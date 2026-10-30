@@ -1,0 +1,10 @@
+{
+  "method": "original_z80_bytes_without_assembly",
+  "normal_row_cases": 12224,
+  "nonlocal_exit_cases": 288,
+  "reset_cases": 1536,
+  "source_sha256": "bab32dcd0347fabd011a6db89f9290c790e8b9b55aeacad78443afa668583fa0",
+  "passed": true,
+  "whole_raster_algorithm_verified": false,
+  "assembly_executed": false
+}

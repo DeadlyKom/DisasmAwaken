@@ -1,0 +1,15 @@
+{
+  "method": "mouse_input_release_merge_after_isolated_static_validation",
+  "passed": true,
+  "candidate": "Tools/Disasm/Research/Candidates/MouseInputRelease",
+  "review": "Tools/Disasm/Research/Candidates/MouseInputMergeReview",
+  "replaced_existing_functions": 5,
+  "replaced_unknown_functions": 5,
+  "documented_functions": 7,
+  "archived_files": 7,
+  "working_copy_files_written": 21,
+  "instruction_count": 32146,
+  "remaining_unknown": 347,
+  "remaining_contracts": 708,
+  "assembly_executed": false
+}

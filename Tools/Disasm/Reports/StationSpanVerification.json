@@ -1,0 +1,12 @@
+{
+  "method": "original_z80_bytes_without_assembly",
+  "pattern_cases": 458752,
+  "flat_pattern_cases": 131072,
+  "clip_counter_cases": 65536,
+  "screen_address_cases": 131072,
+  "original_outline_copy_identical": true,
+  "source_sha256": "1066914072803f32c4a670b182160072369a05d860f5c36353383f22c8217b35",
+  "passed": true,
+  "whole_frame_rendering_verified": false,
+  "assembly_executed": false
+}

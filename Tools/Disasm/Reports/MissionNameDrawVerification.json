@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "cases": 1024,
+  "disabled_cases": 256,
+  "halt_fixture_wakeups": 1024,
+  "method": "original_mission_name_draw_caption_system_name_and_print_without_stubs",
+  "original_caption_executed": true,
+  "real_bank_switches": true,
+  "alternate_register_result_checked": true,
+  "actual_irq_wakeup": false,
+  "calls_stubbed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

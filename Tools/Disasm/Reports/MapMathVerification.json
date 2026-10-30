@@ -1,0 +1,12 @@
+{
+  "method": "original_z80_bytes_without_assembly",
+  "square_table_words": 256,
+  "square_lookup_cases": 512,
+  "sqrt_difference_cases": 131072,
+  "full_byte_arguments_and_carry_domain": true,
+  "flags_checked": true,
+  "source_sha256": "bab32dcd0347fabd011a6db89f9290c790e8b9b55aeacad78443afa668583fa0",
+  "passed": true,
+  "map_rendering_verified": false,
+  "assembly_executed": false
+}

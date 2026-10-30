@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "method": "original_hover_cursor_and_banked_xor_with_explicit_late_pointer_mutation",
+  "cases": 1756,
+  "changed": 290,
+  "unchanged": 1466,
+  "late_hit_failures": 26,
+  "late_different_rows": 48,
+  "pointer_owner_fixture": 40,
+  "banks_modeled": 8,
+  "cached_height_then_residual_band_cases": 2,
+  "original_pointer_code_executed": true,
+  "irq_executed": false,
+  "hardware_race_timing_verified": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

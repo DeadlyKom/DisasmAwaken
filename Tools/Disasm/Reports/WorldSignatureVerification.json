@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "method": "original_region_key_step_and_signature_against_independent_integer_reference",
+  "region_cases": 65536,
+  "key_step_cases": 262144,
+  "signature_cases": 13312,
+  "banked_wrapper_cases": 2496,
+  "all_variants": true,
+  "variant255_means256_steps": true,
+  "region_names_or_game_roles_proved": false,
+  "random_quality_or_period_proved": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

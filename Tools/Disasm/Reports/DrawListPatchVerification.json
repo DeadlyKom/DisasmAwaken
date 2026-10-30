@@ -1,0 +1,16 @@
+{
+  "method": "original_draw_list_opcode_patch_against_pointer_list",
+  "passed": true,
+  "cases": 134192,
+  "by_entry": {
+    "9C59": 67096,
+    "9C68": 67096
+  },
+  "source_sha256": "1066914072803f32c4a670b182160072369a05d860f5c36353383f22c8217b35",
+  "sentinel_high_byte_only": true,
+  "list_length_not_limited_to_128": true,
+  "exact_write_set_checked": true,
+  "irq_enabled": false,
+  "native_execution_verified": false,
+  "assembly_executed": false
+}

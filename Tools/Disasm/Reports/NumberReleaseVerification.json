@@ -1,0 +1,14 @@
+{
+  "method": "number_release_merge_after_isolated_static_validation",
+  "passed": true,
+  "candidate": "Tools/Disasm/Research/Candidates/NumberRelease2",
+  "review": "Tools/Disasm/Research/Candidates/NumberMergeReview",
+  "replaced_unknown_functions": 3,
+  "documented_functions": 5,
+  "archived_files": 5,
+  "working_copy_files_written": 26,
+  "instruction_count": 31183,
+  "remaining_unknown": 394,
+  "remaining_contracts": 779,
+  "assembly_executed": false
+}

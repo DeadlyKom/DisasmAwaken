@@ -1,0 +1,15 @@
+{
+  "method": "original_caption_item_after_modeled_halt_wakeup",
+  "passed": true,
+  "cases": 5172,
+  "source_sha256": "1066914072803f32c4a670b182160072369a05d860f5c36353383f22c8217b35",
+  "glyph_pixels_executed": true,
+  "bitmap_and_attributes_compared": true,
+  "geometry_and_text_are_synthetic": true,
+  "irq_enabled": false,
+  "native_execution_verified": false,
+  "assembly_executed": false,
+  "halt_wakeup_is_fixture": true,
+  "interrupt_handler_executed": false,
+  "interrupt_timing_verified": false
+}

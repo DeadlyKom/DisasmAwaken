@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "cases": 393728,
+  "cases_by_entry": {
+    "38:E41A": 65536,
+    "38:E430": 65536,
+    "38 E445_two_bytes": 65536,
+    "38 E445_same_byte": 256,
+    "30:E41A": 65536,
+    "30:E430": 65536,
+    "30 E445_two_bytes": 65536,
+    "30 E445_same_byte": 256
+  },
+  "method": "both_actual_self_modified_arc_closing_modes_against_integer_bit_operations_all_bytes_pairs_and_saved_AF",
+  "mode_writer_cases": 256,
+  "mode_opcodes": [
+    56,
+    48
+  ],
+  "zero_byte_always_becomes_FF": true,
+  "JR_C_low_formula": "v OR ((v-1) AND 255)",
+  "JR_NC_low_formula": "255 if v=0 else v AND ((v+1) AND 255)",
+  "same_address_uses_updated_byte": true,
+  "saved_stack_pointer_and_AF_checked": true,
+  "full_arc_kernel_proved": false,
+  "calls_stubbed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

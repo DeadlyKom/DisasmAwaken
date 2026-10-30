@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "original_bytes": 56,
+  "first_procedure_bytes": 17,
+  "independent_tail_bytes": 39,
+  "original_instructions_preserved": true,
+  "external_targets_preserved": 4,
+  "assembly_executed": false
+}

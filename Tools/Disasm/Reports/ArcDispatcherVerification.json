@@ -1,0 +1,48 @@
+{
+  "passed": true,
+  "cases": 309248,
+  "paths": {
+    "small_radius": 15886,
+    "inside_two_x_borders": 16773,
+    "outside_y_far_vertical": 21729,
+    "outside_y_rejected": 16692,
+    "outside_y_one_edge": 15591,
+    "inside_one_side_pair": 11944,
+    "outside_x_one_side_pair": 50834,
+    "outside_xy_one_edge": 67324,
+    "outside_xy_rejected": 45872,
+    "outside_x_rejected": 12075,
+    "outside_x_two_borders": 4187,
+    "outside_xy_far_vertical": 5544,
+    "outside_y_both_edges": 13559,
+    "inside_full_span": 11238
+  },
+  "method": "original_entire_DFC3_with_independent_four_center_cases_integer_square_roots_and_pixel_recurrences_full_bitmap_and_work_fields",
+  "window_profiles": [
+    [
+      16,
+      24
+    ],
+    [
+      64,
+      64
+    ],
+    [
+      128,
+      128
+    ],
+    [
+      240,
+      176
+    ]
+  ],
+  "all_radius_bytes_in_base_profile": true,
+  "input_square_root_borrow_preserved": true,
+  "quadrant_high_bits_randomized": true,
+  "arbitrary_window_profiles_proved": false,
+  "full_C000_proved": false,
+  "calls_stubbed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

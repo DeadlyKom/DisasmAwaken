@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "typed_bytes": 784,
+  "raster_records": 192,
+  "background_records": 8,
+  "preserved_unknown_tail": 9,
+  "candidate": "Tools/Disasm/Research/Candidates/PointerTypedRelease",
+  "review": "Tools/Disasm/Research/Candidates/PointerDataMergeReview",
+  "current_instructions_unchanged": true,
+  "assembly_executed": false
+}

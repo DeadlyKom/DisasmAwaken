@@ -1,0 +1,15 @@
+{
+  "method": "active_item_release_merge_after_isolated_static_validation",
+  "passed": true,
+  "candidate": "Tools/Disasm/Research/Candidates/ActiveItemRelease",
+  "review": "Tools/Disasm/Research/Candidates/ActiveItemMergeReview",
+  "replaced_existing_functions": 1,
+  "replaced_unknown_functions": 1,
+  "documented_functions": 1,
+  "archived_files": 1,
+  "working_copy_files_written": 15,
+  "instruction_count": 31324,
+  "remaining_unknown": 357,
+  "remaining_contracts": 719,
+  "assembly_executed": false
+}

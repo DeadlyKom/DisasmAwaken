@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "cadence_and_last_draw_cases": 512,
+  "deferred_active_item_cases": 255,
+  "pointer_pixel_cases": 49152,
+  "whole_normal_callback_cases": 256,
+  "panel_absence_cases": 4,
+  "port_writes": 512,
+  "real_bank_1_cluster_calls": true,
+  "all_variant_count_codes": true,
+  "method": "original_periodic_callback_real_callees_paging_and_independent_fill_cluster_pointer_bitmap_composition",
+  "delayed_rebuild_branch_executed": true,
+  "delayed_rebuild_cases": 96,
+  "explicit_halt_wakeups": 96,
+  "delayed_rebuild_pixel_check": "callee_integration_and_independent_final_pointer_and_shadow_snapshot",
+  "pointer_owner_code": 0,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false,
+  "full_game_loop_proved": false
+}

@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "cases": 3286,
+  "method": "original_map_screen_tables_against_independent_address_walk_column_and_masks",
+  "output_bytes_per_case": 1024,
+  "all_coordinate_bytes_on_each_axis": true,
+  "out_of_screen_inputs_preserve_actual_lookup_bytes": true,
+  "calls_stubbed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

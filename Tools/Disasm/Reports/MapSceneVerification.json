@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "cases": 1024,
+  "arc_dispatch_calls": 523,
+  "visible_marker_calls": 3695,
+  "sector_pixel_xors": 35883,
+  "nontrivial_chains": 452,
+  "method": "entire_original_C000_arc_all_six_original_marker_resources_inside_point_chains_and_sector_pixels_against_composed_independent_bitmap_model",
+  "viewport_profiles": [
+    [
+      128,
+      96
+    ],
+    [
+      208,
+      112
+    ]
+  ],
+  "wrapped_sector_origins": true,
+  "all_chain_styles": true,
+  "empty_and_holey_lists": true,
+  "original_shared_code_snapshot_cases": 64,
+  "negative_guard_from_adjacent_interface_data_checked": true,
+  "general_register_sets_return_exchanged": true,
+  "final_carry_describes_last_sector_word": true,
+  "halt_wakeup_fixture": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false,
+  "calls_stubbed": false,
+  "individually_clipped_chain_edges_tested": false,
+  "full_game_loop_proved": false
+}

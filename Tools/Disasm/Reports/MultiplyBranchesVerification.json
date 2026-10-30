@@ -1,0 +1,68 @@
+{
+  "passed": true,
+  "cases": 524288,
+  "method": "original_unrolled_multiply_with_exact_carry_check_positions",
+  "detected_shift_overflows": 326101,
+  "results_differing_from_saturating_product": 11982,
+  "examples": [
+    {
+      "left": 258,
+      "right": 255,
+      "mathematical": 65790,
+      "returned": 254,
+      "flags": 85
+    },
+    {
+      "left": 258,
+      "right": 32767,
+      "mathematical": 8453886,
+      "returned": 65278,
+      "flags": 108
+    },
+    {
+      "left": 517,
+      "right": 255,
+      "mathematical": 131835,
+      "returned": 763,
+      "flags": 68
+    },
+    {
+      "left": 518,
+      "right": 255,
+      "mathematical": 132090,
+      "returned": 1018,
+      "flags": 68
+    },
+    {
+      "left": 519,
+      "right": 255,
+      "mathematical": 132345,
+      "returned": 1273,
+      "flags": 68
+    },
+    {
+      "left": 520,
+      "right": 255,
+      "mathematical": 132600,
+      "returned": 1528,
+      "flags": 68
+    },
+    {
+      "left": 1041,
+      "right": 255,
+      "mathematical": 265455,
+      "returned": 3311,
+      "flags": 76
+    },
+    {
+      "left": 1042,
+      "right": 255,
+      "mathematical": 265710,
+      "returned": 3566,
+      "flags": 76
+    }
+  ],
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

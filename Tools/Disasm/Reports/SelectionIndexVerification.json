@@ -1,0 +1,10 @@
+{
+  "method": "original_z80_bytes_without_assembly",
+  "cases": 131072,
+  "full_two_byte_input_domain": true,
+  "flags_checked": true,
+  "source_sha256": "dccd2a9c1800630a76da5bbac2ddd0ae3958d4f09bc1dfdd256d5b04dc6d6d99",
+  "passed": true,
+  "ui_selection_correctness_proved": false,
+  "assembly_executed": false
+}

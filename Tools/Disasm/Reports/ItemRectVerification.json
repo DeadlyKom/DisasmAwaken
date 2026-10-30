@@ -1,0 +1,11 @@
+{
+  "method": "original_item_rectangle_validation_against_byte_predicate",
+  "passed": true,
+  "cases": 786432,
+  "wrapped_accepted_cases": 2412,
+  "source_sha256": "1066914072803f32c4a670b182160072369a05d860f5c36353383f22c8217b35",
+  "full_af_and_partial_outputs_checked": true,
+  "irq_enabled": false,
+  "native_execution_verified": false,
+  "assembly_executed": false
+}

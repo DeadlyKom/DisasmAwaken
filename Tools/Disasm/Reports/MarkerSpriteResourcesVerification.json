@@ -1,0 +1,45 @@
+{
+  "passed": true,
+  "resources": [
+    {
+      "name": "Selected",
+      "address": 52675,
+      "sha256": "55fa62133ed580071e8929c1c831c467b6c468b30f506d3a36cf91cd5be7c622"
+    },
+    {
+      "name": "Secondary",
+      "address": 52803,
+      "sha256": "0a24cfaf1d40ac2766954ef59c6dde6f79d3f2506c29c5e044dad52e28e1ad7f"
+    },
+    {
+      "name": "ActiveAux",
+      "address": 52931,
+      "sha256": "afc8506a0f6e18caf518aed466b69742425b87a201702b851d504bd070231dec"
+    },
+    {
+      "name": "Cursor",
+      "address": 53059,
+      "sha256": "d536144759d96db42c40a4aba9a7328ad9b8cf06b9eed57461bb68782b8bd2a8"
+    },
+    {
+      "name": "Primary",
+      "address": 53187,
+      "sha256": "77ae473d172ccb28de2408a96b8cb4405f18ca0239386787da870e08bba11b57"
+    },
+    {
+      "name": "Stored",
+      "address": 53315,
+      "sha256": "1b4433f31ec31b24bb9353f2fbb6057dcb5fa065851f7acff62a5b78f52d74ac"
+    }
+  ],
+  "bytes_checked": 768,
+  "phase_records": 48,
+  "row_words_checked": 384,
+  "method": "all_original_marker_phase_words_against_independent_16_bit_right_shifts",
+  "renderer_reads_seven_rows": true,
+  "preserved_unknown_tail_bytes": 96,
+  "global_tail_purpose_proved": false,
+  "native_execution": false,
+  "assembly_executed": false,
+  "semantic_completeness_proved": false
+}

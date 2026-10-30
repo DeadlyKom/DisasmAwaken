@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "cases": 131328,
+  "zero_count_cases": 16,
+  "method": "original_map_point_outcodes_all_coordinate_words_and_all_header_bytes",
+  "accepted_coordinate_range": "0..254",
+  "negative_axis_bit_left_or_top": true,
+  "upper_nibble_is_complement_of_lower": true,
+  "zero_count_processes_256_wrapped_records": true,
+  "zero_count_reads_its_previous_output": true,
+  "calls_stubbed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

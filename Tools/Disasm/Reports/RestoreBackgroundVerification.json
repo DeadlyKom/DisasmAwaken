@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "method": "original_background_restore_768_cells_eight_banks_attributes_and_pointer",
+  "cases": 1024,
+  "copied_cells": 134976,
+  "retained_cells": 651456,
+  "owner_above_128_checks": 389636,
+  "color_values": 256,
+  "owner_values": 256,
+  "banks_modeled": 8,
+  "original_pointer_code_executed": true,
+  "final_pointer_owner_zero_and_valid": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

@@ -1,0 +1,9 @@
+{
+  "method": "original_z80_text_row_against_byte_wrap_and_height_limit",
+  "cases": 65536,
+  "passed": true,
+  "source_sha256": "1066914072803f32c4a670b182160072369a05d860f5c36353383f22c8217b35",
+  "byte_wrap_preserved": true,
+  "glyph_rendering_verified": false,
+  "assembly_executed": false
+}

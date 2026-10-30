@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "cases": 28672,
+  "method": "original_selected_record_fields_and_bank4_record_fields",
+  "all_selected_bytes": true,
+  "actual_suffix_letters_verified": true,
+  "bank4_sum_stubbed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

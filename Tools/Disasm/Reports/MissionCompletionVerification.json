@@ -1,0 +1,367 @@
+{
+  "passed": true,
+  "cases": 38,
+  "completed": 28,
+  "branches": {
+    "inactive": 2,
+    "other_state": 2,
+    "wrong_first": 2,
+    "already_completed": 2,
+    "too_little": 2,
+    "complete": 28
+  },
+  "max_instructions": 137845,
+  "halt_fixture_wakeups": 94,
+  "recursive_draw_count_on_completion": 2,
+  "results": [
+    {
+      "branch": "inactive",
+      "status_width": 31,
+      "credits": 1000,
+      "reward": 500,
+      "final_credits": 1000,
+      "quantity": 15,
+      "halt_wakeups": 1
+    },
+    {
+      "branch": "inactive",
+      "status_width": 32,
+      "credits": 1000,
+      "reward": 500,
+      "final_credits": 1000,
+      "quantity": 15,
+      "halt_wakeups": 1
+    },
+    {
+      "branch": "other_state",
+      "status_width": 31,
+      "credits": 1000,
+      "reward": 500,
+      "final_credits": 1000,
+      "quantity": 15,
+      "halt_wakeups": 1
+    },
+    {
+      "branch": "other_state",
+      "status_width": 32,
+      "credits": 1000,
+      "reward": 500,
+      "final_credits": 1000,
+      "quantity": 15,
+      "halt_wakeups": 1
+    },
+    {
+      "branch": "wrong_first",
+      "status_width": 31,
+      "credits": 1000,
+      "reward": 500,
+      "final_credits": 1000,
+      "quantity": 15,
+      "halt_wakeups": 1
+    },
+    {
+      "branch": "wrong_first",
+      "status_width": 32,
+      "credits": 1000,
+      "reward": 500,
+      "final_credits": 1000,
+      "quantity": 15,
+      "halt_wakeups": 1
+    },
+    {
+      "branch": "already_completed",
+      "status_width": 31,
+      "credits": 1000,
+      "reward": 500,
+      "final_credits": 1000,
+      "quantity": 15,
+      "halt_wakeups": 1
+    },
+    {
+      "branch": "already_completed",
+      "status_width": 32,
+      "credits": 1000,
+      "reward": 500,
+      "final_credits": 1000,
+      "quantity": 15,
+      "halt_wakeups": 1
+    },
+    {
+      "branch": "too_little",
+      "status_width": 31,
+      "credits": 1000,
+      "reward": 500,
+      "final_credits": 1000,
+      "quantity": 14,
+      "halt_wakeups": 1
+    },
+    {
+      "branch": "too_little",
+      "status_width": 32,
+      "credits": 1000,
+      "reward": 500,
+      "final_credits": 1000,
+      "quantity": 14,
+      "halt_wakeups": 1
+    },
+    {
+      "branch": "complete",
+      "status_width": 31,
+      "credits": 0,
+      "reward": 0,
+      "final_credits": 0,
+      "quantity": 15,
+      "halt_wakeups": 3
+    },
+    {
+      "branch": "complete",
+      "status_width": 32,
+      "credits": 0,
+      "reward": 0,
+      "final_credits": 0,
+      "quantity": 15,
+      "halt_wakeups": 3
+    },
+    {
+      "branch": "complete",
+      "status_width": 31,
+      "credits": 0,
+      "reward": 0,
+      "final_credits": 0,
+      "quantity": 255,
+      "halt_wakeups": 3
+    },
+    {
+      "branch": "complete",
+      "status_width": 32,
+      "credits": 0,
+      "reward": 0,
+      "final_credits": 0,
+      "quantity": 255,
+      "halt_wakeups": 3
+    },
+    {
+      "branch": "complete",
+      "status_width": 31,
+      "credits": 0,
+      "reward": 65535,
+      "final_credits": 65535,
+      "quantity": 15,
+      "halt_wakeups": 3
+    },
+    {
+      "branch": "complete",
+      "status_width": 32,
+      "credits": 0,
+      "reward": 65535,
+      "final_credits": 65535,
+      "quantity": 15,
+      "halt_wakeups": 3
+    },
+    {
+      "branch": "complete",
+      "status_width": 31,
+      "credits": 0,
+      "reward": 65535,
+      "final_credits": 65535,
+      "quantity": 255,
+      "halt_wakeups": 3
+    },
+    {
+      "branch": "complete",
+      "status_width": 32,
+      "credits": 0,
+      "reward": 65535,
+      "final_credits": 65535,
+      "quantity": 255,
+      "halt_wakeups": 3
+    },
+    {
+      "branch": "complete",
+      "status_width": 31,
+      "credits": 65000,
+      "reward": 535,
+      "final_credits": 65535,
+      "quantity": 15,
+      "halt_wakeups": 3
+    },
+    {
+      "branch": "complete",
+      "status_width": 32,
+      "credits": 65000,
+      "reward": 535,
+      "final_credits": 65535,
+      "quantity": 15,
+      "halt_wakeups": 3
+    },
+    {
+      "branch": "complete",
+      "status_width": 31,
+      "credits": 65000,
+      "reward": 535,
+      "final_credits": 65535,
+      "quantity": 255,
+      "halt_wakeups": 3
+    },
+    {
+      "branch": "complete",
+      "status_width": 32,
+      "credits": 65000,
+      "reward": 535,
+      "final_credits": 65535,
+      "quantity": 255,
+      "halt_wakeups": 3
+    },
+    {
+      "branch": "complete",
+      "status_width": 31,
+      "credits": 65000,
+      "reward": 536,
+      "final_credits": 65000,
+      "quantity": 15,
+      "halt_wakeups": 3
+    },
+    {
+      "branch": "complete",
+      "status_width": 32,
+      "credits": 65000,
+      "reward": 536,
+      "final_credits": 65000,
+      "quantity": 15,
+      "halt_wakeups": 3
+    },
+    {
+      "branch": "complete",
+      "status_width": 31,
+      "credits": 65000,
+      "reward": 536,
+      "final_credits": 65000,
+      "quantity": 255,
+      "halt_wakeups": 3
+    },
+    {
+      "branch": "complete",
+      "status_width": 32,
+      "credits": 65000,
+      "reward": 536,
+      "final_credits": 65000,
+      "quantity": 255,
+      "halt_wakeups": 3
+    },
+    {
+      "branch": "complete",
+      "status_width": 31,
+      "credits": 65535,
+      "reward": 0,
+      "final_credits": 65535,
+      "quantity": 15,
+      "halt_wakeups": 3
+    },
+    {
+      "branch": "complete",
+      "status_width": 32,
+      "credits": 65535,
+      "reward": 0,
+      "final_credits": 65535,
+      "quantity": 15,
+      "halt_wakeups": 3
+    },
+    {
+      "branch": "complete",
+      "status_width": 31,
+      "credits": 65535,
+      "reward": 0,
+      "final_credits": 65535,
+      "quantity": 255,
+      "halt_wakeups": 3
+    },
+    {
+      "branch": "complete",
+      "status_width": 32,
+      "credits": 65535,
+      "reward": 0,
+      "final_credits": 65535,
+      "quantity": 255,
+      "halt_wakeups": 3
+    },
+    {
+      "branch": "complete",
+      "status_width": 31,
+      "credits": 65535,
+      "reward": 1,
+      "final_credits": 65000,
+      "quantity": 15,
+      "halt_wakeups": 3
+    },
+    {
+      "branch": "complete",
+      "status_width": 32,
+      "credits": 65535,
+      "reward": 1,
+      "final_credits": 65000,
+      "quantity": 15,
+      "halt_wakeups": 3
+    },
+    {
+      "branch": "complete",
+      "status_width": 31,
+      "credits": 65535,
+      "reward": 1,
+      "final_credits": 65000,
+      "quantity": 255,
+      "halt_wakeups": 3
+    },
+    {
+      "branch": "complete",
+      "status_width": 32,
+      "credits": 65535,
+      "reward": 1,
+      "final_credits": 65000,
+      "quantity": 255,
+      "halt_wakeups": 3
+    },
+    {
+      "branch": "complete",
+      "status_width": 31,
+      "credits": 1000,
+      "reward": 2000,
+      "final_credits": 3000,
+      "quantity": 15,
+      "halt_wakeups": 3
+    },
+    {
+      "branch": "complete",
+      "status_width": 32,
+      "credits": 1000,
+      "reward": 2000,
+      "final_credits": 3000,
+      "quantity": 15,
+      "halt_wakeups": 3
+    },
+    {
+      "branch": "complete",
+      "status_width": 31,
+      "credits": 1000,
+      "reward": 2000,
+      "final_credits": 3000,
+      "quantity": 255,
+      "halt_wakeups": 3
+    },
+    {
+      "branch": "complete",
+      "status_width": 32,
+      "credits": 1000,
+      "reward": 2000,
+      "final_credits": 3000,
+      "quantity": 255,
+      "halt_wakeups": 3
+    }
+  ],
+  "method": "complete_original_DrawItem32_caption_printing_system_name_script_reward_offer_and_recursive_redraw",
+  "model_rom_sha256": "8d93c3342321e9d1e51d60afcd7d15f6a7afd978c231b43435a7c0757c60b9a3",
+  "emulator_rom_match_verified": false,
+  "calls_stubbed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

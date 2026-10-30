@@ -1,0 +1,82 @@
+{
+  "passed": true,
+  "candidate": "Tools/Disasm/Research/Candidates/XorOutlineRelease",
+  "files": [
+    {
+      "path": "Source/Station/SuspendPointer.asm",
+      "equal": true,
+      "sha256": "d389fed1b5e1da447e7d6137035dc60c8045ebbdd199e4026b8b5a47a1385ac5"
+    },
+    {
+      "path": "Source/Station/ResumePointer.asm",
+      "equal": true,
+      "sha256": "e19dcf787ee8c8a0fbfa0eb0ea4f9e01691ecd69f0e0b89e76a67db25d0dd9d1"
+    },
+    {
+      "path": "Source/Station/UpdatePointer.asm",
+      "equal": true,
+      "sha256": "542896189a82d70953595eb73ab1b29cc7a119df60e437c49491ff4702aed117"
+    },
+    {
+      "path": "Source/Station/DrawPointer.asm",
+      "equal": true,
+      "sha256": "1a6a108ee31bde7095af1a9abc996c7d6c01973cfcb9e229cf3ae54394e3d4eb"
+    },
+    {
+      "path": "Source/Station/RestorePointer.asm",
+      "equal": true,
+      "sha256": "a194c73405fee53334939d61361caff75526b8b69c8328269bbd2bb1e13488d2"
+    },
+    {
+      "path": "Source/Station/ToggleItemFrame.asm",
+      "equal": true,
+      "sha256": "0354b1a420180c02f6b047fdd5e45e32b4aa612cdb61a17c52f376b36b7a275f"
+    },
+    {
+      "path": "Source/Station/MergeActionInputs.asm",
+      "equal": true,
+      "sha256": "02462559185c30cedb38f4a21c52d72a5f8794d7f19addf9d7e46f6cf567a98c"
+    },
+    {
+      "path": "Source/Station/GetItemFrameBit.asm",
+      "equal": true,
+      "sha256": "912fe79b628a5255b2d60d306088836e69b1dd6d2514cf459481a61416122677"
+    },
+    {
+      "path": "Source/Station/CloseActiveItem.asm",
+      "equal": true,
+      "sha256": "0536ff2983cfabac051356340e30f40da8d41124be712a2bd3c07b12dac30596"
+    },
+    {
+      "path": "Source/Station/ActivateItem.asm",
+      "equal": true,
+      "sha256": "eceebad4ac819c64e8fd8b09d2bd1784763c2cbc71bfc07ab21b0e4226035470"
+    },
+    {
+      "path": "Source/Station/FinishItemAction.asm",
+      "equal": true,
+      "sha256": "37f8414ea6a38aa5b303813e51f57cdb77dbf7b1c9a67f90e5df3e4d3bf0e584"
+    },
+    {
+      "path": "Source/Station/ToggleItemBounds.asm",
+      "equal": true,
+      "sha256": "dff5ed532a9e8a0d875d0a6034b6c308c82c348d1b024affb6f425dac3f6d7d9"
+    },
+    {
+      "path": "Source/Station/XorRectOutline.asm",
+      "equal": true,
+      "sha256": "595f3e667d5ba0059d807485b85be0cba81176bc2d8c5067e57670767c1a9af6"
+    },
+    {
+      "path": "Source/Station/XorOutlineRow.asm",
+      "equal": true,
+      "sha256": "5ec936c5af0783ad6942b367d84fc1243506c1536cfdd7e525acfc3169e99f37"
+    },
+    {
+      "path": "Source/Station/XorOutlineColumn.asm",
+      "equal": true,
+      "sha256": "2bb80d358b97e107df696b7300486c376e08d483b109a89a21392c5ade694ada"
+    }
+  ],
+  "assembly_executed": false
+}

@@ -1,0 +1,10 @@
+{
+  "method": "original_z80_bytes_without_assembly",
+  "entry": 50922,
+  "canonical_numbers_checked": 100000,
+  "special_cases": 1002,
+  "source_sha256": "dccd2a9c1800630a76da5bbac2ddd0ae3958d4f09bc1dfdd256d5b04dc6d6d99",
+  "first_character_must_be_digit": true,
+  "passed": true,
+  "assembly_executed": false
+}

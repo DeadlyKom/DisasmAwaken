@@ -1,0 +1,65 @@
+{
+  "raw_files": 176,
+  "raw_hashes_preserved": true,
+  "updated_paths": [
+    "Tools/Disasm/ExtractTrd.py",
+    "Tools/Disasm/Disk/Layout.lua",
+    "Tools/Disasm/Disk/Manifest.json",
+    "Tools/Disasm/Research/CheckEffects.py",
+    "Tools/Disasm/Research/CheckFinal.py",
+    "Tools/Disasm/Research/CheckMath.py",
+    "Tools/Disasm/Research/CheckMusic.py",
+    "Tools/Disasm/Research/ExportScreens.py",
+    "Tools/Disasm/Research/GenerateDocs.py",
+    "Tools/Disasm/Research/TraceFlight.py",
+    "README.md"
+  ],
+  "history_moved": [
+    {
+      "path": "Tools/Disasm/Research/History/BootFinal",
+      "files": 1486
+    },
+    {
+      "path": "Tools/Disasm/Research/History/EffectsCandidate",
+      "files": 1479
+    },
+    {
+      "path": "Tools/Disasm/Research/History/EffectsFinal",
+      "files": 1479
+    },
+    {
+      "path": "Tools/Disasm/Research/History/FinalCandidate",
+      "files": 1486
+    },
+    {
+      "path": "Tools/Disasm/Research/History/IntroCandidate",
+      "files": 1465
+    },
+    {
+      "path": "Tools/Disasm/Research/History/IntroFinal",
+      "files": 1465
+    },
+    {
+      "path": "Tools/Disasm/Research/History/MusicCandidate",
+      "files": 1474
+    },
+    {
+      "path": "Tools/Disasm/Research/History/MusicFinal",
+      "files": 1476
+    },
+    {
+      "path": "Tools/Disasm/Research/History/MusicResources",
+      "files": 1478
+    },
+    {
+      "path": "Tools/Disasm/Research/History/SourceAudit",
+      "files": 1451
+    },
+    {
+      "path": "Tools/Disasm/Research/History/SourceHistory",
+      "files": 37
+    }
+  ],
+  "history_hashes_preserved": true,
+  "assembly_executed": false
+}

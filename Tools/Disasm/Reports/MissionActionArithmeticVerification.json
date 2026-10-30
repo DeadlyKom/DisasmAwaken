@@ -1,0 +1,45 @@
+{
+  "passed": true,
+  "accept_cases": 326144,
+  "accepted": 195840,
+  "rejected": 130304,
+  "accepted_wrapped_sums": 97919,
+  "cancel_cases": 262144,
+  "penalty_cases": 65536,
+  "cancellation_differs_from_byte_saturation_examples": [
+    {
+      "H": 0,
+      "D": 1,
+      "quantity": 255,
+      "required": 1,
+      "result": 0
+    },
+    {
+      "H": 0,
+      "D": 2,
+      "quantity": 255,
+      "required": 1,
+      "result": 0
+    },
+    {
+      "H": 0,
+      "D": 3,
+      "quantity": 255,
+      "required": 1,
+      "result": 0
+    },
+    {
+      "H": 0,
+      "D": 4,
+      "quantity": 255,
+      "required": 1,
+      "result": 0
+    }
+  ],
+  "method": "original_instruction_slices_with_independent_wrapped_byte_and_full_word_oracles",
+  "script_executed": false,
+  "drawers_executed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

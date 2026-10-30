@@ -1,0 +1,28 @@
+{
+  "method": "original_settings_label_formatter_all_tag_types_and_bootstrap_pointers",
+  "passed": true,
+  "cases": 773,
+  "source_sha256": "1066914072803f32c4a670b182160072369a05d860f5c36353383f22c8217b35",
+  "numeric_tags": 127,
+  "key_signatures": 40,
+  "boolean_tags": 2,
+  "bootstrap": [
+    {
+      "target": "9728",
+      "settings": "99AE",
+      "length": 13,
+      "original_hex": "594e594e51414f50204d30343000",
+      "formatted_hex": "594e594e51414f50204d30353000"
+    },
+    {
+      "target": "9736",
+      "settings": "99C8",
+      "length": 43,
+      "original_hex": "5953584b4c4e4d41201f5048433132334a465a52425157454744545653584b4c41201f504843314a51444200",
+      "formatted_hex": "5953584b4c4e4d41201f5048433132334a465a524251574547445653584b4c41201f504843314a5144423000"
+    }
+  ],
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

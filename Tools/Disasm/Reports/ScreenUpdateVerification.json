@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "method": "original_screen_update_with_eight_physical_banks_paging_and_cursor_pixels",
+  "cases": 1280,
+  "out_writes": 3840,
+  "screen_bytes": 6912,
+  "banks_modeled": 8,
+  "page_lock_initially_clear": true,
+  "pointer_owner_fixture": 0,
+  "source_sha256": "1066914072803f32c4a670b182160072369a05d860f5c36353383f22c8217b35",
+  "snapshot_contains_original_cursor": true,
+  "base_restored_after_snapshot": true,
+  "interrupt_handler_executed": false,
+  "native_execution_verified": false,
+  "assembly_executed": false
+}

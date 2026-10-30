@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "cases": 917504,
+  "paths": {
+    "8x8": 4088,
+    "8x16": 523266,
+    "16x16": 390150
+  },
+  "second_operand_8000_full_kernel_cases": 65028,
+  "method": "original_signed_multiply_all_words_against_seven_boundaries_both_orders",
+  "extreme_operand_asymmetry_preserved": true,
+  "all_output_registers_and_flags_checked": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

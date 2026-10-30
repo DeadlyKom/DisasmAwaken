@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "cases": 523264,
+  "setup_profiles": 256,
+  "each_boundary_all_byte_values": true,
+  "all_corner_block_bytes": true,
+  "all_output_cursors_when_allowed": true,
+  "unordered_bounds_preserved": true,
+  "method": "original_D0C3_then_four_original_corner_entries_actual_common_writer_exact_output_registers_flags",
+  "calls_stubbed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

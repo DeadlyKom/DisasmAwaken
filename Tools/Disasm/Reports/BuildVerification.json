@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "method": "sjasmplus_lua",
+  "checked_at_utc": "2026-10-30T21:56:50Z",
+  "byte_identical": true,
+  "disk_size": 655360,
+  "active_allocations": 41
+}

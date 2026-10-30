@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "method": "original_text_row_queue_restore_bounds_and_M_m_commands",
+  "cases": {
+    "fixed": 1536,
+    "banked": 1536,
+    "commands": 3108
+  },
+  "actual_restore_item_bounds": true,
+  "existing_alias_by_index_tested": true,
+  "drawing_executed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

@@ -1,0 +1,52 @@
+{
+  "method": "isolated_original_z80_bytes",
+  "assembled_code_used": false,
+  "emulator_boot_test": false,
+  "full_domain_proof": false,
+  "results": [
+    {
+      "name": "AdvanceParameters",
+      "fixtures": 125,
+      "passed": true
+    },
+    {
+      "name": "SelectTexturePointerRow",
+      "fixtures": 256,
+      "passed": true
+    },
+    {
+      "name": "BuildTextureLookupRomBoundary",
+      "fixtures": 3,
+      "synthetic_rom_bytes": true,
+      "original_rom_required": false,
+      "passed": true
+    },
+    {
+      "name": "BuildPhaseTable",
+      "fixtures": 15,
+      "passed": true
+    },
+    {
+      "name": "CombineAttributeNibbles",
+      "fixtures": 64,
+      "passed": true
+    },
+    {
+      "name": "InitializeLookupEffectGeneratedCode",
+      "chains": 3,
+      "passed": true
+    },
+    {
+      "name": "BuildAttributeWriterAndRun",
+      "words": 32,
+      "generated_code_bytes": 128,
+      "passed": true
+    },
+    {
+      "name": "ScatterTextureToScreen",
+      "patches": 2,
+      "bytes_per_patch": 1216,
+      "passed": true
+    }
+  ]
+}

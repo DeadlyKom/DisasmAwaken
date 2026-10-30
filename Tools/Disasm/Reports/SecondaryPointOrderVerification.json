@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "cases": 10240,
+  "method": "original_secondary_point_cursor_count_and_order_all_markers_slots_layout_bytes",
+  "marker_7F_terminates_count_and_is_skipped_backward": true,
+  "empty_FF_skipped": true,
+  "order_is_dense_multiples_of_five_not_compacted_slot_offsets": true,
+  "backward_search_guard_explicit": true,
+  "calls_stubbed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

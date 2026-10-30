@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "new_instructions": 75,
+  "new_code_bytes": 139,
+  "new_fragments": 2,
+  "history_preserved": true,
+  "assembly_executed": false
+}

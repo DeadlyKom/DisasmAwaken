@@ -1,0 +1,62 @@
+{
+  "passed": true,
+  "cases": 178612,
+  "cases_by_mode_and_exit": {
+    "block_0": 89306,
+    "normal": 156930,
+    "block_1": 89306,
+    "special": 21682
+  },
+  "physical_pairs_tested": 81,
+  "semantic_paths_executed": 241,
+  "symbolic_paths": 241,
+  "maximum_output_points": 4,
+  "profiles": [
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      15,
+      23,
+      16,
+      24
+    ],
+    [
+      63,
+      63,
+      64,
+      64
+    ],
+    [
+      127,
+      95,
+      128,
+      96
+    ],
+    [
+      207,
+      111,
+      208,
+      112
+    ],
+    [
+      239,
+      175,
+      240,
+      176
+    ]
+  ],
+  "all_initial_corner_bytes_tested": true,
+  "high_corner_bits_preserved": true,
+  "method": "original_direct_table_entries_against_explicit_semantic_paths_with_integer_sign_tests_and_exact_intersection_quantization",
+  "decision_paths_derived_from_original_graph": true,
+  "independent_geometry_proof": false,
+  "direct_snapshot_targets_not_live_mutated_table": true,
+  "game_reachability_of_all_direct_entries_proved": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

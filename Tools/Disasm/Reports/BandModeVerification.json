@@ -1,0 +1,21 @@
+{
+  "method": "original_band_mode_patch_against_six_word_contract",
+  "passed": true,
+  "cases": 131072,
+  "by_entry": {
+    "CCAF": 65536,
+    "CCD4": 65536
+  },
+  "source_sha256": "1066914072803f32c4a670b182160072369a05d860f5c36353383f22c8217b35",
+  "mutated_word_addresses": [
+    "C095",
+    "C0F2",
+    "C0F8",
+    "C0FF",
+    "C13E",
+    "C144"
+  ],
+  "irq_enabled": false,
+  "native_execution_verified": false,
+  "assembly_executed": false
+}

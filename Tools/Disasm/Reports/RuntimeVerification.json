@@ -1,0 +1,29 @@
+{
+  "method": "full_xpeccy_execution_with_isolated_config",
+  "memory_or_registers_injected": false,
+  "emulator_sha256": "f91c05e8f214a08cb43edad1083dc2aa976904a1aa20c1c90945628f81199caa",
+  "original_config_unchanged": true,
+  "results": [
+    {
+      "name": "Original",
+      "pc": "15FF",
+      "sp": "FF2E",
+      "image_sha256": "55a11de202a5334547e39a6db42c945242a2a53559dc1cf601522219e3463f32",
+      "screen_sha256": "7d9847d84901d931856f1cf04217b96140d5d6931949c18aa92b6d29cce2d487",
+      "screen": "Tools/Disasm/Reports/Runtime/Original.png"
+    },
+    {
+      "name": "Rebuilt",
+      "pc": "15FA",
+      "sp": "FF2C",
+      "image_sha256": "55a11de202a5334547e39a6db42c945242a2a53559dc1cf601522219e3463f32",
+      "screen_sha256": "7d9847d84901d931856f1cf04217b96140d5d6931949c18aa92b6d29cce2d487",
+      "screen": "Tools/Disasm/Reports/Runtime/Rebuilt.png"
+    }
+  ],
+  "visual_scope_requires_review": false,
+  "all_gameplay_verified": false,
+  "game_start_verified": false,
+  "scope": "TR-DOS command prompt after autostart",
+  "owned_processes_closed": true
+}

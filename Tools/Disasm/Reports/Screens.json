@@ -1,0 +1,182 @@
+[
+  {
+    "slot": 9,
+    "index": 0,
+    "offset": 0,
+    "packed_size": 3230,
+    "unpacked_size": 6912,
+    "allocated_size": 3328,
+    "path": "Source/Screens/Station/Screen00.asm"
+  },
+  {
+    "slot": 9,
+    "index": 1,
+    "offset": 3328,
+    "packed_size": 2725,
+    "unpacked_size": 6912,
+    "allocated_size": 2816,
+    "path": "Source/Screens/Station/Screen01.asm"
+  },
+  {
+    "slot": 9,
+    "index": 2,
+    "offset": 6144,
+    "packed_size": 2708,
+    "unpacked_size": 6912,
+    "allocated_size": 2816,
+    "path": "Source/Screens/Station/Screen02.asm"
+  },
+  {
+    "slot": 9,
+    "index": 3,
+    "offset": 8960,
+    "packed_size": 3056,
+    "unpacked_size": 6912,
+    "allocated_size": 3072,
+    "path": "Source/Screens/Station/Screen03.asm"
+  },
+  {
+    "slot": 9,
+    "index": 4,
+    "offset": 12032,
+    "packed_size": 2002,
+    "unpacked_size": 6912,
+    "allocated_size": 2048,
+    "path": "Source/Screens/Station/Screen04.asm"
+  },
+  {
+    "slot": 9,
+    "index": 5,
+    "offset": 14080,
+    "packed_size": 3526,
+    "unpacked_size": 6912,
+    "allocated_size": 3584,
+    "path": "Source/Screens/Station/Screen05.asm"
+  },
+  {
+    "slot": 9,
+    "index": 6,
+    "offset": 17664,
+    "packed_size": 4731,
+    "unpacked_size": 6912,
+    "allocated_size": 4864,
+    "path": "Source/Screens/Station/Screen06.asm"
+  },
+  {
+    "slot": 9,
+    "index": 7,
+    "offset": 22528,
+    "packed_size": 3805,
+    "unpacked_size": 6912,
+    "allocated_size": 3840,
+    "path": "Source/Screens/Station/Screen07.asm"
+  },
+  {
+    "slot": 9,
+    "index": 8,
+    "offset": 26368,
+    "packed_size": 3640,
+    "unpacked_size": 6912,
+    "allocated_size": 3840,
+    "path": "Source/Screens/Station/Screen08.asm"
+  },
+  {
+    "slot": 9,
+    "index": 9,
+    "offset": 30208,
+    "packed_size": 3128,
+    "unpacked_size": 6912,
+    "allocated_size": 3328,
+    "path": "Source/Screens/Station/Screen09.asm"
+  },
+  {
+    "slot": 9,
+    "index": 10,
+    "offset": 33536,
+    "packed_size": 4774,
+    "unpacked_size": 6912,
+    "allocated_size": 4864,
+    "path": "Source/Screens/Station/Screen10.asm"
+  },
+  {
+    "slot": 9,
+    "index": 11,
+    "offset": 38400,
+    "packed_size": 2990,
+    "unpacked_size": 6912,
+    "allocated_size": 3072,
+    "path": "Source/Screens/Station/Screen11.asm"
+  },
+  {
+    "slot": 9,
+    "index": 12,
+    "offset": 41472,
+    "packed_size": 4042,
+    "unpacked_size": 6912,
+    "allocated_size": 4096,
+    "path": "Source/Screens/Station/Screen12.asm"
+  },
+  {
+    "slot": 9,
+    "index": 13,
+    "offset": 45568,
+    "packed_size": 4940,
+    "unpacked_size": 6912,
+    "allocated_size": 5120,
+    "path": "Source/Screens/Station/Screen13.asm"
+  },
+  {
+    "slot": 9,
+    "index": 14,
+    "offset": 50688,
+    "packed_size": 5157,
+    "unpacked_size": 6912,
+    "allocated_size": 5376,
+    "path": "Source/Screens/Station/Screen14.asm"
+  },
+  {
+    "slot": 9,
+    "index": 15,
+    "offset": 56064,
+    "packed_size": 4940,
+    "unpacked_size": 6912,
+    "allocated_size": 5120,
+    "path": "Source/Screens/Station/Screen15.asm"
+  },
+  {
+    "slot": 25,
+    "index": 0,
+    "offset": 0,
+    "packed_size": 1463,
+    "unpacked_size": 6912,
+    "allocated_size": 1536,
+    "path": "Source/Screens/Panel25/Screen00.asm"
+  },
+  {
+    "slot": 26,
+    "index": 0,
+    "offset": 0,
+    "packed_size": 1436,
+    "unpacked_size": 6912,
+    "allocated_size": 1536,
+    "path": "Source/Screens/Panel26/Screen00.asm"
+  },
+  {
+    "slot": 27,
+    "index": 0,
+    "offset": 0,
+    "packed_size": 1423,
+    "unpacked_size": 6912,
+    "allocated_size": 1536,
+    "path": "Source/Screens/Panel27/Screen00.asm"
+  },
+  {
+    "slot": 28,
+    "index": 0,
+    "offset": 0,
+    "packed_size": 1543,
+    "unpacked_size": 6912,
+    "allocated_size": 1792,
+    "path": "Source/Screens/Panel28/Screen00.asm"
+  }
+]

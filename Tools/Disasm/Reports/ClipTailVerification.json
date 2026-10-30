@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "cases": 1023672,
+  "cases_by_family": {
+    "corners": 4084,
+    "product_differences": 32964,
+    "coordinate_differences": 917504,
+    "append_points": 3584,
+    "stack_exits": 65536
+  },
+  "method": "original_clip_tail_independent_entries_flags_output_page_and_literal_stack_frame",
+  "corner_gate_all_bytes_checked": true,
+  "ordinary_calls_not_substituted_for_special_frame": true,
+  "full_dispatch_semantics_proved": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

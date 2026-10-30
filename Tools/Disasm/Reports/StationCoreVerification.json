@@ -1,0 +1,11 @@
+{
+  "method": "relocated_original_z80_bytes_and_port_log",
+  "passed": true,
+  "merged_page_cases": 65536,
+  "direct_page_cases": 65536,
+  "parameter_cases": 2305,
+  "source_sha256": "1066914072803f32c4a670b182160072369a05d860f5c36353383f22c8217b35",
+  "physical_paging_or_lock_bit_simulated": false,
+  "interrupts_simulated": false,
+  "assembly_executed": false
+}

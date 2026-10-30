@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "cases": 303104,
+  "setup_profiles": 256,
+  "all_byte_values_each_boundary": true,
+  "all_second_operand_words_in_one_profile": true,
+  "propagated_second_operand_8000_cases": 1028,
+  "unordered_bounds_preserved": true,
+  "other_product_slots_preserved": true,
+  "method": "original_D0C3_then_four_original_products_complete_signed_multiply_exact_registers_flags_memory",
+  "calls_stubbed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

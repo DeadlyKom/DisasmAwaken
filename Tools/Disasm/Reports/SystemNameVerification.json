@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "cases": 4096,
+  "method": "original_system_name_prefix_copy_two_compact_numbers_letter_and_LF",
+  "all_sixteen_prefixes": true,
+  "all_byte_values_for_both_numbers": true,
+  "zero_alternative_BC_tested": true,
+  "output_register_set_swapped": true,
+  "maximum_output_bytes": 18,
+  "calls_stubbed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

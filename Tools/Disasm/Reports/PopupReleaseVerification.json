@@ -1,0 +1,15 @@
+{
+  "method": "popup_release_merge_after_isolated_static_validation",
+  "passed": true,
+  "candidate": "Tools/Disasm/Research/Candidates/PopupRelease3",
+  "review": "Tools/Disasm/Research/Candidates/PopupMergeReview",
+  "replaced_existing_functions": 1,
+  "replaced_unknown_functions": 1,
+  "documented_functions": 2,
+  "archived_files": 1,
+  "working_copy_files_written": 19,
+  "instruction_count": 32427,
+  "remaining_unknown": 342,
+  "remaining_contracts": 702,
+  "assembly_executed": false
+}

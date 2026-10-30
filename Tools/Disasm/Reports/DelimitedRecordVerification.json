@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "cases": 7680,
+  "method": "original_two_marker_scan_with_actual_cpir",
+  "zero_counts_mean_256": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

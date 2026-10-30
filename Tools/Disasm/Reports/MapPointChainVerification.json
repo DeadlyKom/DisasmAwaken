@@ -1,0 +1,37 @@
+{
+  "passed": true,
+  "cases": 4224,
+  "outcomes": {
+    "count_0_early": 384,
+    "count_1_early": 384,
+    "common_outside_swapped_sets": 590,
+    "clear_chain": 717,
+    "set_chain": 716,
+    "xor_chain": 1433
+  },
+  "edge_pairs": 14384,
+  "accepted_pairs": 13614,
+  "pixel_operations": 1529476,
+  "method": "original_D1AC_full_stored_point_conversion_outcodes_real_side_clipping_and_line_raster_against_independent_screen_model",
+  "point_count_domain": [
+    0,
+    10
+  ],
+  "repeated_and_permuted_indices": true,
+  "top_bottom_common_reject_checked": true,
+  "individual_top_bottom_clipped_edges_tested": false,
+  "common_reject_returns_exchanged_general_sets": true,
+  "coordinate_origin": [
+    16384,
+    16384
+  ],
+  "table_builder_input_DE": 61688,
+  "synthetic_alignment_fixture": true,
+  "calls_stubbed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false,
+  "header_variants_checked": 176,
+  "all_header_bit_positions_varied": true,
+  "all_256_header_values_tested": false
+}

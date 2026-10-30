@@ -1,0 +1,1012 @@
+{
+  "passed": true,
+  "method": "direct_original_map_writers_to_actual_instruction_bytes_and_data_addresses",
+  "writes": [
+    {
+      "phase": "window_setup",
+      "writer": 53443,
+      "register": "HL",
+      "target": 56023,
+      "width": 2,
+      "instruction_owners": [
+        {
+          "address": 56022,
+          "operation": "LD DE,#FFFF",
+          "byte_offset": 1
+        },
+        {
+          "address": 56022,
+          "operation": "LD DE,#FFFF",
+          "byte_offset": 2
+        }
+      ],
+      "existing_symbols": []
+    },
+    {
+      "phase": "window_setup",
+      "writer": 53446,
+      "register": "DE",
+      "target": 55990,
+      "width": 2,
+      "instruction_owners": [
+        {
+          "address": 55989,
+          "operation": "LD DE,#0000",
+          "byte_offset": 1
+        },
+        {
+          "address": 55989,
+          "operation": "LD DE,#0000",
+          "byte_offset": 2
+        }
+      ],
+      "existing_symbols": []
+    },
+    {
+      "phase": "window_setup",
+      "writer": 53453,
+      "register": "HL",
+      "target": 56012,
+      "width": 2,
+      "instruction_owners": [
+        {
+          "address": 56011,
+          "operation": "LD DE,#FF00",
+          "byte_offset": 1
+        },
+        {
+          "address": 56011,
+          "operation": "LD DE,#FF00",
+          "byte_offset": 2
+        }
+      ],
+      "existing_symbols": []
+    },
+    {
+      "phase": "window_setup",
+      "writer": 53456,
+      "register": "DE",
+      "target": 56001,
+      "width": 2,
+      "instruction_owners": [
+        {
+          "address": 56000,
+          "operation": "LD DE,#00FF",
+          "byte_offset": 1
+        },
+        {
+          "address": 56000,
+          "operation": "LD DE,#00FF",
+          "byte_offset": 2
+        }
+      ],
+      "existing_symbols": []
+    },
+    {
+      "phase": "window_setup",
+      "writer": 53461,
+      "register": "A",
+      "target": 55565,
+      "width": 1,
+      "instruction_owners": [
+        {
+          "address": 55564,
+          "operation": "LD BC,#00FF",
+          "byte_offset": 1
+        }
+      ],
+      "existing_symbols": []
+    },
+    {
+      "phase": "window_setup",
+      "writer": 53464,
+      "register": "A",
+      "target": 55770,
+      "width": 1,
+      "instruction_owners": [
+        {
+          "address": 55769,
+          "operation": "LD (HL),#FF",
+          "byte_offset": 1
+        }
+      ],
+      "existing_symbols": []
+    },
+    {
+      "phase": "window_setup",
+      "writer": 53467,
+      "register": "A",
+      "target": 55789,
+      "width": 1,
+      "instruction_owners": [
+        {
+          "address": 55788,
+          "operation": "LD (HL),#FF",
+          "byte_offset": 1
+        }
+      ],
+      "existing_symbols": []
+    },
+    {
+      "phase": "window_setup",
+      "writer": 53470,
+      "register": "A",
+      "target": 55849,
+      "width": 1,
+      "instruction_owners": [
+        {
+          "address": 55848,
+          "operation": "LD (HL),#FF",
+          "byte_offset": 1
+        }
+      ],
+      "existing_symbols": []
+    },
+    {
+      "phase": "window_setup",
+      "writer": 53473,
+      "register": "A",
+      "target": 55943,
+      "width": 1,
+      "instruction_owners": [
+        {
+          "address": 55942,
+          "operation": "LD (HL),#FF",
+          "byte_offset": 1
+        }
+      ],
+      "existing_symbols": []
+    },
+    {
+      "phase": "window_setup",
+      "writer": 53477,
+      "register": "A",
+      "target": 54376,
+      "width": 1,
+      "instruction_owners": [
+        {
+          "address": 54375,
+          "operation": "CP #FF",
+          "byte_offset": 1
+        }
+      ],
+      "existing_symbols": []
+    },
+    {
+      "phase": "window_setup",
+      "writer": 53481,
+      "register": "A",
+      "target": 55534,
+      "width": 1,
+      "instruction_owners": [
+        {
+          "address": 55533,
+          "operation": "LD BC,#0000",
+          "byte_offset": 1
+        }
+      ],
+      "existing_symbols": []
+    },
+    {
+      "phase": "window_setup",
+      "writer": 53484,
+      "register": "A",
+      "target": 55695,
+      "width": 1,
+      "instruction_owners": [
+        {
+          "address": 55694,
+          "operation": "LD (HL),#00",
+          "byte_offset": 1
+        }
+      ],
+      "existing_symbols": []
+    },
+    {
+      "phase": "window_setup",
+      "writer": 53487,
+      "register": "A",
+      "target": 55714,
+      "width": 1,
+      "instruction_owners": [
+        {
+          "address": 55713,
+          "operation": "LD (HL),#00",
+          "byte_offset": 1
+        }
+      ],
+      "existing_symbols": []
+    },
+    {
+      "phase": "window_setup",
+      "writer": 53490,
+      "register": "A",
+      "target": 55866,
+      "width": 1,
+      "instruction_owners": [
+        {
+          "address": 55865,
+          "operation": "LD (HL),#00",
+          "byte_offset": 1
+        }
+      ],
+      "existing_symbols": []
+    },
+    {
+      "phase": "window_setup",
+      "writer": 53493,
+      "register": "A",
+      "target": 55960,
+      "width": 1,
+      "instruction_owners": [
+        {
+          "address": 55959,
+          "operation": "LD (HL),#00",
+          "byte_offset": 1
+        }
+      ],
+      "existing_symbols": []
+    },
+    {
+      "phase": "window_setup",
+      "writer": 53497,
+      "register": "A",
+      "target": 55616,
+      "width": 1,
+      "instruction_owners": [
+        {
+          "address": 55615,
+          "operation": "LD BC,#00FF",
+          "byte_offset": 1
+        }
+      ],
+      "existing_symbols": []
+    },
+    {
+      "phase": "window_setup",
+      "writer": 53500,
+      "register": "A",
+      "target": 55703,
+      "width": 1,
+      "instruction_owners": [
+        {
+          "address": 55702,
+          "operation": "LD L,#FF",
+          "byte_offset": 1
+        }
+      ],
+      "existing_symbols": []
+    },
+    {
+      "phase": "window_setup",
+      "writer": 53503,
+      "register": "A",
+      "target": 55778,
+      "width": 1,
+      "instruction_owners": [
+        {
+          "address": 55777,
+          "operation": "LD L,#FF",
+          "byte_offset": 1
+        }
+      ],
+      "existing_symbols": []
+    },
+    {
+      "phase": "window_setup",
+      "writer": 53506,
+      "register": "A",
+      "target": 55940,
+      "width": 1,
+      "instruction_owners": [
+        {
+          "address": 55939,
+          "operation": "LD (HL),#FF",
+          "byte_offset": 1
+        }
+      ],
+      "existing_symbols": []
+    },
+    {
+      "phase": "window_setup",
+      "writer": 53509,
+      "register": "A",
+      "target": 55957,
+      "width": 1,
+      "instruction_owners": [
+        {
+          "address": 55956,
+          "operation": "LD (HL),#FF",
+          "byte_offset": 1
+        }
+      ],
+      "existing_symbols": []
+    },
+    {
+      "phase": "window_setup",
+      "writer": 53512,
+      "register": "A",
+      "target": 55975,
+      "width": 1,
+      "instruction_owners": [
+        {
+          "address": 55974,
+          "operation": "LD (HL),#FF",
+          "byte_offset": 1
+        }
+      ],
+      "existing_symbols": []
+    },
+    {
+      "phase": "window_setup",
+      "writer": 53516,
+      "register": "A",
+      "target": 54349,
+      "width": 1,
+      "instruction_owners": [
+        {
+          "address": 54348,
+          "operation": "CP #FF",
+          "byte_offset": 1
+        }
+      ],
+      "existing_symbols": []
+    },
+    {
+      "phase": "window_setup",
+      "writer": 53520,
+      "register": "A",
+      "target": 55585,
+      "width": 1,
+      "instruction_owners": [
+        {
+          "address": 55584,
+          "operation": "LD BC,#0000",
+          "byte_offset": 1
+        }
+      ],
+      "existing_symbols": []
+    },
+    {
+      "phase": "window_setup",
+      "writer": 53523,
+      "register": "A",
+      "target": 55692,
+      "width": 1,
+      "instruction_owners": [
+        {
+          "address": 55691,
+          "operation": "LD (HL),#00",
+          "byte_offset": 1
+        }
+      ],
+      "existing_symbols": []
+    },
+    {
+      "phase": "window_setup",
+      "writer": 53526,
+      "register": "A",
+      "target": 55767,
+      "width": 1,
+      "instruction_owners": [
+        {
+          "address": 55766,
+          "operation": "LD (HL),#00",
+          "byte_offset": 1
+        }
+      ],
+      "existing_symbols": []
+    },
+    {
+      "phase": "window_setup",
+      "writer": 53529,
+      "register": "A",
+      "target": 55846,
+      "width": 1,
+      "instruction_owners": [
+        {
+          "address": 55845,
+          "operation": "LD (HL),#00",
+          "byte_offset": 1
+        }
+      ],
+      "existing_symbols": []
+    },
+    {
+      "phase": "window_setup",
+      "writer": 53532,
+      "register": "A",
+      "target": 55863,
+      "width": 1,
+      "instruction_owners": [
+        {
+          "address": 55862,
+          "operation": "LD (HL),#00",
+          "byte_offset": 1
+        }
+      ],
+      "existing_symbols": []
+    },
+    {
+      "phase": "window_setup",
+      "writer": 53535,
+      "register": "A",
+      "target": 55881,
+      "width": 1,
+      "instruction_owners": [
+        {
+          "address": 55880,
+          "operation": "LD (HL),#00",
+          "byte_offset": 1
+        }
+      ],
+      "existing_symbols": []
+    },
+    {
+      "phase": "window_setup",
+      "writer": 53541,
+      "register": "A",
+      "target": 57278,
+      "width": 1,
+      "instruction_owners": [
+        null
+      ],
+      "existing_symbols": []
+    },
+    {
+      "phase": "window_setup",
+      "writer": 53544,
+      "register": "A",
+      "target": 57581,
+      "width": 1,
+      "instruction_owners": [
+        {
+          "address": 57580,
+          "operation": "LD C,#00",
+          "byte_offset": 1
+        }
+      ],
+      "existing_symbols": []
+    },
+    {
+      "phase": "window_setup",
+      "writer": 53547,
+      "register": "A",
+      "target": 57618,
+      "width": 1,
+      "instruction_owners": [
+        {
+          "address": 57617,
+          "operation": "LD C,#00",
+          "byte_offset": 1
+        }
+      ],
+      "existing_symbols": []
+    },
+    {
+      "phase": "window_setup",
+      "writer": 53552,
+      "register": "A",
+      "target": 57464,
+      "width": 1,
+      "instruction_owners": [
+        {
+          "address": 57463,
+          "operation": "SUB #F0",
+          "byte_offset": 1
+        }
+      ],
+      "existing_symbols": []
+    },
+    {
+      "phase": "window_setup",
+      "writer": 53555,
+      "register": "A",
+      "target": 57819,
+      "width": 1,
+      "instruction_owners": [
+        {
+          "address": 57818,
+          "operation": "ADD A,#F8",
+          "byte_offset": 1
+        }
+      ],
+      "existing_symbols": []
+    },
+    {
+      "phase": "window_setup",
+      "writer": 53560,
+      "register": "A",
+      "target": 57609,
+      "width": 1,
+      "instruction_owners": [
+        {
+          "address": 57608,
+          "operation": "ADD A,#00",
+          "byte_offset": 1
+        }
+      ],
+      "existing_symbols": []
+    },
+    {
+      "phase": "window_setup",
+      "writer": 53563,
+      "register": "A",
+      "target": 57279,
+      "width": 1,
+      "instruction_owners": [
+        null
+      ],
+      "existing_symbols": [
+        "MapArcState.ReferenceX"
+      ]
+    },
+    {
+      "phase": "window_setup",
+      "writer": 53566,
+      "register": "A",
+      "target": 57354,
+      "width": 1,
+      "instruction_owners": [
+        {
+          "address": 57353,
+          "operation": "CP #00",
+          "byte_offset": 1
+        }
+      ],
+      "existing_symbols": []
+    },
+    {
+      "phase": "window_setup",
+      "writer": 53569,
+      "register": "A",
+      "target": 57367,
+      "width": 1,
+      "instruction_owners": [
+        {
+          "address": 57366,
+          "operation": "CP #00",
+          "byte_offset": 1
+        }
+      ],
+      "existing_symbols": []
+    },
+    {
+      "phase": "window_setup",
+      "writer": 53572,
+      "register": "A",
+      "target": 57377,
+      "width": 1,
+      "instruction_owners": [
+        {
+          "address": 57376,
+          "operation": "CP #00",
+          "byte_offset": 1
+        }
+      ],
+      "existing_symbols": []
+    },
+    {
+      "phase": "window_setup",
+      "writer": 53575,
+      "register": "A",
+      "target": 57457,
+      "width": 1,
+      "instruction_owners": [
+        {
+          "address": 57456,
+          "operation": "SUB #00",
+          "byte_offset": 1
+        }
+      ],
+      "existing_symbols": []
+    },
+    {
+      "phase": "window_setup",
+      "writer": 53578,
+      "register": "A",
+      "target": 57786,
+      "width": 1,
+      "instruction_owners": [
+        {
+          "address": 57785,
+          "operation": "SUB #00",
+          "byte_offset": 1
+        }
+      ],
+      "existing_symbols": []
+    },
+    {
+      "phase": "window_setup",
+      "writer": 53581,
+      "register": "A",
+      "target": 57481,
+      "width": 1,
+      "instruction_owners": [
+        {
+          "address": 57480,
+          "operation": "ADD A,#00",
+          "byte_offset": 1
+        }
+      ],
+      "existing_symbols": []
+    },
+    {
+      "phase": "window_setup",
+      "writer": 53584,
+      "register": "A",
+      "target": 57843,
+      "width": 1,
+      "instruction_owners": [
+        {
+          "address": 57842,
+          "operation": "ADD A,#00",
+          "byte_offset": 1
+        }
+      ],
+      "existing_symbols": []
+    },
+    {
+      "phase": "window_setup",
+      "writer": 53587,
+      "register": "A",
+      "target": 57470,
+      "width": 1,
+      "instruction_owners": [
+        {
+          "address": 57469,
+          "operation": "ADD A,#00",
+          "byte_offset": 1
+        }
+      ],
+      "existing_symbols": []
+    },
+    {
+      "phase": "window_setup",
+      "writer": 53590,
+      "register": "A",
+      "target": 57832,
+      "width": 1,
+      "instruction_owners": [
+        {
+          "address": 57831,
+          "operation": "ADD A,#00",
+          "byte_offset": 1
+        }
+      ],
+      "existing_symbols": []
+    },
+    {
+      "phase": "window_setup",
+      "writer": 53593,
+      "register": "A",
+      "target": 57282,
+      "width": 1,
+      "instruction_owners": [
+        null
+      ],
+      "existing_symbols": []
+    },
+    {
+      "phase": "window_setup",
+      "writer": 53596,
+      "register": "A",
+      "target": 57281,
+      "width": 1,
+      "instruction_owners": [
+        null
+      ],
+      "existing_symbols": []
+    },
+    {
+      "phase": "window_setup",
+      "writer": 53599,
+      "register": "A",
+      "target": 57572,
+      "width": 1,
+      "instruction_owners": [
+        {
+          "address": 57571,
+          "operation": "ADD A,#00",
+          "byte_offset": 1
+        }
+      ],
+      "existing_symbols": []
+    },
+    {
+      "phase": "window_setup",
+      "writer": 53604,
+      "register": "A",
+      "target": 57715,
+      "width": 1,
+      "instruction_owners": [
+        {
+          "address": 57714,
+          "operation": "SUB #00",
+          "byte_offset": 1
+        }
+      ],
+      "existing_symbols": []
+    },
+    {
+      "phase": "window_setup",
+      "writer": 53607,
+      "register": "A",
+      "target": 57898,
+      "width": 1,
+      "instruction_owners": [
+        {
+          "address": 57897,
+          "operation": "SUB #00",
+          "byte_offset": 1
+        }
+      ],
+      "existing_symbols": []
+    },
+    {
+      "phase": "window_setup",
+      "writer": 53610,
+      "register": "A",
+      "target": 57539,
+      "width": 1,
+      "instruction_owners": [
+        {
+          "address": 57538,
+          "operation": "SUB #00",
+          "byte_offset": 1
+        }
+      ],
+      "existing_symbols": []
+    },
+    {
+      "phase": "window_setup",
+      "writer": 53615,
+      "register": "A",
+      "target": 57280,
+      "width": 1,
+      "instruction_owners": [
+        null
+      ],
+      "existing_symbols": []
+    },
+    {
+      "phase": "window_setup",
+      "writer": 53618,
+      "register": "A",
+      "target": 57350,
+      "width": 1,
+      "instruction_owners": [
+        {
+          "address": 57349,
+          "operation": "CP #00",
+          "byte_offset": 1
+        }
+      ],
+      "existing_symbols": []
+    },
+    {
+      "phase": "window_setup",
+      "writer": 53621,
+      "register": "A",
+      "target": 57492,
+      "width": 1,
+      "instruction_owners": [
+        {
+          "address": 57491,
+          "operation": "SUB #00",
+          "byte_offset": 1
+        }
+      ],
+      "existing_symbols": []
+    },
+    {
+      "phase": "window_setup",
+      "writer": 53624,
+      "register": "A",
+      "target": 57790,
+      "width": 1,
+      "instruction_owners": [
+        {
+          "address": 57789,
+          "operation": "SUB #00",
+          "byte_offset": 1
+        }
+      ],
+      "existing_symbols": []
+    },
+    {
+      "phase": "window_setup",
+      "writer": 53634,
+      "register": "DE",
+      "target": 57276,
+      "width": 2,
+      "instruction_owners": [
+        null,
+        null
+      ],
+      "existing_symbols": []
+    },
+    {
+      "phase": "window_setup",
+      "writer": 53647,
+      "register": "DE",
+      "target": 57274,
+      "width": 2,
+      "instruction_owners": [
+        null,
+        null
+      ],
+      "existing_symbols": []
+    },
+    {
+      "phase": "window_setup",
+      "writer": 53652,
+      "register": "A",
+      "target": 57626,
+      "width": 1,
+      "instruction_owners": [
+        {
+          "address": 57625,
+          "operation": "OR #01",
+          "byte_offset": 1
+        }
+      ],
+      "existing_symbols": []
+    },
+    {
+      "phase": "window_setup",
+      "writer": 53655,
+      "register": "A",
+      "target": 57971,
+      "width": 1,
+      "instruction_owners": [
+        {
+          "address": 57970,
+          "operation": "OR #01",
+          "byte_offset": 1
+        }
+      ],
+      "existing_symbols": []
+    },
+    {
+      "phase": "window_setup",
+      "writer": 53658,
+      "register": "A",
+      "target": 58844,
+      "width": 1,
+      "instruction_owners": [
+        {
+          "address": 58843,
+          "operation": "OR #01",
+          "byte_offset": 1
+        }
+      ],
+      "existing_symbols": []
+    },
+    {
+      "phase": "window_setup",
+      "writer": 53663,
+      "register": "A",
+      "target": 57589,
+      "width": 1,
+      "instruction_owners": [
+        {
+          "address": 57588,
+          "operation": "OR #1E",
+          "byte_offset": 1
+        }
+      ],
+      "existing_symbols": []
+    },
+    {
+      "phase": "window_setup",
+      "writer": 53666,
+      "register": "A",
+      "target": 57947,
+      "width": 1,
+      "instruction_owners": [
+        {
+          "address": 57946,
+          "operation": "OR #1E",
+          "byte_offset": 1
+        }
+      ],
+      "existing_symbols": []
+    },
+    {
+      "phase": "window_setup",
+      "writer": 53669,
+      "register": "A",
+      "target": 58862,
+      "width": 1,
+      "instruction_owners": [
+        {
+          "address": 58861,
+          "operation": "OR #00",
+          "byte_offset": 1
+        }
+      ],
+      "existing_symbols": []
+    },
+    {
+      "phase": "window_setup",
+      "writer": 53672,
+      "register": "A",
+      "target": 58924,
+      "width": 1,
+      "instruction_owners": [
+        {
+          "address": 58923,
+          "operation": "OR #00",
+          "byte_offset": 1
+        }
+      ],
+      "existing_symbols": []
+    },
+    {
+      "phase": "arc_tail_mode",
+      "writer": 57292,
+      "register": "A",
+      "target": 58406,
+      "width": 1,
+      "instruction_owners": [
+        {
+          "address": 58406,
+          "operation": "JR C,#E42B",
+          "byte_offset": 0
+        }
+      ],
+      "existing_symbols": []
+    },
+    {
+      "phase": "arc_tail_mode",
+      "writer": 57295,
+      "register": "A",
+      "target": 58424,
+      "width": 1,
+      "instruction_owners": [
+        {
+          "address": 58424,
+          "operation": "JR C,#E43E",
+          "byte_offset": 0
+        }
+      ],
+      "existing_symbols": []
+    },
+    {
+      "phase": "arc_tail_mode",
+      "writer": 57298,
+      "register": "A",
+      "target": 58447,
+      "width": 1,
+      "instruction_owners": [
+        {
+          "address": 58447,
+          "operation": "JR C,#E454",
+          "byte_offset": 0
+        }
+      ],
+      "existing_symbols": []
+    },
+    {
+      "phase": "arc_tail_mode",
+      "writer": 57301,
+      "register": "A",
+      "target": 58464,
+      "width": 1,
+      "instruction_owners": [
+        {
+          "address": 58464,
+          "operation": "JR C,#E466",
+          "byte_offset": 0
+        }
+      ],
+      "existing_symbols": []
+    }
+  ],
+  "write_instructions": 67,
+  "distinct_target_bytes": 73,
+  "setup_execution_proved": false,
+  "all_game_writers_proved": false,
+  "assembly_executed": false
+}

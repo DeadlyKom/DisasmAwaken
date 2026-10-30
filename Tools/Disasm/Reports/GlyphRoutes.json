@@ -1,0 +1,1154 @@
+[
+  {
+    "shift": 0,
+    "right_edge": false,
+    "y_modulo": 0,
+    "first": 44812,
+    "after_wrap": 0,
+    "address": 37376,
+    "label": "GlyphRoutes.Shift0Y0"
+  },
+  {
+    "shift": 0,
+    "right_edge": false,
+    "y_modulo": 1,
+    "first": 44854,
+    "after_wrap": 44847,
+    "address": 37380,
+    "label": "GlyphRoutes.Shift0Y1"
+  },
+  {
+    "shift": 0,
+    "right_edge": false,
+    "y_modulo": 2,
+    "first": 44859,
+    "after_wrap": 44842,
+    "address": 37384,
+    "label": "GlyphRoutes.Shift0Y2"
+  },
+  {
+    "shift": 0,
+    "right_edge": false,
+    "y_modulo": 3,
+    "first": 44864,
+    "after_wrap": 44837,
+    "address": 37388,
+    "label": "GlyphRoutes.Shift0Y3"
+  },
+  {
+    "shift": 0,
+    "right_edge": false,
+    "y_modulo": 4,
+    "first": 44869,
+    "after_wrap": 44832,
+    "address": 37392,
+    "label": "GlyphRoutes.Shift0Y4"
+  },
+  {
+    "shift": 0,
+    "right_edge": false,
+    "y_modulo": 5,
+    "first": 44874,
+    "after_wrap": 44827,
+    "address": 37396,
+    "label": "GlyphRoutes.Shift0Y5"
+  },
+  {
+    "shift": 0,
+    "right_edge": false,
+    "y_modulo": 6,
+    "first": 44879,
+    "after_wrap": 44822,
+    "address": 37400,
+    "label": "GlyphRoutes.Shift0Y6"
+  },
+  {
+    "shift": 0,
+    "right_edge": false,
+    "y_modulo": 7,
+    "first": 44884,
+    "after_wrap": 44817,
+    "address": 37404,
+    "label": "GlyphRoutes.Shift0Y7"
+  },
+  {
+    "shift": 0,
+    "right_edge": true,
+    "y_modulo": 0,
+    "first": 44812,
+    "after_wrap": 0,
+    "address": 37408,
+    "label": "GlyphRoutes.Edge0Y0"
+  },
+  {
+    "shift": 0,
+    "right_edge": true,
+    "y_modulo": 1,
+    "first": 44854,
+    "after_wrap": 44847,
+    "address": 37412,
+    "label": "GlyphRoutes.Edge0Y1"
+  },
+  {
+    "shift": 0,
+    "right_edge": true,
+    "y_modulo": 2,
+    "first": 44859,
+    "after_wrap": 44842,
+    "address": 37416,
+    "label": "GlyphRoutes.Edge0Y2"
+  },
+  {
+    "shift": 0,
+    "right_edge": true,
+    "y_modulo": 3,
+    "first": 44864,
+    "after_wrap": 44837,
+    "address": 37420,
+    "label": "GlyphRoutes.Edge0Y3"
+  },
+  {
+    "shift": 0,
+    "right_edge": true,
+    "y_modulo": 4,
+    "first": 44869,
+    "after_wrap": 44832,
+    "address": 37424,
+    "label": "GlyphRoutes.Edge0Y4"
+  },
+  {
+    "shift": 0,
+    "right_edge": true,
+    "y_modulo": 5,
+    "first": 44874,
+    "after_wrap": 44827,
+    "address": 37428,
+    "label": "GlyphRoutes.Edge0Y5"
+  },
+  {
+    "shift": 0,
+    "right_edge": true,
+    "y_modulo": 6,
+    "first": 44879,
+    "after_wrap": 44822,
+    "address": 37432,
+    "label": "GlyphRoutes.Edge0Y6"
+  },
+  {
+    "shift": 0,
+    "right_edge": true,
+    "y_modulo": 7,
+    "first": 44884,
+    "after_wrap": 44817,
+    "address": 37436,
+    "label": "GlyphRoutes.Edge0Y7"
+  },
+  {
+    "shift": 1,
+    "right_edge": false,
+    "y_modulo": 0,
+    "first": 44903,
+    "after_wrap": 0,
+    "address": 37440,
+    "label": "GlyphRoutes.Shift1Y0"
+  },
+  {
+    "shift": 1,
+    "right_edge": false,
+    "y_modulo": 1,
+    "first": 45024,
+    "after_wrap": 45008,
+    "address": 37444,
+    "label": "GlyphRoutes.Shift1Y1"
+  },
+  {
+    "shift": 1,
+    "right_edge": false,
+    "y_modulo": 2,
+    "first": 45039,
+    "after_wrap": 44993,
+    "address": 37448,
+    "label": "GlyphRoutes.Shift1Y2"
+  },
+  {
+    "shift": 1,
+    "right_edge": false,
+    "y_modulo": 3,
+    "first": 45054,
+    "after_wrap": 44978,
+    "address": 37452,
+    "label": "GlyphRoutes.Shift1Y3"
+  },
+  {
+    "shift": 1,
+    "right_edge": false,
+    "y_modulo": 4,
+    "first": 45069,
+    "after_wrap": 44963,
+    "address": 37456,
+    "label": "GlyphRoutes.Shift1Y4"
+  },
+  {
+    "shift": 1,
+    "right_edge": false,
+    "y_modulo": 5,
+    "first": 45084,
+    "after_wrap": 44948,
+    "address": 37460,
+    "label": "GlyphRoutes.Shift1Y5"
+  },
+  {
+    "shift": 1,
+    "right_edge": false,
+    "y_modulo": 6,
+    "first": 45099,
+    "after_wrap": 44933,
+    "address": 37464,
+    "label": "GlyphRoutes.Shift1Y6"
+  },
+  {
+    "shift": 1,
+    "right_edge": false,
+    "y_modulo": 7,
+    "first": 45114,
+    "after_wrap": 44918,
+    "address": 37468,
+    "label": "GlyphRoutes.Shift1Y7"
+  },
+  {
+    "shift": 1,
+    "right_edge": true,
+    "y_modulo": 0,
+    "first": 45143,
+    "after_wrap": 0,
+    "address": 37472,
+    "label": "GlyphRoutes.Edge1Y0"
+  },
+  {
+    "shift": 1,
+    "right_edge": true,
+    "y_modulo": 1,
+    "first": 45193,
+    "after_wrap": 45185,
+    "address": 37476,
+    "label": "GlyphRoutes.Edge1Y1"
+  },
+  {
+    "shift": 1,
+    "right_edge": true,
+    "y_modulo": 2,
+    "first": 45199,
+    "after_wrap": 45179,
+    "address": 37480,
+    "label": "GlyphRoutes.Edge1Y2"
+  },
+  {
+    "shift": 1,
+    "right_edge": true,
+    "y_modulo": 3,
+    "first": 45205,
+    "after_wrap": 45173,
+    "address": 37484,
+    "label": "GlyphRoutes.Edge1Y3"
+  },
+  {
+    "shift": 1,
+    "right_edge": true,
+    "y_modulo": 4,
+    "first": 45211,
+    "after_wrap": 45167,
+    "address": 37488,
+    "label": "GlyphRoutes.Edge1Y4"
+  },
+  {
+    "shift": 1,
+    "right_edge": true,
+    "y_modulo": 5,
+    "first": 45217,
+    "after_wrap": 45161,
+    "address": 37492,
+    "label": "GlyphRoutes.Edge1Y5"
+  },
+  {
+    "shift": 1,
+    "right_edge": true,
+    "y_modulo": 6,
+    "first": 45223,
+    "after_wrap": 45155,
+    "address": 37496,
+    "label": "GlyphRoutes.Edge1Y6"
+  },
+  {
+    "shift": 1,
+    "right_edge": true,
+    "y_modulo": 7,
+    "first": 45229,
+    "after_wrap": 45149,
+    "address": 37500,
+    "label": "GlyphRoutes.Edge1Y7"
+  },
+  {
+    "shift": 2,
+    "right_edge": false,
+    "y_modulo": 0,
+    "first": 45249,
+    "after_wrap": 0,
+    "address": 37504,
+    "label": "GlyphRoutes.Shift2Y0"
+  },
+  {
+    "shift": 2,
+    "right_edge": false,
+    "y_modulo": 1,
+    "first": 45394,
+    "after_wrap": 45375,
+    "address": 37508,
+    "label": "GlyphRoutes.Shift2Y1"
+  },
+  {
+    "shift": 2,
+    "right_edge": false,
+    "y_modulo": 2,
+    "first": 45412,
+    "after_wrap": 45357,
+    "address": 37512,
+    "label": "GlyphRoutes.Shift2Y2"
+  },
+  {
+    "shift": 2,
+    "right_edge": false,
+    "y_modulo": 3,
+    "first": 45430,
+    "after_wrap": 45339,
+    "address": 37516,
+    "label": "GlyphRoutes.Shift2Y3"
+  },
+  {
+    "shift": 2,
+    "right_edge": false,
+    "y_modulo": 4,
+    "first": 45448,
+    "after_wrap": 45321,
+    "address": 37520,
+    "label": "GlyphRoutes.Shift2Y4"
+  },
+  {
+    "shift": 2,
+    "right_edge": false,
+    "y_modulo": 5,
+    "first": 45466,
+    "after_wrap": 45303,
+    "address": 37524,
+    "label": "GlyphRoutes.Shift2Y5"
+  },
+  {
+    "shift": 2,
+    "right_edge": false,
+    "y_modulo": 6,
+    "first": 45484,
+    "after_wrap": 45285,
+    "address": 37528,
+    "label": "GlyphRoutes.Shift2Y6"
+  },
+  {
+    "shift": 2,
+    "right_edge": false,
+    "y_modulo": 7,
+    "first": 45502,
+    "after_wrap": 45267,
+    "address": 37532,
+    "label": "GlyphRoutes.Shift2Y7"
+  },
+  {
+    "shift": 2,
+    "right_edge": true,
+    "y_modulo": 0,
+    "first": 45534,
+    "after_wrap": 0,
+    "address": 37536,
+    "label": "GlyphRoutes.Edge2Y0"
+  },
+  {
+    "shift": 2,
+    "right_edge": true,
+    "y_modulo": 1,
+    "first": 45600,
+    "after_wrap": 45590,
+    "address": 37540,
+    "label": "GlyphRoutes.Edge2Y1"
+  },
+  {
+    "shift": 2,
+    "right_edge": true,
+    "y_modulo": 2,
+    "first": 45608,
+    "after_wrap": 45582,
+    "address": 37544,
+    "label": "GlyphRoutes.Edge2Y2"
+  },
+  {
+    "shift": 2,
+    "right_edge": true,
+    "y_modulo": 3,
+    "first": 45616,
+    "after_wrap": 45574,
+    "address": 37548,
+    "label": "GlyphRoutes.Edge2Y3"
+  },
+  {
+    "shift": 2,
+    "right_edge": true,
+    "y_modulo": 4,
+    "first": 45624,
+    "after_wrap": 45566,
+    "address": 37552,
+    "label": "GlyphRoutes.Edge2Y4"
+  },
+  {
+    "shift": 2,
+    "right_edge": true,
+    "y_modulo": 5,
+    "first": 45632,
+    "after_wrap": 45558,
+    "address": 37556,
+    "label": "GlyphRoutes.Edge2Y5"
+  },
+  {
+    "shift": 2,
+    "right_edge": true,
+    "y_modulo": 6,
+    "first": 45640,
+    "after_wrap": 45550,
+    "address": 37560,
+    "label": "GlyphRoutes.Edge2Y6"
+  },
+  {
+    "shift": 2,
+    "right_edge": true,
+    "y_modulo": 7,
+    "first": 45648,
+    "after_wrap": 45542,
+    "address": 37564,
+    "label": "GlyphRoutes.Edge2Y7"
+  },
+  {
+    "shift": 3,
+    "right_edge": false,
+    "y_modulo": 0,
+    "first": 45670,
+    "after_wrap": 0,
+    "address": 37568,
+    "label": "GlyphRoutes.Shift3Y0"
+  },
+  {
+    "shift": 3,
+    "right_edge": false,
+    "y_modulo": 1,
+    "first": 45839,
+    "after_wrap": 45817,
+    "address": 37572,
+    "label": "GlyphRoutes.Shift3Y1"
+  },
+  {
+    "shift": 3,
+    "right_edge": false,
+    "y_modulo": 2,
+    "first": 45860,
+    "after_wrap": 45796,
+    "address": 37576,
+    "label": "GlyphRoutes.Shift3Y2"
+  },
+  {
+    "shift": 3,
+    "right_edge": false,
+    "y_modulo": 3,
+    "first": 45881,
+    "after_wrap": 45775,
+    "address": 37580,
+    "label": "GlyphRoutes.Shift3Y3"
+  },
+  {
+    "shift": 3,
+    "right_edge": false,
+    "y_modulo": 4,
+    "first": 45902,
+    "after_wrap": 45754,
+    "address": 37584,
+    "label": "GlyphRoutes.Shift3Y4"
+  },
+  {
+    "shift": 3,
+    "right_edge": false,
+    "y_modulo": 5,
+    "first": 45923,
+    "after_wrap": 45733,
+    "address": 37588,
+    "label": "GlyphRoutes.Shift3Y5"
+  },
+  {
+    "shift": 3,
+    "right_edge": false,
+    "y_modulo": 6,
+    "first": 45944,
+    "after_wrap": 45712,
+    "address": 37592,
+    "label": "GlyphRoutes.Shift3Y6"
+  },
+  {
+    "shift": 3,
+    "right_edge": false,
+    "y_modulo": 7,
+    "first": 45965,
+    "after_wrap": 45691,
+    "address": 37596,
+    "label": "GlyphRoutes.Shift3Y7"
+  },
+  {
+    "shift": 3,
+    "right_edge": true,
+    "y_modulo": 0,
+    "first": 46000,
+    "after_wrap": 0,
+    "address": 37600,
+    "label": "GlyphRoutes.Edge3Y0"
+  },
+  {
+    "shift": 3,
+    "right_edge": true,
+    "y_modulo": 1,
+    "first": 46082,
+    "after_wrap": 46070,
+    "address": 37604,
+    "label": "GlyphRoutes.Edge3Y1"
+  },
+  {
+    "shift": 3,
+    "right_edge": true,
+    "y_modulo": 2,
+    "first": 46092,
+    "after_wrap": 46060,
+    "address": 37608,
+    "label": "GlyphRoutes.Edge3Y2"
+  },
+  {
+    "shift": 3,
+    "right_edge": true,
+    "y_modulo": 3,
+    "first": 46102,
+    "after_wrap": 46050,
+    "address": 37612,
+    "label": "GlyphRoutes.Edge3Y3"
+  },
+  {
+    "shift": 3,
+    "right_edge": true,
+    "y_modulo": 4,
+    "first": 46112,
+    "after_wrap": 46040,
+    "address": 37616,
+    "label": "GlyphRoutes.Edge3Y4"
+  },
+  {
+    "shift": 3,
+    "right_edge": true,
+    "y_modulo": 5,
+    "first": 46122,
+    "after_wrap": 46030,
+    "address": 37620,
+    "label": "GlyphRoutes.Edge3Y5"
+  },
+  {
+    "shift": 3,
+    "right_edge": true,
+    "y_modulo": 6,
+    "first": 46132,
+    "after_wrap": 46020,
+    "address": 37624,
+    "label": "GlyphRoutes.Edge3Y6"
+  },
+  {
+    "shift": 3,
+    "right_edge": true,
+    "y_modulo": 7,
+    "first": 46142,
+    "after_wrap": 46010,
+    "address": 37628,
+    "label": "GlyphRoutes.Edge3Y7"
+  },
+  {
+    "shift": 4,
+    "right_edge": false,
+    "y_modulo": 0,
+    "first": 46166,
+    "after_wrap": 0,
+    "address": 37632,
+    "label": "GlyphRoutes.Shift4Y0"
+  },
+  {
+    "shift": 4,
+    "right_edge": false,
+    "y_modulo": 1,
+    "first": 46369,
+    "after_wrap": 46334,
+    "address": 37636,
+    "label": "GlyphRoutes.Shift4Y1"
+  },
+  {
+    "shift": 4,
+    "right_edge": false,
+    "y_modulo": 2,
+    "first": 46393,
+    "after_wrap": 46310,
+    "address": 37640,
+    "label": "GlyphRoutes.Shift4Y2"
+  },
+  {
+    "shift": 4,
+    "right_edge": false,
+    "y_modulo": 3,
+    "first": 46417,
+    "after_wrap": 46286,
+    "address": 37644,
+    "label": "GlyphRoutes.Shift4Y3"
+  },
+  {
+    "shift": 4,
+    "right_edge": false,
+    "y_modulo": 4,
+    "first": 46441,
+    "after_wrap": 46262,
+    "address": 37648,
+    "label": "GlyphRoutes.Shift4Y4"
+  },
+  {
+    "shift": 4,
+    "right_edge": false,
+    "y_modulo": 5,
+    "first": 46465,
+    "after_wrap": 46238,
+    "address": 37652,
+    "label": "GlyphRoutes.Shift4Y5"
+  },
+  {
+    "shift": 4,
+    "right_edge": false,
+    "y_modulo": 6,
+    "first": 46489,
+    "after_wrap": 46214,
+    "address": 37656,
+    "label": "GlyphRoutes.Shift4Y6"
+  },
+  {
+    "shift": 4,
+    "right_edge": false,
+    "y_modulo": 7,
+    "first": 46513,
+    "after_wrap": 46190,
+    "address": 37660,
+    "label": "GlyphRoutes.Shift4Y7"
+  },
+  {
+    "shift": 4,
+    "right_edge": true,
+    "y_modulo": 0,
+    "first": 46551,
+    "after_wrap": 0,
+    "address": 37664,
+    "label": "GlyphRoutes.Edge4Y0"
+  },
+  {
+    "shift": 4,
+    "right_edge": true,
+    "y_modulo": 1,
+    "first": 46641,
+    "after_wrap": 46628,
+    "address": 37668,
+    "label": "GlyphRoutes.Edge4Y1"
+  },
+  {
+    "shift": 4,
+    "right_edge": true,
+    "y_modulo": 2,
+    "first": 46652,
+    "after_wrap": 46617,
+    "address": 37672,
+    "label": "GlyphRoutes.Edge4Y2"
+  },
+  {
+    "shift": 4,
+    "right_edge": true,
+    "y_modulo": 3,
+    "first": 46663,
+    "after_wrap": 46606,
+    "address": 37676,
+    "label": "GlyphRoutes.Edge4Y3"
+  },
+  {
+    "shift": 4,
+    "right_edge": true,
+    "y_modulo": 4,
+    "first": 46674,
+    "after_wrap": 46595,
+    "address": 37680,
+    "label": "GlyphRoutes.Edge4Y4"
+  },
+  {
+    "shift": 4,
+    "right_edge": true,
+    "y_modulo": 5,
+    "first": 46685,
+    "after_wrap": 46584,
+    "address": 37684,
+    "label": "GlyphRoutes.Edge4Y5"
+  },
+  {
+    "shift": 4,
+    "right_edge": true,
+    "y_modulo": 6,
+    "first": 46696,
+    "after_wrap": 46573,
+    "address": 37688,
+    "label": "GlyphRoutes.Edge4Y6"
+  },
+  {
+    "shift": 4,
+    "right_edge": true,
+    "y_modulo": 7,
+    "first": 46707,
+    "after_wrap": 46562,
+    "address": 37692,
+    "label": "GlyphRoutes.Edge4Y7"
+  },
+  {
+    "shift": 5,
+    "right_edge": false,
+    "y_modulo": 0,
+    "first": 46732,
+    "after_wrap": 0,
+    "address": 37696,
+    "label": "GlyphRoutes.Shift5Y0"
+  },
+  {
+    "shift": 5,
+    "right_edge": false,
+    "y_modulo": 1,
+    "first": 46901,
+    "after_wrap": 46879,
+    "address": 37700,
+    "label": "GlyphRoutes.Shift5Y1"
+  },
+  {
+    "shift": 5,
+    "right_edge": false,
+    "y_modulo": 2,
+    "first": 46922,
+    "after_wrap": 46858,
+    "address": 37704,
+    "label": "GlyphRoutes.Shift5Y2"
+  },
+  {
+    "shift": 5,
+    "right_edge": false,
+    "y_modulo": 3,
+    "first": 46943,
+    "after_wrap": 46837,
+    "address": 37708,
+    "label": "GlyphRoutes.Shift5Y3"
+  },
+  {
+    "shift": 5,
+    "right_edge": false,
+    "y_modulo": 4,
+    "first": 46964,
+    "after_wrap": 46816,
+    "address": 37712,
+    "label": "GlyphRoutes.Shift5Y4"
+  },
+  {
+    "shift": 5,
+    "right_edge": false,
+    "y_modulo": 5,
+    "first": 46985,
+    "after_wrap": 46795,
+    "address": 37716,
+    "label": "GlyphRoutes.Shift5Y5"
+  },
+  {
+    "shift": 5,
+    "right_edge": false,
+    "y_modulo": 6,
+    "first": 47006,
+    "after_wrap": 46774,
+    "address": 37720,
+    "label": "GlyphRoutes.Shift5Y6"
+  },
+  {
+    "shift": 5,
+    "right_edge": false,
+    "y_modulo": 7,
+    "first": 47027,
+    "after_wrap": 46753,
+    "address": 37724,
+    "label": "GlyphRoutes.Shift5Y7"
+  },
+  {
+    "shift": 5,
+    "right_edge": true,
+    "y_modulo": 0,
+    "first": 47062,
+    "after_wrap": 0,
+    "address": 37728,
+    "label": "GlyphRoutes.Edge5Y0"
+  },
+  {
+    "shift": 5,
+    "right_edge": true,
+    "y_modulo": 1,
+    "first": 47144,
+    "after_wrap": 47132,
+    "address": 37732,
+    "label": "GlyphRoutes.Edge5Y1"
+  },
+  {
+    "shift": 5,
+    "right_edge": true,
+    "y_modulo": 2,
+    "first": 47154,
+    "after_wrap": 47122,
+    "address": 37736,
+    "label": "GlyphRoutes.Edge5Y2"
+  },
+  {
+    "shift": 5,
+    "right_edge": true,
+    "y_modulo": 3,
+    "first": 47164,
+    "after_wrap": 47112,
+    "address": 37740,
+    "label": "GlyphRoutes.Edge5Y3"
+  },
+  {
+    "shift": 5,
+    "right_edge": true,
+    "y_modulo": 4,
+    "first": 47174,
+    "after_wrap": 47102,
+    "address": 37744,
+    "label": "GlyphRoutes.Edge5Y4"
+  },
+  {
+    "shift": 5,
+    "right_edge": true,
+    "y_modulo": 5,
+    "first": 47184,
+    "after_wrap": 47092,
+    "address": 37748,
+    "label": "GlyphRoutes.Edge5Y5"
+  },
+  {
+    "shift": 5,
+    "right_edge": true,
+    "y_modulo": 6,
+    "first": 47194,
+    "after_wrap": 47082,
+    "address": 37752,
+    "label": "GlyphRoutes.Edge5Y6"
+  },
+  {
+    "shift": 5,
+    "right_edge": true,
+    "y_modulo": 7,
+    "first": 47204,
+    "after_wrap": 47072,
+    "address": 37756,
+    "label": "GlyphRoutes.Edge5Y7"
+  },
+  {
+    "shift": 6,
+    "right_edge": false,
+    "y_modulo": 0,
+    "first": 47228,
+    "after_wrap": 0,
+    "address": 37760,
+    "label": "GlyphRoutes.Shift6Y0"
+  },
+  {
+    "shift": 6,
+    "right_edge": false,
+    "y_modulo": 1,
+    "first": 47373,
+    "after_wrap": 47354,
+    "address": 37764,
+    "label": "GlyphRoutes.Shift6Y1"
+  },
+  {
+    "shift": 6,
+    "right_edge": false,
+    "y_modulo": 2,
+    "first": 47391,
+    "after_wrap": 47336,
+    "address": 37768,
+    "label": "GlyphRoutes.Shift6Y2"
+  },
+  {
+    "shift": 6,
+    "right_edge": false,
+    "y_modulo": 3,
+    "first": 47409,
+    "after_wrap": 47318,
+    "address": 37772,
+    "label": "GlyphRoutes.Shift6Y3"
+  },
+  {
+    "shift": 6,
+    "right_edge": false,
+    "y_modulo": 4,
+    "first": 47427,
+    "after_wrap": 47300,
+    "address": 37776,
+    "label": "GlyphRoutes.Shift6Y4"
+  },
+  {
+    "shift": 6,
+    "right_edge": false,
+    "y_modulo": 5,
+    "first": 47445,
+    "after_wrap": 47282,
+    "address": 37780,
+    "label": "GlyphRoutes.Shift6Y5"
+  },
+  {
+    "shift": 6,
+    "right_edge": false,
+    "y_modulo": 6,
+    "first": 47463,
+    "after_wrap": 47264,
+    "address": 37784,
+    "label": "GlyphRoutes.Shift6Y6"
+  },
+  {
+    "shift": 6,
+    "right_edge": false,
+    "y_modulo": 7,
+    "first": 47481,
+    "after_wrap": 47246,
+    "address": 37788,
+    "label": "GlyphRoutes.Shift6Y7"
+  },
+  {
+    "shift": 6,
+    "right_edge": true,
+    "y_modulo": 0,
+    "first": 47513,
+    "after_wrap": 0,
+    "address": 37792,
+    "label": "GlyphRoutes.Edge6Y0"
+  },
+  {
+    "shift": 6,
+    "right_edge": true,
+    "y_modulo": 1,
+    "first": 47587,
+    "after_wrap": 47576,
+    "address": 37796,
+    "label": "GlyphRoutes.Edge6Y1"
+  },
+  {
+    "shift": 6,
+    "right_edge": true,
+    "y_modulo": 2,
+    "first": 47596,
+    "after_wrap": 47567,
+    "address": 37800,
+    "label": "GlyphRoutes.Edge6Y2"
+  },
+  {
+    "shift": 6,
+    "right_edge": true,
+    "y_modulo": 3,
+    "first": 47605,
+    "after_wrap": 47558,
+    "address": 37804,
+    "label": "GlyphRoutes.Edge6Y3"
+  },
+  {
+    "shift": 6,
+    "right_edge": true,
+    "y_modulo": 4,
+    "first": 47614,
+    "after_wrap": 47549,
+    "address": 37808,
+    "label": "GlyphRoutes.Edge6Y4"
+  },
+  {
+    "shift": 6,
+    "right_edge": true,
+    "y_modulo": 5,
+    "first": 47623,
+    "after_wrap": 47540,
+    "address": 37812,
+    "label": "GlyphRoutes.Edge6Y5"
+  },
+  {
+    "shift": 6,
+    "right_edge": true,
+    "y_modulo": 6,
+    "first": 47632,
+    "after_wrap": 47531,
+    "address": 37816,
+    "label": "GlyphRoutes.Edge6Y6"
+  },
+  {
+    "shift": 6,
+    "right_edge": true,
+    "y_modulo": 7,
+    "first": 47641,
+    "after_wrap": 47522,
+    "address": 37820,
+    "label": "GlyphRoutes.Edge6Y7"
+  },
+  {
+    "shift": 7,
+    "right_edge": false,
+    "y_modulo": 0,
+    "first": 47664,
+    "after_wrap": 0,
+    "address": 37824,
+    "label": "GlyphRoutes.Shift7Y0"
+  },
+  {
+    "shift": 7,
+    "right_edge": false,
+    "y_modulo": 1,
+    "first": 47785,
+    "after_wrap": 47769,
+    "address": 37828,
+    "label": "GlyphRoutes.Shift7Y1"
+  },
+  {
+    "shift": 7,
+    "right_edge": false,
+    "y_modulo": 2,
+    "first": 47800,
+    "after_wrap": 47754,
+    "address": 37832,
+    "label": "GlyphRoutes.Shift7Y2"
+  },
+  {
+    "shift": 7,
+    "right_edge": false,
+    "y_modulo": 3,
+    "first": 47815,
+    "after_wrap": 47739,
+    "address": 37836,
+    "label": "GlyphRoutes.Shift7Y3"
+  },
+  {
+    "shift": 7,
+    "right_edge": false,
+    "y_modulo": 4,
+    "first": 47830,
+    "after_wrap": 47724,
+    "address": 37840,
+    "label": "GlyphRoutes.Shift7Y4"
+  },
+  {
+    "shift": 7,
+    "right_edge": false,
+    "y_modulo": 5,
+    "first": 47845,
+    "after_wrap": 47709,
+    "address": 37844,
+    "label": "GlyphRoutes.Shift7Y5"
+  },
+  {
+    "shift": 7,
+    "right_edge": false,
+    "y_modulo": 6,
+    "first": 47860,
+    "after_wrap": 47694,
+    "address": 37848,
+    "label": "GlyphRoutes.Shift7Y6"
+  },
+  {
+    "shift": 7,
+    "right_edge": false,
+    "y_modulo": 7,
+    "first": 47875,
+    "after_wrap": 47679,
+    "address": 37852,
+    "label": "GlyphRoutes.Shift7Y7"
+  },
+  {
+    "shift": 7,
+    "right_edge": true,
+    "y_modulo": 0,
+    "first": 47904,
+    "after_wrap": 0,
+    "address": 37856,
+    "label": "GlyphRoutes.Edge7Y0"
+  },
+  {
+    "shift": 7,
+    "right_edge": true,
+    "y_modulo": 1,
+    "first": 47970,
+    "after_wrap": 47960,
+    "address": 37860,
+    "label": "GlyphRoutes.Edge7Y1"
+  },
+  {
+    "shift": 7,
+    "right_edge": true,
+    "y_modulo": 2,
+    "first": 47978,
+    "after_wrap": 47952,
+    "address": 37864,
+    "label": "GlyphRoutes.Edge7Y2"
+  },
+  {
+    "shift": 7,
+    "right_edge": true,
+    "y_modulo": 3,
+    "first": 47986,
+    "after_wrap": 47944,
+    "address": 37868,
+    "label": "GlyphRoutes.Edge7Y3"
+  },
+  {
+    "shift": 7,
+    "right_edge": true,
+    "y_modulo": 4,
+    "first": 47994,
+    "after_wrap": 47936,
+    "address": 37872,
+    "label": "GlyphRoutes.Edge7Y4"
+  },
+  {
+    "shift": 7,
+    "right_edge": true,
+    "y_modulo": 5,
+    "first": 48002,
+    "after_wrap": 47928,
+    "address": 37876,
+    "label": "GlyphRoutes.Edge7Y5"
+  },
+  {
+    "shift": 7,
+    "right_edge": true,
+    "y_modulo": 6,
+    "first": 48010,
+    "after_wrap": 47920,
+    "address": 37880,
+    "label": "GlyphRoutes.Edge7Y6"
+  },
+  {
+    "shift": 7,
+    "right_edge": true,
+    "y_modulo": 7,
+    "first": 48018,
+    "after_wrap": 47912,
+    "address": 37884,
+    "label": "GlyphRoutes.Edge7Y7"
+  }
+]

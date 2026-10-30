@@ -1,0 +1,10 @@
+{
+  "method": "original_z80_bytes_against_window_operands_and_snapshot",
+  "setup_entry": "#C34B",
+  "setup_cases": 393216,
+  "snapshot_cases": 65536,
+  "passed": true,
+  "source_sha256": "1066914072803f32c4a670b182160072369a05d860f5c36353383f22c8217b35",
+  "text_pixels_or_font_verified": false,
+  "assembly_executed": false
+}

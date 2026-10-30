@@ -1,0 +1,11 @@
+{
+  "method": "original_z80_bytes_against_item_address_formula",
+  "cases": 130816,
+  "flags_entry_cases": 65536,
+  "passed": true,
+  "source_sha256": "1066914072803f32c4a670b182160072369a05d860f5c36353383f22c8217b35",
+  "all_byte_indices_and_offsets_checked": true,
+  "all_word_indices_sampled": true,
+  "dereference_or_item_validity_checked": false,
+  "assembly_executed": false
+}

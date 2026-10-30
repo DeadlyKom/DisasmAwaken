@@ -1,0 +1,13 @@
+# Четыре входа выбора свойств ключа
+
+[ReadCurrentKeyParams](../Source/Text/ReadCurrentKeyParams.asm) и [ReadOtherKeyParams](../Source/Text/ReadOtherKeyParams.asm) выбирают код 0 либо 1 по умолчанию и группу трёх полей. Таблица за якорем CA25 содержит s по CA28, c по CA2B и u по CA2E. Это [GetKeyMajor](../Source/Text/GetKeyMajor.asm), [GetKeyMinor](../Source/Text/GetKeyMinor.asm) и [GetKeySize](../Source/Text/GetKeySize.asm), а не читатели пятибайтовых записей.
+
+[ReadCurrentKeyCodes](../Source/Text/ReadCurrentKeyCodes.asm) и [ReadOtherKeyCodes](../Source/Text/ReadOtherKeyCodes.asm) выбирают те же коды по умолчанию и группу двух полей за якорем CA2E. p по CA31 вызывает [GetKeyFingerprint](../Source/Text/GetKeyFingerprint.asm), g по CA34 [GetKeyRegion](../Source/Text/GetKeyRegion.asm). Формулы характеристик описаны в [WorldSignature](WorldSignature.md), выбор ключа в [KeyChoice](KeyChoice.md).
+
+Без явного числа C получает 0 либо 1. Явное число через ParseFieldSuffix даёт (число-1) AND FFFF. Суффиксный обработчик снимает слово в BC и уменьшает C, второй ключ выбирается, если младший байт до уменьшения был 1. Следовательно, явное число 2 выбирает второй ключ, 1 текущий, 0 также текущий с изменением C до FE после исходного FFFF. Старший байт слова выбора сохраняется в B.
+
+Без точки выполняется локальный RET, возвращающий DE якорь таблицы CA25 либо CA2E, HL индекс выбора, B исходный контекст и C код по умолчанию. Числовое поле при этом не вычислялось. A и F остаются от первого непрочитанного символа и последнего CP парсера. Это исходный путь, он не подменён выдачей признака.
+
+С точкой результат и основные флаги определяются соответствующим обработчиком GetKey. У Size дополнительно EX DE,HL меняет смысл выходного HL. Альтернативный B задаётся числом 3 либо 2, его C и альтернативные HL/DE сохраняются. Альтернативный AF меняется банковым запросом поля. IX у первого непрочитанного символа, IY, I и IFF сохраняются, SP обычного возврата увеличен на два. Неизвестный суффикс передаёт управление SkipLine без обычного результата.
+
+[CheckKeyFieldSelectors.py](../Tools/Disasm/Research/CheckKeyFieldSelectors.py) исполняет все четыре входа, разбор, поиск, пять настоящих обработчиков и переключения банков в 10920 случаях. Проверены все байтовые коды выбора, явные ноль и большие числа, текущий и второй ключи, варианты 0, 1, 255, все допустимые символы и путь без точки. Сверены DE, HL, BC, AF, IX, SP, альтернативные пары и записи страниц. Отчёт [KeyFieldSelectorsVerification](../Tools/Disasm/Reports/KeyFieldSelectorsVerification.json). Сборка, IRQ и нативный игровой запуск не выполнялись.

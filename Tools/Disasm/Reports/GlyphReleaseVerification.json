@@ -1,0 +1,16 @@
+{
+  "method": "glyph_release_merge_after_isolated_static_validation",
+  "passed": true,
+  "candidate": "Tools/Disasm/Research/Candidates/GlyphRelease2",
+  "review": "Tools/Disasm/Research/Candidates/GlyphMergeReview",
+  "replaced_unknown_functions": 16,
+  "documented_functions": 38,
+  "archived_files": 31,
+  "working_copy_files_written": 77,
+  "glyph_route_records": 128,
+  "register_frame_size": 16,
+  "instruction_count": 31153,
+  "remaining_unknown": 396,
+  "remaining_contracts": 781,
+  "assembly_executed": false
+}

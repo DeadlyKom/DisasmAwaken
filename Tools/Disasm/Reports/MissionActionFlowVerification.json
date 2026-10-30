@@ -1,0 +1,323 @@
+{
+  "passed": true,
+  "cases": 38,
+  "results": [
+    {
+      "branch": "accept",
+      "pointer_y": 0,
+      "credits": 2000,
+      "quantity": 15,
+      "final_quantity": 18,
+      "halt_wakeups": 2
+    },
+    {
+      "branch": "accept",
+      "pointer_y": 100,
+      "credits": 2000,
+      "quantity": 15,
+      "final_quantity": 18,
+      "halt_wakeups": 2
+    },
+    {
+      "branch": "wrap_accept",
+      "pointer_y": 0,
+      "credits": 2000,
+      "quantity": 15,
+      "final_quantity": 30,
+      "halt_wakeups": 2
+    },
+    {
+      "branch": "wrap_accept",
+      "pointer_y": 100,
+      "credits": 2000,
+      "quantity": 15,
+      "final_quantity": 30,
+      "halt_wakeups": 2
+    },
+    {
+      "branch": "reject",
+      "pointer_y": 0,
+      "credits": 2000,
+      "quantity": 15,
+      "final_quantity": 15,
+      "halt_wakeups": 4
+    },
+    {
+      "branch": "reject",
+      "pointer_y": 100,
+      "credits": 2000,
+      "quantity": 15,
+      "final_quantity": 15,
+      "halt_wakeups": 4
+    },
+    {
+      "branch": "same_key",
+      "pointer_y": 0,
+      "credits": 2000,
+      "quantity": 15,
+      "final_quantity": 15,
+      "halt_wakeups": 2
+    },
+    {
+      "branch": "same_key",
+      "pointer_y": 100,
+      "credits": 2000,
+      "quantity": 15,
+      "final_quantity": 15,
+      "halt_wakeups": 2
+    },
+    {
+      "branch": "other_row",
+      "pointer_y": 0,
+      "credits": 2000,
+      "quantity": 15,
+      "final_quantity": 15,
+      "halt_wakeups": 2
+    },
+    {
+      "branch": "other_row",
+      "pointer_y": 100,
+      "credits": 2000,
+      "quantity": 15,
+      "final_quantity": 15,
+      "halt_wakeups": 2
+    },
+    {
+      "branch": "complete_refresh",
+      "pointer_y": 0,
+      "credits": 2000,
+      "quantity": 15,
+      "final_quantity": 12,
+      "halt_wakeups": 4
+    },
+    {
+      "branch": "complete_refresh",
+      "pointer_y": 100,
+      "credits": 2000,
+      "quantity": 15,
+      "final_quantity": 12,
+      "halt_wakeups": 4
+    },
+    {
+      "branch": "complete_refresh",
+      "pointer_y": 0,
+      "credits": 2000,
+      "quantity": 15,
+      "final_quantity": 12,
+      "halt_wakeups": 4
+    },
+    {
+      "branch": "complete_refresh",
+      "pointer_y": 100,
+      "credits": 2000,
+      "quantity": 15,
+      "final_quantity": 12,
+      "halt_wakeups": 4
+    },
+    {
+      "branch": "cancel",
+      "pointer_y": 0,
+      "credits": 0,
+      "quantity": 0,
+      "final_quantity": 253,
+      "halt_wakeups": 4
+    },
+    {
+      "branch": "cancel",
+      "pointer_y": 100,
+      "credits": 0,
+      "quantity": 0,
+      "final_quantity": 253,
+      "halt_wakeups": 4
+    },
+    {
+      "branch": "cancel",
+      "pointer_y": 0,
+      "credits": 0,
+      "quantity": 15,
+      "final_quantity": 12,
+      "halt_wakeups": 4
+    },
+    {
+      "branch": "cancel",
+      "pointer_y": 100,
+      "credits": 0,
+      "quantity": 15,
+      "final_quantity": 12,
+      "halt_wakeups": 4
+    },
+    {
+      "branch": "cancel",
+      "pointer_y": 0,
+      "credits": 0,
+      "quantity": 255,
+      "final_quantity": 252,
+      "halt_wakeups": 4
+    },
+    {
+      "branch": "cancel",
+      "pointer_y": 100,
+      "credits": 0,
+      "quantity": 255,
+      "final_quantity": 252,
+      "halt_wakeups": 4
+    },
+    {
+      "branch": "cancel",
+      "pointer_y": 0,
+      "credits": 999,
+      "quantity": 0,
+      "final_quantity": 253,
+      "halt_wakeups": 4
+    },
+    {
+      "branch": "cancel",
+      "pointer_y": 100,
+      "credits": 999,
+      "quantity": 0,
+      "final_quantity": 253,
+      "halt_wakeups": 4
+    },
+    {
+      "branch": "cancel",
+      "pointer_y": 0,
+      "credits": 999,
+      "quantity": 15,
+      "final_quantity": 12,
+      "halt_wakeups": 4
+    },
+    {
+      "branch": "cancel",
+      "pointer_y": 100,
+      "credits": 999,
+      "quantity": 15,
+      "final_quantity": 12,
+      "halt_wakeups": 4
+    },
+    {
+      "branch": "cancel",
+      "pointer_y": 0,
+      "credits": 999,
+      "quantity": 255,
+      "final_quantity": 252,
+      "halt_wakeups": 4
+    },
+    {
+      "branch": "cancel",
+      "pointer_y": 100,
+      "credits": 999,
+      "quantity": 255,
+      "final_quantity": 252,
+      "halt_wakeups": 4
+    },
+    {
+      "branch": "cancel",
+      "pointer_y": 0,
+      "credits": 1000,
+      "quantity": 0,
+      "final_quantity": 253,
+      "halt_wakeups": 4
+    },
+    {
+      "branch": "cancel",
+      "pointer_y": 100,
+      "credits": 1000,
+      "quantity": 0,
+      "final_quantity": 253,
+      "halt_wakeups": 4
+    },
+    {
+      "branch": "cancel",
+      "pointer_y": 0,
+      "credits": 1000,
+      "quantity": 15,
+      "final_quantity": 12,
+      "halt_wakeups": 4
+    },
+    {
+      "branch": "cancel",
+      "pointer_y": 100,
+      "credits": 1000,
+      "quantity": 15,
+      "final_quantity": 12,
+      "halt_wakeups": 4
+    },
+    {
+      "branch": "cancel",
+      "pointer_y": 0,
+      "credits": 1000,
+      "quantity": 255,
+      "final_quantity": 252,
+      "halt_wakeups": 4
+    },
+    {
+      "branch": "cancel",
+      "pointer_y": 100,
+      "credits": 1000,
+      "quantity": 255,
+      "final_quantity": 252,
+      "halt_wakeups": 4
+    },
+    {
+      "branch": "cancel",
+      "pointer_y": 0,
+      "credits": 65535,
+      "quantity": 0,
+      "final_quantity": 253,
+      "halt_wakeups": 4
+    },
+    {
+      "branch": "cancel",
+      "pointer_y": 100,
+      "credits": 65535,
+      "quantity": 0,
+      "final_quantity": 253,
+      "halt_wakeups": 4
+    },
+    {
+      "branch": "cancel",
+      "pointer_y": 0,
+      "credits": 65535,
+      "quantity": 15,
+      "final_quantity": 12,
+      "halt_wakeups": 4
+    },
+    {
+      "branch": "cancel",
+      "pointer_y": 100,
+      "credits": 65535,
+      "quantity": 15,
+      "final_quantity": 12,
+      "halt_wakeups": 4
+    },
+    {
+      "branch": "cancel",
+      "pointer_y": 0,
+      "credits": 65535,
+      "quantity": 255,
+      "final_quantity": 252,
+      "halt_wakeups": 4
+    },
+    {
+      "branch": "cancel",
+      "pointer_y": 100,
+      "credits": 65535,
+      "quantity": 255,
+      "final_quantity": 252,
+      "halt_wakeups": 4
+    }
+  ],
+  "max_instructions": 165072,
+  "halt_fixture_wakeups": 136,
+  "method": "original_complete_mission_action_with_last_draw_handler_no_geometry_action_real_drawers_LANG_and_close",
+  "entry": "6E9C",
+  "prefix_RepaintAndFlag_executed": true,
+  "close_menu_row_match_and_mismatch": true,
+  "frame_bytes": 14,
+  "model_rom_sha256": "8d93c3342321e9d1e51d60afcd7d15f6a7afd978c231b43435a7c0757c60b9a3",
+  "emulator_rom_match_verified": false,
+  "calls_stubbed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

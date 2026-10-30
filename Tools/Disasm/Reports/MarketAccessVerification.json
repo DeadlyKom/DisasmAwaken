@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "method": "original_strided_read_and_market_marker_handlers_with_operand_on_stack",
+  "accessor_cases": {
+    "0xc4d7": 65536,
+    "0xc4e3": 65536,
+    "0xc5c7": 65536,
+    "0xc4da": 65536,
+    "0xc4e6": 65536,
+    "0xc58a": 65536,
+    "0xc590": 65536
+  },
+  "marker_cases": 65536,
+  "all_byte_indices": true,
+  "all_initial_flags_for_accessors": true,
+  "index_high_byte_discarded": true,
+  "logical_bounds_checked_by_original": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

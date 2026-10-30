@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "cases": 68590,
+  "method": "original_view_center_all_coordinate_words_and_all_dimension_bytes",
+  "zero_half_dimension_subtracts_256": true,
+  "clamp_uses_wrapped_sign_not_unsigned_borrow": true,
+  "calls_stubbed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

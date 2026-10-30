@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "cases": 2433,
+  "early_outside_cases": 1020,
+  "stale_selection_cases": 12,
+  "stored_variant_hits": 576,
+  "method": "original_C38C_visible_filter_SumSquares8_and_ReadStoredMapVariant_independent_list_search_and_key_reconstruction",
+  "accepted_counts_zero_through_512": true,
+  "all_dimension_bytes": true,
+  "empty_list_uses_old_choice": true,
+  "halt_wakeup_fixture": true,
+  "tables_and_stored_record_fixture": true,
+  "ROM_fixture_is_zero_filled": true,
+  "all_alternate_AF_values_proved": false,
+  "calls_stubbed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

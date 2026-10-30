@@ -1,0 +1,21 @@
+{
+  "method": "original_text_stream_against_control_and_cursor_model",
+  "passed": true,
+  "cases": 268944,
+  "by_kind": {
+    "carriage_return": 65536,
+    "code_and_mode": 65536,
+    "return_after_cr": 65536,
+    "patched_code_and_mode": 65536,
+    "geometry_and_recovery": 1800,
+    "mixed_stream": 5000
+  },
+  "source_sha256": "1066914072803f32c4a670b182160072369a05d860f5c36353383f22c8217b35",
+  "original_glyph_executed": true,
+  "glyph_pixels_disabled": true,
+  "demonstrated_wrap_cycles": 28,
+  "line_return_patch_cases": 131072,
+  "irq_enabled": false,
+  "native_execution_verified": false,
+  "assembly_executed": false
+}

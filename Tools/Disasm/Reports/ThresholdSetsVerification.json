@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "cases": 3072,
+  "method": "original_threshold_sets_with_real_key_size",
+  "second_entry_uses_thresholds_98F6_and_weights_9632": true,
+  "all_variants": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

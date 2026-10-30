@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "known_semantic_role": false,
+  "absolute_rom_reads": [
+    "#7CCF -> #0001",
+    "#7CDE -> #0001"
+  ],
+  "all_first_rom_byte_values": true,
+  "selected_key_cases": 2805,
+  "second_read_zero_return_cases": 2805,
+  "zero_first_read_loop_iterations": 704,
+  "initial_cursor_offsets": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "constant_zero_read_has_no_local_exit": true,
+  "center_and_redraw_executed": false,
+  "real_emulator_rom_verified": false,
+  "flags_98BF_role_unknown": true,
+  "method": "original_fixed_and_changed_ROM_byte_fixture_until_shared_center_or_early_return",
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "method": "original_market_field_entry_suffix_dispatch_and_all_three_handlers",
+  "cases": {
+    "default": 1120,
+    "price": 1120,
+    "mark": 1120,
+    "weighted": 1120
+  },
+  "calls_stubbed": false,
+  "selected_row_and_base_wrap": true,
+  "explicit_zero_index_tested": true,
+  "native_execution": false,
+  "irq_executed": false,
+  "assembly_executed": false
+}

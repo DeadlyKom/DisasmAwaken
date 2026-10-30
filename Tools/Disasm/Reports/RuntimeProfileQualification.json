@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "method": "original_setup_and_original_consumers_with_explicit_contract_preconditions",
+  "affected_procedures": 18,
+  "addresses": [
+    54320,
+    55522,
+    55553,
+    55584,
+    55615,
+    55646,
+    55721,
+    55796,
+    55890,
+    55984,
+    55995,
+    56006,
+    56017,
+    57928,
+    57952,
+    58840,
+    58851,
+    58913
+  ],
+  "configured_consumer_models_complete": false,
+  "arc_tail_JR_NC_profile_verified": true,
+  "assembly_executed": false,
+  "arc_tail_model_cases": 393728,
+  "original_only_contracts_remaining": 0,
+  "configured_consumers_checked": 18,
+  "configured_consumer_models_complete_within_documented_contracts": true,
+  "full_runtime_profiles_and_game_execution_complete": false,
+  "remaining_limits": [
+    "Complete game callers, shifted minima, all 16-bit coordinate cases and runtime table mutation phases remain incomplete",
+    "Arc recurrence models cover explicit limited radius and coordinate domains",
+    "Seek requires column 0..31 and distinct boundaries aligned to eight rows",
+    "No complete Cartesian product of all parameters",
+    "No IRQ, assembly or native execution"
+  ]
+}

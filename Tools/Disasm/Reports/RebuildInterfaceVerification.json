@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "method": "original_rebuild_sort_paging_and_background_with_synthetic_draw_wrappers",
+  "cases": 320,
+  "active_refusals": 4,
+  "draw_wrapper_calls": 2464,
+  "enabled_wrapper_calls": 2016,
+  "reference_group_moves": 285,
+  "group_mask": 224,
+  "front_group": 64,
+  "last_item_not_sorted": true,
+  "actual_begin_end_background_code_executed": true,
+  "draw_wrappers_are_synthetic": true,
+  "dynamic_draw_frames_verified": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

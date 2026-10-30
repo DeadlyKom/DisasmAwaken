@@ -1,0 +1,118 @@
+{
+  "method": "isolated_export_reproducibility_for_text_subsystem",
+  "passed": true,
+  "compared_procedures": 18,
+  "records": [
+    {
+      "address": "BBA8",
+      "path": "Source/Station/PrintMin4.asm",
+      "equal_ignoring_empty_lines": true,
+      "current_sha256": "dd2153bdc308e9df2d70ba98c5fdf10e9ea62cddb6c5991fd5c4d36269d32fe2"
+    },
+    {
+      "address": "BBBE",
+      "path": "Source/Station/PrintMin2.asm",
+      "equal_ignoring_empty_lines": true,
+      "current_sha256": "afe64aac21393954b78bca878997328f4b5e1761fe89d5659c5456f05e5b4f67"
+    },
+    {
+      "address": "BBD7",
+      "path": "Source/Station/PrintMin3.asm",
+      "equal_ignoring_empty_lines": true,
+      "current_sha256": "c2f55634be9af2e9ea6f6c4b603a048c881a7cd4ebe914e71d71c1b1d234171d"
+    },
+    {
+      "address": "BC01",
+      "path": "Source/Station/PrintWord.asm",
+      "equal_ignoring_empty_lines": true,
+      "current_sha256": "7e7c9cb38ea5b70389b6339565cb13b2857fb486ecea0275a7cfe4c58c0dbf2e"
+    },
+    {
+      "address": "BCAB",
+      "path": "Source/Station/Print4DigitCore.asm",
+      "equal_ignoring_empty_lines": true,
+      "current_sha256": "04955452a02dade4cd55ed3181e6207c014b562559a3cce126937be456c022a8"
+    },
+    {
+      "address": "BD01",
+      "path": "Source/Station/RecoverTextX.asm",
+      "equal_ignoring_empty_lines": true,
+      "current_sha256": "fbaf5a0cd641c1f59b3c7200073a28da36da814c53811fe571c2d48189ee75d9"
+    },
+    {
+      "address": "BD08",
+      "path": "Source/Station/PrintText.asm",
+      "equal_ignoring_empty_lines": true,
+      "current_sha256": "3599403fdb1fdd7d2204711cbf92003d9faa9a3230d8574637723dfc85b81e5a"
+    },
+    {
+      "address": "ADA7",
+      "path": "Source/Station/PrintTextWord.asm",
+      "equal_ignoring_empty_lines": true,
+      "current_sha256": "91cf1bb5216d56f472860ae67a4f780205c3985b7e705ba26152a7e48664d358"
+    },
+    {
+      "address": "AE2A",
+      "path": "Source/Station/PrintWrapWord.asm",
+      "equal_ignoring_empty_lines": true,
+      "current_sha256": "47a302bed8241cb7cedc7e50e6101b92ff8e8d250153a03d824ad03d4e0556fa"
+    },
+    {
+      "address": "AD35",
+      "path": "Source/Station/SkipJustifyRow.asm",
+      "equal_ignoring_empty_lines": true,
+      "current_sha256": "31b6d251d862dd76d2db15763e090725ef350d54e4a9d08ef9256a06cfcdd16c"
+    },
+    {
+      "address": "ADCD",
+      "path": "Source/Station/PrintJustified.asm",
+      "equal_ignoring_empty_lines": true,
+      "current_sha256": "28018fb62518f22f1ead03eb9b8019124408075539aad039339190667ebae3a7"
+    },
+    {
+      "address": "A36E",
+      "path": "Source/Station/PrintAfterCR.asm",
+      "equal_ignoring_empty_lines": true,
+      "current_sha256": "2dcbf5d4d1eab049cee958c04ca9c223206e145d125dc0262a5dcb7281ccc925"
+    },
+    {
+      "address": "A374",
+      "path": "Source/Station/JustifyAfterLF.asm",
+      "equal_ignoring_empty_lines": true,
+      "current_sha256": "093fb34e367ad588f8b884aca54a213650b1800d0a1ea73e17deb6d3f67c863d"
+    },
+    {
+      "address": "A37A",
+      "path": "Source/Station/PrintAfterLF.asm",
+      "equal_ignoring_empty_lines": true,
+      "current_sha256": "8482e1a5d87568e7edf723cc64f72a03d580914c0a655f0f19ffebd64aabdc8a"
+    },
+    {
+      "address": "A380",
+      "path": "Source/Station/SkipCrRecords.asm",
+      "equal_ignoring_empty_lines": true,
+      "current_sha256": "90c303e73af0ba68d96c31876406cb89bdcb1337796f696bb09309f4df266a27"
+    },
+    {
+      "address": "A390",
+      "path": "Source/Station/SkipLfRecords.asm",
+      "equal_ignoring_empty_lines": true,
+      "current_sha256": "24e718611e41093e200bdf1544c2a142740eb652c750955b19cc118d401fb210"
+    },
+    {
+      "address": "A82D",
+      "path": "Source/Station/CountTextRows.asm",
+      "equal_ignoring_empty_lines": true,
+      "current_sha256": "ee32be4fc0dc192088d4541f917b0f092d645af557edbfaf54db873538c736e3"
+    },
+    {
+      "address": "A843",
+      "path": "Source/Station/PrintFromRow.asm",
+      "equal_ignoring_empty_lines": true,
+      "current_sha256": "d180fa92a0a117c0f28f0cc292b361797b9fc98e47a5738915b822b9d2ec176f"
+    }
+  ],
+  "current_sources_overwritten": false,
+  "assembly_executed": false,
+  "candidate": "Tools/Disasm/Research/Candidates/TextSubsystemCurrent2"
+}

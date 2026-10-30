@@ -1,0 +1,52 @@
+{
+  "method": "original_z80_frame_and_original_table_builder_without_irq",
+  "style": "fill",
+  "cases": 111600,
+  "table_entries_checked": 768,
+  "passed": true,
+  "source_sha256": "1066914072803f32c4a670b182160072369a05d860f5c36353383f22c8217b35",
+  "widths": [
+    1,
+    32
+  ],
+  "heights": [
+    1,
+    24
+  ],
+  "rows": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23
+  ],
+  "band_presets": [
+    0,
+    1
+  ],
+  "horizontal_clipping_checked": false,
+  "vertical_clipping_checked": false,
+  "input_domain": "bounded dimensions, sampled rows, sampled columns with horizontal intersection",
+  "bitmap_and_attributes_compared": true,
+  "native_execution_verified": false,
+  "assembly_executed": false
+}

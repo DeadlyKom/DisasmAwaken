@@ -1,0 +1,31 @@
+{
+  "passed": true,
+  "method": "original_activation_full_close_toggle_list_bitmap_and_pointer",
+  "cases": 3072,
+  "transitions": 1536,
+  "already_selected": 1536,
+  "modeled_wakeups": 3072,
+  "source_sha256": "1066914072803f32c4a670b182160072369a05d860f5c36353383f22c8217b35",
+  "original_visited": {
+    "CC81": "cd38be",
+    "CC84": "cd979e",
+    "CC87": "2016",
+    "CC89": "21589a",
+    "CC8C": "228b9e",
+    "CC8F": "cd779e",
+    "CC92": "3eff",
+    "CC94": "32789e",
+    "CC97": "ed537e9e",
+    "CC9B": "76",
+    "CC9C": "cda59e",
+    "CC9F": "3a3998",
+    "CCA2": "17",
+    "CCA6": "228b9e",
+    "CCA9": "c9"
+  },
+  "next_callback_is_fixture": true,
+  "text_fixture": "empty_LF_terminated",
+  "interrupt_handler_executed": false,
+  "native_execution_verified": false,
+  "assembly_executed": false
+}

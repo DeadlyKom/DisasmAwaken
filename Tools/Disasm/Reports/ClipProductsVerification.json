@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "cases": 278528,
+  "propagated_second_operand_8000_cases": 4,
+  "method": "four_original_clip_products_complete_signed_multiply_all_second_operands_and_random_endpoints",
+  "wrapped_coordinate_differences_preserved": true,
+  "other_product_slots_preserved": true,
+  "calls_stubbed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

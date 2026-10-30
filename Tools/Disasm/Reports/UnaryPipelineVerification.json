@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "cases": 1074,
+  "method": "original_two_unary_modes_and_all_seven_handlers_until_next_command",
+  "zero_resource_mode_leaves_numeric_argument_unconsumed": true,
+  "calls_stubbed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

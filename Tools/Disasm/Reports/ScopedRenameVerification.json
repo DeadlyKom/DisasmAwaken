@@ -1,0 +1,12 @@
+{
+  "method": "scoped_promotion_in_isolated_candidate",
+  "passed": true,
+  "candidate": "Tools/Disasm/Research/Candidates/ScopedPromotionRegression2",
+  "same_name": "UnknownC325",
+  "changed_region": "Map",
+  "preserved_region": "Station",
+  "current_project_sources_unchanged": true,
+  "static_source_verification_passed": true,
+  "semantic_analysis_proved": false,
+  "assembly_executed": false
+}

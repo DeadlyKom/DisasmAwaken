@@ -1,0 +1,23 @@
+{
+  "method": "original_z80_bytes_against_pair_allocation_and_clipped_cell_rectangle",
+  "cases": 3872,
+  "passed": true,
+  "source_sha256": "1066914072803f32c4a670b182160072369a05d860f5c36353383f22c8217b35",
+  "free_slots": [
+    0,
+    63,
+    64,
+    127
+  ],
+  "keys": [
+    0,
+    45,
+    4660,
+    65520
+  ],
+  "previous_registration_checked": true,
+  "synthetic_pair_table": true,
+  "no_free_slot_checked": false,
+  "fully_invisible_rectangles_checked": false,
+  "assembly_executed": false
+}

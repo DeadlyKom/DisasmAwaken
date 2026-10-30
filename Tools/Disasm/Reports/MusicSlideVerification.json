@@ -1,0 +1,10 @@
+{
+  "method": "original_z80_bytes_without_assembly",
+  "entry": 59054,
+  "cases": 1536,
+  "all_delay_bytes_checked": true,
+  "source_sha256": "7123daa920c078f50f61a0f6f0a7b9f139218bbb9d730ae5aafa3c3a49808f1d",
+  "passed": true,
+  "whole_slide_playback_proved": false,
+  "assembly_executed": false
+}

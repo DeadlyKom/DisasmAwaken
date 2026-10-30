@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "method": "scoped_random_state_merge_after_independent_candidate_validation",
+  "old_fragments": 2,
+  "new_fragments": 9,
+  "physical_state_records": 7,
+  "new_typed_bytes": 21,
+  "new_code_bytes": 42,
+  "new_instructions": 18,
+  "instruction_count": 32544,
+  "remaining_unknown": 331,
+  "remaining_contracts": 686,
+  "assembly_executed": false
+}

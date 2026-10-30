@@ -1,0 +1,14 @@
+{
+  "method": "inner_release_merge_after_isolated_static_validation",
+  "passed": true,
+  "candidate": "Tools/Disasm/Research/Candidates/InnerFrameRelease",
+  "review": "Tools/Disasm/Research/Candidates/InnerFrameMergeReview",
+  "replaced_unknown_functions": 2,
+  "documented_functions": 4,
+  "archived_files": 4,
+  "working_copy_files_written": 17,
+  "instruction_count": 31256,
+  "remaining_unknown": 378,
+  "remaining_contracts": 763,
+  "assembly_executed": false
+}

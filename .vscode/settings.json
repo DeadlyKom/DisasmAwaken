@@ -1,0 +1,18 @@
+{
+    "git.ignoreLimitWarning": true,
+    "files.watcherExclude": {
+        "**/Tools/Disasm/Research/Candidates/**": true,
+        "**/Tools/Disasm/Research/History/**": true,
+        "**/Tools/Disasm/Research/Archives/**": true
+    },
+    "search.exclude": {
+        "**/Tools/Disasm/Research/Candidates/**": true,
+        "**/Tools/Disasm/Research/History/**": true,
+        "**/Tools/Disasm/Research/Archives/**": true
+    },
+    "files.exclude": {
+        "**/Tools/Disasm/Research/Candidates/**": true,
+        "**/Tools/Disasm/Research/History/**": true,
+        "**/Tools/Disasm/Research/Archives/**": true
+    }
+}

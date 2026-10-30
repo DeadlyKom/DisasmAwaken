@@ -1,0 +1,11 @@
+{
+  "method": "original_z80_bytes_without_assembly",
+  "cases": 12288,
+  "all_cursor_low_bytes_checked": true,
+  "state_profiles": 48,
+  "source_sha256": "202672e6e050bc142cd4c3592efe18efb3740892e710fd3921f5050385886552",
+  "passed": true,
+  "irq_execution_included": false,
+  "whole_intro_effect_verified": false,
+  "assembly_executed": false
+}

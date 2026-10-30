@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "direct_cases": 6144,
+  "prepare_cases": 1024,
+  "method": "original_variant_resource_priority_all_variant_bytes_and_all_prepare_counts",
+  "negative_empty_byte_terminates_secondary_scan": true,
+  "count_zero_prepares_six": true,
+  "max_pointers_written": 6,
+  "calls_stubbed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "cases": 131072,
+  "counts_by_result": [
+    32960,
+    16384,
+    16256,
+    16960,
+    15744,
+    16512,
+    16256
+  ],
+  "range": [
+    0,
+    6
+  ],
+  "zero_return_for_low_three_bit_codes": [
+    0,
+    1
+  ],
+  "method": "original_A7F5_against_four_byte_xor_low_three_bits_saturating_decrement_and_exact_AF",
+  "unrelated_A806_tail_not_claimed": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

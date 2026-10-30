@@ -1,0 +1,122 @@
+{
+  "method": "original_loader_patch_and_draw_adapter_entry_verification",
+  "passed": true,
+  "cases": 10752,
+  "initialized_handlers": 46,
+  "adapters": [
+    {
+      "index": 30,
+      "address": 31253,
+      "path": "Source/Station/DrawItem30.asm"
+    },
+    {
+      "index": 28,
+      "address": 31317,
+      "path": "Source/Station/DrawItem28.asm"
+    },
+    {
+      "index": 29,
+      "address": 31362,
+      "path": "Source/Station/DrawItem29.asm"
+    },
+    {
+      "index": 9,
+      "address": 31390,
+      "path": "Source/Station/DrawItem09.asm"
+    },
+    {
+      "index": 2,
+      "address": 31412,
+      "path": "Source/Station/DrawItem02.asm"
+    },
+    {
+      "index": 3,
+      "address": 31499,
+      "path": "Source/Station/DrawItem03.asm"
+    },
+    {
+      "index": 37,
+      "address": 31525,
+      "path": "Source/Station/DrawItem37.asm"
+    },
+    {
+      "index": 36,
+      "address": 31552,
+      "path": "Source/Station/DrawItem36.asm"
+    },
+    {
+      "index": 21,
+      "address": 31569,
+      "path": "Source/Station/DrawItem21.asm"
+    },
+    {
+      "index": 14,
+      "address": 31870,
+      "path": "Source/Station/DrawItem14.asm"
+    },
+    {
+      "index": 15,
+      "address": 31926,
+      "path": "Source/Station/DrawItem15.asm"
+    },
+    {
+      "index": 18,
+      "address": 31992,
+      "path": "Source/Station/DrawItem18.asm"
+    },
+    {
+      "index": 17,
+      "address": 32036,
+      "path": "Source/Station/DrawItem17.asm"
+    },
+    {
+      "index": 16,
+      "address": 32083,
+      "path": "Source/Station/DrawItem16.asm"
+    },
+    {
+      "index": 35,
+      "address": 32119,
+      "path": "Source/Station/DrawItem35.asm"
+    },
+    {
+      "index": 4,
+      "address": 32153,
+      "path": "Source/Station/DrawItem04.asm"
+    },
+    {
+      "index": 5,
+      "address": 32181,
+      "path": "Source/Station/DrawItem05.asm"
+    },
+    {
+      "index": 6,
+      "address": 32225,
+      "path": "Source/Station/DrawItem06.asm"
+    },
+    {
+      "index": 7,
+      "address": 32281,
+      "path": "Source/Station/DrawItem07.asm"
+    },
+    {
+      "index": 8,
+      "address": 32529,
+      "path": "Source/Station/DrawItem08.asm"
+    },
+    {
+      "index": 33,
+      "address": 43599,
+      "path": "Source/Station/DrawItem33.asm"
+    }
+  ],
+  "source_sha256": "1066914072803f32c4a670b182160072369a05d860f5c36353383f22c8217b35",
+  "actual_low_code_relocation_used": true,
+  "bank_zero_is_fixture_precondition": true,
+  "common_renderer_executed_in_separate_model": true,
+  "disabled_adapter_cases": 10752,
+  "original_list_patchers_executed": true,
+  "irq_enabled": false,
+  "native_execution_verified": false,
+  "assembly_executed": false
+}

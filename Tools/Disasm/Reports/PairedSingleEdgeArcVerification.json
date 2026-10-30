@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "cases": 14848,
+  "internal_E22B_cases": 512,
+  "all_E_selector_bytes": true,
+  "method": "actual_E228_and_E22B_both_halves_against_composed_single_edge_recurrences_complete_bitmap_final_AF_and_stack",
+  "selector_bit_0_not_memory_quadrant": true,
+  "upper_and_lower_passes_xor_shared_start_row_twice": true,
+  "full_DFC3_dispatch_proved": false,
+  "arbitrary_clipped_inputs_proved": false,
+  "calls_stubbed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

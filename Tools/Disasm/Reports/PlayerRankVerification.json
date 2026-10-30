@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "selection_cases": 65536,
+  "full_print_cases": 20,
+  "method": "original_big_endian_threshold_scan_all_words_and_actual_rank_print",
+  "thresholds": [
+    10000,
+    3000,
+    1000,
+    300,
+    100,
+    30
+  ],
+  "equality_chooses_higher_rank": true,
+  "calls_stubbed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "method": "original_resource_activation_with_three_header_mismatch_paths",
+  "active_cases": 162,
+  "skipped_cases": 54,
+  "header_index_compared_as_byte_but_target_offset_is_word": true,
+  "zero_counts_mean_256": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

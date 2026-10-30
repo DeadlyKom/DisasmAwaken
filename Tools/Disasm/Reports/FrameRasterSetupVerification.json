@@ -1,0 +1,11 @@
+{
+  "method": "original_z80_bytes_with_synthetic_address_tables",
+  "cases": 2031616,
+  "all_B_C_bytes_and_interior_widths_checked": true,
+  "real_address_tables_used": false,
+  "left_and_right_opcode_restoration_checked": true,
+  "source_sha256": "1066914072803f32c4a670b182160072369a05d860f5c36353383f22c8217b35",
+  "passed": true,
+  "whole_frame_rendering_verified": false,
+  "assembly_executed": false
+}

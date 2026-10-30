@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "original_bytes": 310,
+  "procedure_lengths": [
+    97,
+    159,
+    54
+  ],
+  "original_instructions_preserved": true,
+  "original_targets_preserved": true,
+  "assembly_executed": false
+}

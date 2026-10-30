@@ -1,0 +1,12 @@
+{
+  "method": "original_z80_bytes_against_cell_address_and_pair_search",
+  "lookup_cases": 65536,
+  "pixel_cursor_cases": 65536,
+  "pair_search_cases": 3072,
+  "buffer_cases": 4608,
+  "passed": true,
+  "source_sha256": "1066914072803f32c4a670b182160072369a05d860f5c36353383f22c8217b35",
+  "fourth_page_is_not_visible_screen": true,
+  "full_background_restore_verified": false,
+  "assembly_executed": false
+}

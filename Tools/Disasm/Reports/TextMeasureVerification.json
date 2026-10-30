@@ -1,0 +1,18 @@
+{
+  "method": "original_z80_text_measurers_against_independent_width_accumulator",
+  "cases": 221184,
+  "passed": true,
+  "source_sha256": "1066914072803f32c4a670b182160072369a05d860f5c36353383f22c8217b35",
+  "original_widths_sha256": "3d28d2d670f8d1917dfe2ed69d9e11fdb5d6987062528e474dea63945b26faed",
+  "original_width_min": 2,
+  "original_width_max": 8,
+  "synthetic_constant_widths": [
+    0,
+    1,
+    127,
+    128,
+    255
+  ],
+  "glyph_rendering_verified": false,
+  "assembly_executed": false
+}

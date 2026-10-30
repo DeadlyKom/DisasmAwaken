@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "cases": 13122,
+  "cases_by_outcome": {
+    "normal_return": 10754,
+    "output_0": 7402,
+    "special_return": 2368,
+    "output_4": 5558,
+    "output_2": 162
+  },
+  "outcode_pairs_checked": 81,
+  "effective_handler_targets_executed": 63,
+  "inside_first_swaps": 1458,
+  "method": "original_D48B_full_dispatch_real_table_products_division_output_and_stack_protocol",
+  "reachable_table_entries_preserved": true,
+  "all_case_algorithms_independently_proved": false,
+  "calls_stubbed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

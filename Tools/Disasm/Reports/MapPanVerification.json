@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "all_word_origin_cases": 262144,
+  "byte_geometry_direction_cases": 131072,
+  "sector_high_change_cases": 5540,
+  "whole_pan_branch_cases": 96,
+  "maximum_normal_step": 8,
+  "negative_candidate_is_undone_not_clamped": true,
+  "wrapped_positive_candidate_accepted": true,
+  "method": "original_pan_direction_and_origin_update_integer_model_then_real_shadow_refresh_independent_bitmap_composition",
+  "full_outer_6C0D_dispatcher_tested": false,
+  "whole_branch_iterations": [
+    1,
+    2,
+    3
+  ],
+  "action_tail_flag_cases": 256,
+  "completed_pan_steps": 192,
+  "empty_stored_lists": true,
+  "zero_arc_radius": true,
+  "pointer_owner_code": 0,
+  "explicit_halt_wakeups": 384,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

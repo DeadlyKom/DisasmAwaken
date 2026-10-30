@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "method": "scoped_menu_command_merge_after_independent_candidate_validation",
+  "new_functions": 9,
+  "new_code_bytes": 209,
+  "new_instructions": 99,
+  "archived_files": 2,
+  "instruction_count": 32526,
+  "unknown_fragments": 333,
+  "unknown_contracts": 692,
+  "assembly_executed": false
+}

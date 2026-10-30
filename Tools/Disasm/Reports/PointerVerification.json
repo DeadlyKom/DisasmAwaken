@@ -1,0 +1,24 @@
+{
+  "method": "original_pointer_masks_pixels_background_and_guard_comparison",
+  "passed": true,
+  "normal_coordinate_cases": 49152,
+  "hover_cases": 18432,
+  "mask_rows": 192,
+  "guard_cases": 24,
+  "full_update_cases": 256,
+  "early_restore_flag_cases": 255,
+  "by_entry": {
+    "6413": 135984,
+    "6547": 68375,
+    "63D8": 24,
+    "63C3": 24,
+    "640C": 257
+  },
+  "source_sha256": "1066914072803f32c4a670b182160072369a05d860f5c36353383f22c8217b35",
+  "attributes_unchanged": true,
+  "invalid_owner_consumes_return_address": true,
+  "saved_row_count_is_draw_immediate": true,
+  "irq_enabled": false,
+  "native_execution_verified": false,
+  "assembly_executed": false
+}

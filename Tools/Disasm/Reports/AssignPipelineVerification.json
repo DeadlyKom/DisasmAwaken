@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "cases": 4312,
+  "method": "complete_original_assignment_until_next_command",
+  "all_seven_writers": true,
+  "all_eleven_operators": true,
+  "calls_stubbed": false,
+  "operator_frame_checked": true,
+  "original_expression_top_restored": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

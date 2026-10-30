@@ -1,0 +1,11 @@
+{
+  "method": "verified_glyph_release_in_isolated_candidate",
+  "passed": true,
+  "candidate": "Tools/Disasm/Research/Candidates/GlyphRelease2",
+  "new_instruction_count": 1065,
+  "functions": 941,
+  "unknown": 396,
+  "contracts_pending": 781,
+  "source_unchanged": true,
+  "assembly_executed": false
+}

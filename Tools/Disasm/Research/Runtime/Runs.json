@@ -1,0 +1,21 @@
+{
+  "executable": "Tools/Disasm/Research/Runtime/Emulator/xpeccy-plus.exe",
+  "runs": [
+    {
+      "name": "Original",
+      "port": 30131,
+      "config": "Tools/Disasm/Research/Runtime/Original/config",
+      "image": "Tools/Disasm/Research/Runtime/Original/Awakenv02.trd",
+      "sha256": "55a11de202a5334547e39a6db42c945242a2a53559dc1cf601522219e3463f32"
+    },
+    {
+      "name": "Rebuilt",
+      "port": 30132,
+      "config": "Tools/Disasm/Research/Runtime/Rebuilt/config",
+      "image": "Tools/Disasm/Research/Runtime/Rebuilt/Awakenv02.trd",
+      "sha256": "55a11de202a5334547e39a6db42c945242a2a53559dc1cf601522219e3463f32"
+    }
+  ],
+  "original_config_sha256": "ca8d9fc2ae951dc2f6124c36d1a63ab76944f8334c58bd3a41fc92f02ad635d9",
+  "path_base": "project_root"
+}

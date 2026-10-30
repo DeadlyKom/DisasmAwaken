@@ -1,0 +1,11 @@
+{
+  "method": "original_z80_bytes_without_assembly",
+  "table_records_checked": 102,
+  "zero_counter_cases": 256,
+  "missing_symbol_tail_checked": true,
+  "operators_emitted": 11,
+  "source_sha256": "dccd2a9c1800630a76da5bbac2ddd0ae3958d4f09bc1dfdd256d5b04dc6d6d99",
+  "whole_script_verified": false,
+  "passed": true,
+  "assembly_executed": false
+}

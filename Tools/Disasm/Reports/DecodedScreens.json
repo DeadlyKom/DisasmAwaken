@@ -1,0 +1,202 @@
+[
+  {
+    "slot": 9,
+    "index": 0,
+    "instruction_steps": 76981,
+    "sha256": "da399f2940b2e17114eec2aaf7fc33e1eedbb8ba0da70dccddb7bcdc5f26130f",
+    "method": "original_9EFF_in_isolated_skoolkit",
+    "flash_phase": 0,
+    "layout": "cell8_then_attributes",
+    "path": "Docs/Images/Screens/09_00.png"
+  },
+  {
+    "slot": 9,
+    "index": 1,
+    "instruction_steps": 72518,
+    "sha256": "519ba4782e7bacb65056007e2dbf42f17e0a25e1cc0729832b1cc378015e5d27",
+    "method": "original_9EFF_in_isolated_skoolkit",
+    "flash_phase": 0,
+    "layout": "cell8_then_attributes",
+    "path": "Docs/Images/Screens/09_01.png"
+  },
+  {
+    "slot": 9,
+    "index": 2,
+    "instruction_steps": 75996,
+    "sha256": "51983d524e243776a734fce42bddadf7f0de034d9c4c782ac954b6e8c3e3e3ed",
+    "method": "original_9EFF_in_isolated_skoolkit",
+    "flash_phase": 0,
+    "layout": "cell8_then_attributes",
+    "path": "Docs/Images/Screens/09_02.png"
+  },
+  {
+    "slot": 9,
+    "index": 3,
+    "instruction_steps": 92589,
+    "sha256": "36fefbc9e13cbb06411d04bca740284d0be1412dd52e8adb93fae5d861ffc050",
+    "method": "original_9EFF_in_isolated_skoolkit",
+    "flash_phase": 0,
+    "layout": "cell8_then_attributes",
+    "path": "Docs/Images/Screens/09_03.png"
+  },
+  {
+    "slot": 9,
+    "index": 4,
+    "instruction_steps": 53371,
+    "sha256": "a107cd1bba08818374ce427c3c58c3a29063fe0645c77e169978d4d08989228e",
+    "method": "original_9EFF_in_isolated_skoolkit",
+    "flash_phase": 0,
+    "layout": "cell8_then_attributes",
+    "path": "Docs/Images/Screens/09_04.png"
+  },
+  {
+    "slot": 9,
+    "index": 5,
+    "instruction_steps": 90649,
+    "sha256": "e597250ef149848f9a58b2eb41d375863210946c99d39a4627f80ac25e78a52a",
+    "method": "original_9EFF_in_isolated_skoolkit",
+    "flash_phase": 0,
+    "layout": "cell8_then_attributes",
+    "path": "Docs/Images/Screens/09_05.png"
+  },
+  {
+    "slot": 9,
+    "index": 6,
+    "instruction_steps": 104207,
+    "sha256": "5ac91ad32f3bdec0e1e2cd3f9f02fb07ea8f6f5a553f31cab2abf79015aa34a1",
+    "method": "original_9EFF_in_isolated_skoolkit",
+    "flash_phase": 0,
+    "layout": "cell8_then_attributes",
+    "path": "Docs/Images/Screens/09_06.png"
+  },
+  {
+    "slot": 9,
+    "index": 7,
+    "instruction_steps": 104698,
+    "sha256": "d456e7107e22e60e63ae0eebf763cc937af1b7fa5d9cf4fb0b0efaecf5a818db",
+    "method": "original_9EFF_in_isolated_skoolkit",
+    "flash_phase": 0,
+    "layout": "cell8_then_attributes",
+    "path": "Docs/Images/Screens/09_07.png"
+  },
+  {
+    "slot": 9,
+    "index": 8,
+    "instruction_steps": 96197,
+    "sha256": "b76e9c63c25c677182983fa49ea15db23c9c2ae6fb06b6328be13eef76c91fea",
+    "method": "original_9EFF_in_isolated_skoolkit",
+    "flash_phase": 0,
+    "layout": "cell8_then_attributes",
+    "path": "Docs/Images/Screens/09_08.png"
+  },
+  {
+    "slot": 9,
+    "index": 9,
+    "instruction_steps": 77827,
+    "sha256": "f3ea50f558db33327812f23173ecae90f3f2ba7f9f86d7d1af20973e645883c9",
+    "method": "original_9EFF_in_isolated_skoolkit",
+    "flash_phase": 0,
+    "layout": "cell8_then_attributes",
+    "path": "Docs/Images/Screens/09_09.png"
+  },
+  {
+    "slot": 9,
+    "index": 10,
+    "instruction_steps": 103657,
+    "sha256": "f41bfb54f66dbb8b14cfa34d9bd9c0ae579352e3f24c7a67ac8ad3acb4916685",
+    "method": "original_9EFF_in_isolated_skoolkit",
+    "flash_phase": 0,
+    "layout": "cell8_then_attributes",
+    "path": "Docs/Images/Screens/09_10.png"
+  },
+  {
+    "slot": 9,
+    "index": 11,
+    "instruction_steps": 79895,
+    "sha256": "f4462efadf7afb78ff41d83e9932525a821bdcb817697deb14895e11e4f200fb",
+    "method": "original_9EFF_in_isolated_skoolkit",
+    "flash_phase": 0,
+    "layout": "cell8_then_attributes",
+    "path": "Docs/Images/Screens/09_11.png"
+  },
+  {
+    "slot": 9,
+    "index": 12,
+    "instruction_steps": 97274,
+    "sha256": "9909f2216708dd5d8491fc1becc02d35dc2e7795ce40a8b5e501a3a7eb0cfa5e",
+    "method": "original_9EFF_in_isolated_skoolkit",
+    "flash_phase": 0,
+    "layout": "cell8_then_attributes",
+    "path": "Docs/Images/Screens/09_12.png"
+  },
+  {
+    "slot": 9,
+    "index": 13,
+    "instruction_steps": 118729,
+    "sha256": "ae2f84d5f27f2707e830a91c62afe5e1286011fafbd0a1c024ecf87ffc09eb58",
+    "method": "original_9EFF_in_isolated_skoolkit",
+    "flash_phase": 0,
+    "layout": "cell8_then_attributes",
+    "path": "Docs/Images/Screens/09_13.png"
+  },
+  {
+    "slot": 9,
+    "index": 14,
+    "instruction_steps": 131727,
+    "sha256": "799658674ded908e9f0d02a4507f1f7c1699b371829de2812834bad017dccebe",
+    "method": "original_9EFF_in_isolated_skoolkit",
+    "flash_phase": 0,
+    "layout": "cell8_then_attributes",
+    "path": "Docs/Images/Screens/09_14.png"
+  },
+  {
+    "slot": 9,
+    "index": 15,
+    "instruction_steps": 114306,
+    "sha256": "c34c60518313d24d212d018622c3e39a58f57597706accfb33626d0b1b7a0b42",
+    "method": "original_9EFF_in_isolated_skoolkit",
+    "flash_phase": 0,
+    "layout": "cell8_then_attributes",
+    "path": "Docs/Images/Screens/09_15.png"
+  },
+  {
+    "slot": 25,
+    "index": 0,
+    "instruction_steps": 50360,
+    "sha256": "baad62078fd18c517dc1b8ccdca49f1fb6cb909b99b9ba44a458b73d328dad54",
+    "method": "original_9EFF_in_isolated_skoolkit",
+    "flash_phase": 0,
+    "layout": "spectrum_screen",
+    "path": "Docs/Images/Screens/25_00.png"
+  },
+  {
+    "slot": 26,
+    "index": 0,
+    "instruction_steps": 58023,
+    "sha256": "ffd369da519723a9a7309c4e1d71f5718dd6dd50e22e0c5149c4df3009758a1e",
+    "method": "original_9EFF_in_isolated_skoolkit",
+    "flash_phase": 0,
+    "layout": "spectrum_screen",
+    "path": "Docs/Images/Screens/26_00.png"
+  },
+  {
+    "slot": 27,
+    "index": 0,
+    "instruction_steps": 57507,
+    "sha256": "5a41024f80493fa7f7e732b584db2bce41720422781bc326bdbe85e2a565311e",
+    "method": "original_9EFF_in_isolated_skoolkit",
+    "flash_phase": 0,
+    "layout": "spectrum_screen",
+    "path": "Docs/Images/Screens/27_00.png"
+  },
+  {
+    "slot": 28,
+    "index": 0,
+    "instruction_steps": 53690,
+    "sha256": "1d33aa9dc91f442a8ef7bbddbb8fe2bf3430122ba4ba88f0dbda3c26a9610551",
+    "method": "original_9EFF_in_isolated_skoolkit",
+    "flash_phase": 0,
+    "layout": "spectrum_screen",
+    "path": "Docs/Images/Screens/28_00.png"
+  }
+]

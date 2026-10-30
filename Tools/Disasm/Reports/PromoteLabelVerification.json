@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "method": "isolated_promotion_of_preexisting_source_with_new_internal_label",
+  "new_label": "Station.RebuildInterface.AfterDraw",
+  "address": 40225,
+  "original_instructions_verified": true,
+  "current_sources_overwritten": false,
+  "assembly_executed": false
+}

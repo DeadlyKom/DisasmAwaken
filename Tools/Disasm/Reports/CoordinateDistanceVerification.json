@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "cases": 131272,
+  "overflow_returns": 27802,
+  "zero_returns": 4,
+  "method": "complete_original_coordinate_distance_with_real_multiply_division_and_seeded_root",
+  "frame_checked": true,
+  "coordinate_wrap_checked": true,
+  "output_byte_9908_checked": true,
+  "quotient_is_at_most_7281": true,
+  "calls_stubbed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

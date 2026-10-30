@@ -1,0 +1,248 @@
+[
+  {
+    "slot": 3,
+    "path": "Source/Files/03_AWAKEN.inc",
+    "offset": 73984,
+    "length": 11520
+  },
+  {
+    "slot": 4,
+    "path": "Source/Files/04_STATIONF.inc",
+    "offset": 85504,
+    "length": 40960
+  },
+  {
+    "slot": 5,
+    "path": "Source/Files/05_LANG.inc",
+    "offset": 126464,
+    "length": 4096
+  },
+  {
+    "slot": 6,
+    "path": "Source/Files/06_D3D.inc",
+    "offset": 130560,
+    "length": 16128
+  },
+  {
+    "slot": 7,
+    "path": "Source/Files/07_KARTA.inc",
+    "offset": 146688,
+    "length": 11776
+  },
+  {
+    "slot": 8,
+    "path": "Source/Files/08_HELP.inc",
+    "offset": 158464,
+    "length": 6144
+  },
+  {
+    "slot": 9,
+    "path": "Source/Files/09_stscr.inc",
+    "offset": 164608,
+    "length": 61184
+  },
+  {
+    "slot": 10,
+    "path": "Source/Files/10_MUZ1.inc",
+    "offset": 225792,
+    "length": 7424
+  },
+  {
+    "slot": 11,
+    "path": "Source/Files/11_SAVE1.inc",
+    "offset": 233216,
+    "length": 512
+  },
+  {
+    "slot": 12,
+    "path": "Source/Files/12_SAVE2.inc",
+    "offset": 233728,
+    "length": 512
+  },
+  {
+    "slot": 13,
+    "path": "Source/Files/13_SAVE3.inc",
+    "offset": 234240,
+    "length": 512
+  },
+  {
+    "slot": 14,
+    "path": "Source/Files/14_SAVE4.inc",
+    "offset": 234752,
+    "length": 512
+  },
+  {
+    "slot": 15,
+    "path": "Source/Files/15_SAVE5.inc",
+    "offset": 235264,
+    "length": 512
+  },
+  {
+    "slot": 16,
+    "path": "Source/Files/16_SAVE0.inc",
+    "offset": 235776,
+    "length": 512
+  },
+  {
+    "slot": 17,
+    "path": "Source/Files/17_ACTION.inc",
+    "offset": 236288,
+    "length": 40960
+  },
+  {
+    "slot": 18,
+    "path": "Source/Files/18_DATAS.inc",
+    "offset": 277248,
+    "length": 7424
+  },
+  {
+    "slot": 19,
+    "path": "Source/Files/19_3DPART.inc",
+    "offset": 284672,
+    "length": 8448
+  },
+  {
+    "slot": 20,
+    "path": "Source/Files/20_VOXAL0.inc",
+    "offset": 293120,
+    "length": 11264
+  },
+  {
+    "slot": 21,
+    "path": "Source/Files/21_VOXAL.inc",
+    "offset": 304384,
+    "length": 3840
+  },
+  {
+    "slot": 22,
+    "path": "Source/Files/22_CONTROL0.inc",
+    "offset": 308224,
+    "length": 6912
+  },
+  {
+    "slot": 23,
+    "path": "Source/Files/23_CONTROL.inc",
+    "offset": 315136,
+    "length": 6656
+  },
+  {
+    "slot": 24,
+    "path": "Source/Files/24_OBJECT3D.inc",
+    "offset": 321792,
+    "length": 10752
+  },
+  {
+    "slot": 25,
+    "path": "Source/Files/25_PANEL.inc",
+    "offset": 332544,
+    "length": 1536
+  },
+  {
+    "slot": 26,
+    "path": "Source/Files/26_PANELF.inc",
+    "offset": 334080,
+    "length": 1536
+  },
+  {
+    "slot": 27,
+    "path": "Source/Files/27_PANELMET.inc",
+    "offset": 335616,
+    "length": 1536
+  },
+  {
+    "slot": 28,
+    "path": "Source/Files/28_PANELFF.inc",
+    "offset": 337152,
+    "length": 1792
+  },
+  {
+    "slot": 29,
+    "path": "Source/Files/29_FINALF.inc",
+    "offset": 338944,
+    "length": 19200
+  },
+  {
+    "slot": 30,
+    "path": "Source/Files/30_scene1po.inc",
+    "offset": 358144,
+    "length": 18688
+  },
+  {
+    "slot": 31,
+    "path": "Source/Files/31_choose1.inc",
+    "offset": 376832,
+    "length": 6912
+  },
+  {
+    "slot": 32,
+    "path": "Source/Files/32_choose2.inc",
+    "offset": 383744,
+    "length": 6912
+  },
+  {
+    "slot": 33,
+    "path": "Source/Files/33_BANK0.inc",
+    "offset": 390656,
+    "length": 16384
+  },
+  {
+    "slot": 34,
+    "path": "Source/Files/34_BANK1.inc",
+    "offset": 407040,
+    "length": 16384
+  },
+  {
+    "slot": 35,
+    "path": "Source/Files/35_BANK2.inc",
+    "offset": 423424,
+    "length": 16384
+  },
+  {
+    "slot": 36,
+    "path": "Source/Files/36_BANK3.inc",
+    "offset": 439808,
+    "length": 16384
+  },
+  {
+    "slot": 37,
+    "path": "Source/Files/37_BANK4.inc",
+    "offset": 456192,
+    "length": 16384
+  },
+  {
+    "slot": 38,
+    "path": "Source/Files/38_BANK5.inc",
+    "offset": 472576,
+    "length": 16384
+  },
+  {
+    "slot": 39,
+    "path": "Source/Files/39_BAR.inc",
+    "offset": 488960,
+    "length": 3328
+  },
+  {
+    "slot": 40,
+    "path": "Source/Files/40_BD0.inc",
+    "offset": 492288,
+    "length": 16384
+  },
+  {
+    "slot": 41,
+    "path": "Source/Files/41_BD1.inc",
+    "offset": 508672,
+    "length": 16384
+  },
+  {
+    "slot": 42,
+    "path": "Source/Files/42_BD2.inc",
+    "offset": 525056,
+    "length": 16384
+  },
+  {
+    "slot": 43,
+    "path": "Source/Files/43_BD3.inc",
+    "offset": 541440,
+    "length": 12288
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "method": "original_three_table_weighted_sum_with_selected_row_and_rotated_option",
+  "cases": 512,
+  "all_category_bytes": true,
+  "all_option_bytes": true,
+  "weights_use_complement_not_absolute_value": true,
+  "native_execution": false,
+  "irq_executed": false,
+  "assembly_executed": false
+}

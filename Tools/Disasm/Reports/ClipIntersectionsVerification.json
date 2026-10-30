@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "cases": 65364,
+  "full_entry_cases": 32682,
+  "cached_entry_cases": 32682,
+  "positive_high_y_low_byte_wrap_cases": 8168,
+  "propagated_multiply_exception_cases": 8,
+  "configured_by_original_D0C3": false,
+  "setup_profiles": 0,
+  "method": "original_four_clip_intersections_actual_products_division_projection_and_wrapping_output_cursor",
+  "quotient_contract_precondition_checked": true,
+  "zero_divisors_excluded": true,
+  "output_cursor_values": [
+    0,
+    2,
+    126,
+    127,
+    254,
+    255
+  ],
+  "calls_stubbed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

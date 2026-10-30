@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "cases": 98304,
+  "tied_candidate_comparisons": 4853,
+  "all_count_bytes": true,
+  "all_origin_words": true,
+  "method": "original_C5E8_C653_SumSquares8_exact_minimum_variant_registers_flags_and_source_points",
+  "count_zero_or_above_six_processes_six": true,
+  "word_carries_in_target_preserved": true,
+  "first_equal_candidate_kept": true,
+  "input_pointer_tables_synthetic": true,
+  "calls_stubbed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

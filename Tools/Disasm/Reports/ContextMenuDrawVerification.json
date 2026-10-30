@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "method": "original_context_menu_caption_frame_and_font_with_independent_text_and_bitmap_reference",
+  "cases": 393,
+  "full_text": 387,
+  "truncated_text": 6,
+  "halt_wakeups": 393,
+  "menu_resource_bytes": 108,
+  "caption_anchor_shared_final_lf": true,
+  "caption_text_index": 0,
+  "actual_menu_text_used": true,
+  "loader_index_patch_fixture": 40,
+  "irq_executed": false,
+  "halt_wakeup_is_fixture": true,
+  "native_execution": false,
+  "assembly_executed": false
+}

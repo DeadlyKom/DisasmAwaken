@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "setup_profiles": 248,
+  "reset_mask_cases": 63488,
+  "seek_cases": 377344,
+  "method": "original_table_builder_DE_zero_then_D0C3_then_reset_and_both_seek_entries",
+  "height_range": "8..176, multiple of 8",
+  "max_x_range": "0..247",
+  "seek_column_range": "1..31",
+  "all_counts_and_rows_in_profile": {
+    "max_x": 239,
+    "height": 128
+  },
+  "all_internal_rows_each_profile": true,
+  "max_x_248_to_255_and_unaligned_boundaries_verified": false,
+  "game_writer_of_OR_operands_executed": true,
+  "calls_stubbed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

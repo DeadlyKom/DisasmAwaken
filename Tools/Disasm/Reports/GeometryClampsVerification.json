@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "method": "original_axis_clamps_exhaustive_valid_size_position_and_half_pixel_delta",
+  "cases": 1105408,
+  "by_axis": {
+    "move_x": 194560,
+    "move_y": 81792,
+    "resize_x": 583680,
+    "resize_y": 245376
+  },
+  "source_sha256": "1066914072803f32c4a670b182160072369a05d860f5c36353383f22c8217b35",
+  "full_tracker_executed": false,
+  "irq_enabled": false,
+  "assembly_executed": false
+}

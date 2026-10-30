@@ -1,0 +1,54 @@
+{
+  "passed": true,
+  "cases": 267080,
+  "outcode_pairs": 81,
+  "cases_by_geometry": {
+    "common_outside": 139860,
+    "touch": 12716,
+    "miss": 54519,
+    "cross": 58190,
+    "both_inside": 1795
+  },
+  "mismatch_count": 0,
+  "examples": [],
+  "method": "rational_slab_interval_with_original_directed_corner_ties_and_ones_complement_quantization",
+  "ordinary_slab_mismatches": 837,
+  "corner_block": 1,
+  "configured_windows_tested": true,
+  "profiles": [
+    [
+      15,
+      23,
+      16,
+      24
+    ],
+    [
+      63,
+      63,
+      64,
+      64
+    ],
+    [
+      127,
+      95,
+      128,
+      96
+    ],
+    [
+      207,
+      111,
+      208,
+      112
+    ],
+    [
+      239,
+      175,
+      240,
+      176
+    ]
+  ],
+  "all_case_algorithms_independently_proved": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

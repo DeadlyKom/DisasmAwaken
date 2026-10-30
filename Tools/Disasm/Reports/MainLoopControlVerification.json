@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "event_enabled_cases": 256,
+  "pulse_cases": 256,
+  "transition_cases": 256,
+  "action_pairs": 65536,
+  "method": "original_main_loop_control_boundaries_real_page_calls_and_input_merge",
+  "previous_action_is_self_modified_operand": true,
+  "launch_codes_are_2_through_128": true,
+  "drawing_executed": false,
+  "script_executed": false,
+  "callbacks_executed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

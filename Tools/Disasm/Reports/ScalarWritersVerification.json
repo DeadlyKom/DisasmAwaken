@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "method": "original_scalar_writer_factories_closures_and_real_operators",
+  "factory_cases": 768,
+  "copy_invocations": 458752,
+  "arithmetic_invocations": 336,
+  "byte_store_discards_high_DE": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

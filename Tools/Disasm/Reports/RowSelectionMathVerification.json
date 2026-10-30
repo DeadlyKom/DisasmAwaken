@@ -1,0 +1,19 @@
+{
+  "method": "original_row_selection_byte_arithmetic_with_full_flags",
+  "passed": true,
+  "source_sha256": "1066914072803f32c4a670b182160072369a05d860f5c36353383f22c8217b35",
+  "cases": 1114112,
+  "by_function": {
+    "coordinates": 65536,
+    "height": 524288,
+    "selection": 524288
+  },
+  "selection_results": {
+    "above": 261120,
+    "below": 178839,
+    "inside": 84329
+  },
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

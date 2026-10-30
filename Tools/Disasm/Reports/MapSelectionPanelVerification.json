@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "cases": 80,
+  "root_dispatch_selection_cases": 32,
+  "selected_counts": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "information_panel_presence": [
+    false,
+    true
+  ],
+  "variant_panel_presence": [
+    false,
+    true
+  ],
+  "outside_pointer_preserves_selection": true,
+  "text_window_restored_after_information_panel": true,
+  "variant_panel_may_replace_final_text_window": true,
+  "method": "original_selection_scene_and_optional_panels_with_independent_nearest_point_key_and_call_state_checks",
+  "whole_bitmap_independent_oracle": false,
+  "calls_stubbed": false,
+  "explicit_halt_wakeups": 288,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

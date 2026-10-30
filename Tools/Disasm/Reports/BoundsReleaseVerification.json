@@ -1,0 +1,15 @@
+{
+  "method": "bounds_release_merge_after_isolated_static_validation",
+  "passed": true,
+  "candidate": "Tools/Disasm/Research/Candidates/BoundsRelease",
+  "review": "Tools/Disasm/Research/Candidates/BoundsMergeReview",
+  "replaced_unknown_functions": 2,
+  "documented_functions": 4,
+  "archived_files": 4,
+  "working_copy_files_written": 25,
+  "instruction_count": 31298,
+  "remaining_unknown": 366,
+  "remaining_contracts": 728,
+  "assembly_executed": false,
+  "replaced_existing_functions": 3
+}

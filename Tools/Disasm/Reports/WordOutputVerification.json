@@ -1,0 +1,17 @@
+{
+  "method": "two_original_word_printers_against_cursor_and_status_model",
+  "passed": true,
+  "cases": 270216,
+  "by_kind": {
+    "width": 131072,
+    "height_and_wrap": 131072,
+    "code_and_origin": 3072,
+    "mixed_word": 5000
+  },
+  "source_sha256": "1066914072803f32c4a670b182160072369a05d860f5c36353383f22c8217b35",
+  "original_glyph_executed": true,
+  "glyph_pixels_disabled": true,
+  "irq_enabled": false,
+  "native_execution_verified": false,
+  "assembly_executed": false
+}

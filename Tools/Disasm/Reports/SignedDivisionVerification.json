@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "word_input_cases": 1310720,
+  "wide_input_cases": 20480,
+  "method": "original_32_to_16_division_against_integer_quotient_and_independent_flag_formula",
+  "negative_numerator_uses_ones_complement": true,
+  "negative_quotient_uses_ones_complement": true,
+  "denominator_sign_is_input_F_sign": true,
+  "zero_divisor_tested": false,
+  "overflow_cases_tested": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "cases": 848,
+  "method": "original_two_entry_threshold_checks_with_actual_parser_and_banks",
+  "all_threshold_bytes": true,
+  "saved_AF_restored_to_HL": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

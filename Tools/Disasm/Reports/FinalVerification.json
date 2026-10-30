@@ -1,0 +1,95 @@
+{
+  "method": "original_builder_and_generated_code_in_isolated_model",
+  "passed": true,
+  "native_final_scene_verified": false,
+  "real_irq_verified": false,
+  "bitmap_line_fixtures": 768,
+  "keyboard_cases": [
+    {
+      "key": null,
+      "initial_delay": 0,
+      "actual_delay": 0
+    },
+    {
+      "key": null,
+      "initial_delay": 1,
+      "actual_delay": 1
+    },
+    {
+      "key": null,
+      "initial_delay": 50,
+      "actual_delay": 50
+    },
+    {
+      "key": null,
+      "initial_delay": 99,
+      "actual_delay": 99
+    },
+    {
+      "key": null,
+      "initial_delay": 100,
+      "actual_delay": 100
+    },
+    {
+      "key": "Q",
+      "initial_delay": 0,
+      "actual_delay": 0
+    },
+    {
+      "key": "Q",
+      "initial_delay": 1,
+      "actual_delay": 0
+    },
+    {
+      "key": "Q",
+      "initial_delay": 50,
+      "actual_delay": 49
+    },
+    {
+      "key": "Q",
+      "initial_delay": 99,
+      "actual_delay": 98
+    },
+    {
+      "key": "Q",
+      "initial_delay": 100,
+      "actual_delay": 99
+    },
+    {
+      "key": "A",
+      "initial_delay": 0,
+      "actual_delay": 1
+    },
+    {
+      "key": "A",
+      "initial_delay": 1,
+      "actual_delay": 2
+    },
+    {
+      "key": "A",
+      "initial_delay": 50,
+      "actual_delay": 51
+    },
+    {
+      "key": "A",
+      "initial_delay": 99,
+      "actual_delay": 100
+    },
+    {
+      "key": "A",
+      "initial_delay": 100,
+      "actual_delay": 100
+    }
+  ],
+  "generated_size": 10552,
+  "generated_start": 32768,
+  "synchronization_slots": {
+    "15": 37162,
+    "7": 40678
+  },
+  "build_steps": 16346,
+  "generated_execution_steps": 8195,
+  "bitmap_bytes_verified": 6144,
+  "attribute_bytes_verified": 768,
+  "stack_restored": true
+}

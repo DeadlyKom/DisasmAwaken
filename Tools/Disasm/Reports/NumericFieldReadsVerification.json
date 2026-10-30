@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "numeric_cases": 780,
+  "resource_cases": 120,
+  "method": "original_numeric_and_delimited_byte_readers_with_expression_push",
+  "arbitrary_separator_bytes_tested": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

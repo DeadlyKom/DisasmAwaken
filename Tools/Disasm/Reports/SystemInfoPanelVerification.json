@@ -1,0 +1,37 @@
+{
+  "passed": true,
+  "cases": 192,
+  "guarded_whole_panel_cases": 96,
+  "absent_guard_cases": 256,
+  "selected_counts": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "trait_major_codes": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "distance_codes": [
+    0,
+    1,
+    2,
+    255
+  ],
+  "method": "real_caption_text_name_distance_descriptors_and_variant_labels_with_semantic_call_argument_trace",
+  "all_selected_counts": true,
+  "actual_calls_executed": true,
+  "calls_stubbed": false,
+  "whole_bitmap_independent_oracle": false,
+  "explicit_halt_wakeups": 192,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

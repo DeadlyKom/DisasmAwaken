@@ -1,0 +1,614 @@
+[
+  {
+    "offset": 2357,
+    "symbol": 63,
+    "handler": 49209,
+    "symbol_name": "ScriptTokens.Commands.Question"
+  },
+  {
+    "offset": 2360,
+    "symbol": 58,
+    "handler": 49239,
+    "symbol_name": "ScriptTokens.Commands.Colon"
+  },
+  {
+    "offset": 2363,
+    "symbol": 123,
+    "handler": 49365,
+    "symbol_name": "ScriptTokens.Commands.OpenBrace"
+  },
+  {
+    "offset": 2366,
+    "symbol": 125,
+    "handler": 49368,
+    "symbol_name": "ScriptTokens.Commands.CloseBrace"
+  },
+  {
+    "offset": 2369,
+    "symbol": 64,
+    "handler": 49280,
+    "symbol_name": "ScriptTokens.Commands.At"
+  },
+  {
+    "offset": 2372,
+    "symbol": 43,
+    "handler": 49296,
+    "symbol_name": "ScriptTokens.Commands.Plus"
+  },
+  {
+    "offset": 2375,
+    "symbol": 45,
+    "handler": 49308,
+    "symbol_name": "ScriptTokens.Commands.Minus"
+  },
+  {
+    "offset": 2378,
+    "symbol": 61,
+    "handler": 49311,
+    "symbol_name": "ScriptTokens.Commands.Equal"
+  },
+  {
+    "offset": 2381,
+    "symbol": 44,
+    "handler": 49293,
+    "symbol_name": "ScriptTokens.Commands.Comma"
+  },
+  {
+    "offset": 2384,
+    "symbol": 84,
+    "handler": 49371,
+    "symbol_name": "ScriptTokens.Commands.UpperT"
+  },
+  {
+    "offset": 2387,
+    "symbol": 77,
+    "handler": 49388,
+    "symbol_name": "ScriptTokens.Commands.UpperM"
+  },
+  {
+    "offset": 2390,
+    "symbol": 109,
+    "handler": 49408,
+    "symbol_name": "ScriptTokens.Commands.LowerM"
+  },
+  {
+    "offset": 2393,
+    "symbol": 94,
+    "handler": 49383,
+    "symbol_name": "ScriptTokens.Commands.Caret"
+  },
+  {
+    "offset": 2396,
+    "symbol": 35,
+    "handler": 49419,
+    "symbol_name": "ScriptTokens.Commands.Hash"
+  },
+  {
+    "offset": 2399,
+    "symbol": 87,
+    "handler": 49411,
+    "symbol_name": "ScriptTokens.Commands.UpperW"
+  },
+  {
+    "offset": 2402,
+    "symbol": 61,
+    "handler": 50133,
+    "symbol_name": "ScriptTokens.Operators.Equal"
+  },
+  {
+    "offset": 2405,
+    "symbol": 42,
+    "handler": 50143,
+    "symbol_name": "ScriptTokens.Operators.Multiply"
+  },
+  {
+    "offset": 2408,
+    "symbol": 43,
+    "handler": 50312,
+    "symbol_name": "ScriptTokens.Operators.Plus"
+  },
+  {
+    "offset": 2411,
+    "symbol": 45,
+    "handler": 50321,
+    "symbol_name": "ScriptTokens.Operators.Minus"
+  },
+  {
+    "offset": 2414,
+    "symbol": 60,
+    "handler": 50332,
+    "symbol_name": "ScriptTokens.Operators.Less"
+  },
+  {
+    "offset": 2417,
+    "symbol": 62,
+    "handler": 50342,
+    "symbol_name": "ScriptTokens.Operators.Greater"
+  },
+  {
+    "offset": 2420,
+    "symbol": 91,
+    "handler": 50353,
+    "symbol_name": "ScriptTokens.Operators.NotGreater"
+  },
+  {
+    "offset": 2423,
+    "symbol": 93,
+    "handler": 50364,
+    "symbol_name": "ScriptTokens.Operators.NotLess"
+  },
+  {
+    "offset": 2426,
+    "symbol": 38,
+    "handler": 50374,
+    "symbol_name": "ScriptTokens.Operators.And"
+  },
+  {
+    "offset": 2429,
+    "symbol": 33,
+    "handler": 50381,
+    "symbol_name": "ScriptTokens.Operators.Or"
+  },
+  {
+    "offset": 2432,
+    "symbol": 58,
+    "handler": 50388,
+    "symbol_name": "ScriptTokens.Operators.Colon"
+  },
+  {
+    "offset": 2435,
+    "symbol": 99,
+    "handler": 49589,
+    "symbol_name": "ScriptTokens.Fields.LowerC"
+  },
+  {
+    "offset": 2438,
+    "symbol": 111,
+    "handler": 49602,
+    "symbol_name": "ScriptTokens.Fields.LowerO"
+  },
+  {
+    "offset": 2441,
+    "symbol": 105,
+    "handler": 49638,
+    "symbol_name": "ScriptTokens.Fields.LowerI"
+  },
+  {
+    "offset": 2444,
+    "symbol": 107,
+    "handler": 49665,
+    "symbol_name": "ScriptTokens.Fields.LowerK"
+  },
+  {
+    "offset": 2447,
+    "symbol": 114,
+    "handler": 49697,
+    "symbol_name": "ScriptTokens.Fields.LowerR"
+  },
+  {
+    "offset": 2450,
+    "symbol": 106,
+    "handler": 49729,
+    "symbol_name": "ScriptTokens.Fields.LowerJ"
+  },
+  {
+    "offset": 2453,
+    "symbol": 74,
+    "handler": 49740,
+    "symbol_name": "ScriptTokens.Fields.UpperJ"
+  },
+  {
+    "offset": 2456,
+    "symbol": 121,
+    "handler": 49746,
+    "symbol_name": "ScriptTokens.Fields.LowerY"
+  },
+  {
+    "offset": 2459,
+    "symbol": 110,
+    "handler": 49751,
+    "symbol_name": "ScriptTokens.Fields.LowerN"
+  },
+  {
+    "offset": 2462,
+    "symbol": 88,
+    "handler": 49755,
+    "symbol_name": "ScriptTokens.Fields.UpperX"
+  },
+  {
+    "offset": 2465,
+    "symbol": 117,
+    "handler": 49761,
+    "symbol_name": "ScriptTokens.Fields.LowerU"
+  },
+  {
+    "offset": 2468,
+    "symbol": 71,
+    "handler": 49767,
+    "symbol_name": "ScriptTokens.Fields.UpperG"
+  },
+  {
+    "offset": 2471,
+    "symbol": 79,
+    "handler": 49801,
+    "symbol_name": "ScriptTokens.Fields.UpperO"
+  },
+  {
+    "offset": 2474,
+    "symbol": 73,
+    "handler": 49845,
+    "symbol_name": "ScriptTokens.Fields.UpperI"
+  },
+  {
+    "offset": 2477,
+    "symbol": 75,
+    "handler": 49872,
+    "symbol_name": "ScriptTokens.Fields.UpperK"
+  },
+  {
+    "offset": 2480,
+    "symbol": 82,
+    "handler": 49898,
+    "symbol_name": "ScriptTokens.Fields.UpperR"
+  },
+  {
+    "offset": 2483,
+    "symbol": 103,
+    "handler": 49924,
+    "symbol_name": "ScriptTokens.Fields.LowerG"
+  },
+  {
+    "offset": 2486,
+    "symbol": 101,
+    "handler": 49986,
+    "symbol_name": "ScriptTokens.Fields.LowerE"
+  },
+  {
+    "offset": 2489,
+    "symbol": 109,
+    "handler": 49997,
+    "symbol_name": "ScriptTokens.Fields.LowerM"
+  },
+  {
+    "offset": 2492,
+    "symbol": 112,
+    "handler": 50018,
+    "symbol_name": "ScriptTokens.Fields.LowerP"
+  },
+  {
+    "offset": 2495,
+    "symbol": 116,
+    "handler": 50005,
+    "symbol_name": "ScriptTokens.Fields.LowerT"
+  },
+  {
+    "offset": 2498,
+    "symbol": 40,
+    "handler": 49964,
+    "symbol_name": "ScriptTokens.Fields.OpenParen"
+  },
+  {
+    "offset": 2501,
+    "symbol": 49,
+    "handler": 49955,
+    "symbol_name": "ScriptTokens.Fields.Digit1"
+  },
+  {
+    "offset": 2504,
+    "symbol": 50,
+    "handler": 49955,
+    "symbol_name": "ScriptTokens.Fields.Digit2"
+  },
+  {
+    "offset": 2507,
+    "symbol": 51,
+    "handler": 49955,
+    "symbol_name": "ScriptTokens.Fields.Digit3"
+  },
+  {
+    "offset": 2510,
+    "symbol": 52,
+    "handler": 49955,
+    "symbol_name": "ScriptTokens.Fields.Digit4"
+  },
+  {
+    "offset": 2513,
+    "symbol": 53,
+    "handler": 49955,
+    "symbol_name": "ScriptTokens.Fields.Digit5"
+  },
+  {
+    "offset": 2516,
+    "symbol": 54,
+    "handler": 49955,
+    "symbol_name": "ScriptTokens.Fields.Digit6"
+  },
+  {
+    "offset": 2519,
+    "symbol": 55,
+    "handler": 49955,
+    "symbol_name": "ScriptTokens.Fields.Digit7"
+  },
+  {
+    "offset": 2522,
+    "symbol": 56,
+    "handler": 49955,
+    "symbol_name": "ScriptTokens.Fields.Digit8"
+  },
+  {
+    "offset": 2525,
+    "symbol": 57,
+    "handler": 49955,
+    "symbol_name": "ScriptTokens.Fields.Digit9"
+  },
+  {
+    "offset": 2528,
+    "symbol": 48,
+    "handler": 49955,
+    "symbol_name": "ScriptTokens.Fields.Digit0"
+  },
+  {
+    "offset": 2531,
+    "symbol": 76,
+    "handler": 50045,
+    "symbol_name": "ScriptTokens.Fields.UpperL"
+  },
+  {
+    "offset": 2534,
+    "symbol": 108,
+    "handler": 50067,
+    "symbol_name": "ScriptTokens.Fields.LowerL"
+  },
+  {
+    "offset": 2537,
+    "symbol": 89,
+    "handler": 50089,
+    "symbol_name": "ScriptTokens.Fields.UpperY"
+  },
+  {
+    "offset": 2540,
+    "symbol": 121,
+    "handler": 50111,
+    "symbol_name": "ScriptTokens.Fields.LowerY2"
+  },
+  {
+    "offset": 2543,
+    "symbol": 115,
+    "handler": 50415,
+    "symbol_name": "ScriptTokens.Suffixes.LowerS"
+  },
+  {
+    "offset": 2546,
+    "symbol": 110,
+    "handler": 50458,
+    "symbol_name": "ScriptTokens.Suffixes.LowerN"
+  },
+  {
+    "offset": 2549,
+    "symbol": 115,
+    "handler": 50582,
+    "symbol_name": "ScriptTokens.Suffixes.LowerS2"
+  },
+  {
+    "offset": 2552,
+    "symbol": 110,
+    "handler": 50601,
+    "symbol_name": "ScriptTokens.Suffixes.LowerN2"
+  },
+  {
+    "offset": 2555,
+    "symbol": 99,
+    "handler": 50391,
+    "symbol_name": "ScriptTokens.Suffixes.LowerC"
+  },
+  {
+    "offset": 2558,
+    "symbol": 118,
+    "handler": 50403,
+    "symbol_name": "ScriptTokens.Suffixes.LowerV"
+  },
+  {
+    "offset": 2561,
+    "symbol": 115,
+    "handler": 50520,
+    "symbol_name": "ScriptTokens.Suffixes.LowerS3"
+  },
+  {
+    "offset": 2564,
+    "symbol": 107,
+    "handler": 50551,
+    "symbol_name": "ScriptTokens.Suffixes.LowerK"
+  },
+  {
+    "offset": 2567,
+    "symbol": 99,
+    "handler": 50570,
+    "symbol_name": "ScriptTokens.Suffixes.LowerC2"
+  },
+  {
+    "offset": 2570,
+    "symbol": 118,
+    "handler": 50576,
+    "symbol_name": "ScriptTokens.Suffixes.LowerV2"
+  },
+  {
+    "offset": 2573,
+    "symbol": 115,
+    "handler": 50610,
+    "symbol_name": "ScriptTokens.Suffixes.LowerS4"
+  },
+  {
+    "offset": 2576,
+    "symbol": 107,
+    "handler": 50619,
+    "symbol_name": "ScriptTokens.Suffixes.LowerK2"
+  },
+  {
+    "offset": 2579,
+    "symbol": 99,
+    "handler": 50625,
+    "symbol_name": "ScriptTokens.Suffixes.LowerC3"
+  },
+  {
+    "offset": 2582,
+    "symbol": 99,
+    "handler": 50631,
+    "symbol_name": "ScriptTokens.Suffixes.LowerC4"
+  },
+  {
+    "offset": 2585,
+    "symbol": 115,
+    "handler": 50637,
+    "symbol_name": "ScriptTokens.Suffixes.LowerS5"
+  },
+  {
+    "offset": 2588,
+    "symbol": 109,
+    "handler": 50655,
+    "symbol_name": "ScriptTokens.Suffixes.LowerM"
+  },
+  {
+    "offset": 2591,
+    "symbol": 99,
+    "handler": 50665,
+    "symbol_name": "ScriptTokens.Suffixes.LowerC5"
+  },
+  {
+    "offset": 2594,
+    "symbol": 116,
+    "handler": 50681,
+    "symbol_name": "ScriptTokens.Suffixes.LowerT"
+  },
+  {
+    "offset": 2597,
+    "symbol": 115,
+    "handler": 50697,
+    "symbol_name": "ScriptTokens.Suffixes.LowerS6"
+  },
+  {
+    "offset": 2600,
+    "symbol": 115,
+    "handler": 50715,
+    "symbol_name": "ScriptTokens.Suffixes.LowerS7"
+  },
+  {
+    "offset": 2603,
+    "symbol": 99,
+    "handler": 50723,
+    "symbol_name": "ScriptTokens.Suffixes.LowerC6"
+  },
+  {
+    "offset": 2606,
+    "symbol": 117,
+    "handler": 50730,
+    "symbol_name": "ScriptTokens.Suffixes.LowerU"
+  },
+  {
+    "offset": 2609,
+    "symbol": 112,
+    "handler": 50738,
+    "symbol_name": "ScriptTokens.Suffixes.LowerP"
+  },
+  {
+    "offset": 2612,
+    "symbol": 103,
+    "handler": 50746,
+    "symbol_name": "ScriptTokens.Suffixes.LowerG"
+  },
+  {
+    "offset": 2615,
+    "symbol": 99,
+    "handler": 50703,
+    "symbol_name": "ScriptTokens.Suffixes.LowerC7"
+  },
+  {
+    "offset": 2618,
+    "symbol": 118,
+    "handler": 50709,
+    "symbol_name": "ScriptTokens.Suffixes.LowerV3"
+  },
+  {
+    "offset": 2621,
+    "symbol": 99,
+    "handler": 50754,
+    "symbol_name": "ScriptTokens.Suffixes.LowerC8"
+  },
+  {
+    "offset": 2624,
+    "symbol": 117,
+    "handler": 50775,
+    "symbol_name": "ScriptTokens.Suffixes.LowerU2"
+  },
+  {
+    "offset": 2627,
+    "symbol": 103,
+    "handler": 50821,
+    "symbol_name": "ScriptTokens.Suffixes.LowerG2"
+  },
+  {
+    "offset": 2630,
+    "symbol": 71,
+    "handler": 50870,
+    "symbol_name": "ScriptTokens.Suffixes.UpperG"
+  },
+  {
+    "offset": 2633,
+    "symbol": 111,
+    "handler": 50876,
+    "symbol_name": "ScriptTokens.Suffixes.LowerO"
+  },
+  {
+    "offset": 2636,
+    "symbol": 105,
+    "handler": 50916,
+    "symbol_name": "ScriptTokens.Suffixes.LowerI"
+  },
+  {
+    "offset": 2639,
+    "symbol": 74,
+    "handler": 50798,
+    "symbol_name": "ScriptTokens.Suffixes.UpperJ"
+  },
+  {
+    "offset": 2642,
+    "symbol": 116,
+    "handler": 49422,
+    "symbol_name": "ScriptTokens.Suffixes.LowerT2"
+  },
+  {
+    "offset": 2645,
+    "symbol": 112,
+    "handler": 49527,
+    "symbol_name": "ScriptTokens.Suffixes.LowerP2"
+  },
+  {
+    "offset": 2648,
+    "symbol": 118,
+    "handler": 49537,
+    "symbol_name": "ScriptTokens.Suffixes.LowerV4"
+  },
+  {
+    "offset": 2651,
+    "symbol": 109,
+    "handler": 49545,
+    "symbol_name": "ScriptTokens.Suffixes.LowerM2"
+  },
+  {
+    "offset": 2654,
+    "symbol": 101,
+    "handler": 49553,
+    "symbol_name": "ScriptTokens.Suffixes.LowerE"
+  },
+  {
+    "offset": 2657,
+    "symbol": 75,
+    "handler": 49561,
+    "symbol_name": "ScriptTokens.Suffixes.UpperK"
+  },
+  {
+    "offset": 2660,
+    "symbol": 82,
+    "handler": 49575,
+    "symbol_name": "ScriptTokens.Suffixes.UpperR"
+  }
+]

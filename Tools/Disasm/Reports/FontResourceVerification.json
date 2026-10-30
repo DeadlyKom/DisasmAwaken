@@ -1,0 +1,48 @@
+{
+  "method": "original_range_split_with_complete_byte_reconstruction",
+  "passed": true,
+  "original_path": "Source/Resources/04_STATIONF/Unclassified044.bin",
+  "original_sha256": "7bd483cf3a987fa23666aa59dee17e0346681f63234448e73f1423d0d734294e",
+  "original_length": 6176,
+  "records": [
+    {
+      "slot": 4,
+      "offset": 8760,
+      "length": 1736,
+      "kind": "unclassified",
+      "path": "Source/Resources/04_STATIONF/Unclassified044.bin",
+      "origin": null,
+      "sha256": "552cf7cebe810c3babdf107c32e8c272fd2197d863092c8519830bb2fd93f581"
+    },
+    {
+      "slot": 4,
+      "offset": 10496,
+      "length": 256,
+      "kind": "binary_resource",
+      "path": "Source/Station/Resources/FontWidths.bin",
+      "origin": 35072,
+      "sha256": "3d28d2d670f8d1917dfe2ed69d9e11fdb5d6987062528e474dea63945b26faed",
+      "format": "FONT_WIDTHS_256"
+    },
+    {
+      "slot": 4,
+      "offset": 10752,
+      "length": 2048,
+      "kind": "binary_resource",
+      "path": "Source/Station/Resources/FontGlyphs.bin",
+      "origin": 35328,
+      "sha256": "792697c57d2e44f3b7e07b0dd4a6bc07401026090eabfc92090802feda2c8cee",
+      "format": "FONT_256_GLYPHS_8_ROWS"
+    },
+    {
+      "slot": 4,
+      "offset": 12800,
+      "length": 2136,
+      "kind": "unclassified",
+      "path": "Source/Resources/04_STATIONF/Unclassified044Tail.bin",
+      "origin": null,
+      "sha256": "39f51509c55052cc5efb3ebc763ed7470b484c1e6a6bcbd8bd071b43fe7089cb"
+    }
+  ],
+  "assembly_executed": false
+}

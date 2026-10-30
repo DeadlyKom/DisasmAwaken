@@ -1,0 +1,13 @@
+{
+  "method": "original_text_separator_search_against_separator_positions",
+  "passed": true,
+  "cases": 8192,
+  "exhausted_search_cases": 4,
+  "source_sha256": "1066914072803f32c4a670b182160072369a05d860f5c36353383f22c8217b35",
+  "index_255_skips_256_separators": true,
+  "search_success_flag_not_propagated": true,
+  "selection_and_print_wrapper_cases": 300,
+  "irq_enabled": false,
+  "native_execution_verified": false,
+  "assembly_executed": false
+}

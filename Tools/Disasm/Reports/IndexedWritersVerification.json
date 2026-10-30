@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "method": "original_indexed_writer_factories_and_two_store_encodings",
+  "factory_cases": 1024,
+  "copy_invocations": 393216,
+  "arithmetic_invocations": 560,
+  "captured_left_differs_from_current_target_tested": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

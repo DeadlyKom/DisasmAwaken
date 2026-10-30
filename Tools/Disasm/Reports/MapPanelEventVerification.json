@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "early_bit7_cases": 32768,
+  "close_panel_cases": 768,
+  "pan_dispatch_cases": 2431,
+  "select_dispatch_cases": 1,
+  "all_input_flag_bytes_on_bit7": true,
+  "all_event_code_bytes": true,
+  "real_list_move_and_removals": true,
+  "ten_control_indices_checked": true,
+  "full_repaint_in_this_model": false,
+  "selection_and_repaint_integration": "MapSelectionPanelVerification.json",
+  "pan_integration": "MapPanVerification.json",
+  "method": "original_dispatcher_and_helpers_until_separately_proved_pan_or_selection_entry",
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

@@ -1,0 +1,25 @@
+{
+  "method": "original_bank1_xor_selection_band_with_independent_byte_mask_reference",
+  "passed": true,
+  "source_slot": 7,
+  "source_sha256": "bab32dcd0347fabd011a6db89f9290c790e8b9b55aeacad78443afa668583fa0",
+  "cases": 183040,
+  "full_bytes_domain": [
+    0,
+    31
+  ],
+  "edge_values": 256,
+  "y_domain": [
+    0,
+    184
+  ],
+  "x_domain": [
+    0,
+    31
+  ],
+  "physical_byte_wrapping_included": true,
+  "physical_bank_switching": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

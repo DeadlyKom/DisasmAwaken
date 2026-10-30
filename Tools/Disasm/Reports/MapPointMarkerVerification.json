@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "cases": 65542,
+  "drawn": 10680,
+  "method": "original_map_point_marker_full_bitmap_all_byte_offsets_and_word_rejections",
+  "rows": 7,
+  "bytes_per_row": 2,
+  "phase_stride": 16,
+  "phases": 8,
+  "attributes_preserved": true,
+  "calls_stubbed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

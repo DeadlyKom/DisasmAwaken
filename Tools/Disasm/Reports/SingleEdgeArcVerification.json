@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "cases": 27648,
+  "exit_reasons": {
+    "row_boundary": 9160,
+    "zero_x": 12072,
+    "join_vertical_row_boundary": 96,
+    "join_vertical_left_byte_collision_horizontal": 1368,
+    "join_vertical_right_byte_collision_horizontal": 208,
+    "join_vertical_zero_x": 1160,
+    "join_horizontal_left_byte_collision_horizontal": 1780,
+    "join_horizontal_right_byte_collision_horizontal": 780,
+    "join_horizontal_zero_x": 1000,
+    "join_horizontal_row_boundary": 24
+  },
+  "method": "actual_setup_preparation_four_wrappers_single_edge_kernel_and_shared_tails_against_coordinate_recurrence",
+  "radius_range": [
+    9,
+    80
+  ],
+  "offset_values": [
+    0,
+    16,
+    32,
+    48,
+    64,
+    80,
+    96,
+    100
+  ],
+  "limit_formula": "(OffsetX-118) AND 255",
+  "zero_counter_exit_leaves_EXX_swapped": true,
+  "alternate_A_limit_preserved": true,
+  "whole_E228_proved": false,
+  "whole_DFC3_dispatch_proved": false,
+  "arbitrary_clipped_inputs_proved": false,
+  "calls_stubbed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

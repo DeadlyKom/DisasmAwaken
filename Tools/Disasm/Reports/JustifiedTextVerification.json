@@ -1,0 +1,16 @@
+{
+  "method": "original_justification_against_word_selection_and_gap_model",
+  "passed": true,
+  "cases": 11656,
+  "by_kind": {
+    "width_and_words": 3584,
+    "height": 3072,
+    "mixed_layout": 5000
+  },
+  "source_sha256": "1066914072803f32c4a670b182160072369a05d860f5c36353383f22c8217b35",
+  "full_renderer_pixels_disabled_in_fixture": true,
+  "dry_pass_restores_glyph_prefix": true,
+  "irq_enabled": false,
+  "native_execution_verified": false,
+  "assembly_executed": false
+}

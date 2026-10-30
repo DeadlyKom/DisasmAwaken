@@ -1,0 +1,18 @@
+{
+  "method": "original_text_pagination_against_composed_row_contracts",
+  "passed": true,
+  "cases": 2204,
+  "by_kind": {
+    "count": 180,
+    "skip_byte": 1024,
+    "mixed_skip": 1000
+  },
+  "source_sha256": "1066914072803f32c4a670b182160072369a05d860f5c36353383f22c8217b35",
+  "full_renderer_pixels_disabled_in_fixture": true,
+  "original_glyph_executed": true,
+  "glyph_prefix_adjusted_at_layout_entries": true,
+  "demonstrated_nonprogress_cases": 2,
+  "irq_enabled": false,
+  "native_execution_verified": false,
+  "assembly_executed": false
+}

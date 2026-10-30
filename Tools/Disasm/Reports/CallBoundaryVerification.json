@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "removed_false_boundaries": [
+    "Action:#CAB3",
+    "Action:#CAE3"
+  ],
+  "source_comments_preserved": true,
+  "instructions_changed": false,
+  "semantic_analysis_completed": false,
+  "assembly_executed": false
+}

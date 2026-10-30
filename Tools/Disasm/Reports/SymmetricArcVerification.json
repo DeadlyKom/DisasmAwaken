@@ -1,0 +1,36 @@
+{
+  "passed": true,
+  "cases": 41472,
+  "exit_reasons": {
+    "entry": 3792,
+    "left_byte_collision_vertical": 792,
+    "row_boundary": 14184,
+    "right_byte_collision_vertical": 792,
+    "left_byte_collision_horizontal": 10956,
+    "right_byte_collision_horizontal": 10956
+  },
+  "method": "actual_setup_PrepareArcFullSpan_both_direction_wrappers_and_symmetric_kernel_against_coordinate_error_recurrence_full_bitmap",
+  "radius_range": [
+    0,
+    80
+  ],
+  "physical_center_x_range": [
+    128,
+    135
+  ],
+  "upper_row": 16,
+  "lower_row_excluded": 192,
+  "actual_mode_writer_executed": true,
+  "all_pixel_phases": true,
+  "byte_closing_modes": [
+    56,
+    48
+  ],
+  "single_edge_entries_proved": false,
+  "whole_DFC3_dispatch_proved": false,
+  "arbitrary_clipped_inputs_proved": false,
+  "calls_stubbed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

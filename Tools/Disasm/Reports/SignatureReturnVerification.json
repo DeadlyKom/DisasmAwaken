@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "cases": 1920,
+  "method": "original_signature_wrappers_returning_bank6",
+  "physical_page_writes": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

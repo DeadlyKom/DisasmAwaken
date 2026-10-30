@@ -1,0 +1,14 @@
+{
+  "method": "original_draw_list_insert_move_against_physical_128_byte_shift",
+  "passed": true,
+  "cases": 29580,
+  "appended": 1548,
+  "normal_move": 26240,
+  "beyond_copy_cases": 1792,
+  "source_sha256": "1066914072803f32c4a670b182160072369a05d860f5c36353383f22c8217b35",
+  "disabled_wrapper_indices_read": true,
+  "entire_tail_buffer_compared": true,
+  "irq_enabled": false,
+  "native_execution_verified": false,
+  "assembly_executed": false
+}

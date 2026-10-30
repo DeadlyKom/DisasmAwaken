@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "method": "original_three_byte_random_step_against_independent_word_carry_formula",
+  "cases": 265728,
+  "all_low_words": true,
+  "exhaustive_high_bytes": [
+    0,
+    1,
+    128,
+    255
+  ],
+  "streams": 7,
+  "clear_market_rows_cases": 256,
+  "clear_market_bytes": 60,
+  "direct_core_register_bank_exchange_verified": true,
+  "random_quality_or_period_proved": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

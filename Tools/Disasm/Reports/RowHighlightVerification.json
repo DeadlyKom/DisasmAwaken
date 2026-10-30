@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "method": "original_station_row_highlight_with_eight_physical_banks_and_independent_xor_reference",
+  "cases": 26122,
+  "rendered": 15602,
+  "rejected": 10520,
+  "out_writes": 31204,
+  "banks_modeled": 8,
+  "station_sha256": "1066914072803f32c4a670b182160072369a05d860f5c36353383f22c8217b35",
+  "map_sha256": "bab32dcd0347fabd011a6db89f9290c790e8b9b55aeacad78443afa668583fa0",
+  "bank0_preserved": true,
+  "bank1_only_width_operand_changes": true,
+  "rom1_forced": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

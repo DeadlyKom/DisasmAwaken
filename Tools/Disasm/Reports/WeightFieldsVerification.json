@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "method": "original_secondary_index_and_two_direct_weight_fields",
+  "sum_cases": 65536,
+  "field_cases": 3584,
+  "all_encoded_weight_bytes": true,
+  "all_index_component_pairs": true,
+  "suffix_handlers_executed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

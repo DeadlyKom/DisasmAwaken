@@ -1,0 +1,47 @@
+{
+  "passed": true,
+  "cases": 51456,
+  "pixel_operations": 5269737,
+  "paths": {
+    "clear_right_x_major": 4840,
+    "clear_right_y_major": 1692,
+    "clear_left_x_major": 4876,
+    "clear_left_y_major": 5212,
+    "clear_equal": 532,
+    "set_right_x_major": 4840,
+    "set_right_y_major": 1692,
+    "set_left_x_major": 4876,
+    "set_left_y_major": 5212,
+    "set_equal": 532,
+    "xor_right_x_major": 4840,
+    "xor_right_y_major": 1692,
+    "xor_left_x_major": 4876,
+    "xor_left_y_major": 5212,
+    "xor_equal": 532
+  },
+  "method": "original_three_self_modified_line_modes_against_independent_pixel_Bresenham_full_screen_and_endpoint_registers",
+  "coordinate_domain": {
+    "x": [
+      0,
+      255
+    ],
+    "y": [
+      0,
+      191
+    ]
+  },
+  "screen_origin": [
+    0,
+    0
+  ],
+  "table_builder_input_DE": 61688,
+  "synthetic_alignment_fixture": true,
+  "last_endpoint_excluded": true,
+  "equal_points_draw_nothing": true,
+  "temporary_opcodes_match_actual_caller": true,
+  "code_writes_limited_to_selected_kernel": true,
+  "calls_stubbed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

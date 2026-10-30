@@ -1,0 +1,11 @@
+{
+  "method": "original_z80_bytes_with_original_raster_patches",
+  "cases": 674240,
+  "edge_opcode_combinations": 4,
+  "interior_widths_checked": 31,
+  "all_valid_byte_columns_and_groups_checked": true,
+  "source_sha256": "1066914072803f32c4a670b182160072369a05d860f5c36353383f22c8217b35",
+  "passed": true,
+  "whole_frame_rendering_verified": false,
+  "assembly_executed": false
+}

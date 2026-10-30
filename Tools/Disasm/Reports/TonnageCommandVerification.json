@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "direct_cases": 256,
+  "command_dispatch_cases": 256,
+  "method": "original_command_T_dispatch_and_complete_weighted_load",
+  "normal_HL_is_handler_address": true,
+  "command_DE_67AE_is_overwritten": true,
+  "calls_stubbed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

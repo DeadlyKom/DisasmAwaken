@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "cases": 65536,
+  "word_sum_overflow_cases": 13816,
+  "method": "original_two_8_bit_squares_against_integer_products_all_input_pairs_exact_flags_and_registers",
+  "main_flags_SZPV_from_second_low_square": true,
+  "alternate_flags_from_first_low_square": true,
+  "all_input_AF_flags_discarded": true,
+  "calls_stubbed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

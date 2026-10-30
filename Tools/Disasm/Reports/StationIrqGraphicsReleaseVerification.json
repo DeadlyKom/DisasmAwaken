@@ -1,0 +1,15 @@
+{
+  "method": "station_irq_graphics_release_merge_after_isolated_static_validation",
+  "passed": true,
+  "candidate": "Tools/Disasm/Research/Candidates/StationIrqGraphicsRelease",
+  "review": "Tools/Disasm/Research/Candidates/StationIrqGraphicsMergeReview",
+  "replaced_existing_functions": 1,
+  "replaced_unknown_functions": 0,
+  "documented_functions": 4,
+  "archived_files": 2,
+  "working_copy_files_written": 21,
+  "instruction_count": 32395,
+  "remaining_unknown": 345,
+  "remaining_contracts": 705,
+  "assembly_executed": false
+}

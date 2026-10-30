@@ -1,0 +1,15 @@
+{
+  "method": "track_geometry_release_merge_after_isolated_static_validation",
+  "passed": true,
+  "candidate": "Tools/Disasm/Research/Candidates/TrackGeometryRelease2",
+  "review": "Tools/Disasm/Research/Candidates/TrackGeometryMergeReview",
+  "replaced_existing_functions": 1,
+  "replaced_unknown_functions": 1,
+  "documented_functions": 6,
+  "archived_files": 2,
+  "working_copy_files_written": 21,
+  "instruction_count": 32105,
+  "remaining_unknown": 354,
+  "remaining_contracts": 716,
+  "assembly_executed": false
+}

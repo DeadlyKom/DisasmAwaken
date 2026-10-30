@@ -1,0 +1,26 @@
+{
+  "path_base": "project_root",
+  "executable": "Tools/Disasm/Research/Runtime/Unreal/Unreal.exe",
+  "exe_sha256": "75f38e202e22d40b0c30d426dc103266b492d6079a22f16a100081ec8b5ea140",
+  "input_images": {
+    "Original.trd": "55a11de202a5334547e39a6db42c945242a2a53559dc1cf601522219e3463f32",
+    "Rebuilt.trd": "55a11de202a5334547e39a6db42c945242a2a53559dc1cf601522219e3463f32"
+  },
+  "memory_or_registers_injected": false,
+  "manual_checks": {
+    "original": {
+      "game_start_verified": true,
+      "evidence": "Пользователь сообщил о запуске оригинала в Unreal словами «запустился».",
+      "station_screen_verified": false,
+      "gameplay_verified": false
+    },
+    "rebuilt": {
+      "game_start_verified": false,
+      "game_start_preliminarily_confirmed": true,
+      "evidence": "Пользователь сообщил «вроде тоже запустился». Это предварительное подтверждение запуска, достижение станции не уточнялось.",
+      "station_screen_verified": false,
+      "gameplay_verified": false,
+      "status": "Запуск предварительно подтверждён пользователем, подробный игровой прогон не выполнен."
+    }
+  }
+}

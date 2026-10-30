@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "cases": 73728,
+  "found": 37152,
+  "terminated": 36576,
+  "method": "original_two_stored_point_searches_and_complete_selection_centering_all_markers_positions_values",
+  "record_size": 5,
+  "empty_byte": "FF",
+  "terminator_range": "80..FE",
+  "all_alternate_registers_preserved": true,
+  "calls_stubbed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "added_instructions": 37,
+  "code_bytes": 65,
+  "callee_contract_stubs": true,
+  "assembly_executed": false
+}

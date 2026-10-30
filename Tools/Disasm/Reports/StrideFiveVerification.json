@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "method": "original_stride5_accessors_and_shared_stack_entries",
+  "accessor_cases": {
+    "0xc5e9": 65536,
+    "0xc5f9": 65536,
+    "0xc609": 65536,
+    "0xc60f": 65536,
+    "0xc615": 65536,
+    "0xc5ec": 65536,
+    "0xc5fc": 65536
+  },
+  "all_byte_indices": true,
+  "all_initial_flags": true,
+  "index_high_byte_discarded": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

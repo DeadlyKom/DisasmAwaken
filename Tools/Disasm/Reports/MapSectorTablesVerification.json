@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "full_cases": 1527,
+  "single_sector_cases": 256,
+  "method": "original_four_adjacent_sector_tables_against_independent_three_word_recurrence",
+  "quadrant_order": [
+    "F200",
+    "F300",
+    "F500",
+    "F400"
+  ],
+  "single_sector_swaps_general_register_sets": true,
+  "calls_stubbed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "method": "scoped_physical_signature_input_merge_after_candidate_validation",
+  "records": 1,
+  "typed_bytes": 5,
+  "instructions_changed": false,
+  "assembly_executed": false
+}

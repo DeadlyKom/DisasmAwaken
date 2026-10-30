@@ -1,0 +1,21 @@
+{
+  "fragments": 1086,
+  "described": 803,
+  "unknown": 283,
+  "instructions": 35417,
+  "physical_bytes_by_kind": {
+    "binary_resource": 26153,
+    "code": 61879,
+    "resource": 67584,
+    "typed_data": 5409,
+    "unclassified": 318719
+  },
+  "ranges_by_kind": {
+    "unclassified": 178,
+    "code": 1086,
+    "typed_data": 64,
+    "binary_resource": 8,
+    "resource": 5
+  },
+  "full_semantic_analysis_complete": false
+}

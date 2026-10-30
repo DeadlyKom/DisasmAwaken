@@ -1,0 +1,31 @@
+{
+  "passed": true,
+  "cases": 88,
+  "secondary_counts": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "original_order_and_map_scene_executed": true,
+  "optional_information_panel_executed": true,
+  "initial_pages": [
+    16,
+    24
+  ],
+  "final_page": 16,
+  "screen_snapshot_compared": true,
+  "whole_bitmap_independent_oracle": false,
+  "explicit_halt_wakeups": 220,
+  "calls_stubbed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

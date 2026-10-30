@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "method": "original_close_callback_protocol_with_explicit_synthetic_register_clobber",
+  "callback_af_cases": 65536,
+  "inactive_cases": 256,
+  "toggle_suppressed_by_bit4": true,
+  "source_sha256": "1066914072803f32c4a670b182160072369a05d860f5c36353383f22c8217b35",
+  "external_callback_is_fixture": true,
+  "irq_enabled": false,
+  "native_execution_verified": false,
+  "assembly_executed": false
+}

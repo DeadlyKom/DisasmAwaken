@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "method": "original_action_merge_and_frame_bit_against_byte_formula",
+  "action_cases": 139264,
+  "frame_bit_index_cases": 65536,
+  "frame_bit_flag_cases": 11776,
+  "source_sha256": "1066914072803f32c4a670b182160072369a05d860f5c36353383f22c8217b35",
+  "original_visited": {
+    "9E97": "e5",
+    "9E98": "d5",
+    "9E99": "c5",
+    "9E9A": "eb",
+    "9E9B": "cdeb9e",
+    "9E9E": "7e",
+    "9E9F": "c1",
+    "9EA0": "d1",
+    "9EA1": "e1",
+    "9EA2": "e601",
+    "9EA4": "c9"
+  },
+  "hardware_meaning_of_input_bits_proved": false,
+  "irq_enabled": false,
+  "native_execution_verified": false,
+  "assembly_executed": false
+}

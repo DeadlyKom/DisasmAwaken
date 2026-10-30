@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "method": "in_memory_duplicate_metadata_rejected_before_any_source_or_registry_write",
+  "message": "Повторная локальная метка Entry по адресам E681 и E682",
+  "source_and_four_registries_unchanged": true,
+  "assembly_executed": false,
+  "long_label_rejected_before_writes": true,
+  "long_label_message": "Локальная метка не помещается до позиции 16: PrepareClipRight"
+}

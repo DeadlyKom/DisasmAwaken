@@ -1,0 +1,694 @@
+                module InterfaceItems
+; исходная таблица #F0FD, шаг FInterfaceItem равен #10
+Item00:         FInterfaceItem {
+                    #00,                                                        ; FInterfaceItem.X
+                    #00,                                                        ; FInterfaceItem.Y
+                    #00,                                                        ; FInterfaceItem.Width
+                    #00,                                                        ; FInterfaceItem.Height
+                    #80,                                                        ; FInterfaceItem.Flags
+                    #00,                                                        ; FInterfaceItem.TextIndex
+                    @Station.HandleItem00.Entry,                                ; FInterfaceItem.EventHandler
+                    #00,                                                        ; FInterfaceItem.SavedX
+                    #17,                                                        ; FInterfaceItem.SavedY
+                    #1B,                                                        ; FInterfaceItem.SavedWidth
+                    #01,                                                        ; FInterfaceItem.SavedHeight
+                    @Station.DrawItem00.Entry,                                  ; FInterfaceItem.DrawHandler
+                    #0000                                                       ; FInterfaceItem.Unknown0E
+                }
+Item01:         FInterfaceItem {
+                    #00,                                                        ; FInterfaceItem.X
+                    #00,                                                        ; FInterfaceItem.Y
+                    #00,                                                        ; FInterfaceItem.Width
+                    #00,                                                        ; FInterfaceItem.Height
+                    #80,                                                        ; FInterfaceItem.Flags
+                    #00,                                                        ; FInterfaceItem.TextIndex
+                    @Station.HandleItem01.Entry,                                ; FInterfaceItem.EventHandler
+                    #1B,                                                        ; FInterfaceItem.SavedX
+                    #17,                                                        ; FInterfaceItem.SavedY
+                    #05,                                                        ; FInterfaceItem.SavedWidth
+                    #01,                                                        ; FInterfaceItem.SavedHeight
+                    @Station.DrawItem01.Entry,                                  ; FInterfaceItem.DrawHandler
+                    #0000                                                       ; FInterfaceItem.Unknown0E
+                }
+Item02:         FInterfaceItem {
+                    #00,                                                        ; FInterfaceItem.X
+                    #00,                                                        ; FInterfaceItem.Y
+                    #00,                                                        ; FInterfaceItem.Width
+                    #00,                                                        ; FInterfaceItem.Height
+                    #40,                                                        ; FInterfaceItem.Flags
+                    #01,                                                        ; FInterfaceItem.TextIndex
+                    @Station.HandleItem02.Entry,                                ; FInterfaceItem.EventHandler
+                    #0A,                                                        ; FInterfaceItem.SavedX
+                    #13,                                                        ; FInterfaceItem.SavedY
+                    #05,                                                        ; FInterfaceItem.SavedWidth
+                    #02,                                                        ; FInterfaceItem.SavedHeight
+                    @Station.DrawItem02.Entry,                                  ; FInterfaceItem.DrawHandler
+                    #0000                                                       ; FInterfaceItem.Unknown0E
+                }
+Item03:         FInterfaceItem {
+                    #00,                                                        ; FInterfaceItem.X
+                    #00,                                                        ; FInterfaceItem.Y
+                    #00,                                                        ; FInterfaceItem.Width
+                    #00,                                                        ; FInterfaceItem.Height
+                    #40,                                                        ; FInterfaceItem.Flags
+                    #02,                                                        ; FInterfaceItem.TextIndex
+                    @Station.HandleItem03.Entry,                                ; FInterfaceItem.EventHandler
+                    #02,                                                        ; FInterfaceItem.SavedX
+                    #13,                                                        ; FInterfaceItem.SavedY
+                    #04,                                                        ; FInterfaceItem.SavedWidth
+                    #02,                                                        ; FInterfaceItem.SavedHeight
+                    @Station.DrawItem03.Entry,                                  ; FInterfaceItem.DrawHandler
+                    #0000                                                       ; FInterfaceItem.Unknown0E
+                }
+Item04:         FInterfaceItem {
+                    #00,                                                        ; FInterfaceItem.X
+                    #00,                                                        ; FInterfaceItem.Y
+                    #00,                                                        ; FInterfaceItem.Width
+                    #00,                                                        ; FInterfaceItem.Height
+                    #40,                                                        ; FInterfaceItem.Flags
+                    #03,                                                        ; FInterfaceItem.TextIndex
+                    @Station.HandleItem04.Entry,                                ; FInterfaceItem.EventHandler
+                    #05,                                                        ; FInterfaceItem.SavedX
+                    #15,                                                        ; FInterfaceItem.SavedY
+                    #05,                                                        ; FInterfaceItem.SavedWidth
+                    #02,                                                        ; FInterfaceItem.SavedHeight
+                    @Station.DrawItem04.Entry,                                  ; FInterfaceItem.DrawHandler
+                    #0000                                                       ; FInterfaceItem.Unknown0E
+                }
+Item05:         FInterfaceItem {
+                    #00,                                                        ; FInterfaceItem.X
+                    #00,                                                        ; FInterfaceItem.Y
+                    #00,                                                        ; FInterfaceItem.Width
+                    #00,                                                        ; FInterfaceItem.Height
+                    #40,                                                        ; FInterfaceItem.Flags
+                    #04,                                                        ; FInterfaceItem.TextIndex
+                    @Station.HandleItem05.Entry,                                ; FInterfaceItem.EventHandler
+                    #06,                                                        ; FInterfaceItem.SavedX
+                    #13,                                                        ; FInterfaceItem.SavedY
+                    #04,                                                        ; FInterfaceItem.SavedWidth
+                    #02,                                                        ; FInterfaceItem.SavedHeight
+                    @Station.DrawItem05.Entry,                                  ; FInterfaceItem.DrawHandler
+                    #0000                                                       ; FInterfaceItem.Unknown0E
+                }
+Item06:         FInterfaceItem {
+                    #00,                                                        ; FInterfaceItem.X
+                    #00,                                                        ; FInterfaceItem.Y
+                    #00,                                                        ; FInterfaceItem.Width
+                    #00,                                                        ; FInterfaceItem.Height
+                    #40,                                                        ; FInterfaceItem.Flags
+                    #05,                                                        ; FInterfaceItem.TextIndex
+                    @Station.HandleItem06.Entry,                                ; FInterfaceItem.EventHandler
+                    #0F,                                                        ; FInterfaceItem.SavedX
+                    #14,                                                        ; FInterfaceItem.SavedY
+                    #06,                                                        ; FInterfaceItem.SavedWidth
+                    #03,                                                        ; FInterfaceItem.SavedHeight
+                    @Station.DrawItem06.Entry,                                  ; FInterfaceItem.DrawHandler
+                    #0000                                                       ; FInterfaceItem.Unknown0E
+                }
+Item07:         FInterfaceItem {
+                    #00,                                                        ; FInterfaceItem.X
+                    #00,                                                        ; FInterfaceItem.Y
+                    #00,                                                        ; FInterfaceItem.Width
+                    #00,                                                        ; FInterfaceItem.Height
+                    #40,                                                        ; FInterfaceItem.Flags
+                    #07,                                                        ; FInterfaceItem.TextIndex
+                    @Station.HandleItem07.Entry,                                ; FInterfaceItem.EventHandler
+                    #0A,                                                        ; FInterfaceItem.SavedX
+                    #15,                                                        ; FInterfaceItem.SavedY
+                    #05,                                                        ; FInterfaceItem.SavedWidth
+                    #02,                                                        ; FInterfaceItem.SavedHeight
+                    @Station.DrawItem07.Entry,                                  ; FInterfaceItem.DrawHandler
+                    #0000                                                       ; FInterfaceItem.Unknown0E
+                }
+Item08:         FInterfaceItem {
+                    #00,                                                        ; FInterfaceItem.X
+                    #00,                                                        ; FInterfaceItem.Y
+                    #00,                                                        ; FInterfaceItem.Width
+                    #00,                                                        ; FInterfaceItem.Height
+                    #40,                                                        ; FInterfaceItem.Flags
+                    #09,                                                        ; FInterfaceItem.TextIndex
+                    @Station.HandleItem08.Entry,                                ; FInterfaceItem.EventHandler
+                    #01,                                                        ; FInterfaceItem.SavedX
+                    #15,                                                        ; FInterfaceItem.SavedY
+                    #04,                                                        ; FInterfaceItem.SavedWidth
+                    #02,                                                        ; FInterfaceItem.SavedHeight
+                    @Station.DrawItem08.Entry,                                  ; FInterfaceItem.DrawHandler
+                    #0000                                                       ; FInterfaceItem.Unknown0E
+                }
+Item09:         FInterfaceItem {
+                    #00,                                                        ; FInterfaceItem.X
+                    #00,                                                        ; FInterfaceItem.Y
+                    #00,                                                        ; FInterfaceItem.Width
+                    #00,                                                        ; FInterfaceItem.Height
+                    #40,                                                        ; FInterfaceItem.Flags
+                    #15,                                                        ; FInterfaceItem.TextIndex
+                    @Station.HandleItem09.Entry,                                ; FInterfaceItem.EventHandler
+                    #00,                                                        ; FInterfaceItem.SavedX
+                    #13,                                                        ; FInterfaceItem.SavedY
+                    #02,                                                        ; FInterfaceItem.SavedWidth
+                    #02,                                                        ; FInterfaceItem.SavedHeight
+                    @Station.DrawItem09.Entry,                                  ; FInterfaceItem.DrawHandler
+                    #0000                                                       ; FInterfaceItem.Unknown0E
+                }
+Item10:         FInterfaceItem {
+                    #00,                                                        ; FInterfaceItem.X
+                    #00,                                                        ; FInterfaceItem.Y
+                    #00,                                                        ; FInterfaceItem.Width
+                    #00,                                                        ; FInterfaceItem.Height
+                    #21,                                                        ; FInterfaceItem.Flags
+                    #14,                                                        ; FInterfaceItem.TextIndex
+                    @Station.HandleItem10.Entry,                                ; FInterfaceItem.EventHandler
+                    #07,                                                        ; FInterfaceItem.SavedX
+                    #05,                                                        ; FInterfaceItem.SavedY
+                    #12,                                                        ; FInterfaceItem.SavedWidth
+                    #08,                                                        ; FInterfaceItem.SavedHeight
+                    @Station.DrawItem10.Entry,                                  ; FInterfaceItem.DrawHandler
+                    #0000                                                       ; FInterfaceItem.Unknown0E
+                }
+Item11:         FInterfaceItem {
+                    #00,                                                        ; FInterfaceItem.X
+                    #00,                                                        ; FInterfaceItem.Y
+                    #00,                                                        ; FInterfaceItem.Width
+                    #00,                                                        ; FInterfaceItem.Height
+                    #01,                                                        ; FInterfaceItem.Flags
+                    #03,                                                        ; FInterfaceItem.TextIndex
+                    @Station.HandleItem11.Entry,                                ; FInterfaceItem.EventHandler
+                    #0B,                                                        ; FInterfaceItem.SavedX
+                    #00,                                                        ; FInterfaceItem.SavedY
+                    #15,                                                        ; FInterfaceItem.SavedWidth
+                    #0F,                                                        ; FInterfaceItem.SavedHeight
+                    @Station.DrawMapPanel.Entry,                                ; FInterfaceItem.DrawHandler
+                    #0000                                                       ; FInterfaceItem.Unknown0E
+                }
+Item12:         FInterfaceItem {
+                    #00,                                                        ; FInterfaceItem.X
+                    #00,                                                        ; FInterfaceItem.Y
+                    #00,                                                        ; FInterfaceItem.Width
+                    #00,                                                        ; FInterfaceItem.Height
+                    #60,                                                        ; FInterfaceItem.Flags
+                    #0E,                                                        ; FInterfaceItem.TextIndex
+                    @Station.HandleStoredPointToggle.Entry,                     ; FInterfaceItem.EventHandler
+                    #0B,                                                        ; FInterfaceItem.SavedX
+                    #0F,                                                        ; FInterfaceItem.SavedY
+                    #05,                                                        ; FInterfaceItem.SavedWidth
+                    #02,                                                        ; FInterfaceItem.SavedHeight
+                    @Station.DrawStoredPointToggle.Entry,                       ; FInterfaceItem.DrawHandler
+                    #0000                                                       ; FInterfaceItem.Unknown0E
+                }
+Item13:         FInterfaceItem {
+                    #00,                                                        ; FInterfaceItem.X
+                    #00,                                                        ; FInterfaceItem.Y
+                    #00,                                                        ; FInterfaceItem.Width
+                    #00,                                                        ; FInterfaceItem.Height
+                    #60,                                                        ; FInterfaceItem.Flags
+                    #0F,                                                        ; FInterfaceItem.TextIndex
+                    @Station.HandleSecondaryPointToggle.Entry,                  ; FInterfaceItem.EventHandler
+                    #10,                                                        ; FInterfaceItem.SavedX
+                    #0F,                                                        ; FInterfaceItem.SavedY
+                    #05,                                                        ; FInterfaceItem.SavedWidth
+                    #02,                                                        ; FInterfaceItem.SavedHeight
+                    @Station.DrawSecondaryPointToggle.Entry,                    ; FInterfaceItem.DrawHandler
+                    #0000                                                       ; FInterfaceItem.Unknown0E
+                }
+Item14:         FInterfaceItem {
+                    #00,                                                        ; FInterfaceItem.X
+                    #00,                                                        ; FInterfaceItem.Y
+                    #00,                                                        ; FInterfaceItem.Width
+                    #00,                                                        ; FInterfaceItem.Height
+                    #60,                                                        ; FInterfaceItem.Flags
+                    #10,                                                        ; FInterfaceItem.TextIndex
+                    @Station.HandleSecondaryClear.Entry,                        ; FInterfaceItem.EventHandler
+                    #10,                                                        ; FInterfaceItem.SavedX
+                    #11,                                                        ; FInterfaceItem.SavedY
+                    #05,                                                        ; FInterfaceItem.SavedWidth
+                    #02,                                                        ; FInterfaceItem.SavedHeight
+                    @Station.DrawItem14.Entry,                                  ; FInterfaceItem.DrawHandler
+                    #0000                                                       ; FInterfaceItem.Unknown0E
+                }
+Item15:         FInterfaceItem {
+                    #00,                                                        ; FInterfaceItem.X
+                    #00,                                                        ; FInterfaceItem.Y
+                    #00,                                                        ; FInterfaceItem.Width
+                    #00,                                                        ; FInterfaceItem.Height
+                    #60,                                                        ; FInterfaceItem.Flags
+                    #11,                                                        ; FInterfaceItem.TextIndex
+                    @Station.HandleStoredPointCycle.Entry,                      ; FInterfaceItem.EventHandler
+                    #0B,                                                        ; FInterfaceItem.SavedX
+                    #11,                                                        ; FInterfaceItem.SavedY
+                    #05,                                                        ; FInterfaceItem.SavedWidth
+                    #02,                                                        ; FInterfaceItem.SavedHeight
+                    @Station.DrawItem15.Entry,                                  ; FInterfaceItem.DrawHandler
+                    #0000                                                       ; FInterfaceItem.Unknown0E
+                }
+Item16:         FInterfaceItem {
+                    #00,                                                        ; FInterfaceItem.X
+                    #00,                                                        ; FInterfaceItem.Y
+                    #00,                                                        ; FInterfaceItem.Width
+                    #00,                                                        ; FInterfaceItem.Height
+                    #60,                                                        ; FInterfaceItem.Flags
+                    #12,                                                        ; FInterfaceItem.TextIndex
+                    @Station.HandleSecondaryCursor.Entry,                       ; FInterfaceItem.EventHandler
+                    #10,                                                        ; FInterfaceItem.SavedX
+                    #13,                                                        ; FInterfaceItem.SavedY
+                    #05,                                                        ; FInterfaceItem.SavedWidth
+                    #02,                                                        ; FInterfaceItem.SavedHeight
+                    @Station.DrawItem16.Entry,                                  ; FInterfaceItem.DrawHandler
+                    #0000                                                       ; FInterfaceItem.Unknown0E
+                }
+Item17:         FInterfaceItem {
+                    #00,                                                        ; FInterfaceItem.X
+                    #00,                                                        ; FInterfaceItem.Y
+                    #00,                                                        ; FInterfaceItem.Width
+                    #00,                                                        ; FInterfaceItem.Height
+                    #60,                                                        ; FInterfaceItem.Flags
+                    #13,                                                        ; FInterfaceItem.TextIndex
+                    @Station.HandleCurrentMapCenter.Entry,                      ; FInterfaceItem.EventHandler
+                    #0B,                                                        ; FInterfaceItem.SavedX
+                    #13,                                                        ; FInterfaceItem.SavedY
+                    #05,                                                        ; FInterfaceItem.SavedWidth
+                    #02,                                                        ; FInterfaceItem.SavedHeight
+                    @Station.DrawItem17.Entry,                                  ; FInterfaceItem.DrawHandler
+                    #0000                                                       ; FInterfaceItem.Unknown0E
+                }
+Item18:         FInterfaceItem {
+                    #00,                                                        ; FInterfaceItem.X
+                    #00,                                                        ; FInterfaceItem.Y
+                    #00,                                                        ; FInterfaceItem.Width
+                    #00,                                                        ; FInterfaceItem.Height
+                    #60,                                                        ; FInterfaceItem.Flags
+                    #14,                                                        ; FInterfaceItem.TextIndex
+                    @Station.HandleItem18.Entry,                                ; FInterfaceItem.EventHandler
+                    #0B,                                                        ; FInterfaceItem.SavedX
+                    #15,                                                        ; FInterfaceItem.SavedY
+                    #05,                                                        ; FInterfaceItem.SavedWidth
+                    #02,                                                        ; FInterfaceItem.SavedHeight
+                    @Station.DrawItem18.Entry,                                  ; FInterfaceItem.DrawHandler
+                    #0000                                                       ; FInterfaceItem.Unknown0E
+                }
+Item19:         FInterfaceItem {
+                    #00,                                                        ; FInterfaceItem.X
+                    #00,                                                        ; FInterfaceItem.Y
+                    #00,                                                        ; FInterfaceItem.Width
+                    #00,                                                        ; FInterfaceItem.Height
+                    #01,                                                        ; FInterfaceItem.Flags
+                    #0D,                                                        ; FInterfaceItem.TextIndex
+                    @Station.HandleItem19.Entry,                                ; FInterfaceItem.EventHandler
+                    #00,                                                        ; FInterfaceItem.SavedX
+                    #00,                                                        ; FInterfaceItem.SavedY
+                    #0B,                                                        ; FInterfaceItem.SavedWidth
+                    #17,                                                        ; FInterfaceItem.SavedHeight
+                    @Station.DrawSystemInfoPanel.Entry,                         ; FInterfaceItem.DrawHandler
+                    #0000                                                       ; FInterfaceItem.Unknown0E
+                }
+Item20:         FInterfaceItem {
+                    #00,                                                        ; FInterfaceItem.X
+                    #00,                                                        ; FInterfaceItem.Y
+                    #00,                                                        ; FInterfaceItem.Width
+                    #00,                                                        ; FInterfaceItem.Height
+                    #02,                                                        ; FInterfaceItem.Flags
+                    #0E,                                                        ; FInterfaceItem.TextIndex
+                    @Station.HandleItem20.Entry,                                ; FInterfaceItem.EventHandler
+                    #15,                                                        ; FInterfaceItem.SavedX
+                    #0F,                                                        ; FInterfaceItem.SavedY
+                    #09,                                                        ; FInterfaceItem.SavedWidth
+                    #09,                                                        ; FInterfaceItem.SavedHeight
+                    @Station.DrawVariantPanel.Entry,                            ; FInterfaceItem.DrawHandler
+                    #0000                                                       ; FInterfaceItem.Unknown0E
+                }
+Item21:         FInterfaceItem {
+                    #00,                                                        ; FInterfaceItem.X
+                    #00,                                                        ; FInterfaceItem.Y
+                    #00,                                                        ; FInterfaceItem.Width
+                    #00,                                                        ; FInterfaceItem.Height
+                    #60,                                                        ; FInterfaceItem.Flags
+                    #28,                                                        ; FInterfaceItem.TextIndex
+                    @Station.HandleItem21.Entry,                                ; FInterfaceItem.EventHandler
+                    #10,                                                        ; FInterfaceItem.SavedX
+                    #15,                                                        ; FInterfaceItem.SavedY
+                    #05,                                                        ; FInterfaceItem.SavedWidth
+                    #02,                                                        ; FInterfaceItem.SavedHeight
+                    @Station.DrawItem21.Entry,                                  ; FInterfaceItem.DrawHandler
+                    #0000                                                       ; FInterfaceItem.Unknown0E
+                }
+Item22:         FInterfaceItem {
+                    #00,                                                        ; FInterfaceItem.X
+                    #00,                                                        ; FInterfaceItem.Y
+                    #00,                                                        ; FInterfaceItem.Width
+                    #00,                                                        ; FInterfaceItem.Height
+                    #01,                                                        ; FInterfaceItem.Flags
+                    #0F,                                                        ; FInterfaceItem.TextIndex
+                    @Station.HandleItem22.Entry,                                ; FInterfaceItem.EventHandler
+                    #00,                                                        ; FInterfaceItem.SavedX
+                    #00,                                                        ; FInterfaceItem.SavedY
+                    #0B,                                                        ; FInterfaceItem.SavedWidth
+                    #0A,                                                        ; FInterfaceItem.SavedHeight
+                    @Station.DrawItem22.Entry,                                  ; FInterfaceItem.DrawHandler
+                    #0000                                                       ; FInterfaceItem.Unknown0E
+                }
+Item23:         FInterfaceItem {
+                    #00,                                                        ; FInterfaceItem.X
+                    #00,                                                        ; FInterfaceItem.Y
+                    #00,                                                        ; FInterfaceItem.Width
+                    #00,                                                        ; FInterfaceItem.Height
+                    #01,                                                        ; FInterfaceItem.Flags
+                    #10,                                                        ; FInterfaceItem.TextIndex
+                    @Station.HandleItem23.Entry,                                ; FInterfaceItem.EventHandler
+                    #0B,                                                        ; FInterfaceItem.SavedX
+                    #00,                                                        ; FInterfaceItem.SavedY
+                    #15,                                                        ; FInterfaceItem.SavedWidth
+                    #13,                                                        ; FInterfaceItem.SavedHeight
+                    @Station.DrawItem23.Entry,                                  ; FInterfaceItem.DrawHandler
+                    #0000                                                       ; FInterfaceItem.Unknown0E
+                }
+Item24:         FInterfaceItem {
+                    #00,                                                        ; FInterfaceItem.X
+                    #00,                                                        ; FInterfaceItem.Y
+                    #00,                                                        ; FInterfaceItem.Width
+                    #00,                                                        ; FInterfaceItem.Height
+                    #01,                                                        ; FInterfaceItem.Flags
+                    #02,                                                        ; FInterfaceItem.TextIndex
+                    @Station.HandleItem24.Entry,                                ; FInterfaceItem.EventHandler
+                    #08,                                                        ; FInterfaceItem.SavedX
+                    #03,                                                        ; FInterfaceItem.SavedY
+                    #10,                                                        ; FInterfaceItem.SavedWidth
+                    #10,                                                        ; FInterfaceItem.SavedHeight
+                    @Station.DrawItem24.Entry,                                  ; FInterfaceItem.DrawHandler
+                    #0000                                                       ; FInterfaceItem.Unknown0E
+                }
+Item25:         FInterfaceItem {
+                    #00,                                                        ; FInterfaceItem.X
+                    #00,                                                        ; FInterfaceItem.Y
+                    #00,                                                        ; FInterfaceItem.Width
+                    #00,                                                        ; FInterfaceItem.Height
+                    #01,                                                        ; FInterfaceItem.Flags
+                    #11,                                                        ; FInterfaceItem.TextIndex
+                    @Station.HandleItem25.Entry,                                ; FInterfaceItem.EventHandler
+                    #00,                                                        ; FInterfaceItem.SavedX
+                    #00,                                                        ; FInterfaceItem.SavedY
+                    #08,                                                        ; FInterfaceItem.SavedWidth
+                    #0A,                                                        ; FInterfaceItem.SavedHeight
+                    @Station.DrawItem25.Entry,                                  ; FInterfaceItem.DrawHandler
+                    #0000                                                       ; FInterfaceItem.Unknown0E
+                }
+Item26:         FInterfaceItem {
+                    #00,                                                        ; FInterfaceItem.X
+                    #00,                                                        ; FInterfaceItem.Y
+                    #00,                                                        ; FInterfaceItem.Width
+                    #00,                                                        ; FInterfaceItem.Height
+                    #01,                                                        ; FInterfaceItem.Flags
+                    #13,                                                        ; FInterfaceItem.TextIndex
+                    @Station.HandleItem26.Entry,                                ; FInterfaceItem.EventHandler
+                    #15,                                                        ; FInterfaceItem.SavedX
+                    #00,                                                        ; FInterfaceItem.SavedY
+                    #0B,                                                        ; FInterfaceItem.SavedWidth
+                    #0C,                                                        ; FInterfaceItem.SavedHeight
+                    @Station.DrawItem26.Entry,                                  ; FInterfaceItem.DrawHandler
+                    #0000                                                       ; FInterfaceItem.Unknown0E
+                }
+Item27:         FInterfaceItem {
+                    #00,                                                        ; FInterfaceItem.X
+                    #00,                                                        ; FInterfaceItem.Y
+                    #00,                                                        ; FInterfaceItem.Width
+                    #00,                                                        ; FInterfaceItem.Height
+                    #01,                                                        ; FInterfaceItem.Flags
+                    #12,                                                        ; FInterfaceItem.TextIndex
+                    @Station.HandleItem27.Entry,                                ; FInterfaceItem.EventHandler
+                    #08,                                                        ; FInterfaceItem.SavedX
+                    #00,                                                        ; FInterfaceItem.SavedY
+                    #0D,                                                        ; FInterfaceItem.SavedWidth
+                    #15,                                                        ; FInterfaceItem.SavedHeight
+                    @Station.DrawItem27.Entry,                                  ; FInterfaceItem.DrawHandler
+                    #0000                                                       ; FInterfaceItem.Unknown0E
+                }
+Item28:         FInterfaceItem {
+                    #00,                                                        ; FInterfaceItem.X
+                    #00,                                                        ; FInterfaceItem.Y
+                    #00,                                                        ; FInterfaceItem.Width
+                    #00,                                                        ; FInterfaceItem.Height
+                    #70,                                                        ; FInterfaceItem.Flags
+                    #0A,                                                        ; FInterfaceItem.TextIndex
+                    @Station.HandleItem28.Entry,                                ; FInterfaceItem.EventHandler
+                    #00,                                                        ; FInterfaceItem.SavedX
+                    #0A,                                                        ; FInterfaceItem.SavedY
+                    #05,                                                        ; FInterfaceItem.SavedWidth
+                    #02,                                                        ; FInterfaceItem.SavedHeight
+                    @Station.DrawItem28.Entry,                                  ; FInterfaceItem.DrawHandler
+                    #0000                                                       ; FInterfaceItem.Unknown0E
+                }
+Item29:         FInterfaceItem {
+                    #00,                                                        ; FInterfaceItem.X
+                    #00,                                                        ; FInterfaceItem.Y
+                    #00,                                                        ; FInterfaceItem.Width
+                    #00,                                                        ; FInterfaceItem.Height
+                    #71,                                                        ; FInterfaceItem.Flags
+                    #0B,                                                        ; FInterfaceItem.TextIndex
+                    @Station.HandleItem29.Entry,                                ; FInterfaceItem.EventHandler
+                    #00,                                                        ; FInterfaceItem.SavedX
+                    #0C,                                                        ; FInterfaceItem.SavedY
+                    #05,                                                        ; FInterfaceItem.SavedWidth
+                    #02,                                                        ; FInterfaceItem.SavedHeight
+                    @Station.DrawItem29.Entry,                                  ; FInterfaceItem.DrawHandler
+                    #0000                                                       ; FInterfaceItem.Unknown0E
+                }
+Item30:         FInterfaceItem {
+                    #00,                                                        ; FInterfaceItem.X
+                    #00,                                                        ; FInterfaceItem.Y
+                    #00,                                                        ; FInterfaceItem.Width
+                    #00,                                                        ; FInterfaceItem.Height
+                    #60,                                                        ; FInterfaceItem.Flags
+                    #16,                                                        ; FInterfaceItem.TextIndex
+                    @Station.HandleItem30.Entry,                                ; FInterfaceItem.EventHandler
+                    #00,                                                        ; FInterfaceItem.SavedX
+                    #0E,                                                        ; FInterfaceItem.SavedY
+                    #05,                                                        ; FInterfaceItem.SavedWidth
+                    #02,                                                        ; FInterfaceItem.SavedHeight
+                    @Station.DrawItem30.Entry,                                  ; FInterfaceItem.DrawHandler
+                    #0000                                                       ; FInterfaceItem.Unknown0E
+                }
+Item31:         FInterfaceItem {
+                    #00,                                                        ; FInterfaceItem.X
+                    #00,                                                        ; FInterfaceItem.Y
+                    #00,                                                        ; FInterfaceItem.Width
+                    #00,                                                        ; FInterfaceItem.Height
+                    #01,                                                        ; FInterfaceItem.Flags
+                    #04,                                                        ; FInterfaceItem.TextIndex
+                    @Station.HandleItem31.Entry,                                ; FInterfaceItem.EventHandler
+                    #06,                                                        ; FInterfaceItem.SavedX
+                    #0A,                                                        ; FInterfaceItem.SavedY
+                    #0B,                                                        ; FInterfaceItem.SavedWidth
+                    #04,                                                        ; FInterfaceItem.SavedHeight
+                    @Station.DrawItem31.Entry,                                  ; FInterfaceItem.DrawHandler
+                    #0000                                                       ; FInterfaceItem.Unknown0E
+                }
+Item32:         FInterfaceItem {
+                    #00,                                                        ; FInterfaceItem.X
+                    #00,                                                        ; FInterfaceItem.Y
+                    #00,                                                        ; FInterfaceItem.Width
+                    #00,                                                        ; FInterfaceItem.Height
+                    #01,                                                        ; FInterfaceItem.Flags
+                    #04,                                                        ; FInterfaceItem.TextIndex
+                    @Station.HandleItem32.Entry,                                ; FInterfaceItem.EventHandler
+                    #06,                                                        ; FInterfaceItem.SavedX
+                    #0F,                                                        ; FInterfaceItem.SavedY
+                    #11,                                                        ; FInterfaceItem.SavedWidth
+                    #08,                                                        ; FInterfaceItem.SavedHeight
+                    @Station.DrawItem32.Entry,                                  ; FInterfaceItem.DrawHandler
+                    #0000                                                       ; FInterfaceItem.Unknown0E
+                }
+Item33:         FInterfaceItem {
+                    #00,                                                        ; FInterfaceItem.X
+                    #00,                                                        ; FInterfaceItem.Y
+                    #00,                                                        ; FInterfaceItem.Width
+                    #00,                                                        ; FInterfaceItem.Height
+                    #60,                                                        ; FInterfaceItem.Flags
+                    #06,                                                        ; FInterfaceItem.TextIndex
+                    @Station.HandleItem33.Entry,                                ; FInterfaceItem.EventHandler
+                    #17,                                                        ; FInterfaceItem.SavedX
+                    #14,                                                        ; FInterfaceItem.SavedY
+                    #06,                                                        ; FInterfaceItem.SavedWidth
+                    #03,                                                        ; FInterfaceItem.SavedHeight
+                    @Station.DrawItem33.Entry,                                  ; FInterfaceItem.DrawHandler
+                    #0000                                                       ; FInterfaceItem.Unknown0E
+                }
+Item34:         FInterfaceItem {
+                    #00,                                                        ; FInterfaceItem.X
+                    #00,                                                        ; FInterfaceItem.Y
+                    #00,                                                        ; FInterfaceItem.Width
+                    #00,                                                        ; FInterfaceItem.Height
+                    #01,                                                        ; FInterfaceItem.Flags
+                    #05,                                                        ; FInterfaceItem.TextIndex
+                    @Station.HandleItem34.Entry,                                ; FInterfaceItem.EventHandler
+                    #00,                                                        ; FInterfaceItem.SavedX
+                    #00,                                                        ; FInterfaceItem.SavedY
+                    #19,                                                        ; FInterfaceItem.SavedWidth
+                    #13,                                                        ; FInterfaceItem.SavedHeight
+                    @Station.DrawItem34.Entry,                                  ; FInterfaceItem.DrawHandler
+                    #0000                                                       ; FInterfaceItem.Unknown0E
+                }
+Item35:         FInterfaceItem {
+                    #00,                                                        ; FInterfaceItem.X
+                    #00,                                                        ; FInterfaceItem.Y
+                    #00,                                                        ; FInterfaceItem.Width
+                    #00,                                                        ; FInterfaceItem.Height
+                    #60,                                                        ; FInterfaceItem.Flags
+                    #0D,                                                        ; FInterfaceItem.TextIndex
+                    @Station.HandleItem35.Entry,                                ; FInterfaceItem.EventHandler
+                    #19,                                                        ; FInterfaceItem.SavedX
+                    #00,                                                        ; FInterfaceItem.SavedY
+                    #05,                                                        ; FInterfaceItem.SavedWidth
+                    #03,                                                        ; FInterfaceItem.SavedHeight
+                    @Station.DrawItem35.Entry,                                  ; FInterfaceItem.DrawHandler
+                    #0000                                                       ; FInterfaceItem.Unknown0E
+                }
+Item36:         FInterfaceItem {
+                    #00,                                                        ; FInterfaceItem.X
+                    #00,                                                        ; FInterfaceItem.Y
+                    #00,                                                        ; FInterfaceItem.Width
+                    #00,                                                        ; FInterfaceItem.Height
+                    #70,                                                        ; FInterfaceItem.Flags
+                    #0A,                                                        ; FInterfaceItem.TextIndex
+                    @Station.HandleItem36.Entry,                                ; FInterfaceItem.EventHandler
+                    #1B,                                                        ; FInterfaceItem.SavedX
+                    #00,                                                        ; FInterfaceItem.SavedY
+                    #05,                                                        ; FInterfaceItem.SavedWidth
+                    #02,                                                        ; FInterfaceItem.SavedHeight
+                    @Station.DrawItem36.Entry,                                  ; FInterfaceItem.DrawHandler
+                    #0000                                                       ; FInterfaceItem.Unknown0E
+                }
+Item37:         FInterfaceItem {
+                    #00,                                                        ; FInterfaceItem.X
+                    #00,                                                        ; FInterfaceItem.Y
+                    #00,                                                        ; FInterfaceItem.Width
+                    #00,                                                        ; FInterfaceItem.Height
+                    #71,                                                        ; FInterfaceItem.Flags
+                    #0B,                                                        ; FInterfaceItem.TextIndex
+                    @Station.HandleItem37.Entry,                                ; FInterfaceItem.EventHandler
+                    #1B,                                                        ; FInterfaceItem.SavedX
+                    #02,                                                        ; FInterfaceItem.SavedY
+                    #05,                                                        ; FInterfaceItem.SavedWidth
+                    #02,                                                        ; FInterfaceItem.SavedHeight
+                    @Station.DrawItem37.Entry,                                  ; FInterfaceItem.DrawHandler
+                    #0000                                                       ; FInterfaceItem.Unknown0E
+                }
+Item38:         FInterfaceItem {
+                    #00,                                                        ; FInterfaceItem.X
+                    #00,                                                        ; FInterfaceItem.Y
+                    #00,                                                        ; FInterfaceItem.Width
+                    #00,                                                        ; FInterfaceItem.Height
+                    #01,                                                        ; FInterfaceItem.Flags
+                    #06,                                                        ; FInterfaceItem.TextIndex
+                    @Station.HandleItem38.Entry,                                ; FInterfaceItem.EventHandler
+                    #00,                                                        ; FInterfaceItem.SavedX
+                    #00,                                                        ; FInterfaceItem.SavedY
+                    #19,                                                        ; FInterfaceItem.SavedWidth
+                    #10,                                                        ; FInterfaceItem.SavedHeight
+                    @Station.DrawItem38.Entry,                                  ; FInterfaceItem.DrawHandler
+                    #0000                                                       ; FInterfaceItem.Unknown0E
+                }
+Item39:         FInterfaceItem {
+                    #00,                                                        ; FInterfaceItem.X
+                    #00,                                                        ; FInterfaceItem.Y
+                    #00,                                                        ; FInterfaceItem.Width
+                    #00,                                                        ; FInterfaceItem.Height
+                    #01,                                                        ; FInterfaceItem.Flags
+                    #0C,                                                        ; FInterfaceItem.TextIndex
+                    @Station.HandleItem39.Entry,                                ; FInterfaceItem.EventHandler
+                    #00,                                                        ; FInterfaceItem.SavedX
+                    #10,                                                        ; FInterfaceItem.SavedY
+                    #20,                                                        ; FInterfaceItem.SavedWidth
+                    #07,                                                        ; FInterfaceItem.SavedHeight
+                    @Station.DrawItem39.Entry,                                  ; FInterfaceItem.DrawHandler
+                    #0000                                                       ; FInterfaceItem.Unknown0E
+                }
+Item40:         FInterfaceItem {
+                    #00,                                                        ; FInterfaceItem.X
+                    #00,                                                        ; FInterfaceItem.Y
+                    #00,                                                        ; FInterfaceItem.Width
+                    #00,                                                        ; FInterfaceItem.Height
+                    #26,                                                        ; FInterfaceItem.Flags
+                    #00,                                                        ; FInterfaceItem.TextIndex
+                    @Station.HandleItem40.Entry,                                ; FInterfaceItem.EventHandler
+                    #08,                                                        ; FInterfaceItem.SavedX
+                    #02,                                                        ; FInterfaceItem.SavedY
+                    #09,                                                        ; FInterfaceItem.SavedWidth
+                    #09,                                                        ; FInterfaceItem.SavedHeight
+                    @Station.DrawItem40.Entry,                                  ; FInterfaceItem.DrawHandler
+                    #0000                                                       ; FInterfaceItem.Unknown0E
+                }
+Item41:         FInterfaceItem {
+                    #00,                                                        ; FInterfaceItem.X
+                    #00,                                                        ; FInterfaceItem.Y
+                    #00,                                                        ; FInterfaceItem.Width
+                    #00,                                                        ; FInterfaceItem.Height
+                    #01,                                                        ; FInterfaceItem.Flags
+                    #0A,                                                        ; FInterfaceItem.TextIndex
+                    @Station.HandleItem41.Entry,                                ; FInterfaceItem.EventHandler
+                    #05,                                                        ; FInterfaceItem.SavedX
+                    #02,                                                        ; FInterfaceItem.SavedY
+                    #0B,                                                        ; FInterfaceItem.SavedWidth
+                    #0C,                                                        ; FInterfaceItem.SavedHeight
+                    @Station.DrawItem41.Entry,                                  ; FInterfaceItem.DrawHandler
+                    #0000                                                       ; FInterfaceItem.Unknown0E
+                }
+Item42:         FInterfaceItem {
+                    #00,                                                        ; FInterfaceItem.X
+                    #00,                                                        ; FInterfaceItem.Y
+                    #00,                                                        ; FInterfaceItem.Width
+                    #00,                                                        ; FInterfaceItem.Height
+                    #01,                                                        ; FInterfaceItem.Flags
+                    #0B,                                                        ; FInterfaceItem.TextIndex
+                    @Station.HandleItem42.Entry,                                ; FInterfaceItem.EventHandler
+                    #05,                                                        ; FInterfaceItem.SavedX
+                    #02,                                                        ; FInterfaceItem.SavedY
+                    #11,                                                        ; FInterfaceItem.SavedWidth
+                    #0C,                                                        ; FInterfaceItem.SavedHeight
+                    @Station.DrawItem42.Entry,                                  ; FInterfaceItem.DrawHandler
+                    #0000                                                       ; FInterfaceItem.Unknown0E
+                }
+Item43:         FInterfaceItem {
+                    #00,                                                        ; FInterfaceItem.X
+                    #00,                                                        ; FInterfaceItem.Y
+                    #00,                                                        ; FInterfaceItem.Width
+                    #00,                                                        ; FInterfaceItem.Height
+                    #26,                                                        ; FInterfaceItem.Flags
+                    #00,                                                        ; FInterfaceItem.TextIndex
+                    @Station.HandleItem43.Entry,                                ; FInterfaceItem.EventHandler
+                    #05,                                                        ; FInterfaceItem.SavedX
+                    #07,                                                        ; FInterfaceItem.SavedY
+                    #07,                                                        ; FInterfaceItem.SavedWidth
+                    #06,                                                        ; FInterfaceItem.SavedHeight
+                    @Station.DrawItem43.Entry,                                  ; FInterfaceItem.DrawHandler
+                    #0000                                                       ; FInterfaceItem.Unknown0E
+                }
+Item44:         FInterfaceItem {
+                    #00,                                                        ; FInterfaceItem.X
+                    #00,                                                        ; FInterfaceItem.Y
+                    #00,                                                        ; FInterfaceItem.Width
+                    #00,                                                        ; FInterfaceItem.Height
+                    #26,                                                        ; FInterfaceItem.Flags
+                    #00,                                                        ; FInterfaceItem.TextIndex
+                    @Station.HandleItem44.Entry,                                ; FInterfaceItem.EventHandler
+                    #10,                                                        ; FInterfaceItem.SavedX
+                    #07,                                                        ; FInterfaceItem.SavedY
+                    #07,                                                        ; FInterfaceItem.SavedWidth
+                    #06,                                                        ; FInterfaceItem.SavedHeight
+                    @Station.DrawItem44.Entry,                                  ; FInterfaceItem.DrawHandler
+                    #0000                                                       ; FInterfaceItem.Unknown0E
+                }
+Item45:         FInterfaceItem {
+                    #00,                                                        ; FInterfaceItem.X
+                    #00,                                                        ; FInterfaceItem.Y
+                    #00,                                                        ; FInterfaceItem.Width
+                    #00,                                                        ; FInterfaceItem.Height
+                    #03,                                                        ; FInterfaceItem.Flags
+                    #15,                                                        ; FInterfaceItem.TextIndex
+                    @Station.HandleItem45.Entry,                                ; FInterfaceItem.EventHandler
+                    #06,                                                        ; FInterfaceItem.SavedX
+                    #06,                                                        ; FInterfaceItem.SavedY
+                    #14,                                                        ; FInterfaceItem.SavedWidth
+                    #07,                                                        ; FInterfaceItem.SavedHeight
+                    @Station.DrawItem45.Entry,                                  ; FInterfaceItem.DrawHandler
+                    #0000                                                       ; FInterfaceItem.Unknown0E
+                }
+End:            DB #80                                                          ; ограничитель таблицы элементов
+                endmodule

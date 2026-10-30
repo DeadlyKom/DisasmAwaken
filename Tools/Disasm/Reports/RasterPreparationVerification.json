@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "edge_coordinate_cases": 131072,
+  "reset_mask_cases": 256,
+  "seek_cases": 72704,
+  "method": "original_raster_edge_addresses_masks_and_bounded_row_seek_all_counts_rows_and_coordinate_bytes",
+  "seek_restores_AF": true,
+  "seek_returns_C_equal_input_A": true,
+  "upper_inclusive_lower_exclusive": true,
+  "original_zero_OR_seek_cases": 65536,
+  "synthetic_nonzero_OR_seek_cases": 7168,
+  "game_writer_of_OR_operands_established": false,
+  "calls_stubbed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "method": "original_four_byte_membership_and_high_bit_code",
+  "cases": {
+    "0xc558": 327680,
+    "0xc5b2": 327680,
+    "0xc55e": 327680,
+    "0xc577_0x988e": 65536,
+    "0xc5bb_0x98f6": 65536,
+    "0xc57a_0xa200": 65536,
+    "0xc57a_0xffff": 65536
+  },
+  "table_selector_alias_tested": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

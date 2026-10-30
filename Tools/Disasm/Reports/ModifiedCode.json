@@ -1,0 +1,7112 @@
+[
+  {
+    "region": "Intro",
+    "writer": 26288,
+    "target": 26348,
+    "target_instruction": 26347,
+    "size": 1,
+    "target_operation": "LD BC,#8000",
+    "path": "Source/Intro/DrawScrolledTexture.asm"
+  },
+  {
+    "region": "Intro",
+    "writer": 26299,
+    "target": 26349,
+    "target_instruction": 26347,
+    "size": 1,
+    "target_operation": "LD BC,#8000",
+    "path": "Source/Intro/DrawScrolledTexture.asm"
+  },
+  {
+    "region": "Intro",
+    "writer": 26308,
+    "target": 26324,
+    "target_instruction": 26323,
+    "size": 1,
+    "target_operation": "LD HL,#CD40",
+    "path": "Source/Intro/DrawScrolledTexture.asm"
+  },
+  {
+    "region": "Intro",
+    "writer": 26317,
+    "target": 26325,
+    "target_instruction": 26323,
+    "size": 1,
+    "target_operation": "LD HL,#CD40",
+    "path": "Source/Intro/DrawScrolledTexture.asm"
+  },
+  {
+    "region": "Intro",
+    "writer": 26338,
+    "target": 26360,
+    "target_instruction": 26359,
+    "size": 2,
+    "target_operation": "LD SP,#3131",
+    "path": "Source/Intro/SampleTextureRows.asm"
+  },
+  {
+    "region": "Intro",
+    "writer": 26467,
+    "target": 26502,
+    "target_instruction": 26501,
+    "size": 2,
+    "target_operation": "LD HL,#2121",
+    "path": "Source/Intro/BuildTextureLookup.asm"
+  },
+  {
+    "region": "Intro",
+    "writer": 26470,
+    "target": 26510,
+    "target_instruction": 26509,
+    "size": 1,
+    "target_operation": "LD IYL,A",
+    "path": "Source/Intro/BuildTextureLookup.asm"
+  },
+  {
+    "region": "Intro",
+    "writer": 26479,
+    "target": 26515,
+    "target_instruction": 26514,
+    "size": 2,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/Intro/BuildTextureLookup.asm"
+  },
+  {
+    "region": "Intro",
+    "writer": 26485,
+    "target": 26526,
+    "target_instruction": 26525,
+    "size": 2,
+    "target_operation": "LD HL,#4000",
+    "path": "Source/Intro/BuildTextureLookup.asm"
+  },
+  {
+    "region": "Intro",
+    "writer": 26506,
+    "target": 26502,
+    "target_instruction": 26501,
+    "size": 2,
+    "target_operation": "LD HL,#2121",
+    "path": "Source/Intro/BuildTextureLookup.asm"
+  },
+  {
+    "region": "Intro",
+    "writer": 26521,
+    "target": 26515,
+    "target_instruction": 26514,
+    "size": 2,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/Intro/BuildTextureLookup.asm"
+  },
+  {
+    "region": "Intro",
+    "writer": 26529,
+    "target": 26526,
+    "target_instruction": 26525,
+    "size": 2,
+    "target_operation": "LD HL,#4000",
+    "path": "Source/Intro/BuildTextureLookup.asm"
+  },
+  {
+    "region": "Intro",
+    "writer": 26613,
+    "target": 26610,
+    "target_instruction": 26609,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Intro/PresentInterlacedFrame.asm"
+  },
+  {
+    "region": "Intro",
+    "writer": 26623,
+    "target": 26681,
+    "target_instruction": 26681,
+    "size": 2,
+    "target_operation": "NOP",
+    "path": "Source/Intro/PresentInterlacedFrame.asm"
+  },
+  {
+    "region": "Intro",
+    "writer": 26663,
+    "target": 26673,
+    "target_instruction": 26672,
+    "size": 2,
+    "target_operation": "LD SP,#3131",
+    "path": "Source/Intro/ScatterTextureToScreen.asm"
+  },
+  {
+    "region": "Intro",
+    "writer": 26666,
+    "target": 26785,
+    "target_instruction": 26784,
+    "size": 2,
+    "target_operation": "LD SP,#3131",
+    "path": "Source/Intro/ScatterTextureToScreen.asm"
+  },
+  {
+    "region": "Intro",
+    "writer": 26677,
+    "target": 26673,
+    "target_instruction": 26672,
+    "size": 2,
+    "target_operation": "LD SP,#3131",
+    "path": "Source/Intro/ScatterTextureToScreen.asm"
+  },
+  {
+    "region": "Intro",
+    "writer": 26788,
+    "target": 26922,
+    "target_instruction": 26921,
+    "size": 2,
+    "target_operation": "LD SP,#3131",
+    "path": "Source/Intro/RunAttributeWriter.asm"
+  },
+  {
+    "region": "Intro",
+    "writer": 27180,
+    "target": 27207,
+    "target_instruction": 27206,
+    "size": 2,
+    "target_operation": "LD SP,#3131",
+    "path": "Source/Intro/AdvanceParameters.asm"
+  },
+  {
+    "region": "Intro",
+    "writer": 27211,
+    "target": 27230,
+    "target_instruction": 27229,
+    "size": 2,
+    "target_operation": "CALL #CDCD",
+    "path": "Source/Intro/RunTimedEffect.asm"
+  },
+  {
+    "region": "Intro",
+    "writer": 27410,
+    "target": 26622,
+    "target_instruction": 26621,
+    "size": 1,
+    "target_operation": "LD H,#14",
+    "path": "Source/Intro/InitializeColumnEffect.asm"
+  },
+  {
+    "region": "Intro",
+    "writer": 27572,
+    "target": 27581,
+    "target_instruction": 27580,
+    "size": 2,
+    "target_operation": "LD SP,#3131",
+    "path": "Source/Intro/RenderLookupTexture.asm"
+  },
+  {
+    "region": "Intro",
+    "writer": 27619,
+    "target": 27635,
+    "target_instruction": 27634,
+    "size": 2,
+    "target_operation": "LD SP,#3131",
+    "path": "Source/Intro/RunTextureSampler.asm"
+  },
+  {
+    "region": "Intro",
+    "writer": 27644,
+    "target": 27554,
+    "target_instruction": 27553,
+    "size": 1,
+    "target_operation": "LD HL,#9400",
+    "path": "Source/Intro/AdvanceTexturePhases.asm"
+  },
+  {
+    "region": "Intro",
+    "writer": 27653,
+    "target": 27558,
+    "target_instruction": 27557,
+    "size": 1,
+    "target_operation": "LD BC,#9500",
+    "path": "Source/Intro/AdvanceTexturePhases.asm"
+  },
+  {
+    "region": "Intro",
+    "writer": 27662,
+    "target": 27561,
+    "target_instruction": 27560,
+    "size": 1,
+    "target_operation": "LD HL,#9600",
+    "path": "Source/Intro/AdvanceTexturePhases.asm"
+  },
+  {
+    "region": "Intro",
+    "writer": 27671,
+    "target": 27666,
+    "target_instruction": 27665,
+    "size": 2,
+    "target_operation": "LD HL,#6400",
+    "path": "Source/Intro/AdvanceTexturePhases.asm"
+  },
+  {
+    "region": "Intro",
+    "writer": 27677,
+    "target": 27564,
+    "target_instruction": 27563,
+    "size": 1,
+    "target_operation": "LD DE,#9700",
+    "path": "Source/Intro/AdvanceTexturePhases.asm"
+  },
+  {
+    "region": "Intro",
+    "writer": 27687,
+    "target": 27682,
+    "target_instruction": 27681,
+    "size": 1,
+    "target_operation": "LD A,#A1",
+    "path": "Source/Intro/AdvanceTextureScale.asm"
+  },
+  {
+    "region": "Intro",
+    "writer": 27701,
+    "target": 27694,
+    "target_instruction": 27693,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Intro/AdvanceTextureScale.asm"
+  },
+  {
+    "region": "Intro",
+    "writer": 27718,
+    "target": 27711,
+    "target_instruction": 27710,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Intro/AdvanceTextureScale.asm"
+  },
+  {
+    "region": "Intro",
+    "writer": 27742,
+    "target": 27570,
+    "target_instruction": 27569,
+    "size": 2,
+    "target_operation": "LD HL,#2121",
+    "path": "Source/Intro/SelectTexturePointerRow.asm"
+  },
+  {
+    "region": "Intro",
+    "writer": 27971,
+    "target": 27968,
+    "target_instruction": 27967,
+    "size": 1,
+    "target_operation": "LD A,#80",
+    "path": "Source/Intro/InitializeLookupEffect.asm"
+  },
+  {
+    "region": "Intro",
+    "writer": 28089,
+    "target": 27610,
+    "target_instruction": 27610,
+    "size": 1,
+    "target_operation": "CALL #6BE3",
+    "path": "Source/Intro/BuildMirroredTexture.asm"
+  },
+  {
+    "region": "Intro",
+    "writer": 28098,
+    "target": 27554,
+    "target_instruction": 27553,
+    "size": 1,
+    "target_operation": "LD HL,#9400",
+    "path": "Source/Intro/BuildMirroredTexture.asm"
+  },
+  {
+    "region": "Intro",
+    "writer": 28101,
+    "target": 27558,
+    "target_instruction": 27557,
+    "size": 1,
+    "target_operation": "LD BC,#9500",
+    "path": "Source/Intro/BuildMirroredTexture.asm"
+  },
+  {
+    "region": "Intro",
+    "writer": 28104,
+    "target": 27561,
+    "target_instruction": 27560,
+    "size": 1,
+    "target_operation": "LD HL,#9600",
+    "path": "Source/Intro/BuildMirroredTexture.asm"
+  },
+  {
+    "region": "Intro",
+    "writer": 28107,
+    "target": 27564,
+    "target_instruction": 27563,
+    "size": 1,
+    "target_operation": "LD DE,#9700",
+    "path": "Source/Intro/BuildMirroredTexture.asm"
+  },
+  {
+    "region": "StationBoot",
+    "writer": 16870,
+    "target": 25351,
+    "target_instruction": 25350,
+    "size": 2,
+    "target_operation": "LD BC,#02FF",
+    "path": "Source/StationBoot/StartStation.asm"
+  },
+  {
+    "region": "StationBoot",
+    "writer": 17036,
+    "target": 25348,
+    "target_instruction": 25347,
+    "size": 2,
+    "target_operation": "LD DE,#5801",
+    "path": "Source/StationBoot/StartStation.asm"
+  },
+  {
+    "region": "StationBoot",
+    "writer": 17068,
+    "target": 25353,
+    "target_instruction": 25353,
+    "size": 2,
+    "target_operation": "LD (HL),L",
+    "path": "Source/StationBoot/StartStation.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 25547,
+    "target": 39702,
+    "target_instruction": 39701,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/SuspendPointer.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 25568,
+    "target": 39702,
+    "target_instruction": 39701,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/ResumePointer.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 25575,
+    "target": 39702,
+    "target_instruction": 39701,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/ResumePointer.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 25701,
+    "target": 25779,
+    "target_instruction": 25778,
+    "size": 2,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/Station/DrawPointer.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 25739,
+    "target": 39565,
+    "target_instruction": 39563,
+    "size": 2,
+    "target_operation": "LD IX,#0000",
+    "path": "Source/Station/DrawPointer.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 25743,
+    "target": 39568,
+    "target_instruction": 39567,
+    "size": 2,
+    "target_operation": "CALL #9A58",
+    "path": "Source/Station/DrawPointer.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 25750,
+    "target": 25779,
+    "target_instruction": 25778,
+    "size": 2,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/Station/DrawPointer.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 25794,
+    "target": 25936,
+    "target_instruction": 25935,
+    "size": 2,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/Station/DrawPointer.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 25818,
+    "target": 25857,
+    "target_instruction": 25856,
+    "size": 1,
+    "target_operation": "LD B,#08",
+    "path": "Source/Station/DrawPointer.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 25853,
+    "target": 25928,
+    "target_instruction": 25927,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/DrawPointer.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 25932,
+    "target": 25928,
+    "target_instruction": 25927,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/RestorePointer.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 26007,
+    "target": 26065,
+    "target_instruction": 26063,
+    "size": 1,
+    "target_operation": "RL (IX+#05)",
+    "path": "Source/Station/ConfigureMouseButtons.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 26012,
+    "target": 26060,
+    "target_instruction": 26058,
+    "size": 1,
+    "target_operation": "RL (IX+#00)",
+    "path": "Source/Station/ConfigureMouseButtons.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 26018,
+    "target": 26055,
+    "target_instruction": 26055,
+    "size": 2,
+    "target_operation": "JR #658E",
+    "path": "Source/Station/ConfigureMouseButtons.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 26499,
+    "target": 39561,
+    "target_instruction": 39560,
+    "size": 2,
+    "target_operation": "CALL #9A58",
+    "path": "Source/Station/Unknown6780.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 26588,
+    "target": 26583,
+    "target_instruction": 26582,
+    "size": 1,
+    "target_operation": "LD A,#FF",
+    "path": "Source/Station/Unknown67D0.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 26599,
+    "target": 48422,
+    "target_instruction": 48421,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/DrawItem25.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 26604,
+    "target": 26583,
+    "target_instruction": 26582,
+    "size": 1,
+    "target_operation": "LD A,#FF",
+    "path": "Source/Station/DrawItem25.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 26609,
+    "target": 48499,
+    "target_instruction": 48498,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/DrawItem25.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 26675,
+    "target": 26578,
+    "target_instruction": 26576,
+    "size": 1,
+    "target_operation": "LD DE,#1E1B",
+    "path": "Source/Station/DrawItem25.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 26769,
+    "target": 39561,
+    "target_instruction": 39560,
+    "size": 2,
+    "target_operation": "CALL #9A58",
+    "path": "Source/Station/DrawItem26.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 27066,
+    "target": 48422,
+    "target_instruction": 48421,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/Unknown69B8.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 27223,
+    "target": 27218,
+    "target_instruction": 27217,
+    "size": 1,
+    "target_operation": "LD A,#FF",
+    "path": "Source/Station/Unknown6A4B.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 27235,
+    "target": 27218,
+    "target_instruction": 27217,
+    "size": 1,
+    "target_operation": "LD A,#FF",
+    "path": "Source/Station/DrawItem22.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 27258,
+    "target": 27213,
+    "target_instruction": 27211,
+    "size": 1,
+    "target_operation": "LD DE,#1E0B",
+    "path": "Source/Station/DrawItem22.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 27263,
+    "target": 48422,
+    "target_instruction": 48421,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/Unknown6A7E.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 27336,
+    "target": 48422,
+    "target_instruction": 48421,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/Unknown6AC6.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 27347,
+    "target": 27360,
+    "target_instruction": 27359,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Station/Unknown6AC6.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 27546,
+    "target": 27541,
+    "target_instruction": 27540,
+    "size": 1,
+    "target_operation": "LD A,#FF",
+    "path": "Source/Station/Unknown6B8E.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 27565,
+    "target": 27541,
+    "target_instruction": 27540,
+    "size": 1,
+    "target_operation": "LD A,#FF",
+    "path": "Source/Station/DrawItem41.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 27578,
+    "target": 27536,
+    "target_instruction": 27534,
+    "size": 1,
+    "target_operation": "LD DE,#1E0B",
+    "path": "Source/Station/DrawItem41.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 27649,
+    "target": 48422,
+    "target_instruction": 48421,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/Unknown6C00.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 27654,
+    "target": 48499,
+    "target_instruction": 48498,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/Unknown6C00.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 28065,
+    "target": 28021,
+    "target_instruction": 28020,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/DrawMapPanelContents.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 28068,
+    "target": 28048,
+    "target_instruction": 28047,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/DrawMapPanelContents.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 28086,
+    "target": 28027,
+    "target_instruction": 28026,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/DrawMapPanel.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 28089,
+    "target": 28021,
+    "target_instruction": 28020,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/DrawMapPanel.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 28092,
+    "target": 28048,
+    "target_instruction": 28047,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/DrawMapPanel.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 28124,
+    "target": 48422,
+    "target_instruction": 48421,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/DrawItem24.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 28505,
+    "target": 28500,
+    "target_instruction": 28499,
+    "size": 1,
+    "target_operation": "LD A,#FF",
+    "path": "Source/Station/UpdateMissionRowHover.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 28621,
+    "target": 28500,
+    "target_instruction": 28499,
+    "size": 1,
+    "target_operation": "LD A,#FF",
+    "path": "Source/Station/DrawItem31.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 28625,
+    "target": 48422,
+    "target_instruction": 48421,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/DrawItem31.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 28781,
+    "target": 28776,
+    "target_instruction": 28775,
+    "size": 1,
+    "target_operation": "LD A,#FF",
+    "path": "Source/Station/Unknown7044.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 28796,
+    "target": 28776,
+    "target_instruction": 28775,
+    "size": 1,
+    "target_operation": "LD A,#FF",
+    "path": "Source/Station/DrawItem34.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 28818,
+    "target": 28771,
+    "target_instruction": 28769,
+    "size": 1,
+    "target_operation": "LD DE,#1E23",
+    "path": "Source/Station/DrawItem34.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 29013,
+    "target": 48422,
+    "target_instruction": 48421,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/Unknown7154.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 29018,
+    "target": 48499,
+    "target_instruction": 48498,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/Unknown7154.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 29023,
+    "target": 48510,
+    "target_instruction": 48509,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/Unknown7154.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 29028,
+    "target": 48521,
+    "target_instruction": 48520,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/Unknown7154.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 29033,
+    "target": 48532,
+    "target_instruction": 48531,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/Unknown7154.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 29038,
+    "target": 48543,
+    "target_instruction": 48542,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/Unknown7154.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 29212,
+    "target": 29207,
+    "target_instruction": 29206,
+    "size": 1,
+    "target_operation": "LD A,#FF",
+    "path": "Source/Station/Unknown7210.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 29231,
+    "target": 29207,
+    "target_instruction": 29206,
+    "size": 1,
+    "target_operation": "LD A,#FF",
+    "path": "Source/Station/DrawItem38.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 29256,
+    "target": 29202,
+    "target_instruction": 29200,
+    "size": 1,
+    "target_operation": "LD DE,#1E1B",
+    "path": "Source/Station/DrawItem38.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 29324,
+    "target": 29446,
+    "target_instruction": 29445,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/Unknown724C.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 29504,
+    "target": 48422,
+    "target_instruction": 48421,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/Unknown733F.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 29509,
+    "target": 48499,
+    "target_instruction": 48498,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/Unknown733F.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 29514,
+    "target": 48510,
+    "target_instruction": 48509,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/Unknown733F.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 29519,
+    "target": 48521,
+    "target_instruction": 48520,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/Unknown733F.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 29524,
+    "target": 48532,
+    "target_instruction": 48531,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/Unknown733F.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 29531,
+    "target": 29405,
+    "target_instruction": 29404,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/Unknown733F.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 29838,
+    "target": 29833,
+    "target_instruction": 29832,
+    "size": 1,
+    "target_operation": "LD A,#FF",
+    "path": "Source/Station/Unknown7482.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 29850,
+    "target": 29833,
+    "target_instruction": 29832,
+    "size": 1,
+    "target_operation": "LD A,#FF",
+    "path": "Source/Station/DrawItem43.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 29854,
+    "target": 48422,
+    "target_instruction": 48421,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/DrawItem43.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 29975,
+    "target": 29970,
+    "target_instruction": 29969,
+    "size": 1,
+    "target_operation": "LD A,#FF",
+    "path": "Source/Station/Unknown750B.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 29987,
+    "target": 29970,
+    "target_instruction": 29969,
+    "size": 1,
+    "target_operation": "LD A,#FF",
+    "path": "Source/Station/DrawItem44.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 29991,
+    "target": 48422,
+    "target_instruction": 48421,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/DrawItem44.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 30079,
+    "target": 30074,
+    "target_instruction": 30073,
+    "size": 1,
+    "target_operation": "LD A,#FF",
+    "path": "Source/Station/HoverContextMenu.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 30091,
+    "target": 30074,
+    "target_instruction": 30073,
+    "size": 1,
+    "target_operation": "LD A,#FF",
+    "path": "Source/Station/DrawItem40.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 30096,
+    "target": 48422,
+    "target_instruction": 48421,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/DrawItem40.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 30252,
+    "target": 30247,
+    "target_instruction": 30246,
+    "size": 1,
+    "target_operation": "LD A,#FF",
+    "path": "Source/Station/Unknown7620.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 30271,
+    "target": 30247,
+    "target_instruction": 30246,
+    "size": 1,
+    "target_operation": "LD A,#FF",
+    "path": "Source/Station/DrawItem42.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 30284,
+    "target": 30242,
+    "target_instruction": 30240,
+    "size": 1,
+    "target_operation": "LD DE,#1E0B",
+    "path": "Source/Station/DrawItem42.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 30317,
+    "target": 48422,
+    "target_instruction": 48421,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/Unknown766C.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 30322,
+    "target": 48499,
+    "target_instruction": 48498,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/Unknown766C.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 30358,
+    "target": 48422,
+    "target_instruction": 48421,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/DrawSystemInfoPanel.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 30886,
+    "target": 39561,
+    "target_instruction": 39560,
+    "size": 2,
+    "target_operation": "CALL #9A58",
+    "path": "Source/Station/DrawVariantPanel.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 31069,
+    "target": 48422,
+    "target_instruction": 48421,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/DrawItem45.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 31249,
+    "target": 40568,
+    "target_instruction": 40567,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/Unknown79C7.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 31310,
+    "target": 31197,
+    "target_instruction": 31196,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/Unknown7A24.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 31353,
+    "target": 31197,
+    "target_instruction": 31196,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/Unknown7A64.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 31913,
+    "target": 31897,
+    "target_instruction": 31896,
+    "size": 2,
+    "target_operation": "LD HL,#990A",
+    "path": "Source/Station/CycleStoredMapPoint.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 31963,
+    "target": 31948,
+    "target_instruction": 31947,
+    "size": 2,
+    "target_operation": "LD HL,#99A3",
+    "path": "Source/Station/Unknown7CC6.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 32115,
+    "target": 28776,
+    "target_instruction": 28775,
+    "size": 1,
+    "target_operation": "LD A,#FF",
+    "path": "Source/Station/Unknown7D63.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 32198,
+    "target": 27340,
+    "target_instruction": 27339,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/Unknown7DC5.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 32297,
+    "target": 26583,
+    "target_instruction": 26582,
+    "size": 1,
+    "target_operation": "LD A,#FF",
+    "path": "Source/Station/Unknown7E1F.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 32301,
+    "target": 31197,
+    "target_instruction": 31196,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/Unknown7E1F.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 32570,
+    "target": 48422,
+    "target_instruction": 48421,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/DrawItem00.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 39514,
+    "target": 39607,
+    "target_instruction": 39606,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/MainLoop.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 39517,
+    "target": 39577,
+    "target_instruction": 39576,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/MainLoop.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 39522,
+    "target": 43433,
+    "target_instruction": 43432,
+    "size": 1,
+    "target_operation": "AND #80",
+    "path": "Source/Station/MainLoop.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 39529,
+    "target": 43433,
+    "target_instruction": 43432,
+    "size": 1,
+    "target_operation": "AND #80",
+    "path": "Source/Station/MainLoop.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 39573,
+    "target": 39568,
+    "target_instruction": 39567,
+    "size": 2,
+    "target_operation": "CALL #9A58",
+    "path": "Source/Station/MainLoop.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 39582,
+    "target": 39577,
+    "target_instruction": 39576,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/MainLoop.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 39585,
+    "target": 39554,
+    "target_instruction": 39553,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/MainLoop.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 39612,
+    "target": 39607,
+    "target_instruction": 39606,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/MainLoop.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 39634,
+    "target": 39632,
+    "target_instruction": 39631,
+    "size": 1,
+    "target_operation": "LD D,#00",
+    "path": "Source/Station/MainLoop.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 39659,
+    "target": 39949,
+    "target_instruction": 39948,
+    "size": 2,
+    "target_operation": "LD SP,#0000",
+    "path": "Source/Station/Interrupt.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 39721,
+    "target": 39778,
+    "target_instruction": 39777,
+    "size": 1,
+    "target_operation": "CP #00",
+    "path": "Source/Station/Interrupt.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 39735,
+    "target": 39794,
+    "target_instruction": 39793,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/Interrupt.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 39779,
+    "target": 39778,
+    "target_instruction": 39777,
+    "size": 1,
+    "target_operation": "CP #00",
+    "path": "Source/Station/Interrupt.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 39808,
+    "target": 39806,
+    "target_instruction": 39805,
+    "size": 1,
+    "target_operation": "LD A,#32",
+    "path": "Source/Station/Interrupt.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 39815,
+    "target": 39806,
+    "target_instruction": 39805,
+    "size": 1,
+    "target_operation": "LD A,#32",
+    "path": "Source/Station/Interrupt.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 39832,
+    "target": 39577,
+    "target_instruction": 39576,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/Interrupt.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 39873,
+    "target": 39949,
+    "target_instruction": 39948,
+    "size": 2,
+    "target_operation": "LD SP,#0000",
+    "path": "Source/Station/Interrupt.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 39876,
+    "target": 39953,
+    "target_instruction": 39952,
+    "size": 2,
+    "target_operation": "JP #0000",
+    "path": "Source/Station/Interrupt.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 40081,
+    "target": 40264,
+    "target_instruction": 40263,
+    "size": 1,
+    "target_operation": "LD C,#00",
+    "path": "Source/Station/RebuildInterface.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 40086,
+    "target": 39554,
+    "target_instruction": 39553,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/RebuildInterface.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 40385,
+    "target": 40497,
+    "target_instruction": 40496,
+    "size": 2,
+    "target_operation": "LD HL,#FFF0",
+    "path": "Source/Station/DispatchInterfaceEvent.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 40412,
+    "target": 40497,
+    "target_instruction": 40496,
+    "size": 2,
+    "target_operation": "LD HL,#FFF0",
+    "path": "Source/Station/DispatchInterfaceEvent.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 40440,
+    "target": 51744,
+    "target_instruction": 51743,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/DispatchInterfaceEvent.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 40467,
+    "target": 40106,
+    "target_instruction": 40105,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/DispatchInterfaceEvent.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 40470,
+    "target": 39554,
+    "target_instruction": 39553,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/DispatchInterfaceEvent.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 40583,
+    "target": 40568,
+    "target_instruction": 40567,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/CloseActiveItem.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 40592,
+    "target": 40587,
+    "target_instruction": 40586,
+    "size": 2,
+    "target_operation": "CALL #9A58",
+    "path": "Source/Station/CloseActiveItem.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 41112,
+    "target": 41123,
+    "target_instruction": 41122,
+    "size": 1,
+    "target_operation": "LD A,#FF",
+    "path": "Source/Station/FillWindowBody.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 41115,
+    "target": 41153,
+    "target_instruction": 41152,
+    "size": 2,
+    "target_operation": "LD SP,#0000",
+    "path": "Source/Station/FillWindowBody.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 41859,
+    "target": 41879,
+    "target_instruction": 41878,
+    "size": 1,
+    "target_operation": "LD A,#0A",
+    "path": "Source/Station/SkipCrRecords.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 41868,
+    "target": 41879,
+    "target_instruction": 41878,
+    "size": 1,
+    "target_operation": "LD A,#0A",
+    "path": "Source/Station/SkipCrRecords.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 41986,
+    "target": 42039,
+    "target_instruction": 42038,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/SaveTextWindow.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 41992,
+    "target": 42044,
+    "target_instruction": 42043,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/SaveTextWindow.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 41998,
+    "target": 42049,
+    "target_instruction": 42048,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/SaveTextWindow.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 42004,
+    "target": 42054,
+    "target_instruction": 42053,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/SaveTextWindow.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 42010,
+    "target": 42059,
+    "target_instruction": 42058,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/SaveTextWindow.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 42016,
+    "target": 42064,
+    "target_instruction": 42063,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/SaveTextWindow.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 42022,
+    "target": 42074,
+    "target_instruction": 42073,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/SaveTextWindow.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 42028,
+    "target": 42079,
+    "target_instruction": 42078,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/SaveTextWindow.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 42034,
+    "target": 42069,
+    "target_instruction": 42068,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/SaveTextWindow.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 42040,
+    "target": 44731,
+    "target_instruction": 44730,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/RestoreTextWindow.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 42045,
+    "target": 44743,
+    "target_instruction": 44742,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/RestoreTextWindow.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 42050,
+    "target": 44735,
+    "target_instruction": 44734,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/RestoreTextWindow.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 42055,
+    "target": 44747,
+    "target_instruction": 44746,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/RestoreTextWindow.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 42060,
+    "target": 44723,
+    "target_instruction": 44722,
+    "size": 1,
+    "target_operation": "CP #00",
+    "path": "Source/Station/RestoreTextWindow.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 42065,
+    "target": 44715,
+    "target_instruction": 44714,
+    "size": 1,
+    "target_operation": "CP #00",
+    "path": "Source/Station/RestoreTextWindow.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 42070,
+    "target": 48422,
+    "target_instruction": 48421,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/RestoreTextWindow.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 42148,
+    "target": 39702,
+    "target_instruction": 39701,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/BeginScreenUpdate.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 42739,
+    "target": 48422,
+    "target_instruction": 48421,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/DrawItem01.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 42867,
+    "target": 39561,
+    "target_instruction": 39560,
+    "size": 2,
+    "target_operation": "CALL #9A58",
+    "path": "Source/Station/HideAllItems.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 42872,
+    "target": 40106,
+    "target_instruction": 40105,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/HideAllItems.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 42884,
+    "target": 39561,
+    "target_instruction": 39560,
+    "size": 2,
+    "target_operation": "CALL #9A58",
+    "path": "Source/Station/CloseAllItems.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 43301,
+    "target": 43417,
+    "target_instruction": 43416,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/GenerateMarket.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 43305,
+    "target": 43367,
+    "target_instruction": 43366,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/GenerateMarket.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 44349,
+    "target": 44757,
+    "target_instruction": 44757,
+    "size": 1,
+    "target_operation": "LD L,B",
+    "path": "Source/Station/SkipJustifyRow.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 44355,
+    "target": 44758,
+    "target_instruction": 44758,
+    "size": 2,
+    "target_operation": "LD C,B",
+    "path": "Source/Station/SkipJustifyRow.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 44362,
+    "target": 44366,
+    "target_instruction": 44365,
+    "size": 1,
+    "target_operation": "LD C,#00",
+    "path": "Source/Station/SkipJustifyRow.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 44444,
+    "target": 44757,
+    "target_instruction": 44757,
+    "size": 1,
+    "target_operation": "LD L,B",
+    "path": "Source/Station/SkipJustifyRow.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 44450,
+    "target": 44758,
+    "target_instruction": 44758,
+    "size": 2,
+    "target_operation": "LD C,B",
+    "path": "Source/Station/SkipJustifyRow.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 44502,
+    "target": 44506,
+    "target_instruction": 44505,
+    "size": 1,
+    "target_operation": "LD C,#00",
+    "path": "Source/Station/PrintJustified.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 44804,
+    "target": 44810,
+    "target_instruction": 44809,
+    "size": 2,
+    "target_operation": "JP #0000",
+    "path": "Source/Station/DrawGlyph.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 48896,
+    "target": 48904,
+    "target_instruction": 48903,
+    "size": 1,
+    "target_operation": "JR #BF09",
+    "path": "Source/Station/RegisterItemCells.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 48977,
+    "target": 49532,
+    "target_instruction": 49532,
+    "size": 2,
+    "target_operation": "LD (HL),D",
+    "path": "Source/Station/PrepareFrameRaster.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 48982,
+    "target": 49596,
+    "target_instruction": 49596,
+    "size": 1,
+    "target_operation": "LD (HL),C",
+    "path": "Source/Station/PrepareFrameRaster.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 48999,
+    "target": 49532,
+    "target_instruction": 49532,
+    "size": 1,
+    "target_operation": "LD (HL),D",
+    "path": "Source/Station/PrepareFrameRaster.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 49002,
+    "target": 49533,
+    "target_instruction": 49533,
+    "size": 1,
+    "target_operation": "INC L",
+    "path": "Source/Station/PrepareFrameRaster.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 49027,
+    "target": 49596,
+    "target_instruction": 49596,
+    "size": 1,
+    "target_operation": "LD (HL),C",
+    "path": "Source/Station/PrepareFrameRaster.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 49234,
+    "target": 44731,
+    "target_instruction": 44730,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/SetupTextWindow.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 49238,
+    "target": 44735,
+    "target_instruction": 44734,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/SetupTextWindow.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 49261,
+    "target": 44743,
+    "target_instruction": 44742,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/SetupTextWindow.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 49265,
+    "target": 44747,
+    "target_instruction": 44746,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/SetupTextWindow.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 49272,
+    "target": 44723,
+    "target_instruction": 44722,
+    "size": 1,
+    "target_operation": "CP #00",
+    "path": "Source/Station/SetupTextWindow.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 49279,
+    "target": 44715,
+    "target_instruction": 44714,
+    "size": 1,
+    "target_operation": "CP #00",
+    "path": "Source/Station/SetupTextWindow.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 49308,
+    "target": 49354,
+    "target_instruction": 49353,
+    "size": 2,
+    "target_operation": "CALL #C1C0",
+    "path": "Source/Station/DrawBandFrame.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 49323,
+    "target": 49535,
+    "target_instruction": 49534,
+    "size": 1,
+    "target_operation": "JR #C180",
+    "path": "Source/Station/DrawBandFrame.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 49743,
+    "target": 44731,
+    "target_instruction": 44730,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/SetupInsetTextWindow.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 49747,
+    "target": 44735,
+    "target_instruction": 44734,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/SetupInsetTextWindow.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 49772,
+    "target": 44743,
+    "target_instruction": 44742,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/SetupInsetTextWindow.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 49776,
+    "target": 44747,
+    "target_instruction": 44746,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/SetupInsetTextWindow.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 49785,
+    "target": 44723,
+    "target_instruction": 44722,
+    "size": 1,
+    "target_operation": "CP #00",
+    "path": "Source/Station/SetupInsetTextWindow.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 49794,
+    "target": 44715,
+    "target_instruction": 44714,
+    "size": 1,
+    "target_operation": "CP #00",
+    "path": "Source/Station/SetupInsetTextWindow.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 49840,
+    "target": 48422,
+    "target_instruction": 48421,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/DrawCaptionItem.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 49893,
+    "target": 48422,
+    "target_instruction": 48421,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/DrawCenteredItem.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 49932,
+    "target": 48463,
+    "target_instruction": 48463,
+    "size": 1,
+    "target_operation": "JP #BD08",
+    "path": "Source/Station/DrawCenteredItem.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 49987,
+    "target": 48463,
+    "target_instruction": 48463,
+    "size": 1,
+    "target_operation": "JP #BD08",
+    "path": "Source/Station/CenterItemLine.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 50022,
+    "target": 44731,
+    "target_instruction": 44730,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/SetupCenterText.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 50026,
+    "target": 44735,
+    "target_instruction": 44734,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/SetupCenterText.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 50051,
+    "target": 44743,
+    "target_instruction": 44742,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/SetupCenterText.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 50055,
+    "target": 44747,
+    "target_instruction": 44746,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/SetupCenterText.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 50064,
+    "target": 44723,
+    "target_instruction": 44722,
+    "size": 1,
+    "target_operation": "CP #00",
+    "path": "Source/Station/SetupCenterText.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 50073,
+    "target": 44715,
+    "target_instruction": 44714,
+    "size": 1,
+    "target_operation": "CP #00",
+    "path": "Source/Station/SetupCenterText.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 50098,
+    "target": 49535,
+    "target_instruction": 49534,
+    "size": 1,
+    "target_operation": "JR #C180",
+    "path": "Source/Station/DrawFrameType.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 50240,
+    "target": 49535,
+    "target_instruction": 49534,
+    "size": 1,
+    "target_operation": "JR #C180",
+    "path": "Source/Station/DrawInsetFrame.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 50470,
+    "target": 50677,
+    "target_instruction": 50676,
+    "size": 1,
+    "target_operation": "LD B,#80",
+    "path": "Source/Station/XorRectOutline.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 50486,
+    "target": 50677,
+    "target_instruction": 50676,
+    "size": 1,
+    "target_operation": "LD B,#80",
+    "path": "Source/Station/XorRectOutline.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 50540,
+    "target": 50544,
+    "target_instruction": 50543,
+    "size": 1,
+    "target_operation": "JR #C571",
+    "path": "Source/Station/XorOutlineRow.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 50755,
+    "target": 50776,
+    "target_instruction": 50775,
+    "size": 1,
+    "target_operation": "JR #C659",
+    "path": "Source/Station/FillRectangle.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 50767,
+    "target": 50774,
+    "target_instruction": 50773,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/FillRectangle.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 51320,
+    "target": 39554,
+    "target_instruction": 39553,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/DropItemDraw.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 51335,
+    "target": 51647,
+    "target_instruction": 51646,
+    "size": 1,
+    "target_operation": "CP #01",
+    "path": "Source/Station/TrackItemGeometry.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 51338,
+    "target": 51935,
+    "target_instruction": 51934,
+    "size": 1,
+    "target_operation": "CP #01",
+    "path": "Source/Station/TrackItemGeometry.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 51395,
+    "target": 51884,
+    "target_instruction": 51883,
+    "size": 1,
+    "target_operation": "CP #03",
+    "path": "Source/Station/TrackItemGeometry.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 51398,
+    "target": 51889,
+    "target_instruction": 51888,
+    "size": 1,
+    "target_operation": "LD H,#03",
+    "path": "Source/Station/TrackItemGeometry.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 51401,
+    "target": 51831,
+    "target_instruction": 51830,
+    "size": 1,
+    "target_operation": "CP #03",
+    "path": "Source/Station/TrackItemGeometry.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 51404,
+    "target": 51836,
+    "target_instruction": 51835,
+    "size": 1,
+    "target_operation": "LD L,#03",
+    "path": "Source/Station/TrackItemGeometry.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 51517,
+    "target": 51633,
+    "target_instruction": 51632,
+    "size": 2,
+    "target_operation": "LD BC,#0000",
+    "path": "Source/Station/TrackItemGeometry.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 51521,
+    "target": 51636,
+    "target_instruction": 51635,
+    "size": 2,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/Station/TrackItemGeometry.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 51717,
+    "target": 39554,
+    "target_instruction": 39553,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/FinishGeometry.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 51756,
+    "target": 51633,
+    "target_instruction": 51632,
+    "size": 2,
+    "target_operation": "LD BC,#0000",
+    "path": "Source/Station/ResizeGeometry.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 51760,
+    "target": 51636,
+    "target_instruction": 51635,
+    "size": 2,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/Station/ResizeGeometry.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 52138,
+    "target": 39554,
+    "target_instruction": 39553,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/RestoreItemBounds.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 52197,
+    "target": 52247,
+    "target_instruction": 52247,
+    "size": 1,
+    "target_operation": "SCF",
+    "path": "Source/Station/RepaintAndTrack.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 52206,
+    "target": 52247,
+    "target_instruction": 52247,
+    "size": 1,
+    "target_operation": "SCF",
+    "path": "Source/Station/RepaintAndFlag.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 52257,
+    "target": 52388,
+    "target_instruction": 52387,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Station/ActivateInterfaceCallback.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 52273,
+    "target": 39554,
+    "target_instruction": 39553,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/ToggleItemBounds.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 52364,
+    "target": 40587,
+    "target_instruction": 40586,
+    "size": 2,
+    "target_operation": "CALL #9A58",
+    "path": "Source/Station/ActivateItem.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 52372,
+    "target": 40568,
+    "target_instruction": 40567,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/ActivateItem.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 52375,
+    "target": 40574,
+    "target_instruction": 40573,
+    "size": 2,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/Station/ActivateItem.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 52390,
+    "target": 40587,
+    "target_instruction": 40586,
+    "size": 2,
+    "target_operation": "CALL #9A58",
+    "path": "Source/Station/ActivateItem.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 52408,
+    "target": 49394,
+    "target_instruction": 49393,
+    "size": 2,
+    "target_operation": "CALL #C1C0",
+    "path": "Source/Station/SetBandFillMode.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 52415,
+    "target": 49470,
+    "target_instruction": 49469,
+    "size": 2,
+    "target_operation": "CALL #C1ED",
+    "path": "Source/Station/SetBandFillMode.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 52419,
+    "target": 49400,
+    "target_instruction": 49399,
+    "size": 2,
+    "target_operation": "CALL #C1ED",
+    "path": "Source/Station/SetBandFillMode.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 52423,
+    "target": 49407,
+    "target_instruction": 49406,
+    "size": 2,
+    "target_operation": "CALL #C1C0",
+    "path": "Source/Station/SetBandFillMode.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 52427,
+    "target": 49476,
+    "target_instruction": 49475,
+    "size": 2,
+    "target_operation": "CALL #C1C0",
+    "path": "Source/Station/SetBandFillMode.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 52431,
+    "target": 49301,
+    "target_instruction": 49300,
+    "size": 2,
+    "target_operation": "LD HL,#C1C0",
+    "path": "Source/Station/SetBandFillMode.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 52439,
+    "target": 49407,
+    "target_instruction": 49406,
+    "size": 2,
+    "target_operation": "CALL #C1C0",
+    "path": "Source/Station/ResetBandMode.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 52443,
+    "target": 49476,
+    "target_instruction": 49475,
+    "size": 2,
+    "target_operation": "CALL #C1C0",
+    "path": "Source/Station/ResetBandMode.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 52447,
+    "target": 49301,
+    "target_instruction": 49300,
+    "size": 2,
+    "target_operation": "LD HL,#C1C0",
+    "path": "Source/Station/ResetBandMode.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 52451,
+    "target": 49394,
+    "target_instruction": 49393,
+    "size": 2,
+    "target_operation": "CALL #C1C0",
+    "path": "Source/Station/ResetBandMode.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 52458,
+    "target": 49470,
+    "target_instruction": 49469,
+    "size": 2,
+    "target_operation": "CALL #C1ED",
+    "path": "Source/Station/ResetBandMode.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 52462,
+    "target": 49400,
+    "target_instruction": 49399,
+    "size": 2,
+    "target_operation": "CALL #C1ED",
+    "path": "Source/Station/ResetBandMode.asm"
+  },
+  {
+    "region": "Text",
+    "writer": 49156,
+    "target": 49180,
+    "target_instruction": 49179,
+    "size": 2,
+    "target_operation": "LD SP,#0000",
+    "path": "Source/Text/RunMarketScript.asm"
+  },
+  {
+    "region": "Text",
+    "writer": 49161,
+    "target": 49192,
+    "target_instruction": 49191,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Text/RunMarketScript.asm"
+  },
+  {
+    "region": "Text",
+    "writer": 49390,
+    "target": 49192,
+    "target_instruction": 49191,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Text/QueueTextAndStopAtLine.asm"
+  },
+  {
+    "region": "Text",
+    "writer": 50420,
+    "target": 50441,
+    "target_instruction": 50440,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Text/CheckThresholdSet30.asm"
+  },
+  {
+    "region": "Text",
+    "writer": 50587,
+    "target": 50441,
+    "target_instruction": 50440,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Text/CheckThresholdSet14.asm"
+  },
+  {
+    "region": "Text",
+    "writer": 50825,
+    "target": 50839,
+    "target_instruction": 50838,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Text/PushCargo7BitWriter.asm"
+  },
+  {
+    "region": "Text",
+    "writer": 50828,
+    "target": 50842,
+    "target_instruction": 50841,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Text/PushCargo7BitWriter.asm"
+  },
+  {
+    "region": "Text",
+    "writer": 50879,
+    "target": 50893,
+    "target_instruction": 50892,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Text/PushEquipmentWeightWriter.asm"
+  },
+  {
+    "region": "Text",
+    "writer": 50882,
+    "target": 50896,
+    "target_instruction": 50895,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Text/PushEquipmentWeightWriter.asm"
+  },
+  {
+    "region": "Text",
+    "writer": 51182,
+    "target": 51204,
+    "target_instruction": 51203,
+    "size": 2,
+    "target_operation": "JP #0000",
+    "path": "Source/Text/ParseFieldSuffix.asm"
+  },
+  {
+    "region": "Text",
+    "writer": 51273,
+    "target": 51286,
+    "target_instruction": 51285,
+    "size": 1,
+    "target_operation": "LD B,#00",
+    "path": "Source/Text/FindDelimitedRecord.asm"
+  },
+  {
+    "region": "Text",
+    "writer": 51277,
+    "target": 51298,
+    "target_instruction": 51297,
+    "size": 1,
+    "target_operation": "LD B,#00",
+    "path": "Source/Text/FindDelimitedRecord.asm"
+  },
+  {
+    "region": "Text",
+    "writer": 51316,
+    "target": 51332,
+    "target_instruction": 51331,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Text/ComputeWeightedLoad.asm"
+  },
+  {
+    "region": "Text",
+    "writer": 51383,
+    "target": 51391,
+    "target_instruction": 51390,
+    "size": 1,
+    "target_operation": "ADD A,#00",
+    "path": "Source/Text/ComputeWeightedLoad.asm"
+  },
+  {
+    "region": "Text",
+    "writer": 51417,
+    "target": 51425,
+    "target_instruction": 51424,
+    "size": 1,
+    "target_operation": "ADD A,#00",
+    "path": "Source/Text/ComputeWeightedLoad.asm"
+  },
+  {
+    "region": "Map",
+    "writer": 49152,
+    "target": 57284,
+    "target_instruction": 57283,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Map/DrawMapScene.asm"
+  },
+  {
+    "region": "Map",
+    "writer": 49484,
+    "target": 49710,
+    "target_instruction": 49709,
+    "size": 2,
+    "target_operation": "LD SP,#0000",
+    "path": "Source/Map/DrawMapScene.asm"
+  },
+  {
+    "region": "Map",
+    "writer": 49496,
+    "target": 49547,
+    "target_instruction": 49546,
+    "size": 1,
+    "target_operation": "CP #D0",
+    "path": "Source/Map/DrawMapScene.asm"
+  },
+  {
+    "region": "Map",
+    "writer": 49499,
+    "target": 49636,
+    "target_instruction": 49635,
+    "size": 1,
+    "target_operation": "CP #D0",
+    "path": "Source/Map/DrawMapScene.asm"
+  },
+  {
+    "region": "Map",
+    "writer": 49505,
+    "target": 49681,
+    "target_instruction": 49680,
+    "size": 1,
+    "target_operation": "CP #31",
+    "path": "Source/Map/DrawMapScene.asm"
+  },
+  {
+    "region": "Map",
+    "writer": 49508,
+    "target": 49590,
+    "target_instruction": 49589,
+    "size": 1,
+    "target_operation": "CP #31",
+    "path": "Source/Map/DrawMapScene.asm"
+  },
+  {
+    "region": "Map",
+    "writer": 49514,
+    "target": 49524,
+    "target_instruction": 49523,
+    "size": 1,
+    "target_operation": "LD BC,#8070",
+    "path": "Source/Map/DrawMapScene.asm"
+  },
+  {
+    "region": "Map",
+    "writer": 49520,
+    "target": 49617,
+    "target_instruction": 49616,
+    "size": 1,
+    "target_operation": "LD BC,#8091",
+    "path": "Source/Map/DrawMapScene.asm"
+  },
+  {
+    "region": "Map",
+    "writer": 51074,
+    "target": 51126,
+    "target_instruction": 51125,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Map/PrepareVariantResources.asm"
+  },
+  {
+    "region": "Map",
+    "writer": 51174,
+    "target": 51223,
+    "target_instruction": 51222,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Map/SelectVariantResource.asm"
+  },
+  {
+    "region": "Map",
+    "writer": 51469,
+    "target": 51485,
+    "target_instruction": 51484,
+    "size": 1,
+    "target_operation": "JR #C91E",
+    "path": "Source/Map/XorSelectionBand.asm"
+  },
+  {
+    "region": "Map",
+    "writer": 53791,
+    "target": 54022,
+    "target_instruction": 54021,
+    "size": 1,
+    "target_operation": "ADD A,#00",
+    "path": "Source/Map/DrawMapPointChain.asm"
+  },
+  {
+    "region": "Map",
+    "writer": 54062,
+    "target": 54072,
+    "target_instruction": 54072,
+    "size": 1,
+    "target_operation": "NOP",
+    "path": "Source/Map/RasterizeMapLine.asm"
+  },
+  {
+    "region": "Map",
+    "writer": 54068,
+    "target": 54075,
+    "target_instruction": 54075,
+    "size": 1,
+    "target_operation": "JR C,#D346",
+    "path": "Source/Map/RasterizeMapLine.asm"
+  },
+  {
+    "region": "Map",
+    "writer": 54125,
+    "target": 54135,
+    "target_instruction": 54135,
+    "size": 1,
+    "target_operation": "NOP",
+    "path": "Source/Map/RasterizeMapLine.asm"
+  },
+  {
+    "region": "Map",
+    "writer": 54131,
+    "target": 54161,
+    "target_instruction": 54161,
+    "size": 1,
+    "target_operation": "JR C,#D397",
+    "path": "Source/Map/RasterizeMapLine.asm"
+  },
+  {
+    "region": "Map",
+    "writer": 54186,
+    "target": 54196,
+    "target_instruction": 54196,
+    "size": 1,
+    "target_operation": "NOP",
+    "path": "Source/Map/RasterizeMapLine.asm"
+  },
+  {
+    "region": "Map",
+    "writer": 54192,
+    "target": 54199,
+    "target_instruction": 54199,
+    "size": 1,
+    "target_operation": "JR C,#D3C2",
+    "path": "Source/Map/RasterizeMapLine.asm"
+  },
+  {
+    "region": "Map",
+    "writer": 54249,
+    "target": 54259,
+    "target_instruction": 54259,
+    "size": 1,
+    "target_operation": "NOP",
+    "path": "Source/Map/RasterizeMapLine.asm"
+  },
+  {
+    "region": "Map",
+    "writer": 54255,
+    "target": 54285,
+    "target_instruction": 54285,
+    "size": 1,
+    "target_operation": "JR C,#D413",
+    "path": "Source/Map/RasterizeMapLine.asm"
+  },
+  {
+    "region": "Map",
+    "writer": 57292,
+    "target": 58406,
+    "target_instruction": 58406,
+    "size": 1,
+    "target_operation": "JR C,#E42B",
+    "path": "Source/Map/DrawClippedMapArc.asm"
+  },
+  {
+    "region": "Map",
+    "writer": 57295,
+    "target": 58424,
+    "target_instruction": 58424,
+    "size": 1,
+    "target_operation": "JR C,#E43E",
+    "path": "Source/Map/DrawClippedMapArc.asm"
+  },
+  {
+    "region": "Map",
+    "writer": 57298,
+    "target": 58447,
+    "target_instruction": 58447,
+    "size": 1,
+    "target_operation": "JR C,#E454",
+    "path": "Source/Map/DrawClippedMapArc.asm"
+  },
+  {
+    "region": "Map",
+    "writer": 57301,
+    "target": 58464,
+    "target_instruction": 58464,
+    "size": 1,
+    "target_operation": "JR C,#E466",
+    "path": "Source/Map/DrawClippedMapArc.asm"
+  },
+  {
+    "region": "Help",
+    "writer": 56151,
+    "target": 56065,
+    "target_instruction": 56064,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Help/SelectText.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 56075,
+    "target": 56141,
+    "target_instruction": 56140,
+    "size": 2,
+    "target_operation": "LD SP,#0000",
+    "path": "Source/Music/InitializeModule.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 56079,
+    "target": 57262,
+    "target_instruction": 57261,
+    "size": 2,
+    "target_operation": "LD BC,#0000",
+    "path": "Source/Music/InitializeModule.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 56090,
+    "target": 57186,
+    "target_instruction": 57185,
+    "size": 1,
+    "target_operation": "LD A,#03",
+    "path": "Source/Music/InitializeModule.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 56095,
+    "target": 57240,
+    "target_instruction": 57239,
+    "size": 2,
+    "target_operation": "LD HL,#E7C9",
+    "path": "Source/Music/InitializeModule.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 56101,
+    "target": 57247,
+    "target_instruction": 57246,
+    "size": 2,
+    "target_operation": "LD HL,#E7C9",
+    "path": "Source/Music/InitializeModule.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 56106,
+    "target": 57255,
+    "target_instruction": 57254,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Music/InitializeModule.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 56131,
+    "target": 57399,
+    "target_instruction": 57398,
+    "size": 1,
+    "target_operation": "OR #00",
+    "path": "Source/Music/InitializeModule.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 56134,
+    "target": 57654,
+    "target_instruction": 57653,
+    "size": 1,
+    "target_operation": "OR #00",
+    "path": "Source/Music/InitializeModule.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 56137,
+    "target": 57909,
+    "target_instruction": 57908,
+    "size": 1,
+    "target_operation": "OR #00",
+    "path": "Source/Music/InitializeModule.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 56146,
+    "target": 57464,
+    "target_instruction": 57463,
+    "size": 2,
+    "target_operation": "LD SP,#0000",
+    "path": "Source/Music/InitializeModule.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 56149,
+    "target": 57720,
+    "target_instruction": 57719,
+    "size": 2,
+    "target_operation": "LD SP,#0000",
+    "path": "Source/Music/InitializeModule.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 56152,
+    "target": 57974,
+    "target_instruction": 57973,
+    "size": 2,
+    "target_operation": "LD SP,#0000",
+    "path": "Source/Music/InitializeModule.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 56155,
+    "target": 56914,
+    "target_instruction": 56913,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Music/InitializeModule.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 56158,
+    "target": 57056,
+    "target_instruction": 57055,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Music/InitializeModule.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 56161,
+    "target": 57845,
+    "target_instruction": 57844,
+    "size": 2,
+    "target_operation": "LD SP,#0000",
+    "path": "Source/Music/InitializeModule.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 56164,
+    "target": 57225,
+    "target_instruction": 57224,
+    "size": 2,
+    "target_operation": "LD DE,#DC10",
+    "path": "Source/Music/InitializeModule.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 56169,
+    "target": 56925,
+    "target_instruction": 56924,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/InitializeModule.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 56172,
+    "target": 57067,
+    "target_instruction": 57066,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/InitializeModule.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 56175,
+    "target": 57899,
+    "target_instruction": 57898,
+    "size": 1,
+    "target_operation": "ADD A,#00",
+    "path": "Source/Music/InitializeModule.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 56179,
+    "target": 57327,
+    "target_instruction": 57326,
+    "size": 1,
+    "target_operation": "LD A,#FF",
+    "path": "Source/Music/InitializeModule.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 56182,
+    "target": 57838,
+    "target_instruction": 57837,
+    "size": 1,
+    "target_operation": "LD A,#FF",
+    "path": "Source/Music/InitializeModule.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 56185,
+    "target": 57582,
+    "target_instruction": 57581,
+    "size": 1,
+    "target_operation": "LD A,#FF",
+    "path": "Source/Music/InitializeModule.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 56206,
+    "target": 57204,
+    "target_instruction": 57203,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/ClearAyRegisters.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 56220,
+    "target": 57195,
+    "target_instruction": 57195,
+    "size": 1,
+    "target_operation": "JR #DF7F",
+    "path": "Source/Music/ClearAyRegisters.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 56786,
+    "target": 56983,
+    "target_instruction": 56982,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/SetGateTimingA.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 56791,
+    "target": 56991,
+    "target_instruction": 56990,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/SetGateTimingA.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 56796,
+    "target": 56976,
+    "target_instruction": 56976,
+    "size": 1,
+    "target_operation": "JR #DEA3",
+    "path": "Source/Music/SetGateTimingA.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 56850,
+    "target": 58087,
+    "target_instruction": 58086,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/SetGateTimingC.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 56853,
+    "target": 58069,
+    "target_instruction": 58068,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/SetGateTimingC.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 56858,
+    "target": 58083,
+    "target_instruction": 58082,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/SetGateTimingC.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 56869,
+    "target": 56863,
+    "target_instruction": 56863,
+    "size": 1,
+    "target_operation": "JP #DFE3",
+    "path": "Source/Music/TickDispatch.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 56878,
+    "target": 57496,
+    "target_instruction": 57495,
+    "size": 2,
+    "target_operation": "LD BC,#0000",
+    "path": "Source/Music/TickDispatch.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 56883,
+    "target": 57338,
+    "target_instruction": 57337,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/TickDispatch.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 56886,
+    "target": 57406,
+    "target_instruction": 57405,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/TickDispatch.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 56889,
+    "target": 57429,
+    "target_instruction": 57428,
+    "size": 1,
+    "target_operation": "ADD A,#00",
+    "path": "Source/Music/TickDispatch.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 56892,
+    "target": 57468,
+    "target_instruction": 57467,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/TickDispatch.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 56895,
+    "target": 57503,
+    "target_instruction": 57502,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/TickDispatch.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 56898,
+    "target": 57559,
+    "target_instruction": 57558,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/TickDispatch.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 56901,
+    "target": 57452,
+    "target_instruction": 57451,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Music/TickDispatch.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 56905,
+    "target": 57327,
+    "target_instruction": 57326,
+    "size": 1,
+    "target_operation": "LD A,#FF",
+    "path": "Source/Music/TickDispatch.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 56916,
+    "target": 57334,
+    "target_instruction": 57333,
+    "size": 2,
+    "target_operation": "LD SP,#0000",
+    "path": "Source/Music/TickDispatch.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 56921,
+    "target": 57361,
+    "target_instruction": 57360,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/TickDispatch.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 56926,
+    "target": 57389,
+    "target_instruction": 57388,
+    "size": 1,
+    "target_operation": "ADD A,#00",
+    "path": "Source/Music/TickDispatch.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 56932,
+    "target": 57468,
+    "target_instruction": 57467,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/TickDispatch.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 56938,
+    "target": 57464,
+    "target_instruction": 57463,
+    "size": 2,
+    "target_operation": "LD SP,#0000",
+    "path": "Source/Music/TickDispatch.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 56943,
+    "target": 57399,
+    "target_instruction": 57398,
+    "size": 1,
+    "target_operation": "OR #00",
+    "path": "Source/Music/TickDispatch.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 56979,
+    "target": 56976,
+    "target_instruction": 56976,
+    "size": 1,
+    "target_operation": "JR #DEA3",
+    "path": "Source/Music/UnknownDE90.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 56984,
+    "target": 57577,
+    "target_instruction": 57576,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/UnknownDE90.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 56987,
+    "target": 57559,
+    "target_instruction": 57558,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/UnknownDE90.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 56992,
+    "target": 57573,
+    "target_instruction": 57572,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/UnknownDE90.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 57020,
+    "target": 57752,
+    "target_instruction": 57751,
+    "size": 2,
+    "target_operation": "LD BC,#0000",
+    "path": "Source/Music/UnknownDEB9.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 57025,
+    "target": 57593,
+    "target_instruction": 57592,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/UnknownDEB9.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 57028,
+    "target": 57661,
+    "target_instruction": 57660,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/UnknownDEB9.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 57031,
+    "target": 57684,
+    "target_instruction": 57683,
+    "size": 1,
+    "target_operation": "ADD A,#00",
+    "path": "Source/Music/UnknownDEB9.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 57034,
+    "target": 57724,
+    "target_instruction": 57723,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/UnknownDEB9.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 57037,
+    "target": 57759,
+    "target_instruction": 57758,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/UnknownDEB9.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 57040,
+    "target": 57815,
+    "target_instruction": 57814,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/UnknownDEB9.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 57043,
+    "target": 57708,
+    "target_instruction": 57707,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Music/UnknownDEB9.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 57047,
+    "target": 57582,
+    "target_instruction": 57581,
+    "size": 1,
+    "target_operation": "LD A,#FF",
+    "path": "Source/Music/UnknownDEB9.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 57058,
+    "target": 57589,
+    "target_instruction": 57588,
+    "size": 2,
+    "target_operation": "LD SP,#0000",
+    "path": "Source/Music/UnknownDEB9.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 57063,
+    "target": 57616,
+    "target_instruction": 57615,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/UnknownDEB9.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 57068,
+    "target": 57644,
+    "target_instruction": 57643,
+    "size": 1,
+    "target_operation": "ADD A,#00",
+    "path": "Source/Music/UnknownDEB9.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 57074,
+    "target": 57724,
+    "target_instruction": 57723,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/UnknownDEB9.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 57080,
+    "target": 57720,
+    "target_instruction": 57719,
+    "size": 2,
+    "target_operation": "LD SP,#0000",
+    "path": "Source/Music/UnknownDEB9.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 57085,
+    "target": 57654,
+    "target_instruction": 57653,
+    "size": 1,
+    "target_operation": "OR #00",
+    "path": "Source/Music/UnknownDEB9.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 57170,
+    "target": 58097,
+    "target_instruction": 58096,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Music/UnknownDF47.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 57176,
+    "target": 57160,
+    "target_instruction": 57159,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/UnknownDF47.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 57179,
+    "target": 58094,
+    "target_instruction": 58093,
+    "size": 2,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/Music/UnknownDF47.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 57182,
+    "target": 58106,
+    "target_instruction": 58105,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/UnknownDF47.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 57187,
+    "target": 58237,
+    "target_instruction": 58236,
+    "size": 1,
+    "target_operation": "LD A,#03",
+    "path": "Source/Music/UnknownDF47.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 57200,
+    "target": 58114,
+    "target_instruction": 58113,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Music/UnknownDF70.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 57205,
+    "target": 58106,
+    "target_instruction": 58105,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/UnknownDF70.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 57208,
+    "target": 58121,
+    "target_instruction": 58120,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/UnknownDF70.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 57212,
+    "target": 57195,
+    "target_instruction": 57195,
+    "size": 1,
+    "target_operation": "JR #DF7F",
+    "path": "Source/Music/UnknownDF70.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 57231,
+    "target": 57191,
+    "target_instruction": 57190,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/AdvancePatternA.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 57235,
+    "target": 57277,
+    "target_instruction": 57276,
+    "size": 2,
+    "target_operation": "LD SP,#0000",
+    "path": "Source/Music/AdvancePatternA.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 57251,
+    "target": 57240,
+    "target_instruction": 57239,
+    "size": 2,
+    "target_operation": "LD HL,#E7C9",
+    "path": "Source/Music/AdvancePatternA.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 57268,
+    "target": 58259,
+    "target_instruction": 58258,
+    "size": 2,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/Music/AdvancePatternA.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 57273,
+    "target": 58308,
+    "target_instruction": 58307,
+    "size": 2,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/Music/AdvancePatternA.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 57284,
+    "target": 57225,
+    "target_instruction": 57224,
+    "size": 2,
+    "target_operation": "LD DE,#DC10",
+    "path": "Source/Music/AdvancePatternA.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 57299,
+    "target": 56878,
+    "target_instruction": 56878,
+    "size": 1,
+    "target_operation": "LD (#E098),HL",
+    "path": "Source/Music/AdvancePatternA.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 57304,
+    "target": 56929,
+    "target_instruction": 56929,
+    "size": 1,
+    "target_operation": "JR #DE72",
+    "path": "Source/Music/AdvancePatternA.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 57308,
+    "target": 56881,
+    "target_instruction": 56881,
+    "size": 1,
+    "target_operation": "JR #DE5C",
+    "path": "Source/Music/AdvancePatternA.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 57312,
+    "target": 56946,
+    "target_instruction": 56946,
+    "size": 1,
+    "target_operation": "JR #DE90",
+    "path": "Source/Music/AdvancePatternA.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 57322,
+    "target": 58126,
+    "target_instruction": 58125,
+    "size": 2,
+    "target_operation": "LD SP,#0000",
+    "path": "Source/Music/RenderChannelA.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 57345,
+    "target": 57338,
+    "target_instruction": 57337,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/RenderChannelA.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 57375,
+    "target": 57361,
+    "target_instruction": 57360,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/RenderChannelA.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 57412,
+    "target": 57406,
+    "target_instruction": 57405,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/RenderChannelA.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 57434,
+    "target": 57429,
+    "target_instruction": 57428,
+    "size": 1,
+    "target_operation": "ADD A,#00",
+    "path": "Source/Music/RenderChannelA.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 57459,
+    "target": 57452,
+    "target_instruction": 57451,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Music/RenderChannelA.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 57475,
+    "target": 57468,
+    "target_instruction": 57467,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/RenderChannelA.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 57515,
+    "target": 57496,
+    "target_instruction": 57495,
+    "size": 2,
+    "target_operation": "LD BC,#0000",
+    "path": "Source/Music/RenderChannelA.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 57551,
+    "target": 57503,
+    "target_instruction": 57502,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/UnknownE0CD.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 57578,
+    "target": 57559,
+    "target_instruction": 57558,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/UnknownE0CD.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 57600,
+    "target": 57593,
+    "target_instruction": 57592,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/UnknownE0CD.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 57630,
+    "target": 57616,
+    "target_instruction": 57615,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/UnknownE0CD.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 57667,
+    "target": 57661,
+    "target_instruction": 57660,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/UnknownE0CD.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 57689,
+    "target": 57684,
+    "target_instruction": 57683,
+    "size": 1,
+    "target_operation": "ADD A,#00",
+    "path": "Source/Music/UnknownE0CD.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 57715,
+    "target": 57708,
+    "target_instruction": 57707,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Music/UnknownE0CD.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 57731,
+    "target": 57724,
+    "target_instruction": 57723,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/UnknownE0CD.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 57771,
+    "target": 57752,
+    "target_instruction": 57751,
+    "size": 2,
+    "target_operation": "LD BC,#0000",
+    "path": "Source/Music/UnknownE0CD.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 57807,
+    "target": 57759,
+    "target_instruction": 57758,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/UnknownE1CD.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 57834,
+    "target": 57815,
+    "target_instruction": 57814,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/UnknownE1CD.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 57856,
+    "target": 57849,
+    "target_instruction": 57848,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/UnknownE1CD.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 57885,
+    "target": 57871,
+    "target_instruction": 57870,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/UnknownE1CD.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 57922,
+    "target": 57916,
+    "target_instruction": 57915,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/UnknownE1CD.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 57944,
+    "target": 57939,
+    "target_instruction": 57938,
+    "size": 1,
+    "target_operation": "ADD A,#00",
+    "path": "Source/Music/UnknownE1CD.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 57969,
+    "target": 57962,
+    "target_instruction": 57961,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Music/UnknownE1CD.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 57985,
+    "target": 57978,
+    "target_instruction": 57977,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/UnknownE1CD.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58025,
+    "target": 58006,
+    "target_instruction": 58005,
+    "size": 2,
+    "target_operation": "LD BC,#0000",
+    "path": "Source/Music/UnknownE1CD.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58061,
+    "target": 58013,
+    "target_instruction": 58012,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/UnknownE2CB.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58088,
+    "target": 58069,
+    "target_instruction": 58068,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/UnknownE2CB.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58117,
+    "target": 58094,
+    "target_instruction": 58093,
+    "size": 2,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/Music/UnknownE2CB.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58122,
+    "target": 58106,
+    "target_instruction": 58105,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/UnknownE2CB.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58177,
+    "target": 57321,
+    "target_instruction": 57318,
+    "size": 1,
+    "target_operation": "LD IX,#0000",
+    "path": "Source/Music/UnknownE2CB.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58239,
+    "target": 58237,
+    "target_instruction": 58236,
+    "size": 1,
+    "target_operation": "LD A,#03",
+    "path": "Source/Music/UnknownE2CB.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58266,
+    "target": 58259,
+    "target_instruction": 58258,
+    "size": 2,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/Music/UnknownE2CB.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58281,
+    "target": 57020,
+    "target_instruction": 57020,
+    "size": 1,
+    "target_operation": "LD (#E198),HL",
+    "path": "Source/Music/UnknownE2CB.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58286,
+    "target": 57071,
+    "target_instruction": 57071,
+    "size": 1,
+    "target_operation": "JR #DF00",
+    "path": "Source/Music/UnknownE2CB.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58290,
+    "target": 57023,
+    "target_instruction": 57023,
+    "size": 1,
+    "target_operation": "JR #DEEA",
+    "path": "Source/Music/UnknownE2CB.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58294,
+    "target": 57088,
+    "target_instruction": 57088,
+    "size": 1,
+    "target_operation": "JR #DF1E",
+    "path": "Source/Music/UnknownE2CB.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58299,
+    "target": 56863,
+    "target_instruction": 56863,
+    "size": 1,
+    "target_operation": "JP #DFE3",
+    "path": "Source/Music/UnknownE2CB.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58315,
+    "target": 58308,
+    "target_instruction": 58307,
+    "size": 2,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/Music/UnknownE2CB.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58328,
+    "target": 58006,
+    "target_instruction": 58005,
+    "size": 2,
+    "target_operation": "LD BC,#0000",
+    "path": "Source/Music/UnknownE2CB.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58332,
+    "target": 56909,
+    "target_instruction": 56908,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/UnknownE2CB.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58346,
+    "target": 56925,
+    "target_instruction": 56924,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/UnknownE2CB.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58353,
+    "target": 56904,
+    "target_instruction": 56904,
+    "size": 1,
+    "target_operation": "CPL",
+    "path": "Source/Music/UnknownE2CB.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58366,
+    "target": 57289,
+    "target_instruction": 57288,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/UnknownE2CB.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58372,
+    "target": 57160,
+    "target_instruction": 57159,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/UnknownE2CB.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58377,
+    "target": 57169,
+    "target_instruction": 57167,
+    "size": 1,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Music/UnknownE2CB.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58382,
+    "target": 57168,
+    "target_instruction": 57167,
+    "size": 1,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Music/UnknownE2CB.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58387,
+    "target": 56942,
+    "target_instruction": 56941,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/UnknownE2CB.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58402,
+    "target": 56936,
+    "target_instruction": 56935,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Music/UnknownE2CB.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58407,
+    "target": 56942,
+    "target_instruction": 56941,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/UnknownE2CB.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58421,
+    "target": 56914,
+    "target_instruction": 56913,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Music/UnknownE2CB.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58468,
+    "target": 57160,
+    "target_instruction": 57159,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/UnknownE439.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58473,
+    "target": 57169,
+    "target_instruction": 57167,
+    "size": 1,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Music/UnknownE439.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58478,
+    "target": 57168,
+    "target_instruction": 57167,
+    "size": 1,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Music/UnknownE439.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58496,
+    "target": 56936,
+    "target_instruction": 56935,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Music/UnknownE439.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58505,
+    "target": 57051,
+    "target_instruction": 57050,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/UnknownE439.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58519,
+    "target": 57067,
+    "target_instruction": 57066,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/UnknownE439.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58526,
+    "target": 57046,
+    "target_instruction": 57046,
+    "size": 1,
+    "target_operation": "CPL",
+    "path": "Source/Music/UnknownE439.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58539,
+    "target": 58271,
+    "target_instruction": 58270,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/UnknownE439.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58545,
+    "target": 57160,
+    "target_instruction": 57159,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/UnknownE439.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58550,
+    "target": 57169,
+    "target_instruction": 57167,
+    "size": 1,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Music/UnknownE439.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58555,
+    "target": 57168,
+    "target_instruction": 57167,
+    "size": 1,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Music/UnknownE439.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58560,
+    "target": 57084,
+    "target_instruction": 57083,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/UnknownE439.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58575,
+    "target": 57078,
+    "target_instruction": 57077,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Music/UnknownE439.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58580,
+    "target": 57084,
+    "target_instruction": 57083,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/UnknownE439.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58594,
+    "target": 57056,
+    "target_instruction": 57055,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Music/UnknownE439.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58641,
+    "target": 57191,
+    "target_instruction": 57190,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/UnknownE4E6.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58648,
+    "target": 57160,
+    "target_instruction": 57159,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/UnknownE4E6.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58653,
+    "target": 57169,
+    "target_instruction": 57167,
+    "size": 1,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Music/UnknownE4E6.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58658,
+    "target": 57168,
+    "target_instruction": 57167,
+    "size": 1,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Music/UnknownE4E6.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58676,
+    "target": 57078,
+    "target_instruction": 57077,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Music/UnknownE4E6.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58691,
+    "target": 57899,
+    "target_instruction": 57898,
+    "size": 1,
+    "target_operation": "ADD A,#00",
+    "path": "Source/Music/UnknownE4E6.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58696,
+    "target": 58069,
+    "target_instruction": 58068,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/UnknownE4E6.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58700,
+    "target": 57838,
+    "target_instruction": 57837,
+    "size": 1,
+    "target_operation": "LD A,#FF",
+    "path": "Source/Music/UnknownE4E6.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58704,
+    "target": 57160,
+    "target_instruction": 57159,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/UnknownE4E6.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58709,
+    "target": 57169,
+    "target_instruction": 57167,
+    "size": 1,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Music/UnknownE4E6.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58714,
+    "target": 57168,
+    "target_instruction": 57167,
+    "size": 1,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Music/UnknownE4E6.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58719,
+    "target": 57909,
+    "target_instruction": 57908,
+    "size": 1,
+    "target_operation": "OR #00",
+    "path": "Source/Music/UnknownE4E6.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58731,
+    "target": 57974,
+    "target_instruction": 57973,
+    "size": 2,
+    "target_operation": "LD SP,#0000",
+    "path": "Source/Music/UnknownE4E6.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58736,
+    "target": 57909,
+    "target_instruction": 57908,
+    "size": 1,
+    "target_operation": "OR #00",
+    "path": "Source/Music/UnknownE4E6.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58740,
+    "target": 57978,
+    "target_instruction": 57977,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/UnknownE4E6.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58751,
+    "target": 57845,
+    "target_instruction": 57844,
+    "size": 2,
+    "target_operation": "LD SP,#0000",
+    "path": "Source/Music/UnknownE4E6.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58808,
+    "target": 58320,
+    "target_instruction": 58319,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/UnknownE583.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58816,
+    "target": 57160,
+    "target_instruction": 57159,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/UnknownE583.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58821,
+    "target": 57169,
+    "target_instruction": 57167,
+    "size": 1,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Music/UnknownE583.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58826,
+    "target": 57168,
+    "target_instruction": 57167,
+    "size": 1,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Music/UnknownE583.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58844,
+    "target": 57974,
+    "target_instruction": 57973,
+    "size": 2,
+    "target_operation": "LD SP,#0000",
+    "path": "Source/Music/UnknownE583.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58849,
+    "target": 57978,
+    "target_instruction": 57977,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/UnknownE583.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58860,
+    "target": 57849,
+    "target_instruction": 57848,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/UnknownE583.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58863,
+    "target": 57916,
+    "target_instruction": 57915,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/UnknownE583.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58866,
+    "target": 57939,
+    "target_instruction": 57938,
+    "size": 1,
+    "target_operation": "ADD A,#00",
+    "path": "Source/Music/UnknownE583.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58869,
+    "target": 57978,
+    "target_instruction": 57977,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/UnknownE583.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58872,
+    "target": 58013,
+    "target_instruction": 58012,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/UnknownE583.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58875,
+    "target": 57838,
+    "target_instruction": 57837,
+    "size": 1,
+    "target_operation": "LD A,#FF",
+    "path": "Source/Music/UnknownE583.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58878,
+    "target": 58069,
+    "target_instruction": 58068,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/UnknownE583.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58881,
+    "target": 57962,
+    "target_instruction": 57961,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Music/UnknownE583.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 58886,
+    "target": 57871,
+    "target_instruction": 57870,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/UnknownE583.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 59056,
+    "target": 58013,
+    "target_instruction": 58012,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/SetToneSlideC.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 59059,
+    "target": 58060,
+    "target_instruction": 58059,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/SetToneSlideC.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 59068,
+    "target": 58022,
+    "target_instruction": 58021,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Music/SetToneSlideC.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 59073,
+    "target": 58029,
+    "target_instruction": 58028,
+    "size": 1,
+    "target_operation": "JR #E2CB",
+    "path": "Source/Music/SetToneSlideC.asm"
+  },
+  {
+    "region": "Music",
+    "writer": 59077,
+    "target": 58069,
+    "target_instruction": 58068,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/SetToneSlideC.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 24671,
+    "target": 60662,
+    "target_instruction": 60661,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Action/Unknown6040.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 24908,
+    "target": 26271,
+    "target_instruction": 26270,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Action/Unknown6145.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 24911,
+    "target": 26219,
+    "target_instruction": 26218,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Action/Unknown6145.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 24914,
+    "target": 26186,
+    "target_instruction": 26185,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Action/Unknown6145.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 24917,
+    "target": 26254,
+    "target_instruction": 26253,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Action/Unknown6145.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 24920,
+    "target": 26237,
+    "target_instruction": 26236,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Action/Unknown6145.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 24923,
+    "target": 26204,
+    "target_instruction": 26203,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Action/Unknown6145.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 25459,
+    "target": 25436,
+    "target_instruction": 25435,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Action/Unknown635B.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 25465,
+    "target": 60585,
+    "target_instruction": 60584,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Action/Unknown635B.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 26200,
+    "target": 26186,
+    "target_instruction": 26185,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Action/Unknown6649.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 26233,
+    "target": 26219,
+    "target_instruction": 26218,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Action/Unknown6649.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 26250,
+    "target": 26237,
+    "target_instruction": 26236,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Action/Unknown6649.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 26267,
+    "target": 26254,
+    "target_instruction": 26253,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Action/Unknown6649.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 26276,
+    "target": 26271,
+    "target_instruction": 26270,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Action/Unknown6649.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 26431,
+    "target": 31595,
+    "target_instruction": 31594,
+    "size": 1,
+    "target_operation": "CP #FD",
+    "path": "Source/Action/Unknown66D2.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 26503,
+    "target": 26497,
+    "target_instruction": 26496,
+    "size": 2,
+    "target_operation": "LD HL,#8000",
+    "path": "Source/Action/Unknown6780.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 26511,
+    "target": 26497,
+    "target_instruction": 26496,
+    "size": 2,
+    "target_operation": "LD HL,#8000",
+    "path": "Source/Action/Unknown6780.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 26670,
+    "target": 26242,
+    "target_instruction": 26241,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Action/Unknown6780.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 26675,
+    "target": 26237,
+    "target_instruction": 26236,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Action/Unknown6780.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 26686,
+    "target": 26684,
+    "target_instruction": 26683,
+    "size": 1,
+    "target_operation": "LD A,#80",
+    "path": "Source/Action/Unknown6780.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 26713,
+    "target": 26204,
+    "target_instruction": 26203,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Action/Unknown6780.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 26725,
+    "target": 26237,
+    "target_instruction": 26236,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Action/Unknown6780.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 26729,
+    "target": 26242,
+    "target_instruction": 26241,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Action/Unknown6780.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 26745,
+    "target": 31595,
+    "target_instruction": 31594,
+    "size": 1,
+    "target_operation": "CP #FD",
+    "path": "Source/Action/Unknown6780.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 26783,
+    "target": 26837,
+    "target_instruction": 26836,
+    "size": 2,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/Action/Unknown6780.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 26802,
+    "target": 26877,
+    "target_instruction": 26876,
+    "size": 2,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/Action/Unknown6780.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 26821,
+    "target": 26917,
+    "target_instruction": 26916,
+    "size": 2,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/Action/Unknown6780.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 26978,
+    "target": 26259,
+    "target_instruction": 26258,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Action/Unknown6780.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 26983,
+    "target": 26254,
+    "target_instruction": 26253,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Action/Unknown6780.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 26993,
+    "target": 26254,
+    "target_instruction": 26253,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Action/Unknown6780.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 26997,
+    "target": 26259,
+    "target_instruction": 26258,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Action/Unknown6780.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 27273,
+    "target": 44872,
+    "target_instruction": 44871,
+    "size": 2,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/Action/Unknown6A6E.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 27279,
+    "target": 44886,
+    "target_instruction": 44885,
+    "size": 2,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/Action/Unknown6A6E.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 27285,
+    "target": 44905,
+    "target_instruction": 44904,
+    "size": 2,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/Action/Unknown6A6E.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 27676,
+    "target": 44872,
+    "target_instruction": 44871,
+    "size": 2,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/Action/Unknown6C19.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 27682,
+    "target": 44886,
+    "target_instruction": 44885,
+    "size": 2,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/Action/Unknown6C19.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 27688,
+    "target": 44905,
+    "target_instruction": 44904,
+    "size": 2,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/Action/Unknown6C19.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 27799,
+    "target": 44872,
+    "target_instruction": 44871,
+    "size": 2,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/Action/Unknown6C8F.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 27805,
+    "target": 44886,
+    "target_instruction": 44885,
+    "size": 2,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/Action/Unknown6C8F.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 27811,
+    "target": 44905,
+    "target_instruction": 44904,
+    "size": 2,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/Action/Unknown6C8F.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 27970,
+    "target": 27961,
+    "target_instruction": 27960,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Action/Unknown6D38.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 27973,
+    "target": 27965,
+    "target_instruction": 27964,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Action/Unknown6D38.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 28001,
+    "target": 44905,
+    "target_instruction": 44904,
+    "size": 2,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/Action/Unknown6D38.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 28023,
+    "target": 44872,
+    "target_instruction": 44871,
+    "size": 2,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/Action/Unknown6D38.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 28045,
+    "target": 44886,
+    "target_instruction": 44885,
+    "size": 2,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/Action/Unknown6D38.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 28290,
+    "target": 58803,
+    "target_instruction": 58802,
+    "size": 2,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/Action/Unknown6E6C.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 28309,
+    "target": 58834,
+    "target_instruction": 58833,
+    "size": 2,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/Action/Unknown6E6C.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 28328,
+    "target": 58861,
+    "target_instruction": 58860,
+    "size": 2,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/Action/Unknown6E6C.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 28336,
+    "target": 26271,
+    "target_instruction": 26270,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Action/Unknown6EAC.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 28378,
+    "target": 28333,
+    "target_instruction": 28332,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Action/Unknown6EAC.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 28506,
+    "target": 28505,
+    "target_instruction": 28504,
+    "size": 1,
+    "target_operation": "LD C,#00",
+    "path": "Source/Action/Unknown6F55.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 28531,
+    "target": 26271,
+    "target_instruction": 26270,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Action/Unknown6F55.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 28535,
+    "target": 28502,
+    "target_instruction": 28501,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Action/Unknown6F55.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 28543,
+    "target": 28539,
+    "target_instruction": 28538,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Action/Unknown6F55.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 28559,
+    "target": 28557,
+    "target_instruction": 28556,
+    "size": 1,
+    "target_operation": "LD A,#92",
+    "path": "Source/Action/Unknown6F55.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 28596,
+    "target": 28592,
+    "target_instruction": 28591,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Action/Unknown6F55.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 28612,
+    "target": 28610,
+    "target_instruction": 28609,
+    "size": 1,
+    "target_operation": "LD A,#92",
+    "path": "Source/Action/Unknown6F55.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 28649,
+    "target": 28645,
+    "target_instruction": 28644,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Action/Unknown6F55.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 28664,
+    "target": 28662,
+    "target_instruction": 28661,
+    "size": 1,
+    "target_operation": "LD A,#92",
+    "path": "Source/Action/Unknown6F55.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 30838,
+    "target": 31022,
+    "target_instruction": 31019,
+    "size": 1,
+    "target_operation": "LD (IY+#18),#10",
+    "path": "Source/Action/Unknown7859.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 31023,
+    "target": 31022,
+    "target_instruction": 31019,
+    "size": 1,
+    "target_operation": "LD (IY+#18),#10",
+    "path": "Source/Action/Unknown7859.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 31051,
+    "target": 31132,
+    "target_instruction": 31131,
+    "size": 2,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/Action/Unknown7859.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 31144,
+    "target": 31585,
+    "target_instruction": 31584,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Action/Unknown7859.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 31156,
+    "target": 31585,
+    "target_instruction": 31584,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Action/Unknown7859.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 31168,
+    "target": 31198,
+    "target_instruction": 31197,
+    "size": 1,
+    "target_operation": "ADD A,#00",
+    "path": "Source/Action/Unknown7859.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 31177,
+    "target": 31338,
+    "target_instruction": 31335,
+    "size": 1,
+    "target_operation": "LD (IX+#12),#00",
+    "path": "Source/Action/Unknown7859.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 31269,
+    "target": 27961,
+    "target_instruction": 27960,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Action/Unknown7859.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 31281,
+    "target": 27965,
+    "target_instruction": 27964,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Action/Unknown7859.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 31579,
+    "target": 31577,
+    "target_instruction": 31576,
+    "size": 1,
+    "target_operation": "LD A,#80",
+    "path": "Source/Action/Unknown7B58.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 31839,
+    "target": 27961,
+    "target_instruction": 27960,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Action/Unknown7B58.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 31851,
+    "target": 27965,
+    "target_instruction": 27964,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Action/Unknown7B58.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 32451,
+    "target": 32527,
+    "target_instruction": 32526,
+    "size": 2,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/Action/Unknown7EB7.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 32455,
+    "target": 32530,
+    "target_instruction": 32529,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Action/Unknown7EB7.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 32470,
+    "target": 32547,
+    "target_instruction": 32546,
+    "size": 2,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/Action/Unknown7EB7.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 32474,
+    "target": 32550,
+    "target_instruction": 32549,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Action/Unknown7EB7.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 32489,
+    "target": 32567,
+    "target_instruction": 32566,
+    "size": 2,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/Action/Unknown7EB7.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 32493,
+    "target": 32570,
+    "target_instruction": 32569,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Action/Unknown7EB7.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 43108,
+    "target": 43103,
+    "target_instruction": 43102,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Action/UpdateFrame.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 43183,
+    "target": 26186,
+    "target_instruction": 26185,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Action/UpdateFrame.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 43190,
+    "target": 43187,
+    "target_instruction": 43186,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Action/UpdateFrame.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 43202,
+    "target": 43196,
+    "target_instruction": 43195,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Action/UpdateFrame.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 43205,
+    "target": 26219,
+    "target_instruction": 26218,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Action/UpdateFrame.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 43258,
+    "target": 60585,
+    "target_instruction": 60584,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Action/UpdateFrame.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 43301,
+    "target": 26186,
+    "target_instruction": 26185,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Action/UpdateFrame.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 43311,
+    "target": 43309,
+    "target_instruction": 43308,
+    "size": 1,
+    "target_operation": "LD A,#80",
+    "path": "Source/Action/UpdateFrame.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 43321,
+    "target": 60662,
+    "target_instruction": 60661,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Action/UpdateFrame.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 43362,
+    "target": 26186,
+    "target_instruction": 26185,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Action/UpdateFrame.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 43369,
+    "target": 43366,
+    "target_instruction": 43365,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Action/UpdateFrame.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 43387,
+    "target": 26186,
+    "target_instruction": 26185,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Action/UpdateFrame.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 43429,
+    "target": 49311,
+    "target_instruction": 49310,
+    "size": 1,
+    "target_operation": "JP M,#C58B",
+    "path": "Source/Action/UpdateFrame.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 43432,
+    "target": 49466,
+    "target_instruction": 49464,
+    "size": 1,
+    "target_operation": "CALL #C681",
+    "path": "Source/Action/UpdateFrame.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 43435,
+    "target": 53560,
+    "target_instruction": 53560,
+    "size": 1,
+    "target_operation": "LD D,A",
+    "path": "Source/Action/UpdateFrame.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 43441,
+    "target": 49628,
+    "target_instruction": 49628,
+    "size": 1,
+    "target_operation": "CALL #C496",
+    "path": "Source/Action/UpdateFrame.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 43444,
+    "target": 49848,
+    "target_instruction": 49848,
+    "size": 1,
+    "target_operation": "CALL #C58B",
+    "path": "Source/Action/UpdateFrame.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 43447,
+    "target": 49921,
+    "target_instruction": 49920,
+    "size": 1,
+    "target_operation": "SET 1,(HL)",
+    "path": "Source/Action/UpdateFrame.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 43450,
+    "target": 50032,
+    "target_instruction": 50030,
+    "size": 1,
+    "target_operation": "CALL #C6C8",
+    "path": "Source/Action/UpdateFrame.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 43453,
+    "target": 50133,
+    "target_instruction": 50131,
+    "size": 1,
+    "target_operation": "JP #C08A",
+    "path": "Source/Action/UpdateFrame.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 43456,
+    "target": 50254,
+    "target_instruction": 50253,
+    "size": 1,
+    "target_operation": "CALL #C477",
+    "path": "Source/Action/UpdateFrame.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 43459,
+    "target": 50501,
+    "target_instruction": 50500,
+    "size": 1,
+    "target_operation": "LD A,(#CF34)",
+    "path": "Source/Action/UpdateFrame.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 43462,
+    "target": 50761,
+    "target_instruction": 50761,
+    "size": 1,
+    "target_operation": "JP #C6DB",
+    "path": "Source/Action/UpdateFrame.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 43465,
+    "target": 50866,
+    "target_instruction": 50865,
+    "size": 1,
+    "target_operation": "SBC HL,BC",
+    "path": "Source/Action/UpdateFrame.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 43471,
+    "target": 51079,
+    "target_instruction": 51078,
+    "size": 1,
+    "target_operation": "ADD IX,IX",
+    "path": "Source/Action/UpdateFrame.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 43474,
+    "target": 51232,
+    "target_instruction": 51231,
+    "size": 1,
+    "target_operation": "JR NC,#C823",
+    "path": "Source/Action/UpdateFrame.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 43477,
+    "target": 51503,
+    "target_instruction": 51503,
+    "size": 1,
+    "target_operation": "JR NC,#C932",
+    "path": "Source/Action/UpdateFrame.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 43492,
+    "target": 51862,
+    "target_instruction": 51861,
+    "size": 1,
+    "target_operation": "JP PO,#CA9E",
+    "path": "Source/Action/UpdateFrame.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 43498,
+    "target": 52127,
+    "target_instruction": 52126,
+    "size": 1,
+    "target_operation": "JR NZ,#CBBB",
+    "path": "Source/Action/UpdateFrame.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 43501,
+    "target": 52132,
+    "target_instruction": 52132,
+    "size": 1,
+    "target_operation": "LD L,C",
+    "path": "Source/Action/UpdateFrame.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 43504,
+    "target": 52343,
+    "target_instruction": 52343,
+    "size": 1,
+    "target_operation": "LD (#D61E),A",
+    "path": "Source/Action/UpdateFrame.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 43507,
+    "target": 52453,
+    "target_instruction": 52452,
+    "size": 1,
+    "target_operation": "SRA A",
+    "path": "Source/Action/UpdateFrame.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 43510,
+    "target": 52601,
+    "target_instruction": 52601,
+    "size": 1,
+    "target_operation": "SUB L",
+    "path": "Source/Action/UpdateFrame.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 43513,
+    "target": 52675,
+    "target_instruction": 52675,
+    "size": 1,
+    "target_operation": "SUB L",
+    "path": "Source/Action/UpdateFrame.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 43516,
+    "target": 52776,
+    "target_instruction": 52776,
+    "size": 1,
+    "target_operation": "LD (#D673),A",
+    "path": "Source/Action/UpdateFrame.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 43519,
+    "target": 52844,
+    "target_instruction": 52843,
+    "size": 1,
+    "target_operation": "LD (#D62F),A",
+    "path": "Source/Action/UpdateFrame.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 43522,
+    "target": 52893,
+    "target_instruction": 52892,
+    "size": 1,
+    "target_operation": "LD (#D662),A",
+    "path": "Source/Action/UpdateFrame.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 43578,
+    "target": 49731,
+    "target_instruction": 49730,
+    "size": 1,
+    "target_operation": "CALL NZ,#C662",
+    "path": "Source/Action/UpdateFrame.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 43581,
+    "target": 49735,
+    "target_instruction": 49733,
+    "size": 1,
+    "target_operation": "JP #C1C0",
+    "path": "Source/Action/UpdateFrame.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 43584,
+    "target": 50634,
+    "target_instruction": 50634,
+    "size": 1,
+    "target_operation": "LD (HL),A",
+    "path": "Source/Action/UpdateFrame.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 43587,
+    "target": 50663,
+    "target_instruction": 50663,
+    "size": 1,
+    "target_operation": "LD A,(#CF2B)",
+    "path": "Source/Action/UpdateFrame.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 43590,
+    "target": 50802,
+    "target_instruction": 50800,
+    "size": 1,
+    "target_operation": "LD BC,(#CF2F)",
+    "path": "Source/Action/UpdateFrame.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 43593,
+    "target": 50862,
+    "target_instruction": 50860,
+    "size": 1,
+    "target_operation": "LD BC,(#CF2B)",
+    "path": "Source/Action/UpdateFrame.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 43611,
+    "target": 50995,
+    "target_instruction": 50993,
+    "size": 1,
+    "target_operation": "JP C,#C764",
+    "path": "Source/Action/UpdateFrame.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 43614,
+    "target": 51045,
+    "target_instruction": 51044,
+    "size": 1,
+    "target_operation": "ADD IX,DE",
+    "path": "Source/Action/UpdateFrame.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 43617,
+    "target": 51618,
+    "target_instruction": 51618,
+    "size": 1,
+    "target_operation": "LD A,(#9B13)",
+    "path": "Source/Action/UpdateFrame.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 43620,
+    "target": 51652,
+    "target_instruction": 51651,
+    "size": 1,
+    "target_operation": "LD (#CC27),A",
+    "path": "Source/Action/UpdateFrame.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 43623,
+    "target": 51748,
+    "target_instruction": 51748,
+    "size": 1,
+    "target_operation": "LD L,B",
+    "path": "Source/Action/UpdateFrame.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 43626,
+    "target": 51759,
+    "target_instruction": 51758,
+    "size": 1,
+    "target_operation": "LD IXH,A",
+    "path": "Source/Action/UpdateFrame.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 43635,
+    "target": 52009,
+    "target_instruction": 52009,
+    "size": 1,
+    "target_operation": "BIT 0,(IY+#00)",
+    "path": "Source/Action/UpdateFrame.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 43638,
+    "target": 52025,
+    "target_instruction": 52025,
+    "size": 1,
+    "target_operation": "LD C,#00",
+    "path": "Source/Action/UpdateFrame.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 43641,
+    "target": 52750,
+    "target_instruction": 52748,
+    "size": 1,
+    "target_operation": "LD A,(#CBA1)",
+    "path": "Source/Action/UpdateFrame.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 43644,
+    "target": 52764,
+    "target_instruction": 52764,
+    "size": 1,
+    "target_operation": "LD (#D60D),A",
+    "path": "Source/Action/UpdateFrame.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 44111,
+    "target": 60585,
+    "target_instruction": 60584,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Action/UnknownAC38.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 44114,
+    "target": 60662,
+    "target_instruction": 60661,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Action/UnknownAC38.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 44129,
+    "target": 63388,
+    "target_instruction": 63387,
+    "size": 1,
+    "target_operation": "LD C,#0A",
+    "path": "Source/Action/UnknownAC5D.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 44136,
+    "target": 63384,
+    "target_instruction": 63383,
+    "size": 1,
+    "target_operation": "LD C,#0A",
+    "path": "Source/Action/UnknownAC5D.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 44141,
+    "target": 43368,
+    "target_instruction": 43367,
+    "size": 1,
+    "target_operation": "ADD A,#50",
+    "path": "Source/Action/UnknownAC5D.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 44151,
+    "target": 43189,
+    "target_instruction": 43188,
+    "size": 1,
+    "target_operation": "ADD A,#14",
+    "path": "Source/Action/UnknownAC5D.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 44156,
+    "target": 31595,
+    "target_instruction": 31594,
+    "size": 1,
+    "target_operation": "CP #FD",
+    "path": "Source/Action/UnknownAC5D.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 44159,
+    "target": 26740,
+    "target_instruction": 26739,
+    "size": 1,
+    "target_operation": "ADD A,#00",
+    "path": "Source/Action/UnknownAC5D.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 44184,
+    "target": 31140,
+    "target_instruction": 31139,
+    "size": 1,
+    "target_operation": "CP #F2",
+    "path": "Source/Action/UnknownAC5D.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 44189,
+    "target": 32263,
+    "target_instruction": 32262,
+    "size": 1,
+    "target_operation": "OR #32",
+    "path": "Source/Action/UnknownAC5D.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 44194,
+    "target": 32265,
+    "target_instruction": 32264,
+    "size": 1,
+    "target_operation": "LD H,#64",
+    "path": "Source/Action/UnknownAC5D.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 44199,
+    "target": 32228,
+    "target_instruction": 32227,
+    "size": 1,
+    "target_operation": "OR #20",
+    "path": "Source/Action/UnknownAC5D.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 44816,
+    "target": 44820,
+    "target_instruction": 44819,
+    "size": 1,
+    "target_operation": "JR NZ,#AF13",
+    "path": "Source/Action/UnknownAE73.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 44843,
+    "target": 44847,
+    "target_instruction": 44846,
+    "size": 1,
+    "target_operation": "JR NZ,#AF2E",
+    "path": "Source/Action/UnknownAE73.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 44867,
+    "target": 45041,
+    "target_instruction": 45039,
+    "size": 2,
+    "target_operation": "LD IX,#0000",
+    "path": "Source/Action/UnknownAE73.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 51628,
+    "target": 52024,
+    "target_instruction": 52023,
+    "size": 1,
+    "target_operation": "LD B,#00",
+    "path": "Source/Action/UnknownC88C.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 51631,
+    "target": 52265,
+    "target_instruction": 52264,
+    "size": 1,
+    "target_operation": "LD D,#00",
+    "path": "Source/Action/UnknownC88C.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 51636,
+    "target": 52261,
+    "target_instruction": 52260,
+    "size": 1,
+    "target_operation": "LD B,#00",
+    "path": "Source/Action/UnknownC88C.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 51641,
+    "target": 52028,
+    "target_instruction": 52027,
+    "size": 1,
+    "target_operation": "LD D,#00",
+    "path": "Source/Action/UnknownC88C.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 51645,
+    "target": 52514,
+    "target_instruction": 52513,
+    "size": 1,
+    "target_operation": "LD B,#00",
+    "path": "Source/Action/UnknownC88C.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 51648,
+    "target": 52026,
+    "target_instruction": 52025,
+    "size": 1,
+    "target_operation": "LD C,#00",
+    "path": "Source/Action/UnknownC88C.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 51651,
+    "target": 52263,
+    "target_instruction": 52262,
+    "size": 1,
+    "target_operation": "LD C,#00",
+    "path": "Source/Action/UnknownC88C.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 51654,
+    "target": 52518,
+    "target_instruction": 52517,
+    "size": 1,
+    "target_operation": "LD D,#00",
+    "path": "Source/Action/UnknownC88C.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 51659,
+    "target": 52516,
+    "target_instruction": 52515,
+    "size": 1,
+    "target_operation": "LD C,#00",
+    "path": "Source/Action/UnknownC88C.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 51696,
+    "target": 52514,
+    "target_instruction": 52513,
+    "size": 1,
+    "target_operation": "LD B,#00",
+    "path": "Source/Action/UnknownC88C.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 51722,
+    "target": 52024,
+    "target_instruction": 52023,
+    "size": 1,
+    "target_operation": "LD B,#00",
+    "path": "Source/Action/UnknownC88C.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 51741,
+    "target": 52261,
+    "target_instruction": 52260,
+    "size": 1,
+    "target_operation": "LD B,#00",
+    "path": "Source/Action/UnknownC88C.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 51797,
+    "target": 52026,
+    "target_instruction": 52025,
+    "size": 1,
+    "target_operation": "LD C,#00",
+    "path": "Source/Action/UnknownC88C.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 51814,
+    "target": 52516,
+    "target_instruction": 52515,
+    "size": 1,
+    "target_operation": "LD C,#00",
+    "path": "Source/Action/UnknownC88C.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 51870,
+    "target": 52263,
+    "target_instruction": 52262,
+    "size": 1,
+    "target_operation": "LD C,#00",
+    "path": "Source/Action/UnknownC88C.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 51926,
+    "target": 52028,
+    "target_instruction": 52027,
+    "size": 1,
+    "target_operation": "LD D,#00",
+    "path": "Source/Action/UnknownC88C.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 51943,
+    "target": 52518,
+    "target_instruction": 52517,
+    "size": 1,
+    "target_operation": "LD D,#00",
+    "path": "Source/Action/UnknownC88C.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 51999,
+    "target": 52265,
+    "target_instruction": 52264,
+    "size": 1,
+    "target_operation": "LD D,#00",
+    "path": "Source/Action/UnknownC88C.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 53514,
+    "target": 53545,
+    "target_instruction": 53544,
+    "size": 2,
+    "target_operation": "LD SP,#0000",
+    "path": "Source/Action/ClearWorkBuffer.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 57416,
+    "target": 57377,
+    "target_instruction": 57376,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Action/UnknownE020.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 57419,
+    "target": 60803,
+    "target_instruction": 60802,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Action/UnknownE020.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 57445,
+    "target": 52030,
+    "target_instruction": 52029,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Action/UnknownE020.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 57456,
+    "target": 52107,
+    "target_instruction": 52106,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Action/UnknownE020.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 57467,
+    "target": 52184,
+    "target_instruction": 52183,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Action/UnknownE020.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 57478,
+    "target": 52052,
+    "target_instruction": 52051,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Action/UnknownE020.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 57489,
+    "target": 52129,
+    "target_instruction": 52128,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Action/UnknownE020.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 57500,
+    "target": 52206,
+    "target_instruction": 52205,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Action/UnknownE020.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 57511,
+    "target": 52079,
+    "target_instruction": 52078,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Action/UnknownE020.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 57522,
+    "target": 52156,
+    "target_instruction": 52155,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Action/UnknownE020.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 57533,
+    "target": 52233,
+    "target_instruction": 52232,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Action/UnknownE020.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 57559,
+    "target": 58535,
+    "target_instruction": 58534,
+    "size": 2,
+    "target_operation": "LD SP,#0000",
+    "path": "Source/Action/UnknownE020.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 57601,
+    "target": 44872,
+    "target_instruction": 44871,
+    "size": 2,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/Action/UnknownE020.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 57619,
+    "target": 44886,
+    "target_instruction": 44885,
+    "size": 2,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/Action/UnknownE020.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 57637,
+    "target": 44905,
+    "target_instruction": 44904,
+    "size": 2,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/Action/UnknownE020.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 57757,
+    "target": 60803,
+    "target_instruction": 60802,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Action/UnknownE020.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 58546,
+    "target": 58582,
+    "target_instruction": 58581,
+    "size": 2,
+    "target_operation": "LD SP,#0000",
+    "path": "Source/Action/UnknownE4A6.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 58716,
+    "target": 58885,
+    "target_instruction": 58884,
+    "size": 2,
+    "target_operation": "LD SP,#0000",
+    "path": "Source/Action/UnknownE55C.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 58730,
+    "target": 59020,
+    "target_instruction": 59019,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Action/UnknownE55C.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 58737,
+    "target": 58803,
+    "target_instruction": 58802,
+    "size": 2,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/Action/UnknownE55C.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 58743,
+    "target": 59026,
+    "target_instruction": 59025,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Action/UnknownE55C.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 58750,
+    "target": 58834,
+    "target_instruction": 58833,
+    "size": 2,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/Action/UnknownE55C.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 58756,
+    "target": 59032,
+    "target_instruction": 59031,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Action/UnknownE55C.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 58763,
+    "target": 58861,
+    "target_instruction": 58860,
+    "size": 2,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/Action/UnknownE55C.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 58778,
+    "target": 58782,
+    "target_instruction": 58781,
+    "size": 1,
+    "target_operation": "JR #E59D",
+    "path": "Source/Action/UnknownE55C.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 58942,
+    "target": 58948,
+    "target_instruction": 58947,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Action/UnknownE5A0.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 58955,
+    "target": 58948,
+    "target_instruction": 58947,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Action/UnknownE5A0.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 59022,
+    "target": 58803,
+    "target_instruction": 58802,
+    "size": 2,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/Action/UnknownE685.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 59028,
+    "target": 58834,
+    "target_instruction": 58833,
+    "size": 2,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/Action/UnknownE685.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 59034,
+    "target": 58861,
+    "target_instruction": 58860,
+    "size": 2,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/Action/UnknownE685.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 60637,
+    "target": 60585,
+    "target_instruction": 60584,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Action/UnknownECA8.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 60644,
+    "target": 60586,
+    "target_instruction": 60584,
+    "size": 1,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Action/UnknownECA8.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 60718,
+    "target": 60662,
+    "target_instruction": 60661,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Action/UnknownECA8.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 60725,
+    "target": 60663,
+    "target_instruction": 60661,
+    "size": 1,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Action/UnknownECA8.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 62837,
+    "target": 58800,
+    "target_instruction": 58799,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Action/UnknownF572.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 62840,
+    "target": 58831,
+    "target_instruction": 58830,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Action/UnknownF572.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 62843,
+    "target": 58858,
+    "target_instruction": 58857,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Action/UnknownF572.asm"
+  },
+  {
+    "region": "ThreeD",
+    "writer": 51628,
+    "target": 52024,
+    "target_instruction": 52023,
+    "size": 1,
+    "target_operation": "LD B,#00",
+    "path": "Source/ThreeD/UnknownC88C.asm"
+  },
+  {
+    "region": "ThreeD",
+    "writer": 51631,
+    "target": 52265,
+    "target_instruction": 52264,
+    "size": 1,
+    "target_operation": "LD D,#00",
+    "path": "Source/ThreeD/UnknownC88C.asm"
+  },
+  {
+    "region": "ThreeD",
+    "writer": 51636,
+    "target": 52261,
+    "target_instruction": 52260,
+    "size": 1,
+    "target_operation": "LD B,#00",
+    "path": "Source/ThreeD/UnknownC88C.asm"
+  },
+  {
+    "region": "ThreeD",
+    "writer": 51641,
+    "target": 52028,
+    "target_instruction": 52027,
+    "size": 1,
+    "target_operation": "LD D,#00",
+    "path": "Source/ThreeD/UnknownC88C.asm"
+  },
+  {
+    "region": "ThreeD",
+    "writer": 51645,
+    "target": 52514,
+    "target_instruction": 52513,
+    "size": 1,
+    "target_operation": "LD B,#00",
+    "path": "Source/ThreeD/UnknownC88C.asm"
+  },
+  {
+    "region": "ThreeD",
+    "writer": 51648,
+    "target": 52026,
+    "target_instruction": 52025,
+    "size": 1,
+    "target_operation": "LD C,#00",
+    "path": "Source/ThreeD/UnknownC88C.asm"
+  },
+  {
+    "region": "ThreeD",
+    "writer": 51651,
+    "target": 52263,
+    "target_instruction": 52262,
+    "size": 1,
+    "target_operation": "LD C,#00",
+    "path": "Source/ThreeD/UnknownC88C.asm"
+  },
+  {
+    "region": "ThreeD",
+    "writer": 51654,
+    "target": 52518,
+    "target_instruction": 52517,
+    "size": 1,
+    "target_operation": "LD D,#00",
+    "path": "Source/ThreeD/UnknownC88C.asm"
+  },
+  {
+    "region": "ThreeD",
+    "writer": 51659,
+    "target": 52516,
+    "target_instruction": 52515,
+    "size": 1,
+    "target_operation": "LD C,#00",
+    "path": "Source/ThreeD/UnknownC88C.asm"
+  },
+  {
+    "region": "ThreeD",
+    "writer": 51696,
+    "target": 52514,
+    "target_instruction": 52513,
+    "size": 1,
+    "target_operation": "LD B,#00",
+    "path": "Source/ThreeD/UnknownC88C.asm"
+  },
+  {
+    "region": "ThreeD",
+    "writer": 51722,
+    "target": 52024,
+    "target_instruction": 52023,
+    "size": 1,
+    "target_operation": "LD B,#00",
+    "path": "Source/ThreeD/UnknownC88C.asm"
+  },
+  {
+    "region": "ThreeD",
+    "writer": 51741,
+    "target": 52261,
+    "target_instruction": 52260,
+    "size": 1,
+    "target_operation": "LD B,#00",
+    "path": "Source/ThreeD/UnknownC88C.asm"
+  },
+  {
+    "region": "ThreeD",
+    "writer": 51797,
+    "target": 52026,
+    "target_instruction": 52025,
+    "size": 1,
+    "target_operation": "LD C,#00",
+    "path": "Source/ThreeD/UnknownC88C.asm"
+  },
+  {
+    "region": "ThreeD",
+    "writer": 51814,
+    "target": 52516,
+    "target_instruction": 52515,
+    "size": 1,
+    "target_operation": "LD C,#00",
+    "path": "Source/ThreeD/UnknownC88C.asm"
+  },
+  {
+    "region": "ThreeD",
+    "writer": 51870,
+    "target": 52263,
+    "target_instruction": 52262,
+    "size": 1,
+    "target_operation": "LD C,#00",
+    "path": "Source/ThreeD/UnknownC88C.asm"
+  },
+  {
+    "region": "ThreeD",
+    "writer": 51926,
+    "target": 52028,
+    "target_instruction": 52027,
+    "size": 1,
+    "target_operation": "LD D,#00",
+    "path": "Source/ThreeD/UnknownCAB3.asm"
+  },
+  {
+    "region": "ThreeD",
+    "writer": 51943,
+    "target": 52518,
+    "target_instruction": 52517,
+    "size": 1,
+    "target_operation": "LD D,#00",
+    "path": "Source/ThreeD/UnknownCAE3.asm"
+  },
+  {
+    "region": "ThreeD",
+    "writer": 51999,
+    "target": 52265,
+    "target_instruction": 52264,
+    "size": 1,
+    "target_operation": "LD D,#00",
+    "path": "Source/ThreeD/UnknownCAE3.asm"
+  },
+  {
+    "region": "ThreeD",
+    "writer": 53514,
+    "target": 53545,
+    "target_instruction": 53544,
+    "size": 2,
+    "target_operation": "LD SP,#0000",
+    "path": "Source/ThreeD/ClearWorkBuffer.asm"
+  },
+  {
+    "region": "Voxel",
+    "writer": 58634,
+    "target": 59311,
+    "target_instruction": 59310,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Voxel/RotateBasisVectors.asm"
+  },
+  {
+    "region": "Voxel",
+    "writer": 58640,
+    "target": 59393,
+    "target_instruction": 59392,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Voxel/RotateBasisVectors.asm"
+  },
+  {
+    "region": "Voxel",
+    "writer": 58646,
+    "target": 59475,
+    "target_instruction": 59474,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Voxel/RotateBasisVectors.asm"
+  },
+  {
+    "region": "Voxel",
+    "writer": 58652,
+    "target": 59003,
+    "target_instruction": 59002,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Voxel/RotateBasisVectors.asm"
+  },
+  {
+    "region": "Voxel",
+    "writer": 58658,
+    "target": 59085,
+    "target_instruction": 59084,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Voxel/RotateBasisVectors.asm"
+  },
+  {
+    "region": "Voxel",
+    "writer": 58664,
+    "target": 59167,
+    "target_instruction": 59166,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Voxel/RotateBasisVectors.asm"
+  },
+  {
+    "region": "Voxel",
+    "writer": 58726,
+    "target": 59311,
+    "target_instruction": 59310,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Voxel/RotateBasisVectors.asm"
+  },
+  {
+    "region": "Voxel",
+    "writer": 58767,
+    "target": 59003,
+    "target_instruction": 59002,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Voxel/RotateBasisVectors.asm"
+  },
+  {
+    "region": "Voxel",
+    "writer": 58808,
+    "target": 59393,
+    "target_instruction": 59392,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Voxel/RotateBasisVectors.asm"
+  },
+  {
+    "region": "Voxel",
+    "writer": 58849,
+    "target": 59085,
+    "target_instruction": 59084,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Voxel/RotateBasisVectors.asm"
+  },
+  {
+    "region": "Voxel",
+    "writer": 58890,
+    "target": 59475,
+    "target_instruction": 59474,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Voxel/RotateBasisVectors.asm"
+  },
+  {
+    "region": "Voxel",
+    "writer": 58931,
+    "target": 59167,
+    "target_instruction": 59166,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Voxel/RotateBasisVectors.asm"
+  },
+  {
+    "region": "Voxel",
+    "writer": 58944,
+    "target": 59322,
+    "target_instruction": 59321,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Voxel/RotateBasisVectors.asm"
+  },
+  {
+    "region": "Voxel",
+    "writer": 58950,
+    "target": 59404,
+    "target_instruction": 59403,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Voxel/RotateBasisVectors.asm"
+  },
+  {
+    "region": "Voxel",
+    "writer": 58956,
+    "target": 59486,
+    "target_instruction": 59485,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Voxel/RotateBasisVectors.asm"
+  },
+  {
+    "region": "Voxel",
+    "writer": 59077,
+    "target": 59322,
+    "target_instruction": 59321,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Voxel/RotateBasisVectors.asm"
+  },
+  {
+    "region": "Voxel",
+    "writer": 59159,
+    "target": 59404,
+    "target_instruction": 59403,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Voxel/RotateBasisVectors.asm"
+  },
+  {
+    "region": "Voxel",
+    "writer": 59241,
+    "target": 59486,
+    "target_instruction": 59485,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Voxel/RotateBasisVectors.asm"
+  },
+  {
+    "region": "Voxel",
+    "writer": 59585,
+    "target": 59667,
+    "target_instruction": 59666,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Voxel/SignedSeededProduct.asm"
+  },
+  {
+    "region": "Voxel",
+    "writer": 60422,
+    "target": 60506,
+    "target_instruction": 60503,
+    "size": 1,
+    "target_operation": "LD (IY+#06),#00",
+    "path": "Source/Voxel/CreateSmallEffect.asm"
+  },
+  {
+    "region": "Voxel",
+    "writer": 60427,
+    "target": 60541,
+    "target_instruction": 60538,
+    "size": 1,
+    "target_operation": "LD (IY+#11),#00",
+    "path": "Source/Voxel/CreateSmallEffect.asm"
+  },
+  {
+    "region": "Voxel",
+    "writer": 60432,
+    "target": 60537,
+    "target_instruction": 60534,
+    "size": 1,
+    "target_operation": "LD (IY+#10),#00",
+    "path": "Source/Voxel/ConfigureSmallEffect.asm"
+  },
+  {
+    "region": "Voxel",
+    "writer": 60437,
+    "target": 60524,
+    "target_instruction": 60523,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Voxel/ConfigureSmallEffect.asm"
+  },
+  {
+    "region": "Voxel",
+    "writer": 60449,
+    "target": 60506,
+    "target_instruction": 60503,
+    "size": 1,
+    "target_operation": "LD (IY+#06),#00",
+    "path": "Source/Voxel/CreateLargeEffect.asm"
+  },
+  {
+    "region": "Voxel",
+    "writer": 60454,
+    "target": 60541,
+    "target_instruction": 60538,
+    "size": 1,
+    "target_operation": "LD (IY+#11),#00",
+    "path": "Source/Voxel/CreateLargeEffect.asm"
+  },
+  {
+    "region": "Voxel",
+    "writer": 60459,
+    "target": 60537,
+    "target_instruction": 60534,
+    "size": 1,
+    "target_operation": "LD (IY+#10),#00",
+    "path": "Source/Voxel/CreateLargeEffect.asm"
+  },
+  {
+    "region": "Voxel",
+    "writer": 60464,
+    "target": 60524,
+    "target_instruction": 60523,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Voxel/CreateLargeEffect.asm"
+  },
+  {
+    "region": "Voxel",
+    "writer": 60550,
+    "target": 60798,
+    "target_instruction": 60797,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Voxel/ClipSprite.asm"
+  },
+  {
+    "region": "Voxel",
+    "writer": 60553,
+    "target": 60573,
+    "target_instruction": 60572,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Voxel/ClipSprite.asm"
+  },
+  {
+    "region": "Voxel",
+    "writer": 60556,
+    "target": 60626,
+    "target_instruction": 60625,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Voxel/ClipSprite.asm"
+  },
+  {
+    "region": "Voxel",
+    "writer": 60595,
+    "target": 60798,
+    "target_instruction": 60797,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Voxel/ClipSprite.asm"
+  },
+  {
+    "region": "Voxel",
+    "writer": 60707,
+    "target": 60951,
+    "target_instruction": 60950,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Voxel/ClipSprite.asm"
+  },
+  {
+    "region": "Voxel",
+    "writer": 60720,
+    "target": 61002,
+    "target_instruction": 61002,
+    "size": 1,
+    "target_operation": "JR NC,#EE53",
+    "path": "Source/Voxel/ClipSprite.asm"
+  },
+  {
+    "region": "Voxel",
+    "writer": 61011,
+    "target": 61048,
+    "target_instruction": 61047,
+    "size": 2,
+    "target_operation": "JP #0000",
+    "path": "Source/Voxel/ClipSprite.asm"
+  },
+  {
+    "region": "Controls",
+    "writer": 51330,
+    "target": 51850,
+    "target_instruction": 51849,
+    "size": 2,
+    "target_operation": "LD SP,#0000",
+    "path": "Source/Controls/UnknownC882.asm"
+  },
+  {
+    "region": "Controls",
+    "writer": 51334,
+    "target": 51844,
+    "target_instruction": 51843,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Controls/UnknownC882.asm"
+  },
+  {
+    "region": "Controls",
+    "writer": 51885,
+    "target": 51855,
+    "target_instruction": 51854,
+    "size": 2,
+    "target_operation": "LD BC,#0000",
+    "path": "Source/Controls/UnknownCA8D.asm"
+  },
+  {
+    "region": "Controls",
+    "writer": 52295,
+    "target": 52766,
+    "target_instruction": 52765,
+    "size": 1,
+    "target_operation": "LD C,#00",
+    "path": "Source/Controls/UnknownCB00.asm"
+  },
+  {
+    "region": "Controls",
+    "writer": 52304,
+    "target": 52434,
+    "target_instruction": 52433,
+    "size": 1,
+    "target_operation": "LD E,#00",
+    "path": "Source/Controls/UnknownCB00.asm"
+  },
+  {
+    "region": "Controls",
+    "writer": 52309,
+    "target": 52637,
+    "target_instruction": 52636,
+    "size": 1,
+    "target_operation": "LD E,#00",
+    "path": "Source/Controls/UnknownCB00.asm"
+  },
+  {
+    "region": "Controls",
+    "writer": 52317,
+    "target": 52350,
+    "target_instruction": 52349,
+    "size": 1,
+    "target_operation": "LD E,#00",
+    "path": "Source/Controls/UnknownCB00.asm"
+  },
+  {
+    "region": "Controls",
+    "writer": 52320,
+    "target": 52553,
+    "target_instruction": 52552,
+    "size": 1,
+    "target_operation": "LD E,#00",
+    "path": "Source/Controls/UnknownCB00.asm"
+  },
+  {
+    "region": "Controls",
+    "writer": 52335,
+    "target": 52529,
+    "target_instruction": 52528,
+    "size": 2,
+    "target_operation": "CALL #CE16",
+    "path": "Source/Controls/UnknownCB00.asm"
+  },
+  {
+    "region": "Controls",
+    "writer": 52338,
+    "target": 52732,
+    "target_instruction": 52731,
+    "size": 2,
+    "target_operation": "CALL #CE16",
+    "path": "Source/Controls/UnknownCB00.asm"
+  },
+  {
+    "region": "Controls",
+    "writer": 52543,
+    "target": 52747,
+    "target_instruction": 52746,
+    "size": 1,
+    "target_operation": "LD (HL),#00",
+    "path": "Source/Controls/UnknownCB00.asm"
+  },
+  {
+    "region": "Controls",
+    "writer": 52762,
+    "target": 52759,
+    "target_instruction": 52758,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Controls/UnknownCE16.asm"
+  },
+  {
+    "region": "Controls",
+    "writer": 52910,
+    "target": 52916,
+    "target_instruction": 52915,
+    "size": 1,
+    "target_operation": "JR #CEB3",
+    "path": "Source/Controls/UnknownCEA4.asm"
+  },
+  {
+    "region": "Controls",
+    "writer": 52986,
+    "target": 53824,
+    "target_instruction": 53822,
+    "size": 2,
+    "target_operation": "LD IX,#0000",
+    "path": "Source/Controls/UnknownCEFA.asm"
+  },
+  {
+    "region": "Controls",
+    "writer": 54669,
+    "target": 54709,
+    "target_instruction": 54708,
+    "size": 2,
+    "target_operation": "LD DE,#0020",
+    "path": "Source/Controls/UnknownD57B.asm"
+  },
+  {
+    "region": "Controls",
+    "writer": 54680,
+    "target": 54709,
+    "target_instruction": 54708,
+    "size": 2,
+    "target_operation": "LD DE,#0020",
+    "path": "Source/Controls/UnknownD57B.asm"
+  },
+  {
+    "region": "Controls",
+    "writer": 54686,
+    "target": 54784,
+    "target_instruction": 54783,
+    "size": 2,
+    "target_operation": "CP #00",
+    "path": "Source/Controls/UnknownD57B.asm"
+  },
+  {
+    "region": "Controls",
+    "writer": 54891,
+    "target": 54898,
+    "target_instruction": 54897,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Controls/UnknownD609.asm"
+  },
+  {
+    "region": "Controls",
+    "writer": 55038,
+    "target": 55045,
+    "target_instruction": 55044,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Controls/UnknownD609.asm"
+  },
+  {
+    "region": "Controls",
+    "writer": 55050,
+    "target": 55062,
+    "target_instruction": 55061,
+    "size": 1,
+    "target_operation": "JR #D727",
+    "path": "Source/Controls/UnknownD609.asm"
+  },
+  {
+    "region": "Controls",
+    "writer": 55147,
+    "target": 55154,
+    "target_instruction": 55153,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Controls/UnknownD727.asm"
+  },
+  {
+    "region": "Controls",
+    "writer": 55286,
+    "target": 55293,
+    "target_instruction": 55292,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Controls/UnknownD727.asm"
+  },
+  {
+    "region": "Controls",
+    "writer": 55298,
+    "target": 55310,
+    "target_instruction": 55309,
+    "size": 1,
+    "target_operation": "JR #D80D",
+    "path": "Source/Controls/UnknownD727.asm"
+  },
+  {
+    "region": "Controls",
+    "writer": 55397,
+    "target": 55404,
+    "target_instruction": 55403,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Controls/UnknownD833.asm"
+  },
+  {
+    "region": "Controls",
+    "writer": 55528,
+    "target": 55535,
+    "target_instruction": 55534,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Controls/UnknownD833.asm"
+  },
+  {
+    "region": "Controls",
+    "writer": 55540,
+    "target": 55552,
+    "target_instruction": 55551,
+    "size": 1,
+    "target_operation": "JR #D8FF",
+    "path": "Source/Controls/UnknownD833.asm"
+  },
+  {
+    "region": "Controls",
+    "writer": 55932,
+    "target": 55939,
+    "target_instruction": 55938,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Controls/UnknownD9DE.asm"
+  },
+  {
+    "region": "Controls",
+    "writer": 57377,
+    "target": 57481,
+    "target_instruction": 57480,
+    "size": 2,
+    "target_operation": "LD SP,#0000",
+    "path": "Source/Controls/UnknownE021.asm"
+  },
+  {
+    "region": "Controls",
+    "writer": 58005,
+    "target": 58511,
+    "target_instruction": 58510,
+    "size": 2,
+    "target_operation": "LD SP,#0000",
+    "path": "Source/Controls/UnknownE291.asm"
+  },
+  {
+    "region": "Controls",
+    "writer": 58034,
+    "target": 58032,
+    "target_instruction": 58031,
+    "size": 1,
+    "target_operation": "LD L,#00",
+    "path": "Source/Controls/UnknownE291.asm"
+  },
+  {
+    "region": "Controls",
+    "writer": 58049,
+    "target": 58044,
+    "target_instruction": 58043,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Controls/UnknownE291.asm"
+  },
+  {
+    "region": "Controls",
+    "writer": 58052,
+    "target": 58481,
+    "target_instruction": 58480,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Controls/UnknownE291.asm"
+  },
+  {
+    "region": "Controls",
+    "writer": 58494,
+    "target": 58481,
+    "target_instruction": 58480,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Controls/UnknownE291.asm"
+  },
+  {
+    "region": "Controls",
+    "writer": 60433,
+    "target": 60579,
+    "target_instruction": 60578,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Controls/UnknownEC0E.asm"
+  },
+  {
+    "region": "Controls",
+    "writer": 60439,
+    "target": 60586,
+    "target_instruction": 60585,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Controls/UnknownEC0E.asm"
+  },
+  {
+    "region": "Controls",
+    "writer": 60444,
+    "target": 60509,
+    "target_instruction": 60508,
+    "size": 2,
+    "target_operation": "LD HL,#EC80",
+    "path": "Source/Controls/UnknownEC0E.asm"
+  },
+  {
+    "region": "Controls",
+    "writer": 60539,
+    "target": 60509,
+    "target_instruction": 60508,
+    "size": 2,
+    "target_operation": "LD HL,#EC80",
+    "path": "Source/Controls/UnknownEC59.asm"
+  },
+  {
+    "region": "Controls",
+    "writer": 60590,
+    "target": 60586,
+    "target_instruction": 60585,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Controls/UnknownECA2.asm"
+  },
+  {
+    "region": "Controls",
+    "writer": 60613,
+    "target": 61398,
+    "target_instruction": 61397,
+    "size": 1,
+    "target_operation": "LD C,#00",
+    "path": "Source/Controls/UnknownECA2.asm"
+  },
+  {
+    "region": "Controls",
+    "writer": 60628,
+    "target": 60579,
+    "target_instruction": 60578,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Controls/UnknownECA2.asm"
+  },
+  {
+    "region": "Controls",
+    "writer": 60645,
+    "target": 60579,
+    "target_instruction": 60578,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Controls/UnknownECA2.asm"
+  },
+  {
+    "region": "Controls",
+    "writer": 60650,
+    "target": 61398,
+    "target_instruction": 61397,
+    "size": 1,
+    "target_operation": "LD C,#00",
+    "path": "Source/Controls/UnknownECA2.asm"
+  },
+  {
+    "region": "Controls",
+    "writer": 60712,
+    "target": 61377,
+    "target_instruction": 61376,
+    "size": 2,
+    "target_operation": "LD SP,#0000",
+    "path": "Source/Controls/UnknownED28.asm"
+  },
+  {
+    "region": "Controls",
+    "writer": 61422,
+    "target": 61398,
+    "target_instruction": 61397,
+    "size": 1,
+    "target_operation": "LD C,#00",
+    "path": "Source/Controls/UnknownEFC4.asm"
+  },
+  {
+    "region": "Controls",
+    "writer": 61712,
+    "target": 61710,
+    "target_instruction": 61709,
+    "size": 1,
+    "target_operation": "LD A,#80",
+    "path": "Source/Controls/UnknownF10D.asm"
+  },
+  {
+    "region": "Final",
+    "writer": 24739,
+    "target": 24947,
+    "target_instruction": 24946,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Final/InitializeFinal.asm"
+  },
+  {
+    "region": "Final",
+    "writer": 24755,
+    "target": 24947,
+    "target_instruction": 24946,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Final/InitializeFinal.asm"
+  },
+  {
+    "region": "Final",
+    "writer": 24900,
+    "target": 24788,
+    "target_instruction": 24787,
+    "size": 1,
+    "target_operation": "LD A,#01",
+    "path": "Source/Final/ReadSpeedKeys.asm"
+  },
+  {
+    "region": "Final",
+    "writer": 25016,
+    "target": 25141,
+    "target_instruction": 25140,
+    "size": 2,
+    "target_operation": "LD HL,#627D",
+    "path": "Source/Final/PrepareFrame.asm"
+  },
+  {
+    "region": "Final",
+    "writer": 25022,
+    "target": 25144,
+    "target_instruction": 25143,
+    "size": 2,
+    "target_operation": "LD BC,#0017",
+    "path": "Source/Final/PrepareFrame.asm"
+  }
+]

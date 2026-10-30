@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "cases": 65568,
+  "method": "original_bank4_sum_and_bank6_return",
+  "all_byte_pairs": true,
+  "all_unlocked_pages": true,
+  "high_byte_E147_ignored": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "cases": 1793,
+  "output_wrapped_cases": 386,
+  "zero_sentinel_at_first_record_cases": 53,
+  "method": "original_C4E6_after_explicit_HALT_wakeup_four_128_word_tables_independent_filter_full_output_and_exact_pointer_registers",
+  "accepted_counts_zero_through_512_checked": true,
+  "all_width_and_height_bytes": true,
+  "output_cursor_wrap_not_fixed": true,
+  "halt_wakeup_fixture": true,
+  "interrupt_handler_executed": false,
+  "all_AF_values_proved": false,
+  "tables_synthetic": true,
+  "calls_stubbed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

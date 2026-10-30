@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "cases": 331776,
+  "setup_profiles": 256,
+  "all_byte_thresholds_each_axis": true,
+  "all_coordinate_words_each_axis_in_profile": [
+    240,
+    15
+  ],
+  "all_headers_per_profile": true,
+  "zero_count_cases": 4096,
+  "nonzero_minima_do_not_move_lower_classifier_boundary": true,
+  "maximum_255_wraps_excluded_threshold_to_zero": true,
+  "method": "original_D0C3_then_original_D430_exact_memory_registers_flags",
+  "calls_stubbed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

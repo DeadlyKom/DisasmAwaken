@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "archived_snapshots": 695,
+  "removed_expanded_files": 123476,
+  "archived_logical_bytes": 1816941635,
+  "unique_content_objects": 9032,
+  "unique_content_bytes": 894585100,
+  "archive_bytes": 113719756,
+  "archive": "Tools/Disasm/Research/Archives/LegacySnapshots-20261031.zip",
+  "archive_sha256": "15df27419206e703d143bf035a762b04cc575f17c4ae244872a4a250b6833459",
+  "retained_candidates": [
+    "AnimatedVariantCodeScoped",
+    "EventActionCodeScoped",
+    "PeriodicVariantCodeScoped"
+  ],
+  "active_files_checked": 3007,
+  "active_files_unchanged": true,
+  "originals_and_research_scripts_preserved": true,
+  "snapshot_directory_guards_preserved": true,
+  "assembly_executed": false,
+  "recovery_behaviour_checked": true,
+  "recovery_preserves_modified_files": true,
+  "candidate_creation_does_not_restore_archived_snapshot": true,
+  "source_verification_passed": true,
+  "source_instruction_count": 35417,
+  "source_covered_bytes": 479744,
+  "documentation_verification_passed": true,
+  "git_diff_check_passed": true,
+  "remaining_expanded_snapshot_files": {
+    "Candidates": {
+      "files": 186,
+      "bytes": 19846061
+    },
+    "History": {
+      "files": 599,
+      "bytes": 159331
+    }
+  },
+  "logical_bytes_released": 1703037076
+}

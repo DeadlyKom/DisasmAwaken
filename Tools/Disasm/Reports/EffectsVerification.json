@@ -1,0 +1,176 @@
+{
+  "method": "isolated_original_z80_bytes",
+  "passed": true,
+  "multiply_fixtures": 1024,
+  "division_fixtures": 65280,
+  "division_proved_denominator_range": [
+    1,
+    128
+  ],
+  "division_full_nonzero_byte_domain": false,
+  "division_outside_mismatches": 23580,
+  "division_outside_examples": [
+    {
+      "numerator": 2,
+      "denominator": 171,
+      "actual": 3,
+      "expected": 2
+    },
+    {
+      "numerator": 2,
+      "denominator": 172,
+      "actual": 3,
+      "expected": 2
+    },
+    {
+      "numerator": 2,
+      "denominator": 173,
+      "actual": 3,
+      "expected": 2
+    },
+    {
+      "numerator": 2,
+      "denominator": 174,
+      "actual": 3,
+      "expected": 2
+    },
+    {
+      "numerator": 2,
+      "denominator": 175,
+      "actual": 3,
+      "expected": 2
+    },
+    {
+      "numerator": 2,
+      "denominator": 176,
+      "actual": 3,
+      "expected": 2
+    },
+    {
+      "numerator": 2,
+      "denominator": 177,
+      "actual": 3,
+      "expected": 2
+    },
+    {
+      "numerator": 2,
+      "denominator": 178,
+      "actual": 3,
+      "expected": 2
+    },
+    {
+      "numerator": 2,
+      "denominator": 179,
+      "actual": 3,
+      "expected": 2
+    },
+    {
+      "numerator": 2,
+      "denominator": 180,
+      "actual": 3,
+      "expected": 2
+    }
+  ],
+  "seeded_fixtures": 324,
+  "seeded_multiply_is_ordinary_product": false,
+  "effect_records": [
+    {
+      "entry": 60416,
+      "skipped_occupied": 0,
+      "record": [
+        34,
+        17,
+        68,
+        51,
+        102,
+        85,
+        35,
+        2,
+        0,
+        216,
+        0,
+        216,
+        1,
+        13,
+        192,
+        0,
+        12,
+        12
+      ]
+    },
+    {
+      "entry": 60416,
+      "skipped_occupied": 1,
+      "record": [
+        34,
+        17,
+        68,
+        51,
+        102,
+        85,
+        35,
+        2,
+        0,
+        216,
+        0,
+        216,
+        1,
+        13,
+        192,
+        0,
+        12,
+        12
+      ]
+    },
+    {
+      "entry": 60443,
+      "skipped_occupied": 0,
+      "record": [
+        34,
+        17,
+        68,
+        51,
+        102,
+        85,
+        35,
+        2,
+        0,
+        196,
+        0,
+        196,
+        1,
+        8,
+        128,
+        2,
+        20,
+        20
+      ]
+    },
+    {
+      "entry": 60443,
+      "skipped_occupied": 1,
+      "record": [
+        34,
+        17,
+        68,
+        51,
+        102,
+        85,
+        35,
+        2,
+        0,
+        196,
+        0,
+        196,
+        1,
+        8,
+        128,
+        2,
+        20,
+        20
+      ]
+    }
+  ],
+  "zero_angle_basis_preserved": true,
+  "full_game_verified": false
+}

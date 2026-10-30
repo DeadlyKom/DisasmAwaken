@@ -1,0 +1,111 @@
+{
+  "method": "original_bytes_in_isolated_skoolkit",
+  "full_domain_proof": false,
+  "game_code_modified": false,
+  "results": [
+    {
+      "name": "CompareEqual",
+      "address": 50133,
+      "fixtures": 121,
+      "formula_matches": true,
+      "differences": []
+    },
+    {
+      "name": "MultiplyWithChecks",
+      "address": 50143,
+      "fixtures": 121,
+      "formula_matches": false,
+      "differences": [
+        {
+          "left": 32767,
+          "right": 127,
+          "actual": 32641,
+          "mathematical_expected": 65535
+        },
+        {
+          "left": 32767,
+          "right": 255,
+          "actual": 32513,
+          "mathematical_expected": 65535
+        },
+        {
+          "left": 32767,
+          "right": 32767,
+          "actual": 1,
+          "mathematical_expected": 65535
+        },
+        {
+          "left": 32767,
+          "right": 65535,
+          "actual": 32769,
+          "mathematical_expected": 65535
+        }
+      ]
+    },
+    {
+      "name": "AddSaturated",
+      "address": 50312,
+      "fixtures": 121,
+      "formula_matches": true,
+      "differences": []
+    },
+    {
+      "name": "SubtractSaturated",
+      "address": 50321,
+      "fixtures": 121,
+      "formula_matches": true,
+      "differences": []
+    },
+    {
+      "name": "CompareLess",
+      "address": 50332,
+      "fixtures": 121,
+      "formula_matches": true,
+      "differences": []
+    },
+    {
+      "name": "CompareGreater",
+      "address": 50342,
+      "fixtures": 121,
+      "formula_matches": true,
+      "differences": []
+    },
+    {
+      "name": "CompareNotGreater",
+      "address": 50353,
+      "fixtures": 121,
+      "formula_matches": true,
+      "differences": []
+    },
+    {
+      "name": "CompareNotLess",
+      "address": 50364,
+      "fixtures": 121,
+      "formula_matches": true,
+      "differences": []
+    },
+    {
+      "name": "AndWords",
+      "address": 50374,
+      "fixtures": 121,
+      "formula_matches": true,
+      "differences": []
+    },
+    {
+      "name": "OrWords",
+      "address": 50381,
+      "fixtures": 121,
+      "formula_matches": true,
+      "differences": []
+    },
+    {
+      "name": "MultiplySignedScaled",
+      "address": 53548,
+      "fixtures": 208,
+      "formula_matches": true,
+      "formula": "truncate_toward_zero(coefficient * operand / 128)",
+      "coefficient_range": "tested values within -127..127",
+      "differences": []
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "method": "original_byte_pushes_and_word_fallthrough_into_expression_push",
+  "byte_cases": 328192,
+  "word_cases": 65536,
+  "alternate_DE_difference_checked": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

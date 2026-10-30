@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "cases": 9216,
+  "method": "original_LANG_key_choice_and_real_banked_wrappers",
+  "all_choice_bytes": true,
+  "field_handlers": 5,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

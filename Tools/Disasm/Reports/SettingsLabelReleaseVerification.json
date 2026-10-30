@@ -1,0 +1,15 @@
+{
+  "method": "settings_label_release_merge_after_isolated_static_validation",
+  "passed": true,
+  "candidate": "Tools/Disasm/Research/Candidates/SettingsLabelRelease",
+  "review": "Tools/Disasm/Research/Candidates/SettingsLabelMergeReview",
+  "replaced_existing_functions": 1,
+  "replaced_unknown_functions": 1,
+  "documented_functions": 1,
+  "archived_files": 3,
+  "working_copy_files_written": 20,
+  "instruction_count": 32427,
+  "remaining_unknown": 343,
+  "remaining_contracts": 703,
+  "assembly_executed": false
+}

@@ -1,0 +1,72 @@
+{
+  "method": "text_and_resource_comparison_without_assembly",
+  "passed": true,
+  "instruction_count": 35417,
+  "active_allocations": 41,
+  "covered_bytes": 479744,
+  "interface_records": 46,
+  "script_token_records": 102,
+  "texture_phase_records": 3,
+  "glyph_route_records": 128,
+  "packed_screens": 20,
+  "pointer_records": {
+    "FPointerRasterRow": 192,
+    "FPointerSavedRow": 8
+  },
+  "mouse_records": 1,
+  "pointer_input_records": {
+    "FInputFlags": 1,
+    "FPointerDirection": 16,
+    "FKeyBinding": 6
+  },
+  "station_irq_records": {
+    "FStationBcdCounter": 1,
+    "FStationIrqStorage": 1,
+    "FWindowReturnChain": 1
+  },
+  "matrix_key_records": 63,
+  "setting_records": {
+    "Source/Station/Data/InterfaceChoices.asm": 4,
+    "Source/Station/Data/InterfaceColors.asm": 3,
+    "Source/Station/Data/ControlOptions.asm": 43
+  },
+  "setting_text_bytes": 58,
+  "context_menu_bytes": 108,
+  "random_state_records": 7,
+  "signature_input_records": 1,
+  "market_records": {
+    "CategoryBytes": 27,
+    "FMarketRule": 30,
+    "FMarketRow": 30
+  },
+  "assignment_records": 1,
+  "action_file_keys": 1,
+  "expression_stack_records": 1,
+  "rank_threshold_records": 6,
+  "rank_text_bytes": 70,
+  "mission_offer_records": 1,
+  "system_prefix_bytes": 88,
+  "mission_message_bytes": 27,
+  "mission_text_bytes": 174,
+  "stored_map_point_records": 20,
+  "stored_map_order_records": 1,
+  "clip_work_records": {
+    "FProjectedPoint": 2,
+    "FClipProduct": 4,
+    "FClipCornerState": 1
+  },
+  "clip_output_size_bytes": 1,
+  "semantic_completeness_proved": false,
+  "map_line_records": {
+    "FClipOutputPoint": 2,
+    "FMapLineMode": 1,
+    "FMapLineMaskSet": 2
+  },
+  "map_chain_point_records": 2,
+  "arc_workspace_records": 1,
+  "marker_sprite_phase_records": 48,
+  "variant_path_points": 348,
+  "variant_sprite_phases": 32,
+  "auxiliary_map_keys": 10,
+  "auxiliary_map_code_bytes": 11
+}

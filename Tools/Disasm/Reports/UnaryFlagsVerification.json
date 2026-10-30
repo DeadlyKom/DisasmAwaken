@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "method": "original_unary_indexed_flag_stores_and_bank4_selection",
+  "flag_cases": 6216,
+  "selection_cases": 3072,
+  "arbitrary_alt_A_bytes_tested": true,
+  "all_selection_indices": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

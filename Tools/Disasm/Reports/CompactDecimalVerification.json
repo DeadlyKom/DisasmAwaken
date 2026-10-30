@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "cases": 512,
+  "method": "original_compact_decimal_all_bytes_and_buffer_page_crossing",
+  "omitted_zero_tens_values": [
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    200,
+    201,
+    202,
+    203,
+    204,
+    205,
+    206,
+    207,
+    208,
+    209
+  ],
+  "terminator_written": false,
+  "calls_stubbed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

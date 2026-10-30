@@ -1,0 +1,894 @@
+{
+  "passed": true,
+  "method": "all_conditional_paths_cached_product_definite_initialization_and_output_bound",
+  "roots_checked": 72,
+  "corner_block_precondition": 1,
+  "conditional_branches_both_explored": true,
+  "maximum_output_points": 2,
+  "initialized_products_proved": true,
+  "special_exits_have_no_nested_case_calls": true,
+  "roots": [
+    {
+      "entry": 54493,
+      "abstract_states": 1,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 54501,
+      "abstract_states": 1,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 54502,
+      "abstract_states": 16,
+      "terminal_outcomes": [
+        [
+          "normal",
+          1
+        ]
+      ]
+    },
+    {
+      "entry": 54517,
+      "abstract_states": 6,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 54528,
+      "abstract_states": 16,
+      "terminal_outcomes": [
+        [
+          "normal",
+          1
+        ]
+      ]
+    },
+    {
+      "entry": 54543,
+      "abstract_states": 6,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 54554,
+      "abstract_states": 16,
+      "terminal_outcomes": [
+        [
+          "normal",
+          1
+        ]
+      ]
+    },
+    {
+      "entry": 54569,
+      "abstract_states": 6,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 54580,
+      "abstract_states": 16,
+      "terminal_outcomes": [
+        [
+          "normal",
+          1
+        ]
+      ]
+    },
+    {
+      "entry": 54595,
+      "abstract_states": 6,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 54606,
+      "abstract_states": 4,
+      "terminal_outcomes": [
+        [
+          "normal",
+          2
+        ]
+      ]
+    },
+    {
+      "entry": 54612,
+      "abstract_states": 4,
+      "terminal_outcomes": [
+        [
+          "normal",
+          2
+        ]
+      ]
+    },
+    {
+      "entry": 54618,
+      "abstract_states": 12,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ],
+        [
+          "normal",
+          2
+        ]
+      ]
+    },
+    {
+      "entry": 54636,
+      "abstract_states": 33,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ],
+        [
+          "normal",
+          2
+        ]
+      ]
+    },
+    {
+      "entry": 54660,
+      "abstract_states": 12,
+      "terminal_outcomes": [
+        [
+          "normal",
+          2
+        ],
+        [
+          "special",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 54678,
+      "abstract_states": 5,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ],
+        [
+          "special",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 54685,
+      "abstract_states": 25,
+      "terminal_outcomes": [
+        [
+          "normal",
+          2
+        ],
+        [
+          "special",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 54703,
+      "abstract_states": 4,
+      "terminal_outcomes": [
+        [
+          "normal",
+          2
+        ]
+      ]
+    },
+    {
+      "entry": 54709,
+      "abstract_states": 4,
+      "terminal_outcomes": [
+        [
+          "normal",
+          2
+        ]
+      ]
+    },
+    {
+      "entry": 54715,
+      "abstract_states": 12,
+      "terminal_outcomes": [
+        [
+          "normal",
+          2
+        ],
+        [
+          "special",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 54733,
+      "abstract_states": 25,
+      "terminal_outcomes": [
+        [
+          "normal",
+          2
+        ],
+        [
+          "special",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 54751,
+      "abstract_states": 5,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ],
+        [
+          "special",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 54758,
+      "abstract_states": 12,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ],
+        [
+          "normal",
+          2
+        ]
+      ]
+    },
+    {
+      "entry": 54776,
+      "abstract_states": 33,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ],
+        [
+          "normal",
+          2
+        ]
+      ]
+    },
+    {
+      "entry": 54800,
+      "abstract_states": 4,
+      "terminal_outcomes": [
+        [
+          "normal",
+          2
+        ]
+      ]
+    },
+    {
+      "entry": 54806,
+      "abstract_states": 12,
+      "terminal_outcomes": [
+        [
+          "normal",
+          2
+        ],
+        [
+          "special",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 54824,
+      "abstract_states": 12,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ],
+        [
+          "normal",
+          2
+        ]
+      ]
+    },
+    {
+      "entry": 54842,
+      "abstract_states": 5,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ],
+        [
+          "special",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 54849,
+      "abstract_states": 4,
+      "terminal_outcomes": [
+        [
+          "normal",
+          2
+        ]
+      ]
+    },
+    {
+      "entry": 54855,
+      "abstract_states": 25,
+      "terminal_outcomes": [
+        [
+          "normal",
+          2
+        ],
+        [
+          "special",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 54876,
+      "abstract_states": 33,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ],
+        [
+          "normal",
+          2
+        ]
+      ]
+    },
+    {
+      "entry": 54903,
+      "abstract_states": 19,
+      "terminal_outcomes": [
+        [
+          "normal",
+          2
+        ]
+      ]
+    },
+    {
+      "entry": 54931,
+      "abstract_states": 5,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ],
+        [
+          "special",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 54938,
+      "abstract_states": 27,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ],
+        [
+          "normal",
+          2
+        ]
+      ]
+    },
+    {
+      "entry": 54969,
+      "abstract_states": 6,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 54980,
+      "abstract_states": 14,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 54986,
+      "abstract_states": 28,
+      "terminal_outcomes": [
+        [
+          "normal",
+          2
+        ],
+        [
+          "special",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 55007,
+      "abstract_states": 55,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ],
+        [
+          "normal",
+          2
+        ],
+        [
+          "special",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 55032,
+      "abstract_states": 19,
+      "terminal_outcomes": [
+        [
+          "normal",
+          2
+        ]
+      ]
+    },
+    {
+      "entry": 55060,
+      "abstract_states": 28,
+      "terminal_outcomes": [
+        [
+          "normal",
+          2
+        ],
+        [
+          "special",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 55081,
+      "abstract_states": 6,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 55092,
+      "abstract_states": 5,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ],
+        [
+          "special",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 55099,
+      "abstract_states": 27,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ],
+        [
+          "normal",
+          2
+        ]
+      ]
+    },
+    {
+      "entry": 55130,
+      "abstract_states": 55,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ],
+        [
+          "normal",
+          2
+        ],
+        [
+          "special",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 55155,
+      "abstract_states": 14,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 55161,
+      "abstract_states": 4,
+      "terminal_outcomes": [
+        [
+          "normal",
+          2
+        ]
+      ]
+    },
+    {
+      "entry": 55167,
+      "abstract_states": 12,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ],
+        [
+          "normal",
+          2
+        ]
+      ]
+    },
+    {
+      "entry": 55185,
+      "abstract_states": 12,
+      "terminal_outcomes": [
+        [
+          "normal",
+          2
+        ],
+        [
+          "special",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 55203,
+      "abstract_states": 4,
+      "terminal_outcomes": [
+        [
+          "normal",
+          2
+        ]
+      ]
+    },
+    {
+      "entry": 55209,
+      "abstract_states": 33,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ],
+        [
+          "normal",
+          2
+        ]
+      ]
+    },
+    {
+      "entry": 55236,
+      "abstract_states": 25,
+      "terminal_outcomes": [
+        [
+          "normal",
+          2
+        ],
+        [
+          "special",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 55257,
+      "abstract_states": 5,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ],
+        [
+          "special",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 55264,
+      "abstract_states": 19,
+      "terminal_outcomes": [
+        [
+          "normal",
+          2
+        ]
+      ]
+    },
+    {
+      "entry": 55292,
+      "abstract_states": 6,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 55303,
+      "abstract_states": 28,
+      "terminal_outcomes": [
+        [
+          "normal",
+          2
+        ],
+        [
+          "special",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 55324,
+      "abstract_states": 27,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ],
+        [
+          "normal",
+          2
+        ]
+      ]
+    },
+    {
+      "entry": 55355,
+      "abstract_states": 14,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 55361,
+      "abstract_states": 55,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ],
+        [
+          "normal",
+          2
+        ],
+        [
+          "special",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 55386,
+      "abstract_states": 5,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ],
+        [
+          "special",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 55393,
+      "abstract_states": 19,
+      "terminal_outcomes": [
+        [
+          "normal",
+          2
+        ]
+      ]
+    },
+    {
+      "entry": 55421,
+      "abstract_states": 27,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ],
+        [
+          "normal",
+          2
+        ]
+      ]
+    },
+    {
+      "entry": 55452,
+      "abstract_states": 5,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ],
+        [
+          "special",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 55459,
+      "abstract_states": 28,
+      "terminal_outcomes": [
+        [
+          "normal",
+          2
+        ],
+        [
+          "special",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 55480,
+      "abstract_states": 55,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ],
+        [
+          "normal",
+          2
+        ],
+        [
+          "special",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 55505,
+      "abstract_states": 6,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 55516,
+      "abstract_states": 14,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 55646,
+      "abstract_states": 1,
+      "terminal_outcomes": [
+        [
+          "normal",
+          1
+        ]
+      ]
+    },
+    {
+      "entry": 55721,
+      "abstract_states": 1,
+      "terminal_outcomes": [
+        [
+          "normal",
+          1
+        ]
+      ]
+    },
+    {
+      "entry": 55796,
+      "abstract_states": 1,
+      "terminal_outcomes": [
+        [
+          "normal",
+          1
+        ]
+      ]
+    },
+    {
+      "entry": 55890,
+      "abstract_states": 1,
+      "terminal_outcomes": [
+        [
+          "normal",
+          1
+        ]
+      ]
+    },
+    {
+      "entry": 56130,
+      "abstract_states": 1,
+      "terminal_outcomes": [
+        [
+          "normal",
+          1
+        ]
+      ]
+    },
+    {
+      "entry": 56153,
+      "abstract_states": 1,
+      "terminal_outcomes": [
+        [
+          "special",
+          0
+        ]
+      ]
+    }
+  ],
+  "arithmetic_ordering_independently_proved": false,
+  "assembly_executed": false
+}

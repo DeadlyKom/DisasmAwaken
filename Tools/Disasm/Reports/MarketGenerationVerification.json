@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "method": "original_market_generation_with_real_banked_signature_and_three_byte_random_stream",
+  "cases": 4608,
+  "generated_cases": 2304,
+  "cleared_cases": 2304,
+  "generated_rows_per_case": 27,
+  "special_rows": 3,
+  "prices_below_five": 1652,
+  "marked_rows": 21970,
+  "actual_original_rule_tables_used": true,
+  "mode_values": [
+    0,
+    128
+  ],
+  "signature_query_stubbed": false,
+  "random_stream_stubbed": false,
+  "banks_modeled": 8,
+  "mark_game_meaning_proved": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

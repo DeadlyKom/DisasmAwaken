@@ -14,3 +14,8 @@
 *.pack.ar
 *.pack.pass-1
 *.pack.pass-2
+
+# Временные исследовательские снимки и компактная история дизассемблирования.
+/Tools/Disasm/Research/Candidates/
+/Tools/Disasm/Research/History/
+/Tools/Disasm/Research/Archives/

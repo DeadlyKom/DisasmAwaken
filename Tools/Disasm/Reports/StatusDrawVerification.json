@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "cases": 256,
+  "disabled_cases": 256,
+  "method": "complete_original_status_draw_registration_fill_strings_numbers_and_player_rank",
+  "status_index": "min(byte_984B_shift_right_5,3)",
+  "low_five_bits_ignored_by_status_selection": true,
+  "calls_stubbed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

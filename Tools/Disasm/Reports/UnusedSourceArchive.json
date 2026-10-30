@@ -1,0 +1,1419 @@
+{
+  "method": "archive_unincluded_source_texts_with_hash_preservation",
+  "files": [
+    {
+      "old_path": "Source/Action/Unknown638C.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/Unknown638C.asm",
+      "sha256": "3847ba8ba39a41cc70879a5acbf9fc4f89a8b469bb2aa54d58a6b7a62587d10e"
+    },
+    {
+      "old_path": "Source/Action/UnknownAAE2.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownAAE2.asm",
+      "sha256": "e3cda2ba0d0852b3444237e26c2f570c265026f9708d6ebdbc7b192fd070d7b4"
+    },
+    {
+      "old_path": "Source/Action/UnknownC07A.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownC07A.asm",
+      "sha256": "bb615b025ace28b667d73f0f4333261d0ce44a5e13101e0ef9531a36627179ed"
+    },
+    {
+      "old_path": "Source/Action/UnknownC07B.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownC07B.asm",
+      "sha256": "b5dc142031e4346352c1ba38b4a79fa004c95bfc0ef329fa4dbea1a375f5cb71"
+    },
+    {
+      "old_path": "Source/Action/UnknownC08A.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownC08A.asm",
+      "sha256": "6623c5d00f8aeaea1a506cb794ed812dfb163e395834ea472ca03af60330d91b"
+    },
+    {
+      "old_path": "Source/Action/UnknownC095.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownC095.asm",
+      "sha256": "87dd18a2713a2cc3eac9c8852fea7803c159910d93f823e8cdaac84f57a51eeb"
+    },
+    {
+      "old_path": "Source/Action/UnknownC0A4.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownC0A4.asm",
+      "sha256": "d7e8ce819875d8aab5552258a0a0c8d407ced53764be0e25eacbd7e69772d363"
+    },
+    {
+      "old_path": "Source/Action/UnknownC0AF.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownC0AF.asm",
+      "sha256": "839c4b2bc17a8e8c3e36648a5fc1045cbc80b94ca678c5de08e4288a4d2b9575"
+    },
+    {
+      "old_path": "Source/Action/UnknownC0BE.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownC0BE.asm",
+      "sha256": "96015c8c6b917420f4a9277be7c61a5889c4c9e3933ceaacc2b9474481be2089"
+    },
+    {
+      "old_path": "Source/Action/FinishBandFrame.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/FinishBandFrame.asm",
+      "sha256": "fb1c936d54b154888dad3ad61502fb51c1751638d0284cc95d776b124a323e64"
+    },
+    {
+      "old_path": "Source/Action/UnknownC0D8.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownC0D8.asm",
+      "sha256": "0c842f0d6c328a5a106a8f46ca89cb078b9db6f65bd9a57ec212d17608a25209"
+    },
+    {
+      "old_path": "Source/Action/UnknownC0E3.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownC0E3.asm",
+      "sha256": "d628ac02580d98bf6106ea69903a789684d79cfda34352aa64a2ec53110da8ba"
+    },
+    {
+      "old_path": "Source/Action/UnknownC0E9.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownC0E9.asm",
+      "sha256": "edcbe09c47efb531c5c795add903f191e2d957bebdc51a291a26fbc825c037f0"
+    },
+    {
+      "old_path": "Source/Action/UnknownC0EF.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownC0EF.asm",
+      "sha256": "6163bf4cdce59aa0436cd206855c0b72ff608331a1d98418160e1a7be8ea5020"
+    },
+    {
+      "old_path": "Source/Action/UnknownC101.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownC101.asm",
+      "sha256": "00f3e73b6cd1dd9ac07104f5974427f61be992eea71c0aea94f62f6ba99ae2ff"
+    },
+    {
+      "old_path": "Source/Action/UnknownC119.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownC119.asm",
+      "sha256": "20631103f11a3550f58e2c01b3810c9da7a2f86947e6c21e94742c354623e67c"
+    },
+    {
+      "old_path": "Source/Action/UnknownC12B.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownC12B.asm",
+      "sha256": "79e4be2917b807d20ff6b16ae6d09e97156e49ed7c0bb69198beed5baad7b74d"
+    },
+    {
+      "old_path": "Source/Action/UnknownC132.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownC132.asm",
+      "sha256": "46aab2a075f6ad8c18ba22a6c7024620e0e07eb2e5534581569279e62a073a47"
+    },
+    {
+      "old_path": "Source/Action/UnknownC144.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownC144.asm",
+      "sha256": "e98b316c1a9e783cae1f9e88eb17c7ddaa320422785ca47421a3f6bbdd587331"
+    },
+    {
+      "old_path": "Source/Action/UnknownC14A.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownC14A.asm",
+      "sha256": "9a2a69e9bc4c8dd542ceca663bd74f1e2bb5a03b1ec4dd9e8c356d9c9ae01dcd"
+    },
+    {
+      "old_path": "Source/Action/UnknownC150.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownC150.asm",
+      "sha256": "8e1de43c97b47179e6dc920a82199814a1e653061815fd15a85ce3a5d9c458ce"
+    },
+    {
+      "old_path": "Source/Action/UnknownC162.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownC162.asm",
+      "sha256": "3bfb34c7bffbcac219f6e30a63b4df5236e9193d09a45cf5c300d1ddd8a8137e"
+    },
+    {
+      "old_path": "Source/Action/UnknownC174.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownC174.asm",
+      "sha256": "526b55ad25f654e2ee200d76eaa84ae4495bab6147a5f99179fa0e606c5634bc"
+    },
+    {
+      "old_path": "Source/Action/DrawSpanRow.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/DrawSpanRow.asm",
+      "sha256": "f82fa7e59263acf61de4b8c2299da40c551c7a823f745c552e73b2a763449d5c"
+    },
+    {
+      "old_path": "Source/Action/UnknownC18D.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownC18D.asm",
+      "sha256": "c3044d4bfc5c23e4129fa695ea0c7ab71508cf1056ab2b513f0c68f28543496d"
+    },
+    {
+      "old_path": "Source/Action/UnknownC1A5.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownC1A5.asm",
+      "sha256": "1b08670ad8ee6839a8073551549fa9ba75df3dc4cdfd59625d2a2acee8f9380a"
+    },
+    {
+      "old_path": "Source/Action/UnknownC1AB.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownC1AB.asm",
+      "sha256": "169f46d9d9ec8160e58d644f5a701a5136d3c1cdad1876068cbe444f232f513d"
+    },
+    {
+      "old_path": "Source/Action/UnknownC1BD.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownC1BD.asm",
+      "sha256": "262c55a493920f2aa4ef643d93c48dbd196e85abfabb026acb91063242a17b53"
+    },
+    {
+      "old_path": "Source/Action/SetCutoutPattern.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/SetCutoutPattern.asm",
+      "sha256": "d8468b2bb32208ad9862598d16fc873f935e8dbf4e583cafae4426d954d4f7de"
+    },
+    {
+      "old_path": "Source/Action/UnknownC1D6.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownC1D6.asm",
+      "sha256": "31fa8c19dcd97775fb2fcc83cdf14e78ec9b8a6187a3f590ae90e16c2e311378"
+    },
+    {
+      "old_path": "Source/Action/UnknownC1DC.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownC1DC.asm",
+      "sha256": "1e3c46b7b22d3c91553cef0a3e3fca647ce613a041b2e79d9dc981a489c4e94a"
+    },
+    {
+      "old_path": "Source/Action/UnknownC1F1.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownC1F1.asm",
+      "sha256": "415dc5ba2512aee01b8ff03bbc0e56e0c5c8cad37d049eb94f955f06cd03cffe"
+    },
+    {
+      "old_path": "Source/Action/UnknownC20C.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownC20C.asm",
+      "sha256": "c34b1e595da4a2503cd6de826104625cbe65e302bd93c6d08c7d5fa7d5f0613a"
+    },
+    {
+      "old_path": "Source/Action/UnknownC228.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownC228.asm",
+      "sha256": "a9e95554f9155e8ed6105b737472837c85beb1b5194b02bfc72d9ede0ad075b8"
+    },
+    {
+      "old_path": "Source/Action/UnknownC22F.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownC22F.asm",
+      "sha256": "17570cb6725920f35bfde94559b32001d9a1472fa6551b5c2d048a14f9451f4a"
+    },
+    {
+      "old_path": "Source/Action/UnknownC24E.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownC24E.asm",
+      "sha256": "b7757e518012f5cc581e4f4e5689b5bf568b66f262cd9b9d5146e7044b371023"
+    },
+    {
+      "old_path": "Source/Action/UnknownC259.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownC259.asm",
+      "sha256": "47543f80f726f557f415c6cfb07c470209f734db394a5230cea5af7c99d08912"
+    },
+    {
+      "old_path": "Source/Action/UnknownC25F.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownC25F.asm",
+      "sha256": "78940781b11530038ce9588b8248918e02f1d8b9f4a6718fd93ee6ec84cd4f7b"
+    },
+    {
+      "old_path": "Source/Action/UnknownC274.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownC274.asm",
+      "sha256": "f9ca3c6681730f5f2563a602ea9b48d20183bc74d157bb725fdee7bebd6c07f6"
+    },
+    {
+      "old_path": "Source/Action/UnknownC28D.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownC28D.asm",
+      "sha256": "c66dec9d0e589b6167ee3e20557c1468460b7af6353f78d33243b4fb2be0750a"
+    },
+    {
+      "old_path": "Source/Action/UnknownC2A9.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownC2A9.asm",
+      "sha256": "28cf10fcb6f1da924e8dbd68bc7f19bc95751f4b26d6ca59a35e3b4d20d76d5d"
+    },
+    {
+      "old_path": "Source/Action/UnknownC2BE.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownC2BE.asm",
+      "sha256": "88f5be7ea5b6b42cb0d45b1e28fd1a769b99d4702cff705ab1b03e85a60a115d"
+    },
+    {
+      "old_path": "Source/Action/UnknownC2C9.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownC2C9.asm",
+      "sha256": "0be8fdb562be20a5d6a273c91dcb18e6c79604a9b9336ef6b43055d1217d100a"
+    },
+    {
+      "old_path": "Source/Action/UnknownC2D0.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownC2D0.asm",
+      "sha256": "49a359e25a9d4d099e83f060dfd7b3a55ff2b5da44efbf6c2ca347a9816b117c"
+    },
+    {
+      "old_path": "Source/Action/UnknownC2EF.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownC2EF.asm",
+      "sha256": "93c29464097d1fa859601c49878bfda139a8188e162fa90aa0e8679ee03ec16b"
+    },
+    {
+      "old_path": "Source/Action/UnknownC308.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownC308.asm",
+      "sha256": "71c51624484e7c1d61f6190f40b6e24029db640c590abc4c1d49717a9ce8226b"
+    },
+    {
+      "old_path": "Source/Action/UnknownC30E.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownC30E.asm",
+      "sha256": "627421c267986344170bf91f141ebece346b7290f5ab26f617976f15d89fc042"
+    },
+    {
+      "old_path": "Source/Action/UnknownC314.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownC314.asm",
+      "sha256": "8694e74798d09fc7a92bcc022c1677c3dedbe9687233708d100c52693a2cf30f"
+    },
+    {
+      "old_path": "Source/Action/UnknownC326.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownC326.asm",
+      "sha256": "f2e9aa58fd94b31c964520d2f9400c33716ab0306fc4080785e21c288fe25d26"
+    },
+    {
+      "old_path": "Source/Action/UnknownC338.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownC338.asm",
+      "sha256": "ca06a525df8be3c2a0f0579da44460cd57617aba88688c740dfc23664340d246"
+    },
+    {
+      "old_path": "Source/Action/UnknownC33E.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownC33E.asm",
+      "sha256": "e86a512ebef492bfed8905dbd10210e6af5e75e3e034107a5a177230588f0ffb"
+    },
+    {
+      "old_path": "Source/Action/UnknownC359.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownC359.asm",
+      "sha256": "e38a2594a67b90fe4013e742000c714024349ca0cc6733599c1ceb0648899ca4"
+    },
+    {
+      "old_path": "Source/Action/UnknownC36E.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownC36E.asm",
+      "sha256": "520d129cfbf554cf060f976e29c5fb61147cfbaf867c02c939c816cd191b2b22"
+    },
+    {
+      "old_path": "Source/Action/UnknownC375.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownC375.asm",
+      "sha256": "d83f663054976e15003a629a7a0ea7ce32633c9882588b651deb4335a444cc23"
+    },
+    {
+      "old_path": "Source/Action/UnknownC391.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownC391.asm",
+      "sha256": "e484dd43672c67f53866221c75fdfe2c80967d05b0f93cba6d8d7988d3c159c8"
+    },
+    {
+      "old_path": "Source/Action/UnknownC39C.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownC39C.asm",
+      "sha256": "5ae59528d9a0bde9ea37a264c246cfa147ca5605cca3eb8549c1aef08cb23543"
+    },
+    {
+      "old_path": "Source/Action/UnknownC3B1.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownC3B1.asm",
+      "sha256": "70215d4b7419abdb35768d5fc844e513d484acd65e595dc19f58952f912d3450"
+    },
+    {
+      "old_path": "Source/Action/UnknownC3D0.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownC3D0.asm",
+      "sha256": "5a7975acf7e2718b909d58dceaa24c4f0d5f9a0daf46442154f7a7c0711922ac"
+    },
+    {
+      "old_path": "Source/Action/UnknownC3D6.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownC3D6.asm",
+      "sha256": "0b0647fc724114d619ab4d04c71c8e77459fa8876562abba1b77fb72d8f5dfc9"
+    },
+    {
+      "old_path": "Source/Action/UnknownC3EF.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownC3EF.asm",
+      "sha256": "2db24ec9f881e0945f70c51e6292ee3ab6f0472b14a1815ba241f506d787fc03"
+    },
+    {
+      "old_path": "Source/Action/UnknownC3F6.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownC3F6.asm",
+      "sha256": "ee8b40c03f6768da118876564c8ec6a35a583c239973a6dc0e0a2dd9edba509a"
+    },
+    {
+      "old_path": "Source/Action/UnknownC412.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownC412.asm",
+      "sha256": "070dcc08de6f25870446df413e32e0f510274be17e1add4db6d4d5d192756429"
+    },
+    {
+      "old_path": "Source/Action/UnknownC431.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownC431.asm",
+      "sha256": "16373147d4f599560c1575d59c24f6db41f1e3f81d4560ac17fe989d6706abc2"
+    },
+    {
+      "old_path": "Source/Action/UnknownC438.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownC438.asm",
+      "sha256": "6c4d38b1baf26a784b2b6fb31c41d335b1d0786e175708100fcdc2d889257ec5"
+    },
+    {
+      "old_path": "Source/Action/UnknownC44D.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownC44D.asm",
+      "sha256": "eeac8c7f1269602f7dc7d81a74e7823ca4c7ba39fcf1c28c2b2131b35039d4f4"
+    },
+    {
+      "old_path": "Source/Action/UnknownC466.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownC466.asm",
+      "sha256": "e1bee242eba600f4a8ca1840ca0d88dc77d1f3023cfa45f326fbd6475c77f526"
+    },
+    {
+      "old_path": "Source/Action/UnknownC471.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownC471.asm",
+      "sha256": "eba23a3fc7d5e623d52b64f9630b0cad0461021e356773a72d53b988b6d26efd"
+    },
+    {
+      "old_path": "Source/Action/UnknownC4F3.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownC4F3.asm",
+      "sha256": "ef6ba385a9460eaca760368002eea38b105a9c8249f361a0f90aadbdee85e6ef"
+    },
+    {
+      "old_path": "Source/Action/UnknownC53D.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownC53D.asm",
+      "sha256": "cc0b52d9d86d709580fe765d4363aa8ed3e4d4f4fcad1db4c1d880388201dcf8"
+    },
+    {
+      "old_path": "Source/Action/UnknownC588.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownC588.asm",
+      "sha256": "a87f607b2b0288a096919e6b3ea5df95ee70f3209f41d3d4ccca86e18f07ddc8"
+    },
+    {
+      "old_path": "Source/Action/UnknownC5E4.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownC5E4.asm",
+      "sha256": "3180cc1219b682df5f6403c894221327992226f88fb086d3705ee1a18870c453"
+    },
+    {
+      "old_path": "Source/Action/UnknownC6D3.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownC6D3.asm",
+      "sha256": "c714aae55fbea1fe71b324e37f67e6c5cd6ca55ad34a5b831655b0a270c7da3d"
+    },
+    {
+      "old_path": "Source/Action/UnknownC6EA.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownC6EA.asm",
+      "sha256": "1c3590377100105bf16247ca6340a19e5140fcaa61ddb9d6adea3d769aefe579"
+    },
+    {
+      "old_path": "Source/Action/UnknownC941.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownC941.asm",
+      "sha256": "e9c74a1d806d792985e44051f3c4d0b872a57e24792466c62bc52b4e5341efc6"
+    },
+    {
+      "old_path": "Source/Action/UnknownC99B.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownC99B.asm",
+      "sha256": "93c4b4b3ea7421d4cb5f8ce47bdd85f3b720938baef150d57ba527c00fcd6f4c"
+    },
+    {
+      "old_path": "Source/Action/UnknownCB23.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownCB23.asm",
+      "sha256": "35eb68729b8d8d896a0983096d47e350aa34830f59c24474f6e30686e472e7b9"
+    },
+    {
+      "old_path": "Source/Action/UnknownD100.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownD100.asm",
+      "sha256": "4c75c63eedd7d100edcf7811dd678bd4192b31d7c295e80fff72da6064c61b62"
+    },
+    {
+      "old_path": "Source/Action/UnknownD10A.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownD10A.asm",
+      "sha256": "5434c27ab77b4b6846ba03d32927330edb7b676caa6e80f0de4eb5eb5d2ef6f8"
+    },
+    {
+      "old_path": "Source/Action/UnknownD12C.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownD12C.asm",
+      "sha256": "417da65339940a68485a0d17eab6238b62ba4caf14450caa71d8610477324327"
+    },
+    {
+      "old_path": "Source/Action/UnknownD209.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownD209.asm",
+      "sha256": "3df530fd141ec55b7719310cb2e0906ecbe7877442dd22c2014e89d19926407f"
+    },
+    {
+      "old_path": "Source/Action/UnknownD503.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownD503.asm",
+      "sha256": "5e6138254d019d3996e87fbef5098579008fb5d5fd05deaabb67e8f08f8030a1"
+    },
+    {
+      "old_path": "Source/Action/UnknownD511.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownD511.asm",
+      "sha256": "012a0421c68bcefc867cf9dd7cc76b47f1f4cd21cc17f57d22b65f089bf41df9"
+    },
+    {
+      "old_path": "Source/Action/UnknownD5C9.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownD5C9.asm",
+      "sha256": "caa220ba92fe7b5e1379524a5276aaa3bbd1c5f0d45260d7089884df4b7fe083"
+    },
+    {
+      "old_path": "Source/Action/UnknownD5F9.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownD5F9.asm",
+      "sha256": "d74abd20eac12e4c13d8d9c07e280740bd615b82497a4926c9a7786b36952a13"
+    },
+    {
+      "old_path": "Source/Action/UnknownD727.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownD727.asm",
+      "sha256": "9bd8c59858b16c4892302b6e838f40a69b1e8faf546eb27de0297cb67ea82789"
+    },
+    {
+      "old_path": "Source/Action/UnknownDBBD.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownDBBD.asm",
+      "sha256": "0fc5669e9ba45b669627edd9c79255201890554d24d360b6604a868f62e05059"
+    },
+    {
+      "old_path": "Source/Action/UnknownDD23.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownDD23.asm",
+      "sha256": "05da5034537171dfbf97679405c445ea32fcdc1bf115d22b4d7107c6e3070432"
+    },
+    {
+      "old_path": "Source/Action/UnknownDDD1.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownDDD1.asm",
+      "sha256": "f7469d82eda8da98858dc1ebdbe18770896926fc3d59fb21e53342e4fb18731f"
+    },
+    {
+      "old_path": "Source/Action/UnknownDDF0.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownDDF0.asm",
+      "sha256": "af5f586762ffd866b431fbc0e65a35d5b8b152b70dd2493725c5a9fe7a08a0ba"
+    },
+    {
+      "old_path": "Source/Action/UnknownDE0A.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownDE0A.asm",
+      "sha256": "640d0442256b3e934c3763331a58dba5093388c5702271a103cc75b5e44d5ec8"
+    },
+    {
+      "old_path": "Source/Action/UnknownDEF3.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownDEF3.asm",
+      "sha256": "fc92922110909c1f49534bfac9a0fec8855b42b0d0a1c17ee4e0d1aeab843a52"
+    },
+    {
+      "old_path": "Source/Action/UnknownDFB6.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownDFB6.asm",
+      "sha256": "931441d2b376ba942f45c1de2be3738f1a427b7d093ea52416da4049af095e61"
+    },
+    {
+      "old_path": "Source/Action/UnknownEBD4.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownEBD4.asm",
+      "sha256": "3144db628379087d610b082d1b380840e53d465d25703af2f036eac91d925159"
+    },
+    {
+      "old_path": "Source/Action/UnknownF03D.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Action/UnknownF03D.asm",
+      "sha256": "14aed9a6ccc4d977994ff3f2c32a07ba07a8479ca71d1d0e5a2f3b2fef45ff09"
+    },
+    {
+      "old_path": "Source/Music/UnknownDFE3.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Music/UnknownDFE3.asm",
+      "sha256": "a7436ceb9b67750dfce090a324baedce46a47932e5dfbc7cf4613ae7f9b7d4cd"
+    },
+    {
+      "old_path": "Source/Music/UnknownE489.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Music/UnknownE489.asm",
+      "sha256": "854d6e8fed6e8c65e4959056e90724ccf03ef1ae0d1b1e1f813172e7581ac51b"
+    },
+    {
+      "old_path": "Source/Station/Unknown65D8.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Station/Unknown65D8.asm",
+      "sha256": "3d4642df141eb8037324826cd3190f6688bc10aca2b322ef21a0039dfdbac66f"
+    },
+    {
+      "old_path": "Source/Station/Unknown7958.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Station/Unknown7958.asm",
+      "sha256": "f0c43a8271b2400009e76f98b435db790abe4f1c3f6cb274f5b3875a9c3cf094"
+    },
+    {
+      "old_path": "Source/Station/Unknown7AA1.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Station/Unknown7AA1.asm",
+      "sha256": "a6f86d164265feca5d5c0a3cfaf0a62be71cff179179f6cce15e8f20bebf64fe"
+    },
+    {
+      "old_path": "Source/Station/Unknown7AB7.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Station/Unknown7AB7.asm",
+      "sha256": "e153585f06a9e5f36cb4a95c55ff7e1d93c0a7b3da352ae28c08f3d547ac2350"
+    },
+    {
+      "old_path": "Source/Station/Unknown7B0E.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Station/Unknown7B0E.asm",
+      "sha256": "f754d271b83299d498d360513beda6e11606f3f676acd6effd503d0e55c31b64"
+    },
+    {
+      "old_path": "Source/Station/Unknown7D9C.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Station/Unknown7D9C.asm",
+      "sha256": "46565102105390c5fa26dc028fe08cf59b99286bbec6e0fa6faf559775e405fe"
+    },
+    {
+      "old_path": "Source/Station/Unknown7DB8.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Station/Unknown7DB8.asm",
+      "sha256": "b9ff9cfb6c631533d7730788cbf4489058d75c2dfdc46d43608b880a4811fe09"
+    },
+    {
+      "old_path": "Source/Station/Unknown7DE4.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Station/Unknown7DE4.asm",
+      "sha256": "a8b5adb376239b562fe10970375533e4b9ea3124cbbbe9fc0f13a231fac10e2f"
+    },
+    {
+      "old_path": "Source/Station/Unknown7E1C.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Station/Unknown7E1C.asm",
+      "sha256": "a3eb90e80586458116f9e0a08c4eed94db587ee18a7ac012d3edb28b21b539e5"
+    },
+    {
+      "old_path": "Source/Station/Unknown7E5A.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Station/Unknown7E5A.asm",
+      "sha256": "09ec88cb9a54e4da0eea2b89eaa4838385fbaf159bb9db48dcb8e118fd9286b5"
+    },
+    {
+      "old_path": "Source/Station/Unknown7F14.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Station/Unknown7F14.asm",
+      "sha256": "3cd76645526245083ea184d55f129ddb536cd9cadefd2d4d52d48c09cc84dca2"
+    },
+    {
+      "old_path": "Source/Station/Unknown7F35.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Station/Unknown7F35.asm",
+      "sha256": "7bd4cfd6b9737719f3f6698737f647d630dc00d217eec66ddc94cb0109db7df5"
+    },
+    {
+      "old_path": "Source/Station/Unknown9C77.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Station/Unknown9C77.asm",
+      "sha256": "280099ccda4464e5158c78998be94cbc624bc1d011ce0a53e6d219ae7ffc95fc"
+    },
+    {
+      "old_path": "Source/Station/Unknown9D25.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Station/Unknown9D25.asm",
+      "sha256": "f10400ac55b3bed94ac69e484cc1ce29754ff18a34d3f375a0199ddcc7fbbf0d"
+    },
+    {
+      "old_path": "Source/Station/Unknown9DBA.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Station/Unknown9DBA.asm",
+      "sha256": "12760c6d49e8e002926b3cb097b65249e8fa654c31778e198763a13815f1c803"
+    },
+    {
+      "old_path": "Source/Station/UnknownA6EE.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Station/UnknownA6EE.asm",
+      "sha256": "d3f0453f91ec4b306ee061b7862f649fcf1bc80790e7440f721c3b1d975e57c8"
+    },
+    {
+      "old_path": "Source/Station/PrintPlayerRank.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Station/PrintPlayerRank.asm",
+      "sha256": "ec6b69b0c09f5102fe7db118160d222b1a24fed1c48af7bbe960ab9825e1d498"
+    },
+    {
+      "old_path": "Source/Station/UnknownB514.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Station/UnknownB514.asm",
+      "sha256": "296526bdd178e37d844c8273d7fc451743f380ef6d7084bb10991023752d34f0"
+    },
+    {
+      "old_path": "Source/Station/RecoverTextX.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Station/RecoverTextX.asm",
+      "sha256": "ff83efebccce4e00d3e92bf2b457c4ec8ddfc7aaf7a050362213e8a86d03c513"
+    },
+    {
+      "old_path": "Source/Station/UnknownC201.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Station/UnknownC201.asm",
+      "sha256": "e3525b35b976826a0d44c3106cc1e2cd1c45ce7593140d94cf07310f3ca87d34"
+    },
+    {
+      "old_path": "Source/Station/UnknownC210.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Station/UnknownC210.asm",
+      "sha256": "c2b94bfa601950a256bb136d0e0353877a93a3596f492aa069c059446ca34c06"
+    },
+    {
+      "old_path": "Source/Station/UnknownC873.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Station/UnknownC873.asm",
+      "sha256": "25081615b378bd1d68dc8335fb44cf4cdb2fefee395c8aee6af28f3281290b1c"
+    },
+    {
+      "old_path": "Source/Station/UnknownCB1C.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Station/UnknownCB1C.asm",
+      "sha256": "9c25fc3cf22e4dc98fe1b68a54e6c9e27fdd01cbeda4742ce14809fca7d6b438"
+    },
+    {
+      "old_path": "Source/Station/UnknownCBA9.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Station/UnknownCBA9.asm",
+      "sha256": "309be8c594784038636a91857a1493984243208f3dd7bfbba629f3061ae69af7"
+    },
+    {
+      "old_path": "Source/Text/DecrementValue.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/DecrementValue.asm",
+      "sha256": "7aab7dfd242902c9451f5efc735a56939c7f9fff28c65dfee35a1287e5e24826"
+    },
+    {
+      "old_path": "Source/Text/IncrementValue.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/IncrementValue.asm",
+      "sha256": "0984b49655cdca096fa0b20e5397cdc653a69413889a6e6d5ed63b4e46fbf988"
+    },
+    {
+      "old_path": "Source/Text/UnknownC057.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC057.asm",
+      "sha256": "72dd62daaaceb4bc301e71afa10c7124293708494e93fe6e0b4bf05469e51fdd"
+    },
+    {
+      "old_path": "Source/Text/UnknownC080.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC080.asm",
+      "sha256": "e6d6f457960a488f17859a1699f3aeaef852b9c6bafa54fe2d9e1ca87ca5666c"
+    },
+    {
+      "old_path": "Source/Text/UnknownC08D.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC08D.asm",
+      "sha256": "b266d324d34a589d6a3ef8f6e38c9a63a3edd78402e7a6db0ea6357e5d0760ef"
+    },
+    {
+      "old_path": "Source/Text/UnknownC0D5.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC0D5.asm",
+      "sha256": "6c0d20701a104b1ed093dc2e7fa212db416801cfa7d563aa7311bf6b9039d318"
+    },
+    {
+      "old_path": "Source/Text/UnknownC0D8.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC0D8.asm",
+      "sha256": "86044dea4244f1af2d7d89f7b39af815df8a98f59c75018a8b64af883e704560"
+    },
+    {
+      "old_path": "Source/Text/UnknownC0DB.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC0DB.asm",
+      "sha256": "b575e219b611deac1ae287a275f10de81cb97e08f16a105e87791b60cd8d148f"
+    },
+    {
+      "old_path": "Source/Text/UnknownC0EC.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC0EC.asm",
+      "sha256": "b82efc12479f763cbf0a2c73a71974f17c010b271bb95aedde1891a0da31ceeb"
+    },
+    {
+      "old_path": "Source/Text/UnknownC100.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC100.asm",
+      "sha256": "b75f1ce4f543601ef6f82815603e9f233c2d092d45a8760f5358dfc4face67c4"
+    },
+    {
+      "old_path": "Source/Text/UnknownC103.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC103.asm",
+      "sha256": "2fab97d5863d2e56ba25bcaa66af1d02c01421b11550531e5fc1bfa19560d6c1"
+    },
+    {
+      "old_path": "Source/Text/UnknownC10B.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC10B.asm",
+      "sha256": "0bed984f71fbfee77a5ff1bc709004003c588cb57e700ada82e1bc7a2eeadec2"
+    },
+    {
+      "old_path": "Source/Text/UnknownC10E.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC10E.asm",
+      "sha256": "f239400b5e3082c037111d19e107ce38acab75267da92ec323a5d282d941d39d"
+    },
+    {
+      "old_path": "Source/Text/UnknownC177.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC177.asm",
+      "sha256": "bfff4962e6d6551937424b25e248786d8557a0054333a7cc645a0023a8fa7ce2"
+    },
+    {
+      "old_path": "Source/Text/UnknownC181.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC181.asm",
+      "sha256": "7a9d84c5f61711cead7ae34c17d1ffb5e3e244d9d6e6499f1b2fa864f7f600d9"
+    },
+    {
+      "old_path": "Source/Text/UnknownC189.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC189.asm",
+      "sha256": "426d19f6794ea7e899c750bf5e405f910f50b353394ce9383e3e20f357af819f"
+    },
+    {
+      "old_path": "Source/Text/UnknownC191.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC191.asm",
+      "sha256": "8cf348361d71ca7f29282c45d66d8e823acf28c4ff788a84e6d58fa2305b1cae"
+    },
+    {
+      "old_path": "Source/Text/UnknownC199.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC199.asm",
+      "sha256": "f17ee512506e0e03c8a257cf36df199e4544cff820e5d830b72e2f8ccf5ec0f2"
+    },
+    {
+      "old_path": "Source/Text/UnknownC1A7.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC1A7.asm",
+      "sha256": "a3b68a3690f156cafc9b8ba9b3a90dbcc2984c4197cc012570f9159157c0a20b"
+    },
+    {
+      "old_path": "Source/Text/UnknownC1B5.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC1B5.asm",
+      "sha256": "77229c38c92397b031a2b7a22d1c2135b4a3dc51df17def717315df480929830"
+    },
+    {
+      "old_path": "Source/Text/UnknownC1C2.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC1C2.asm",
+      "sha256": "ae09975b4a54db7c2eb36b66c2786eaa887abf247000615e0815a6ebd48b2553"
+    },
+    {
+      "old_path": "Source/Text/UnknownC1E6.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC1E6.asm",
+      "sha256": "acffa0f7c0f52c1b10c025e2daee68f07d998ce82288134966e6dc3eb3039470"
+    },
+    {
+      "old_path": "Source/Text/UnknownC201.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC201.asm",
+      "sha256": "26f177dde60046ad2468bd55bbb6d3203b58ca018a72097cc863b465ac48f278"
+    },
+    {
+      "old_path": "Source/Text/UnknownC221.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC221.asm",
+      "sha256": "f96037069bdb86023880c7cd22c033676a8a1014716f3d2bd958e6f5a0f83e43"
+    },
+    {
+      "old_path": "Source/Text/UnknownC241.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC241.asm",
+      "sha256": "c706e90a73db98c9ff89d6d0c71c2fe5fb27c8316626733ae8d3f8bbcb181f80"
+    },
+    {
+      "old_path": "Source/Text/UnknownC24C.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC24C.asm",
+      "sha256": "8812f91cdddbc5f26e15fac6d9a789ca59e57810f9f200fb2e50718d763f7acd"
+    },
+    {
+      "old_path": "Source/Text/UnknownC252.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC252.asm",
+      "sha256": "09294d5678718522ed7abcf1299fa916280a34a977c04fce9c167c52f5cf7fe2"
+    },
+    {
+      "old_path": "Source/Text/UnknownC257.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC257.asm",
+      "sha256": "d555ed93260c7daeaf1668218f64943a7862dd997940692641c8fa729d3805e1"
+    },
+    {
+      "old_path": "Source/Text/UnknownC25B.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC25B.asm",
+      "sha256": "1e3fe08f478ce5b25235be609aeb485384f853f73226fa492d317ef5a7a1c53e"
+    },
+    {
+      "old_path": "Source/Text/UnknownC261.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC261.asm",
+      "sha256": "8f5daaeacea974154060f05deb53f3667a04aba4f845c05a17acb5d2208f2308"
+    },
+    {
+      "old_path": "Source/Text/UnknownC267.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC267.asm",
+      "sha256": "6e18661671b75d26c67c24941bdcec0b969e1b27ac503f22a828e489bd2378a4"
+    },
+    {
+      "old_path": "Source/Text/UnknownC289.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC289.asm",
+      "sha256": "3abf2b1dcc9e59f5c3f0c004e7219fe540ac52412e3a539a5c4235361c414ad5"
+    },
+    {
+      "old_path": "Source/Text/UnknownC2B5.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC2B5.asm",
+      "sha256": "7f2cac67c561e81d1722fd26a95b086649ada390fa4b730cabc7e88a6c7183d0"
+    },
+    {
+      "old_path": "Source/Text/UnknownC2D0.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC2D0.asm",
+      "sha256": "f75bd5daf1ec4cc72571ecd8c4474f939543692e4c39bc254590498ad00d69de"
+    },
+    {
+      "old_path": "Source/Text/UnknownC2EA.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC2EA.asm",
+      "sha256": "24badc34b866af2fba122390899f34c047fd625fb9359aa39f2e35184d111f9f"
+    },
+    {
+      "old_path": "Source/Text/UnknownC304.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC304.asm",
+      "sha256": "144e9f6733bbc4b72069dd31e2ddde71d373917f8cfef30244a069f0551eb7ec"
+    },
+    {
+      "old_path": "Source/Text/UnknownC323.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC323.asm",
+      "sha256": "e64bb4cef9e96d792ab589690865ec166bb91eccd447a4f067383fb6a9c43dfc"
+    },
+    {
+      "old_path": "Source/Text/UnknownC32C.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC32C.asm",
+      "sha256": "ad129445de1a5b054f723a2570f8fe8c51b0c3fb6f269af9a780a84f35c3781f"
+    },
+    {
+      "old_path": "Source/Text/UnknownC342.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC342.asm",
+      "sha256": "2d160668f119ca7b0cfad816931dec916cd4f3de4f2da12427edd2845a548be7"
+    },
+    {
+      "old_path": "Source/Text/UnknownC34D.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC34D.asm",
+      "sha256": "41f7e52e34552fda52261d3b22b21b37f1035766b56843f9f85ea5344e087237"
+    },
+    {
+      "old_path": "Source/Text/UnknownC355.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC355.asm",
+      "sha256": "ae6b852657806fa8cdad5feaaa5c7a9578b210680f072cecb01e89db9421dc9c"
+    },
+    {
+      "old_path": "Source/Text/UnknownC362.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC362.asm",
+      "sha256": "bc0215a703e71fe9dc268eeb616849a7c12498cd162dec48dab75c40cb3ab12d"
+    },
+    {
+      "old_path": "Source/Text/UnknownC37D.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC37D.asm",
+      "sha256": "1a8ce947ebd8855012f6567417dc68814fd742ae5b111ea6fcf4e774c29691fb"
+    },
+    {
+      "old_path": "Source/Text/UnknownC393.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC393.asm",
+      "sha256": "807b75c3f628acd4308b51476c732dd58b8ecafc5eae9532f8569fc7d2870ec1"
+    },
+    {
+      "old_path": "Source/Text/UnknownC3A9.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC3A9.asm",
+      "sha256": "7bf1b6820972ce705ad4581d634606cbeb34b71ba28dbb1437cb623979053b7f"
+    },
+    {
+      "old_path": "Source/Text/UnknownC3BF.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC3BF.asm",
+      "sha256": "d02885913490aa4a663fa39e22cf823e0105dfb185d3b90b66440efec5a4d2ab"
+    },
+    {
+      "old_path": "Source/Text/UnknownC3D5.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC3D5.asm",
+      "sha256": "8b5c106cc72cf4f6b53cda5afdb4bd71e71d66ed71347d71f5a5d6a1a489e6a0"
+    },
+    {
+      "old_path": "Source/Text/UnknownC3DF.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC3DF.asm",
+      "sha256": "93b8e503cbeb5272229b3b4792eb9ac419434072c6f783ba5760f728718408e6"
+    },
+    {
+      "old_path": "Source/Text/UnknownC488.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC488.asm",
+      "sha256": "5f81c69e1e1faef72604b1781573c1b93e35acff8807842a4caf8a00144fa1dc"
+    },
+    {
+      "old_path": "Source/Text/UnknownC491.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC491.asm",
+      "sha256": "b20a4dabad86c68f24d7ef51aa261539604109c11fd8970b92f2f12da691ddd7"
+    },
+    {
+      "old_path": "Source/Text/UnknownC49C.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC49C.asm",
+      "sha256": "274bb0041eb24a424e9cd918f751002c28d77765a825c469f718c39cd6923849"
+    },
+    {
+      "old_path": "Source/Text/UnknownC4A6.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC4A6.asm",
+      "sha256": "3385d26fda55a072a71974329c92208fd360285c340e499b2cb43e4e260e0629"
+    },
+    {
+      "old_path": "Source/Text/UnknownC4B1.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC4B1.asm",
+      "sha256": "ea87ffe42f4996409f1fce02ff6035cf4c16a76a8f7ef4ee75c57bfe9f402d97"
+    },
+    {
+      "old_path": "Source/Text/UnknownC4BC.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC4BC.asm",
+      "sha256": "eb0b39bfeef456df2b8cefa3fae3d239bf46666b0758cfc9cfa438055149fcb6"
+    },
+    {
+      "old_path": "Source/Text/UnknownC4C6.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC4C6.asm",
+      "sha256": "0053ddd3dd5e091e44d32fe0f1266fe538466c3aa09f19691b0c5d0e2635a1f2"
+    },
+    {
+      "old_path": "Source/Text/UnknownC4CD.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC4CD.asm",
+      "sha256": "4cd6b68b462c5d6485731bfa5ee5ecaad3f1836238ad41d9869d8c3e2eec0da7"
+    },
+    {
+      "old_path": "Source/Text/UnknownC4D4.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC4D4.asm",
+      "sha256": "4e3e68848f4b2c78f8c2e598f061e1133a405049f929ed344f5c245fdcbd09af"
+    },
+    {
+      "old_path": "Source/Text/UnknownC4D7.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC4D7.asm",
+      "sha256": "d8b74216db9ea8e085c3b0ec60be596d86008ddf0586e3b5a9289a0e15ddd14c"
+    },
+    {
+      "old_path": "Source/Text/UnknownC4E3.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC4E3.asm",
+      "sha256": "b511ffc7b72c30f7851ee75853645ebc7f6f0f158799d598b7021dc7d417b75b"
+    },
+    {
+      "old_path": "Source/Text/UnknownC4EF.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC4EF.asm",
+      "sha256": "f76d50a430041d6a31ca091d48bd7e0a588ed61f16058362ef5f1e325ae03ecb"
+    },
+    {
+      "old_path": "Source/Text/UnknownC51A.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC51A.asm",
+      "sha256": "d9b5b727f2a01e660b541a3207a9bfef7852aa5638ff619a655cdaabce46af5b"
+    },
+    {
+      "old_path": "Source/Text/UnknownC558.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC558.asm",
+      "sha256": "f6bbd2913d0bbe29332f07068ed7656b81f2f0ac443acb0ba00c4a1707eb20ac"
+    },
+    {
+      "old_path": "Source/Text/UnknownC577.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC577.asm",
+      "sha256": "42aac640c83adb88f3c93b43475fe8174d7ef06902d38aa766736114eb9d6b7c"
+    },
+    {
+      "old_path": "Source/Text/UnknownC58A.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC58A.asm",
+      "sha256": "455edb6532384726e0ea721427a7d67d31cba0377badba72734b9cc8e06e1894"
+    },
+    {
+      "old_path": "Source/Text/UnknownC590.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC590.asm",
+      "sha256": "83ffd634c825bd686cd69828e75e6fe20b0f54f3b044b2e9f2c31bfafb57e03c"
+    },
+    {
+      "old_path": "Source/Text/UnknownC596.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC596.asm",
+      "sha256": "b182804c32952f8bc4a9b4996f84d937485840034c2022bb88ba8479aabd49fe"
+    },
+    {
+      "old_path": "Source/Text/UnknownC5A9.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC5A9.asm",
+      "sha256": "18fd0a2fe46cfd0a95d5775086e13e5eeed1294ab9f1e5a0c32ad95ae0301ce4"
+    },
+    {
+      "old_path": "Source/Text/UnknownC5B2.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC5B2.asm",
+      "sha256": "66927afe69736cc34a58f8a7bfcfc757a88410bf1cd418b1fdce5cd2678dc32a"
+    },
+    {
+      "old_path": "Source/Text/UnknownC5BB.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC5BB.asm",
+      "sha256": "bf3f7265b042dd0699cc6c0d75c2abc8e7a425e29de3558c36d12b108e989000"
+    },
+    {
+      "old_path": "Source/Text/UnknownC5C1.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC5C1.asm",
+      "sha256": "d2d51b7fbbf0fbf408a627a344a1f77b9e9d9b85a6a68fe2e5459f6ad8f290d4"
+    },
+    {
+      "old_path": "Source/Text/UnknownC5C7.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC5C7.asm",
+      "sha256": "24ea84504500f8d7790cab6c08d4f22e93b5fee18ea9e0a8819105abb48fbd82"
+    },
+    {
+      "old_path": "Source/Text/UnknownC5CD.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC5CD.asm",
+      "sha256": "79452bdab0533bbb949140db401029e54c8cb1d33add262154d21c75891420e6"
+    },
+    {
+      "old_path": "Source/Text/UnknownC5DF.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC5DF.asm",
+      "sha256": "e9e1374c2da2fbd01b2ef817f17b996fa57e0dabf56a20bf8c64af5d888cd0a5"
+    },
+    {
+      "old_path": "Source/Text/UnknownC5E9.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC5E9.asm",
+      "sha256": "08f7538b7acaa8537bd9c78174d7d1f6510787d3ea15452a7727cd55e6fee206"
+    },
+    {
+      "old_path": "Source/Text/UnknownC5F9.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC5F9.asm",
+      "sha256": "bdbf10b808ddaf63ce84ef2681f51e2818afac9b8ec741f82038d5dc883fe41d"
+    },
+    {
+      "old_path": "Source/Text/UnknownC609.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC609.asm",
+      "sha256": "3f62780fcdbf726052ad2accfe266952cce21a83b6197226045740753cf882e3"
+    },
+    {
+      "old_path": "Source/Text/UnknownC60F.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC60F.asm",
+      "sha256": "c9038017de62356154e9f707caef7d92d5129dd054208ae3ff5ca3ec63082f80"
+    },
+    {
+      "old_path": "Source/Text/UnknownC615.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC615.asm",
+      "sha256": "fb9a7a9b891202de4d7bc2c5cf3f5f7bb0f47511272fa2627ef04c2661d5d754"
+    },
+    {
+      "old_path": "Source/Text/UnknownC61B.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC61B.asm",
+      "sha256": "6546f832ae27ac6210d18f3057d13b44f1808a90e5e074d8b17bfdc272daf861"
+    },
+    {
+      "old_path": "Source/Text/UnknownC623.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC623.asm",
+      "sha256": "664b3f2db084bc0b5fc686a031b84307d50e0b536086fa6783b0847a04aeb97c"
+    },
+    {
+      "old_path": "Source/Text/UnknownC62A.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC62A.asm",
+      "sha256": "1b062dde2cbe96d16a5e6c52e2619849d03f1afc8af8e32ea645a016181188dd"
+    },
+    {
+      "old_path": "Source/Text/UnknownC632.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC632.asm",
+      "sha256": "b8da9c8eb16d9828dac4aa5f93ecba1effb11b8430a5a3b1fa2dad243a8dd140"
+    },
+    {
+      "old_path": "Source/Text/UnknownC63A.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC63A.asm",
+      "sha256": "8df2e5abcab86bd050ffc6d3a79b43da8b270b23548d94d7a8889fed7e297533"
+    },
+    {
+      "old_path": "Source/Text/UnknownC642.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC642.asm",
+      "sha256": "128dc624ed7c227b766c9eba8ad508a4dffd18a4503ac3c8c91a6539f406c64a"
+    },
+    {
+      "old_path": "Source/Text/UnknownC657.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC657.asm",
+      "sha256": "83b991c02f6074ecbb5183cf5292fec883b292595fbd733e13c666b2dc8fc93f"
+    },
+    {
+      "old_path": "Source/Text/UnknownC66E.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC66E.asm",
+      "sha256": "47e760897b3fc1b835e7305edb160b7bd5adfce35091d4586f1e774a8b9f3670"
+    },
+    {
+      "old_path": "Source/Text/UnknownC685.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC685.asm",
+      "sha256": "d1ad5f6ad644db85280304f574927c41748e26516381c0bc56005f3c914bd2e2"
+    },
+    {
+      "old_path": "Source/Text/UnknownC6B6.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC6B6.asm",
+      "sha256": "a8320ad427eff944ed2102dc196789a50b608f2c39e76ca4180fc64b83f754c0"
+    },
+    {
+      "old_path": "Source/Text/UnknownC6BC.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC6BC.asm",
+      "sha256": "9316dc6b8653f8c9b0e67ab327042c24135b1443d10b4a8e627687e696702034"
+    },
+    {
+      "old_path": "Source/Text/UnknownC6E4.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/Text/UnknownC6E4.asm",
+      "sha256": "b6c2524eb13d1c5b994bce1db9d8b596086e717311b7d46174fb613a57f5701c"
+    },
+    {
+      "old_path": "Source/ThreeD/UnknownC07A.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/UnknownC07A.asm",
+      "sha256": "264c9a2ade9120efdbbf275d95a95df16df79982d2307b4e558c4ddbdba6fc8f"
+    },
+    {
+      "old_path": "Source/ThreeD/UnknownC07B.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/UnknownC07B.asm",
+      "sha256": "0c1ef3def3e22deccb663f52ccc5e4b4fbf5cb6e67f277f142ed5f1c8ececd84"
+    },
+    {
+      "old_path": "Source/ThreeD/UnknownC08A.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/UnknownC08A.asm",
+      "sha256": "64a83b73c1034be24487ff545a1fedeff9e96b8b91b4ebf07c53f4eb6bd21011"
+    },
+    {
+      "old_path": "Source/ThreeD/UnknownC095.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/UnknownC095.asm",
+      "sha256": "6a01b98fc16b427b375ce7a841a1339a7d0985b99ae4e3e187e6fa88d3c8e8e0"
+    },
+    {
+      "old_path": "Source/ThreeD/UnknownC0A4.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/UnknownC0A4.asm",
+      "sha256": "42440d36ed56d1f80a6b9ad8c9ad40db31811da65d82f0ba91f0c39444ade0a7"
+    },
+    {
+      "old_path": "Source/ThreeD/UnknownC0AF.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/UnknownC0AF.asm",
+      "sha256": "5519735e839a90d925c8d2abc3f95ab06059ac385642aeacea86126741768f20"
+    },
+    {
+      "old_path": "Source/ThreeD/UnknownC0BE.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/UnknownC0BE.asm",
+      "sha256": "5caefdb3c8a5600a621dece705eac324daee8bc19eda0674f93613f16d12e0f4"
+    },
+    {
+      "old_path": "Source/ThreeD/FinishBandFrame.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/FinishBandFrame.asm",
+      "sha256": "6f1199a56df28457105c89bffb38e88ad235397e73b9f39a9fcbe9d2ba9891c7"
+    },
+    {
+      "old_path": "Source/ThreeD/UnknownC0D8.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/UnknownC0D8.asm",
+      "sha256": "c19d9c4336236246cfadd502b998448b9dfe809d2495667c672f8e64a07db4ef"
+    },
+    {
+      "old_path": "Source/ThreeD/UnknownC0E3.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/UnknownC0E3.asm",
+      "sha256": "3bd820d1e2ee9b8f17f2ca6aaf758c1b2834ddf4c5f7ea7850e309239114e542"
+    },
+    {
+      "old_path": "Source/ThreeD/UnknownC0E9.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/UnknownC0E9.asm",
+      "sha256": "9ef2c50ba47b62fcbe2d536f6ae82ca9cebd622104d18ca95ba1d7eef00c4795"
+    },
+    {
+      "old_path": "Source/ThreeD/UnknownC0EF.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/UnknownC0EF.asm",
+      "sha256": "0574fbd25854ead984184d627a40d01949e19c4d07895f20681a4e63300ab67d"
+    },
+    {
+      "old_path": "Source/ThreeD/UnknownC101.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/UnknownC101.asm",
+      "sha256": "5965b0ff8b55b81c261747624fb0b0b9d7e6bbbbcc46f9058353cbc458a982fe"
+    },
+    {
+      "old_path": "Source/ThreeD/UnknownC119.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/UnknownC119.asm",
+      "sha256": "47330c2ddfcc99c7aee367e8653d250f80d873390b757c627e9d67c8d0d166a7"
+    },
+    {
+      "old_path": "Source/ThreeD/UnknownC12B.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/UnknownC12B.asm",
+      "sha256": "c28c9b2b881bbd10e5fd27508ddbc55419dee005852ef07ee08cfd43702fc7e8"
+    },
+    {
+      "old_path": "Source/ThreeD/UnknownC132.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/UnknownC132.asm",
+      "sha256": "df6bb30c8e976bf065fe783423857c374623c2188e42fe9c0254e636a1252e98"
+    },
+    {
+      "old_path": "Source/ThreeD/UnknownC144.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/UnknownC144.asm",
+      "sha256": "bbbfd2dcb677525e4d20dc4f97063860aa48e8dcd9b2eaeea988a86399de2ebd"
+    },
+    {
+      "old_path": "Source/ThreeD/UnknownC14A.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/UnknownC14A.asm",
+      "sha256": "ffb238023ba1bff2048bd5afb3823e89fd316daef02223c792585b9e28bc8d98"
+    },
+    {
+      "old_path": "Source/ThreeD/UnknownC150.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/UnknownC150.asm",
+      "sha256": "aeef49866a29e3292e86ca31cd329cda2617134346f32a6abee3eddf247ac49f"
+    },
+    {
+      "old_path": "Source/ThreeD/UnknownC162.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/UnknownC162.asm",
+      "sha256": "ba3748a5d9bd94f14b3d752879d46f35800190f8bd5fe365de2c3b6b739b8800"
+    },
+    {
+      "old_path": "Source/ThreeD/UnknownC174.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/UnknownC174.asm",
+      "sha256": "9d8a79e09707457f95e4f110b40a5ae5a84e0aa9e50349eb96b5ad8cc507e23a"
+    },
+    {
+      "old_path": "Source/ThreeD/DrawSpanRow.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/DrawSpanRow.asm",
+      "sha256": "b84a02e0baf68e9c6f4bf2a6492078488683eb14b1ce9eb62a33cef9512d8cbd"
+    },
+    {
+      "old_path": "Source/ThreeD/UnknownC18D.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/UnknownC18D.asm",
+      "sha256": "810874e4f7220879aedae484ab7bbb610345fe2086c55d1cb81ca2f5dd4b12fa"
+    },
+    {
+      "old_path": "Source/ThreeD/UnknownC1A5.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/UnknownC1A5.asm",
+      "sha256": "001d6c9bc012be368631a346930ecc27b032e332516e7437d22497387e536139"
+    },
+    {
+      "old_path": "Source/ThreeD/UnknownC1AB.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/UnknownC1AB.asm",
+      "sha256": "5ed0e1293bdb90cc6ed08f4019ac9116a12a96667e203f050a40cddd3f2a51b4"
+    },
+    {
+      "old_path": "Source/ThreeD/UnknownC1BD.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/UnknownC1BD.asm",
+      "sha256": "b1c14d943462053bbe0bb6ff1921b9e98e455479e0afd6035a1c99c48ecebac5"
+    },
+    {
+      "old_path": "Source/ThreeD/SetCutoutPattern.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/SetCutoutPattern.asm",
+      "sha256": "8b424c9fcb20aaec805b0f57d71d4b332443e05a144bb83e7a9cccf0f418068b"
+    },
+    {
+      "old_path": "Source/ThreeD/UnknownC1D6.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/UnknownC1D6.asm",
+      "sha256": "3d78e639a15b6294d65e087d0f86492bd6297bb1d0236157c599caf74e025b97"
+    },
+    {
+      "old_path": "Source/ThreeD/UnknownC1DC.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/UnknownC1DC.asm",
+      "sha256": "26ea5ad33f6d5a81dae4adf4363c37de6e7c26436142a96f7bfbfec27841d565"
+    },
+    {
+      "old_path": "Source/ThreeD/UnknownC1F1.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/UnknownC1F1.asm",
+      "sha256": "816540efd1a553a4cf1b80ba9d20e64fbf8addfce37b99891cfc4067a4b0785c"
+    },
+    {
+      "old_path": "Source/ThreeD/UnknownC20C.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/UnknownC20C.asm",
+      "sha256": "a11642e13f3a691ed54f12fd0a4c28c4284da82100c0dd29b2934539d3795e7b"
+    },
+    {
+      "old_path": "Source/ThreeD/UnknownC228.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/UnknownC228.asm",
+      "sha256": "eca34dd08f101df4f0233e4b3c0f98ed364663295a5d488ceea018b0acf6c265"
+    },
+    {
+      "old_path": "Source/ThreeD/UnknownC22F.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/UnknownC22F.asm",
+      "sha256": "6fdb7da42beb9168e2524bdd48b76dfdc07236ebccc9c609100259cb58ef64f9"
+    },
+    {
+      "old_path": "Source/ThreeD/UnknownC24E.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/UnknownC24E.asm",
+      "sha256": "37312e259fc8dc9d552001d6d4a3ea0d844baa8c9107fb6e929a5ee5f5d5f8ae"
+    },
+    {
+      "old_path": "Source/ThreeD/UnknownC259.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/UnknownC259.asm",
+      "sha256": "10bf245c74a1c7fa58b8e0e6d79a568a676ab1a179c3416fe5e6a08fa95ebe3b"
+    },
+    {
+      "old_path": "Source/ThreeD/UnknownC25F.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/UnknownC25F.asm",
+      "sha256": "9d271ce5f4fbb902b9a189f4c01e687aded1c408986dd2e2065442cb2f03f2a7"
+    },
+    {
+      "old_path": "Source/ThreeD/UnknownC274.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/UnknownC274.asm",
+      "sha256": "48bed4591c1e62aa215d9519d8fe0266ca67288b47b1eae2f15f587b84209dbe"
+    },
+    {
+      "old_path": "Source/ThreeD/UnknownC28D.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/UnknownC28D.asm",
+      "sha256": "1348085c91aa9a40b8359d8f7d246a5c851cb86c1b6d89ce566a49fa04d426db"
+    },
+    {
+      "old_path": "Source/ThreeD/UnknownC2A9.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/UnknownC2A9.asm",
+      "sha256": "3c7c25fa133b175f65a4322479c5543ed7af2c952163aa89594e7a8d558653a1"
+    },
+    {
+      "old_path": "Source/ThreeD/UnknownC2BE.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/UnknownC2BE.asm",
+      "sha256": "7429f7935104c97c6c6d4f274260d4daf040795a0e6554c7f31b78b45c43b1a0"
+    },
+    {
+      "old_path": "Source/ThreeD/UnknownC2C9.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/UnknownC2C9.asm",
+      "sha256": "c79a5c0a5c3fb136d573fae3e035db6240f48b74c70dae0c14cce18981b93e39"
+    },
+    {
+      "old_path": "Source/ThreeD/UnknownC2D0.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/UnknownC2D0.asm",
+      "sha256": "27fb10a9f1500b00a73dd98f4920df6a5abca421c7f1d8aaae8b2db58f167e8b"
+    },
+    {
+      "old_path": "Source/ThreeD/UnknownC2EF.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/UnknownC2EF.asm",
+      "sha256": "78e780f8e22efa84a13f4544cc33e7b44915be917ca43fe53ef03def04d4d488"
+    },
+    {
+      "old_path": "Source/ThreeD/UnknownC308.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/UnknownC308.asm",
+      "sha256": "9c344440b290604196d1e056fa7b8a7ea3f21d75dd1bd992e5f7d10fe730fddf"
+    },
+    {
+      "old_path": "Source/ThreeD/UnknownC30E.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/UnknownC30E.asm",
+      "sha256": "32283fdca0c1be608ac19e159eded8090598588f64df66bbc0b6ef47cc9a775b"
+    },
+    {
+      "old_path": "Source/ThreeD/UnknownC314.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/UnknownC314.asm",
+      "sha256": "31d77eb3d116d77d1294c922ca263ab1910b1f1b60b0131877641c9d3bfc6f55"
+    },
+    {
+      "old_path": "Source/ThreeD/UnknownC326.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/UnknownC326.asm",
+      "sha256": "efc43ede3778254e27ce0c98ff0b978e9441df4b8f850b93cbc163efe77ccfe7"
+    },
+    {
+      "old_path": "Source/ThreeD/UnknownC338.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/UnknownC338.asm",
+      "sha256": "c28fe2a03d67ffd1a2512ec56bfc9e0afbeaa8724ddeb5513078cf32c4f0c01b"
+    },
+    {
+      "old_path": "Source/ThreeD/UnknownC33E.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/UnknownC33E.asm",
+      "sha256": "1135f98377e12650be5ade4fe66767f7767702d24c54b48eb23fef8fc84081db"
+    },
+    {
+      "old_path": "Source/ThreeD/UnknownC359.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/UnknownC359.asm",
+      "sha256": "89dbb33ad749c87417ce0d908bd34924bd7116142eea6d3fd5adeeaa1f2dc936"
+    },
+    {
+      "old_path": "Source/ThreeD/UnknownC36E.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/UnknownC36E.asm",
+      "sha256": "fffc7eda9f11ada7febebcd49de708e8de92f1f248164391bddb305b131fda43"
+    },
+    {
+      "old_path": "Source/ThreeD/UnknownC375.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/UnknownC375.asm",
+      "sha256": "c609de372e342881beef65db197cebeaecc864d12e74899bd922bc08f57b434d"
+    },
+    {
+      "old_path": "Source/ThreeD/UnknownC391.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/UnknownC391.asm",
+      "sha256": "c4194a96c8f1f30dcf2d2a91831b545e03b63a26952f95da587dfbbcbf5aac30"
+    },
+    {
+      "old_path": "Source/ThreeD/UnknownC39C.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/UnknownC39C.asm",
+      "sha256": "0ff7f2ad08a5d639641b5c8c5013afaea28bf6dc6542bbab7d16b93e107a4bc8"
+    },
+    {
+      "old_path": "Source/ThreeD/UnknownC3B1.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/UnknownC3B1.asm",
+      "sha256": "7bb9b2300729ed0ab3e4763839f75a0fb535e5f2106fd545fc2ff19bffb2888d"
+    },
+    {
+      "old_path": "Source/ThreeD/UnknownC3D0.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/UnknownC3D0.asm",
+      "sha256": "0e1003d6da6ceb488f9688a5bc88a51ffeeb0143dcecfc5048f63c1957c3f115"
+    },
+    {
+      "old_path": "Source/ThreeD/UnknownC3D6.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/UnknownC3D6.asm",
+      "sha256": "33eee73964d246f4154ef8b901e2a240284217051955c141b244ebb713d7109d"
+    },
+    {
+      "old_path": "Source/ThreeD/UnknownC3EF.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/UnknownC3EF.asm",
+      "sha256": "a3063bc71f5b1780680d431238659fb17cadf865b8ba5e85b1fce507f3ff3702"
+    },
+    {
+      "old_path": "Source/ThreeD/UnknownC3F6.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/UnknownC3F6.asm",
+      "sha256": "fd736bc1aed6e153b895150db741a2957e42f490d02b63befe9b7c1d5c3ce38c"
+    },
+    {
+      "old_path": "Source/ThreeD/UnknownC412.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/UnknownC412.asm",
+      "sha256": "57ae8bcb840dfff16bea7896cb85ffc0eade46df32f3b5fafd59ef733d6102a3"
+    },
+    {
+      "old_path": "Source/ThreeD/UnknownC431.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/UnknownC431.asm",
+      "sha256": "7bfbee9d701e9945dcd7225d8206d4184779a7a9df69169562af2899bf0b9979"
+    },
+    {
+      "old_path": "Source/ThreeD/UnknownC438.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/UnknownC438.asm",
+      "sha256": "3907955fece29f8b6b6ab35a206b89c7e630ca2ebedf90f3696963eff736de89"
+    },
+    {
+      "old_path": "Source/ThreeD/UnknownC44D.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/UnknownC44D.asm",
+      "sha256": "32f04564afa958e08f1e53c934aadc780edb4ecc3a6ef48b35aef961497f7c7c"
+    },
+    {
+      "old_path": "Source/ThreeD/UnknownC466.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/UnknownC466.asm",
+      "sha256": "fccd3dc553bee90b71999a0827db4d60b0d9dfed7619d025363ec75b8cd8d296"
+    },
+    {
+      "old_path": "Source/ThreeD/UnknownC471.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/UnknownC471.asm",
+      "sha256": "3dabe3b08a1227fb01c0ab793610bc4bbeec5b2d8e83fa942b8fd8ced95a384f"
+    },
+    {
+      "old_path": "Source/ThreeD/UnknownC4F3.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/UnknownC4F3.asm",
+      "sha256": "cdc176f8b5dc2366a14ad1d2fb4704bb09fff1b80998dfc2cf162eaa94390657"
+    },
+    {
+      "old_path": "Source/ThreeD/UnknownC53D.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/UnknownC53D.asm",
+      "sha256": "68ac956fa498511a618edffc3ac83d4dc5b9f50b8a961b5b930256fa6528983f"
+    },
+    {
+      "old_path": "Source/ThreeD/UnknownC588.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/UnknownC588.asm",
+      "sha256": "578a2fe6ae8af024f5618a7adddd840c3524283697c6497ff9f7b049a30e7df7"
+    },
+    {
+      "old_path": "Source/ThreeD/UnknownC5E4.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/UnknownC5E4.asm",
+      "sha256": "cacd9d4509552d071dda2d1c9fc50a0c6ad08e9df77595ae3d2603da4f5f8812"
+    },
+    {
+      "old_path": "Source/ThreeD/UnknownC6D3.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/UnknownC6D3.asm",
+      "sha256": "845a0885053715b2dfc9dafcc26c29af1d90d9dfac9c78a1e250c05c709c736f"
+    },
+    {
+      "old_path": "Source/ThreeD/UnknownC6EA.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/UnknownC6EA.asm",
+      "sha256": "426d82be5dc395e1c4896902eb0988cdc39d579999a2d815e9f4d3b7a00ae17e"
+    },
+    {
+      "old_path": "Source/ThreeD/UnknownD10A.asm",
+      "archive_path": "Tools/Disasm/Research/History/UnusedSource/Source/ThreeD/UnknownD10A.asm",
+      "sha256": "6196d9b4cbbe21b32a274ce0f802ec0a9b015536eaef9a003390edd9f927acdd"
+    }
+  ],
+  "count": 282,
+  "bytes_preserved": true,
+  "current_source_map_unchanged": true,
+  "assembly_executed": false
+}

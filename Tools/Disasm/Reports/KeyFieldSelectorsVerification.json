@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "cases": 10920,
+  "method": "original_four_key_field_selectors_and_banked_handlers",
+  "no_suffix_returns_table_anchor": true,
+  "all_choice_bytes": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

@@ -1,0 +1,8 @@
+{
+  "files_changed": 924,
+  "boilerplate_comments_removed": 3681,
+  "potential_fallthroughs_marked": 72,
+  "ordered_include_files": 135,
+  "instruction_sequences_preserved": true,
+  "assembly_executed": false
+}

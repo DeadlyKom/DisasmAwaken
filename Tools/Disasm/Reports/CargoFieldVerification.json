@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "method": "original_cargo_field_and_second_byte_suffix",
+  "cases": {
+    "default": 1120,
+    "second_byte": 1120
+  },
+  "calls_stubbed": false,
+  "selected_row_and_base_wrap": true,
+  "explicit_zero_index_tested": true,
+  "native_execution": false,
+  "irq_executed": false,
+  "assembly_executed": false
+}

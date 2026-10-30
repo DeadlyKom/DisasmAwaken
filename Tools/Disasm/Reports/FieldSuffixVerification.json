@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "method": "original_suffix_parser_and_decimal_reader_until_tail_target",
+  "cases": {
+    "first_byte": 256,
+    "decimal": 200000,
+    "suffix": 100001
+  },
+  "dispatch_or_field_handler_executed": false,
+  "decimal_reader_stubbed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

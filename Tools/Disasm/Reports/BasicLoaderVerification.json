@@ -1,0 +1,10 @@
+{
+  "method": "original_loader_bytes_until_trdos_entry",
+  "cases": 5120,
+  "all_input_flags_checked": true,
+  "trdos_rom_executed": false,
+  "disk_read_performed": false,
+  "source_sha256": "202672e6e050bc142cd4c3592efe18efb3740892e710fd3921f5050385886552",
+  "passed": true,
+  "assembly_executed": false
+}

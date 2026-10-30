@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "method": "scoped_candidate_overlay_original_instructions_labels_physical_coverage_and_real_include_graph",
+  "plan_sha256": "9ef4a5309a87eb95c9e3540604983fdb8df0d0668ec306c72c78966b1dd67cb6",
+  "candidate_files": 12,
+  "new_fragments": 2,
+  "new_instructions_checked": 75,
+  "new_labels_checked": 6,
+  "existing_manual_sources_instruction_sequences_unchanged": 0,
+  "covered_bytes": 479744,
+  "include_text_files": 1213,
+  "include_binary_files": 226,
+  "source_changed": false,
+  "semantic_completeness_proved": false,
+  "assembly_executed": false
+}

@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "cases": 1152,
+  "changed_cases": 32,
+  "method": "original_mission_hover_wrapper_two_row_limit_real_xor_pointer_and_operand_store",
+  "all_pointer_y_values": true,
+  "last_handler_gate": true,
+  "bitmap_and_attributes_checked": true,
+  "calls_stubbed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

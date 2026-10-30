@@ -1,0 +1,13 @@
+{
+  "method": "original_popup_group_filter_and_context_item_preparation",
+  "passed": true,
+  "source_sha256": "1066914072803f32c4a670b182160072369a05d860f5c36353383f22c8217b35",
+  "filter_cases": 2513,
+  "removed_operations": 11737,
+  "nonterminating_long_list_cases": 1,
+  "menu_coordinate_cases": 65536,
+  "irq_executed": false,
+  "drawing_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

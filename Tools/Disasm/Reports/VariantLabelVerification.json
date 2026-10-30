@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "cases": 4096,
+  "hyphen_only_cases": 1024,
+  "method": "original_variant_label_all_variant_bytes_all_fold_classes_actual_key_steps_glyphs_and_decimal",
+  "all_variant_bytes": true,
+  "all_fold_classes": true,
+  "number_wrap_preserved": true,
+  "calls_stubbed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

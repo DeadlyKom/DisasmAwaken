@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "method": "original_menu_commands_geometry_copy_close_filter_and_explicit_halt_wakeups",
+  "save_geometry_cases": 752,
+  "close_filter_cases": 304,
+  "hide_cases": 256,
+  "all_flag_bytes": true,
+  "actual_remove_code_executed": true,
+  "halt_wakeup_is_fixture": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

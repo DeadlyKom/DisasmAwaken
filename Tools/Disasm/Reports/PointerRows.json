@@ -1,0 +1,2498 @@
+[
+  {
+    "address": 24576,
+    "offset": 0,
+    "label": "PointerSprites.Normal.Shift0Row0",
+    "shift": 0,
+    "row": 0,
+    "values": [
+      63,
+      0,
+      255,
+      0
+    ]
+  },
+  {
+    "address": 24580,
+    "offset": 4,
+    "label": "PointerSprites.Normal.Shift0Row1",
+    "shift": 0,
+    "row": 1,
+    "values": [
+      31,
+      64,
+      255,
+      0
+    ]
+  },
+  {
+    "address": 24584,
+    "offset": 8,
+    "label": "PointerSprites.Normal.Shift0Row2",
+    "shift": 0,
+    "row": 2,
+    "values": [
+      15,
+      96,
+      255,
+      0
+    ]
+  },
+  {
+    "address": 24588,
+    "offset": 12,
+    "label": "PointerSprites.Normal.Shift0Row3",
+    "shift": 0,
+    "row": 3,
+    "values": [
+      7,
+      112,
+      255,
+      0
+    ]
+  },
+  {
+    "address": 24592,
+    "offset": 16,
+    "label": "PointerSprites.Normal.Shift0Row4",
+    "shift": 0,
+    "row": 4,
+    "values": [
+      3,
+      120,
+      255,
+      0
+    ]
+  },
+  {
+    "address": 24596,
+    "offset": 20,
+    "label": "PointerSprites.Normal.Shift0Row5",
+    "shift": 0,
+    "row": 5,
+    "values": [
+      7,
+      96,
+      255,
+      0
+    ]
+  },
+  {
+    "address": 24600,
+    "offset": 24,
+    "label": "PointerSprites.Normal.Shift0Row6",
+    "shift": 0,
+    "row": 6,
+    "values": [
+      31,
+      0,
+      255,
+      0
+    ]
+  },
+  {
+    "address": 24604,
+    "offset": 28,
+    "label": "PointerSprites.Normal.Shift0Row7",
+    "shift": 0,
+    "row": 7,
+    "values": [
+      127,
+      0,
+      255,
+      0
+    ]
+  },
+  {
+    "address": 24608,
+    "offset": 32,
+    "label": "PointerSprites.Normal.Shift1Row0",
+    "shift": 1,
+    "row": 0,
+    "values": [
+      159,
+      0,
+      255,
+      0
+    ]
+  },
+  {
+    "address": 24612,
+    "offset": 36,
+    "label": "PointerSprites.Normal.Shift1Row1",
+    "shift": 1,
+    "row": 1,
+    "values": [
+      143,
+      32,
+      255,
+      0
+    ]
+  },
+  {
+    "address": 24616,
+    "offset": 40,
+    "label": "PointerSprites.Normal.Shift1Row2",
+    "shift": 1,
+    "row": 2,
+    "values": [
+      135,
+      48,
+      255,
+      0
+    ]
+  },
+  {
+    "address": 24620,
+    "offset": 44,
+    "label": "PointerSprites.Normal.Shift1Row3",
+    "shift": 1,
+    "row": 3,
+    "values": [
+      131,
+      56,
+      255,
+      0
+    ]
+  },
+  {
+    "address": 24624,
+    "offset": 48,
+    "label": "PointerSprites.Normal.Shift1Row4",
+    "shift": 1,
+    "row": 4,
+    "values": [
+      129,
+      60,
+      255,
+      0
+    ]
+  },
+  {
+    "address": 24628,
+    "offset": 52,
+    "label": "PointerSprites.Normal.Shift1Row5",
+    "shift": 1,
+    "row": 5,
+    "values": [
+      131,
+      48,
+      255,
+      0
+    ]
+  },
+  {
+    "address": 24632,
+    "offset": 56,
+    "label": "PointerSprites.Normal.Shift1Row6",
+    "shift": 1,
+    "row": 6,
+    "values": [
+      143,
+      0,
+      255,
+      0
+    ]
+  },
+  {
+    "address": 24636,
+    "offset": 60,
+    "label": "PointerSprites.Normal.Shift1Row7",
+    "shift": 1,
+    "row": 7,
+    "values": [
+      191,
+      0,
+      255,
+      0
+    ]
+  },
+  {
+    "address": 24640,
+    "offset": 64,
+    "label": "PointerSprites.Normal.Shift2Row0",
+    "shift": 2,
+    "row": 0,
+    "values": [
+      207,
+      0,
+      255,
+      0
+    ]
+  },
+  {
+    "address": 24644,
+    "offset": 68,
+    "label": "PointerSprites.Normal.Shift2Row1",
+    "shift": 2,
+    "row": 1,
+    "values": [
+      199,
+      16,
+      255,
+      0
+    ]
+  },
+  {
+    "address": 24648,
+    "offset": 72,
+    "label": "PointerSprites.Normal.Shift2Row2",
+    "shift": 2,
+    "row": 2,
+    "values": [
+      195,
+      24,
+      255,
+      0
+    ]
+  },
+  {
+    "address": 24652,
+    "offset": 76,
+    "label": "PointerSprites.Normal.Shift2Row3",
+    "shift": 2,
+    "row": 3,
+    "values": [
+      193,
+      28,
+      255,
+      0
+    ]
+  },
+  {
+    "address": 24656,
+    "offset": 80,
+    "label": "PointerSprites.Normal.Shift2Row4",
+    "shift": 2,
+    "row": 4,
+    "values": [
+      192,
+      30,
+      255,
+      0
+    ]
+  },
+  {
+    "address": 24660,
+    "offset": 84,
+    "label": "PointerSprites.Normal.Shift2Row5",
+    "shift": 2,
+    "row": 5,
+    "values": [
+      193,
+      24,
+      255,
+      0
+    ]
+  },
+  {
+    "address": 24664,
+    "offset": 88,
+    "label": "PointerSprites.Normal.Shift2Row6",
+    "shift": 2,
+    "row": 6,
+    "values": [
+      199,
+      0,
+      255,
+      0
+    ]
+  },
+  {
+    "address": 24668,
+    "offset": 92,
+    "label": "PointerSprites.Normal.Shift2Row7",
+    "shift": 2,
+    "row": 7,
+    "values": [
+      223,
+      0,
+      255,
+      0
+    ]
+  },
+  {
+    "address": 24672,
+    "offset": 96,
+    "label": "PointerSprites.Normal.Shift3Row0",
+    "shift": 3,
+    "row": 0,
+    "values": [
+      231,
+      0,
+      255,
+      0
+    ]
+  },
+  {
+    "address": 24676,
+    "offset": 100,
+    "label": "PointerSprites.Normal.Shift3Row1",
+    "shift": 3,
+    "row": 1,
+    "values": [
+      227,
+      8,
+      255,
+      0
+    ]
+  },
+  {
+    "address": 24680,
+    "offset": 104,
+    "label": "PointerSprites.Normal.Shift3Row2",
+    "shift": 3,
+    "row": 2,
+    "values": [
+      225,
+      12,
+      255,
+      0
+    ]
+  },
+  {
+    "address": 24684,
+    "offset": 108,
+    "label": "PointerSprites.Normal.Shift3Row3",
+    "shift": 3,
+    "row": 3,
+    "values": [
+      224,
+      14,
+      255,
+      0
+    ]
+  },
+  {
+    "address": 24688,
+    "offset": 112,
+    "label": "PointerSprites.Normal.Shift3Row4",
+    "shift": 3,
+    "row": 4,
+    "values": [
+      224,
+      15,
+      127,
+      0
+    ]
+  },
+  {
+    "address": 24692,
+    "offset": 116,
+    "label": "PointerSprites.Normal.Shift3Row5",
+    "shift": 3,
+    "row": 5,
+    "values": [
+      224,
+      12,
+      255,
+      0
+    ]
+  },
+  {
+    "address": 24696,
+    "offset": 120,
+    "label": "PointerSprites.Normal.Shift3Row6",
+    "shift": 3,
+    "row": 6,
+    "values": [
+      227,
+      0,
+      255,
+      0
+    ]
+  },
+  {
+    "address": 24700,
+    "offset": 124,
+    "label": "PointerSprites.Normal.Shift3Row7",
+    "shift": 3,
+    "row": 7,
+    "values": [
+      239,
+      0,
+      255,
+      0
+    ]
+  },
+  {
+    "address": 24704,
+    "offset": 128,
+    "label": "PointerSprites.Normal.Shift4Row0",
+    "shift": 4,
+    "row": 0,
+    "values": [
+      243,
+      0,
+      255,
+      0
+    ]
+  },
+  {
+    "address": 24708,
+    "offset": 132,
+    "label": "PointerSprites.Normal.Shift4Row1",
+    "shift": 4,
+    "row": 1,
+    "values": [
+      241,
+      4,
+      255,
+      0
+    ]
+  },
+  {
+    "address": 24712,
+    "offset": 136,
+    "label": "PointerSprites.Normal.Shift4Row2",
+    "shift": 4,
+    "row": 2,
+    "values": [
+      240,
+      6,
+      255,
+      0
+    ]
+  },
+  {
+    "address": 24716,
+    "offset": 140,
+    "label": "PointerSprites.Normal.Shift4Row3",
+    "shift": 4,
+    "row": 3,
+    "values": [
+      240,
+      7,
+      127,
+      0
+    ]
+  },
+  {
+    "address": 24720,
+    "offset": 144,
+    "label": "PointerSprites.Normal.Shift4Row4",
+    "shift": 4,
+    "row": 4,
+    "values": [
+      240,
+      7,
+      63,
+      128
+    ]
+  },
+  {
+    "address": 24724,
+    "offset": 148,
+    "label": "PointerSprites.Normal.Shift4Row5",
+    "shift": 4,
+    "row": 5,
+    "values": [
+      240,
+      6,
+      127,
+      0
+    ]
+  },
+  {
+    "address": 24728,
+    "offset": 152,
+    "label": "PointerSprites.Normal.Shift4Row6",
+    "shift": 4,
+    "row": 6,
+    "values": [
+      241,
+      0,
+      255,
+      0
+    ]
+  },
+  {
+    "address": 24732,
+    "offset": 156,
+    "label": "PointerSprites.Normal.Shift4Row7",
+    "shift": 4,
+    "row": 7,
+    "values": [
+      247,
+      0,
+      255,
+      0
+    ]
+  },
+  {
+    "address": 24736,
+    "offset": 160,
+    "label": "PointerSprites.Normal.Shift5Row0",
+    "shift": 5,
+    "row": 0,
+    "values": [
+      249,
+      0,
+      255,
+      0
+    ]
+  },
+  {
+    "address": 24740,
+    "offset": 164,
+    "label": "PointerSprites.Normal.Shift5Row1",
+    "shift": 5,
+    "row": 1,
+    "values": [
+      248,
+      2,
+      255,
+      0
+    ]
+  },
+  {
+    "address": 24744,
+    "offset": 168,
+    "label": "PointerSprites.Normal.Shift5Row2",
+    "shift": 5,
+    "row": 2,
+    "values": [
+      248,
+      3,
+      127,
+      0
+    ]
+  },
+  {
+    "address": 24748,
+    "offset": 172,
+    "label": "PointerSprites.Normal.Shift5Row3",
+    "shift": 5,
+    "row": 3,
+    "values": [
+      248,
+      3,
+      63,
+      128
+    ]
+  },
+  {
+    "address": 24752,
+    "offset": 176,
+    "label": "PointerSprites.Normal.Shift5Row4",
+    "shift": 5,
+    "row": 4,
+    "values": [
+      248,
+      3,
+      31,
+      192
+    ]
+  },
+  {
+    "address": 24756,
+    "offset": 180,
+    "label": "PointerSprites.Normal.Shift5Row5",
+    "shift": 5,
+    "row": 5,
+    "values": [
+      248,
+      3,
+      63,
+      0
+    ]
+  },
+  {
+    "address": 24760,
+    "offset": 184,
+    "label": "PointerSprites.Normal.Shift5Row6",
+    "shift": 5,
+    "row": 6,
+    "values": [
+      248,
+      0,
+      255,
+      0
+    ]
+  },
+  {
+    "address": 24764,
+    "offset": 188,
+    "label": "PointerSprites.Normal.Shift5Row7",
+    "shift": 5,
+    "row": 7,
+    "values": [
+      251,
+      0,
+      255,
+      0
+    ]
+  },
+  {
+    "address": 24768,
+    "offset": 192,
+    "label": "PointerSprites.Normal.Shift6Row0",
+    "shift": 6,
+    "row": 0,
+    "values": [
+      252,
+      0,
+      255,
+      0
+    ]
+  },
+  {
+    "address": 24772,
+    "offset": 196,
+    "label": "PointerSprites.Normal.Shift6Row1",
+    "shift": 6,
+    "row": 1,
+    "values": [
+      252,
+      1,
+      127,
+      0
+    ]
+  },
+  {
+    "address": 24776,
+    "offset": 200,
+    "label": "PointerSprites.Normal.Shift6Row2",
+    "shift": 6,
+    "row": 2,
+    "values": [
+      252,
+      1,
+      63,
+      128
+    ]
+  },
+  {
+    "address": 24780,
+    "offset": 204,
+    "label": "PointerSprites.Normal.Shift6Row3",
+    "shift": 6,
+    "row": 3,
+    "values": [
+      252,
+      1,
+      31,
+      192
+    ]
+  },
+  {
+    "address": 24784,
+    "offset": 208,
+    "label": "PointerSprites.Normal.Shift6Row4",
+    "shift": 6,
+    "row": 4,
+    "values": [
+      252,
+      1,
+      15,
+      224
+    ]
+  },
+  {
+    "address": 24788,
+    "offset": 212,
+    "label": "PointerSprites.Normal.Shift6Row5",
+    "shift": 6,
+    "row": 5,
+    "values": [
+      252,
+      1,
+      31,
+      128
+    ]
+  },
+  {
+    "address": 24792,
+    "offset": 216,
+    "label": "PointerSprites.Normal.Shift6Row6",
+    "shift": 6,
+    "row": 6,
+    "values": [
+      252,
+      0,
+      127,
+      0
+    ]
+  },
+  {
+    "address": 24796,
+    "offset": 220,
+    "label": "PointerSprites.Normal.Shift6Row7",
+    "shift": 6,
+    "row": 7,
+    "values": [
+      253,
+      0,
+      255,
+      0
+    ]
+  },
+  {
+    "address": 24800,
+    "offset": 224,
+    "label": "PointerSprites.Normal.Shift7Row0",
+    "shift": 7,
+    "row": 0,
+    "values": [
+      254,
+      0,
+      127,
+      0
+    ]
+  },
+  {
+    "address": 24804,
+    "offset": 228,
+    "label": "PointerSprites.Normal.Shift7Row1",
+    "shift": 7,
+    "row": 1,
+    "values": [
+      254,
+      0,
+      63,
+      128
+    ]
+  },
+  {
+    "address": 24808,
+    "offset": 232,
+    "label": "PointerSprites.Normal.Shift7Row2",
+    "shift": 7,
+    "row": 2,
+    "values": [
+      254,
+      0,
+      31,
+      192
+    ]
+  },
+  {
+    "address": 24812,
+    "offset": 236,
+    "label": "PointerSprites.Normal.Shift7Row3",
+    "shift": 7,
+    "row": 3,
+    "values": [
+      254,
+      0,
+      15,
+      224
+    ]
+  },
+  {
+    "address": 24816,
+    "offset": 240,
+    "label": "PointerSprites.Normal.Shift7Row4",
+    "shift": 7,
+    "row": 4,
+    "values": [
+      254,
+      0,
+      7,
+      240
+    ]
+  },
+  {
+    "address": 24820,
+    "offset": 244,
+    "label": "PointerSprites.Normal.Shift7Row5",
+    "shift": 7,
+    "row": 5,
+    "values": [
+      254,
+      0,
+      15,
+      192
+    ]
+  },
+  {
+    "address": 24824,
+    "offset": 248,
+    "label": "PointerSprites.Normal.Shift7Row6",
+    "shift": 7,
+    "row": 6,
+    "values": [
+      254,
+      0,
+      63,
+      0
+    ]
+  },
+  {
+    "address": 24828,
+    "offset": 252,
+    "label": "PointerSprites.Normal.Shift7Row7",
+    "shift": 7,
+    "row": 7,
+    "values": [
+      254,
+      0,
+      255,
+      0
+    ]
+  },
+  {
+    "address": 24832,
+    "offset": 256,
+    "label": "PointerSprites.Top.Shift0Row0",
+    "shift": 0,
+    "row": 0,
+    "values": [
+      7,
+      0,
+      255,
+      0
+    ]
+  },
+  {
+    "address": 24836,
+    "offset": 260,
+    "label": "PointerSprites.Top.Shift0Row1",
+    "shift": 0,
+    "row": 1,
+    "values": [
+      3,
+      120,
+      255,
+      0
+    ]
+  },
+  {
+    "address": 24840,
+    "offset": 264,
+    "label": "PointerSprites.Top.Shift0Row2",
+    "shift": 0,
+    "row": 2,
+    "values": [
+      1,
+      72,
+      255,
+      0
+    ]
+  },
+  {
+    "address": 24844,
+    "offset": 268,
+    "label": "PointerSprites.Top.Shift0Row3",
+    "shift": 0,
+    "row": 3,
+    "values": [
+      0,
+      78,
+      255,
+      0
+    ]
+  },
+  {
+    "address": 24848,
+    "offset": 272,
+    "label": "PointerSprites.Top.Shift0Row4",
+    "shift": 0,
+    "row": 4,
+    "values": [
+      0,
+      122,
+      255,
+      0
+    ]
+  },
+  {
+    "address": 24852,
+    "offset": 276,
+    "label": "PointerSprites.Top.Shift0Row5",
+    "shift": 0,
+    "row": 5,
+    "values": [
+      128,
+      18,
+      255,
+      0
+    ]
+  },
+  {
+    "address": 24856,
+    "offset": 280,
+    "label": "PointerSprites.Top.Shift0Row6",
+    "shift": 0,
+    "row": 6,
+    "values": [
+      192,
+      30,
+      255,
+      0
+    ]
+  },
+  {
+    "address": 24860,
+    "offset": 284,
+    "label": "PointerSprites.Top.Shift0Row7",
+    "shift": 0,
+    "row": 7,
+    "values": [
+      224,
+      0,
+      255,
+      0
+    ]
+  },
+  {
+    "address": 24864,
+    "offset": 288,
+    "label": "PointerSprites.Top.Shift1Row0",
+    "shift": 1,
+    "row": 0,
+    "values": [
+      131,
+      0,
+      255,
+      0
+    ]
+  },
+  {
+    "address": 24868,
+    "offset": 292,
+    "label": "PointerSprites.Top.Shift1Row1",
+    "shift": 1,
+    "row": 1,
+    "values": [
+      129,
+      60,
+      255,
+      0
+    ]
+  },
+  {
+    "address": 24872,
+    "offset": 296,
+    "label": "PointerSprites.Top.Shift1Row2",
+    "shift": 1,
+    "row": 2,
+    "values": [
+      128,
+      36,
+      255,
+      0
+    ]
+  },
+  {
+    "address": 24876,
+    "offset": 300,
+    "label": "PointerSprites.Top.Shift1Row3",
+    "shift": 1,
+    "row": 3,
+    "values": [
+      128,
+      39,
+      127,
+      0
+    ]
+  },
+  {
+    "address": 24880,
+    "offset": 304,
+    "label": "PointerSprites.Top.Shift1Row4",
+    "shift": 1,
+    "row": 4,
+    "values": [
+      128,
+      61,
+      127,
+      0
+    ]
+  },
+  {
+    "address": 24884,
+    "offset": 308,
+    "label": "PointerSprites.Top.Shift1Row5",
+    "shift": 1,
+    "row": 5,
+    "values": [
+      192,
+      9,
+      127,
+      0
+    ]
+  },
+  {
+    "address": 24888,
+    "offset": 312,
+    "label": "PointerSprites.Top.Shift1Row6",
+    "shift": 1,
+    "row": 6,
+    "values": [
+      224,
+      15,
+      127,
+      0
+    ]
+  },
+  {
+    "address": 24892,
+    "offset": 316,
+    "label": "PointerSprites.Top.Shift1Row7",
+    "shift": 1,
+    "row": 7,
+    "values": [
+      240,
+      0,
+      127,
+      0
+    ]
+  },
+  {
+    "address": 24896,
+    "offset": 320,
+    "label": "PointerSprites.Top.Shift2Row0",
+    "shift": 2,
+    "row": 0,
+    "values": [
+      193,
+      0,
+      255,
+      0
+    ]
+  },
+  {
+    "address": 24900,
+    "offset": 324,
+    "label": "PointerSprites.Top.Shift2Row1",
+    "shift": 2,
+    "row": 1,
+    "values": [
+      192,
+      30,
+      255,
+      0
+    ]
+  },
+  {
+    "address": 24904,
+    "offset": 328,
+    "label": "PointerSprites.Top.Shift2Row2",
+    "shift": 2,
+    "row": 2,
+    "values": [
+      192,
+      18,
+      127,
+      0
+    ]
+  },
+  {
+    "address": 24908,
+    "offset": 332,
+    "label": "PointerSprites.Top.Shift2Row3",
+    "shift": 2,
+    "row": 3,
+    "values": [
+      192,
+      19,
+      63,
+      128
+    ]
+  },
+  {
+    "address": 24912,
+    "offset": 336,
+    "label": "PointerSprites.Top.Shift2Row4",
+    "shift": 2,
+    "row": 4,
+    "values": [
+      192,
+      30,
+      63,
+      128
+    ]
+  },
+  {
+    "address": 24916,
+    "offset": 340,
+    "label": "PointerSprites.Top.Shift2Row5",
+    "shift": 2,
+    "row": 5,
+    "values": [
+      224,
+      4,
+      63,
+      128
+    ]
+  },
+  {
+    "address": 24920,
+    "offset": 344,
+    "label": "PointerSprites.Top.Shift2Row6",
+    "shift": 2,
+    "row": 6,
+    "values": [
+      240,
+      7,
+      63,
+      128
+    ]
+  },
+  {
+    "address": 24924,
+    "offset": 348,
+    "label": "PointerSprites.Top.Shift2Row7",
+    "shift": 2,
+    "row": 7,
+    "values": [
+      248,
+      0,
+      63,
+      0
+    ]
+  },
+  {
+    "address": 24928,
+    "offset": 352,
+    "label": "PointerSprites.Top.Shift3Row0",
+    "shift": 3,
+    "row": 0,
+    "values": [
+      224,
+      0,
+      255,
+      0
+    ]
+  },
+  {
+    "address": 24932,
+    "offset": 356,
+    "label": "PointerSprites.Top.Shift3Row1",
+    "shift": 3,
+    "row": 1,
+    "values": [
+      224,
+      15,
+      127,
+      0
+    ]
+  },
+  {
+    "address": 24936,
+    "offset": 360,
+    "label": "PointerSprites.Top.Shift3Row2",
+    "shift": 3,
+    "row": 2,
+    "values": [
+      224,
+      9,
+      63,
+      0
+    ]
+  },
+  {
+    "address": 24940,
+    "offset": 364,
+    "label": "PointerSprites.Top.Shift3Row3",
+    "shift": 3,
+    "row": 3,
+    "values": [
+      224,
+      9,
+      31,
+      192
+    ]
+  },
+  {
+    "address": 24944,
+    "offset": 368,
+    "label": "PointerSprites.Top.Shift3Row4",
+    "shift": 3,
+    "row": 4,
+    "values": [
+      224,
+      15,
+      31,
+      64
+    ]
+  },
+  {
+    "address": 24948,
+    "offset": 372,
+    "label": "PointerSprites.Top.Shift3Row5",
+    "shift": 3,
+    "row": 5,
+    "values": [
+      240,
+      2,
+      31,
+      64
+    ]
+  },
+  {
+    "address": 24952,
+    "offset": 376,
+    "label": "PointerSprites.Top.Shift3Row6",
+    "shift": 3,
+    "row": 6,
+    "values": [
+      248,
+      3,
+      31,
+      192
+    ]
+  },
+  {
+    "address": 24956,
+    "offset": 380,
+    "label": "PointerSprites.Top.Shift3Row7",
+    "shift": 3,
+    "row": 7,
+    "values": [
+      252,
+      0,
+      31,
+      0
+    ]
+  },
+  {
+    "address": 24960,
+    "offset": 384,
+    "label": "PointerSprites.Top.Shift4Row0",
+    "shift": 4,
+    "row": 0,
+    "values": [
+      240,
+      0,
+      127,
+      0
+    ]
+  },
+  {
+    "address": 24964,
+    "offset": 388,
+    "label": "PointerSprites.Top.Shift4Row1",
+    "shift": 4,
+    "row": 1,
+    "values": [
+      240,
+      7,
+      63,
+      128
+    ]
+  },
+  {
+    "address": 24968,
+    "offset": 392,
+    "label": "PointerSprites.Top.Shift4Row2",
+    "shift": 4,
+    "row": 2,
+    "values": [
+      240,
+      4,
+      31,
+      128
+    ]
+  },
+  {
+    "address": 24972,
+    "offset": 396,
+    "label": "PointerSprites.Top.Shift4Row3",
+    "shift": 4,
+    "row": 3,
+    "values": [
+      240,
+      4,
+      15,
+      224
+    ]
+  },
+  {
+    "address": 24976,
+    "offset": 400,
+    "label": "PointerSprites.Top.Shift4Row4",
+    "shift": 4,
+    "row": 4,
+    "values": [
+      240,
+      7,
+      15,
+      160
+    ]
+  },
+  {
+    "address": 24980,
+    "offset": 404,
+    "label": "PointerSprites.Top.Shift4Row5",
+    "shift": 4,
+    "row": 5,
+    "values": [
+      248,
+      1,
+      15,
+      32
+    ]
+  },
+  {
+    "address": 24984,
+    "offset": 408,
+    "label": "PointerSprites.Top.Shift4Row6",
+    "shift": 4,
+    "row": 6,
+    "values": [
+      252,
+      1,
+      15,
+      224
+    ]
+  },
+  {
+    "address": 24988,
+    "offset": 412,
+    "label": "PointerSprites.Top.Shift4Row7",
+    "shift": 4,
+    "row": 7,
+    "values": [
+      254,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "address": 24992,
+    "offset": 416,
+    "label": "PointerSprites.Top.Shift5Row0",
+    "shift": 5,
+    "row": 0,
+    "values": [
+      248,
+      0,
+      63,
+      0
+    ]
+  },
+  {
+    "address": 24996,
+    "offset": 420,
+    "label": "PointerSprites.Top.Shift5Row1",
+    "shift": 5,
+    "row": 1,
+    "values": [
+      248,
+      3,
+      31,
+      192
+    ]
+  },
+  {
+    "address": 25000,
+    "offset": 424,
+    "label": "PointerSprites.Top.Shift5Row2",
+    "shift": 5,
+    "row": 2,
+    "values": [
+      248,
+      2,
+      15,
+      64
+    ]
+  },
+  {
+    "address": 25004,
+    "offset": 428,
+    "label": "PointerSprites.Top.Shift5Row3",
+    "shift": 5,
+    "row": 3,
+    "values": [
+      248,
+      2,
+      7,
+      112
+    ]
+  },
+  {
+    "address": 25008,
+    "offset": 432,
+    "label": "PointerSprites.Top.Shift5Row4",
+    "shift": 5,
+    "row": 4,
+    "values": [
+      248,
+      3,
+      7,
+      208
+    ]
+  },
+  {
+    "address": 25012,
+    "offset": 436,
+    "label": "PointerSprites.Top.Shift5Row5",
+    "shift": 5,
+    "row": 5,
+    "values": [
+      252,
+      0,
+      7,
+      144
+    ]
+  },
+  {
+    "address": 25016,
+    "offset": 440,
+    "label": "PointerSprites.Top.Shift5Row6",
+    "shift": 5,
+    "row": 6,
+    "values": [
+      254,
+      0,
+      7,
+      240
+    ]
+  },
+  {
+    "address": 25020,
+    "offset": 444,
+    "label": "PointerSprites.Top.Shift5Row7",
+    "shift": 5,
+    "row": 7,
+    "values": [
+      255,
+      0,
+      7,
+      0
+    ]
+  },
+  {
+    "address": 25024,
+    "offset": 448,
+    "label": "PointerSprites.Top.Shift6Row0",
+    "shift": 6,
+    "row": 0,
+    "values": [
+      252,
+      0,
+      31,
+      0
+    ]
+  },
+  {
+    "address": 25028,
+    "offset": 452,
+    "label": "PointerSprites.Top.Shift6Row1",
+    "shift": 6,
+    "row": 1,
+    "values": [
+      252,
+      1,
+      15,
+      224
+    ]
+  },
+  {
+    "address": 25032,
+    "offset": 456,
+    "label": "PointerSprites.Top.Shift6Row2",
+    "shift": 6,
+    "row": 2,
+    "values": [
+      252,
+      1,
+      7,
+      32
+    ]
+  },
+  {
+    "address": 25036,
+    "offset": 460,
+    "label": "PointerSprites.Top.Shift6Row3",
+    "shift": 6,
+    "row": 3,
+    "values": [
+      252,
+      1,
+      3,
+      56
+    ]
+  },
+  {
+    "address": 25040,
+    "offset": 464,
+    "label": "PointerSprites.Top.Shift6Row4",
+    "shift": 6,
+    "row": 4,
+    "values": [
+      252,
+      1,
+      3,
+      232
+    ]
+  },
+  {
+    "address": 25044,
+    "offset": 468,
+    "label": "PointerSprites.Top.Shift6Row5",
+    "shift": 6,
+    "row": 5,
+    "values": [
+      254,
+      0,
+      3,
+      72
+    ]
+  },
+  {
+    "address": 25048,
+    "offset": 472,
+    "label": "PointerSprites.Top.Shift6Row6",
+    "shift": 6,
+    "row": 6,
+    "values": [
+      255,
+      0,
+      3,
+      120
+    ]
+  },
+  {
+    "address": 25052,
+    "offset": 476,
+    "label": "PointerSprites.Top.Shift6Row7",
+    "shift": 6,
+    "row": 7,
+    "values": [
+      255,
+      0,
+      131,
+      0
+    ]
+  },
+  {
+    "address": 25056,
+    "offset": 480,
+    "label": "PointerSprites.Top.Shift7Row0",
+    "shift": 7,
+    "row": 0,
+    "values": [
+      254,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "address": 25060,
+    "offset": 484,
+    "label": "PointerSprites.Top.Shift7Row1",
+    "shift": 7,
+    "row": 1,
+    "values": [
+      254,
+      0,
+      7,
+      240
+    ]
+  },
+  {
+    "address": 25064,
+    "offset": 488,
+    "label": "PointerSprites.Top.Shift7Row2",
+    "shift": 7,
+    "row": 2,
+    "values": [
+      254,
+      0,
+      3,
+      144
+    ]
+  },
+  {
+    "address": 25068,
+    "offset": 492,
+    "label": "PointerSprites.Top.Shift7Row3",
+    "shift": 7,
+    "row": 3,
+    "values": [
+      254,
+      0,
+      1,
+      156
+    ]
+  },
+  {
+    "address": 25072,
+    "offset": 496,
+    "label": "PointerSprites.Top.Shift7Row4",
+    "shift": 7,
+    "row": 4,
+    "values": [
+      254,
+      0,
+      1,
+      244
+    ]
+  },
+  {
+    "address": 25076,
+    "offset": 500,
+    "label": "PointerSprites.Top.Shift7Row5",
+    "shift": 7,
+    "row": 5,
+    "values": [
+      255,
+      0,
+      1,
+      36
+    ]
+  },
+  {
+    "address": 25080,
+    "offset": 504,
+    "label": "PointerSprites.Top.Shift7Row6",
+    "shift": 7,
+    "row": 6,
+    "values": [
+      255,
+      0,
+      129,
+      60
+    ]
+  },
+  {
+    "address": 25084,
+    "offset": 508,
+    "label": "PointerSprites.Top.Shift7Row7",
+    "shift": 7,
+    "row": 7,
+    "values": [
+      255,
+      0,
+      193,
+      0
+    ]
+  },
+  {
+    "address": 25088,
+    "offset": 512,
+    "label": "PointerSprites.Bottom.Shift0Row0",
+    "shift": 0,
+    "row": 0,
+    "values": [
+      1,
+      0,
+      255,
+      0
+    ]
+  },
+  {
+    "address": 25092,
+    "offset": 516,
+    "label": "PointerSprites.Bottom.Shift0Row1",
+    "shift": 0,
+    "row": 1,
+    "values": [
+      2,
+      120,
+      255,
+      0
+    ]
+  },
+  {
+    "address": 25096,
+    "offset": 520,
+    "label": "PointerSprites.Bottom.Shift0Row2",
+    "shift": 0,
+    "row": 2,
+    "values": [
+      4,
+      112,
+      255,
+      0
+    ]
+  },
+  {
+    "address": 25100,
+    "offset": 524,
+    "label": "PointerSprites.Bottom.Shift0Row3",
+    "shift": 0,
+    "row": 3,
+    "values": [
+      8,
+      98,
+      255,
+      0
+    ]
+  },
+  {
+    "address": 25104,
+    "offset": 528,
+    "label": "PointerSprites.Bottom.Shift0Row4",
+    "shift": 0,
+    "row": 4,
+    "values": [
+      16,
+      70,
+      255,
+      0
+    ]
+  },
+  {
+    "address": 25108,
+    "offset": 532,
+    "label": "PointerSprites.Bottom.Shift0Row5",
+    "shift": 0,
+    "row": 5,
+    "values": [
+      32,
+      14,
+      255,
+      0
+    ]
+  },
+  {
+    "address": 25112,
+    "offset": 536,
+    "label": "PointerSprites.Bottom.Shift0Row6",
+    "shift": 0,
+    "row": 6,
+    "values": [
+      64,
+      30,
+      255,
+      0
+    ]
+  },
+  {
+    "address": 25116,
+    "offset": 540,
+    "label": "PointerSprites.Bottom.Shift0Row7",
+    "shift": 0,
+    "row": 7,
+    "values": [
+      128,
+      0,
+      255,
+      0
+    ]
+  },
+  {
+    "address": 25120,
+    "offset": 544,
+    "label": "PointerSprites.Bottom.Shift1Row0",
+    "shift": 1,
+    "row": 0,
+    "values": [
+      128,
+      0,
+      255,
+      0
+    ]
+  },
+  {
+    "address": 25124,
+    "offset": 548,
+    "label": "PointerSprites.Bottom.Shift1Row1",
+    "shift": 1,
+    "row": 1,
+    "values": [
+      129,
+      60,
+      127,
+      0
+    ]
+  },
+  {
+    "address": 25128,
+    "offset": 552,
+    "label": "PointerSprites.Bottom.Shift1Row2",
+    "shift": 1,
+    "row": 2,
+    "values": [
+      130,
+      56,
+      127,
+      0
+    ]
+  },
+  {
+    "address": 25132,
+    "offset": 556,
+    "label": "PointerSprites.Bottom.Shift1Row3",
+    "shift": 1,
+    "row": 3,
+    "values": [
+      132,
+      49,
+      127,
+      0
+    ]
+  },
+  {
+    "address": 25136,
+    "offset": 560,
+    "label": "PointerSprites.Bottom.Shift1Row4",
+    "shift": 1,
+    "row": 4,
+    "values": [
+      136,
+      35,
+      127,
+      0
+    ]
+  },
+  {
+    "address": 25140,
+    "offset": 564,
+    "label": "PointerSprites.Bottom.Shift1Row5",
+    "shift": 1,
+    "row": 5,
+    "values": [
+      144,
+      7,
+      127,
+      0
+    ]
+  },
+  {
+    "address": 25144,
+    "offset": 568,
+    "label": "PointerSprites.Bottom.Shift1Row6",
+    "shift": 1,
+    "row": 6,
+    "values": [
+      160,
+      15,
+      127,
+      0
+    ]
+  },
+  {
+    "address": 25148,
+    "offset": 572,
+    "label": "PointerSprites.Bottom.Shift1Row7",
+    "shift": 1,
+    "row": 7,
+    "values": [
+      192,
+      0,
+      127,
+      0
+    ]
+  },
+  {
+    "address": 25152,
+    "offset": 576,
+    "label": "PointerSprites.Bottom.Shift2Row0",
+    "shift": 2,
+    "row": 0,
+    "values": [
+      192,
+      0,
+      127,
+      0
+    ]
+  },
+  {
+    "address": 25156,
+    "offset": 580,
+    "label": "PointerSprites.Bottom.Shift2Row1",
+    "shift": 2,
+    "row": 1,
+    "values": [
+      192,
+      30,
+      191,
+      0
+    ]
+  },
+  {
+    "address": 25160,
+    "offset": 584,
+    "label": "PointerSprites.Bottom.Shift2Row2",
+    "shift": 2,
+    "row": 2,
+    "values": [
+      193,
+      28,
+      63,
+      0
+    ]
+  },
+  {
+    "address": 25164,
+    "offset": 588,
+    "label": "PointerSprites.Bottom.Shift2Row3",
+    "shift": 2,
+    "row": 3,
+    "values": [
+      194,
+      24,
+      63,
+      128
+    ]
+  },
+  {
+    "address": 25168,
+    "offset": 592,
+    "label": "PointerSprites.Bottom.Shift2Row4",
+    "shift": 2,
+    "row": 4,
+    "values": [
+      196,
+      17,
+      63,
+      128
+    ]
+  },
+  {
+    "address": 25172,
+    "offset": 596,
+    "label": "PointerSprites.Bottom.Shift2Row5",
+    "shift": 2,
+    "row": 5,
+    "values": [
+      200,
+      3,
+      63,
+      128
+    ]
+  },
+  {
+    "address": 25176,
+    "offset": 600,
+    "label": "PointerSprites.Bottom.Shift2Row6",
+    "shift": 2,
+    "row": 6,
+    "values": [
+      208,
+      7,
+      63,
+      128
+    ]
+  },
+  {
+    "address": 25180,
+    "offset": 604,
+    "label": "PointerSprites.Bottom.Shift2Row7",
+    "shift": 2,
+    "row": 7,
+    "values": [
+      224,
+      0,
+      63,
+      0
+    ]
+  },
+  {
+    "address": 25184,
+    "offset": 608,
+    "label": "PointerSprites.Bottom.Shift3Row0",
+    "shift": 3,
+    "row": 0,
+    "values": [
+      224,
+      0,
+      63,
+      0
+    ]
+  },
+  {
+    "address": 25188,
+    "offset": 612,
+    "label": "PointerSprites.Bottom.Shift3Row1",
+    "shift": 3,
+    "row": 1,
+    "values": [
+      224,
+      15,
+      95,
+      0
+    ]
+  },
+  {
+    "address": 25192,
+    "offset": 616,
+    "label": "PointerSprites.Bottom.Shift3Row2",
+    "shift": 3,
+    "row": 2,
+    "values": [
+      224,
+      14,
+      159,
+      0
+    ]
+  },
+  {
+    "address": 25196,
+    "offset": 620,
+    "label": "PointerSprites.Bottom.Shift3Row3",
+    "shift": 3,
+    "row": 3,
+    "values": [
+      225,
+      12,
+      31,
+      64
+    ]
+  },
+  {
+    "address": 25200,
+    "offset": 624,
+    "label": "PointerSprites.Bottom.Shift3Row4",
+    "shift": 3,
+    "row": 4,
+    "values": [
+      226,
+      8,
+      31,
+      192
+    ]
+  },
+  {
+    "address": 25204,
+    "offset": 628,
+    "label": "PointerSprites.Bottom.Shift3Row5",
+    "shift": 3,
+    "row": 5,
+    "values": [
+      228,
+      1,
+      31,
+      192
+    ]
+  },
+  {
+    "address": 25208,
+    "offset": 632,
+    "label": "PointerSprites.Bottom.Shift3Row6",
+    "shift": 3,
+    "row": 6,
+    "values": [
+      232,
+      3,
+      31,
+      192
+    ]
+  },
+  {
+    "address": 25212,
+    "offset": 636,
+    "label": "PointerSprites.Bottom.Shift3Row7",
+    "shift": 3,
+    "row": 7,
+    "values": [
+      240,
+      0,
+      31,
+      0
+    ]
+  },
+  {
+    "address": 25216,
+    "offset": 640,
+    "label": "PointerSprites.Bottom.Shift4Row0",
+    "shift": 4,
+    "row": 0,
+    "values": [
+      240,
+      0,
+      31,
+      0
+    ]
+  },
+  {
+    "address": 25220,
+    "offset": 644,
+    "label": "PointerSprites.Bottom.Shift4Row1",
+    "shift": 4,
+    "row": 1,
+    "values": [
+      240,
+      7,
+      47,
+      128
+    ]
+  },
+  {
+    "address": 25224,
+    "offset": 648,
+    "label": "PointerSprites.Bottom.Shift4Row2",
+    "shift": 4,
+    "row": 2,
+    "values": [
+      240,
+      7,
+      79,
+      0
+    ]
+  },
+  {
+    "address": 25228,
+    "offset": 652,
+    "label": "PointerSprites.Bottom.Shift4Row3",
+    "shift": 4,
+    "row": 3,
+    "values": [
+      240,
+      6,
+      143,
+      32
+    ]
+  },
+  {
+    "address": 25232,
+    "offset": 656,
+    "label": "PointerSprites.Bottom.Shift4Row4",
+    "shift": 4,
+    "row": 4,
+    "values": [
+      241,
+      4,
+      15,
+      96
+    ]
+  },
+  {
+    "address": 25236,
+    "offset": 660,
+    "label": "PointerSprites.Bottom.Shift4Row5",
+    "shift": 4,
+    "row": 5,
+    "values": [
+      242,
+      0,
+      15,
+      224
+    ]
+  },
+  {
+    "address": 25240,
+    "offset": 664,
+    "label": "PointerSprites.Bottom.Shift4Row6",
+    "shift": 4,
+    "row": 6,
+    "values": [
+      244,
+      1,
+      15,
+      224
+    ]
+  },
+  {
+    "address": 25244,
+    "offset": 668,
+    "label": "PointerSprites.Bottom.Shift4Row7",
+    "shift": 4,
+    "row": 7,
+    "values": [
+      248,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "address": 25248,
+    "offset": 672,
+    "label": "PointerSprites.Bottom.Shift5Row0",
+    "shift": 5,
+    "row": 0,
+    "values": [
+      248,
+      0,
+      15,
+      0
+    ]
+  },
+  {
+    "address": 25252,
+    "offset": 676,
+    "label": "PointerSprites.Bottom.Shift5Row1",
+    "shift": 5,
+    "row": 1,
+    "values": [
+      248,
+      3,
+      23,
+      192
+    ]
+  },
+  {
+    "address": 25256,
+    "offset": 680,
+    "label": "PointerSprites.Bottom.Shift5Row2",
+    "shift": 5,
+    "row": 2,
+    "values": [
+      248,
+      3,
+      39,
+      128
+    ]
+  },
+  {
+    "address": 25260,
+    "offset": 684,
+    "label": "PointerSprites.Bottom.Shift5Row3",
+    "shift": 5,
+    "row": 3,
+    "values": [
+      248,
+      3,
+      71,
+      16
+    ]
+  },
+  {
+    "address": 25264,
+    "offset": 688,
+    "label": "PointerSprites.Bottom.Shift5Row4",
+    "shift": 5,
+    "row": 4,
+    "values": [
+      248,
+      2,
+      135,
+      48
+    ]
+  },
+  {
+    "address": 25268,
+    "offset": 692,
+    "label": "PointerSprites.Bottom.Shift5Row5",
+    "shift": 5,
+    "row": 5,
+    "values": [
+      249,
+      0,
+      7,
+      112
+    ]
+  },
+  {
+    "address": 25272,
+    "offset": 696,
+    "label": "PointerSprites.Bottom.Shift5Row6",
+    "shift": 5,
+    "row": 6,
+    "values": [
+      250,
+      0,
+      7,
+      240
+    ]
+  },
+  {
+    "address": 25276,
+    "offset": 700,
+    "label": "PointerSprites.Bottom.Shift5Row7",
+    "shift": 5,
+    "row": 7,
+    "values": [
+      252,
+      0,
+      7,
+      0
+    ]
+  },
+  {
+    "address": 25280,
+    "offset": 704,
+    "label": "PointerSprites.Bottom.Shift6Row0",
+    "shift": 6,
+    "row": 0,
+    "values": [
+      252,
+      0,
+      7,
+      0
+    ]
+  },
+  {
+    "address": 25284,
+    "offset": 708,
+    "label": "PointerSprites.Bottom.Shift6Row1",
+    "shift": 6,
+    "row": 1,
+    "values": [
+      252,
+      1,
+      11,
+      224
+    ]
+  },
+  {
+    "address": 25288,
+    "offset": 712,
+    "label": "PointerSprites.Bottom.Shift6Row2",
+    "shift": 6,
+    "row": 2,
+    "values": [
+      252,
+      1,
+      19,
+      192
+    ]
+  },
+  {
+    "address": 25292,
+    "offset": 716,
+    "label": "PointerSprites.Bottom.Shift6Row3",
+    "shift": 6,
+    "row": 3,
+    "values": [
+      252,
+      1,
+      35,
+      136
+    ]
+  },
+  {
+    "address": 25296,
+    "offset": 720,
+    "label": "PointerSprites.Bottom.Shift6Row4",
+    "shift": 6,
+    "row": 4,
+    "values": [
+      252,
+      1,
+      67,
+      24
+    ]
+  },
+  {
+    "address": 25300,
+    "offset": 724,
+    "label": "PointerSprites.Bottom.Shift6Row5",
+    "shift": 6,
+    "row": 5,
+    "values": [
+      252,
+      0,
+      131,
+      56
+    ]
+  },
+  {
+    "address": 25304,
+    "offset": 728,
+    "label": "PointerSprites.Bottom.Shift6Row6",
+    "shift": 6,
+    "row": 6,
+    "values": [
+      253,
+      0,
+      3,
+      120
+    ]
+  },
+  {
+    "address": 25308,
+    "offset": 732,
+    "label": "PointerSprites.Bottom.Shift6Row7",
+    "shift": 6,
+    "row": 7,
+    "values": [
+      254,
+      0,
+      3,
+      0
+    ]
+  },
+  {
+    "address": 25312,
+    "offset": 736,
+    "label": "PointerSprites.Bottom.Shift7Row0",
+    "shift": 7,
+    "row": 0,
+    "values": [
+      254,
+      0,
+      3,
+      0
+    ]
+  },
+  {
+    "address": 25316,
+    "offset": 740,
+    "label": "PointerSprites.Bottom.Shift7Row1",
+    "shift": 7,
+    "row": 1,
+    "values": [
+      254,
+      0,
+      5,
+      240
+    ]
+  },
+  {
+    "address": 25320,
+    "offset": 744,
+    "label": "PointerSprites.Bottom.Shift7Row2",
+    "shift": 7,
+    "row": 2,
+    "values": [
+      254,
+      0,
+      9,
+      224
+    ]
+  },
+  {
+    "address": 25324,
+    "offset": 748,
+    "label": "PointerSprites.Bottom.Shift7Row3",
+    "shift": 7,
+    "row": 3,
+    "values": [
+      254,
+      0,
+      17,
+      196
+    ]
+  },
+  {
+    "address": 25328,
+    "offset": 752,
+    "label": "PointerSprites.Bottom.Shift7Row4",
+    "shift": 7,
+    "row": 4,
+    "values": [
+      254,
+      0,
+      33,
+      140
+    ]
+  },
+  {
+    "address": 25332,
+    "offset": 756,
+    "label": "PointerSprites.Bottom.Shift7Row5",
+    "shift": 7,
+    "row": 5,
+    "values": [
+      254,
+      0,
+      65,
+      28
+    ]
+  },
+  {
+    "address": 25336,
+    "offset": 760,
+    "label": "PointerSprites.Bottom.Shift7Row6",
+    "shift": 7,
+    "row": 6,
+    "values": [
+      254,
+      0,
+      129,
+      60
+    ]
+  },
+  {
+    "address": 25340,
+    "offset": 764,
+    "label": "PointerSprites.Bottom.Shift7Row7",
+    "shift": 7,
+    "row": 7,
+    "values": [
+      255,
+      0,
+      1,
+      0
+    ]
+  }
+]

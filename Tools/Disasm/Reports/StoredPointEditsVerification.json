@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "cases": {
+    "toggle_a": 5376,
+    "insert_b": 10240,
+    "delete_b": 10240,
+    "clear_b": 1024,
+    "seek_b": 2816,
+    "cycle_a": 10240,
+    "center_key": 2048
+  },
+  "shifted_insert_cases": 1793,
+  "variant_ignored_by_lookup": true,
+  "all_ten_slot_hole_masks": true,
+  "insertion_immediate_hole_and_shifted_hole_have_different_target": true,
+  "first_byte_only_tombstones": true,
+  "scope": "original_mutations_and_banked_lookup_until_refresh_or_secondary_order_entry",
+  "redraw_executed": false,
+  "secondary_order_executed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

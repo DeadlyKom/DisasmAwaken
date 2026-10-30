@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "single_sprite_cases": 8192,
+  "blink_cases": 1536,
+  "whole_cluster_cases": 2048,
+  "sprites_drawn_in_single_cases": 4096,
+  "sprites_skipped_in_single_cases": 4096,
+  "stream_wraps": 1008,
+  "all_counter_bytes_tested": true,
+  "all_blink_mask_bytes_tested": true,
+  "all_eight_phases": true,
+  "method": "original_entire_C677_and_helpers_against_independent_spectrum_bitmap_and_byte_counter_model",
+  "calls_stubbed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false,
+  "full_game_loop_proved": false
+}

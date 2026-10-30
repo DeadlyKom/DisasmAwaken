@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "operator_cases": 1617,
+  "nested_and_chain_cases": 25,
+  "method": "original_numeric_readers_dispatch_operators_expression_call_and_control",
+  "all_eleven_operators": true,
+  "evaluation_left_to_right": true,
+  "explicit_nested_parentheses": true,
+  "calls_stubbed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

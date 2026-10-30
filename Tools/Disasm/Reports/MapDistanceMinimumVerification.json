@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "cases": 589809,
+  "accepted_cases": 294908,
+  "equal_distance_rejected_cases": 65539,
+  "method": "original_C653_and_SumSquares8_all_wrapped_delta_pairs_minimum_boundaries_and_all_minimum_words_three_distances",
+  "signed_byte_absolute_value_preserved": true,
+  "delta_minus_128_magnitude_128": true,
+  "maximum_distance_squared": 32768,
+  "strict_unsigned_comparison": true,
+  "point_pointer_advances_one_byte": true,
+  "exact_main_and_alternate_flags_checked": true,
+  "calls_stubbed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

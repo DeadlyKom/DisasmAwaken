@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "drawing_cases": 1280,
+  "disabled_cases": 256,
+  "method": "original_counter_draw_fill_and_glyphs_against_independent_pixels",
+  "all_four_counter_bytes": true,
+  "all_fill_modes": true,
+  "glyph_calls_observed": true,
+  "bitmap_and_attributes_checked": true,
+  "calls_stubbed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

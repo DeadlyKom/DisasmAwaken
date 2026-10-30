@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "cases": 327680,
+  "cases_by_entry": {
+    "E278": 65536,
+    "E248": 65536,
+    "E260": 65536,
+    "E208": 65536,
+    "E299": 65536
+  },
+  "configured_by_original_D0C3": false,
+  "setup_profiles": 0,
+  "method": "five_original_arc_preparations_all_radius_bytes_and_offsets_actual_edge_helpers_flags_and_alternate_registers",
+  "right_preparation_LeftMask_side_effect_checked": true,
+  "screen_tables_from_original_builder": true,
+  "full_arc_raster_algorithm_proved": false,
+  "calls_stubbed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

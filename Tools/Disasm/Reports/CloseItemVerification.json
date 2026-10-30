@@ -1,0 +1,16 @@
+{
+  "method": "original_active_item_close_full_frame_pointer_and_empty_callback",
+  "passed": true,
+  "cases": 4096,
+  "redrawn": 2048,
+  "skipped": 2048,
+  "modeled_wakeups": 2048,
+  "source_sha256": "1066914072803f32c4a670b182160072369a05d860f5c36353383f22c8217b35",
+  "bitmap_and_attributes_compared": true,
+  "text_fixture": "empty_LF_terminated",
+  "native_execution_verified": false,
+  "interrupt_handler_executed": false,
+  "interrupt_timing_verified": false,
+  "assembly_executed": false,
+  "close_callback": "EmptyCallback"
+}

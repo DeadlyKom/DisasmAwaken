@@ -1,0 +1,42 @@
+{
+  "passed": true,
+  "cases": 228568,
+  "dispatch_prepared_cases": 77680,
+  "x_rejected_cases": 78111,
+  "y_rejected_cases": 72777,
+  "prepared_offsets_truncated_to_byte_cases": 3814,
+  "method": "original_C000_prefix_until_actual_DFC3_call_or_marker_continuation_independent_word_geometry_and_radius_formula",
+  "setup_profiles": [
+    [
+      239,
+      175
+    ],
+    [
+      0,
+      0
+    ],
+    [
+      1,
+      255
+    ],
+    [
+      255,
+      175
+    ],
+    [
+      31,
+      23
+    ]
+  ],
+  "all_source_radius_words": true,
+  "all_coordinate_difference_words_in_base_profile": true,
+  "radius_formula": "3*(high(source) if high(source)!=0 else low(source)//2) AND 255",
+  "quadrant_bit_0": "wrapped WorldX-OriginX-HalfX is nonnegative",
+  "quadrant_bit_1": "wrapped OriginY-WorldY+HalfY is nonnegative",
+  "quadrant_upper_bits_cleared_by_this_writer": true,
+  "full_C000_and_DFC3_proved": false,
+  "calls_stubbed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

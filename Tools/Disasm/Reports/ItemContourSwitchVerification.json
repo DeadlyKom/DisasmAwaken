@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "cases": 1280,
+  "equal_index_cases": 256,
+  "all_old_flag_bytes": true,
+  "other_item_fields_preserved": true,
+  "draw_calls_per_case": 2,
+  "real_centered_renderer_and_pointer_guards": true,
+  "pointer_initially_restored": true,
+  "pointer_outside_items": true,
+  "method": "original_A806_call_argument_and_frame_trace_full_real_callees_flag_updates_and_return_registers",
+  "independent_compound_bitmap_oracle": false,
+  "callee_bitmap_models": "CenteredItemVerification.json and PointerVerification.json",
+  "calls_stubbed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

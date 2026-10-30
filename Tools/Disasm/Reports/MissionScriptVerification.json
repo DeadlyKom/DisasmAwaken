@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "cases": 1024,
+  "method": "original_LANG_event_17_full_interpreter_and_weighted_load",
+  "executed_command_paths": [
+    [
+      "0xc0db",
+      "0xc0db",
+      "0xc0e7"
+    ]
+  ],
+  "max_instructions": 30994,
+  "event_decimal": 17,
+  "event_hex": "11",
+  "weighted_sum_runs": 2,
+  "other_game_fields_preserved": true,
+  "calls_stubbed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

@@ -1,0 +1,51 @@
+{
+  "passed": true,
+  "paths": [
+    {
+      "radius_name": 7,
+      "points": 28,
+      "squared_distance_min": 41,
+      "squared_distance_max": 53
+    },
+    {
+      "radius_name": 10,
+      "points": 40,
+      "squared_distance_min": 98,
+      "squared_distance_max": 109
+    },
+    {
+      "radius_name": 13,
+      "points": 52,
+      "squared_distance_min": 169,
+      "squared_distance_max": 181
+    },
+    {
+      "radius_name": 16,
+      "points": 64,
+      "squared_distance_min": 242,
+      "squared_distance_max": 265
+    },
+    {
+      "radius_name": 19,
+      "points": 76,
+      "squared_distance_min": 349,
+      "squared_distance_max": 370
+    },
+    {
+      "radius_name": 22,
+      "points": 88,
+      "squared_distance_min": 466,
+      "squared_distance_max": 512
+    }
+  ],
+  "path_points": 348,
+  "path_terminators": 6,
+  "sprite_phases": 32,
+  "sprite_row_words": 96,
+  "physical_bytes": 894,
+  "fourfold_path_symmetry": true,
+  "exact_euclidean_radius_claimed": false,
+  "all_phase_words_shifted_from_phase_zero": true,
+  "method": "original_physical_paths_byte_terminators_and_three_row_phase_words",
+  "assembly_executed": false
+}

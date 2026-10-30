@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "method": "original_three_field_dispatchers_until_handler_or_skip",
+  "found_cases": 49,
+  "missing_cases": 719,
+  "all_256_bytes_per_dispatcher": true,
+  "error_retains_find_token_return": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

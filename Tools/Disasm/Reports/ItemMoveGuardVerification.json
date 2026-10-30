@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "cases": 770,
+  "absent_pointer_cases": 220,
+  "present_pointer_missing_index_appends": 210,
+  "pointer_guard_and_index_move_select_different_handlers": 130,
+  "beyond_fixed_shift_cases": 100,
+  "full_4096_byte_tail_checked": true,
+  "disabled_handlers_tested": true,
+  "record_and_preserved_registers_checked": true,
+  "method": "original_BE27_presence_guard_then_real_BE38_against_full_physical_shift_and_index_model",
+  "calls_stubbed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

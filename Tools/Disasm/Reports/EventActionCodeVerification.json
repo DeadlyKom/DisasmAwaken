@@ -1,0 +1,23 @@
+{
+  "method": "scoped_event_action_code_candidate_from_actual_bytes_and_dispatcher_roots",
+  "new_instructions": 1654,
+  "new_code_bytes": 3093,
+  "new_fragments": 39,
+  "extra_existing_labels": [
+    {
+      "path": "Source/Station/RepaintAndTrack.asm",
+      "address": 52194,
+      "name": "Station.RepaintAndTrack.KeepSelector"
+    },
+    {
+      "path": "Source/Station/EndScreenUpdate.asm",
+      "address": 42137,
+      "name": "Station.EndScreenUpdate.ShowBase"
+    }
+  ],
+  "semantic_completeness_proved": false,
+  "assembly_executed": false,
+  "passed": true,
+  "candidate_files": 56,
+  "history_preserved": true
+}

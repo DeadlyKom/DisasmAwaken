@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "cases": 256,
+  "method": "original_relocated_station_exit_real_music_and_explicit_disk_postcondition",
+  "real_music_initializer_executed": true,
+  "real_bank_switches": true,
+  "only_one_5000_byte_cleared": true,
+  "disk_load_substituted": true,
+  "trdos_executed": false,
+  "action_entry_executed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

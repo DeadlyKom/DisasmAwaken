@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "cases": 1024,
+  "guarded_returns": 4,
+  "method": "original_W_and_fixed_transition_until_relocated_4200",
+  "all_selection_bytes": true,
+  "copied_state_and_code_checked": true,
+  "page_shadow_deliberately_not_updated": true,
+  "relocated_loader_executed": false,
+  "interface_callback_executed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "condition_cases": 131082,
+  "line_cases": 1024,
+  "command_cases": 262,
+  "method": "original_script_control_instructions_and_command_dispatch_table",
+  "all_16_bit_conditions": true,
+  "first_closing_brace_without_nesting": true,
+  "nul_does_not_stop_skip_line": true,
+  "calls_stubbed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}
