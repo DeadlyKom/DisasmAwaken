@@ -1,19 +1,19 @@
 {
   "method": "static_source_audit_without_assembly",
-  "included_text_files": 1232,
-  "included_binary_files": 226,
-  "registered_functions": 1096,
+  "included_text_files": 1239,
+  "included_binary_files": 227,
+  "registered_functions": 1099,
   "unlinked_functions": [],
   "missing_includes_or_resources": [],
   "missing_include_order": [],
-  "global_definitions": 10604,
-  "global_references": 8122,
+  "global_definitions": 10705,
+  "global_references": 8181,
   "unresolved_global_references": [],
   "duplicate_global_definitions": [],
   "global_reference_case_mismatches": [],
   "source_files_outside_graph": [],
-  "unknown_fragments": 261,
-  "unknown_contract_fragments": 496,
+  "unknown_fragments": 254,
+  "unknown_contract_fragments": 485,
   "unknown_contract_files": [
     "Source/Intro/InitializeIntro.asm",
     "Source/Intro/LoadStation.asm",
@@ -42,21 +42,10 @@
     "Source/Station/Unknown6774.asm",
     "Source/Station/Unknown6780.asm",
     "Source/Station/Unknown67A9.asm",
-    "Source/Station/DrawItem25.asm",
-    "Source/Station/HandleItem26.asm",
-    "Source/Station/Unknown683A.asm",
-    "Source/Station/Unknown686F.asm",
     "Source/Station/Unknown6870.asm",
     "Source/Station/DrawItem26.asm",
     "Source/Station/Unknown68CC.asm",
     "Source/Station/Unknown68EA.asm",
-    "Source/Station/HandleItem27.asm",
-    "Source/Station/Unknown6916.asm",
-    "Source/Station/Unknown693D.asm",
-    "Source/Station/Unknown693E.asm",
-    "Source/Station/DrawItem27.asm",
-    "Source/Station/Unknown6952.asm",
-    "Source/Station/Unknown6963.asm",
     "Source/Station/HandleItem23.asm",
     "Source/Station/Unknown697B.asm",
     "Source/Station/Unknown69A7.asm",
@@ -512,11 +501,11 @@
     "Source/Final/InitializeFinal.asm",
     "Source/Final/HaltFinal.asm"
   ],
-  "named_fragments_without_proved_contract": 235,
+  "named_fragments_without_proved_contract": 231,
   "original_profile_only_contracts": 0,
   "runtime_profile_limits": "See RuntimeProfileQualification.json and Docs/MapRuntimeProfiles.md, whole game remains unproved",
   "pending_by_region": {
-    "Station": 61,
+    "Station": 54,
     "Music": 14,
     "Action": 97,
     "ThreeD": 23,
@@ -524,14 +513,14 @@
   },
   "potential_continuations": 102,
   "ordered_fragments": 189,
-  "python_scripts_parsed": 500,
+  "python_scripts_parsed": 523,
   "python_duplicate_literal_keys": [],
   "totals": {
-    "address_label": 1454,
-    "numeric_control_target": 191,
+    "address_label": 1447,
+    "numeric_control_target": 186,
     "numeric_index_operand": 352,
-    "condition_without_data_semantics": 1688,
-    "conditional_without_right_comment": 68
+    "condition_without_data_semantics": 1685,
+    "conditional_without_right_comment": 62
   },
   "findings": [
     {
@@ -1255,76 +1244,6 @@
       "issue": "address_label"
     },
     {
-      "path": "Source/Station/DrawItem25.asm",
-      "line": 27,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Station/DrawItem25.asm",
-      "line": 33,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Station/DrawItem25.asm",
-      "line": 37,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Station/DrawItem25.asm",
-      "line": 40,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Station/DrawItem25.asm",
-      "line": 50,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Station/DrawItem25.asm",
-      "line": 54,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Station/DrawItem25.asm",
-      "line": 55,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Station/DrawItem25.asm",
-      "line": 61,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/Station/Unknown683A.asm",
-      "line": 15,
-      "issue": "conditional_without_right_comment"
-    },
-    {
-      "path": "Source/Station/Unknown683A.asm",
-      "line": 18,
-      "issue": "conditional_without_right_comment"
-    },
-    {
-      "path": "Source/Station/Unknown683A.asm",
-      "line": 20,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/Station/Unknown683A.asm",
-      "line": 21,
-      "issue": "conditional_without_right_comment"
-    },
-    {
-      "path": "Source/Station/Unknown683A.asm",
-      "line": 27,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Station/Unknown683A.asm",
-      "line": 35,
-      "issue": "address_label"
-    },
-    {
       "path": "Source/Station/DrawItem26.asm",
       "line": 19,
       "issue": "numeric_control_target"
@@ -1362,41 +1281,6 @@
     {
       "path": "Source/Station/Unknown68EA.asm",
       "line": 34,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/Station/Unknown6916.asm",
-      "line": 15,
-      "issue": "conditional_without_right_comment"
-    },
-    {
-      "path": "Source/Station/Unknown6916.asm",
-      "line": 18,
-      "issue": "conditional_without_right_comment"
-    },
-    {
-      "path": "Source/Station/Unknown6916.asm",
-      "line": 20,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/Station/Unknown6916.asm",
-      "line": 21,
-      "issue": "conditional_without_right_comment"
-    },
-    {
-      "path": "Source/Station/Unknown6916.asm",
-      "line": 34,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Station/Unknown6952.asm",
-      "line": 20,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/Station/Unknown6963.asm",
-      "line": 17,
       "issue": "numeric_control_target"
     },
     {

@@ -45,6 +45,13 @@ for a,name,index,draw,area,row,operand,pixel,description in PANELS:
   a+11: ([], 'выход, если '+callee+' вернул Z=1, сохранить прежний номер'),
   a+12: (['сохранение полного результата A только по Z=0, нулевая строка тоже допустима'],None)})
 
+# Старший операнд корабельного наведения перезаписывается доказанным рисователем, 30 является только исходным значением.
+ship_contract=list(CONTRACTS['Station',0x67D0])
+ship_contract[1]=[line.replace('DrawItem25','DrawModelListPanel').replace('DE=1E1B','DE с младшим отступом 1B и старшим ModelListState.HoverRows').replace('D=30 запрошенных строк','D равен текущему ModelListState.HoverRows, исходно 30') for line in ship_contract[1]]
+ship_contract[3]=[*ship_contract[3],'DrawModelListPanel записывает вычисленный счётчик в 67D2, поэтому во время игры D не обязан равняться исходному 30']
+CONTRACTS['Station',0x67D0]=tuple(ship_contract)
+COMMENTS[0x67D0]=(['выбор отступа 27 пикселей и текущего счётчика ModelListState.HoverRows, исходно 30'],None)
+
 
 def name_operands(region,address,operation):
  if region!='Station':return operation
@@ -53,4 +60,4 @@ def name_operands(region,address,operation):
  if address not in FUNCTIONS:return operation
  panel=next(p for p in PANELS if p[0]==address)
  constant='PositionsPixels' if panel[7] else ('IndentedRows' if panel[4]&255==27 else 'Rows')
- return operation.replace('LD DE, #'+format(panel[4],'04X'),'LD DE, @PanelHoverConst.'+constant).replace('LD HL, #'+format(panel[3],'04X'),'LD HL, @Station.DrawItem'+str(panel[2])+'.Entry')
+ return operation.replace('LD DE, #'+format(panel[4],'04X'),'LD DE, @PanelHoverConst.'+constant).replace('LD HL, #'+format(panel[3],'04X'),'LD HL, @Station.'+('DrawModelListPanel' if panel[2]==25 else 'DrawItem'+str(panel[2]))+'.Entry')

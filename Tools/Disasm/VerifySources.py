@@ -157,6 +157,74 @@ def main():
         market_script_bytes = len(raw)
         market_script_labels = len(labels)
 
+    # Проверка фактических DB двух описательных CP866-потоков и физических адресов всех записей.
+    from PreviewDescriptionTables import TABLES as PREVIEW_TEXT_TABLES, parse as parse_preview_text
+    preview_description_bytes = 0
+    preview_description_labels = 0
+    for _, path, start, end, _ in PREVIEW_TEXT_TABLES:
+        entries = [item for item in source_map if item['path'] == path]
+        if not entries:
+            continue
+        if len(entries) != 1:
+            raise ValueError('Неоднозначная регистрация описаний D3D')
+        item = entries[0]
+        raw, labels = parse_preview_text((ROOT/path).read_text(encoding='utf-8'), 0xC000+start)
+        if (item['slot'], item['offset'], item['length'], item['origin']) != (6, start, end-start, 0xC000+start):
+            raise ValueError('Изменилось физическое размещение описаний D3D')
+        if raw != sources[6][start:end] or any(symbols.get(key.upper()) != value for key,value in labels.items()):
+            raise ValueError('Изменились байты либо метки описаний D3D')
+        preview_description_bytes += len(raw)
+        preview_description_labels += len(labels)
+
+    # Проверка фактических байтов CP866 цен и их управляющих разделителей.
+    from PreviewPriceTable import PATH as PREVIEW_PRICE_PATH, START as PREVIEW_PRICE_START, END as PREVIEW_PRICE_END, parse as parse_preview_prices
+    preview_price_bytes = 0
+    preview_price_labels = 0
+    price_entries = [item for item in source_map if item['path'] == PREVIEW_PRICE_PATH]
+    if price_entries:
+        if len(price_entries) != 1:
+            raise ValueError('Неоднозначная регистрация цен D3D')
+        item = price_entries[0]
+        raw, labels = parse_preview_prices((ROOT/PREVIEW_PRICE_PATH).read_text(encoding='utf-8'), 0xC000+PREVIEW_PRICE_START)
+        if (item['slot'], item['offset'], item['length'], item['origin']) != (6, PREVIEW_PRICE_START, PREVIEW_PRICE_END-PREVIEW_PRICE_START, 0xC000+PREVIEW_PRICE_START):
+            raise ValueError('Изменилось размещение цен D3D')
+        if raw != sources[6][PREVIEW_PRICE_START:PREVIEW_PRICE_END] or any(symbols.get(key.upper()) != value for key,value in labels.items()):
+            raise ValueError('Изменились исходные байты либо метки цен D3D')
+        preview_price_bytes = len(raw)
+        preview_price_labels = len(labels)
+
+    # Проверка шестнадцати физических пар начальных моделей рынка по полям структуры.
+    from ModelAvailabilityTable import PATH as MODEL_AVAILABILITY_PATH, START as MODEL_AVAILABILITY_START, END as MODEL_AVAILABILITY_END, FIELDS as MODEL_AVAILABILITY_FIELDS
+    model_availability_records = 0
+    availability_entries = [item for item in source_map if item['path'] == MODEL_AVAILABILITY_PATH]
+    if availability_entries:
+        if len(availability_entries) != 1:
+            raise ValueError('Неоднозначная регистрация доступности моделей')
+        item = availability_entries[0]
+        if (item['slot'], item['offset'], item['length'], item['origin']) != (4, MODEL_AVAILABILITY_START, 32, 0x94BC):
+            raise ValueError('Изменились границы доступности моделей')
+        text = '\n'.join(line.split(';',1)[0] for line in (ROOT/MODEL_AVAILABILITY_PATH).read_text(encoding='utf-8').splitlines())
+        records_available = re.findall(r'(Level[0-9]{2}):\s+FModelAvailability\s*\{([^}]+)\}', text)
+        if len(records_available) != 16 or symbols['FMODELAVAILABILITY'] != 2:
+            raise ValueError('Изменился размер структуры либо число уровней')
+        raw = bytearray()
+        for i,(label,arguments) in enumerate(records_available):
+            if label != 'Level'+str(i+1).zfill(2):
+                raise ValueError('Неверный порядок уровней доступности')
+            values = [number(value) for value in arguments.split(',')]
+            if len(values) != 2:
+                raise ValueError('Изменилось число полей доступности')
+            address = 0x94BC+2*i
+            if symbols['MODELAVAILABILITY.'+label.upper()] != address:
+                raise ValueError('Изменилась база физической записи доступности')
+            for offset,field in enumerate(MODEL_AVAILABILITY_FIELDS):
+                if symbols['FMODELAVAILABILITY.'+field.upper()] != offset or symbols['MODELAVAILABILITY.'+label.upper()+'.'+field.upper()] != address+offset:
+                    raise ValueError('Изменилось смещение поля доступности')
+            raw.extend(values)
+        if raw != sources[4][MODEL_AVAILABILITY_START:MODEL_AVAILABILITY_END]:
+            raise ValueError('Изменились исходные пары доступности моделей')
+        model_availability_records = len(records_available)
+
     # Проверка физических инициализаторов интерфейса по полям его структуры.
     text = (ROOT/"Source/Station/Data/InterfaceItems.asm").read_text(encoding="utf-8")
     text = "\n".join(line.split(";",1)[0] for line in text.splitlines())
@@ -795,6 +863,11 @@ def main():
     report['auxiliary_map_code_bytes'] = auxiliary_map_code_bytes
     report['market_script_bytes'] = market_script_bytes
     report['market_script_labels'] = market_script_labels
+    report['preview_description_bytes'] = preview_description_bytes
+    report['preview_description_labels'] = preview_description_labels
+    report['preview_price_bytes'] = preview_price_bytes
+    report['preview_price_labels'] = preview_price_labels
+    report['model_availability_records'] = model_availability_records
     (ROOT/"Tools/Disasm/Reports/SourceVerification.json").write_text(
         json.dumps(report,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     print(json.dumps(report,ensure_ascii=False,indent=2))

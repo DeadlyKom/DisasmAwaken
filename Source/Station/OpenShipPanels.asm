@@ -36,10 +36,10 @@ Entry:          XOR A
                 LD HL, @Station.DrawItem28.Entry
                 CALL @Station.RestoreItemBounds.Entry
                 ; восстановление следующей панели в исходной последовательности 30, 29, 28, 25, 27, 26
-                LD HL, @Station.DrawItem25.Entry
+                LD HL, @Station.DrawModelListPanel.Entry
                 CALL @Station.RestoreItemBounds.Entry
                 ; восстановление следующей панели в исходной последовательности 30, 29, 28, 25, 27, 26
-                LD HL, @Station.DrawItem27.Entry
+                LD HL, @Station.DrawModelDescriptionPanel.Entry
                 CALL @Station.RestoreItemBounds.Entry
                 ; восстановление следующей панели в исходной последовательности 30, 29, 28, 25, 27, 26
                 LD HL, @Station.DrawItem26.Entry

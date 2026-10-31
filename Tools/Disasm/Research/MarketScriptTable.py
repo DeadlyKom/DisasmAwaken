@@ -37,7 +37,7 @@ def extract(source):
     return source[START:end],end
 
 
-def parse(text):
+def parse(text, origin=ORIGIN):
     """Независимое чтение фактически записанных DB, включая строки с запятыми."""
     data=bytearray();symbols={};module=None
     token=re.compile(r'\s*(?:"([^"\r\n]*)"|#([0-9A-Fa-f]{2}))\s*(,|$)')
@@ -53,7 +53,7 @@ def parse(text):
             if not re.fullmatch(r'[A-Za-z][A-Za-z0-9_]{0,14}:',label):raise ValueError('Недопустимая метка потока')
             key=module+'.'+label[:-1]
             if key in symbols:raise ValueError('Повторная метка потока')
-            symbols[key]=ORIGIN+len(data)
+            symbols[key]=origin+len(data)
         if not operation.upper().startswith('DB '):raise ValueError('Неподдержанная директива сценария '+operation)
         arguments=operation[3:];position=0
         while position<len(arguments):

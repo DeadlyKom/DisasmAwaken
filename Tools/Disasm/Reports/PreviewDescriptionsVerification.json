@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "count_cases": 506,
+  "print_cases": 2512,
+  "independent_glyphs": 91976,
+  "all_selectors_checked": true,
+  "all_skip_bytes_checked": true,
+  "wrapped_index_sum": true,
+  "scroll_high_byte_ignored_for_skip": true,
+  "real_skip_count_print_and_glyph_callees": true,
+  "whole_bitmap_and_attributes_compared": true,
+  "original_descriptions_preserved": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

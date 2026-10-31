@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "whole_action_cases": 132,
+  "rendered_steps": 132,
+  "independent_glyphs": 4658,
+  "real_repaint_count_scroll_clear_print_and_pointer": true,
+  "top_row_word_saved": true,
+  "shadow_bitmap_and_attributes_checked": true,
+  "input_mutated_at_poll_boundaries": true,
+  "explicit_halt_wakeups": 132,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

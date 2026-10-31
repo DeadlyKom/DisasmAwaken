@@ -1,13 +1,13 @@
 {
   "status": "in_progress",
   "all_plan_stages_completed": false,
-  "fragments": 1096,
-  "described": 835,
-  "unknown": 261,
-  "unproved_contracts": 496,
-  "named_without_contract": 235,
-  "instruction_count": 35560,
-  "unclassified_bytes": 317222,
+  "fragments": 1099,
+  "described": 845,
+  "unknown": 254,
+  "unproved_contracts": 485,
+  "named_without_contract": 231,
+  "instruction_count": 35638,
+  "unclassified_bytes": 314575,
   "passed_reports": [
     "Tools/Disasm/Reports/PointerVerification.json",
     "Tools/Disasm/Reports/PointerTablesVerification.json",
@@ -199,7 +199,18 @@
     "Tools/Disasm/Reports/PreviewSetupVerification.json",
     "Tools/Disasm/Reports/D3DPreviewSetupClassification.json",
     "Tools/Disasm/Reports/FilePlacementVerification.json",
-    "Tools/Disasm/Reports/PreviewFaceFillVerification.json"
+    "Tools/Disasm/Reports/PreviewFaceFillVerification.json",
+    "Tools/Disasm/Reports/PreviewDescriptionsVerification.json",
+    "Tools/Disasm/Reports/D3DDescriptionsClassification.json",
+    "Tools/Disasm/Reports/PreviewPricesVerification.json",
+    "Tools/Disasm/Reports/D3DPricesClassification.json",
+    "Tools/Disasm/Reports/ModelAvailabilityClassification.json",
+    "Tools/Disasm/Reports/ModelListPanelVerification.json",
+    "Tools/Disasm/Reports/DescriptionBankCallsVerification.json",
+    "Tools/Disasm/Reports/DescriptionPanelVerification.json",
+    "Tools/Disasm/Reports/DescriptionActionVerification.json",
+    "Tools/Disasm/Reports/DescriptionScrollVerification.json",
+    "Tools/Disasm/Reports/PreviewActionVerification.json"
   ],
   "next_station_work": [
     {
@@ -224,7 +235,7 @@
     }
   ],
   "remaining_by_region": {
-    "Station": 61,
+    "Station": 54,
     "Music": 14,
     "Action": 97,
     "ThreeD": 23,
@@ -242,7 +253,7 @@
   "irq_hardware_execution_verified": false,
   "temporary_cleanup": "695 старых снимков сохранены в проверенном дедуплицированном архиве LegacySnapshots-20261031.zip, распакованные дубликаты заменены маркерами. Новые точечные истории сохраняются для проверки, удаление их распакованных копий допустимо только после проверенного архивирования.",
   "pending_by_region": {
-    "Station": 61,
+    "Station": 54,
     "Music": 14,
     "Action": 97,
     "ThreeD": 23,
@@ -250,14 +261,14 @@
   },
   "next_semantic_work": [
     "Station, выделенный периодический корабельный код 68CC..6912 и его зависимые рисователи, действия корабельных панелей, писатели битов грузового массива, Unknown98A0 и разбор 7CC6",
-    "D3D, из 2532 обнаруженных инструкций выделены и описаны 69, из 4686 байтов 150. Остаются внешние входы E0C5/E124/E154, графическое ядро EC28 и E07F с EI, данные моделей и косвенные потоки.",
+    "D3D, выделены 147 инструкций и 298 байтов кода, 2467 байтов исходных текстов. Остаются графическое ядро EC28 и E07F с EI, физические записи моделей и граней, косвенные потоки.",
     "LANG, ветви кораблей и оснащения, стоянка, начальная проверка, неизвестный префикс и потребители секторного хвоста",
     "Остальные регионы по pending_by_region и все именованные фрагменты без доказанных контрактов"
   ],
   "next_text_algorithm": "Все зарегистрированные Text-входы имеют описанный контракт, полнота игровых назначений полей и физической разметки LANG ещё не доказана",
   "next_map_work": "Писатели сохранённых списков и их обёртки управления описаны. Остаточные назначения полей, данных, хвостов фаз и формулы запаса дальности требуют полного прохода по потребителям.",
-  "next_station_algorithm": "Корабельные рисователи 25/26/27, периодические 68CC/68EA и условные продолжения. Контракт BuildSpriteLineTable установлен. В D3D разобраны E011, E0B5 и E13C, следующие внешние входы E0C5, E124, E154, затем графическое ядро EC28 и завершение E07F с EI. Для 6364 установлен TogglePreviewFaceFill, два опорных заголовка переключают шаблоны заполнения выбранных граней. Остаётся физическая разметка записей граней и графическое ядро.",
-  "documentation_links": 1673,
+  "next_station_algorithm": "Периодические 68CC/68EA и рисователь 26 с настоящим кадром D3D E07F/EC28. Список моделей, панель описания, её действие и прокрутка, пустое наведение 3D и действие изменения третьей координаты описаны.",
+  "documentation_links": 1687,
   "updated_on": "2026-10-31",
   "d3d_discovery": {
     "report": "Tools/Disasm/Reports/D3DPreviewDiscovery.json",
@@ -266,11 +277,12 @@
     "included_in_source_instruction_count": false,
     "included_in_unclassified_bytes": true,
     "full_contracts_proved": false,
-    "extracted_instructions": 69,
-    "unextracted_discovered_instructions": 2463,
-    "extracted_code_bytes": 150,
-    "unextracted_discovered_code_bytes": 4536,
-    "face_header_roles_observed": 13
+    "extracted_instructions": 147,
+    "unextracted_discovered_instructions": 2385,
+    "extracted_code_bytes": 298,
+    "unextracted_discovered_code_bytes": 4388,
+    "face_header_roles_observed": 13,
+    "typed_text_bytes": 2467
   },
   "observational_reports": [
     {

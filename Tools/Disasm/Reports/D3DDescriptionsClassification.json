@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "instructions": 25,
+  "code_bytes": 53,
+  "typed_description_bytes": 2281,
+  "descriptions": 11,
+  "bank": 4,
+  "source_labels_checked": 12,
+  "scoped_candidate_and_history": true,
+  "physical_bytes_preserved": true,
+  "assembly_executed": false
+}

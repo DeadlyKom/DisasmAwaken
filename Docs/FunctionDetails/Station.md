@@ -466,11 +466,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## DrawItem25
+## DrawModelListPanel
 
-[Station.DrawItem25](../../Source/Station/DrawItem25.asm)
+[Station.DrawModelListPanel](../../Source/Station/DrawModelListPanel.asm)
 
-обработчик рисования станционного элемента из записи 25 таблицы FInterfaceItem.
+Рисование списка рыночных либо текущих кораблей и скимеров с обновлением высоты наведения.
 
 Вход `#67E0`, запись 4, смещения `#0A8C..#0AE2`.
 
@@ -480,11 +480,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## HandleItem26
+## IgnoreModelPreviewHover
 
-[Station.HandleItem26](../../Source/Station/HandleItem26.asm)
+[Station.IgnoreModelPreviewHover](../../Source/Station/IgnoreModelPreviewHover.asm)
 
-обработчик события станционного элемента из записи 26 таблицы FInterfaceItem.
+Пустой вход наведения панели 3D-просмотра с хвостовым переходом к возврату.
 
 Вход `#6837`, запись 4, смещения `#0AE3..#0AE5`.
 
@@ -494,11 +494,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## Unknown686F
+## ReturnModelPreviewHover
 
-[Station.Unknown686F](../../Source/Station/Unknown686F.asm)
+[Station.ReturnModelPreviewHover](../../Source/Station/ReturnModelPreviewHover.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+Общий пустой возврат наведения панели 3D-просмотра.
 
 Вход `#686F`, запись 4, смещения `#0B1B..#0B1B`.
 
@@ -522,11 +522,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## HandleItem27
+## HandleModelDescriptionHover
 
-[Station.HandleItem27](../../Source/Station/HandleItem27.asm)
+[Station.HandleModelDescriptionHover](../../Source/Station/HandleModelDescriptionHover.asm)
 
-обработчик события станционного элемента из записи 27 таблицы FInterfaceItem.
+Пустой трёхбайтовый вход наведения панели описания, действие начинается отдельно через Entry+3.
 
 Вход `#6913`, запись 4, смещения `#0BBF..#0BC1`.
 
@@ -536,11 +536,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## Unknown693D
+## ReturnModelDescriptionHover
 
-[Station.Unknown693D](../../Source/Station/Unknown693D.asm)
+[Station.ReturnModelDescriptionHover](../../Source/Station/ReturnModelDescriptionHover.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+Возврат без действий из ветви наведения панели описания.
 
 Вход `#693D`, запись 4, смещения `#0BE9..#0BE9`.
 
@@ -550,11 +550,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## DrawItem27
+## DrawModelDescriptionPanel
 
-[Station.DrawItem27](../../Source/Station/DrawItem27.asm)
+[Station.DrawModelDescriptionPanel](../../Source/Station/DrawModelDescriptionPanel.asm)
 
-обработчик рисования станционного элемента из записи 27 таблицы FInterfaceItem.
+Рамка и банковая печать выбранного описания с сохранённой начальной строкой.
 
 Вход `#6945`, запись 4, смещения `#0BF1..#0BFD`.
 
@@ -564,11 +564,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## Unknown6952
+## PrintModelDescription
 
-[Station.Unknown6952](../../Source/Station/Unknown6952.asm)
+[Station.PrintModelDescription](../../Source/Station/PrintModelDescription.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+Банковая печать выбранного описания модели с возвратом в станционный банк.
 
 Вход `#6952`, запись 4, смещения `#0BFE..#0C0E`.
 
@@ -5169,17 +5169,17 @@ XOR префикса глифа до следующего знакоместа, 
 
 [Station.Unknown67A9](../../Source/Station/Unknown67A9.asm) — Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются.
 
-## Unknown683A
+## HandleModelPreviewClick
 
-[Station.Unknown683A](../../Source/Station/Unknown683A.asm) — Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются.
+[Station.HandleModelPreviewClick](../../Source/Station/HandleModelPreviewClick.asm) — Выбор 3D-панели, закрытие с отключением периодического вызова либо изменение третьей координаты на 32.
 
-## Unknown6916
+## HandleModelDescriptionClick
 
-[Station.Unknown6916](../../Source/Station/Unknown6916.asm) — Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются.
+[Station.HandleModelDescriptionClick](../../Source/Station/HandleModelDescriptionClick.asm) — Выбор панели описания, закрытие по строке заголовка либо прокрутка выбранного текста.
 
-## Unknown6963
+## CountModelDescriptionRows
 
-[Station.Unknown6963](../../Source/Station/Unknown6963.asm) — Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются.
+[Station.CountModelDescriptionRows](../../Source/Station/CountModelDescriptionRows.asm) — Банковый подсчёт описания модели с записью полного слова границы прокрутки.
 
 ## Unknown697B
 
@@ -5349,6 +5349,6 @@ XOR префикса глифа до следующего знакоместа, 
 
 [Station.Unknown68EA](../../Source/Station/Unknown68EA.asm) — выделен исходный исполняемый код, полный договор пока Unknown.
 
-[Station.Unknown693E](../../Source/Station/Unknown693E.asm) — выделен исходный исполняемый код, полный договор пока Unknown.
+[Station.TryDrawModelDescription](../../Source/Station/TryDrawModelDescription.asm) — выделен исходный исполняемый код, полный договор пока Unknown.
 
 Порядок вызовов и условные продолжения описаны в [ShipPeriodicCode](../ShipPeriodicCode.md).

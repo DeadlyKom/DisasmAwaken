@@ -5,3 +5,9 @@
 [AdjustPreviewThird](../../Source/D3D/AdjustPreviewThird.asm) — ограниченное изменение третьей координаты, см. [PreviewThird](../PreviewThird.md).
 
 [SetupPreviewModel](../../Source/D3D/SetupPreviewModel.asm) — композиция границ, таблиц и смещения модели, см. [PreviewSetup](../PreviewSetup.md).
+
+[CountPreviewTextRows](../../Source/D3D/CountPreviewTextRows.asm) — см. [PreviewDescriptions](../PreviewDescriptions.md).
+
+[PrintPreviewTextRows](../../Source/D3D/PrintPreviewTextRows.asm) — см. [PreviewDescriptions](../PreviewDescriptions.md).
+
+[DrawPreviewPrices](../../Source/D3D/DrawPreviewPrices.asm) — см. [PreviewDescriptions](../PreviewPrices.md).

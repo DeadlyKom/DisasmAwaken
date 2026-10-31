@@ -922,7 +922,7 @@
     "offset": 2700,
     "length": 87,
     "kind": "code",
-    "path": "Source/Station/DrawItem25.asm",
+    "path": "Source/Station/DrawModelListPanel.asm",
     "origin": 26592,
     "sha256": "f310cc9d2132f3cd04e13b7e22cba19fa80e5a2c9423a2913a42a2b6c0a6e9f9"
   },
@@ -931,7 +931,7 @@
     "offset": 2787,
     "length": 3,
     "kind": "code",
-    "path": "Source/Station/HandleItem26.asm",
+    "path": "Source/Station/IgnoreModelPreviewHover.asm",
     "origin": 26679,
     "sha256": "967b8f80e247d7c8cc2a666b739ca19935236ee160c8a514498c39f1c091d591"
   },
@@ -940,7 +940,7 @@
     "offset": 2843,
     "length": 1,
     "kind": "code",
-    "path": "Source/Station/Unknown686F.asm",
+    "path": "Source/Station/ReturnModelPreviewHover.asm",
     "origin": 26735,
     "sha256": "4fb733bedb74fec8d65bedf056b935189a289e928b3302bec38a281814de523a"
   },
@@ -985,7 +985,7 @@
     "offset": 3007,
     "length": 3,
     "kind": "code",
-    "path": "Source/Station/HandleItem27.asm",
+    "path": "Source/Station/HandleModelDescriptionHover.asm",
     "origin": 26899,
     "sha256": "73f2148b7fea8a2e512b204cf819a67570d41b87537517939de932ebc251c239"
   },
@@ -994,7 +994,7 @@
     "offset": 3049,
     "length": 1,
     "kind": "code",
-    "path": "Source/Station/Unknown693D.asm",
+    "path": "Source/Station/ReturnModelDescriptionHover.asm",
     "origin": 26941,
     "sha256": "4fb733bedb74fec8d65bedf056b935189a289e928b3302bec38a281814de523a"
   },
@@ -1003,7 +1003,7 @@
     "offset": 3050,
     "length": 7,
     "kind": "code",
-    "path": "Source/Station/Unknown693E.asm",
+    "path": "Source/Station/TryDrawModelDescription.asm",
     "origin": 26942,
     "sha256": "72180f8464e8048ba46ab87a2c7bbaa9be7236f6ab054f9ae5417f647282cd0f"
   },
@@ -1012,7 +1012,7 @@
     "offset": 3057,
     "length": 13,
     "kind": "code",
-    "path": "Source/Station/DrawItem27.asm",
+    "path": "Source/Station/DrawModelDescriptionPanel.asm",
     "origin": 26949,
     "sha256": "5c004a3406607182a9b06bb46cdc7f6c4aa64555c30d91fd99b5dd5ba13dd725"
   },
@@ -1021,7 +1021,7 @@
     "offset": 3070,
     "length": 17,
     "kind": "code",
-    "path": "Source/Station/Unknown6952.asm",
+    "path": "Source/Station/PrintModelDescription.asm",
     "origin": 26962,
     "sha256": "bd02ca731126e4529079340d4a8243456ea622f43fa78130ca5e0422091d220e"
   },
@@ -2470,11 +2470,20 @@
   {
     "slot": 4,
     "offset": 13312,
-    "length": 220,
+    "length": 188,
     "kind": "unclassified",
-    "path": "Source/Resources/04_STATIONF/Unclassified044Tail.bin",
+    "path": "Source/Resources/04_STATIONF/BeforeModelAvailability.bin",
     "origin": null,
-    "sha256": "2656ab64263549db757ca2a7ae6d32954d7742c03c5f20f506f19c9276e61309"
+    "sha256": "495470d8ac1605c8952ddd16c3c05293c5e40b25a6839f8afcc6579300e526d9"
+  },
+  {
+    "slot": 4,
+    "offset": 13500,
+    "length": 32,
+    "kind": "typed_data",
+    "path": "Source/Station/Data/ModelAvailability.asm",
+    "origin": 38076,
+    "sha256": "394684dc7ef00eb48a92505d60f6c065acb7eb110e975fddba5a988d3b96baa5"
   },
   {
     "slot": 4,
@@ -5737,11 +5746,29 @@
   {
     "slot": 6,
     "offset": 0,
-    "length": 8209,
+    "length": 3648,
     "kind": "unclassified",
-    "path": "Source/Resources/06_D3D/BeforePreviewClip.bin",
+    "path": "Source/Resources/06_D3D/BeforePriceText.bin",
     "origin": null,
-    "sha256": "21f675ee6b657b9c2e32aa227a7d2e8f77c64f00a4714ac934488efd2517ac94"
+    "sha256": "5931ecf71eb51e5d63c52a189a528248541e80f7f09776a8074aa81e43c96ec4"
+  },
+  {
+    "slot": 6,
+    "offset": 3648,
+    "length": 186,
+    "kind": "typed_data",
+    "path": "Source/D3D/Data/PreviewPrices.asm",
+    "origin": 52800,
+    "sha256": "e2b2778802c2736d510afdfadb8a56fe521e45a3ddbdecc557f2f687134c50cd"
+  },
+  {
+    "slot": 6,
+    "offset": 3834,
+    "length": 4375,
+    "kind": "unclassified",
+    "path": "Source/Resources/06_D3D/AfterPriceText.bin",
+    "origin": null,
+    "sha256": "a978d356d9e6d1856aa00180c30df4c6cc225c9672028aa0cf253eccd15a015b"
   },
   {
     "slot": 6,
@@ -5773,11 +5800,20 @@
   {
     "slot": 6,
     "offset": 8389,
-    "length": 119,
-    "kind": "unclassified",
-    "path": "Source/Resources/06_D3D/BeforePreviewSetup.bin",
-    "origin": null,
-    "sha256": "c294b343a51f92d0abe51eea19aff2403455c732ba0b120e2576e00a342e43a3"
+    "length": 95,
+    "kind": "code",
+    "path": "Source/D3D/DrawPreviewPrices.asm",
+    "origin": 57541,
+    "sha256": "4e42defaf2ccc000fe9c7f2375d8a04b98d70287836897753e10452110ee904d"
+  },
+  {
+    "slot": 6,
+    "offset": 8484,
+    "length": 24,
+    "kind": "code",
+    "path": "Source/D3D/CountPreviewTextRows.asm",
+    "origin": 57636,
+    "sha256": "0d2eb057b1f4e820bc272d888f6fb086d716586e6b41c33ba39c944fc4d63e42"
   },
   {
     "slot": 6,
@@ -5791,11 +5827,47 @@
   {
     "slot": 6,
     "offset": 8532,
-    "length": 7596,
+    "length": 29,
+    "kind": "code",
+    "path": "Source/D3D/PrintPreviewTextRows.asm",
+    "origin": 57684,
+    "sha256": "ddfc180dd634bb150ce654febfc7c00ca6130e974f1528c2bea7de2bb2ca0f7d"
+  },
+  {
+    "slot": 6,
+    "offset": 8561,
+    "length": 5136,
     "kind": "unclassified",
-    "path": "Source/Resources/06_D3D/AfterPreviewSetup.bin",
+    "path": "Source/Resources/06_D3D/BeforeDescriptionText.bin",
     "origin": null,
-    "sha256": "94bca6015c6c6e8ea914d9ef6e9ece7881ba5d3d8d26cef8c6866ba26d6f334f"
+    "sha256": "70d062035635becff8b978b3e6bc3d5d36070345c05b6d5ad5248c34905a1453"
+  },
+  {
+    "slot": 6,
+    "offset": 13697,
+    "length": 1623,
+    "kind": "typed_data",
+    "path": "Source/D3D/Data/ShipDescriptions.asm",
+    "origin": 62849,
+    "sha256": "316dfcc0faaa07e0ae4c48fc3de1da937b572a2b7dc9a27153abb516e723ec9e"
+  },
+  {
+    "slot": 6,
+    "offset": 15320,
+    "length": 658,
+    "kind": "typed_data",
+    "path": "Source/D3D/Data/SkimmerDescriptions.asm",
+    "origin": 64472,
+    "sha256": "192352bc01f9372f87f19ed37ea807f0d74e6363186bda87d1fef39c217c1597"
+  },
+  {
+    "slot": 6,
+    "offset": 15978,
+    "length": 150,
+    "kind": "unclassified",
+    "path": "Source/Resources/06_D3D/AfterDescriptionText.bin",
+    "origin": null,
+    "sha256": "a678ecc013f1016bcd4cca5e82de0ba3a38fadc09201ac456e32ca2cfb802430"
   },
   {
     "slot": 7,
@@ -11595,7 +11667,7 @@
     "offset": 2790,
     "length": 53,
     "kind": "code",
-    "path": "Source/Station/Unknown683A.asm",
+    "path": "Source/Station/HandleModelPreviewClick.asm",
     "origin": 26682,
     "sha256": "2ec19a372729be923b5f68509c2c50ca62564e922cd4b1cf257ccdfe6c521fe4"
   },
@@ -11604,7 +11676,7 @@
     "offset": 3010,
     "length": 39,
     "kind": "code",
-    "path": "Source/Station/Unknown6916.asm",
+    "path": "Source/Station/HandleModelDescriptionClick.asm",
     "origin": 26902,
     "sha256": "34204b655c3480caed5e227f991a4bb934fde377f1ab9fd78a66d4a18d558183"
   },
@@ -11613,7 +11685,7 @@
     "offset": 3087,
     "length": 21,
     "kind": "code",
-    "path": "Source/Station/Unknown6963.asm",
+    "path": "Source/Station/CountModelDescriptionRows.asm",
     "origin": 26979,
     "sha256": "833dd4457dfc92d9b27005aed0952c79972a2878ee4ce8fda156145db8c65888"
   },

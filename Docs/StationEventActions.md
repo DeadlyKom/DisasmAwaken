@@ -8,9 +8,9 @@
 | --- | --- | --- | --- |
 | Station | 6774 | [Unknown6774](../Source/Station/Unknown6774.asm) | 12 |
 | Station | 67A9 | [Unknown67A9](../Source/Station/Unknown67A9.asm) | 39 |
-| Station | 683A | [Unknown683A](../Source/Station/Unknown683A.asm) | 53 |
-| Station | 6916 | [Unknown6916](../Source/Station/Unknown6916.asm) | 39 |
-| Station | 6963 | [Unknown6963](../Source/Station/Unknown6963.asm) | 21 |
+| Station | 683A | [HandleModelPreviewClick](../Source/Station/HandleModelPreviewClick.asm) | 53 |
+| Station | 6916 | [HandleModelDescriptionClick](../Source/Station/HandleModelDescriptionClick.asm) | 39 |
+| Station | 6963 | [CountModelDescriptionRows](../Source/Station/CountModelDescriptionRows.asm) | 21 |
 | Station | 697B | [Unknown697B](../Source/Station/Unknown697B.asm) | 44 |
 | Station | 69E0 | [Unknown69E0](../Source/Station/Unknown69E0.asm) | 107 |
 | Station | 6A86 | [Unknown6A86](../Source/Station/Unknown6A86.asm) | 40 |

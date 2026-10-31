@@ -387,7 +387,7 @@ Item25:         FInterfaceItem {
                     #00,                                                        ; FInterfaceItem.SavedY
                     #08,                                                        ; FInterfaceItem.SavedWidth
                     #0A,                                                        ; FInterfaceItem.SavedHeight
-                    @Station.DrawItem25.Entry,                                  ; FInterfaceItem.DrawHandler
+                    @Station.DrawModelListPanel.Entry,                          ; FInterfaceItem.DrawHandler
                     #0000                                                       ; FInterfaceItem.Unknown0E
                 }
 Item26:         FInterfaceItem {
@@ -397,7 +397,7 @@ Item26:         FInterfaceItem {
                     #00,                                                        ; FInterfaceItem.Height
                     #01,                                                        ; FInterfaceItem.Flags
                     #13,                                                        ; FInterfaceItem.TextIndex
-                    @Station.HandleItem26.Entry,                                ; FInterfaceItem.EventHandler
+                    @Station.IgnoreModelPreviewHover.Entry,                     ; FInterfaceItem.EventHandler
                     #15,                                                        ; FInterfaceItem.SavedX
                     #00,                                                        ; FInterfaceItem.SavedY
                     #0B,                                                        ; FInterfaceItem.SavedWidth
@@ -412,12 +412,12 @@ Item27:         FInterfaceItem {
                     #00,                                                        ; FInterfaceItem.Height
                     #01,                                                        ; FInterfaceItem.Flags
                     #12,                                                        ; FInterfaceItem.TextIndex
-                    @Station.HandleItem27.Entry,                                ; FInterfaceItem.EventHandler
+                    @Station.HandleModelDescriptionHover.Entry,                 ; FInterfaceItem.EventHandler
                     #08,                                                        ; FInterfaceItem.SavedX
                     #00,                                                        ; FInterfaceItem.SavedY
                     #0D,                                                        ; FInterfaceItem.SavedWidth
                     #15,                                                        ; FInterfaceItem.SavedHeight
-                    @Station.DrawItem27.Entry,                                  ; FInterfaceItem.DrawHandler
+                    @Station.DrawModelDescriptionPanel.Entry,                   ; FInterfaceItem.DrawHandler
                     #0000                                                       ; FInterfaceItem.Unknown0E
                 }
 Item28:         FInterfaceItem {

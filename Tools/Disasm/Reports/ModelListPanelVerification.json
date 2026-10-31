@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "cases": 960,
+  "market_cases": 512,
+  "owned_cases": 448,
+  "all_16_system_levels": true,
+  "zero_exact_one_and_other_selectors": true,
+  "real_caption_descriptor_banking_and_prices": true,
+  "independent_price_body_bitmap_and_bank_oracle": true,
+  "caption_uses_separate_proved_contract": true,
+  "hover_row_count_and_selection_checked": true,
+  "disabled_entry_cases": 256,
+  "explicit_halt_wakeups": 960,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

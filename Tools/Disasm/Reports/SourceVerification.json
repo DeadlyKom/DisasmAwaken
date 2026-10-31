@@ -1,7 +1,7 @@
 {
   "method": "text_and_resource_comparison_without_assembly",
   "passed": true,
-  "instruction_count": 35560,
+  "instruction_count": 35638,
   "active_allocations": 41,
   "covered_bytes": 479744,
   "interface_records": 46,
@@ -71,5 +71,10 @@
   "auxiliary_map_keys": 10,
   "auxiliary_map_code_bytes": 11,
   "market_script_bytes": 1161,
-  "market_script_labels": 12
+  "market_script_labels": 12,
+  "preview_description_bytes": 2281,
+  "preview_description_labels": 12,
+  "preview_price_bytes": 186,
+  "preview_price_labels": 12,
+  "model_availability_records": 16
 }

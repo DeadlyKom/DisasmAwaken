@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "cases": 688,
+  "independent_glyphs": 25162,
+  "karen_owned_cases": 54,
+  "all_selectors": true,
+  "zero_and_two_nonzero_owned_flags": true,
+  "real_header_body_and_glyphs": true,
+  "whole_bitmap_and_attributes_compared": true,
+  "entire_bank_compared": true,
+  "temporary_record_end_restored": true,
+  "byte_cursor_row_count_checked": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

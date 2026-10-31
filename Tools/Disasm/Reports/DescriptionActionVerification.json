@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "dispatch_cases": 512,
+  "all_selector_bytes": true,
+  "early_bit7_cases": 256,
+  "selector_one_returns": 2,
+  "row_close_cases": 127,
+  "scroll_dispatch_cases": 127,
+  "real_repaint_list_close_and_d3d_count": true,
+  "scroll_stopped_at_entry": true,
+  "child_scroll_report": "ScrollWindowVerification.json",
+  "count_independently_calculated": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

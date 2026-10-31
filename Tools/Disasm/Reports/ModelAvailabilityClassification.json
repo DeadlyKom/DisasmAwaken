@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "records": 16,
+  "record_size": 2,
+  "typed_bytes": 32,
+  "source_labels": 48,
+  "original_values_preserved": true,
+  "level_domain_from_describe_current_key": "1..16",
+  "next_physical_table": "MarketCategories at 94DC",
+  "scoped_candidate_and_history": true,
+  "assembly_executed": false
+}

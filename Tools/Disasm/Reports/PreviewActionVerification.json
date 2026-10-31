@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "cases": 3584,
+  "all_selector_bytes": true,
+  "bit7_removed_by_real_repaint_entry": true,
+  "close_cases": 1778,
+  "increment_cases": 1778,
+  "decrement_cases": 28,
+  "accepted_coordinate_cases": 770,
+  "real_list_close_banking_and_adjust": true,
+  "wrapped_sum_and_range_checked": true,
+  "native_execution": false,
+  "irq_executed": false,
+  "assembly_executed": false
+}

@@ -663,4 +663,22 @@ Triangle4       equ #F1BE                                                       
 Triangle5       equ #F1DB                                                       ; существующий байт заголовка грани в банке D3D 4
                 endmodule
 
+                module ModelListState
+Opcode          equ #67E0                                                       ; первый байт рисователя, 21 либо отключающий C9
+ItemIndex       equ #67E1                                                       ; изменяемый индекс FInterfaceItem панели моделей
+HoverRows       equ #67D2                                                       ; вычисленный старший байт LD DE наведения, исходно 30
+                endmodule
+
+                module CurrentModels
+ShipIndex       equ #9849                                                       ; текущий индекс корабля для собственного ценового просмотра
+SkimmerIndex    equ #984A                                                       ; текущий индекс скимера для собственного ценового просмотра
+                endmodule
+
+                module ModelDescriptionState
+RowCount        equ #692B                                                       ; существующий операнд слова общей границы прокрутки описания
+TopRow          equ #6933                                                       ; существующий операнд текущего 16-битного начала прокрутки
+Opcode          equ #6945                                                       ; первый байт рисователя описания, 21 либо отключающий C9
+ItemIndex       equ #6946                                                       ; изменяемый индекс FInterfaceItem панели описания
+                endmodule
+
                 endif

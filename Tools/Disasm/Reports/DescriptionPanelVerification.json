@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "cases": 576,
+  "direct_cases": 288,
+  "listed_fallthrough_cases": 288,
+  "independent_glyphs": 45284,
+  "unlisted_cases": 256,
+  "disabled_entry_cases": 256,
+  "empty_event_entry_cases": 512,
+  "real_caption_and_description_callees": true,
+  "caption_uses_separate_proved_contract": true,
+  "description_bitmap_and_attributes_independently_compared": true,
+  "banking_and_registers_checked": true,
+  "explicit_halt_wakeups": 576,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

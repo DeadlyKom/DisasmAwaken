@@ -63,10 +63,10 @@
 | Station | #65A2 | #65C7 | `JR #658E` | [ConfigureMouseButtons.asm](../Source/Station/ConfigureMouseButtons.asm) |
 | Station | #6783 | #9A89 | `CALL #9A58` | [Unknown6780.asm](../Source/Station/Unknown6780.asm) |
 | Station | #67DC | #67D7 | `LD A,#FF` | [UpdateShipListHover.asm](../Source/Station/UpdateShipListHover.asm) |
-| Station | #67E7 | #BD26 | `LD A,#00` | [DrawItem25.asm](../Source/Station/DrawItem25.asm) |
-| Station | #67EC | #67D7 | `LD A,#FF` | [DrawItem25.asm](../Source/Station/DrawItem25.asm) |
-| Station | #67F1 | #BD73 | `LD A,#00` | [DrawItem25.asm](../Source/Station/DrawItem25.asm) |
-| Station | #6833 | #67D2 | `LD DE,#1E1B` | [DrawItem25.asm](../Source/Station/DrawItem25.asm) |
+| Station | #67E7 | #BD26 | `LD A,#00` | [DrawModelListPanel.asm](../Source/Station/DrawModelListPanel.asm) |
+| Station | #67EC | #67D7 | `LD A,#FF` | [DrawModelListPanel.asm](../Source/Station/DrawModelListPanel.asm) |
+| Station | #67F1 | #BD73 | `LD A,#00` | [DrawModelListPanel.asm](../Source/Station/DrawModelListPanel.asm) |
+| Station | #6833 | #67D2 | `LD DE,#1E1B` | [DrawModelListPanel.asm](../Source/Station/DrawModelListPanel.asm) |
 | Station | #6891 | #9A89 | `CALL #9A58` | [DrawItem26.asm](../Source/Station/DrawItem26.asm) |
 | Station | #69BA | #BD26 | `LD A,#00` | [Unknown69B8.asm](../Source/Station/Unknown69B8.asm) |
 | Station | #6A57 | #6A52 | `LD A,#FF` | [UpdateIndexListHover.asm](../Source/Station/UpdateIndexListHover.asm) |

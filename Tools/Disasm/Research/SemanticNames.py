@@ -139,6 +139,15 @@ def name_operands(region, function_address, operation):
     operation = sprite_line_table_name_operands(region, function_address, operation)
     operation = d3d_setup_name_operands(region, function_address, operation)
     operation = preview_face_fill_name_operands(region, function_address, operation)
+    operation = d3d_description_name_operands(region, function_address, operation)
+    operation = d3d_price_name_operands(region, function_address, operation)
+    operation = model_availability_name_operands(region, function_address, operation)
+    operation = model_list_panel_name_operands(region, function_address, operation)
+    operation = description_bank_name_operands(region, function_address, operation)
+    operation = description_panel_name_operands(region, function_address, operation)
+    operation = description_action_name_operands(region, function_address, operation)
+    operation = preview_hover_name_operands(region, function_address, operation)
+    operation = preview_action_name_operands(region, function_address, operation)
     operation = map_point_chain_name_operands(region, function_address, operation)
     operation = map_line_name_operands(region, function_address, operation)
     operation = arc_closing_name_operands(region, function_address, operation)
@@ -939,3 +948,37 @@ DOCUMENTS.update(D3D_SETUP_DOCUMENTS)
 from PreviewFaceFillFacts import LABELS as PREVIEW_FACE_FILL_LABELS, DOCUMENTS as PREVIEW_FACE_FILL_DOCUMENTS, name_operands as preview_face_fill_name_operands
 LABELS.update(PREVIEW_FACE_FILL_LABELS)
 DOCUMENTS.update(PREVIEW_FACE_FILL_DOCUMENTS)
+
+from D3DDescriptionFacts import LABELS as D3D_DESCRIPTION_LABELS, DOCUMENTS as D3D_DESCRIPTION_DOCUMENTS, name_operands as d3d_description_name_operands
+LABELS.update(D3D_DESCRIPTION_LABELS)
+DOCUMENTS.update(D3D_DESCRIPTION_DOCUMENTS)
+
+from D3DPriceFacts import LABELS as D3D_PRICE_LABELS, DOCUMENTS as D3D_PRICE_DOCUMENTS, name_operands as d3d_price_name_operands
+LABELS.update(D3D_PRICE_LABELS)
+DOCUMENTS.update(D3D_PRICE_DOCUMENTS)
+
+from ModelAvailabilityTable import name_operands as model_availability_name_operands
+
+from ModelListPanelFacts import LABELS as MODEL_LIST_PANEL_LABELS, DOCUMENTS as MODEL_LIST_PANEL_DOCUMENTS, name_operands as model_list_panel_name_operands
+LABELS.update(MODEL_LIST_PANEL_LABELS)
+DOCUMENTS.update(MODEL_LIST_PANEL_DOCUMENTS)
+
+from DescriptionBankFacts import LABELS as DESCRIPTION_BANK_LABELS, DOCUMENTS as DESCRIPTION_BANK_DOCUMENTS, name_operands as description_bank_name_operands
+LABELS.update(DESCRIPTION_BANK_LABELS)
+DOCUMENTS.update(DESCRIPTION_BANK_DOCUMENTS)
+
+from DescriptionPanelFacts import LABELS as DESCRIPTION_PANEL_LABELS, DOCUMENTS as DESCRIPTION_PANEL_DOCUMENTS, name_operands as description_panel_name_operands
+LABELS.update(DESCRIPTION_PANEL_LABELS)
+DOCUMENTS.update(DESCRIPTION_PANEL_DOCUMENTS)
+
+from DescriptionActionFacts import LABELS as DESCRIPTION_ACTION_LABELS, DOCUMENTS as DESCRIPTION_ACTION_DOCUMENTS, name_operands as description_action_name_operands
+LABELS.update(DESCRIPTION_ACTION_LABELS)
+DOCUMENTS.update(DESCRIPTION_ACTION_DOCUMENTS)
+
+from PreviewHoverFacts import LABELS as PREVIEW_HOVER_LABELS, DOCUMENTS as PREVIEW_HOVER_DOCUMENTS, name_operands as preview_hover_name_operands
+LABELS.update(PREVIEW_HOVER_LABELS)
+DOCUMENTS.update(PREVIEW_HOVER_DOCUMENTS)
+
+from PreviewActionFacts import LABELS as PREVIEW_ACTION_LABELS, DOCUMENTS as PREVIEW_ACTION_DOCUMENTS, name_operands as preview_action_name_operands
+LABELS.update(PREVIEW_ACTION_LABELS)
+DOCUMENTS.update(PREVIEW_ACTION_DOCUMENTS)

@@ -947,47 +947,47 @@
   },
   {
     "region": "Station",
-    "name": "DrawItem25",
+    "name": "DrawModelListPanel",
     "address": 26592,
     "slot": 4,
     "offset": 2700,
-    "description": "обработчик рисования станционного элемента из записи 25 таблицы FInterfaceItem",
+    "description": "Рисование списка рыночных либо текущих кораблей и скимеров с обновлением высоты наведения",
     "semantic_status": "described",
     "end_offset": 2787,
-    "path": "Source/Station/DrawItem25.asm"
+    "path": "Source/Station/DrawModelListPanel.asm"
   },
   {
     "region": "Station",
-    "name": "HandleItem26",
+    "name": "IgnoreModelPreviewHover",
     "address": 26679,
     "slot": 4,
     "offset": 2787,
-    "description": "обработчик события станционного элемента из записи 26 таблицы FInterfaceItem",
+    "description": "Пустой вход наведения панели 3D-просмотра с хвостовым переходом к возврату",
     "semantic_status": "described",
     "end_offset": 2790,
-    "path": "Source/Station/HandleItem26.asm"
+    "path": "Source/Station/IgnoreModelPreviewHover.asm"
   },
   {
     "region": "Station",
-    "name": "Unknown683A",
+    "name": "HandleModelPreviewClick",
     "address": 26682,
     "slot": 4,
     "offset": 2790,
     "end_offset": 2843,
-    "description": "Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются",
-    "semantic_status": "unknown",
-    "path": "Source/Station/Unknown683A.asm"
+    "description": "Выбор 3D-панели, закрытие с отключением периодического вызова либо изменение третьей координаты на 32",
+    "semantic_status": "described",
+    "path": "Source/Station/HandleModelPreviewClick.asm"
   },
   {
     "region": "Station",
-    "name": "Unknown686F",
+    "name": "ReturnModelPreviewHover",
     "address": 26735,
     "slot": 4,
     "offset": 2843,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Общий пустой возврат наведения панели 3D-просмотра",
+    "semantic_status": "described",
     "end_offset": 2844,
-    "path": "Source/Station/Unknown686F.asm"
+    "path": "Source/Station/ReturnModelPreviewHover.asm"
   },
   {
     "region": "Station",
@@ -1035,80 +1035,80 @@
   },
   {
     "region": "Station",
-    "name": "HandleItem27",
+    "name": "HandleModelDescriptionHover",
     "address": 26899,
     "slot": 4,
     "offset": 3007,
-    "description": "обработчик события станционного элемента из записи 27 таблицы FInterfaceItem",
+    "description": "Пустой трёхбайтовый вход наведения панели описания, действие начинается отдельно через Entry+3",
     "semantic_status": "described",
     "end_offset": 3010,
-    "path": "Source/Station/HandleItem27.asm"
+    "path": "Source/Station/HandleModelDescriptionHover.asm"
   },
   {
     "region": "Station",
-    "name": "Unknown6916",
+    "name": "HandleModelDescriptionClick",
     "address": 26902,
     "slot": 4,
     "offset": 3010,
     "end_offset": 3049,
-    "description": "Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются",
-    "semantic_status": "unknown",
-    "path": "Source/Station/Unknown6916.asm"
+    "description": "Выбор панели описания, закрытие по строке заголовка либо прокрутка выбранного текста",
+    "semantic_status": "described",
+    "path": "Source/Station/HandleModelDescriptionClick.asm"
   },
   {
     "region": "Station",
-    "name": "Unknown693D",
+    "name": "ReturnModelDescriptionHover",
     "address": 26941,
     "slot": 4,
     "offset": 3049,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Возврат без действий из ветви наведения панели описания",
+    "semantic_status": "described",
     "end_offset": 3050,
-    "path": "Source/Station/Unknown693D.asm"
+    "path": "Source/Station/ReturnModelDescriptionHover.asm"
   },
   {
     "region": "Station",
-    "name": "Unknown693E",
+    "name": "TryDrawModelDescription",
     "address": 26942,
     "slot": 4,
     "offset": 3050,
-    "description": "Unknown, исходный корабельный callback, полный договор зависимых рисователей и банка 4 ещё не установлен",
-    "semantic_status": "unknown",
+    "description": "Условное последовательное рисование описания только при наличии точного обработчика в списке",
+    "semantic_status": "described",
     "end_offset": 3057,
-    "path": "Source/Station/Unknown693E.asm"
+    "path": "Source/Station/TryDrawModelDescription.asm"
   },
   {
     "region": "Station",
-    "name": "DrawItem27",
+    "name": "DrawModelDescriptionPanel",
     "address": 26949,
     "slot": 4,
     "offset": 3057,
-    "description": "обработчик рисования станционного элемента из записи 27 таблицы FInterfaceItem",
+    "description": "Рамка и банковая печать выбранного описания с сохранённой начальной строкой",
     "semantic_status": "described",
     "end_offset": 3070,
-    "path": "Source/Station/DrawItem27.asm"
+    "path": "Source/Station/DrawModelDescriptionPanel.asm"
   },
   {
     "region": "Station",
-    "name": "Unknown6952",
+    "name": "PrintModelDescription",
     "address": 26962,
     "slot": 4,
     "offset": 3070,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Банковая печать выбранного описания модели с возвратом в станционный банк",
+    "semantic_status": "described",
     "end_offset": 3087,
-    "path": "Source/Station/Unknown6952.asm"
+    "path": "Source/Station/PrintModelDescription.asm"
   },
   {
     "region": "Station",
-    "name": "Unknown6963",
+    "name": "CountModelDescriptionRows",
     "address": 26979,
     "slot": 4,
     "offset": 3087,
     "end_offset": 3108,
-    "description": "Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются",
-    "semantic_status": "unknown",
-    "path": "Source/Station/Unknown6963.asm"
+    "description": "Банковый подсчёт описания модели с записью полного слова границы прокрутки",
+    "semantic_status": "described",
+    "path": "Source/Station/CountModelDescriptionRows.asm"
   },
   {
     "region": "Station",
@@ -12053,6 +12053,39 @@
     "end_offset": 8532,
     "path": "Source/D3D/SetupPreviewModel.asm",
     "description": "Настройка границ и трёх таблиц просмотра с выбором байтового смещения модели",
+    "semantic_status": "described"
+  },
+  {
+    "region": "D3D",
+    "name": "CountPreviewTextRows",
+    "address": 57636,
+    "slot": 6,
+    "offset": 8484,
+    "end_offset": 8508,
+    "path": "Source/D3D/CountPreviewTextRows.asm",
+    "description": "Подсчёт выровненных строк выбранного описания корабля либо скимера",
+    "semantic_status": "described"
+  },
+  {
+    "region": "D3D",
+    "name": "PrintPreviewTextRows",
+    "address": 57684,
+    "slot": 6,
+    "offset": 8532,
+    "end_offset": 8561,
+    "path": "Source/D3D/PrintPreviewTextRows.asm",
+    "description": "Печать выбранного описания корабля либо скимера с байтовым пропуском строк",
+    "semantic_status": "described"
+  },
+  {
+    "region": "D3D",
+    "name": "DrawPreviewPrices",
+    "address": 57541,
+    "slot": 6,
+    "offset": 8389,
+    "end_offset": 8484,
+    "path": "Source/D3D/DrawPreviewPrices.asm",
+    "description": "Вывод цен доступных моделей либо одной собственной модели с временным ограничителем текста",
     "semantic_status": "described"
   }
 ]

@@ -526,6 +526,8 @@ SaleBanMask     equ #80                                                         
 ThirdMinHigh    equ #02                                                         ; минимальный старший байт принятой суммы, 512
 ThirdEndHigh    equ #10                                                         ; исключённый верхний старший байт, 4096
 SpecialBase     equ #1C                                                         ; добавка смещения модели только при исходном селекторе 1
+ThirdStep       equ #0020                                                       ; положительный шаг третьей координаты, 32
+ThirdBackStep   equ #FFE0                                                       ; отрицательный шаг третьей координаты по модулю 65536, минус 32
                 endmodule
 
                 module SpriteLineConst
@@ -538,6 +540,18 @@ RowLowMask      equ #E0                                                         
 FillToggleMask  equ #60                                                         ; инвертируемые разряды 6 и 5 индекса заполнения выбранных граней
 VertexCountMask equ #0F                                                         ; младшая тетрада положительного заголовка, число вершин
 FillIndexMask   equ #70                                                         ; разряды 6..4 положительного заголовка, индекс пары D100
+                endmodule
+
+                module PreviewPriceConst
+HeadingCursor   equ #0800                                                       ; упакованный курсор X=0, Y=8 для заголовка цен
+BodyCursor      equ #1800                                                       ; упакованный курсор X=0, Y=24 для ценовых строк
+BodyY           equ #18                                                         ; начальный пиксельный Y ценового тела
+KarenIndex      equ #06                                                         ; индекс собственного Карэна с особым разделителем
+PriceColumn     equ #24                                                         ; позиция цены в пикселях для управляющего кода 2
+                endmodule
+
+                module DescriptionConst
+TopOffset       equ #08                                                         ; верхний отступ описания при прокрутке, 8 пикселей
                 endmodule
 
                 endif

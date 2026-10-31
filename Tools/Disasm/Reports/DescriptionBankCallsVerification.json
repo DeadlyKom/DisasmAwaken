@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "count_cases": 108,
+  "print_cases": 432,
+  "independent_glyphs": 37108,
+  "real_banking_and_d3d_callees": true,
+  "wrapped_index_sum": true,
+  "row_count_operand_written_only_by_counter": true,
+  "final_af_is_page_selection": true,
+  "full_bitmap_attributes_and_d3d_bank_compared": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

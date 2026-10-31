@@ -14,9 +14,9 @@
 | StationBoot | 3 | 3 | [Факты](FunctionDetails/StationBoot.md) |
 | StationExit | 1 | 1 | [Факты](FunctionDetails/StationExit.md) |
 | StationFinalExit | 1 | 1 | [Факты](FunctionDetails/StationFinalExit.md) |
-| Station | 422 | 361 | [Факты](FunctionDetails/Station.md) |
+| Station | 422 | 368 | [Факты](FunctionDetails/Station.md) |
 | Text | 126 | 126 | [Факты](FunctionDetails/Text.md) |
-| D3D | 3 | 3 | [Факты](FunctionDetails/D3D.md) |
+| D3D | 6 | 6 | [Факты](FunctionDetails/D3D.md) |
 | Map | 89 | 89 | [Факты](FunctionDetails/Map.md) |
 | Help | 4 | 4 | [Факты](FunctionDetails/Help.md) |
 | Music | 27 | 13 | [Факты](FunctionDetails/Music.md) |
@@ -118,14 +118,14 @@
 | #6771 | [Station.HandleItem25](../Source/Station/HandleItem25.asm) | обработчик события станционного элемента из записи 25 таблицы FInterfaceItem |
 | #6780 | [Station.Unknown6780](../Source/Station/Unknown6780.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #67D0 | [Station.UpdateShipListHover](../Source/Station/UpdateShipListHover.asm) | Обновление XOR-полосы списка Корабли с сохранением номера только по Z=0 |
-| #67E0 | [Station.DrawItem25](../Source/Station/DrawItem25.asm) | обработчик рисования станционного элемента из записи 25 таблицы FInterfaceItem |
-| #6837 | [Station.HandleItem26](../Source/Station/HandleItem26.asm) | обработчик события станционного элемента из записи 26 таблицы FInterfaceItem |
-| #686F | [Station.Unknown686F](../Source/Station/Unknown686F.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #67E0 | [Station.DrawModelListPanel](../Source/Station/DrawModelListPanel.asm) | Рисование списка рыночных либо текущих кораблей и скимеров с обновлением высоты наведения |
+| #6837 | [Station.IgnoreModelPreviewHover](../Source/Station/IgnoreModelPreviewHover.asm) | Пустой вход наведения панели 3D-просмотра с хвостовым переходом к возврату |
+| #686F | [Station.ReturnModelPreviewHover](../Source/Station/ReturnModelPreviewHover.asm) | Общий пустой возврат наведения панели 3D-просмотра |
 | #6877 | [Station.DrawItem26](../Source/Station/DrawItem26.asm) | обработчик рисования станционного элемента из записи 26 таблицы FInterfaceItem |
-| #6913 | [Station.HandleItem27](../Source/Station/HandleItem27.asm) | обработчик события станционного элемента из записи 27 таблицы FInterfaceItem |
-| #693D | [Station.Unknown693D](../Source/Station/Unknown693D.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #6945 | [Station.DrawItem27](../Source/Station/DrawItem27.asm) | обработчик рисования станционного элемента из записи 27 таблицы FInterfaceItem |
-| #6952 | [Station.Unknown6952](../Source/Station/Unknown6952.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #6913 | [Station.HandleModelDescriptionHover](../Source/Station/HandleModelDescriptionHover.asm) | Пустой трёхбайтовый вход наведения панели описания, действие начинается отдельно через Entry+3 |
+| #693D | [Station.ReturnModelDescriptionHover](../Source/Station/ReturnModelDescriptionHover.asm) | Возврат без действий из ветви наведения панели описания |
+| #6945 | [Station.DrawModelDescriptionPanel](../Source/Station/DrawModelDescriptionPanel.asm) | Рамка и банковая печать выбранного описания с сохранённой начальной строкой |
+| #6952 | [Station.PrintModelDescription](../Source/Station/PrintModelDescription.asm) | Банковая печать выбранного описания модели с возвратом в станционный банк |
 | #6978 | [Station.HandleItem23](../Source/Station/HandleItem23.asm) | обработчик события станционного элемента из записи 23 таблицы FInterfaceItem |
 | #69A7 | [Station.Unknown69A7](../Source/Station/Unknown69A7.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #69A8 | [Station.DrawItem23](../Source/Station/DrawItem23.asm) | обработчик рисования станционного элемента из записи 23 таблицы FInterfaceItem |
@@ -1100,11 +1100,11 @@
 
 | #67A9 | [Station.Unknown67A9](../Source/Station/Unknown67A9.asm) | Unknown, новый вход действия или его достижимый помощник |
 
-| #683A | [Station.Unknown683A](../Source/Station/Unknown683A.asm) | Unknown, новый вход действия или его достижимый помощник |
+| #683A | [Station.HandleModelPreviewClick](../Source/Station/HandleModelPreviewClick.asm) | Unknown, новый вход действия или его достижимый помощник |
 
-| #6916 | [Station.Unknown6916](../Source/Station/Unknown6916.asm) | Unknown, новый вход действия или его достижимый помощник |
+| #6916 | [Station.HandleModelDescriptionClick](../Source/Station/HandleModelDescriptionClick.asm) | Unknown, новый вход действия или его достижимый помощник |
 
-| #6963 | [Station.Unknown6963](../Source/Station/Unknown6963.asm) | Unknown, новый вход действия или его достижимый помощник |
+| #6963 | [Station.CountModelDescriptionRows](../Source/Station/CountModelDescriptionRows.asm) | Unknown, новый вход действия или его достижимый помощник |
 
 | #697B | [Station.Unknown697B](../Source/Station/Unknown697B.asm) | Unknown, новый вход действия или его достижимый помощник |
 
@@ -1225,10 +1225,16 @@
 | #6870 | [Station.Unknown6870](../Source/Station/Unknown6870.asm) | Unknown, полный контракт ещё не доказан |
 | #68CC | [Station.Unknown68CC](../Source/Station/Unknown68CC.asm) | Unknown, полный контракт ещё не доказан |
 | #68EA | [Station.Unknown68EA](../Source/Station/Unknown68EA.asm) | Unknown, полный контракт ещё не доказан |
-| #693E | [Station.Unknown693E](../Source/Station/Unknown693E.asm) | Unknown, полный контракт ещё не доказан |
+| #693E | [Station.TryDrawModelDescription](../Source/Station/TryDrawModelDescription.asm) | Unknown, полный контракт ещё не доказан |
 
 | #E011, банк 4 | [D3D.ConfigurePreviewClip](../Source/D3D/ConfigurePreviewClip.asm) | Настройка четырёх углов и повторённых операндов границ корабельного просмотра |
 
 | #E0B5, банк 4 | [D3D.AdjustPreviewThird](../Source/D3D/AdjustPreviewThird.asm) | Изменение третьей координаты записи просмотра с принятием обёрнутой суммы только в 512..4095 |
 
 | #E13C, банк 4 | [D3D.SetupPreviewModel](../Source/D3D/SetupPreviewModel.asm) | Настройка границ и трёх таблиц просмотра с выбором байтового смещения модели |
+
+| #E124, банк 4 | [D3D.CountPreviewTextRows](../Source/D3D/CountPreviewTextRows.asm) | Подсчёт выровненных строк выбранного описания корабля либо скимера |
+
+| #E154, банк 4 | [D3D.PrintPreviewTextRows](../Source/D3D/PrintPreviewTextRows.asm) | Печать выбранного описания корабля либо скимера с байтовым пропуском строк |
+
+| #E0C5, банк 4 | [D3D.DrawPreviewPrices](../Source/D3D/DrawPreviewPrices.asm) | Вывод цен доступных моделей либо одной собственной модели с временным ограничителем текста |

@@ -183,21 +183,21 @@
                 ent
                 assert $ == #0A8C
                 disp #67E0
-                include "../Station/DrawItem25.asm"
+                include "../Station/DrawModelListPanel.asm"
                 ent
                 assert $ == #0AE3
                 disp #6837
-                include "../Station/HandleItem26.asm"
+                include "../Station/IgnoreModelPreviewHover.asm"
                 ent
                 assert $ == #0AE6
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
                 disp #683A
-                include "../Station/Unknown683A.asm"
+                include "../Station/HandleModelPreviewClick.asm"
                 ent
                 assert $ == #0B1B
                 assert $ == #0B1B
                 disp #686F
-                include "../Station/Unknown686F.asm"
+                include "../Station/ReturnModelPreviewHover.asm"
                 ent
                 assert $ == #0B1C
                 disp #6870
@@ -219,35 +219,35 @@
                 assert $ == #0BBF
                 assert $ == #0BBF
                 disp #6913
-                include "../Station/HandleItem27.asm"
+                include "../Station/HandleModelDescriptionHover.asm"
                 ent
                 assert $ == #0BC2
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
                 disp #6916
-                include "../Station/Unknown6916.asm"
+                include "../Station/HandleModelDescriptionClick.asm"
                 ent
                 assert $ == #0BE9
                 assert $ == #0BE9
                 disp #693D
-                include "../Station/Unknown693D.asm"
+                include "../Station/ReturnModelDescriptionHover.asm"
                 ent
                 assert $ == #0BEA
                 disp #693E
-                include "../Station/Unknown693E.asm"                            ; (0) жёсткий порядок, последовательное исполнение
+                include "../Station/TryDrawModelDescription.asm"                ; (0) жёсткий порядок, последовательное исполнение
                 ent
                 assert $ == #0BF1
                 assert $ == #0BF1
                 disp #6945
-                include "../Station/DrawItem27.asm"                             ; (1) жёсткий порядок, последовательное исполнение
+                include "../Station/DrawModelDescriptionPanel.asm"              ; (1) жёсткий порядок, последовательное исполнение
                 ent
                 assert $ == #0BFE
                 disp #6952
-                include "../Station/Unknown6952.asm"
+                include "../Station/PrintModelDescription.asm"
                 ent
                 assert $ == #0C0F
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
                 disp #6963
-                include "../Station/Unknown6963.asm"
+                include "../Station/CountModelDescriptionRows.asm"
                 ent
                 assert $ == #0C24
                 assert $ == #0C24
@@ -1037,7 +1037,12 @@
                 ent
                 assert $ == #3400
                 ; Unknown, исходные байты вне подтверждённых записей рынка
-                incbin "../Resources/04_STATIONF/Unclassified044Tail.bin"
+                incbin "../Resources/04_STATIONF/BeforeModelAvailability.bin"
+                assert $ == #34BC
+                disp #94BC
+                include "../Station/Data/ModelAvailability.asm"
+                ent
+                assert $ == #34DC
                 assert $ == #34DC
                 disp #94DC
                 include "../Station/Data/MarketCategories.asm"

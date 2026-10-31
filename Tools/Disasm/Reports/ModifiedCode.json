@@ -519,7 +519,7 @@
     "target_instruction": 48421,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Station/DrawItem25.asm"
+    "path": "Source/Station/DrawModelListPanel.asm"
   },
   {
     "region": "Station",
@@ -528,7 +528,7 @@
     "target_instruction": 26582,
     "size": 1,
     "target_operation": "LD A,#FF",
-    "path": "Source/Station/DrawItem25.asm"
+    "path": "Source/Station/DrawModelListPanel.asm"
   },
   {
     "region": "Station",
@@ -537,7 +537,7 @@
     "target_instruction": 48498,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Station/DrawItem25.asm"
+    "path": "Source/Station/DrawModelListPanel.asm"
   },
   {
     "region": "Station",
@@ -546,7 +546,7 @@
     "target_instruction": 26576,
     "size": 1,
     "target_operation": "LD DE,#1E1B",
-    "path": "Source/Station/DrawItem25.asm"
+    "path": "Source/Station/DrawModelListPanel.asm"
   },
   {
     "region": "Station",

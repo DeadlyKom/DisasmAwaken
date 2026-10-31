@@ -13,12 +13,12 @@ from skoolkit.simutils import get_registers, A, F, B, C, D, E, H, L, PC, SP
 from CheckJustifiedText import reference as layout
 
 
-def reference(start, text, widths, coords, width, height, skip):
-    x, y, bc, d, e, pointer, calls = 0, coords >> 8, coords, 0x24, skip, 0, []
+def reference(start, text, widths, coords, width, height, skip, initial_d=0x24, positions=None, origin=(0, 0)):
+    x, y, bc, d, e, pointer, calls = 0, coords >> 8, coords, initial_d, skip, 0, []
     if start == 0xA82D:
         count = 0
         for _ in range(1000):
-            result = layout(0xAD35, text[pointer:], widths, x, 8, width, height, bc, count >> 8, count & 255)
+            result = layout(0xAD35, text[pointer:], widths, x, 8, width, height, bc, count >> 8, count & 255, origin=origin)
             consumed, x, y, a, f, bc, _, _, attempted = result
             pointer += consumed
             calls.extend(attempted)
@@ -28,14 +28,14 @@ def reference(start, text, widths, coords, width, height, skip):
         raise ValueError("Подсчёт строк не достиг завершения")
     x, y = coords & 255, coords >> 8
     for _ in range(skip):
-        result = layout(0xAD35, text[pointer:], widths, x, y, width, height, coords, d, e)
+        result = layout(0xAD35, text[pointer:], widths, x, y, width, height, coords, d, e, origin=origin)
         consumed, _, _, a, f, _, _, _, attempted = result
         pointer += consumed
         calls.extend(attempted)
         if f & 1:
             return pointer, x, y, a, f, coords, d, e, calls
         e = (e-1) & 255
-    result = layout(0xADCD, text[pointer:], widths, x, y, width, height, coords, d, e)
+    result = layout(0xADCD, text[pointer:], widths, x, y, width, height, coords, d, e, positions=positions, origin=origin)
     consumed, x, y, a, f, bc, d, e, attempted = result
     calls.extend(attempted)
     return pointer+consumed, x, y, a, f, bc, d, e, calls

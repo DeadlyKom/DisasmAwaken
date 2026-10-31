@@ -20,8 +20,8 @@ Entry:          LD A, (@ActiveItemState.Active)
 
                 LD (@ShipPanelState.PendingRedraw), A
                 CALL @Station.BeginScreenUpdate.Entry
-                CALL @Station.DrawItem25.Entry
-                CALL @Station.Unknown693E.Entry
+                CALL @Station.DrawModelListPanel.Entry
+                CALL @Station.TryDrawModelDescription.Entry
                 LD DE, (#6878)
                 CALL @Station.MoveItemToTail.Entry
                 CALL @Station.Unknown6870.Entry

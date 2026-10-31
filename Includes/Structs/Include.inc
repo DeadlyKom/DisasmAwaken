@@ -863,4 +863,11 @@ ReturnAddress   dw #0000                                                        
                 ends
                 assert FScrollDrawFrame == #08
 
+                ; начальные индексы ценового рынка для одного числового уровня системы
+                struct FModelAvailability
+ShipBase        db #00                                                          ; начальный индекс кораблей 0..5, ноль открывает все шесть рыночных строк
+SkimmerBase     db #00                                                          ; начальный индекс скимеров 0..3, ноль открывает все четыре строки
+                ends
+                assert FModelAvailability == #02
+
                 endif

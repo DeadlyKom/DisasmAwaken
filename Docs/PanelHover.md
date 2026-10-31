@@ -4,7 +4,7 @@
 
 | Обёртка | Рисователь | DE | Операнд прежней строки | Единицы D |
 | --- | --- | --- | --- | --- |
-| [UpdateShipListHover](../Source/Station/UpdateShipListHover.asm), 67D0 | [DrawItem25](../Source/Station/DrawItem25.asm), 67E0 | 1E1B | ShipsRow, 67D7 | 30 строк |
+| [UpdateShipListHover](../Source/Station/UpdateShipListHover.asm), 67D0 | [DrawModelListPanel](../Source/Station/DrawModelListPanel.asm), 67E0 | 1E1B | ShipsRow, 67D7 | 30 строк |
 | [UpdateIndexListHover](../Source/Station/UpdateIndexListHover.asm), 6A4B | [DrawItem22](../Source/Station/DrawItem22.asm), 6A5B | 1E0B | IndexRow, 6A52 | 30 строк |
 | [UpdateEnvironmentHover](../Source/Station/UpdateEnvironmentHover.asm), 6B8E | [DrawItem41](../Source/Station/DrawItem41.asm), 6BA5 | 1E0B | EnvironmentRow, 6B95 | 30 строк |
 | [UpdateEquipmentHover](../Source/Station/UpdateEquipmentHover.asm), 7210 | [DrawItem38](../Source/Station/DrawItem38.asm), 7227 | 1E1B | EquipmentRow, 7217 | 30 строк |
@@ -31,3 +31,5 @@
 [CheckPanelHover.py](../Tools/Disasm/Research/CheckPanelHover.py) исполняет все семь исходных обёрток вместе с настоящими ядрами, банковым XOR и указателем. Для каждой проверены все PointerY=0..191, прежние номера FF, 0 и 64 и оба положения рисователя в списке. Страницы 10 и 18 чередуются. Ожидаемый bitmap задан независимыми моделями полосы и указателя, сравниваются также атрибуты, сохранённый операнд, SP, Z, индексные регистры и страница. [Отчёт](../Tools/Disasm/Reports/PanelHoverVerification.json).
 
 В этой модели прежний фон указателя уже восстановлен и владелец ячейки нулевой. Смена PointerY между двумя проверками покрыта отдельной моделью ядра, аппаратные IRQ здесь не исполняются. Сборка и нативный игровой запуск этой проверкой не подтверждаются.
+
+Для [корабельной панели](ModelListPanel.md) старший операнд #67D2 изменяется после рисунка. Исходный запрос 30 заменяется ModelListState.HoverRows, младший отступ 27 сохраняется. Текущий [DrawModelListPanel](../Source/Station/DrawModelListPanel.asm) и [UpdateShipListHover](../Source/Station/UpdateShipListHover.asm) используют один и тот же доказанный счётчик.

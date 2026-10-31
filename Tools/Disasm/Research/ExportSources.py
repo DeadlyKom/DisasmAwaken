@@ -510,6 +510,26 @@ def main():
     write(MARKET_SCRIPT, market_script_text)
     symbols.update(market_script_symbols)
     special[5, MARKET_SCRIPT_START] = (market_script_end, MARKET_SCRIPT, 0xC000 + MARKET_SCRIPT_START)
+    # Восстановление двух доказанных CP866-потоков описаний в отдельном кандидате.
+    from PreviewDescriptionTables import TABLES as PREVIEW_TEXT_TABLES, render as render_preview_text
+    for table in PREVIEW_TEXT_TABLES:
+        _, path, start, end, _ = table
+        text, labels = render_preview_text(data_by_slot[6], table)
+        write(path, text)
+        symbols.update(labels)
+        special[6, start] = (end, path, 0xC000+start)
+    # Подтверждённые ценовые строки D3D формируются только в отдельном кандидате.
+    from PreviewPriceTable import PATH as PREVIEW_PRICE_PATH, START as PREVIEW_PRICE_START, END as PREVIEW_PRICE_END, render as render_preview_prices
+    text, labels = render_preview_prices(data_by_slot[6])
+    write(PREVIEW_PRICE_PATH, text)
+    symbols.update(labels)
+    special[6, PREVIEW_PRICE_START] = (PREVIEW_PRICE_END, PREVIEW_PRICE_PATH, 0xC000+PREVIEW_PRICE_START)
+    # Физические пары начальных моделей для шестнадцати уровней системы.
+    from ModelAvailabilityTable import PATH as MODEL_AVAILABILITY_PATH, START as MODEL_AVAILABILITY_START, END as MODEL_AVAILABILITY_END, render as render_model_availability
+    text, labels = render_model_availability(data_by_slot[4])
+    write(MODEL_AVAILABILITY_PATH, text)
+    symbols.update(labels)
+    special[4, MODEL_AVAILABILITY_START] = (MODEL_AVAILABILITY_END, MODEL_AVAILABILITY_PATH, 0x6000+MODEL_AVAILABILITY_START)
     # Выделение подтверждённого PT3 от исходного адреса #E700 до логического конца MUZ1.C.
     music_end = next(item["length"] for item in disk["entries"] if item["slot"] == 10)
     binary_resources = {(10, 0xC00): (music_end, "Source/Music/Resources/Antichrist.pt3", "PT3")}
