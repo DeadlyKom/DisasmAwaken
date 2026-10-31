@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "cases": 262144,
+  "all_operand_byte_pairs_in_four_entries": true,
+  "table_bytes_checked": 256,
+  "table_formula": "floor(min(i,255-i)^2/127)",
+  "independent_table_difference_and_sub_flags": true,
+  "maximum_product_error_numerator_over_127": 471,
+  "no_memory_writes": true,
+  "all_preserved_context_checked": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

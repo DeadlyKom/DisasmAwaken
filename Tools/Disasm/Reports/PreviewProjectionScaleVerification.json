@@ -1,0 +1,89 @@
+{
+  "passed": true,
+  "cases": 4096,
+  "all_header_bytes_checked": true,
+  "all_three_original_self_jumps_checked": true,
+  "exact_sub_flags_and_preserved_context": true,
+  "exact_three_operand_writes": true,
+  "original_headers": [
+    {
+      "model": 0,
+      "pointer": 61795,
+      "header": 2,
+      "exponent": 2
+    },
+    {
+      "model": 1,
+      "pointer": 62144,
+      "header": 2,
+      "exponent": 2
+    },
+    {
+      "model": 2,
+      "pointer": 61686,
+      "header": 2,
+      "exponent": 2
+    },
+    {
+      "model": 3,
+      "pointer": 62065,
+      "header": 2,
+      "exponent": 2
+    },
+    {
+      "model": 4,
+      "pointer": 61526,
+      "header": 2,
+      "exponent": 2
+    },
+    {
+      "model": 5,
+      "pointer": 61942,
+      "header": 2,
+      "exponent": 2
+    },
+    {
+      "model": 6,
+      "pointer": 61795,
+      "header": 2,
+      "exponent": 2
+    },
+    {
+      "model": 7,
+      "pointer": 62673,
+      "header": 2,
+      "exponent": 2
+    },
+    {
+      "model": 8,
+      "pointer": 62271,
+      "header": 2,
+      "exponent": 2
+    },
+    {
+      "model": 9,
+      "pointer": 62567,
+      "header": 2,
+      "exponent": 2
+    },
+    {
+      "model": 10,
+      "pointer": 62379,
+      "header": 3,
+      "exponent": 3
+    }
+  ],
+  "consumer_safe_exponents": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "invalid_exponents_not_repaired": true,
+  "perspective_not_executed": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "cases": 73752,
+  "outcomes": {
+    "first_minus": 27103,
+    "accepted": 3597,
+    "second_minus": 3706,
+    "first_plus": 33775,
+    "second_plus": 5571
+  },
+  "all_depth_words": true,
+  "all_four_rejection_paths": true,
+  "independent_folded_table_and_wrapped_halfword_geometry": true,
+  "exact_register_flags_and_no_local_memory_writes": true,
+  "real_queue_fallthrough_cases": 24,
+  "prepared_jr_displacements": "6-exponent for exponent 1..6",
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

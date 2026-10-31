@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "instructions": 44,
+  "code_bytes": 52,
+  "bank": 4,
+  "functions": 4,
+  "typed_table_bytes": 256,
+  "source_labels": 1,
+  "scoped_candidate_and_history": true,
+  "physical_bytes_preserved": true,
+  "assembly_executed": false
+}

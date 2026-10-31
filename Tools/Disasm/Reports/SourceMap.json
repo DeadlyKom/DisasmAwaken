@@ -5746,11 +5746,83 @@
   {
     "slot": 6,
     "offset": 0,
-    "length": 3648,
+    "length": 512,
     "kind": "unclassified",
-    "path": "Source/Resources/06_D3D/BeforePriceText.bin",
+    "path": "Source/Resources/06_D3D/BeforeSceneSeed.bin",
     "origin": null,
-    "sha256": "5931ecf71eb51e5d63c52a189a528248541e80f7f09776a8074aa81e43c96ec4"
+    "sha256": "7ae89428b4648b74f67375ce064ada4981eca2e9a4c5bcdba3f40c337490d733"
+  },
+  {
+    "slot": 6,
+    "offset": 512,
+    "length": 3,
+    "kind": "typed_data",
+    "path": "Source/D3D/Data/PreviewSharedSeed.asm",
+    "origin": 49664,
+    "sha256": "709e80c88487a2411e1ee4dfb9f22a861492d20c4765150c0c794abd70f8147c"
+  },
+  {
+    "slot": 6,
+    "offset": 515,
+    "length": 9,
+    "kind": "unclassified",
+    "path": "Source/Resources/06_D3D/BetweenSceneSeedMatrix.bin",
+    "origin": null,
+    "sha256": "3e7077fd2f66d689e0cee6a7cf5b37bf2dca7c979af356d0a31cbc5c85605c7d"
+  },
+  {
+    "slot": 6,
+    "offset": 524,
+    "length": 18,
+    "kind": "typed_data",
+    "path": "Source/D3D/Data/PreviewSceneMatrix.asm",
+    "origin": 49676,
+    "sha256": "60daa3a5f7dbfa200f8c82840ecf5b42640b70f3b7218a4c6bbd67db542e75a4"
+  },
+  {
+    "slot": 6,
+    "offset": 542,
+    "length": 226,
+    "kind": "unclassified",
+    "path": "Source/Resources/06_D3D/AfterSceneMatrix.bin",
+    "origin": null,
+    "sha256": "ac41e9584bf0e3f1620d625398a2df66c5fdb744069d8bc957b8690d5af879b3"
+  },
+  {
+    "slot": 6,
+    "offset": 768,
+    "length": 256,
+    "kind": "typed_data",
+    "path": "Source/D3D/Data/FoldedSquare127.asm",
+    "origin": 49920,
+    "sha256": "9511a17f6cd20ff375097d712f0c7cd01ed0cd151a939ec88234a4d80bd3c620"
+  },
+  {
+    "slot": 6,
+    "offset": 1024,
+    "length": 768,
+    "kind": "unclassified",
+    "path": "Source/Resources/06_D3D/AfterSquareTable.bin",
+    "origin": null,
+    "sha256": "f0213770a2b92b9442115ba79b04e9ccb98786a5b9c1647b0b9dbbdc30e45bbf"
+  },
+  {
+    "slot": 6,
+    "offset": 1792,
+    "length": 252,
+    "kind": "typed_data",
+    "path": "Source/D3D/Data/PreviewQueue.asm",
+    "origin": 50944,
+    "sha256": "913c6e2c32d99e4baff62cf421a494730cb043924f2c6bf46406573b59c641bd"
+  },
+  {
+    "slot": 6,
+    "offset": 2044,
+    "length": 1604,
+    "kind": "unclassified",
+    "path": "Source/Resources/06_D3D/AfterQueueStorage.bin",
+    "origin": null,
+    "sha256": "a4430be4253730e9dae9b1096ac7c73a02b15117d2ac078e68ec43bd1a7b8626"
   },
   {
     "slot": 6,
@@ -5764,11 +5836,128 @@
   {
     "slot": 6,
     "offset": 3834,
-    "length": 4375,
+    "length": 10,
+    "kind": "typed_data",
+    "path": "Source/D3D/Data/PreviewDrawState.asm",
+    "origin": 52986,
+    "sha256": "01d448afd928065458cf670b60f5a594d735af0172c8d67f22a81680132681ca"
+  },
+  {
+    "slot": 6,
+    "offset": 3844,
+    "length": 252,
     "kind": "unclassified",
-    "path": "Source/Resources/06_D3D/AfterPriceText.bin",
+    "path": "Source/Resources/06_D3D/AfterDrawState.bin",
     "origin": null,
-    "sha256": "a978d356d9e6d1856aa00180c30df4c6cc225c9672028aa0cf253eccd15a015b"
+    "sha256": "913c6e2c32d99e4baff62cf421a494730cb043924f2c6bf46406573b59c641bd"
+  },
+  {
+    "slot": 6,
+    "offset": 4096,
+    "length": 44,
+    "kind": "typed_data",
+    "path": "Source/D3D/Data/PreviewModelPointers.asm",
+    "origin": 53248,
+    "sha256": "c9c103bdb7115e540186b722c46b09b3b2b5e88cf84fdde2d6a5bc283b2e74f4"
+  },
+  {
+    "slot": 6,
+    "offset": 4140,
+    "length": 1260,
+    "kind": "unclassified",
+    "path": "Source/Resources/06_D3D/AfterModelPointers.bin",
+    "origin": null,
+    "sha256": "74bb9a0d1ec727f3b3b7c1426ee9e47d4813ea54477b51a7357e48186a7387b7"
+  },
+  {
+    "slot": 6,
+    "offset": 5400,
+    "length": 13,
+    "kind": "code",
+    "path": "Source/D3D/LookupPreviewProductE.asm",
+    "origin": 54552,
+    "sha256": "21c26a6093bcc7191467e4f4458e5d3c3ec4edf072a4fc86bdb1be6d8d3aadfa"
+  },
+  {
+    "slot": 6,
+    "offset": 5413,
+    "length": 13,
+    "kind": "code",
+    "path": "Source/D3D/LookupPreviewProductB.asm",
+    "origin": 54565,
+    "sha256": "22816c5435c14721ffb9183c99342910aae28629ce153d6f681ecaf267962f9d"
+  },
+  {
+    "slot": 6,
+    "offset": 5426,
+    "length": 13,
+    "kind": "code",
+    "path": "Source/D3D/LookupPreviewProductC.asm",
+    "origin": 54578,
+    "sha256": "7b2196d07b2f7495c2f4a5476f7a95e70f9fda6a59e4743efbbdc24fc18c2947"
+  },
+  {
+    "slot": 6,
+    "offset": 5439,
+    "length": 13,
+    "kind": "code",
+    "path": "Source/D3D/LookupPreviewProductD.asm",
+    "origin": 54591,
+    "sha256": "75ed24691e41227cc9e8bd7e1cbf2b0ffd0febdc74a0874c23243493d56e7270"
+  },
+  {
+    "slot": 6,
+    "offset": 5452,
+    "length": 717,
+    "kind": "code",
+    "path": "Source/D3D/ComposePreviewMatrix.asm",
+    "origin": 54604,
+    "sha256": "c7286d796b244182f5e6af71437a8fc5d64b9c0d2cf5b65094d7d55f5f8f535a"
+  },
+  {
+    "slot": 6,
+    "offset": 6169,
+    "length": 239,
+    "kind": "unclassified",
+    "path": "Source/Resources/06_D3D/BeforeVertexGroup.bin",
+    "origin": null,
+    "sha256": "cfc26a41f32c35026d7ccf55e12c66c5a57df1839d133a532e6c4859753b61e5"
+  },
+  {
+    "slot": 6,
+    "offset": 6408,
+    "length": 268,
+    "kind": "code",
+    "path": "Source/D3D/ProjectPreviewVertexGroup.asm",
+    "origin": 55560,
+    "sha256": "cfd627497f5ac8cb67279b1ccb56737cd3062b1b3ba883e51755e27d97467a4d"
+  },
+  {
+    "slot": 6,
+    "offset": 6676,
+    "length": 453,
+    "kind": "code",
+    "path": "Source/D3D/ProjectPreviewVertex.asm",
+    "origin": 55828,
+    "sha256": "e7fbff8ba3ca693c7c10c41024b2ccd51c32208e0153a2c9c8b593494de22b8f"
+  },
+  {
+    "slot": 6,
+    "offset": 7129,
+    "length": 16,
+    "kind": "code",
+    "path": "Source/D3D/ConfigurePreviewProjectionScale.asm",
+    "origin": 56281,
+    "sha256": "eb0e23f3bcce910e7dbae193d992bbc74c0aaa4cdc2933fd098b3c859d0cb597"
+  },
+  {
+    "slot": 6,
+    "offset": 7145,
+    "length": 1064,
+    "kind": "unclassified",
+    "path": "Source/Resources/06_D3D/AfterProjectionScale.bin",
+    "origin": null,
+    "sha256": "3decb8bea85e8fe2b7baebc0cbd26c6aae480f6287731ecc129f11ec74051af0"
   },
   {
     "slot": 6,
@@ -5863,11 +6052,56 @@
   {
     "slot": 6,
     "offset": 11304,
-    "length": 2393,
+    "length": 392,
+    "kind": "code",
+    "path": "Source/D3D/BuildPreviewQueue.asm",
+    "origin": 60456,
+    "sha256": "cc7351f079aa32f4df1e05d12cc284491b72a03bfc5725df865d688577e8651b"
+  },
+  {
+    "slot": 6,
+    "offset": 11696,
+    "length": 116,
+    "kind": "code",
+    "path": "Source/D3D/CheckPreviewBounds.asm",
+    "origin": 60848,
+    "sha256": "5cd47ed940034e9b81ce0e2b565908c3e7eb9c75dbba2a9b064d7d540db2040a"
+  },
+  {
+    "slot": 6,
+    "offset": 11812,
+    "length": 202,
+    "kind": "code",
+    "path": "Source/D3D/InsertPreviewQueue.asm",
+    "origin": 60964,
+    "sha256": "07ac475e2d32d34f59f6a37203acac04482758e236de4cdad2b3c741a44148d0"
+  },
+  {
+    "slot": 6,
+    "offset": 12014,
+    "length": 112,
     "kind": "unclassified",
-    "path": "Source/Resources/06_D3D/AfterCoordinateTransform.bin",
+    "path": "Source/Resources/06_D3D/BeforeModelMatrix.bin",
     "origin": null,
-    "sha256": "6e738fe8f2ab4202f478315e4fe9ae9e85eb44b0bb596e9d1324c87c9d67f488"
+    "sha256": "2b9c4c9b61699b5dfa912f8c5d003648f512bda979ad0add70e116d4e87b7b04"
+  },
+  {
+    "slot": 6,
+    "offset": 12126,
+    "length": 248,
+    "kind": "code",
+    "path": "Source/D3D/BuildPreviewModelMatrix.asm",
+    "origin": 61278,
+    "sha256": "1cdf33dd62c6d9dfbf7a7105669ca50c2cc808cfc1a102418692fa99a3658d43"
+  },
+  {
+    "slot": 6,
+    "offset": 12374,
+    "length": 1323,
+    "kind": "unclassified",
+    "path": "Source/Resources/06_D3D/AfterModelMatrix.bin",
+    "origin": null,
+    "sha256": "b92a902e7d40436b414718ef3292899a6cfdd404040cab49be687402cc393c06"
   },
   {
     "slot": 6,

@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "instructions": 188,
+  "code_bytes": 392,
+  "bank": 4,
+  "typed_bytes": 65,
+  "scene_records": 13,
+  "unknown_seed_fields": 3,
+  "source_labels": 47,
+  "scoped_candidate_and_history": true,
+  "physical_bytes_preserved": true,
+  "assembly_executed": false
+}

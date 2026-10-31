@@ -1,0 +1,34 @@
+{
+  "passed": true,
+  "cases": 5632,
+  "projected_vertices": 22592,
+  "all_256_masks_checked": true,
+  "vertices_per_group": {
+    "0": 23,
+    "1": 176,
+    "2": 607,
+    "3": 1224,
+    "4": 1534,
+    "5": 1245,
+    "6": 617,
+    "7": 181,
+    "8": 25
+  },
+  "projection_reasons": {
+    "accepted": 18883,
+    "negative_depth": 3692,
+    "second_axis": 6,
+    "first_axis": 11
+  },
+  "special_masks_01_and_81_preserved": true,
+  "bytewise_negation_and_rotates_preserved": true,
+  "packed_word_carries_preserved": true,
+  "independent_numeric_group_and_real_projection": true,
+  "all_main_alternate_and_index_registers_checked": true,
+  "real_cpu_sp_and_return_restored": true,
+  "exact_write_boundaries_checked": true,
+  "whole_physical_model_walk_not_executed": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

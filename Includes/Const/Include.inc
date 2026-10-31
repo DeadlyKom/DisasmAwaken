@@ -554,4 +554,63 @@ PriceColumn     equ #24                                                         
 TopOffset       equ #08                                                         ; верхний отступ описания при прокрутке, 8 пикселей
                 endmodule
 
+                module PreviewQueueConst
+Page            equ #C7                                                         ; старший байт адреса физических узлов очереди
+EndMarker       equ #01                                                         ; младший индекс конца активной цепочки, нулевой индекс допустим
+FullIndex       equ #FC                                                         ; свободный индекс после 18 узлов, прекращение обхода объектов
+SecondKeyBit    equ #07                                                         ; разряд выбора второго ключа при сравнении узлов
+SecondKeyMask   equ #80                                                         ; маска заголовочного флага, передаваемого в Flags узла
+                endmodule
+
+                module PreviewBoundsConst
+TablePage       equ #C3                                                         ; исходная страница FoldedSquare127
+FirstSeed       equ #48                                                         ; затравка первой пары табличных граничных тестов
+SecondSeed      equ #42                                                         ; затравка второй пары табличных граничных тестов
+                endmodule
+
+                module PreviewQueueBuildConst
+Objects         equ #CDC0                                                       ; начало исходных записей объектов
+RecordStep      equ #40                                                         ; шаг записи объекта, первые десять байтов читает проход
+MarkerHigh      equ #80                                                         ; старший байт специальной записи конца либо отключения
+CoeffMinBad     equ #80                                                         ; неподдерживаемый модуль коэффициента минус 128
+RawHighLimit    equ #70                                                         ; исключённый модуль старшего байта исходной координаты
+FirstHighEnd    equ #60                                                         ; исключённый предел свёрнутого старшего байта первого результата
+BaseIndexHigh   equ #1F                                                         ; порог старшего байта третьего результата для основного указателя
+ModelPage       equ #D0                                                         ; страница исходных пар указателей моделей
+ScaleStart      equ #06                                                         ; вычитаемое из показателя масштаба для смещения JR
+ZeroPairFlag    equ #01                                                         ; бит 0 при нулевых первом и третьем параметрах ориентации
+                endmodule
+
+                module PreviewModelMatrixConst
+OneAxisBit      equ #00                                                         ; номер бита упрощённой ориентации по второму углу
+QuarterTurn     equ #40                                                         ; четверть оборота в байтовых угловых единицах
+SinePage        equ #C4                                                         ; старший байт адреса исходной синусоиды
+ProductPage     equ #C3                                                         ; старший байт адреса свёрнутых квадратов
+Unit            equ #7F                                                         ; единичный коэффициент исходного масштаба
+                endmodule
+
+                module PreviewMatrixComposeConst
+QuarterMask     equ #3F                                                         ; маска младших разрядов для проверки кратности угла 64
+                endmodule
+
+                module PreviewPerspectiveConst
+SignBitMask     equ #01                                                         ; маска младшего разряда после переноса исходного знака через RLCA
+InvalidHigh     equ #80                                                         ; старший байт маркера отказа проекции
+StackAdvance    equ #09                                                         ; прибавление после двух PUSH даёт общий шаг рабочего SP пять
+PreviousDelta   equ #FFFD                                                       ; смещение минус три от SP после первого PUSH до старшего байта прежнего слова
+                endmodule
+
+                module PreviewVertexGroupConst
+SingleMask      equ #01                                                         ; маска единственной вершины 0
+OppositeMask    equ #81                                                         ; маска особой пары противоположных вершин
+Vertex0Bit      equ #00                                                         ; разряд выбора комбинации 0
+Vertex1Bit      equ #01                                                         ; разряд выбора комбинации 1
+Vertex2Bit      equ #02                                                         ; разряд выбора комбинации 2
+Vertex3Bit      equ #03                                                         ; разряд выбора комбинации 3
+Vertex4Bit      equ #04                                                         ; разряд выбора комбинации 4
+Vertex5Bit      equ #05                                                         ; разряд выбора комбинации 5
+Vertex6Bit      equ #06                                                         ; разряд выбора комбинации 6
+Vertex7Bit      equ #07                                                         ; разряд выбора комбинации 7
+                endmodule
+
                 endif

@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "typed_bytes": 10,
+  "physical_struct_fields": 7,
+  "named_index_fields": 8,
+  "original_bytes_preserved": true,
+  "scoped_candidate_and_history": true,
+  "assembly_executed": false
+}

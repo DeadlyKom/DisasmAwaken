@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "instructions": 86,
+  "code_bytes": 202,
+  "bank": 4,
+  "physical_nodes": 18,
+  "node_size": 14,
+  "typed_bytes": 252,
+  "source_labels": 198,
+  "scoped_candidate_and_history": true,
+  "physical_bytes_preserved": true,
+  "assembly_executed": false
+}

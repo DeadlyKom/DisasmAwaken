@@ -524,6 +524,27 @@ def main():
     write(PREVIEW_PRICE_PATH, text)
     symbols.update(labels)
     special[6, PREVIEW_PRICE_START] = (PREVIEW_PRICE_END, PREVIEW_PRICE_PATH, 0xC000+PREVIEW_PRICE_START)
+    # Исходные физические параметры, матрица и пары указателей, без подмены загрузочной инициализации.
+    from PreviewSceneTables import TABLES as PREVIEW_SCENE_TABLES, render as render_preview_scene
+    from PreviewDrawStateTable import TABLE as PREVIEW_DRAW_STATE_TABLE
+    for table in (*PREVIEW_SCENE_TABLES, PREVIEW_DRAW_STATE_TABLE):
+        _, path, start, end, _, _, _ = table
+        text, labels = render_preview_scene(data_by_slot[6], table)
+        write(path, text)
+        symbols.update(labels)
+        special[6, start] = (end, path, 0xC000+start)
+    # Исходная страница свёрнутых квадратов, формула отдельно подтверждена всеми 256 байтами.
+    from PreviewSquareTable import PATH as PREVIEW_SQUARE_PATH, START as PREVIEW_SQUARE_START, END as PREVIEW_SQUARE_END, render as render_preview_square
+    text, labels = render_preview_square(data_by_slot[6])
+    write(PREVIEW_SQUARE_PATH, text)
+    symbols.update(labels)
+    special[6, PREVIEW_SQUARE_START] = (PREVIEW_SQUARE_END, PREVIEW_SQUARE_PATH, 0xC300)
+    # Исходные невыделенные узлы очереди D3D, активные ссылки создаёт код вставки.
+    from PreviewQueueTable import PATH as PREVIEW_QUEUE_PATH, START as PREVIEW_QUEUE_START, END as PREVIEW_QUEUE_END, render as render_preview_queue
+    text, labels = render_preview_queue(data_by_slot[6])
+    write(PREVIEW_QUEUE_PATH, text)
+    symbols.update(labels)
+    special[6, PREVIEW_QUEUE_START] = (PREVIEW_QUEUE_END, PREVIEW_QUEUE_PATH, 0xC700)
     # Физические пары начальных моделей для шестнадцати уровней системы.
     from ModelAvailabilityTable import PATH as MODEL_AVAILABILITY_PATH, START as MODEL_AVAILABILITY_START, END as MODEL_AVAILABILITY_END, render as render_model_availability
     text, labels = render_model_availability(data_by_slot[4])

@@ -1,0 +1,37 @@
+{
+  "passed": true,
+  "cases": 1586,
+  "synthetic_header_cases": 12,
+  "accepted_objects": 275,
+  "record_count_fixtures": {
+    "1": 740,
+    "2": 185,
+    "0": 212,
+    "3": 230,
+    "4": 219
+  },
+  "reasons": {
+    "accepted": 275,
+    "raw_coordinate_range": 862,
+    "disabled": 56,
+    "end_marker": 58,
+    "negative_depth": 593,
+    "first_minus": 219,
+    "transform_overflow": 191,
+    "first_plus": 173,
+    "transformed_first_range": 97,
+    "second_minus": 71,
+    "second_plus": 76,
+    "depth_plus_radius": 2
+  },
+  "all_11_original_model_headers": true,
+  "real_transform_bounds_queue_and_sp_restore": true,
+  "independent_functional_queue_and_register_oracle": true,
+  "dirty_unused_nodes_preserved": true,
+  "exact_write_boundaries_checked": true,
+  "real_cpu_return_bytes_preserved": true,
+  "rendering_pass_not_executed": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

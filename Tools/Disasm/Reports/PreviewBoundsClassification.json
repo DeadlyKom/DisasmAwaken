@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "instructions": 71,
+  "code_bytes": 116,
+  "bank": 4,
+  "functions": 1,
+  "hard_order_with_queue": true,
+  "scoped_candidate_and_history": true,
+  "physical_bytes_preserved": true,
+  "assembly_executed": false
+}

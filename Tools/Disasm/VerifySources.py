@@ -225,6 +225,70 @@ def main():
             raise ValueError('Изменились исходные пары доступности моделей')
         model_availability_records = len(records_available)
 
+    # Проверка физических исходных параметров, матрицы и пар указателей моделей по реальным полям.
+    from PreviewSceneTables import TABLES as PREVIEW_SCENE_TABLES, parse as parse_preview_scene
+    from PreviewDrawStateTable import TABLE as PREVIEW_DRAW_STATE_TABLE
+    preview_scene_records = {}
+    for module,path,start,end,structure,fields,names in (*PREVIEW_SCENE_TABLES, PREVIEW_DRAW_STATE_TABLE):
+        entries = [item for item in source_map if item['path'] == path]
+        if not entries:
+            continue
+        if len(entries) != 1:
+            raise ValueError('Неоднозначная регистрация '+module)
+        item = entries[0]
+        if (item['slot'],item['offset'],item['length'],item['origin']) != (6,start,end-start,0xC000+start):
+            raise ValueError('Изменилось физическое размещение '+module)
+        raw,labels = parse_preview_scene((ROOT/path).read_text(encoding='utf-8'), (module,path,start,end,structure,fields,names))
+        if raw != sources[6][start:end] or any(symbols.get(key.upper()) != value for key,value in labels.items()):
+            raise ValueError('Изменились исходные байты либо адреса '+module)
+        offset = 0
+        for field,width,_ in fields:
+            if symbols.get(structure.upper()+'.'+field.upper()) != offset:
+                raise ValueError('Изменилось поле '+structure)
+            offset += width
+        if symbols.get(structure.upper()) != offset:
+            raise ValueError('Изменился размер '+structure)
+        preview_scene_records[module] = len(names)
+
+    # Проверка исходных DB свёрнутых квадратов и точной целочисленной формулы всей страницы.
+    from PreviewSquareTable import PATH as PREVIEW_SQUARE_PATH, START as PREVIEW_SQUARE_START, END as PREVIEW_SQUARE_END, parse as parse_preview_square
+    preview_square_bytes = 0
+    square_entries = [item for item in source_map if item['path'] == PREVIEW_SQUARE_PATH]
+    if square_entries:
+        if len(square_entries) != 1:
+            raise ValueError('Неоднозначная регистрация свёрнутых квадратов')
+        item = square_entries[0]
+        raw, labels = parse_preview_square((ROOT/PREVIEW_SQUARE_PATH).read_text(encoding='utf-8'), 0xC300)
+        if (item['slot'], item['offset'], item['length'], item['origin']) != (6, PREVIEW_SQUARE_START, PREVIEW_SQUARE_END-PREVIEW_SQUARE_START, 0xC300):
+            raise ValueError('Изменилось размещение свёрнутых квадратов D3D')
+        if raw != sources[6][PREVIEW_SQUARE_START:PREVIEW_SQUARE_END] or raw != bytes(min(i,255-i)**2//127 for i in range(256)):
+            raise ValueError('Изменились исходные байты таблицы квадратов D3D')
+        if labels != {'FoldedSquare127.Values':0xC300} or any(symbols.get(key.upper()) != value for key,value in labels.items()):
+            raise ValueError('Изменились адресные метки таблицы квадратов')
+        preview_square_bytes = len(raw)
+
+    # Проверка физических узлов очереди D3D, полей структуры и исходных невыделенных значений.
+    from PreviewQueueTable import PATH as PREVIEW_QUEUE_PATH, START as PREVIEW_QUEUE_START, END as PREVIEW_QUEUE_END, FIELDS as PREVIEW_QUEUE_FIELDS, parse as parse_preview_queue
+    preview_queue_records = 0
+    queue_entries = [item for item in source_map if item['path'] == PREVIEW_QUEUE_PATH]
+    if queue_entries:
+        if len(queue_entries) != 1:
+            raise ValueError('Неоднозначная регистрация очереди D3D')
+        item = queue_entries[0]
+        if (item['slot'], item['offset'], item['length'], item['origin']) != (6, PREVIEW_QUEUE_START, PREVIEW_QUEUE_END-PREVIEW_QUEUE_START, 0xC700):
+            raise ValueError('Изменилось физическое размещение очереди D3D')
+        raw, labels = parse_preview_queue((ROOT/PREVIEW_QUEUE_PATH).read_text(encoding='utf-8'))
+        if raw != sources[6][PREVIEW_QUEUE_START:PREVIEW_QUEUE_END] or any(symbols.get(key.upper()) != value for key,value in labels.items()):
+            raise ValueError('Изменились исходные байты либо метки узлов D3D')
+        offset = 0
+        for field,width,_ in PREVIEW_QUEUE_FIELDS:
+            if symbols.get('FPREVIEWQUEUENODE.'+field.upper()) != offset:
+                raise ValueError('Изменилось физическое поле узла D3D')
+            offset += width
+        if symbols.get('FPREVIEWQUEUENODE') != offset or offset != 14:
+            raise ValueError('Изменился размер физического узла D3D')
+        preview_queue_records = 18
+
     # Проверка физических инициализаторов интерфейса по полям его структуры.
     text = (ROOT/"Source/Station/Data/InterfaceItems.asm").read_text(encoding="utf-8")
     text = "\n".join(line.split(";",1)[0] for line in text.splitlines())
@@ -868,6 +932,9 @@ def main():
     report['preview_price_bytes'] = preview_price_bytes
     report['preview_price_labels'] = preview_price_labels
     report['model_availability_records'] = model_availability_records
+    report['preview_queue_records'] = preview_queue_records
+    report['preview_square_bytes'] = preview_square_bytes
+    report['preview_scene_records'] = preview_scene_records
     (ROOT/"Tools/Disasm/Reports/SourceVerification.json").write_text(
         json.dumps(report,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     print(json.dumps(report,ensure_ascii=False,indent=2))

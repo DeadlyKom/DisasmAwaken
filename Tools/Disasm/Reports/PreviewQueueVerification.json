@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "cases": 267008,
+  "outcomes": {
+    "head": 117181,
+    "tail": 147727,
+    "middle": 1844,
+    "full_stop": 256
+  },
+  "all_flag_byte_pairs": true,
+  "all_valid_queue_sizes": true,
+  "wrapped_sign_comparisons": 2147,
+  "independent_list_insertion_and_binary_record_pack": true,
+  "full_queue_does_not_write": true,
+  "transient_flags_push_checked": true,
+  "sp_at_node_plus_one": true,
+  "register_and_write_boundaries_checked": true,
+  "child_rendering_not_executed": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

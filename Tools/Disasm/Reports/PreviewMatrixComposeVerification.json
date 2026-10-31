@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "cases": 8960,
+  "branches": {
+    "quadrant0": 775,
+    "quadrant1": 785,
+    "quadrant2": 776,
+    "quadrant3": 778,
+    "one_axis": 2749,
+    "general": 3097
+  },
+  "real_matrix_producer_cases": 1024,
+  "all_bytes_in_four_quadrants": true,
+  "all_second_angles_in_one_axis_path": true,
+  "all_nine_composed_operands_checked": true,
+  "exact_registers_and_stack_writes_checked": true,
+  "independent_functional_composition": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false,
+  "whole_projection_not_executed": true
+}

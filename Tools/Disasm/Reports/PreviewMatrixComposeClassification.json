@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "instructions": 284,
+  "code_bytes": 717,
+  "bank": 4,
+  "functions": 1,
+  "registered_operand_writers": 39,
+  "scoped_candidate_and_history": true,
+  "physical_bytes_preserved": true,
+  "assembly_executed": false
+}

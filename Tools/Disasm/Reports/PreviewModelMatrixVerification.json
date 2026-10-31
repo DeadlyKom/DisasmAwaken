@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "matrix_cases": 7616,
+  "branches": {
+    "shortcut": 1024,
+    "general": 6592
+  },
+  "correction_cases": 262144,
+  "all_byte_pairs_in_four_corrections": true,
+  "sine_bytes_checked": 256,
+  "sine_formula": "clamp(round(128*sin(2*pi*i/256)),-127,127)",
+  "independent_numeric_matrix_and_register_oracle": true,
+  "all_nine_coefficient_operands_checked": true,
+  "exact_stack_writes_checked": true,
+  "all_preserved_context_checked": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false,
+  "full_frame_semantics_proved": false
+}

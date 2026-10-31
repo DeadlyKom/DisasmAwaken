@@ -150,6 +150,15 @@ def name_operands(region, function_address, operation):
     operation = preview_action_name_operands(region, function_address, operation)
     operation = preview_multiply_name_operands(region, function_address, operation)
     operation = preview_transform_name_operands(region, function_address, operation)
+    operation = preview_queue_name_operands(region, function_address, operation)
+    operation = preview_lookup_name_operands(region, function_address, operation)
+    operation = preview_bounds_name_operands(region, function_address, operation)
+    operation = preview_queue_build_name_operands(region, function_address, operation)
+    operation = preview_model_matrix_name_operands(region, function_address, operation)
+    operation = preview_matrix_compose_name_operands(region, function_address, operation)
+    operation = preview_projection_scale_name_operands(region, function_address, operation)
+    operation = preview_perspective_name_operands(region, function_address, operation)
+    operation = preview_vertex_group_name_operands(region, function_address, operation)
     operation = map_point_chain_name_operands(region, function_address, operation)
     operation = map_line_name_operands(region, function_address, operation)
     operation = arc_closing_name_operands(region, function_address, operation)
@@ -992,3 +1001,39 @@ DOCUMENTS.update(PREVIEW_MULTIPLY_DOCUMENTS)
 from PreviewTransformFacts import LABELS as PREVIEW_TRANSFORM_LABELS, DOCUMENTS as PREVIEW_TRANSFORM_DOCUMENTS, name_operands as preview_transform_name_operands
 LABELS.update(PREVIEW_TRANSFORM_LABELS)
 DOCUMENTS.update(PREVIEW_TRANSFORM_DOCUMENTS)
+
+from PreviewQueueFacts import LABELS as PREVIEW_QUEUE_LABELS, DOCUMENTS as PREVIEW_QUEUE_DOCUMENTS, name_operands as preview_queue_name_operands
+LABELS.update(PREVIEW_QUEUE_LABELS)
+DOCUMENTS.update(PREVIEW_QUEUE_DOCUMENTS)
+
+from PreviewLookupProductFacts import LABELS as PREVIEW_LOOKUP_LABELS, DOCUMENTS as PREVIEW_LOOKUP_DOCUMENTS, name_operands as preview_lookup_name_operands
+LABELS.update(PREVIEW_LOOKUP_LABELS)
+DOCUMENTS.update(PREVIEW_LOOKUP_DOCUMENTS)
+
+from PreviewBoundsFacts import LABELS as PREVIEW_BOUNDS_LABELS, DOCUMENTS as PREVIEW_BOUNDS_DOCUMENTS, name_operands as preview_bounds_name_operands
+LABELS.update(PREVIEW_BOUNDS_LABELS)
+DOCUMENTS.update(PREVIEW_BOUNDS_DOCUMENTS)
+
+from PreviewQueueBuildFacts import LABELS as PREVIEW_QUEUE_BUILD_LABELS, DOCUMENTS as PREVIEW_QUEUE_BUILD_DOCUMENTS, name_operands as preview_queue_build_name_operands
+LABELS.update(PREVIEW_QUEUE_BUILD_LABELS)
+DOCUMENTS.update(PREVIEW_QUEUE_BUILD_DOCUMENTS)
+
+from PreviewModelMatrixFacts import LABELS as PREVIEW_MODEL_MATRIX_LABELS, DOCUMENTS as PREVIEW_MODEL_MATRIX_DOCUMENTS, name_operands as preview_model_matrix_name_operands
+LABELS.update(PREVIEW_MODEL_MATRIX_LABELS)
+DOCUMENTS.update(PREVIEW_MODEL_MATRIX_DOCUMENTS)
+
+from PreviewMatrixComposeFacts import LABELS as PREVIEW_MATRIX_COMPOSE_LABELS, DOCUMENTS as PREVIEW_MATRIX_COMPOSE_DOCUMENTS, name_operands as preview_matrix_compose_name_operands
+LABELS.update(PREVIEW_MATRIX_COMPOSE_LABELS)
+DOCUMENTS.update(PREVIEW_MATRIX_COMPOSE_DOCUMENTS)
+
+from PreviewProjectionScaleFacts import LABELS as PREVIEW_PROJECTION_SCALE_LABELS, DOCUMENTS as PREVIEW_PROJECTION_SCALE_DOCUMENTS, name_operands as preview_projection_scale_name_operands
+LABELS.update(PREVIEW_PROJECTION_SCALE_LABELS)
+DOCUMENTS.update(PREVIEW_PROJECTION_SCALE_DOCUMENTS)
+
+from PreviewPerspectiveFacts import LABELS as PREVIEW_PERSPECTIVE_LABELS, DOCUMENTS as PREVIEW_PERSPECTIVE_DOCUMENTS, name_operands as preview_perspective_name_operands
+LABELS.update(PREVIEW_PERSPECTIVE_LABELS)
+DOCUMENTS.update(PREVIEW_PERSPECTIVE_DOCUMENTS)
+
+from PreviewVertexGroupFacts import LABELS as PREVIEW_VERTEX_GROUP_LABELS, DOCUMENTS as PREVIEW_VERTEX_GROUP_DOCUMENTS, name_operands as preview_vertex_group_name_operands
+LABELS.update(PREVIEW_VERTEX_GROUP_LABELS)
+DOCUMENTS.update(PREVIEW_VERTEX_GROUP_DOCUMENTS)

@@ -7117,5 +7117,833 @@
     "size": 2,
     "target_operation": "JP #0000",
     "path": "Source/D3D/MultiplyPreviewCoordinate.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 60476,
+    "target": 54631,
+    "target_instruction": 54630,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/D3D/BuildPreviewQueue.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 60487,
+    "target": 54681,
+    "target_instruction": 54680,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/D3D/BuildPreviewQueue.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 60498,
+    "target": 54731,
+    "target_instruction": 54730,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/D3D/BuildPreviewQueue.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 60509,
+    "target": 54644,
+    "target_instruction": 54643,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/D3D/BuildPreviewQueue.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 60520,
+    "target": 54694,
+    "target_instruction": 54693,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/D3D/BuildPreviewQueue.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 60531,
+    "target": 54744,
+    "target_instruction": 54743,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/D3D/BuildPreviewQueue.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 60542,
+    "target": 54662,
+    "target_instruction": 54661,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/D3D/BuildPreviewQueue.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 60553,
+    "target": 54712,
+    "target_instruction": 54711,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/D3D/BuildPreviewQueue.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 60564,
+    "target": 54762,
+    "target_instruction": 54761,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/D3D/BuildPreviewQueue.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 60579,
+    "target": 61167,
+    "target_instruction": 61166,
+    "size": 2,
+    "target_operation": "LD SP,#0000",
+    "path": "Source/D3D/BuildPreviewQueue.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 60614,
+    "target": 60287,
+    "target_instruction": 60286,
+    "size": 2,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/D3D/BuildPreviewQueue.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 60632,
+    "target": 60301,
+    "target_instruction": 60300,
+    "size": 2,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/D3D/BuildPreviewQueue.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 60650,
+    "target": 60320,
+    "target_instruction": 60319,
+    "size": 2,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/D3D/BuildPreviewQueue.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 60751,
+    "target": 60764,
+    "target_instruction": 60763,
+    "size": 1,
+    "target_operation": "JR #ED5B",
+    "path": "Source/D3D/BuildPreviewQueue.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 60754,
+    "target": 60868,
+    "target_instruction": 60867,
+    "size": 1,
+    "target_operation": "JR #EDC3",
+    "path": "Source/D3D/BuildPreviewQueue.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 60757,
+    "target": 60925,
+    "target_instruction": 60924,
+    "size": 1,
+    "target_operation": "JR #EDFC",
+    "path": "Source/D3D/BuildPreviewQueue.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 61295,
+    "target": 54625,
+    "target_instruction": 54624,
+    "size": 1,
+    "target_operation": "LD B,#00",
+    "path": "Source/D3D/BuildPreviewModelMatrix.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 61298,
+    "target": 54785,
+    "target_instruction": 54784,
+    "size": 1,
+    "target_operation": "LD D,#00",
+    "path": "Source/D3D/BuildPreviewModelMatrix.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 61303,
+    "target": 54781,
+    "target_instruction": 54780,
+    "size": 1,
+    "target_operation": "LD B,#00",
+    "path": "Source/D3D/BuildPreviewModelMatrix.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 61308,
+    "target": 54629,
+    "target_instruction": 54628,
+    "size": 1,
+    "target_operation": "LD D,#00",
+    "path": "Source/D3D/BuildPreviewModelMatrix.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 61312,
+    "target": 54953,
+    "target_instruction": 54952,
+    "size": 1,
+    "target_operation": "LD B,#00",
+    "path": "Source/D3D/BuildPreviewModelMatrix.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 61315,
+    "target": 54627,
+    "target_instruction": 54626,
+    "size": 1,
+    "target_operation": "LD C,#00",
+    "path": "Source/D3D/BuildPreviewModelMatrix.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 61318,
+    "target": 54783,
+    "target_instruction": 54782,
+    "size": 1,
+    "target_operation": "LD C,#00",
+    "path": "Source/D3D/BuildPreviewModelMatrix.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 61321,
+    "target": 54957,
+    "target_instruction": 54956,
+    "size": 1,
+    "target_operation": "LD D,#00",
+    "path": "Source/D3D/BuildPreviewModelMatrix.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 61326,
+    "target": 54955,
+    "target_instruction": 54954,
+    "size": 1,
+    "target_operation": "LD C,#00",
+    "path": "Source/D3D/BuildPreviewModelMatrix.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 61363,
+    "target": 54953,
+    "target_instruction": 54952,
+    "size": 1,
+    "target_operation": "LD B,#00",
+    "path": "Source/D3D/BuildPreviewModelMatrix.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 61380,
+    "target": 54625,
+    "target_instruction": 54624,
+    "size": 1,
+    "target_operation": "LD B,#00",
+    "path": "Source/D3D/BuildPreviewModelMatrix.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 61390,
+    "target": 54781,
+    "target_instruction": 54780,
+    "size": 1,
+    "target_operation": "LD B,#00",
+    "path": "Source/D3D/BuildPreviewModelMatrix.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 61419,
+    "target": 54627,
+    "target_instruction": 54626,
+    "size": 1,
+    "target_operation": "LD C,#00",
+    "path": "Source/D3D/BuildPreviewModelMatrix.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 61427,
+    "target": 54955,
+    "target_instruction": 54954,
+    "size": 1,
+    "target_operation": "LD C,#00",
+    "path": "Source/D3D/BuildPreviewModelMatrix.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 61456,
+    "target": 54783,
+    "target_instruction": 54782,
+    "size": 1,
+    "target_operation": "LD C,#00",
+    "path": "Source/D3D/BuildPreviewModelMatrix.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 61485,
+    "target": 54629,
+    "target_instruction": 54628,
+    "size": 1,
+    "target_operation": "LD D,#00",
+    "path": "Source/D3D/BuildPreviewModelMatrix.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 61493,
+    "target": 54957,
+    "target_instruction": 54956,
+    "size": 1,
+    "target_operation": "LD D,#00",
+    "path": "Source/D3D/BuildPreviewModelMatrix.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 61522,
+    "target": 54785,
+    "target_instruction": 54784,
+    "size": 1,
+    "target_operation": "LD D,#00",
+    "path": "Source/D3D/BuildPreviewModelMatrix.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 54677,
+    "target": 55489,
+    "target_instruction": 55488,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/D3D/ComposePreviewMatrix.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 54727,
+    "target": 55513,
+    "target_instruction": 55512,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/D3D/ComposePreviewMatrix.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 54777,
+    "target": 55537,
+    "target_instruction": 55536,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/D3D/ComposePreviewMatrix.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 54836,
+    "target": 55505,
+    "target_instruction": 55504,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/D3D/ComposePreviewMatrix.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 54889,
+    "target": 55529,
+    "target_instruction": 55528,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/D3D/ComposePreviewMatrix.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 54942,
+    "target": 55553,
+    "target_instruction": 55552,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/D3D/ComposePreviewMatrix.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55002,
+    "target": 55497,
+    "target_instruction": 55496,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/D3D/ComposePreviewMatrix.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55049,
+    "target": 55521,
+    "target_instruction": 55520,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/D3D/ComposePreviewMatrix.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55096,
+    "target": 55545,
+    "target_instruction": 55544,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/D3D/ComposePreviewMatrix.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55103,
+    "target": 55497,
+    "target_instruction": 55496,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/D3D/ComposePreviewMatrix.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55109,
+    "target": 55521,
+    "target_instruction": 55520,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/D3D/ComposePreviewMatrix.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55115,
+    "target": 55545,
+    "target_instruction": 55544,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/D3D/ComposePreviewMatrix.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55122,
+    "target": 55497,
+    "target_instruction": 55496,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/D3D/ComposePreviewMatrix.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55128,
+    "target": 55521,
+    "target_instruction": 55520,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/D3D/ComposePreviewMatrix.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55134,
+    "target": 55545,
+    "target_instruction": 55544,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/D3D/ComposePreviewMatrix.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55152,
+    "target": 55489,
+    "target_instruction": 55488,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/D3D/ComposePreviewMatrix.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55158,
+    "target": 55513,
+    "target_instruction": 55512,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/D3D/ComposePreviewMatrix.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55164,
+    "target": 55537,
+    "target_instruction": 55536,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/D3D/ComposePreviewMatrix.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55172,
+    "target": 55505,
+    "target_instruction": 55504,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/D3D/ComposePreviewMatrix.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55180,
+    "target": 55529,
+    "target_instruction": 55528,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/D3D/ComposePreviewMatrix.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55188,
+    "target": 55553,
+    "target_instruction": 55552,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/D3D/ComposePreviewMatrix.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55195,
+    "target": 55489,
+    "target_instruction": 55488,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/D3D/ComposePreviewMatrix.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55201,
+    "target": 55513,
+    "target_instruction": 55512,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/D3D/ComposePreviewMatrix.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55207,
+    "target": 55537,
+    "target_instruction": 55536,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/D3D/ComposePreviewMatrix.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55213,
+    "target": 55505,
+    "target_instruction": 55504,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/D3D/ComposePreviewMatrix.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55219,
+    "target": 55529,
+    "target_instruction": 55528,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/D3D/ComposePreviewMatrix.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55225,
+    "target": 55553,
+    "target_instruction": 55552,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/D3D/ComposePreviewMatrix.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55234,
+    "target": 55489,
+    "target_instruction": 55488,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/D3D/ComposePreviewMatrix.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55242,
+    "target": 55513,
+    "target_instruction": 55512,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/D3D/ComposePreviewMatrix.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55250,
+    "target": 55537,
+    "target_instruction": 55536,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/D3D/ComposePreviewMatrix.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55256,
+    "target": 55505,
+    "target_instruction": 55504,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/D3D/ComposePreviewMatrix.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55262,
+    "target": 55529,
+    "target_instruction": 55528,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/D3D/ComposePreviewMatrix.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55268,
+    "target": 55553,
+    "target_instruction": 55552,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/D3D/ComposePreviewMatrix.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55277,
+    "target": 55489,
+    "target_instruction": 55488,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/D3D/ComposePreviewMatrix.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55285,
+    "target": 55513,
+    "target_instruction": 55512,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/D3D/ComposePreviewMatrix.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55293,
+    "target": 55537,
+    "target_instruction": 55536,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/D3D/ComposePreviewMatrix.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55301,
+    "target": 55505,
+    "target_instruction": 55504,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/D3D/ComposePreviewMatrix.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55309,
+    "target": 55529,
+    "target_instruction": 55528,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/D3D/ComposePreviewMatrix.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55317,
+    "target": 55553,
+    "target_instruction": 55552,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/D3D/ComposePreviewMatrix.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 56287,
+    "target": 55840,
+    "target_instruction": 55839,
+    "size": 1,
+    "target_operation": "JR #DA1F",
+    "path": "Source/D3D/ConfigurePreviewProjectionScale.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 56290,
+    "target": 55867,
+    "target_instruction": 55866,
+    "size": 1,
+    "target_operation": "JR #DA3A",
+    "path": "Source/D3D/ConfigurePreviewProjectionScale.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 56293,
+    "target": 56057,
+    "target_instruction": 56056,
+    "size": 1,
+    "target_operation": "JR #DAF8",
+    "path": "Source/D3D/ConfigurePreviewProjectionScale.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 56232,
+    "target": 56246,
+    "target_instruction": 56245,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/D3D/ProjectPreviewVertex.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 56242,
+    "target": 56256,
+    "target_instruction": 56254,
+    "size": 2,
+    "target_operation": "LD (#0000),BC",
+    "path": "Source/D3D/ProjectPreviewVertex.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55560,
+    "target": 55825,
+    "target_instruction": 55824,
+    "size": 2,
+    "target_operation": "LD SP,#0000",
+    "path": "Source/D3D/ProjectPreviewVertexGroup.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55578,
+    "target": 55674,
+    "target_instruction": 55673,
+    "size": 2,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/D3D/ProjectPreviewVertexGroup.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55592,
+    "target": 55726,
+    "target_instruction": 55725,
+    "size": 2,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/D3D/ProjectPreviewVertexGroup.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55598,
+    "target": 55739,
+    "target_instruction": 55738,
+    "size": 2,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/D3D/ProjectPreviewVertexGroup.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55602,
+    "target": 55754,
+    "target_instruction": 55753,
+    "size": 2,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/D3D/ProjectPreviewVertexGroup.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55613,
+    "target": 55791,
+    "target_instruction": 55790,
+    "size": 2,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/D3D/ProjectPreviewVertexGroup.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55617,
+    "target": 55804,
+    "target_instruction": 55803,
+    "size": 2,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/D3D/ProjectPreviewVertexGroup.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55623,
+    "target": 55765,
+    "target_instruction": 55764,
+    "size": 2,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/D3D/ProjectPreviewVertexGroup.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55629,
+    "target": 55778,
+    "target_instruction": 55777,
+    "size": 2,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/D3D/ProjectPreviewVertexGroup.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55658,
+    "target": 55794,
+    "target_instruction": 55793,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/D3D/ProjectPreviewVertexGroup.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55662,
+    "target": 55807,
+    "target_instruction": 55806,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/D3D/ProjectPreviewVertexGroup.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55666,
+    "target": 55768,
+    "target_instruction": 55767,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/D3D/ProjectPreviewVertexGroup.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55670,
+    "target": 55781,
+    "target_instruction": 55780,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/D3D/ProjectPreviewVertexGroup.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55821,
+    "target": 55565,
+    "target_instruction": 55564,
+    "size": 1,
+    "target_operation": "LD SP,#C600",
+    "path": "Source/D3D/ProjectPreviewVertexGroup.asm"
   }
 ]

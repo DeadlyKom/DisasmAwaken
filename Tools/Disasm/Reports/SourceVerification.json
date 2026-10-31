@@ -1,7 +1,7 @@
 {
   "method": "text_and_resource_comparison_without_assembly",
   "passed": true,
-  "instruction_count": 35784,
+  "instruction_count": 37014,
   "active_allocations": 41,
   "covered_bytes": 479744,
   "interface_records": 46,
@@ -76,5 +76,13 @@
   "preview_description_labels": 12,
   "preview_price_bytes": 186,
   "preview_price_labels": 12,
-  "model_availability_records": 16
+  "model_availability_records": 16,
+  "preview_queue_records": 18,
+  "preview_square_bytes": 256,
+  "preview_scene_records": {
+    "PreviewSharedSeed": 1,
+    "PreviewSceneMatrix": 1,
+    "PreviewModelPointers": 11,
+    "PreviewDrawState": 1
+  }
 }

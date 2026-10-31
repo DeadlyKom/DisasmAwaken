@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "region": "D3D",
+  "instructions": 1523,
+  "procedure_roots": 20,
+  "calls": 12,
+  "branches": 141,
+  "indirect_continuations": 4,
+  "all_direct_target_sets_equal_registered_instructions": true,
+  "all_indirect_continuations_explicit": true,
+  "source_instructions_modified": false,
+  "assembly_executed": false,
+  "full_semantic_analysis_complete": false
+}

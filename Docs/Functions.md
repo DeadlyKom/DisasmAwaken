@@ -16,7 +16,7 @@
 | StationFinalExit | 1 | 1 | [Факты](FunctionDetails/StationFinalExit.md) |
 | Station | 422 | 368 | [Факты](FunctionDetails/Station.md) |
 | Text | 126 | 126 | [Факты](FunctionDetails/Text.md) |
-| D3D | 8 | 8 | [Факты](FunctionDetails/D3D.md) |
+| D3D | 20 | 20 | [Факты](FunctionDetails/D3D.md) |
 | Map | 89 | 89 | [Факты](FunctionDetails/Map.md) |
 | Help | 4 | 4 | [Факты](FunctionDetails/Help.md) |
 | Music | 27 | 13 | [Факты](FunctionDetails/Music.md) |
@@ -1242,3 +1242,27 @@
 | #EB10, банк 4 | [D3D.MultiplyPreviewCoordinate](../Source/D3D/MultiplyPreviewCoordinate.asm) | Знаковое произведение 16-битной координаты и 7-битного коэффициента с усечением после деления на 128 и переходным возвратом |
 
 | #EB7E, банк 4 | [D3D.TransformPreviewCoords](../Source/D3D/TransformPreviewCoords.asm) | Три скалярных произведения с переносом знакового умножителя, ранним переполнением и продолжением через IY |
+
+| #EE24, банк 4 | [D3D.InsertPreviewQueue](../Source/D3D/InsertPreviewQueue.asm) | Вставка четырнадцатибайтового узла по двум ключам с выбором по биту 7 и прекращением обхода при заполнении |
+
+| #D518, банк 4 | [D3D.LookupPreviewProductE](../Source/D3D/LookupPreviewProductE.asm) | Табличная аппроксимация произведения байтов A и E через разность свёрнутых квадратов |
+
+| #D525, банк 4 | [D3D.LookupPreviewProductB](../Source/D3D/LookupPreviewProductB.asm) | Табличная аппроксимация произведения байтов A и B через разность свёрнутых квадратов |
+
+| #D532, банк 4 | [D3D.LookupPreviewProductC](../Source/D3D/LookupPreviewProductC.asm) | Табличная аппроксимация произведения байтов A и C через разность свёрнутых квадратов |
+
+| #D53F, банк 4 | [D3D.LookupPreviewProductD](../Source/D3D/LookupPreviewProductD.asm) | Табличная аппроксимация произведения байтов A и D через разность свёрнутых квадратов |
+
+| #EDB0, банк 4 | [D3D.CheckPreviewBounds](../Source/D3D/CheckPreviewBounds.asm) | Проверка четырёх обёрнутых знаковых границ с табличными размерами и продолжением во вставку очереди |
+
+| #EC28, банк 4 | [D3D.BuildPreviewQueue](../Source/D3D/BuildPreviewQueue.asm) | Подготовка коэффициентов, обход исходных записей с шагом 64, преобразование, отбор и сборка очереди перед рисованием |
+
+| #EF5E, банк 4 | [D3D.BuildPreviewModelMatrix](../Source/D3D/BuildPreviewModelMatrix.asm) | Матрица ориентации модели по трём байтовым углам либо упрощённая матрица по второму углу |
+
+| #D54C, банк 4 | [D3D.ComposePreviewMatrix](../Source/D3D/ComposePreviewMatrix.asm) | Композиция матрицы сцены и модели с отражаемой арифметикой, одноосной ветвью и точными четвертьоборотами |
+
+| #DBD9, банк 4 | [D3D.ConfigurePreviewProjectionScale](../Source/D3D/ConfigurePreviewProjectionScale.asm) | Настройка трёх последовательностей масштаба проекции по показателю заголовка модели |
+
+| #DA14, банк 4 | [D3D.ProjectPreviewVertex](../Source/D3D/ProjectPreviewVertex.asm) | Перспектива одной вершины с двумя знаковыми делениями, маркерами отказа и пятибайтовым шагом рабочего SP |
+
+| #D908, банк 4 | [D3D.ProjectPreviewVertexGroup](../Source/D3D/ProjectPreviewVertexGroup.asm) | Генерация комбинаций вершин по маске с настоящей перспективой, рабочим стеком и восстановлением CPU-возврата |

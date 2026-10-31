@@ -12109,5 +12109,139 @@
     "path": "Source/D3D/TransformPreviewCoords.asm",
     "description": "Три скалярных произведения с переносом знакового умножителя, ранним переполнением и продолжением через IY",
     "semantic_status": "described"
+  },
+  {
+    "region": "D3D",
+    "name": "InsertPreviewQueue",
+    "address": 60964,
+    "slot": 6,
+    "offset": 11812,
+    "end_offset": 12014,
+    "path": "Source/D3D/InsertPreviewQueue.asm",
+    "description": "Вставка четырнадцатибайтового узла по двум ключам с выбором по биту 7 и прекращением обхода при заполнении",
+    "semantic_status": "described"
+  },
+  {
+    "region": "D3D",
+    "name": "LookupPreviewProductE",
+    "address": 54552,
+    "slot": 6,
+    "offset": 5400,
+    "end_offset": 5413,
+    "path": "Source/D3D/LookupPreviewProductE.asm",
+    "description": "Табличная аппроксимация произведения байтов A и E через разность свёрнутых квадратов",
+    "semantic_status": "described"
+  },
+  {
+    "region": "D3D",
+    "name": "LookupPreviewProductB",
+    "address": 54565,
+    "slot": 6,
+    "offset": 5413,
+    "end_offset": 5426,
+    "path": "Source/D3D/LookupPreviewProductB.asm",
+    "description": "Табличная аппроксимация произведения байтов A и B через разность свёрнутых квадратов",
+    "semantic_status": "described"
+  },
+  {
+    "region": "D3D",
+    "name": "LookupPreviewProductC",
+    "address": 54578,
+    "slot": 6,
+    "offset": 5426,
+    "end_offset": 5439,
+    "path": "Source/D3D/LookupPreviewProductC.asm",
+    "description": "Табличная аппроксимация произведения байтов A и C через разность свёрнутых квадратов",
+    "semantic_status": "described"
+  },
+  {
+    "region": "D3D",
+    "name": "LookupPreviewProductD",
+    "address": 54591,
+    "slot": 6,
+    "offset": 5439,
+    "end_offset": 5452,
+    "path": "Source/D3D/LookupPreviewProductD.asm",
+    "description": "Табличная аппроксимация произведения байтов A и D через разность свёрнутых квадратов",
+    "semantic_status": "described"
+  },
+  {
+    "region": "D3D",
+    "name": "CheckPreviewBounds",
+    "address": 60848,
+    "slot": 6,
+    "offset": 11696,
+    "end_offset": 11812,
+    "path": "Source/D3D/CheckPreviewBounds.asm",
+    "description": "Проверка четырёх обёрнутых знаковых границ с табличными размерами и продолжением во вставку очереди",
+    "semantic_status": "described"
+  },
+  {
+    "region": "D3D",
+    "name": "BuildPreviewQueue",
+    "address": 60456,
+    "slot": 6,
+    "offset": 11304,
+    "end_offset": 11696,
+    "path": "Source/D3D/BuildPreviewQueue.asm",
+    "description": "Подготовка коэффициентов, обход исходных записей с шагом 64, преобразование, отбор и сборка очереди перед рисованием",
+    "semantic_status": "described",
+    "fragment_scope": "queue_build_before_render",
+    "whole_ec28_rendering_contract_proved": false
+  },
+  {
+    "region": "D3D",
+    "name": "BuildPreviewModelMatrix",
+    "address": 61278,
+    "slot": 6,
+    "offset": 12126,
+    "end_offset": 12374,
+    "path": "Source/D3D/BuildPreviewModelMatrix.asm",
+    "description": "Матрица ориентации модели по трём байтовым углам либо упрощённая матрица по второму углу",
+    "semantic_status": "described"
+  },
+  {
+    "region": "D3D",
+    "name": "ComposePreviewMatrix",
+    "address": 54604,
+    "slot": 6,
+    "offset": 5452,
+    "end_offset": 6169,
+    "path": "Source/D3D/ComposePreviewMatrix.asm",
+    "description": "Композиция матрицы сцены и модели с отражаемой арифметикой, одноосной ветвью и точными четвертьоборотами",
+    "semantic_status": "described"
+  },
+  {
+    "region": "D3D",
+    "name": "ConfigurePreviewProjectionScale",
+    "address": 56281,
+    "slot": 6,
+    "offset": 7129,
+    "end_offset": 7145,
+    "path": "Source/D3D/ConfigurePreviewProjectionScale.asm",
+    "description": "Настройка трёх последовательностей масштаба проекции по показателю заголовка модели",
+    "semantic_status": "described"
+  },
+  {
+    "region": "D3D",
+    "name": "ProjectPreviewVertex",
+    "address": 55828,
+    "slot": 6,
+    "offset": 6676,
+    "end_offset": 7129,
+    "path": "Source/D3D/ProjectPreviewVertex.asm",
+    "description": "Перспектива одной вершины с двумя знаковыми делениями, маркерами отказа и пятибайтовым шагом рабочего SP",
+    "semantic_status": "described"
+  },
+  {
+    "region": "D3D",
+    "name": "ProjectPreviewVertexGroup",
+    "address": 55560,
+    "slot": 6,
+    "offset": 6408,
+    "end_offset": 6676,
+    "path": "Source/D3D/ProjectPreviewVertexGroup.asm",
+    "description": "Генерация комбинаций вершин по маске с настоящей перспективой, рабочим стеком и восстановлением CPU-возврата",
+    "semantic_status": "described"
   }
 ]

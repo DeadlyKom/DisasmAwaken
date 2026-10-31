@@ -2,8 +2,8 @@
   "method": "actual_file_include_order_physical_offsets_and_disp_origins_against_source_map",
   "passed": true,
   "files": 41,
-  "ranges_checked": 1364,
-  "physical_assertions_checked": 1468,
+  "ranges_checked": 1390,
+  "physical_assertions_checked": 1507,
   "errors": [],
   "assembly_executed": false,
   "misplaced_code_probe_rejected": true

@@ -1,13 +1,13 @@
 {
   "method": "static_source_audit_without_assembly",
-  "included_text_files": 1241,
-  "included_binary_files": 228,
-  "registered_functions": 1101,
+  "included_text_files": 1259,
+  "included_binary_files": 236,
+  "registered_functions": 1113,
   "unlinked_functions": [],
   "missing_includes_or_resources": [],
   "missing_include_order": [],
-  "global_definitions": 10750,
-  "global_references": 8241,
+  "global_definitions": 11277,
+  "global_references": 8763,
   "unresolved_global_references": [],
   "duplicate_global_definitions": [],
   "global_reference_case_mismatches": [],
@@ -511,13 +511,13 @@
     "ThreeD": 23,
     "Controls": 66
   },
-  "potential_continuations": 102,
-  "ordered_fragments": 189,
-  "python_scripts_parsed": 530,
+  "potential_continuations": 104,
+  "ordered_fragments": 192,
+  "python_scripts_parsed": 594,
   "python_duplicate_literal_keys": [],
   "totals": {
     "address_label": 1447,
-    "numeric_control_target": 187,
+    "numeric_control_target": 191,
     "numeric_index_operand": 352,
     "condition_without_data_semantics": 1685,
     "conditional_without_right_comment": 62
@@ -19186,6 +19186,26 @@
     {
       "path": "Source/D3D/MultiplyPreviewCoordinate.asm",
       "line": 151,
+      "issue": "numeric_control_target"
+    },
+    {
+      "path": "Source/D3D/InsertPreviewQueue.asm",
+      "line": 110,
+      "issue": "numeric_control_target"
+    },
+    {
+      "path": "Source/D3D/InsertPreviewQueue.asm",
+      "line": 126,
+      "issue": "numeric_control_target"
+    },
+    {
+      "path": "Source/D3D/InsertPreviewQueue.asm",
+      "line": 140,
+      "issue": "numeric_control_target"
+    },
+    {
+      "path": "Source/D3D/BuildPreviewQueue.asm",
+      "line": 146,
       "issue": "numeric_control_target"
     }
   ],

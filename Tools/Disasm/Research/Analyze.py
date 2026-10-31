@@ -97,6 +97,23 @@ def analyze(name, extra_roots=(), observed=(), initial_bank=None):
         if len(multiply_continuations) != 9:
             raise ValueError("Изменены девять исходных вызовов умножителя D3D")
         roots.update(multiply_continuations)
+        # Поиск всех шести подготовленных целей каждого JR масштаба, исходные FE не отражают рабочие переходы.
+        # Три последних операнда подготавливает проверенный ConfigurePreviewProjectionScale.
+        for address in (0xED5B, 0xEDC3, 0xEDFC, 0xDA1F, 0xDA3A, 0xDAF8):
+            if memory[address:address+7] != bytes.fromhex("18fe2929292929"):
+                raise ValueError("Изменён исходный развёрнутый масштаб D3D")
+            roots.update(address+2+skip for skip in range(6))
+        # Продолжение преобразования задаётся IY, доказанный помощник завершает работу JP (IY).
+        if memory[0xED0A:0xED11] != bytes.fromhex("fd2111edc37eeb"):
+            raise ValueError("Изменено продолжение преобразования D3D")
+        roots.add(0xED11)
+        # Поиск десяти подготовок продолжения через HL перед JP к перспективе.
+        # Маска 81 возвращается в Opposite, который не достигается обычным последовательным декодированием.
+        for address,target in ((0xD987,0xD98D),(0xD99D,0xDA08),(0xD9A7,0xD9AD),(0xD9B4,0xD9BA),(0xD9C1,0xD9C7),(0xD9CE,0xD9D4),(0xD9DB,0xD9E1),(0xD9E8,0xD9EE),(0xD9F5,0xD9FB),(0xDA02,0xDA08)):
+            opcode = 0xC3 if address in (0xD987,0xD99D) else 0xC2
+            if memory[address:address+6] != bytes((0x21,target&255,target>>8,opcode,0x14,0xDA)):
+                raise ValueError("Изменена подготовка продолжения перспективы D3D")
+            roots.add(target)
     # Периодический адрес 68EA записывается DrawItem26, остальные входы достигаются его исходными ветвями.
     if name == "Station":
         roots.update((0x6870, 0x68CC, 0x68EA, 0x693E))

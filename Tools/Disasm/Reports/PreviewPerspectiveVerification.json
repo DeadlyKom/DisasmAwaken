@@ -1,0 +1,36 @@
+{
+  "passed": true,
+  "cases": 350208,
+  "reasons": {
+    "first_axis": 68370,
+    "accepted": 176697,
+    "negative_depth": 40368,
+    "second_axis": 64773
+  },
+  "exponents": {
+    "1": 331466,
+    "2": 3769,
+    "3": 3721,
+    "4": 3786,
+    "5": 3735,
+    "6": 3731
+  },
+  "all_depth_words": true,
+  "all_first_axis_words_at_depths": [
+    1,
+    256,
+    32767
+  ],
+  "all_second_axis_words_at_depth": 3,
+  "all_local_bytes_at_six_scales": true,
+  "independent_signed_division_and_rejection_formula": true,
+  "exact_output_words_and_write_boundaries": true,
+  "real_working_sp_and_indirect_continuation": true,
+  "main_bc_de_hl_and_index_context_checked": true,
+  "exact_af_and_alternate_registers_checked": true,
+  "whole_vertex_group_not_executed": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false,
+  "original_projection_sha256": "e7fbff8ba3ca693c7c10c41024b2ccd51c32208e0153a2c9c8b593494de22b8f"
+}
