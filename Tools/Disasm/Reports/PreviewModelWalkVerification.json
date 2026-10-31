@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "cases": 1516,
+  "entries": {
+    "D896": 643,
+    "D819": 873
+  },
+  "projected_vertices": 31254,
+  "processed_groups": 9788,
+  "synthetic_empty_models": 44,
+  "all_22_original_pointer_slots": true,
+  "unique_physical_models": 10,
+  "physical_groups": 62,
+  "all_relative_planar_angles": true,
+  "independent_full_model_walk_and_register_oracle": true,
+  "real_products_group_projection_scale_and_cpu_return": true,
+  "exact_write_boundaries_checked": true,
+  "planar_game_caller_not_established": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false,
+  "face_pass_not_executed": true
+}

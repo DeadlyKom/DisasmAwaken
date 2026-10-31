@@ -39,3 +39,13 @@
 [ProjectPreviewVertex](../../Source/D3D/ProjectPreviewVertex.asm) — см. [PreviewPerspective](../PreviewPerspective.md).
 
 [ProjectPreviewVertexGroup](../../Source/D3D/ProjectPreviewVertexGroup.asm) — см. [PreviewVertexGroup](../PreviewVertexGroup.md).
+
+[ProjectPlanarVertexGroup](../../Source/D3D/ProjectPlanarVertexGroup.asm) — см. [PreviewVertexProducts](../PreviewVertexProducts.md).
+
+[PreparePreviewVertexProducts](../../Source/D3D/PreparePreviewVertexProducts.asm) — см. [PreviewVertexProducts](../PreviewVertexProducts.md).
+
+[ProjectPlanarModelGroups](../../Source/D3D/ProjectPlanarModelGroups.asm) — см. [PreviewModelGroups](../PreviewModelGroups.md).
+
+[ProjectPreviewModelGroups](../../Source/D3D/ProjectPreviewModelGroups.asm) — см. [PreviewModelGroups](../PreviewModelGroups.md).
+
+[ClassifyPreviewVertices](../../Source/D3D/ClassifyPreviewVertices.asm) — см. [PreviewVertexClass](../PreviewVertexClass.md).

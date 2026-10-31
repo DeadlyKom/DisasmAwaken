@@ -250,6 +250,54 @@ def main():
             raise ValueError('Изменился размер '+structure)
         preview_scene_records[module] = len(names)
 
+    # Проверка реальных структур, меток и каждого исходного байта префиксов моделей.
+    from PreviewModelGroupTables import tables as preview_model_tables, parse as parse_preview_model, STRUCTURES as PREVIEW_MODEL_STRUCTURES
+    preview_model_records = {}
+    for model in preview_model_tables(sources[6]):
+        entries = [item for item in source_map if item['path'] == model['path']]
+        if not entries:
+            continue
+        if len(entries) != 1:
+            raise ValueError('Неоднозначная регистрация групп модели')
+        item = entries[0]
+        if (item['slot'], item['offset'], item['length'], item['origin']) != (6, model['start'], model['end']-model['start'], model['pointer']):
+            raise ValueError('Изменилось физическое размещение групп модели')
+        raw, labels = parse_preview_model((ROOT/model['path']).read_text('utf-8'), model)
+        if raw != sources[6][model['start']:model['end']] or any(symbols.get(key.upper()) != value for key,value in labels.items()):
+            raise ValueError('Изменились исходные байты или метки групп модели')
+        preview_model_records[model['name']] = len(model['groups'])
+    if preview_model_records:
+        for structure,fields in PREVIEW_MODEL_STRUCTURES:
+            offset = 0
+            for field,width,meaning in fields:
+                if symbols.get(structure.upper()+'.'+field.upper()) != offset:
+                    raise ValueError('Изменилось поле структуры модели')
+                offset += width
+            if symbols.get(structure.upper()) != offset:
+                raise ValueError('Изменился размер структуры модели')
+
+    # Проверка физических пятибайтовых записей и хвоста исходной страницы проекции.
+    from PreviewProjectedVertexTable import PATH as PROJECTED_PATH, FIELDS as PROJECTED_FIELDS, parse as parse_projected
+    preview_projected_vertices = 0
+    projected_entries = [item for item in source_map if item['path'] == PROJECTED_PATH]
+    if projected_entries:
+        if len(projected_entries) != 1:
+            raise ValueError('Неоднозначный буфер проекции')
+        item = projected_entries[0]
+        if (item['slot'],item['offset'],item['length'],item['origin']) != (6,0x600,256,0xC600):
+            raise ValueError('Изменилось размещение исходного буфера проекции')
+        raw, labels = parse_projected((ROOT/PROJECTED_PATH).read_text('utf-8'))
+        if raw != sources[6][0x600:0x700] or any(symbols.get(key.upper()) != value for key,value in labels.items()):
+            raise ValueError('Изменились байты или метки исходного буфера проекции')
+        offset = 0
+        for field,width,meaning in PROJECTED_FIELDS:
+            if symbols.get('FPREVIEWPROJECTEDVERTEX.'+field.upper()) != offset:
+                raise ValueError('Изменилось поле пятибайтовой записи')
+            offset += width
+        if symbols.get('FPREVIEWPROJECTEDVERTEX') != 5:
+            raise ValueError('Изменился размер пятибайтовой записи')
+        preview_projected_vertices = 51
+
     # Проверка исходных DB свёрнутых квадратов и точной целочисленной формулы всей страницы.
     from PreviewSquareTable import PATH as PREVIEW_SQUARE_PATH, START as PREVIEW_SQUARE_START, END as PREVIEW_SQUARE_END, parse as parse_preview_square
     preview_square_bytes = 0
@@ -935,6 +983,8 @@ def main():
     report['preview_queue_records'] = preview_queue_records
     report['preview_square_bytes'] = preview_square_bytes
     report['preview_scene_records'] = preview_scene_records
+    report['preview_model_group_records'] = preview_model_records
+    report['preview_projected_vertices'] = preview_projected_vertices
     (ROOT/"Tools/Disasm/Reports/SourceVerification.json").write_text(
         json.dumps(report,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     print(json.dumps(report,ensure_ascii=False,indent=2))

@@ -613,4 +613,13 @@ Vertex6Bit      equ #06                                                         
 Vertex7Bit      equ #07                                                         ; разряд выбора комбинации 7
                 endmodule
 
+                module PreviewVertexClassConst
+InvalidHigh     equ #80                                                         ; маркер раннего отказа в старшем байте второй координаты
+YBelowBit       equ #01                                                         ; номер бита второй координаты меньше нуля
+YAboveBit       equ #00                                                         ; номер бита второй координаты не меньше AfterMaxY
+XBelowBit       equ #03                                                         ; номер бита первой координаты меньше нуля
+XAboveBit       equ #02                                                         ; номер бита первой координаты не меньше AfterMaxX
+CodeInvert      equ #F0                                                         ; маска инверсии старшей тетрады кода сторон
+                endmodule
+
                 endif

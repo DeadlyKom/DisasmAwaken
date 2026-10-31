@@ -793,4 +793,11 @@ DepthVertex6    equ #D9D8                                                       
 DepthVertex7    equ #D9E5                                                       ; операнд третьей компоненты комбинации 7
                 endmodule
 
+                module PreviewPlanarProductsState
+CosFirst        equ #D861                                                       ; операнд косинуса для первого входного параметра
+SinFirst        equ #D869                                                       ; операнд синуса для третьего входного параметра
+SinSecond       equ #D871                                                       ; операнд синуса, отрицаемого перед умножением первого параметра
+CosSecond       equ #D87B                                                       ; операнд косинуса для третьей компоненты третьего параметра
+                endmodule
+
                 endif

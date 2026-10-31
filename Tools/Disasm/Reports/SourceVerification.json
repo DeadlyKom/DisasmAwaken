@@ -1,7 +1,7 @@
 {
   "method": "text_and_resource_comparison_without_assembly",
   "passed": true,
-  "instruction_count": 37014,
+  "instruction_count": 37194,
   "active_allocations": 41,
   "covered_bytes": 479744,
   "interface_records": 46,
@@ -84,5 +84,18 @@
     "PreviewSceneMatrix": 1,
     "PreviewModelPointers": 11,
     "PreviewDrawState": 1
-  }
+  },
+  "preview_model_group_records": {
+    "Orsan": 5,
+    "Memfis": 4,
+    "Dominion": 11,
+    "Baros": 5,
+    "Firs": 6,
+    "Sofist": 8,
+    "Kridon": 5,
+    "Algol": 7,
+    "Protos": 4,
+    "Fervest": 7
+  },
+  "preview_projected_vertices": 51
 }

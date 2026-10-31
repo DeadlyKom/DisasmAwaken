@@ -533,6 +533,19 @@ def main():
         write(path, text)
         symbols.update(labels)
         special[6, start] = (end, path, 0xC000+start)
+    # Исходные заголовки и группы моделей, ручной экспорт здесь не запускается.
+    from PreviewModelGroupTables import tables as preview_model_tables, render as render_preview_model
+    for model in preview_model_tables(data_by_slot[6]):
+        text, labels = render_preview_model(data_by_slot[6], model)
+        write(model['path'], text)
+        symbols.update(labels)
+        special[6, model['start']] = (model['end'], model['path'], model['pointer'])
+    # Исходный рабочий буфер проекции, экспорт на этапе исследования не запускается.
+    from PreviewProjectedVertexTable import PATH as PROJECTED_PATH, render as render_projected
+    text, labels = render_projected(data_by_slot[6])
+    write(PROJECTED_PATH, text)
+    symbols.update(labels)
+    special[6,0x600] = (0x700,PROJECTED_PATH,0xC600)
     # Исходная страница свёрнутых квадратов, формула отдельно подтверждена всеми 256 байтами.
     from PreviewSquareTable import PATH as PREVIEW_SQUARE_PATH, START as PREVIEW_SQUARE_START, END as PREVIEW_SQUARE_END, render as render_preview_square
     text, labels = render_preview_square(data_by_slot[6])

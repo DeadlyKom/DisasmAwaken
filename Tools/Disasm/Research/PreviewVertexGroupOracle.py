@@ -32,12 +32,14 @@ def byte_combinations(u,v,w):
  return values
 
 
-def group(words,thirds,mask,base,exponent,centres,offset,buffer):
+def group(words,thirds,mask,base,exponent,centres,offset,buffer,initial_alternates=None):
  input_low=words[0]&255;words=combinations(*words,packed_negative);thirds=byte_combinations(*thirds)
  if mask==1:vertices=[(words[0],thirds[0])]
  elif mask==129:vertices=[(words[0],thirds[0]),(packed_negative(words[0]),(-thirds[0])&255)]
  else:vertices=[(words[index],thirds[index]) for index in (0,1,3,2,6,7,5,4) if mask&(1<<index)]
- memory=bytearray(buffer);stack=0xC600+offset;reasons=[];alt_af=(0x69,0xCF);alt_bc=0x58BE;alt_de=0x47AD;alt_hl=0x369C;last_success=None;last_flags=0
+ memory=bytearray(buffer);stack=0xC600+offset;reasons=[]
+ alt_af,alt_bc,alt_de,alt_hl=initial_alternates or ((0x69,0xCF),0x58BE,0x47AD,0x369C)
+ last_success=None;last_flags=0
  for packed,third in vertices:
   vertex=(third,packed&255,packed>>8);out=project(vertex,base,exponent,centres);previous=memory[stack-6-0xC5F0]+256*memory[stack-5-0xC5F0]
   context=registers(vertex,base,exponent,centres,stack,previous,initial_alt_af=alt_af,initial_alt_bc=alt_bc)

@@ -12243,5 +12243,62 @@
     "path": "Source/D3D/ProjectPreviewVertexGroup.asm",
     "description": "Генерация комбинаций вершин по маске с настоящей перспективой, рабочим стеком и восстановлением CPU-возврата",
     "semantic_status": "described"
+  },
+  {
+    "region": "D3D",
+    "name": "ProjectPlanarVertexGroup",
+    "address": 55390,
+    "slot": 6,
+    "offset": 6238,
+    "end_offset": 6294,
+    "path": "Source/D3D/ProjectPlanarVertexGroup.asm",
+    "description": "Произведения плоской группы с прямой второй компонентой и переходом к генератору вершин",
+    "semantic_status": "described"
+  },
+  {
+    "region": "D3D",
+    "name": "PreparePreviewVertexProducts",
+    "address": 55486,
+    "slot": 6,
+    "offset": 6334,
+    "end_offset": 6408,
+    "path": "Source/D3D/PreparePreviewVertexProducts.asm",
+    "description": "Девять табличных произведений общей матрицы с последовательным продолжением в генератор группы",
+    "semantic_status": "described",
+    "fragment_scope": "products_then_group",
+    "fallthrough_continuation": 55560
+  },
+  {
+    "region": "D3D",
+    "name": "ProjectPlanarModelGroups",
+    "address": 55321,
+    "slot": 6,
+    "offset": 6169,
+    "end_offset": 6238,
+    "path": "Source/D3D/ProjectPlanarModelGroups.asm",
+    "description": "Подготовка относительного угла плоского входа и проекция всех физических групп выбранной модели",
+    "semantic_status": "described"
+  },
+  {
+    "region": "D3D",
+    "name": "ProjectPreviewModelGroups",
+    "address": 55446,
+    "slot": 6,
+    "offset": 6294,
+    "end_offset": 6334,
+    "path": "Source/D3D/ProjectPreviewModelGroups.asm",
+    "description": "Проекция всех физических групп выбранной модели через общую матрицу и восстановление CPU-стека",
+    "semantic_status": "described"
+  },
+  {
+    "region": "D3D",
+    "name": "ClassifyPreviewVertices",
+    "address": 57158,
+    "slot": 6,
+    "offset": 8006,
+    "end_offset": 8102,
+    "path": "Source/D3D/ClassifyPreviewVertices.asm",
+    "description": "Коды сторон окна для спроецированных вершин, инверсная старшая тетрада и ранний отказ по маркеру 80",
+    "semantic_status": "described"
   }
 ]

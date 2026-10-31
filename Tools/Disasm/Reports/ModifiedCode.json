@@ -7945,5 +7945,221 @@
     "size": 1,
     "target_operation": "LD SP,#C600",
     "path": "Source/D3D/ProjectPreviewVertexGroup.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55397,
+    "target": 55569,
+    "target_instruction": 55567,
+    "size": 1,
+    "target_operation": "LD BC,#0000",
+    "path": "Source/D3D/ProjectPlanarVertexGroup.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55405,
+    "target": 55575,
+    "target_instruction": 55573,
+    "size": 1,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/D3D/ProjectPlanarVertexGroup.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55415,
+    "target": 55638,
+    "target_instruction": 55636,
+    "size": 1,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/D3D/ProjectPlanarVertexGroup.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55423,
+    "target": 55635,
+    "target_instruction": 55634,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/D3D/ProjectPlanarVertexGroup.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55427,
+    "target": 55571,
+    "target_instruction": 55570,
+    "size": 1,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/D3D/ProjectPlanarVertexGroup.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55431,
+    "target": 55572,
+    "target_instruction": 55570,
+    "size": 1,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/D3D/ProjectPlanarVertexGroup.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55434,
+    "target": 55568,
+    "target_instruction": 55567,
+    "size": 1,
+    "target_operation": "LD BC,#0000",
+    "path": "Source/D3D/ProjectPlanarVertexGroup.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55437,
+    "target": 55574,
+    "target_instruction": 55573,
+    "size": 1,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/D3D/ProjectPlanarVertexGroup.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55440,
+    "target": 55637,
+    "target_instruction": 55636,
+    "size": 1,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/D3D/ProjectPlanarVertexGroup.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55493,
+    "target": 55569,
+    "target_instruction": 55567,
+    "size": 1,
+    "target_operation": "LD BC,#0000",
+    "path": "Source/D3D/PreparePreviewVertexProducts.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55501,
+    "target": 55572,
+    "target_instruction": 55570,
+    "size": 1,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/D3D/PreparePreviewVertexProducts.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55509,
+    "target": 55575,
+    "target_instruction": 55573,
+    "size": 1,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/D3D/PreparePreviewVertexProducts.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55517,
+    "target": 55568,
+    "target_instruction": 55567,
+    "size": 1,
+    "target_operation": "LD BC,#0000",
+    "path": "Source/D3D/PreparePreviewVertexProducts.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55525,
+    "target": 55571,
+    "target_instruction": 55570,
+    "size": 1,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/D3D/PreparePreviewVertexProducts.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55533,
+    "target": 55574,
+    "target_instruction": 55573,
+    "size": 1,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/D3D/PreparePreviewVertexProducts.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55541,
+    "target": 55638,
+    "target_instruction": 55636,
+    "size": 1,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/D3D/PreparePreviewVertexProducts.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55549,
+    "target": 55637,
+    "target_instruction": 55636,
+    "size": 1,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/D3D/PreparePreviewVertexProducts.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55557,
+    "target": 55635,
+    "target_instruction": 55634,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/D3D/PreparePreviewVertexProducts.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55336,
+    "target": 55393,
+    "target_instruction": 55392,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/D3D/ProjectPlanarModelGroups.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55339,
+    "target": 55419,
+    "target_instruction": 55418,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/D3D/ProjectPlanarModelGroups.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55344,
+    "target": 55401,
+    "target_instruction": 55400,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/D3D/ProjectPlanarModelGroups.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55347,
+    "target": 55409,
+    "target_instruction": 55408,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/D3D/ProjectPlanarModelGroups.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55362,
+    "target": 55565,
+    "target_instruction": 55564,
+    "size": 1,
+    "target_operation": "LD SP,#C600",
+    "path": "Source/D3D/ProjectPlanarModelGroups.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 55458,
+    "target": 55565,
+    "target_instruction": 55564,
+    "size": 1,
+    "target_operation": "LD SP,#C600",
+    "path": "Source/D3D/ProjectPreviewModelGroups.asm"
   }
 ]

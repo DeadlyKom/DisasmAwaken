@@ -5800,11 +5800,20 @@
   {
     "slot": 6,
     "offset": 1024,
-    "length": 768,
+    "length": 512,
     "kind": "unclassified",
-    "path": "Source/Resources/06_D3D/AfterSquareTable.bin",
+    "path": "Source/Resources/06_D3D/BeforeProjectedVertices.bin",
     "origin": null,
-    "sha256": "f0213770a2b92b9442115ba79b04e9ccb98786a5b9c1647b0b9dbbdc30e45bbf"
+    "sha256": "9b7ef1c85a2d752c2e46ec66e89305673eb5dddeeeb8dbddc4d7416f25f8500f"
+  },
+  {
+    "slot": 6,
+    "offset": 1536,
+    "length": 256,
+    "kind": "typed_data",
+    "path": "Source/D3D/Data/PreviewProjectedVertices.asm",
+    "origin": 50688,
+    "sha256": "5341e6b2646979a70e57653007a1f310169421ec9bdd9f1a5648f75ade005af1"
   },
   {
     "slot": 6,
@@ -5917,11 +5926,38 @@
   {
     "slot": 6,
     "offset": 6169,
-    "length": 239,
-    "kind": "unclassified",
-    "path": "Source/Resources/06_D3D/BeforeVertexGroup.bin",
-    "origin": null,
-    "sha256": "cfc26a41f32c35026d7ccf55e12c66c5a57df1839d133a532e6c4859753b61e5"
+    "length": 69,
+    "kind": "code",
+    "path": "Source/D3D/ProjectPlanarModelGroups.asm",
+    "origin": 55321,
+    "sha256": "acc5eb289dfc9d11aae06ff1eb3643d201d29f69451dca0d12865abc3d2a92cc"
+  },
+  {
+    "slot": 6,
+    "offset": 6238,
+    "length": 56,
+    "kind": "code",
+    "path": "Source/D3D/ProjectPlanarVertexGroup.asm",
+    "origin": 55390,
+    "sha256": "acd313534eeb1658fa4755e5a9e83da66adb4b8d46a5f7799d23acb2f41125b1"
+  },
+  {
+    "slot": 6,
+    "offset": 6294,
+    "length": 40,
+    "kind": "code",
+    "path": "Source/D3D/ProjectPreviewModelGroups.asm",
+    "origin": 55446,
+    "sha256": "518e21d2f0fef0950c93ae8aed5184aebaaeb9c0cacbf0cc8b1a65e69432a4b0"
+  },
+  {
+    "slot": 6,
+    "offset": 6334,
+    "length": 74,
+    "kind": "code",
+    "path": "Source/D3D/PreparePreviewVertexProducts.asm",
+    "origin": 55486,
+    "sha256": "5744b30253423c2e85e3793452cb061e9756aad068136af4cadeedb69dc16f7b"
   },
   {
     "slot": 6,
@@ -5953,11 +5989,29 @@
   {
     "slot": 6,
     "offset": 7145,
-    "length": 1064,
+    "length": 861,
     "kind": "unclassified",
-    "path": "Source/Resources/06_D3D/AfterProjectionScale.bin",
+    "path": "Source/Resources/06_D3D/BeforeVertexClass.bin",
     "origin": null,
-    "sha256": "3decb8bea85e8fe2b7baebc0cbd26c6aae480f6287731ecc129f11ec74051af0"
+    "sha256": "e03f47ffccd5227e568a3f96b37633ed36e70d351eb50e99b113913c27d53abe"
+  },
+  {
+    "slot": 6,
+    "offset": 8006,
+    "length": 96,
+    "kind": "code",
+    "path": "Source/D3D/ClassifyPreviewVertices.asm",
+    "origin": 57158,
+    "sha256": "fceebdd2e3838979186b2e87a162e0e54762a996f7b5b8180a80f83ef95a42f3"
+  },
+  {
+    "slot": 6,
+    "offset": 8102,
+    "length": 107,
+    "kind": "unclassified",
+    "path": "Source/Resources/06_D3D/AfterVertexClass.bin",
+    "origin": null,
+    "sha256": "17a04e9f7df0e1b8c7af5a9a31ea90306837e5ac43985e774ee5ad4794f9d35d"
   },
   {
     "slot": 6,
@@ -6097,11 +6151,182 @@
   {
     "slot": 6,
     "offset": 12374,
-    "length": 1323,
+    "length": 23,
+    "kind": "typed_data",
+    "path": "Source/D3D/Data/ModelGroups/Orsan.asm",
+    "origin": 61526,
+    "sha256": "501b1491e4366c5bf93e2843f1ed9e2efdd5daee785c0e19c32bc144bf637c25"
+  },
+  {
+    "slot": 6,
+    "offset": 12397,
+    "length": 137,
     "kind": "unclassified",
-    "path": "Source/Resources/06_D3D/AfterModelMatrix.bin",
+    "path": "Source/Resources/06_D3D/AfterOrsanGroups.bin",
     "origin": null,
-    "sha256": "b92a902e7d40436b414718ef3292899a6cfdd404040cab49be687402cc393c06"
+    "sha256": "9f289df1f19330b8efc9debf4f2dcf03919452785a394acc4a360f72ba6d67fa"
+  },
+  {
+    "slot": 6,
+    "offset": 12534,
+    "length": 19,
+    "kind": "typed_data",
+    "path": "Source/D3D/Data/ModelGroups/Memfis.asm",
+    "origin": 61686,
+    "sha256": "563f30e989ad0656e7fe3075768c32269984ebdba2767a22990f38865cde06d8"
+  },
+  {
+    "slot": 6,
+    "offset": 12553,
+    "length": 90,
+    "kind": "unclassified",
+    "path": "Source/Resources/06_D3D/AfterMemfisGroups.bin",
+    "origin": null,
+    "sha256": "c843dd407a9263dfd4b79eb9e618f92cc68d92d053e4ab16ff9d3d713aa3a695"
+  },
+  {
+    "slot": 6,
+    "offset": 12643,
+    "length": 47,
+    "kind": "typed_data",
+    "path": "Source/D3D/Data/ModelGroups/Dominion.asm",
+    "origin": 61795,
+    "sha256": "a692910179e12f68ded0adc98e7fdca26d39240558715e02b594d01b0e769003"
+  },
+  {
+    "slot": 6,
+    "offset": 12690,
+    "length": 100,
+    "kind": "unclassified",
+    "path": "Source/Resources/06_D3D/AfterDominionGroups.bin",
+    "origin": null,
+    "sha256": "35bb69dceee06651011167f952613a611071bccc3ec3ba379b4eadec26332486"
+  },
+  {
+    "slot": 6,
+    "offset": 12790,
+    "length": 23,
+    "kind": "typed_data",
+    "path": "Source/D3D/Data/ModelGroups/Baros.asm",
+    "origin": 61942,
+    "sha256": "843f3bcaf225cee0c5f44d855aa0e39387e712db505f362a45316de94760cade"
+  },
+  {
+    "slot": 6,
+    "offset": 12813,
+    "length": 100,
+    "kind": "unclassified",
+    "path": "Source/Resources/06_D3D/AfterBarosGroups.bin",
+    "origin": null,
+    "sha256": "157edfa5331905ae790e6735f3c1c6fee1e6437a2c5cee722bf6c3a28da18191"
+  },
+  {
+    "slot": 6,
+    "offset": 12913,
+    "length": 27,
+    "kind": "typed_data",
+    "path": "Source/D3D/Data/ModelGroups/Firs.asm",
+    "origin": 62065,
+    "sha256": "b502ffe12579348cba3bb98af86e1660a49bbf85b3b70f3e1ab29549de6306ee"
+  },
+  {
+    "slot": 6,
+    "offset": 12940,
+    "length": 52,
+    "kind": "unclassified",
+    "path": "Source/Resources/06_D3D/AfterFirsGroups.bin",
+    "origin": null,
+    "sha256": "21f59272ef4b412d2e57fb902711bf9f827469e0619c7cd651f7e0af41591b73"
+  },
+  {
+    "slot": 6,
+    "offset": 12992,
+    "length": 35,
+    "kind": "typed_data",
+    "path": "Source/D3D/Data/ModelGroups/Sofist.asm",
+    "origin": 62144,
+    "sha256": "8b3f7c860e0285076ebab68a2de07428b94c48a750dce43b72236cf48f9ea318"
+  },
+  {
+    "slot": 6,
+    "offset": 13027,
+    "length": 92,
+    "kind": "unclassified",
+    "path": "Source/Resources/06_D3D/AfterSofistGroups.bin",
+    "origin": null,
+    "sha256": "1e96bace55fdf0978eb53973552fb9e60cb8cb833e1414a14d37eb36d3644749"
+  },
+  {
+    "slot": 6,
+    "offset": 13119,
+    "length": 23,
+    "kind": "typed_data",
+    "path": "Source/D3D/Data/ModelGroups/Kridon.asm",
+    "origin": 62271,
+    "sha256": "c38d37f4733e0b22dd8ae7d99e9c2504c2e1618763f7087fd34b4ebded34d47f"
+  },
+  {
+    "slot": 6,
+    "offset": 13142,
+    "length": 85,
+    "kind": "unclassified",
+    "path": "Source/Resources/06_D3D/AfterKridonGroups.bin",
+    "origin": null,
+    "sha256": "4ad9e0a215a234f4c3dffd3e2f890d8f7cf71f212323ffedc9dd6196816d897b"
+  },
+  {
+    "slot": 6,
+    "offset": 13227,
+    "length": 31,
+    "kind": "typed_data",
+    "path": "Source/D3D/Data/ModelGroups/Algol.asm",
+    "origin": 62379,
+    "sha256": "da09826212b255743f33a392e2d499d5807f29cf2b9ccd20bfcf83a89b473169"
+  },
+  {
+    "slot": 6,
+    "offset": 13258,
+    "length": 157,
+    "kind": "unclassified",
+    "path": "Source/Resources/06_D3D/AfterAlgolGroups.bin",
+    "origin": null,
+    "sha256": "e3939f432c72127d56d451b66a0474f1e9d4e655bc5bff9818516cdc1dd96c8f"
+  },
+  {
+    "slot": 6,
+    "offset": 13415,
+    "length": 19,
+    "kind": "typed_data",
+    "path": "Source/D3D/Data/ModelGroups/Protos.asm",
+    "origin": 62567,
+    "sha256": "7f649dc4db363c433bbd2743f1daab5a985e7b73a0dc3fb28c24936b041b6665"
+  },
+  {
+    "slot": 6,
+    "offset": 13434,
+    "length": 87,
+    "kind": "unclassified",
+    "path": "Source/Resources/06_D3D/AfterProtosGroups.bin",
+    "origin": null,
+    "sha256": "f118b7122e1e52c2dfdf91f725b90c5a336e7e1e31ec03116675c197afd4d366"
+  },
+  {
+    "slot": 6,
+    "offset": 13521,
+    "length": 31,
+    "kind": "typed_data",
+    "path": "Source/D3D/Data/ModelGroups/Fervest.asm",
+    "origin": 62673,
+    "sha256": "5e1f39daf6b3ef793f79103a89c8a78d768a93e462ba7ffcd647656a83e163c4"
+  },
+  {
+    "slot": 6,
+    "offset": 13552,
+    "length": 145,
+    "kind": "unclassified",
+    "path": "Source/Resources/06_D3D/AfterFervestGroups.bin",
+    "origin": null,
+    "sha256": "58a7ce45151f19b8520ba0b7e7220ca8261c5a4d334b84b70ead6f2760ad12cc"
   },
   {
     "slot": 6,

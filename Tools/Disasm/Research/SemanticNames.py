@@ -159,6 +159,9 @@ def name_operands(region, function_address, operation):
     operation = preview_projection_scale_name_operands(region, function_address, operation)
     operation = preview_perspective_name_operands(region, function_address, operation)
     operation = preview_vertex_group_name_operands(region, function_address, operation)
+    operation = previewvertexclass_name_operands(region, function_address, operation)
+    operation = previewmodelwalk_name_operands(region, function_address, operation)
+    operation = previewvertexproducts_name_operands(region, function_address, operation)
     operation = map_point_chain_name_operands(region, function_address, operation)
     operation = map_line_name_operands(region, function_address, operation)
     operation = arc_closing_name_operands(region, function_address, operation)
@@ -1037,3 +1040,15 @@ DOCUMENTS.update(PREVIEW_PERSPECTIVE_DOCUMENTS)
 from PreviewVertexGroupFacts import LABELS as PREVIEW_VERTEX_GROUP_LABELS, DOCUMENTS as PREVIEW_VERTEX_GROUP_DOCUMENTS, name_operands as preview_vertex_group_name_operands
 LABELS.update(PREVIEW_VERTEX_GROUP_LABELS)
 DOCUMENTS.update(PREVIEW_VERTEX_GROUP_DOCUMENTS)
+
+from PreviewVertexProductsFacts import LABELS as PREVIEW_VERTEX_PRODUCTS_LABELS, DOCUMENTS as PREVIEW_VERTEX_PRODUCTS_DOCUMENTS, name_operands as previewvertexproducts_name_operands
+LABELS.update(PREVIEW_VERTEX_PRODUCTS_LABELS)
+DOCUMENTS.update(PREVIEW_VERTEX_PRODUCTS_DOCUMENTS)
+
+from PreviewModelWalkFacts import LABELS as PREVIEW_MODEL_WALK_LABELS, DOCUMENTS as PREVIEW_MODEL_WALK_DOCUMENTS, name_operands as previewmodelwalk_name_operands
+LABELS.update(PREVIEW_MODEL_WALK_LABELS)
+DOCUMENTS.update(PREVIEW_MODEL_WALK_DOCUMENTS)
+
+from PreviewVertexClassFacts import LABELS as PREVIEW_VERTEX_CLASS_LABELS, DOCUMENTS as PREVIEW_VERTEX_CLASS_DOCUMENTS, name_operands as previewvertexclass_name_operands
+LABELS.update(PREVIEW_VERTEX_CLASS_LABELS)
+DOCUMENTS.update(PREVIEW_VERTEX_CLASS_DOCUMENTS)

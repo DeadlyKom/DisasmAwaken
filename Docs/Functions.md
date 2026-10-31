@@ -16,7 +16,7 @@
 | StationFinalExit | 1 | 1 | [Факты](FunctionDetails/StationFinalExit.md) |
 | Station | 422 | 368 | [Факты](FunctionDetails/Station.md) |
 | Text | 126 | 126 | [Факты](FunctionDetails/Text.md) |
-| D3D | 20 | 20 | [Факты](FunctionDetails/D3D.md) |
+| D3D | 25 | 25 | [Факты](FunctionDetails/D3D.md) |
 | Map | 89 | 89 | [Факты](FunctionDetails/Map.md) |
 | Help | 4 | 4 | [Факты](FunctionDetails/Help.md) |
 | Music | 27 | 13 | [Факты](FunctionDetails/Music.md) |
@@ -1266,3 +1266,13 @@
 | #DA14, банк 4 | [D3D.ProjectPreviewVertex](../Source/D3D/ProjectPreviewVertex.asm) | Перспектива одной вершины с двумя знаковыми делениями, маркерами отказа и пятибайтовым шагом рабочего SP |
 
 | #D908, банк 4 | [D3D.ProjectPreviewVertexGroup](../Source/D3D/ProjectPreviewVertexGroup.asm) | Генерация комбинаций вершин по маске с настоящей перспективой, рабочим стеком и восстановлением CPU-возврата |
+
+| #D85E, банк 4 | [D3D.ProjectPlanarVertexGroup](../Source/D3D/ProjectPlanarVertexGroup.asm) | Произведения плоской группы с прямой второй компонентой и переходом к генератору вершин |
+
+| #D8BE, банк 4 | [D3D.PreparePreviewVertexProducts](../Source/D3D/PreparePreviewVertexProducts.asm) | Девять табличных произведений общей матрицы с последовательным продолжением в генератор группы |
+
+| #D819, банк 4 | [D3D.ProjectPlanarModelGroups](../Source/D3D/ProjectPlanarModelGroups.asm) | Подготовка относительного угла плоского входа и проекция всех физических групп выбранной модели |
+
+| #D896, банк 4 | [D3D.ProjectPreviewModelGroups](../Source/D3D/ProjectPreviewModelGroups.asm) | Проекция всех физических групп выбранной модели через общую матрицу и восстановление CPU-стека |
+
+| #DF46, банк 4 | [D3D.ClassifyPreviewVertices](../Source/D3D/ClassifyPreviewVertices.asm) | Коды сторон окна для спроецированных вершин, инверсная старшая тетрада и ранний отказ по маркеру 80 |

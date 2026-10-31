@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "typed_bytes": 278,
+  "headers": 10,
+  "groups": 62,
+  "single_byte_terminators": 10,
+  "structures": 2,
+  "scoped_candidate_and_history": true,
+  "physical_bytes_preserved": true,
+  "assembly_executed": false
+}

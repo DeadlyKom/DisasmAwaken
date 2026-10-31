@@ -400,8 +400,8 @@
     }
   ],
   "sector_sha256": "672578dc75c56674e98f8c104e792fd649b9e172d68ab3093a33d26f4124bfe5",
-  "static_baseline_instruction_count": 3143,
-  "static_baseline_code_bytes": 5774,
+  "static_baseline_instruction_count": 3207,
+  "static_baseline_code_bytes": 5899,
   "unique_observed_instructions": 2573,
   "observed_missing_from_static": [
     53744,
@@ -654,11 +654,11 @@
     60084,
     60085
   ],
-  "expanded_instruction_count": 3432,
-  "expanded_code_bytes": 6271,
+  "expanded_instruction_count": 3496,
+  "expanded_code_bytes": 6396,
   "expanded_overlaps": [],
   "observed_original_decode_mismatches": [],
-  "registered_source_instructions": 1523,
+  "registered_source_instructions": 1703,
   "registered_source_missing_from_expanded": [],
   "changed_original_instructions": [
     {

@@ -23,7 +23,11 @@
                 include "../D3D/Data/FoldedSquare127.asm"
                 ent
                 assert $ == #0400
-                incbin "../Resources/06_D3D/AfterSquareTable.bin"
+                incbin "../Resources/06_D3D/BeforeProjectedVertices.bin"
+                assert $ == #0600
+                disp #C600
+                include "../D3D/Data/PreviewProjectedVertices.asm"
+                ent
                 assert $ == #0700
                 assert $ == #0700
                 disp #C700
@@ -70,10 +74,27 @@
                 include "../D3D/ComposePreviewMatrix.asm"
                 ent
                 assert $ == #1819
-                incbin "../Resources/06_D3D/BeforeVertexGroup.bin"
+                disp #D819
+                include "../D3D/ProjectPlanarModelGroups.asm"
+                ent
+                assert $ == #185E
+                assert $ == #185E
+                disp #D85E
+                include "../D3D/ProjectPlanarVertexGroup.asm"
+                ent
+                assert $ == #1896
+                disp #D896
+                include "../D3D/ProjectPreviewModelGroups.asm"
+                ent
+                assert $ == #18BE
+                assert $ == #18BE
+                disp #D8BE
+                include "../D3D/PreparePreviewVertexProducts.asm"               ; (0) жёсткий порядок, последовательное исполнение
+                ent
+                assert $ == #1908
                 assert $ == #1908
                 disp #D908
-                include "../D3D/ProjectPreviewVertexGroup.asm"
+                include "../D3D/ProjectPreviewVertexGroup.asm"                  ; (1) жёсткий порядок, последовательное исполнение
                 ent
                 assert $ == #1A14
                 assert $ == #1A14
@@ -86,7 +107,14 @@
                 include "../D3D/ConfigurePreviewProjectionScale.asm"
                 ent
                 assert $ == #1BE9
-                incbin "../Resources/06_D3D/AfterProjectionScale.bin"
+                incbin "../Resources/06_D3D/BeforeVertexClass.bin"
+                assert $ == #1F46
+                disp #DF46
+                include "../D3D/ClassifyPreviewVertices.asm"
+                ent
+                assert $ == #1FA6
+                incbin "../Resources/06_D3D/AfterVertexClass.bin"
+                assert $ == #2011
                 assert $ == #2011
                 assert $ == #2011
                 assert $ == #2011
@@ -150,7 +178,66 @@
                 include "../D3D/BuildPreviewModelMatrix.asm"
                 ent
                 assert $ == #3056
-                incbin "../Resources/06_D3D/AfterModelMatrix.bin"
+                disp #F056
+                include "../D3D/Data/ModelGroups/Orsan.asm"
+                ent
+                assert $ == #306D
+                incbin "../Resources/06_D3D/AfterOrsanGroups.bin"
+                assert $ == #30F6
+                disp #F0F6
+                include "../D3D/Data/ModelGroups/Memfis.asm"
+                ent
+                assert $ == #3109
+                incbin "../Resources/06_D3D/AfterMemfisGroups.bin"
+                assert $ == #3163
+                disp #F163
+                include "../D3D/Data/ModelGroups/Dominion.asm"
+                ent
+                assert $ == #3192
+                incbin "../Resources/06_D3D/AfterDominionGroups.bin"
+                assert $ == #31F6
+                disp #F1F6
+                include "../D3D/Data/ModelGroups/Baros.asm"
+                ent
+                assert $ == #320D
+                incbin "../Resources/06_D3D/AfterBarosGroups.bin"
+                assert $ == #3271
+                disp #F271
+                include "../D3D/Data/ModelGroups/Firs.asm"
+                ent
+                assert $ == #328C
+                incbin "../Resources/06_D3D/AfterFirsGroups.bin"
+                assert $ == #32C0
+                disp #F2C0
+                include "../D3D/Data/ModelGroups/Sofist.asm"
+                ent
+                assert $ == #32E3
+                incbin "../Resources/06_D3D/AfterSofistGroups.bin"
+                assert $ == #333F
+                disp #F33F
+                include "../D3D/Data/ModelGroups/Kridon.asm"
+                ent
+                assert $ == #3356
+                incbin "../Resources/06_D3D/AfterKridonGroups.bin"
+                assert $ == #33AB
+                disp #F3AB
+                include "../D3D/Data/ModelGroups/Algol.asm"
+                ent
+                assert $ == #33CA
+                incbin "../Resources/06_D3D/AfterAlgolGroups.bin"
+                assert $ == #3467
+                disp #F467
+                include "../D3D/Data/ModelGroups/Protos.asm"
+                ent
+                assert $ == #347A
+                incbin "../Resources/06_D3D/AfterProtosGroups.bin"
+                assert $ == #34D1
+                disp #F4D1
+                include "../D3D/Data/ModelGroups/Fervest.asm"
+                ent
+                assert $ == #34F0
+                incbin "../Resources/06_D3D/AfterFervestGroups.bin"
+                assert $ == #3581
                 assert $ == #3581
                 assert $ == #3581
                 assert $ == #3581

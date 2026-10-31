@@ -926,4 +926,27 @@ NextFree        db #00                                                          
                 ends
                 assert FPreviewDrawState == #0A
 
+                ; Документация [заголовки и физические группы](../../Docs/PreviewModelGroups.md)
+                struct FPreviewModelHeader
+Size            db #00                                                          ; исходный размер модели, первый байт заголовка
+ScaleFlags      db #00                                                          ; биты 6..0 показатель масштаба, бит 7 отдельный признак второго ключа
+                ends
+                assert FPreviewModelHeader == #02
+
+                struct FPreviewVertexGroup
+Mask            db #00                                                          ; маска комбинаций вершин 7..0, нуль является однобайтовым концом списка
+ParamFirst      db #00                                                          ; первый байтовый параметр группы, вход B поставщика
+ParamSecond     db #00                                                          ; второй байтовый параметр группы, вход C поставщика
+ParamThird      db #00                                                          ; третий байтовый параметр группы, вход D поставщика
+                ends
+                assert FPreviewVertexGroup == #04
+
+                ; Документация [пятибайтовая запись проекции](../../Docs/PreviewVertexClass.md)
+                struct FPreviewProjectedVertex
+SecondAxis      dw #0000                                                        ; слово второй координаты с центром HalfY
+FirstAxis       dw #0000                                                        ; слово первой координаты с центром HalfX
+Outcode         db #00                                                          ; код сторон, младшая тетрада прямая, старшая инверсная
+                ends
+                assert FPreviewProjectedVertex == #05
+
                 endif

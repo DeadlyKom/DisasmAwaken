@@ -114,6 +114,10 @@ def analyze(name, extra_roots=(), observed=(), initial_bank=None):
             if memory[address:address+6] != bytes((0x21,target&255,target>>8,opcode,0x14,0xDA)):
                 raise ValueError("Изменена подготовка продолжения перспективы D3D")
             roots.add(target)
+        # Проверка самостоятельного плоского входа, его полный проход доказан моделью, игровой вызывающий путь ещё не установлен.
+        if memory[0xD819:0xD822] != bytes.fromhex("3a01c2473a1fc29047"):
+            raise ValueError("Изменено начало плоского обхода D3D")
+        roots.add(0xD819)
     # Периодический адрес 68EA записывается DrawItem26, остальные входы достигаются его исходными ветвями.
     if name == "Station":
         roots.update((0x6870, 0x68CC, 0x68EA, 0x693E))

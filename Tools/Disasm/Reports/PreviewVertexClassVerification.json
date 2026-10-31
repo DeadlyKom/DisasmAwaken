@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "cases": 199008,
+  "outcomes": {
+    "completed": 198459,
+    "marker_80": 549
+  },
+  "codes": [
+    90,
+    105,
+    120,
+    150,
+    165,
+    180,
+    210,
+    225,
+    240
+  ],
+  "all_coordinate_words_on_both_axes": true,
+  "all_byte_thresholds_and_coordinates": true,
+  "all_modular_counters_checked": true,
+  "empty_offset_04_cases": 1,
+  "exact_main_alternate_and_index_registers": true,
+  "exact_partial_writes_and_cpu_stack": true,
+  "independent_coordinate_and_modular_buffer_model": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false,
+  "face_dispatch_not_executed": true
+}

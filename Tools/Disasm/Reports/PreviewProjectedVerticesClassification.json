@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "typed_bytes": 256,
+  "records": 51,
+  "record_size": 5,
+  "tail_bytes": 1,
+  "original_initial_values_preserved": true,
+  "scoped_candidate_and_history": true,
+  "assembly_executed": false
+}
