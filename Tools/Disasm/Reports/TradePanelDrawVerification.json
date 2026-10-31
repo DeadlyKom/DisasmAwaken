@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "cases": 48,
+  "numeric_paths": 36,
+  "header_rejection_paths": 12,
+  "disabled_entry_cases": 256,
+  "row_count_written_to_hover_operand": true,
+  "selection_reset_to_ff": true,
+  "header_and_numeric_bitmap_compared": true,
+  "caption_uses_separate_contract": true,
+  "real_caption_header_names_numbers_and_glyphs": true,
+  "explicit_halt_wakeups": 48,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

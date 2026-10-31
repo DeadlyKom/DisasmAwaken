@@ -4,9 +4,12 @@ from pathlib import Path
 import hashlib
 import json
 import re
+import sys
 
 
 ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT / "Tools/Disasm/Research"))
+from MarketScriptTable import PATH as MARKET_SCRIPT_PATH, START as MARKET_SCRIPT_START, parse as parse_market_script
 
 
 def structure_symbols():
@@ -134,6 +137,25 @@ def main():
             code_count += len(actual)
     if not all(all(c) for c in coverage.values()):
         raise ValueError("Неполное покрытие действующих областей")
+
+    # Проверка фактически записанного CP866-сценария по DB и адресам его именованных входов.
+    market_script_bytes = 0
+    market_script_labels = 0
+    script_entries = [item for item in source_map if item["path"] == MARKET_SCRIPT_PATH]
+    if script_entries:
+        if len(script_entries) != 1:
+            raise ValueError("Сценарий зарегистрирован неоднозначно")
+        item = script_entries[0]
+        raw, labels = parse_market_script((ROOT / MARKET_SCRIPT_PATH).read_text(encoding="utf-8"))
+        end = sources[5].index(0, MARKET_SCRIPT_START) + 1
+        if (item["slot"], item["offset"], item["length"], item["origin"]) != (5, MARKET_SCRIPT_START, end - MARKET_SCRIPT_START, 0xC000 + MARKET_SCRIPT_START):
+            raise ValueError("Неверная физическая граница сценария")
+        if raw != sources[5][MARKET_SCRIPT_START:end]:
+            raise ValueError("Изменились исходные байты сценария LANG")
+        if any(symbols.get(key.upper()) != value for key, value in labels.items()):
+            raise ValueError("Адреса меток сценария отличаются от реестра")
+        market_script_bytes = len(raw)
+        market_script_labels = len(labels)
 
     # Проверка физических инициализаторов интерфейса по полям его структуры.
     text = (ROOT/"Source/Station/Data/InterfaceItems.asm").read_text(encoding="utf-8")
@@ -427,6 +449,19 @@ def main():
         if raw != sources[4][0x21B4:0x21BD]:
             raise ValueError("Изменились имя либо тип ACTION")
         action_file_keys = 1
+
+    # Проверка физического имени FINALF в перенесённом финальном выходе.
+    final_file_keys = 0
+    path = "Source/StationFinalExit/Data/FinalFileName.asm"
+    if any(item["path"] == path for item in source_map):
+        text = (ROOT / path).read_text(encoding="utf-8")
+        found = re.findall(r'FTrDosFileKey\s*\{\s*\{\s*"([^"]*)"\s*\}\s*,\s*#([0-9A-Fa-f]+)\s*\}', text)
+        if len(found) != 1 or len(found[0][0]) != 8:
+            raise ValueError("Не найден физический ключ FINALF")
+        raw = found[0][0].encode("ascii") + bytes([int(found[0][1], 16)])
+        if raw != sources[4][0x1119:0x1122]:
+            raise ValueError("Изменились имя либо тип FINALF")
+        final_file_keys = 1
 
     # Проверка семи LF-строк, шести физических порогов и подписи ранга.
     rank_threshold_records = 0
@@ -749,7 +784,7 @@ def main():
                   instruction_count=code_count, active_allocations=len(coverage),
                   covered_bytes=sum(len(c) for c in coverage.values()),
                   interface_records=len(records), script_token_records=len(tokens), texture_phase_records=len(phases), glyph_route_records=len(glyph_routes), packed_screens=len(screens),
-                  pointer_records=pointer_counts, mouse_records=mouse_records, pointer_input_records=pointer_input_records, station_irq_records=station_irq_records, matrix_key_records=matrix_key_records, setting_records=setting_records, setting_text_bytes=setting_text_bytes, context_menu_bytes=context_menu_bytes, random_state_records=random_state_records, signature_input_records=signature_input_records, market_records=market_records, assignment_records=assignment_records, action_file_keys=action_file_keys, expression_stack_records=expression_stack_records, rank_threshold_records=rank_threshold_records, rank_text_bytes=rank_text_bytes, mission_offer_records=mission_offer_records, system_prefix_bytes=system_prefix_bytes, mission_message_bytes=mission_message_bytes, mission_text_bytes=mission_text_bytes, stored_map_point_records=stored_map_point_records, stored_map_order_records=stored_map_order_records, clip_work_records=clip_work_records, clip_output_size_bytes=clip_output_size_bytes, semantic_completeness_proved=False)
+                  pointer_records=pointer_counts, mouse_records=mouse_records, pointer_input_records=pointer_input_records, station_irq_records=station_irq_records, matrix_key_records=matrix_key_records, setting_records=setting_records, setting_text_bytes=setting_text_bytes, context_menu_bytes=context_menu_bytes, random_state_records=random_state_records, signature_input_records=signature_input_records, market_records=market_records, assignment_records=assignment_records, action_file_keys=action_file_keys, final_file_keys=final_file_keys, expression_stack_records=expression_stack_records, rank_threshold_records=rank_threshold_records, rank_text_bytes=rank_text_bytes, mission_offer_records=mission_offer_records, system_prefix_bytes=system_prefix_bytes, mission_message_bytes=mission_message_bytes, mission_text_bytes=mission_text_bytes, stored_map_point_records=stored_map_point_records, stored_map_order_records=stored_map_order_records, clip_work_records=clip_work_records, clip_output_size_bytes=clip_output_size_bytes, semantic_completeness_proved=False)
     report['map_line_records'] = map_line_records
     report['map_chain_point_records'] = map_chain_point_records
     report['arc_workspace_records'] = arc_workspace_records
@@ -758,6 +793,8 @@ def main():
     report['variant_sprite_phases'] = variant_sprite_phases
     report['auxiliary_map_keys'] = auxiliary_map_keys
     report['auxiliary_map_code_bytes'] = auxiliary_map_code_bytes
+    report['market_script_bytes'] = market_script_bytes
+    report['market_script_labels'] = market_script_labels
     (ROOT/"Tools/Disasm/Reports/SourceVerification.json").write_text(
         json.dumps(report,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     print(json.dumps(report,ensure_ascii=False,indent=2))

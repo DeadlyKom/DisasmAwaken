@@ -1,6 +1,8 @@
 # Торговый язык LANG.C
 
 Вход интерпретатора — `#C000`, начало текста — `#CA8F`.
+Активные байты вынесены в [MarketScript.asm](../Source/Text/Data/MarketScript.asm),
+проверенные ветви товаров описаны в [OriginalTradeScript](OriginalTradeScript.md).
 Символы и таблицы проверены по самому файлу. [Исходный сценарий](MarketScript.txt)
 сохранён в UTF-8 для чтения, сборка использует исходные байты CP866.
 
@@ -153,7 +155,7 @@ CPU-стек при таком обработчике восстанавлива
 | #CA10 | `k` | [Text.Property073](../Source/Text/Property073.asm) |
 | #CA13 | `c` | [Text.GetCargoSecondByte](../Source/Text/GetCargoSecondByte.asm) |
 | #CA16 | `c` | [Text.GetMarketPrice](../Source/Text/GetMarketPrice.asm) |
-| #CA19 | `s` | [Text.IsMarketMarkClear](../Source/Text/IsMarketMarkClear.asm) |
+| #CA19 | `s` | [Text.IsMarketSaleLegal](../Source/Text/IsMarketSaleLegal.asm) |
 | #CA1C | `m` | [Text.GetIndexedLoad](../Source/Text/GetIndexedLoad.asm) |
 | #CA1F | `c` | [Text.ReadStrideFiveWord](../Source/Text/ReadStrideFiveWord.asm) |
 | #CA22 | `t` | [Text.ReadStrideFiveByte](../Source/Text/ReadStrideFiveByte.asm) |

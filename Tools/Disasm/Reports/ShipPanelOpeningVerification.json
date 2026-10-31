@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "cases": 4096,
+  "real_reset_and_banking": true,
+  "all_saved_height_and_frame_flag_bytes": true,
+  "all_physical_record_fields_compared": true,
+  "empty_reversed_aliased_and_duplicate_lists": true,
+  "disabled_opcodes_retained": true,
+  "no_immediate_screen_drawing": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

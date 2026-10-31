@@ -1292,11 +1292,11 @@
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## IsMarketMarkClear
+## IsMarketSaleLegal
 
-[Text.IsMarketMarkClear](../../Source/Text/IsMarketMarkClear.asm)
+[Text.IsMarketSaleLegal](../../Source/Text/IsMarketSaleLegal.asm)
 
-Проверка снятого bit7 строки рынка по стековому индексу.
+Проверка разрешённой продажи товара по снятому bit7 рыночной записи.
 
 Вход `#C5CD`, запись 5, смещения `#05CD..#05DE`.
 

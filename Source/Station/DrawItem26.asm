@@ -24,7 +24,7 @@ Entry:          LD HL, #0000
                 JR NC, @Station.DrawItem26.Point6891                            ; переход, если флаг Carry сброшен
 
 
-                LD HL, #68EA
+                LD HL, @Station.Unknown68EA.Entry
 Point6891:      LD (#9A89), HL
                 EX DE, HL
                 ADD HL, HL
@@ -41,7 +41,7 @@ Point6891:      LD (#9A89), HL
                 LD A, (#AEAB)
                 SUB #0E
                 LD H, A
-                LD A, (#6906)
+                LD A, (@ShipPanelState.Selector)
                 CALL #E13C
                 LD HL, (#9A89)
                 LD DE, #9A58
@@ -51,7 +51,7 @@ Point6891:      LD (#9A89), HL
 
 
                 HALT
-                LD A, (#6906)
+                LD A, (@ShipPanelState.Selector)
                 CALL #E07F
 Point68C6:      LD A, #10
                 CALL @Station.SelectRamBank.Entry

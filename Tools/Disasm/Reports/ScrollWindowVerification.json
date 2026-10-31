@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "down_gate_cases": 196608,
+  "accepted_down_gates": 196564,
+  "all_index_words": true,
+  "visible_row_gate_values": [
+    1,
+    8,
+    31
+  ],
+  "whole_cases": 204,
+  "early_height_rejections": 12,
+  "rendered_steps": 180,
+  "explicit_halt_wakeups": 180,
+  "real_clear_trade_callback_and_pointer": true,
+  "base_bitmap_and_shadow_bitmap_and_attributes_compared": true,
+  "input_codes_and_pointer_y_mutated_at_poll_boundaries": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

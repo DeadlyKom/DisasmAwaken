@@ -16,7 +16,7 @@ Entry:          RET
 Point67AA:      CALL @Station.BeginScreenUpdate.Entry
                 LD A, #14
                 CALL @Station.SelectRamBank.Entry
-                LD A, (#67D7)
+                LD A, (@PanelHoverState.ShipsRow)
                 CP #FF
                 JR Z, @Station.Unknown67A9.Point67BC
 
@@ -27,7 +27,7 @@ Point67BC:      LD A, #10
                 LD (#6933), HL
                 CALL @Station.EndScreenUpdate.Entry
                 LD A, #01
-                LD (#68EB), A
+                LD (@ShipPanelState.PendingRedraw), A
                 RET
 
                 endmodule

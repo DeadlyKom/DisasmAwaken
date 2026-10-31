@@ -124,7 +124,7 @@ RemoveLoad:     LD A, (#9852)
                 LD A, #16
                 CALL @Station.SelectMemoryPage.Entry
                 LD A, #11
-                LD (#983A), A
+                LD (@ScriptCallState.EventCode), A
                 CALL @Text.RunMarketScript.Entry
                 ; возврат станции, обновление статуса и замена предложения настоящим генератором
                 LD A, #10

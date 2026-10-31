@@ -122,5 +122,5 @@ COMMENTS={
 
 def name_operands(region,address,operation):
  if region=='Text' and address in FUNCTIONS:
-  return operation.replace('(#C01C)','(@ScriptRuntimeState.SavedSP)').replace('(#C028)','(@ScriptRuntimeState.StopAtLine)')
+  return operation.replace('(#C01C)','(@ScriptRuntimeState.SavedSP)').replace('(#C028)','(@ScriptRuntimeState.StopAtLine)').replace('LD IX, #CA8F','LD IX, @MarketScript.Entry')
  return operation

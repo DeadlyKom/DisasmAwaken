@@ -38,7 +38,7 @@ COMMENTS={
  0xC277:(['выбор внутреннего ReadStock для пути без точки, индекс снимается только суффиксными обработчиками'],None),
  0xC27D:(['расчёт двухбайтового смещения по полному HL без обрезания до байта'],None),
  0xC27E:(['выбор массива текущего рынка для прямого чтения количества'],None),
- 0xC281:(['расчёт адреса StockAndMark с шестнадцатибитным оборачиванием'],None),
+ 0xC281:(['расчёт адреса StockAndSaleBan с шестнадцатибитным оборачиванием'],None),
  0xC283:(['удаление bit7 маркера перед возвратом байтового количества'],None),
  0xC285:(['передача количества в DE как результата выражения языка'],None),
  0xC5DF:(['чтение стекового индекса поверх адреса возврата'],None),
@@ -50,5 +50,5 @@ COMMENTS={
 def name_operands(region,address,operation):
  if region!='Text':return operation
  if address==0xC26D:
-  operation=operation.replace('#C27D','@Text.ReadMarketField.ReadStock').replace('#9555','@MarketRows.Row00.StockAndMark')
+  operation=operation.replace('#C27D','@Text.ReadMarketField.ReadStock').replace('#9555','@MarketRows.Row00.StockAndSaleBan')
  return operation

@@ -70,8 +70,8 @@ COMMENTS={
  0xA9B2:(['обнуление количества при нехватке до порога 10'],None),
  0xA9B3:(['объединение нового количества и разрешённого новым режимом маркера'],None),
  0xA9B6:(['расчёт маски сохранения старого bit7 как MarkMode XOR #80'],None),
- 0xA9BD:(['обновление StockAndMark, прочие прежние разряды в двух поддержанных режимах не сохраняются'],None),
- 0xA9BF:(['расчёт скидки min((StockAndMark >> 1) AND #3F, 8), Carry после RRA удаляется маской'],None),
+ 0xA9BD:(['обновление StockAndSaleBan, прочие прежние разряды в двух поддержанных режимах не сохраняются'],None),
+ 0xA9BF:(['расчёт скидки min((StockAndSaleBan >> 1) AND #3F, 8), Carry после RRA удаляется маской'],None),
  0xA9C2:(['проверка верхней границы скидки 8'],None),
  0xA9C4:([], 'переход, если половина количества меньше 8, оставить вычисленную скидку'),
  0xA9C8:(['расчёт обратной разности скидка - цена, затем NEG восстанавливает положительную цену'],None),
@@ -93,4 +93,5 @@ def name_operands(region,address,operation):
                   '#A8B1':'@RandomStates.Seed1.HighByte','#94DC':'@MarketCategories.Category00',
                   '#9518':'@MarketRules.Rule00','#9556':'@MarketRows.Row00.Price'}.items():operation=operation.replace(raw,name)
  operation=operation.replace('(IX + #00)','(IX + @FMarketRule.BasePrice)').replace('(IX + #01)','(IX + @FMarketRule.StockRule)')
+ operation=operation.replace('XOR #80','XOR @MarketRowConst.SaleBanMask')
  return operation

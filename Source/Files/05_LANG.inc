@@ -372,7 +372,7 @@
                 ent
                 assert $ == #05CD
                 disp #C5CD
-                include "../Text/IsMarketMarkClear.asm"
+                include "../Text/IsMarketSaleLegal.asm"
                 ent
                 assert $ == #05DF
                 disp #C5DF
@@ -520,6 +520,13 @@
                 include "../Text/Data/AssignmentScratch.asm"
                 ent
                 assert $ == #0A81
-                ; Unknown, исходные байты вне подтверждённой рабочей записи
-                incbin "../Resources/05_LANG/AfterAssignmentScratch.bin"
+                ; Unknown, четырнадцать исходных байтов между рабочей записью и сценарием
+                incbin "../Resources/05_LANG/BeforeMarketScript.bin"
+                assert $ == #0A8F
+                disp #CA8F
+                include "../Text/Data/MarketScript.asm"
+                ent
+                assert $ == #0F18
+                ; исходный хвост после первого NUL, дополнительные потребители пока не установлены
+                incbin "../Resources/05_LANG/AfterMarketScript.bin"
                 assert $ == #1000

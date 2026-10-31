@@ -77,7 +77,7 @@
     {
       "index": 35,
       "address": 32119,
-      "path": "Source/Station/DrawItem35.asm"
+      "path": "Source/Station/DrawSellControl.asm"
     },
     {
       "index": 4,
@@ -97,7 +97,7 @@
     {
       "index": 7,
       "address": 32281,
-      "path": "Source/Station/DrawItem07.asm"
+      "path": "Source/Station/DrawShipControl.asm"
     },
     {
       "index": 8,

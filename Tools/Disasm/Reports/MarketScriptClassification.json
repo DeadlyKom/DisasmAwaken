@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "original_range_bytes": 1407,
+  "prefix_unknown_bytes": 14,
+  "script_bytes": 1161,
+  "tail_preserved_bytes": 232,
+  "script_labels": 12,
+  "all_original_bytes_preserved": true,
+  "source_bytes_verified_without_assembly": true,
+  "ordinary_build_requires_python": false,
+  "assembly_executed": false
+}

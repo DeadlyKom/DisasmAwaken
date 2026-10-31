@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "changed_files": 19,
+  "physical_field": "FMarketRow.StockAndSaleBan",
+  "illegal_sale_proof": "OriginalTradeScriptVerification.json",
+  "code_and_data_bytes_unchanged": true,
+  "assembly_executed": false,
+  "python_templates_rechecked_without_asm_alignment": [
+    "Tools/Disasm/Research/CheckMarketAccess.py",
+    "Tools/Disasm/Research/MarketAccessFacts.py",
+    "Tools/Disasm/Research/MarketFacts.py",
+    "Tools/Disasm/Research/MarketFieldFacts.py",
+    "Tools/Disasm/Research/MarketTables.py",
+    "Tools/Disasm/Research/PromoteMarketLegality.py",
+    "Tools/Disasm/Research/TradeNumericColumnFacts.py"
+  ],
+  "migration_script_excluded_from_own_replacements": true
+}

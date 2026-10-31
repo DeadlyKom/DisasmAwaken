@@ -6,7 +6,7 @@
                 DW @Station.DrawItem04.Entry
                 DW @Station.DrawItem05.Entry
                 DW @Station.DrawItem06.Entry
-                DW @Station.DrawItem07.Entry
+                DW @Station.DrawShipControl.Entry
                 DW @Station.DrawItem08.Entry
                 DW @Station.DrawItem09.Entry
                 DW @Station.DrawItem45.Entry

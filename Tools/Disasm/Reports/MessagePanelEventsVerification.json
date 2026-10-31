@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "event_cases": 1048,
+  "removed_cases": 383,
+  "redrawn_cases": 16,
+  "bit7_early_cases": 520,
+  "hover_cases": 1024,
+  "explicit_halt_wakeups": 16,
+  "visited_event_instructions": [
+    28101,
+    28104,
+    28105,
+    28106,
+    28109,
+    28112,
+    28113,
+    28114,
+    28290,
+    28293,
+    28294
+  ],
+  "all_selector_bytes_without_redraw": true,
+  "real_repaint_and_list_helpers": true,
+  "geometry_action_disabled_in_fixture": true,
+  "active_callback_disabled_in_fixture": true,
+  "independent_full_bitmap_oracle": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

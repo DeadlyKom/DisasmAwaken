@@ -23,8 +23,8 @@ Entry:          RET C                                                           
                 LD A, #10
                 CALL @Station.SelectRamBank.Entry
                 LD A, #01
-                LD (#68EB), A
-                LD A, (#6906)
+                LD (@ShipPanelState.PendingRedraw), A
+                LD A, (@ShipPanelState.Selector)
                 OR A
                 LD A, (#9849)
                 JR Z, @Station.Unknown7A24.Point7A44                            ; переход, если флаг Z установлен
@@ -38,7 +38,7 @@ Point7A44:      INC A
 
 
                 LD A, #01
-                LD (#79DD), A
+                LD (@ShipPanelState.OwnedMode), A
                 EX DE, HL
                 JP @Station.SwitchItemContour.Entry
 

@@ -320,7 +320,7 @@ LowerC4:        FScriptToken {
                 }
 LowerS5:        FScriptToken {
                     #73,                                                        ; Symbol, исходный ASCII-код
-                    @Text.IsMarketMarkClear.Entry                               ; Handler, адрес из исходной записи
+                    @Text.IsMarketSaleLegal.Entry                               ; Handler, адрес из исходной записи
                 }
 LowerM:         FScriptToken {
                     #6D,                                                        ; Symbol, исходный ASCII-код

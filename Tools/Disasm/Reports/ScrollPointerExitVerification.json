@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "cases": 1536,
+  "all_pointer_y_0_191": true,
+  "pointer_x": [
+    0,
+    7,
+    248,
+    255
+  ],
+  "saved_xy_popped_before_return": true,
+  "bitmap_and_attributes_compared": true,
+  "real_resume_pointer": true,
+  "owner_zero_fixture": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "cases": 32,
+  "active_status_draw_cases": 16,
+  "event_codes": [
+    0,
+    9,
+    10,
+    255
+  ],
+  "real_banked_interpreter_entry_and_return": true,
+  "script_input_fixture": "NUL at CA8F in modeled LANG bank only",
+  "original_trade_script_commands_executed": false,
+  "real_status_and_trade_drawers": true,
+  "actual_call_order_and_ports_checked": true,
+  "explicit_halt_wakeups": 32,
+  "independent_whole_screen_oracle_in_this_model": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

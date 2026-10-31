@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "instructions": 38,
+  "code_bytes": 92,
+  "typed_filename_bytes": 9,
+  "original_physical_bytes_preserved": true,
+  "stored_address": 28177,
+  "execution_address": 16384,
+  "method": "scoped_candidate_original_bytes_control_flow_and_full_source_map_verification",
+  "assembly_executed": false
+}

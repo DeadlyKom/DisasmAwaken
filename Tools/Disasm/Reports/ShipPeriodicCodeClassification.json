@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "added_instructions": 36,
+  "added_code_bytes": 85,
+  "new_unknown_fragments": 4,
+  "old_instruction_records_preserved": true,
+  "conditional_fallthrough_order_explicit": true,
+  "scoped_candidate_and_history": true,
+  "full_semantic_analysis_complete": false,
+  "assembly_executed": false
+}

@@ -33,7 +33,7 @@ Point742E:      LD A, I
                 PUSH AF
                 PUSH DE
                 LD IY, #5C3A
-                LD A, (#7489)
+                LD A, (@PanelHoverState.ToPositionRow)
                 ADD A, #30
                 LD HL, #7534
                 LD (HL), A
@@ -59,7 +59,7 @@ Point742E:      LD A, I
                 POP HL
                 POP IY
                 CALL #C873
-                LD A, (#7489)
+                LD A, (@PanelHoverState.ToPositionRow)
                 RET
 
                 endmodule

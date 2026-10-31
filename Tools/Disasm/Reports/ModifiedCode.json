@@ -510,7 +510,7 @@
     "target_instruction": 26582,
     "size": 1,
     "target_operation": "LD A,#FF",
-    "path": "Source/Station/Unknown67D0.asm"
+    "path": "Source/Station/UpdateShipListHover.asm"
   },
   {
     "region": "Station",
@@ -573,7 +573,7 @@
     "target_instruction": 27217,
     "size": 1,
     "target_operation": "LD A,#FF",
-    "path": "Source/Station/Unknown6A4B.asm"
+    "path": "Source/Station/UpdateIndexListHover.asm"
   },
   {
     "region": "Station",
@@ -627,7 +627,7 @@
     "target_instruction": 27540,
     "size": 1,
     "target_operation": "LD A,#FF",
-    "path": "Source/Station/Unknown6B8E.asm"
+    "path": "Source/Station/UpdateEnvironmentHover.asm"
   },
   {
     "region": "Station",
@@ -717,7 +717,7 @@
     "target_instruction": 48421,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Station/DrawItem24.asm"
+    "path": "Source/Station/DrawDecodedMessagePanel.asm"
   },
   {
     "region": "Station",
@@ -753,7 +753,7 @@
     "target_instruction": 28775,
     "size": 1,
     "target_operation": "LD A,#FF",
-    "path": "Source/Station/Unknown7044.asm"
+    "path": "Source/Station/RunTradeEventAndRedraw.asm"
   },
   {
     "region": "Station",
@@ -762,7 +762,7 @@
     "target_instruction": 28775,
     "size": 1,
     "target_operation": "LD A,#FF",
-    "path": "Source/Station/DrawItem34.asm"
+    "path": "Source/Station/DrawTradePanel.asm"
   },
   {
     "region": "Station",
@@ -771,7 +771,7 @@
     "target_instruction": 28769,
     "size": 1,
     "target_operation": "LD DE,#1E23",
-    "path": "Source/Station/DrawItem34.asm"
+    "path": "Source/Station/DrawTradePanel.asm"
   },
   {
     "region": "Station",
@@ -780,7 +780,7 @@
     "target_instruction": 48421,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Station/Unknown7154.asm"
+    "path": "Source/Station/SetMarketTextColumns.asm"
   },
   {
     "region": "Station",
@@ -789,7 +789,7 @@
     "target_instruction": 48498,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Station/Unknown7154.asm"
+    "path": "Source/Station/SetMarketTextColumns.asm"
   },
   {
     "region": "Station",
@@ -798,7 +798,7 @@
     "target_instruction": 48509,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Station/Unknown7154.asm"
+    "path": "Source/Station/SetMarketTextColumns.asm"
   },
   {
     "region": "Station",
@@ -807,7 +807,7 @@
     "target_instruction": 48520,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Station/Unknown7154.asm"
+    "path": "Source/Station/SetMarketTextColumns.asm"
   },
   {
     "region": "Station",
@@ -816,7 +816,7 @@
     "target_instruction": 48531,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Station/Unknown7154.asm"
+    "path": "Source/Station/SetMarketTextColumns.asm"
   },
   {
     "region": "Station",
@@ -825,7 +825,7 @@
     "target_instruction": 48542,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Station/Unknown7154.asm"
+    "path": "Source/Station/SetMarketTextColumns.asm"
   },
   {
     "region": "Station",
@@ -834,7 +834,7 @@
     "target_instruction": 29206,
     "size": 1,
     "target_operation": "LD A,#FF",
-    "path": "Source/Station/Unknown7210.asm"
+    "path": "Source/Station/UpdateEquipmentHover.asm"
   },
   {
     "region": "Station",
@@ -924,7 +924,7 @@
     "target_instruction": 29832,
     "size": 1,
     "target_operation": "LD A,#FF",
-    "path": "Source/Station/Unknown7482.asm"
+    "path": "Source/Station/UpdateToPositionHover.asm"
   },
   {
     "region": "Station",
@@ -951,7 +951,7 @@
     "target_instruction": 29969,
     "size": 1,
     "target_operation": "LD A,#FF",
-    "path": "Source/Station/Unknown750B.asm"
+    "path": "Source/Station/UpdateFromPositionHover.asm"
   },
   {
     "region": "Station",
@@ -1005,7 +1005,7 @@
     "target_instruction": 30246,
     "size": 1,
     "target_operation": "LD A,#FF",
-    "path": "Source/Station/Unknown7620.asm"
+    "path": "Source/Station/UpdateGameSettingsHover.asm"
   },
   {
     "region": "Station",
@@ -1122,7 +1122,7 @@
     "target_instruction": 28775,
     "size": 1,
     "target_operation": "LD A,#FF",
-    "path": "Source/Station/Unknown7D63.asm"
+    "path": "Source/Station/SellCurrentCargo.asm"
   },
   {
     "region": "Station",
@@ -1131,7 +1131,7 @@
     "target_instruction": 27339,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Station/Unknown7DC5.asm"
+    "path": "Source/Station/OpenEquipmentPanels.asm"
   },
   {
     "region": "Station",
@@ -1140,7 +1140,7 @@
     "target_instruction": 26582,
     "size": 1,
     "target_operation": "LD A,#FF",
-    "path": "Source/Station/Unknown7E1F.asm"
+    "path": "Source/Station/ResetShipPanelSelection.asm"
   },
   {
     "region": "Station",
@@ -1149,7 +1149,7 @@
     "target_instruction": 31196,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Station/Unknown7E1F.asm"
+    "path": "Source/Station/ResetShipPanelSelection.asm"
   },
   {
     "region": "Station",

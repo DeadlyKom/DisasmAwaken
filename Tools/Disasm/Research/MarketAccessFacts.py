@@ -4,7 +4,7 @@ FUNCTIONS = {
     0xC4D7: ("ReadStridedWord", "Чтение слова с шагом два по индексу из CPU-стека"),
     0xC4E3: ("ReadStridedByte", "Чтение байта с шагом два по индексу из CPU-стека"),
     0xC5C7: ("GetMarketPrice", "Чтение текущей цены строки рынка по стековому индексу"),
-    0xC5CD: ("IsMarketMarkClear", "Проверка снятого bit7 строки рынка по стековому индексу"),
+    0xC5CD: ("IsMarketSaleLegal", "Проверка разрешённой продажи товара по снятому bit7 рыночной записи"),
 }
 DOCUMENTS = {("Text", address): ("MarketAccess", "стековый договор чтения полей и проверка маркера")
              for address in FUNCTIONS}
@@ -43,13 +43,15 @@ CONTRACTS = {
         ["HL, DE, AF"],
         [*NOTES, "общий хвост ReadStridedByte.ReadAtBase использует базу #9556"]),
     ("Text", 0xC5CD): (
-        [*STACK, "для строки рынка допустим логический индекс 0..29, проверяется StockAndMark"],
-        ["HL=MarketRows.Row00.StockAndMark + 2*индекс, DE=1 при снятом bit7, иначе 0",
-         "AF - A=E, при снятом bit7 F=0, при установленном F=#90 OR (StockAndMark AND #28)",
+        [*STACK, "для строки рынка допустим логический индекс 0..29, проверяется StockAndSaleBan"],
+        ["HL=MarketRows.Row00.StockAndSaleBan + 2*индекс, DE=1 при снятом bit7, иначе 0",
+         "AF - A=E, при снятом bit7 F=0, при установленном F=#90 OR (StockAndSaleBan AND #28)",
          PRESERVED],
         ["HL, DE, AF"],
         [*NOTES, "Z=0 при обоих результатах, результат запроса нужно брать из DE, а не из Z",
-         "игровое назначение bit7 не доказано, имя описывает точный проверяемый разряд"]),
+         "DE=1 означает отсутствие штрафного запрета продажи, исходные события 10 и 11 при DE=0 назначают штраф и списание количества груза",
+         "предметный смысл доказан исполнением исходного сценария, роль старшего разряда грузовой записи этим не приравнивается к рынку",
+         "Сценарий [незаконная продажа и штраф](../../Docs/OriginalTradeScript.md) проверен отдельно"]),
 }
 COMMENTS = {
     0xC4D7: (["выбор исходной базы слов, игровой смысл таблицы #9592 пока не установлен"], None),
@@ -66,12 +68,12 @@ COMMENTS = {
     0xC4EB: (["чтение байта и расширение результата DE нулевым старшим байтом"], None),
     0xC5C7: (["выбор поля Price первой физической строки рынка"], None),
     0xC5CD: (["чтение стекового индекса, старший байт затем отбрасывается"], None),
-    0xC5D0: (["выбор поля StockAndMark первой физической строки рынка"], None),
+    0xC5D0: (["выбор поля StockAndSaleBan первой физической строки рынка"], None),
     0xC5D3: (["расчёт двухбайтового смещения рыночной строки"], None),
-    0xC5D4: (["расчёт адреса StockAndMark выбранной строки"], None),
+    0xC5D4: (["расчёт адреса StockAndSaleBan выбранной строки"], None),
     0xC5D5: (["выбор результата ложь до проверки старшего маркера"], None),
-    0xC5D6: (["проверка bit7 StockAndMark, игровые единицы этого маркера не установлены"], None),
-    0xC5D8: ([], "переход, если bit7 StockAndMark установлен, вернуть нулевой результат"),
+    0xC5D6: (["флаг, запрет продажи StockAndSaleBan выбирает ложь для штрафной ветви сценария"], None),
+    0xC5D8: ([], "переход, если bit7 StockAndSaleBan установлен, вернуть нулевой результат"),
     0xC5DA: (["выбор результата истина при снятом старшем маркере"], None),
     0xC5DB: (["возврат логического результата в DE с нулевым D"], None),
 }
@@ -81,7 +83,8 @@ def name_operands(region, address, operation):
     if region == "Text" and address == 0xC5C7:
         operation = operation.replace("#9556", "@MarketRows.Row00.Price")
     if region == "Text" and address == 0xC5CD:
-        operation = operation.replace("#9555", "@MarketRows.Row00.StockAndMark")
+        operation = operation.replace("#9555", "@MarketRows.Row00.StockAndSaleBan")
+        operation = operation.replace("BIT 7,", "BIT @MarketRowConst.SaleBanBit,")
     return operation
 
 

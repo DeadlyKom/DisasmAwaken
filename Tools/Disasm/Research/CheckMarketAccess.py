@@ -41,7 +41,7 @@ def main():
     assert r[8:12]==initial[8:12] and r[16:24]==initial[16:24]
     count+=1
   counts[hex(entry)]=count
- # Проверка каждого байта StockAndMark при всех индексах без ограничения исходными 30 строками.
+ # Проверка каждого байта StockAndSaleBan при всех индексах без ограничения исходными 30 строками.
  for index in range(256):
   for value in range(256):
    simulator.registers[:]=initial;r=simulator.registers

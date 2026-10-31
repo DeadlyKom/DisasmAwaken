@@ -165,15 +165,15 @@ MaskRandom:     LD A, E
 MergeMark:      EXX
                 OR D
                 LD D, A
-                ; расчёт маски сохранения старого bit7 как MarkMode XOR #80
+                ; расчёт маски сохранения старого bit7 как MarkMode XOR @MarketRowConst.SaleBanMask
                 LD A, (@MarketState.MarkMode)
-                XOR #80
+                XOR @MarketRowConst.SaleBanMask
                 AND (HL)
                 OR D
-                ; обновление StockAndMark, прочие прежние разряды в двух поддержанных режимах не сохраняются
+                ; обновление StockAndSaleBan, прочие прежние разряды в двух поддержанных режимах не сохраняются
                 LD (HL), A
                 INC HL
-                ; расчёт скидки min((StockAndMark >> 1) AND #3F, 8), Carry после RRA удаляется маской
+                ; расчёт скидки min((StockAndSaleBan >> 1) AND #3F, 8), Carry после RRA удаляется маской
                 RRA
                 AND #3F
                 ; проверка верхней границы скидки 8

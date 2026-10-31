@@ -61,6 +61,8 @@ def continuity(functions, flow):
 def format_function(text, target=None):
     lines = []
     for line in text.splitlines():
+        if line.lstrip().startswith(";"):
+            line = " " * 16 + line.lstrip()
         if BOILERPLATE.fullmatch(line):
             continue
         op = operation(line)
@@ -80,6 +82,20 @@ def format_function(text, target=None):
             previous = operation(lines[begin-1]) if begin else ""
             gap = [""] if re.match(r"^(?:JP|JR|DJNZ|RET|RETI|RETN)(?:\s|$)", previous) else []
             lines[begin:end] = [*gap, continuation, ""]
+    # Закрытие внутренних смысловых разделов перед концом модуля, без добавления инструкции.
+    end = next((i for i, line in enumerate(lines) if operation(line).lower() == "endmodule"), len(lines))
+    seen_code = False
+    has_internal_sections = False
+    divider = "; -----------------------------------------"
+    for line in lines[:end]:
+        op = operation(line)
+        if op and not op.lower().startswith("module "):
+            seen_code = True
+        if seen_code and line.strip() == divider:
+            has_internal_sections = True
+    last = next((line.strip() for line in reversed(lines[:end]) if line.strip()), "")
+    if has_internal_sections and last != divider:
+        lines.insert(end, " " * 16 + divider)
     result = "\n".join(lines).rstrip() + "\n"
     if instructions(result) != instructions(text):
         raise ValueError("Оформление изменило последовательность инструкций")

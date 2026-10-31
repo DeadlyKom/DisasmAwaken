@@ -179,7 +179,7 @@
                 assert $ == #0A7C
                 assert $ == #0A7C
                 disp #67D0
-                include "../Station/Unknown67D0.asm"
+                include "../Station/UpdateShipListHover.asm"
                 ent
                 assert $ == #0A8C
                 disp #67E0
@@ -200,15 +200,23 @@
                 include "../Station/Unknown686F.asm"
                 ent
                 assert $ == #0B1C
-                ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/04_STATIONF/Unclassified009.bin"
+                disp #6870
+                include "../Station/Unknown6870.asm"                            ; (0) жёсткий порядок, последовательное исполнение
+                ent
+                assert $ == #0B23
                 assert $ == #0B23
                 disp #6877
-                include "../Station/DrawItem26.asm"
+                include "../Station/DrawItem26.asm"                             ; (1) жёсткий порядок, последовательное исполнение
                 ent
                 assert $ == #0B78
-                ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/04_STATIONF/Unclassified010.bin"
+                disp #68CC
+                include "../Station/Unknown68CC.asm"
+                ent
+                assert $ == #0B96
+                disp #68EA
+                include "../Station/Unknown68EA.asm"
+                ent
+                assert $ == #0BBF
                 assert $ == #0BBF
                 disp #6913
                 include "../Station/HandleItem27.asm"
@@ -224,11 +232,13 @@
                 include "../Station/Unknown693D.asm"
                 ent
                 assert $ == #0BEA
-                ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/04_STATIONF/Unclassified012.bin"
+                disp #693E
+                include "../Station/Unknown693E.asm"                            ; (0) жёсткий порядок, последовательное исполнение
+                ent
+                assert $ == #0BF1
                 assert $ == #0BF1
                 disp #6945
-                include "../Station/DrawItem27.asm"
+                include "../Station/DrawItem27.asm"                             ; (1) жёсткий порядок, последовательное исполнение
                 ent
                 assert $ == #0BFE
                 disp #6952
@@ -278,7 +288,7 @@
                 assert $ == #0CF7
                 assert $ == #0CF7
                 disp #6A4B
-                include "../Station/Unknown6A4B.asm"
+                include "../Station/UpdateIndexListHover.asm"
                 ent
                 assert $ == #0D07
                 disp #6A5B
@@ -332,7 +342,7 @@
                 assert $ == #0E3A
                 assert $ == #0E3A
                 disp #6B8E
-                include "../Station/Unknown6B8E.asm"
+                include "../Station/UpdateEnvironmentHover.asm"
                 ent
                 assert $ == #0E4A
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
@@ -395,46 +405,52 @@
                 ent
                 assert $ == #106E
                 disp #6DC2
-                include "../Station/HandleItem24.asm"
+                include "../Station/HandleDecodedMessageHover.asm"
                 ent
                 assert $ == #1071
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
                 disp #6DC5
-                include "../Station/Unknown6DC5.asm"
+                include "../Station/HandleDecodedMessageClick.asm"
                 ent
                 assert $ == #107F
                 assert $ == #107F
                 disp #6DD3
-                include "../Station/Unknown6DD3.asm"
+                include "../Station/ReturnDecodedMessageHover.asm"
                 ent
                 assert $ == #1080
                 disp #6DD4
-                include "../Station/DrawItem24.asm"
+                include "../Station/DrawDecodedMessagePanel.asm"
                 ent
                 assert $ == #10BD
-                ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/04_STATIONF/Unclassified023.bin"
+                ; исходные байты 6E11..6E75, исполнение загрузчика после переноса в 4000
+                disp #4000
+                include "../StationFinalExit/LoadFinal.asm"
+                ent
+                assert $ == #1119
+                disp #405C
+                include "../StationFinalExit/Data/FinalFileName.asm"
+                ent
                 assert $ == #1122
                 disp #6E76
-                include "../Station/Unknown6E76.asm"
+                include "../Station/PrintDecodedMessage.asm"
                 ent
                 assert $ == #112B
                 disp #6E7F
-                include "../Station/HandleItem10.asm"
+                include "../Station/HandleQueuedMessageHover.asm"
                 ent
                 assert $ == #112E
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
                 disp #6E82
-                include "../Station/Unknown6E82.asm"
+                include "../Station/HandleQueuedMessageClick.asm"
                 ent
                 assert $ == #1135
                 assert $ == #1135
                 disp #6E89
-                include "../Station/Unknown6E89.asm"
+                include "../Station/ReturnQueuedMessageHover.asm"
                 ent
                 assert $ == #1136
                 disp #6E8A
-                include "../Station/DrawItem10.asm"
+                include "../Station/DrawQueuedMessagePanel.asm"
                 ent
                 assert $ == #1145
                 disp #6E99
@@ -468,29 +484,34 @@
                 ent
                 assert $ == #129A
                 disp #6FEE
-                include "../Station/HandleItem34.asm"
+                include "../Station/HandleTradePanelHover.asm"
                 ent
                 assert $ == #129D
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
                 disp #6FF1
-                include "../Station/Unknown6FF1.asm"                            ; (0) жёсткий порядок, последовательное исполнение
+                include "../Station/HandleTradePanelClick.asm"                  ; (0) жёсткий порядок, последовательное исполнение
                 ent
                 assert $ == #12F0
                 assert $ == #12F0
                 disp #7044
-                include "../Station/Unknown7044.asm"                            ; (1) жёсткий порядок, последовательное исполнение
+                include "../Station/RunTradeEventAndRedraw.asm"                 ; (1) жёсткий порядок, последовательное исполнение
+                ent
+                assert $ == #130D
+                disp #7061
+                include "../Station/UpdateTradeRowHover.asm"
                 ent
                 assert $ == #131D
+                assert $ == #131D
                 disp #7071
-                include "../Station/DrawItem34.asm"
+                include "../Station/DrawTradePanel.asm"
                 ent
                 assert $ == #1342
                 disp #7096
-                include "../Station/Unknown7096.asm"
+                include "../Station/DrawTradeNumericColumns.asm"
                 ent
                 assert $ == #1400
                 disp #7154
-                include "../Station/Unknown7154.asm"
+                include "../Station/SetMarketTextColumns.asm"
                 ent
                 assert $ == #141E
                 disp #7172
@@ -504,7 +525,7 @@
                 assert $ == #14BC
                 assert $ == #14BC
                 disp #7210
-                include "../Station/Unknown7210.asm"
+                include "../Station/UpdateEquipmentHover.asm"
                 ent
                 assert $ == #14CC
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
@@ -539,7 +560,7 @@
                 assert $ == #172E
                 assert $ == #172E
                 disp #7482
-                include "../Station/Unknown7482.asm"
+                include "../Station/UpdateToPositionHover.asm"
                 ent
                 assert $ == #173E
                 disp #7492
@@ -557,7 +578,7 @@
                 assert $ == #17B7
                 assert $ == #17B7
                 disp #750B
-                include "../Station/Unknown750B.asm"
+                include "../Station/UpdateFromPositionHover.asm"
                 ent
                 assert $ == #17C7
                 disp #751B
@@ -594,7 +615,7 @@
                 assert $ == #18CC
                 assert $ == #18CC
                 disp #7620
-                include "../Station/Unknown7620.asm"
+                include "../Station/UpdateGameSettingsHover.asm"
                 ent
                 assert $ == #18DC
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
@@ -906,23 +927,23 @@
                 ent
                 assert $ == #2005
                 disp #7D59
-                include "../Station/HandleItem35.asm"
+                include "../Station/HandleSellControl.asm"
                 ent
                 assert $ == #200F
                 disp #7D63
-                include "../Station/Unknown7D63.asm"
+                include "../Station/SellCurrentCargo.asm"
                 ent
                 assert $ == #2023
                 disp #7D77
-                include "../Station/DrawItem35.asm"
+                include "../Station/DrawSellControl.asm"
                 ent
                 assert $ == #2029
                 disp #7D7D
-                include "../Station/HandleItem04.asm"
+                include "../Station/HandleContractsControl.asm"
                 ent
                 assert $ == #2033
                 disp #7D87
-                include "../Station/Unknown7D87.asm"
+                include "../Station/OpenContractPanels.asm"
                 ent
                 assert $ == #2045
                 disp #7D99
@@ -930,11 +951,11 @@
                 ent
                 assert $ == #204B
                 disp #7D9F
-                include "../Station/HandleItem05.asm"
+                include "../Station/HandleTradeControl.asm"
                 ent
                 assert $ == #2055
                 disp #7DA9
-                include "../Station/Unknown7DA9.asm"
+                include "../Station/OpenTradePanels.asm"
                 ent
                 assert $ == #2061
                 disp #7DB5
@@ -942,11 +963,11 @@
                 ent
                 assert $ == #2067
                 disp #7DBB
-                include "../Station/HandleItem06.asm"
+                include "../Station/HandleEquipmentControl.asm"
                 ent
                 assert $ == #2071
                 disp #7DC5
-                include "../Station/Unknown7DC5.asm"
+                include "../Station/OpenEquipmentPanels.asm"
                 ent
                 assert $ == #208D
                 disp #7DE1
@@ -954,19 +975,19 @@
                 ent
                 assert $ == #2093
                 disp #7DE7
-                include "../Station/HandleItem07.asm"
+                include "../Station/HandleShipControl.asm"
                 ent
                 assert $ == #209D
                 disp #7DF1
-                include "../Station/Unknown7DF1.asm"
+                include "../Station/OpenShipPanels.asm"
                 ent
                 assert $ == #20C5
                 disp #7E19
-                include "../Station/DrawItem07.asm"
+                include "../Station/DrawShipControl.asm"
                 ent
                 assert $ == #20CB
                 disp #7E1F
-                include "../Station/Unknown7E1F.asm"
+                include "../Station/ResetShipPanelSelection.asm"
                 ent
                 assert $ == #20FF
                 disp #7E53
@@ -1228,15 +1249,20 @@
                 assert $ == #4191
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
                 disp #A191
-                include "../Station/UnknownA191.asm"
+                include "../Station/ParseSettingsLabel.asm"
+                ent
+                assert $ == #41CD
+                disp #A1CD
+                include "../Station/RestoreScrollPointer.asm"
                 ent
                 assert $ == #41D6
+                assert $ == #41D6
                 disp #A1D6
-                include "../Station/UnknownA1D6.asm"
+                include "../Station/ScrollWindowRows.asm"
                 ent
                 assert $ == #426F
                 disp #A26F
-                include "../Station/UnknownA26F.asm"
+                include "../Station/XorRowIfSelected.asm"
                 ent
                 assert $ == #4280
                 assert $ == #4280
@@ -1853,7 +1879,7 @@
                 assert $ == #66B0
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
                 disp #C6B0
-                include "../Station/UnknownC6B0.asm"
+                include "../Station/ClearScrollWindowBody.asm"
                 ent
                 assert $ == #685E
                 assert $ == #685E

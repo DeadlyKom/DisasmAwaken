@@ -12116,7 +12116,9 @@
         "origin": 25378,
         "name": "Station",
         "roots": [
-          25378
+          25378,
+          28316,
+          28509
         ]
       },
       {
@@ -12167,10 +12169,13 @@
       26474,
       26481,
       26484,
+      26576,
       26592,
       26679,
       26682,
       26743,
+      26828,
+      26858,
       26899,
       26902,
       26949,
@@ -12179,21 +12184,31 @@
       27048,
       27101,
       27104,
+      27211,
       27227,
       27267,
       27270,
       27318,
       27369,
       27372,
+      27534,
       27557,
       27658,
       27661,
+      27758,
+      27917,
+      27972,
+      27982,
+      27992,
       28072,
       28098,
       28101,
+      28115,
       28116,
+      28278,
       28287,
       28290,
+      28297,
       28298,
       28313,
       28316,
@@ -12202,15 +12217,22 @@
       28613,
       28654,
       28657,
+      28740,
+      28769,
       28785,
+      28822,
+      29012,
       29042,
       29045,
+      29200,
       29223,
       29726,
       29729,
+      29826,
       29842,
       29863,
       29866,
+      29963,
       29979,
       30009,
       30012,
@@ -12218,13 +12240,17 @@
       30083,
       30105,
       30108,
+      30240,
       30263,
       30326,
       30329,
+      30344,
       30351,
       30776,
       30779,
+      30853,
       30860,
+      30909,
       30934,
       31048,
       31051,
@@ -12268,11 +12294,15 @@
       31575,
       31578,
       31585,
+      31643,
       31656,
+      31662,
       31670,
       31673,
       31680,
       31774,
+      31780,
+      31818,
       31834,
       31837,
       31844,
@@ -12288,6 +12318,7 @@
       31998,
       32001,
       32008,
+      32020,
       32036,
       32042,
       32045,
@@ -12313,6 +12344,7 @@
       32234,
       32241,
       32281,
+      32287,
       32339,
       32342,
       32529,
@@ -12340,13 +12372,16 @@
       40683,
       40685,
       40703,
-      40980,
       40992,
       41051,
       41156,
       41238,
       41290,
       41315,
+      41361,
+      41421,
+      41430,
+      41583,
       41600,
       41615,
       41636,
@@ -12359,6 +12394,7 @@
       41850,
       41856,
       41872,
+      41889,
       41983,
       42038,
       42084,
@@ -12456,6 +12492,7 @@
       48392,
       48550,
       48586,
+      48679,
       48696,
       48785,
       48814,
@@ -12491,6 +12528,7 @@
       50534,
       50674,
       50726,
+      50864,
       51294,
       51315,
       51324,
@@ -12530,6 +12568,9 @@
       26177,
       26328,
       26496,
+      26592,
+      26736,
+      26942,
       26962,
       26979,
       27048,
@@ -12768,6 +12809,7 @@
       26735,
       26769,
       26822,
+      26828,
       26940,
       26941,
       27022,
@@ -18570,6 +18612,27 @@
         "offset": 2843
       },
       {
+        "address": 26736,
+        "operation": "LD DE,#6877",
+        "hex": "117768",
+        "slot": 4,
+        "offset": 2844
+      },
+      {
+        "address": 26739,
+        "operation": "CALL #CB64",
+        "hex": "cd64cb",
+        "slot": 4,
+        "offset": 2847
+      },
+      {
+        "address": 26742,
+        "operation": "RET NZ",
+        "hex": "c0",
+        "slot": 4,
+        "offset": 2850
+      },
+      {
         "address": 26743,
         "operation": "LD HL,#0000",
         "hex": "210000",
@@ -18836,6 +18899,216 @@
         "offset": 2935
       },
       {
+        "address": 26828,
+        "operation": "LD A,(#9E78)",
+        "hex": "3a789e",
+        "slot": 4,
+        "offset": 2936
+      },
+      {
+        "address": 26831,
+        "operation": "OR A",
+        "hex": "b7",
+        "slot": 4,
+        "offset": 2939
+      },
+      {
+        "address": 26832,
+        "operation": "RET NZ",
+        "hex": "c0",
+        "slot": 4,
+        "offset": 2940
+      },
+      {
+        "address": 26833,
+        "operation": "LD (#68EB),A",
+        "hex": "32eb68",
+        "slot": 4,
+        "offset": 2941
+      },
+      {
+        "address": 26836,
+        "operation": "CALL #A49F",
+        "hex": "cd9fa4",
+        "slot": 4,
+        "offset": 2944
+      },
+      {
+        "address": 26839,
+        "operation": "CALL #67E0",
+        "hex": "cde067",
+        "slot": 4,
+        "offset": 2947
+      },
+      {
+        "address": 26842,
+        "operation": "CALL #693E",
+        "hex": "cd3e69",
+        "slot": 4,
+        "offset": 2950
+      },
+      {
+        "address": 26845,
+        "operation": "LD DE,(#6878)",
+        "hex": "ed5b7868",
+        "slot": 4,
+        "offset": 2953
+      },
+      {
+        "address": 26849,
+        "operation": "CALL #BE38",
+        "hex": "cd38be",
+        "slot": 4,
+        "offset": 2957
+      },
+      {
+        "address": 26852,
+        "operation": "CALL #6870",
+        "hex": "cd7068",
+        "slot": 4,
+        "offset": 2960
+      },
+      {
+        "address": 26855,
+        "operation": "JP #A496",
+        "hex": "c396a4",
+        "slot": 4,
+        "offset": 2963
+      },
+      {
+        "address": 26858,
+        "operation": "LD A,#00",
+        "hex": "3e00",
+        "slot": 4,
+        "offset": 2966
+      },
+      {
+        "address": 26860,
+        "operation": "OR A",
+        "hex": "b7",
+        "slot": 4,
+        "offset": 2968
+      },
+      {
+        "address": 26861,
+        "operation": "JR NZ,#68CC",
+        "hex": "20dd",
+        "slot": 4,
+        "offset": 2969
+      },
+      {
+        "address": 26863,
+        "operation": "CALL #CB52",
+        "hex": "cd52cb",
+        "slot": 4,
+        "offset": 2971
+      },
+      {
+        "address": 26866,
+        "operation": "LD DE,#6877",
+        "hex": "117768",
+        "slot": 4,
+        "offset": 2974
+      },
+      {
+        "address": 26869,
+        "operation": "OR A",
+        "hex": "b7",
+        "slot": 4,
+        "offset": 2977
+      },
+      {
+        "address": 26870,
+        "operation": "SBC HL,DE",
+        "hex": "ed52",
+        "slot": 4,
+        "offset": 2978
+      },
+      {
+        "address": 26872,
+        "operation": "RET NZ",
+        "hex": "c0",
+        "slot": 4,
+        "offset": 2980
+      },
+      {
+        "address": 26873,
+        "operation": "CALL #A49F",
+        "hex": "cd9fa4",
+        "slot": 4,
+        "offset": 2981
+      },
+      {
+        "address": 26876,
+        "operation": "CALL #A05B",
+        "hex": "cd5ba0",
+        "slot": 4,
+        "offset": 2984
+      },
+      {
+        "address": 26879,
+        "operation": "HALT",
+        "hex": "76",
+        "slot": 4,
+        "offset": 2987
+      },
+      {
+        "address": 26880,
+        "operation": "LD A,#14",
+        "hex": "3e14",
+        "slot": 4,
+        "offset": 2988
+      },
+      {
+        "address": 26882,
+        "operation": "CALL #6396",
+        "hex": "cd9663",
+        "slot": 4,
+        "offset": 2990
+      },
+      {
+        "address": 26885,
+        "operation": "LD A,#00",
+        "hex": "3e00",
+        "slot": 4,
+        "offset": 2993
+      },
+      {
+        "address": 26887,
+        "operation": "CALL #E07F",
+        "hex": "cd7fe0",
+        "slot": 4,
+        "offset": 2995
+      },
+      {
+        "address": 26890,
+        "operation": "LD A,#10",
+        "hex": "3e10",
+        "slot": 4,
+        "offset": 2998
+      },
+      {
+        "address": 26892,
+        "operation": "CALL #6396",
+        "hex": "cd9663",
+        "slot": 4,
+        "offset": 3000
+      },
+      {
+        "address": 26895,
+        "operation": "CALL #A496",
+        "hex": "cd96a4",
+        "slot": 4,
+        "offset": 3003
+      },
+      {
+        "address": 26898,
+        "operation": "RET",
+        "hex": "c9",
+        "slot": 4,
+        "offset": 3006
+      },
+      {
         "address": 26899,
         "operation": "JP #693D",
         "hex": "c33d69",
@@ -18967,6 +19240,27 @@
         "hex": "c9",
         "slot": 4,
         "offset": 3049
+      },
+      {
+        "address": 26942,
+        "operation": "LD DE,#6945",
+        "hex": "114569",
+        "slot": 4,
+        "offset": 3050
+      },
+      {
+        "address": 26945,
+        "operation": "CALL #CB64",
+        "hex": "cd64cb",
+        "slot": 4,
+        "offset": 3053
+      },
+      {
+        "address": 26948,
+        "operation": "RET NZ",
+        "hex": "c0",
+        "slot": 4,
+        "offset": 3056
       },
       {
         "address": 26949,
@@ -93799,6 +94093,55 @@
         "reason": "банковый или динамический вход"
       },
       {
+        "address": 26491,
+        "operation": "CALL #C85E",
+        "target": 51294,
+        "bank": null,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 26506,
+        "operation": "CALL #C873",
+        "target": 51315,
+        "bank": null,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 26513,
+        "operation": "CALL #C873",
+        "target": 51315,
+        "bank": null,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 26520,
+        "operation": "CALL #C873",
+        "target": 51315,
+        "bank": null,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 26527,
+        "operation": "CALL #C873",
+        "target": 51315,
+        "bank": null,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 26534,
+        "operation": "JP #C873",
+        "target": 51315,
+        "bank": null,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 40634,
+        "operation": "CALL #C2DF",
+        "target": 49887,
+        "bank": null,
+        "reason": "банковый или динамический вход"
+      },
+      {
         "address": 26666,
         "operation": "CALL #E0C5",
         "target": 57541,
@@ -93810,6 +94153,27 @@
         "operation": "CALL #C9B9",
         "target": 51641,
         "bank": 1,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 26689,
+        "operation": "CALL #C85E",
+        "target": 51294,
+        "bank": null,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 26709,
+        "operation": "CALL #E0B5",
+        "target": 57525,
+        "bank": 4,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 26726,
+        "operation": "CALL #E0B5",
+        "target": 57525,
+        "bank": 4,
         "reason": "банковый или динамический вход"
       },
       {
@@ -93841,10 +94205,85 @@
         "reason": "банковый или динамический вход"
       },
       {
+        "address": 26863,
+        "operation": "CALL #CB52",
+        "target": 52050,
+        "bank": null,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 26887,
+        "operation": "CALL #E07F",
+        "target": 57471,
+        "bank": 4,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 41125,
+        "operation": "JP (HL)",
+        "reason": "косвенный переход"
+      },
+      {
+        "address": 26739,
+        "operation": "CALL #CB64",
+        "target": 52068,
+        "bank": null,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 26945,
+        "operation": "CALL #CB64",
+        "target": 52068,
+        "bank": null,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 26952,
+        "operation": "CALL #C287",
+        "target": 49799,
+        "bank": null,
+        "reason": "банковый или динамический вход"
+      },
+      {
         "address": 26970,
         "operation": "CALL #E154",
         "target": 57684,
         "bank": 4,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 26909,
+        "operation": "CALL #C85E",
+        "target": 51294,
+        "bank": null,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 41572,
+        "operation": "CALL #0000",
+        "target": 0,
+        "bank": null,
+        "reason": "вне текущего представления памяти"
+      },
+      {
+        "address": 26987,
+        "operation": "CALL #E124",
+        "target": 57636,
+        "bank": 4,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 27010,
+        "operation": "CALL #C85E",
+        "target": 51294,
+        "bank": null,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 27019,
+        "operation": "JP #C873",
+        "target": 51315,
+        "bank": null,
         "reason": "банковый или динамический вход"
       },
       {
@@ -93862,10 +94301,45 @@
         "reason": "банковый или динамический вход"
       },
       {
+        "address": 27112,
+        "operation": "CALL #C85E",
+        "target": 51294,
+        "bank": null,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 27121,
+        "operation": "JP #C873",
+        "target": 51315,
+        "bank": null,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 27190,
+        "operation": "CALL #DB57",
+        "target": 56151,
+        "bank": 7,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 27230,
+        "operation": "CALL #C287",
+        "target": 49799,
+        "bank": null,
+        "reason": "банковый или динамический вход"
+      },
+      {
         "address": 27249,
         "operation": "CALL #DB5B",
         "target": 56155,
         "bank": 7,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 27278,
+        "operation": "CALL #C85E",
+        "target": 51294,
+        "bank": null,
         "reason": "банковый или динамический вход"
       },
       {
@@ -93876,16 +94350,107 @@
         "reason": "вне текущего представления памяти"
       },
       {
-        "address": 28078,
+        "address": 27321,
         "operation": "CALL #C287",
         "target": 49799,
         "bank": null,
         "reason": "банковый или динамический вход"
       },
       {
-        "address": 28081,
-        "operation": "CALL #CCD4",
-        "target": 52436,
+        "address": 27380,
+        "operation": "CALL #C85E",
+        "target": 51294,
+        "bank": null,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 27553,
+        "operation": "CALL #CB64",
+        "target": 52068,
+        "bank": null,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 27560,
+        "operation": "CALL #C287",
+        "target": 49799,
+        "bank": null,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 27676,
+        "operation": "CALL #C85E",
+        "target": 51294,
+        "bank": null,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 27685,
+        "operation": "CALL #C873",
+        "target": 51315,
+        "bank": null,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 27692,
+        "operation": "CALL #C873",
+        "target": 51315,
+        "bank": null,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 27699,
+        "operation": "CALL #C873",
+        "target": 51315,
+        "bank": null,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 27706,
+        "operation": "CALL #C873",
+        "target": 51315,
+        "bank": null,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 27713,
+        "operation": "CALL #C873",
+        "target": 51315,
+        "bank": null,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 27720,
+        "operation": "CALL #C873",
+        "target": 51315,
+        "bank": null,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 27727,
+        "operation": "CALL #C873",
+        "target": 51315,
+        "bank": null,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 27734,
+        "operation": "CALL #C873",
+        "target": 51315,
+        "bank": null,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 27741,
+        "operation": "CALL #C873",
+        "target": 51315,
+        "bank": null,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 27748,
+        "operation": "CALL #C873",
+        "target": 51315,
         "bank": null,
         "reason": "банковый или динамический вход"
       },
@@ -93918,79 +94483,79 @@
         "reason": "банковый или динамический вход"
       },
       {
-        "address": 28174,
-        "operation": "JP #4000",
-        "target": 16384,
-        "bank": null,
-        "reason": "вне текущего представления памяти"
-      },
-      {
-        "address": 28640,
-        "operation": "CALL #E6AB",
-        "target": 59051,
+        "address": 27934,
+        "operation": "CALL #C38C",
+        "target": 50060,
         "bank": 1,
         "reason": "банковый или динамический вход"
       },
       {
-        "address": 30020,
-        "operation": "CALL #C85E",
-        "target": 51294,
+        "address": 30856,
+        "operation": "CALL #CB64",
+        "target": 52068,
         "bank": null,
         "reason": "банковый или динамический вход"
       },
       {
-        "address": 30025,
-        "operation": "CALL #C873",
-        "target": 51315,
+        "address": 30863,
+        "operation": "CALL #CCAF",
+        "target": 52399,
         "bank": null,
         "reason": "банковый или динамический вход"
       },
       {
-        "address": 30064,
-        "operation": "JP #CBA9",
-        "target": 52137,
+        "address": 30866,
+        "operation": "CALL #C287",
+        "target": 49799,
         "bank": null,
         "reason": "банковый или динамический вход"
       },
       {
-        "address": 42994,
-        "operation": "JP #CBA9",
-        "target": 52137,
+        "address": 30869,
+        "operation": "CALL #CCD4",
+        "target": 52436,
         "bank": null,
         "reason": "банковый или динамический вход"
       },
       {
-        "address": 42988,
-        "operation": "JP #CBA9",
-        "target": 52137,
+        "address": 30900,
+        "operation": "CALL #C781",
+        "target": 51073,
+        "bank": 1,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 30946,
+        "operation": "CALL #CB52",
+        "target": 52050,
         "bank": null,
         "reason": "банковый или динамический вход"
       },
       {
-        "address": 42982,
-        "operation": "JP #CBA9",
-        "target": 52137,
+        "address": 31033,
+        "operation": "CALL #C677",
+        "target": 50807,
+        "bank": 1,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 48690,
+        "operation": "CALL #CB64",
+        "target": 52068,
         "bank": null,
         "reason": "банковый или динамический вход"
       },
       {
-        "address": 42976,
-        "operation": "JP #CB7F",
-        "target": 52095,
+        "address": 30347,
+        "operation": "CALL #CB64",
+        "target": 52068,
         "bank": null,
         "reason": "банковый или динамический вход"
       },
       {
-        "address": 42925,
-        "operation": "CALL #C873",
-        "target": 51315,
-        "bank": null,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 40634,
-        "operation": "CALL #C2DF",
-        "target": 49887,
+        "address": 30354,
+        "operation": "CALL #C287",
+        "target": 49799,
         "bank": null,
         "reason": "банковый или динамический вход"
       },
@@ -94086,24 +94651,381 @@
         "reason": "банковый или динамический вход"
       },
       {
-        "address": 30866,
+        "address": 28078,
         "operation": "CALL #C287",
         "target": 49799,
         "bank": null,
         "reason": "банковый или динамический вход"
       },
       {
-        "address": 30869,
+        "address": 28081,
         "operation": "CALL #CCD4",
         "target": 52436,
         "bank": null,
         "reason": "банковый или динамический вход"
       },
       {
-        "address": 30900,
-        "operation": "CALL #C781",
-        "target": 51073,
+        "address": 28109,
+        "operation": "CALL #C85E",
+        "target": 51294,
+        "bank": null,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 28174,
+        "operation": "JP #4000",
+        "target": 16384,
+        "bank": null,
+        "reason": "вне текущего представления памяти"
+      },
+      {
+        "address": 28294,
+        "operation": "JP #C873",
+        "target": 51315,
+        "bank": null,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 28324,
+        "operation": "CALL #C85E",
+        "target": 51294,
+        "bank": null,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 28459,
+        "operation": "CALL #C85E",
+        "target": 51294,
+        "bank": null,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 49082,
+        "operation": "CALL #C039",
+        "target": 49209,
+        "bank": null,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 49138,
+        "operation": "JP #C626",
+        "target": 50726,
+        "bank": null,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 43656,
+        "operation": "CALL #C287",
+        "target": 49799,
+        "bank": null,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 43719,
+        "operation": "CALL #E6AB",
+        "target": 59051,
         "bank": 1,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 43818,
+        "operation": "CALL #C000",
+        "target": 49152,
+        "bank": 6,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 28616,
+        "operation": "CALL #C287",
+        "target": 49799,
+        "bank": null,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 28640,
+        "operation": "CALL #E6AB",
+        "target": 59051,
+        "bank": 1,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 44114,
+        "operation": "CALL #E7BA",
+        "target": 59322,
+        "bank": 1,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 44123,
+        "operation": "CALL #DB63",
+        "target": 56163,
+        "bank": null,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 44132,
+        "operation": "CALL #DB63",
+        "target": 56163,
+        "bank": null,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 28541,
+        "operation": "CALL #C000",
+        "target": 49152,
+        "bank": 6,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 28665,
+        "operation": "CALL #C85E",
+        "target": 51294,
+        "bank": null,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 28674,
+        "operation": "JP #C873",
+        "target": 51315,
+        "bank": null,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 28748,
+        "operation": "CALL #C000",
+        "target": 49152,
+        "bank": 6,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 28788,
+        "operation": "CALL #C287",
+        "target": 49799,
+        "bank": null,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 29053,
+        "operation": "CALL #C85E",
+        "target": 51294,
+        "bank": null,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 29062,
+        "operation": "CALL #C873",
+        "target": 51315,
+        "bank": null,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 29069,
+        "operation": "CALL #C873",
+        "target": 51315,
+        "bank": null,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 29076,
+        "operation": "CALL #C873",
+        "target": 51315,
+        "bank": null,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 29219,
+        "operation": "CALL #CB64",
+        "target": 52068,
+        "bank": null,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 29226,
+        "operation": "CALL #C287",
+        "target": 49799,
+        "bank": null,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 29179,
+        "operation": "CALL #C000",
+        "target": 49152,
+        "bank": 6,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 29737,
+        "operation": "CALL #C85E",
+        "target": 51294,
+        "bank": null,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 29785,
+        "operation": "CALL #3D13",
+        "target": 15635,
+        "bank": null,
+        "reason": "вне текущего представления памяти"
+      },
+      {
+        "address": 29791,
+        "operation": "CALL #3D13",
+        "target": 15635,
+        "bank": null,
+        "reason": "вне текущего представления памяти"
+      },
+      {
+        "address": 29805,
+        "operation": "CALL #3D13",
+        "target": 15635,
+        "bank": null,
+        "reason": "вне текущего представления памяти"
+      },
+      {
+        "address": 29819,
+        "operation": "CALL #C873",
+        "target": 51315,
+        "bank": null,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 29874,
+        "operation": "CALL #C85E",
+        "target": 51294,
+        "bank": null,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 29922,
+        "operation": "CALL #3D13",
+        "target": 15635,
+        "bank": null,
+        "reason": "вне текущего представления памяти"
+      },
+      {
+        "address": 29928,
+        "operation": "CALL #3D13",
+        "target": 15635,
+        "bank": null,
+        "reason": "вне текущего представления памяти"
+      },
+      {
+        "address": 29942,
+        "operation": "CALL #3D13",
+        "target": 15635,
+        "bank": null,
+        "reason": "вне текущего представления памяти"
+      },
+      {
+        "address": 29956,
+        "operation": "CALL #C873",
+        "target": 51315,
+        "bank": null,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 30020,
+        "operation": "CALL #C85E",
+        "target": 51294,
+        "bank": null,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 30025,
+        "operation": "CALL #C873",
+        "target": 51315,
+        "bank": null,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 30064,
+        "operation": "JP #CBA9",
+        "target": 52137,
+        "bank": null,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 42994,
+        "operation": "JP #CBA9",
+        "target": 52137,
+        "bank": null,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 42988,
+        "operation": "JP #CBA9",
+        "target": 52137,
+        "bank": null,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 42982,
+        "operation": "JP #CBA9",
+        "target": 52137,
+        "bank": null,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 42976,
+        "operation": "JP #CB7F",
+        "target": 52095,
+        "bank": null,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 42925,
+        "operation": "CALL #C873",
+        "target": 51315,
+        "bank": null,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 30116,
+        "operation": "CALL #C85E",
+        "target": 51294,
+        "bank": null,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 30259,
+        "operation": "CALL #CB64",
+        "target": 52068,
+        "bank": null,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 30266,
+        "operation": "CALL #C287",
+        "target": 49799,
+        "bank": null,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 30337,
+        "operation": "CALL #C85E",
+        "target": 51294,
+        "bank": null,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 30787,
+        "operation": "CALL #C85E",
+        "target": 51294,
+        "bank": null,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 30831,
+        "operation": "CALL #C5E8",
+        "target": 50664,
+        "bank": 1,
+        "reason": "банковый или динамический вход"
+      },
+      {
+        "address": 31057,
+        "operation": "JP #C85E",
+        "target": 51294,
+        "bank": null,
         "reason": "банковый или динамический вход"
       },
       {
@@ -94131,55 +95053,6 @@
         "address": 31242,
         "operation": "CALL #C873",
         "target": 51315,
-        "bank": null,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 26506,
-        "operation": "CALL #C873",
-        "target": 51315,
-        "bank": null,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 26513,
-        "operation": "CALL #C873",
-        "target": 51315,
-        "bank": null,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 26520,
-        "operation": "CALL #C873",
-        "target": 51315,
-        "bank": null,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 26527,
-        "operation": "CALL #C873",
-        "target": 51315,
-        "bank": null,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 26534,
-        "operation": "JP #C873",
-        "target": 51315,
-        "bank": null,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 49082,
-        "operation": "CALL #C039",
-        "target": 49209,
-        "bank": null,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 49138,
-        "operation": "JP #C626",
-        "target": 50726,
         "bank": null,
         "reason": "банковый или динамический вход"
       },
@@ -94331,13 +95204,6 @@
         "reason": "банковый или динамический вход"
       },
       {
-        "address": 30347,
-        "operation": "CALL #CB64",
-        "target": 52068,
-        "bank": null,
-        "reason": "банковый или динамический вход"
-      },
-      {
         "address": 31690,
         "operation": "CALL #C88F",
         "target": 51343,
@@ -94363,13 +95229,6 @@
         "operation": "CALL #C88F",
         "target": 51343,
         "bank": 1,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 28748,
-        "operation": "CALL #C000",
-        "target": 49152,
-        "bank": 6,
         "reason": "банковый или динамический вход"
       },
       {
@@ -94528,11 +95387,6 @@
         "reason": "банковый или динамический вход"
       },
       {
-        "address": 41125,
-        "operation": "JP (HL)",
-        "reason": "косвенный переход"
-      },
-      {
         "address": 41127,
         "operation": "JP (HL)",
         "reason": "косвенный переход"
@@ -94568,524 +95422,6 @@
         "reason": "косвенный переход"
       },
       {
-        "address": 43656,
-        "operation": "CALL #C287",
-        "target": 49799,
-        "bank": null,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 43719,
-        "operation": "CALL #E6AB",
-        "target": 59051,
-        "bank": 1,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 43818,
-        "operation": "CALL #C000",
-        "target": 49152,
-        "bank": 6,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 44114,
-        "operation": "CALL #E7BA",
-        "target": 59322,
-        "bank": 1,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 44123,
-        "operation": "CALL #DB63",
-        "target": 56163,
-        "bank": null,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 44132,
-        "operation": "CALL #DB63",
-        "target": 56163,
-        "bank": null,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 28541,
-        "operation": "CALL #C000",
-        "target": 49152,
-        "bank": 6,
-        "reason": "банковый вход LANG по доказанному LD A,16 и SelectRamBank"
-      },
-      {
-        "address": 26491,
-        "operation": "CALL #C85E",
-        "target": 51294,
-        "bank": null,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 26689,
-        "operation": "CALL #C85E",
-        "target": 51294,
-        "bank": null,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 26709,
-        "operation": "CALL #E0B5",
-        "target": 57525,
-        "bank": 4,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 26726,
-        "operation": "CALL #E0B5",
-        "target": 57525,
-        "bank": 4,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 26909,
-        "operation": "CALL #C85E",
-        "target": 51294,
-        "bank": null,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 41572,
-        "operation": "CALL #0000",
-        "target": 0,
-        "bank": null,
-        "reason": "вне текущего представления памяти"
-      },
-      {
-        "address": 26987,
-        "operation": "CALL #E124",
-        "target": 57636,
-        "bank": 4,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 27010,
-        "operation": "CALL #C85E",
-        "target": 51294,
-        "bank": null,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 27019,
-        "operation": "JP #C873",
-        "target": 51315,
-        "bank": null,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 27112,
-        "operation": "CALL #C85E",
-        "target": 51294,
-        "bank": null,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 27121,
-        "operation": "JP #C873",
-        "target": 51315,
-        "bank": null,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 27190,
-        "operation": "CALL #DB57",
-        "target": 56151,
-        "bank": 7,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 27230,
-        "operation": "CALL #C287",
-        "target": 49799,
-        "bank": null,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 27278,
-        "operation": "CALL #C85E",
-        "target": 51294,
-        "bank": null,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 27380,
-        "operation": "CALL #C85E",
-        "target": 51294,
-        "bank": null,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 27553,
-        "operation": "CALL #CB64",
-        "target": 52068,
-        "bank": null,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 27560,
-        "operation": "CALL #C287",
-        "target": 49799,
-        "bank": null,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 27676,
-        "operation": "CALL #C85E",
-        "target": 51294,
-        "bank": null,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 27685,
-        "operation": "CALL #C873",
-        "target": 51315,
-        "bank": null,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 27692,
-        "operation": "CALL #C873",
-        "target": 51315,
-        "bank": null,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 27699,
-        "operation": "CALL #C873",
-        "target": 51315,
-        "bank": null,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 27706,
-        "operation": "CALL #C873",
-        "target": 51315,
-        "bank": null,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 27713,
-        "operation": "CALL #C873",
-        "target": 51315,
-        "bank": null,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 27720,
-        "operation": "CALL #C873",
-        "target": 51315,
-        "bank": null,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 27727,
-        "operation": "CALL #C873",
-        "target": 51315,
-        "bank": null,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 27734,
-        "operation": "CALL #C873",
-        "target": 51315,
-        "bank": null,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 27741,
-        "operation": "CALL #C873",
-        "target": 51315,
-        "bank": null,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 27748,
-        "operation": "CALL #C873",
-        "target": 51315,
-        "bank": null,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 27934,
-        "operation": "CALL #C38C",
-        "target": 50060,
-        "bank": 1,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 30856,
-        "operation": "CALL #CB64",
-        "target": 52068,
-        "bank": null,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 30863,
-        "operation": "CALL #CCAF",
-        "target": 52399,
-        "bank": null,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 48690,
-        "operation": "CALL #CB64",
-        "target": 52068,
-        "bank": null,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 30354,
-        "operation": "CALL #C287",
-        "target": 49799,
-        "bank": null,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 28109,
-        "operation": "CALL #C85E",
-        "target": 51294,
-        "bank": null,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 28294,
-        "operation": "JP #C873",
-        "target": 51315,
-        "bank": null,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 28324,
-        "operation": "CALL #C85E",
-        "target": 51294,
-        "bank": null,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 28459,
-        "operation": "CALL #C85E",
-        "target": 51294,
-        "bank": null,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 28616,
-        "operation": "CALL #C287",
-        "target": 49799,
-        "bank": null,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 28541,
-        "operation": "CALL #C000",
-        "target": 49152,
-        "bank": 6,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 28665,
-        "operation": "CALL #C85E",
-        "target": 51294,
-        "bank": null,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 28674,
-        "operation": "JP #C873",
-        "target": 51315,
-        "bank": null,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 28788,
-        "operation": "CALL #C287",
-        "target": 49799,
-        "bank": null,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 29053,
-        "operation": "CALL #C85E",
-        "target": 51294,
-        "bank": null,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 29062,
-        "operation": "CALL #C873",
-        "target": 51315,
-        "bank": null,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 29069,
-        "operation": "CALL #C873",
-        "target": 51315,
-        "bank": null,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 29076,
-        "operation": "CALL #C873",
-        "target": 51315,
-        "bank": null,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 29219,
-        "operation": "CALL #CB64",
-        "target": 52068,
-        "bank": null,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 29226,
-        "operation": "CALL #C287",
-        "target": 49799,
-        "bank": null,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 27314,
-        "operation": "CALL #CB64",
-        "target": 52068,
-        "bank": null,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 29179,
-        "operation": "CALL #C000",
-        "target": 49152,
-        "bank": 6,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 29737,
-        "operation": "CALL #C85E",
-        "target": 51294,
-        "bank": null,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 29785,
-        "operation": "CALL #3D13",
-        "target": 15635,
-        "bank": null,
-        "reason": "вне текущего представления памяти"
-      },
-      {
-        "address": 29791,
-        "operation": "CALL #3D13",
-        "target": 15635,
-        "bank": null,
-        "reason": "вне текущего представления памяти"
-      },
-      {
-        "address": 29805,
-        "operation": "CALL #3D13",
-        "target": 15635,
-        "bank": null,
-        "reason": "вне текущего представления памяти"
-      },
-      {
-        "address": 29819,
-        "operation": "CALL #C873",
-        "target": 51315,
-        "bank": null,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 29874,
-        "operation": "CALL #C85E",
-        "target": 51294,
-        "bank": null,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 29922,
-        "operation": "CALL #3D13",
-        "target": 15635,
-        "bank": null,
-        "reason": "вне текущего представления памяти"
-      },
-      {
-        "address": 29928,
-        "operation": "CALL #3D13",
-        "target": 15635,
-        "bank": null,
-        "reason": "вне текущего представления памяти"
-      },
-      {
-        "address": 29942,
-        "operation": "CALL #3D13",
-        "target": 15635,
-        "bank": null,
-        "reason": "вне текущего представления памяти"
-      },
-      {
-        "address": 29956,
-        "operation": "CALL #C873",
-        "target": 51315,
-        "bank": null,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 30116,
-        "operation": "CALL #C85E",
-        "target": 51294,
-        "bank": null,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 30259,
-        "operation": "CALL #CB64",
-        "target": 52068,
-        "bank": null,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 30266,
-        "operation": "CALL #C287",
-        "target": 49799,
-        "bank": null,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 30337,
-        "operation": "CALL #C85E",
-        "target": 51294,
-        "bank": null,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 30787,
-        "operation": "CALL #C85E",
-        "target": 51294,
-        "bank": null,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 30831,
-        "operation": "CALL #C5E8",
-        "target": 50664,
-        "bank": 1,
-        "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 31057,
-        "operation": "JP #C85E",
-        "target": 51294,
-        "bank": null,
-        "reason": "банковый или динамический вход"
-      },
-      {
         "address": 43616,
         "operation": "CALL #C85E",
         "target": 51294,
@@ -95112,20 +95448,13 @@
         "target": 51315,
         "bank": null,
         "reason": "банковый или динамический вход"
-      },
-      {
-        "address": 31033,
-        "operation": "CALL #C677",
-        "target": 50807,
-        "bank": 1,
-        "reason": "банковый или динамический вход"
       }
     ],
     "overlaps": [],
-    "instruction_count": 11490,
-    "code_bytes": 19285,
+    "instruction_count": 11526,
+    "code_bytes": 19370,
     "total_bytes": 39474,
-    "classified_fraction": 0.48854942493793385
+    "classified_fraction": 0.4907027410447383
   },
   {
     "name": "Text",
@@ -255242,6 +255571,328 @@
     "instruction_count": 28,
     "code_bytes": 72,
     "total_bytes": 72,
+    "classified_fraction": 1.0
+  },
+  {
+    "name": "StationFinalExit",
+    "blocks": [
+      {
+        "slot": 4,
+        "offset": 4285,
+        "length": 92,
+        "origin": 16384,
+        "name": "StationFinalExit",
+        "roots": [
+          16384
+        ]
+      }
+    ],
+    "roots": [
+      16384
+    ],
+    "calls": [
+      25494,
+      56064
+    ],
+    "branches": [
+      15635,
+      16423
+    ],
+    "instructions": [
+      {
+        "address": 16384,
+        "operation": "DI",
+        "hex": "f3",
+        "slot": 4,
+        "offset": 4285
+      },
+      {
+        "address": 16385,
+        "operation": "LD A,#13",
+        "hex": "3e13",
+        "slot": 4,
+        "offset": 4286
+      },
+      {
+        "address": 16387,
+        "operation": "CALL #6396",
+        "hex": "cd9663",
+        "slot": 4,
+        "offset": 4288
+      },
+      {
+        "address": 16390,
+        "operation": "CALL #DB00",
+        "hex": "cd00db",
+        "slot": 4,
+        "offset": 4291
+      },
+      {
+        "address": 16393,
+        "operation": "LD SP,#5FFF",
+        "hex": "31ff5f",
+        "slot": 4,
+        "offset": 4294
+      },
+      {
+        "address": 16396,
+        "operation": "LD A,#1F",
+        "hex": "3e1f",
+        "slot": 4,
+        "offset": 4297
+      },
+      {
+        "address": 16398,
+        "operation": "LD BC,#7FFD",
+        "hex": "01fd7f",
+        "slot": 4,
+        "offset": 4299
+      },
+      {
+        "address": 16401,
+        "operation": "OUT (C),A",
+        "hex": "ed79",
+        "slot": 4,
+        "offset": 4302
+      },
+      {
+        "address": 16403,
+        "operation": "LD HL,#D800",
+        "hex": "2100d8",
+        "slot": 4,
+        "offset": 4304
+      },
+      {
+        "address": 16406,
+        "operation": "LD DE,#D801",
+        "hex": "1101d8",
+        "slot": 4,
+        "offset": 4307
+      },
+      {
+        "address": 16409,
+        "operation": "LD BC,#02FF",
+        "hex": "01ff02",
+        "slot": 4,
+        "offset": 4310
+      },
+      {
+        "address": 16412,
+        "operation": "LD (HL),#01",
+        "hex": "3601",
+        "slot": 4,
+        "offset": 4313
+      },
+      {
+        "address": 16414,
+        "operation": "LDIR",
+        "hex": "edb0",
+        "slot": 4,
+        "offset": 4315
+      },
+      {
+        "address": 16416,
+        "operation": "LD A,#01",
+        "hex": "3e01",
+        "slot": 4,
+        "offset": 4317
+      },
+      {
+        "address": 16418,
+        "operation": "OUT (#FE),A",
+        "hex": "d3fe",
+        "slot": 4,
+        "offset": 4319
+      },
+      {
+        "address": 16420,
+        "operation": "LD BC,#7FFE",
+        "hex": "01fe7f",
+        "slot": 4,
+        "offset": 4321
+      },
+      {
+        "address": 16423,
+        "operation": "IN A,(C)",
+        "hex": "ed78",
+        "slot": 4,
+        "offset": 4324
+      },
+      {
+        "address": 16425,
+        "operation": "CP #BE",
+        "hex": "febe",
+        "slot": 4,
+        "offset": 4326
+      },
+      {
+        "address": 16427,
+        "operation": "JP NZ,#4027",
+        "hex": "c22740",
+        "slot": 4,
+        "offset": 4328
+      },
+      {
+        "address": 16430,
+        "operation": "LD HL,#D800",
+        "hex": "2100d8",
+        "slot": 4,
+        "offset": 4331
+      },
+      {
+        "address": 16433,
+        "operation": "LD DE,#D801",
+        "hex": "1101d8",
+        "slot": 4,
+        "offset": 4334
+      },
+      {
+        "address": 16436,
+        "operation": "LD BC,#02FF",
+        "hex": "01ff02",
+        "slot": 4,
+        "offset": 4337
+      },
+      {
+        "address": 16439,
+        "operation": "LD (HL),L",
+        "hex": "75",
+        "slot": 4,
+        "offset": 4340
+      },
+      {
+        "address": 16440,
+        "operation": "LDIR",
+        "hex": "edb0",
+        "slot": 4,
+        "offset": 4341
+      },
+      {
+        "address": 16442,
+        "operation": "IM 1",
+        "hex": "ed56",
+        "slot": 4,
+        "offset": 4343
+      },
+      {
+        "address": 16444,
+        "operation": "LD IY,#5C3A",
+        "hex": "fd213a5c",
+        "slot": 4,
+        "offset": 4345
+      },
+      {
+        "address": 16448,
+        "operation": "LD A,#3F",
+        "hex": "3e3f",
+        "slot": 4,
+        "offset": 4349
+      },
+      {
+        "address": 16450,
+        "operation": "LD I,A",
+        "hex": "ed47",
+        "slot": 4,
+        "offset": 4351
+      },
+      {
+        "address": 16452,
+        "operation": "LD HL,#405C",
+        "hex": "215c40",
+        "slot": 4,
+        "offset": 4353
+      },
+      {
+        "address": 16455,
+        "operation": "LD DE,#5CDD",
+        "hex": "11dd5c",
+        "slot": 4,
+        "offset": 4356
+      },
+      {
+        "address": 16458,
+        "operation": "LD BC,#0009",
+        "hex": "010900",
+        "slot": 4,
+        "offset": 4359
+      },
+      {
+        "address": 16461,
+        "operation": "LDIR",
+        "hex": "edb0",
+        "slot": 4,
+        "offset": 4362
+      },
+      {
+        "address": 16463,
+        "operation": "XOR A",
+        "hex": "af",
+        "slot": 4,
+        "offset": 4364
+      },
+      {
+        "address": 16464,
+        "operation": "LD (#5CF9),A",
+        "hex": "32f95c",
+        "slot": 4,
+        "offset": 4365
+      },
+      {
+        "address": 16467,
+        "operation": "LD C,#0E",
+        "hex": "0e0e",
+        "slot": 4,
+        "offset": 4368
+      },
+      {
+        "address": 16469,
+        "operation": "LD DE,#6000",
+        "hex": "110060",
+        "slot": 4,
+        "offset": 4370
+      },
+      {
+        "address": 16472,
+        "operation": "PUSH DE",
+        "hex": "d5",
+        "slot": 4,
+        "offset": 4373
+      },
+      {
+        "address": 16473,
+        "operation": "JP #3D13",
+        "hex": "c3133d",
+        "slot": 4,
+        "offset": 4374
+      }
+    ],
+    "unresolved": [
+      {
+        "address": 16387,
+        "operation": "CALL #6396",
+        "target": 25494,
+        "bank": 0,
+        "reason": "вне текущего представления памяти"
+      },
+      {
+        "address": 16390,
+        "operation": "CALL #DB00",
+        "target": 56064,
+        "bank": 3,
+        "reason": "вне текущего представления памяти"
+      },
+      {
+        "address": 16473,
+        "operation": "JP #3D13",
+        "target": 15635,
+        "bank": 7,
+        "reason": "вне текущего представления памяти"
+      }
+    ],
+    "overlaps": [],
+    "instruction_count": 38,
+    "code_bytes": 92,
+    "total_bytes": 92,
     "classified_fraction": 1.0
   }
 ]

@@ -23,9 +23,9 @@ Entry:          RET C                                                           
                 LD A, #10
                 CALL @Station.SelectRamBank.Entry
                 LD A, #01
-                LD (#68EB), A
+                LD (@ShipPanelState.PendingRedraw), A
 Point7A78:      XOR A
-                LD (#79DD), A
+                LD (@ShipPanelState.OwnedMode), A
                 LD HL, (#7A56)
                 JP @Station.SwitchItemContour.Entry
 

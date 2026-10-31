@@ -10,7 +10,7 @@ Entry:          FMissionOfferState {
                     #0000,                                                      ; UnknownWord0A, исходное значение поля
                     #03E8,                                                      ; Reward, исходное значение поля
                     #0F,                                                        ; RequiredTonnage, исходное значение поля
-                    #01                                                         ; UnknownStatus, исходное значение поля
+                    #01                                                         ; MessageIndex, исходное значение поля
                 }
                 assert $ == #98C0
                 endmodule

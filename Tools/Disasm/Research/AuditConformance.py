@@ -78,8 +78,8 @@ def audit():
             unlinked.append(function["path"])
             continue
         text = path.read_text(encoding="utf-8")
-        contract_block = re.search(r"^; In:[ \t]*\n(.*?)(?=^; Note:|^; -{3})", text, re.M | re.S)
-        if contract_block and re.search(r"^;[ \t]+Unknown\b", contract_block[1], re.M):
+        contract_block = re.search(r"^[ \t]*; In:[ \t]*\n(.*?)(?=^[ \t]*; Note:|^[ \t]*; -{3})", text, re.M | re.S)
+        if contract_block and re.search(r"^[ \t]*;[ \t]+Unknown\b", contract_block[1], re.M):
             unknown_contracts.append(function["path"])
         lines = text.splitlines()
         for index, line in enumerate(lines):

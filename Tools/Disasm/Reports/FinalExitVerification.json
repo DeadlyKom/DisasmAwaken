@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "cases": 512,
+  "keyboard_reads": 1022,
+  "accepted_keyboard_byte": 190,
+  "all_other_bytes_wait": true,
+  "real_music_initializer": true,
+  "real_paging_and_attribute_fills": true,
+  "relocated_copy_512_bytes_preserved": true,
+  "filename": "FINALF  C",
+  "stacked_entry": 24576,
+  "stops_before_trdos": true,
+  "disk_load_substituted": false,
+  "trdos_executed": false,
+  "final_entry_executed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

@@ -13,7 +13,7 @@ CONTRACTS={('Station',0xAC14):(
   'AF - A=(входная CurrentPage AND F8) OR 10, F от последнего OR банкового интерфейса',
   'MissionOffer.Entry.FirstWord=current.FirstWord, SecondWord=слово последнего принятого NextRandom1',
   'RequiredTonnage=ROM[lowT]>>3, значение 1..31, Reward=(distance*20*RequiredTonnage) AND FFFF',
-  'UnknownStatus=0, четыре UnknownWord04..UnknownWord0A между ключом и наградой не меняются',
+  'MessageIndex=0, четыре UnknownWord04..UnknownWord0A между ключом и наградой не меняются',
   "HL'=адрес RandomStates.Seed1, DE'=current.FirstWord, BC'=current.SecondWord",
   "AF' соответствует MeasureCoordinateDistance, при нулевом расстоянии либо раннем переполнении сохранён",
   'IX, IY, I и IFF сохранены, SP обычного возврата равен входному SP+2',
@@ -26,7 +26,7 @@ CONTRACTS={('Station',0xAC14):(
   'оба ключа расстояния имеют одинаковый FirstWord, отличаются только словом текущего и случайного SecondWord',
   'код FF от MeasureCoordinateDistance не отвергается и участвует в награде как число 255',
   'старшее слово второго произведения не проверяется, максимальное 255*20*31 равно 158100 и может обернуть Reward',
-  'четыре промежуточных слова и смысл UnknownStatus остаются неустановленными, физическая структура этого не скрывает',
+  'четыре промежуточных слова остаются неустановленными, MessageIndex выбирает сообщение расшифровки, физическая структура этого не скрывает',
   'ROM из исследовательской модели не объявляется ROM эмулятора Unreal, нативный запуск генератора не подтверждён'])}
 COMMENTS={
  0xAC14:(['чтение текущего первого слова ключа, оно остаётся общим для текущего и предлагаемого пункта'],None),
@@ -35,7 +35,7 @@ COMMENTS={
  0xAC1E:(['перезапись старших двух байтов Seed1, младший байт прежнего состояния не меняется'],None),
  0xAC22:(['расчёт следующего слова RNG с рабочими альтернативными HL, DE и BC'],None),
  0xAC25:(['сохранение нового второго слова предлагаемого пункта до проверки тоннажа'],None),
- 0xAC28:(['обнуление UnknownStatus перед проверкой каждого нового кандидата'],None),
+ 0xAC28:(['обнуление MessageIndex перед проверкой каждого нового кандидата'],None),
  0xAC2C:(['выбор рабочего BC генератора, B=0 и C=lowT дают адрес первого ROM-страничного блока'],None),
  0xAC2D:(['чтение ROM[lowT] как исходного байта для требуемого тоннажа'],None),
  0xAC2E:(['расчёт пятибитного тоннажа тремя логическими сдвигами ROM-байта'],None),
@@ -60,7 +60,7 @@ def name_operands(region,address,operation):
  if region=='Station' and address==0xAC14:
   for raw,name in ((0x983F,'SignatureInput.Entry.FirstWord'),(0x9841,'SignatureInput.Entry.SecondWord'),
    (0x98B0,'MissionOffer.Entry.FirstWord'),(0x98B2,'MissionOffer.Entry.SecondWord'),
-   (0x98BC,'MissionOffer.Entry.Reward'),(0x98BE,'MissionOffer.Entry.RequiredTonnage'),(0x98BF,'MissionOffer.Entry.UnknownStatus')):
+   (0x98BC,'MissionOffer.Entry.Reward'),(0x98BE,'MissionOffer.Entry.RequiredTonnage'),(0x98BF,'MissionOffer.Entry.MessageIndex')):
    operation=operation.replace('(#'+format(raw,'04X')+')','(@'+name+')')
   return operation.replace('(#A8B0)','(@RandomStates.Seed1.LowWord + 1)').replace('CALL #E7BA','CALL @Map.MeasureCoordinateDistance.Entry').replace('CALL #DB63','CALL @Map.MultiplySigned16.Entry').replace('LD DE, #0014','LD DE, @MissionOfferConst.RewardScale')
  return operation

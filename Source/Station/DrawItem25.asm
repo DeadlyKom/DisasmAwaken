@@ -19,15 +19,15 @@ Entry:          LD HL, #0000
                 XOR A
                 LD (@TextWindow.Style), A
                 LD A, #FF
-                LD (#67D7), A
+                LD (@PanelHoverState.ShipsRow), A
                 LD A, #24
                 LD (@TextStreamState.Column2X), A
-                LD A, (#79DD)
+                LD A, (@ShipPanelState.OwnedMode)
                 OR A
                 JR Z, @Station.DrawItem25.Point6808                             ; переход, если флаг Z установлен
 
 
-                LD A, (#6906)
+                LD A, (@ShipPanelState.Selector)
                 OR A
                 LD A, (#9849)
                 JR Z, @Station.DrawItem25.Point6806                             ; переход, если флаг Z установлен
@@ -45,7 +45,7 @@ Point6808:      CALL @Station.DescribeCurrentKey.Entry
                 LD D, #00
                 LD HL, #94BC
                 ADD HL, DE
-                LD A, (#6906)
+                LD A, (@ShipPanelState.Selector)
                 OR A
                 JR Z, @Station.DrawItem25.Point681C                             ; переход, если флаг Z установлен
 
@@ -55,9 +55,9 @@ Point681C:      LD A, (HL)
 Point681D:      EX AF, AF'
                 LD A, #14
                 CALL @Station.SelectRamBank.Entry
-                LD A, (#79DD)
+                LD A, (@ShipPanelState.OwnedMode)
                 LD H, A
-                LD A, (#6906)
+                LD A, (@ShipPanelState.Selector)
                 CALL #E0C5
                 LD A, #10
                 CALL @Station.SelectRamBank.Entry

@@ -56,14 +56,17 @@ from MissionOfferTable import render as render_mission_offer, PATH as MISSION_OF
 from PlayerRankTable import render as render_player_ranks, PATH as PLAYER_RANKS
 from ActionFileKeyTable import render as render_action_key, PATH as ACTION_FILE_KEY
 from StationExitFacts import COMMENTS as STATION_EXIT_COMMENTS
+from FinalExitFacts import COMMENTS as FINAL_EXIT_COMMENTS
+from FinalFileKeyTable import render as render_final_key, PATH as FINAL_FILE_KEY
 from ExpressionStackTable import render as render_expression_stack, PATH as EXPRESSION_STACK
 from AssignmentScratchTable import render as render_assignment_scratch, PATH as ASSIGNMENT_SCRATCH
+from MarketScriptTable import render as render_market_script, PATH as MARKET_SCRIPT, START as MARKET_SCRIPT_START
 from SettingsTables import render as render_settings, CHOICES as SETTINGS_CHOICES, COLORS as SETTINGS_COLORS, CONTROLS as SETTINGS_CONTROLS, TEXT as SETTINGS_TEXT
 from StationIrqTables import render as render_station_irq_data, COUNTER as IRQ_COUNTER, STACK as IRQ_STACK, CHAIN as WINDOW_CHAIN
 from PointerInputTables import render as render_pointer_input, FLAGS as INPUT_FLAGS, DIRECTIONS as INPUT_DIRECTIONS, KEYS as INPUT_KEYS
 
 REGION_NOTES = {"Intro": INTRO_NOTES, "Music": MUSIC_NOTES, "Voxel": EFFECTS_NOTES, "Final": FINAL_NOTES, "Text": TEXT_NOTES, "Map": MAP_NOTES, "Station": STATION_NOTES, "Basic": BASIC_NOTES}
-REGION_COMMENTS = {"Intro": INTRO_COMMENTS, "Music": MUSIC_COMMENTS, "Voxel": EFFECTS_COMMENTS, "Final": FINAL_COMMENTS, "Text": TEXT_COMMENTS, "Map": MAP_COMMENTS, "Station": STATION_COMMENTS, "Basic": BASIC_COMMENTS, "StationExit": STATION_EXIT_COMMENTS}
+REGION_COMMENTS = {"Intro": INTRO_COMMENTS, "Music": MUSIC_COMMENTS, "Voxel": EFFECTS_COMMENTS, "Final": FINAL_COMMENTS, "Text": TEXT_COMMENTS, "Map": MAP_COMMENTS, "Station": STATION_COMMENTS, "Basic": BASIC_COMMENTS, "StationExit": STATION_EXIT_COMMENTS, "StationFinalExit": FINAL_EXIT_COMMENTS}
 
 
 def write(path, text):
@@ -490,6 +493,10 @@ def main():
     write(ACTION_FILE_KEY, action_key_text)
     symbols.update(action_key_symbols)
     special[4, 0x21B4] = (0x21BD, ACTION_FILE_KEY, 0x4248)
+    final_key_text, final_key_symbols = render_final_key(data_by_slot[4])
+    write(FINAL_FILE_KEY, final_key_text)
+    symbols.update(final_key_symbols)
+    special[4, 0x1119] = (0x1122, FINAL_FILE_KEY, 0x405C)
     expression_stack_text, expression_stack_symbols = render_expression_stack(data_by_slot[5])
     write(EXPRESSION_STACK, expression_stack_text)
     symbols.update(expression_stack_symbols)
@@ -498,6 +505,10 @@ def main():
     write(ASSIGNMENT_SCRATCH, assignment_text)
     symbols.update(assignment_symbols)
     special[5, 0xA7B] = (0xA81, ASSIGNMENT_SCRATCH, 0xCA7B)
+    market_script_text, market_script_symbols, market_script_end = render_market_script(data_by_slot[5])
+    write(MARKET_SCRIPT, market_script_text)
+    symbols.update(market_script_symbols)
+    special[5, MARKET_SCRIPT_START] = (market_script_end, MARKET_SCRIPT, 0xC000 + MARKET_SCRIPT_START)
     # Выделение подтверждённого PT3 от исходного адреса #E700 до логического конца MUZ1.C.
     music_end = next(item["length"] for item in disk["entries"] if item["slot"] == 10)
     binary_resources = {(10, 0xC00): (music_end, "Source/Music/Resources/Antichrist.pt3", "PT3")}

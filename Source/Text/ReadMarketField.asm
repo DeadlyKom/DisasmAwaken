@@ -42,8 +42,8 @@ Entry:          EXX
                 ; расчёт двухбайтового смещения по полному HL без обрезания до байта
 ReadStock:      ADD HL, HL
                 ; выбор массива текущего рынка для прямого чтения количества
-                LD DE, @MarketRows.Row00.StockAndMark
-                ; расчёт адреса StockAndMark с шестнадцатибитным оборачиванием
+                LD DE, @MarketRows.Row00.StockAndSaleBan
+                ; расчёт адреса StockAndSaleBan с шестнадцатибитным оборачиванием
                 ADD HL, DE
                 LD A, (HL)
                 ; удаление bit7 маркера перед возвратом байтового количества

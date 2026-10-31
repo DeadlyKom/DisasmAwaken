@@ -49,7 +49,7 @@ Entry:          XOR A
                 CALL @Station.SelectRamBank.Entry
                 ; запись исходного кода события входа на станцию перед интерпретатором
                 LD A, #0F
-                LD (#983A), A
+                LD (@ScriptCallState.EventCode), A
                 CALL @Text.RunMarketScript.Entry
                 ; возврат банка станционного кода после сценария, если тот вернулся
                 LD A, #10
@@ -84,7 +84,7 @@ CheckPulse:     LD A, #00
                 CALL @Station.SelectRamBank.Entry
                 ; запись кода периодического события в общее поле сценария
                 LD A, #10
-                LD (#983A), A
+                LD (@ScriptCallState.EventCode), A
                 CALL @Text.RunMarketScript.Entry
                 ; возврат станционного банка после периодического сценария
                 LD A, #10

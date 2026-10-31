@@ -30,21 +30,21 @@ Entry:          CALL @Station.RepaintAndFlag.Entry
 
 Point7198:      CALL @Station.Unknown733F.Entry
                 LD DE, (#7211)
-                LD A, (#7217)
-                CALL @Station.UnknownA26F.Entry
+                LD A, (@ScriptSelection.EquipmentRow)
+                CALL @Station.XorRowIfSelected.Entry
                 LD A, #FF
-                LD (#7217), A
+                LD (@ScriptSelection.EquipmentRow), A
                 LD HL, #7244
-                LD (#A265), HL
+                LD (@ScrollState.RenderCall), HL
                 LD HL, #001D
-                LD (#A235), HL
+                LD (@ScrollState.EndLimit), HL
                 LD A, #18
                 LD HL, #0000
-                CALL @Station.UnknownA1D6.Entry
+                CALL @Station.ScrollWindowRows.Entry
                 LD (#71B9), HL
                 RET
 
-Point71C2:      LD A, (#7217)
+Point71C2:      LD A, (@ScriptSelection.EquipmentRow)
                 INC A
                 RET Z
 
@@ -73,7 +73,7 @@ Point71EB:      LD A, #00
                 JR Z, @Station.Unknown7175.Point71F3
 
                 INC A
-Point71F3:      LD (#983A), A
+Point71F3:      LD (@ScriptCallState.EventCode), A
                 LD A, #16
                 CALL @Station.SelectRamBank.Entry
                 CALL #C000

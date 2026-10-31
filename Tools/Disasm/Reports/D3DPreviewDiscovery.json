@@ -1,0 +1,203 @@
+{
+  "method": "static_original_bank4_trace_from_station_calls_without_source_export",
+  "passed": true,
+  "slot": 6,
+  "bank": 4,
+  "load_address": 49152,
+  "logical_bytes": 15978,
+  "sector_bytes": 16128,
+  "sector_sha256": "672578dc75c56674e98f8c104e792fd649b9e172d68ab3093a33d26f4124bfe5",
+  "external_entries": [
+    57471,
+    57525,
+    57541,
+    57636,
+    57660,
+    57684
+  ],
+  "external_calls": [
+    {
+      "address": 26666,
+      "operation": "CALL #E0C5",
+      "target": 57541,
+      "bank": 4,
+      "reason": "банковый или динамический вход"
+    },
+    {
+      "address": 26709,
+      "operation": "CALL #E0B5",
+      "target": 57525,
+      "bank": 4,
+      "reason": "банковый или динамический вход"
+    },
+    {
+      "address": 26726,
+      "operation": "CALL #E0B5",
+      "target": 57525,
+      "bank": 4,
+      "reason": "банковый или динамический вход"
+    },
+    {
+      "address": 26801,
+      "operation": "CALL #E13C",
+      "target": 57660,
+      "bank": 4,
+      "reason": "банковый или динамический вход"
+    },
+    {
+      "address": 26887,
+      "operation": "CALL #E07F",
+      "target": 57471,
+      "bank": 4,
+      "reason": "банковый или динамический вход"
+    },
+    {
+      "address": 26970,
+      "operation": "CALL #E154",
+      "target": 57684,
+      "bank": 4,
+      "reason": "банковый или динамический вход"
+    },
+    {
+      "address": 26987,
+      "operation": "CALL #E124",
+      "target": 57636,
+      "bank": 4,
+      "reason": "банковый или динамический вход"
+    }
+  ],
+  "instruction_count": 2532,
+  "code_bytes": 4686,
+  "overlaps": [],
+  "unresolved": [
+    {
+      "address": 57521,
+      "operation": "CALL #6364",
+      "target": 25444,
+      "bank": 4,
+      "reason": "вне текущего представления памяти"
+    },
+    {
+      "address": 60283,
+      "operation": "JP #0000",
+      "target": 0,
+      "bank": 4,
+      "reason": "вне текущего представления памяти"
+    },
+    {
+      "address": 53865,
+      "operation": "JP (HL)",
+      "reason": "косвенный переход"
+    },
+    {
+      "address": 57825,
+      "operation": "JP (HL)",
+      "reason": "косвенный переход"
+    },
+    {
+      "address": 60167,
+      "operation": "JP (HL)",
+      "reason": "косвенный переход"
+    },
+    {
+      "address": 57557,
+      "operation": "CALL #BD08",
+      "target": 48392,
+      "bank": 4,
+      "reason": "вне текущего представления памяти"
+    },
+    {
+      "address": 57596,
+      "operation": "CALL #A380",
+      "target": 41856,
+      "bank": 4,
+      "reason": "вне текущего представления памяти"
+    },
+    {
+      "address": 57609,
+      "operation": "CALL #A36E",
+      "target": 41838,
+      "bank": 4,
+      "reason": "вне текущего представления памяти"
+    },
+    {
+      "address": 57620,
+      "operation": "CALL #A36E",
+      "target": 41838,
+      "bank": 4,
+      "reason": "вне текущего представления памяти"
+    },
+    {
+      "address": 57653,
+      "operation": "CALL #A390",
+      "target": 41872,
+      "bank": 4,
+      "reason": "вне текущего представления памяти"
+    },
+    {
+      "address": 57656,
+      "operation": "CALL #A82D",
+      "target": 43053,
+      "bank": 4,
+      "reason": "вне текущего представления памяти"
+    },
+    {
+      "address": 57665,
+      "operation": "CALL #6322",
+      "target": 25378,
+      "bank": 4,
+      "reason": "вне текущего представления памяти"
+    },
+    {
+      "address": 57702,
+      "operation": "CALL #A390",
+      "target": 41872,
+      "bank": 4,
+      "reason": "вне текущего представления памяти"
+    },
+    {
+      "address": 57709,
+      "operation": "CALL #A843",
+      "target": 43075,
+      "bank": 4,
+      "reason": "вне текущего представления памяти"
+    }
+  ],
+  "decoded_sequence_sha256": "75a97d9a2a2e637567cbebdf91ebad8bdd92dc48e2f9bdbfdcdfc8cfc65ab8a2",
+  "preview_tail": [
+    {
+      "address": 57517,
+      "operation": "CALL #EC28",
+      "hex": "cd28ec",
+      "slot": 6,
+      "offset": 8365
+    },
+    {
+      "address": 57520,
+      "operation": "EI",
+      "hex": "fb",
+      "slot": 6,
+      "offset": 8368
+    },
+    {
+      "address": 57521,
+      "operation": "CALL #6364",
+      "hex": "cd6463",
+      "slot": 6,
+      "offset": 8369
+    },
+    {
+      "address": 57524,
+      "operation": "RET",
+      "hex": "c9",
+      "slot": 6,
+      "offset": 8372
+    }
+  ],
+  "source_map_modified": false,
+  "source_export_executed": false,
+  "contracts_proved": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

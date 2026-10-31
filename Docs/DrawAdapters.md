@@ -103,10 +103,10 @@ I и IFF сохраняются, стек сбалансирован.
 | #7CF8 | [Station.DrawItem18](../Source/Station/DrawItem18.asm) |
 | #7D24 | [Station.DrawItem17](../Source/Station/DrawItem17.asm) |
 | #7D53 | [Station.DrawItem16](../Source/Station/DrawItem16.asm) |
-| #7D77 | [Station.DrawItem35](../Source/Station/DrawItem35.asm) |
+| #7D77 | [Station.DrawSellControl](../Source/Station/DrawSellControl.asm) |
 | #7D99 | [Station.DrawItem04](../Source/Station/DrawItem04.asm) |
 | #7DB5 | [Station.DrawItem05](../Source/Station/DrawItem05.asm) |
 | #7DE1 | [Station.DrawItem06](../Source/Station/DrawItem06.asm) |
-| #7E19 | [Station.DrawItem07](../Source/Station/DrawItem07.asm) |
+| #7E19 | [Station.DrawShipControl](../Source/Station/DrawShipControl.asm) |
 | #7F11 | [Station.DrawItem08](../Source/Station/DrawItem08.asm) |
 | #AA4F | [Station.DrawItem33](../Source/Station/DrawItem33.asm) |

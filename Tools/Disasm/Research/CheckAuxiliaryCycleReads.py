@@ -35,7 +35,7 @@ def main():
      else:
       address=(0x98B0+4*(expected_cursor-0x99A3))&65535
       assert r[PC]==0x7D14 and r[D]*256+r[E]==int.from_bytes(m[address:address+2],'little') and r[H]*256+r[L]==int.from_bytes(m[address+2:address+4],'little') and r[SP]==0x7FFE;selected+=1
- report=dict(passed=True,known_semantic_role=False,absolute_rom_reads=['#7CCF -> #0001','#7CDE -> #0001'],all_first_rom_byte_values=True,selected_key_cases=selected,second_read_zero_return_cases=early,zero_first_read_loop_iterations=zero_iterations,initial_cursor_offsets=list(range(11)),constant_zero_read_has_no_local_exit=True,center_and_redraw_executed=False,real_emulator_rom_verified=False,flags_98BF_role_unknown=True,method='original_fixed_and_changed_ROM_byte_fixture_until_shared_center_or_early_return',irq_executed=False,native_execution=False,assembly_executed=False)
+ report=dict(passed=True,known_semantic_role=False,absolute_rom_reads=['#7CCF -> #0001','#7CDE -> #0001'],all_first_rom_byte_values=True,selected_key_cases=selected,second_read_zero_return_cases=early,zero_first_read_loop_iterations=zero_iterations,initial_cursor_offsets=list(range(11)),constant_zero_read_has_no_local_exit=True,center_and_redraw_executed=False,real_emulator_rom_verified=False,message_index_98BF=1,field_is_numeric_message_selector=True,method='original_fixed_and_changed_ROM_byte_fixture_until_shared_center_or_early_return',irq_executed=False,native_execution=False,assembly_executed=False)
  (ROOT/'Tools/Disasm/Reports/AuxiliaryCycleReadsVerification.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n','utf-8');print(json.dumps(report,ensure_ascii=False,indent=2))
 
 

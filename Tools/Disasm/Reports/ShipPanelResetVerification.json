@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "cases": 10240,
+  "all_frame_flag_bytes": true,
+  "aliased_records_set_then_clear": true,
+  "all_eight_banks_compared_except_six_stack_scratch_bytes": true,
+  "original_banked_write_and_port_trace": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

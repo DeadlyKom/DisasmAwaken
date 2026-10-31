@@ -14,13 +14,13 @@
 ;   граница файла не доказывает границу логической процедуры
 ;   состояние самомодификации и активной страницы учитывается отдельно
 ; -----------------------------------------
-Entry:          LD A, (#67D7)
+Entry:          LD A, (@PanelHoverState.ShipsRow)
                 INC A
                 RET Z                                                           ; выход, если флаг Z установлен
 
                 LD A, #14
                 CALL @Station.SelectRamBank.Entry
-                LD A, (#67D7)
+                LD A, (@PanelHoverState.ShipsRow)
                 LD (#E146), A
                 LD A, #10
                 CALL @Station.SelectRamBank.Entry
@@ -31,14 +31,14 @@ Entry:          LD A, (#67D7)
 
 
                 INC C
-Point79E4:      LD A, (#6906)
+Point79E4:      LD A, (@ShipPanelState.Selector)
                 OR A
                 LD A, C
                 JR Z, @Station.Unknown79C7.Point79ED                            ; переход, если флаг Z установлен
 
 
                 ADD A, #02
-Point79ED:      LD (#983A), A
+Point79ED:      LD (@ScriptCallState.EventCode), A
                 LD A, #16
                 CALL @Station.SelectRamBank.Entry
                 CALL #C000

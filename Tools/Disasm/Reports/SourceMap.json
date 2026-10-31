@@ -913,7 +913,7 @@
     "offset": 2684,
     "length": 16,
     "kind": "code",
-    "path": "Source/Station/Unknown67D0.asm",
+    "path": "Source/Station/UpdateShipListHover.asm",
     "origin": 26576,
     "sha256": "6826318b9236f588d0e6e096645366ce199014fa14de48428eeb4341c84b9c2f"
   },
@@ -948,9 +948,9 @@
     "slot": 4,
     "offset": 2844,
     "length": 7,
-    "kind": "unclassified",
-    "path": "Source/Resources/04_STATIONF/Unclassified009.bin",
-    "origin": null,
+    "kind": "code",
+    "path": "Source/Station/Unknown6870.asm",
+    "origin": 26736,
     "sha256": "85d3897e25ec08063ae3a932c317a124af589eb024c0a1d4facfac087509a522"
   },
   {
@@ -965,11 +965,20 @@
   {
     "slot": 4,
     "offset": 2936,
-    "length": 71,
-    "kind": "unclassified",
-    "path": "Source/Resources/04_STATIONF/Unclassified010.bin",
-    "origin": null,
-    "sha256": "58e562b2362715ec6f820a43eee776be12faddc40fa2302d66b8e33f414c1157"
+    "length": 30,
+    "kind": "code",
+    "path": "Source/Station/Unknown68CC.asm",
+    "origin": 26828,
+    "sha256": "cd45380636fc9f1cd12ac0d5cdd25e0f27db6936bc416ab687c76141aa8b12e8"
+  },
+  {
+    "slot": 4,
+    "offset": 2966,
+    "length": 41,
+    "kind": "code",
+    "path": "Source/Station/Unknown68EA.asm",
+    "origin": 26858,
+    "sha256": "3093b60bf4cd5a0b39391407ffe5c351d25f304ee4c8ad6e57a607de3b938eb6"
   },
   {
     "slot": 4,
@@ -993,9 +1002,9 @@
     "slot": 4,
     "offset": 3050,
     "length": 7,
-    "kind": "unclassified",
-    "path": "Source/Resources/04_STATIONF/Unclassified012.bin",
-    "origin": null,
+    "kind": "code",
+    "path": "Source/Station/Unknown693E.asm",
+    "origin": 26942,
     "sha256": "72180f8464e8048ba46ab87a2c7bbaa9be7236f6ab054f9ae5417f647282cd0f"
   },
   {
@@ -1075,7 +1084,7 @@
     "offset": 3319,
     "length": 16,
     "kind": "code",
-    "path": "Source/Station/Unknown6A4B.asm",
+    "path": "Source/Station/UpdateIndexListHover.asm",
     "origin": 27211,
     "sha256": "3af44d01bc705db8a01570cc1455ff4611cb24c3769943925c36ffd44256b287"
   },
@@ -1156,7 +1165,7 @@
     "offset": 3642,
     "length": 16,
     "kind": "code",
-    "path": "Source/Station/Unknown6B8E.asm",
+    "path": "Source/Station/UpdateEnvironmentHover.asm",
     "origin": 27534,
     "sha256": "44ab92fa825ca22a65abb9447b37440a9a906b6a3d7423e04a24139b4c3bd9b6"
   },
@@ -1228,7 +1237,7 @@
     "offset": 4206,
     "length": 3,
     "kind": "code",
-    "path": "Source/Station/HandleItem24.asm",
+    "path": "Source/Station/HandleDecodedMessageHover.asm",
     "origin": 28098,
     "sha256": "3f55ea222d80b7c4013f67f14c94e655836a2b20f8b3d59f91f344468971f736"
   },
@@ -1237,7 +1246,7 @@
     "offset": 4223,
     "length": 1,
     "kind": "code",
-    "path": "Source/Station/Unknown6DD3.asm",
+    "path": "Source/Station/ReturnDecodedMessageHover.asm",
     "origin": 28115,
     "sha256": "4fb733bedb74fec8d65bedf056b935189a289e928b3302bec38a281814de523a"
   },
@@ -1246,25 +1255,34 @@
     "offset": 4224,
     "length": 61,
     "kind": "code",
-    "path": "Source/Station/DrawItem24.asm",
+    "path": "Source/Station/DrawDecodedMessagePanel.asm",
     "origin": 28116,
     "sha256": "ccb16a64ad60ddf804924bc78a5780d792c11362d736c931097ceddf7d144c4a"
   },
   {
     "slot": 4,
     "offset": 4285,
-    "length": 101,
-    "kind": "unclassified",
-    "path": "Source/Resources/04_STATIONF/Unclassified023.bin",
-    "origin": null,
-    "sha256": "cfd593d785edad72fd6dbbed9b660431ace7fca5b6a01f4831628119df4147d5"
+    "length": 92,
+    "kind": "code",
+    "path": "Source/StationFinalExit/LoadFinal.asm",
+    "origin": 16384,
+    "sha256": "a1c62b99fc2d66c1ca2e585c03239b8415f2421f5553db89e4adb2848bb4ecfe"
+  },
+  {
+    "slot": 4,
+    "offset": 4377,
+    "length": 9,
+    "kind": "typed_data",
+    "path": "Source/StationFinalExit/Data/FinalFileName.asm",
+    "origin": 16476,
+    "sha256": "4b090a2eeb346476a9235ea41af42d8dc84f1308acc69284543b68ecd0dd8341"
   },
   {
     "slot": 4,
     "offset": 4386,
     "length": 9,
     "kind": "code",
-    "path": "Source/Station/Unknown6E76.asm",
+    "path": "Source/Station/PrintDecodedMessage.asm",
     "origin": 28278,
     "sha256": "ffb88563db13fe50eb88bae3cc6786a3ffbcee21d00efdf26e654a5cff2f6948"
   },
@@ -1273,7 +1291,7 @@
     "offset": 4395,
     "length": 3,
     "kind": "code",
-    "path": "Source/Station/HandleItem10.asm",
+    "path": "Source/Station/HandleQueuedMessageHover.asm",
     "origin": 28287,
     "sha256": "6505c19e57c6684e4cf541a257a732bf445083a6ee2ded65e26ad106d2d41b6a"
   },
@@ -1282,7 +1300,7 @@
     "offset": 4405,
     "length": 1,
     "kind": "code",
-    "path": "Source/Station/Unknown6E89.asm",
+    "path": "Source/Station/ReturnQueuedMessageHover.asm",
     "origin": 28297,
     "sha256": "4fb733bedb74fec8d65bedf056b935189a289e928b3302bec38a281814de523a"
   },
@@ -1291,7 +1309,7 @@
     "offset": 4406,
     "length": 15,
     "kind": "code",
-    "path": "Source/Station/DrawItem10.asm",
+    "path": "Source/Station/DrawQueuedMessagePanel.asm",
     "origin": 28298,
     "sha256": "e992d2a93f7c198d634a24702a1ac96fa8f3eab77b36a5a864efb8a895151293"
   },
@@ -1363,25 +1381,34 @@
     "offset": 4762,
     "length": 3,
     "kind": "code",
-    "path": "Source/Station/HandleItem34.asm",
+    "path": "Source/Station/HandleTradePanelHover.asm",
     "origin": 28654,
     "sha256": "8cbb4545f6b27d7f9a8fc4d64774ef48eaa40075a8a2414dd0c5e2dc3730ed41"
   },
   {
     "slot": 4,
     "offset": 4848,
-    "length": 45,
+    "length": 29,
     "kind": "code",
-    "path": "Source/Station/Unknown7044.asm",
+    "path": "Source/Station/RunTradeEventAndRedraw.asm",
     "origin": 28740,
-    "sha256": "4566007a7ce153b357199585866878cd5cf2737527eed4cf1cfb56864afaff11"
+    "sha256": "b193a3bc6e9caf55c5333b6beeb2916535ee0c38ac7062c57a98181b13f60afd"
+  },
+  {
+    "slot": 4,
+    "offset": 4877,
+    "length": 16,
+    "kind": "code",
+    "path": "Source/Station/UpdateTradeRowHover.asm",
+    "origin": 28769,
+    "sha256": "baddd89188c66140e212a1ce26116f4fe16bd9ef8fbc2e72b1a19b4a1a21a673"
   },
   {
     "slot": 4,
     "offset": 4893,
     "length": 37,
     "kind": "code",
-    "path": "Source/Station/DrawItem34.asm",
+    "path": "Source/Station/DrawTradePanel.asm",
     "origin": 28785,
     "sha256": "38e3f6016f7cb026008cd75b56e0441b00cc9f7ccc3f4940798444643a08ffa5"
   },
@@ -1390,7 +1417,7 @@
     "offset": 4930,
     "length": 190,
     "kind": "code",
-    "path": "Source/Station/Unknown7096.asm",
+    "path": "Source/Station/DrawTradeNumericColumns.asm",
     "origin": 28822,
     "sha256": "85b2f994e3f998fafb5a488166f6de684e17c69b25dda3df6b6bfcc155e10c3c"
   },
@@ -1399,7 +1426,7 @@
     "offset": 5120,
     "length": 30,
     "kind": "code",
-    "path": "Source/Station/Unknown7154.asm",
+    "path": "Source/Station/SetMarketTextColumns.asm",
     "origin": 29012,
     "sha256": "8764ad77d04f011a36795db8d90f4176d30d83c811cccbedb3471e14407991bb"
   },
@@ -1417,7 +1444,7 @@
     "offset": 5308,
     "length": 16,
     "kind": "code",
-    "path": "Source/Station/Unknown7210.asm",
+    "path": "Source/Station/UpdateEquipmentHover.asm",
     "origin": 29200,
     "sha256": "1e42176dd5f42be8dbb12bb27190ecb25d58aa3f7a96be62fac978d189875c4e"
   },
@@ -1471,7 +1498,7 @@
     "offset": 5934,
     "length": 16,
     "kind": "code",
-    "path": "Source/Station/Unknown7482.asm",
+    "path": "Source/Station/UpdateToPositionHover.asm",
     "origin": 29826,
     "sha256": "021cf6f99f84ef0539e8b5ffa020021ef5304b626a9b50d1d2728eaf548a5223"
   },
@@ -1498,7 +1525,7 @@
     "offset": 6071,
     "length": 16,
     "kind": "code",
-    "path": "Source/Station/Unknown750B.asm",
+    "path": "Source/Station/UpdateFromPositionHover.asm",
     "origin": 29963,
     "sha256": "a9ef303b75e962d40ce19477b2225b17471cc85e14d950bb3a50fb87b3be1374"
   },
@@ -1570,7 +1597,7 @@
     "offset": 6348,
     "length": 16,
     "kind": "code",
-    "path": "Source/Station/Unknown7620.asm",
+    "path": "Source/Station/UpdateGameSettingsHover.asm",
     "origin": 30240,
     "sha256": "afe1e33fef6a5b6c56825016ec375a53bdfe56153e1bf5aec36aa422053b0b2e"
   },
@@ -2191,7 +2218,7 @@
     "offset": 8197,
     "length": 10,
     "kind": "code",
-    "path": "Source/Station/HandleItem35.asm",
+    "path": "Source/Station/HandleSellControl.asm",
     "origin": 32089,
     "sha256": "40b6b7f86b2ab85462880bb24f416e8bffcc7f0aaa35715bfdb133c262fd84f2"
   },
@@ -2200,7 +2227,7 @@
     "offset": 8207,
     "length": 20,
     "kind": "code",
-    "path": "Source/Station/Unknown7D63.asm",
+    "path": "Source/Station/SellCurrentCargo.asm",
     "origin": 32099,
     "sha256": "ed8db624b70d8e53e949e8af71eca735a078aabcb76296cb1ecd22eaa97ed910"
   },
@@ -2209,7 +2236,7 @@
     "offset": 8227,
     "length": 6,
     "kind": "code",
-    "path": "Source/Station/DrawItem35.asm",
+    "path": "Source/Station/DrawSellControl.asm",
     "origin": 32119,
     "sha256": "c1e0c4e4787798c72b1b569a601837b6f49d0f0a91957bf69d2b42a02bd0eaa9"
   },
@@ -2218,7 +2245,7 @@
     "offset": 8233,
     "length": 10,
     "kind": "code",
-    "path": "Source/Station/HandleItem04.asm",
+    "path": "Source/Station/HandleContractsControl.asm",
     "origin": 32125,
     "sha256": "c0fcab512d1f6ee26f947776983618465bc71a400be09ac4e55f3da9cecafb75"
   },
@@ -2227,7 +2254,7 @@
     "offset": 8243,
     "length": 18,
     "kind": "code",
-    "path": "Source/Station/Unknown7D87.asm",
+    "path": "Source/Station/OpenContractPanels.asm",
     "origin": 32135,
     "sha256": "dee5e44fc88ca18cb3b612897c7e10d56025c713cebb3486a301ae0f38d7f951"
   },
@@ -2245,7 +2272,7 @@
     "offset": 8267,
     "length": 10,
     "kind": "code",
-    "path": "Source/Station/HandleItem05.asm",
+    "path": "Source/Station/HandleTradeControl.asm",
     "origin": 32159,
     "sha256": "07c861662c2b7d90c40a55ab409f91d134809e972e59f7d367d90d4dd5f3674e"
   },
@@ -2254,7 +2281,7 @@
     "offset": 8277,
     "length": 12,
     "kind": "code",
-    "path": "Source/Station/Unknown7DA9.asm",
+    "path": "Source/Station/OpenTradePanels.asm",
     "origin": 32169,
     "sha256": "7f06f561458d1580ec02f54589a4efe12eb25181230ca09dfc239db43e76eb9c"
   },
@@ -2272,7 +2299,7 @@
     "offset": 8295,
     "length": 10,
     "kind": "code",
-    "path": "Source/Station/HandleItem06.asm",
+    "path": "Source/Station/HandleEquipmentControl.asm",
     "origin": 32187,
     "sha256": "5c4cff727b179888276791fb029880f97533fb3da9fd76423fd18fe3b4a7eafb"
   },
@@ -2281,7 +2308,7 @@
     "offset": 8305,
     "length": 28,
     "kind": "code",
-    "path": "Source/Station/Unknown7DC5.asm",
+    "path": "Source/Station/OpenEquipmentPanels.asm",
     "origin": 32197,
     "sha256": "f00384394e924cf8ac51216509bc677359a0d8bc4618ae22e439b6517fb52a46"
   },
@@ -2299,7 +2326,7 @@
     "offset": 8339,
     "length": 10,
     "kind": "code",
-    "path": "Source/Station/HandleItem07.asm",
+    "path": "Source/Station/HandleShipControl.asm",
     "origin": 32231,
     "sha256": "4be30452e3e150ce1c1a24e4076da5db3e8d32a2aa20b2713b0383b88ce84303"
   },
@@ -2308,7 +2335,7 @@
     "offset": 8349,
     "length": 40,
     "kind": "code",
-    "path": "Source/Station/Unknown7DF1.asm",
+    "path": "Source/Station/OpenShipPanels.asm",
     "origin": 32241,
     "sha256": "13db21a845c04e33d1471774c2cbff8e7e03ea24c35c7b6be0ce4ce8aec4d742"
   },
@@ -2317,7 +2344,7 @@
     "offset": 8389,
     "length": 6,
     "kind": "code",
-    "path": "Source/Station/DrawItem07.asm",
+    "path": "Source/Station/DrawShipControl.asm",
     "origin": 32281,
     "sha256": "c1e0c4e4787798c72b1b569a601837b6f49d0f0a91957bf69d2b42a02bd0eaa9"
   },
@@ -2326,7 +2353,7 @@
     "offset": 8395,
     "length": 52,
     "kind": "code",
-    "path": "Source/Station/Unknown7E1F.asm",
+    "path": "Source/Station/ResetShipPanelSelection.asm",
     "origin": 32287,
     "sha256": "041d297de563bffcb1ac7d22d58cab099db2af24acf62438b834fcfb72d9326f"
   },
@@ -5352,7 +5379,7 @@
     "offset": 1485,
     "length": 18,
     "kind": "code",
-    "path": "Source/Text/IsMarketMarkClear.asm",
+    "path": "Source/Text/IsMarketSaleLegal.asm",
     "origin": 50637,
     "sha256": "bb019d90a9d00ae76b63eea0e70d3697f950e7574d569663ef669c51a7419267"
   },
@@ -5683,11 +5710,29 @@
   {
     "slot": 5,
     "offset": 2689,
-    "length": 1407,
+    "length": 14,
     "kind": "unclassified",
-    "path": "Source/Resources/05_LANG/AfterAssignmentScratch.bin",
+    "path": "Source/Resources/05_LANG/BeforeMarketScript.bin",
     "origin": null,
-    "sha256": "8c923d41b25ac1c54011a34fbeccdfa98036936c930be15663e8cc9c3d111b10"
+    "sha256": "e7ecebbc590bc88b3761fa6cd03d749f87463dabb67021a5c6768c25ec68b3f2"
+  },
+  {
+    "slot": 5,
+    "offset": 2703,
+    "length": 1161,
+    "kind": "typed_data",
+    "path": "Source/Text/Data/MarketScript.asm",
+    "origin": 51855,
+    "sha256": "12386209f646b5820adfa3ba8b2eed9c7c4c32d0d810f774ada616309b53569f"
+  },
+  {
+    "slot": 5,
+    "offset": 3864,
+    "length": 232,
+    "kind": "unclassified",
+    "path": "Source/Resources/05_LANG/AfterMarketScript.bin",
+    "origin": null,
+    "sha256": "2e3e601754c818365ad75c8ff79145765e2db60402b5882bf7b9ce6537aba45e"
   },
   {
     "slot": 6,
@@ -11622,7 +11667,7 @@
     "offset": 4209,
     "length": 14,
     "kind": "code",
-    "path": "Source/Station/Unknown6DC5.asm",
+    "path": "Source/Station/HandleDecodedMessageClick.asm",
     "origin": 28101,
     "sha256": "a5bcc3f0219498dc9c64c89d81fefbb4a4d909c875b6db4ebf9d78552dc400fa"
   },
@@ -11631,7 +11676,7 @@
     "offset": 4398,
     "length": 7,
     "kind": "code",
-    "path": "Source/Station/Unknown6E82.asm",
+    "path": "Source/Station/HandleQueuedMessageClick.asm",
     "origin": 28290,
     "sha256": "11e8d00b801d93c1a9a72cb4b7aace21f2867392bec81503fdafe2d26ee35197"
   },
@@ -11640,7 +11685,7 @@
     "offset": 4765,
     "length": 83,
     "kind": "code",
-    "path": "Source/Station/Unknown6FF1.asm",
+    "path": "Source/Station/HandleTradePanelClick.asm",
     "origin": 28657,
     "sha256": "649e9fd5aaf7ba8649df36c6e46e801eccb6a6a077e0706fff5b489a54478236"
   },
@@ -11737,18 +11782,27 @@
   {
     "slot": 4,
     "offset": 16785,
-    "length": 69,
+    "length": 60,
     "kind": "code",
-    "path": "Source/Station/UnknownA191.asm",
+    "path": "Source/Station/ParseSettingsLabel.asm",
     "origin": 41361,
-    "sha256": "8dce280a49df12716770e8fec9206202eab3889e306d595cb4415f28f5e60d97"
+    "sha256": "d3ca26067bfa3e39166ed21d3a1ab3afd72e02fb88333478961e2b3146f5b8f9"
+  },
+  {
+    "slot": 4,
+    "offset": 16845,
+    "length": 9,
+    "kind": "code",
+    "path": "Source/Station/RestoreScrollPointer.asm",
+    "origin": 41421,
+    "sha256": "f4827355fc78016d422c42765a581cff2638722b80a24a1853ef5ac6bc4c70b4"
   },
   {
     "slot": 4,
     "offset": 16854,
     "length": 153,
     "kind": "code",
-    "path": "Source/Station/UnknownA1D6.asm",
+    "path": "Source/Station/ScrollWindowRows.asm",
     "origin": 41430,
     "sha256": "53737caf3e8ada6752b5e02a1cc15bcdeb128ba90a452703be1bb16d37520aec"
   },
@@ -11757,7 +11811,7 @@
     "offset": 17007,
     "length": 17,
     "kind": "code",
-    "path": "Source/Station/UnknownA26F.asm",
+    "path": "Source/Station/XorRowIfSelected.asm",
     "origin": 41583,
     "sha256": "f8766c0dc13a2260cb35a69f5eb0623a459e97addef46321acbc509e1a4fd466"
   },
@@ -11802,7 +11856,7 @@
     "offset": 26288,
     "length": 430,
     "kind": "code",
-    "path": "Source/Station/UnknownC6B0.asm",
+    "path": "Source/Station/ClearScrollWindowBody.asm",
     "origin": 50864,
     "sha256": "e1a741ac1afe2739d88599f2e5e54c4a3b871023592a82ea86275b58da6a9879"
   },

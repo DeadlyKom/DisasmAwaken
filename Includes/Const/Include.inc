@@ -223,6 +223,10 @@ VisiblePage     equ #0010                                                       
 BaseScreen      equ #4000                                                       ; исходный адрес базовых пикселей и атрибутов банка 5
 BankWindow      equ #C000                                                       ; начало существующего переключаемого окна RAM
 ScreenBytes     equ #1B00                                                       ; 6912 байтов пикселей и атрибутов одного экрана
+BitmapBytes     equ #1800                                                       ; 6144 байта пикселей без атрибутов
+AttributeBytes  equ #0300                                                       ; 768 байтов атрибутов
+BaseAttributes  equ #5800                                                       ; исходные атрибуты базового экрана банка 5
+BankAttributes  equ #D800                                                       ; атрибуты банка 7 в переключаемом окне
                 endmodule
 
                 module RepaintConst
@@ -443,6 +447,79 @@ NegativeStep    equ #F8                                                         
 PreviousRecord  equ #FFFB                                                       ; отрицательный размер пятибайтовой записи
 Empty           equ #FF                                                         ; первый байт физически пустой записи
 EndMarker       equ #80                                                         ; точный исходный ограничитель прохода очистки B
+                endmodule
+
+                module DecodedMessageConst
+System          equ #00                                                         ; числовой индекс сообщения о расшифрованной системе
+AlienSignal     equ #01                                                         ; числовой индекс предупреждения об иносигнале
+                endmodule
+
+                module DecodedPanelConst
+SystemFirst     equ #4B37                                                       ; FirstWord ключа системы Дзета-43/78-Д
+SystemSecond    equ #4E25                                                       ; SecondWord ключа системы Дзета-43/78-Д
+FinalCode       equ #FE                                                         ; точный числовой код допуска финального перехода
+                endmodule
+
+                module FinalExitCopy
+Source          equ #6E11                                                       ; физический источник исходного финального загрузчика
+Destination     equ #4000                                                       ; адрес исходного исполнения после переноса
+Bytes           equ #0200                                                       ; исходная длина переноса, включая соседний хвост
+                endmodule
+
+                module MarketColumnConst
+SaleQuantity    equ #60                                                         ; начало количества в колонке Продажа, пиксели
+SalePrice       equ #72                                                         ; начало цены в колонке Продажа, пиксели
+OwnedQuantity   equ #88                                                         ; начало количества в колонке Наличие, пиксели
+OwnedPrice      equ #9A                                                         ; начало цены в колонке Наличие, пиксели
+Unit            equ #B0                                                         ; начало единицы измерения, пиксели
+                endmodule
+
+                module PanelHoverConst
+Rows            equ #1E0B                                                       ; запрос 30 строк, верхний отступ 11 пикселей
+IndentedRows    equ #1E1B                                                       ; запрос 30 строк, верхний отступ 27 пикселей
+PositionsPixels equ #2803                                                       ; высота 40 пикселей, верхний отступ 3 пикселя
+                endmodule
+
+                module TradeTableConst
+StartCursor     equ #2000                                                       ; исходные CursorX=0, CursorY=32 перед наименованиями
+StartY          equ #20                                                         ; Y первой числовой строки относительно окна
+QuantityMask    equ #7F                                                         ; bits6..0 количества без неизвестного визуального разряда
+MarkGlyph       equ #FE                                                         ; исходный глиф для установленного bit7 количества
+SaleMarkX       equ #6D                                                         ; фиксированный X рыночного значка, 109 пикселей
+OwnedMarkX      equ #86                                                         ; фиксированный X значка наличия, 134 пикселя
+                endmodule
+
+                module SettingsParseConst
+TableLow        equ #AC                                                         ; младший байт исходного Code1D по 96AC
+TableHigh       equ #96                                                         ; старший байт Code1D до переноса прибавления TableLow
+AfterTags       equ #82                                                         ; первый код после числовых значений и двух маркеров N/Y
+                endmodule
+
+                module ClearBodyConst
+HeightExtra     equ #05                                                         ; байтовая добавка к переданной высоте очищаемого тела
+YEnd            equ #C0                                                         ; исходный предел сравнения вертикальных координат, 192
+UnrolledBytes   equ #1E                                                         ; число пар записи и увеличения адреса в развёрнутом блоке
+LeftKeep        equ #E0                                                         ; сохраняемые три левых пикселя обычной строки
+RightKeep       equ #07                                                         ; сохраняемые три правых пикселя обычной строки
+                endmodule
+
+                module TradePanelConst
+NoRow           equ #FF                                                         ; числовой маркер отсутствующей выбранной строки
+OwnedColumnX    equ #87                                                         ; байтовая граница колонки Наличие, 135 пикселей
+LanguagePage    equ #16                                                         ; банк LANG 6 с ROM 1 для SelectRamBank
+EndLimit        equ #001D                                                       ; исходная граница 29 проверки прокрутки вниз
+HoverAreaInit   equ #1E23                                                       ; исходные 30 строк и отступ 35 до обновления счётчика
+                endmodule
+
+                module TradeEvent
+BuyOne          equ #09                                                         ; исходная покупка одной единицы текущего товара
+SellOne         equ #0A                                                         ; исходная продажа одной единицы текущего груза
+SellCurrent     equ #0B                                                         ; исходная продажа всего текущего груза
+                endmodule
+
+                module MarketRowConst
+SaleBanBit      equ #07                                                         ; номер разряда запрета продажи в StockAndSaleBan
+SaleBanMask     equ #80                                                         ; флаг, продажа товара вызывает штраф и списание количества груза
                 endmodule
 
                 endif

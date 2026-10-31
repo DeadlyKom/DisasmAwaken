@@ -1,0 +1,48 @@
+{
+  "passed": true,
+  "cases": 14319,
+  "visible_rectangles": 10909,
+  "all_widths_2_32_and_heights_3_24": true,
+  "negative_origin_and_both_screen_edges": true,
+  "top_offsets": [
+    0,
+    8,
+    32
+  ],
+  "offset_limited_to_text_height": true,
+  "visited_clear_loops": [
+    51021,
+    51115,
+    51204
+  ],
+  "whole_bitmap_and_attributes_compared": true,
+  "independent_pixel_rectangle_reference": true,
+  "original_self_modified_jumps_executed": true,
+  "bottom_clip_preserves_row_191": true,
+  "top_191_zero_height_boundaries": [
+    {
+      "x": -1,
+      "rows": 256,
+      "first_write_outside_bitmap": 22528,
+      "last_write_outside_bitmap": 30656,
+      "written_bytes_outside_bitmap": 255
+    },
+    {
+      "x": 0,
+      "rows": 256,
+      "first_write_outside_bitmap": 22528,
+      "last_write_outside_bitmap": 30657,
+      "written_bytes_outside_bitmap": 510
+    },
+    {
+      "x": 31,
+      "rows": 256,
+      "first_write_outside_bitmap": 22559,
+      "last_write_outside_bitmap": 30687,
+      "written_bytes_outside_bitmap": 255
+    }
+  ],
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

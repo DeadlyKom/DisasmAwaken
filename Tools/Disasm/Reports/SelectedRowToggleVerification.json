@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "whole_cases": 1024,
+  "early_ff_cases": 4,
+  "rendered_bands": 732,
+  "rejected_bands": 288,
+  "all_input_flags_for_ff": 256,
+  "all_row_bytes": true,
+  "real_pointer_and_banked_xor": true,
+  "bitmap_and_attributes_compared": true,
+  "row_not_limited_to_clamped_height": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

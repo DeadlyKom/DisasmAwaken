@@ -17,7 +17,7 @@
 Entry:          LD HL, #0000
                 CALL @Station.DrawCaptionItem.Entry
                 LD A, #FF
-                LD (#6A52), A
+                LD (@PanelHoverState.IndexRow), A
                 CALL @Station.Unknown6A7E.Entry
                 LD HL, (#6A15)
                 LD A, #17

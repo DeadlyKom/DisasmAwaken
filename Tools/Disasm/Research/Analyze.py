@@ -36,6 +36,7 @@ BLOCKS = [
     block(4, 0x5CE, 0x1C6A, 0x6322, "Station", (0x6322, 0x6E9C, 0x6F5D)),
     block(4, 0x2238, 0xA000-0x2238, 0x8238, "Station", (0x9A59, 0x9AEA, 0x639F, 0x9EFF, 0xA163)),
     block(4, 0x216C, 0x48, 0x4200, "StationExit", (0x4200,)),
+    block(4, 0x10BD, 0x5C, 0x4000, "StationFinalExit", (0x4000,)),
     block(5, 0, 3864, 0xC000, "Text", (0xC000,)),
     block(7, 0, 11776, 0xC000, "Map", (0xC000, 0xC44A, 0xC474, 0xC677, 0xD0C3)),
     block(8, 0, 5921, 0xDB00, "Help", (0xDB00, 0xDB42, 0xDB57, 0xDB5B)),
@@ -59,7 +60,7 @@ def payload(slot):
     return (ROOT / (entry(slot)["path"] + ".sectors.bin")).read_bytes()
 
 
-def analyze(name, extra_roots=(), observed=()):
+def analyze(name, extra_roots=(), observed=(), initial_bank=0):
     chunks = [b for b in BLOCKS if b["name"] == name]
     memory = bytearray(65536)
     origins = {}
@@ -81,6 +82,9 @@ def analyze(name, extra_roots=(), observed=()):
     roots = {address for chunk in chunks for address in chunk["roots"]}
     roots.update(address for address in extra_roots if address in origins)
     roots.update(address for address in FUNCTIONS.get(name, {}) if address in origins)
+    # Периодический адрес 68EA записывается DrawItem26, остальные входы достигаются его исходными ветвями.
+    if name == "Station":
+        roots.update((0x6870, 0x68CC, 0x68EA, 0x693E))
     # Поиск корней по исходной разнесённой таблице кодов границ, это статический снимок до рабочих записей.
     if name == "Map":
         codes = (0, 1, 2, 4, 5, 6, 8, 9, 10)
@@ -159,7 +163,7 @@ def analyze(name, extra_roots=(), observed=()):
         raw = bytes.fromhex(encoded)
         if any(address + i not in origins for i in range(len(raw))) or memory[address:address + len(raw)] != raw:
             raise ValueError("Не совпали исходные байты подтверждённого продолжения")
-    pending = [(address, 0, None) for address in sorted(roots | set(observed) | linear | set(continuations), reverse=True)]
+    pending = [(address, initial_bank, None) for address in sorted(roots | set(observed) | linear | set(continuations), reverse=True)]
     while pending:
         address, bank, accumulator = pending.pop()
         hl_constant = None
@@ -213,7 +217,7 @@ def analyze(name, extra_roots=(), observed=()):
                         roots.add(hl_constant)
                         pending.append((hl_constant, bank, None))
                     # Обновление абстрактной страницы только через установленный интерфейс OUT #7FFD.
-                    page_calls = {"Station": (0x6396, 0x639F), "StationExit": (0x6396,), "Action": (0xAB1B,)}
+                    page_calls = {"Station": (0x6396, 0x639F), "StationExit": (0x6396,), "StationFinalExit": (0x6396,), "Action": (0xAB1B,)}
                     if target in page_calls.get(name, ()):
                         bank = None if accumulator is None else accumulator & 7
                     elif name in ("Station", "Action"):
@@ -230,6 +234,9 @@ def analyze(name, extra_roots=(), observed=()):
                 unresolved.append({"address": address, "operation": operation,
                                    "reason": "обработчик RST зависит от ПЗУ и контекста"})
                 break
+            # Обновление банка для доказанного прямого OUT 1F в перенесённом финальном загрузчике.
+            if name == "StationFinalExit" and address == 0x4011 and operation == "OUT (C),A" and accumulator == 0x1F:
+                bank = 7
             # Поиск фактического callback MainLoop по записи в операнд периодического CALL.
             if name == "Station" and operation == "LD (#9A89),HL" and hl_constant in origins:
                 roots.add(hl_constant)

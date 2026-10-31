@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "cases": 8064,
+  "changed_cases": 928,
+  "unchanged_cases": 7136,
+  "per_wrapper": {
+    "UpdateShipListHover": 1152,
+    "UpdateIndexListHover": 1152,
+    "UpdateEnvironmentHover": 1152,
+    "UpdateEquipmentHover": 1152,
+    "UpdateToPositionHover": 1152,
+    "UpdateFromPositionHover": 1152,
+    "UpdateGameSettingsHover": 1152
+  },
+  "every_pointer_y_0_191": true,
+  "previous_rows": [
+    255,
+    0,
+    64
+  ],
+  "last_draw_handler_gate": true,
+  "bitmap_and_attributes_compared": true,
+  "real_pointer_and_banked_xor": true,
+  "late_pointer_change_not_injected_here": true,
+  "late_change_core_report": "RowHoverVerification.json",
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

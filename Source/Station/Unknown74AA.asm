@@ -22,7 +22,7 @@ Entry:          CALL @Station.RepaintAndFlag.Entry
 
                 RET
 
-Point74B7:      LD A, (#7512)
+Point74B7:      LD A, (@PanelHoverState.FromPositionRow)
                 ADD A, #30
                 LD HL, #7534
                 LD (HL), A
@@ -59,7 +59,7 @@ Point74B7:      LD A, (#7512)
                 LD I, A
                 IM 2
                 CALL #C873
-                LD A, (#7512)
+                LD A, (@PanelHoverState.FromPositionRow)
                 RET
 
                 endmodule

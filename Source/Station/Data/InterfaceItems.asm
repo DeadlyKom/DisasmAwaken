@@ -67,7 +67,7 @@ Item04:         FInterfaceItem {
                     #00,                                                        ; FInterfaceItem.Height
                     #40,                                                        ; FInterfaceItem.Flags
                     #03,                                                        ; FInterfaceItem.TextIndex
-                    @Station.HandleItem04.Entry,                                ; FInterfaceItem.EventHandler
+                    @Station.HandleContractsControl.Entry,                      ; FInterfaceItem.EventHandler
                     #05,                                                        ; FInterfaceItem.SavedX
                     #15,                                                        ; FInterfaceItem.SavedY
                     #05,                                                        ; FInterfaceItem.SavedWidth
@@ -82,7 +82,7 @@ Item05:         FInterfaceItem {
                     #00,                                                        ; FInterfaceItem.Height
                     #40,                                                        ; FInterfaceItem.Flags
                     #04,                                                        ; FInterfaceItem.TextIndex
-                    @Station.HandleItem05.Entry,                                ; FInterfaceItem.EventHandler
+                    @Station.HandleTradeControl.Entry,                          ; FInterfaceItem.EventHandler
                     #06,                                                        ; FInterfaceItem.SavedX
                     #13,                                                        ; FInterfaceItem.SavedY
                     #04,                                                        ; FInterfaceItem.SavedWidth
@@ -97,7 +97,7 @@ Item06:         FInterfaceItem {
                     #00,                                                        ; FInterfaceItem.Height
                     #40,                                                        ; FInterfaceItem.Flags
                     #05,                                                        ; FInterfaceItem.TextIndex
-                    @Station.HandleItem06.Entry,                                ; FInterfaceItem.EventHandler
+                    @Station.HandleEquipmentControl.Entry,                      ; FInterfaceItem.EventHandler
                     #0F,                                                        ; FInterfaceItem.SavedX
                     #14,                                                        ; FInterfaceItem.SavedY
                     #06,                                                        ; FInterfaceItem.SavedWidth
@@ -112,12 +112,12 @@ Item07:         FInterfaceItem {
                     #00,                                                        ; FInterfaceItem.Height
                     #40,                                                        ; FInterfaceItem.Flags
                     #07,                                                        ; FInterfaceItem.TextIndex
-                    @Station.HandleItem07.Entry,                                ; FInterfaceItem.EventHandler
+                    @Station.HandleShipControl.Entry,                           ; FInterfaceItem.EventHandler
                     #0A,                                                        ; FInterfaceItem.SavedX
                     #15,                                                        ; FInterfaceItem.SavedY
                     #05,                                                        ; FInterfaceItem.SavedWidth
                     #02,                                                        ; FInterfaceItem.SavedHeight
-                    @Station.DrawItem07.Entry,                                  ; FInterfaceItem.DrawHandler
+                    @Station.DrawShipControl.Entry,                             ; FInterfaceItem.DrawHandler
                     #0000                                                       ; FInterfaceItem.Unknown0E
                 }
 Item08:         FInterfaceItem {
@@ -157,12 +157,12 @@ Item10:         FInterfaceItem {
                     #00,                                                        ; FInterfaceItem.Height
                     #21,                                                        ; FInterfaceItem.Flags
                     #14,                                                        ; FInterfaceItem.TextIndex
-                    @Station.HandleItem10.Entry,                                ; FInterfaceItem.EventHandler
+                    @Station.HandleQueuedMessageHover.Entry,                    ; FInterfaceItem.EventHandler
                     #07,                                                        ; FInterfaceItem.SavedX
                     #05,                                                        ; FInterfaceItem.SavedY
                     #12,                                                        ; FInterfaceItem.SavedWidth
                     #08,                                                        ; FInterfaceItem.SavedHeight
-                    @Station.DrawItem10.Entry,                                  ; FInterfaceItem.DrawHandler
+                    @Station.DrawQueuedMessagePanel.Entry,                      ; FInterfaceItem.DrawHandler
                     #0000                                                       ; FInterfaceItem.Unknown0E
                 }
 Item11:         FInterfaceItem {
@@ -367,12 +367,12 @@ Item24:         FInterfaceItem {
                     #00,                                                        ; FInterfaceItem.Height
                     #01,                                                        ; FInterfaceItem.Flags
                     #02,                                                        ; FInterfaceItem.TextIndex
-                    @Station.HandleItem24.Entry,                                ; FInterfaceItem.EventHandler
+                    @Station.HandleDecodedMessageHover.Entry,                   ; FInterfaceItem.EventHandler
                     #08,                                                        ; FInterfaceItem.SavedX
                     #03,                                                        ; FInterfaceItem.SavedY
                     #10,                                                        ; FInterfaceItem.SavedWidth
                     #10,                                                        ; FInterfaceItem.SavedHeight
-                    @Station.DrawItem24.Entry,                                  ; FInterfaceItem.DrawHandler
+                    @Station.DrawDecodedMessagePanel.Entry,                     ; FInterfaceItem.DrawHandler
                     #0000                                                       ; FInterfaceItem.Unknown0E
                 }
 Item25:         FInterfaceItem {
@@ -517,12 +517,12 @@ Item34:         FInterfaceItem {
                     #00,                                                        ; FInterfaceItem.Height
                     #01,                                                        ; FInterfaceItem.Flags
                     #05,                                                        ; FInterfaceItem.TextIndex
-                    @Station.HandleItem34.Entry,                                ; FInterfaceItem.EventHandler
+                    @Station.HandleTradePanelHover.Entry,                       ; FInterfaceItem.EventHandler
                     #00,                                                        ; FInterfaceItem.SavedX
                     #00,                                                        ; FInterfaceItem.SavedY
                     #19,                                                        ; FInterfaceItem.SavedWidth
                     #13,                                                        ; FInterfaceItem.SavedHeight
-                    @Station.DrawItem34.Entry,                                  ; FInterfaceItem.DrawHandler
+                    @Station.DrawTradePanel.Entry,                              ; FInterfaceItem.DrawHandler
                     #0000                                                       ; FInterfaceItem.Unknown0E
                 }
 Item35:         FInterfaceItem {
@@ -532,12 +532,12 @@ Item35:         FInterfaceItem {
                     #00,                                                        ; FInterfaceItem.Height
                     #60,                                                        ; FInterfaceItem.Flags
                     #0D,                                                        ; FInterfaceItem.TextIndex
-                    @Station.HandleItem35.Entry,                                ; FInterfaceItem.EventHandler
+                    @Station.HandleSellControl.Entry,                           ; FInterfaceItem.EventHandler
                     #19,                                                        ; FInterfaceItem.SavedX
                     #00,                                                        ; FInterfaceItem.SavedY
                     #05,                                                        ; FInterfaceItem.SavedWidth
                     #03,                                                        ; FInterfaceItem.SavedHeight
-                    @Station.DrawItem35.Entry,                                  ; FInterfaceItem.DrawHandler
+                    @Station.DrawSellControl.Entry,                             ; FInterfaceItem.DrawHandler
                     #0000                                                       ; FInterfaceItem.Unknown0E
                 }
 Item36:         FInterfaceItem {

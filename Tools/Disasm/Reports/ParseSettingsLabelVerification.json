@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "cases": 65537,
+  "all_nonzero_characters_and_old_discriminators": 65280,
+  "matrix_word_writes": 36456,
+  "numeric_byte_writes": 37140,
+  "ny_marker_writes": 4,
+  "low_byte_lookup_doubling_checked": true,
+  "old_second_byte_preserved_on_byte_writes": true,
+  "mixed_lengths_0_64": true,
+  "source_and_destination_guards_compared": true,
+  "all_return_registers_checked": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

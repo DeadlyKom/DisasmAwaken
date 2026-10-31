@@ -52,7 +52,7 @@ Entry:          XOR A
 RecomputeLoad:  LD A, #16
                 CALL @Station.SelectRamBank.Entry
                 LD A, #11
-                LD (#983A), A
+                LD (@ScriptCallState.EventCode), A
                 CALL @Text.RunMarketScript.Entry
                 ; возврат банка станции после сценария, если интерпретатор вернулся
                 LD A, #10

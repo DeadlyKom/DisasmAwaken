@@ -17,7 +17,7 @@
 ;   AF - A=(входная CurrentPage AND F8) OR 10, F от последнего OR банкового интерфейса
 ;   MissionOffer.Entry.FirstWord=current.FirstWord, SecondWord=слово последнего принятого NextRandom1
 ;   RequiredTonnage=ROM[lowT]>>3, значение 1..31, Reward=(distance*20*RequiredTonnage) AND FFFF
-;   UnknownStatus=0, четыре UnknownWord04..UnknownWord0A между ключом и наградой не меняются
+;   MessageIndex=0, четыре UnknownWord04..UnknownWord0A между ключом и наградой не меняются
 ;   HL'=адрес RandomStates.Seed1, DE'=current.FirstWord, BC'=current.SecondWord
 ;   AF' соответствует MeasureCoordinateDistance, при нулевом расстоянии либо раннем переполнении сохранён
 ;   IX, IY, I и IFF сохранены, SP обычного возврата равен входному SP+2
@@ -32,7 +32,7 @@
 ;   оба ключа расстояния имеют одинаковый FirstWord, отличаются только словом текущего и случайного SecondWord
 ;   код FF от MeasureCoordinateDistance не отвергается и участвует в награде как число 255
 ;   старшее слово второго произведения не проверяется, максимальное 255*20*31 равно 158100 и может обернуть Reward
-;   четыре промежуточных слова и смысл UnknownStatus остаются неустановленными, физическая структура этого не скрывает
+;   четыре промежуточных слова и смысл MessageIndex остаются неустановленными, физическая структура этого не скрывает
 ;   ROM из исследовательской модели не объявляется ROM эмулятора Unreal, нативный запуск генератора не подтверждён
 ; -----------------------------------------
                 ; чтение текущего первого слова ключа, оно остаётся общим для текущего и предлагаемого пункта
@@ -47,9 +47,9 @@ Entry:          LD HL, (@SignatureInput.Entry.FirstWord)
                 CALL @Station.NextRandom1.Entry
                 ; сохранение нового второго слова предлагаемого пункта до проверки тоннажа
                 LD (@MissionOffer.Entry.SecondWord), HL
-                ; обнуление UnknownStatus перед проверкой каждого нового кандидата
+                ; обнуление MessageIndex перед проверкой каждого нового кандидата
                 XOR A
-                LD (@MissionOffer.Entry.UnknownStatus), A
+                LD (@MissionOffer.Entry.MessageIndex), A
                 ; выбор рабочего BC генератора, B=0 и C=lowT дают адрес первого ROM-страничного блока
                 EXX
                 ; чтение ROM[lowT] как исходного байта для требуемого тоннажа

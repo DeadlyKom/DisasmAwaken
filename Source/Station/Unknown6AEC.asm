@@ -22,21 +22,21 @@ Entry:          CALL @Station.RepaintAndFlag.Entry
 
                 LD BC, #9728
                 LD DE, #99AE
-                JP @Station.UnknownA191.Entry
+                JP @Station.ParseSettingsLabel.Entry
 
 Point6B02:      CALL @Station.Unknown6C00.Entry
                 LD DE, (#6B8F)
-                LD A, (#6B95)
-                CALL @Station.UnknownA26F.Entry
+                LD A, (@PanelHoverState.EnvironmentRow)
+                CALL @Station.XorRowIfSelected.Entry
                 LD A, #FF
-                LD (#6B95), A
+                LD (@PanelHoverState.EnvironmentRow), A
                 LD HL, #6BB6
-                LD (#A265), HL
+                LD (@ScrollState.RenderCall), HL
                 LD HL, #000C
-                LD (#A235), HL
+                LD (@ScrollState.EndLimit), HL
                 LD A, #08
                 LD HL, #0000
-                CALL @Station.UnknownA1D6.Entry
+                CALL @Station.ScrollWindowRows.Entry
                 LD (#6B23), HL
                 RET
 
@@ -46,7 +46,7 @@ Point6B2C:      LD A, (#6B23)
 
                 DEC A
                 LD C, A
-                LD A, (#6B95)
+                LD A, (@PanelHoverState.EnvironmentRow)
                 ADD A, C
                 LD C, A
                 LD B, #00

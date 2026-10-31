@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "active_cases": 28,
+  "no_selection_cases": 256,
+  "paths": {
+    "message_8": 4,
+    "success": 8,
+    "message_9": 4,
+    "message_10": 12
+  },
+  "forced_row_zero_after_repaint": true,
+  "original_trade_event_11_script_executed": true,
+  "real_status_and_trade_drawers": true,
+  "real_banking_and_pointer": true,
+  "adjacent_call_opcode_high_byte_checked": true,
+  "independent_money_quantity_and_message_oracle": true,
+  "independent_full_bitmap_oracle_in_this_model": false,
+  "explicit_halt_wakeups": 28,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

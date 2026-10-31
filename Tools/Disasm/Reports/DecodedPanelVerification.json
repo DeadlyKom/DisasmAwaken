@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "gate_cases": 131328,
+  "fixed_system_name": "Дзета-43/78-Д",
+  "all_first_words": true,
+  "all_second_words": true,
+  "all_98A0_bytes": true,
+  "whole_panel_cases": 32,
+  "whole_final_paths": 8,
+  "whole_message_paths": 24,
+  "real_caption_message_and_music": true,
+  "final_copy_512_bytes_checked": true,
+  "explicit_halt_wakeups": 32,
+  "unknown_98A0_game_role_retained": true,
+  "trdos_executed": false,
+  "final_entry_executed": false,
+  "whole_frame_bitmap_independent_oracle": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

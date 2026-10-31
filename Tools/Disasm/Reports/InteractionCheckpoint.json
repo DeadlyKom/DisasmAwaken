@@ -1,13 +1,13 @@
 {
   "status": "in_progress",
   "all_plan_stages_completed": false,
-  "fragments": 1081,
-  "described": 792,
-  "unknown": 289,
-  "unproved_contracts": 545,
-  "named_without_contract": 256,
-  "instruction_count": 35417,
-  "unclassified_bytes": 318719,
+  "fragments": 1093,
+  "described": 832,
+  "unknown": 261,
+  "unproved_contracts": 498,
+  "named_without_contract": 237,
+  "instruction_count": 35491,
+  "unclassified_bytes": 317372,
   "passed_reports": [
     "Tools/Disasm/Reports/PointerVerification.json",
     "Tools/Disasm/Reports/PointerTablesVerification.json",
@@ -160,7 +160,37 @@
     "Tools/Disasm/Reports/SystemTraitsVerification.json",
     "Tools/Disasm/Reports/SystemInfoPanelVerification.json",
     "Tools/Disasm/Reports/MapSelectionPanelVerification.json",
-    "Tools/Disasm/Reports/MapPanelEventVerification.json"
+    "Tools/Disasm/Reports/MapPanelEventVerification.json",
+    "Tools/Disasm/Reports/StoredPointRefreshVerification.json",
+    "Tools/Disasm/Reports/AuxiliaryCycleReadsVerification.json",
+    "Tools/Disasm/Reports/DecodedMessageVerification.json",
+    "Tools/Disasm/Reports/FinalExitVerification.json",
+    "Tools/Disasm/Reports/DecodedPanelVerification.json",
+    "Tools/Disasm/Reports/StationFinalExitClassification.json",
+    "Tools/Disasm/Reports/MessagePanelEventsVerification.json",
+    "Tools/Disasm/Reports/QueuedMessagePanelVerification.json",
+    "Tools/Disasm/Reports/SelectedRowToggleVerification.json",
+    "Tools/Disasm/Reports/PanelHoverVerification.json",
+    "Tools/Disasm/Reports/TradeNumericColumnsVerification.json",
+    "Tools/Disasm/Reports/ParseSettingsLabelVerification.json",
+    "Tools/Disasm/Reports/SettingsParserSplitVerification.json",
+    "Tools/Disasm/Reports/ScrollPointerExitVerification.json",
+    "Tools/Disasm/Reports/ScrollBodyClearVerification.json",
+    "Tools/Disasm/Reports/ScrollWindowVerification.json",
+    "Tools/Disasm/Reports/TradePanelDrawVerification.json",
+    "Tools/Disasm/Reports/TradePanelHoverVerification.json",
+    "Tools/Disasm/Reports/TradePanelEventVerification.json",
+    "Tools/Disasm/Reports/TradeScriptWrapperVerification.json",
+    "Tools/Disasm/Reports/TradePanelSplitVerification.json",
+    "Tools/Disasm/Reports/OriginalTradeScriptVerification.json",
+    "Tools/Disasm/Reports/MarketScriptClassification.json",
+    "Tools/Disasm/Reports/MarketLegalityFieldVerification.json",
+    "Tools/Disasm/Reports/SellCurrentCargoVerification.json",
+    "Tools/Disasm/Reports/PanelOpeningVerification.json",
+    "Tools/Disasm/Reports/ShipPanelResetVerification.json",
+    "Tools/Disasm/Reports/ShipPanelOpeningVerification.json",
+    "Tools/Disasm/Reports/ShipPeriodicCodeClassification.json",
+    "Tools/Disasm/Reports/D3DPreviewDiscovery.json"
   ],
   "next_station_work": [
     {
@@ -181,11 +211,11 @@
     {
       "address": "#A91B",
       "source": "Source/Station/GenerateMarket.asm",
-      "task": "Формулы и физические таблицы установлены, остаются игровые значения маркера и категорий, все писатели и потребители"
+      "task": "Формулы и физические таблицы установлены, рыночный bit7 запрещает продажу. Остаются назначения категорий, грузового bit7 и все писатели и потребители."
     }
   ],
   "remaining_by_region": {
-    "Station": 89,
+    "Station": 61,
     "Music": 14,
     "Action": 97,
     "ThreeD": 23,
@@ -201,22 +231,31 @@
   ],
   "irq_model_execution_verified": true,
   "irq_hardware_execution_verified": false,
-  "temporary_cleanup": "После полного завершения удалить временные дубликаты кандидатов и истории, сначала проверить уникальные ручные материалы",
+  "temporary_cleanup": "695 старых снимков сохранены в проверенном дедуплицированном архиве LegacySnapshots-20261031.zip, распакованные дубликаты заменены маркерами. Новые точечные истории сохраняются для проверки, удаление их распакованных копий допустимо только после проверенного архивирования.",
   "pending_by_region": {
-    "Station": 89,
+    "Station": 61,
     "Music": 14,
     "Action": 97,
     "ThreeD": 23,
     "Controls": 66
   },
   "next_semantic_work": [
-    "Station, MainLoop, игровые обработчики событий и потребители перенесённого состояния ACTION",
-    "Station, MainLoop и игровые обработчики событий",
-    "Все оставшиеся регионы по ConformanceAudit.pending_by_region",
-    "Text, игровые назначения полей и ресурсов, остальные потребители общих данных"
+    "Station, выделенный периодический корабельный код 68CC..6912 и его зависимые рисователи, действия корабельных панелей, писатели битов грузового массива, Unknown98A0 и разбор 7CC6",
+    "D3D, банк 4, 2532 инструкции и 4686 байтов статически обнаружены по шести внешним входам, отдельный кандидат исходников и полный смысловой разбор ещё не выполнены",
+    "LANG, ветви кораблей и оснащения, стоянка, начальная проверка, неизвестный префикс и потребители секторного хвоста",
+    "Остальные регионы по pending_by_region и все именованные фрагменты без доказанных контрактов"
   ],
   "next_text_algorithm": "Все зарегистрированные Text-входы имеют описанный контракт, полнота игровых назначений полей и физической разметки LANG ещё не доказана",
-  "next_map_work": "Диспетчер события основной карты, прокрутка, выбор точки, панель систем и панель планет описаны. Далее писатели сохранённых списков и действия связанных записей 21,12,13,14,15,17,16,18. Прочие данные и игровые назначения части кодов, хвостов фаз и формулы запаса дальности ещё требуют полного прохода по писателям и потребителям.",
-  "next_station_algorithm": "Связанные с картой писатели списков 7B61,7BC0,7C64,7C8E,7D08,7D34 и их общие хвосты. Диспетчер 6C0D, прокрутка 6C6E, выбор 6D0D, основная карта 6D44..6DC1, панель систем 7688..7837 и признаки A3A1 уже описаны. Остальные 89 Station Unknown и 256 именованных процедур без доказанного контракта по всем регионам остаются в очереди.",
-  "documentation_links": 1594
+  "next_map_work": "Писатели сохранённых списков и их обёртки управления описаны. Остаточные назначения полей, данных, хвостов фаз и формулы запаса дальности требуют полного прохода по потребителям.",
+  "next_station_algorithm": "Полные контракты выделенных периодических корабельных входов 68CC и 68EA с условными продолжениями 6870 и 693E, рисователи 25/26/27, исходный алгоритм E07F банка 4. Продажа текущего груза и открытие групп описаны, bit7 грузовой записи остаётся Unknown.",
+  "documentation_links": 1668,
+  "updated_on": "2026-10-31",
+  "d3d_discovery": {
+    "report": "Tools/Disasm/Reports/D3DPreviewDiscovery.json",
+    "instructions": 2532,
+    "code_bytes": 4686,
+    "included_in_source_instruction_count": false,
+    "included_in_unclassified_bytes": true,
+    "full_contracts_proved": false
+  }
 }

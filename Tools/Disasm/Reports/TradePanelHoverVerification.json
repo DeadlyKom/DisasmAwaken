@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "cases": 7680,
+  "changed_cases": 928,
+  "all_dynamic_row_count_bytes": true,
+  "entry_hover_jump_executed": true,
+  "bitmap_and_attributes_compared": true,
+  "real_row_hover_and_pointer": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

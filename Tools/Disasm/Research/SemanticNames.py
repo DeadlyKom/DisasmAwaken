@@ -121,6 +121,19 @@ def name_operands(region, function_address, operation):
     operation = map_panel_event_name_operands(region, function_address, operation)
     operation = stored_point_edit_name_operands(region, function_address, operation)
     operation = stored_point_control_name_operands(region, function_address, operation)
+    operation = decoded_message_name_operands(region, function_address, operation)
+    operation = final_exit_name_operands(region, function_address, operation)
+    operation = decoded_panel_name_operands(region, function_address, operation)
+    operation = message_panel_name_operands(region, function_address, operation)
+    operation = market_panel_helper_name_operands(region, function_address, operation)
+    operation = panel_hover_name_operands(region, function_address, operation)
+    operation = trade_numeric_column_name_operands(region, function_address, operation)
+    operation = settings_parser_name_operands(region, function_address, operation)
+    operation = scroll_body_clear_name_operands(region, function_address, operation)
+    operation = scroll_window_name_operands(region, function_address, operation)
+    operation = trade_panel_name_operands(region, function_address, operation)
+    operation = control_panel_group_name_operands(region, function_address, operation)
+    operation = ship_periodic_code_name_operands(region, function_address, operation)
     operation = map_point_chain_name_operands(region, function_address, operation)
     operation = map_line_name_operands(region, function_address, operation)
     operation = arc_closing_name_operands(region, function_address, operation)
@@ -853,3 +866,51 @@ LABELS.update(STORED_POINT_CONTROL_LABELS)
 DOCUMENTS.update(STORED_POINT_CONTROL_DOCUMENTS)
 
 DOCUMENTS['Station',0x7CC6]=('AuxiliaryCycleReads','частичные доказательства двух абсолютных чтений, игровой договор остаётся Unknown')
+
+from DecodedMessageFacts import DOCUMENTS as DECODED_MESSAGE_DOCUMENTS, name_operands as decoded_message_name_operands
+DOCUMENTS.update(DECODED_MESSAGE_DOCUMENTS)
+
+from FinalExitFacts import LABELS as FINAL_EXIT_LABELS, DOCUMENTS as FINAL_EXIT_DOCUMENTS, name_operands as final_exit_name_operands
+LABELS.update(FINAL_EXIT_LABELS)
+DOCUMENTS.update(FINAL_EXIT_DOCUMENTS)
+
+from DecodedPanelFacts import LABELS as DECODED_PANEL_LABELS, DOCUMENTS as DECODED_PANEL_DOCUMENTS, name_operands as decoded_panel_name_operands
+LABELS.update(DECODED_PANEL_LABELS)
+DOCUMENTS.update(DECODED_PANEL_DOCUMENTS)
+
+from MessagePanelFacts import LABELS as MESSAGE_PANEL_LABELS, DOCUMENTS as MESSAGE_PANEL_DOCUMENTS, name_operands as message_panel_name_operands
+LABELS.update(MESSAGE_PANEL_LABELS)
+DOCUMENTS.update(MESSAGE_PANEL_DOCUMENTS)
+
+from MarketPanelHelperFacts import DOCUMENTS as MARKET_PANEL_HELPER_DOCUMENTS, name_operands as market_panel_helper_name_operands
+DOCUMENTS.update(MARKET_PANEL_HELPER_DOCUMENTS)
+
+from PanelHoverFacts import DOCUMENTS as PANEL_HOVER_DOCUMENTS, name_operands as panel_hover_name_operands
+DOCUMENTS.update(PANEL_HOVER_DOCUMENTS)
+
+from TradeNumericColumnFacts import LABELS as TRADE_NUMERIC_COLUMN_LABELS, DOCUMENTS as TRADE_NUMERIC_COLUMN_DOCUMENTS, name_operands as trade_numeric_column_name_operands
+LABELS.update(TRADE_NUMERIC_COLUMN_LABELS)
+DOCUMENTS.update(TRADE_NUMERIC_COLUMN_DOCUMENTS)
+
+from SettingsParserFacts import LABELS as SETTINGS_PARSER_LABELS, DOCUMENTS as SETTINGS_PARSER_DOCUMENTS, name_operands as settings_parser_name_operands
+LABELS.update(SETTINGS_PARSER_LABELS)
+DOCUMENTS.update(SETTINGS_PARSER_DOCUMENTS)
+
+from ScrollBodyClearFacts import LABELS as SCROLL_BODY_CLEAR_LABELS, DOCUMENTS as SCROLL_BODY_CLEAR_DOCUMENTS, name_operands as scroll_body_clear_name_operands
+LABELS.update(SCROLL_BODY_CLEAR_LABELS)
+DOCUMENTS.update(SCROLL_BODY_CLEAR_DOCUMENTS)
+
+from ScrollWindowFacts import LABELS as SCROLL_WINDOW_LABELS, DOCUMENTS as SCROLL_WINDOW_DOCUMENTS, name_operands as scroll_window_name_operands
+LABELS.update(SCROLL_WINDOW_LABELS)
+DOCUMENTS.update(SCROLL_WINDOW_DOCUMENTS)
+
+from TradePanelFacts import LABELS as TRADE_PANEL_LABELS, DOCUMENTS as TRADE_PANEL_DOCUMENTS, name_operands as trade_panel_name_operands
+LABELS.update(TRADE_PANEL_LABELS)
+DOCUMENTS.update(TRADE_PANEL_DOCUMENTS)
+
+from ControlPanelGroupFacts import LABELS as CONTROL_PANEL_GROUP_LABELS, DOCUMENTS as CONTROL_PANEL_GROUP_DOCUMENTS, name_operands as control_panel_group_name_operands
+LABELS.update(CONTROL_PANEL_GROUP_LABELS)
+DOCUMENTS.update(CONTROL_PANEL_GROUP_DOCUMENTS)
+
+from ShipPeriodicCodeFacts import DOCUMENTS as SHIP_PERIODIC_CODE_DOCUMENTS, name_operands as ship_periodic_code_name_operands
+DOCUMENTS.update(SHIP_PERIODIC_CODE_DOCUMENTS)

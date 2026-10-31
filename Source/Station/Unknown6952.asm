@@ -16,7 +16,7 @@
 ; -----------------------------------------
 Entry:          LD A, #14
                 CALL @Station.SelectRamBank.Entry
-                LD A, (#6906)
+                LD A, (@ShipPanelState.Selector)
                 CALL #E154
                 LD A, #10
                 CALL @Station.SelectRamBank.Entry

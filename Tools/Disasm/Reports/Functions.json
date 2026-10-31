@@ -99,6 +99,17 @@
     "path": "Source/Intro/InitializeScrolledTexture.asm"
   },
   {
+    "region": "IntroTemplates",
+    "name": "ScrolledSample",
+    "address": 26402,
+    "slot": 3,
+    "offset": 1058,
+    "description": "Семибайтовый образец выборки, 64 копии исполняются по адресу #7E00",
+    "semantic_status": "described",
+    "end_offset": 1065,
+    "path": "Source/IntroTemplates/ScrolledSample.asm"
+  },
+  {
     "region": "Intro",
     "name": "ExpandTextureRows",
     "address": 26409,
@@ -341,6 +352,17 @@
     "path": "Source/Intro/InitializeColumnEffect.asm"
   },
   {
+    "region": "IntroTemplates",
+    "name": "ColumnSample",
+    "address": 27482,
+    "slot": 3,
+    "offset": 2138,
+    "description": "25-байтовый образец выборки и семи вертикальных записей, 64 копии по адресу #D000",
+    "semantic_status": "described",
+    "end_offset": 2163,
+    "path": "Source/IntroTemplates/ColumnSample.asm"
+  },
+  {
     "region": "Intro",
     "name": "DrawLookupTextureFrame",
     "address": 27539,
@@ -451,50 +473,6 @@
     "path": "Source/Intro/BuildPhaseTable.asm"
   },
   {
-    "region": "Intro",
-    "name": "BuildIntroTexture",
-    "address": 28045,
-    "slot": 3,
-    "offset": 2701,
-    "description": "Преобразование текстуры и копирование #1300 байт в страницу 4",
-    "semantic_status": "described",
-    "end_offset": 2742,
-    "path": "Source/Intro/BuildIntroTexture.asm"
-  },
-  {
-    "region": "Intro",
-    "name": "BuildMirroredTexture",
-    "address": 28086,
-    "slot": 3,
-    "offset": 2742,
-    "description": "Построение отражённой текстуры и перенос результата в страницу 4",
-    "semantic_status": "described",
-    "end_offset": 2865,
-    "path": "Source/Intro/BuildMirroredTexture.asm"
-  },
-  {
-    "region": "IntroTemplates",
-    "name": "ScrolledSample",
-    "address": 26402,
-    "slot": 3,
-    "offset": 1058,
-    "description": "Семибайтовый образец выборки, 64 копии исполняются по адресу #7E00",
-    "semantic_status": "described",
-    "end_offset": 1065,
-    "path": "Source/IntroTemplates/ScrolledSample.asm"
-  },
-  {
-    "region": "IntroTemplates",
-    "name": "ColumnSample",
-    "address": 27482,
-    "slot": 3,
-    "offset": 2138,
-    "description": "25-байтовый образец выборки и семи вертикальных записей, 64 копии по адресу #D000",
-    "semantic_status": "described",
-    "end_offset": 2163,
-    "path": "Source/IntroTemplates/ColumnSample.asm"
-  },
-  {
     "region": "IntroTemplates",
     "name": "PointerSample",
     "address": 28024,
@@ -515,6 +493,28 @@
     "semantic_status": "described",
     "end_offset": 2701,
     "path": "Source/IntroTemplates/PhaseSum.asm"
+  },
+  {
+    "region": "Intro",
+    "name": "BuildIntroTexture",
+    "address": 28045,
+    "slot": 3,
+    "offset": 2701,
+    "description": "Преобразование текстуры и копирование #1300 байт в страницу 4",
+    "semantic_status": "described",
+    "end_offset": 2742,
+    "path": "Source/Intro/BuildIntroTexture.asm"
+  },
+  {
+    "region": "Intro",
+    "name": "BuildMirroredTexture",
+    "address": 28086,
+    "slot": 3,
+    "offset": 2742,
+    "description": "Построение отражённой текстуры и перенос результата в страницу 4",
+    "semantic_status": "described",
+    "end_offset": 2865,
+    "path": "Source/Intro/BuildMirroredTexture.asm"
   },
   {
     "region": "IntroUnpack",
@@ -903,6 +903,17 @@
   },
   {
     "region": "Station",
+    "name": "Unknown6774",
+    "address": 26484,
+    "slot": 4,
+    "offset": 2592,
+    "end_offset": 2604,
+    "description": "Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются",
+    "semantic_status": "unknown",
+    "path": "Source/Station/Unknown6774.asm"
+  },
+  {
+    "region": "Station",
     "name": "Unknown6780",
     "address": 26496,
     "slot": 4,
@@ -914,14 +925,25 @@
   },
   {
     "region": "Station",
-    "name": "Unknown67D0",
+    "name": "Unknown67A9",
+    "address": 26537,
+    "slot": 4,
+    "offset": 2645,
+    "end_offset": 2684,
+    "description": "Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются",
+    "semantic_status": "unknown",
+    "path": "Source/Station/Unknown67A9.asm"
+  },
+  {
+    "region": "Station",
+    "name": "UpdateShipListHover",
     "address": 26576,
     "slot": 4,
     "offset": 2684,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Обновление XOR-полосы списка Корабли с сохранением номера только по Z=0",
+    "semantic_status": "described",
     "end_offset": 2700,
-    "path": "Source/Station/Unknown67D0.asm"
+    "path": "Source/Station/UpdateShipListHover.asm"
   },
   {
     "region": "Station",
@@ -947,6 +969,17 @@
   },
   {
     "region": "Station",
+    "name": "Unknown683A",
+    "address": 26682,
+    "slot": 4,
+    "offset": 2790,
+    "end_offset": 2843,
+    "description": "Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются",
+    "semantic_status": "unknown",
+    "path": "Source/Station/Unknown683A.asm"
+  },
+  {
+    "region": "Station",
     "name": "Unknown686F",
     "address": 26735,
     "slot": 4,
@@ -955,6 +988,17 @@
     "semantic_status": "unknown",
     "end_offset": 2844,
     "path": "Source/Station/Unknown686F.asm"
+  },
+  {
+    "region": "Station",
+    "name": "Unknown6870",
+    "address": 26736,
+    "slot": 4,
+    "offset": 2844,
+    "description": "Unknown, исходный корабельный callback, полный договор зависимых рисователей и банка 4 ещё не установлен",
+    "semantic_status": "unknown",
+    "end_offset": 2851,
+    "path": "Source/Station/Unknown6870.asm"
   },
   {
     "region": "Station",
@@ -969,6 +1013,28 @@
   },
   {
     "region": "Station",
+    "name": "Unknown68CC",
+    "address": 26828,
+    "slot": 4,
+    "offset": 2936,
+    "description": "Unknown, исходный корабельный callback, полный договор зависимых рисователей и банка 4 ещё не установлен",
+    "semantic_status": "unknown",
+    "end_offset": 2966,
+    "path": "Source/Station/Unknown68CC.asm"
+  },
+  {
+    "region": "Station",
+    "name": "Unknown68EA",
+    "address": 26858,
+    "slot": 4,
+    "offset": 2966,
+    "description": "Unknown, исходный корабельный callback, полный договор зависимых рисователей и банка 4 ещё не установлен",
+    "semantic_status": "unknown",
+    "end_offset": 3007,
+    "path": "Source/Station/Unknown68EA.asm"
+  },
+  {
+    "region": "Station",
     "name": "HandleItem27",
     "address": 26899,
     "slot": 4,
@@ -980,6 +1046,17 @@
   },
   {
     "region": "Station",
+    "name": "Unknown6916",
+    "address": 26902,
+    "slot": 4,
+    "offset": 3010,
+    "end_offset": 3049,
+    "description": "Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются",
+    "semantic_status": "unknown",
+    "path": "Source/Station/Unknown6916.asm"
+  },
+  {
+    "region": "Station",
     "name": "Unknown693D",
     "address": 26941,
     "slot": 4,
@@ -988,6 +1065,17 @@
     "semantic_status": "unknown",
     "end_offset": 3050,
     "path": "Source/Station/Unknown693D.asm"
+  },
+  {
+    "region": "Station",
+    "name": "Unknown693E",
+    "address": 26942,
+    "slot": 4,
+    "offset": 3050,
+    "description": "Unknown, исходный корабельный callback, полный договор зависимых рисователей и банка 4 ещё не установлен",
+    "semantic_status": "unknown",
+    "end_offset": 3057,
+    "path": "Source/Station/Unknown693E.asm"
   },
   {
     "region": "Station",
@@ -1013,6 +1101,17 @@
   },
   {
     "region": "Station",
+    "name": "Unknown6963",
+    "address": 26979,
+    "slot": 4,
+    "offset": 3087,
+    "end_offset": 3108,
+    "description": "Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются",
+    "semantic_status": "unknown",
+    "path": "Source/Station/Unknown6963.asm"
+  },
+  {
+    "region": "Station",
     "name": "HandleItem23",
     "address": 27000,
     "slot": 4,
@@ -1021,6 +1120,17 @@
     "semantic_status": "described",
     "end_offset": 3111,
     "path": "Source/Station/HandleItem23.asm"
+  },
+  {
+    "region": "Station",
+    "name": "Unknown697B",
+    "address": 27003,
+    "slot": 4,
+    "offset": 3111,
+    "end_offset": 3155,
+    "description": "Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются",
+    "semantic_status": "unknown",
+    "path": "Source/Station/Unknown697B.asm"
   },
   {
     "region": "Station",
@@ -1079,14 +1189,25 @@
   },
   {
     "region": "Station",
-    "name": "Unknown6A4B",
+    "name": "Unknown69E0",
+    "address": 27104,
+    "slot": 4,
+    "offset": 3212,
+    "end_offset": 3319,
+    "description": "Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются",
+    "semantic_status": "unknown",
+    "path": "Source/Station/Unknown69E0.asm"
+  },
+  {
+    "region": "Station",
+    "name": "UpdateIndexListHover",
     "address": 27211,
     "slot": 4,
     "offset": 3319,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Обновление XOR-полосы списка Индекс с сохранением номера только по Z=0",
+    "semantic_status": "described",
     "end_offset": 3335,
-    "path": "Source/Station/Unknown6A4B.asm"
+    "path": "Source/Station/UpdateIndexListHover.asm"
   },
   {
     "region": "Station",
@@ -1123,6 +1244,17 @@
   },
   {
     "region": "Station",
+    "name": "Unknown6A86",
+    "address": 27270,
+    "slot": 4,
+    "offset": 3378,
+    "end_offset": 3418,
+    "description": "Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются",
+    "semantic_status": "unknown",
+    "path": "Source/Station/Unknown6A86.asm"
+  },
+  {
+    "region": "Station",
     "name": "Unknown6AAE",
     "address": 27310,
     "slot": 4,
@@ -1131,6 +1263,17 @@
     "semantic_status": "unknown",
     "end_offset": 3419,
     "path": "Source/Station/Unknown6AAE.asm"
+  },
+  {
+    "region": "Station",
+    "name": "Unknown6AAF",
+    "address": 27311,
+    "slot": 4,
+    "offset": 3419,
+    "end_offset": 3426,
+    "description": "Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются",
+    "semantic_status": "unknown",
+    "path": "Source/Station/Unknown6AAF.asm"
   },
   {
     "region": "Station",
@@ -1178,14 +1321,36 @@
   },
   {
     "region": "Station",
-    "name": "Unknown6B8E",
+    "name": "Unknown6AEC",
+    "address": 27372,
+    "slot": 4,
+    "offset": 3480,
+    "end_offset": 3642,
+    "description": "Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются",
+    "semantic_status": "unknown",
+    "path": "Source/Station/Unknown6AEC.asm"
+  },
+  {
+    "region": "Station",
+    "name": "UpdateEnvironmentHover",
     "address": 27534,
     "slot": 4,
     "offset": 3642,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Обновление XOR-полосы установок среды с сохранением номера только по Z=0",
+    "semantic_status": "described",
     "end_offset": 3658,
-    "path": "Source/Station/Unknown6B8E.asm"
+    "path": "Source/Station/UpdateEnvironmentHover.asm"
+  },
+  {
+    "region": "Station",
+    "name": "Unknown6B9E",
+    "address": 27550,
+    "slot": 4,
+    "offset": 3658,
+    "end_offset": 3665,
+    "description": "Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются",
+    "semantic_status": "unknown",
+    "path": "Source/Station/Unknown6B9E.asm"
   },
   {
     "region": "Station",
@@ -1233,6 +1398,39 @@
   },
   {
     "region": "Station",
+    "name": "HandleMapPanelEvent",
+    "address": 27661,
+    "slot": 4,
+    "offset": 3769,
+    "end_offset": 3866,
+    "description": "Обработка события панели карты с выбором точки, прокруткой либо закрытием набора связанных панелей",
+    "semantic_status": "described",
+    "path": "Source/Station/HandleMapPanelEvent.asm"
+  },
+  {
+    "region": "Station",
+    "name": "PanMapView",
+    "address": 27758,
+    "slot": 4,
+    "offset": 3866,
+    "end_offset": 4025,
+    "description": "Прокрутка начала карты шагами по восемь с выбором оси по положению указателя",
+    "semantic_status": "described",
+    "path": "Source/Station/PanMapView.asm"
+  },
+  {
+    "region": "Station",
+    "name": "SelectMapPointAndRefresh",
+    "address": 27917,
+    "slot": 4,
+    "offset": 4025,
+    "end_offset": 4079,
+    "description": "Выбор ближайшей видимой точки карты, перерисовка карты и обновление панелей систем и планет",
+    "semantic_status": "described",
+    "path": "Source/Station/SelectMapPointAndRefresh.asm"
+  },
+  {
+    "region": "Station",
     "name": "Unknown6D43",
     "address": 27971,
     "slot": 4,
@@ -1241,6 +1439,28 @@
     "semantic_status": "unknown",
     "end_offset": 4080,
     "path": "Source/Station/Unknown6D43.asm"
+  },
+  {
+    "region": "Station",
+    "name": "RefreshMapPanel",
+    "address": 27972,
+    "slot": 4,
+    "offset": 4080,
+    "end_offset": 4090,
+    "description": "Перерисовка карты через снимок банка 7, очистку тела и дополнительный HALT перед показом",
+    "semantic_status": "described",
+    "path": "Source/Station/RefreshMapPanel.asm"
+  },
+  {
+    "region": "Station",
+    "name": "ClearAndDrawMapPanel",
+    "address": 27982,
+    "slot": 4,
+    "offset": 4090,
+    "end_offset": 4100,
+    "description": "Проверка геометрии и заливка тела перед последовательным общим рисунком карты",
+    "semantic_status": "described",
+    "path": "Source/Station/ClearAndDrawMapPanel.asm"
   },
   {
     "region": "Station",
@@ -1266,80 +1486,113 @@
   },
   {
     "region": "Station",
-    "name": "HandleItem24",
+    "name": "HandleDecodedMessageHover",
     "address": 28098,
     "slot": 4,
     "offset": 4206,
-    "description": "обработчик события станционного элемента из записи 24 таблицы FInterfaceItem",
+    "description": "Передача события наведения пустому обработчику панели расшифровки",
     "semantic_status": "described",
     "end_offset": 4209,
-    "path": "Source/Station/HandleItem24.asm"
+    "path": "Source/Station/HandleDecodedMessageHover.asm"
   },
   {
     "region": "Station",
-    "name": "Unknown6DD3",
+    "name": "HandleDecodedMessageClick",
+    "address": 28101,
+    "slot": 4,
+    "offset": 4209,
+    "end_offset": 4223,
+    "description": "Перерисовка панели расшифровки с исключением селектора 1 и закрытием по текстовой строке",
+    "semantic_status": "described",
+    "path": "Source/Station/HandleDecodedMessageClick.asm"
+  },
+  {
+    "region": "Station",
+    "name": "ReturnDecodedMessageHover",
     "address": 28115,
     "slot": 4,
     "offset": 4223,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Пустой возврат события наведения панели расшифровки",
+    "semantic_status": "described",
     "end_offset": 4224,
-    "path": "Source/Station/Unknown6DD3.asm"
+    "path": "Source/Station/ReturnDecodedMessageHover.asm"
   },
   {
     "region": "Station",
-    "name": "DrawItem24",
+    "name": "DrawDecodedMessagePanel",
     "address": 28116,
     "slot": 4,
     "offset": 4224,
-    "description": "обработчик рисования станционного элемента из записи 24 таблицы FInterfaceItem",
+    "description": "Рисование сообщения расшифровки либо перенос финального загрузчика при точном ключе и коде FE",
     "semantic_status": "described",
     "end_offset": 4285,
-    "path": "Source/Station/DrawItem24.asm"
+    "path": "Source/Station/DrawDecodedMessagePanel.asm"
+  },
+  {
+    "region": "StationFinalExit",
+    "name": "LoadFinal",
+    "address": 16384,
+    "slot": 4,
+    "offset": 4285,
+    "end_offset": 4377,
+    "description": "Перенесённый загрузчик FINALF с повторной инициализацией музыки и ожиданием точного байта клавиатуры",
+    "semantic_status": "described",
+    "path": "Source/StationFinalExit/LoadFinal.asm"
   },
   {
     "region": "Station",
-    "name": "Unknown6E76",
+    "name": "PrintDecodedMessage",
     "address": 28278,
     "slot": 4,
     "offset": 4386,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Выбор и печать сообщения расшифровки по числовому полю MessageIndex предложения",
+    "semantic_status": "described",
     "end_offset": 4395,
-    "path": "Source/Station/Unknown6E76.asm"
+    "path": "Source/Station/PrintDecodedMessage.asm"
   },
   {
     "region": "Station",
-    "name": "HandleItem10",
+    "name": "HandleQueuedMessageHover",
     "address": 28287,
     "slot": 4,
     "offset": 4395,
-    "description": "обработчик события станционного элемента из записи 10 таблицы FInterfaceItem",
+    "description": "Передача события наведения пустому обработчику уведомления",
     "semantic_status": "described",
     "end_offset": 4398,
-    "path": "Source/Station/HandleItem10.asm"
+    "path": "Source/Station/HandleQueuedMessageHover.asm"
   },
   {
     "region": "Station",
-    "name": "Unknown6E89",
+    "name": "HandleQueuedMessageClick",
+    "address": 28290,
+    "slot": 4,
+    "offset": 4398,
+    "end_offset": 4405,
+    "description": "Закрытие уведомления после RepaintAndFlag при сброшенном Carry",
+    "semantic_status": "described",
+    "path": "Source/Station/HandleQueuedMessageClick.asm"
+  },
+  {
+    "region": "Station",
+    "name": "ReturnQueuedMessageHover",
     "address": 28297,
     "slot": 4,
     "offset": 4405,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Пустой возврат события наведения уведомления",
+    "semantic_status": "described",
     "end_offset": 4406,
-    "path": "Source/Station/Unknown6E89.asm"
+    "path": "Source/Station/ReturnQueuedMessageHover.asm"
   },
   {
     "region": "Station",
-    "name": "DrawItem10",
+    "name": "DrawQueuedMessagePanel",
     "address": 28298,
     "slot": 4,
     "offset": 4406,
-    "description": "обработчик рисования станционного элемента из записи 10 таблицы FInterfaceItem",
+    "description": "Рамка уведомления и вывод выбранной изменяемым операндом строки с выравниванием",
     "semantic_status": "described",
     "end_offset": 4421,
-    "path": "Source/Station/DrawItem10.asm"
+    "path": "Source/Station/DrawQueuedMessagePanel.asm"
   },
   {
     "region": "Station",
@@ -1354,6 +1607,17 @@
   },
   {
     "region": "Station",
+    "name": "ProcessMissionAction",
+    "address": 28316,
+    "slot": 4,
+    "offset": 4424,
+    "description": "Проверка селектора и строки, принятие либо расторжение миссии с общей перерисовкой",
+    "semantic_status": "described",
+    "end_offset": 4590,
+    "path": "Source/Station/ProcessMissionAction.asm"
+  },
+  {
+    "region": "Station",
     "name": "UpdateMissionRowHover",
     "address": 28493,
     "slot": 4,
@@ -1362,6 +1626,17 @@
     "semantic_status": "described",
     "end_offset": 4617,
     "path": "Source/Station/UpdateMissionRowHover.asm"
+  },
+  {
+    "region": "Station",
+    "name": "CancelMission",
+    "address": 28509,
+    "slot": 4,
+    "offset": 4617,
+    "description": "Расторжение миссии на сохранённом кадре, пересчёт загрузки и денежный штраф",
+    "semantic_status": "described",
+    "end_offset": 4705,
+    "path": "Source/Station/CancelMission.asm"
   },
   {
     "region": "Station",
@@ -1376,58 +1651,80 @@
   },
   {
     "region": "Station",
-    "name": "HandleItem34",
+    "name": "HandleTradePanelHover",
     "address": 28654,
     "slot": 4,
     "offset": 4762,
-    "description": "обработчик события станционного элемента из записи 34 таблицы FInterfaceItem",
+    "description": "Хвостовой вход обновления торговой строки наведения",
     "semantic_status": "described",
     "end_offset": 4765,
-    "path": "Source/Station/HandleItem34.asm"
+    "path": "Source/Station/HandleTradePanelHover.asm"
   },
   {
     "region": "Station",
-    "name": "Unknown7044",
+    "name": "HandleTradePanelClick",
+    "address": 28657,
+    "slot": 4,
+    "offset": 4765,
+    "end_offset": 4848,
+    "description": "Закрытие торговой панели с меню, прокрутка либо выбор кода события по колонке",
+    "semantic_status": "described",
+    "path": "Source/Station/HandleTradePanelClick.asm"
+  },
+  {
+    "region": "Station",
+    "name": "RunTradeEventAndRedraw",
     "address": 28740,
     "slot": 4,
     "offset": 4848,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
-    "end_offset": 4893,
-    "path": "Source/Station/Unknown7044.asm"
+    "description": "Запись торгового кода события, запуск LANG и обновление статуса и торговой панели",
+    "semantic_status": "described",
+    "end_offset": 4877,
+    "path": "Source/Station/RunTradeEventAndRedraw.asm"
   },
   {
     "region": "Station",
-    "name": "DrawItem34",
+    "name": "UpdateTradeRowHover",
+    "address": 28769,
+    "slot": 4,
+    "offset": 4877,
+    "description": "Обновление торговой XOR-полосы по изменяемому числу начатых строк",
+    "semantic_status": "described",
+    "end_offset": 4893,
+    "path": "Source/Station/UpdateTradeRowHover.asm"
+  },
+  {
+    "region": "Station",
+    "name": "DrawTradePanel",
     "address": 28785,
     "slot": 4,
     "offset": 4893,
-    "description": "обработчик рисования станционного элемента из записи 34 таблицы FInterfaceItem",
+    "description": "Рамка и торговые колонки с сохранением числа начатых строк в операнде подсветки",
     "semantic_status": "described",
     "end_offset": 4930,
-    "path": "Source/Station/DrawItem34.asm"
+    "path": "Source/Station/DrawTradePanel.asm"
   },
   {
     "region": "Station",
-    "name": "Unknown7096",
+    "name": "DrawTradeNumericColumns",
     "address": 28822,
     "slot": 4,
     "offset": 4930,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Наименования товаров и четыре числовые колонки с двумя отдельными байтами количества и цены",
+    "semantic_status": "described",
     "end_offset": 5120,
-    "path": "Source/Station/Unknown7096.asm"
+    "path": "Source/Station/DrawTradeNumericColumns.asm"
   },
   {
     "region": "Station",
-    "name": "Unknown7154",
+    "name": "SetMarketTextColumns",
     "address": 29012,
     "slot": 4,
     "offset": 5120,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Отключение переноса текста и установка пяти пиксельных позиций торговых колонок",
+    "semantic_status": "described",
     "end_offset": 5150,
-    "path": "Source/Station/Unknown7154.asm"
+    "path": "Source/Station/SetMarketTextColumns.asm"
   },
   {
     "region": "Station",
@@ -1442,14 +1739,36 @@
   },
   {
     "region": "Station",
-    "name": "Unknown7210",
+    "name": "Unknown7175",
+    "address": 29045,
+    "slot": 4,
+    "offset": 5153,
+    "end_offset": 5308,
+    "description": "Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются",
+    "semantic_status": "unknown",
+    "path": "Source/Station/Unknown7175.asm"
+  },
+  {
+    "region": "Station",
+    "name": "UpdateEquipmentHover",
     "address": 29200,
     "slot": 4,
     "offset": 5308,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Обновление XOR-полосы оснащения корабля с сохранением номера только по Z=0",
+    "semantic_status": "described",
     "end_offset": 5324,
-    "path": "Source/Station/Unknown7210.asm"
+    "path": "Source/Station/UpdateEquipmentHover.asm"
+  },
+  {
+    "region": "Station",
+    "name": "Unknown7220",
+    "address": 29216,
+    "slot": 4,
+    "offset": 5324,
+    "end_offset": 5331,
+    "description": "Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются",
+    "semantic_status": "unknown",
+    "path": "Source/Station/Unknown7220.asm"
   },
   {
     "region": "Station",
@@ -1497,14 +1816,25 @@
   },
   {
     "region": "Station",
-    "name": "Unknown7482",
+    "name": "Unknown7421",
+    "address": 29729,
+    "slot": 4,
+    "offset": 5837,
+    "end_offset": 5934,
+    "description": "Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются",
+    "semantic_status": "unknown",
+    "path": "Source/Station/Unknown7421.asm"
+  },
+  {
+    "region": "Station",
+    "name": "UpdateToPositionHover",
     "address": 29826,
     "slot": 4,
     "offset": 5934,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Обновление XOR-полосы списка В позицию 1..5 с сохранением номера только по Z=0",
+    "semantic_status": "described",
     "end_offset": 5950,
-    "path": "Source/Station/Unknown7482.asm"
+    "path": "Source/Station/UpdateToPositionHover.asm"
   },
   {
     "region": "Station",
@@ -1530,14 +1860,25 @@
   },
   {
     "region": "Station",
-    "name": "Unknown750B",
+    "name": "Unknown74AA",
+    "address": 29866,
+    "slot": 4,
+    "offset": 5974,
+    "end_offset": 6071,
+    "description": "Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются",
+    "semantic_status": "unknown",
+    "path": "Source/Station/Unknown74AA.asm"
+  },
+  {
+    "region": "Station",
+    "name": "UpdateFromPositionHover",
     "address": 29963,
     "slot": 4,
     "offset": 6071,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Обновление XOR-полосы списка С позиции 1..5 с сохранением номера только по Z=0",
+    "semantic_status": "described",
     "end_offset": 6087,
-    "path": "Source/Station/Unknown750B.asm"
+    "path": "Source/Station/UpdateFromPositionHover.asm"
   },
   {
     "region": "Station",
@@ -1607,14 +1948,36 @@
   },
   {
     "region": "Station",
-    "name": "Unknown7620",
+    "name": "Unknown759C",
+    "address": 30108,
+    "slot": 4,
+    "offset": 6216,
+    "end_offset": 6348,
+    "description": "Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются",
+    "semantic_status": "unknown",
+    "path": "Source/Station/Unknown759C.asm"
+  },
+  {
+    "region": "Station",
+    "name": "UpdateGameSettingsHover",
     "address": 30240,
     "slot": 4,
     "offset": 6348,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Обновление XOR-полосы установок игры с сохранением номера только по Z=0",
+    "semantic_status": "described",
     "end_offset": 6364,
-    "path": "Source/Station/Unknown7620.asm"
+    "path": "Source/Station/UpdateGameSettingsHover.asm"
+  },
+  {
+    "region": "Station",
+    "name": "Unknown7630",
+    "address": 30256,
+    "slot": 4,
+    "offset": 6364,
+    "end_offset": 6371,
+    "description": "Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются",
+    "semantic_status": "unknown",
+    "path": "Source/Station/Unknown7630.asm"
   },
   {
     "region": "Station",
@@ -1662,6 +2025,17 @@
   },
   {
     "region": "Station",
+    "name": "Unknown7679",
+    "address": 30329,
+    "slot": 4,
+    "offset": 6437,
+    "end_offset": 6451,
+    "description": "Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются",
+    "semantic_status": "unknown",
+    "path": "Source/Station/Unknown7679.asm"
+  },
+  {
+    "region": "Station",
     "name": "Unknown7687",
     "address": 30343,
     "slot": 4,
@@ -1706,6 +2080,17 @@
   },
   {
     "region": "Station",
+    "name": "Unknown783B",
+    "address": 30779,
+    "slot": 4,
+    "offset": 6887,
+    "end_offset": 6960,
+    "description": "Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются",
+    "semantic_status": "unknown",
+    "path": "Source/Station/Unknown783B.asm"
+  },
+  {
+    "region": "Station",
     "name": "Unknown7884",
     "address": 30852,
     "slot": 4,
@@ -1714,6 +2099,17 @@
     "semantic_status": "unknown",
     "end_offset": 6961,
     "path": "Source/Station/Unknown7884.asm"
+  },
+  {
+    "region": "Station",
+    "name": "TryDrawVariantPanel",
+    "address": 30853,
+    "slot": 4,
+    "offset": 6961,
+    "end_offset": 6968,
+    "description": "Проверка наличия обработчика панели в списке перед последовательным рисованием",
+    "semantic_status": "described",
+    "path": "Source/Station/TryDrawVariantPanel.asm"
   },
   {
     "region": "Station",
@@ -1728,6 +2124,28 @@
   },
   {
     "region": "Station",
+    "name": "RefreshVariantPanel",
+    "address": 30909,
+    "slot": 4,
+    "offset": 7017,
+    "end_offset": 7042,
+    "path": "Source/Station/RefreshVariantPanel.asm",
+    "description": "Отложенный перенос панели в конец списка и перерисовка через теневой экран",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Station",
+    "name": "UpdateVariantPanel",
+    "address": 30934,
+    "slot": 4,
+    "offset": 7042,
+    "end_offset": 7156,
+    "path": "Source/Station/UpdateVariantPanel.asm",
+    "description": "Периодическая очистка и банковая анимация панели с отдельной ветвью отложенного обновления",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Station",
     "name": "HandleItem45",
     "address": 31048,
     "slot": 4,
@@ -1736,6 +2154,17 @@
     "semantic_status": "described",
     "end_offset": 7159,
     "path": "Source/Station/HandleItem45.asm"
+  },
+  {
+    "region": "Station",
+    "name": "Unknown794B",
+    "address": 31051,
+    "slot": 4,
+    "offset": 7159,
+    "end_offset": 7168,
+    "description": "Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются",
+    "semantic_status": "unknown",
+    "path": "Source/Station/Unknown794B.asm"
   },
   {
     "region": "Station",
@@ -2344,58 +2773,58 @@
   },
   {
     "region": "Station",
-    "name": "HandleItem35",
+    "name": "HandleSellControl",
     "address": 32089,
     "slot": 4,
     "offset": 8197,
-    "description": "обработчик события станционного элемента из записи 35 таблицы FInterfaceItem",
+    "description": "Подготовка отложенного callback продажи текущей строки",
     "semantic_status": "described",
     "end_offset": 8207,
-    "path": "Source/Station/HandleItem35.asm"
+    "path": "Source/Station/HandleSellControl.asm"
   },
   {
     "region": "Station",
-    "name": "Unknown7D63",
+    "name": "SellCurrentCargo",
     "address": 32099,
     "slot": 4,
     "offset": 8207,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Продажа текущей строки груза событием 11 с принудительным выбором строки 0 после перерисовки",
+    "semantic_status": "described",
     "end_offset": 8227,
-    "path": "Source/Station/Unknown7D63.asm"
+    "path": "Source/Station/SellCurrentCargo.asm"
   },
   {
     "region": "Station",
-    "name": "DrawItem35",
+    "name": "DrawSellControl",
     "address": 32119,
     "slot": 4,
     "offset": 8227,
-    "description": "Обёртка рисования элемента 35 через изменяемый индекс и DrawCenteredItem",
+    "description": "Рисование управляющего элемента продажи через изменяемый индекс 35",
     "semantic_status": "described",
     "end_offset": 8233,
-    "path": "Source/Station/DrawItem35.asm"
+    "path": "Source/Station/DrawSellControl.asm"
   },
   {
     "region": "Station",
-    "name": "HandleItem04",
+    "name": "HandleContractsControl",
     "address": 32125,
     "slot": 4,
     "offset": 8233,
-    "description": "обработчик события станционного элемента из записи 4 таблицы FInterfaceItem",
+    "description": "Подготовка отложенного callback открытия панелей контракта",
     "semantic_status": "described",
     "end_offset": 8243,
-    "path": "Source/Station/HandleItem04.asm"
+    "path": "Source/Station/HandleContractsControl.asm"
   },
   {
     "region": "Station",
-    "name": "Unknown7D87",
+    "name": "OpenContractPanels",
     "address": 32135,
     "slot": 4,
     "offset": 8243,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Восстановление границ и порядка панелей контракта 31, 33, 32",
+    "semantic_status": "described",
     "end_offset": 8261,
-    "path": "Source/Station/Unknown7D87.asm"
+    "path": "Source/Station/OpenContractPanels.asm"
   },
   {
     "region": "Station",
@@ -2410,25 +2839,25 @@
   },
   {
     "region": "Station",
-    "name": "HandleItem05",
+    "name": "HandleTradeControl",
     "address": 32159,
     "slot": 4,
     "offset": 8267,
-    "description": "обработчик события станционного элемента из записи 5 таблицы FInterfaceItem",
+    "description": "Подготовка отложенного callback открытия товарных панелей",
     "semantic_status": "described",
     "end_offset": 8277,
-    "path": "Source/Station/HandleItem05.asm"
+    "path": "Source/Station/HandleTradeControl.asm"
   },
   {
     "region": "Station",
-    "name": "Unknown7DA9",
+    "name": "OpenTradePanels",
     "address": 32169,
     "slot": 4,
     "offset": 8277,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Восстановление границ управляющего элемента продажи и товарной панели",
+    "semantic_status": "described",
     "end_offset": 8289,
-    "path": "Source/Station/Unknown7DA9.asm"
+    "path": "Source/Station/OpenTradePanels.asm"
   },
   {
     "region": "Station",
@@ -2443,25 +2872,25 @@
   },
   {
     "region": "Station",
-    "name": "HandleItem06",
+    "name": "HandleEquipmentControl",
     "address": 32187,
     "slot": 4,
     "offset": 8295,
-    "description": "обработчик события станционного элемента из записи 6 таблицы FInterfaceItem",
+    "description": "Подготовка отложенного callback открытия панелей оснащения",
     "semantic_status": "described",
     "end_offset": 8305,
-    "path": "Source/Station/HandleItem06.asm"
+    "path": "Source/Station/HandleEquipmentControl.asm"
   },
   {
     "region": "Station",
-    "name": "Unknown7DC5",
+    "name": "OpenEquipmentPanels",
     "address": 32197,
     "slot": 4,
     "offset": 8305,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Сброс индекса текста оснащения и восстановление панелей 39, 36, 37, 38",
+    "semantic_status": "described",
     "end_offset": 8333,
-    "path": "Source/Station/Unknown7DC5.asm"
+    "path": "Source/Station/OpenEquipmentPanels.asm"
   },
   {
     "region": "Station",
@@ -2476,47 +2905,47 @@
   },
   {
     "region": "Station",
-    "name": "HandleItem07",
+    "name": "HandleShipControl",
     "address": 32231,
     "slot": 4,
     "offset": 8339,
-    "description": "обработчик события станционного элемента из записи 7 таблицы FInterfaceItem",
+    "description": "Подготовка отложенного callback открытия корабельных панелей",
     "semantic_status": "described",
     "end_offset": 8349,
-    "path": "Source/Station/HandleItem07.asm"
+    "path": "Source/Station/HandleShipControl.asm"
   },
   {
     "region": "Station",
-    "name": "Unknown7DF1",
+    "name": "OpenShipPanels",
     "address": 32241,
     "slot": 4,
     "offset": 8349,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Сброс выбора и восстановление шести корабельных панелей в исходном порядке",
+    "semantic_status": "described",
     "end_offset": 8389,
-    "path": "Source/Station/Unknown7DF1.asm"
+    "path": "Source/Station/OpenShipPanels.asm"
   },
   {
     "region": "Station",
-    "name": "DrawItem07",
+    "name": "DrawShipControl",
     "address": 32281,
     "slot": 4,
     "offset": 8389,
-    "description": "Обёртка рисования элемента 7 через изменяемый индекс и DrawCenteredItem",
+    "description": "Рисование управляющего элемента корабля через изменяемый индекс 7",
     "semantic_status": "described",
     "end_offset": 8395,
-    "path": "Source/Station/DrawItem07.asm"
+    "path": "Source/Station/DrawShipControl.asm"
   },
   {
     "region": "Station",
-    "name": "Unknown7E1F",
+    "name": "ResetShipPanelSelection",
     "address": 32287,
     "slot": 4,
     "offset": 8395,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Сброс режима списка, рамок выбора и первого компонента индекса банка 4",
+    "semantic_status": "described",
     "end_offset": 8447,
-    "path": "Source/Station/Unknown7E1F.asm"
+    "path": "Source/Station/ResetShipPanelSelection.asm"
   },
   {
     "region": "Station",
@@ -2528,6 +2957,17 @@
     "semantic_status": "described",
     "end_offset": 8556,
     "path": "Source/Station/HandleItem08.asm"
+  },
+  {
+    "region": "StationExit",
+    "name": "LoadAction",
+    "address": 16896,
+    "slot": 4,
+    "offset": 8556,
+    "description": "Повторная инициализация музыки, запрос ACTION и передача сохранённого контекста",
+    "semantic_status": "described",
+    "end_offset": 8628,
+    "path": "Source/StationExit/LoadAction.asm"
   },
   {
     "region": "Station",
@@ -2880,6 +3320,50 @@
     "semantic_status": "described",
     "end_offset": 16785,
     "path": "Source/Station/FormatSettingsLabel.asm"
+  },
+  {
+    "region": "Station",
+    "name": "ParseSettingsLabel",
+    "address": 41361,
+    "slot": 4,
+    "offset": 16785,
+    "end_offset": 16845,
+    "description": "Преобразование нультерминированной подписи обратно в двухбайтовые настройки по прежнему типу записи",
+    "semantic_status": "described",
+    "path": "Source/Station/ParseSettingsLabel.asm"
+  },
+  {
+    "region": "Station",
+    "name": "RestoreScrollPointer",
+    "address": 41421,
+    "slot": 4,
+    "offset": 16845,
+    "end_offset": 16854,
+    "description": "Общий выход прокрутки со снятием сохранённых координат и восстановлением указателя",
+    "semantic_status": "described",
+    "path": "Source/Station/RestoreScrollPointer.asm"
+  },
+  {
+    "region": "Station",
+    "name": "ScrollWindowRows",
+    "address": 41430,
+    "slot": 4,
+    "offset": 16854,
+    "end_offset": 17007,
+    "description": "Прокрутка индекса строк по указателю с теневым снимком, очисткой тела и изменяемым рисователем",
+    "semantic_status": "described",
+    "path": "Source/Station/ScrollWindowRows.asm"
+  },
+  {
+    "region": "Station",
+    "name": "XorRowIfSelected",
+    "address": 41583,
+    "slot": 4,
+    "offset": 17007,
+    "end_offset": 17024,
+    "description": "Инверсия выбранной строки с восстановлением указателя, FF означает отсутствие строки",
+    "semantic_status": "described",
+    "path": "Source/Station/XorRowIfSelected.asm"
   },
   {
     "region": "Station",
@@ -3463,6 +3947,17 @@
     "semantic_status": "described",
     "end_offset": 19032,
     "path": "Source/Station/HandleItem32.asm"
+  },
+  {
+    "region": "Station",
+    "name": "UnknownAA58",
+    "address": 43608,
+    "slot": 4,
+    "offset": 19032,
+    "end_offset": 19074,
+    "description": "Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются",
+    "semantic_status": "unknown",
+    "path": "Source/Station/UnknownAA58.asm"
   },
   {
     "region": "Station",
@@ -4082,6 +4577,17 @@
   },
   {
     "region": "Station",
+    "name": "MoveItemToTailIfListed",
+    "address": 48679,
+    "slot": 4,
+    "offset": 24103,
+    "end_offset": 24120,
+    "description": "Проверка присутствия DrawHandler в списке перед переносом элемента по его индексу",
+    "semantic_status": "described",
+    "path": "Source/Station/MoveItemToTailIfListed.asm"
+  },
+  {
+    "region": "Station",
     "name": "MoveItemToTail",
     "address": 48696,
     "slot": 4,
@@ -4464,6 +4970,17 @@
     "semantic_status": "described",
     "end_offset": 26288,
     "path": "Source/Station/FillRectangle.asm"
+  },
+  {
+    "region": "Station",
+    "name": "ClearScrollWindowBody",
+    "address": 50864,
+    "slot": 4,
+    "offset": 26288,
+    "end_offset": 26718,
+    "description": "Очистка тела окна с трёхпиксельными боковыми полями и тремя путями горизонтального отсечения",
+    "semantic_status": "described",
+    "path": "Source/Station/ClearScrollWindowBody.asm"
   },
   {
     "region": "Station",
@@ -5721,14 +6238,14 @@
   },
   {
     "region": "Text",
-    "name": "IsMarketMarkClear",
+    "name": "IsMarketSaleLegal",
     "address": 50637,
     "slot": 5,
     "offset": 1485,
-    "description": "Проверка снятого bit7 строки рынка по стековому индексу",
+    "description": "Проверка разрешённой продажи товара по снятому bit7 рыночной записи",
     "semantic_status": "described",
     "end_offset": 1503,
-    "path": "Source/Text/IsMarketMarkClear.asm"
+    "path": "Source/Text/IsMarketSaleLegal.asm"
   },
   {
     "region": "Text",
@@ -6139,6 +6656,28 @@
   },
   {
     "region": "Map",
+    "name": "SumSquares8",
+    "address": 50024,
+    "slot": 7,
+    "offset": 872,
+    "end_offset": 908,
+    "description": "Сумма квадратов двух беззнаковых байтов из A и A' с 16-битным оборачиванием",
+    "semantic_status": "described",
+    "path": "Source/Map/SumSquares8.asm"
+  },
+  {
+    "region": "Map",
+    "name": "SelectNearestVisiblePoint",
+    "address": 50060,
+    "slot": 7,
+    "offset": 908,
+    "end_offset": 1039,
+    "description": "Выбор первой ближайшей видимой точки карты и чтение её сохранённого варианта",
+    "semantic_status": "described",
+    "path": "Source/Map/SelectNearestVisiblePoint.asm"
+  },
+  {
+    "region": "Map",
     "name": "ReadStoredMapVariant",
     "address": 50191,
     "slot": 7,
@@ -6150,6 +6689,28 @@
   },
   {
     "region": "Map",
+    "name": "BuildMapQuadrantTables",
+    "address": 50250,
+    "slot": 7,
+    "offset": 1098,
+    "end_offset": 1140,
+    "description": "Построение четырёх 256-байтовых таблиц соседних секторов карты",
+    "semantic_status": "described",
+    "path": "Source/Map/BuildMapQuadrantTables.asm"
+  },
+  {
+    "region": "Map",
+    "name": "BuildMapSectorTable",
+    "address": 50292,
+    "slot": 7,
+    "offset": 1140,
+    "end_offset": 1179,
+    "description": "Формирование таблицы одного сектора с возвратом в противоположном общем наборе",
+    "semantic_status": "described",
+    "path": "Source/Map/BuildMapSectorTable.asm"
+  },
+  {
+    "region": "Map",
     "name": "BuildMapScreenTables",
     "address": 50331,
     "slot": 7,
@@ -6158,6 +6719,127 @@
     "semantic_status": "described",
     "end_offset": 1253,
     "path": "Source/Map/BuildMapScreenTables.asm"
+  },
+  {
+    "region": "Map",
+    "name": "BuildVisibleMapPoints",
+    "address": 50405,
+    "slot": 7,
+    "offset": 1253,
+    "end_offset": 1512,
+    "description": "Фильтрация четырёх секторных таблиц в пары относительных координат и ссылки на исходные слова",
+    "semantic_status": "described",
+    "path": "Source/Map/BuildVisibleMapPoints.asm"
+  },
+  {
+    "region": "Map",
+    "name": "SelectNearestMapVariant",
+    "address": 50664,
+    "slot": 7,
+    "offset": 1512,
+    "end_offset": 1619,
+    "description": "Выбор первого ближайшего варианта карты по текущим парам координат",
+    "semantic_status": "described",
+    "path": "Source/Map/SelectNearestMapVariant.asm"
+  },
+  {
+    "region": "Map",
+    "name": "UpdateMapDistanceMinimum",
+    "address": 50771,
+    "slot": 7,
+    "offset": 1619,
+    "end_offset": 1655,
+    "description": "Обновление минимума квадрата расстояния от пары байтов до целевой точки",
+    "semantic_status": "described",
+    "path": "Source/Map/UpdateMapDistanceMinimum.asm"
+  },
+  {
+    "region": "Map",
+    "name": "DrawVariantCluster",
+    "address": 50807,
+    "slot": 7,
+    "offset": 1655,
+    "end_offset": 1728,
+    "description": "XOR центральной пятистрочной метки и последовательная анимация не более шести вариантов",
+    "semantic_status": "described",
+    "path": "Source/Map/DrawVariantCluster.asm"
+  },
+  {
+    "region": "Map",
+    "name": "AnimateVariant0",
+    "address": 50880,
+    "slot": 7,
+    "offset": 1728,
+    "end_offset": 1757,
+    "description": "Анимационный шаг варианта 0 и последующее исполнение оставшихся обёрток",
+    "semantic_status": "described",
+    "path": "Source/Map/AnimateVariant0.asm"
+  },
+  {
+    "region": "Map",
+    "name": "AnimateVariant1",
+    "address": 50909,
+    "slot": 7,
+    "offset": 1757,
+    "end_offset": 1786,
+    "description": "Анимационный шаг варианта 1 и последующее исполнение оставшихся обёрток",
+    "semantic_status": "described",
+    "path": "Source/Map/AnimateVariant1.asm"
+  },
+  {
+    "region": "Map",
+    "name": "AnimateVariant2",
+    "address": 50938,
+    "slot": 7,
+    "offset": 1786,
+    "end_offset": 1815,
+    "description": "Анимационный шаг варианта 2 и последующее исполнение оставшихся обёрток",
+    "semantic_status": "described",
+    "path": "Source/Map/AnimateVariant2.asm"
+  },
+  {
+    "region": "Map",
+    "name": "AnimateVariant3",
+    "address": 50967,
+    "slot": 7,
+    "offset": 1815,
+    "end_offset": 1844,
+    "description": "Анимационный шаг варианта 3 и последующее исполнение оставшихся обёрток",
+    "semantic_status": "described",
+    "path": "Source/Map/AnimateVariant3.asm"
+  },
+  {
+    "region": "Map",
+    "name": "AnimateVariant4",
+    "address": 50996,
+    "slot": 7,
+    "offset": 1844,
+    "end_offset": 1873,
+    "description": "Анимационный шаг варианта 4 и последующее исполнение оставшихся обёрток",
+    "semantic_status": "described",
+    "path": "Source/Map/AnimateVariant4.asm"
+  },
+  {
+    "region": "Map",
+    "name": "AnimateVariant5",
+    "address": 51025,
+    "slot": 7,
+    "offset": 1873,
+    "end_offset": 1902,
+    "description": "Анимационный шаг варианта 5 и последующее исполнение оставшихся обёрток",
+    "semantic_status": "described",
+    "path": "Source/Map/AnimateVariant5.asm"
+  },
+  {
+    "region": "Map",
+    "name": "SelectBlinkingVariant",
+    "address": 51054,
+    "slot": 7,
+    "offset": 1902,
+    "end_offset": 1921,
+    "description": "Циклическое мигание выбранного варианта заменой ресурса по младшему биту маски",
+    "semantic_status": "described",
+    "path": "Source/Map/SelectBlinkingVariant.asm"
   },
   {
     "region": "Map",
@@ -6180,6 +6862,17 @@
     "semantic_status": "described",
     "end_offset": 2087,
     "path": "Source/Map/SelectVariantResource.asm"
+  },
+  {
+    "region": "Map",
+    "name": "XorVariantPhase",
+    "address": 51239,
+    "slot": 7,
+    "offset": 2087,
+    "end_offset": 2191,
+    "description": "Чтение пары смещений, уменьшение альтернативного счётчика и XOR трёхстрочной фазы",
+    "semantic_status": "described",
+    "path": "Source/Map/XorVariantPhase.asm"
   },
   {
     "region": "Map",
@@ -6260,6 +6953,17 @@
   },
   {
     "region": "Map",
+    "name": "SetupMapRasterWindow",
+    "address": 53443,
+    "slot": 7,
+    "offset": 4291,
+    "end_offset": 4524,
+    "description": "Настройка границ отсечения, половин размеров и крайних адресов растрового окна",
+    "semantic_status": "described",
+    "path": "Source/Map/SetupMapRasterWindow.asm"
+  },
+  {
+    "region": "Map",
     "name": "DrawMapPointChain",
     "address": 53676,
     "slot": 7,
@@ -6301,6 +7005,237 @@
     "semantic_status": "described",
     "end_offset": 5341,
     "path": "Source/Map/DispatchMapClipEdge.asm"
+  },
+  {
+    "region": "Map",
+    "name": "MapClipCases",
+    "address": 54493,
+    "slot": 7,
+    "offset": 5341,
+    "end_offset": 6370,
+    "description": "Табличные решения отсечения по двум зонам, пересечения, отметки углов и общий возврат",
+    "semantic_status": "described",
+    "path": "Source/Map/MapClipCases.asm"
+  },
+  {
+    "region": "Map",
+    "name": "ComputeTopClipProduct",
+    "address": 55522,
+    "slot": 7,
+    "offset": 6370,
+    "end_offset": 6401,
+    "description": "Произведение (Y1-MinY)*(X1-X2) для верхней границы окна",
+    "semantic_status": "described",
+    "path": "Source/Map/ComputeTopClipProduct.asm"
+  },
+  {
+    "region": "Map",
+    "name": "ComputeBottomClipProduct",
+    "address": 55553,
+    "slot": 7,
+    "offset": 6401,
+    "end_offset": 6432,
+    "description": "Произведение (Y1-MaxY)*(X1-X2) для нижней границы окна",
+    "semantic_status": "described",
+    "path": "Source/Map/ComputeBottomClipProduct.asm"
+  },
+  {
+    "region": "Map",
+    "name": "ComputeLeftClipProduct",
+    "address": 55584,
+    "slot": 7,
+    "offset": 6432,
+    "end_offset": 6463,
+    "description": "Произведение (Y1-Y2)*(X1-MinX) для левой границы окна",
+    "semantic_status": "described",
+    "path": "Source/Map/ComputeLeftClipProduct.asm"
+  },
+  {
+    "region": "Map",
+    "name": "ComputeRightClipProduct",
+    "address": 55615,
+    "slot": 7,
+    "offset": 6463,
+    "end_offset": 6494,
+    "description": "Произведение (Y1-Y2)*(X1-MaxX) для правой границы окна",
+    "semantic_status": "described",
+    "path": "Source/Map/ComputeRightClipProduct.asm"
+  },
+  {
+    "region": "Map",
+    "name": "AppendTopClipIntersection",
+    "address": 55646,
+    "slot": 7,
+    "offset": 6494,
+    "end_offset": 6569,
+    "description": "Добавление пересечения с верхней границей окна в выходной список",
+    "semantic_status": "described",
+    "path": "Source/Map/AppendTopClipIntersection.asm"
+  },
+  {
+    "region": "Map",
+    "name": "AppendBottomClipIntersection",
+    "address": 55721,
+    "slot": 7,
+    "offset": 6569,
+    "end_offset": 6644,
+    "description": "Добавление пересечения с нижней границей окна в выходной список",
+    "semantic_status": "described",
+    "path": "Source/Map/AppendBottomClipIntersection.asm"
+  },
+  {
+    "region": "Map",
+    "name": "AppendLeftClipIntersection",
+    "address": 55796,
+    "slot": 7,
+    "offset": 6644,
+    "end_offset": 6738,
+    "description": "Добавление пересечения с левой границей окна в выходной список",
+    "semantic_status": "described",
+    "path": "Source/Map/AppendLeftClipIntersection.asm"
+  },
+  {
+    "region": "Map",
+    "name": "AppendRightClipIntersection",
+    "address": 55890,
+    "slot": 7,
+    "offset": 6738,
+    "end_offset": 6832,
+    "description": "Добавление пересечения с правой границей окна в выходной список",
+    "semantic_status": "described",
+    "path": "Source/Map/AppendRightClipIntersection.asm"
+  },
+  {
+    "region": "Map",
+    "name": "AppendTopLeftCorner",
+    "address": 55984,
+    "slot": 7,
+    "offset": 6832,
+    "end_offset": 6843,
+    "description": "Условное добавление верхнего левого угла окна",
+    "semantic_status": "described",
+    "path": "Source/Map/AppendTopLeftCorner.asm"
+  },
+  {
+    "region": "Map",
+    "name": "AppendTopRightCorner",
+    "address": 55995,
+    "slot": 7,
+    "offset": 6843,
+    "end_offset": 6854,
+    "description": "Условное добавление верхнего правого угла окна",
+    "semantic_status": "described",
+    "path": "Source/Map/AppendTopRightCorner.asm"
+  },
+  {
+    "region": "Map",
+    "name": "AppendBottomLeftCorner",
+    "address": 56006,
+    "slot": 7,
+    "offset": 6854,
+    "end_offset": 6865,
+    "description": "Условное добавление нижнего левого угла окна",
+    "semantic_status": "described",
+    "path": "Source/Map/AppendBottomLeftCorner.asm"
+  },
+  {
+    "region": "Map",
+    "name": "AppendBottomRightCorner",
+    "address": 56017,
+    "slot": 7,
+    "offset": 6865,
+    "end_offset": 6876,
+    "description": "Условное добавление нижнего правого угла окна",
+    "semantic_status": "described",
+    "path": "Source/Map/AppendBottomRightCorner.asm"
+  },
+  {
+    "region": "Map",
+    "name": "SubtractTopLeftProducts",
+    "address": 56028,
+    "slot": 7,
+    "offset": 6876,
+    "end_offset": 6896,
+    "description": "Старшее слово и флаги 32-битной разности верхнего и левого произведений",
+    "semantic_status": "described",
+    "path": "Source/Map/SubtractTopLeftProducts.asm"
+  },
+  {
+    "region": "Map",
+    "name": "SubtractTopRightProducts",
+    "address": 56048,
+    "slot": 7,
+    "offset": 6896,
+    "end_offset": 6916,
+    "description": "Старшее слово и флаги 32-битной разности верхнего и правого произведений",
+    "semantic_status": "described",
+    "path": "Source/Map/SubtractTopRightProducts.asm"
+  },
+  {
+    "region": "Map",
+    "name": "SubtractBottomLeftProducts",
+    "address": 56068,
+    "slot": 7,
+    "offset": 6916,
+    "end_offset": 6936,
+    "description": "Старшее слово и флаги 32-битной разности нижнего и левого произведений",
+    "semantic_status": "described",
+    "path": "Source/Map/SubtractBottomLeftProducts.asm"
+  },
+  {
+    "region": "Map",
+    "name": "SubtractBottomRightProducts",
+    "address": 56088,
+    "slot": 7,
+    "offset": 6936,
+    "end_offset": 6956,
+    "description": "Старшее слово и флаги 32-битной разности нижнего и правого произведений",
+    "semantic_status": "described",
+    "path": "Source/Map/SubtractBottomRightProducts.asm"
+  },
+  {
+    "region": "Map",
+    "name": "SubtractClipPointX",
+    "address": 56108,
+    "slot": 7,
+    "offset": 6956,
+    "end_offset": 6967,
+    "description": "Знаковые флаги оборачиваемой разности X2-X1",
+    "semantic_status": "described",
+    "path": "Source/Map/SubtractClipPointX.asm"
+  },
+  {
+    "region": "Map",
+    "name": "SubtractClipPointY",
+    "address": 56119,
+    "slot": 7,
+    "offset": 6967,
+    "end_offset": 6978,
+    "description": "Знаковые флаги оборачиваемой разности Y2-Y1",
+    "semantic_status": "described",
+    "path": "Source/Map/SubtractClipPointY.asm"
+  },
+  {
+    "region": "Map",
+    "name": "AppendSecondClipPoint",
+    "address": 56130,
+    "slot": 7,
+    "offset": 6978,
+    "end_offset": 7001,
+    "description": "Добавление младших байтов второй точки либо пары из DE",
+    "semantic_status": "described",
+    "path": "Source/Map/AppendSecondClipPoint.asm"
+  },
+  {
+    "region": "Map",
+    "name": "UnwindClipFrame",
+    "address": 56153,
+    "slot": 7,
+    "offset": 7001,
+    "end_offset": 7011,
+    "description": "Специальный возврат со снятием трёх слов и установленным Carry",
+    "semantic_status": "described",
+    "path": "Source/Map/UnwindClipFrame.asm"
   },
   {
     "region": "Map",
@@ -10132,6 +11067,28 @@
   },
   {
     "region": "Voxel",
+    "name": "RotateBasisVectors",
+    "address": 58624,
+    "slot": 20,
+    "offset": 9472,
+    "description": "Последовательное преобразование трёх векторов ориентации #9B00..#9B11 по углам #9B14, #9B12 и #9B13",
+    "semantic_status": "described",
+    "end_offset": 10401,
+    "path": "Source/Voxel/RotateBasisVectors.asm"
+  },
+  {
+    "region": "Voxel",
+    "name": "SignedSeededProduct",
+    "address": 59553,
+    "slot": 20,
+    "offset": 10401,
+    "description": "Знаковое табличное произведение с использованием входного IY как младшей части накопителя",
+    "semantic_status": "described",
+    "end_offset": 10597,
+    "path": "Source/Voxel/SignedSeededProduct.asm"
+  },
+  {
+    "region": "Voxel",
     "name": "CreateSmallEffect",
     "address": 60416,
     "slot": 21,
@@ -10208,26 +11165,488 @@
     "path": "Source/Voxel/Divide7BitFixed.asm"
   },
   {
-    "region": "Voxel",
-    "name": "RotateBasisVectors",
-    "address": 58624,
-    "slot": 20,
-    "offset": 9472,
-    "description": "Последовательное преобразование трёх векторов ориентации #9B00..#9B11 по углам #9B14, #9B12 и #9B13",
-    "semantic_status": "described",
-    "end_offset": 10401,
-    "path": "Source/Voxel/RotateBasisVectors.asm"
+    "region": "Controls",
+    "name": "UnknownC870",
+    "address": 51312,
+    "slot": 22,
+    "offset": 2160,
+    "description": "Unknown, назначение этого фрагмента ещё не установлено",
+    "semantic_status": "unknown",
+    "end_offset": 2178,
+    "path": "Source/Controls/UnknownC870.asm"
   },
   {
-    "region": "Voxel",
-    "name": "SignedSeededProduct",
-    "address": 59553,
-    "slot": 20,
-    "offset": 10401,
-    "description": "Знаковое табличное произведение с использованием входного IY как младшей части накопителя",
-    "semantic_status": "described",
-    "end_offset": 10597,
-    "path": "Source/Voxel/SignedSeededProduct.asm"
+    "region": "Controls",
+    "name": "UnknownC882",
+    "address": 51330,
+    "slot": 22,
+    "offset": 2178,
+    "description": "Unknown, назначение этого фрагмента ещё не установлено",
+    "semantic_status": "unknown",
+    "end_offset": 2701,
+    "path": "Source/Controls/UnknownC882.asm"
+  },
+  {
+    "region": "Controls",
+    "name": "UnknownCA8D",
+    "address": 51853,
+    "slot": 22,
+    "offset": 2701,
+    "description": "Unknown, назначение этого фрагмента ещё не установлено",
+    "semantic_status": "unknown",
+    "end_offset": 2739,
+    "path": "Source/Controls/UnknownCA8D.asm"
+  },
+  {
+    "region": "Controls",
+    "name": "UnknownCAB3",
+    "address": 51891,
+    "slot": 22,
+    "offset": 2739,
+    "description": "Unknown, назначение этого фрагмента ещё не установлено",
+    "semantic_status": "unknown",
+    "end_offset": 2787,
+    "path": "Source/Controls/UnknownCAB3.asm"
+  },
+  {
+    "region": "Controls",
+    "name": "UnknownCAE3",
+    "address": 51939,
+    "slot": 22,
+    "offset": 2787,
+    "description": "Unknown, назначение этого фрагмента ещё не установлено",
+    "semantic_status": "unknown",
+    "end_offset": 2816,
+    "path": "Source/Controls/UnknownCAE3.asm"
+  },
+  {
+    "region": "Controls",
+    "name": "UnknownCB00",
+    "address": 51968,
+    "slot": 22,
+    "offset": 2816,
+    "description": "Unknown, назначение этого фрагмента ещё не установлено",
+    "semantic_status": "unknown",
+    "end_offset": 3606,
+    "path": "Source/Controls/UnknownCB00.asm"
+  },
+  {
+    "region": "Controls",
+    "name": "UnknownCE16",
+    "address": 52758,
+    "slot": 22,
+    "offset": 3606,
+    "description": "Unknown, назначение этого фрагмента ещё не установлено",
+    "semantic_status": "unknown",
+    "end_offset": 3677,
+    "path": "Source/Controls/UnknownCE16.asm"
+  },
+  {
+    "region": "Controls",
+    "name": "UnknownCEA4",
+    "address": 52900,
+    "slot": 22,
+    "offset": 3748,
+    "description": "Unknown, назначение этого фрагмента ещё не установлено",
+    "semantic_status": "unknown",
+    "end_offset": 3765,
+    "path": "Source/Controls/UnknownCEA4.asm"
+  },
+  {
+    "region": "Controls",
+    "name": "UnknownCECF",
+    "address": 52943,
+    "slot": 22,
+    "offset": 3791,
+    "description": "Unknown, назначение этого фрагмента ещё не установлено",
+    "semantic_status": "unknown",
+    "end_offset": 3833,
+    "path": "Source/Controls/UnknownCECF.asm"
+  },
+  {
+    "region": "Controls",
+    "name": "UnknownCEFA",
+    "address": 52986,
+    "slot": 22,
+    "offset": 3834,
+    "description": "Unknown, назначение этого фрагмента ещё не установлено",
+    "semantic_status": "unknown",
+    "end_offset": 3851,
+    "path": "Source/Controls/UnknownCEFA.asm"
+  },
+  {
+    "region": "Controls",
+    "name": "UnknownCF0B",
+    "address": 53003,
+    "slot": 22,
+    "offset": 3851,
+    "description": "Unknown, назначение этого фрагмента ещё не установлено",
+    "semantic_status": "unknown",
+    "end_offset": 4298,
+    "path": "Source/Controls/UnknownCF0B.asm"
+  },
+  {
+    "region": "Controls",
+    "name": "UnknownD0CA",
+    "address": 53450,
+    "slot": 22,
+    "offset": 4298,
+    "description": "Unknown, назначение этого фрагмента ещё не установлено",
+    "semantic_status": "unknown",
+    "end_offset": 4362,
+    "path": "Source/Controls/UnknownD0CA.asm"
+  },
+  {
+    "region": "Controls",
+    "name": "UnknownD10A",
+    "address": 53514,
+    "slot": 22,
+    "offset": 4362,
+    "description": "Unknown, назначение этого фрагмента ещё не установлено",
+    "semantic_status": "unknown",
+    "end_offset": 4453,
+    "path": "Source/Controls/UnknownD10A.asm"
+  },
+  {
+    "region": "Controls",
+    "name": "UnknownD165",
+    "address": 53605,
+    "slot": 22,
+    "offset": 4453,
+    "description": "Unknown, назначение этого фрагмента ещё не установлено",
+    "semantic_status": "unknown",
+    "end_offset": 4455,
+    "path": "Source/Controls/UnknownD165.asm"
+  },
+  {
+    "region": "Controls",
+    "name": "UnknownD167",
+    "address": 53607,
+    "slot": 22,
+    "offset": 4455,
+    "description": "Unknown, назначение этого фрагмента ещё не установлено",
+    "semantic_status": "unknown",
+    "end_offset": 4477,
+    "path": "Source/Controls/UnknownD167.asm"
+  },
+  {
+    "region": "Controls",
+    "name": "UnknownD18D",
+    "address": 53645,
+    "slot": 22,
+    "offset": 4493,
+    "description": "Unknown, назначение этого фрагмента ещё не установлено",
+    "semantic_status": "unknown",
+    "end_offset": 4514,
+    "path": "Source/Controls/UnknownD18D.asm"
+  },
+  {
+    "region": "Controls",
+    "name": "UnknownD1A2",
+    "address": 53666,
+    "slot": 22,
+    "offset": 4514,
+    "description": "Unknown, назначение этого фрагмента ещё не установлено",
+    "semantic_status": "unknown",
+    "end_offset": 4534,
+    "path": "Source/Controls/UnknownD1A2.asm"
+  },
+  {
+    "region": "Controls",
+    "name": "UnknownD1B6",
+    "address": 53686,
+    "slot": 22,
+    "offset": 4534,
+    "description": "Unknown, назначение этого фрагмента ещё не установлено",
+    "semantic_status": "unknown",
+    "end_offset": 4555,
+    "path": "Source/Controls/UnknownD1B6.asm"
+  },
+  {
+    "region": "Controls",
+    "name": "UnknownD1CB",
+    "address": 53707,
+    "slot": 22,
+    "offset": 4555,
+    "description": "Unknown, назначение этого фрагмента ещё не установлено",
+    "semantic_status": "unknown",
+    "end_offset": 4575,
+    "path": "Source/Controls/UnknownD1CB.asm"
+  },
+  {
+    "region": "Controls",
+    "name": "UnknownD1DF",
+    "address": 53727,
+    "slot": 22,
+    "offset": 4575,
+    "description": "Unknown, назначение этого фрагмента ещё не установлено",
+    "semantic_status": "unknown",
+    "end_offset": 4596,
+    "path": "Source/Controls/UnknownD1DF.asm"
+  },
+  {
+    "region": "Controls",
+    "name": "UnknownD1F4",
+    "address": 53748,
+    "slot": 22,
+    "offset": 4596,
+    "description": "Unknown, назначение этого фрагмента ещё не установлено",
+    "semantic_status": "unknown",
+    "end_offset": 4616,
+    "path": "Source/Controls/UnknownD1F4.asm"
+  },
+  {
+    "region": "Controls",
+    "name": "UnknownD208",
+    "address": 53768,
+    "slot": 22,
+    "offset": 4616,
+    "description": "Unknown, назначение этого фрагмента ещё не установлено",
+    "semantic_status": "unknown",
+    "end_offset": 4625,
+    "path": "Source/Controls/UnknownD208.asm"
+  },
+  {
+    "region": "Controls",
+    "name": "UnknownD211",
+    "address": 53777,
+    "slot": 22,
+    "offset": 4625,
+    "description": "Unknown, назначение этого фрагмента ещё не установлено",
+    "semantic_status": "unknown",
+    "end_offset": 4634,
+    "path": "Source/Controls/UnknownD211.asm"
+  },
+  {
+    "region": "Controls",
+    "name": "UnknownD21A",
+    "address": 53786,
+    "slot": 22,
+    "offset": 4634,
+    "description": "Unknown, назначение этого фрагмента ещё не установлено",
+    "semantic_status": "unknown",
+    "end_offset": 4647,
+    "path": "Source/Controls/UnknownD21A.asm"
+  },
+  {
+    "region": "Controls",
+    "name": "UnknownD232",
+    "address": 53810,
+    "slot": 22,
+    "offset": 4658,
+    "description": "Unknown, назначение этого фрагмента ещё не установлено",
+    "semantic_status": "unknown",
+    "end_offset": 4662,
+    "path": "Source/Controls/UnknownD232.asm"
+  },
+  {
+    "region": "Controls",
+    "name": "UnknownD236",
+    "address": 53814,
+    "slot": 22,
+    "offset": 4662,
+    "description": "Unknown, назначение этого фрагмента ещё не установлено",
+    "semantic_status": "unknown",
+    "end_offset": 4875,
+    "path": "Source/Controls/UnknownD236.asm"
+  },
+  {
+    "region": "Controls",
+    "name": "UnknownD30B",
+    "address": 54027,
+    "slot": 22,
+    "offset": 4875,
+    "description": "Unknown, назначение этого фрагмента ещё не установлено",
+    "semantic_status": "unknown",
+    "end_offset": 4896,
+    "path": "Source/Controls/UnknownD30B.asm"
+  },
+  {
+    "region": "Controls",
+    "name": "UnknownD320",
+    "address": 54048,
+    "slot": 22,
+    "offset": 4896,
+    "description": "Unknown, назначение этого фрагмента ещё не установлено",
+    "semantic_status": "unknown",
+    "end_offset": 5323,
+    "path": "Source/Controls/UnknownD320.asm"
+  },
+  {
+    "region": "Controls",
+    "name": "UnknownD4CB",
+    "address": 54475,
+    "slot": 22,
+    "offset": 5323,
+    "description": "Unknown, назначение этого фрагмента ещё не установлено",
+    "semantic_status": "unknown",
+    "end_offset": 5348,
+    "path": "Source/Controls/UnknownD4CB.asm"
+  },
+  {
+    "region": "Controls",
+    "name": "UnknownD4E4",
+    "address": 54500,
+    "slot": 22,
+    "offset": 5348,
+    "description": "Unknown, назначение этого фрагмента ещё не установлено",
+    "semantic_status": "unknown",
+    "end_offset": 5377,
+    "path": "Source/Controls/UnknownD4E4.asm"
+  },
+  {
+    "region": "Controls",
+    "name": "UnknownD504",
+    "address": 54532,
+    "slot": 22,
+    "offset": 5380,
+    "description": "Unknown, назначение этого фрагмента ещё не установлено",
+    "semantic_status": "unknown",
+    "end_offset": 5397,
+    "path": "Source/Controls/UnknownD504.asm"
+  },
+  {
+    "region": "Controls",
+    "name": "UnknownD515",
+    "address": 54549,
+    "slot": 22,
+    "offset": 5397,
+    "description": "Unknown, назначение этого фрагмента ещё не установлено",
+    "semantic_status": "unknown",
+    "end_offset": 5436,
+    "path": "Source/Controls/UnknownD515.asm"
+  },
+  {
+    "region": "Controls",
+    "name": "UnknownD53C",
+    "address": 54588,
+    "slot": 22,
+    "offset": 5436,
+    "description": "Unknown, назначение этого фрагмента ещё не установлено",
+    "semantic_status": "unknown",
+    "end_offset": 5484,
+    "path": "Source/Controls/UnknownD53C.asm"
+  },
+  {
+    "region": "Controls",
+    "name": "UnknownD56C",
+    "address": 54636,
+    "slot": 22,
+    "offset": 5484,
+    "description": "Unknown, назначение этого фрагмента ещё не установлено",
+    "semantic_status": "unknown",
+    "end_offset": 5499,
+    "path": "Source/Controls/UnknownD56C.asm"
+  },
+  {
+    "region": "Controls",
+    "name": "UnknownD57B",
+    "address": 54651,
+    "slot": 22,
+    "offset": 5499,
+    "description": "Unknown, назначение этого фрагмента ещё не установлено",
+    "semantic_status": "unknown",
+    "end_offset": 5641,
+    "path": "Source/Controls/UnknownD57B.asm"
+  },
+  {
+    "region": "Controls",
+    "name": "UnknownD609",
+    "address": 54793,
+    "slot": 22,
+    "offset": 5641,
+    "description": "Unknown, назначение этого фрагмента ещё не установлено",
+    "semantic_status": "unknown",
+    "end_offset": 5911,
+    "path": "Source/Controls/UnknownD609.asm"
+  },
+  {
+    "region": "Controls",
+    "name": "UnknownD727",
+    "address": 55079,
+    "slot": 22,
+    "offset": 5927,
+    "description": "Unknown, назначение этого фрагмента ещё не установлено",
+    "semantic_status": "unknown",
+    "end_offset": 6159,
+    "path": "Source/Controls/UnknownD727.asm"
+  },
+  {
+    "region": "Controls",
+    "name": "UnknownD833",
+    "address": 55347,
+    "slot": 22,
+    "offset": 6195,
+    "description": "Unknown, назначение этого фрагмента ещё не установлено",
+    "semantic_status": "unknown",
+    "end_offset": 6401,
+    "path": "Source/Controls/UnknownD833.asm"
+  },
+  {
+    "region": "Controls",
+    "name": "UnknownD925",
+    "address": 55589,
+    "slot": 22,
+    "offset": 6437,
+    "description": "Unknown, назначение этого фрагмента ещё не установлено",
+    "semantic_status": "unknown",
+    "end_offset": 6464,
+    "path": "Source/Controls/UnknownD925.asm"
+  },
+  {
+    "region": "Controls",
+    "name": "UnknownD940",
+    "address": 55616,
+    "slot": 22,
+    "offset": 6464,
+    "description": "Unknown, назначение этого фрагмента ещё не установлено",
+    "semantic_status": "unknown",
+    "end_offset": 6491,
+    "path": "Source/Controls/UnknownD940.asm"
+  },
+  {
+    "region": "Controls",
+    "name": "UnknownD95F",
+    "address": 55647,
+    "slot": 22,
+    "offset": 6495,
+    "description": "Unknown, назначение этого фрагмента ещё не установлено",
+    "semantic_status": "unknown",
+    "end_offset": 6526,
+    "path": "Source/Controls/UnknownD95F.asm"
+  },
+  {
+    "region": "Controls",
+    "name": "UnknownD9B0",
+    "address": 55728,
+    "slot": 22,
+    "offset": 6576,
+    "description": "Unknown, назначение этого фрагмента ещё не установлено",
+    "semantic_status": "unknown",
+    "end_offset": 6622,
+    "path": "Source/Controls/UnknownD9B0.asm"
+  },
+  {
+    "region": "Controls",
+    "name": "UnknownD9DE",
+    "address": 55774,
+    "slot": 22,
+    "offset": 6622,
+    "description": "Unknown, назначение этого фрагмента ещё не установлено",
+    "semantic_status": "unknown",
+    "end_offset": 6841,
+    "path": "Source/Controls/UnknownD9DE.asm"
+  },
+  {
+    "region": "Controls",
+    "name": "UnknownDAB9",
+    "address": 55993,
+    "slot": 22,
+    "offset": 6841,
+    "description": "Unknown, назначение этого фрагмента ещё не установлено",
+    "semantic_status": "unknown",
+    "end_offset": 6878,
+    "path": "Source/Controls/UnknownDAB9.asm"
   },
   {
     "region": "Controls",
@@ -10330,83 +11749,6 @@
   },
   {
     "region": "Controls",
-    "name": "UnknownC870",
-    "address": 51312,
-    "slot": 22,
-    "offset": 2160,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
-    "end_offset": 2178,
-    "path": "Source/Controls/UnknownC870.asm"
-  },
-  {
-    "region": "Controls",
-    "name": "UnknownC882",
-    "address": 51330,
-    "slot": 22,
-    "offset": 2178,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
-    "end_offset": 2701,
-    "path": "Source/Controls/UnknownC882.asm"
-  },
-  {
-    "region": "Controls",
-    "name": "UnknownCA8D",
-    "address": 51853,
-    "slot": 22,
-    "offset": 2701,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
-    "end_offset": 2739,
-    "path": "Source/Controls/UnknownCA8D.asm"
-  },
-  {
-    "region": "Controls",
-    "name": "UnknownCAB3",
-    "address": 51891,
-    "slot": 22,
-    "offset": 2739,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
-    "end_offset": 2787,
-    "path": "Source/Controls/UnknownCAB3.asm"
-  },
-  {
-    "region": "Controls",
-    "name": "UnknownCAE3",
-    "address": 51939,
-    "slot": 22,
-    "offset": 2787,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
-    "end_offset": 2816,
-    "path": "Source/Controls/UnknownCAE3.asm"
-  },
-  {
-    "region": "Controls",
-    "name": "UnknownCB00",
-    "address": 51968,
-    "slot": 22,
-    "offset": 2816,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
-    "end_offset": 3606,
-    "path": "Source/Controls/UnknownCB00.asm"
-  },
-  {
-    "region": "Controls",
-    "name": "UnknownCE16",
-    "address": 52758,
-    "slot": 22,
-    "offset": 3606,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
-    "end_offset": 3677,
-    "path": "Source/Controls/UnknownCE16.asm"
-  },
-  {
-    "region": "Controls",
     "name": "UnknownE8FD",
     "address": 59645,
     "slot": 23,
@@ -10429,72 +11771,6 @@
   },
   {
     "region": "Controls",
-    "name": "UnknownCEA4",
-    "address": 52900,
-    "slot": 22,
-    "offset": 3748,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
-    "end_offset": 3765,
-    "path": "Source/Controls/UnknownCEA4.asm"
-  },
-  {
-    "region": "Controls",
-    "name": "UnknownCECF",
-    "address": 52943,
-    "slot": 22,
-    "offset": 3791,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
-    "end_offset": 3833,
-    "path": "Source/Controls/UnknownCECF.asm"
-  },
-  {
-    "region": "Controls",
-    "name": "UnknownCEFA",
-    "address": 52986,
-    "slot": 22,
-    "offset": 3834,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
-    "end_offset": 3851,
-    "path": "Source/Controls/UnknownCEFA.asm"
-  },
-  {
-    "region": "Controls",
-    "name": "UnknownCF0B",
-    "address": 53003,
-    "slot": 22,
-    "offset": 3851,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
-    "end_offset": 4298,
-    "path": "Source/Controls/UnknownCF0B.asm"
-  },
-  {
-    "region": "Controls",
-    "name": "UnknownD0CA",
-    "address": 53450,
-    "slot": 22,
-    "offset": 4298,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
-    "end_offset": 4362,
-    "path": "Source/Controls/UnknownD0CA.asm"
-  },
-  {
-    "region": "Controls",
-    "name": "UnknownD10A",
-    "address": 53514,
-    "slot": 22,
-    "offset": 4362,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
-    "end_offset": 4453,
-    "path": "Source/Controls/UnknownD10A.asm"
-  },
-  {
-    "region": "Controls",
     "name": "UnknownEC0E",
     "address": 60430,
     "slot": 23,
@@ -10503,28 +11779,6 @@
     "semantic_status": "unknown",
     "end_offset": 4472,
     "path": "Source/Controls/UnknownEC0E.asm"
-  },
-  {
-    "region": "Controls",
-    "name": "UnknownD165",
-    "address": 53605,
-    "slot": 22,
-    "offset": 4453,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
-    "end_offset": 4455,
-    "path": "Source/Controls/UnknownD165.asm"
-  },
-  {
-    "region": "Controls",
-    "name": "UnknownD167",
-    "address": 53607,
-    "slot": 22,
-    "offset": 4455,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
-    "end_offset": 4477,
-    "path": "Source/Controls/UnknownD167.asm"
   },
   {
     "region": "Controls",
@@ -10550,39 +11804,6 @@
   },
   {
     "region": "Controls",
-    "name": "UnknownD18D",
-    "address": 53645,
-    "slot": 22,
-    "offset": 4493,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
-    "end_offset": 4514,
-    "path": "Source/Controls/UnknownD18D.asm"
-  },
-  {
-    "region": "Controls",
-    "name": "UnknownD1A2",
-    "address": 53666,
-    "slot": 22,
-    "offset": 4514,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
-    "end_offset": 4534,
-    "path": "Source/Controls/UnknownD1A2.asm"
-  },
-  {
-    "region": "Controls",
-    "name": "UnknownD1B6",
-    "address": 53686,
-    "slot": 22,
-    "offset": 4534,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
-    "end_offset": 4555,
-    "path": "Source/Controls/UnknownD1B6.asm"
-  },
-  {
-    "region": "Controls",
     "name": "UnknownECA2",
     "address": 60578,
     "slot": 23,
@@ -10591,61 +11812,6 @@
     "semantic_status": "unknown",
     "end_offset": 4629,
     "path": "Source/Controls/UnknownECA2.asm"
-  },
-  {
-    "region": "Controls",
-    "name": "UnknownD1CB",
-    "address": 53707,
-    "slot": 22,
-    "offset": 4555,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
-    "end_offset": 4575,
-    "path": "Source/Controls/UnknownD1CB.asm"
-  },
-  {
-    "region": "Controls",
-    "name": "UnknownD1DF",
-    "address": 53727,
-    "slot": 22,
-    "offset": 4575,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
-    "end_offset": 4596,
-    "path": "Source/Controls/UnknownD1DF.asm"
-  },
-  {
-    "region": "Controls",
-    "name": "UnknownD1F4",
-    "address": 53748,
-    "slot": 22,
-    "offset": 4596,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
-    "end_offset": 4616,
-    "path": "Source/Controls/UnknownD1F4.asm"
-  },
-  {
-    "region": "Controls",
-    "name": "UnknownD208",
-    "address": 53768,
-    "slot": 22,
-    "offset": 4616,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
-    "end_offset": 4625,
-    "path": "Source/Controls/UnknownD208.asm"
-  },
-  {
-    "region": "Controls",
-    "name": "UnknownD211",
-    "address": 53777,
-    "slot": 22,
-    "offset": 4625,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
-    "end_offset": 4634,
-    "path": "Source/Controls/UnknownD211.asm"
   },
   {
     "region": "Controls",
@@ -10660,39 +11826,6 @@
   },
   {
     "region": "Controls",
-    "name": "UnknownD21A",
-    "address": 53786,
-    "slot": 22,
-    "offset": 4634,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
-    "end_offset": 4647,
-    "path": "Source/Controls/UnknownD21A.asm"
-  },
-  {
-    "region": "Controls",
-    "name": "UnknownD232",
-    "address": 53810,
-    "slot": 22,
-    "offset": 4658,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
-    "end_offset": 4662,
-    "path": "Source/Controls/UnknownD232.asm"
-  },
-  {
-    "region": "Controls",
-    "name": "UnknownD236",
-    "address": 53814,
-    "slot": 22,
-    "offset": 4662,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
-    "end_offset": 4875,
-    "path": "Source/Controls/UnknownD236.asm"
-  },
-  {
-    "region": "Controls",
     "name": "UnknownED28",
     "address": 60712,
     "slot": 23,
@@ -10701,50 +11834,6 @@
     "semantic_status": "unknown",
     "end_offset": 5350,
     "path": "Source/Controls/UnknownED28.asm"
-  },
-  {
-    "region": "Controls",
-    "name": "UnknownD30B",
-    "address": 54027,
-    "slot": 22,
-    "offset": 4875,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
-    "end_offset": 4896,
-    "path": "Source/Controls/UnknownD30B.asm"
-  },
-  {
-    "region": "Controls",
-    "name": "UnknownD320",
-    "address": 54048,
-    "slot": 22,
-    "offset": 4896,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
-    "end_offset": 5323,
-    "path": "Source/Controls/UnknownD320.asm"
-  },
-  {
-    "region": "Controls",
-    "name": "UnknownD4CB",
-    "address": 54475,
-    "slot": 22,
-    "offset": 5323,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
-    "end_offset": 5348,
-    "path": "Source/Controls/UnknownD4CB.asm"
-  },
-  {
-    "region": "Controls",
-    "name": "UnknownD4E4",
-    "address": 54500,
-    "slot": 22,
-    "offset": 5348,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
-    "end_offset": 5377,
-    "path": "Source/Controls/UnknownD4E4.asm"
   },
   {
     "region": "Controls",
@@ -10759,17 +11848,6 @@
   },
   {
     "region": "Controls",
-    "name": "UnknownD504",
-    "address": 54532,
-    "slot": 22,
-    "offset": 5380,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
-    "end_offset": 5397,
-    "path": "Source/Controls/UnknownD504.asm"
-  },
-  {
-    "region": "Controls",
     "name": "UnknownEFF1",
     "address": 61425,
     "slot": 23,
@@ -10781,50 +11859,6 @@
   },
   {
     "region": "Controls",
-    "name": "UnknownD515",
-    "address": 54549,
-    "slot": 22,
-    "offset": 5397,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
-    "end_offset": 5436,
-    "path": "Source/Controls/UnknownD515.asm"
-  },
-  {
-    "region": "Controls",
-    "name": "UnknownD53C",
-    "address": 54588,
-    "slot": 22,
-    "offset": 5436,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
-    "end_offset": 5484,
-    "path": "Source/Controls/UnknownD53C.asm"
-  },
-  {
-    "region": "Controls",
-    "name": "UnknownD56C",
-    "address": 54636,
-    "slot": 22,
-    "offset": 5484,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
-    "end_offset": 5499,
-    "path": "Source/Controls/UnknownD56C.asm"
-  },
-  {
-    "region": "Controls",
-    "name": "UnknownD57B",
-    "address": 54651,
-    "slot": 22,
-    "offset": 5499,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
-    "end_offset": 5641,
-    "path": "Source/Controls/UnknownD57B.asm"
-  },
-  {
-    "region": "Controls",
     "name": "UnknownF094",
     "address": 61588,
     "slot": 23,
@@ -10833,17 +11867,6 @@
     "semantic_status": "unknown",
     "end_offset": 5647,
     "path": "Source/Controls/UnknownF094.asm"
-  },
-  {
-    "region": "Controls",
-    "name": "UnknownD609",
-    "address": 54793,
-    "slot": 22,
-    "offset": 5641,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
-    "end_offset": 5911,
-    "path": "Source/Controls/UnknownD609.asm"
   },
   {
     "region": "Controls",
@@ -10877,94 +11900,6 @@
     "semantic_status": "unknown",
     "end_offset": 5837,
     "path": "Source/Controls/UnknownF188.asm"
-  },
-  {
-    "region": "Controls",
-    "name": "UnknownD727",
-    "address": 55079,
-    "slot": 22,
-    "offset": 5927,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
-    "end_offset": 6159,
-    "path": "Source/Controls/UnknownD727.asm"
-  },
-  {
-    "region": "Controls",
-    "name": "UnknownD833",
-    "address": 55347,
-    "slot": 22,
-    "offset": 6195,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
-    "end_offset": 6401,
-    "path": "Source/Controls/UnknownD833.asm"
-  },
-  {
-    "region": "Controls",
-    "name": "UnknownD925",
-    "address": 55589,
-    "slot": 22,
-    "offset": 6437,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
-    "end_offset": 6464,
-    "path": "Source/Controls/UnknownD925.asm"
-  },
-  {
-    "region": "Controls",
-    "name": "UnknownD940",
-    "address": 55616,
-    "slot": 22,
-    "offset": 6464,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
-    "end_offset": 6491,
-    "path": "Source/Controls/UnknownD940.asm"
-  },
-  {
-    "region": "Controls",
-    "name": "UnknownD95F",
-    "address": 55647,
-    "slot": 22,
-    "offset": 6495,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
-    "end_offset": 6526,
-    "path": "Source/Controls/UnknownD95F.asm"
-  },
-  {
-    "region": "Controls",
-    "name": "UnknownD9B0",
-    "address": 55728,
-    "slot": 22,
-    "offset": 6576,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
-    "end_offset": 6622,
-    "path": "Source/Controls/UnknownD9B0.asm"
-  },
-  {
-    "region": "Controls",
-    "name": "UnknownD9DE",
-    "address": 55774,
-    "slot": 22,
-    "offset": 6622,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
-    "end_offset": 6841,
-    "path": "Source/Controls/UnknownD9DE.asm"
-  },
-  {
-    "region": "Controls",
-    "name": "UnknownDAB9",
-    "address": 55993,
-    "slot": 22,
-    "offset": 6841,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
-    "end_offset": 6878,
-    "path": "Source/Controls/UnknownDAB9.asm"
   },
   {
     "region": "Final",
@@ -11055,17 +11990,6 @@
     "path": "Source/Final/EmitAttributeRow.asm"
   },
   {
-    "region": "Final",
-    "name": "NextBitmapLine",
-    "address": 25238,
-    "slot": 29,
-    "offset": 662,
-    "description": "Переход к следующей пиксельной строке в экранной раскладке Spectrum",
-    "semantic_status": "described",
-    "end_offset": 677,
-    "path": "Source/Final/NextBitmapLine.asm"
-  },
-  {
     "region": "FinalTemplates",
     "name": "BitmapLine",
     "address": 25159,
@@ -11088,861 +12012,14 @@
     "path": "Source/FinalTemplates/AttributeRow.asm"
   },
   {
-    "region": "StationExit",
-    "name": "LoadAction",
-    "address": 16896,
-    "slot": 4,
-    "offset": 8556,
-    "description": "Повторная инициализация музыки, запрос ACTION и передача сохранённого контекста",
+    "region": "Final",
+    "name": "NextBitmapLine",
+    "address": 25238,
+    "slot": 29,
+    "offset": 662,
+    "description": "Переход к следующей пиксельной строке в экранной раскладке Spectrum",
     "semantic_status": "described",
-    "end_offset": 8628,
-    "path": "Source/StationExit/LoadAction.asm"
-  },
-  {
-    "region": "Station",
-    "name": "ProcessMissionAction",
-    "address": 28316,
-    "slot": 4,
-    "offset": 4424,
-    "description": "Проверка селектора и строки, принятие либо расторжение миссии с общей перерисовкой",
-    "semantic_status": "described",
-    "end_offset": 4590,
-    "path": "Source/Station/ProcessMissionAction.asm"
-  },
-  {
-    "region": "Station",
-    "name": "CancelMission",
-    "address": 28509,
-    "slot": 4,
-    "offset": 4617,
-    "description": "Расторжение миссии на сохранённом кадре, пересчёт загрузки и денежный штраф",
-    "semantic_status": "described",
-    "end_offset": 4705,
-    "path": "Source/Station/CancelMission.asm"
-  },
-  {
-    "region": "Map",
-    "name": "BuildMapQuadrantTables",
-    "address": 50250,
-    "slot": 7,
-    "offset": 1098,
-    "end_offset": 1140,
-    "description": "Построение четырёх 256-байтовых таблиц соседних секторов карты",
-    "semantic_status": "described",
-    "path": "Source/Map/BuildMapQuadrantTables.asm"
-  },
-  {
-    "region": "Map",
-    "name": "BuildMapSectorTable",
-    "address": 50292,
-    "slot": 7,
-    "offset": 1140,
-    "end_offset": 1179,
-    "description": "Формирование таблицы одного сектора с возвратом в противоположном общем наборе",
-    "semantic_status": "described",
-    "path": "Source/Map/BuildMapSectorTable.asm"
-  },
-  {
-    "region": "Map",
-    "name": "MapClipCases",
-    "address": 54493,
-    "slot": 7,
-    "offset": 5341,
-    "end_offset": 6370,
-    "description": "Табличные решения отсечения по двум зонам, пересечения, отметки углов и общий возврат",
-    "semantic_status": "described",
-    "path": "Source/Map/MapClipCases.asm"
-  },
-  {
-    "region": "Map",
-    "name": "ComputeTopClipProduct",
-    "address": 55522,
-    "slot": 7,
-    "offset": 6370,
-    "end_offset": 6401,
-    "description": "Произведение (Y1-MinY)*(X1-X2) для верхней границы окна",
-    "semantic_status": "described",
-    "path": "Source/Map/ComputeTopClipProduct.asm"
-  },
-  {
-    "region": "Map",
-    "name": "ComputeBottomClipProduct",
-    "address": 55553,
-    "slot": 7,
-    "offset": 6401,
-    "end_offset": 6432,
-    "description": "Произведение (Y1-MaxY)*(X1-X2) для нижней границы окна",
-    "semantic_status": "described",
-    "path": "Source/Map/ComputeBottomClipProduct.asm"
-  },
-  {
-    "region": "Map",
-    "name": "ComputeLeftClipProduct",
-    "address": 55584,
-    "slot": 7,
-    "offset": 6432,
-    "end_offset": 6463,
-    "description": "Произведение (Y1-Y2)*(X1-MinX) для левой границы окна",
-    "semantic_status": "described",
-    "path": "Source/Map/ComputeLeftClipProduct.asm"
-  },
-  {
-    "region": "Map",
-    "name": "ComputeRightClipProduct",
-    "address": 55615,
-    "slot": 7,
-    "offset": 6463,
-    "end_offset": 6494,
-    "description": "Произведение (Y1-Y2)*(X1-MaxX) для правой границы окна",
-    "semantic_status": "described",
-    "path": "Source/Map/ComputeRightClipProduct.asm"
-  },
-  {
-    "region": "Map",
-    "name": "AppendTopClipIntersection",
-    "address": 55646,
-    "slot": 7,
-    "offset": 6494,
-    "end_offset": 6569,
-    "description": "Добавление пересечения с верхней границей окна в выходной список",
-    "semantic_status": "described",
-    "path": "Source/Map/AppendTopClipIntersection.asm"
-  },
-  {
-    "region": "Map",
-    "name": "AppendBottomClipIntersection",
-    "address": 55721,
-    "slot": 7,
-    "offset": 6569,
-    "end_offset": 6644,
-    "description": "Добавление пересечения с нижней границей окна в выходной список",
-    "semantic_status": "described",
-    "path": "Source/Map/AppendBottomClipIntersection.asm"
-  },
-  {
-    "region": "Map",
-    "name": "AppendLeftClipIntersection",
-    "address": 55796,
-    "slot": 7,
-    "offset": 6644,
-    "end_offset": 6738,
-    "description": "Добавление пересечения с левой границей окна в выходной список",
-    "semantic_status": "described",
-    "path": "Source/Map/AppendLeftClipIntersection.asm"
-  },
-  {
-    "region": "Map",
-    "name": "AppendRightClipIntersection",
-    "address": 55890,
-    "slot": 7,
-    "offset": 6738,
-    "end_offset": 6832,
-    "description": "Добавление пересечения с правой границей окна в выходной список",
-    "semantic_status": "described",
-    "path": "Source/Map/AppendRightClipIntersection.asm"
-  },
-  {
-    "region": "Map",
-    "name": "AppendTopLeftCorner",
-    "address": 55984,
-    "slot": 7,
-    "offset": 6832,
-    "end_offset": 6843,
-    "description": "Условное добавление верхнего левого угла окна",
-    "semantic_status": "described",
-    "path": "Source/Map/AppendTopLeftCorner.asm"
-  },
-  {
-    "region": "Map",
-    "name": "AppendTopRightCorner",
-    "address": 55995,
-    "slot": 7,
-    "offset": 6843,
-    "end_offset": 6854,
-    "description": "Условное добавление верхнего правого угла окна",
-    "semantic_status": "described",
-    "path": "Source/Map/AppendTopRightCorner.asm"
-  },
-  {
-    "region": "Map",
-    "name": "AppendBottomLeftCorner",
-    "address": 56006,
-    "slot": 7,
-    "offset": 6854,
-    "end_offset": 6865,
-    "description": "Условное добавление нижнего левого угла окна",
-    "semantic_status": "described",
-    "path": "Source/Map/AppendBottomLeftCorner.asm"
-  },
-  {
-    "region": "Map",
-    "name": "AppendBottomRightCorner",
-    "address": 56017,
-    "slot": 7,
-    "offset": 6865,
-    "end_offset": 6876,
-    "description": "Условное добавление нижнего правого угла окна",
-    "semantic_status": "described",
-    "path": "Source/Map/AppendBottomRightCorner.asm"
-  },
-  {
-    "region": "Map",
-    "name": "SubtractTopLeftProducts",
-    "address": 56028,
-    "slot": 7,
-    "offset": 6876,
-    "end_offset": 6896,
-    "description": "Старшее слово и флаги 32-битной разности верхнего и левого произведений",
-    "semantic_status": "described",
-    "path": "Source/Map/SubtractTopLeftProducts.asm"
-  },
-  {
-    "region": "Map",
-    "name": "SubtractTopRightProducts",
-    "address": 56048,
-    "slot": 7,
-    "offset": 6896,
-    "end_offset": 6916,
-    "description": "Старшее слово и флаги 32-битной разности верхнего и правого произведений",
-    "semantic_status": "described",
-    "path": "Source/Map/SubtractTopRightProducts.asm"
-  },
-  {
-    "region": "Map",
-    "name": "SubtractBottomLeftProducts",
-    "address": 56068,
-    "slot": 7,
-    "offset": 6916,
-    "end_offset": 6936,
-    "description": "Старшее слово и флаги 32-битной разности нижнего и левого произведений",
-    "semantic_status": "described",
-    "path": "Source/Map/SubtractBottomLeftProducts.asm"
-  },
-  {
-    "region": "Map",
-    "name": "SubtractBottomRightProducts",
-    "address": 56088,
-    "slot": 7,
-    "offset": 6936,
-    "end_offset": 6956,
-    "description": "Старшее слово и флаги 32-битной разности нижнего и правого произведений",
-    "semantic_status": "described",
-    "path": "Source/Map/SubtractBottomRightProducts.asm"
-  },
-  {
-    "region": "Map",
-    "name": "SubtractClipPointX",
-    "address": 56108,
-    "slot": 7,
-    "offset": 6956,
-    "end_offset": 6967,
-    "description": "Знаковые флаги оборачиваемой разности X2-X1",
-    "semantic_status": "described",
-    "path": "Source/Map/SubtractClipPointX.asm"
-  },
-  {
-    "region": "Map",
-    "name": "SubtractClipPointY",
-    "address": 56119,
-    "slot": 7,
-    "offset": 6967,
-    "end_offset": 6978,
-    "description": "Знаковые флаги оборачиваемой разности Y2-Y1",
-    "semantic_status": "described",
-    "path": "Source/Map/SubtractClipPointY.asm"
-  },
-  {
-    "region": "Map",
-    "name": "AppendSecondClipPoint",
-    "address": 56130,
-    "slot": 7,
-    "offset": 6978,
-    "end_offset": 7001,
-    "description": "Добавление младших байтов второй точки либо пары из DE",
-    "semantic_status": "described",
-    "path": "Source/Map/AppendSecondClipPoint.asm"
-  },
-  {
-    "region": "Map",
-    "name": "UnwindClipFrame",
-    "address": 56153,
-    "slot": 7,
-    "offset": 7001,
-    "end_offset": 7011,
-    "description": "Специальный возврат со снятием трёх слов и установленным Carry",
-    "semantic_status": "described",
-    "path": "Source/Map/UnwindClipFrame.asm"
-  },
-  {
-    "region": "Station",
-    "name": "Unknown6774",
-    "address": 26484,
-    "slot": 4,
-    "offset": 2592,
-    "end_offset": 2604,
-    "description": "Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются",
-    "semantic_status": "unknown",
-    "path": "Source/Station/Unknown6774.asm"
-  },
-  {
-    "region": "Station",
-    "name": "Unknown67A9",
-    "address": 26537,
-    "slot": 4,
-    "offset": 2645,
-    "end_offset": 2684,
-    "description": "Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются",
-    "semantic_status": "unknown",
-    "path": "Source/Station/Unknown67A9.asm"
-  },
-  {
-    "region": "Station",
-    "name": "Unknown683A",
-    "address": 26682,
-    "slot": 4,
-    "offset": 2790,
-    "end_offset": 2843,
-    "description": "Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются",
-    "semantic_status": "unknown",
-    "path": "Source/Station/Unknown683A.asm"
-  },
-  {
-    "region": "Station",
-    "name": "Unknown6916",
-    "address": 26902,
-    "slot": 4,
-    "offset": 3010,
-    "end_offset": 3049,
-    "description": "Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются",
-    "semantic_status": "unknown",
-    "path": "Source/Station/Unknown6916.asm"
-  },
-  {
-    "region": "Station",
-    "name": "Unknown6963",
-    "address": 26979,
-    "slot": 4,
-    "offset": 3087,
-    "end_offset": 3108,
-    "description": "Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются",
-    "semantic_status": "unknown",
-    "path": "Source/Station/Unknown6963.asm"
-  },
-  {
-    "region": "Station",
-    "name": "Unknown697B",
-    "address": 27003,
-    "slot": 4,
-    "offset": 3111,
-    "end_offset": 3155,
-    "description": "Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются",
-    "semantic_status": "unknown",
-    "path": "Source/Station/Unknown697B.asm"
-  },
-  {
-    "region": "Station",
-    "name": "Unknown69E0",
-    "address": 27104,
-    "slot": 4,
-    "offset": 3212,
-    "end_offset": 3319,
-    "description": "Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются",
-    "semantic_status": "unknown",
-    "path": "Source/Station/Unknown69E0.asm"
-  },
-  {
-    "region": "Station",
-    "name": "Unknown6A86",
-    "address": 27270,
-    "slot": 4,
-    "offset": 3378,
-    "end_offset": 3418,
-    "description": "Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются",
-    "semantic_status": "unknown",
-    "path": "Source/Station/Unknown6A86.asm"
-  },
-  {
-    "region": "Station",
-    "name": "Unknown6AAF",
-    "address": 27311,
-    "slot": 4,
-    "offset": 3419,
-    "end_offset": 3426,
-    "description": "Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются",
-    "semantic_status": "unknown",
-    "path": "Source/Station/Unknown6AAF.asm"
-  },
-  {
-    "region": "Station",
-    "name": "Unknown6AEC",
-    "address": 27372,
-    "slot": 4,
-    "offset": 3480,
-    "end_offset": 3642,
-    "description": "Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются",
-    "semantic_status": "unknown",
-    "path": "Source/Station/Unknown6AEC.asm"
-  },
-  {
-    "region": "Station",
-    "name": "Unknown6B9E",
-    "address": 27550,
-    "slot": 4,
-    "offset": 3658,
-    "end_offset": 3665,
-    "description": "Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются",
-    "semantic_status": "unknown",
-    "path": "Source/Station/Unknown6B9E.asm"
-  },
-  {
-    "region": "Station",
-    "name": "HandleMapPanelEvent",
-    "address": 27661,
-    "slot": 4,
-    "offset": 3769,
-    "end_offset": 3866,
-    "description": "Обработка события панели карты с выбором точки, прокруткой либо закрытием набора связанных панелей",
-    "semantic_status": "described",
-    "path": "Source/Station/HandleMapPanelEvent.asm"
-  },
-  {
-    "region": "Station",
-    "name": "PanMapView",
-    "address": 27758,
-    "slot": 4,
-    "offset": 3866,
-    "end_offset": 4025,
-    "description": "Прокрутка начала карты шагами по восемь с выбором оси по положению указателя",
-    "semantic_status": "described",
-    "path": "Source/Station/PanMapView.asm"
-  },
-  {
-    "region": "Station",
-    "name": "SelectMapPointAndRefresh",
-    "address": 27917,
-    "slot": 4,
-    "offset": 4025,
-    "end_offset": 4079,
-    "description": "Выбор ближайшей видимой точки карты, перерисовка карты и обновление панелей систем и планет",
-    "semantic_status": "described",
-    "path": "Source/Station/SelectMapPointAndRefresh.asm"
-  },
-  {
-    "region": "Station",
-    "name": "RefreshMapPanel",
-    "address": 27972,
-    "slot": 4,
-    "offset": 4080,
-    "end_offset": 4090,
-    "description": "Перерисовка карты через снимок банка 7, очистку тела и дополнительный HALT перед показом",
-    "semantic_status": "described",
-    "path": "Source/Station/RefreshMapPanel.asm"
-  },
-  {
-    "region": "Station",
-    "name": "ClearAndDrawMapPanel",
-    "address": 27982,
-    "slot": 4,
-    "offset": 4090,
-    "end_offset": 4100,
-    "description": "Проверка геометрии и заливка тела перед последовательным общим рисунком карты",
-    "semantic_status": "described",
-    "path": "Source/Station/ClearAndDrawMapPanel.asm"
-  },
-  {
-    "region": "Station",
-    "name": "Unknown6DC5",
-    "address": 28101,
-    "slot": 4,
-    "offset": 4209,
-    "end_offset": 4223,
-    "description": "Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются",
-    "semantic_status": "unknown",
-    "path": "Source/Station/Unknown6DC5.asm"
-  },
-  {
-    "region": "Station",
-    "name": "Unknown6E82",
-    "address": 28290,
-    "slot": 4,
-    "offset": 4398,
-    "end_offset": 4405,
-    "description": "Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются",
-    "semantic_status": "unknown",
-    "path": "Source/Station/Unknown6E82.asm"
-  },
-  {
-    "region": "Station",
-    "name": "Unknown6FF1",
-    "address": 28657,
-    "slot": 4,
-    "offset": 4765,
-    "end_offset": 4848,
-    "description": "Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются",
-    "semantic_status": "unknown",
-    "path": "Source/Station/Unknown6FF1.asm"
-  },
-  {
-    "region": "Station",
-    "name": "Unknown7175",
-    "address": 29045,
-    "slot": 4,
-    "offset": 5153,
-    "end_offset": 5308,
-    "description": "Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются",
-    "semantic_status": "unknown",
-    "path": "Source/Station/Unknown7175.asm"
-  },
-  {
-    "region": "Station",
-    "name": "Unknown7220",
-    "address": 29216,
-    "slot": 4,
-    "offset": 5324,
-    "end_offset": 5331,
-    "description": "Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются",
-    "semantic_status": "unknown",
-    "path": "Source/Station/Unknown7220.asm"
-  },
-  {
-    "region": "Station",
-    "name": "Unknown7421",
-    "address": 29729,
-    "slot": 4,
-    "offset": 5837,
-    "end_offset": 5934,
-    "description": "Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются",
-    "semantic_status": "unknown",
-    "path": "Source/Station/Unknown7421.asm"
-  },
-  {
-    "region": "Station",
-    "name": "Unknown74AA",
-    "address": 29866,
-    "slot": 4,
-    "offset": 5974,
-    "end_offset": 6071,
-    "description": "Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются",
-    "semantic_status": "unknown",
-    "path": "Source/Station/Unknown74AA.asm"
-  },
-  {
-    "region": "Station",
-    "name": "Unknown759C",
-    "address": 30108,
-    "slot": 4,
-    "offset": 6216,
-    "end_offset": 6348,
-    "description": "Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются",
-    "semantic_status": "unknown",
-    "path": "Source/Station/Unknown759C.asm"
-  },
-  {
-    "region": "Station",
-    "name": "Unknown7630",
-    "address": 30256,
-    "slot": 4,
-    "offset": 6364,
-    "end_offset": 6371,
-    "description": "Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются",
-    "semantic_status": "unknown",
-    "path": "Source/Station/Unknown7630.asm"
-  },
-  {
-    "region": "Station",
-    "name": "Unknown7679",
-    "address": 30329,
-    "slot": 4,
-    "offset": 6437,
-    "end_offset": 6451,
-    "description": "Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются",
-    "semantic_status": "unknown",
-    "path": "Source/Station/Unknown7679.asm"
-  },
-  {
-    "region": "Station",
-    "name": "Unknown783B",
-    "address": 30779,
-    "slot": 4,
-    "offset": 6887,
-    "end_offset": 6960,
-    "description": "Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются",
-    "semantic_status": "unknown",
-    "path": "Source/Station/Unknown783B.asm"
-  },
-  {
-    "region": "Station",
-    "name": "TryDrawVariantPanel",
-    "address": 30853,
-    "slot": 4,
-    "offset": 6961,
-    "end_offset": 6968,
-    "description": "Проверка наличия обработчика панели в списке перед последовательным рисованием",
-    "semantic_status": "described",
-    "path": "Source/Station/TryDrawVariantPanel.asm"
-  },
-  {
-    "region": "Station",
-    "name": "Unknown794B",
-    "address": 31051,
-    "slot": 4,
-    "offset": 7159,
-    "end_offset": 7168,
-    "description": "Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются",
-    "semantic_status": "unknown",
-    "path": "Source/Station/Unknown794B.asm"
-  },
-  {
-    "region": "Station",
-    "name": "UnknownA191",
-    "address": 41361,
-    "slot": 4,
-    "offset": 16785,
-    "end_offset": 16854,
-    "description": "Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются",
-    "semantic_status": "unknown",
-    "path": "Source/Station/UnknownA191.asm"
-  },
-  {
-    "region": "Station",
-    "name": "UnknownA1D6",
-    "address": 41430,
-    "slot": 4,
-    "offset": 16854,
-    "end_offset": 17007,
-    "description": "Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются",
-    "semantic_status": "unknown",
-    "path": "Source/Station/UnknownA1D6.asm"
-  },
-  {
-    "region": "Station",
-    "name": "UnknownA26F",
-    "address": 41583,
-    "slot": 4,
-    "offset": 17007,
-    "end_offset": 17024,
-    "description": "Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются",
-    "semantic_status": "unknown",
-    "path": "Source/Station/UnknownA26F.asm"
-  },
-  {
-    "region": "Station",
-    "name": "UnknownAA58",
-    "address": 43608,
-    "slot": 4,
-    "offset": 19032,
-    "end_offset": 19074,
-    "description": "Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются",
-    "semantic_status": "unknown",
-    "path": "Source/Station/UnknownAA58.asm"
-  },
-  {
-    "region": "Station",
-    "name": "MoveItemToTailIfListed",
-    "address": 48679,
-    "slot": 4,
-    "offset": 24103,
-    "end_offset": 24120,
-    "description": "Проверка присутствия DrawHandler в списке перед переносом элемента по его индексу",
-    "semantic_status": "described",
-    "path": "Source/Station/MoveItemToTailIfListed.asm"
-  },
-  {
-    "region": "Station",
-    "name": "UnknownC6B0",
-    "address": 50864,
-    "slot": 4,
-    "offset": 26288,
-    "end_offset": 26718,
-    "description": "Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются",
-    "semantic_status": "unknown",
-    "path": "Source/Station/UnknownC6B0.asm"
-  },
-  {
-    "region": "Map",
-    "name": "SumSquares8",
-    "address": 50024,
-    "slot": 7,
-    "offset": 872,
-    "end_offset": 908,
-    "description": "Сумма квадратов двух беззнаковых байтов из A и A' с 16-битным оборачиванием",
-    "semantic_status": "described",
-    "path": "Source/Map/SumSquares8.asm"
-  },
-  {
-    "region": "Map",
-    "name": "SelectNearestVisiblePoint",
-    "address": 50060,
-    "slot": 7,
-    "offset": 908,
-    "end_offset": 1039,
-    "description": "Выбор первой ближайшей видимой точки карты и чтение её сохранённого варианта",
-    "semantic_status": "described",
-    "path": "Source/Map/SelectNearestVisiblePoint.asm"
-  },
-  {
-    "region": "Map",
-    "name": "BuildVisibleMapPoints",
-    "address": 50405,
-    "slot": 7,
-    "offset": 1253,
-    "end_offset": 1512,
-    "description": "Фильтрация четырёх секторных таблиц в пары относительных координат и ссылки на исходные слова",
-    "semantic_status": "described",
-    "path": "Source/Map/BuildVisibleMapPoints.asm"
-  },
-  {
-    "region": "Map",
-    "name": "SelectNearestMapVariant",
-    "address": 50664,
-    "slot": 7,
-    "offset": 1512,
-    "end_offset": 1619,
-    "description": "Выбор первого ближайшего варианта карты по текущим парам координат",
-    "semantic_status": "described",
-    "path": "Source/Map/SelectNearestMapVariant.asm"
-  },
-  {
-    "region": "Map",
-    "name": "UpdateMapDistanceMinimum",
-    "address": 50771,
-    "slot": 7,
-    "offset": 1619,
-    "end_offset": 1655,
-    "description": "Обновление минимума квадрата расстояния от пары байтов до целевой точки",
-    "semantic_status": "described",
-    "path": "Source/Map/UpdateMapDistanceMinimum.asm"
-  },
-  {
-    "region": "Map",
-    "name": "SetupMapRasterWindow",
-    "address": 53443,
-    "slot": 7,
-    "offset": 4291,
-    "end_offset": 4524,
-    "description": "Настройка границ отсечения, половин размеров и крайних адресов растрового окна",
-    "semantic_status": "described",
-    "path": "Source/Map/SetupMapRasterWindow.asm"
-  },
-  {
-    "region": "Map",
-    "name": "DrawVariantCluster",
-    "address": 50807,
-    "slot": 7,
-    "offset": 1655,
-    "end_offset": 1728,
-    "description": "XOR центральной пятистрочной метки и последовательная анимация не более шести вариантов",
-    "semantic_status": "described",
-    "path": "Source/Map/DrawVariantCluster.asm"
-  },
-  {
-    "region": "Map",
-    "name": "AnimateVariant0",
-    "address": 50880,
-    "slot": 7,
-    "offset": 1728,
-    "end_offset": 1757,
-    "description": "Анимационный шаг варианта 0 и последующее исполнение оставшихся обёрток",
-    "semantic_status": "described",
-    "path": "Source/Map/AnimateVariant0.asm"
-  },
-  {
-    "region": "Map",
-    "name": "AnimateVariant1",
-    "address": 50909,
-    "slot": 7,
-    "offset": 1757,
-    "end_offset": 1786,
-    "description": "Анимационный шаг варианта 1 и последующее исполнение оставшихся обёрток",
-    "semantic_status": "described",
-    "path": "Source/Map/AnimateVariant1.asm"
-  },
-  {
-    "region": "Map",
-    "name": "AnimateVariant2",
-    "address": 50938,
-    "slot": 7,
-    "offset": 1786,
-    "end_offset": 1815,
-    "description": "Анимационный шаг варианта 2 и последующее исполнение оставшихся обёрток",
-    "semantic_status": "described",
-    "path": "Source/Map/AnimateVariant2.asm"
-  },
-  {
-    "region": "Map",
-    "name": "AnimateVariant3",
-    "address": 50967,
-    "slot": 7,
-    "offset": 1815,
-    "end_offset": 1844,
-    "description": "Анимационный шаг варианта 3 и последующее исполнение оставшихся обёрток",
-    "semantic_status": "described",
-    "path": "Source/Map/AnimateVariant3.asm"
-  },
-  {
-    "region": "Map",
-    "name": "AnimateVariant4",
-    "address": 50996,
-    "slot": 7,
-    "offset": 1844,
-    "end_offset": 1873,
-    "description": "Анимационный шаг варианта 4 и последующее исполнение оставшихся обёрток",
-    "semantic_status": "described",
-    "path": "Source/Map/AnimateVariant4.asm"
-  },
-  {
-    "region": "Map",
-    "name": "AnimateVariant5",
-    "address": 51025,
-    "slot": 7,
-    "offset": 1873,
-    "end_offset": 1902,
-    "description": "Анимационный шаг варианта 5 и последующее исполнение оставшихся обёрток",
-    "semantic_status": "described",
-    "path": "Source/Map/AnimateVariant5.asm"
-  },
-  {
-    "region": "Map",
-    "name": "SelectBlinkingVariant",
-    "address": 51054,
-    "slot": 7,
-    "offset": 1902,
-    "end_offset": 1921,
-    "description": "Циклическое мигание выбранного варианта заменой ресурса по младшему биту маски",
-    "semantic_status": "described",
-    "path": "Source/Map/SelectBlinkingVariant.asm"
-  },
-  {
-    "region": "Map",
-    "name": "XorVariantPhase",
-    "address": 51239,
-    "slot": 7,
-    "offset": 2087,
-    "end_offset": 2191,
-    "description": "Чтение пары смещений, уменьшение альтернативного счётчика и XOR трёхстрочной фазы",
-    "semantic_status": "described",
-    "path": "Source/Map/XorVariantPhase.asm"
-  },
-  {
-    "region": "Station",
-    "name": "RefreshVariantPanel",
-    "address": 30909,
-    "slot": 4,
-    "offset": 7017,
-    "end_offset": 7042,
-    "path": "Source/Station/RefreshVariantPanel.asm",
-    "description": "Отложенный перенос панели в конец списка и перерисовка через теневой экран",
-    "semantic_status": "described"
-  },
-  {
-    "region": "Station",
-    "name": "UpdateVariantPanel",
-    "address": 30934,
-    "slot": 4,
-    "offset": 7042,
-    "end_offset": 7156,
-    "path": "Source/Station/UpdateVariantPanel.asm",
-    "description": "Периодическая очистка и банковая анимация панели с отдельной ветвью отложенного обновления",
-    "semantic_status": "described"
+    "end_offset": 677,
+    "path": "Source/Final/NextBitmapLine.asm"
   }
 ]

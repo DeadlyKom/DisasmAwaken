@@ -17,7 +17,7 @@
 Entry:          LD HL, #0000
                 CALL @Station.DrawCaptionItem.Entry
                 LD A, #FF
-                LD (#6B95), A
+                LD (@PanelHoverState.EnvironmentRow), A
                 CALL @Station.Unknown6C00.Entry
                 LD HL, (#6B23)
                 CALL @Station.Unknown6BBE.Entry

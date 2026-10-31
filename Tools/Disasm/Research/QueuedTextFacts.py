@@ -1,5 +1,5 @@
 """Подготовка строки окна через восстановление геометрии и команды M/m."""
-STATION_FUNCTIONS={0xA85F:('QueueTextRow','Выбор строки текста DrawItem10 и восстановление элемента в списке'),
+STATION_FUNCTIONS={0xA85F:('QueueTextRow','Выбор строки текста DrawQueuedMessagePanel и восстановление элемента в списке'),
  0xA86B:('QueueTextRowForLang','Подготовка строки текста в банке 0 с возвратом банка языка 6')}
 TEXT_FUNCTIONS={0xC0EC:('QueueTextAndStopAtLine','Подготовка строки текста с завершением сценария на следующем CR'),
  0xC100:('QueueTextCommand','Подготовка строки текста без изменения признака завершения строки')}
@@ -8,13 +8,13 @@ DOCUMENTS={**{('Station',a):('QueuedText','строка, геометрия, с�
 LABELS={('Text',0xC0F1):'ReadRow'}
 CONTRACTS={('Station',0xA85F):(
  ['AF - A байтовый индекс строки, F сохраняемый контекст, станционный банк 0 выбран',
-  'DrawItem10.Entry содержит исходную обёртку с корректным индексом в двух операндах, выполнен договор RestoreItemBounds'],
- ['HL выбранный существующий либо входной обработчик после MoveItemToTail, DE индекс из обёртки DrawItem10',
+  'DrawQueuedMessagePanel.Entry содержит исходную обёртку с корректным индексом в двух операндах, выполнен договор RestoreItemBounds'],
+ ['HL выбранный существующий либо входной обработчик после MoveItemToTail, DE индекс из обёртки DrawQueuedMessagePanel',
   'BC и AF сохранены, операнд TextRowState.Row получает исходный A',
   'геометрия записи восстановлена из SavedX..SavedHeight, указатель выбранного обработчика в конце списка, EventEnabled=0',
   'альтернативные и индексные регистры, I и IFF сохранены, SP обычного возврата равен входному SP+2'],
  ['HL, DE'],
- ['код рисования DrawItem10 не исполняется, перерисовка зависит от дальнейшего RebuildInterface',
+ ['код рисования DrawQueuedMessagePanel не исполняется, перерисовка зависит от дальнейшего RebuildInterface',
   'при существующем другом обработчике того же индекса MoveItemToTail возвращает его, исходная индексная логика сохранена',
   'строка лишь записывается в операнд, существование строки в текстовом ресурсе этим входом не проверяется']),
  ('Station',0xA86B):(
@@ -44,7 +44,7 @@ for address in TEXT_FUNCTIONS:
    'эта команда подготавливает элемент, само рисование требует дальнейшего прохода интерфейса'])
 COMMENTS={
  0xA85F:(['сохранение строки и всего F перед изменением списка и геометрии'],None),
- 0xA860:(['обновление операнда Row в DrawItem10 без исполнения рисователя'],None),
+ 0xA860:(['обновление операнда Row в DrawQueuedMessagePanel без исполнения рисователя'],None),
  0xA863:(['выбор обёртки текстового элемента для восстановления её геометрии'],None),
  0xA866:(['перенос выбранного обработчика в конец списка и восстановление сохранённых границ'],None),
  0xA869:(['восстановление исходного AF, результат внутренних вычислений флагов не возвращается'],None),
@@ -66,7 +66,7 @@ TEXT_COMMENTS={a:v for a,v in COMMENTS.items() if a>=0xC000}
 
 def name_operands(region,address,operation):
  if region=='Station' and address in STATION_FUNCTIONS:
-  return operation.replace('(#6E91)','(@TextRowState.Row)').replace('LD HL, #6E8A','LD HL, @Station.DrawItem10.Entry').replace('CALL #CBA9','CALL @Station.RestoreItemBounds.Entry').replace('CALL #6396','CALL @Station.SelectRamBank.Entry').replace('CALL #A85F','CALL @Station.QueueTextRow.Entry')
+  return operation.replace('(#6E91)','(@TextRowState.Row)').replace('LD HL, #6E8A','LD HL, @Station.DrawQueuedMessagePanel.Entry').replace('CALL #CBA9','CALL @Station.RestoreItemBounds.Entry').replace('CALL #6396','CALL @Station.SelectRamBank.Entry').replace('CALL #A85F','CALL @Station.QueueTextRow.Entry')
  if region=='Text' and address in TEXT_FUNCTIONS:
   return operation.replace('(#C028)','(@ScriptRuntimeState.StopAtLine)').replace('CALL #A86B','CALL @Station.QueueTextRowForLang.Entry')
  return operation

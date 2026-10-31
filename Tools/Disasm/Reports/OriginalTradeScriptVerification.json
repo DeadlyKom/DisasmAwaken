@@ -1,0 +1,34 @@
+{
+  "passed": true,
+  "cases": 4912,
+  "per_event": {
+    "9": 2048,
+    "10": 1432,
+    "11": 1432
+  },
+  "all_quantity_and_marker_bytes": true,
+  "original_script_bytes_unchanged": true,
+  "script_start": 51855,
+  "active_script_bytes": 1161,
+  "invalid_q_address": 51900,
+  "invalid_q_skip_cases": 2048,
+  "overflow_message_then_trade_cases": 607,
+  "empty_stock_purchase_cases": 140,
+  "illegal_market_fine_cases": 1262,
+  "queued_messages": {
+    "8": 338,
+    "9": 1262,
+    "5": 568,
+    "10": 607,
+    "0": 210,
+    "2": 160
+  },
+  "ports_checked_as_real_banking": 6290,
+  "all_ship_capacity_bytes": true,
+  "actual_interpreter_and_original_script_executed": true,
+  "actual_weight_tables_preserved": true,
+  "station_display_not_executed": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

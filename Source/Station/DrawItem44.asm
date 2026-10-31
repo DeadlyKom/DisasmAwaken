@@ -17,7 +17,7 @@
 Entry:          LD HL, #0000
                 CALL @Station.DrawCaptionItem.Entry
                 LD A, #FF
-                LD (#7512), A
+                LD (@PanelHoverState.FromPositionRow), A
                 XOR A
                 LD (@TextWindow.Style), A
                 LD HL, #DE8F

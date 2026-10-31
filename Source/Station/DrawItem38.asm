@@ -17,7 +17,7 @@
 Entry:          LD HL, #0000
                 CALL @Station.DrawCaptionItem.Entry
                 LD A, #FF
-                LD (#7217), A
+                LD (@ScriptSelection.EquipmentRow), A
                 CALL @Station.Unknown733F.Entry
                 LD HL, #EE19
                 CALL @Station.PrintText.Entry

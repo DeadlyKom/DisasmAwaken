@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "cases": 864,
+  "independently_composed_glyphs": 28321,
+  "early_stream_stops": 476,
+  "message_selectors": [
+    0,
+    1
+  ],
+  "real_text_and_glyph_code": true,
+  "all_bitmap_and_attribute_bytes_compared": true,
+  "unknown_selector_values_not_assigned_meanings": true,
+  "method": "original_6E76_and_PrintAfterLF_PrintText_DrawGlyph_against_text_cursor_and_font_xor_models",
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

@@ -1,6 +1,6 @@
-"""Шестнадцать исходных байтов состояния, четыре промежуточных слова и статус остаются Unknown."""
+"""Шестнадцать исходных байтов состояния, четыре промежуточных слова Unknown, MessageIndex задаёт сообщение расшифровки."""
 PATH='Source/Station/Data/MissionOffer.asm'
-FIELDS=('FirstWord','SecondWord','UnknownWord04','UnknownWord06','UnknownWord08','UnknownWord0A','Reward','RequiredTonnage','UnknownStatus')
+FIELDS=('FirstWord','SecondWord','UnknownWord04','UnknownWord06','UnknownWord08','UnknownWord0A','Reward','RequiredTonnage','MessageIndex')
 
 
 def render(source):

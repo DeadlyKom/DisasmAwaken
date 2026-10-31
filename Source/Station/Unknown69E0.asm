@@ -25,17 +25,17 @@ Entry:          CALL @Station.RepaintAndFlag.Entry
 
 Point69F4:      CALL @Station.Unknown6A7E.Entry
                 LD DE, (#6A4C)
-                LD A, (#6A52)
-                CALL @Station.UnknownA26F.Entry
+                LD A, (@PanelHoverState.IndexRow)
+                CALL @Station.XorRowIfSelected.Entry
                 LD A, #FF
-                LD (#6A52), A
+                LD (@PanelHoverState.IndexRow), A
                 LD HL, #6A6C
-                LD (#A265), HL
+                LD (@ScrollState.RenderCall), HL
                 LD HL, #0007
-                LD (#A235), HL
+                LD (@ScrollState.EndLimit), HL
                 LD A, #08
                 LD HL, #0000
-                CALL @Station.UnknownA1D6.Entry
+                CALL @Station.ScrollWindowRows.Entry
                 LD (#6A15), HL
                 RET
 
@@ -47,7 +47,7 @@ Point6A1E:      LD A, (#6A15)
                 LD C, A
                 LD HL, #0000
                 LD (#699D), HL
-                LD A, (#6A52)
+                LD A, (@PanelHoverState.IndexRow)
                 ADD A, C
                 EX AF, AF'
                 LD A, #17

@@ -515,7 +515,7 @@ StockRule       db #00                                                          
                 assert FMarketRule == #02
 
                 struct FMarketRow
-StockAndMark    db #00                                                          ; bit7 маркер неизвестного игрового назначения, bits6..0 количество
+StockAndSaleBan db #00                                                          ; bit7 запрет продажи со штрафом, bits6..0 количество
 Price           db #00                                                          ; текущая цена после колебания, категорийной поправки и скидки
                 ends
                 assert FMarketRow == #02
@@ -597,7 +597,7 @@ UnknownWord08   dw #0000                                                        
 UnknownWord0A   dw #0000                                                        ; Unknown, слово по смещению 10
 Reward          dw #0000                                                        ; младшее слово произведения вознаграждения
 RequiredTonnage db #00                                                          ; принятый требуемый тоннаж
-UnknownStatus   db #00                                                          ; Unknown, генератор сбрасывает весь байт в ноль
+MessageIndex   db #00                                                          ; числовой селектор сообщения расшифровки, генератор записывает 0
                 ends
                 assert FMissionOfferState == #10
 
@@ -848,5 +848,19 @@ ReturnAddress   dw #0000                                                        
                 ends
                 assert FSecondaryDeleteFrame == #06
 
+
+                struct FScrollExitFrame
+SavedPointerXY  dw #0000                                                        ; сохранённые X в младшем байте и Y в старшем
+ReturnAddress   dw #0000                                                        ; исходный возврат, расположенный после пары координат
+                ends
+                assert FScrollExitFrame == #04
+
+                struct FScrollDrawFrame
+SavedIndex      dw #0000                                                        ; принятый индекс перед очисткой и перед callback
+SavedViewport   dw #0000                                                        ; BC, C содержит фиксированную высоту просмотра в строках
+SavedPointerXY  dw #0000                                                        ; нижняя часть FScrollExitFrame с исходными X и Y
+ReturnAddress   dw #0000                                                        ; исходный адрес возврата вызывающей процедуры
+                ends
+                assert FScrollDrawFrame == #08
 
                 endif

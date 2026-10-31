@@ -36,7 +36,7 @@ OperatorAnchor  equ #C95F                                                       
 EquipmentRow    equ #7217                                                       ; байт выбранной строки списка оснащения
 EquipmentBase   equ #71B9                                                       ; младший байт смещения списка оснащения
 CargoRow        equ #7068                                                       ; байт выбранной строки списка товаров
-CargoBase       equ #7026                                                       ; младший байт смещения списка товаров
+CargoBase       equ #7026                                                       ; слово индекса прокрутки, сценарий читает только младший байт
                 endmodule
 
                 module MapState
@@ -327,7 +327,7 @@ StopAtLine      equ #C028                                                       
                 endmodule
 
                 module TextRowState
-Row             equ #6E91                                                       ; операнд LD A индекса текста в DrawItem10
+Row             equ #6E91                                                       ; операнд LD A индекса текста в DrawQueuedMessagePanel
                 endmodule
 
                 module MainLoopState
@@ -530,6 +530,75 @@ PoliticalAreas  equ #F0B2                                                       
 
                 module StoredPointCycle
 Cursor          equ #7C99                                                       ; изменяемый операнд LD HL циклического выбора первого списка
+                endmodule
+
+                module DecodedMessageText
+Entry           equ #E262                                                       ; начальный LF перед сообщениями о системе и иносигнале
+                endmodule
+
+                module DecodedPanelState
+ItemIndex       equ #6DD5                                                       ; изменяемый индекс FInterfaceItem панели расшифровки
+Unknown98A0     equ #98A0                                                       ; Unknown, только FE допускает финал при заданном ключе
+                endmodule
+
+                module QueuedMessageState
+ItemIndex       equ #6E8B                                                       ; изменяемый индекс FInterfaceItem уведомления
+                endmodule
+
+                module QueuedMessageText
+Entry           equ #CE19                                                       ; начальный LF таблицы уведомлений
+                endmodule
+
+                module PanelHoverState
+ShipsRow        equ #67D7                                                       ; сохранённая строка списка Корабли, FF при отсутствии
+IndexRow        equ #6A52                                                       ; сохранённая строка списка Индекс, FF при отсутствии
+EnvironmentRow  equ #6B95                                                       ; сохранённая строка установок среды, FF при отсутствии
+ToPositionRow   equ #7489                                                       ; сохранённая строка списка В позицию, FF при отсутствии
+FromPositionRow equ #7512                                                       ; сохранённая строка списка С позиции, FF при отсутствии
+GameSettingsRow equ #7627                                                       ; сохранённая строка установок игры, FF при отсутствии
+                endmodule
+
+                module TradeTableText
+Header          equ #EBF3                                                       ; исходный заголовок колонок Продажа и Наличие
+Names           equ #EC4C                                                       ; исходный CR-список товаров с единицами измерения
+                endmodule
+
+                module TradeColumnState
+OwnedRows       equ #9852                                                       ; читаемая пара количества и цены для колонки Наличие
+                endmodule
+
+                module ClearBodyState
+TopOffset       equ #C6E3                                                       ; изменяемая байтовая добавка к младшему OriginY
+WholeSkip       equ #C754                                                       ; смещение JR перед записями с обоими боковыми полями
+LeftSkip        equ #C7AE                                                       ; смещение JR после отсечения слева
+RightSkip       equ #C80B                                                       ; смещение JR после отсечения справа
+                endmodule
+
+                module ScrollState
+EndLimit        equ #A235                                                       ; изменяемая граница проверки индекса и высоты просмотра
+ClearHeight     equ #A25E                                                       ; доступная высота, записанная при входе перед вызовом очистки
+RenderCall      equ #A265                                                       ; изменяемое слово CALL рисователя принятого индекса
+                endmodule
+
+                module TradePanelState
+Opcode          equ #7071                                                       ; первый 21 активного Entry либо C9 отключённого рисователя
+ItemIndex       equ #7072                                                       ; изменяемый индекс FInterfaceItem товарной панели
+HoverArea       equ #7062                                                       ; слово LD DE, младший отступ и старший запрос строк
+HoverRows       equ #7063                                                       ; число начатых строк от рисователя, старший байт HoverArea
+                endmodule
+
+                module ScriptCallState
+EventCode       equ #983A                                                       ; код события, читаемый торговым ReadEventCode
+                endmodule
+
+                module EquipmentInfoState
+TextIndex       equ #6ACC                                                       ; изменяемый индекс LF-текста описания оснащения
+                endmodule
+
+                module ShipPanelState
+Selector        equ #6906                                                       ; полный селектор корабельных панелей, назначение всех категорий ещё неизвестно
+PendingRedraw   equ #68EB                                                       ; ненулевой операнд периодического входа запрашивает обновление списка и панелей
+OwnedMode       equ #79DD                                                       ; ноль выбирает доступность системы, ненулевое значение выбирает текущие объекты
                 endmodule
 
                 endif

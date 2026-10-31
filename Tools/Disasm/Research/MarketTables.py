@@ -17,13 +17,13 @@ def render(source):
     lines.append(((label+':').ljust(16)+f'db #{value:02X}').ljust(80)+'; категория строки '+str(index)+', сравнивается с MinorCode')
   else:
    structure='FMarketRule' if path==RULES else 'FMarketRow'
-   fields=('BasePrice','StockRule') if path==RULES else ('StockAndMark','Price')
+   fields=('BasePrice','StockRule') if path==RULES else ('StockAndSaleBan','Price')
    for index in range(30):
     address=start+2*index+0x6000;label=('Rule' if path==RULES else 'Row')+str(index).zfill(2)
     symbols[module+'.'+label]=address
     for offset,field in enumerate(fields):symbols[module+'.'+label+'.'+field]=address+offset
     values=source[start+2*index:start+2*index+2]
-    comment='BasePrice, StockRule' if path==RULES else 'StockAndMark, Price, исходная пустая строка'
+    comment='BasePrice, StockRule' if path==RULES else 'StockAndSaleBan, Price, исходная пустая строка'
     if path==RULES and index>=27:comment+=', для этой строки читается только BasePrice'
     lines.append(((label+':').ljust(16)+structure+f' {{ #{values[0]:02X}, #{values[1]:02X} }}').ljust(80)+'; '+comment)
    if path==ROWS:

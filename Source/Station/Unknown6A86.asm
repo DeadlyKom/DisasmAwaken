@@ -22,12 +22,12 @@ Entry:          CALL @Station.RepaintAndFlag.Entry
 
                 CALL @Station.Unknown6AC6.Entry
                 LD HL, #6ADE
-                LD (#A265), HL
+                LD (@ScrollState.RenderCall), HL
                 LD HL, #0000
-                LD (#A235), HL
+                LD (@ScrollState.EndLimit), HL
                 LD A, #08
                 LD HL, #0000
-                CALL @Station.UnknownA1D6.Entry
+                CALL @Station.ScrollWindowRows.Entry
                 LD (#6AA4), HL
                 RET
 

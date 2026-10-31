@@ -1,7 +1,7 @@
 {
   "method": "text_and_resource_comparison_without_assembly",
   "passed": true,
-  "instruction_count": 35417,
+  "instruction_count": 35491,
   "active_allocations": 41,
   "covered_bytes": 479744,
   "interface_records": 46,
@@ -41,6 +41,7 @@
   },
   "assignment_records": 1,
   "action_file_keys": 1,
+  "final_file_keys": 1,
   "expression_stack_records": 1,
   "rank_threshold_records": 6,
   "rank_text_bytes": 70,
@@ -68,5 +69,7 @@
   "variant_path_points": 348,
   "variant_sprite_phases": 32,
   "auxiliary_map_keys": 10,
-  "auxiliary_map_code_bytes": 11
+  "auxiliary_map_code_bytes": 11,
+  "market_script_bytes": 1161,
+  "market_script_labels": 12
 }

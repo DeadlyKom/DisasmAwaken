@@ -13,7 +13,8 @@
 | IntroUnpack | 1 | 1 | [Факты](FunctionDetails/IntroUnpack.md) |
 | StationBoot | 3 | 3 | [Факты](FunctionDetails/StationBoot.md) |
 | StationExit | 1 | 1 | [Факты](FunctionDetails/StationExit.md) |
-| Station | 416 | 333 | [Факты](FunctionDetails/Station.md) |
+| StationFinalExit | 1 | 1 | [Факты](FunctionDetails/StationFinalExit.md) |
+| Station | 422 | 361 | [Факты](FunctionDetails/Station.md) |
 | Text | 126 | 126 | [Факты](FunctionDetails/Text.md) |
 | Map | 89 | 89 | [Факты](FunctionDetails/Map.md) |
 | Help | 4 | 4 | [Факты](FunctionDetails/Help.md) |
@@ -115,7 +116,7 @@
 | #676A | [Station.StepDown](../Source/Station/StepDown.asm) | Ограниченный шаг указателя вниз |
 | #6771 | [Station.HandleItem25](../Source/Station/HandleItem25.asm) | обработчик события станционного элемента из записи 25 таблицы FInterfaceItem |
 | #6780 | [Station.Unknown6780](../Source/Station/Unknown6780.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #67D0 | [Station.Unknown67D0](../Source/Station/Unknown67D0.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #67D0 | [Station.UpdateShipListHover](../Source/Station/UpdateShipListHover.asm) | Обновление XOR-полосы списка Корабли с сохранением номера только по Z=0 |
 | #67E0 | [Station.DrawItem25](../Source/Station/DrawItem25.asm) | обработчик рисования станционного элемента из записи 25 таблицы FInterfaceItem |
 | #6837 | [Station.HandleItem26](../Source/Station/HandleItem26.asm) | обработчик события станционного элемента из записи 26 таблицы FInterfaceItem |
 | #686F | [Station.Unknown686F](../Source/Station/Unknown686F.asm) | Unknown, назначение этого фрагмента ещё не установлено |
@@ -130,7 +131,7 @@
 | #69B8 | [Station.Unknown69B8](../Source/Station/Unknown69B8.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #69CF | [Station.Unknown69CF](../Source/Station/Unknown69CF.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #69DD | [Station.HandleItem22](../Source/Station/HandleItem22.asm) | обработчик события станционного элемента из записи 22 таблицы FInterfaceItem |
-| #6A4B | [Station.Unknown6A4B](../Source/Station/Unknown6A4B.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #6A4B | [Station.UpdateIndexListHover](../Source/Station/UpdateIndexListHover.asm) | Обновление XOR-полосы списка Индекс с сохранением номера только по Z=0 |
 | #6A5B | [Station.DrawItem22](../Source/Station/DrawItem22.asm) | обработчик рисования станционного элемента из записи 22 таблицы FInterfaceItem |
 | #6A7E | [Station.Unknown6A7E](../Source/Station/Unknown6A7E.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #6A83 | [Station.HandleItem39](../Source/Station/HandleItem39.asm) | обработчик события станционного элемента из записи 39 таблицы FInterfaceItem |
@@ -139,7 +140,7 @@
 | #6AC6 | [Station.Unknown6AC6](../Source/Station/Unknown6AC6.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #6ADE | [Station.Unknown6ADE](../Source/Station/Unknown6ADE.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #6AE9 | [Station.HandleItem41](../Source/Station/HandleItem41.asm) | обработчик события станционного элемента из записи 41 таблицы FInterfaceItem |
-| #6B8E | [Station.Unknown6B8E](../Source/Station/Unknown6B8E.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #6B8E | [Station.UpdateEnvironmentHover](../Source/Station/UpdateEnvironmentHover.asm) | Обновление XOR-полосы установок среды с сохранением номера только по Z=0 |
 | #6BA5 | [Station.DrawItem41](../Source/Station/DrawItem41.asm) | обработчик рисования станционного элемента из записи 41 таблицы FInterfaceItem |
 | #6BBE | [Station.Unknown6BBE](../Source/Station/Unknown6BBE.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #6C00 | [Station.Unknown6C00](../Source/Station/Unknown6C00.asm) | Unknown, назначение этого фрагмента ещё не установлено |
@@ -147,38 +148,38 @@
 | #6D43 | [Station.Unknown6D43](../Source/Station/Unknown6D43.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #6D58 | [Station.DrawMapPanelContents](../Source/Station/DrawMapPanelContents.asm) | Настройка размеров карты, условное построение таблиц и банковое рисование C000 |
 | #6DA8 | [Station.DrawMapPanel](../Source/Station/DrawMapPanel.asm) | Рисование полосовой рамки карты, установка трёх запросов и последовательный вход содержимого |
-| #6DC2 | [Station.HandleItem24](../Source/Station/HandleItem24.asm) | обработчик события станционного элемента из записи 24 таблицы FInterfaceItem |
-| #6DD3 | [Station.Unknown6DD3](../Source/Station/Unknown6DD3.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #6DD4 | [Station.DrawItem24](../Source/Station/DrawItem24.asm) | обработчик рисования станционного элемента из записи 24 таблицы FInterfaceItem |
-| #6E76 | [Station.Unknown6E76](../Source/Station/Unknown6E76.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #6E7F | [Station.HandleItem10](../Source/Station/HandleItem10.asm) | обработчик события станционного элемента из записи 10 таблицы FInterfaceItem |
-| #6E89 | [Station.Unknown6E89](../Source/Station/Unknown6E89.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #6E8A | [Station.DrawItem10](../Source/Station/DrawItem10.asm) | обработчик рисования станционного элемента из записи 10 таблицы FInterfaceItem |
+| #6DC2 | [Station.HandleDecodedMessageHover](../Source/Station/HandleDecodedMessageHover.asm) | Передача события наведения пустому обработчику панели расшифровки |
+| #6DD3 | [Station.ReturnDecodedMessageHover](../Source/Station/ReturnDecodedMessageHover.asm) | Пустой возврат события наведения панели расшифровки |
+| #6DD4 | [Station.DrawDecodedMessagePanel](../Source/Station/DrawDecodedMessagePanel.asm) | Рисование сообщения расшифровки либо перенос финального загрузчика при точном ключе и коде FE |
+| #6E76 | [Station.PrintDecodedMessage](../Source/Station/PrintDecodedMessage.asm) | Выбор и печать сообщения расшифровки по числовому полю MessageIndex предложения |
+| #6E7F | [Station.HandleQueuedMessageHover](../Source/Station/HandleQueuedMessageHover.asm) | Передача события наведения пустому обработчику уведомления |
+| #6E89 | [Station.ReturnQueuedMessageHover](../Source/Station/ReturnQueuedMessageHover.asm) | Пустой возврат события наведения уведомления |
+| #6E8A | [Station.DrawQueuedMessagePanel](../Source/Station/DrawQueuedMessagePanel.asm) | Рамка уведомления и вывод выбранной изменяемым операндом строки с выравниванием |
 | #6E99 | [Station.HandleItem31](../Source/Station/HandleItem31.asm) | Вход наведения элемента 31, хвостовое обновление подсветки миссии |
 | #6F4D | [Station.UpdateMissionRowHover](../Source/Station/UpdateMissionRowHover.asm) | Обновление подсветки двух строк элемента миссии с хранением номера в операнде |
 | #6FC5 | [Station.DrawItem31](../Source/Station/DrawItem31.asm) | Рамка элемента цели миссии, сброс строки наведения и печать сформированного имени |
-| #6FEE | [Station.HandleItem34](../Source/Station/HandleItem34.asm) | обработчик события станционного элемента из записи 34 таблицы FInterfaceItem |
-| #7044 | [Station.Unknown7044](../Source/Station/Unknown7044.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #7071 | [Station.DrawItem34](../Source/Station/DrawItem34.asm) | обработчик рисования станционного элемента из записи 34 таблицы FInterfaceItem |
-| #7096 | [Station.Unknown7096](../Source/Station/Unknown7096.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #7154 | [Station.Unknown7154](../Source/Station/Unknown7154.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #6FEE | [Station.HandleTradePanelHover](../Source/Station/HandleTradePanelHover.asm) | Хвостовой вход обновления торговой строки наведения |
+| #7044 | [Station.RunTradeEventAndRedraw](../Source/Station/RunTradeEventAndRedraw.asm) | Запись торгового кода события, запуск LANG и обновление статуса и торговой панели |
+| #7071 | [Station.DrawTradePanel](../Source/Station/DrawTradePanel.asm) | Рамка и торговые колонки с сохранением числа начатых строк в операнде подсветки |
+| #7096 | [Station.DrawTradeNumericColumns](../Source/Station/DrawTradeNumericColumns.asm) | Наименования товаров и четыре числовые колонки с двумя отдельными байтами количества и цены |
+| #7154 | [Station.SetMarketTextColumns](../Source/Station/SetMarketTextColumns.asm) | Отключение переноса текста и установка пяти пиксельных позиций торговых колонок |
 | #7172 | [Station.HandleItem38](../Source/Station/HandleItem38.asm) | обработчик события станционного элемента из записи 38 таблицы FInterfaceItem |
-| #7210 | [Station.Unknown7210](../Source/Station/Unknown7210.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #7210 | [Station.UpdateEquipmentHover](../Source/Station/UpdateEquipmentHover.asm) | Обновление XOR-полосы оснащения корабля с сохранением номера только по Z=0 |
 | #7227 | [Station.DrawItem38](../Source/Station/DrawItem38.asm) | обработчик рисования станционного элемента из записи 38 таблицы FInterfaceItem |
 | #724C | [Station.Unknown724C](../Source/Station/Unknown724C.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #733F | [Station.Unknown733F](../Source/Station/Unknown733F.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #741E | [Station.HandleItem43](../Source/Station/HandleItem43.asm) | обработчик события станционного элемента из записи 43 таблицы FInterfaceItem |
-| #7482 | [Station.Unknown7482](../Source/Station/Unknown7482.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #7482 | [Station.UpdateToPositionHover](../Source/Station/UpdateToPositionHover.asm) | Обновление XOR-полосы списка В позицию 1..5 с сохранением номера только по Z=0 |
 | #7492 | [Station.DrawItem43](../Source/Station/DrawItem43.asm) | обработчик рисования станционного элемента из записи 43 таблицы FInterfaceItem |
 | #74A7 | [Station.HandleItem44](../Source/Station/HandleItem44.asm) | обработчик события станционного элемента из записи 44 таблицы FInterfaceItem |
-| #750B | [Station.Unknown750B](../Source/Station/Unknown750B.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #750B | [Station.UpdateFromPositionHover](../Source/Station/UpdateFromPositionHover.asm) | Обновление XOR-полосы списка С позиции 1..5 с сохранением номера только по Z=0 |
 | #751B | [Station.DrawItem44](../Source/Station/DrawItem44.asm) | обработчик рисования станционного элемента из записи 44 таблицы FInterfaceItem |
 | #7539 | [Station.HandleItem40](../Source/Station/HandleItem40.asm) | Вход наведения контекстного меню с хвостовым переходом в HoverContextMenu |
 | #753C | [Station.ActivateContextMenu](../Source/Station/ActivateContextMenu.asm) | Развилка действия меню после перерисовки и выполнение команды выбранной строки |
 | #7573 | [Station.HoverContextMenu](../Source/Station/HoverContextMenu.asm) | Обновление выбранной строки контекстного меню и сохранение результата в операнде |
 | #7583 | [Station.DrawItem40](../Source/Station/DrawItem40.asm) | Регистрация и рамка контекстного меню, сброс выделения и печать восьми команд |
 | #7599 | [Station.HandleItem42](../Source/Station/HandleItem42.asm) | обработчик события станционного элемента из записи 42 таблицы FInterfaceItem |
-| #7620 | [Station.Unknown7620](../Source/Station/Unknown7620.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #7620 | [Station.UpdateGameSettingsHover](../Source/Station/UpdateGameSettingsHover.asm) | Обновление XOR-полосы установок игры с сохранением номера только по Z=0 |
 | #7637 | [Station.DrawItem42](../Source/Station/DrawItem42.asm) | обработчик рисования станционного элемента из записи 42 таблицы FInterfaceItem |
 | #7650 | [Station.Unknown7650](../Source/Station/Unknown7650.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #766C | [Station.Unknown766C](../Source/Station/Unknown766C.asm) | Unknown, назначение этого фрагмента ещё не установлено |
@@ -240,22 +241,22 @@
 | #7D2A | [Station.HandleSecondaryCursor](../Source/Station/HandleSecondaryCursor.asm) | Подготовка callback установки курсора B через геометрию либо активацию |
 | #7D34 | [Station.SelectSecondaryListCursor](../Source/Station/SelectSecondaryListCursor.asm) | Установка курсора второго списка на первую совпавшую с выбранным ключом запись |
 | #7D53 | [Station.DrawItem16](../Source/Station/DrawItem16.asm) | Обёртка рисования элемента 16 через изменяемый индекс и DrawCenteredItem |
-| #7D59 | [Station.HandleItem35](../Source/Station/HandleItem35.asm) | обработчик события станционного элемента из записи 35 таблицы FInterfaceItem |
-| #7D63 | [Station.Unknown7D63](../Source/Station/Unknown7D63.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #7D77 | [Station.DrawItem35](../Source/Station/DrawItem35.asm) | Обёртка рисования элемента 35 через изменяемый индекс и DrawCenteredItem |
-| #7D7D | [Station.HandleItem04](../Source/Station/HandleItem04.asm) | обработчик события станционного элемента из записи 4 таблицы FInterfaceItem |
-| #7D87 | [Station.Unknown7D87](../Source/Station/Unknown7D87.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #7D59 | [Station.HandleSellControl](../Source/Station/HandleSellControl.asm) | Подготовка отложенного callback продажи текущей строки |
+| #7D63 | [Station.SellCurrentCargo](../Source/Station/SellCurrentCargo.asm) | Продажа текущей строки груза событием 11 с принудительным выбором строки 0 после перерисовки |
+| #7D77 | [Station.DrawSellControl](../Source/Station/DrawSellControl.asm) | Рисование управляющего элемента продажи через изменяемый индекс 35 |
+| #7D7D | [Station.HandleContractsControl](../Source/Station/HandleContractsControl.asm) | Подготовка отложенного callback открытия панелей контракта |
+| #7D87 | [Station.OpenContractPanels](../Source/Station/OpenContractPanels.asm) | Восстановление границ и порядка панелей контракта 31, 33, 32 |
 | #7D99 | [Station.DrawItem04](../Source/Station/DrawItem04.asm) | Обёртка рисования элемента 4 через изменяемый индекс и DrawCenteredItem |
-| #7D9F | [Station.HandleItem05](../Source/Station/HandleItem05.asm) | обработчик события станционного элемента из записи 5 таблицы FInterfaceItem |
-| #7DA9 | [Station.Unknown7DA9](../Source/Station/Unknown7DA9.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #7D9F | [Station.HandleTradeControl](../Source/Station/HandleTradeControl.asm) | Подготовка отложенного callback открытия товарных панелей |
+| #7DA9 | [Station.OpenTradePanels](../Source/Station/OpenTradePanels.asm) | Восстановление границ управляющего элемента продажи и товарной панели |
 | #7DB5 | [Station.DrawItem05](../Source/Station/DrawItem05.asm) | Обёртка рисования элемента 5 через изменяемый индекс и DrawCenteredItem |
-| #7DBB | [Station.HandleItem06](../Source/Station/HandleItem06.asm) | обработчик события станционного элемента из записи 6 таблицы FInterfaceItem |
-| #7DC5 | [Station.Unknown7DC5](../Source/Station/Unknown7DC5.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #7DBB | [Station.HandleEquipmentControl](../Source/Station/HandleEquipmentControl.asm) | Подготовка отложенного callback открытия панелей оснащения |
+| #7DC5 | [Station.OpenEquipmentPanels](../Source/Station/OpenEquipmentPanels.asm) | Сброс индекса текста оснащения и восстановление панелей 39, 36, 37, 38 |
 | #7DE1 | [Station.DrawItem06](../Source/Station/DrawItem06.asm) | Обёртка рисования элемента 6 через изменяемый индекс и DrawCenteredItem |
-| #7DE7 | [Station.HandleItem07](../Source/Station/HandleItem07.asm) | обработчик события станционного элемента из записи 7 таблицы FInterfaceItem |
-| #7DF1 | [Station.Unknown7DF1](../Source/Station/Unknown7DF1.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #7E19 | [Station.DrawItem07](../Source/Station/DrawItem07.asm) | Обёртка рисования элемента 7 через изменяемый индекс и DrawCenteredItem |
-| #7E1F | [Station.Unknown7E1F](../Source/Station/Unknown7E1F.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #7DE7 | [Station.HandleShipControl](../Source/Station/HandleShipControl.asm) | Подготовка отложенного callback открытия корабельных панелей |
+| #7DF1 | [Station.OpenShipPanels](../Source/Station/OpenShipPanels.asm) | Сброс выбора и восстановление шести корабельных панелей в исходном порядке |
+| #7E19 | [Station.DrawShipControl](../Source/Station/DrawShipControl.asm) | Рисование управляющего элемента корабля через изменяемый индекс 7 |
+| #7E1F | [Station.ResetShipPanelSelection](../Source/Station/ResetShipPanelSelection.asm) | Сброс режима списка, рамок выбора и первого компонента индекса банка 4 |
 | #7E53 | [Station.HandleItem08](../Source/Station/HandleItem08.asm) | Активация элемента 8 и подготовка перенесённого перехода из станции |
 | #7F11 | [Station.DrawItem08](../Source/Station/DrawItem08.asm) | Обёртка рисования элемента 8 через изменяемый индекс и DrawCenteredItem |
 | #7F17 | [Station.HandleItem00](../Source/Station/HandleItem00.asm) | обработчик события станционного элемента из записи 0 таблицы FInterfaceItem |
@@ -545,7 +546,7 @@
 | #C5BB | [Text.Property073](../Source/Text/Property073.asm) | Чтение кода старшего разряда по базе #98F6 |
 | #C5C1 | [Text.GetCargoSecondByte](../Source/Text/GetCargoSecondByte.asm) | Чтение второго байта двухбайтовой грузовой записи по стековому индексу |
 | #C5C7 | [Text.GetMarketPrice](../Source/Text/GetMarketPrice.asm) | Чтение текущей цены строки рынка по стековому индексу |
-| #C5CD | [Text.IsMarketMarkClear](../Source/Text/IsMarketMarkClear.asm) | Проверка снятого bit7 строки рынка по стековому индексу |
+| #C5CD | [Text.IsMarketSaleLegal](../Source/Text/IsMarketSaleLegal.asm) | Проверка разрешённой продажи товара по снятому bit7 рыночной записи |
 | #C5DF | [Text.GetIndexedLoad](../Source/Text/GetIndexedLoad.asm) | Взвешенная сумма с выбранной строкой из младшего байта стекового индекса |
 | #C5E9 | [Text.ReadStrideFiveWord](../Source/Text/ReadStrideFiveWord.asm) | Чтение слова по индексу из CPU-стека с шагом пять и базой #9803 |
 | #C5F9 | [Text.ReadStrideFiveByte](../Source/Text/ReadStrideFiveByte.asm) | Чтение байта по индексу из CPU-стека с шагом пять и базой #9802 |
@@ -1122,11 +1123,11 @@
 
 | #6D4E | [Station.ClearAndDrawMapPanel](../Source/Station/ClearAndDrawMapPanel.asm) | Unknown, новый вход действия или его достижимый помощник |
 
-| #6DC5 | [Station.Unknown6DC5](../Source/Station/Unknown6DC5.asm) | Unknown, новый вход действия или его достижимый помощник |
+| #6DC5 | [Station.HandleDecodedMessageClick](../Source/Station/HandleDecodedMessageClick.asm) | Unknown, новый вход действия или его достижимый помощник |
 
-| #6E82 | [Station.Unknown6E82](../Source/Station/Unknown6E82.asm) | Unknown, новый вход действия или его достижимый помощник |
+| #6E82 | [Station.HandleQueuedMessageClick](../Source/Station/HandleQueuedMessageClick.asm) | Unknown, новый вход действия или его достижимый помощник |
 
-| #6FF1 | [Station.Unknown6FF1](../Source/Station/Unknown6FF1.asm) | Unknown, новый вход действия или его достижимый помощник |
+| #6FF1 | [Station.HandleTradePanelClick](../Source/Station/HandleTradePanelClick.asm) | Unknown, новый вход действия или его достижимый помощник |
 
 | #7175 | [Station.Unknown7175](../Source/Station/Unknown7175.asm) | Unknown, новый вход действия или его достижимый помощник |
 
@@ -1148,17 +1149,17 @@
 
 | #794B | [Station.Unknown794B](../Source/Station/Unknown794B.asm) | Unknown, новый вход действия или его достижимый помощник |
 
-| #A191 | [Station.UnknownA191](../Source/Station/UnknownA191.asm) | Unknown, новый вход действия или его достижимый помощник |
+| #A191 | [Station.ParseSettingsLabel](../Source/Station/ParseSettingsLabel.asm) | Unknown, новый вход действия или его достижимый помощник |
 
-| #A1D6 | [Station.UnknownA1D6](../Source/Station/UnknownA1D6.asm) | Unknown, новый вход действия или его достижимый помощник |
+| #A1D6 | [Station.ScrollWindowRows](../Source/Station/ScrollWindowRows.asm) | Unknown, новый вход действия или его достижимый помощник |
 
-| #A26F | [Station.UnknownA26F](../Source/Station/UnknownA26F.asm) | Unknown, новый вход действия или его достижимый помощник |
+| #A26F | [Station.XorRowIfSelected](../Source/Station/XorRowIfSelected.asm) | Unknown, новый вход действия или его достижимый помощник |
 
 | #AA58 | [Station.UnknownAA58](../Source/Station/UnknownAA58.asm) | Unknown, новый вход действия или его достижимый помощник |
 
 | #BE27 | [Station.MoveItemToTailIfListed](../Source/Station/MoveItemToTailIfListed.asm) | Unknown, новый вход действия или его достижимый помощник |
 
-| #C6B0 | [Station.UnknownC6B0](../Source/Station/UnknownC6B0.asm) | Unknown, новый вход действия или его достижимый помощник |
+| #C6B0 | [Station.ClearScrollWindowBody](../Source/Station/ClearScrollWindowBody.asm) | Unknown, новый вход действия или его достижимый помощник |
 
 | #C368 | [Map.SumSquares8](../Source/Map/SumSquares8.asm) | Unknown, новый вход действия или его достижимый помощник |
 
@@ -1209,3 +1210,18 @@
 | #7C4A | [Station.RefreshSecondaryListPanels](../Source/Station/RefreshSecondaryListPanels.asm) | Unknown, самостоятельный вход |
 
 | #7D14 | [Station.CenterKeyAndRefreshMap](../Source/Station/CenterKeyAndRefreshMap.asm) | Unknown, самостоятельный вход |
+
+| #4000 | [StationFinalExit.LoadFinal](../Source/StationFinalExit/LoadFinal.asm) | Перенесённый загрузчик FINALF с повторной инициализацией музыки и ожиданием точного байта клавиатуры |
+
+| #A1CD | [Station.RestoreScrollPointer](../Source/Station/RestoreScrollPointer.asm) | Unknown, самостоятельный вход |
+
+| #7061 | [Station.UpdateTradeRowHover](../Source/Station/UpdateTradeRowHover.asm) | Unknown, самостоятельный вход |
+
+## Дополнительно обнаруженный корабельный код
+
+| Адрес | Исходник | Статус |
+| --- | --- | --- |
+| #6870 | [Station.Unknown6870](../Source/Station/Unknown6870.asm) | Unknown, полный контракт ещё не доказан |
+| #68CC | [Station.Unknown68CC](../Source/Station/Unknown68CC.asm) | Unknown, полный контракт ещё не доказан |
+| #68EA | [Station.Unknown68EA](../Source/Station/Unknown68EA.asm) | Unknown, полный контракт ещё не доказан |
+| #693E | [Station.Unknown693E](../Source/Station/Unknown693E.asm) | Unknown, полный контракт ещё не доказан |

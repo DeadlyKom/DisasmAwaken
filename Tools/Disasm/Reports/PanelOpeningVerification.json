@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "cases": 6144,
+  "all_saved_height_bytes": true,
+  "empty_reversed_aliased_and_duplicate_lists": true,
+  "existing_same_index_handler_retained": true,
+  "disabled_opcodes_not_enabled": true,
+  "all_physical_record_fields_compared": true,
+  "no_immediate_screen_drawing": true,
+  "equipment_info_text_index_reset_to_zero": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}
