@@ -1,7 +1,7 @@
 {
   "passed": true,
   "method": "actual_source_label_positions_against_original_instruction_lengths_and_symbol_registry",
-  "labels_checked": 4082,
+  "labels_checked": 4199,
   "missing_symbol_bindings": [],
   "wrong_addresses": [],
   "invalid_label_prefixes": [],

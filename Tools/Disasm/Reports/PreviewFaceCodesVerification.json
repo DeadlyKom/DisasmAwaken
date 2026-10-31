@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "cases": 99712,
+  "outcomes": {
+    "zero_code": 33444,
+    "completed": 66268
+  },
+  "all_index_and_code_bytes": true,
+  "all_counts_and_first_zero_positions": true,
+  "zero_count_reads_256": true,
+  "exact_registers_flags_and_two_stack_bytes": true,
+  "no_projection_buffer_writes": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false,
+  "full_face_pass_not_executed": true
+}

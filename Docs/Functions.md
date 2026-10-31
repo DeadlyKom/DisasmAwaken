@@ -16,7 +16,7 @@
 | StationFinalExit | 1 | 1 | [Факты](FunctionDetails/StationFinalExit.md) |
 | Station | 422 | 368 | [Факты](FunctionDetails/Station.md) |
 | Text | 126 | 126 | [Факты](FunctionDetails/Text.md) |
-| D3D | 25 | 25 | [Факты](FunctionDetails/D3D.md) |
+| D3D | 30 | 30 | [Факты](FunctionDetails/D3D.md) |
 | Map | 89 | 89 | [Факты](FunctionDetails/Map.md) |
 | Help | 4 | 4 | [Факты](FunctionDetails/Help.md) |
 | Music | 27 | 13 | [Факты](FunctionDetails/Music.md) |
@@ -1276,3 +1276,13 @@
 | #D896, банк 4 | [D3D.ProjectPreviewModelGroups](../Source/D3D/ProjectPreviewModelGroups.asm) | Проекция всех физических групп выбранной модели через общую матрицу и восстановление CPU-стека |
 
 | #DF46, банк 4 | [D3D.ClassifyPreviewVertices](../Source/D3D/ClassifyPreviewVertices.asm) | Коды сторон окна для спроецированных вершин, инверсная старшая тетрада и ранний отказ по маркеру 80 |
+
+| #E869, банк 4 | [D3D.MultiplyPreviewSignedWords](../Source/D3D/MultiplyPreviewSignedWords.asm) | Знаковое произведение слов с тремя размерными ветвями и особым длинным случаем второго слова 8000 |
+
+| #DFA6, банк 4 | [D3D.ComputePreviewFaceOrientation](../Source/D3D/ComputePreviewFaceOrientation.asm) | Ориентация по трём вершинам с выбором индексов, цепочкой заёмов и двумя настоящими произведениями |
+
+| #DDFD, банк 4 | [D3D.CollectPreviewFaceCodes](../Source/D3D/CollectPreviewFaceCodes.asm) | Общий OR кодов вершин грани с ранним Carry по нулевому коду и восстановлением счётчика |
+
+| #DE1C, банк 4 | [D3D.RasterizePreviewEdge](../Source/D3D/RasterizePreviewEdge.asm) | Растровое ребро с исключённым концом, четырьмя ветвями, режимами XOR/OR/AND и точными флагами |
+
+| #D4DF, банк 4 | [D3D.DividePreviewSlopeByte](../Source/D3D/DividePreviewSlopeByte.asm) | Восемь шагов деления горизонтальной длины ребра с дополненным частным и остатком |

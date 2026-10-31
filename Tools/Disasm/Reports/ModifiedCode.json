@@ -8161,5 +8161,77 @@
     "size": 1,
     "target_operation": "LD SP,#C600",
     "path": "Source/D3D/ProjectPreviewModelGroups.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 56924,
+    "target": 56934,
+    "target_instruction": 56934,
+    "size": 1,
+    "target_operation": "NOP",
+    "path": "Source/D3D/RasterizePreviewEdge.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 56930,
+    "target": 56937,
+    "target_instruction": 56937,
+    "size": 1,
+    "target_operation": "JR C,#DE74",
+    "path": "Source/D3D/RasterizePreviewEdge.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 56987,
+    "target": 56997,
+    "target_instruction": 56997,
+    "size": 1,
+    "target_operation": "NOP",
+    "path": "Source/D3D/RasterizePreviewEdge.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 56993,
+    "target": 57023,
+    "target_instruction": 57023,
+    "size": 1,
+    "target_operation": "JR C,#DEC5",
+    "path": "Source/D3D/RasterizePreviewEdge.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 57048,
+    "target": 57058,
+    "target_instruction": 57058,
+    "size": 1,
+    "target_operation": "NOP",
+    "path": "Source/D3D/RasterizePreviewEdge.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 57054,
+    "target": 57061,
+    "target_instruction": 57061,
+    "size": 1,
+    "target_operation": "JR C,#DEF0",
+    "path": "Source/D3D/RasterizePreviewEdge.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 57111,
+    "target": 57121,
+    "target_instruction": 57121,
+    "size": 1,
+    "target_operation": "NOP",
+    "path": "Source/D3D/RasterizePreviewEdge.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 57117,
+    "target": 57147,
+    "target_instruction": 57147,
+    "size": 1,
+    "target_operation": "JR C,#DF41",
+    "path": "Source/D3D/RasterizePreviewEdge.asm"
   }
 ]

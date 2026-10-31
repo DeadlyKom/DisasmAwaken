@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "cases": 140108,
+  "index_strides": {
+    "1": 65999,
+    "2": 74109
+  },
+  "orientation_signs": {
+    "negative": 70496,
+    "nonnegative": 69612
+  },
+  "extreme_multiplier_cases": 131242,
+  "all_coordinate_words_in_selected_geometries": true,
+  "all_index_bytes_and_input_a": true,
+  "original_chained_borrows_and_product_carry_preserved": true,
+  "independent_full_register_and_signed_product_model": true,
+  "real_two_word_multipliers": true,
+  "exact_twelve_stack_bytes_and_cpu_return": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false,
+  "face_walk_not_executed": true
+}

@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "cases": 1048576,
+  "canonical_nonzero_divisor_cases": 133632,
+  "all_byte_dividend_and_divisor_pairs": true,
+  "all_word_inputs_at_seven_divisors": true,
+  "both_input_carries_checked": true,
+  "independent_byte_remainder_and_inverse_quotient_model": true,
+  "exact_flags_and_preserved_context": true,
+  "zero_divisor_original_behavior_preserved": true,
+  "discarded_ninth_bit_preserved": true,
+  "no_memory_writes": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

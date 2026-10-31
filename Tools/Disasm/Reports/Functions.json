@@ -12300,5 +12300,60 @@
     "path": "Source/D3D/ClassifyPreviewVertices.asm",
     "description": "Коды сторон окна для спроецированных вершин, инверсная старшая тетрада и ранний отказ по маркеру 80",
     "semantic_status": "described"
+  },
+  {
+    "region": "D3D",
+    "name": "MultiplyPreviewSignedWords",
+    "address": 59497,
+    "slot": 6,
+    "offset": 10345,
+    "end_offset": 10753,
+    "path": "Source/D3D/MultiplyPreviewSignedWords.asm",
+    "description": "Знаковое произведение слов с тремя размерными ветвями и особым длинным случаем второго слова 8000",
+    "semantic_status": "described"
+  },
+  {
+    "region": "D3D",
+    "name": "ComputePreviewFaceOrientation",
+    "address": 57254,
+    "slot": 6,
+    "offset": 8102,
+    "end_offset": 8209,
+    "path": "Source/D3D/ComputePreviewFaceOrientation.asm",
+    "description": "Ориентация по трём вершинам с выбором индексов, цепочкой заёмов и двумя настоящими произведениями",
+    "semantic_status": "described"
+  },
+  {
+    "region": "D3D",
+    "name": "CollectPreviewFaceCodes",
+    "address": 56829,
+    "slot": 6,
+    "offset": 7677,
+    "end_offset": 7708,
+    "path": "Source/D3D/CollectPreviewFaceCodes.asm",
+    "description": "Общий OR кодов вершин грани с ранним Carry по нулевому коду и восстановлением счётчика",
+    "semantic_status": "described"
+  },
+  {
+    "region": "D3D",
+    "name": "RasterizePreviewEdge",
+    "address": 56860,
+    "slot": 6,
+    "offset": 7708,
+    "end_offset": 8006,
+    "path": "Source/D3D/RasterizePreviewEdge.asm",
+    "description": "Растровое ребро с исключённым концом, четырьмя ветвями, режимами XOR/OR/AND и точными флагами",
+    "semantic_status": "described"
+  },
+  {
+    "region": "D3D",
+    "name": "DividePreviewSlopeByte",
+    "address": 54495,
+    "slot": 6,
+    "offset": 5343,
+    "end_offset": 5400,
+    "path": "Source/D3D/DividePreviewSlopeByte.asm",
+    "description": "Восемь шагов деления горизонтальной длины ребра с дополненным частным и остатком",
+    "semantic_status": "described"
   }
 ]

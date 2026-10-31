@@ -5782,11 +5782,47 @@
   {
     "slot": 6,
     "offset": 542,
-    "length": 226,
+    "length": 45,
     "kind": "unclassified",
-    "path": "Source/Resources/06_D3D/AfterSceneMatrix.bin",
+    "path": "Source/Resources/06_D3D/BeforeEdgeEndpoints.bin",
     "origin": null,
-    "sha256": "ac41e9584bf0e3f1620d625398a2df66c5fdb744069d8bc957b8690d5af879b3"
+    "sha256": "8a1020634191c27b63d3c2aa45b723f696ddf2743ca8996a33ed0e47ddd7fc07"
+  },
+  {
+    "slot": 6,
+    "offset": 587,
+    "length": 4,
+    "kind": "typed_data",
+    "path": "Source/D3D/Data/PreviewEdgeEndpoints.asm",
+    "origin": 49739,
+    "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+  },
+  {
+    "slot": 6,
+    "offset": 591,
+    "length": 32,
+    "kind": "unclassified",
+    "path": "Source/Resources/06_D3D/BetweenEdgeEndpointsMode.bin",
+    "origin": null,
+    "sha256": "66687aadf862bd776c8fc18b8e9f8e20089714856ee233b3902a591d0d5f2925"
+  },
+  {
+    "slot": 6,
+    "offset": 623,
+    "length": 2,
+    "kind": "typed_data",
+    "path": "Source/D3D/Data/PreviewEdgeMode.asm",
+    "origin": 49775,
+    "sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7"
+  },
+  {
+    "slot": 6,
+    "offset": 625,
+    "length": 143,
+    "kind": "unclassified",
+    "path": "Source/Resources/06_D3D/AfterEdgeMode.bin",
+    "origin": null,
+    "sha256": "660b0fd63d20d0f2b3aa7179d51400a3f10089a6a065c32c03b34c99ccbe5074"
   },
   {
     "slot": 6,
@@ -5827,11 +5863,29 @@
   {
     "slot": 6,
     "offset": 2044,
-    "length": 1604,
+    "length": 1460,
     "kind": "unclassified",
-    "path": "Source/Resources/06_D3D/AfterQueueStorage.bin",
+    "path": "Source/Resources/06_D3D/BeforePixelMasks.bin",
     "origin": null,
-    "sha256": "a4430be4253730e9dae9b1096ac7c73a02b15117d2ac078e68ec43bd1a7b8626"
+    "sha256": "c36f9db52c7ac7acb67a35513a471983caf886be38039e1f1e388784bdeecbfc"
+  },
+  {
+    "slot": 6,
+    "offset": 3504,
+    "length": 16,
+    "kind": "typed_data",
+    "path": "Source/D3D/Data/PreviewPixelMasks.asm",
+    "origin": 52656,
+    "sha256": "4878abe224de8a19eb477534fb895b00f4894e1b09611399b50e8120e004a92b"
+  },
+  {
+    "slot": 6,
+    "offset": 3520,
+    "length": 128,
+    "kind": "unclassified",
+    "path": "Source/Resources/06_D3D/AfterPixelMasks.bin",
+    "origin": null,
+    "sha256": "69df9941ca909655a78272608c53042d89d9b6c68d3db7b112f3291b780bdb1f"
   },
   {
     "slot": 6,
@@ -5872,11 +5926,20 @@
   {
     "slot": 6,
     "offset": 4140,
-    "length": 1260,
+    "length": 1203,
     "kind": "unclassified",
-    "path": "Source/Resources/06_D3D/AfterModelPointers.bin",
+    "path": "Source/Resources/06_D3D/BeforeSlopeDivision.bin",
     "origin": null,
-    "sha256": "74bb9a0d1ec727f3b3b7c1426ee9e47d4813ea54477b51a7357e48186a7387b7"
+    "sha256": "1a88b791f256b5499282b0586c8f04f86ad502532d39400d90a46b9d9fb53396"
+  },
+  {
+    "slot": 6,
+    "offset": 5343,
+    "length": 57,
+    "kind": "code",
+    "path": "Source/D3D/DividePreviewSlopeByte.asm",
+    "origin": 54495,
+    "sha256": "e66a5ef7d8f40212fb149e7e16748a019479667c644f0447a4181e5240434b1a"
   },
   {
     "slot": 6,
@@ -5989,11 +6052,29 @@
   {
     "slot": 6,
     "offset": 7145,
-    "length": 861,
+    "length": 532,
     "kind": "unclassified",
-    "path": "Source/Resources/06_D3D/BeforeVertexClass.bin",
+    "path": "Source/Resources/06_D3D/BeforeFaceCodes.bin",
     "origin": null,
-    "sha256": "e03f47ffccd5227e568a3f96b37633ed36e70d351eb50e99b113913c27d53abe"
+    "sha256": "f44c695ec82af935be39b2032f92adb652bb8e9df6c55f1592f73eb7cc2a1c5e"
+  },
+  {
+    "slot": 6,
+    "offset": 7677,
+    "length": 31,
+    "kind": "code",
+    "path": "Source/D3D/CollectPreviewFaceCodes.asm",
+    "origin": 56829,
+    "sha256": "1c0ff7d752a70b515a7af59cee7b4e33a749102b1c708bb6f08fbb7d3034bbb7"
+  },
+  {
+    "slot": 6,
+    "offset": 7708,
+    "length": 298,
+    "kind": "code",
+    "path": "Source/D3D/RasterizePreviewEdge.asm",
+    "origin": 56860,
+    "sha256": "11e8a22f0f016e58e6ae630e2a86911303ea5bc1305d619741af8c511a007c9b"
   },
   {
     "slot": 6,
@@ -6008,9 +6089,9 @@
     "slot": 6,
     "offset": 8102,
     "length": 107,
-    "kind": "unclassified",
-    "path": "Source/Resources/06_D3D/AfterVertexClass.bin",
-    "origin": null,
+    "kind": "code",
+    "path": "Source/D3D/ComputePreviewFaceOrientation.asm",
+    "origin": 57254,
     "sha256": "17a04e9f7df0e1b8c7af5a9a31ea90306837e5ac43985e774ee5ad4794f9d35d"
   },
   {
@@ -6079,11 +6160,29 @@
   {
     "slot": 6,
     "offset": 8561,
-    "length": 2463,
+    "length": 1784,
     "kind": "unclassified",
-    "path": "Source/Resources/06_D3D/BeforeCoordinateMultiply.bin",
+    "path": "Source/Resources/06_D3D/BeforeFaceProduct.bin",
     "origin": null,
-    "sha256": "e74e4fb13edf5c6f7a2426b9175b67f18ce2d16aee01c78b3ce082db62ede1b8"
+    "sha256": "777de4061502f20e14e46b8666c284a50be63383aea8fec5ab289fb2599ce2e2"
+  },
+  {
+    "slot": 6,
+    "offset": 10345,
+    "length": 408,
+    "kind": "code",
+    "path": "Source/D3D/MultiplyPreviewSignedWords.asm",
+    "origin": 59497,
+    "sha256": "d66ec835dc18ad08df374b9c885f2178ec32b17a9010e23332af56d32d6f42f8"
+  },
+  {
+    "slot": 6,
+    "offset": 10753,
+    "length": 271,
+    "kind": "unclassified",
+    "path": "Source/Resources/06_D3D/AfterFaceProduct.bin",
+    "origin": null,
+    "sha256": "d1d65dfb5ba8ea2be6607ca3f3717928566679408e3c7eb42c1de6a101d2b952"
   },
   {
     "slot": 6,

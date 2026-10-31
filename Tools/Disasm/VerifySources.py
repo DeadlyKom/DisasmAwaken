@@ -228,8 +228,9 @@ def main():
     # Проверка физических исходных параметров, матрицы и пар указателей моделей по реальным полям.
     from PreviewSceneTables import TABLES as PREVIEW_SCENE_TABLES, parse as parse_preview_scene
     from PreviewDrawStateTable import TABLE as PREVIEW_DRAW_STATE_TABLE
+    from PreviewEdgeData import TABLES as PREVIEW_EDGE_TABLES
     preview_scene_records = {}
-    for module,path,start,end,structure,fields,names in (*PREVIEW_SCENE_TABLES, PREVIEW_DRAW_STATE_TABLE):
+    for module,path,start,end,structure,fields,names in (*PREVIEW_SCENE_TABLES, PREVIEW_DRAW_STATE_TABLE, *PREVIEW_EDGE_TABLES):
         entries = [item for item in source_map if item['path'] == path]
         if not entries:
             continue
@@ -297,6 +298,23 @@ def main():
         if symbols.get('FPREVIEWPROJECTEDVERTEX') != 5:
             raise ValueError('Изменился размер пятибайтовой записи')
         preview_projected_vertices = 51
+
+    # Проверка двух исходных таблиц пиксельных масок и их фактического размещения.
+    from PreviewEdgeData import MASK_PATH, parse_bytes as parse_mask_bytes
+    preview_pixel_masks = 0
+    mask_entries = [item for item in source_map if item['path'] == MASK_PATH]
+    if mask_entries:
+        if len(mask_entries) != 1:
+            raise ValueError('Неоднозначная регистрация масок рёбер')
+        item = mask_entries[0]
+        if (item['slot'],item['offset'],item['length'],item['origin']) != (6,0xDB0,16,0xCDB0):
+            raise ValueError('Изменилось размещение масок рёбер')
+        raw, labels = parse_mask_bytes((ROOT/MASK_PATH).read_text('utf-8'),0xCDB0)
+        if raw != sources[6][0xDB0:0xDC0] or raw != bytes([128>>i for i in range(8)]+[255^(128>>i) for i in range(8)]):
+            raise ValueError('Изменились исходные маски пикселя')
+        if any(symbols.get(key.upper()) != value for key,value in labels.items()):
+            raise ValueError('Изменились метки масок пикселя')
+        preview_pixel_masks = 16
 
     # Проверка исходных DB свёрнутых квадратов и точной целочисленной формулы всей страницы.
     from PreviewSquareTable import PATH as PREVIEW_SQUARE_PATH, START as PREVIEW_SQUARE_START, END as PREVIEW_SQUARE_END, parse as parse_preview_square
@@ -985,6 +1003,7 @@ def main():
     report['preview_scene_records'] = preview_scene_records
     report['preview_model_group_records'] = preview_model_records
     report['preview_projected_vertices'] = preview_projected_vertices
+    report['preview_pixel_masks'] = preview_pixel_masks
     (ROOT/"Tools/Disasm/Reports/SourceVerification.json").write_text(
         json.dumps(report,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     print(json.dumps(report,ensure_ascii=False,indent=2))

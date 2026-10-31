@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "functions": 1,
+  "instructions": 23,
+  "code_bytes": 31,
+  "registered_operand_writers": 0,
+  "scoped_candidate_and_history": true,
+  "physical_bytes_preserved": true,
+  "retained_original_resource_path": true,
+  "assembly_executed": false
+}

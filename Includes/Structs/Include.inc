@@ -949,4 +949,17 @@ Outcode         db #00                                                          
                 ends
                 assert FPreviewProjectedVertex == #05
 
+                ; Документация [физические параметры рёбер](../../Docs/PreviewEdgeRaster.md)
+                struct FPreviewEdgeEndpoints
+StartPoint      dw #0000                                                        ; начальное слово, младший байт колонка, старший строка
+EndPoint        dw #0000                                                        ; конечное слово в том же формате
+                ends
+                assert FPreviewEdgeEndpoints == #04
+
+                struct FPreviewEdgeMode
+PixelOpcode     db #00                                                          ; байт пиксельной инструкции A1 для AND, A9 для XOR, B1 для OR
+BoundaryOpcode  db #00                                                          ; байт перехода 30 для JR NC при AND, 38 для JR C при XOR и OR
+                ends
+                assert FPreviewEdgeMode == #02
+
                 endif

@@ -527,9 +527,10 @@ def main():
     # Исходные физические параметры, матрица и пары указателей, без подмены загрузочной инициализации.
     from PreviewSceneTables import TABLES as PREVIEW_SCENE_TABLES, render as render_preview_scene
     from PreviewDrawStateTable import TABLE as PREVIEW_DRAW_STATE_TABLE
-    for table in (*PREVIEW_SCENE_TABLES, PREVIEW_DRAW_STATE_TABLE):
+    from PreviewEdgeData import TABLES as PREVIEW_EDGE_TABLES, MASK_PATH as EDGE_MASK_PATH, render_masks as render_edge_masks, render as render_edge_records
+    for table in (*PREVIEW_SCENE_TABLES, PREVIEW_DRAW_STATE_TABLE, *PREVIEW_EDGE_TABLES):
         _, path, start, end, _, _, _ = table
-        text, labels = render_preview_scene(data_by_slot[6], table)
+        text, labels = (render_edge_records if table in PREVIEW_EDGE_TABLES else render_preview_scene)(data_by_slot[6], table)
         write(path, text)
         symbols.update(labels)
         special[6, start] = (end, path, 0xC000+start)
@@ -546,6 +547,10 @@ def main():
     write(PROJECTED_PATH, text)
     symbols.update(labels)
     special[6,0x600] = (0x700,PROJECTED_PATH,0xC600)
+    text, labels = render_edge_masks(data_by_slot[6])
+    write(EDGE_MASK_PATH,text)
+    symbols.update(labels)
+    special[6,0xDB0] = (0xDC0,EDGE_MASK_PATH,0xCDB0)
     # Исходная страница свёрнутых квадратов, формула отдельно подтверждена всеми 256 байтами.
     from PreviewSquareTable import PATH as PREVIEW_SQUARE_PATH, START as PREVIEW_SQUARE_START, END as PREVIEW_SQUARE_END, render as render_preview_square
     text, labels = render_preview_square(data_by_slot[6])

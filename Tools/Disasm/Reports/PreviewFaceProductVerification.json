@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "cases": 921600,
+  "branches": {
+    "byte": 4088,
+    "mixed": 523334,
+    "long": 394178
+  },
+  "extreme_multiplier_cases": 65028,
+  "all_words_in_both_roles_at_seven_factors": true,
+  "independent_signed_32_bit_result_and_register_flags": true,
+  "original_extreme_multiplier_loss_preserved": true,
+  "exact_cpu_stack_writes": true,
+  "alternate_and_index_registers_checked": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

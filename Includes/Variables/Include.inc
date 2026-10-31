@@ -800,4 +800,16 @@ SinSecond       equ #D871                                                       
 CosSecond       equ #D87B                                                       ; операнд косинуса для третьей компоненты третьего параметра
                 endmodule
 
+                module PreviewEdgeRasterState
+MaskOffset      equ #DE34                                                       ; операнд младшего адреса таблицы масок, B0 либо B8
+LeftFlatOp      equ #DE66                                                       ; изменяемый opcode пиксельной операции ветви LeftFlat
+LeftFlatJump    equ #DE69                                                       ; изменяемый opcode границы байта ветви LeftFlat
+LeftSteepOp     equ #DEA5                                                       ; изменяемый opcode пиксельной операции ветви LeftSteep
+LeftSteepJump   equ #DEBF                                                       ; изменяемый opcode границы байта ветви LeftSteep
+RightFlatOp     equ #DEE2                                                       ; изменяемый opcode пиксельной операции ветви RightFlat
+RightFlatJump   equ #DEE5                                                       ; изменяемый opcode границы байта ветви RightFlat
+RightSteepOp    equ #DF21                                                       ; изменяемый opcode пиксельной операции ветви RightSteep
+RightSteepJump  equ #DF3B                                                       ; изменяемый opcode границы байта ветви RightSteep
+                endmodule
+
                 endif

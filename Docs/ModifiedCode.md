@@ -915,3 +915,11 @@
 | D3D | #D833 | #D871 | LD A,#00 | [ProjectPlanarModelGroups.asm](../Source/D3D/ProjectPlanarModelGroups.asm) |
 | D3D | #D842 | #D90D | LD SP,#C600 | [ProjectPlanarModelGroups.asm](../Source/D3D/ProjectPlanarModelGroups.asm) |
 | D3D | #D8A2 | #D90D | LD SP,#C600 | [ProjectPreviewModelGroups.asm](../Source/D3D/ProjectPreviewModelGroups.asm) |
+| D3D | #DE5C | #DE66 | NOP | [RasterizePreviewEdge.asm](../Source/D3D/RasterizePreviewEdge.asm) |
+| D3D | #DE62 | #DE69 | JR C,#DE74 | [RasterizePreviewEdge.asm](../Source/D3D/RasterizePreviewEdge.asm) |
+| D3D | #DE9B | #DEA5 | NOP | [RasterizePreviewEdge.asm](../Source/D3D/RasterizePreviewEdge.asm) |
+| D3D | #DEA1 | #DEBF | JR C,#DEC5 | [RasterizePreviewEdge.asm](../Source/D3D/RasterizePreviewEdge.asm) |
+| D3D | #DED8 | #DEE2 | NOP | [RasterizePreviewEdge.asm](../Source/D3D/RasterizePreviewEdge.asm) |
+| D3D | #DEDE | #DEE5 | JR C,#DEF0 | [RasterizePreviewEdge.asm](../Source/D3D/RasterizePreviewEdge.asm) |
+| D3D | #DF17 | #DF21 | NOP | [RasterizePreviewEdge.asm](../Source/D3D/RasterizePreviewEdge.asm) |
+| D3D | #DF1D | #DF3B | JR C,#DF41 | [RasterizePreviewEdge.asm](../Source/D3D/RasterizePreviewEdge.asm) |

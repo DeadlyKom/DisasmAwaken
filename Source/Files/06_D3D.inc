@@ -16,7 +16,20 @@
                 include "../D3D/Data/PreviewSceneMatrix.asm"
                 ent
                 assert $ == #021E
-                incbin "../Resources/06_D3D/AfterSceneMatrix.bin"
+                incbin "../Resources/06_D3D/BeforeEdgeEndpoints.bin"
+                assert $ == #024B
+                disp #C24B
+                include "../D3D/Data/PreviewEdgeEndpoints.asm"
+                ent
+                assert $ == #024F
+                incbin "../Resources/06_D3D/BetweenEdgeEndpointsMode.bin"
+                assert $ == #026F
+                disp #C26F
+                include "../D3D/Data/PreviewEdgeMode.asm"
+                ent
+                assert $ == #0271
+                incbin "../Resources/06_D3D/AfterEdgeMode.bin"
+                assert $ == #0300
                 assert $ == #0300
                 assert $ == #0300
                 disp #C300
@@ -34,7 +47,14 @@
                 include "../D3D/Data/PreviewQueue.asm"
                 ent
                 assert $ == #07FC
-                incbin "../Resources/06_D3D/AfterQueueStorage.bin"
+                incbin "../Resources/06_D3D/BeforePixelMasks.bin"
+                assert $ == #0DB0
+                disp #CDB0
+                include "../D3D/Data/PreviewPixelMasks.asm"
+                ent
+                assert $ == #0DC0
+                incbin "../Resources/06_D3D/AfterPixelMasks.bin"
+                assert $ == #0E40
                 assert $ == #0E40
                 assert $ == #0E40
                 disp #CE40
@@ -51,7 +71,12 @@
                 include "../D3D/Data/PreviewModelPointers.asm"
                 ent
                 assert $ == #102C
-                incbin "../Resources/06_D3D/AfterModelPointers.bin"
+                incbin "../Resources/06_D3D/BeforeSlopeDivision.bin"
+                assert $ == #14DF
+                disp #D4DF
+                include "../D3D/DividePreviewSlopeByte.asm"
+                ent
+                assert $ == #1518
                 assert $ == #1518
                 assert $ == #1518
                 disp #D518
@@ -107,13 +132,26 @@
                 include "../D3D/ConfigurePreviewProjectionScale.asm"
                 ent
                 assert $ == #1BE9
-                incbin "../Resources/06_D3D/BeforeVertexClass.bin"
+                incbin "../Resources/06_D3D/BeforeFaceCodes.bin"
+                assert $ == #1DFD
+                disp #DDFD
+                include "../D3D/CollectPreviewFaceCodes.asm"
+                ent
+                assert $ == #1E1C
+                disp #DE1C
+                include "../D3D/RasterizePreviewEdge.asm"
+                ent
+                assert $ == #1F46
+                assert $ == #1F46
                 assert $ == #1F46
                 disp #DF46
                 include "../D3D/ClassifyPreviewVertices.asm"
                 ent
                 assert $ == #1FA6
-                incbin "../Resources/06_D3D/AfterVertexClass.bin"
+                disp #DFA6
+                include "../D3D/ComputePreviewFaceOrientation.asm"
+                ent
+                assert $ == #2011
                 assert $ == #2011
                 assert $ == #2011
                 assert $ == #2011
@@ -148,7 +186,14 @@
                 include "../D3D/PrintPreviewTextRows.asm"
                 ent
                 assert $ == #2171
-                incbin "../Resources/06_D3D/BeforeCoordinateMultiply.bin"
+                incbin "../Resources/06_D3D/BeforeFaceProduct.bin"
+                assert $ == #2869
+                disp #E869
+                include "../D3D/MultiplyPreviewSignedWords.asm"
+                ent
+                assert $ == #2A01
+                incbin "../Resources/06_D3D/AfterFaceProduct.bin"
+                assert $ == #2B10
                 assert $ == #2B10
                 disp #EB10
                 include "../D3D/MultiplyPreviewCoordinate.asm"

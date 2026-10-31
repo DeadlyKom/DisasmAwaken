@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "cases": 10728,
+  "independent_geometric_edge_intersections": true,
+  "full_6144_byte_bitmap": true,
+  "consistent_fill_modes": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "modes_5_6_7_not_proved": true,
+  "top_included_bottom_excluded": true,
+  "left_included_right_excluded": true,
+  "signed_half_up_edge_rounding": true,
+  "real_sprite_line_table_setup": true,
+  "all_writes_accounted_for": true,
+  "ignored_rom_write_attempts_with_unchanged_values": 780,
+  "original_column_255_address_drift_preserved": true,
+  "caller_hl_preserved": true,
+  "convex_onscreen_profile": true,
+  "exact_full_register_contract_proved": true,
+  "degenerate_horizontal_contours_checked": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

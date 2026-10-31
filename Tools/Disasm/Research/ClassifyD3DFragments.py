@@ -91,7 +91,12 @@ def apply(facts,tag,original_path,ranges,verification,extra_texts=None):
  for i in added:
   match=re.fullmatch(r'LD \(#([0-9A-F]+)\),(A|HL|DE|BC|SP)',i['operation'])
   if not match:continue
-  target=int(match[1],16);size=1 if match[2]=='A' else 2;owner=owners[target];assert owner['address']<target and all(owners[target+j]['address']==owner['address'] for j in range(size))
+  target=int(match[1],16);size=1 if match[2]=='A' else 2;owner=owners[target]
+  opcode_targets=getattr(facts,'OPCODE_TARGETS',{})
+  if target in opcode_targets:
+   assert size==1 and owner['address']==target and memory[target]==opcode_targets[target]
+  else:assert owner['address']<target
+  assert all(owners[target+j]['address']==owner['address'] for j in range(size))
   assert not any(v['region']=='D3D' and v['writer']==i['address'] and v['target']==target for v in modified)
   path=next(f['path'] for f in functions if f['region']=='D3D' and f['address']<=i['address']<0xC000+f['end_offset'])
   modified.append(dict(region='D3D',writer=i['address'],target=target,target_instruction=owner['address'],size=size,target_operation=owner['operation'],path=path));writers+=1
@@ -123,6 +128,11 @@ def apply(facts,tag,original_path,ranges,verification,extra_texts=None):
  for rel,before,data in plan:target=ROOT/rel;target.parent.mkdir(parents=True,exist_ok=True);target.write_bytes(data)
  with contextlib.redirect_stdout(io.StringIO()):verify()
  for original in originals:
+  # Сохранение исходного имени допустимо для нового остатка, такой активный ресурс удалять нельзя.
+  if original in pending or original in binaries:
+   value=(pending if original in pending else binaries)[original]
+   assert original.read_bytes()==(value if isinstance(value,bytes) else value.encode('utf-8'))
+   continue
   assert original.resolve().is_relative_to(ROOT/'Source/Resources/06_D3D') and original.read_bytes()==(history/original.relative_to(ROOT)).read_bytes();original.unlink()
  report=dict(passed=True,functions=len(facts.FUNCTIONS),instructions=len(added),code_bytes=sum(facts.ENDS[p]-p for p in facts.FUNCTIONS),registered_operand_writers=writers,scoped_candidate_and_history=True,physical_bytes_preserved=True,assembly_executed=False)
  (ROOT/('Tools/Disasm/Reports/'+tag+'Classification.json')).write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n','utf-8');print(json.dumps(report,ensure_ascii=False,indent=2))

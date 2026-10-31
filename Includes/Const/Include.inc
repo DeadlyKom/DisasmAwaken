@@ -622,4 +622,15 @@ XAboveBit       equ #02                                                         
 CodeInvert      equ #F0                                                         ; маска инверсии старшей тетрады кода сторон
                 endmodule
 
+                module PreviewFaceMathConst
+SignBit         equ #07                                                         ; номер знакового разряда старшего байта слова
+VertexPage      equ #C6                                                         ; страница существующих записей проекции
+SparseAt        equ #05                                                         ; порог A для выбора индексов 0,2,4 вместо 0,1,2
+                endmodule
+
+                module PreviewEdgeRasterConst
+MaskPage        equ #CD                                                         ; старший байт исходных таблиц PreviewPixelMasks
+RowHighPage     equ #C9                                                         ; старший байт страницы PreviewLineTable.RowHigh
+                endmodule
+
                 endif

@@ -159,6 +159,10 @@ def name_operands(region, function_address, operation):
     operation = preview_projection_scale_name_operands(region, function_address, operation)
     operation = preview_perspective_name_operands(region, function_address, operation)
     operation = preview_vertex_group_name_operands(region, function_address, operation)
+    operation = previewslopedivision_name_operands(region, function_address, operation)
+    operation = previewedgeraster_name_operands(region, function_address, operation)
+    operation = previewfacecodes_name_operands(region, function_address, operation)
+    operation = previewfacemath_name_operands(region, function_address, operation)
     operation = previewvertexclass_name_operands(region, function_address, operation)
     operation = previewmodelwalk_name_operands(region, function_address, operation)
     operation = previewvertexproducts_name_operands(region, function_address, operation)
@@ -1052,3 +1056,19 @@ DOCUMENTS.update(PREVIEW_MODEL_WALK_DOCUMENTS)
 from PreviewVertexClassFacts import LABELS as PREVIEW_VERTEX_CLASS_LABELS, DOCUMENTS as PREVIEW_VERTEX_CLASS_DOCUMENTS, name_operands as previewvertexclass_name_operands
 LABELS.update(PREVIEW_VERTEX_CLASS_LABELS)
 DOCUMENTS.update(PREVIEW_VERTEX_CLASS_DOCUMENTS)
+
+from PreviewFaceMathFacts import LABELS as PREVIEW_FACE_MATH_LABELS, DOCUMENTS as PREVIEW_FACE_MATH_DOCUMENTS, name_operands as previewfacemath_name_operands
+LABELS.update(PREVIEW_FACE_MATH_LABELS)
+DOCUMENTS.update(PREVIEW_FACE_MATH_DOCUMENTS)
+
+from PreviewFaceCodesFacts import LABELS as PREVIEW_FACE_CODES_LABELS, DOCUMENTS as PREVIEW_FACE_CODES_DOCUMENTS, name_operands as previewfacecodes_name_operands
+LABELS.update(PREVIEW_FACE_CODES_LABELS)
+DOCUMENTS.update(PREVIEW_FACE_CODES_DOCUMENTS)
+
+from PreviewEdgeRasterFacts import LABELS as PREVIEW_EDGE_RASTER_LABELS, DOCUMENTS as PREVIEW_EDGE_RASTER_DOCUMENTS, name_operands as previewedgeraster_name_operands
+LABELS.update(PREVIEW_EDGE_RASTER_LABELS)
+DOCUMENTS.update(PREVIEW_EDGE_RASTER_DOCUMENTS)
+
+from PreviewSlopeDivisionFacts import LABELS as PREVIEW_SLOPE_DIVISION_LABELS, DOCUMENTS as PREVIEW_SLOPE_DIVISION_DOCUMENTS, name_operands as previewslopedivision_name_operands
+LABELS.update(PREVIEW_SLOPE_DIVISION_LABELS)
+DOCUMENTS.update(PREVIEW_SLOPE_DIVISION_DOCUMENTS)

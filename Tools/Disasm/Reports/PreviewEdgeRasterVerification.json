@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "cases": 30464,
+  "branches": {
+    "degenerate": 6,
+    "right_shallow": 8488,
+    "left_shallow": 8563,
+    "left_steep": 6881,
+    "right_steep": 6526
+  },
+  "independent_pixel_set_and_full_6144_byte_bitmap": true,
+  "real_sprite_line_table_setup": true,
+  "original_three_operator_and_branch_pairs": true,
+  "endpoint_excluded": true,
+  "all_64_by_64_slopes_both_directions": true,
+  "all_screen_start_rows": true,
+  "final_pointer_mask_major_minor_and_preserved_registers_checked": true,
+  "exact_two_self_modified_bytes_checked": true,
+  "screen_write_bounds_checked": true,
+  "exact_main_and_alternate_af_checked": true,
+  "shifted_and_unaligned_origins_checked": true,
+  "onscreen_table_profile": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

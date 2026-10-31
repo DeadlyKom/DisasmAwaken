@@ -658,7 +658,7 @@
   "expanded_code_bytes": 6396,
   "expanded_overlaps": [],
   "observed_original_decode_mismatches": [],
-  "registered_source_instructions": 1703,
+  "registered_source_instructions": 2301,
   "registered_source_missing_from_expanded": [],
   "changed_original_instructions": [
     {

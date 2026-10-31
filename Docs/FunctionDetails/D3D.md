@@ -49,3 +49,13 @@
 [ProjectPreviewModelGroups](../../Source/D3D/ProjectPreviewModelGroups.asm) — см. [PreviewModelGroups](../PreviewModelGroups.md).
 
 [ClassifyPreviewVertices](../../Source/D3D/ClassifyPreviewVertices.asm) — см. [PreviewVertexClass](../PreviewVertexClass.md).
+
+[MultiplyPreviewSignedWords](../../Source/D3D/MultiplyPreviewSignedWords.asm) — см. [PreviewFaceMath](../PreviewFaceMath.md).
+
+[ComputePreviewFaceOrientation](../../Source/D3D/ComputePreviewFaceOrientation.asm) — см. [PreviewFaceMath](../PreviewFaceMath.md).
+
+[CollectPreviewFaceCodes](../../Source/D3D/CollectPreviewFaceCodes.asm) — см. [PreviewFaceCodes](../PreviewFaceCodes.md).
+
+[RasterizePreviewEdge](../../Source/D3D/RasterizePreviewEdge.asm) — см. [PreviewEdgeRaster](../PreviewEdgeRaster.md).
+
+[DividePreviewSlopeByte](../../Source/D3D/DividePreviewSlopeByte.asm) — см. [PreviewSlopeDivision](../PreviewSlopeDivision.md).
