@@ -197,6 +197,61 @@
   "source_map_modified": false,
   "source_export_executed": false,
   "contracts_proved": false,
+  "fixed_helper_6364_bank4_disk_targets": [
+    {
+      "address": 62338,
+      "disk_byte_bank4": 36
+    },
+    {
+      "address": 62516,
+      "disk_byte_bank4": 36
+    },
+    {
+      "address": 62660,
+      "disk_byte_bank4": 36
+    },
+    {
+      "address": 61680,
+      "disk_byte_bank4": 36
+    },
+    {
+      "address": 61764,
+      "disk_byte_bank4": 36
+    },
+    {
+      "address": 62054,
+      "disk_byte_bank4": 36
+    },
+    {
+      "address": 62234,
+      "disk_byte_bank4": 20
+    },
+    {
+      "address": 62788,
+      "disk_byte_bank4": 19
+    },
+    {
+      "address": 62792,
+      "disk_byte_bank4": 19
+    },
+    {
+      "address": 62135,
+      "disk_byte_bank4": 35
+    },
+    {
+      "address": 62139,
+      "disk_byte_bank4": 35
+    },
+    {
+      "address": 61886,
+      "disk_byte_bank4": 35
+    },
+    {
+      "address": 61915,
+      "disk_byte_bank4": 35
+    }
+  ],
+  "helper_6364_observed_positive_face_header_roles_proved": true,
   "irq_executed": false,
   "native_execution": false,
   "assembly_executed": false

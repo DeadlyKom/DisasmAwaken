@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "cases": 4096,
+  "all_selectors": true,
+  "all_input_flag_bytes_covered": true,
+  "real_clip_and_table_callees": true,
+  "independent_full_memory_and_register_oracle": true,
+  "exact_four_stack_scratch_bytes": true,
+  "byte_index_overflow_preserved": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

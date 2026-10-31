@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "cases": 65536,
+  "all_byte_origins": true,
+  "independent_extended_ula_formula": true,
+  "full_memory_compared": true,
+  "all_768_table_bytes_compared": true,
+  "offscreen_addresses_preserved": true,
+  "full_main_and_alternate_flags_checked": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

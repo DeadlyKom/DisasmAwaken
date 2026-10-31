@@ -522,4 +522,22 @@ SaleBanBit      equ #07                                                         
 SaleBanMask     equ #80                                                         ; флаг, продажа товара вызывает штраф и списание количества груза
                 endmodule
 
+                module D3DPreviewConst
+ThirdMinHigh    equ #02                                                         ; минимальный старший байт принятой суммы, 512
+ThirdEndHigh    equ #10                                                         ; исключённый верхний старший байт, 4096
+SpecialBase     equ #1C                                                         ; добавка смещения модели только при исходном селекторе 1
+                endmodule
+
+                module SpriteLineConst
+XInset          equ #08                                                         ; внутренний отступ начала X в пикселях
+YInset          equ #10                                                         ; внутренний отступ начала Y в пикселях
+RowLowMask      equ #E0                                                         ; строковые разряды младшего адреса без байтовой колонки
+                endmodule
+
+                module PreviewFaceConst
+FillToggleMask  equ #60                                                         ; инвертируемые разряды 6 и 5 индекса заполнения выбранных граней
+VertexCountMask equ #0F                                                         ; младшая тетрада положительного заголовка, число вершин
+FillIndexMask   equ #70                                                         ; разряды 6..4 положительного заголовка, индекс пары D100
+                endmodule
+
                 endif

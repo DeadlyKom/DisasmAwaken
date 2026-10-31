@@ -42,7 +42,7 @@ Point6891:      LD (#9A89), HL
                 SUB #0E
                 LD H, A
                 LD A, (@ShipPanelState.Selector)
-                CALL #E13C
+                CALL @D3D.SetupPreviewModel.Entry
                 LD HL, (#9A89)
                 LD DE, #9A58
                 OR A

@@ -1,0 +1,164 @@
+{
+  "passed": true,
+  "cases": 131072,
+  "original_patch_instruction_forms": {
+    "HalfXLow": {
+      "address": 56039,
+      "instruction": "LD BC,nn",
+      "bytes_written": 1
+    },
+    "HalfYLow": {
+      "address": 56229,
+      "instruction": "LD DE,nn",
+      "bytes_written": 1
+    },
+    "MaxCorner": {
+      "address": 59355,
+      "instruction": "LD DE,nn",
+      "bytes_written": 2
+    },
+    "MinCorner": {
+      "address": 59322,
+      "instruction": "LD DE,nn",
+      "bytes_written": 2
+    },
+    "MaxXMinY": {
+      "address": 59344,
+      "instruction": "LD DE,nn",
+      "bytes_written": 2
+    },
+    "MinXMaxY": {
+      "address": 59333,
+      "instruction": "LD DE,nn",
+      "bytes_written": 2
+    },
+    "AfterMaxX": {
+      "address": 57215,
+      "instruction": "CP n",
+      "bytes_written": 1
+    },
+    "AfterMaxY": {
+      "address": 57188,
+      "instruction": "CP n",
+      "bytes_written": 1
+    },
+    "MaxX0": {
+      "address": 58899,
+      "instruction": "LD BC,nn",
+      "bytes_written": 1
+    },
+    "MaxX1": {
+      "address": 59104,
+      "instruction": "LD (HL),n",
+      "bytes_written": 1
+    },
+    "MaxX2": {
+      "address": 59123,
+      "instruction": "LD (HL),n",
+      "bytes_written": 1
+    },
+    "MaxX3": {
+      "address": 59182,
+      "instruction": "LD (HL),n",
+      "bytes_written": 1
+    },
+    "MaxX4": {
+      "address": 59275,
+      "instruction": "LD (HL),n",
+      "bytes_written": 1
+    },
+    "MinX0": {
+      "address": 58868,
+      "instruction": "LD BC,nn",
+      "bytes_written": 1
+    },
+    "MinX1": {
+      "address": 59029,
+      "instruction": "LD (HL),n",
+      "bytes_written": 1
+    },
+    "MinX2": {
+      "address": 59048,
+      "instruction": "LD (HL),n",
+      "bytes_written": 1
+    },
+    "MinX3": {
+      "address": 59199,
+      "instruction": "LD (HL),n",
+      "bytes_written": 1
+    },
+    "MinX4": {
+      "address": 59292,
+      "instruction": "LD (HL),n",
+      "bytes_written": 1
+    },
+    "MaxY0": {
+      "address": 58950,
+      "instruction": "LD BC,nn",
+      "bytes_written": 1
+    },
+    "MaxY1": {
+      "address": 59037,
+      "instruction": "LD L,n",
+      "bytes_written": 1
+    },
+    "MaxY2": {
+      "address": 59112,
+      "instruction": "LD L,n",
+      "bytes_written": 1
+    },
+    "MaxY3": {
+      "address": 59272,
+      "instruction": "LD (HL),n",
+      "bytes_written": 1
+    },
+    "MaxY4": {
+      "address": 59289,
+      "instruction": "LD (HL),n",
+      "bytes_written": 1
+    },
+    "MaxY5": {
+      "address": 59307,
+      "instruction": "LD (HL),n",
+      "bytes_written": 1
+    },
+    "MinY0": {
+      "address": 58919,
+      "instruction": "LD BC,nn",
+      "bytes_written": 1
+    },
+    "MinY1": {
+      "address": 59026,
+      "instruction": "LD (HL),n",
+      "bytes_written": 1
+    },
+    "MinY2": {
+      "address": 59101,
+      "instruction": "LD (HL),n",
+      "bytes_written": 1
+    },
+    "MinY3": {
+      "address": 59179,
+      "instruction": "LD (HL),n",
+      "bytes_written": 1
+    },
+    "MinY4": {
+      "address": 59196,
+      "instruction": "LD (HL),n",
+      "bytes_written": 1
+    },
+    "MinY5": {
+      "address": 59214,
+      "instruction": "LD (HL),n",
+      "bytes_written": 1
+    }
+  },
+  "all_byte_width_height_pairs": true,
+  "nonzero_and_inverted_lower_bounds": true,
+  "full_bank_compared": true,
+  "byte_overflow_preserved": true,
+  "full_register_and_flags_checked": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

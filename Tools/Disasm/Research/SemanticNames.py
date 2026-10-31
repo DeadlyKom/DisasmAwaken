@@ -134,6 +134,11 @@ def name_operands(region, function_address, operation):
     operation = trade_panel_name_operands(region, function_address, operation)
     operation = control_panel_group_name_operands(region, function_address, operation)
     operation = ship_periodic_code_name_operands(region, function_address, operation)
+    operation = d3d_clip_name_operands(region, function_address, operation)
+    operation = d3d_third_name_operands(region, function_address, operation)
+    operation = sprite_line_table_name_operands(region, function_address, operation)
+    operation = d3d_setup_name_operands(region, function_address, operation)
+    operation = preview_face_fill_name_operands(region, function_address, operation)
     operation = map_point_chain_name_operands(region, function_address, operation)
     operation = map_line_name_operands(region, function_address, operation)
     operation = arc_closing_name_operands(region, function_address, operation)
@@ -914,3 +919,23 @@ DOCUMENTS.update(CONTROL_PANEL_GROUP_DOCUMENTS)
 
 from ShipPeriodicCodeFacts import DOCUMENTS as SHIP_PERIODIC_CODE_DOCUMENTS, name_operands as ship_periodic_code_name_operands
 DOCUMENTS.update(SHIP_PERIODIC_CODE_DOCUMENTS)
+
+from D3DClipFacts import LABELS as D3D_CLIP_LABELS, DOCUMENTS as D3D_CLIP_DOCUMENTS, name_operands as d3d_clip_name_operands
+LABELS.update(D3D_CLIP_LABELS)
+DOCUMENTS.update(D3D_CLIP_DOCUMENTS)
+
+from D3DThirdFacts import LABELS as D3D_THIRD_LABELS, DOCUMENTS as D3D_THIRD_DOCUMENTS, name_operands as d3d_third_name_operands
+LABELS.update(D3D_THIRD_LABELS)
+DOCUMENTS.update(D3D_THIRD_DOCUMENTS)
+
+from SpriteLineTableFacts import LABELS as SPRITE_LINE_TABLE_LABELS, DOCUMENTS as SPRITE_LINE_TABLE_DOCUMENTS, name_operands as sprite_line_table_name_operands
+LABELS.update(SPRITE_LINE_TABLE_LABELS)
+DOCUMENTS.update(SPRITE_LINE_TABLE_DOCUMENTS)
+
+from D3DSetupFacts import LABELS as D3D_SETUP_LABELS, DOCUMENTS as D3D_SETUP_DOCUMENTS, name_operands as d3d_setup_name_operands
+LABELS.update(D3D_SETUP_LABELS)
+DOCUMENTS.update(D3D_SETUP_DOCUMENTS)
+
+from PreviewFaceFillFacts import LABELS as PREVIEW_FACE_FILL_LABELS, DOCUMENTS as PREVIEW_FACE_FILL_DOCUMENTS, name_operands as preview_face_fill_name_operands
+LABELS.update(PREVIEW_FACE_FILL_LABELS)
+DOCUMENTS.update(PREVIEW_FACE_FILL_DOCUMENTS)

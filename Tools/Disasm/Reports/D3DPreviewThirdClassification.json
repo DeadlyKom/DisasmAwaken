@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "instructions": 9,
+  "code_bytes": 16,
+  "bank": 4,
+  "scoped_candidate_and_history": true,
+  "physical_bytes_preserved": true,
+  "assembly_executed": false
+}

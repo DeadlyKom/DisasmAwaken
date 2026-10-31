@@ -23,6 +23,7 @@ from BasicNotes import COMMENTS as BASIC_COMMENTS
 from IntroNotes import COMMENTS as INTRO_COMMENTS, NOTES as INTRO_NOTES
 from StationNotes import COMMENTS as STATION_COMMENTS
 from FinalExitFacts import COMMENTS as FINAL_EXIT_COMMENTS
+from D3DClipFacts import COMMENTS as D3D_COMMENTS
 from ValidateNotes import validate_notes
 
 ROOT = Path(__file__).resolve().parents[3]
@@ -51,7 +52,7 @@ def promote(region, address, refresh=False):
                if function["offset"] <= i["offset"] < function["end_offset"] and i["slot"] == function["slot"]]
     comments = {"Music": MUSIC_COMMENTS, "Text": TEXT_COMMENTS, "Map": MAP_COMMENTS,
                 "Basic": BASIC_COMMENTS, "Intro": INTRO_COMMENTS, "Station": STATION_COMMENTS,
-                "StationFinalExit": FINAL_EXIT_COMMENTS}.get(region, {})
+                "StationFinalExit": FINAL_EXIT_COMMENTS, "D3D": D3D_COMMENTS}.get(region, {})
     validate_notes(flow, {region: comments})
     if len(instructions(current)) != len(decoded):
         raise ValueError("Фрагмент содержит неизвестные ручные изменения инструкций")

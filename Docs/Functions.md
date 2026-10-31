@@ -16,6 +16,7 @@
 | StationFinalExit | 1 | 1 | [Факты](FunctionDetails/StationFinalExit.md) |
 | Station | 422 | 361 | [Факты](FunctionDetails/Station.md) |
 | Text | 126 | 126 | [Факты](FunctionDetails/Text.md) |
+| D3D | 3 | 3 | [Факты](FunctionDetails/D3D.md) |
 | Map | 89 | 89 | [Факты](FunctionDetails/Map.md) |
 | Help | 4 | 4 | [Факты](FunctionDetails/Help.md) |
 | Music | 27 | 13 | [Факты](FunctionDetails/Music.md) |
@@ -84,8 +85,8 @@
 | #6300 | [StationBoot.RelocateBootstrap](../Source/StationBoot/RelocateBootstrap.asm) | Очистка атрибутов и перенос #02B5 байт загрузчика в #4000 |
 | #4000 | [StationBoot.InitializeStation](../Source/StationBoot/InitializeStation.asm) | Перенос ядра из #65CE в #6322, загрузка банков и создание таблиц |
 | #4070 | [StationBoot.StartStation](../Source/StationBoot/StartStation.asm) | Загрузка банков карты, музыки, справки, 3D и языка, выбор фона, настройка устройств и запуск цикла станции |
-| #6322 | [Station.BuildSpriteLineTable](../Source/Station/BuildSpriteLineTable.asm) | Построение адресов строк спрайта с обработкой смещения внутри знакоместа |
-| #6364 | [Station.ToggleScreenOperands](../Source/Station/ToggleScreenOperands.asm) | Переключение экранной области изменением старших байтов операндов рисования |
+| #6322 | [Station.BuildSpriteLineTable](../Source/Station/BuildSpriteLineTable.asm) | Построение 256 адресов строк и 256 байтовых колонок просмотра без экранного отсечения |
+| #6364 | [Station.TogglePreviewFaceFill](../Source/Station/TogglePreviewFaceFill.asm) | Переключение шаблона заполнения семи четырёхугольных и шести треугольных граней по двум опорным заголовкам |
 | #6396 | [Station.SelectRamBank](../Source/Station/SelectRamBank.asm) | Объединение старших пяти битов теневого #7FFD со всем входным A и запись результата в порт |
 | #639F | [Station.SelectMemoryPage](../Source/Station/SelectMemoryPage.asm) | Сохранение теневого #7FFD и переключение страницы с сохранением BC |
 | #63AA | [Station.StopMusic](../Source/Station/StopMusic.asm) | Остановка музыкального модуля в странице 3 и восстановление IM 1 |
@@ -1225,3 +1226,9 @@
 | #68CC | [Station.Unknown68CC](../Source/Station/Unknown68CC.asm) | Unknown, полный контракт ещё не доказан |
 | #68EA | [Station.Unknown68EA](../Source/Station/Unknown68EA.asm) | Unknown, полный контракт ещё не доказан |
 | #693E | [Station.Unknown693E](../Source/Station/Unknown693E.asm) | Unknown, полный контракт ещё не доказан |
+
+| #E011, банк 4 | [D3D.ConfigurePreviewClip](../Source/D3D/ConfigurePreviewClip.asm) | Настройка четырёх углов и повторённых операндов границ корабельного просмотра |
+
+| #E0B5, банк 4 | [D3D.AdjustPreviewThird](../Source/D3D/AdjustPreviewThird.asm) | Изменение третьей координаты записи просмотра с принятием обёрнутой суммы только в 512..4095 |
+
+| #E13C, банк 4 | [D3D.SetupPreviewModel](../Source/D3D/SetupPreviewModel.asm) | Настройка границ и трёх таблиц просмотра с выбором байтового смещения модели |

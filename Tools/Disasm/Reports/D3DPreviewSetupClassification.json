@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "instructions": 14,
+  "code_bytes": 24,
+  "bank": 4,
+  "scoped_candidate_and_history": true,
+  "physical_bytes_preserved": true,
+  "assembly_executed": false,
+  "review_corrections": {
+    "disp": 57660,
+    "physical_header_first": 8508,
+    "physical_header_last": 8531,
+    "candidate_corrected": true,
+    "placement_report": "Tools/Disasm/Reports/FilePlacementVerification.json"
+  }
+}

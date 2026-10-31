@@ -134,11 +134,11 @@
   "StationBoot.StartStation.Point4260": 16992,
   "StationBoot.StartStation.Point4278": 17016,
   "Station.BuildSpriteLineTable.Entry": 25378,
-  "Station.BuildSpriteLineTable.Point633D": 25405,
-  "Station.BuildSpriteLineTable.Point6352": 25426,
-  "Station.BuildSpriteLineTable.Point6358": 25432,
-  "Station.BuildSpriteLineTable.Point635A": 25434,
-  "Station.ToggleScreenOperands.Entry": 25444,
+  "Station.BuildSpriteLineTable.StoreRow": 25405,
+  "Station.BuildSpriteLineTable.NextRow": 25426,
+  "Station.BuildSpriteLineTable.ColumnGroup": 25432,
+  "Station.BuildSpriteLineTable.StoreColumn": 25434,
+  "Station.TogglePreviewFaceFill.Entry": 25444,
   "Station.SelectRamBank.Entry": 25494,
   "Station.SelectMemoryPage.Entry": 25503,
   "Station.StopMusic.Entry": 25514,
@@ -7075,5 +7075,9 @@
   "Station.Unknown6870.Entry": 26736,
   "Station.Unknown68CC.Entry": 26828,
   "Station.Unknown68EA.Entry": 26858,
-  "Station.Unknown693E.Entry": 26942
+  "Station.Unknown693E.Entry": 26942,
+  "D3D.ConfigurePreviewClip.Entry": 57361,
+  "D3D.AdjustPreviewThird.Entry": 57525,
+  "D3D.SetupPreviewModel.Entry": 57660,
+  "D3D.SetupPreviewModel.StoreOffset": 57680
 }

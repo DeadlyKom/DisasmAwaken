@@ -27,7 +27,7 @@ Entry:          CALL @Station.RepaintAndTrack.Entry
 Point684D:      LD A, #14
                 CALL @Station.SelectRamBank.Entry
                 LD HL, #0020
-                CALL #E0B5
+                CALL @D3D.AdjustPreviewThird.Entry
                 LD A, #10
                 CALL @Station.SelectRamBank.Entry
                 RET
@@ -35,7 +35,7 @@ Point684D:      LD A, #14
 Point685E:      LD A, #14
                 CALL @Station.SelectRamBank.Entry
                 LD HL, #FFE0
-                CALL #E0B5
+                CALL @D3D.AdjustPreviewThird.Entry
                 LD A, #10
                 CALL @Station.SelectRamBank.Entry
                 RET

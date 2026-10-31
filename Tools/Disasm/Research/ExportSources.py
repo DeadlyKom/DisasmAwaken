@@ -57,6 +57,7 @@ from PlayerRankTable import render as render_player_ranks, PATH as PLAYER_RANKS
 from ActionFileKeyTable import render as render_action_key, PATH as ACTION_FILE_KEY
 from StationExitFacts import COMMENTS as STATION_EXIT_COMMENTS
 from FinalExitFacts import COMMENTS as FINAL_EXIT_COMMENTS
+from D3DClipFacts import COMMENTS as D3D_COMMENTS
 from FinalFileKeyTable import render as render_final_key, PATH as FINAL_FILE_KEY
 from ExpressionStackTable import render as render_expression_stack, PATH as EXPRESSION_STACK
 from AssignmentScratchTable import render as render_assignment_scratch, PATH as ASSIGNMENT_SCRATCH
@@ -66,7 +67,7 @@ from StationIrqTables import render as render_station_irq_data, COUNTER as IRQ_C
 from PointerInputTables import render as render_pointer_input, FLAGS as INPUT_FLAGS, DIRECTIONS as INPUT_DIRECTIONS, KEYS as INPUT_KEYS
 
 REGION_NOTES = {"Intro": INTRO_NOTES, "Music": MUSIC_NOTES, "Voxel": EFFECTS_NOTES, "Final": FINAL_NOTES, "Text": TEXT_NOTES, "Map": MAP_NOTES, "Station": STATION_NOTES, "Basic": BASIC_NOTES}
-REGION_COMMENTS = {"Intro": INTRO_COMMENTS, "Music": MUSIC_COMMENTS, "Voxel": EFFECTS_COMMENTS, "Final": FINAL_COMMENTS, "Text": TEXT_COMMENTS, "Map": MAP_COMMENTS, "Station": STATION_COMMENTS, "Basic": BASIC_COMMENTS, "StationExit": STATION_EXIT_COMMENTS, "StationFinalExit": FINAL_EXIT_COMMENTS}
+REGION_COMMENTS = {"Intro": INTRO_COMMENTS, "Music": MUSIC_COMMENTS, "Voxel": EFFECTS_COMMENTS, "Final": FINAL_COMMENTS, "Text": TEXT_COMMENTS, "Map": MAP_COMMENTS, "Station": STATION_COMMENTS, "Basic": BASIC_COMMENTS, "StationExit": STATION_EXIT_COMMENTS, "StationFinalExit": FINAL_EXIT_COMMENTS, "D3D": D3D_COMMENTS}
 
 
 def write(path, text):

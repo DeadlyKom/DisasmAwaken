@@ -566,21 +566,21 @@
     "address": 25378,
     "slot": 4,
     "offset": 1486,
-    "description": "Построение адресов строк спрайта с обработкой смещения внутри знакоместа",
+    "description": "Построение 256 адресов строк и 256 байтовых колонок просмотра без экранного отсечения",
     "semantic_status": "described",
     "end_offset": 1552,
     "path": "Source/Station/BuildSpriteLineTable.asm"
   },
   {
     "region": "Station",
-    "name": "ToggleScreenOperands",
+    "name": "TogglePreviewFaceFill",
     "address": 25444,
     "slot": 4,
     "offset": 1552,
-    "description": "Переключение экранной области изменением старших байтов операндов рисования",
+    "description": "Переключение шаблона заполнения семи четырёхугольных и шести треугольных граней по двум опорным заголовкам",
     "semantic_status": "described",
     "end_offset": 1602,
-    "path": "Source/Station/ToggleScreenOperands.asm"
+    "path": "Source/Station/TogglePreviewFaceFill.asm"
   },
   {
     "region": "Station",
@@ -12021,5 +12021,38 @@
     "semantic_status": "described",
     "end_offset": 677,
     "path": "Source/Final/NextBitmapLine.asm"
+  },
+  {
+    "region": "D3D",
+    "name": "ConfigurePreviewClip",
+    "address": 57361,
+    "slot": 6,
+    "offset": 8209,
+    "end_offset": 8319,
+    "path": "Source/D3D/ConfigurePreviewClip.asm",
+    "description": "Настройка четырёх углов и повторённых операндов границ корабельного просмотра",
+    "semantic_status": "described"
+  },
+  {
+    "region": "D3D",
+    "name": "AdjustPreviewThird",
+    "address": 57525,
+    "slot": 6,
+    "offset": 8373,
+    "end_offset": 8389,
+    "path": "Source/D3D/AdjustPreviewThird.asm",
+    "description": "Изменение третьей координаты записи просмотра с принятием обёрнутой суммы только в 512..4095",
+    "semantic_status": "described"
+  },
+  {
+    "region": "D3D",
+    "name": "SetupPreviewModel",
+    "address": 57660,
+    "slot": 6,
+    "offset": 8508,
+    "end_offset": 8532,
+    "path": "Source/D3D/SetupPreviewModel.asm",
+    "description": "Настройка границ и трёх таблиц просмотра с выбором байтового смещения модели",
+    "semantic_status": "described"
   }
 ]

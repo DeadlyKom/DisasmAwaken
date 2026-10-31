@@ -37,6 +37,8 @@ BLOCKS = [
     block(4, 0x2238, 0xA000-0x2238, 0x8238, "Station", (0x9A59, 0x9AEA, 0x639F, 0x9EFF, 0xA163)),
     block(4, 0x216C, 0x48, 0x4200, "StationExit", (0x4200,)),
     block(4, 0x10BD, 0x5C, 0x4000, "StationFinalExit", (0x4000,)),
+    # Исходная загрузка D3D в банк 4, пока выделен только доказанный вход настройки границ.
+    block(6, 0, 15978, 0xC000, "D3D", (0xE011,)),
     block(5, 0, 3864, 0xC000, "Text", (0xC000,)),
     block(7, 0, 11776, 0xC000, "Map", (0xC000, 0xC44A, 0xC474, 0xC677, 0xD0C3)),
     block(8, 0, 5921, 0xDB00, "Help", (0xDB00, 0xDB42, 0xDB57, 0xDB5B)),
@@ -60,7 +62,7 @@ def payload(slot):
     return (ROOT / (entry(slot)["path"] + ".sectors.bin")).read_bytes()
 
 
-def analyze(name, extra_roots=(), observed=(), initial_bank=0):
+def analyze(name, extra_roots=(), observed=(), initial_bank=None):
     chunks = [b for b in BLOCKS if b["name"] == name]
     memory = bytearray(65536)
     origins = {}
@@ -163,6 +165,8 @@ def analyze(name, extra_roots=(), observed=(), initial_bank=0):
         raw = bytes.fromhex(encoded)
         if any(address + i not in origins for i in range(len(raw))) or memory[address:address + len(raw)] != raw:
             raise ValueError("Не совпали исходные байты подтверждённого продолжения")
+    if initial_bank is None:
+        initial_bank = 4 if name == "D3D" else 0
     pending = [(address, initial_bank, None) for address in sorted(roots | set(observed) | linear | set(continuations), reverse=True)]
     while pending:
         address, bank, accumulator = pending.pop()

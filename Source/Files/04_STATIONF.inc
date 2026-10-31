@@ -27,7 +27,7 @@
                 ent
                 assert $ == #0610
                 disp #6364
-                include "../Station/ToggleScreenOperands.asm"
+                include "../Station/TogglePreviewFaceFill.asm"
                 ent
                 assert $ == #0642
                 disp #6396

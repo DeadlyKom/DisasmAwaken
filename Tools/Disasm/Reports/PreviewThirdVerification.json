@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "cases": 327680,
+  "accepted": 17920,
+  "wrapped_additions": 70143,
+  "all_words_for_both_original_steps": true,
+  "all_step_words_for_three_initial_values": true,
+  "full_bank_compared": true,
+  "full_flags_checked": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

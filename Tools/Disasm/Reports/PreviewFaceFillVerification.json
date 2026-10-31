@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "cases": 65536,
+  "all_seed_byte_pairs": true,
+  "distinct_headers_check_broadcast_not_individual_xor": true,
+  "full_memory_compared": true,
+  "registers_flags_and_iff_checked": true,
+  "quad_headers": [
+    62338,
+    62516,
+    62660,
+    61680,
+    61764,
+    62054,
+    62234
+  ],
+  "triangle_headers": [
+    62788,
+    62792,
+    62135,
+    62139,
+    61886,
+    61915
+  ],
+  "original_pattern_pairs": "ff0077aa55ff11550000000000000000",
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

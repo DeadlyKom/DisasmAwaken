@@ -8,7 +8,7 @@
 
 [Station.BuildSpriteLineTable](../../Source/Station/BuildSpriteLineTable.asm)
 
-Построение адресов строк спрайта с обработкой смещения внутри знакоместа.
+Построение 256 адресов строк и 256 байтовых колонок просмотра без экранного отсечения.
 
 Вход `#6322`, запись 4, смещения `#05CE..#060F`.
 
@@ -18,11 +18,11 @@
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## ToggleScreenOperands
+## TogglePreviewFaceFill
 
-[Station.ToggleScreenOperands](../../Source/Station/ToggleScreenOperands.asm)
+[Station.TogglePreviewFaceFill](../../Source/Station/TogglePreviewFaceFill.asm)
 
-Переключение экранной области изменением старших байтов операндов рисования.
+Переключение шаблона заполнения семи четырёхугольных и шести треугольных граней по двум опорным заголовкам.
 
 Вход `#6364`, запись 4, смещения `#0610..#0641`.
 

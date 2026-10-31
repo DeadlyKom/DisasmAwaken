@@ -598,7 +598,7 @@
     "offset": 1552,
     "length": 50,
     "kind": "code",
-    "path": "Source/Station/ToggleScreenOperands.asm",
+    "path": "Source/Station/TogglePreviewFaceFill.asm",
     "origin": 25444,
     "sha256": "188bb683a109f39e752f5d1d8f50c6e0f9e6104dd90cef08c33fab1b73418f7a"
   },
@@ -5737,11 +5737,65 @@
   {
     "slot": 6,
     "offset": 0,
-    "length": 16128,
+    "length": 8209,
     "kind": "unclassified",
-    "path": "Source/Resources/06_D3D/Unclassified000.bin",
+    "path": "Source/Resources/06_D3D/BeforePreviewClip.bin",
     "origin": null,
-    "sha256": "672578dc75c56674e98f8c104e792fd649b9e172d68ab3093a33d26f4124bfe5"
+    "sha256": "21f675ee6b657b9c2e32aa227a7d2e8f77c64f00a4714ac934488efd2517ac94"
+  },
+  {
+    "slot": 6,
+    "offset": 8209,
+    "length": 110,
+    "kind": "code",
+    "path": "Source/D3D/ConfigurePreviewClip.asm",
+    "origin": 57361,
+    "sha256": "bd88a83422312d0cf54482f79aad9e3326178751131167acc2eb8cc4fe07089e"
+  },
+  {
+    "slot": 6,
+    "offset": 8319,
+    "length": 54,
+    "kind": "unclassified",
+    "path": "Source/Resources/06_D3D/BeforePreviewThird.bin",
+    "origin": null,
+    "sha256": "e6312673c02925253a87dc968d09d512ebdc71a5785535f155ce701e7c57018d"
+  },
+  {
+    "slot": 6,
+    "offset": 8373,
+    "length": 16,
+    "kind": "code",
+    "path": "Source/D3D/AdjustPreviewThird.asm",
+    "origin": 57525,
+    "sha256": "a0cde65f5e7345261374fe03d5eef020132944884d8e24c3419c9ba5d1acb3d6"
+  },
+  {
+    "slot": 6,
+    "offset": 8389,
+    "length": 119,
+    "kind": "unclassified",
+    "path": "Source/Resources/06_D3D/BeforePreviewSetup.bin",
+    "origin": null,
+    "sha256": "c294b343a51f92d0abe51eea19aff2403455c732ba0b120e2576e00a342e43a3"
+  },
+  {
+    "slot": 6,
+    "offset": 8508,
+    "length": 24,
+    "kind": "code",
+    "path": "Source/D3D/SetupPreviewModel.asm",
+    "origin": 57660,
+    "sha256": "7653c8c9f536c2e91a88892607171e2691f77f58665c303e4e99500d24516e0a"
+  },
+  {
+    "slot": 6,
+    "offset": 8532,
+    "length": 7596,
+    "kind": "unclassified",
+    "path": "Source/Resources/06_D3D/AfterPreviewSetup.bin",
+    "origin": null,
+    "sha256": "94bca6015c6c6e8ea914d9ef6e9ece7881ba5d3d8d26cef8c6866ba26d6f334f"
   },
   {
     "slot": 7,

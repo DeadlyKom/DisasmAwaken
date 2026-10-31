@@ -1,19 +1,19 @@
 {
   "method": "static_source_audit_without_assembly",
-  "included_text_files": 1229,
-  "included_binary_files": 223,
-  "registered_functions": 1093,
+  "included_text_files": 1232,
+  "included_binary_files": 226,
+  "registered_functions": 1096,
   "unlinked_functions": [],
   "missing_includes_or_resources": [],
   "missing_include_order": [],
-  "global_definitions": 10541,
-  "global_references": 8053,
+  "global_definitions": 10604,
+  "global_references": 8122,
   "unresolved_global_references": [],
   "duplicate_global_definitions": [],
   "global_reference_case_mismatches": [],
   "source_files_outside_graph": [],
   "unknown_fragments": 261,
-  "unknown_contract_fragments": 498,
+  "unknown_contract_fragments": 496,
   "unknown_contract_files": [
     "Source/Intro/InitializeIntro.asm",
     "Source/Intro/LoadStation.asm",
@@ -37,8 +37,6 @@
     "Source/IntroUnpack/UnpackScreen.asm",
     "Source/StationBoot/RelocateBootstrap.asm",
     "Source/StationBoot/InitializeStation.asm",
-    "Source/Station/BuildSpriteLineTable.asm",
-    "Source/Station/ToggleScreenOperands.asm",
     "Source/Station/StopMusic.asm",
     "Source/Station/HandleItem25.asm",
     "Source/Station/Unknown6774.asm",
@@ -514,7 +512,7 @@
     "Source/Final/InitializeFinal.asm",
     "Source/Final/HaltFinal.asm"
   ],
-  "named_fragments_without_proved_contract": 237,
+  "named_fragments_without_proved_contract": 235,
   "original_profile_only_contracts": 0,
   "runtime_profile_limits": "See RuntimeProfileQualification.json and Docs/MapRuntimeProfiles.md, whole game remains unproved",
   "pending_by_region": {
@@ -526,13 +524,13 @@
   },
   "potential_continuations": 102,
   "ordered_fragments": 189,
-  "python_scripts_parsed": 485,
+  "python_scripts_parsed": 500,
   "python_duplicate_literal_keys": [],
   "totals": {
-    "address_label": 1458,
-    "numeric_control_target": 194,
+    "address_label": 1454,
+    "numeric_control_target": 191,
     "numeric_index_operand": 352,
-    "condition_without_data_semantics": 1692,
+    "condition_without_data_semantics": 1688,
     "conditional_without_right_comment": 68
   },
   "findings": [
@@ -1217,46 +1215,6 @@
       "issue": "numeric_control_target"
     },
     {
-      "path": "Source/Station/BuildSpriteLineTable.asm",
-      "line": 37,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Station/BuildSpriteLineTable.asm",
-      "line": 44,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Station/BuildSpriteLineTable.asm",
-      "line": 50,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Station/BuildSpriteLineTable.asm",
-      "line": 56,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Station/BuildSpriteLineTable.asm",
-      "line": 57,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Station/BuildSpriteLineTable.asm",
-      "line": 63,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Station/BuildSpriteLineTable.asm",
-      "line": 64,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Station/BuildSpriteLineTable.asm",
-      "line": 71,
-      "issue": "condition_without_data_semantics"
-    },
-    {
       "path": "Source/Station/StopMusic.asm",
       "line": 19,
       "issue": "numeric_control_target"
@@ -1363,18 +1321,8 @@
     },
     {
       "path": "Source/Station/Unknown683A.asm",
-      "line": 30,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/Station/Unknown683A.asm",
       "line": 35,
       "issue": "address_label"
-    },
-    {
-      "path": "Source/Station/Unknown683A.asm",
-      "line": 38,
-      "issue": "numeric_control_target"
     },
     {
       "path": "Source/Station/DrawItem26.asm",
@@ -1395,11 +1343,6 @@
       "path": "Source/Station/DrawItem26.asm",
       "line": 28,
       "issue": "address_label"
-    },
-    {
-      "path": "Source/Station/DrawItem26.asm",
-      "line": 45,
-      "issue": "numeric_control_target"
     },
     {
       "path": "Source/Station/DrawItem26.asm",

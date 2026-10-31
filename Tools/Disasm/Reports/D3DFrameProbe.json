@@ -1,0 +1,1328 @@
+{
+  "all_13_headers_consumed_by_face_parsers": true,
+  "method": "eleven_original_preview_models_without_irq_or_independent_bitmap_oracle",
+  "all_cases_returned": true,
+  "cases": [
+    {
+      "method": "limited_original_d3d_frame_without_irq",
+      "selector": 0,
+      "row": 0,
+      "completed": true,
+      "instructions": 25727,
+      "final_pc": 16383,
+      "final_sp": 32768,
+      "unique_pcs": 2124,
+      "helper_6364_seed_bytes_before_call": {
+        "61680": 36,
+        "62135": 35
+      },
+      "writes_F000_F57F": [
+        {
+          "address": 62338,
+          "pc": 25449,
+          "before": 36,
+          "after": 68
+        },
+        {
+          "address": 62516,
+          "pc": 25452,
+          "before": 36,
+          "after": 68
+        },
+        {
+          "address": 62660,
+          "pc": 25455,
+          "before": 36,
+          "after": 68
+        },
+        {
+          "address": 61680,
+          "pc": 25458,
+          "before": 36,
+          "after": 68
+        },
+        {
+          "address": 61764,
+          "pc": 25461,
+          "before": 36,
+          "after": 68
+        },
+        {
+          "address": 62054,
+          "pc": 25464,
+          "before": 36,
+          "after": 68
+        },
+        {
+          "address": 62234,
+          "pc": 25467,
+          "before": 20,
+          "after": 68
+        },
+        {
+          "address": 62788,
+          "pc": 25475,
+          "before": 19,
+          "after": 67
+        },
+        {
+          "address": 62792,
+          "pc": 25478,
+          "before": 19,
+          "after": 67
+        },
+        {
+          "address": 62135,
+          "pc": 25481,
+          "before": 35,
+          "after": 67
+        },
+        {
+          "address": 62139,
+          "pc": 25484,
+          "before": 35,
+          "after": 67
+        },
+        {
+          "address": 61886,
+          "pc": 25487,
+          "before": 35,
+          "after": 67
+        },
+        {
+          "address": 61915,
+          "pc": 25490,
+          "before": 35,
+          "after": 67
+        }
+      ],
+      "reads_helper_targets": [
+        {
+          "address": 61886,
+          "pc": 56655,
+          "value": 35
+        },
+        {
+          "address": 61915,
+          "pc": 56655,
+          "value": 35
+        },
+        {
+          "address": 61680,
+          "pc": 25444,
+          "value": 36
+        },
+        {
+          "address": 62135,
+          "pc": 25470,
+          "value": 35
+        }
+      ],
+      "halt_address": null,
+      "matrix_original_snippet_executed": true,
+      "real_setup_and_render_core": true,
+      "framebuffer_independent_oracle": false,
+      "irq_executed": false,
+      "native_execution": false,
+      "assembly_executed": false
+    },
+    {
+      "method": "limited_original_d3d_frame_without_irq",
+      "selector": 0,
+      "row": 1,
+      "completed": true,
+      "instructions": 29414,
+      "final_pc": 16383,
+      "final_sp": 32768,
+      "unique_pcs": 2129,
+      "helper_6364_seed_bytes_before_call": {
+        "61680": 36,
+        "62135": 35
+      },
+      "writes_F000_F57F": [
+        {
+          "address": 62338,
+          "pc": 25449,
+          "before": 36,
+          "after": 68
+        },
+        {
+          "address": 62516,
+          "pc": 25452,
+          "before": 36,
+          "after": 68
+        },
+        {
+          "address": 62660,
+          "pc": 25455,
+          "before": 36,
+          "after": 68
+        },
+        {
+          "address": 61680,
+          "pc": 25458,
+          "before": 36,
+          "after": 68
+        },
+        {
+          "address": 61764,
+          "pc": 25461,
+          "before": 36,
+          "after": 68
+        },
+        {
+          "address": 62054,
+          "pc": 25464,
+          "before": 36,
+          "after": 68
+        },
+        {
+          "address": 62234,
+          "pc": 25467,
+          "before": 20,
+          "after": 68
+        },
+        {
+          "address": 62788,
+          "pc": 25475,
+          "before": 19,
+          "after": 67
+        },
+        {
+          "address": 62792,
+          "pc": 25478,
+          "before": 19,
+          "after": 67
+        },
+        {
+          "address": 62135,
+          "pc": 25481,
+          "before": 35,
+          "after": 67
+        },
+        {
+          "address": 62139,
+          "pc": 25484,
+          "before": 35,
+          "after": 67
+        },
+        {
+          "address": 61886,
+          "pc": 25487,
+          "before": 35,
+          "after": 67
+        },
+        {
+          "address": 61915,
+          "pc": 25490,
+          "before": 35,
+          "after": 67
+        }
+      ],
+      "reads_helper_targets": [
+        {
+          "address": 62234,
+          "pc": 56655,
+          "value": 20
+        },
+        {
+          "address": 61680,
+          "pc": 25444,
+          "value": 36
+        },
+        {
+          "address": 62135,
+          "pc": 25470,
+          "value": 35
+        }
+      ],
+      "halt_address": null,
+      "matrix_original_snippet_executed": true,
+      "real_setup_and_render_core": true,
+      "framebuffer_independent_oracle": false,
+      "irq_executed": false,
+      "native_execution": false,
+      "assembly_executed": false
+    },
+    {
+      "method": "limited_original_d3d_frame_without_irq",
+      "selector": 0,
+      "row": 2,
+      "completed": true,
+      "instructions": 17580,
+      "final_pc": 16383,
+      "final_sp": 32768,
+      "unique_pcs": 1964,
+      "helper_6364_seed_bytes_before_call": {
+        "61680": 36,
+        "62135": 35
+      },
+      "writes_F000_F57F": [
+        {
+          "address": 62338,
+          "pc": 25449,
+          "before": 36,
+          "after": 68
+        },
+        {
+          "address": 62516,
+          "pc": 25452,
+          "before": 36,
+          "after": 68
+        },
+        {
+          "address": 62660,
+          "pc": 25455,
+          "before": 36,
+          "after": 68
+        },
+        {
+          "address": 61680,
+          "pc": 25458,
+          "before": 36,
+          "after": 68
+        },
+        {
+          "address": 61764,
+          "pc": 25461,
+          "before": 36,
+          "after": 68
+        },
+        {
+          "address": 62054,
+          "pc": 25464,
+          "before": 36,
+          "after": 68
+        },
+        {
+          "address": 62234,
+          "pc": 25467,
+          "before": 20,
+          "after": 68
+        },
+        {
+          "address": 62788,
+          "pc": 25475,
+          "before": 19,
+          "after": 67
+        },
+        {
+          "address": 62792,
+          "pc": 25478,
+          "before": 19,
+          "after": 67
+        },
+        {
+          "address": 62135,
+          "pc": 25481,
+          "before": 35,
+          "after": 67
+        },
+        {
+          "address": 62139,
+          "pc": 25484,
+          "before": 35,
+          "after": 67
+        },
+        {
+          "address": 61886,
+          "pc": 25487,
+          "before": 35,
+          "after": 67
+        },
+        {
+          "address": 61915,
+          "pc": 25490,
+          "before": 35,
+          "after": 67
+        }
+      ],
+      "reads_helper_targets": [
+        {
+          "address": 61764,
+          "pc": 56655,
+          "value": 36
+        },
+        {
+          "address": 61680,
+          "pc": 25444,
+          "value": 36
+        },
+        {
+          "address": 62135,
+          "pc": 25470,
+          "value": 35
+        }
+      ],
+      "halt_address": null,
+      "matrix_original_snippet_executed": true,
+      "real_setup_and_render_core": true,
+      "framebuffer_independent_oracle": false,
+      "irq_executed": false,
+      "native_execution": false,
+      "assembly_executed": false
+    },
+    {
+      "method": "limited_original_d3d_frame_without_irq",
+      "selector": 0,
+      "row": 3,
+      "completed": true,
+      "instructions": 17138,
+      "final_pc": 16383,
+      "final_sp": 32768,
+      "unique_pcs": 1990,
+      "helper_6364_seed_bytes_before_call": {
+        "61680": 36,
+        "62135": 35
+      },
+      "writes_F000_F57F": [
+        {
+          "address": 62338,
+          "pc": 25449,
+          "before": 36,
+          "after": 68
+        },
+        {
+          "address": 62516,
+          "pc": 25452,
+          "before": 36,
+          "after": 68
+        },
+        {
+          "address": 62660,
+          "pc": 25455,
+          "before": 36,
+          "after": 68
+        },
+        {
+          "address": 61680,
+          "pc": 25458,
+          "before": 36,
+          "after": 68
+        },
+        {
+          "address": 61764,
+          "pc": 25461,
+          "before": 36,
+          "after": 68
+        },
+        {
+          "address": 62054,
+          "pc": 25464,
+          "before": 36,
+          "after": 68
+        },
+        {
+          "address": 62234,
+          "pc": 25467,
+          "before": 20,
+          "after": 68
+        },
+        {
+          "address": 62788,
+          "pc": 25475,
+          "before": 19,
+          "after": 67
+        },
+        {
+          "address": 62792,
+          "pc": 25478,
+          "before": 19,
+          "after": 67
+        },
+        {
+          "address": 62135,
+          "pc": 25481,
+          "before": 35,
+          "after": 67
+        },
+        {
+          "address": 62139,
+          "pc": 25484,
+          "before": 35,
+          "after": 67
+        },
+        {
+          "address": 61886,
+          "pc": 25487,
+          "before": 35,
+          "after": 67
+        },
+        {
+          "address": 61915,
+          "pc": 25490,
+          "before": 35,
+          "after": 67
+        }
+      ],
+      "reads_helper_targets": [
+        {
+          "address": 62135,
+          "pc": 56655,
+          "value": 35
+        },
+        {
+          "address": 62139,
+          "pc": 56655,
+          "value": 35
+        },
+        {
+          "address": 61680,
+          "pc": 25444,
+          "value": 36
+        },
+        {
+          "address": 62135,
+          "pc": 25470,
+          "value": 35
+        }
+      ],
+      "halt_address": null,
+      "matrix_original_snippet_executed": true,
+      "real_setup_and_render_core": true,
+      "framebuffer_independent_oracle": false,
+      "irq_executed": false,
+      "native_execution": false,
+      "assembly_executed": false
+    },
+    {
+      "method": "limited_original_d3d_frame_without_irq",
+      "selector": 0,
+      "row": 4,
+      "completed": true,
+      "instructions": 31450,
+      "final_pc": 16383,
+      "final_sp": 32768,
+      "unique_pcs": 2275,
+      "helper_6364_seed_bytes_before_call": {
+        "61680": 36,
+        "62135": 35
+      },
+      "writes_F000_F57F": [
+        {
+          "address": 62338,
+          "pc": 25449,
+          "before": 36,
+          "after": 68
+        },
+        {
+          "address": 62516,
+          "pc": 25452,
+          "before": 36,
+          "after": 68
+        },
+        {
+          "address": 62660,
+          "pc": 25455,
+          "before": 36,
+          "after": 68
+        },
+        {
+          "address": 61680,
+          "pc": 25458,
+          "before": 36,
+          "after": 68
+        },
+        {
+          "address": 61764,
+          "pc": 25461,
+          "before": 36,
+          "after": 68
+        },
+        {
+          "address": 62054,
+          "pc": 25464,
+          "before": 36,
+          "after": 68
+        },
+        {
+          "address": 62234,
+          "pc": 25467,
+          "before": 20,
+          "after": 68
+        },
+        {
+          "address": 62788,
+          "pc": 25475,
+          "before": 19,
+          "after": 67
+        },
+        {
+          "address": 62792,
+          "pc": 25478,
+          "before": 19,
+          "after": 67
+        },
+        {
+          "address": 62135,
+          "pc": 25481,
+          "before": 35,
+          "after": 67
+        },
+        {
+          "address": 62139,
+          "pc": 25484,
+          "before": 35,
+          "after": 67
+        },
+        {
+          "address": 61886,
+          "pc": 25487,
+          "before": 35,
+          "after": 67
+        },
+        {
+          "address": 61915,
+          "pc": 25490,
+          "before": 35,
+          "after": 67
+        }
+      ],
+      "reads_helper_targets": [
+        {
+          "address": 61680,
+          "pc": 56297,
+          "value": 36
+        },
+        {
+          "address": 61680,
+          "pc": 25444,
+          "value": 36
+        },
+        {
+          "address": 62135,
+          "pc": 25470,
+          "value": 35
+        }
+      ],
+      "halt_address": null,
+      "matrix_original_snippet_executed": true,
+      "real_setup_and_render_core": true,
+      "framebuffer_independent_oracle": false,
+      "irq_executed": false,
+      "native_execution": false,
+      "assembly_executed": false
+    },
+    {
+      "method": "limited_original_d3d_frame_without_irq",
+      "selector": 0,
+      "row": 5,
+      "completed": true,
+      "instructions": 29986,
+      "final_pc": 16383,
+      "final_sp": 32768,
+      "unique_pcs": 1989,
+      "helper_6364_seed_bytes_before_call": {
+        "61680": 36,
+        "62135": 35
+      },
+      "writes_F000_F57F": [
+        {
+          "address": 62338,
+          "pc": 25449,
+          "before": 36,
+          "after": 68
+        },
+        {
+          "address": 62516,
+          "pc": 25452,
+          "before": 36,
+          "after": 68
+        },
+        {
+          "address": 62660,
+          "pc": 25455,
+          "before": 36,
+          "after": 68
+        },
+        {
+          "address": 61680,
+          "pc": 25458,
+          "before": 36,
+          "after": 68
+        },
+        {
+          "address": 61764,
+          "pc": 25461,
+          "before": 36,
+          "after": 68
+        },
+        {
+          "address": 62054,
+          "pc": 25464,
+          "before": 36,
+          "after": 68
+        },
+        {
+          "address": 62234,
+          "pc": 25467,
+          "before": 20,
+          "after": 68
+        },
+        {
+          "address": 62788,
+          "pc": 25475,
+          "before": 19,
+          "after": 67
+        },
+        {
+          "address": 62792,
+          "pc": 25478,
+          "before": 19,
+          "after": 67
+        },
+        {
+          "address": 62135,
+          "pc": 25481,
+          "before": 35,
+          "after": 67
+        },
+        {
+          "address": 62139,
+          "pc": 25484,
+          "before": 35,
+          "after": 67
+        },
+        {
+          "address": 61886,
+          "pc": 25487,
+          "before": 35,
+          "after": 67
+        },
+        {
+          "address": 61915,
+          "pc": 25490,
+          "before": 35,
+          "after": 67
+        }
+      ],
+      "reads_helper_targets": [
+        {
+          "address": 62054,
+          "pc": 56655,
+          "value": 36
+        },
+        {
+          "address": 61680,
+          "pc": 25444,
+          "value": 36
+        },
+        {
+          "address": 62135,
+          "pc": 25470,
+          "value": 35
+        }
+      ],
+      "halt_address": null,
+      "matrix_original_snippet_executed": true,
+      "real_setup_and_render_core": true,
+      "framebuffer_independent_oracle": false,
+      "irq_executed": false,
+      "native_execution": false,
+      "assembly_executed": false
+    },
+    {
+      "method": "limited_original_d3d_frame_without_irq",
+      "selector": 0,
+      "row": 6,
+      "completed": true,
+      "instructions": 25727,
+      "final_pc": 16383,
+      "final_sp": 32768,
+      "unique_pcs": 2124,
+      "helper_6364_seed_bytes_before_call": {
+        "61680": 36,
+        "62135": 35
+      },
+      "writes_F000_F57F": [
+        {
+          "address": 62338,
+          "pc": 25449,
+          "before": 36,
+          "after": 68
+        },
+        {
+          "address": 62516,
+          "pc": 25452,
+          "before": 36,
+          "after": 68
+        },
+        {
+          "address": 62660,
+          "pc": 25455,
+          "before": 36,
+          "after": 68
+        },
+        {
+          "address": 61680,
+          "pc": 25458,
+          "before": 36,
+          "after": 68
+        },
+        {
+          "address": 61764,
+          "pc": 25461,
+          "before": 36,
+          "after": 68
+        },
+        {
+          "address": 62054,
+          "pc": 25464,
+          "before": 36,
+          "after": 68
+        },
+        {
+          "address": 62234,
+          "pc": 25467,
+          "before": 20,
+          "after": 68
+        },
+        {
+          "address": 62788,
+          "pc": 25475,
+          "before": 19,
+          "after": 67
+        },
+        {
+          "address": 62792,
+          "pc": 25478,
+          "before": 19,
+          "after": 67
+        },
+        {
+          "address": 62135,
+          "pc": 25481,
+          "before": 35,
+          "after": 67
+        },
+        {
+          "address": 62139,
+          "pc": 25484,
+          "before": 35,
+          "after": 67
+        },
+        {
+          "address": 61886,
+          "pc": 25487,
+          "before": 35,
+          "after": 67
+        },
+        {
+          "address": 61915,
+          "pc": 25490,
+          "before": 35,
+          "after": 67
+        }
+      ],
+      "reads_helper_targets": [
+        {
+          "address": 61886,
+          "pc": 56655,
+          "value": 35
+        },
+        {
+          "address": 61915,
+          "pc": 56655,
+          "value": 35
+        },
+        {
+          "address": 61680,
+          "pc": 25444,
+          "value": 36
+        },
+        {
+          "address": 62135,
+          "pc": 25470,
+          "value": 35
+        }
+      ],
+      "halt_address": null,
+      "matrix_original_snippet_executed": true,
+      "real_setup_and_render_core": true,
+      "framebuffer_independent_oracle": false,
+      "irq_executed": false,
+      "native_execution": false,
+      "assembly_executed": false
+    },
+    {
+      "method": "limited_original_d3d_frame_without_irq",
+      "selector": 1,
+      "row": 0,
+      "completed": true,
+      "instructions": 36822,
+      "final_pc": 16383,
+      "final_sp": 32768,
+      "unique_pcs": 1987,
+      "helper_6364_seed_bytes_before_call": {
+        "61680": 36,
+        "62135": 35
+      },
+      "writes_F000_F57F": [
+        {
+          "address": 62338,
+          "pc": 25449,
+          "before": 36,
+          "after": 68
+        },
+        {
+          "address": 62516,
+          "pc": 25452,
+          "before": 36,
+          "after": 68
+        },
+        {
+          "address": 62660,
+          "pc": 25455,
+          "before": 36,
+          "after": 68
+        },
+        {
+          "address": 61680,
+          "pc": 25458,
+          "before": 36,
+          "after": 68
+        },
+        {
+          "address": 61764,
+          "pc": 25461,
+          "before": 36,
+          "after": 68
+        },
+        {
+          "address": 62054,
+          "pc": 25464,
+          "before": 36,
+          "after": 68
+        },
+        {
+          "address": 62234,
+          "pc": 25467,
+          "before": 20,
+          "after": 68
+        },
+        {
+          "address": 62788,
+          "pc": 25475,
+          "before": 19,
+          "after": 67
+        },
+        {
+          "address": 62792,
+          "pc": 25478,
+          "before": 19,
+          "after": 67
+        },
+        {
+          "address": 62135,
+          "pc": 25481,
+          "before": 35,
+          "after": 67
+        },
+        {
+          "address": 62139,
+          "pc": 25484,
+          "before": 35,
+          "after": 67
+        },
+        {
+          "address": 61886,
+          "pc": 25487,
+          "before": 35,
+          "after": 67
+        },
+        {
+          "address": 61915,
+          "pc": 25490,
+          "before": 35,
+          "after": 67
+        }
+      ],
+      "reads_helper_targets": [
+        {
+          "address": 62788,
+          "pc": 56655,
+          "value": 19
+        },
+        {
+          "address": 62792,
+          "pc": 56655,
+          "value": 19
+        },
+        {
+          "address": 61680,
+          "pc": 25444,
+          "value": 36
+        },
+        {
+          "address": 62135,
+          "pc": 25470,
+          "value": 35
+        }
+      ],
+      "halt_address": null,
+      "matrix_original_snippet_executed": true,
+      "real_setup_and_render_core": true,
+      "framebuffer_independent_oracle": false,
+      "irq_executed": false,
+      "native_execution": false,
+      "assembly_executed": false
+    },
+    {
+      "method": "limited_original_d3d_frame_without_irq",
+      "selector": 1,
+      "row": 1,
+      "completed": true,
+      "instructions": 23287,
+      "final_pc": 16383,
+      "final_sp": 32768,
+      "unique_pcs": 1978,
+      "helper_6364_seed_bytes_before_call": {
+        "61680": 36,
+        "62135": 35
+      },
+      "writes_F000_F57F": [
+        {
+          "address": 62338,
+          "pc": 25449,
+          "before": 36,
+          "after": 68
+        },
+        {
+          "address": 62516,
+          "pc": 25452,
+          "before": 36,
+          "after": 68
+        },
+        {
+          "address": 62660,
+          "pc": 25455,
+          "before": 36,
+          "after": 68
+        },
+        {
+          "address": 61680,
+          "pc": 25458,
+          "before": 36,
+          "after": 68
+        },
+        {
+          "address": 61764,
+          "pc": 25461,
+          "before": 36,
+          "after": 68
+        },
+        {
+          "address": 62054,
+          "pc": 25464,
+          "before": 36,
+          "after": 68
+        },
+        {
+          "address": 62234,
+          "pc": 25467,
+          "before": 20,
+          "after": 68
+        },
+        {
+          "address": 62788,
+          "pc": 25475,
+          "before": 19,
+          "after": 67
+        },
+        {
+          "address": 62792,
+          "pc": 25478,
+          "before": 19,
+          "after": 67
+        },
+        {
+          "address": 62135,
+          "pc": 25481,
+          "before": 35,
+          "after": 67
+        },
+        {
+          "address": 62139,
+          "pc": 25484,
+          "before": 35,
+          "after": 67
+        },
+        {
+          "address": 61886,
+          "pc": 25487,
+          "before": 35,
+          "after": 67
+        },
+        {
+          "address": 61915,
+          "pc": 25490,
+          "before": 35,
+          "after": 67
+        }
+      ],
+      "reads_helper_targets": [
+        {
+          "address": 62338,
+          "pc": 56655,
+          "value": 36
+        },
+        {
+          "address": 61680,
+          "pc": 25444,
+          "value": 36
+        },
+        {
+          "address": 62135,
+          "pc": 25470,
+          "value": 35
+        }
+      ],
+      "halt_address": null,
+      "matrix_original_snippet_executed": true,
+      "real_setup_and_render_core": true,
+      "framebuffer_independent_oracle": false,
+      "irq_executed": false,
+      "native_execution": false,
+      "assembly_executed": false
+    },
+    {
+      "method": "limited_original_d3d_frame_without_irq",
+      "selector": 1,
+      "row": 2,
+      "completed": true,
+      "instructions": 24444,
+      "final_pc": 16383,
+      "final_sp": 32768,
+      "unique_pcs": 1990,
+      "helper_6364_seed_bytes_before_call": {
+        "61680": 36,
+        "62135": 35
+      },
+      "writes_F000_F57F": [
+        {
+          "address": 62338,
+          "pc": 25449,
+          "before": 36,
+          "after": 68
+        },
+        {
+          "address": 62516,
+          "pc": 25452,
+          "before": 36,
+          "after": 68
+        },
+        {
+          "address": 62660,
+          "pc": 25455,
+          "before": 36,
+          "after": 68
+        },
+        {
+          "address": 61680,
+          "pc": 25458,
+          "before": 36,
+          "after": 68
+        },
+        {
+          "address": 61764,
+          "pc": 25461,
+          "before": 36,
+          "after": 68
+        },
+        {
+          "address": 62054,
+          "pc": 25464,
+          "before": 36,
+          "after": 68
+        },
+        {
+          "address": 62234,
+          "pc": 25467,
+          "before": 20,
+          "after": 68
+        },
+        {
+          "address": 62788,
+          "pc": 25475,
+          "before": 19,
+          "after": 67
+        },
+        {
+          "address": 62792,
+          "pc": 25478,
+          "before": 19,
+          "after": 67
+        },
+        {
+          "address": 62135,
+          "pc": 25481,
+          "before": 35,
+          "after": 67
+        },
+        {
+          "address": 62139,
+          "pc": 25484,
+          "before": 35,
+          "after": 67
+        },
+        {
+          "address": 61886,
+          "pc": 25487,
+          "before": 35,
+          "after": 67
+        },
+        {
+          "address": 61915,
+          "pc": 25490,
+          "before": 35,
+          "after": 67
+        }
+      ],
+      "reads_helper_targets": [
+        {
+          "address": 62660,
+          "pc": 56655,
+          "value": 36
+        },
+        {
+          "address": 61680,
+          "pc": 25444,
+          "value": 36
+        },
+        {
+          "address": 62135,
+          "pc": 25470,
+          "value": 35
+        }
+      ],
+      "halt_address": null,
+      "matrix_original_snippet_executed": true,
+      "real_setup_and_render_core": true,
+      "framebuffer_independent_oracle": false,
+      "irq_executed": false,
+      "native_execution": false,
+      "assembly_executed": false
+    },
+    {
+      "method": "limited_original_d3d_frame_without_irq",
+      "selector": 1,
+      "row": 3,
+      "completed": true,
+      "instructions": 39781,
+      "final_pc": 16383,
+      "final_sp": 32768,
+      "unique_pcs": 2278,
+      "helper_6364_seed_bytes_before_call": {
+        "61680": 36,
+        "62135": 35
+      },
+      "writes_F000_F57F": [
+        {
+          "address": 62338,
+          "pc": 25449,
+          "before": 36,
+          "after": 68
+        },
+        {
+          "address": 62516,
+          "pc": 25452,
+          "before": 36,
+          "after": 68
+        },
+        {
+          "address": 62660,
+          "pc": 25455,
+          "before": 36,
+          "after": 68
+        },
+        {
+          "address": 61680,
+          "pc": 25458,
+          "before": 36,
+          "after": 68
+        },
+        {
+          "address": 61764,
+          "pc": 25461,
+          "before": 36,
+          "after": 68
+        },
+        {
+          "address": 62054,
+          "pc": 25464,
+          "before": 36,
+          "after": 68
+        },
+        {
+          "address": 62234,
+          "pc": 25467,
+          "before": 20,
+          "after": 68
+        },
+        {
+          "address": 62788,
+          "pc": 25475,
+          "before": 19,
+          "after": 67
+        },
+        {
+          "address": 62792,
+          "pc": 25478,
+          "before": 19,
+          "after": 67
+        },
+        {
+          "address": 62135,
+          "pc": 25481,
+          "before": 35,
+          "after": 67
+        },
+        {
+          "address": 62139,
+          "pc": 25484,
+          "before": 35,
+          "after": 67
+        },
+        {
+          "address": 61886,
+          "pc": 25487,
+          "before": 35,
+          "after": 67
+        },
+        {
+          "address": 61915,
+          "pc": 25490,
+          "before": 35,
+          "after": 67
+        }
+      ],
+      "reads_helper_targets": [
+        {
+          "address": 62516,
+          "pc": 56297,
+          "value": 36
+        },
+        {
+          "address": 61680,
+          "pc": 25444,
+          "value": 36
+        },
+        {
+          "address": 62135,
+          "pc": 25470,
+          "value": 35
+        }
+      ],
+      "halt_address": null,
+      "matrix_original_snippet_executed": true,
+      "real_setup_and_render_core": true,
+      "framebuffer_independent_oracle": false,
+      "irq_executed": false,
+      "native_execution": false,
+      "assembly_executed": false
+    }
+  ],
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

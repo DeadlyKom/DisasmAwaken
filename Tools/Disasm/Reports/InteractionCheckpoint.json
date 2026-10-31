@@ -1,13 +1,13 @@
 {
   "status": "in_progress",
   "all_plan_stages_completed": false,
-  "fragments": 1093,
-  "described": 832,
+  "fragments": 1096,
+  "described": 835,
   "unknown": 261,
-  "unproved_contracts": 498,
-  "named_without_contract": 237,
-  "instruction_count": 35491,
-  "unclassified_bytes": 317372,
+  "unproved_contracts": 496,
+  "named_without_contract": 235,
+  "instruction_count": 35560,
+  "unclassified_bytes": 317222,
   "passed_reports": [
     "Tools/Disasm/Reports/PointerVerification.json",
     "Tools/Disasm/Reports/PointerTablesVerification.json",
@@ -190,7 +190,16 @@
     "Tools/Disasm/Reports/ShipPanelResetVerification.json",
     "Tools/Disasm/Reports/ShipPanelOpeningVerification.json",
     "Tools/Disasm/Reports/ShipPeriodicCodeClassification.json",
-    "Tools/Disasm/Reports/D3DPreviewDiscovery.json"
+    "Tools/Disasm/Reports/D3DPreviewDiscovery.json",
+    "Tools/Disasm/Reports/PreviewClipBoundsVerification.json",
+    "Tools/Disasm/Reports/D3DPreviewClipClassification.json",
+    "Tools/Disasm/Reports/PreviewThirdVerification.json",
+    "Tools/Disasm/Reports/D3DPreviewThirdClassification.json",
+    "Tools/Disasm/Reports/SpriteLineTableVerification.json",
+    "Tools/Disasm/Reports/PreviewSetupVerification.json",
+    "Tools/Disasm/Reports/D3DPreviewSetupClassification.json",
+    "Tools/Disasm/Reports/FilePlacementVerification.json",
+    "Tools/Disasm/Reports/PreviewFaceFillVerification.json"
   ],
   "next_station_work": [
     {
@@ -241,14 +250,14 @@
   },
   "next_semantic_work": [
     "Station, выделенный периодический корабельный код 68CC..6912 и его зависимые рисователи, действия корабельных панелей, писатели битов грузового массива, Unknown98A0 и разбор 7CC6",
-    "D3D, банк 4, 2532 инструкции и 4686 байтов статически обнаружены по шести внешним входам, отдельный кандидат исходников и полный смысловой разбор ещё не выполнены",
+    "D3D, из 2532 обнаруженных инструкций выделены и описаны 69, из 4686 байтов 150. Остаются внешние входы E0C5/E124/E154, графическое ядро EC28 и E07F с EI, данные моделей и косвенные потоки.",
     "LANG, ветви кораблей и оснащения, стоянка, начальная проверка, неизвестный префикс и потребители секторного хвоста",
     "Остальные регионы по pending_by_region и все именованные фрагменты без доказанных контрактов"
   ],
   "next_text_algorithm": "Все зарегистрированные Text-входы имеют описанный контракт, полнота игровых назначений полей и физической разметки LANG ещё не доказана",
   "next_map_work": "Писатели сохранённых списков и их обёртки управления описаны. Остаточные назначения полей, данных, хвостов фаз и формулы запаса дальности требуют полного прохода по потребителям.",
-  "next_station_algorithm": "Полные контракты выделенных периодических корабельных входов 68CC и 68EA с условными продолжениями 6870 и 693E, рисователи 25/26/27, исходный алгоритм E07F банка 4. Продажа текущего груза и открытие групп описаны, bit7 грузовой записи остаётся Unknown.",
-  "documentation_links": 1668,
+  "next_station_algorithm": "Корабельные рисователи 25/26/27, периодические 68CC/68EA и условные продолжения. Контракт BuildSpriteLineTable установлен. В D3D разобраны E011, E0B5 и E13C, следующие внешние входы E0C5, E124, E154, затем графическое ядро EC28 и завершение E07F с EI. Для 6364 установлен TogglePreviewFaceFill, два опорных заголовка переключают шаблоны заполнения выбранных граней. Остаётся физическая разметка записей граней и графическое ядро.",
+  "documentation_links": 1673,
   "updated_on": "2026-10-31",
   "d3d_discovery": {
     "report": "Tools/Disasm/Reports/D3DPreviewDiscovery.json",
@@ -256,6 +265,20 @@
     "code_bytes": 4686,
     "included_in_source_instruction_count": false,
     "included_in_unclassified_bytes": true,
-    "full_contracts_proved": false
-  }
+    "full_contracts_proved": false,
+    "extracted_instructions": 69,
+    "unextracted_discovered_instructions": 2463,
+    "extracted_code_bytes": 150,
+    "unextracted_discovered_code_bytes": 4536,
+    "face_header_roles_observed": 13
+  },
+  "observational_reports": [
+    {
+      "report": "Tools/Disasm/Reports/D3DFrameProbe.json",
+      "cases": 11,
+      "all_cases_returned": true,
+      "independent_bitmap_oracle": false,
+      "irq_executed": false
+    }
+  ]
 }
