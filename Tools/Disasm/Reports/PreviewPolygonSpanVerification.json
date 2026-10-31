@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "cases": 655360,
+  "all_32_even_span_entries": true,
+  "all_256_initial_columns": true,
+  "all_eight_right_pixel_positions": true,
+  "consistent_modes": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "both_pattern_phases": true,
+  "carry_zero_and_one_checked": true,
+  "exact_bitmap_and_ordered_write_trace": true,
+  "exact_main_and_alternate_af": true,
+  "all_other_registers_and_sp_checked": true,
+  "continuation": 53767,
+  "cpu_return_executed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

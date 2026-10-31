@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "cases": 1331200,
+  "wide_input_cases": 20480,
+  "original_map_and_d3d_instruction_bytes_equal_after_internal_jp_relocation": true,
+  "relocated_absolute_jumps": 1,
+  "actual_d3d_execution": true,
+  "independent_numeric_quotient_and_flag_formula": true,
+  "negative_numerator_and_quotient_use_ones_complement": true,
+  "denominator_sign_is_input_s": true,
+  "exact_main_alternate_and_index_context": true,
+  "all_ix_high_bytes_preserved": true,
+  "no_memory_writes": true,
+  "zero_divisor_tested": false,
+  "quotient_overflow_tested": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

@@ -8233,5 +8233,311 @@
     "size": 1,
     "target_operation": "JR C,#DF41",
     "path": "Source/D3D/RasterizePreviewEdge.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 53831,
+    "target": 53817,
+    "target_instruction": 53816,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/D3D/StepPreviewPolygonRow.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 53920,
+    "target": 53904,
+    "target_instruction": 53903,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/D3D/UpdatePreviewLeftEdge.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 53924,
+    "target": 53799,
+    "target_instruction": 53798,
+    "size": 1,
+    "target_operation": "ADD A,#00",
+    "path": "Source/D3D/UpdatePreviewLeftEdge.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 53933,
+    "target": 53823,
+    "target_instruction": 53822,
+    "size": 1,
+    "target_operation": "CP #00",
+    "path": "Source/D3D/UpdatePreviewLeftEdge.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 53959,
+    "target": 53795,
+    "target_instruction": 53794,
+    "size": 1,
+    "target_operation": "SUB #00",
+    "path": "Source/D3D/UpdatePreviewLeftEdge.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 53988,
+    "target": 53795,
+    "target_instruction": 53794,
+    "size": 1,
+    "target_operation": "SUB #00",
+    "path": "Source/D3D/UpdatePreviewLeftEdge.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 54020,
+    "target": 53795,
+    "target_instruction": 53794,
+    "size": 1,
+    "target_operation": "SUB #00",
+    "path": "Source/D3D/UpdatePreviewLeftEdge.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 54046,
+    "target": 53795,
+    "target_instruction": 53794,
+    "size": 1,
+    "target_operation": "SUB #00",
+    "path": "Source/D3D/UpdatePreviewLeftEdge.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 54076,
+    "target": 53795,
+    "target_instruction": 53794,
+    "size": 1,
+    "target_operation": "SUB #00",
+    "path": "Source/D3D/UpdatePreviewLeftEdge.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 54100,
+    "target": 53817,
+    "target_instruction": 53816,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/D3D/UpdatePreviewRightEdge.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 54122,
+    "target": 54104,
+    "target_instruction": 54103,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/D3D/UpdatePreviewRightEdge.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 54126,
+    "target": 53811,
+    "target_instruction": 53810,
+    "size": 1,
+    "target_operation": "ADD A,#00",
+    "path": "Source/D3D/UpdatePreviewRightEdge.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 54135,
+    "target": 53827,
+    "target_instruction": 53826,
+    "size": 1,
+    "target_operation": "CP #00",
+    "path": "Source/D3D/UpdatePreviewRightEdge.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 54161,
+    "target": 53807,
+    "target_instruction": 53806,
+    "size": 1,
+    "target_operation": "SUB #00",
+    "path": "Source/D3D/UpdatePreviewRightEdge.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 54189,
+    "target": 53807,
+    "target_instruction": 53806,
+    "size": 1,
+    "target_operation": "SUB #00",
+    "path": "Source/D3D/UpdatePreviewRightEdge.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 54220,
+    "target": 53807,
+    "target_instruction": 53806,
+    "size": 1,
+    "target_operation": "SUB #00",
+    "path": "Source/D3D/UpdatePreviewRightEdge.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 54243,
+    "target": 53807,
+    "target_instruction": 53806,
+    "size": 1,
+    "target_operation": "SUB #00",
+    "path": "Source/D3D/UpdatePreviewRightEdge.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 54273,
+    "target": 53807,
+    "target_instruction": 53806,
+    "size": 1,
+    "target_operation": "SUB #00",
+    "path": "Source/D3D/UpdatePreviewRightEdge.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 54305,
+    "target": 54111,
+    "target_instruction": 54110,
+    "size": 1,
+    "target_operation": "CP #00",
+    "path": "Source/D3D/FillPreviewPolygon.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 54338,
+    "target": 53819,
+    "target_instruction": 53818,
+    "size": 1,
+    "target_operation": "CP #00",
+    "path": "Source/D3D/FillPreviewPolygon.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 54342,
+    "target": 53823,
+    "target_instruction": 53822,
+    "size": 1,
+    "target_operation": "CP #00",
+    "path": "Source/D3D/FillPreviewPolygon.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 54345,
+    "target": 53827,
+    "target_instruction": 53826,
+    "size": 1,
+    "target_operation": "CP #00",
+    "path": "Source/D3D/FillPreviewPolygon.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 54359,
+    "target": 53904,
+    "target_instruction": 53903,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/D3D/FillPreviewPolygon.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 54375,
+    "target": 54104,
+    "target_instruction": 54103,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/D3D/FillPreviewPolygon.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 54390,
+    "target": 53772,
+    "target_instruction": 53771,
+    "size": 1,
+    "target_operation": "XOR #00",
+    "path": "Source/D3D/FillPreviewPolygon.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 54404,
+    "target": 53847,
+    "target_instruction": 53846,
+    "size": 1,
+    "target_operation": "ADD A,#00",
+    "path": "Source/D3D/FillPreviewPolygon.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 54434,
+    "target": 54471,
+    "target_instruction": 54470,
+    "size": 1,
+    "target_operation": "OR #00",
+    "path": "Source/D3D/FillPreviewPolygon.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 54485,
+    "target": 53886,
+    "target_instruction": 53885,
+    "size": 2,
+    "target_operation": "LD SP,#0000",
+    "path": "Source/D3D/FillPreviewPolygon.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 56780,
+    "target": 56884,
+    "target_instruction": 56883,
+    "size": 1,
+    "target_operation": "ADD A,#00",
+    "path": "Source/D3D/RenderPreviewInsideFaces.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 56446,
+    "target": 56884,
+    "target_instruction": 56883,
+    "size": 1,
+    "target_operation": "ADD A,#00",
+    "path": "Source/D3D/RenderPreviewClippedFaces.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 61204,
+    "target": 56054,
+    "target_instruction": 56053,
+    "size": 2,
+    "target_operation": "LD BC,#0000",
+    "path": "Source/D3D/RenderPreviewQueue.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 61212,
+    "target": 55864,
+    "target_instruction": 55863,
+    "size": 2,
+    "target_operation": "LD BC,#0000",
+    "path": "Source/D3D/RenderPreviewQueue.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 61220,
+    "target": 55830,
+    "target_instruction": 55829,
+    "size": 2,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/D3D/RenderPreviewQueue.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 61228,
+    "target": 60301,
+    "target_instruction": 60300,
+    "size": 2,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/D3D/RenderPreviewQueue.asm"
   }
 ]

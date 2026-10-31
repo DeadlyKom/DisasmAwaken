@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "typed_bytes": 12,
+  "physical_structures": 2,
+  "reused_structures": [
+    "FClipCornerState",
+    "FPreviewProjectedVertex"
+  ],
+  "physical_records": 3,
+  "original_initial_values_preserved": true,
+  "scoped_candidate_and_history": true,
+  "assembly_executed": false
+}

@@ -812,4 +812,30 @@ RightSteepOp    equ #DF21                                                       
 RightSteepJump  equ #DF3B                                                       ; изменяемый opcode границы байта ветви RightSteep
                 endmodule
 
+                module PreviewPolygonState
+PatternDelta    equ #D20C                                                       ; операнд XOR для смены шаблона строки
+LeftSubtract    equ #D223                                                       ; вычитаемая дробная часть левого шага
+LeftHeight      equ #D227                                                       ; восстанавливаемый период левой ошибки
+RightSubtract   equ #D22F                                                       ; вычитаемая дробная часть правого шага
+RightHeight     equ #D233                                                       ; восстанавливаемый период правой ошибки
+CurrentRow      equ #D239                                                       ; операнд загрузки текущей строки контура
+LastRow         equ #D23B                                                       ; исключённая нижняя строка всего контура
+LeftEndRow      equ #D23F                                                       ; строка смены левого ребра
+RightEndRow     equ #D243                                                       ; строка смены правого ребра
+ColumnBase      equ #D257                                                       ; операнд начальной байтовой колонки экрана
+SavedStack      equ #D27E                                                       ; операнд восстановления CPU-SP перед POP HL и RET
+UpdateLeft      equ #D28C                                                       ; существующий вход обновления левой цепочки
+SelectRight     equ #D282                                                       ; существующий JP к обновлению правой цепочки
+                endmodule
+
+                module PreviewPolygonEdgeState
+LeftVertex      equ #D290                                                       ; операнд указателя строкового байта начала левого ребра
+RightVertex     equ #D358                                                       ; операнд указателя строкового байта начала правого ребра
+LastIndex       equ #D35F                                                       ; операнд последнего нечётного индекса строки контура в странице C8
+                endmodule
+
+                module PreviewPolygonPrepState
+FirstRowLow     equ #D4C7                                                       ; операнд OR младшего адреса начальной экранной строки
+                endmodule
+
                 endif

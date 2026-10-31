@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "cases": 1170,
+  "events": {
+    "polygon": 258,
+    "clipped_polygons": 130,
+    "clipped_segments": 969,
+    "edge": 1177
+  },
+  "full_original_dbe9_executed": true,
+  "real_orientation_clippers_fill_and_edge": true,
+  "independent_bitmap_composition": true,
+  "clipping_decisions_derived_from_original_graph": true,
+  "all_positive_counts_3_through_15": true,
+  "all_line_counts_2_through_15": true,
+  "fill_modes": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "all_four_line_operators": true,
+  "all_256_initial_face_gate_values": true,
+  "zero_vertex_code_early_rejection_checked": true,
+  "exact_call_order_and_parameters": true,
+  "final_hl_af_sp_and_control_bytes_checked": true,
+  "exact_split_line_workspace_words_and_codes": true,
+  "all_final_registers_proved": false,
+  "profile": [
+    127,
+    95,
+    128,
+    96
+  ],
+  "nonzero_minima_checked": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

@@ -1,7 +1,7 @@
 {
   "method": "text_and_resource_comparison_without_assembly",
   "passed": true,
-  "instruction_count": 37792,
+  "instruction_count": 39575,
   "active_allocations": 41,
   "covered_bytes": 479744,
   "interface_records": 46,
@@ -85,7 +85,23 @@
     "PreviewModelPointers": 11,
     "PreviewDrawState": 1,
     "PreviewEdgeEndpoints": 1,
-    "PreviewEdgeMode": 1
+    "PreviewEdgeMode": 1,
+    "PreviewContourSize": 1,
+    "PreviewFillMode": 1,
+    "PreviewFillPatterns": 8,
+    "PreviewFaceGateState": 1,
+    "PreviewClipFirst": 1,
+    "PreviewClipSecond": 1,
+    "PreviewClipCorners": 1,
+    "PreviewClipTopProduct": 1,
+    "PreviewClipBottomProduct": 1,
+    "PreviewClipLeftLow": 1,
+    "PreviewClipLeftHigh": 1,
+    "PreviewClipRightProduct": 1,
+    "PreviewLineCoordinates": 1,
+    "PreviewLineTail": 1,
+    "PreviewObjectAngles": 1,
+    "PreviewPrimaryAngles": 1
   },
   "preview_model_group_records": {
     "Orsan": 5,

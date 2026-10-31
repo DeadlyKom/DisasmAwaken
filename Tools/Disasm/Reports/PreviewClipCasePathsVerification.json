@@ -1,0 +1,892 @@
+{
+  "passed": true,
+  "method": "original_d3d_bytes_explicit_address_mapping_and_all_conditional_cache_paths",
+  "handler_bytes": 1021,
+  "handler_instructions": 365,
+  "translated_absolute_words": 308,
+  "physical_pairs": 81,
+  "distinct_roots": 71,
+  "semantic_paths": 241,
+  "all_instruction_bytes_compared": true,
+  "initialized_products_proved": true,
+  "all_conditions_have_explained_provenance": true,
+  "corner_block_precondition": 1,
+  "maximum_output_points": 2,
+  "special_exits_have_no_nested_case_calls": true,
+  "roots": [
+    {
+      "entry": 57835,
+      "abstract_states": 1,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 57836,
+      "abstract_states": 16,
+      "terminal_outcomes": [
+        [
+          "normal",
+          1
+        ]
+      ]
+    },
+    {
+      "entry": 57851,
+      "abstract_states": 6,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 57862,
+      "abstract_states": 16,
+      "terminal_outcomes": [
+        [
+          "normal",
+          1
+        ]
+      ]
+    },
+    {
+      "entry": 57877,
+      "abstract_states": 6,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 57888,
+      "abstract_states": 16,
+      "terminal_outcomes": [
+        [
+          "normal",
+          1
+        ]
+      ]
+    },
+    {
+      "entry": 57903,
+      "abstract_states": 6,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 57914,
+      "abstract_states": 16,
+      "terminal_outcomes": [
+        [
+          "normal",
+          1
+        ]
+      ]
+    },
+    {
+      "entry": 57929,
+      "abstract_states": 6,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 57940,
+      "abstract_states": 4,
+      "terminal_outcomes": [
+        [
+          "normal",
+          2
+        ]
+      ]
+    },
+    {
+      "entry": 57946,
+      "abstract_states": 4,
+      "terminal_outcomes": [
+        [
+          "normal",
+          2
+        ]
+      ]
+    },
+    {
+      "entry": 57952,
+      "abstract_states": 12,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ],
+        [
+          "normal",
+          2
+        ]
+      ]
+    },
+    {
+      "entry": 57970,
+      "abstract_states": 33,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ],
+        [
+          "normal",
+          2
+        ]
+      ]
+    },
+    {
+      "entry": 57994,
+      "abstract_states": 12,
+      "terminal_outcomes": [
+        [
+          "normal",
+          2
+        ],
+        [
+          "special",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 58012,
+      "abstract_states": 5,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ],
+        [
+          "special",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 58019,
+      "abstract_states": 25,
+      "terminal_outcomes": [
+        [
+          "normal",
+          2
+        ],
+        [
+          "special",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 58037,
+      "abstract_states": 4,
+      "terminal_outcomes": [
+        [
+          "normal",
+          2
+        ]
+      ]
+    },
+    {
+      "entry": 58043,
+      "abstract_states": 4,
+      "terminal_outcomes": [
+        [
+          "normal",
+          2
+        ]
+      ]
+    },
+    {
+      "entry": 58049,
+      "abstract_states": 12,
+      "terminal_outcomes": [
+        [
+          "normal",
+          2
+        ],
+        [
+          "special",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 58067,
+      "abstract_states": 25,
+      "terminal_outcomes": [
+        [
+          "normal",
+          2
+        ],
+        [
+          "special",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 58085,
+      "abstract_states": 5,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ],
+        [
+          "special",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 58092,
+      "abstract_states": 12,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ],
+        [
+          "normal",
+          2
+        ]
+      ]
+    },
+    {
+      "entry": 58110,
+      "abstract_states": 33,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ],
+        [
+          "normal",
+          2
+        ]
+      ]
+    },
+    {
+      "entry": 58134,
+      "abstract_states": 4,
+      "terminal_outcomes": [
+        [
+          "normal",
+          2
+        ]
+      ]
+    },
+    {
+      "entry": 58140,
+      "abstract_states": 12,
+      "terminal_outcomes": [
+        [
+          "normal",
+          2
+        ],
+        [
+          "special",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 58158,
+      "abstract_states": 12,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ],
+        [
+          "normal",
+          2
+        ]
+      ]
+    },
+    {
+      "entry": 58176,
+      "abstract_states": 5,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ],
+        [
+          "special",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 58183,
+      "abstract_states": 4,
+      "terminal_outcomes": [
+        [
+          "normal",
+          2
+        ]
+      ]
+    },
+    {
+      "entry": 58189,
+      "abstract_states": 25,
+      "terminal_outcomes": [
+        [
+          "normal",
+          2
+        ],
+        [
+          "special",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 58210,
+      "abstract_states": 33,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ],
+        [
+          "normal",
+          2
+        ]
+      ]
+    },
+    {
+      "entry": 58237,
+      "abstract_states": 19,
+      "terminal_outcomes": [
+        [
+          "normal",
+          2
+        ]
+      ]
+    },
+    {
+      "entry": 58265,
+      "abstract_states": 5,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ],
+        [
+          "special",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 58272,
+      "abstract_states": 27,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ],
+        [
+          "normal",
+          2
+        ]
+      ]
+    },
+    {
+      "entry": 58303,
+      "abstract_states": 6,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 58314,
+      "abstract_states": 14,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 58320,
+      "abstract_states": 28,
+      "terminal_outcomes": [
+        [
+          "normal",
+          2
+        ],
+        [
+          "special",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 58341,
+      "abstract_states": 55,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ],
+        [
+          "normal",
+          2
+        ],
+        [
+          "special",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 58366,
+      "abstract_states": 19,
+      "terminal_outcomes": [
+        [
+          "normal",
+          2
+        ]
+      ]
+    },
+    {
+      "entry": 58394,
+      "abstract_states": 28,
+      "terminal_outcomes": [
+        [
+          "normal",
+          2
+        ],
+        [
+          "special",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 58415,
+      "abstract_states": 6,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 58426,
+      "abstract_states": 5,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ],
+        [
+          "special",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 58433,
+      "abstract_states": 27,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ],
+        [
+          "normal",
+          2
+        ]
+      ]
+    },
+    {
+      "entry": 58464,
+      "abstract_states": 55,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ],
+        [
+          "normal",
+          2
+        ],
+        [
+          "special",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 58489,
+      "abstract_states": 14,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 58495,
+      "abstract_states": 4,
+      "terminal_outcomes": [
+        [
+          "normal",
+          2
+        ]
+      ]
+    },
+    {
+      "entry": 58501,
+      "abstract_states": 12,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ],
+        [
+          "normal",
+          2
+        ]
+      ]
+    },
+    {
+      "entry": 58519,
+      "abstract_states": 12,
+      "terminal_outcomes": [
+        [
+          "normal",
+          2
+        ],
+        [
+          "special",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 58537,
+      "abstract_states": 4,
+      "terminal_outcomes": [
+        [
+          "normal",
+          2
+        ]
+      ]
+    },
+    {
+      "entry": 58543,
+      "abstract_states": 33,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ],
+        [
+          "normal",
+          2
+        ]
+      ]
+    },
+    {
+      "entry": 58570,
+      "abstract_states": 25,
+      "terminal_outcomes": [
+        [
+          "normal",
+          2
+        ],
+        [
+          "special",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 58591,
+      "abstract_states": 5,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ],
+        [
+          "special",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 58598,
+      "abstract_states": 19,
+      "terminal_outcomes": [
+        [
+          "normal",
+          2
+        ]
+      ]
+    },
+    {
+      "entry": 58626,
+      "abstract_states": 6,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 58637,
+      "abstract_states": 28,
+      "terminal_outcomes": [
+        [
+          "normal",
+          2
+        ],
+        [
+          "special",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 58658,
+      "abstract_states": 27,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ],
+        [
+          "normal",
+          2
+        ]
+      ]
+    },
+    {
+      "entry": 58689,
+      "abstract_states": 14,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 58695,
+      "abstract_states": 55,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ],
+        [
+          "normal",
+          2
+        ],
+        [
+          "special",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 58720,
+      "abstract_states": 5,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ],
+        [
+          "special",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 58727,
+      "abstract_states": 19,
+      "terminal_outcomes": [
+        [
+          "normal",
+          2
+        ]
+      ]
+    },
+    {
+      "entry": 58755,
+      "abstract_states": 27,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ],
+        [
+          "normal",
+          2
+        ]
+      ]
+    },
+    {
+      "entry": 58786,
+      "abstract_states": 5,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ],
+        [
+          "special",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 58793,
+      "abstract_states": 28,
+      "terminal_outcomes": [
+        [
+          "normal",
+          2
+        ],
+        [
+          "special",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 58814,
+      "abstract_states": 55,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ],
+        [
+          "normal",
+          2
+        ],
+        [
+          "special",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 58839,
+      "abstract_states": 6,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 58850,
+      "abstract_states": 14,
+      "terminal_outcomes": [
+        [
+          "normal",
+          0
+        ]
+      ]
+    },
+    {
+      "entry": 58980,
+      "abstract_states": 1,
+      "terminal_outcomes": [
+        [
+          "normal",
+          1
+        ]
+      ]
+    },
+    {
+      "entry": 59055,
+      "abstract_states": 1,
+      "terminal_outcomes": [
+        [
+          "normal",
+          1
+        ]
+      ]
+    },
+    {
+      "entry": 59130,
+      "abstract_states": 1,
+      "terminal_outcomes": [
+        [
+          "normal",
+          1
+        ]
+      ]
+    },
+    {
+      "entry": 59223,
+      "abstract_states": 1,
+      "terminal_outcomes": [
+        [
+          "normal",
+          1
+        ]
+      ]
+    },
+    {
+      "entry": 59462,
+      "abstract_states": 1,
+      "terminal_outcomes": [
+        [
+          "normal",
+          1
+        ]
+      ]
+    },
+    {
+      "entry": 59485,
+      "abstract_states": 1,
+      "terminal_outcomes": [
+        [
+          "special",
+          0
+        ]
+      ]
+    }
+  ],
+  "independent_geometry_proof": false,
+  "all_final_registers_proved": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

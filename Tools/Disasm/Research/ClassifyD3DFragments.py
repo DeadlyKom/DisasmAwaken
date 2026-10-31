@@ -37,16 +37,29 @@ def apply(facts,tag,original_path,ranges,verification,extra_texts=None):
   assert not continuation or target
   pending[ROOT/path]=format_function('\n'.join(lines)+'\n',target=target)
   function=dict(region='D3D',name=name,address=begin,slot=6,offset=begin-0xC000,end_offset=end-0xC000,path=path,description=description,semantic_status='described')
-  if continuation:function['fragment_scope']='products_then_group';function['fallthrough_continuation']=continuation
+  if continuation:function['fragment_scope']=getattr(facts,'FUNCTION_SCOPES',{}).get(begin,'products_then_group');function['fallthrough_continuation']=continuation
   functions.append(function)
  old_bytes={i['address']+j for i in g['instructions'] for j in range(len(bytes.fromhex(i['hex'])))}
  assert all(i['address']+j not in old_bytes for i in added for j in range(len(bytes.fromhex(i['hex']))))
- g['instructions']=sorted(g['instructions']+added,key=lambda i:i['address']);g['roots']=sorted(set(g['roots'])|set(facts.FUNCTIONS))
+ g['instructions']=sorted(g['instructions']+added,key=lambda i:i['address']);g['roots']=sorted(set(g['roots'])|set(facts.FUNCTIONS)|set(getattr(facts,'INTERNAL_ROOTS',())))
  g['instruction_count']=len(g['instructions']);g['code_bytes']=sum(len(bytes.fromhex(i['hex'])) for i in g['instructions']);g['classified_fraction']=g['code_bytes']/g['total_bytes']
  validate_notes([g],{'D3D':facts.COMMENTS})
  # Проверка прямых целей по реальным зарегистрированным инструкциям, без переноса всей разведки в исходники.
  calls=set();branches=set();addresses={i['address'] for i in g['instructions']}
  g['unresolved']=[v for v in g['unresolved'] if v.get('target') not in addresses]
+ # Регистрация только явно доказанных новых непрямых входов, без угадывания по адресам.
+ for pointer,targets in getattr(facts,'INDIRECT_TARGETS',{}).items():
+  instruction=next(i for i in added if i['address']==pointer)
+  assert instruction['operation'] in ('JP (HL)','JP (IX)','JP (IY)') and set(targets)<=addresses
+  assert not any(v['address']==pointer for v in g['unresolved'])
+  g['unresolved'].append(dict(address=pointer,operation=instruction['operation'],bank=4,reason='непрямой переход, проверенные цели перечислены отдельно',verified_targets=sorted(targets)))
+ # Регистрация именованных продолжений в ещё не выделенном исходном коде банка 4.
+ for i in added:
+  match=re.fullmatch(r'(?:JP|JR) (?:[A-Z]+,)?#([0-9A-F]+)',i['operation'])
+  if not match:continue
+  target=int(match[1],16)
+  if target not in addresses and target in getattr(facts,'EXTERNAL_CONTINUATIONS',{}):
+   if not any(v['address']==i['address'] for v in g['unresolved']):g['unresolved'].append(dict(address=i['address'],operation=i['operation'],target=target,bank=4,reason=facts.EXTERNAL_CONTINUATIONS[target]))
  for i in g['instructions']:
   match=re.fullmatch(r'(CALL|JP|JR|DJNZ) (?:[A-Z]+,)?#([0-9A-F]+)',i['operation'])
   if match:(calls if match[1]=='CALL' else branches).add(int(match[2],16))
@@ -87,11 +100,17 @@ def apply(facts,tag,original_path,ranges,verification,extra_texts=None):
  pending[p]=t
  # Поиск реального владельца операнда, включая старший байт слова, по точным длинам уже выделенного кода.
  owners={i['address']+j:i for i in g['instructions'] for j in range(len(bytes.fromhex(i['hex'])))}
- modified=read('ModifiedCode');p=ROOT/'Docs/ModifiedCode.md';t=p.read_text('utf-8');writers=0
+ modified=read('ModifiedCode');p=ROOT/'Docs/ModifiedCode.md';t=p.read_text('utf-8');writers=data_writers=0
  for i in added:
   match=re.fullmatch(r'LD \(#([0-9A-F]+)\),(A|HL|DE|BC|SP)',i['operation'])
   if not match:continue
-  target=int(match[1],16);size=1 if match[2]=='A' else 2;owner=owners[target]
+  target=int(match[1],16);size=1 if match[2]=='A' else 2
+  # Проверка записи в доказанный физический экземпляр данных, она не является самомодификацией кода.
+  if target in getattr(facts,'DATA_WRITES',{}):
+   expected_size,path=facts.DATA_WRITES[target];assert size==expected_size
+   item=next(v for v in source_map if v['slot']==6 and v['offset']<=target-0xC000 and target-0xC000+size<=v['offset']+v['length'])
+   assert item['kind']=='typed_data' and item['path']==path;data_writers+=1;continue
+  owner=owners[target]
   opcode_targets=getattr(facts,'OPCODE_TARGETS',{})
   if target in opcode_targets:
    assert size==1 and owner['address']==target and memory[target]==opcode_targets[target]
@@ -134,5 +153,5 @@ def apply(facts,tag,original_path,ranges,verification,extra_texts=None):
    assert original.read_bytes()==(value if isinstance(value,bytes) else value.encode('utf-8'))
    continue
   assert original.resolve().is_relative_to(ROOT/'Source/Resources/06_D3D') and original.read_bytes()==(history/original.relative_to(ROOT)).read_bytes();original.unlink()
- report=dict(passed=True,functions=len(facts.FUNCTIONS),instructions=len(added),code_bytes=sum(facts.ENDS[p]-p for p in facts.FUNCTIONS),registered_operand_writers=writers,scoped_candidate_and_history=True,physical_bytes_preserved=True,assembly_executed=False)
+ report=dict(passed=True,functions=len(facts.FUNCTIONS),instructions=len(added),code_bytes=sum(facts.ENDS[p]-p for p in facts.FUNCTIONS),registered_operand_writers=writers,verified_physical_data_writers=data_writers,scoped_candidate_and_history=True,physical_bytes_preserved=True,assembly_executed=False)
  (ROOT/('Tools/Disasm/Reports/'+tag+'Classification.json')).write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n','utf-8');print(json.dumps(report,ensure_ascii=False,indent=2))

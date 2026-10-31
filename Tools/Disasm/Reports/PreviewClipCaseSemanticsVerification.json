@@ -1,0 +1,62 @@
+{
+  "passed": true,
+  "cases": 178612,
+  "cases_by_mode_and_exit": {
+    "block_0": 89306,
+    "normal": 150866,
+    "block_1": 89306,
+    "special": 27746
+  },
+  "physical_pairs": 81,
+  "semantic_paths_executed": 241,
+  "symbolic_paths": 241,
+  "maximum_output_points": 4,
+  "profiles": [
+    [
+      15,
+      23,
+      16,
+      24
+    ],
+    [
+      63,
+      63,
+      64,
+      64
+    ],
+    [
+      127,
+      95,
+      128,
+      96
+    ],
+    [
+      207,
+      111,
+      208,
+      112
+    ],
+    [
+      239,
+      175,
+      240,
+      176
+    ],
+    [
+      255,
+      255,
+      256,
+      256
+    ]
+  ],
+  "all_initial_corner_bytes_tested": true,
+  "high_corner_bits_preserved": true,
+  "real_e011_and_all_d3d_arithmetic": true,
+  "independent_geometry_proof": false,
+  "decision_paths_derived_from_original_graph": true,
+  "all_final_registers_proved": false,
+  "exact_normal_and_special_frame_returns": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

@@ -229,8 +229,15 @@ def main():
     from PreviewSceneTables import TABLES as PREVIEW_SCENE_TABLES, parse as parse_preview_scene
     from PreviewDrawStateTable import TABLE as PREVIEW_DRAW_STATE_TABLE
     from PreviewEdgeData import TABLES as PREVIEW_EDGE_TABLES
+    from PreviewPolygonData import TABLES as PREVIEWPOLYGONDATA_TABLES
+    from PreviewFaceGateData import TABLES as PREVIEWFACEGATEDATA_TABLES
+    from PreviewClipWorkData import TABLES as PREVIEWCLIPWORKDATA_TABLES
+    from PreviewClipProductData import TABLES as PREVIEWCLIPPRODUCTDATA_TABLES
+    from PreviewLineWorkData import TABLES as PREVIEWLINEWORKDATA_TABLES
+    from PreviewQueueRenderData import TABLES as PREVIEWQUEUERENDERDATA_TABLES
+    from PreviewFrameData import TABLES as PREVIEWFRAMEDATA_TABLES
     preview_scene_records = {}
-    for module,path,start,end,structure,fields,names in (*PREVIEW_SCENE_TABLES, PREVIEW_DRAW_STATE_TABLE, *PREVIEW_EDGE_TABLES):
+    for module,path,start,end,structure,fields,names in (*PREVIEW_SCENE_TABLES, PREVIEW_DRAW_STATE_TABLE, *PREVIEW_EDGE_TABLES, *PREVIEWPOLYGONDATA_TABLES, *PREVIEWFACEGATEDATA_TABLES, *PREVIEWCLIPWORKDATA_TABLES, *PREVIEWCLIPPRODUCTDATA_TABLES, *PREVIEWLINEWORKDATA_TABLES, *PREVIEWQUEUERENDERDATA_TABLES, *PREVIEWFRAMEDATA_TABLES):
         entries = [item for item in source_map if item['path'] == path]
         if not entries:
             continue

@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "typed_bytes": 16,
+  "physical_structures": 2,
+  "newly_declared_structures": [
+    "FPreviewClipProductWord"
+  ],
+  "reused_structures": [
+    "FClipProduct",
+    "FPreviewClipProductWord"
+  ],
+  "physical_records": 5,
+  "original_initial_values_preserved": true,
+  "scoped_candidate_and_history": true,
+  "assembly_executed": false
+}

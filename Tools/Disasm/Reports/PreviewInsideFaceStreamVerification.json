@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "cases": 1698,
+  "events": {
+    "polygon": 208,
+    "edge": 2605
+  },
+  "full_original_dd4f_pass_executed": true,
+  "orientation_and_both_renderers_not_stubbed": true,
+  "independent_stream_parser_and_bitmap_composition": true,
+  "all_positive_counts_3_through_15": true,
+  "all_polyline_counts_2_through_15": true,
+  "all_four_line_operator_codes": true,
+  "all_256_previous_face_flags": true,
+  "bit6_depends_on_previous_orientation_only": true,
+  "exact_call_parameters_and_order": true,
+  "final_hl_af_sp_and_control_bytes_checked": true,
+  "projected_vertices_and_input_stream_preserved": true,
+  "all_final_registers_proved": true,
+  "clipped_dbe9_path_proved": false,
+  "convex_onscreen_zero_origin_profile": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

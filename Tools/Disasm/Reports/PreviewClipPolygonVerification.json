@@ -1,0 +1,35 @@
+{
+  "passed": true,
+  "cases": 1980,
+  "edges_checked": 37390,
+  "cases_by_return": {
+    "normal": 872,
+    "special": 1108
+  },
+  "output_page_wrap_cases": 108,
+  "lengths": [
+    1,
+    2,
+    3,
+    4,
+    7,
+    15,
+    31,
+    127,
+    128,
+    255,
+    256
+  ],
+  "input_b_zero_means_256": true,
+  "all_output_page_and_guard_bytes_checked": true,
+  "exact_final_hl_bc_af_sp": true,
+  "real_all_d3d_arithmetic": true,
+  "original_input_indices_cross_page_boundary": true,
+  "independent_geometry_proof": false,
+  "nonzero_minima_checked": false,
+  "all_final_de_afprime_ix_proved": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false,
+  "seen_and_block_cleared_from_ff": true
+}

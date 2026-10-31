@@ -1,0 +1,8806 @@
+{
+  "method": "original_d3d_bytes_explicit_address_mapping_and_all_conditional_cache_paths",
+  "cases": [
+    {
+      "first": 0,
+      "second": 0,
+      "entry": 59462,
+      "paths": [
+        {
+          "conditions": [],
+          "actions": [
+            [
+              "second"
+            ]
+          ],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 0,
+      "second": 1,
+      "entry": 59223,
+      "paths": [
+        {
+          "conditions": [],
+          "actions": [
+            [
+              "intersection",
+              "Right"
+            ]
+          ],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 0,
+      "second": 2,
+      "entry": 59130,
+      "paths": [
+        {
+          "conditions": [],
+          "actions": [
+            [
+              "intersection",
+              "Left"
+            ]
+          ],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 0,
+      "second": 4,
+      "entry": 59055,
+      "paths": [
+        {
+          "conditions": [],
+          "actions": [
+            [
+              "intersection",
+              "Bottom"
+            ]
+          ],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 0,
+      "second": 5,
+      "entry": 57836,
+      "paths": [
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "intersection",
+              "Bottom"
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                0,
+                0
+              ],
+              "NZ",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "intersection",
+              "Right"
+            ],
+            [
+              "corner",
+              0
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                0,
+                0
+              ],
+              "NZ",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "intersection",
+              "Right"
+            ],
+            [
+              "mark",
+              0
+            ]
+          ],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 0,
+      "second": 6,
+      "entry": 57862,
+      "paths": [
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "intersection",
+              "Left"
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                1,
+                0
+              ],
+              "NZ",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "intersection",
+              "Bottom"
+            ],
+            [
+              "corner",
+              1
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                1,
+                0
+              ],
+              "NZ",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "intersection",
+              "Bottom"
+            ],
+            [
+              "mark",
+              1
+            ]
+          ],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 0,
+      "second": 8,
+      "entry": 58980,
+      "paths": [
+        {
+          "conditions": [],
+          "actions": [
+            [
+              "intersection",
+              "Top"
+            ]
+          ],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 0,
+      "second": 9,
+      "entry": 57888,
+      "paths": [
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "intersection",
+              "Right"
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                2,
+                0
+              ],
+              "NZ",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "intersection",
+              "Top"
+            ],
+            [
+              "corner",
+              2
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                2,
+                0
+              ],
+              "NZ",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "intersection",
+              "Top"
+            ],
+            [
+              "mark",
+              2
+            ]
+          ],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 0,
+      "second": 10,
+      "entry": 57914,
+      "paths": [
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "intersection",
+              "Top"
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                3,
+                0
+              ],
+              "NZ",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "intersection",
+              "Left"
+            ],
+            [
+              "corner",
+              3
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                3,
+                0
+              ],
+              "NZ",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "intersection",
+              "Left"
+            ],
+            [
+              "mark",
+              3
+            ]
+          ],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 1,
+      "second": 0,
+      "entry": 57940,
+      "paths": [
+        {
+          "conditions": [],
+          "actions": [
+            [
+              "intersection",
+              "Right"
+            ],
+            [
+              "second"
+            ]
+          ],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 1,
+      "second": 1,
+      "entry": 57835,
+      "paths": [
+        {
+          "conditions": [],
+          "actions": [],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 1,
+      "second": 2,
+      "entry": 57946,
+      "paths": [
+        {
+          "conditions": [],
+          "actions": [
+            [
+              "intersection",
+              "Right"
+            ],
+            [
+              "intersection",
+              "Left"
+            ]
+          ],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 1,
+      "second": 4,
+      "entry": 57952,
+      "paths": [
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "P",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "corner",
+              0
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "P",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "intersection",
+              "Right"
+            ],
+            [
+              "intersection",
+              "Bottom"
+            ]
+          ],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 1,
+      "second": 5,
+      "entry": 57851,
+      "paths": [
+        {
+          "conditions": [
+            [
+              [
+                "seen",
+                0,
+                0
+              ],
+              "NZ",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "corner",
+              0
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "seen",
+                0,
+                0
+              ],
+              "NZ",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              0
+            ]
+          ],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 1,
+      "second": 6,
+      "entry": 57970,
+      "paths": [
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              true
+            ],
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "intersection",
+              "Right"
+            ],
+            [
+              "intersection",
+              "Left"
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              true
+            ],
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                1,
+                0
+              ],
+              "NZ",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "intersection",
+              "Right"
+            ],
+            [
+              "intersection",
+              "Bottom"
+            ],
+            [
+              "corner",
+              1
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              true
+            ],
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                1,
+                0
+              ],
+              "NZ",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "intersection",
+              "Right"
+            ],
+            [
+              "intersection",
+              "Bottom"
+            ],
+            [
+              "mark",
+              1
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                1,
+                0
+              ],
+              "NZ",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "corner",
+              0
+            ],
+            [
+              "corner",
+              1
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                1,
+                0
+              ],
+              "NZ",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "corner",
+              0
+            ],
+            [
+              "mark",
+              1
+            ]
+          ],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 1,
+      "second": 8,
+      "entry": 57994,
+      "paths": [
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              true
+            ]
+          ],
+          "actions": [],
+          "exit": "special"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "intersection",
+              "Right"
+            ],
+            [
+              "intersection",
+              "Top"
+            ]
+          ],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 1,
+      "second": 9,
+      "entry": 58012,
+      "paths": [
+        {
+          "conditions": [
+            [
+              [
+                "delta",
+                "X"
+              ],
+              "M",
+              true
+            ]
+          ],
+          "actions": [],
+          "exit": "special"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "delta",
+                "X"
+              ],
+              "M",
+              false
+            ]
+          ],
+          "actions": [],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 1,
+      "second": 10,
+      "entry": 58019,
+      "paths": [
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              true
+            ]
+          ],
+          "actions": [],
+          "exit": "special"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "intersection",
+              "Right"
+            ],
+            [
+              "intersection",
+              "Top"
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                3,
+                0
+              ],
+              "NZ",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "intersection",
+              "Right"
+            ],
+            [
+              "intersection",
+              "Left"
+            ],
+            [
+              "corner",
+              3
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                3,
+                0
+              ],
+              "NZ",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "intersection",
+              "Right"
+            ],
+            [
+              "intersection",
+              "Left"
+            ],
+            [
+              "mark",
+              3
+            ]
+          ],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 2,
+      "second": 0,
+      "entry": 58037,
+      "paths": [
+        {
+          "conditions": [],
+          "actions": [
+            [
+              "intersection",
+              "Left"
+            ],
+            [
+              "second"
+            ]
+          ],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 2,
+      "second": 1,
+      "entry": 58043,
+      "paths": [
+        {
+          "conditions": [],
+          "actions": [
+            [
+              "intersection",
+              "Left"
+            ],
+            [
+              "intersection",
+              "Right"
+            ]
+          ],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 2,
+      "second": 2,
+      "entry": 57835,
+      "paths": [
+        {
+          "conditions": [],
+          "actions": [],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 2,
+      "second": 4,
+      "entry": 58049,
+      "paths": [
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              true
+            ]
+          ],
+          "actions": [],
+          "exit": "special"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "intersection",
+              "Left"
+            ],
+            [
+              "intersection",
+              "Bottom"
+            ]
+          ],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 2,
+      "second": 5,
+      "entry": 58067,
+      "paths": [
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              true
+            ]
+          ],
+          "actions": [],
+          "exit": "special"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "intersection",
+              "Left"
+            ],
+            [
+              "intersection",
+              "Bottom"
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                0,
+                0
+              ],
+              "NZ",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "intersection",
+              "Left"
+            ],
+            [
+              "intersection",
+              "Right"
+            ],
+            [
+              "corner",
+              0
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                0,
+                0
+              ],
+              "NZ",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "intersection",
+              "Left"
+            ],
+            [
+              "intersection",
+              "Right"
+            ],
+            [
+              "mark",
+              0
+            ]
+          ],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 2,
+      "second": 6,
+      "entry": 58085,
+      "paths": [
+        {
+          "conditions": [
+            [
+              [
+                "delta",
+                "X"
+              ],
+              "P",
+              true
+            ]
+          ],
+          "actions": [],
+          "exit": "special"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "delta",
+                "X"
+              ],
+              "P",
+              false
+            ]
+          ],
+          "actions": [],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 2,
+      "second": 8,
+      "entry": 58092,
+      "paths": [
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "P",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "corner",
+              3
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "P",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "intersection",
+              "Left"
+            ],
+            [
+              "intersection",
+              "Top"
+            ]
+          ],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 2,
+      "second": 9,
+      "entry": 58110,
+      "paths": [
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              true
+            ],
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "intersection",
+              "Left"
+            ],
+            [
+              "intersection",
+              "Right"
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              true
+            ],
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                2,
+                0
+              ],
+              "NZ",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "intersection",
+              "Left"
+            ],
+            [
+              "intersection",
+              "Top"
+            ],
+            [
+              "corner",
+              2
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              true
+            ],
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                2,
+                0
+              ],
+              "NZ",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "intersection",
+              "Left"
+            ],
+            [
+              "intersection",
+              "Top"
+            ],
+            [
+              "mark",
+              2
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                2,
+                0
+              ],
+              "NZ",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "corner",
+              3
+            ],
+            [
+              "corner",
+              2
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                2,
+                0
+              ],
+              "NZ",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "corner",
+              3
+            ],
+            [
+              "mark",
+              2
+            ]
+          ],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 2,
+      "second": 10,
+      "entry": 57929,
+      "paths": [
+        {
+          "conditions": [
+            [
+              [
+                "seen",
+                3,
+                0
+              ],
+              "NZ",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "corner",
+              3
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "seen",
+                3,
+                0
+              ],
+              "NZ",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              3
+            ]
+          ],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 4,
+      "second": 0,
+      "entry": 58134,
+      "paths": [
+        {
+          "conditions": [],
+          "actions": [
+            [
+              "intersection",
+              "Bottom"
+            ],
+            [
+              "second"
+            ]
+          ],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 4,
+      "second": 1,
+      "entry": 58140,
+      "paths": [
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              true
+            ]
+          ],
+          "actions": [],
+          "exit": "special"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "intersection",
+              "Bottom"
+            ],
+            [
+              "intersection",
+              "Right"
+            ]
+          ],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 4,
+      "second": 2,
+      "entry": 58158,
+      "paths": [
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "P",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "corner",
+              1
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "P",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "intersection",
+              "Bottom"
+            ],
+            [
+              "intersection",
+              "Left"
+            ]
+          ],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 4,
+      "second": 4,
+      "entry": 57835,
+      "paths": [
+        {
+          "conditions": [],
+          "actions": [],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 4,
+      "second": 5,
+      "entry": 58176,
+      "paths": [
+        {
+          "conditions": [
+            [
+              [
+                "delta",
+                "Y"
+              ],
+              "M",
+              true
+            ]
+          ],
+          "actions": [],
+          "exit": "special"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "delta",
+                "Y"
+              ],
+              "M",
+              false
+            ]
+          ],
+          "actions": [],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 4,
+      "second": 6,
+      "entry": 57877,
+      "paths": [
+        {
+          "conditions": [
+            [
+              [
+                "seen",
+                1,
+                0
+              ],
+              "NZ",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "corner",
+              1
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "seen",
+                1,
+                0
+              ],
+              "NZ",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              1
+            ]
+          ],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 4,
+      "second": 8,
+      "entry": 58183,
+      "paths": [
+        {
+          "conditions": [],
+          "actions": [
+            [
+              "intersection",
+              "Bottom"
+            ],
+            [
+              "intersection",
+              "Top"
+            ]
+          ],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 4,
+      "second": 9,
+      "entry": 58189,
+      "paths": [
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              true
+            ]
+          ],
+          "actions": [],
+          "exit": "special"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "intersection",
+              "Bottom"
+            ],
+            [
+              "intersection",
+              "Right"
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                2,
+                0
+              ],
+              "NZ",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "intersection",
+              "Bottom"
+            ],
+            [
+              "intersection",
+              "Top"
+            ],
+            [
+              "corner",
+              2
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                2,
+                0
+              ],
+              "NZ",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "intersection",
+              "Bottom"
+            ],
+            [
+              "intersection",
+              "Top"
+            ],
+            [
+              "mark",
+              2
+            ]
+          ],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 4,
+      "second": 10,
+      "entry": 58210,
+      "paths": [
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              true
+            ],
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "intersection",
+              "Bottom"
+            ],
+            [
+              "intersection",
+              "Top"
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              true
+            ],
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                3,
+                0
+              ],
+              "NZ",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "intersection",
+              "Bottom"
+            ],
+            [
+              "intersection",
+              "Left"
+            ],
+            [
+              "corner",
+              3
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              true
+            ],
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                3,
+                0
+              ],
+              "NZ",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "intersection",
+              "Bottom"
+            ],
+            [
+              "intersection",
+              "Left"
+            ],
+            [
+              "mark",
+              3
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                3,
+                0
+              ],
+              "NZ",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "corner",
+              1
+            ],
+            [
+              "corner",
+              3
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                3,
+                0
+              ],
+              "NZ",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "corner",
+              1
+            ],
+            [
+              "mark",
+              3
+            ]
+          ],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 5,
+      "second": 0,
+      "entry": 58237,
+      "paths": [
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "intersection",
+              "Right"
+            ],
+            [
+              "second"
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                0,
+                0
+              ],
+              "NZ",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              0
+            ],
+            [
+              "corner",
+              0
+            ],
+            [
+              "intersection",
+              "Bottom"
+            ],
+            [
+              "second"
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                0,
+                0
+              ],
+              "NZ",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              0
+            ],
+            [
+              "intersection",
+              "Bottom"
+            ],
+            [
+              "second"
+            ]
+          ],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 5,
+      "second": 1,
+      "entry": 58265,
+      "paths": [
+        {
+          "conditions": [
+            [
+              [
+                "delta",
+                "X"
+              ],
+              "P",
+              true
+            ]
+          ],
+          "actions": [],
+          "exit": "special"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "delta",
+                "X"
+              ],
+              "P",
+              false
+            ]
+          ],
+          "actions": [],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 5,
+      "second": 2,
+      "entry": 58272,
+      "paths": [
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "intersection",
+              "Right"
+            ],
+            [
+              "intersection",
+              "Left"
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                0,
+                0
+              ],
+              "NZ",
+              true
+            ],
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "P",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              0
+            ],
+            [
+              "corner",
+              0
+            ],
+            [
+              "corner",
+              1
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                0,
+                0
+              ],
+              "NZ",
+              true
+            ],
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "P",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              0
+            ],
+            [
+              "corner",
+              0
+            ],
+            [
+              "intersection",
+              "Bottom"
+            ],
+            [
+              "intersection",
+              "Left"
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                0,
+                0
+              ],
+              "NZ",
+              false
+            ],
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "P",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              0
+            ],
+            [
+              "corner",
+              1
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                0,
+                0
+              ],
+              "NZ",
+              false
+            ],
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "P",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              0
+            ],
+            [
+              "intersection",
+              "Bottom"
+            ],
+            [
+              "intersection",
+              "Left"
+            ]
+          ],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 5,
+      "second": 4,
+      "entry": 58303,
+      "paths": [
+        {
+          "conditions": [
+            [
+              [
+                "seen",
+                0,
+                0
+              ],
+              "NZ",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "corner",
+              0
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "seen",
+                0,
+                0
+              ],
+              "NZ",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              0
+            ]
+          ],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 5,
+      "second": 5,
+      "entry": 57835,
+      "paths": [
+        {
+          "conditions": [],
+          "actions": [],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 5,
+      "second": 6,
+      "entry": 58314,
+      "paths": [
+        {
+          "conditions": [
+            [
+              [
+                "seen",
+                0,
+                0
+              ],
+              "NZ",
+              true
+            ],
+            [
+              [
+                "seen",
+                1,
+                0
+              ],
+              "NZ",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "corner",
+              0
+            ],
+            [
+              "corner",
+              1
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "seen",
+                0,
+                0
+              ],
+              "NZ",
+              true
+            ],
+            [
+              [
+                "seen",
+                1,
+                0
+              ],
+              "NZ",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "corner",
+              0
+            ],
+            [
+              "mark",
+              1
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "seen",
+                0,
+                0
+              ],
+              "NZ",
+              false
+            ],
+            [
+              [
+                "seen",
+                1,
+                1
+              ],
+              "NZ",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              0
+            ],
+            [
+              "corner",
+              1
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "seen",
+                0,
+                0
+              ],
+              "NZ",
+              false
+            ],
+            [
+              [
+                "seen",
+                1,
+                1
+              ],
+              "NZ",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              0
+            ],
+            [
+              "mark",
+              1
+            ]
+          ],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 5,
+      "second": 8,
+      "entry": 58320,
+      "paths": [
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              true
+            ],
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              true
+            ]
+          ],
+          "actions": [],
+          "exit": "special"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              true
+            ],
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "intersection",
+              "Right"
+            ],
+            [
+              "intersection",
+              "Top"
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                0,
+                0
+              ],
+              "NZ",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "corner",
+              0
+            ],
+            [
+              "intersection",
+              "Bottom"
+            ],
+            [
+              "intersection",
+              "Top"
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                0,
+                0
+              ],
+              "NZ",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              0
+            ],
+            [
+              "intersection",
+              "Bottom"
+            ],
+            [
+              "intersection",
+              "Top"
+            ]
+          ],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 5,
+      "second": 9,
+      "entry": 59485,
+      "paths": [
+        {
+          "conditions": [],
+          "actions": [],
+          "exit": "special"
+        }
+      ]
+    },
+    {
+      "first": 5,
+      "second": 10,
+      "entry": 58341,
+      "paths": [
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              true
+            ],
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              true
+            ]
+          ],
+          "actions": [],
+          "exit": "special"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              true
+            ],
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "intersection",
+              "Right"
+            ],
+            [
+              "intersection",
+              "Top"
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              true
+            ],
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                3,
+                0
+              ],
+              "NZ",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "intersection",
+              "Right"
+            ],
+            [
+              "intersection",
+              "Left"
+            ],
+            [
+              "corner",
+              3
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              true
+            ],
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                3,
+                0
+              ],
+              "NZ",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "intersection",
+              "Right"
+            ],
+            [
+              "intersection",
+              "Left"
+            ],
+            [
+              "mark",
+              3
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                0,
+                0
+              ],
+              "NZ",
+              true
+            ],
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              true
+            ],
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              0
+            ],
+            [
+              "corner",
+              0
+            ],
+            [
+              "intersection",
+              "Bottom"
+            ],
+            [
+              "intersection",
+              "Top"
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                0,
+                0
+              ],
+              "NZ",
+              true
+            ],
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              true
+            ],
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                3,
+                1
+              ],
+              "NZ",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              0
+            ],
+            [
+              "corner",
+              0
+            ],
+            [
+              "intersection",
+              "Bottom"
+            ],
+            [
+              "intersection",
+              "Left"
+            ],
+            [
+              "corner",
+              3
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                0,
+                0
+              ],
+              "NZ",
+              true
+            ],
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              true
+            ],
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                3,
+                1
+              ],
+              "NZ",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              0
+            ],
+            [
+              "corner",
+              0
+            ],
+            [
+              "intersection",
+              "Bottom"
+            ],
+            [
+              "intersection",
+              "Left"
+            ],
+            [
+              "mark",
+              3
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                0,
+                0
+              ],
+              "NZ",
+              true
+            ],
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                3,
+                1
+              ],
+              "NZ",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              0
+            ],
+            [
+              "corner",
+              0
+            ],
+            [
+              "corner",
+              1
+            ],
+            [
+              "corner",
+              3
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                0,
+                0
+              ],
+              "NZ",
+              true
+            ],
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                3,
+                1
+              ],
+              "NZ",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              0
+            ],
+            [
+              "corner",
+              0
+            ],
+            [
+              "corner",
+              1
+            ],
+            [
+              "mark",
+              3
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                0,
+                0
+              ],
+              "NZ",
+              false
+            ],
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              true
+            ],
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              0
+            ],
+            [
+              "intersection",
+              "Bottom"
+            ],
+            [
+              "intersection",
+              "Top"
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                0,
+                0
+              ],
+              "NZ",
+              false
+            ],
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              true
+            ],
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                3,
+                1
+              ],
+              "NZ",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              0
+            ],
+            [
+              "intersection",
+              "Bottom"
+            ],
+            [
+              "intersection",
+              "Left"
+            ],
+            [
+              "corner",
+              3
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                0,
+                0
+              ],
+              "NZ",
+              false
+            ],
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              true
+            ],
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                3,
+                1
+              ],
+              "NZ",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              0
+            ],
+            [
+              "intersection",
+              "Bottom"
+            ],
+            [
+              "intersection",
+              "Left"
+            ],
+            [
+              "mark",
+              3
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                0,
+                0
+              ],
+              "NZ",
+              false
+            ],
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                3,
+                1
+              ],
+              "NZ",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              0
+            ],
+            [
+              "corner",
+              1
+            ],
+            [
+              "corner",
+              3
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                0,
+                0
+              ],
+              "NZ",
+              false
+            ],
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                3,
+                1
+              ],
+              "NZ",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              0
+            ],
+            [
+              "corner",
+              1
+            ],
+            [
+              "mark",
+              3
+            ]
+          ],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 6,
+      "second": 0,
+      "entry": 58366,
+      "paths": [
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "intersection",
+              "Bottom"
+            ],
+            [
+              "second"
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                1,
+                0
+              ],
+              "NZ",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              1
+            ],
+            [
+              "corner",
+              1
+            ],
+            [
+              "intersection",
+              "Left"
+            ],
+            [
+              "second"
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                1,
+                0
+              ],
+              "NZ",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              1
+            ],
+            [
+              "intersection",
+              "Left"
+            ],
+            [
+              "second"
+            ]
+          ],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 6,
+      "second": 1,
+      "entry": 58394,
+      "paths": [
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              true
+            ],
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              true
+            ]
+          ],
+          "actions": [],
+          "exit": "special"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              true
+            ],
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "intersection",
+              "Bottom"
+            ],
+            [
+              "intersection",
+              "Right"
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                1,
+                0
+              ],
+              "NZ",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "corner",
+              1
+            ],
+            [
+              "intersection",
+              "Left"
+            ],
+            [
+              "intersection",
+              "Right"
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                1,
+                0
+              ],
+              "NZ",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              1
+            ],
+            [
+              "intersection",
+              "Left"
+            ],
+            [
+              "intersection",
+              "Right"
+            ]
+          ],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 6,
+      "second": 2,
+      "entry": 58415,
+      "paths": [
+        {
+          "conditions": [
+            [
+              [
+                "seen",
+                1,
+                0
+              ],
+              "NZ",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "corner",
+              1
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "seen",
+                1,
+                0
+              ],
+              "NZ",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              1
+            ]
+          ],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 6,
+      "second": 4,
+      "entry": 58426,
+      "paths": [
+        {
+          "conditions": [
+            [
+              [
+                "delta",
+                "Y"
+              ],
+              "P",
+              true
+            ]
+          ],
+          "actions": [],
+          "exit": "special"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "delta",
+                "Y"
+              ],
+              "P",
+              false
+            ]
+          ],
+          "actions": [],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 6,
+      "second": 5,
+      "entry": 59485,
+      "paths": [
+        {
+          "conditions": [],
+          "actions": [],
+          "exit": "special"
+        }
+      ]
+    },
+    {
+      "first": 6,
+      "second": 6,
+      "entry": 57835,
+      "paths": [
+        {
+          "conditions": [],
+          "actions": [],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 6,
+      "second": 8,
+      "entry": 58433,
+      "paths": [
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "intersection",
+              "Bottom"
+            ],
+            [
+              "intersection",
+              "Top"
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                1,
+                0
+              ],
+              "NZ",
+              true
+            ],
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "P",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              1
+            ],
+            [
+              "corner",
+              1
+            ],
+            [
+              "corner",
+              3
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                1,
+                0
+              ],
+              "NZ",
+              true
+            ],
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "P",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              1
+            ],
+            [
+              "corner",
+              1
+            ],
+            [
+              "intersection",
+              "Left"
+            ],
+            [
+              "intersection",
+              "Top"
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                1,
+                0
+              ],
+              "NZ",
+              false
+            ],
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "P",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              1
+            ],
+            [
+              "corner",
+              3
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                1,
+                0
+              ],
+              "NZ",
+              false
+            ],
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "P",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              1
+            ],
+            [
+              "intersection",
+              "Left"
+            ],
+            [
+              "intersection",
+              "Top"
+            ]
+          ],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 6,
+      "second": 9,
+      "entry": 58464,
+      "paths": [
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              true
+            ],
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              true
+            ]
+          ],
+          "actions": [],
+          "exit": "special"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              true
+            ],
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "intersection",
+              "Bottom"
+            ],
+            [
+              "intersection",
+              "Right"
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              true
+            ],
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                2,
+                0
+              ],
+              "NZ",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "intersection",
+              "Bottom"
+            ],
+            [
+              "intersection",
+              "Top"
+            ],
+            [
+              "corner",
+              2
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              true
+            ],
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                2,
+                0
+              ],
+              "NZ",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "intersection",
+              "Bottom"
+            ],
+            [
+              "intersection",
+              "Top"
+            ],
+            [
+              "mark",
+              2
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                1,
+                0
+              ],
+              "NZ",
+              true
+            ],
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              true
+            ],
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              1
+            ],
+            [
+              "corner",
+              1
+            ],
+            [
+              "intersection",
+              "Left"
+            ],
+            [
+              "intersection",
+              "Right"
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                1,
+                0
+              ],
+              "NZ",
+              true
+            ],
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              true
+            ],
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                2,
+                2
+              ],
+              "NZ",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              1
+            ],
+            [
+              "corner",
+              1
+            ],
+            [
+              "intersection",
+              "Left"
+            ],
+            [
+              "intersection",
+              "Top"
+            ],
+            [
+              "corner",
+              2
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                1,
+                0
+              ],
+              "NZ",
+              true
+            ],
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              true
+            ],
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                2,
+                2
+              ],
+              "NZ",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              1
+            ],
+            [
+              "corner",
+              1
+            ],
+            [
+              "intersection",
+              "Left"
+            ],
+            [
+              "intersection",
+              "Top"
+            ],
+            [
+              "mark",
+              2
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                1,
+                0
+              ],
+              "NZ",
+              true
+            ],
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                2,
+                2
+              ],
+              "NZ",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              1
+            ],
+            [
+              "corner",
+              1
+            ],
+            [
+              "corner",
+              3
+            ],
+            [
+              "corner",
+              2
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                1,
+                0
+              ],
+              "NZ",
+              true
+            ],
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                2,
+                2
+              ],
+              "NZ",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              1
+            ],
+            [
+              "corner",
+              1
+            ],
+            [
+              "corner",
+              3
+            ],
+            [
+              "mark",
+              2
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                1,
+                0
+              ],
+              "NZ",
+              false
+            ],
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              true
+            ],
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              1
+            ],
+            [
+              "intersection",
+              "Left"
+            ],
+            [
+              "intersection",
+              "Right"
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                1,
+                0
+              ],
+              "NZ",
+              false
+            ],
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              true
+            ],
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                2,
+                2
+              ],
+              "NZ",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              1
+            ],
+            [
+              "intersection",
+              "Left"
+            ],
+            [
+              "intersection",
+              "Top"
+            ],
+            [
+              "corner",
+              2
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                1,
+                0
+              ],
+              "NZ",
+              false
+            ],
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              true
+            ],
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                2,
+                2
+              ],
+              "NZ",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              1
+            ],
+            [
+              "intersection",
+              "Left"
+            ],
+            [
+              "intersection",
+              "Top"
+            ],
+            [
+              "mark",
+              2
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                1,
+                0
+              ],
+              "NZ",
+              false
+            ],
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                2,
+                2
+              ],
+              "NZ",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              1
+            ],
+            [
+              "corner",
+              3
+            ],
+            [
+              "corner",
+              2
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                1,
+                0
+              ],
+              "NZ",
+              false
+            ],
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                2,
+                2
+              ],
+              "NZ",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              1
+            ],
+            [
+              "corner",
+              3
+            ],
+            [
+              "mark",
+              2
+            ]
+          ],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 6,
+      "second": 10,
+      "entry": 58489,
+      "paths": [
+        {
+          "conditions": [
+            [
+              [
+                "seen",
+                1,
+                0
+              ],
+              "NZ",
+              true
+            ],
+            [
+              [
+                "seen",
+                3,
+                0
+              ],
+              "NZ",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "corner",
+              1
+            ],
+            [
+              "corner",
+              3
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "seen",
+                1,
+                0
+              ],
+              "NZ",
+              true
+            ],
+            [
+              [
+                "seen",
+                3,
+                0
+              ],
+              "NZ",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "corner",
+              1
+            ],
+            [
+              "mark",
+              3
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "seen",
+                1,
+                0
+              ],
+              "NZ",
+              false
+            ],
+            [
+              [
+                "seen",
+                3,
+                2
+              ],
+              "NZ",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              1
+            ],
+            [
+              "corner",
+              3
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "seen",
+                1,
+                0
+              ],
+              "NZ",
+              false
+            ],
+            [
+              [
+                "seen",
+                3,
+                2
+              ],
+              "NZ",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              1
+            ],
+            [
+              "mark",
+              3
+            ]
+          ],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 8,
+      "second": 0,
+      "entry": 58495,
+      "paths": [
+        {
+          "conditions": [],
+          "actions": [
+            [
+              "intersection",
+              "Top"
+            ],
+            [
+              "second"
+            ]
+          ],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 8,
+      "second": 1,
+      "entry": 58501,
+      "paths": [
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "P",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "corner",
+              2
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "P",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "intersection",
+              "Top"
+            ],
+            [
+              "intersection",
+              "Right"
+            ]
+          ],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 8,
+      "second": 2,
+      "entry": 58519,
+      "paths": [
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              true
+            ]
+          ],
+          "actions": [],
+          "exit": "special"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "intersection",
+              "Top"
+            ],
+            [
+              "intersection",
+              "Left"
+            ]
+          ],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 8,
+      "second": 4,
+      "entry": 58537,
+      "paths": [
+        {
+          "conditions": [],
+          "actions": [
+            [
+              "intersection",
+              "Top"
+            ],
+            [
+              "intersection",
+              "Bottom"
+            ]
+          ],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 8,
+      "second": 5,
+      "entry": 58543,
+      "paths": [
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              true
+            ],
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "intersection",
+              "Top"
+            ],
+            [
+              "intersection",
+              "Bottom"
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              true
+            ],
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                0,
+                0
+              ],
+              "NZ",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "intersection",
+              "Top"
+            ],
+            [
+              "intersection",
+              "Right"
+            ],
+            [
+              "corner",
+              0
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              true
+            ],
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                0,
+                0
+              ],
+              "NZ",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "intersection",
+              "Top"
+            ],
+            [
+              "intersection",
+              "Right"
+            ],
+            [
+              "mark",
+              0
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                0,
+                0
+              ],
+              "NZ",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "corner",
+              2
+            ],
+            [
+              "corner",
+              0
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                0,
+                0
+              ],
+              "NZ",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "corner",
+              2
+            ],
+            [
+              "mark",
+              0
+            ]
+          ],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 8,
+      "second": 6,
+      "entry": 58570,
+      "paths": [
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              true
+            ]
+          ],
+          "actions": [],
+          "exit": "special"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "intersection",
+              "Top"
+            ],
+            [
+              "intersection",
+              "Left"
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                1,
+                0
+              ],
+              "NZ",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "intersection",
+              "Top"
+            ],
+            [
+              "intersection",
+              "Bottom"
+            ],
+            [
+              "corner",
+              1
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                1,
+                0
+              ],
+              "NZ",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "intersection",
+              "Top"
+            ],
+            [
+              "intersection",
+              "Bottom"
+            ],
+            [
+              "mark",
+              1
+            ]
+          ],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 8,
+      "second": 8,
+      "entry": 57835,
+      "paths": [
+        {
+          "conditions": [],
+          "actions": [],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 8,
+      "second": 9,
+      "entry": 57903,
+      "paths": [
+        {
+          "conditions": [
+            [
+              [
+                "seen",
+                2,
+                0
+              ],
+              "NZ",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "corner",
+              2
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "seen",
+                2,
+                0
+              ],
+              "NZ",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              2
+            ]
+          ],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 8,
+      "second": 10,
+      "entry": 58591,
+      "paths": [
+        {
+          "conditions": [
+            [
+              [
+                "delta",
+                "Y"
+              ],
+              "P",
+              true
+            ]
+          ],
+          "actions": [],
+          "exit": "special"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "delta",
+                "Y"
+              ],
+              "P",
+              false
+            ]
+          ],
+          "actions": [],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 9,
+      "second": 0,
+      "entry": 58598,
+      "paths": [
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "intersection",
+              "Top"
+            ],
+            [
+              "second"
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                2,
+                0
+              ],
+              "NZ",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              2
+            ],
+            [
+              "corner",
+              2
+            ],
+            [
+              "intersection",
+              "Right"
+            ],
+            [
+              "second"
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                2,
+                0
+              ],
+              "NZ",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              2
+            ],
+            [
+              "intersection",
+              "Right"
+            ],
+            [
+              "second"
+            ]
+          ],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 9,
+      "second": 1,
+      "entry": 58626,
+      "paths": [
+        {
+          "conditions": [
+            [
+              [
+                "seen",
+                2,
+                0
+              ],
+              "NZ",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "corner",
+              2
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "seen",
+                2,
+                0
+              ],
+              "NZ",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              2
+            ]
+          ],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 9,
+      "second": 2,
+      "entry": 58637,
+      "paths": [
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              true
+            ],
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              true
+            ]
+          ],
+          "actions": [],
+          "exit": "special"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              true
+            ],
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "intersection",
+              "Top"
+            ],
+            [
+              "intersection",
+              "Left"
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                2,
+                0
+              ],
+              "NZ",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "corner",
+              2
+            ],
+            [
+              "intersection",
+              "Right"
+            ],
+            [
+              "intersection",
+              "Left"
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                2,
+                0
+              ],
+              "NZ",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              2
+            ],
+            [
+              "intersection",
+              "Right"
+            ],
+            [
+              "intersection",
+              "Left"
+            ]
+          ],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 9,
+      "second": 4,
+      "entry": 58658,
+      "paths": [
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "intersection",
+              "Top"
+            ],
+            [
+              "intersection",
+              "Bottom"
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                2,
+                0
+              ],
+              "NZ",
+              true
+            ],
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "P",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              2
+            ],
+            [
+              "corner",
+              2
+            ],
+            [
+              "corner",
+              0
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                2,
+                0
+              ],
+              "NZ",
+              true
+            ],
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "P",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              2
+            ],
+            [
+              "corner",
+              2
+            ],
+            [
+              "intersection",
+              "Right"
+            ],
+            [
+              "intersection",
+              "Bottom"
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                2,
+                0
+              ],
+              "NZ",
+              false
+            ],
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "P",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              2
+            ],
+            [
+              "corner",
+              0
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                2,
+                0
+              ],
+              "NZ",
+              false
+            ],
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "P",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              2
+            ],
+            [
+              "intersection",
+              "Right"
+            ],
+            [
+              "intersection",
+              "Bottom"
+            ]
+          ],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 9,
+      "second": 5,
+      "entry": 58689,
+      "paths": [
+        {
+          "conditions": [
+            [
+              [
+                "seen",
+                2,
+                0
+              ],
+              "NZ",
+              true
+            ],
+            [
+              [
+                "seen",
+                0,
+                0
+              ],
+              "NZ",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "corner",
+              2
+            ],
+            [
+              "corner",
+              0
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "seen",
+                2,
+                0
+              ],
+              "NZ",
+              true
+            ],
+            [
+              [
+                "seen",
+                0,
+                0
+              ],
+              "NZ",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "corner",
+              2
+            ],
+            [
+              "mark",
+              0
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "seen",
+                2,
+                0
+              ],
+              "NZ",
+              false
+            ],
+            [
+              [
+                "seen",
+                0,
+                4
+              ],
+              "NZ",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              2
+            ],
+            [
+              "corner",
+              0
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "seen",
+                2,
+                0
+              ],
+              "NZ",
+              false
+            ],
+            [
+              [
+                "seen",
+                0,
+                4
+              ],
+              "NZ",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              2
+            ],
+            [
+              "mark",
+              0
+            ]
+          ],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 9,
+      "second": 6,
+      "entry": 58695,
+      "paths": [
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              true
+            ],
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              true
+            ]
+          ],
+          "actions": [],
+          "exit": "special"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              true
+            ],
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "intersection",
+              "Top"
+            ],
+            [
+              "intersection",
+              "Left"
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              true
+            ],
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                1,
+                0
+              ],
+              "NZ",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "intersection",
+              "Top"
+            ],
+            [
+              "intersection",
+              "Bottom"
+            ],
+            [
+              "corner",
+              1
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              true
+            ],
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                1,
+                0
+              ],
+              "NZ",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "intersection",
+              "Top"
+            ],
+            [
+              "intersection",
+              "Bottom"
+            ],
+            [
+              "mark",
+              1
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                2,
+                0
+              ],
+              "NZ",
+              true
+            ],
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              true
+            ],
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              2
+            ],
+            [
+              "corner",
+              2
+            ],
+            [
+              "intersection",
+              "Right"
+            ],
+            [
+              "intersection",
+              "Left"
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                2,
+                0
+              ],
+              "NZ",
+              true
+            ],
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              true
+            ],
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                1,
+                4
+              ],
+              "NZ",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              2
+            ],
+            [
+              "corner",
+              2
+            ],
+            [
+              "intersection",
+              "Right"
+            ],
+            [
+              "intersection",
+              "Bottom"
+            ],
+            [
+              "corner",
+              1
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                2,
+                0
+              ],
+              "NZ",
+              true
+            ],
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              true
+            ],
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                1,
+                4
+              ],
+              "NZ",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              2
+            ],
+            [
+              "corner",
+              2
+            ],
+            [
+              "intersection",
+              "Right"
+            ],
+            [
+              "intersection",
+              "Bottom"
+            ],
+            [
+              "mark",
+              1
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                2,
+                0
+              ],
+              "NZ",
+              true
+            ],
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                1,
+                4
+              ],
+              "NZ",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              2
+            ],
+            [
+              "corner",
+              2
+            ],
+            [
+              "corner",
+              0
+            ],
+            [
+              "corner",
+              1
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                2,
+                0
+              ],
+              "NZ",
+              true
+            ],
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                1,
+                4
+              ],
+              "NZ",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              2
+            ],
+            [
+              "corner",
+              2
+            ],
+            [
+              "corner",
+              0
+            ],
+            [
+              "mark",
+              1
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                2,
+                0
+              ],
+              "NZ",
+              false
+            ],
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              true
+            ],
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              2
+            ],
+            [
+              "intersection",
+              "Right"
+            ],
+            [
+              "intersection",
+              "Left"
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                2,
+                0
+              ],
+              "NZ",
+              false
+            ],
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              true
+            ],
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                1,
+                4
+              ],
+              "NZ",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              2
+            ],
+            [
+              "intersection",
+              "Right"
+            ],
+            [
+              "intersection",
+              "Bottom"
+            ],
+            [
+              "corner",
+              1
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                2,
+                0
+              ],
+              "NZ",
+              false
+            ],
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              true
+            ],
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                1,
+                4
+              ],
+              "NZ",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              2
+            ],
+            [
+              "intersection",
+              "Right"
+            ],
+            [
+              "intersection",
+              "Bottom"
+            ],
+            [
+              "mark",
+              1
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                2,
+                0
+              ],
+              "NZ",
+              false
+            ],
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                1,
+                4
+              ],
+              "NZ",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              2
+            ],
+            [
+              "corner",
+              0
+            ],
+            [
+              "corner",
+              1
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                2,
+                0
+              ],
+              "NZ",
+              false
+            ],
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                1,
+                4
+              ],
+              "NZ",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              2
+            ],
+            [
+              "corner",
+              0
+            ],
+            [
+              "mark",
+              1
+            ]
+          ],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 9,
+      "second": 8,
+      "entry": 58720,
+      "paths": [
+        {
+          "conditions": [
+            [
+              [
+                "delta",
+                "Y"
+              ],
+              "M",
+              true
+            ]
+          ],
+          "actions": [],
+          "exit": "special"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "delta",
+                "Y"
+              ],
+              "M",
+              false
+            ]
+          ],
+          "actions": [],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 9,
+      "second": 9,
+      "entry": 57835,
+      "paths": [
+        {
+          "conditions": [],
+          "actions": [],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 9,
+      "second": 10,
+      "entry": 59485,
+      "paths": [
+        {
+          "conditions": [],
+          "actions": [],
+          "exit": "special"
+        }
+      ]
+    },
+    {
+      "first": 10,
+      "second": 0,
+      "entry": 58727,
+      "paths": [
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "intersection",
+              "Left"
+            ],
+            [
+              "second"
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                3,
+                0
+              ],
+              "NZ",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              3
+            ],
+            [
+              "corner",
+              3
+            ],
+            [
+              "intersection",
+              "Top"
+            ],
+            [
+              "second"
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                3,
+                0
+              ],
+              "NZ",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              3
+            ],
+            [
+              "intersection",
+              "Top"
+            ],
+            [
+              "second"
+            ]
+          ],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 10,
+      "second": 1,
+      "entry": 58755,
+      "paths": [
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "intersection",
+              "Left"
+            ],
+            [
+              "intersection",
+              "Right"
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                3,
+                0
+              ],
+              "NZ",
+              true
+            ],
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "P",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              3
+            ],
+            [
+              "corner",
+              3
+            ],
+            [
+              "corner",
+              2
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                3,
+                0
+              ],
+              "NZ",
+              true
+            ],
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "P",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              3
+            ],
+            [
+              "corner",
+              3
+            ],
+            [
+              "intersection",
+              "Top"
+            ],
+            [
+              "intersection",
+              "Right"
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                3,
+                0
+              ],
+              "NZ",
+              false
+            ],
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "P",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              3
+            ],
+            [
+              "corner",
+              2
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                3,
+                0
+              ],
+              "NZ",
+              false
+            ],
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "P",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              3
+            ],
+            [
+              "intersection",
+              "Top"
+            ],
+            [
+              "intersection",
+              "Right"
+            ]
+          ],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 10,
+      "second": 2,
+      "entry": 58786,
+      "paths": [
+        {
+          "conditions": [
+            [
+              [
+                "delta",
+                "X"
+              ],
+              "M",
+              true
+            ]
+          ],
+          "actions": [],
+          "exit": "special"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "delta",
+                "X"
+              ],
+              "M",
+              false
+            ]
+          ],
+          "actions": [],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 10,
+      "second": 4,
+      "entry": 58793,
+      "paths": [
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              true
+            ],
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              true
+            ]
+          ],
+          "actions": [],
+          "exit": "special"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              true
+            ],
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "intersection",
+              "Left"
+            ],
+            [
+              "intersection",
+              "Bottom"
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                3,
+                0
+              ],
+              "NZ",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "corner",
+              3
+            ],
+            [
+              "intersection",
+              "Top"
+            ],
+            [
+              "intersection",
+              "Bottom"
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                3,
+                0
+              ],
+              "NZ",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              3
+            ],
+            [
+              "intersection",
+              "Top"
+            ],
+            [
+              "intersection",
+              "Bottom"
+            ]
+          ],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 10,
+      "second": 5,
+      "entry": 58814,
+      "paths": [
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              true
+            ],
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              true
+            ]
+          ],
+          "actions": [],
+          "exit": "special"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              true
+            ],
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "intersection",
+              "Left"
+            ],
+            [
+              "intersection",
+              "Bottom"
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              true
+            ],
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                0,
+                0
+              ],
+              "NZ",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "intersection",
+              "Left"
+            ],
+            [
+              "intersection",
+              "Right"
+            ],
+            [
+              "corner",
+              0
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              true
+            ],
+            [
+              [
+                "product",
+                "Bottom",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                0,
+                0
+              ],
+              "NZ",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "intersection",
+              "Left"
+            ],
+            [
+              "intersection",
+              "Right"
+            ],
+            [
+              "mark",
+              0
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                3,
+                0
+              ],
+              "NZ",
+              true
+            ],
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              true
+            ],
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              3
+            ],
+            [
+              "corner",
+              3
+            ],
+            [
+              "intersection",
+              "Top"
+            ],
+            [
+              "intersection",
+              "Bottom"
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                3,
+                0
+              ],
+              "NZ",
+              true
+            ],
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              true
+            ],
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                0,
+                8
+              ],
+              "NZ",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              3
+            ],
+            [
+              "corner",
+              3
+            ],
+            [
+              "intersection",
+              "Top"
+            ],
+            [
+              "intersection",
+              "Right"
+            ],
+            [
+              "corner",
+              0
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                3,
+                0
+              ],
+              "NZ",
+              true
+            ],
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              true
+            ],
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                0,
+                8
+              ],
+              "NZ",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              3
+            ],
+            [
+              "corner",
+              3
+            ],
+            [
+              "intersection",
+              "Top"
+            ],
+            [
+              "intersection",
+              "Right"
+            ],
+            [
+              "mark",
+              0
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                3,
+                0
+              ],
+              "NZ",
+              true
+            ],
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                0,
+                8
+              ],
+              "NZ",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              3
+            ],
+            [
+              "corner",
+              3
+            ],
+            [
+              "corner",
+              2
+            ],
+            [
+              "corner",
+              0
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                3,
+                0
+              ],
+              "NZ",
+              true
+            ],
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                0,
+                8
+              ],
+              "NZ",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              3
+            ],
+            [
+              "corner",
+              3
+            ],
+            [
+              "corner",
+              2
+            ],
+            [
+              "mark",
+              0
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                3,
+                0
+              ],
+              "NZ",
+              false
+            ],
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              true
+            ],
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              3
+            ],
+            [
+              "intersection",
+              "Top"
+            ],
+            [
+              "intersection",
+              "Bottom"
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                3,
+                0
+              ],
+              "NZ",
+              false
+            ],
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              true
+            ],
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                0,
+                8
+              ],
+              "NZ",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              3
+            ],
+            [
+              "intersection",
+              "Top"
+            ],
+            [
+              "intersection",
+              "Right"
+            ],
+            [
+              "corner",
+              0
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                3,
+                0
+              ],
+              "NZ",
+              false
+            ],
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              true
+            ],
+            [
+              [
+                "product",
+                "Bottom",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                0,
+                8
+              ],
+              "NZ",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              3
+            ],
+            [
+              "intersection",
+              "Top"
+            ],
+            [
+              "intersection",
+              "Right"
+            ],
+            [
+              "mark",
+              0
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                3,
+                0
+              ],
+              "NZ",
+              false
+            ],
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                0,
+                8
+              ],
+              "NZ",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              3
+            ],
+            [
+              "corner",
+              2
+            ],
+            [
+              "corner",
+              0
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "product",
+                "Top",
+                "Left"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                3,
+                0
+              ],
+              "NZ",
+              false
+            ],
+            [
+              [
+                "product",
+                "Top",
+                "Right"
+              ],
+              "M",
+              false
+            ],
+            [
+              [
+                "seen",
+                0,
+                8
+              ],
+              "NZ",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              3
+            ],
+            [
+              "corner",
+              2
+            ],
+            [
+              "mark",
+              0
+            ]
+          ],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 10,
+      "second": 6,
+      "entry": 59485,
+      "paths": [
+        {
+          "conditions": [],
+          "actions": [],
+          "exit": "special"
+        }
+      ]
+    },
+    {
+      "first": 10,
+      "second": 8,
+      "entry": 58839,
+      "paths": [
+        {
+          "conditions": [
+            [
+              [
+                "seen",
+                3,
+                0
+              ],
+              "NZ",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "corner",
+              3
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "seen",
+                3,
+                0
+              ],
+              "NZ",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              3
+            ]
+          ],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 10,
+      "second": 9,
+      "entry": 58850,
+      "paths": [
+        {
+          "conditions": [
+            [
+              [
+                "seen",
+                3,
+                0
+              ],
+              "NZ",
+              true
+            ],
+            [
+              [
+                "seen",
+                2,
+                0
+              ],
+              "NZ",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "corner",
+              3
+            ],
+            [
+              "corner",
+              2
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "seen",
+                3,
+                0
+              ],
+              "NZ",
+              true
+            ],
+            [
+              [
+                "seen",
+                2,
+                0
+              ],
+              "NZ",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "corner",
+              3
+            ],
+            [
+              "mark",
+              2
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "seen",
+                3,
+                0
+              ],
+              "NZ",
+              false
+            ],
+            [
+              [
+                "seen",
+                2,
+                8
+              ],
+              "NZ",
+              true
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              3
+            ],
+            [
+              "corner",
+              2
+            ]
+          ],
+          "exit": "normal"
+        },
+        {
+          "conditions": [
+            [
+              [
+                "seen",
+                3,
+                0
+              ],
+              "NZ",
+              false
+            ],
+            [
+              [
+                "seen",
+                2,
+                8
+              ],
+              "NZ",
+              false
+            ]
+          ],
+          "actions": [
+            [
+              "mark",
+              3
+            ],
+            [
+              "mark",
+              2
+            ]
+          ],
+          "exit": "normal"
+        }
+      ]
+    },
+    {
+      "first": 10,
+      "second": 10,
+      "entry": 57835,
+      "paths": [
+        {
+          "conditions": [],
+          "actions": [],
+          "exit": "normal"
+        }
+      ]
+    }
+  ],
+  "independent_geometry_proof": false
+}

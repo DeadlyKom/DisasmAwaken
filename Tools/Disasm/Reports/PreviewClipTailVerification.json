@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "counts": {
+    "differences": 655360,
+    "append": 526848,
+    "second": 524288,
+    "corners": 262144,
+    "configured_corners": 4096
+  },
+  "exact_main_alternate_and_index_context": true,
+  "append_wraps_only_inside_c8": true,
+  "ordered_point_and_counter_writes_checked": true,
+  "input_carry_preserved_by_append": true,
+  "corner_and_clears_input_carry": true,
+  "all_block_bytes_checked": true,
+  "real_configurer_all_256_component_values": true,
+  "original_immediates_not_replaced_in_source": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "typed_bytes": 3,
+  "physical_structures": 1,
+  "newly_declared_structures": [],
+  "reused_structures": [
+    "FPreviewObjectAngles"
+  ],
+  "physical_records": 1,
+  "original_initial_values_preserved": true,
+  "scoped_candidate_and_history": true,
+  "assembly_executed": false
+}

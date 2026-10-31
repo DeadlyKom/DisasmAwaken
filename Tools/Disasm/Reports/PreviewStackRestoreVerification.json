@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "cases": 65536,
+  "all_saved_sp_words": true,
+  "all_main_alternate_index_context_preserved": true,
+  "no_memory_writes": true,
+  "real_ld_sp_executed": true,
+  "next_queue_not_executed": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

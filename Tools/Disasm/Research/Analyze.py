@@ -86,6 +86,30 @@ def analyze(name, extra_roots=(), observed=(), initial_bank=None):
     roots.update(address for address in FUNCTIONS.get(name, {}) if address in origins)
     # Поиск девяти продолжений доказанного переходного умножителя, его JP не создаёт CPU-возврата.
     if name == "D3D":
+        # Поиск исходных целей девяти достижимых кодов сторон, общих для E171 и EAB6.
+        # Это корни разнесённой таблицы, а не перенос готового реестра инструкций в разведку.
+        clip_codes = (0, 1, 2, 4, 5, 6, 8, 9, 10)
+        clip_targets = set()
+        for first in clip_codes:
+            for second in clip_codes:
+                index = first * 16 + second
+                target = memory[0xCC00 + index] + 256 * memory[0xCD00 + index]
+                if not 0xE1EB <= target <= 0xE85D:
+                    raise ValueError("Изменена исходная цель таблицы отсечения D3D")
+                clip_targets.add(target)
+        if len(clip_targets) != 71:
+            raise ValueError("Изменилось число различных целей отсечения D3D")
+        roots.update(clip_targets)
+        # Продолжения обоих диспетчеров положены в стек явно, JP (HL) их сам не обнаруживает.
+        if memory[0xE1DD:0xE1E2] != bytes.fromhex('11e2e1d5e9'):
+            raise ValueError("Изменено стековое продолжение отсечения многоугольника D3D")
+        if memory[0xEB01:0xEB08] != bytes.fromhex('1108ebd5d5d5e9'):
+            raise ValueError("Изменены три стековых продолжения отсечения отрезка D3D")
+        roots.update((0xE1E2, 0xEB08))
+        # Проверка всех 32 чётных входов развёрнутой строки, включая не наблюдённую первую пару.
+        if memory[0xD1C0:0xD207] != bytes.fromhex('020c'*31+'08fd5deb0aa62cb602'):
+            raise ValueError("Изменена исходная развёрнутая строка D3D")
+        roots.update(range(0xD1C0,0xD200,2))
         multiply_continuations = set()
         for address in range(0xEB7E, 0xEC28 - 6):
             if (memory[address:address+2] == bytes.fromhex("d911") and

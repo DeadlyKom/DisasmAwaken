@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "cases": 13264,
+  "wrapper_cases": 98304,
+  "all_even_contour_lengths_6_through_254": true,
+  "all_eight_preparation_modes": true,
+  "all_192_horizontal_exit_rows": true,
+  "both_input_carries": true,
+  "exact_main_alternate_and_index_context": true,
+  "exact_order_independent_operand_values_and_write_count": true,
+  "no_screen_writes": true,
+  "temporary_sp_and_cpu_hl_checked": true,
+  "all_wrapper_flags_and_indices": true,
+  "stop_before_scanline_loop": true,
+  "full_modes_5_6_7_rasterization_proved": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

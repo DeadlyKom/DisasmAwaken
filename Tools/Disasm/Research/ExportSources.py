@@ -528,9 +528,16 @@ def main():
     from PreviewSceneTables import TABLES as PREVIEW_SCENE_TABLES, render as render_preview_scene
     from PreviewDrawStateTable import TABLE as PREVIEW_DRAW_STATE_TABLE
     from PreviewEdgeData import TABLES as PREVIEW_EDGE_TABLES, MASK_PATH as EDGE_MASK_PATH, render_masks as render_edge_masks, render as render_edge_records
-    for table in (*PREVIEW_SCENE_TABLES, PREVIEW_DRAW_STATE_TABLE, *PREVIEW_EDGE_TABLES):
+    from PreviewPolygonData import TABLES as PREVIEWPOLYGONDATA_TABLES, render as render_previewpolygondata
+    from PreviewFaceGateData import TABLES as PREVIEWFACEGATEDATA_TABLES, render as render_previewfacegatedata
+    from PreviewClipWorkData import TABLES as PREVIEWCLIPWORKDATA_TABLES, render as render_previewclipworkdata
+    from PreviewClipProductData import TABLES as PREVIEWCLIPPRODUCTDATA_TABLES, render as render_previewclipproductdata
+    from PreviewLineWorkData import TABLES as PREVIEWLINEWORKDATA_TABLES, render as render_previewlineworkdata
+    from PreviewQueueRenderData import TABLES as PREVIEWQUEUERENDERDATA_TABLES, render as render_previewqueuerenderdata
+    from PreviewFrameData import TABLES as PREVIEWFRAMEDATA_TABLES, render as render_previewframedata
+    for table in (*PREVIEW_SCENE_TABLES, PREVIEW_DRAW_STATE_TABLE, *PREVIEW_EDGE_TABLES, *PREVIEWPOLYGONDATA_TABLES, *PREVIEWFACEGATEDATA_TABLES, *PREVIEWCLIPWORKDATA_TABLES, *PREVIEWCLIPPRODUCTDATA_TABLES, *PREVIEWLINEWORKDATA_TABLES, *PREVIEWQUEUERENDERDATA_TABLES, *PREVIEWFRAMEDATA_TABLES):
         _, path, start, end, _, _, _ = table
-        text, labels = (render_edge_records if table in PREVIEW_EDGE_TABLES else render_preview_scene)(data_by_slot[6], table)
+        text, labels = (render_previewframedata if table in PREVIEWFRAMEDATA_TABLES else render_previewqueuerenderdata if table in PREVIEWQUEUERENDERDATA_TABLES else render_previewlineworkdata if table in PREVIEWLINEWORKDATA_TABLES else render_previewclipproductdata if table in PREVIEWCLIPPRODUCTDATA_TABLES else render_previewclipworkdata if table in PREVIEWCLIPWORKDATA_TABLES else render_previewfacegatedata if table in PREVIEWFACEGATEDATA_TABLES else render_previewpolygondata if table in PREVIEWPOLYGONDATA_TABLES else render_edge_records if table in PREVIEW_EDGE_TABLES else render_preview_scene)(data_by_slot[6], table)
         write(path, text)
         symbols.update(labels)
         special[6, start] = (end, path, 0xC000+start)

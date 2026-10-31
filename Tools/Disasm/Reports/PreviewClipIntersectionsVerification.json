@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "cases": 273492,
+  "full_entry_cases": 136746,
+  "cached_entry_cases": 136746,
+  "positive_high_row_low_byte_preserved_cases": 34506,
+  "propagated_second_8000_cases": 518,
+  "configured_profiles": 256,
+  "real_configurer_multiply_and_division": true,
+  "zero_denominator_and_quotient_overflow_excluded": true,
+  "unordered_limits_preserved": true,
+  "all_six_cursor_positions": [
+    0,
+    2,
+    126,
+    127,
+    254,
+    255
+  ],
+  "exact_main_alternate_and_index_context": true,
+  "entire_output_page_and_guard_bytes_checked": true,
+  "exact_stack_and_cache_write_addresses_and_count": true,
+  "input_points_preserved": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

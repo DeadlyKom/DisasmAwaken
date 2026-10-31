@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "cases": 144,
+  "nodes_checked": 816,
+  "cases_by_renderer": {
+    "zero_classifier_result": 136,
+    "common_outside_classifier_result": 408,
+    "clipped_renderer": 5,
+    "rejected_without_renderer": 544,
+    "inside_renderer": 267
+  },
+  "queue_lengths": [
+    0,
+    1,
+    2,
+    4,
+    9,
+    18
+  ],
+  "all_11_model_offsets": true,
+  "noncontiguous_shuffled_queue_order": true,
+  "exact_all_ten_loaded_fields": true,
+  "real_matrix_projection_classifier_and_renderers": true,
+  "synthetic_queue_fields_for_rejection_paths": true,
+  "classifier_result_used_as_composition_boundary": true,
+  "independent_full_frame_bitmap_oracle": false,
+  "queue_and_head_preserved": true,
+  "final_hl_af_sp_and_cpu_return_checked": true,
+  "all_final_registers_proved": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

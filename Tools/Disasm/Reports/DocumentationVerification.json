@@ -1,8 +1,8 @@
 {
   "method": "relative_source_documentation_link_graph_without_assembly",
   "passed": true,
-  "function_files": 1123,
-  "source_links_checked": 1711,
+  "function_files": 1163,
+  "source_links_checked": 1751,
   "missing_targets": [],
   "outside_project": [],
   "missing_backlinks": [],

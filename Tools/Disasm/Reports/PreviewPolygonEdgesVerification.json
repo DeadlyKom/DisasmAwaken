@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "cases": 195202,
+  "wrapper_cases": 98560,
+  "branches": {
+    "left_negative_wide": 30560,
+    "right_negative_wide": 30560,
+    "left_positive_short": 18336,
+    "right_positive_short": 18336,
+    "left_positive_wide": 30560,
+    "right_positive_wide": 30560,
+    "left_negative_short": 18145,
+    "right_negative_short": 18145
+  },
+  "all_191_heights_and_511_signed_slopes": true,
+  "exact_full_main_alternate_and_index_context": true,
+  "left_af_preserved": true,
+  "right_short_and_wide_af_checked": true,
+  "negative_right_half_quotient_preserved": true,
+  "exact_operand_targets_and_values": true,
+  "wrapped_left_chain_checked": true,
+  "both_wrap_helpers_and_right_selector_all_flags_checked": true,
+  "temporary_stack_writes_bounded": true,
+  "cpu_return_executed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

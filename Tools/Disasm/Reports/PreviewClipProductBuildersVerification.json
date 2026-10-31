@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "cases": 820224,
+  "entries": {
+    "0xe5e8": 136704,
+    "0xe5f3": 136704,
+    "0xe607": 136704,
+    "0xe612": 136704,
+    "0xe626": 136704,
+    "0xe645": 136704
+  },
+  "extreme_second_8000_cases": 390822,
+  "full_and_both_cached_entries": true,
+  "all_word_values_in_both_factor_roles": true,
+  "real_multiply_not_stubbed": true,
+  "ordered_hl_de_arguments_preserved": true,
+  "all_256_configured_boundary_bytes": true,
+  "cached_de_independent_of_point_column_difference": true,
+  "exact_main_alternate_and_index_context": true,
+  "exact_four_stack_and_four_data_bytes": true,
+  "input_points_preserved": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

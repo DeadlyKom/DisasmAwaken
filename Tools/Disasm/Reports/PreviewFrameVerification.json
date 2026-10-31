@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "prefix_cases": 65536,
+  "full_frame_cases": 44,
+  "all_256_input_a": true,
+  "all_byte_values_of_each_orientation_parameter": true,
+  "prefix_all_other_registers_and_exact_three_write_set": true,
+  "real_e13c_ec28_queue_render_and_6364": true,
+  "ei_changes_iff_zero_to_one": true,
+  "exact_final_broadcast_headers_and_af": true,
+  "real_cpu_sp_restored": true,
+  "independent_whole_frame_bitmap_oracle": false,
+  "irq_delivered": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

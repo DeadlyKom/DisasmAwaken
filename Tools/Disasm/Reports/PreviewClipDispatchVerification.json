@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "cases": 20736,
+  "swapped_cases": 2304,
+  "physical_pairs": 81,
+  "effective_targets": 63,
+  "exact_all_main_alternate_index_context_before_jp": true,
+  "exact_five_byte_swap": true,
+  "exact_three_frame_words_and_write_set": true,
+  "all_input_corner_bytes_preserved": true,
+  "all_output_points_preserved": true,
+  "full_handlers_separately_checked_in": "PreviewClipSegmentVerification.json",
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

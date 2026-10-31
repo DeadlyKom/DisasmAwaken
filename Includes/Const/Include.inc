@@ -633,4 +633,59 @@ MaskPage        equ #CD                                                         
 RowHighPage     equ #C9                                                         ; старший байт страницы PreviewLineTable.RowHigh
                 endmodule
 
+                module PreviewPolygonConst
+FirstRow        equ #01                                                         ; младший адрес первой строковой координаты пары в странице контура
+MaskCycleBit    equ #01                                                         ; сбрасываемый разряд страницы масок после INC H, чередование C0 и C1
+PixelStepLo     equ #20                                                         ; один пиксель в младшем байте упакованной границы
+RowStepHigh     equ #20                                                         ; старший байт добавки 2000 для следующей строки упакованной границы
+SpanPage        equ #D1                                                         ; страница развёрнутой записи внутренних байтов
+PointPage       equ #C8                                                         ; исходная страница пар колонка и строка
+ErrorStep       equ #FFE0                                                       ; временное значение SP для поправки минус один пиксель
+                endmodule
+
+                module PreviewPolygonPrepConst
+FirstPointRow   equ #C801                                                       ; исходный адрес строки первой пары в странице контура
+PatternPage     equ #D1                                                         ; страница исходных пар Pattern и RowXor
+ColumnPage      equ #CB                                                         ; страница байтовых колонок подготовленной PreviewLineTable
+FirstMaskPage   equ #C0                                                         ; первая страница крайних масок контура
+RightMaskOffset equ #10                                                         ; смещение правой пары масок относительно левой при том же пикселе и режиме
+                endmodule
+
+                module PreviewFaceStreamConst
+CountMask       equ #0F                                                         ; младшее числовое поле числа индексных байтов
+FillMask        equ #07                                                         ; маска индекса заполнения после четырёх RRCA
+GateBit         equ #06                                                         ; условная полилиния пропускается по ненулевому предыдущему коду ориентации
+LineModeMask    equ #30                                                         ; двухбитовое поле режима ребра в заголовке
+OrMode          equ #10                                                         ; код поля MM для OR, нуль означает AND, 20 и 30 означают XOR
+AndPair         equ #30A1                                                       ; PixelOpcode AND C и BoundaryOpcode JR NC в исходном порядке байтов
+OrPair          equ #38B1                                                       ; PixelOpcode OR C и BoundaryOpcode JR C
+XorPair         equ #38A9                                                       ; PixelOpcode XOR C и BoundaryOpcode JR C
+SetMaskLow      equ #B0                                                         ; младший адрес прямых масок XOR и OR
+ClearMaskLow    equ #B8                                                         ; младший адрес инверсных масок AND
+                endmodule
+
+                module PreviewClipIntersectionConst
+LowRowLimit     equ #C0                                                         ; исходный исключённый порог младшего байта строки, старший положительный байт здесь не отвергается
+                endmodule
+
+                module PreviewClipDispatchConst
+InsideCode      equ #F0                                                         ; полный код внутренней точки, только точное равенство включает обмен
+ComplementMask  equ #F0                                                         ; маска дополнения к коду сторон первого конца
+SideMask        equ #0F                                                         ; младшие разряды сторон второго конца
+LowTablePage    equ #CC                                                         ; страница младших байтов целей, старшие читаются на следующей странице
+BlockCorners    equ #01                                                         ; ненулевой режим подавления отдельных углов
+TwoPointBytes   equ #04                                                         ; байтовый размер ровно двух выходных точек
+                endmodule
+
+                module PreviewClipPolygonConst
+MinimumBytes    equ #06                                                         ; минимум трёх двухбайтовых точек для сброшенного Carry обычного завершения
+                endmodule
+
+                module PreviewFrameConst
+SpecialFirst    equ #08                                                         ; первый параметр специальной ветви входного A=1
+FirstStep       equ #01                                                         ; шаг первого параметра общей ветви
+SecondStep      equ #02                                                         ; шаг второго параметра обеих ветвей
+ThirdStep       equ #03                                                         ; шаг третьего параметра общей ветви
+                endmodule
+
                 endif

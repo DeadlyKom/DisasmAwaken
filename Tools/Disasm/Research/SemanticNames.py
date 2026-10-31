@@ -159,6 +159,22 @@ def name_operands(region, function_address, operation):
     operation = preview_projection_scale_name_operands(region, function_address, operation)
     operation = preview_perspective_name_operands(region, function_address, operation)
     operation = preview_vertex_group_name_operands(region, function_address, operation)
+    operation = previewframe_name_operands(region, function_address, operation)
+    operation = previewqueuerender_name_operands(region, function_address, operation)
+    operation = previewclippedfacestream_name_operands(region, function_address, operation)
+    operation = previewclippolygon_name_operands(region, function_address, operation)
+    operation = previewclipdispatch_name_operands(region, function_address, operation)
+    operation = previewclipcases_name_operands(region, function_address, operation)
+    operation = previewclipintersections_name_operands(region, function_address, operation)
+    operation = previewclipdivision_name_operands(region, function_address, operation)
+    operation = previewclipproductbuilders_name_operands(region, function_address, operation)
+    operation = previewclipproductdifferences_name_operands(region, function_address, operation)
+    operation = previewcliptail_name_operands(region, function_address, operation)
+    operation = previewclipunwind_name_operands(region, function_address, operation)
+    operation = previewinsidefacestream_name_operands(region, function_address, operation)
+    operation = previewpolygonpreparation_name_operands(region, function_address, operation)
+    operation = previewpolygonedges_name_operands(region, function_address, operation)
+    operation = previewpolygonrows_name_operands(region, function_address, operation)
     operation = previewslopedivision_name_operands(region, function_address, operation)
     operation = previewedgeraster_name_operands(region, function_address, operation)
     operation = previewfacecodes_name_operands(region, function_address, operation)
@@ -1072,3 +1088,67 @@ DOCUMENTS.update(PREVIEW_EDGE_RASTER_DOCUMENTS)
 from PreviewSlopeDivisionFacts import LABELS as PREVIEW_SLOPE_DIVISION_LABELS, DOCUMENTS as PREVIEW_SLOPE_DIVISION_DOCUMENTS, name_operands as previewslopedivision_name_operands
 LABELS.update(PREVIEW_SLOPE_DIVISION_LABELS)
 DOCUMENTS.update(PREVIEW_SLOPE_DIVISION_DOCUMENTS)
+
+from PreviewPolygonRowsFacts import LABELS as PREVIEW_POLYGON_ROWS_LABELS, DOCUMENTS as PREVIEW_POLYGON_ROWS_DOCUMENTS, name_operands as previewpolygonrows_name_operands
+LABELS.update(PREVIEW_POLYGON_ROWS_LABELS)
+DOCUMENTS.update(PREVIEW_POLYGON_ROWS_DOCUMENTS)
+
+from PreviewPolygonEdgesFacts import LABELS as PREVIEW_POLYGON_EDGES_LABELS, DOCUMENTS as PREVIEW_POLYGON_EDGES_DOCUMENTS, name_operands as previewpolygonedges_name_operands
+LABELS.update(PREVIEW_POLYGON_EDGES_LABELS)
+DOCUMENTS.update(PREVIEW_POLYGON_EDGES_DOCUMENTS)
+
+from PreviewPolygonPreparationFacts import LABELS as PREVIEW_POLYGON_PREPARATION_LABELS, DOCUMENTS as PREVIEW_POLYGON_PREPARATION_DOCUMENTS, name_operands as previewpolygonpreparation_name_operands
+LABELS.update(PREVIEW_POLYGON_PREPARATION_LABELS)
+DOCUMENTS.update(PREVIEW_POLYGON_PREPARATION_DOCUMENTS)
+
+from PreviewInsideFaceStreamFacts import LABELS as PREVIEW_INSIDE_FACE_STREAM_LABELS, DOCUMENTS as PREVIEW_INSIDE_FACE_STREAM_DOCUMENTS, name_operands as previewinsidefacestream_name_operands
+LABELS.update(PREVIEW_INSIDE_FACE_STREAM_LABELS)
+DOCUMENTS.update(PREVIEW_INSIDE_FACE_STREAM_DOCUMENTS)
+
+from PreviewClipUnwindFacts import LABELS as PREVIEW_CLIP_UNWIND_LABELS, DOCUMENTS as PREVIEW_CLIP_UNWIND_DOCUMENTS, name_operands as previewclipunwind_name_operands
+LABELS.update(PREVIEW_CLIP_UNWIND_LABELS)
+DOCUMENTS.update(PREVIEW_CLIP_UNWIND_DOCUMENTS)
+
+from PreviewClipTailFacts import LABELS as PREVIEW_CLIP_TAIL_LABELS, DOCUMENTS as PREVIEW_CLIP_TAIL_DOCUMENTS, name_operands as previewcliptail_name_operands
+LABELS.update(PREVIEW_CLIP_TAIL_LABELS)
+DOCUMENTS.update(PREVIEW_CLIP_TAIL_DOCUMENTS)
+
+from PreviewClipProductDifferenceFacts import LABELS as PREVIEW_CLIP_PRODUCT_DIFFERENCES_LABELS, DOCUMENTS as PREVIEW_CLIP_PRODUCT_DIFFERENCES_DOCUMENTS, name_operands as previewclipproductdifferences_name_operands
+LABELS.update(PREVIEW_CLIP_PRODUCT_DIFFERENCES_LABELS)
+DOCUMENTS.update(PREVIEW_CLIP_PRODUCT_DIFFERENCES_DOCUMENTS)
+
+from PreviewClipProductBuilderFacts import LABELS as PREVIEW_CLIP_PRODUCT_BUILDERS_LABELS, DOCUMENTS as PREVIEW_CLIP_PRODUCT_BUILDERS_DOCUMENTS, name_operands as previewclipproductbuilders_name_operands
+LABELS.update(PREVIEW_CLIP_PRODUCT_BUILDERS_LABELS)
+DOCUMENTS.update(PREVIEW_CLIP_PRODUCT_BUILDERS_DOCUMENTS)
+
+from PreviewClipDivisionFacts import LABELS as PREVIEW_CLIP_DIVISION_LABELS, DOCUMENTS as PREVIEW_CLIP_DIVISION_DOCUMENTS, name_operands as previewclipdivision_name_operands
+LABELS.update(PREVIEW_CLIP_DIVISION_LABELS)
+DOCUMENTS.update(PREVIEW_CLIP_DIVISION_DOCUMENTS)
+
+from PreviewClipIntersectionFacts import LABELS as PREVIEW_CLIP_INTERSECTIONS_LABELS, DOCUMENTS as PREVIEW_CLIP_INTERSECTIONS_DOCUMENTS, name_operands as previewclipintersections_name_operands
+LABELS.update(PREVIEW_CLIP_INTERSECTIONS_LABELS)
+DOCUMENTS.update(PREVIEW_CLIP_INTERSECTIONS_DOCUMENTS)
+
+from PreviewClipCaseFacts import LABELS as PREVIEW_CLIP_CASES_LABELS, DOCUMENTS as PREVIEW_CLIP_CASES_DOCUMENTS, name_operands as previewclipcases_name_operands
+LABELS.update(PREVIEW_CLIP_CASES_LABELS)
+DOCUMENTS.update(PREVIEW_CLIP_CASES_DOCUMENTS)
+
+from PreviewClipDispatchFacts import LABELS as PREVIEW_CLIP_DISPATCH_LABELS, DOCUMENTS as PREVIEW_CLIP_DISPATCH_DOCUMENTS, name_operands as previewclipdispatch_name_operands
+LABELS.update(PREVIEW_CLIP_DISPATCH_LABELS)
+DOCUMENTS.update(PREVIEW_CLIP_DISPATCH_DOCUMENTS)
+
+from PreviewClipPolygonFacts import LABELS as PREVIEW_CLIP_POLYGON_LABELS, DOCUMENTS as PREVIEW_CLIP_POLYGON_DOCUMENTS, name_operands as previewclippolygon_name_operands
+LABELS.update(PREVIEW_CLIP_POLYGON_LABELS)
+DOCUMENTS.update(PREVIEW_CLIP_POLYGON_DOCUMENTS)
+
+from PreviewClippedFaceStreamFacts import LABELS as PREVIEW_CLIPPED_FACE_STREAM_LABELS, DOCUMENTS as PREVIEW_CLIPPED_FACE_STREAM_DOCUMENTS, name_operands as previewclippedfacestream_name_operands
+LABELS.update(PREVIEW_CLIPPED_FACE_STREAM_LABELS)
+DOCUMENTS.update(PREVIEW_CLIPPED_FACE_STREAM_DOCUMENTS)
+
+from PreviewQueueRenderFacts import LABELS as PREVIEW_QUEUE_RENDER_LABELS, DOCUMENTS as PREVIEW_QUEUE_RENDER_DOCUMENTS, name_operands as previewqueuerender_name_operands
+LABELS.update(PREVIEW_QUEUE_RENDER_LABELS)
+DOCUMENTS.update(PREVIEW_QUEUE_RENDER_DOCUMENTS)
+
+from PreviewFrameFacts import LABELS as PREVIEW_FRAME_LABELS, DOCUMENTS as PREVIEW_FRAME_DOCUMENTS, name_operands as previewframe_name_operands
+LABELS.update(PREVIEW_FRAME_LABELS)
+DOCUMENTS.update(PREVIEW_FRAME_DOCUMENTS)

@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "typed_bytes": 10,
+  "physical_structures": 2,
+  "newly_declared_structures": [
+    "FPreviewLineCoordinates",
+    "FPreviewLineTail"
+  ],
+  "reused_structures": [],
+  "physical_records": 2,
+  "original_initial_values_preserved": true,
+  "scoped_candidate_and_history": true,
+  "assembly_executed": false
+}

@@ -962,4 +962,56 @@ BoundaryOpcode  db #00                                                          
                 ends
                 assert FPreviewEdgeMode == #02
 
+                ; Документация [физические записи заливки](../../Docs/PreviewPolygonFill.md)
+                struct FPreviewContourSize
+ByteCount       db #00                                                          ; число байтов пар колонка и строка, рабочий профиль ненулевое чётное значение
+                ends
+                assert FPreviewContourSize == #01
+
+                struct FPreviewFillMode
+Index           db #00                                                          ; индекс пары внутренних шаблонов, крайние маски доказаны только для 0..4
+                ends
+                assert FPreviewFillMode == #01
+
+                struct FPreviewFillPattern
+Pattern         db #00                                                          ; первый шаблон внутренних байтов многоугольника
+RowXor          db #00                                                          ; XOR шаблона при переходе к следующей строке контура
+                ends
+                assert FPreviewFillPattern == #02
+
+                ; Документация [физические записи заливки](../../Docs/PreviewFaceStream.md)
+                struct FPreviewFaceGateState
+RejectCode      db #00                                                          ; нуль после принятой ориентации, один после отвергнутой, читатель проверяет весь байт
+                ends
+                assert FPreviewFaceGateState == #01
+
+                ; Документация [физические записи](../../Docs/PreviewClipProducts.md)
+                struct FPreviewClipProductWord
+Word            dw #0000                                                        ; физическое слово разнесённого левого кэша, смысл младшего либо старшего задаётся именем экземпляра
+                ends
+                assert FPreviewClipProductWord == #02
+
+                ; Документация [физические записи](../../Docs/PreviewClippedFaceStream.md)
+                struct FPreviewLineCoordinates
+PreviousColumn  dw #0000                                                        ; слово колонки предыдущего конца полилинии
+PreviousRow     dw #0000                                                        ; слово строки предыдущего конца полилинии
+CurrentColumn   dw #0000                                                        ; слово колонки очередного конца полилинии
+                ends
+                assert FPreviewLineCoordinates == #06
+
+                struct FPreviewLineTail
+CurrentRow      dw #0000                                                        ; слово строки очередного конца полилинии
+PreviousCode    db #00                                                          ; полный код сторон предыдущего конца
+CurrentCode     db #00                                                          ; полный код сторон очередного конца
+                ends
+                assert FPreviewLineTail == #04
+
+                ; Документация [физические записи](../../Docs/PreviewQueueRender.md)
+                struct FPreviewObjectAngles
+First           db #00                                                          ; первый байтовый параметр ориентации объекта
+Second          db #00                                                          ; второй байтовый параметр ориентации объекта
+Third           db #00                                                          ; третий байтовый параметр ориентации объекта
+                ends
+                assert FPreviewObjectAngles == #03
+
                 endif

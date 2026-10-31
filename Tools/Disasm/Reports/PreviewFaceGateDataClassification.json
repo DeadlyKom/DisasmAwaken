@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "typed_bytes": 1,
+  "physical_structures": 1,
+  "physical_records": 1,
+  "original_initial_values_preserved": true,
+  "scoped_candidate_and_history": true,
+  "assembly_executed": false
+}

@@ -16,7 +16,7 @@
 | StationFinalExit | 1 | 1 | [Факты](FunctionDetails/StationFinalExit.md) |
 | Station | 422 | 368 | [Факты](FunctionDetails/Station.md) |
 | Text | 126 | 126 | [Факты](FunctionDetails/Text.md) |
-| D3D | 30 | 30 | [Факты](FunctionDetails/D3D.md) |
+| D3D | 70 | 70 | [Факты](FunctionDetails/D3D.md) |
 | Map | 89 | 89 | [Факты](FunctionDetails/Map.md) |
 | Help | 4 | 4 | [Факты](FunctionDetails/Help.md) |
 | Music | 27 | 13 | [Факты](FunctionDetails/Music.md) |
@@ -1286,3 +1286,83 @@
 | #DE1C, банк 4 | [D3D.RasterizePreviewEdge](../Source/D3D/RasterizePreviewEdge.asm) | Растровое ребро с исключённым концом, четырьмя ветвями, режимами XOR/OR/AND и точными флагами |
 
 | #D4DF, банк 4 | [D3D.DividePreviewSlopeByte](../Source/D3D/DividePreviewSlopeByte.asm) | Восемь шагов деления горизонтальной длины ребра с дополненным частным и остатком |
+
+| #D207, банк 4 | [D3D.StepPreviewPolygonRow](../Source/D3D/StepPreviewPolygonRow.asm) | Продвижение двух рёбер, экранной строки и шаблона, вывод полосы и общий возврат |
+
+| #D1C0, банк 4 | [D3D.WritePreviewPolygonSpan](../Source/D3D/WritePreviewPolygonSpan.asm) | Развёрнутая запись 0..31 полного байта и маскированный правый край с продолжением в цикл строк |
+
+| #D282, банк 4 | [D3D.SelectPreviewRightEdge](../Source/D3D/SelectPreviewRightEdge.asm) | Переход к обновлению прямой правой цепочки без CPU-вызова |
+
+| #D285, банк 4 | [D3D.WrapPreviewLeftEdge](../Source/D3D/WrapPreviewLeftEdge.asm) | Переход обратной цепочки к последней строковой координате контура |
+
+| #D28C, банк 4 | [D3D.UpdatePreviewLeftEdge](../Source/D3D/UpdatePreviewLeftEdge.asm) | Выбор восходящего левого ребра, деление наклона и подготовка шага и ошибки |
+
+| #D34B, банк 4 | [D3D.WrapPreviewRightEdge](../Source/D3D/WrapPreviewRightEdge.asm) | Переход прямой цепочки к первой строковой координате контура |
+
+| #D350, банк 4 | [D3D.UpdatePreviewRightEdge](../Source/D3D/UpdatePreviewRightEdge.asm) | Выбор восходящего правого ребра и подготовка его шага, ошибки и следующей строки |
+
+| #D40F, банк 4 | [D3D.WrapPreviewTopLeft](../Source/D3D/WrapPreviewTopLeft.asm) | Переход верхнего обратного поиска к последней строке контура через AF' |
+
+| #D416, банк 4 | [D3D.WrapPreviewTopRight](../Source/D3D/WrapPreviewTopRight.asm) | Переход верхнего прямого поиска к первой строке контура |
+
+| #D41B, банк 4 | [D3D.FillPreviewPolygon](../Source/D3D/FillPreviewPolygon.asm) | Подготовка двух границ и шаблона, временного стека и полный проход заливки многоугольника |
+
+| #DD4F, банк 4 | [D3D.RenderPreviewInsideFaces](../Source/D3D/RenderPreviewInsideFaces.asm) | Обход граней и полилиний без отсечения с сохранённым кодом ориентации и тремя режимами рёбер |
+
+| #E85D, банк 4 | [D3D.UnwindPreviewClipFrame](../Source/D3D/UnwindPreviewClipFrame.asm) | Снятие трёх служебных слов отсечения и возврат по настоящему CPU-адресу с Carry |
+
+| #E84E, банк 4 | [D3D.AppendPreviewClipPoint](../Source/D3D/AppendPreviewClipPoint.asm) | Запись упакованной точки в страницу C8 с байтовым оборачиванием размера |
+
+| #E846, банк 4 | [D3D.AppendPreviewClipSecond](../Source/D3D/AppendPreviewClipSecond.asm) | Упаковка младших байтов второго конца и последовательный вход в запись точки |
+
+| #E830, банк 4 | [D3D.SubtractPreviewClipColumns](../Source/D3D/SubtractPreviewClipColumns.asm) | Разность знаковых слов колонок второго и первого конца с точными флагами SBC |
+
+| #E83B, банк 4 | [D3D.SubtractPreviewClipRows](../Source/D3D/SubtractPreviewClipRows.asm) | Разность знаковых слов строк второго и первого конца с точными флагами SBC |
+
+| #E7B4, банк 4 | [D3D.AppendPreviewClipTopLeft](../Source/D3D/AppendPreviewClipTopLeft.asm) | Добавление угла сверху слева при нулевом запрете углов |
+
+| #E7BF, банк 4 | [D3D.AppendPreviewClipTopRight](../Source/D3D/AppendPreviewClipTopRight.asm) | Добавление угла сверху справа при нулевом запрете углов |
+
+| #E7CA, банк 4 | [D3D.AppendPreviewClipBottomLeft](../Source/D3D/AppendPreviewClipBottomLeft.asm) | Добавление угла снизу слева при нулевом запрете углов |
+
+| #E7D5, банк 4 | [D3D.AppendPreviewClipBottomRight](../Source/D3D/AppendPreviewClipBottomRight.asm) | Добавление угла снизу справа при нулевом запрете углов |
+
+| #E7E0, банк 4 | [D3D.SubtractPreviewClipTopLeft](../Source/D3D/SubtractPreviewClipTopLeft.asm) | Разность кэшей Top и Left с заёмом младшего слова и возвратом старшего |
+
+| #E7F4, банк 4 | [D3D.SubtractPreviewClipTopRight](../Source/D3D/SubtractPreviewClipTopRight.asm) | Разность кэшей Top и Right с заёмом младшего слова и возвратом старшего |
+
+| #E808, банк 4 | [D3D.SubtractPreviewClipBottomLeft](../Source/D3D/SubtractPreviewClipBottomLeft.asm) | Разность кэшей Bottom и Left с заёмом младшего слова и возвратом старшего |
+
+| #E81C, банк 4 | [D3D.SubtractPreviewClipBottomRight](../Source/D3D/SubtractPreviewClipBottomRight.asm) | Разность кэшей Bottom и Right с заёмом младшего слова и возвратом старшего |
+
+| #E5E8, банк 4 | [D3D.BuildPreviewClipTopProduct](../Source/D3D/BuildPreviewClipTopProduct.asm) | Формирование кэша Top относительно границы с исходным порядком аргументов умножения |
+
+| #E607, банк 4 | [D3D.BuildPreviewClipBottomProduct](../Source/D3D/BuildPreviewClipBottomProduct.asm) | Формирование кэша Bottom относительно границы с исходным порядком аргументов умножения |
+
+| #E626, банк 4 | [D3D.BuildPreviewClipLeftProduct](../Source/D3D/BuildPreviewClipLeftProduct.asm) | Формирование кэша Left относительно границы с исходным порядком аргументов умножения |
+
+| #E645, банк 4 | [D3D.BuildPreviewClipRightProduct](../Source/D3D/BuildPreviewClipRightProduct.asm) | Формирование кэша Right относительно границы с исходным порядком аргументов умножения |
+
+| #EA01, банк 4 | [D3D.DividePreviewClip32To16](../Source/D3D/DividePreviewClip32To16.asm) | Деление HL:A:A' на DE с входным знаком делителя и однокомплементными отрицательными значениями |
+
+| #E664, банк 4 | [D3D.AppendPreviewClipTopIntersection](../Source/D3D/AppendPreviewClipTopIntersection.asm) | Пересечение с границей Top и запись исходной байтовой проекции в контур C8 |
+
+| #E6AF, банк 4 | [D3D.AppendPreviewClipBottomIntersection](../Source/D3D/AppendPreviewClipBottomIntersection.asm) | Пересечение с границей Bottom и запись исходной байтовой проекции в контур C8 |
+
+| #E6FA, банк 4 | [D3D.AppendPreviewClipLeftIntersection](../Source/D3D/AppendPreviewClipLeftIntersection.asm) | Пересечение с границей Left и запись исходной байтовой проекции в контур C8 |
+
+| #E757, банк 4 | [D3D.AppendPreviewClipRightIntersection](../Source/D3D/AppendPreviewClipRightIntersection.asm) | Пересечение с границей Right и запись исходной байтовой проекции в контур C8 |
+
+| #E1EB, банк 4 | [D3D.PreviewClipCases](../Source/D3D/PreviewClipCases.asm) | Решения отсечения по паре зон, порядок пересечений и накопление отметок углов |
+
+| #EAB6, банк 4 | [D3D.DispatchPreviewClipSegment](../Source/D3D/DispatchPreviewClipSegment.asm) | Перестановка внутреннего первого конца и табличное отсечение отдельного сегмента |
+
+| #E171, банк 4 | [D3D.ClipPreviewPolygon](../Source/D3D/ClipPreviewPolygon.asm) | Замкнутый обход индексов проекции, отсечение каждого ребра и приём контура по размеру |
+
+| #DBE9, банк 4 | [D3D.RenderPreviewClippedFaces](../Source/D3D/RenderPreviewClippedFaces.asm) | Полный поток граней и полилиний с кодами сторон и обоими отсекателями |
+
+| #EEF1, банк 4 | [D3D.RenderPreviewQueue](../Source/D3D/RenderPreviewQueue.asm) | Обход связанной очереди, загрузка параметров узла и выбор внутреннего либо отсечённого рисователя |
+
+| #EEEE, банк 4 | [D3D.RestorePreviewStack](../Source/D3D/RestorePreviewStack.asm) | Восстановление CPU-SP из изменяемого операнда и последовательный вход в рисование очереди |
+
+| #E07F, банк 4 | [D3D.RenderPreviewFrame](../Source/D3D/RenderPreviewFrame.asm) | Изменение ориентации первой записи, полный графический проход, EI и переключение заполнения граней |

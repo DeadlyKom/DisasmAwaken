@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "functions": 1,
+  "instructions": 23,
+  "code_bytes": 54,
+  "registered_operand_writers": 0,
+  "verified_physical_data_writers": 6,
+  "scoped_candidate_and_history": true,
+  "physical_bytes_preserved": true,
+  "assembly_executed": false
+}

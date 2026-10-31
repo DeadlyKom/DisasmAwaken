@@ -16,19 +16,95 @@
                 include "../D3D/Data/PreviewSceneMatrix.asm"
                 ent
                 assert $ == #021E
-                incbin "../Resources/06_D3D/BeforeEdgeEndpoints.bin"
+                disp #C21E
+                include "../D3D/Data/PreviewObjectAngles.asm"
+                ent
+                assert $ == #0221
+                incbin "../Resources/06_D3D/BeforeContourSizeAfterAngles.bin"
+                assert $ == #022B
+                assert $ == #022B
+                disp #C22B
+                include "../D3D/Data/PreviewContourSize.asm"
+                ent
+                assert $ == #022C
+                disp #C22C
+                include "../D3D/Data/PreviewClipFirst.asm"
+                ent
+                assert $ == #0231
+                incbin "../Resources/06_D3D/AfterClipFirst.bin"
+                assert $ == #023B
+                assert $ == #023B
+                disp #C23B
+                include "../D3D/Data/PreviewFillMode.asm"
+                ent
+                assert $ == #023C
+                disp #C23C
+                include "../D3D/Data/PreviewClipSecond.asm"
+                ent
+                assert $ == #0241
+                incbin "../Resources/06_D3D/AfterClipSecond.bin"
+                assert $ == #024B
+                assert $ == #024B
                 assert $ == #024B
                 disp #C24B
                 include "../D3D/Data/PreviewEdgeEndpoints.asm"
                 ent
                 assert $ == #024F
-                incbin "../Resources/06_D3D/BetweenEdgeEndpointsMode.bin"
+                disp #C24F
+                include "../D3D/Data/PreviewClipCorners.asm"
+                ent
+                assert $ == #0251
+                incbin "../Resources/06_D3D/BeforeLineCoordinates.bin"
+                assert $ == #025B
+                disp #C25B
+                include "../D3D/Data/PreviewLineCoordinates.asm"
+                ent
+                assert $ == #0261
+                incbin "../Resources/06_D3D/BetweenLineWords.bin"
+                assert $ == #026B
+                disp #C26B
+                include "../D3D/Data/PreviewLineTail.asm"
+                ent
+                assert $ == #026F
+                assert $ == #026F
                 assert $ == #026F
                 disp #C26F
                 include "../D3D/Data/PreviewEdgeMode.asm"
                 ent
                 assert $ == #0271
-                incbin "../Resources/06_D3D/AfterEdgeMode.bin"
+                incbin "../Resources/06_D3D/BeforeFaceGateState.bin"
+                assert $ == #027B
+                disp #C27B
+                include "../D3D/Data/PreviewFaceGateState.asm"
+                ent
+                assert $ == #027C
+                incbin "../Resources/06_D3D/BeforeClipProducts.bin"
+                assert $ == #02DC
+                disp #C2DC
+                include "../D3D/Data/PreviewClipTopProduct.asm"
+                ent
+                assert $ == #02E0
+                incbin "../Resources/06_D3D/BetweenClipTopBottom.bin"
+                assert $ == #02EA
+                disp #C2EA
+                include "../D3D/Data/PreviewClipBottomProduct.asm"
+                ent
+                assert $ == #02EE
+                disp #C2EE
+                include "../D3D/Data/PreviewClipLeftLow.asm"
+                ent
+                assert $ == #02F0
+                incbin "../Resources/06_D3D/BetweenClipLeftWords.bin"
+                assert $ == #02FA
+                disp #C2FA
+                include "../D3D/Data/PreviewClipLeftHigh.asm"
+                ent
+                assert $ == #02FC
+                disp #C2FC
+                include "../D3D/Data/PreviewClipRightProduct.asm"
+                ent
+                assert $ == #0300
+                assert $ == #0300
                 assert $ == #0300
                 assert $ == #0300
                 assert $ == #0300
@@ -53,7 +129,14 @@
                 include "../D3D/Data/PreviewPixelMasks.asm"
                 ent
                 assert $ == #0DC0
-                incbin "../Resources/06_D3D/AfterPixelMasks.bin"
+                incbin "../Resources/06_D3D/BeforePrimaryAngles.bin"
+                assert $ == #0DC7
+                disp #CDC7
+                include "../D3D/Data/PreviewPrimaryAngles.asm"
+                ent
+                assert $ == #0DCA
+                incbin "../Resources/06_D3D/AfterPrimaryAngles.bin"
+                assert $ == #0E40
                 assert $ == #0E40
                 assert $ == #0E40
                 assert $ == #0E40
@@ -71,7 +154,57 @@
                 include "../D3D/Data/PreviewModelPointers.asm"
                 ent
                 assert $ == #102C
-                incbin "../Resources/06_D3D/BeforeSlopeDivision.bin"
+                incbin "../Resources/06_D3D/BeforeFillPatterns.bin"
+                assert $ == #1100
+                disp #D100
+                include "../D3D/Data/PreviewFillPatterns.asm"
+                ent
+                assert $ == #1110
+                incbin "../Resources/06_D3D/AfterFillPatterns.bin"
+                assert $ == #11C0
+                assert $ == #11C0
+                disp #D1C0
+                include "../D3D/WritePreviewPolygonSpan.asm"                    ; (0) жёсткий порядок, последовательное исполнение
+                ent
+                assert $ == #1207
+                disp #D207
+                include "../D3D/StepPreviewPolygonRow.asm"                      ; (1) жёсткий порядок, последовательное исполнение
+                ent
+                assert $ == #1282
+                disp #D282
+                include "../D3D/SelectPreviewRightEdge.asm"
+                ent
+                assert $ == #1285
+                disp #D285
+                include "../D3D/WrapPreviewLeftEdge.asm"
+                ent
+                assert $ == #128C
+                disp #D28C
+                include "../D3D/UpdatePreviewLeftEdge.asm"
+                ent
+                assert $ == #134B
+                disp #D34B
+                include "../D3D/WrapPreviewRightEdge.asm"
+                ent
+                assert $ == #1350
+                disp #D350
+                include "../D3D/UpdatePreviewRightEdge.asm"
+                ent
+                assert $ == #140F
+                disp #D40F
+                include "../D3D/WrapPreviewTopLeft.asm"
+                ent
+                assert $ == #1416
+                disp #D416
+                include "../D3D/WrapPreviewTopRight.asm"
+                ent
+                assert $ == #141B
+                disp #D41B
+                include "../D3D/FillPreviewPolygon.asm"
+                ent
+                assert $ == #14DF
+                assert $ == #14DF
+                assert $ == #14DF
                 assert $ == #14DF
                 disp #D4DF
                 include "../D3D/DividePreviewSlopeByte.asm"
@@ -132,7 +265,15 @@
                 include "../D3D/ConfigurePreviewProjectionScale.asm"
                 ent
                 assert $ == #1BE9
-                incbin "../Resources/06_D3D/BeforeFaceCodes.bin"
+                disp #DBE9
+                include "../D3D/RenderPreviewClippedFaces.asm"
+                ent
+                assert $ == #1D4F
+                assert $ == #1D4F
+                disp #DD4F
+                include "../D3D/RenderPreviewInsideFaces.asm"
+                ent
+                assert $ == #1DFD
                 assert $ == #1DFD
                 disp #DDFD
                 include "../D3D/CollectPreviewFaceCodes.asm"
@@ -162,7 +303,10 @@
                 include "../D3D/ConfigurePreviewClip.asm"
                 ent
                 assert $ == #207F
-                incbin "../Resources/06_D3D/BeforePreviewThird.bin"
+                disp #E07F
+                include "../D3D/RenderPreviewFrame.asm"
+                ent
+                assert $ == #20B5
                 assert $ == #20B5
                 disp #E0B5
                 include "../D3D/AdjustPreviewThird.asm"
@@ -186,13 +330,120 @@
                 include "../D3D/PrintPreviewTextRows.asm"
                 ent
                 assert $ == #2171
+                disp #E171
+                include "../D3D/ClipPreviewPolygon.asm"                         ; (0) жёсткий порядок, последовательное исполнение
+                ent
+                assert $ == #21EB
+                assert $ == #21EB
+                disp #E1EB
+                include "../D3D/PreviewClipCases.asm"                           ; (1) жёсткий порядок, последовательное исполнение
+                ent
+                assert $ == #25E8
+                assert $ == #25E8
+                disp #E5E8
+                include "../D3D/BuildPreviewClipTopProduct.asm"
+                ent
+                assert $ == #2607
+                disp #E607
+                include "../D3D/BuildPreviewClipBottomProduct.asm"
+                ent
+                assert $ == #2626
+                disp #E626
+                include "../D3D/BuildPreviewClipLeftProduct.asm"
+                ent
+                assert $ == #2645
+                disp #E645
+                include "../D3D/BuildPreviewClipRightProduct.asm"
+                ent
+                assert $ == #2664
+                disp #E664
+                include "../D3D/AppendPreviewClipTopIntersection.asm"
+                ent
+                assert $ == #26AF
+                disp #E6AF
+                include "../D3D/AppendPreviewClipBottomIntersection.asm"
+                ent
+                assert $ == #26FA
+                disp #E6FA
+                include "../D3D/AppendPreviewClipLeftIntersection.asm"
+                ent
+                assert $ == #2757
+                disp #E757
+                include "../D3D/AppendPreviewClipRightIntersection.asm"
+                ent
+                assert $ == #27B4
+                assert $ == #27B4
+                assert $ == #27B4
+                disp #E7B4
+                include "../D3D/AppendPreviewClipTopLeft.asm"
+                ent
+                assert $ == #27BF
+                disp #E7BF
+                include "../D3D/AppendPreviewClipTopRight.asm"
+                ent
+                assert $ == #27CA
+                disp #E7CA
+                include "../D3D/AppendPreviewClipBottomLeft.asm"
+                ent
+                assert $ == #27D5
+                disp #E7D5
+                include "../D3D/AppendPreviewClipBottomRight.asm"
+                ent
+                assert $ == #27E0
+                disp #E7E0
+                include "../D3D/SubtractPreviewClipTopLeft.asm"
+                ent
+                assert $ == #27F4
+                disp #E7F4
+                include "../D3D/SubtractPreviewClipTopRight.asm"
+                ent
+                assert $ == #2808
+                disp #E808
+                include "../D3D/SubtractPreviewClipBottomLeft.asm"
+                ent
+                assert $ == #281C
+                disp #E81C
+                include "../D3D/SubtractPreviewClipBottomRight.asm"
+                ent
+                assert $ == #2830
+                assert $ == #2830
+                disp #E830
+                include "../D3D/SubtractPreviewClipColumns.asm"
+                ent
+                assert $ == #283B
+                disp #E83B
+                include "../D3D/SubtractPreviewClipRows.asm"
+                ent
+                assert $ == #2846
+                disp #E846
+                include "../D3D/AppendPreviewClipSecond.asm"                    ; (0) жёсткий порядок, последовательное исполнение
+                ent
+                assert $ == #284E
+                disp #E84E
+                include "../D3D/AppendPreviewClipPoint.asm"                     ; (1) жёсткий порядок, последовательное исполнение
+                ent
+                assert $ == #285D
+                assert $ == #285D
+                disp #E85D
+                include "../D3D/UnwindPreviewClipFrame.asm"
+                ent
+                assert $ == #2867
                 incbin "../Resources/06_D3D/BeforeFaceProduct.bin"
+                assert $ == #2869
                 assert $ == #2869
                 disp #E869
                 include "../D3D/MultiplyPreviewSignedWords.asm"
                 ent
                 assert $ == #2A01
-                incbin "../Resources/06_D3D/AfterFaceProduct.bin"
+                disp #EA01
+                include "../D3D/DividePreviewClip32To16.asm"
+                ent
+                assert $ == #2AB6
+                disp #EAB6
+                include "../D3D/DispatchPreviewClipSegment.asm"
+                ent
+                assert $ == #2B10
+                assert $ == #2B10
                 assert $ == #2B10
                 assert $ == #2B10
                 disp #EB10
@@ -217,7 +468,14 @@
                 include "../D3D/InsertPreviewQueue.asm"                         ; (2) жёсткий порядок, последовательное исполнение
                 ent
                 assert $ == #2EEE
-                incbin "../Resources/06_D3D/BeforeModelMatrix.bin"
+                disp #EEEE
+                include "../D3D/RestorePreviewStack.asm"                        ; (0) жёсткий порядок, последовательное исполнение
+                ent
+                assert $ == #2EF1
+                disp #EEF1
+                include "../D3D/RenderPreviewQueue.asm"                         ; (1) жёсткий порядок, последовательное исполнение
+                ent
+                assert $ == #2F5E
                 assert $ == #2F5E
                 disp #EF5E
                 include "../D3D/BuildPreviewModelMatrix.asm"

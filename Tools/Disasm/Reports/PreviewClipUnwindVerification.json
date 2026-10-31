@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "cases": 655360,
+  "all_65536_third_words": true,
+  "all_256_by_256_first_and_second_high_bytes": true,
+  "exact_flags_and_scf_undocumented_bits": true,
+  "exact_sp_plus_eight_and_cpu_return": true,
+  "all_preserved_registers_checked": true,
+  "no_memory_writes": true,
+  "frame_fields_not_assumed_equal": true,
+  "real_dispatch_frame_result": {
+    "a": 235,
+    "f": 169,
+    "bc": 234,
+    "hl": 60402
+  },
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

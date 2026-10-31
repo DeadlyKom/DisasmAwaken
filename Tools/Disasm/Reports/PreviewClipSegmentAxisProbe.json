@@ -1,0 +1,330 @@
+{
+  "passed": false,
+  "cases": 534160,
+  "profiles": [
+    [
+      15,
+      23,
+      16,
+      24
+    ],
+    [
+      63,
+      63,
+      64,
+      64
+    ],
+    [
+      127,
+      95,
+      128,
+      96
+    ],
+    [
+      207,
+      111,
+      208,
+      112
+    ],
+    [
+      239,
+      175,
+      240,
+      176
+    ]
+  ],
+  "outcode_pairs_checked": 81,
+  "effective_handler_targets_executed": 63,
+  "cases_by_outcome": {
+    "normal_return": 412776,
+    "output_0": 383690,
+    "special_return": 121384,
+    "output_4": 146882,
+    "output_2": 3588
+  },
+  "independent_rational_interval_and_original_quantization": true,
+  "real_e011_configuration": true,
+  "real_eab6_dispatch_and_all_arithmetic": true,
+  "both_corner_seen_states": true,
+  "exact_five_byte_swap_and_three_stack_copies": true,
+  "normal_return_de_eb08_checked": true,
+  "special_return_eb_a9_00ea_ebf2_checked": true,
+  "output_guard_bytes_and_tail_preserved": true,
+  "all_final_registers_proved": false,
+  "full_handler_contracts_proved": false,
+  "mismatch_count": 109352,
+  "examples": [
+    {
+      "profile": [
+        15,
+        23,
+        16,
+        24
+      ],
+      "first": [
+        -512,
+        -512
+      ],
+      "second": [
+        1,
+        24
+      ],
+      "seen": 0,
+      "actual": [],
+      "expected": [
+        [
+          0,
+          22
+        ],
+        [
+          0,
+          23
+        ]
+      ],
+      "kind": "cross"
+    },
+    {
+      "profile": [
+        15,
+        23,
+        16,
+        24
+      ],
+      "first": [
+        -512,
+        -512
+      ],
+      "second": [
+        1,
+        24
+      ],
+      "seen": 255,
+      "actual": [],
+      "expected": [
+        [
+          0,
+          22
+        ],
+        [
+          0,
+          23
+        ]
+      ],
+      "kind": "cross"
+    },
+    {
+      "profile": [
+        15,
+        23,
+        16,
+        24
+      ],
+      "first": [
+        -512,
+        -512
+      ],
+      "second": [
+        14,
+        24
+      ],
+      "seen": 0,
+      "actual": [
+        [
+          0,
+          9
+        ],
+        [
+          5,
+          15
+        ]
+      ],
+      "expected": [
+        [
+          0,
+          9
+        ],
+        [
+          13,
+          23
+        ]
+      ],
+      "kind": "cross"
+    },
+    {
+      "profile": [
+        15,
+        23,
+        16,
+        24
+      ],
+      "first": [
+        -512,
+        -512
+      ],
+      "second": [
+        14,
+        24
+      ],
+      "seen": 255,
+      "actual": [
+        [
+          0,
+          9
+        ],
+        [
+          5,
+          15
+        ]
+      ],
+      "expected": [
+        [
+          0,
+          9
+        ],
+        [
+          13,
+          23
+        ]
+      ],
+      "kind": "cross"
+    },
+    {
+      "profile": [
+        15,
+        23,
+        16,
+        24
+      ],
+      "first": [
+        -512,
+        -512
+      ],
+      "second": [
+        15,
+        24
+      ],
+      "seen": 0,
+      "actual": [
+        [
+          0,
+          8
+        ],
+        [
+          6,
+          15
+        ]
+      ],
+      "expected": [
+        [
+          0,
+          8
+        ],
+        [
+          14,
+          23
+        ]
+      ],
+      "kind": "cross"
+    },
+    {
+      "profile": [
+        15,
+        23,
+        16,
+        24
+      ],
+      "first": [
+        -512,
+        -512
+      ],
+      "second": [
+        15,
+        24
+      ],
+      "seen": 255,
+      "actual": [
+        [
+          0,
+          8
+        ],
+        [
+          6,
+          15
+        ]
+      ],
+      "expected": [
+        [
+          0,
+          8
+        ],
+        [
+          14,
+          23
+        ]
+      ],
+      "kind": "cross"
+    },
+    {
+      "profile": [
+        15,
+        23,
+        16,
+        24
+      ],
+      "first": [
+        -512,
+        -512
+      ],
+      "second": [
+        16,
+        0
+      ],
+      "seen": 0,
+      "actual": [
+        [
+          16,
+          0
+        ],
+        [
+          23,
+          6
+        ]
+      ],
+      "expected": [],
+      "kind": "miss"
+    },
+    {
+      "profile": [
+        15,
+        23,
+        16,
+        24
+      ],
+      "first": [
+        -512,
+        -512
+      ],
+      "second": [
+        16,
+        0
+      ],
+      "seen": 255,
+      "actual": [
+        [
+          16,
+          0
+        ],
+        [
+          23,
+          6
+        ]
+      ],
+      "expected": [],
+      "kind": "miss"
+    }
+  ],
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false,
+  "reason": "В пробе H ошибочно принят за экранную колонку, фактический FirstAxis в H является строкой, SecondAxis в L колонкой. Это отвергнутая постановка модели, не ошибка игры."
+}
