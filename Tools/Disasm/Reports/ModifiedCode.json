@@ -7108,5 +7108,14 @@
     "size": 2,
     "target_operation": "LD BC,#0017",
     "path": "Source/Final/PrepareFrame.asm"
+  },
+  {
+    "region": "D3D",
+    "writer": 60176,
+    "target": 60284,
+    "target_instruction": 60283,
+    "size": 2,
+    "target_operation": "JP #0000",
+    "path": "Source/D3D/MultiplyPreviewCoordinate.asm"
   }
 ]

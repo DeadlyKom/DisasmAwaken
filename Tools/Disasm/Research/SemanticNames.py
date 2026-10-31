@@ -148,6 +148,8 @@ def name_operands(region, function_address, operation):
     operation = description_action_name_operands(region, function_address, operation)
     operation = preview_hover_name_operands(region, function_address, operation)
     operation = preview_action_name_operands(region, function_address, operation)
+    operation = preview_multiply_name_operands(region, function_address, operation)
+    operation = preview_transform_name_operands(region, function_address, operation)
     operation = map_point_chain_name_operands(region, function_address, operation)
     operation = map_line_name_operands(region, function_address, operation)
     operation = arc_closing_name_operands(region, function_address, operation)
@@ -982,3 +984,11 @@ DOCUMENTS.update(PREVIEW_HOVER_DOCUMENTS)
 from PreviewActionFacts import LABELS as PREVIEW_ACTION_LABELS, DOCUMENTS as PREVIEW_ACTION_DOCUMENTS, name_operands as preview_action_name_operands
 LABELS.update(PREVIEW_ACTION_LABELS)
 DOCUMENTS.update(PREVIEW_ACTION_DOCUMENTS)
+
+from PreviewMultiplyFacts import LABELS as PREVIEW_MULTIPLY_LABELS, DOCUMENTS as PREVIEW_MULTIPLY_DOCUMENTS, name_operands as preview_multiply_name_operands
+LABELS.update(PREVIEW_MULTIPLY_LABELS)
+DOCUMENTS.update(PREVIEW_MULTIPLY_DOCUMENTS)
+
+from PreviewTransformFacts import LABELS as PREVIEW_TRANSFORM_LABELS, DOCUMENTS as PREVIEW_TRANSFORM_DOCUMENTS, name_operands as preview_transform_name_operands
+LABELS.update(PREVIEW_TRANSFORM_LABELS)
+DOCUMENTS.update(PREVIEW_TRANSFORM_DOCUMENTS)

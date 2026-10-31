@@ -41,7 +41,19 @@
                 include "../D3D/PrintPreviewTextRows.asm"
                 ent
                 assert $ == #2171
-                incbin "../Resources/06_D3D/BeforeDescriptionText.bin"
+                incbin "../Resources/06_D3D/BeforeCoordinateMultiply.bin"
+                assert $ == #2B10
+                disp #EB10
+                include "../D3D/MultiplyPreviewCoordinate.asm"
+                ent
+                assert $ == #2B7E
+                disp #EB7E
+                include "../D3D/TransformPreviewCoords.asm"
+                ent
+                assert $ == #2C28
+                incbin "../Resources/06_D3D/AfterCoordinateTransform.bin"
+                assert $ == #3581
+                assert $ == #3581
                 assert $ == #3581
                 disp #F581
                 include "../D3D/Data/ShipDescriptions.asm"

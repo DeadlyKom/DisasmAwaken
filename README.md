@@ -15,7 +15,7 @@
 [аудите требований](Tools/Disasm/Reports/ConformanceAudit.json).
 Полный семантический разбор ещё продолжается,
 неустановленные назначения и контракты явно обозначены `Unknown`.
-В реестре 1099 фрагментов, 254 с неизвестным назначением и 485 без доказанного контракта. У всех зарегистрированных входов Text контракты описаны, но игровые значения части полей и физические данные языка ещё требуют разбора. Управление сценарием описано в [ScriptControl](Docs/ScriptControl.md), выражения в [ExpressionControl](Docs/ExpressionControl.md).
+В реестре 1101 фрагментов, 254 с неизвестным назначением и 485 без доказанного контракта. У всех зарегистрированных входов Text контракты описаны, но игровые значения части полей и физические данные языка ещё требуют разбора. Управление сценарием описано в [ScriptControl](Docs/ScriptControl.md), выражения в [ExpressionControl](Docs/ExpressionControl.md).
 Отсечение карты описывается в [ClipProducts](Docs/ClipProducts.md), [ClipIntersections](Docs/ClipIntersections.md), [ClipTail](Docs/ClipTail.md) и [ClipCases](Docs/ClipCases.md). Подготовки дуги и завершающие маски разобраны в [ArcPreparation](Docs/ArcPreparation.md) и [ArcClosing](Docs/ArcClosing.md), диспетчер геометрических случаев остаётся Unknown.
 Запуск оригинала в Unreal подтверждён пользователем. Запуск пересобранного
 образа предварительно подтверждён, подробный игровой прогон ещё не выполнен.

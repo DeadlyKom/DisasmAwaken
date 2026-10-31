@@ -16,7 +16,7 @@
 | StationFinalExit | 1 | 1 | [Факты](FunctionDetails/StationFinalExit.md) |
 | Station | 422 | 368 | [Факты](FunctionDetails/Station.md) |
 | Text | 126 | 126 | [Факты](FunctionDetails/Text.md) |
-| D3D | 6 | 6 | [Факты](FunctionDetails/D3D.md) |
+| D3D | 8 | 8 | [Факты](FunctionDetails/D3D.md) |
 | Map | 89 | 89 | [Факты](FunctionDetails/Map.md) |
 | Help | 4 | 4 | [Факты](FunctionDetails/Help.md) |
 | Music | 27 | 13 | [Факты](FunctionDetails/Music.md) |
@@ -1238,3 +1238,7 @@
 | #E154, банк 4 | [D3D.PrintPreviewTextRows](../Source/D3D/PrintPreviewTextRows.asm) | Печать выбранного описания корабля либо скимера с байтовым пропуском строк |
 
 | #E0C5, банк 4 | [D3D.DrawPreviewPrices](../Source/D3D/DrawPreviewPrices.asm) | Вывод цен доступных моделей либо одной собственной модели с временным ограничителем текста |
+
+| #EB10, банк 4 | [D3D.MultiplyPreviewCoordinate](../Source/D3D/MultiplyPreviewCoordinate.asm) | Знаковое произведение 16-битной координаты и 7-битного коэффициента с усечением после деления на 128 и переходным возвратом |
+
+| #EB7E, банк 4 | [D3D.TransformPreviewCoords](../Source/D3D/TransformPreviewCoords.asm) | Три скалярных произведения с переносом знакового умножителя, ранним переполнением и продолжением через IY |

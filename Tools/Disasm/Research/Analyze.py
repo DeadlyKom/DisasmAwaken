@@ -84,6 +84,19 @@ def analyze(name, extra_roots=(), observed=(), initial_bank=None):
     roots = {address for chunk in chunks for address in chunk["roots"]}
     roots.update(address for address in extra_roots if address in origins)
     roots.update(address for address in FUNCTIONS.get(name, {}) if address in origins)
+    # Поиск девяти продолжений доказанного переходного умножителя, его JP не создаёт CPU-возврата.
+    if name == "D3D":
+        multiply_continuations = set()
+        for address in range(0xEB7E, 0xEC28 - 6):
+            if (memory[address:address+2] == bytes.fromhex("d911") and
+                    memory[address+4:address+7] == bytes.fromhex("c310eb")):
+                target = memory[address+2] + 256*memory[address+3]
+                if target != address+7:
+                    raise ValueError("Изменено продолжение переходного умножителя D3D")
+                multiply_continuations.add(target)
+        if len(multiply_continuations) != 9:
+            raise ValueError("Изменены девять исходных вызовов умножителя D3D")
+        roots.update(multiply_continuations)
     # Периодический адрес 68EA записывается DrawItem26, остальные входы достигаются его исходными ветвями.
     if name == "Station":
         roots.update((0x6870, 0x68CC, 0x68EA, 0x693E))

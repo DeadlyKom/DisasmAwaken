@@ -5836,11 +5836,38 @@
   {
     "slot": 6,
     "offset": 8561,
-    "length": 5136,
+    "length": 2463,
     "kind": "unclassified",
-    "path": "Source/Resources/06_D3D/BeforeDescriptionText.bin",
+    "path": "Source/Resources/06_D3D/BeforeCoordinateMultiply.bin",
     "origin": null,
-    "sha256": "70d062035635becff8b978b3e6bc3d5d36070345c05b6d5ad5248c34905a1453"
+    "sha256": "e74e4fb13edf5c6f7a2426b9175b67f18ce2d16aee01c78b3ce082db62ede1b8"
+  },
+  {
+    "slot": 6,
+    "offset": 11024,
+    "length": 110,
+    "kind": "code",
+    "path": "Source/D3D/MultiplyPreviewCoordinate.asm",
+    "origin": 60176,
+    "sha256": "5f0cd905f8d0842b7ee9a196a7085d8cb49911625287b3aa5c078bcdaec653af"
+  },
+  {
+    "slot": 6,
+    "offset": 11134,
+    "length": 170,
+    "kind": "code",
+    "path": "Source/D3D/TransformPreviewCoords.asm",
+    "origin": 60286,
+    "sha256": "edbb1d5acd03c2e22f5ea34956efb51116bb1e5cc2925bad889b1f849a103692"
+  },
+  {
+    "slot": 6,
+    "offset": 11304,
+    "length": 2393,
+    "kind": "unclassified",
+    "path": "Source/Resources/06_D3D/AfterCoordinateTransform.bin",
+    "origin": null,
+    "sha256": "6e738fe8f2ab4202f478315e4fe9ae9e85eb44b0bb596e9d1324c87c9d67f488"
   },
   {
     "slot": 6,

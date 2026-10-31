@@ -1,13 +1,13 @@
 {
   "status": "in_progress",
   "all_plan_stages_completed": false,
-  "fragments": 1099,
-  "described": 845,
+  "fragments": 1101,
+  "described": 847,
   "unknown": 254,
   "unproved_contracts": 485,
   "named_without_contract": 231,
-  "instruction_count": 35638,
-  "unclassified_bytes": 314575,
+  "instruction_count": 35784,
+  "unclassified_bytes": 314295,
   "passed_reports": [
     "Tools/Disasm/Reports/PointerVerification.json",
     "Tools/Disasm/Reports/PointerTablesVerification.json",
@@ -210,7 +210,11 @@
     "Tools/Disasm/Reports/DescriptionPanelVerification.json",
     "Tools/Disasm/Reports/DescriptionActionVerification.json",
     "Tools/Disasm/Reports/DescriptionScrollVerification.json",
-    "Tools/Disasm/Reports/PreviewActionVerification.json"
+    "Tools/Disasm/Reports/PreviewActionVerification.json",
+    "Tools/Disasm/Reports/PreviewCoordinateMultiplyVerification.json",
+    "Tools/Disasm/Reports/PreviewMultiplyClassification.json",
+    "Tools/Disasm/Reports/PreviewTransformVerification.json",
+    "Tools/Disasm/Reports/PreviewTransformClassification.json"
   ],
   "next_station_work": [
     {
@@ -261,33 +265,41 @@
   },
   "next_semantic_work": [
     "Station, выделенный периодический корабельный код 68CC..6912 и его зависимые рисователи, действия корабельных панелей, писатели битов грузового массива, Unknown98A0 и разбор 7CC6",
-    "D3D, выделены 147 инструкций и 298 байтов кода, 2467 байтов исходных текстов. Остаются графическое ядро EC28 и E07F с EI, физические записи моделей и граней, косвенные потоки.",
+    "D3D, выделены 293 инструкции и 578 байтов кода, 2467 байтов текстов. Переходный умножитель и три строки преобразования доказаны. Остаются EC28, объектный список, отсечение, сортировка, матрицы, грани и растеризация, E07F с EI и композиция станции.",
     "LANG, ветви кораблей и оснащения, стоянка, начальная проверка, неизвестный префикс и потребители секторного хвоста",
     "Остальные регионы по pending_by_region и все именованные фрагменты без доказанных контрактов"
   ],
   "next_text_algorithm": "Все зарегистрированные Text-входы имеют описанный контракт, полнота игровых назначений полей и физической разметки LANG ещё не доказана",
   "next_map_work": "Писатели сохранённых списков и их обёртки управления описаны. Остаточные назначения полей, данных, хвостов фаз и формулы запаса дальности требуют полного прохода по потребителям.",
-  "next_station_algorithm": "Периодические 68CC/68EA и рисователь 26 с настоящим кадром D3D E07F/EC28. Список моделей, панель описания, её действие и прокрутка, пустое наведение 3D и действие изменения третьей координаты описаны.",
-  "documentation_links": 1687,
+  "next_station_algorithm": "Рисователь 26 и периодические 68CC/68EA зависят от кадра D3D. Далее EC28, восстановление SP, объектная очередь и растеризация, затем полная композиция 3D-панели.",
+  "documentation_links": 1689,
   "updated_on": "2026-10-31",
   "d3d_discovery": {
-    "report": "Tools/Disasm/Reports/D3DPreviewDiscovery.json",
-    "instructions": 2532,
-    "code_bytes": 4686,
+    "report": "Tools/Disasm/Reports/D3DRuntimeFlow.json",
+    "instructions": 3405,
+    "code_bytes": 6239,
     "included_in_source_instruction_count": false,
     "included_in_unclassified_bytes": true,
     "full_contracts_proved": false,
-    "extracted_instructions": 147,
-    "unextracted_discovered_instructions": 2385,
-    "extracted_code_bytes": 298,
-    "unextracted_discovered_code_bytes": 4388,
+    "extracted_instructions": 293,
+    "unextracted_discovered_instructions": 3112,
+    "extracted_code_bytes": 578,
+    "unextracted_discovered_code_bytes": 5661,
     "face_header_roles_observed": 13,
-    "typed_text_bytes": 2467
+    "typed_text_bytes": 2467,
+    "original_static_report": "Tools/Disasm/Reports/D3DPreviewDiscovery.json"
   },
   "observational_reports": [
     {
       "report": "Tools/Disasm/Reports/D3DFrameProbe.json",
       "cases": 11,
+      "all_cases_returned": true,
+      "independent_bitmap_oracle": false,
+      "irq_executed": false
+    },
+    {
+      "report": "Tools/Disasm/Reports/D3DRuntimeFlow.json",
+      "cases": 44,
       "all_cases_returned": true,
       "independent_bitmap_oracle": false,
       "irq_executed": false

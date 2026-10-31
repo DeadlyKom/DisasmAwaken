@@ -12087,5 +12087,27 @@
     "path": "Source/D3D/DrawPreviewPrices.asm",
     "description": "Вывод цен доступных моделей либо одной собственной модели с временным ограничителем текста",
     "semantic_status": "described"
+  },
+  {
+    "region": "D3D",
+    "name": "MultiplyPreviewCoordinate",
+    "address": 60176,
+    "slot": 6,
+    "offset": 11024,
+    "end_offset": 11134,
+    "path": "Source/D3D/MultiplyPreviewCoordinate.asm",
+    "description": "Знаковое произведение 16-битной координаты и 7-битного коэффициента с усечением после деления на 128 и переходным возвратом",
+    "semantic_status": "described"
+  },
+  {
+    "region": "D3D",
+    "name": "TransformPreviewCoords",
+    "address": 60286,
+    "slot": 6,
+    "offset": 11134,
+    "end_offset": 11304,
+    "path": "Source/D3D/TransformPreviewCoords.asm",
+    "description": "Три скалярных произведения с переносом знакового умножителя, ранним переполнением и продолжением через IY",
+    "semantic_status": "described"
   }
 ]

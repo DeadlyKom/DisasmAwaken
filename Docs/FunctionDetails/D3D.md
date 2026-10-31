@@ -11,3 +11,7 @@
 [PrintPreviewTextRows](../../Source/D3D/PrintPreviewTextRows.asm) — см. [PreviewDescriptions](../PreviewDescriptions.md).
 
 [DrawPreviewPrices](../../Source/D3D/DrawPreviewPrices.asm) — см. [PreviewDescriptions](../PreviewPrices.md).
+
+[MultiplyPreviewCoordinate](../../Source/D3D/MultiplyPreviewCoordinate.asm) — см. [PreviewCoordinateMultiply](../PreviewCoordinateMultiply.md).
+
+[TransformPreviewCoords](../../Source/D3D/TransformPreviewCoords.asm) — см. [PreviewTransform](../PreviewTransform.md).

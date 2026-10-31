@@ -1,13 +1,13 @@
 {
   "method": "static_source_audit_without_assembly",
-  "included_text_files": 1239,
-  "included_binary_files": 227,
-  "registered_functions": 1099,
+  "included_text_files": 1241,
+  "included_binary_files": 228,
+  "registered_functions": 1101,
   "unlinked_functions": [],
   "missing_includes_or_resources": [],
   "missing_include_order": [],
-  "global_definitions": 10705,
-  "global_references": 8181,
+  "global_definitions": 10750,
+  "global_references": 8241,
   "unresolved_global_references": [],
   "duplicate_global_definitions": [],
   "global_reference_case_mismatches": [],
@@ -513,11 +513,11 @@
   },
   "potential_continuations": 102,
   "ordered_fragments": 189,
-  "python_scripts_parsed": 523,
+  "python_scripts_parsed": 530,
   "python_duplicate_literal_keys": [],
   "totals": {
     "address_label": 1447,
-    "numeric_control_target": 186,
+    "numeric_control_target": 187,
     "numeric_index_operand": 352,
     "condition_without_data_semantics": 1685,
     "conditional_without_right_comment": 62
@@ -19182,6 +19182,11 @@
       "path": "Source/Final/NextBitmapLine.asm",
       "line": 25,
       "issue": "condition_without_data_semantics"
+    },
+    {
+      "path": "Source/D3D/MultiplyPreviewCoordinate.asm",
+      "line": 151,
+      "issue": "numeric_control_target"
     }
   ],
   "full_semantic_analysis_complete": false,

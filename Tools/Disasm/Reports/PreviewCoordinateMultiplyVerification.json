@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "cases": 376832,
+  "all_coordinate_words_for_coefficients": [
+    -127,
+    -1,
+    0,
+    1,
+    127
+  ],
+  "all_coefficient_bytes_sampled": true,
+  "coefficient_80_original_zero_result_preserved": true,
+  "independent_integer_product_and_register_flags": true,
+  "exact_two_self_modified_return_bytes": true,
+  "sp_unchanged": true,
+  "alternate_and_index_registers_checked": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

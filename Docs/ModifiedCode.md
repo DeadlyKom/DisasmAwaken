@@ -796,3 +796,5 @@
 | Final | #6144 | #60D4 | `LD A,#01` | [ReadSpeedKeys.asm](../Source/Final/ReadSpeedKeys.asm) |
 | Final | #61B8 | #6235 | `LD HL,#627D` | [PrepareFrame.asm](../Source/Final/PrepareFrame.asm) |
 | Final | #61BE | #6238 | `LD BC,#0017` | [PrepareFrame.asm](../Source/Final/PrepareFrame.asm) |
+
+| D3D | #EB10 | #EB7C | `JP #0000` | [MultiplyPreviewCoordinate.asm](../Source/D3D/MultiplyPreviewCoordinate.asm) |
