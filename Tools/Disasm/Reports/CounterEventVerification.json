@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "entry_all_af": 65536,
+  "internal_return_all_af": 65536,
+  "all_memory_general_index_and_alternate_registers_preserved": true,
+  "refresh_register_increments_checked": true,
+  "no_counter_tick_or_input_side_effect": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

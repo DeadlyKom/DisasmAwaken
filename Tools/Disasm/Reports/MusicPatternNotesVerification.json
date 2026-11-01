@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "partial_decoders": 3,
+  "precise_range_conditions": 22,
+  "parent_unknown_status_preserved": true,
+  "instructions_changed": 0,
+  "physical_bytes_preserved": true,
+  "assembly_executed": false
+}

@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "row_cases": 8768,
+  "direct_jump_cases": 256,
+  "all_gate_enable_reset_combinations": true,
+  "all_memory_compared": true,
+  "main_and_alternate_registers_checked": true,
+  "entry_ld_bc_and_exx_checked": true,
+  "control_gates_not_self_cleared": true,
+  "stop_addresses": [
+    56976,
+    57315
+  ],
+  "irq_executed": false,
+  "synthesis_executed": false,
+  "assembly_executed": false
+}

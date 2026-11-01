@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "cases_by_path": {
+    "choice_apply": 512,
+    "choice_ff_preserved": 2,
+    "choice_empty_entry": 256,
+    "drop_group": 128,
+    "action_other_row": 254,
+    "action_close_group": 254,
+    "action_choice": 4,
+    "action_high_bit_return": 512,
+    "action_repaint_first_return": 4,
+    "redraw_irq_wakeups": 4
+  },
+  "all_256_hover_rows": true,
+  "hover_ff_preserves_model_byte": true,
+  "full_description_top_word_reset": true,
+  "all_256_action_selectors": true,
+  "exact_five_drop_order_and_128_byte_tail_shifts": true,
+  "duplicate_and_disabled_aliases": true,
+  "real_repaint_pointer_row_close_screen_and_bank_helpers": true,
+  "no_immediate_preview_render": true,
+  "selection_requests_deferred_redraw": true,
+  "independent_list_and_register_oracle": true,
+  "irq_executed": true,
+  "irq_only_at_redraw_caption_halts": true,
+  "music_disabled": true,
+  "native_execution": false,
+  "assembly_executed": false
+}

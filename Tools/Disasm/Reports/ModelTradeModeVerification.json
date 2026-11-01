@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "cases_by_path": {
+    "carry_guard_returns": 65536,
+    "all_selector_owned_pairs_before_contour": 65536,
+    "all_new_purchase_words_before_contour": 65536,
+    "full_two_contour_calls": 192,
+    "shared_purchase_entry_without_reset": 8,
+    "mode_button_wrapper_equivalence": 8,
+    "disabled_mode_button_returns": 512
+  },
+  "all_selector_and_owned_bytes": true,
+  "all_carry_guard_af": true,
+  "all_new_purchase_indices_stopped_before_contour": true,
+  "original_bank_4_row_operand_only_reset": true,
+  "both_screen_bits_preserved": true,
+  "real_centered_frames_and_pointer": true,
+  "shared_tail_does_not_reset_row_or_pending": true,
+  "independent_whole_contour_bitmap": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

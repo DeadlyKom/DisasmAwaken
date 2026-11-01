@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "logical_length": 7209,
+  "allocation_length": 7424,
+  "preserved_sector_tail_bytes": 215,
+  "source_path": "Source/Music/Resources/SectorTail.bin",
+  "unused_or_discardable_claimed": false,
+  "assembly_executed": false
+}

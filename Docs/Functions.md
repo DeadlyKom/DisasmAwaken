@@ -14,12 +14,12 @@
 | StationBoot | 3 | 3 | [Факты](FunctionDetails/StationBoot.md) |
 | StationExit | 1 | 1 | [Факты](FunctionDetails/StationExit.md) |
 | StationFinalExit | 1 | 1 | [Факты](FunctionDetails/StationFinalExit.md) |
-| Station | 422 | 368 | [Факты](FunctionDetails/Station.md) |
+| Station | 423 | 423 | [Факты](FunctionDetails/Station.md) |
 | Text | 126 | 126 | [Факты](FunctionDetails/Text.md) |
 | D3D | 70 | 70 | [Факты](FunctionDetails/D3D.md) |
 | Map | 89 | 89 | [Факты](FunctionDetails/Map.md) |
 | Help | 4 | 4 | [Факты](FunctionDetails/Help.md) |
-| Music | 27 | 13 | [Факты](FunctionDetails/Music.md) |
+| Music | 49 | 49 | [Факты](FunctionDetails/Music.md) |
 | ActionBoot | 9 | 9 | [Факты](FunctionDetails/ActionBoot.md) |
 | Action | 178 | 81 | [Факты](FunctionDetails/Action.md) |
 | ThreeD | 98 | 75 | [Факты](FunctionDetails/ThreeD.md) |
@@ -89,7 +89,7 @@
 | #6364 | [Station.TogglePreviewFaceFill](../Source/Station/TogglePreviewFaceFill.asm) | Переключение шаблона заполнения семи четырёхугольных и шести треугольных граней по двум опорным заголовкам |
 | #6396 | [Station.SelectRamBank](../Source/Station/SelectRamBank.asm) | Объединение старших пяти битов теневого #7FFD со всем входным A и запись результата в порт |
 | #639F | [Station.SelectMemoryPage](../Source/Station/SelectMemoryPage.asm) | Сохранение теневого #7FFD и переключение страницы с сохранением BC |
-| #63AA | [Station.StopMusic](../Source/Station/StopMusic.asm) | Остановка музыкального модуля в странице 3 и восстановление IM 1 |
+| #63AA | [Station.StopMusic](../Source/Station/StopMusic.asm) | Глушение AY в банке музыки, установка IM 1 и выход через двухсловную CPU-рамку |
 | #63C3 | [Station.SuspendPointer](../Source/Station/SuspendPointer.asm) | Запрет периодического обновления указателя с восстановлением его фона |
 | #63D8 | [Station.ResumePointer](../Source/Station/ResumePointer.asm) | Рисование указателя с сохранением регистров и разрешением периодического обновления |
 | #63F1 | [Station.TestMotionParameters](../Source/Station/TestMotionParameters.asm) | Объединение четырёх слов параметров в признак нулевого движения |
@@ -115,38 +115,38 @@
 | #6762 | [Station.NoPointerMotion](../Source/Station/NoPointerMotion.asm) | Возврат без изменения координат для пустой либо противоречивой комбинации направлений |
 | #6763 | [Station.StepUp](../Source/Station/StepUp.asm) | Ограниченный шаг указателя вверх |
 | #676A | [Station.StepDown](../Source/Station/StepDown.asm) | Ограниченный шаг указателя вниз |
-| #6771 | [Station.HandleItem25](../Source/Station/HandleItem25.asm) | обработчик события станционного элемента из записи 25 таблицы FInterfaceItem |
-| #6780 | [Station.Unknown6780](../Source/Station/Unknown6780.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #6771 | [Station.HandleShipListHover](../Source/Station/HandleShipListHover.asm) | Хвостовая передача наведения списка моделей кораблей в UpdateShipListHover |
+| #6780 | [Station.DropShipDetailPanels](../Source/Station/DropShipDetailPanels.asm) | Отключение периодического просмотра и последовательное удаление пяти связанных панелей |
 | #67D0 | [Station.UpdateShipListHover](../Source/Station/UpdateShipListHover.asm) | Обновление XOR-полосы списка Корабли с сохранением номера только по Z=0 |
 | #67E0 | [Station.DrawModelListPanel](../Source/Station/DrawModelListPanel.asm) | Рисование списка рыночных либо текущих кораблей и скимеров с обновлением высоты наведения |
 | #6837 | [Station.IgnoreModelPreviewHover](../Source/Station/IgnoreModelPreviewHover.asm) | Пустой вход наведения панели 3D-просмотра с хвостовым переходом к возврату |
 | #686F | [Station.ReturnModelPreviewHover](../Source/Station/ReturnModelPreviewHover.asm) | Общий пустой возврат наведения панели 3D-просмотра |
-| #6877 | [Station.DrawItem26](../Source/Station/DrawItem26.asm) | обработчик рисования станционного элемента из записи 26 таблицы FInterfaceItem |
+| #6877 | [Station.DrawShipPreview](../Source/Station/DrawShipPreview.asm) | Рамка корабельного просмотра, выбор периодического callback, настройка банка 4 и первый кадр |
 | #6913 | [Station.HandleModelDescriptionHover](../Source/Station/HandleModelDescriptionHover.asm) | Пустой трёхбайтовый вход наведения панели описания, действие начинается отдельно через Entry+3 |
 | #693D | [Station.ReturnModelDescriptionHover](../Source/Station/ReturnModelDescriptionHover.asm) | Возврат без действий из ветви наведения панели описания |
 | #6945 | [Station.DrawModelDescriptionPanel](../Source/Station/DrawModelDescriptionPanel.asm) | Рамка и банковая печать выбранного описания с сохранённой начальной строкой |
 | #6952 | [Station.PrintModelDescription](../Source/Station/PrintModelDescription.asm) | Банковая печать выбранного описания модели с возвратом в станционный банк |
-| #6978 | [Station.HandleItem23](../Source/Station/HandleItem23.asm) | обработчик события станционного элемента из записи 23 таблицы FInterfaceItem |
-| #69A7 | [Station.Unknown69A7](../Source/Station/Unknown69A7.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #69A8 | [Station.DrawItem23](../Source/Station/DrawItem23.asm) | обработчик рисования станционного элемента из записи 23 таблицы FInterfaceItem |
-| #69B8 | [Station.Unknown69B8](../Source/Station/Unknown69B8.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #69CF | [Station.Unknown69CF](../Source/Station/Unknown69CF.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #69DD | [Station.HandleItem22](../Source/Station/HandleItem22.asm) | обработчик события станционного элемента из записи 22 таблицы FInterfaceItem |
+| #6978 | [Station.HandleHelpTextHover](../Source/Station/HandleHelpTextHover.asm) | Пустая JP-обёртка наведения панели текста справки |
+| #69A7 | [Station.IgnoreHelpTextHover](../Source/Station/IgnoreHelpTextHover.asm) | Пустой обработчик наведения текста справки с немедленным RET |
+| #69A8 | [Station.DrawHelpText](../Source/Station/DrawHelpText.asm) | Рамка панели справки, повторное индексирование выбранной записи и печать от TopLine |
+| #69B8 | [Station.IndexHelpText](../Source/Station/IndexHelpText.asm) | Выбор банка HELP, индексирование LF-записи и сохранение полного числа строк |
+| #69CF | [Station.PrintHelpLine](../Source/Station/PrintHelpLine.asm) | Межбанковая печать по индексу таблицы HELP с возвратом банка станции |
+| #69DD | [Station.HandleHelpIndexHover](../Source/Station/HandleHelpIndexHover.asm) | Хвостовая передача наведения разделов справки в UpdateIndexListHover |
 | #6A4B | [Station.UpdateIndexListHover](../Source/Station/UpdateIndexListHover.asm) | Обновление XOR-полосы списка Индекс с сохранением номера только по Z=0 |
-| #6A5B | [Station.DrawItem22](../Source/Station/DrawItem22.asm) | обработчик рисования станционного элемента из записи 22 таблицы FInterfaceItem |
-| #6A7E | [Station.Unknown6A7E](../Source/Station/Unknown6A7E.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #6A83 | [Station.HandleItem39](../Source/Station/HandleItem39.asm) | обработчик события станционного элемента из записи 39 таблицы FInterfaceItem |
-| #6AAE | [Station.Unknown6AAE](../Source/Station/Unknown6AAE.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #6AB6 | [Station.DrawItem39](../Source/Station/DrawItem39.asm) | обработчик рисования станционного элемента из записи 39 таблицы FInterfaceItem |
-| #6AC6 | [Station.Unknown6AC6](../Source/Station/Unknown6AC6.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #6ADE | [Station.Unknown6ADE](../Source/Station/Unknown6ADE.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #6AE9 | [Station.HandleItem41](../Source/Station/HandleItem41.asm) | обработчик события станционного элемента из записи 41 таблицы FInterfaceItem |
+| #6A5B | [Station.DrawHelpContents](../Source/Station/DrawHelpContents.asm) | Рамка списка разделов справки, сброс подсветки и пересчёт числа видимых CR-заголовков |
+| #6A7E | [Station.DisableTextWrap](../Source/Station/DisableTextWrap.asm) | Отключение переноса текста, при отказе ширины печататель пропускает остаток строки |
+| #6A83 | [Station.HandleEquipmentInfoHover](../Source/Station/HandleEquipmentInfoHover.asm) | Пустая JP-обёртка наведения документации оснащения |
+| #6AAE | [Station.IgnoreEquipmentInfoHover](../Source/Station/IgnoreEquipmentInfoHover.asm) | Пустое наведение документации оснащения с немедленным RET |
+| #6AB6 | [Station.DrawEquipmentInfo](../Source/Station/DrawEquipmentInfo.asm) | Рамка документации оснащения, поиск и подсчёт LF-текста, печать от TopRow |
+| #6AC6 | [Station.UpdateEquipmentInfo](../Source/Station/UpdateEquipmentInfo.asm) | Поиск LF-описания оснащения, сохранение его начала и полного числа визуальных строк |
+| #6ADE | [Station.PrintEquipmentInfo](../Source/Station/PrintEquipmentInfo.asm) | Печать сохранённого описания оснащения с байтовым числом пропускаемых строк |
+| #6AE9 | [Station.HandleEnvironmentHover](../Source/Station/HandleEnvironmentHover.asm) | Передача наведения среды в обработчик её динамического числа строк |
 | #6B8E | [Station.UpdateEnvironmentHover](../Source/Station/UpdateEnvironmentHover.asm) | Обновление XOR-полосы установок среды с сохранением номера только по Z=0 |
-| #6BA5 | [Station.DrawItem41](../Source/Station/DrawItem41.asm) | обработчик рисования станционного элемента из записи 41 таблицы FInterfaceItem |
-| #6BBE | [Station.Unknown6BBE](../Source/Station/Unknown6BBE.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #6C00 | [Station.Unknown6C00](../Source/Station/Unknown6C00.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #6C0A | [Station.HandleItem11](../Source/Station/HandleItem11.asm) | обработчик события станционного элемента из записи 11 таблицы FInterfaceItem |
-| #6D43 | [Station.Unknown6D43](../Source/Station/Unknown6D43.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #6BA5 | [Station.DrawEnvironmentPanel](../Source/Station/DrawEnvironmentPanel.asm) | Рамка установок среды, сброс подсветки и сохранение числа обработанных значений |
+| #6BBE | [Station.PrintEnvironmentRows](../Source/Station/PrintEnvironmentRows.asm) | CR-подписи установок среды и общий цикл текущих значений со счётчиком в A' |
+| #6C00 | [Station.SetupEnvironmentText](../Source/Station/SetupEnvironmentText.asm) | Запрет переноса установок среды и выбор колонки значений X=66 |
+| #6C0A | [Station.HandleGalaxyMapHover](../Source/Station/HandleGalaxyMapHover.asm) | Пустая JP-обёртка наведения панели карты галактики |
+| #6D43 | [Station.IgnoreGalaxyMapHover](../Source/Station/IgnoreGalaxyMapHover.asm) | Игнорирование наведения панели карты галактики с полным сохранением контекста |
 | #6D58 | [Station.DrawMapPanelContents](../Source/Station/DrawMapPanelContents.asm) | Настройка размеров карты, условное построение таблиц и банковое рисование C000 |
 | #6DA8 | [Station.DrawMapPanel](../Source/Station/DrawMapPanel.asm) | Рисование полосовой рамки карты, установка трёх запросов и последовательный вход содержимого |
 | #6DC2 | [Station.HandleDecodedMessageHover](../Source/Station/HandleDecodedMessageHover.asm) | Передача события наведения пустому обработчику панели расшифровки |
@@ -164,63 +164,63 @@
 | #7071 | [Station.DrawTradePanel](../Source/Station/DrawTradePanel.asm) | Рамка и торговые колонки с сохранением числа начатых строк в операнде подсветки |
 | #7096 | [Station.DrawTradeNumericColumns](../Source/Station/DrawTradeNumericColumns.asm) | Наименования товаров и четыре числовые колонки с двумя отдельными байтами количества и цены |
 | #7154 | [Station.SetMarketTextColumns](../Source/Station/SetMarketTextColumns.asm) | Отключение переноса текста и установка пяти пиксельных позиций торговых колонок |
-| #7172 | [Station.HandleItem38](../Source/Station/HandleItem38.asm) | обработчик события станционного элемента из записи 38 таблицы FInterfaceItem |
+| #7172 | [Station.HandleEquipmentListHover](../Source/Station/HandleEquipmentListHover.asm) | JP-обёртка наведения оснащения с текущим счётчиком попыток рисователя |
 | #7210 | [Station.UpdateEquipmentHover](../Source/Station/UpdateEquipmentHover.asm) | Обновление XOR-полосы оснащения корабля с сохранением номера только по Z=0 |
-| #7227 | [Station.DrawItem38](../Source/Station/DrawItem38.asm) | обработчик рисования станционного элемента из записи 38 таблицы FInterfaceItem |
-| #724C | [Station.Unknown724C](../Source/Station/Unknown724C.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #733F | [Station.Unknown733F](../Source/Station/Unknown733F.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #741E | [Station.HandleItem43](../Source/Station/HandleItem43.asm) | обработчик события станционного элемента из записи 43 таблицы FInterfaceItem |
+| #7227 | [Station.DrawEquipmentList](../Source/Station/DrawEquipmentList.asm) | Рамка оснащения, заголовки колонок и сохранение счётчика попыток вывода |
+| #724C | [Station.PrintEquipmentRows](../Source/Station/PrintEquipmentRows.asm) | Имена оснащения и четыре параллельные колонки количества, цены, веса и проверки типа корабля |
+| #733F | [Station.SetupEquipmentColumns](../Source/Station/SetupEquipmentColumns.asm) | Подготовка четырёх X-колонок оснащения и сохранение характеристики L текущего ключа |
+| #741E | [Station.HandleSaveSlotHover](../Source/Station/HandleSaveSlotHover.asm) | Хвостовая передача наведения позиций записи состояния в UpdateToPositionHover |
 | #7482 | [Station.UpdateToPositionHover](../Source/Station/UpdateToPositionHover.asm) | Обновление XOR-полосы списка В позицию 1..5 с сохранением номера только по Z=0 |
-| #7492 | [Station.DrawItem43](../Source/Station/DrawItem43.asm) | обработчик рисования станционного элемента из записи 43 таблицы FInterfaceItem |
-| #74A7 | [Station.HandleItem44](../Source/Station/HandleItem44.asm) | обработчик события станционного элемента из записи 44 таблицы FInterfaceItem |
+| #7492 | [Station.DrawSaveSlotPanel](../Source/Station/DrawSaveSlotPanel.asm) | Рамка и пять строк выбора позиции записи, без выполнения дискового протокола |
+| #74A7 | [Station.HandleLoadSlotHover](../Source/Station/HandleLoadSlotHover.asm) | Хвостовая передача наведения позиций чтения состояния в UpdateFromPositionHover |
 | #750B | [Station.UpdateFromPositionHover](../Source/Station/UpdateFromPositionHover.asm) | Обновление XOR-полосы списка С позиции 1..5 с сохранением номера только по Z=0 |
-| #751B | [Station.DrawItem44](../Source/Station/DrawItem44.asm) | обработчик рисования станционного элемента из записи 44 таблицы FInterfaceItem |
+| #751B | [Station.DrawLoadSlotPanel](../Source/Station/DrawLoadSlotPanel.asm) | Рамка и пять строк выбора позиции чтения, без выполнения дискового протокола |
 | #7539 | [Station.HandleItem40](../Source/Station/HandleItem40.asm) | Вход наведения контекстного меню с хвостовым переходом в HoverContextMenu |
 | #753C | [Station.ActivateContextMenu](../Source/Station/ActivateContextMenu.asm) | Развилка действия меню после перерисовки и выполнение команды выбранной строки |
 | #7573 | [Station.HoverContextMenu](../Source/Station/HoverContextMenu.asm) | Обновление выбранной строки контекстного меню и сохранение результата в операнде |
 | #7583 | [Station.DrawItem40](../Source/Station/DrawItem40.asm) | Регистрация и рамка контекстного меню, сброс выделения и печать восьми команд |
-| #7599 | [Station.HandleItem42](../Source/Station/HandleItem42.asm) | обработчик события станционного элемента из записи 42 таблицы FInterfaceItem |
+| #7599 | [Station.HandleGameSettingsHover](../Source/Station/HandleGameSettingsHover.asm) | Передача наведения игры в обработчик её динамического числа строк |
 | #7620 | [Station.UpdateGameSettingsHover](../Source/Station/UpdateGameSettingsHover.asm) | Обновление XOR-полосы установок игры с сохранением номера только по Z=0 |
-| #7637 | [Station.DrawItem42](../Source/Station/DrawItem42.asm) | обработчик рисования станционного элемента из записи 42 таблицы FInterfaceItem |
-| #7650 | [Station.Unknown7650](../Source/Station/Unknown7650.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #766C | [Station.Unknown766C](../Source/Station/Unknown766C.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #7676 | [Station.HandleItem19](../Source/Station/HandleItem19.asm) | обработчик события станционного элемента из записи 19 таблицы FInterfaceItem |
-| #7687 | [Station.Unknown7687](../Source/Station/Unknown7687.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #7637 | [Station.DrawGameSettings](../Source/Station/DrawGameSettings.asm) | Рамка установок игры, сброс подсветки и сохранение числа обработанных значений |
+| #7650 | [Station.PrintGameSettingsRows](../Source/Station/PrintGameSettingsRows.asm) | CR-подписи игровых клавиш и передача значений в общий цикл среды |
+| #766C | [Station.SetupGameSettingsText](../Source/Station/SetupGameSettingsText.asm) | Запрет переноса установок игры и выбор колонки значений X=110 |
+| #7676 | [Station.HandleSystemInfoHover](../Source/Station/HandleSystemInfoHover.asm) | Пустая JP-обёртка наведения панели информации о системе |
+| #7687 | [Station.IgnoreSystemInfoHover](../Source/Station/IgnoreSystemInfoHover.asm) | Игнорирование наведения панели информации о системе с полным сохранением контекста |
 | #7688 | [Station.TryDrawSystemInfo](../Source/Station/TryDrawSystemInfo.asm) | Проверка присутствия панели систем перед последовательным рисованием её содержимого |
 | #768F | [Station.DrawSystemInfoPanel](../Source/Station/DrawSystemInfoPanel.asm) | Рисование дальности топлива, расстояния, выбранной и текущей систем с перечнем планет |
-| #7838 | [Station.HandleItem20](../Source/Station/HandleItem20.asm) | обработчик события станционного элемента из записи 20 таблицы FInterfaceItem |
-| #7884 | [Station.Unknown7884](../Source/Station/Unknown7884.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #7838 | [Station.HandleSystemMapHover](../Source/Station/HandleSystemMapHover.asm) | Пустая JP-обёртка наведения панели карты системы |
+| #7884 | [Station.IgnoreSystemMapHover](../Source/Station/IgnoreSystemMapHover.asm) | Игнорирование наведения панели карты системы с полным сохранением контекста |
 | #788C | [Station.DrawVariantPanel](../Source/Station/DrawVariantPanel.asm) | Рисование полосовой панели, установка периодического callback и подготовка ресурсов вариантов |
-| #7948 | [Station.HandleItem45](../Source/Station/HandleItem45.asm) | обработчик события станционного элемента из записи 45 таблицы FInterfaceItem |
-| #7954 | [Station.Unknown7954](../Source/Station/Unknown7954.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #7955 | [Station.DrawItem45](../Source/Station/DrawItem45.asm) | обработчик рисования станционного элемента из записи 45 таблицы FInterfaceItem |
-| #79BD | [Station.HandleItem30](../Source/Station/HandleItem30.asm) | обработчик события станционного элемента из записи 30 таблицы FInterfaceItem |
-| #79C7 | [Station.Unknown79C7](../Source/Station/Unknown79C7.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #7948 | [Station.HandleWelcomeHover](../Source/Station/HandleWelcomeHover.asm) | Пустая JP-обёртка наведения панели приветствия |
+| #7954 | [Station.IgnoreWelcomeHover](../Source/Station/IgnoreWelcomeHover.asm) | Игнорирование наведения панели приветствия с полным сохранением контекста |
+| #7955 | [Station.DrawWelcomePanel](../Source/Station/DrawWelcomePanel.asm) | Вывод приветствия станции, её модели, имени системы и почасовой ставки 5×L |
+| #79BD | [Station.InstallShipTradeCallback](../Source/Station/InstallShipTradeCallback.asm) | Установка отложенной цели ConfirmShipModelTrade через общий обработчик активации элемента |
+| #79C7 | [Station.ConfirmShipModelTrade](../Source/Station/ConfirmShipModelTrade.asm) | Передача выбранной модели событию LANG и закрытие списка с пятью связанными панелями |
 | #7A15 | [Station.DrawItem30](../Source/Station/DrawItem30.asm) | Обёртка рисования элемента 30 через изменяемый индекс и DrawCenteredItem |
-| #7A1B | [Station.HandleItem28](../Source/Station/HandleItem28.asm) | обработчик события станционного элемента из записи 28 таблицы FInterfaceItem |
-| #7A24 | [Station.Unknown7A24](../Source/Station/Unknown7A24.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #7A55 | [Station.DrawItem28](../Source/Station/DrawItem28.asm) | Обёртка рисования элемента 28 через изменяемый индекс и DrawCenteredItem |
-| #7A5B | [Station.HandleItem29](../Source/Station/HandleItem29.asm) | обработчик события станционного элемента из записи 29 таблицы FInterfaceItem |
-| #7A64 | [Station.Unknown7A64](../Source/Station/Unknown7A64.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #7A82 | [Station.DrawItem29](../Source/Station/DrawItem29.asm) | Обёртка рисования элемента 29 через изменяемый индекс и DrawCenteredItem |
-| #7A88 | [Station.HandleItem09](../Source/Station/HandleItem09.asm) | обработчик события станционного элемента из записи 9 таблицы FInterfaceItem |
-| #7A92 | [Station.Unknown7A92](../Source/Station/Unknown7A92.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #7A1B | [Station.HandleShipSaleButton](../Source/Station/HandleShipSaleButton.asm) | Установка callback и последовательный вход в SelectSaleMode после общего действия кнопки |
+| #7A24 | [Station.SelectSaleMode](../Source/Station/SelectSaleMode.asm) | Выбор продажи собственного корабля либо скимера с возвратом к покупке при типе FF |
+| #7A55 | [Station.DrawSaleModeButton](../Source/Station/DrawSaleModeButton.asm) | Центрируемая кнопка продажи с изменяемым индексом FInterfaceItem 28 |
+| #7A5B | [Station.HandleShipPurchaseButton](../Source/Station/HandleShipPurchaseButton.asm) | Установка callback и последовательный вход в SelectPurchaseMode после общего действия кнопки |
+| #7A64 | [Station.SelectPurchaseMode](../Source/Station/SelectPurchaseMode.asm) | Выбор каталога покупки, сброс строки просмотра и переключение контура кнопок |
+| #7A82 | [Station.DrawPurchaseModeButton](../Source/Station/DrawPurchaseModeButton.asm) | Центрируемая кнопка покупки с изменяемым индексом FInterfaceItem 29 |
+| #7A88 | [Station.InstallHelpPanelsCallback](../Source/Station/InstallHelpPanelsCallback.asm) | Установка отложенной цели OpenHelpPanels через общий обработчик активации элемента |
+| #7A92 | [Station.OpenHelpPanels](../Source/Station/OpenHelpPanels.asm) | Перенос текстовой панели и списка справки в конец рисования с восстановлением их сохранённой геометрии |
 | #7A9E | [Station.DrawItem09](../Source/Station/DrawItem09.asm) | Обёртка рисования элемента 9 через изменяемый индекс и DrawCenteredItem |
-| #7AA4 | [Station.HandleItem02](../Source/Station/HandleItem02.asm) | обработчик события станционного элемента из записи 2 таблицы FInterfaceItem |
-| #7AAE | [Station.Unknown7AAE](../Source/Station/Unknown7AAE.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #7AA4 | [Station.InstallGalaxyNewsCallback](../Source/Station/InstallGalaxyNewsCallback.asm) | Установка отложенного открытия через OpenGalaxyNewsPanel |
+| #7AAE | [Station.OpenGalaxyNewsPanel](../Source/Station/OpenGalaxyNewsPanel.asm) | Перенос панели галактических новостей в конец рисования и восстановление сохранённой геометрии |
 | #7AB4 | [Station.DrawItem02](../Source/Station/DrawItem02.asm) | Обёртка рисования элемента 2 через изменяемый индекс и DrawCenteredItem |
-| #7ABA | [Station.HandleItem03](../Source/Station/HandleItem03.asm) | обработчик события станционного элемента из записи 3 таблицы FInterfaceItem |
-| #7AC4 | [Station.Unknown7AC4](../Source/Station/Unknown7AC4.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #7ABA | [Station.InstallMapPanelsCallback](../Source/Station/InstallMapPanelsCallback.asm) | Установка отложенного открытия через OpenMapPanelGroup |
+| #7AC4 | [Station.OpenMapPanelGroup](../Source/Station/OpenMapPanelGroup.asm) | Подготовка группы из одиннадцати панелей карты с восстановлением геометрии и запросом обновления |
 | #7B0B | [Station.DrawItem03](../Source/Station/DrawItem03.asm) | Обёртка рисования элемента 3 через изменяемый индекс и DrawCenteredItem |
-| #7B11 | [Station.HandleItem37](../Source/Station/HandleItem37.asm) | обработчик события станционного элемента из записи 37 таблицы FInterfaceItem |
-| #7B1A | [Station.Unknown7B1A](../Source/Station/Unknown7B1A.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #7B25 | [Station.DrawItem37](../Source/Station/DrawItem37.asm) | Обёртка рисования элемента 37 через изменяемый индекс и DrawCenteredItem |
-| #7B2B | [Station.HandleItem36](../Source/Station/HandleItem36.asm) | обработчик события станционного элемента из записи 36 таблицы FInterfaceItem |
-| #7B34 | [Station.Unknown7B34](../Source/Station/Unknown7B34.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #7B40 | [Station.DrawItem36](../Source/Station/DrawItem36.asm) | Обёртка рисования элемента 36 через изменяемый индекс и DrawCenteredItem |
-| #7B46 | [Station.HandleItem21](../Source/Station/HandleItem21.asm) | обработчик события станционного элемента из записи 21 таблицы FInterfaceItem |
-| #7B50 | [Station.Unknown7B50](../Source/Station/Unknown7B50.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #7B51 | [Station.DrawItem21](../Source/Station/DrawItem21.asm) | Обёртка рисования элемента 21 через изменяемый индекс и DrawCenteredItem |
+| #7B11 | [Station.HandleEquipmentPurchaseButton](../Source/Station/HandleEquipmentPurchaseButton.asm) | Установка callback и последовательный вход в SelectEquipmentPurchase после общего действия кнопки |
+| #7B1A | [Station.SelectEquipmentPurchase](../Source/Station/SelectEquipmentPurchase.asm) | Выбор покупки оборудования и переключение контура с продажи на покупку |
+| #7B25 | [Station.DrawEquipmentPurchase](../Source/Station/DrawEquipmentPurchase.asm) | Центрируемая кнопка покупки оборудования с изменяемым индексом 37 |
+| #7B2B | [Station.HandleEquipmentSaleButton](../Source/Station/HandleEquipmentSaleButton.asm) | Установка callback и последовательный вход в SelectEquipmentSale после общего действия кнопки |
+| #7B34 | [Station.SelectEquipmentSale](../Source/Station/SelectEquipmentSale.asm) | Выбор продажи оборудования и переключение контура с покупки на продажу |
+| #7B40 | [Station.DrawEquipmentSale](../Source/Station/DrawEquipmentSale.asm) | Центрируемая кнопка продажи оборудования с изменяемым индексом 36 |
+| #7B46 | [Station.InstallFlightButtonCallback](../Source/Station/InstallFlightButtonCallback.asm) | Установка пустого callback кнопки с исходной подписью Перелет |
+| #7B50 | [Station.EmptyFlightCallback](../Source/Station/EmptyFlightCallback.asm) | Пустой RET callback элемента 21, установленный обработчиком кнопки Перелет |
+| #7B51 | [Station.DrawFlightButton](../Source/Station/DrawFlightButton.asm) | Центрируемая кнопка Перелет, исходный текст 40 и изменяемый индекс элемента 21 |
 | #7B57 | [Station.HandleStoredPointToggle](../Source/Station/HandleStoredPointToggle.asm) | Подготовка callback переключения A через общий выбор геометрии либо активации |
 | #7B61 | [Station.ToggleStoredMapPoint](../Source/Station/ToggleStoredMapPoint.asm) | Удаление выбранного ключа из первого списка либо запись в его первую пустую запись |
 | #7BA8 | [Station.DrawStoredPointToggle](../Source/Station/DrawStoredPointToggle.asm) | Рисование элемента переключения первого списка через общий центрированный рисователь |
@@ -233,9 +233,9 @@
 | #7C84 | [Station.HandleStoredPointCycle](../Source/Station/HandleStoredPointCycle.asm) | Подготовка callback циклического выбора A через геометрию либо активацию |
 | #7C8E | [Station.CycleStoredMapPoint](../Source/Station/CycleStoredMapPoint.asm) | Циклический переход по первому списку с пропуском FF и центрированием выбранного ключа |
 | #7CB6 | [Station.DrawItem15](../Source/Station/DrawItem15.asm) | Обёртка рисования элемента 15 через изменяемый индекс и DrawCenteredItem |
-| #7CBC | [Station.HandleItem18](../Source/Station/HandleItem18.asm) | обработчик события станционного элемента из записи 18 таблицы FInterfaceItem |
-| #7CC6 | [Station.Unknown7CC6](../Source/Station/Unknown7CC6.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #7CF8 | [Station.DrawItem18](../Source/Station/DrawItem18.asm) | Обёртка рисования элемента 18 через изменяемый индекс и DrawCenteredItem |
+| #7CBC | [Station.InstallContractMapCallback](../Source/Station/InstallContractMapCallback.asm) | Установка отложенного центрирования карты кнопкой Контракт |
+| #7CC6 | [Station.CenterContractMap](../Source/Station/CenterContractMap.asm) | Выбор четырёхбайтового ключа и центрирование карты контракта с исходными абсолютными чтениями ROM |
+| #7CF8 | [Station.DrawContractButton](../Source/Station/DrawContractButton.asm) | Центрируемая кнопка Контракт с исходным текстовым индексом 20 и изменяемым индексом элемента 18 |
 | #7CFE | [Station.HandleCurrentMapCenter](../Source/Station/HandleCurrentMapCenter.asm) | Подготовка callback центрирования текущего ключа через геометрию либо активацию |
 | #7D08 | [Station.CenterCurrentMapPoint](../Source/Station/CenterCurrentMapPoint.asm) | Чтение двух слов текущего ключа перед общим выбором и центрированием карты |
 | #7D24 | [Station.DrawItem17](../Source/Station/DrawItem17.asm) | Обёртка рисования элемента 17 через изменяемый индекс и DrawCenteredItem |
@@ -260,8 +260,8 @@
 | #7E1F | [Station.ResetShipPanelSelection](../Source/Station/ResetShipPanelSelection.asm) | Сброс режима списка, рамок выбора и первого компонента индекса банка 4 |
 | #7E53 | [Station.HandleItem08](../Source/Station/HandleItem08.asm) | Активация элемента 8 и подготовка перенесённого перехода из станции |
 | #7F11 | [Station.DrawItem08](../Source/Station/DrawItem08.asm) | Обёртка рисования элемента 8 через изменяемый индекс и DrawCenteredItem |
-| #7F17 | [Station.HandleItem00](../Source/Station/HandleItem00.asm) | обработчик события станционного элемента из записи 0 таблицы FInterfaceItem |
-| #7F33 | [Station.Unknown7F33](../Source/Station/Unknown7F33.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #7F17 | [Station.HandleStatusPanelAction](../Source/Station/HandleStatusPanelAction.asm) | Геометрия по входному Z, перенос статусного элемента и условный рисунок с восстановлением AF |
+| #7F33 | [Station.RestoreActionAF](../Source/Station/RestoreActionAF.asm) | Снятие сохранённого AF из динамического кадра и возврат внешнему обработчику |
 | #7F35 | [Station.DrawItem00](../Source/Station/DrawItem00.asm) | Заливка статусного элемента и вывод полицейского статуса, денег, тоннажа и ранга |
 | #9A58 | [Station.EmptyCallback](../Source/Station/EmptyCallback.asm) | Исходный RET для временно отключённых обратных вызовов |
 | #9A59 | [Station.MainLoop](../Source/Station/MainLoop.asm) | Цикл станции, начальный и периодический сценарии, сравнение кодов ввода и событий |
@@ -283,8 +283,8 @@
 | #9ED7 | [Station.ResetIndexTable](../Source/Station/ResetIndexTable.asm) | Заполнение #0080 байт таблицы #8500 значением #FF |
 | #9EEB | [Station.GetItemFlags](../Source/Station/GetItemFlags.asm) | Получение адреса поля Flags элемента через последовательный вход GetItemField |
 | #9EED | [Station.GetItemField](../Source/Station/GetItemField.asm) | Вычисление адреса поля шестнадцатибайтовой записи станционного интерфейса |
-| #9EFF | [Station.UnpackResource](../Source/Station/UnpackResource.asm) | Распаковка ресурса с заголовком, переносом упакованного потока и обработкой ссылок |
-| #A014 | [Station.UnknownA014](../Source/Station/UnknownA014.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #9EFF | [Station.UnpackResource](../Source/Station/UnpackResource.asm) | Распаковка HR-потока со словным битовым резервуаром, LZ-ссылками, тройками и сохранённым шестибайтовым концом |
+| #A014 | [Station.RefillPackedBits](../Source/Station/RefillPackedBits.asm) | Чтение очередного слова битового потока из IX с восстановлением счётчика B из C без изменения флагов |
 | #A020 | [Station.CopyWindowIcon](../Source/Station/CopyWindowIcon.asm) | Копирование 128 байтов иконки в 32 экранные строки по таблицам адресации |
 | #A05B | [Station.FillWindowBody](../Source/Station/FillWindowBody.asm) | Заливка внутреннего тела окна группами восьми строк через таблицу CPU-возвратов |
 | #A0C4 | [Station.FillBodyRow](../Source/Station/FillBodyRow.asm) | Развёрнутая запись до 30 байтов одной строки с восстановлением младшего адреса и RET |
@@ -313,7 +313,7 @@
 | #A496 | [Station.EndScreenUpdate](../Source/Station/EndScreenUpdate.asm) | Возобновление указателя и переключение отображения на обновлённый базовый экран |
 | #A49F | [Station.BeginScreenUpdate](../Source/Station/BeginScreenUpdate.asm) | Копирование старого экрана в банк 7 перед восстановлением фона указателя и скрытым обновлением |
 | #A6C4 | [Station.CheckItemRect](../Source/Station/CheckItemRect.asm) | Проверка неотрицательного начала, экранных границ и минимального размера элемента |
-| #A6EA | [Station.HandleItem01](../Source/Station/HandleItem01.asm) | обработчик события станционного элемента из записи 1 таблицы FInterfaceItem |
+| #A6EA | [Station.IgnoreCounterEvent](../Source/Station/IgnoreCounterEvent.asm) | Пустой обработчик события счётчика, исходный JP во внутренний RET без изменения данных |
 | #A6EE | [Station.DrawItem01](../Source/Station/DrawItem01.asm) | Заполнение элемента 1 и вывод восьми разрядов станционного BCD-счётчика |
 | #A770 | [Station.HideAllItems](../Source/Station/HideAllItems.asm) | Отключение периодического callback и установка состояния скрытого интерфейса |
 | #A781 | [Station.CloseAllItems](../Source/Station/CloseAllItems.asm) | Удаление разрешённых флагами элементов из текущего списка рисования |
@@ -339,11 +339,11 @@
 | #A91B | [Station.GenerateMarket](../Source/Station/GenerateMarket.asm) | Генерация запасов, маркеров и цен тридцати двухбайтовых строк рынка |
 | #A9F3 | [Station.StepSignatureKey](../Source/Station/StepSignatureKey.asm) | Обновление двух слов рабочего ключа с байтовым смешиванием и XOR-свёрткой |
 | #AA1D | [Station.SumBank4Index](../Source/Station/SumBank4Index.asm) | Сумма двух байтов банка 4 с возвратом банка языка 6 |
-| #AA33 | [Station.HandleItem33](../Source/Station/HandleItem33.asm) | обработчик события станционного элемента из записи 33 таблицы FInterfaceItem |
-| #AA3D | [Station.UnknownAA3D](../Source/Station/UnknownAA3D.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #AA33 | [Station.InstallMissionOfferCallback](../Source/Station/InstallMissionOfferCallback.asm) | Установка отложенной цели RefreshMissionOfferPanels через общий обработчик активации элемента |
+| #AA3D | [Station.RefreshMissionOfferPanels](../Source/Station/RefreshMissionOfferPanels.asm) | Генерация нового предложения и последовательное обновление цели, условий миссии и статуса |
 | #AA4F | [Station.DrawItem33](../Source/Station/DrawItem33.asm) | Обёртка рисования элемента 33 через изменяемый индекс и DrawCenteredItem |
-| #AA55 | [Station.HandleItem32](../Source/Station/HandleItem32.asm) | обработчик события станционного элемента из записи 32 таблицы FInterfaceItem |
-| #AA84 | [Station.UnknownAA84](../Source/Station/UnknownAA84.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #AA55 | [Station.HandleContractHover](../Source/Station/HandleContractHover.asm) | Пустая JP-обёртка наведения панели контракта |
+| #AA84 | [Station.IgnoreContractHover](../Source/Station/IgnoreContractHover.asm) | Игнорирование наведения панели контракта с полным сохранением контекста |
 | #AA85 | [Station.DrawItem32](../Source/Station/DrawItem32.asm) | Вывод условий миссии и однократное завершение с наградой при достижении цели |
 | #AC14 | [Station.GenerateMissionOffer](../Source/Station/GenerateMissionOffer.asm) | Генерация координат предложения, требуемого тоннажа и награды по расстоянию |
 | #AD35 | [Station.SkipJustifyRow](../Source/Station/SkipJustifyRow.asm) | Пропуск одной выровненной строки через продвижение глифа без пикселей |
@@ -397,7 +397,7 @@
 | #BD08 | [Station.PrintText](../Source/Station/PrintText.asm) | Вывод байтового текстового потока с управляющими позициями и переносом строки |
 | #BDA6 | [Station.MeasureTextRun](../Source/Station/MeasureTextRun.asm) | Измерение пиксельной ширины текста до CR, LF или разделителя B с продвижением HL |
 | #BDCA | [Station.MeasureTextRunSaved](../Source/Station/MeasureTextRunSaved.asm) | Измерение пиксельной ширины текста до CR, LF или разделителя B с сохранением HL |
-| #BDF0 | [Station.UnknownBDF0](../Source/Station/UnknownBDF0.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #BDF0 | [Station.DrawKeyLabel](../Source/Station/DrawKeyLabel.asm) | Вывод одного глифа либо четырёх байтов обозначения Enter, Symbol Shift или Space |
 | #BE38 | [Station.MoveItemToTail](../Source/Station/MoveItemToTail.asm) | Поиск обработчика по индексу, перенос к концу списка либо добавление новой обёртки |
 | #BE91 | [Station.InvalidateItemIndex](../Source/Station/InvalidateItemIndex.asm) | Поиск первой совпавшей индексной пары и запись #FF в её старший байт |
 | #BEAE | [Station.RegisterItemCells](../Source/Station/RegisterItemCells.asm) | Замена регистрации элемента индексной парой и заполнение видимого прямоугольника кодом владельца |
@@ -630,36 +630,33 @@
 | #E779 | [Map.ClassifyKeyRegion](../Source/Map/ClassifyKeyRegion.asm) | Классификация байтов H и L по трём прямоугольникам и внешней области |
 | #E7BA | [Map.MeasureCoordinateDistance](../Source/Map/MeasureCoordinateDistance.asm) | Расстояние упакованных координат с делением суммы квадратов на 9 и кодом FF |
 | #E838 | [Map.SeededSqrt16](../Source/Map/SeededSqrt16.asm) | Целый корень через табличное начальное приближение с исходной верхней областью таблиц |
-| #DB00 | [Help.IndexTextLines](../Source/Help/IndexTextLines.asm) | Создание таблицы указателей максимум на 1024 строки текста |
-| #DB42 | [Help.PrintIndexedLine](../Source/Help/PrintIndexedLine.asm) | Получение указателя по индексу HL и передача непустой строки процедуре печати |
-| #DB57 | [Help.SelectText](../Source/Help/SelectText.asm) | Изменение номера текста в непосредственном операнде инициализатора |
-| #DB5B | [Help.FormatNumber](../Source/Help/FormatNumber.asm) | Печать числа через общий форматировщик и расчёт длины в знакоместах |
-| #DB00 | [Music.Initialize](../Source/Music/Initialize.asm) | Начальный вход проигрывателя с адресом модуля #E700 |
+| #DB00 | [Help.IndexTextLines](../Source/Help/IndexTextLines.asm) | Индексирование выбранной LF-записи по правилам переноса строк и обнуление остатка таблицы |
+| #DB42 | [Help.PrintIndexedLine](../Source/Help/PrintIndexedLine.asm) | Печать по физическому указателю строки с начальной позицией X=0, Y=8 |
+| #DB57 | [Help.SelectText](../Source/Help/SelectText.asm) | Подготовка номера LF-записи в операнде IndexTextLines без немедленного вывода |
+| #DB5B | [Help.PrintCrRecordAndRows](../Source/Help/PrintCrRecordAndRows.asm) | Печать выбранного CR-заголовка и возврат байтового числа занятых строк в A' |
+| #DB00 | [Music.Initialize](../Source/Music/Initialize.asm) | Выбор исходной композиции E700 и инициализация модуля с глушением аппаратного AY |
 | #DB05 | [Music.PlayFrame](../Source/Music/PlayFrame.asm) | Кадровый вход проигрывателя, переход к изменяемому диспетчеру #DE1F |
-| #DB08 | [Music.Stop](../Source/Music/Stop.asm) | Остановка звука обнулением регистров AY с номерами 13..0 |
-| #DB0A | [Music.InitializeModule](../Source/Music/InitializeModule.asm) | Чтение заголовка и относительных указателей PT3, сброс внутренних состояний и регистров AY |
-| #DB7C | [Music.ClearAyRegisters](../Source/Music/ClearAyRegisters.asm) | Запись нуля во все 14 музыкальных регистров AY через порты #FFFD и #BFFD |
+| #DB08 | [Music.Stop](../Source/Music/Stop.asm) | Глушение аппаратных регистров AY без изменения RAM и запрета последующих кадров |
+| #DB0A | [Music.InitializeModule](../Source/Music/InitializeModule.asm) | Перенос полей модуля, 48 указателей и начальных состояний с восстановлением SP и глушением AY |
+| #DB7C | [Music.ClearAyRegisters](../Source/Music/ClearAyRegisters.asm) | Последовательная запись нуля в аппаратные регистры AY 13..0 без изменения RAM |
 | #DDCA | [Music.ReadGateTimingA](../Source/Music/ReadGateTimingA.asm) | Чтение двух длительностей переключения канала A из потока паттерна |
 | #DDD2 | [Music.SetGateTimingA](../Source/Music/SetGateTimingA.asm) | Настройка двух длительностей канала A и замена JR в #DE90 на LD B,n |
 | #DE0A | [Music.ReadGateTimingC](../Source/Music/ReadGateTimingC.asm) | Чтение двух длительностей переключения канала C из потока паттерна |
 | #DE12 | [Music.SetGateTimingC](../Source/Music/SetGateTimingC.asm) | Установка счётчика и длительностей чередования включённого и выключенного состояния канала C |
-| #DE1F | [Music.TickDispatch](../Source/Music/TickDispatch.asm) | Изменяемый вход музыкального тика, исходный JP выбирает синтез без обновления строки паттерна |
-| #DE90 | [Music.UnknownDE90](../Source/Music/UnknownDE90.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #DEAE | [Music.UnknownDEAE](../Source/Music/UnknownDEAE.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #DEB9 | [Music.UnknownDEB9](../Source/Music/UnknownDEB9.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #DF1E | [Music.UnknownDF1E](../Source/Music/UnknownDF1E.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #DF31 | [Music.UnknownDF31](../Source/Music/UnknownDF31.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #DF3C | [Music.UnknownDF3C](../Source/Music/UnknownDF3C.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #DF47 | [Music.UnknownDF47](../Source/Music/UnknownDF47.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #DF70 | [Music.UnknownDF70](../Source/Music/UnknownDF70.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #DF7F | [Music.AdvancePatternA](../Source/Music/AdvancePatternA.asm) | Обновление счётчика нот канала A, перехода позиции и трёх указателей паттернов |
-| #DFE3 | [Music.RenderChannelA](../Source/Music/RenderChannelA.asm) | Начало кадрового синтеза канала A, сэмпл, орнамент, тон, шум и амплитуда |
-| #E0CD | [Music.UnknownE0CD](../Source/Music/UnknownE0CD.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #E1CD | [Music.UnknownE1CD](../Source/Music/UnknownE1CD.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #E2CB | [Music.UnknownE2CB](../Source/Music/UnknownE2CB.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #E439 | [Music.UnknownE439](../Source/Music/UnknownE439.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #E4E6 | [Music.UnknownE4E6](../Source/Music/UnknownE4E6.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #E583 | [Music.UnknownE583](../Source/Music/UnknownE583.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #DE1F | [Music.TickDispatch](../Source/Music/TickDispatch.asm) | Изменяемый вход тика, выбор синтеза либо перенос подготовленных параметров строки A |
+| #DE90 | [Music.StageGateAndSampleA](../Source/Music/StageGateAndSampleA.asm) | Применение отложенных длительностей чередования и позиции сэмпла канала A |
+| #DEAE | [Music.StageOrnamentA](../Source/Music/StageOrnamentA.asm) | Применение отложенной позиции орнамента канала A |
+| #DEB9 | [Music.StageChannelBRow](../Source/Music/StageChannelBRow.asm) | Сброс накопленного скольжения, подготовка ноты, орнамента и параметров скольжения строки B |
+| #DF1E | [Music.StageGateB](../Source/Music/StageGateB.asm) | Применение отложенных длительностей чередования канала B |
+| #DF31 | [Music.StageSampleB](../Source/Music/StageSampleB.asm) | Применение отложенной позиции сэмпла канала B |
+| #DF3C | [Music.StageOrnamentB](../Source/Music/StageOrnamentB.asm) | Применение отложенной позиции орнамента канала B |
+| #DF47 | [Music.StageEnvelopeAndNoise](../Source/Music/StageEnvelopeAndNoise.asm) | Подготовка формы огибающей и шума, перезапуск её периода и отложенного скольжения |
+| #DF70 | [Music.CommitEnvelopeSlide](../Source/Music/CommitEnvelopeSlide.asm) | Фиксация шага и задержки скольжения огибающей перед продолжением разбора канала A |
+| #DF7F | [Music.AdvancePatternA](../Source/Music/AdvancePatternA.asm) | Счётчик строки A, переход позиции, чтение трёх указателей через SP и подготовка маркеров строки A |
+| #DFE3 | [Music.RenderChannelA](../Source/Music/RenderChannelA.asm) | Синтез сэмпла, орнамента, тона, шума и огибающей A с подготовкой общего кадрового контекста |
+| #E0CD | [Music.FinishChannelA](../Source/Music/FinishChannelA.asm) | Завершение счётчика скольжения A, восстановление амплитуды и обновление чередования |
+| #E1CD | [Music.FinishChannelB](../Source/Music/FinishChannelB.asm) | Завершение счётчика скольжения B, восстановление амплитуды и обновление чередования |
+| #E2CB | [Music.FinishChannelC](../Source/Music/FinishChannelC.asm) | Завершение счётчика скольжения C, восстановление амплитуды и обновление чередования |
 | #E6AE | [Music.SetToneSlideC](../Source/Music/SetToneSlideC.asm) | Чтение задержки и шага скольжения тона C, настройка изменяемых операндов и отключение счётчика чередования |
 | #6000 | [ActionBoot.RelocateBootstrap](../Source/ActionBoot/RelocateBootstrap.asm) | Подготовка экранов и перенос #01FA байт загрузчика в #4200 |
 | #4200 | [ActionBoot.InitializeFlight](../Source/ActionBoot/InitializeFlight.asm) | Перенос ядра в #6000, загрузка графических банков и запуск полётного режима |
@@ -1096,9 +1093,9 @@
 
 [RasterizeArcEdges](../Source/Map/RasterizeArcEdges.asm) — Unknown, растровый вход после самостоятельной подготовки.
 
-| #6774 | [Station.Unknown6774](../Source/Station/Unknown6774.asm) | Unknown, новый вход действия или его достижимый помощник |
+| #6774 | [Station.HandleShipModelAction](../Source/Station/HandleShipModelAction.asm) | Развилка действия списка моделей после перерисовки, выбор строки либо закрытие группы |
 
-| #67A9 | [Station.Unknown67A9](../Source/Station/Unknown67A9.asm) | Unknown, новый вход действия или его достижимый помощник |
+| #67A9 | [Station.ShipModelChoice](../Source/Station/ShipModelChoice.asm) | Пустая ветвь действия и отдельное применение выбранной строки с отложенной перерисовкой |
 
 | #683A | [Station.HandleModelPreviewClick](../Source/Station/HandleModelPreviewClick.asm) | Unknown, новый вход действия или его достижимый помощник |
 
@@ -1106,17 +1103,17 @@
 
 | #6963 | [Station.CountModelDescriptionRows](../Source/Station/CountModelDescriptionRows.asm) | Unknown, новый вход действия или его достижимый помощник |
 
-| #697B | [Station.Unknown697B](../Source/Station/Unknown697B.asm) | Unknown, новый вход действия или его достижимый помощник |
+| #697B | [Station.HandleHelpTextAction](../Source/Station/HandleHelpTextAction.asm) | Закрытие связанной пары либо прокрутка LF-текста, выбор единицей ничего не делает |
 
-| #69E0 | [Station.Unknown69E0](../Source/Station/Unknown69E0.asm) | Unknown, новый вход действия или его достижимый помощник |
+| #69E0 | [Station.HandleHelpContentsAction](../Source/Station/HandleHelpContentsAction.asm) | Закрытие пары, прокрутка CR-заголовков либо выбор раздела с перерисовкой обеих панелей |
 
-| #6A86 | [Station.Unknown6A86](../Source/Station/Unknown6A86.asm) | Unknown, новый вход действия или его достижимый помощник |
+| #6A86 | [Station.HandleEquipmentInfoAction](../Source/Station/HandleEquipmentInfoAction.asm) | Закрытие либо прокрутка документации оснащения, выбор единицей пустой |
 
-| #6AAF | [Station.Unknown6AAF](../Source/Station/Unknown6AAF.asm) | Unknown, новый вход действия или его достижимый помощник |
+| #6AAF | [Station.TryDrawEquipmentInfo](../Source/Station/TryDrawEquipmentInfo.asm) | Условное рисование документации только при точном указателе в списке |
 
-| #6AEC | [Station.Unknown6AEC](../Source/Station/Unknown6AEC.asm) | Unknown, новый вход действия или его достижимый помощник |
+| #6AEC | [Station.HandleEnvironmentAction](../Source/Station/HandleEnvironmentAction.asm) | Закрытие с применением настроек среды, прокрутка, Y/N и ограниченный ввод клавиш или цветов |
 
-| #6B9E | [Station.Unknown6B9E](../Source/Station/Unknown6B9E.asm) | Unknown, новый вход действия или его достижимый помощник |
+| #6B9E | [Station.TryDrawEnvironmentPanel](../Source/Station/TryDrawEnvironmentPanel.asm) | Условное рисование установок среды при точном указателе панели в списке |
 
 | #6C0D | [Station.HandleMapPanelEvent](../Source/Station/HandleMapPanelEvent.asm) | Unknown, новый вход действия или его достижимый помощник |
 
@@ -1130,25 +1127,25 @@
 
 | #6FF1 | [Station.HandleTradePanelClick](../Source/Station/HandleTradePanelClick.asm) | Unknown, новый вход действия или его достижимый помощник |
 
-| #7175 | [Station.Unknown7175](../Source/Station/Unknown7175.asm) | Unknown, новый вход действия или его достижимый помощник |
+| #7175 | [Station.HandleEquipmentListAction](../Source/Station/HandleEquipmentListAction.asm) | Выбор описания либо подтверждение сделки оснащения, закрытие группы и прокрутка списка |
 
-| #7220 | [Station.Unknown7220](../Source/Station/Unknown7220.asm) | Unknown, новый вход действия или его достижимый помощник |
+| #7220 | [Station.TryDrawEquipmentList](../Source/Station/TryDrawEquipmentList.asm) | Условное рисование списка оснащения только при точном указателе в списке |
 
-| #7421 | [Station.Unknown7421](../Source/Station/Unknown7421.asm) | Unknown, новый вход действия или его достижимый помощник |
+| #7421 | [Station.HandleSaveSlotAction](../Source/Station/HandleSaveSlotAction.asm) | Выбор позиции и запись двух секторов блока состояния в существующий SAVE-файл |
 
-| #74AA | [Station.Unknown74AA](../Source/Station/Unknown74AA.asm) | Unknown, новый вход действия или его достижимый помощник |
+| #74AA | [Station.HandleLoadSlotAction](../Source/Station/HandleLoadSlotAction.asm) | Выбор позиции и чтение двух секторов существующего SAVE-файла в блок состояния |
 
-| #759C | [Station.Unknown759C](../Source/Station/Unknown759C.asm) | Unknown, новый вход действия или его достижимый помощник |
+| #759C | [Station.HandleGameSettingsAction](../Source/Station/HandleGameSettingsAction.asm) | Закрытие с применением игровых настроек, прокрутка и редактирование переключателя или клавиши |
 
-| #7630 | [Station.Unknown7630](../Source/Station/Unknown7630.asm) | Unknown, новый вход действия или его достижимый помощник |
+| #7630 | [Station.TryDrawGameSettings](../Source/Station/TryDrawGameSettings.asm) | Условное рисование установок игры при точном указателе панели в списке |
 
-| #7679 | [Station.Unknown7679](../Source/Station/Unknown7679.asm) | Unknown, новый вход действия или его достижимый помощник |
+| #7679 | [Station.HandleSystemInfoAction](../Source/Station/HandleSystemInfoAction.asm) | Общая перерисовка и закрытие информационного окна, селектор 1 не меняет содержимое |
 
-| #783B | [Station.Unknown783B](../Source/Station/Unknown783B.asm) | Unknown, новый вход действия или его достижимый помощник |
+| #783B | [Station.HandleSystemMapAction](../Source/Station/HandleSystemMapAction.asm) | Выбор ближайшего варианта системы либо закрытие карты с отключением её периодического обновления |
 
 | #7885 | [Station.TryDrawVariantPanel](../Source/Station/TryDrawVariantPanel.asm) | Unknown, новый вход действия или его достижимый помощник |
 
-| #794B | [Station.Unknown794B](../Source/Station/Unknown794B.asm) | Unknown, новый вход действия или его достижимый помощник |
+| #794B | [Station.HandleWelcomeAction](../Source/Station/HandleWelcomeAction.asm) | Общая перерисовка и закрытие приветствия, селектор 1 не меняет содержимое |
 
 | #A191 | [Station.ParseSettingsLabel](../Source/Station/ParseSettingsLabel.asm) | Unknown, новый вход действия или его достижимый помощник |
 
@@ -1156,7 +1153,7 @@
 
 | #A26F | [Station.XorRowIfSelected](../Source/Station/XorRowIfSelected.asm) | Unknown, новый вход действия или его достижимый помощник |
 
-| #AA58 | [Station.UnknownAA58](../Source/Station/UnknownAA58.asm) | Unknown, новый вход действия или его достижимый помощник |
+| #AA58 | [Station.HandleMissionGroupAction](../Source/Station/HandleMissionGroupAction.asm) | Общее действие панели миссии и условное закрытие трёх связанных панелей |
 
 | #BE27 | [Station.MoveItemToTailIfListed](../Source/Station/MoveItemToTailIfListed.asm) | Unknown, новый вход действия или его достижимый помощник |
 
@@ -1222,9 +1219,9 @@
 
 | Адрес | Исходник | Статус |
 | --- | --- | --- |
-| #6870 | [Station.Unknown6870](../Source/Station/Unknown6870.asm) | Unknown, полный контракт ещё не доказан |
-| #68CC | [Station.Unknown68CC](../Source/Station/Unknown68CC.asm) | Unknown, полный контракт ещё не доказан |
-| #68EA | [Station.Unknown68EA](../Source/Station/Unknown68EA.asm) | Unknown, полный контракт ещё не доказан |
+| #6870 | [Station.TryDrawShipPreview](../Source/Station/TryDrawShipPreview.asm) | Рисование корабельного просмотра только при наличии точного указателя обработчика |
+| #68CC | [Station.RefreshShipPanels](../Source/Station/RefreshShipPanels.asm) | Отложенное обновление списка моделей, описания и перенесённого в конец корабельного просмотра |
+| #68EA | [Station.AnimateShipPreview](../Source/Station/AnimateShipPreview.asm) | Периодическое рисование кадра последней корабельной панели либо переход к её отложенному обновлению |
 | #693E | [Station.TryDrawModelDescription](../Source/Station/TryDrawModelDescription.asm) | Unknown, полный контракт ещё не доказан |
 
 | #E011, банк 4 | [D3D.ConfigurePreviewClip](../Source/D3D/ConfigurePreviewClip.asm) | Настройка четырёх углов и повторённых операндов границ корабельного просмотра |
@@ -1366,3 +1363,55 @@
 | #EEEE, банк 4 | [D3D.RestorePreviewStack](../Source/D3D/RestorePreviewStack.asm) | Восстановление CPU-SP из изменяемого операнда и последовательный вход в рисование очереди |
 
 | #E07F, банк 4 | [D3D.RenderPreviewFrame](../Source/D3D/RenderPreviewFrame.asm) | Изменение ориентации первой записи, полный графический проход, EI и переключение заполнения граней |
+
+| Адрес | Процедура | Назначение |
+| --- | --- | --- |
+| #7F30 | [Station.ResumeActionPointer](../Source/Station/ResumeActionPointer.asm) | Возобновление указателя после RET непрямого рисователя с продолжением восстановления AF |
+
+[StageEnvelopeAndNoise](../Source/Music/StageEnvelopeAndNoise.asm) — Подготовка формы огибающей и шума, перезапуск её периода и отложенного скольжения.
+
+[CommitEnvelopeSlide](../Source/Music/CommitEnvelopeSlide.asm) — Фиксация шага и задержки скольжения огибающей перед продолжением разбора канала A.
+
+| #DB8C | [Music.ReadEnvelopeSlide](../Source/Music/ReadEnvelopeSlide.asm) | Чтение задержки и знакового слова шага, включение отложенного скольжения огибающей |
+
+| #E2EB | [Music.OutputAyFrame](../Source/Music/OutputAyFrame.asm) | Расчёт общей огибающей, восстановление стека и вывод регистров AY |
+
+
+[Music.ReadGateTimingB](../Source/Music/ReadGateTimingB.asm) — Чтение двух длительностей чередования канала B. [Договор и проверка](MusicEffects.md).
+
+[Music.SetGateTimingB](../Source/Music/SetGateTimingB.asm) — Установка двух подготовленных длительностей чередования канала B. [Договор и проверка](MusicEffects.md).
+
+[Music.SetToneSlideA](../Source/Music/SetToneSlideA.asm) — Чтение задержки и шага неограниченного скольжения тона A. [Договор и проверка](MusicEffects.md).
+
+[Music.SetTonePortamentoA](../Source/Music/SetTonePortamentoA.asm) — Настройка ограниченного скольжения от прежней ноты к новой цели A. [Договор и проверка](MusicEffects.md).
+
+[Music.SetSamplePositionA](../Source/Music/SetSamplePositionA.asm) — Чтение позиции сэмпла канала A. [Договор и проверка](MusicEffects.md).
+
+[Music.SetOrnamentPositionA](../Source/Music/SetOrnamentPositionA.asm) — Чтение позиции орнамента канала A. [Договор и проверка](MusicEffects.md).
+
+[Music.SetToneSlideB](../Source/Music/SetToneSlideB.asm) — Чтение задержки и шага неограниченного скольжения тона B. [Договор и проверка](MusicEffects.md).
+
+[Music.SetTonePortamentoB](../Source/Music/SetTonePortamentoB.asm) — Настройка ограниченного скольжения от прежней ноты к новой цели B. [Договор и проверка](MusicEffects.md).
+
+[Music.SetSamplePositionB](../Source/Music/SetSamplePositionB.asm) — Чтение позиции сэмпла канала B. [Договор и проверка](MusicEffects.md).
+
+[Music.SetOrnamentPositionB](../Source/Music/SetOrnamentPositionB.asm) — Чтение позиции орнамента канала B. [Договор и проверка](MusicEffects.md).
+
+[Music.SetTonePortamentoC](../Source/Music/SetTonePortamentoC.asm) — Настройка ограниченного скольжения от прежней ноты к новой цели C. [Договор и проверка](MusicEffects.md).
+
+[Music.SetSamplePositionC](../Source/Music/SetSamplePositionC.asm) — Чтение позиции сэмпла канала C. [Договор и проверка](MusicEffects.md).
+
+[Music.SetOrnamentPositionC](../Source/Music/SetOrnamentPositionC.asm) — Чтение позиции орнамента канала C. [Договор и проверка](MusicEffects.md).
+
+[Music.SetRowTempo](../Source/Music/SetRowTempo.asm) — Чтение и установка изменяемого темпа музыкальной строки. [Договор и проверка](MusicEffects.md).
+
+| #E0ED | [Music.RenderChannelB](../Source/Music/RenderChannelB.asm) | Синтез сэмпла, орнамента, тона, шума и огибающей канала B |
+
+| #E1ED | [Music.RenderChannelC](../Source/Music/RenderChannelC.asm) | Синтез сэмпла, орнамента, тона, шума и огибающей канала C |
+| #E37C | [Music.AdvancePatternBC](../Source/Music/AdvancePatternBC.asm) | Распределение фаз разбора B и C, счётчиков строк и кодов подготовки следующего кадра |
+| #E3DC | [Music.PatternCommandsA](../Source/Music/PatternCommandsA.asm) | Внутренние входы нот, громкости, огибающей и выбора сэмпла и орнамента A |
+| #E439 | [Music.DecodePatternA](../Source/Music/DecodePatternA.asm) | Декодирование строки A с накоплением отложенных эффектов на CPU-стеке |
+| #E489 | [Music.PatternCommandsB](../Source/Music/PatternCommandsB.asm) | Внутренние входы нот, громкости, огибающей и выбора сэмпла и орнамента B |
+| #E4E6 | [Music.DecodePatternB](../Source/Music/DecodePatternB.asm) | Декодирование строки B, включая отдельную команду базового шума и отложенные эффекты |
+| #E53D | [Music.PatternCommandsC](../Source/Music/PatternCommandsC.asm) | Внутренние входы громкости, выключения, огибающей и указателей канала C |
+| #E583 | [Music.DecodePatternC](../Source/Music/DecodePatternC.asm) | Декодирование строки C с непосредственным сбросом новой ноты и отложенными эффектами |

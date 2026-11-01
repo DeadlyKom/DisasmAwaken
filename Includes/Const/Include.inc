@@ -4,6 +4,7 @@
                 module TrDos
 Dispatch        equ #3D13                                                       ; интерфейс системных функций TR-DOS
 ReadSectors     equ #05                                                         ; чтение физических секторов
+WriteSectors    equ #06                                                         ; запись физических секторов в существующие позиции
 ReadCatalog     equ #08                                                         ; получение записи каталога
 FindFile        equ #0A                                                         ; поиск имени из системного буфера
 LoadFile        equ #0E                                                         ; загрузка файла через интерфейс TR-DOS
@@ -686,6 +687,119 @@ SpecialFirst    equ #08                                                         
 FirstStep       equ #01                                                         ; шаг первого параметра общей ветви
 SecondStep      equ #02                                                         ; шаг второго параметра обеих ветвей
 ThirdStep       equ #03                                                         ; шаг третьего параметра общей ветви
+                endmodule
+
+                module ShipPreviewConst
+PreviewPage     equ #14                                                         ; банк D3D 4 с установкой ROM 1
+ColumnInset     equ #0D                                                         ; вычитаемое из пиксельной ширины текстового окна для верхней колонки
+RowInset        equ #0E                                                         ; вычитаемое из пиксельной высоты текстового окна для верхней строки
+                endmodule
+
+                module HelpLineConst
+Capacity        equ #0400                                                       ; физические 1024 слова, безопасный завершающий LDIR требует N<1024
+                endmodule
+
+                module HelpTextConst
+SectionTitles   equ #E37C                                                       ; банк 7, начало физического CR-потока заголовков разделов справки
+                endmodule
+
+                module EquipmentInfoConst
+TextBase        equ #D1BA                                                       ; банк станции 0, исходный блок LF-описаний документации оснащения
+                endmodule
+
+                module KeyLabelConst
+FirstDirect     equ #21                                                         ; первый код, который обёртка передаёт одним вызовом DrawGlyph
+FirstExpanded   equ #1E                                                         ; первый штатный код физической четырёхсимвольной подписи Enter
+                endmodule
+
+                module SettingsRowConst
+EnvLabels       equ #DECB                                                      ; банк станции 0, CR-подписи установок среды
+GameLabels      equ #DF3C                                                       ; банк станции 0, CR-подписи игровых клавиш
+EnvColumn       equ #0042                                                      ; пиксельная X значений среды относительно окна
+GameColumn      equ #006E                                                       ; пиксельная X игровых значений относительно окна
+                endmodule
+
+                module SaveSlotConst
+RomI            equ #3F                                                         ; I режима Spectrum ROM перед последовательностью DOS
+SectorCount     equ #02                                                         ; фиксированный перенос двух секторов, всего 512 байтов
+                endmodule
+
+                module EquipmentListConst
+Column2X        equ #74                                                         ; X второй колонки в пикселях окна
+Column3X        equ #86                                                         ; X третьей колонки в пикселях окна
+Column4X        equ #9C                                                         ; X четвёртой колонки в пикселях окна
+Column5X        equ #AE                                                         ; X пятой колонки в пикселях окна
+EndQuantity     equ #80                                                         ; отдельный маркер конца количеств, не инверсный ноль
+ShipMismatch    equ #FB                                                         ; глиф при отсутствии неотрицательного типа во всём наборе
+ShipSetSize     equ #0004                                                       ; число байтов типов корабля на строку оснащения
+FirstCursor     equ #1800                                                       ; X=0, Y=24 перед печатью CR-наименований
+FirstRowY       equ #18                                                         ; первая числовая строка находится на Y=24
+ColumnInset     equ #04                                                         ; дополнительный отступ колонок Вес и Уст в пикселях
+                endmodule
+
+                module SettingsEditConst
+CapsShift       equ #1D                                                         ; код Caps Shift, он повторяет ожидание и не отменяет ввод
+InkLimit        equ #38                                                         ; исключающая граница цифры 8 для Ink и Paper
+BitLimit        equ #32                                                         ; исключающая граница цифры 2 для Bright
+PendingGlyph    equ #5F                                                         ; подчёркивание перед ожиданием редактируемой клавиши
+EnvLastRow      equ #0C                                                         ; последний исходный индекс установок среды
+GameLastRow     equ #1A                                                         ; последний исходный индекс установок игры, хвост шаблона сохранён
+ToggleCount     equ #04                                                         ; первые четыре индекса среды переключают Y и N
+ColorStart      equ #0A                                                         ; первый цветовой индекс среды, Ink
+BrightIndex     equ #0C                                                         ; индекс Bright, код также применяет его проверку к большим индексам
+                endmodule
+
+
+                module ContractMapConst
+RomProbe        equ #0001                                                       ; абсолютный адрес двух исходных чтений ROM, это не адрес через HL
+                endmodule
+
+
+                module PackedResourceConst
+PrefixBytes     equ #0C                                                         ; шесть байтов заголовка и шесть сохранённых финальных байтов
+TailWords       equ #03                                                         ; число сохранённых слов конца результата
+BitsPerWord     equ #10                                                         ; число битов little-endian слова резервуара
+InitialWindow   equ #BF                                                         ; исходная циклическая маска диапазона, семь единиц и один ноль
+GroupSeed       equ #80                                                         ; начальное значение счётчика двухбитовой группы длины
+RepeatGroup     equ #03                                                         ; код продолжения длины в очередной двухбитовой группе
+SpecialLength   equ #04                                                         ; значение длины, вводящее специальный префикс
+ShortLength     equ #02                                                         ; граница отдельного формата ссылки длиной один байт
+LengthAdjust    equ #FF                                                         ; ADC с FF сохраняет длины 1..3 и уменьшает остальные на один
+OffsetSeed      equ #BF                                                         ; маркер двухбитового префикса смещения
+SpecialSeed     equ #EF                                                         ; маркер компактного специального поля
+NegativeHigh    equ #FF                                                         ; старший байт знакового восьмибитового смещения
+EscapeMin       equ #E0                                                         ; нижняя граница расширения после старшего байта FF
+TripleBias      equ #10                                                         ; поправка компактного смещения тройки после XOR с длиной
+LongLengthSeed  equ #FC                                                         ; маркер семибитового поля длины либо терминатора
+EndCode         equ #0F                                                         ; семибитовый терминатор восстановления шести финальных байтов
+LiteralBias     equ #EA                                                         ; поправка перед удвоением длины пачки литералов
+ResultWord      equ #2758                                                       ; фиксированное выходное слово HL альтернативного набора, применение вызывающими не установлено
+                endmodule
+
+
+                module MusicCommandConst
+EnableDeferred  equ #06                                                         ; LD B,n вместо JR в переключателе отложенной команды
+SkipToneLimit   equ #1D                                                         ; смещение JR для обхода сравнения с целевой нотой
+                endmodule
+
+
+                module MusicSampleConst
+FixedLevelBit   equ #00                                                         ; бит пропуска добавления маски огибающей
+AccumShiftBit   equ #05                                                         ; бит сохранения шумового либо огибающего вклада
+AccumToneBit    equ #06                                                         ; бит сохранения тональной поправки
+AdjustUpBit     equ #06                                                         ; единица выбирает увеличение поправки уровня
+AdjustBit       equ #07                                                         ; бит изменения поправки уровня из сэмпла
+EnvShiftBit     equ #07                                                         ; выбор вклада огибающей и бита старшей тройки микшера
+VolumePage      equ #DC                                                         ; старший байт страницы таблицы громкости
+PitchPage       equ #DD                                                         ; старший байт страницы слов периодов нот
+HighNibbleMask  equ #F0                                                         ; маска старшей тетрады для смещения уровня и раскрытия знака
+ShiftMask       equ #1F                                                         ; пять младших битов сдвига огибающей после SRL E
+MaxAdjust       equ #1F                                                         ; предел увеличения поправки уровня 31
+NibbleBoundary  equ #10                                                         ; граница 16 при ограничении уровня и раскрытии знака
+MaxLevel        equ #0F                                                         ; максимальный вычисленный базовый уровень 15
+MixerMaskA      equ #09                                                         ; два формируемых бита микшера канала A
+MixerMaskB      equ #12                                                         ; два формируемых бита микшера канала B
+MixerMaskC      equ #24                                                         ; два формируемых бита микшера канала C
                 endmodule
 
                 endif

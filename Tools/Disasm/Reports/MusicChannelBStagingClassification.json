@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "functions_described": 3,
+  "new_instructions": 15,
+  "new_code_bytes": 35,
+  "instructions_changed": 0,
+  "physical_bytes_preserved": true,
+  "assembly_executed": false
+}

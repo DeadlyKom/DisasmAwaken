@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "cases_by_path": {
+    "full_contract_map": 96,
+    "real_im2": 240
+  },
+  "caption": "Контракт",
+  "source_text_index": 20,
+  "checked_local_rom_name": "pentagon.rom",
+  "combined_rom_sha256": "2686a6520972fe503101f7eaf667ee1bb5d151bbaa12d8ac338afed30baa80a7",
+  "identified_48k_chunk_offset": 49152,
+  "checked_local_48k_name": "48for128.rom",
+  "basic48_sha256": "110020ff7a4e350999777261000442426838cc391be93ba3146abc9477dcc05f",
+  "absolute_byte_0001": 175,
+  "full_48k_chunk_exactly_matches_separate_image": false,
+  "separate_48k_difference_offsets": [
+    109
+  ],
+  "selected_rom_chunk_sha256": "8d93c3342321e9d1e51d60afcd7d15f6a7afd978c231b43435a7c0757c60b9a3",
+  "full_chunk_matches_previous_model_rom": true,
+  "rom_assigned_to_model_bank1": true,
+  "unreal_process_state_verified": false,
+  "source_absolute_reads_preserved": true,
+  "always_selects_first_offer_key_for_stable_af": true,
+  "independent_center_coordinates": true,
+  "original_map_and_optional_information_redraw": true,
+  "independent_whole_bitmap": false,
+  "irq_only_at_halt": true,
+  "music_disabled": true,
+  "rom_opcodes_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

@@ -895,18 +895,36 @@
     "offset": 2589,
     "length": 3,
     "kind": "code",
-    "path": "Source/Station/HandleItem25.asm",
+    "path": "Source/Station/HandleShipListHover.asm",
     "origin": 26481,
     "sha256": "a1f00ef3599ab61efdf49362a7275142184c7c5aba7982bd93d03a9c20cecec8"
+  },
+  {
+    "slot": 4,
+    "offset": 2592,
+    "length": 12,
+    "kind": "code",
+    "path": "Source/Station/HandleShipModelAction.asm",
+    "origin": 26484,
+    "sha256": "6bbab382f330de36636b60a87029b9886450aff92114c06ad7d0840be6112762"
   },
   {
     "slot": 4,
     "offset": 2604,
     "length": 41,
     "kind": "code",
-    "path": "Source/Station/Unknown6780.asm",
+    "path": "Source/Station/DropShipDetailPanels.asm",
     "origin": 26496,
     "sha256": "a768c66902e8d33710a0a927298cb9cbaa5d4948aff7b0dd2d1c76cccbd76272"
+  },
+  {
+    "slot": 4,
+    "offset": 2645,
+    "length": 39,
+    "kind": "code",
+    "path": "Source/Station/ShipModelChoice.asm",
+    "origin": 26537,
+    "sha256": "e8fe5a9d55f2ca1ae4b355d098fb09143f5dce2adf8dc74d8ded8bf93192e704"
   },
   {
     "slot": 4,
@@ -937,6 +955,15 @@
   },
   {
     "slot": 4,
+    "offset": 2790,
+    "length": 53,
+    "kind": "code",
+    "path": "Source/Station/HandleModelPreviewClick.asm",
+    "origin": 26682,
+    "sha256": "2ec19a372729be923b5f68509c2c50ca62564e922cd4b1cf257ccdfe6c521fe4"
+  },
+  {
+    "slot": 4,
     "offset": 2843,
     "length": 1,
     "kind": "code",
@@ -949,7 +976,7 @@
     "offset": 2844,
     "length": 7,
     "kind": "code",
-    "path": "Source/Station/Unknown6870.asm",
+    "path": "Source/Station/TryDrawShipPreview.asm",
     "origin": 26736,
     "sha256": "85d3897e25ec08063ae3a932c317a124af589eb024c0a1d4facfac087509a522"
   },
@@ -958,7 +985,7 @@
     "offset": 2851,
     "length": 85,
     "kind": "code",
-    "path": "Source/Station/DrawItem26.asm",
+    "path": "Source/Station/DrawShipPreview.asm",
     "origin": 26743,
     "sha256": "15bc455cecf2d913e5d443fd4d4cd573719b22a625fd72b437bb03cffa9138ae"
   },
@@ -967,7 +994,7 @@
     "offset": 2936,
     "length": 30,
     "kind": "code",
-    "path": "Source/Station/Unknown68CC.asm",
+    "path": "Source/Station/RefreshShipPanels.asm",
     "origin": 26828,
     "sha256": "cd45380636fc9f1cd12ac0d5cdd25e0f27db6936bc416ab687c76141aa8b12e8"
   },
@@ -976,7 +1003,7 @@
     "offset": 2966,
     "length": 41,
     "kind": "code",
-    "path": "Source/Station/Unknown68EA.asm",
+    "path": "Source/Station/AnimateShipPreview.asm",
     "origin": 26858,
     "sha256": "3093b60bf4cd5a0b39391407ffe5c351d25f304ee4c8ad6e57a607de3b938eb6"
   },
@@ -988,6 +1015,15 @@
     "path": "Source/Station/HandleModelDescriptionHover.asm",
     "origin": 26899,
     "sha256": "73f2148b7fea8a2e512b204cf819a67570d41b87537517939de932ebc251c239"
+  },
+  {
+    "slot": 4,
+    "offset": 3010,
+    "length": 39,
+    "kind": "code",
+    "path": "Source/Station/HandleModelDescriptionClick.asm",
+    "origin": 26902,
+    "sha256": "34204b655c3480caed5e227f991a4bb934fde377f1ab9fd78a66d4a18d558183"
   },
   {
     "slot": 4,
@@ -1027,19 +1063,37 @@
   },
   {
     "slot": 4,
+    "offset": 3087,
+    "length": 21,
+    "kind": "code",
+    "path": "Source/Station/CountModelDescriptionRows.asm",
+    "origin": 26979,
+    "sha256": "833dd4457dfc92d9b27005aed0952c79972a2878ee4ce8fda156145db8c65888"
+  },
+  {
+    "slot": 4,
     "offset": 3108,
     "length": 3,
     "kind": "code",
-    "path": "Source/Station/HandleItem23.asm",
+    "path": "Source/Station/HandleHelpTextHover.asm",
     "origin": 27000,
     "sha256": "ce2075ce7a6b7c177657a36e07cddb4daadaf4af8522afd35f090a01eea8de10"
+  },
+  {
+    "slot": 4,
+    "offset": 3111,
+    "length": 44,
+    "kind": "code",
+    "path": "Source/Station/HandleHelpTextAction.asm",
+    "origin": 27003,
+    "sha256": "8ac99fc4a0396e615989295d344d576f9ff9fc57d9bf14aac1246085726d0fc6"
   },
   {
     "slot": 4,
     "offset": 3155,
     "length": 1,
     "kind": "code",
-    "path": "Source/Station/Unknown69A7.asm",
+    "path": "Source/Station/IgnoreHelpTextHover.asm",
     "origin": 27047,
     "sha256": "4fb733bedb74fec8d65bedf056b935189a289e928b3302bec38a281814de523a"
   },
@@ -1048,7 +1102,7 @@
     "offset": 3156,
     "length": 16,
     "kind": "code",
-    "path": "Source/Station/DrawItem23.asm",
+    "path": "Source/Station/DrawHelpText.asm",
     "origin": 27048,
     "sha256": "a1418ba63a59ac0f6b2382a5c7c3b41986d1bc4a68cc1678c73224ee8e019879"
   },
@@ -1057,7 +1111,7 @@
     "offset": 3172,
     "length": 23,
     "kind": "code",
-    "path": "Source/Station/Unknown69B8.asm",
+    "path": "Source/Station/IndexHelpText.asm",
     "origin": 27064,
     "sha256": "73f7a955738844959693f401a5c76ecaa21f05b14ab3ab3660f37d73b0b486ff"
   },
@@ -1066,7 +1120,7 @@
     "offset": 3195,
     "length": 14,
     "kind": "code",
-    "path": "Source/Station/Unknown69CF.asm",
+    "path": "Source/Station/PrintHelpLine.asm",
     "origin": 27087,
     "sha256": "919d46aa0f9e94cef3ede61de66db04ec2456b394acbc939718dc502e47d4468"
   },
@@ -1075,9 +1129,18 @@
     "offset": 3209,
     "length": 3,
     "kind": "code",
-    "path": "Source/Station/HandleItem22.asm",
+    "path": "Source/Station/HandleHelpIndexHover.asm",
     "origin": 27101,
     "sha256": "0414f3f2471b814038c732a2e8cb6d039c3b114a81ddf75501d7c7e0c7cea977"
+  },
+  {
+    "slot": 4,
+    "offset": 3212,
+    "length": 107,
+    "kind": "code",
+    "path": "Source/Station/HandleHelpContentsAction.asm",
+    "origin": 27104,
+    "sha256": "531c025a5e025fa76968c1389b5f5d79a0ebf14a4b4773e0cecf99b986fad443"
   },
   {
     "slot": 4,
@@ -1093,7 +1156,7 @@
     "offset": 3335,
     "length": 35,
     "kind": "code",
-    "path": "Source/Station/DrawItem22.asm",
+    "path": "Source/Station/DrawHelpContents.asm",
     "origin": 27227,
     "sha256": "086efbd45ba0ecc4c19350d2b4e7b70233bdbf238efb3fdb92d3f2b9a08b47e5"
   },
@@ -1102,7 +1165,7 @@
     "offset": 3370,
     "length": 5,
     "kind": "code",
-    "path": "Source/Station/Unknown6A7E.asm",
+    "path": "Source/Station/DisableTextWrap.asm",
     "origin": 27262,
     "sha256": "7173d861ad67b2c2bf026a7afa296a9d5f3a5a2d54a74d71d2d61b95d7cf9c33"
   },
@@ -1111,25 +1174,43 @@
     "offset": 3375,
     "length": 3,
     "kind": "code",
-    "path": "Source/Station/HandleItem39.asm",
+    "path": "Source/Station/HandleEquipmentInfoHover.asm",
     "origin": 27267,
     "sha256": "b8a6c7227bb4eb6720110fde16568faf728b3baaed5c0b2ddabc673319e454bf"
+  },
+  {
+    "slot": 4,
+    "offset": 3378,
+    "length": 40,
+    "kind": "code",
+    "path": "Source/Station/HandleEquipmentInfoAction.asm",
+    "origin": 27270,
+    "sha256": "fdd8ebe0a9613dba90138e347b2fbeb478e85cd0e41740370cce9e58ced58067"
   },
   {
     "slot": 4,
     "offset": 3418,
     "length": 1,
     "kind": "code",
-    "path": "Source/Station/Unknown6AAE.asm",
+    "path": "Source/Station/IgnoreEquipmentInfoHover.asm",
     "origin": 27310,
     "sha256": "4fb733bedb74fec8d65bedf056b935189a289e928b3302bec38a281814de523a"
+  },
+  {
+    "slot": 4,
+    "offset": 3419,
+    "length": 7,
+    "kind": "code",
+    "path": "Source/Station/TryDrawEquipmentInfo.asm",
+    "origin": 27311,
+    "sha256": "6984b2546d318fccc9f3e533d9b44cdd30b6e963117921354c8522161a537520"
   },
   {
     "slot": 4,
     "offset": 3426,
     "length": 16,
     "kind": "code",
-    "path": "Source/Station/DrawItem39.asm",
+    "path": "Source/Station/DrawEquipmentInfo.asm",
     "origin": 27318,
     "sha256": "075b7070598633f32f58fd76c29dd5b7e4863794bee51733ec01e8f6f87a5290"
   },
@@ -1138,7 +1219,7 @@
     "offset": 3442,
     "length": 24,
     "kind": "code",
-    "path": "Source/Station/Unknown6AC6.asm",
+    "path": "Source/Station/UpdateEquipmentInfo.asm",
     "origin": 27334,
     "sha256": "a3de75d4c442f553b62599317e1363e3b5470f5ccd9eb49fe6590232d040cdf4"
   },
@@ -1147,7 +1228,7 @@
     "offset": 3466,
     "length": 11,
     "kind": "code",
-    "path": "Source/Station/Unknown6ADE.asm",
+    "path": "Source/Station/PrintEquipmentInfo.asm",
     "origin": 27358,
     "sha256": "05bcc54bff8405c8723f6e45e27dd5ba7e8c665121b193f0e95cdcce38ea7f8d"
   },
@@ -1156,9 +1237,18 @@
     "offset": 3477,
     "length": 3,
     "kind": "code",
-    "path": "Source/Station/HandleItem41.asm",
+    "path": "Source/Station/HandleEnvironmentHover.asm",
     "origin": 27369,
     "sha256": "fbc5033719490f00d925cef57530f321773d40262b58f227504c5ed48593a9be"
+  },
+  {
+    "slot": 4,
+    "offset": 3480,
+    "length": 162,
+    "kind": "code",
+    "path": "Source/Station/HandleEnvironmentAction.asm",
+    "origin": 27372,
+    "sha256": "fd86db74889cf0dfb58d6620b4ca7297e9f1e6284b49bfbce2f9aecc733d4f2a"
   },
   {
     "slot": 4,
@@ -1171,10 +1261,19 @@
   },
   {
     "slot": 4,
+    "offset": 3658,
+    "length": 7,
+    "kind": "code",
+    "path": "Source/Station/TryDrawEnvironmentPanel.asm",
+    "origin": 27550,
+    "sha256": "2d47218b12e1a5383f2e90e2984028f343dece6a19d57993328497979fd6cc49"
+  },
+  {
+    "slot": 4,
     "offset": 3665,
     "length": 25,
     "kind": "code",
-    "path": "Source/Station/DrawItem41.asm",
+    "path": "Source/Station/DrawEnvironmentPanel.asm",
     "origin": 27557,
     "sha256": "94521ef1e8a2f90bade1a661b1bc1f3c8da43d7d3e3fc9fcbfa90356d1807bc4"
   },
@@ -1183,7 +1282,7 @@
     "offset": 3690,
     "length": 66,
     "kind": "code",
-    "path": "Source/Station/Unknown6BBE.asm",
+    "path": "Source/Station/PrintEnvironmentRows.asm",
     "origin": 27582,
     "sha256": "bba3fd7ab138c9fcdb472ac95dacab4fde096c1b9d8b1e5f9bd00a63f3631c0c"
   },
@@ -1192,7 +1291,7 @@
     "offset": 3756,
     "length": 10,
     "kind": "code",
-    "path": "Source/Station/Unknown6C00.asm",
+    "path": "Source/Station/SetupEnvironmentText.asm",
     "origin": 27648,
     "sha256": "cbe7e911d618fb3740527f61f9a01fbac3294aa28e2f8fe59928b9ef75a61e68"
   },
@@ -1201,18 +1300,63 @@
     "offset": 3766,
     "length": 3,
     "kind": "code",
-    "path": "Source/Station/HandleItem11.asm",
+    "path": "Source/Station/HandleGalaxyMapHover.asm",
     "origin": 27658,
     "sha256": "a0ccfc2a1c27510e44d82e6812416d727e4527a5fa585694d5d5182208b15da1"
+  },
+  {
+    "slot": 4,
+    "offset": 3769,
+    "length": 97,
+    "kind": "code",
+    "path": "Source/Station/HandleMapPanelEvent.asm",
+    "origin": 27661,
+    "sha256": "d3bb84b88b683f177d33f08c2124c13f3bbd51bf932998efc8ec05dccde888c4"
+  },
+  {
+    "slot": 4,
+    "offset": 3866,
+    "length": 159,
+    "kind": "code",
+    "path": "Source/Station/PanMapView.asm",
+    "origin": 27758,
+    "sha256": "30f3b5007949b58e46b663870628ac456fa90da67c85231b4067588d52e761f4"
+  },
+  {
+    "slot": 4,
+    "offset": 4025,
+    "length": 54,
+    "kind": "code",
+    "path": "Source/Station/SelectMapPointAndRefresh.asm",
+    "origin": 27917,
+    "sha256": "132bdada6ca2eb11a89120d749738ea26f6167d90161ccc4c301e732fd19dfd9"
   },
   {
     "slot": 4,
     "offset": 4079,
     "length": 1,
     "kind": "code",
-    "path": "Source/Station/Unknown6D43.asm",
+    "path": "Source/Station/IgnoreGalaxyMapHover.asm",
     "origin": 27971,
     "sha256": "4fb733bedb74fec8d65bedf056b935189a289e928b3302bec38a281814de523a"
+  },
+  {
+    "slot": 4,
+    "offset": 4080,
+    "length": 10,
+    "kind": "code",
+    "path": "Source/Station/RefreshMapPanel.asm",
+    "origin": 27972,
+    "sha256": "a34065d04ec0e54ea5bf3f127b20e0cb8f884ccb1f07d936797faf475406e39c"
+  },
+  {
+    "slot": 4,
+    "offset": 4090,
+    "length": 10,
+    "kind": "code",
+    "path": "Source/Station/ClearAndDrawMapPanel.asm",
+    "origin": 27982,
+    "sha256": "f29d00008b1d602ba74549ac129c8349aeea4c845968ea94940c1190c6ac0201"
   },
   {
     "slot": 4,
@@ -1240,6 +1384,15 @@
     "path": "Source/Station/HandleDecodedMessageHover.asm",
     "origin": 28098,
     "sha256": "3f55ea222d80b7c4013f67f14c94e655836a2b20f8b3d59f91f344468971f736"
+  },
+  {
+    "slot": 4,
+    "offset": 4209,
+    "length": 14,
+    "kind": "code",
+    "path": "Source/Station/HandleDecodedMessageClick.asm",
+    "origin": 28101,
+    "sha256": "a5bcc3f0219498dc9c64c89d81fefbb4a4d909c875b6db4ebf9d78552dc400fa"
   },
   {
     "slot": 4,
@@ -1294,6 +1447,15 @@
     "path": "Source/Station/HandleQueuedMessageHover.asm",
     "origin": 28287,
     "sha256": "6505c19e57c6684e4cf541a257a732bf445083a6ee2ded65e26ad106d2d41b6a"
+  },
+  {
+    "slot": 4,
+    "offset": 4398,
+    "length": 7,
+    "kind": "code",
+    "path": "Source/Station/HandleQueuedMessageClick.asm",
+    "origin": 28290,
+    "sha256": "11e8d00b801d93c1a9a72cb4b7aace21f2867392bec81503fdafe2d26ee35197"
   },
   {
     "slot": 4,
@@ -1387,6 +1549,15 @@
   },
   {
     "slot": 4,
+    "offset": 4765,
+    "length": 83,
+    "kind": "code",
+    "path": "Source/Station/HandleTradePanelClick.asm",
+    "origin": 28657,
+    "sha256": "649e9fd5aaf7ba8649df36c6e46e801eccb6a6a077e0706fff5b489a54478236"
+  },
+  {
+    "slot": 4,
     "offset": 4848,
     "length": 29,
     "kind": "code",
@@ -1435,9 +1606,18 @@
     "offset": 5150,
     "length": 3,
     "kind": "code",
-    "path": "Source/Station/HandleItem38.asm",
+    "path": "Source/Station/HandleEquipmentListHover.asm",
     "origin": 29042,
     "sha256": "cbed20ee8d1dd48f242cb82e20ae40f050a34d037c6877aa1ff7c0b2075a8d3e"
+  },
+  {
+    "slot": 4,
+    "offset": 5153,
+    "length": 155,
+    "kind": "code",
+    "path": "Source/Station/HandleEquipmentListAction.asm",
+    "origin": 29045,
+    "sha256": "c331a41dbed32b5ff5a6e7f92ab22b78e33f78963891cd05167686234d68bec1"
   },
   {
     "slot": 4,
@@ -1450,10 +1630,19 @@
   },
   {
     "slot": 4,
+    "offset": 5324,
+    "length": 7,
+    "kind": "code",
+    "path": "Source/Station/TryDrawEquipmentList.asm",
+    "origin": 29216,
+    "sha256": "c1fbd24c35931b902df0c95f7bce7e82ee4aee927e536ec1b0ab4b562e0f67a4"
+  },
+  {
+    "slot": 4,
     "offset": 5331,
     "length": 37,
     "kind": "code",
-    "path": "Source/Station/DrawItem38.asm",
+    "path": "Source/Station/DrawEquipmentList.asm",
     "origin": 29223,
     "sha256": "ee84b25b3f7f1e9542354375810e46da3c575158c2a21f19254f01be5ee4bde2"
   },
@@ -1462,7 +1651,7 @@
     "offset": 5368,
     "length": 243,
     "kind": "code",
-    "path": "Source/Station/Unknown724C.asm",
+    "path": "Source/Station/PrintEquipmentRows.asm",
     "origin": 29260,
     "sha256": "a842f66b2460c8be6c40ebef96e58167398d7309d067f274e4796d69c5e22a51"
   },
@@ -1471,7 +1660,7 @@
     "offset": 5611,
     "length": 32,
     "kind": "code",
-    "path": "Source/Station/Unknown733F.asm",
+    "path": "Source/Station/SetupEquipmentColumns.asm",
     "origin": 29503,
     "sha256": "075465552bd191fa19b35a56223f74928097797bb767dbb7c1aa811afa8c4667"
   },
@@ -1489,9 +1678,18 @@
     "offset": 5834,
     "length": 3,
     "kind": "code",
-    "path": "Source/Station/HandleItem43.asm",
+    "path": "Source/Station/HandleSaveSlotHover.asm",
     "origin": 29726,
     "sha256": "b0a5bfea9a0b3143827fc48c07c08e62ac5784cf0f9c4d9f8c469746704defb5"
+  },
+  {
+    "slot": 4,
+    "offset": 5837,
+    "length": 97,
+    "kind": "code",
+    "path": "Source/Station/HandleSaveSlotAction.asm",
+    "origin": 29729,
+    "sha256": "e9a06fffe1097bdb8f72d02ba3f77de21164088408d9e2f04654976fd128162c"
   },
   {
     "slot": 4,
@@ -1507,7 +1705,7 @@
     "offset": 5950,
     "length": 21,
     "kind": "code",
-    "path": "Source/Station/DrawItem43.asm",
+    "path": "Source/Station/DrawSaveSlotPanel.asm",
     "origin": 29842,
     "sha256": "844484b267416da3c89ce5c98acaeb266786bd15c0c91598e4826e69c5f68aca"
   },
@@ -1516,9 +1714,18 @@
     "offset": 5971,
     "length": 3,
     "kind": "code",
-    "path": "Source/Station/HandleItem44.asm",
+    "path": "Source/Station/HandleLoadSlotHover.asm",
     "origin": 29863,
     "sha256": "cbdeee8195b3902c717a204655fb50cf2017e9f90500682e345af41417c338b8"
+  },
+  {
+    "slot": 4,
+    "offset": 5974,
+    "length": 97,
+    "kind": "code",
+    "path": "Source/Station/HandleLoadSlotAction.asm",
+    "origin": 29866,
+    "sha256": "da450b977d93f0c146b425299e174ae7ffcbb20c9b74b02e62ebcf2941fa9d04"
   },
   {
     "slot": 4,
@@ -1534,7 +1741,7 @@
     "offset": 6087,
     "length": 21,
     "kind": "code",
-    "path": "Source/Station/DrawItem44.asm",
+    "path": "Source/Station/DrawLoadSlotPanel.asm",
     "origin": 29979,
     "sha256": "6d4da2951f30edc1752e0048a1b619dcdb46c61a7bfca74d1ae32143a63b70a9"
   },
@@ -1542,9 +1749,9 @@
     "slot": 4,
     "offset": 6108,
     "length": 9,
-    "kind": "unclassified",
-    "path": "Source/Resources/04_STATIONF/Unclassified033.bin",
-    "origin": null,
+    "kind": "typed_data",
+    "path": "Source/Station/Data/SaveSlotFileName.asm",
+    "origin": 30000,
     "sha256": "6cf7362724faf6b4363bc31d05c33263a292a393ac56ee62019811ddeca90d69"
   },
   {
@@ -1588,9 +1795,18 @@
     "offset": 6213,
     "length": 3,
     "kind": "code",
-    "path": "Source/Station/HandleItem42.asm",
+    "path": "Source/Station/HandleGameSettingsHover.asm",
     "origin": 30105,
     "sha256": "17215e193261a1b9ee90bed9693c8afd43bb2507d91949bf2693cf5abd7553c1"
+  },
+  {
+    "slot": 4,
+    "offset": 6216,
+    "length": 132,
+    "kind": "code",
+    "path": "Source/Station/HandleGameSettingsAction.asm",
+    "origin": 30108,
+    "sha256": "056dac97572223cf908ae4ff42c0d3db686ab154b155bfc11cd40a66deb1b527"
   },
   {
     "slot": 4,
@@ -1603,10 +1819,19 @@
   },
   {
     "slot": 4,
+    "offset": 6364,
+    "length": 7,
+    "kind": "code",
+    "path": "Source/Station/TryDrawGameSettings.asm",
+    "origin": 30256,
+    "sha256": "c8da80679707b0970ebc0a6c1fe1fafc813087b94517360bee505c7b969959d6"
+  },
+  {
+    "slot": 4,
     "offset": 6371,
     "length": 25,
     "kind": "code",
-    "path": "Source/Station/DrawItem42.asm",
+    "path": "Source/Station/DrawGameSettings.asm",
     "origin": 30263,
     "sha256": "b1f33ac54b1728321229d824d42c2e648d3daa12fdd7cf70b3d4c3a4a07d9c39"
   },
@@ -1615,7 +1840,7 @@
     "offset": 6396,
     "length": 28,
     "kind": "code",
-    "path": "Source/Station/Unknown7650.asm",
+    "path": "Source/Station/PrintGameSettingsRows.asm",
     "origin": 30288,
     "sha256": "705e9d91b2cc2885c0f30cf5bd19ca4f3c2d1e8d34151fff2818ae89c1d568cd"
   },
@@ -1624,7 +1849,7 @@
     "offset": 6424,
     "length": 10,
     "kind": "code",
-    "path": "Source/Station/Unknown766C.asm",
+    "path": "Source/Station/SetupGameSettingsText.asm",
     "origin": 30316,
     "sha256": "426da78875c0d56355fbb3a1845e1b13d2ae3a358200f2b9ae06c11c639df67e"
   },
@@ -1633,16 +1858,25 @@
     "offset": 6434,
     "length": 3,
     "kind": "code",
-    "path": "Source/Station/HandleItem19.asm",
+    "path": "Source/Station/HandleSystemInfoHover.asm",
     "origin": 30326,
     "sha256": "40a60f11cafb2c242655dbc79b6f8ab867ab6b53feb8f0091fa6f94711ea7a10"
+  },
+  {
+    "slot": 4,
+    "offset": 6437,
+    "length": 14,
+    "kind": "code",
+    "path": "Source/Station/HandleSystemInfoAction.asm",
+    "origin": 30329,
+    "sha256": "8876888438ce55409c37459dbbfe09bf459a40962aeba3ab7c7ef65398f7a7e7"
   },
   {
     "slot": 4,
     "offset": 6451,
     "length": 1,
     "kind": "code",
-    "path": "Source/Station/Unknown7687.asm",
+    "path": "Source/Station/IgnoreSystemInfoHover.asm",
     "origin": 30343,
     "sha256": "4fb733bedb74fec8d65bedf056b935189a289e928b3302bec38a281814de523a"
   },
@@ -1669,18 +1903,36 @@
     "offset": 6884,
     "length": 3,
     "kind": "code",
-    "path": "Source/Station/HandleItem20.asm",
+    "path": "Source/Station/HandleSystemMapHover.asm",
     "origin": 30776,
     "sha256": "6acee3cde8887d62a7d5f39a6f0361543ba3664268e35550a7272ef6bbf1ce35"
+  },
+  {
+    "slot": 4,
+    "offset": 6887,
+    "length": 73,
+    "kind": "code",
+    "path": "Source/Station/HandleSystemMapAction.asm",
+    "origin": 30779,
+    "sha256": "3ae1fc4d1f31d9db98e3d41e35cf7ce56a9ac671eace1d1d99f18116a9f0f6e6"
   },
   {
     "slot": 4,
     "offset": 6960,
     "length": 1,
     "kind": "code",
-    "path": "Source/Station/Unknown7884.asm",
+    "path": "Source/Station/IgnoreSystemMapHover.asm",
     "origin": 30852,
     "sha256": "4fb733bedb74fec8d65bedf056b935189a289e928b3302bec38a281814de523a"
+  },
+  {
+    "slot": 4,
+    "offset": 6961,
+    "length": 7,
+    "kind": "code",
+    "path": "Source/Station/TryDrawVariantPanel.asm",
+    "origin": 30853,
+    "sha256": "c1953c2affdc09178b34b770e4fcfba89e69ed1ae72d6abf4f9b148e6e0b7875"
   },
   {
     "slot": 4,
@@ -1714,16 +1966,25 @@
     "offset": 7156,
     "length": 3,
     "kind": "code",
-    "path": "Source/Station/HandleItem45.asm",
+    "path": "Source/Station/HandleWelcomeHover.asm",
     "origin": 31048,
     "sha256": "b63c10eee22ae4e71fd9bfdf8e109dcc21eccbc9df6198623906fa52f651b985"
+  },
+  {
+    "slot": 4,
+    "offset": 7159,
+    "length": 9,
+    "kind": "code",
+    "path": "Source/Station/HandleWelcomeAction.asm",
+    "origin": 31051,
+    "sha256": "58659176f3d9f3a0ff61c9c520ae6cbcdd5153a374c141c152ca656cf35c6d9b"
   },
   {
     "slot": 4,
     "offset": 7168,
     "length": 1,
     "kind": "code",
-    "path": "Source/Station/Unknown7954.asm",
+    "path": "Source/Station/IgnoreWelcomeHover.asm",
     "origin": 31060,
     "sha256": "4fb733bedb74fec8d65bedf056b935189a289e928b3302bec38a281814de523a"
   },
@@ -1732,7 +1993,7 @@
     "offset": 7169,
     "length": 104,
     "kind": "code",
-    "path": "Source/Station/DrawItem45.asm",
+    "path": "Source/Station/DrawWelcomePanel.asm",
     "origin": 31061,
     "sha256": "5e337a33978b7b35879007adf59ecd2ce1d917b87a22345af769af38edbcebdf"
   },
@@ -1741,7 +2002,7 @@
     "offset": 7273,
     "length": 10,
     "kind": "code",
-    "path": "Source/Station/HandleItem30.asm",
+    "path": "Source/Station/InstallShipTradeCallback.asm",
     "origin": 31165,
     "sha256": "1ea9ec3498ad2e54d186076bca9181499b02abbd7978fce63b0f80d3b047c62e"
   },
@@ -1750,7 +2011,7 @@
     "offset": 7283,
     "length": 78,
     "kind": "code",
-    "path": "Source/Station/Unknown79C7.asm",
+    "path": "Source/Station/ConfirmShipModelTrade.asm",
     "origin": 31175,
     "sha256": "137fb794a51cb174fec36569cd741cde573860f19aa4e35168d9d8933138b8ed"
   },
@@ -1768,7 +2029,7 @@
     "offset": 7367,
     "length": 9,
     "kind": "code",
-    "path": "Source/Station/HandleItem28.asm",
+    "path": "Source/Station/HandleShipSaleButton.asm",
     "origin": 31259,
     "sha256": "782cfb7ae6b7e9890fe2b3167ff4e776742ee7f2796dc83c6eef9635fe2a7f79"
   },
@@ -1777,7 +2038,7 @@
     "offset": 7376,
     "length": 49,
     "kind": "code",
-    "path": "Source/Station/Unknown7A24.asm",
+    "path": "Source/Station/SelectSaleMode.asm",
     "origin": 31268,
     "sha256": "e60dd75f687dd06b96279d292371d01eaaa258a57475f06638c88130a8de873d"
   },
@@ -1786,7 +2047,7 @@
     "offset": 7425,
     "length": 6,
     "kind": "code",
-    "path": "Source/Station/DrawItem28.asm",
+    "path": "Source/Station/DrawSaleModeButton.asm",
     "origin": 31317,
     "sha256": "c1e0c4e4787798c72b1b569a601837b6f49d0f0a91957bf69d2b42a02bd0eaa9"
   },
@@ -1795,7 +2056,7 @@
     "offset": 7431,
     "length": 9,
     "kind": "code",
-    "path": "Source/Station/HandleItem29.asm",
+    "path": "Source/Station/HandleShipPurchaseButton.asm",
     "origin": 31323,
     "sha256": "4b18c9d394acb4a3c0fde1e9761348358dcf78255d3ed20b80ca74ee655ec32b"
   },
@@ -1804,7 +2065,7 @@
     "offset": 7440,
     "length": 30,
     "kind": "code",
-    "path": "Source/Station/Unknown7A64.asm",
+    "path": "Source/Station/SelectPurchaseMode.asm",
     "origin": 31332,
     "sha256": "193dee144008049e9e9e57ce5702c57d29c51cc7b835bad3acf22d0aa1a51a57"
   },
@@ -1813,7 +2074,7 @@
     "offset": 7470,
     "length": 6,
     "kind": "code",
-    "path": "Source/Station/DrawItem29.asm",
+    "path": "Source/Station/DrawPurchaseModeButton.asm",
     "origin": 31362,
     "sha256": "c1e0c4e4787798c72b1b569a601837b6f49d0f0a91957bf69d2b42a02bd0eaa9"
   },
@@ -1822,7 +2083,7 @@
     "offset": 7476,
     "length": 10,
     "kind": "code",
-    "path": "Source/Station/HandleItem09.asm",
+    "path": "Source/Station/InstallHelpPanelsCallback.asm",
     "origin": 31368,
     "sha256": "96bc723f6fccced8b0fc3dfbce51fe2da4bf3ce504d39c66dbb4cf24518c1c31"
   },
@@ -1831,7 +2092,7 @@
     "offset": 7486,
     "length": 12,
     "kind": "code",
-    "path": "Source/Station/Unknown7A92.asm",
+    "path": "Source/Station/OpenHelpPanels.asm",
     "origin": 31378,
     "sha256": "1ae7eba70f0fd8efac2fabc4e2da370b6057baf79b99aab92bd208ed15ceb170"
   },
@@ -1849,7 +2110,7 @@
     "offset": 7504,
     "length": 10,
     "kind": "code",
-    "path": "Source/Station/HandleItem02.asm",
+    "path": "Source/Station/InstallGalaxyNewsCallback.asm",
     "origin": 31396,
     "sha256": "81b4320b56ab70424edb486a6774be2ddf4fb05e8a668260e7200a58c1ed3e42"
   },
@@ -1858,7 +2119,7 @@
     "offset": 7514,
     "length": 6,
     "kind": "code",
-    "path": "Source/Station/Unknown7AAE.asm",
+    "path": "Source/Station/OpenGalaxyNewsPanel.asm",
     "origin": 31406,
     "sha256": "c3b226bdea25223c4ab1aac2419d80431ad498712d0a44e0fb1a555c604bce7d"
   },
@@ -1876,7 +2137,7 @@
     "offset": 7526,
     "length": 10,
     "kind": "code",
-    "path": "Source/Station/HandleItem03.asm",
+    "path": "Source/Station/InstallMapPanelsCallback.asm",
     "origin": 31418,
     "sha256": "1d7d681809c8ee7e4394ffeaa5c537cb3da6c7fc4b4fb84371081a1054d55dd3"
   },
@@ -1885,7 +2146,7 @@
     "offset": 7536,
     "length": 71,
     "kind": "code",
-    "path": "Source/Station/Unknown7AC4.asm",
+    "path": "Source/Station/OpenMapPanelGroup.asm",
     "origin": 31428,
     "sha256": "0e0944b16ade729cd55b248009e2f48335e052530d23f931674896da5e70da2b"
   },
@@ -1903,7 +2164,7 @@
     "offset": 7613,
     "length": 9,
     "kind": "code",
-    "path": "Source/Station/HandleItem37.asm",
+    "path": "Source/Station/HandleEquipmentPurchaseButton.asm",
     "origin": 31505,
     "sha256": "4d6b602b9eedaadffbbb75021b9b31da11a85473a1521232970237719f3c0be0"
   },
@@ -1912,7 +2173,7 @@
     "offset": 7622,
     "length": 11,
     "kind": "code",
-    "path": "Source/Station/Unknown7B1A.asm",
+    "path": "Source/Station/SelectEquipmentPurchase.asm",
     "origin": 31514,
     "sha256": "1d83ba12f45bca4823cdf46c9563cbf5e6f9f1cb4ab1d63219c3764bd534d4ea"
   },
@@ -1921,7 +2182,7 @@
     "offset": 7633,
     "length": 6,
     "kind": "code",
-    "path": "Source/Station/DrawItem37.asm",
+    "path": "Source/Station/DrawEquipmentPurchase.asm",
     "origin": 31525,
     "sha256": "c1e0c4e4787798c72b1b569a601837b6f49d0f0a91957bf69d2b42a02bd0eaa9"
   },
@@ -1930,7 +2191,7 @@
     "offset": 7639,
     "length": 9,
     "kind": "code",
-    "path": "Source/Station/HandleItem36.asm",
+    "path": "Source/Station/HandleEquipmentSaleButton.asm",
     "origin": 31531,
     "sha256": "91b542bdc0cbce752c4121cb5b41bf1783be532bd58496b38da5ea03ede81adb"
   },
@@ -1939,7 +2200,7 @@
     "offset": 7648,
     "length": 12,
     "kind": "code",
-    "path": "Source/Station/Unknown7B34.asm",
+    "path": "Source/Station/SelectEquipmentSale.asm",
     "origin": 31540,
     "sha256": "d7cfa43c1fb9472ecf200db72354d085dfb79df0f6879b5e564cfe935201892c"
   },
@@ -1948,7 +2209,7 @@
     "offset": 7660,
     "length": 6,
     "kind": "code",
-    "path": "Source/Station/DrawItem36.asm",
+    "path": "Source/Station/DrawEquipmentSale.asm",
     "origin": 31552,
     "sha256": "c1e0c4e4787798c72b1b569a601837b6f49d0f0a91957bf69d2b42a02bd0eaa9"
   },
@@ -1957,7 +2218,7 @@
     "offset": 7666,
     "length": 10,
     "kind": "code",
-    "path": "Source/Station/HandleItem21.asm",
+    "path": "Source/Station/InstallFlightButtonCallback.asm",
     "origin": 31558,
     "sha256": "7a7d76d6445b4d9544849994f763bbc2cb2feffa5cebcecf409d404c1aac8fa7"
   },
@@ -1966,7 +2227,7 @@
     "offset": 7676,
     "length": 1,
     "kind": "code",
-    "path": "Source/Station/Unknown7B50.asm",
+    "path": "Source/Station/EmptyFlightCallback.asm",
     "origin": 31568,
     "sha256": "4fb733bedb74fec8d65bedf056b935189a289e928b3302bec38a281814de523a"
   },
@@ -1975,7 +2236,7 @@
     "offset": 7677,
     "length": 6,
     "kind": "code",
-    "path": "Source/Station/DrawItem21.asm",
+    "path": "Source/Station/DrawFlightButton.asm",
     "origin": 31569,
     "sha256": "c1e0c4e4787798c72b1b569a601837b6f49d0f0a91957bf69d2b42a02bd0eaa9"
   },
@@ -2128,7 +2389,7 @@
     "offset": 8040,
     "length": 10,
     "kind": "code",
-    "path": "Source/Station/HandleItem18.asm",
+    "path": "Source/Station/InstallContractMapCallback.asm",
     "origin": 31932,
     "sha256": "6e4ecc0c34487bb87e0cd737434f200a069ecb503297c6c4a96e8235e9c241e5"
   },
@@ -2137,7 +2398,7 @@
     "offset": 8050,
     "length": 50,
     "kind": "code",
-    "path": "Source/Station/Unknown7CC6.asm",
+    "path": "Source/Station/CenterContractMap.asm",
     "origin": 31942,
     "sha256": "79c4a92cfbadc7cf8158f3040d5a7a96096ed91fb7ee0645c00acdd4161d117a"
   },
@@ -2146,7 +2407,7 @@
     "offset": 8100,
     "length": 6,
     "kind": "code",
-    "path": "Source/Station/DrawItem18.asm",
+    "path": "Source/Station/DrawContractButton.asm",
     "origin": 31992,
     "sha256": "c1e0c4e4787798c72b1b569a601837b6f49d0f0a91957bf69d2b42a02bd0eaa9"
   },
@@ -2398,7 +2659,7 @@
     "offset": 8643,
     "length": 25,
     "kind": "code",
-    "path": "Source/Station/HandleItem00.asm",
+    "path": "Source/Station/HandleStatusPanelAction.asm",
     "origin": 32535,
     "sha256": "3d153cff62fcd5075c4165f0de1879ac9f2b2570e44ca6092991c82992d4f10f"
   },
@@ -2406,9 +2667,9 @@
     "slot": 4,
     "offset": 8668,
     "length": 3,
-    "kind": "unclassified",
-    "path": "Source/Resources/04_STATIONF/Unclassified043.bin",
-    "origin": null,
+    "kind": "code",
+    "path": "Source/Station/ResumeActionPointer.asm",
+    "origin": 32560,
     "sha256": "987716125629322e4389fa2277a479cf3cb5901c7f571ad14c587920c57e35f1"
   },
   {
@@ -2416,7 +2677,7 @@
     "offset": 8671,
     "length": 2,
     "kind": "code",
-    "path": "Source/Station/Unknown7F33.asm",
+    "path": "Source/Station/RestoreActionAF.asm",
     "origin": 32563,
     "sha256": "85fda2a287bfbd74f728fb3c8eb40e452f882194b4875fb016771d2cde477dcb"
   },
@@ -2895,7 +3156,7 @@
     "offset": 16404,
     "length": 12,
     "kind": "code",
-    "path": "Source/Station/UnknownA014.asm",
+    "path": "Source/Station/RefillPackedBits.asm",
     "origin": 40980,
     "sha256": "440f0bf4b2f19696689599e8b00232322843847a85ec01f17f4b486f122625c6"
   },
@@ -2961,6 +3222,42 @@
     "path": "Source/Station/FormatSettingsLabel.asm",
     "origin": 41315,
     "sha256": "e2240ea9079239c96ecf5615af11989c4e2ad38dc41762926c21171490b118eb"
+  },
+  {
+    "slot": 4,
+    "offset": 16785,
+    "length": 60,
+    "kind": "code",
+    "path": "Source/Station/ParseSettingsLabel.asm",
+    "origin": 41361,
+    "sha256": "d3ca26067bfa3e39166ed21d3a1ab3afd72e02fb88333478961e2b3146f5b8f9"
+  },
+  {
+    "slot": 4,
+    "offset": 16845,
+    "length": 9,
+    "kind": "code",
+    "path": "Source/Station/RestoreScrollPointer.asm",
+    "origin": 41421,
+    "sha256": "f4827355fc78016d422c42765a581cff2638722b80a24a1853ef5ac6bc4c70b4"
+  },
+  {
+    "slot": 4,
+    "offset": 16854,
+    "length": 153,
+    "kind": "code",
+    "path": "Source/Station/ScrollWindowRows.asm",
+    "origin": 41430,
+    "sha256": "53737caf3e8ada6752b5e02a1cc15bcdeb128ba90a452703be1bb16d37520aec"
+  },
+  {
+    "slot": 4,
+    "offset": 17007,
+    "length": 17,
+    "kind": "code",
+    "path": "Source/Station/XorRowIfSelected.asm",
+    "origin": 41583,
+    "sha256": "f8766c0dc13a2260cb35a69f5eb0623a459e97addef46321acbc509e1a4fd466"
   },
   {
     "slot": 4,
@@ -3165,7 +3462,7 @@
     "offset": 18154,
     "length": 4,
     "kind": "code",
-    "path": "Source/Station/HandleItem01.asm",
+    "path": "Source/Station/IgnoreCounterEvent.asm",
     "origin": 42730,
     "sha256": "129bfea31ef8e446ba870cbdbf0f961bb0244b94124f5420cccfef4a202f4289"
   },
@@ -3417,7 +3714,7 @@
     "offset": 18995,
     "length": 10,
     "kind": "code",
-    "path": "Source/Station/HandleItem33.asm",
+    "path": "Source/Station/InstallMissionOfferCallback.asm",
     "origin": 43571,
     "sha256": "81b4b05036fe21a40b11d9f8ff5c171479de50e3d1b95ea8062f3ee776e6b1a4"
   },
@@ -3426,7 +3723,7 @@
     "offset": 19005,
     "length": 18,
     "kind": "code",
-    "path": "Source/Station/UnknownAA3D.asm",
+    "path": "Source/Station/RefreshMissionOfferPanels.asm",
     "origin": 43581,
     "sha256": "e1d7eb6b5e1c355860d890b9816dbcd11bcc2d5e86ab4c57115494de8ede0fae"
   },
@@ -3444,16 +3741,34 @@
     "offset": 19029,
     "length": 3,
     "kind": "code",
-    "path": "Source/Station/HandleItem32.asm",
+    "path": "Source/Station/HandleContractHover.asm",
     "origin": 43605,
     "sha256": "3d8f68b54741dc6f7fabb236426d9dd3e9051b6473c3489d47b538f045f323dd"
+  },
+  {
+    "slot": 4,
+    "offset": 19032,
+    "length": 42,
+    "kind": "code",
+    "path": "Source/Station/HandleMissionGroupAction.asm",
+    "origin": 43608,
+    "sha256": "bad86852650c3d9f18744559cc125d3f450ecc6d5e1f1cc014dcbd13ab8949e2"
+  },
+  {
+    "slot": 4,
+    "offset": 19074,
+    "length": 2,
+    "kind": "unclassified",
+    "path": "Source/Resources/04_STATIONF/EventGap4A82.bin",
+    "origin": null,
+    "sha256": "2b83fca8dcc615080d0630d4b7eb699c924b6911b1ade02d557f0dabcf70e9ed"
   },
   {
     "slot": 4,
     "offset": 19076,
     "length": 1,
     "kind": "code",
-    "path": "Source/Station/UnknownAA84.asm",
+    "path": "Source/Station/IgnoreContractHover.asm",
     "origin": 43652,
     "sha256": "4fb733bedb74fec8d65bedf056b935189a289e928b3302bec38a281814de523a"
   },
@@ -3966,9 +4281,27 @@
     "offset": 24048,
     "length": 43,
     "kind": "code",
-    "path": "Source/Station/UnknownBDF0.asm",
+    "path": "Source/Station/DrawKeyLabel.asm",
     "origin": 48624,
     "sha256": "2e4f291d8d39fca2ab5e3dcd564e879ca3e093f9a1e16155d5280d597578d0e4"
+  },
+  {
+    "slot": 4,
+    "offset": 24091,
+    "length": 12,
+    "kind": "typed_data",
+    "path": "Source/Station/Data/KeyAbbreviations.asm",
+    "origin": 48667,
+    "sha256": "117695fa9f20f67eacf455266f6a0dffa445709b96a5c292a127323176c354bd"
+  },
+  {
+    "slot": 4,
+    "offset": 24103,
+    "length": 17,
+    "kind": "code",
+    "path": "Source/Station/MoveItemToTailIfListed.asm",
+    "origin": 48679,
+    "sha256": "6fed9d87f3fccf6c81c3b715773d47d0164035f897e4b6468b7f58f3e1c4ccb6"
   },
   {
     "slot": 4,
@@ -4296,6 +4629,15 @@
   },
   {
     "slot": 4,
+    "offset": 26288,
+    "length": 430,
+    "kind": "code",
+    "path": "Source/Station/ClearScrollWindowBody.asm",
+    "origin": 50864,
+    "sha256": "e1a741ac1afe2739d88599f2e5e54c4a3b871023592a82ea86275b58da6a9879"
+  },
+  {
+    "slot": 4,
     "offset": 26718,
     "length": 21,
     "kind": "code",
@@ -4504,11 +4846,29 @@
   {
     "slot": 4,
     "offset": 27891,
-    "length": 5691,
-    "kind": "unclassified",
-    "path": "Source/Resources/04_STATIONF/Unclassified085.bin",
+    "length": 143,
+    "kind": "binary_resource",
+    "path": "Source/Resources/04_STATIONF/WelcomeModelLabels.bin",
     "origin": null,
-    "sha256": "4a70468e95592c829390caaaf3c9a7d83a38ead9c8f5a13a23d016e2eac676c7"
+    "sha256": "ee8015a07c5d3a3e3072949b6e395eb3c3352e1741998784ae38506b71bfe850"
+  },
+  {
+    "slot": 4,
+    "offset": 28034,
+    "length": 151,
+    "kind": "binary_resource",
+    "path": "Source/Resources/04_STATIONF/WelcomeTemplate.bin",
+    "origin": null,
+    "sha256": "68103769d639263334d0e44857e3b593450b52270b850fd8fffc0277bee2d404"
+  },
+  {
+    "slot": 4,
+    "offset": 28185,
+    "length": 5397,
+    "kind": "unclassified",
+    "path": "Source/Resources/04_STATIONF/Unclassified085AfterWelcome.bin",
+    "origin": null,
+    "sha256": "8f1e251857419a8ac57c3cbbbd5fbf913ff5550aed01234366e688af9a9c32f1"
   },
   {
     "slot": 4,
@@ -7032,6 +7392,24 @@
   },
   {
     "slot": 7,
+    "offset": 872,
+    "length": 36,
+    "kind": "code",
+    "path": "Source/Map/SumSquares8.asm",
+    "origin": 50024,
+    "sha256": "97a5432a22d422801b556999b5d5dca54405f398ff6e280889d8f40c91a62fb0"
+  },
+  {
+    "slot": 7,
+    "offset": 908,
+    "length": 131,
+    "kind": "code",
+    "path": "Source/Map/SelectNearestVisiblePoint.asm",
+    "origin": 50060,
+    "sha256": "a92f1af1d4006ef8655acdc2b48dec04c6574eb564bd3e7aba28bbf2b280ecdf"
+  },
+  {
+    "slot": 7,
     "offset": 1039,
     "length": 59,
     "kind": "code",
@@ -7065,6 +7443,105 @@
     "path": "Source/Map/BuildMapScreenTables.asm",
     "origin": 50331,
     "sha256": "33d16cb8cfd537c65fa368d8dfc32f524365b50fb5a47322155393f55ff37d09"
+  },
+  {
+    "slot": 7,
+    "offset": 1253,
+    "length": 259,
+    "kind": "code",
+    "path": "Source/Map/BuildVisibleMapPoints.asm",
+    "origin": 50405,
+    "sha256": "4077a7768aeb9a4ea7a3b950e112ecf73ea8596312c4dcf2c1f492d8be58ab29"
+  },
+  {
+    "slot": 7,
+    "offset": 1512,
+    "length": 107,
+    "kind": "code",
+    "path": "Source/Map/SelectNearestMapVariant.asm",
+    "origin": 50664,
+    "sha256": "0577b32815a36463a346cb8a33276b48873fdbd10e6f7125ec5be8f2f11e0132"
+  },
+  {
+    "slot": 7,
+    "offset": 1619,
+    "length": 36,
+    "kind": "code",
+    "path": "Source/Map/UpdateMapDistanceMinimum.asm",
+    "origin": 50771,
+    "sha256": "fa3d67b8bcecb4f025806e2aaeb20d38afa6686defe41fd3b1b825a4222d6b60"
+  },
+  {
+    "slot": 7,
+    "offset": 1655,
+    "length": 73,
+    "kind": "code",
+    "path": "Source/Map/DrawVariantCluster.asm",
+    "origin": 50807,
+    "sha256": "80bce207480f0fc94435d90290990a57d6f85e99d05a32f690821da0f3c3978e"
+  },
+  {
+    "slot": 7,
+    "offset": 1728,
+    "length": 29,
+    "kind": "code",
+    "path": "Source/Map/AnimateVariant0.asm",
+    "origin": 50880,
+    "sha256": "b38204e250b4f78c3e9913bf81d60b63e4c00831248048916ac58d4d967b5410"
+  },
+  {
+    "slot": 7,
+    "offset": 1757,
+    "length": 29,
+    "kind": "code",
+    "path": "Source/Map/AnimateVariant1.asm",
+    "origin": 50909,
+    "sha256": "8afce8b847aa4dd931e6b88889243de92c258a3747d10b569f649de683778df5"
+  },
+  {
+    "slot": 7,
+    "offset": 1786,
+    "length": 29,
+    "kind": "code",
+    "path": "Source/Map/AnimateVariant2.asm",
+    "origin": 50938,
+    "sha256": "907d759715a6467edec8a8226bb9a65b3737cbadaa0d4309a82ace8655f0eb1a"
+  },
+  {
+    "slot": 7,
+    "offset": 1815,
+    "length": 29,
+    "kind": "code",
+    "path": "Source/Map/AnimateVariant3.asm",
+    "origin": 50967,
+    "sha256": "859de24abc39cf20901ef45364853bdbdffe7d79412bc89901e8f5ddd1b08523"
+  },
+  {
+    "slot": 7,
+    "offset": 1844,
+    "length": 29,
+    "kind": "code",
+    "path": "Source/Map/AnimateVariant4.asm",
+    "origin": 50996,
+    "sha256": "b14c90c166406cabec0dbd8b2a0998508c57311da349ae34670508dcff85948d"
+  },
+  {
+    "slot": 7,
+    "offset": 1873,
+    "length": 29,
+    "kind": "code",
+    "path": "Source/Map/AnimateVariant5.asm",
+    "origin": 51025,
+    "sha256": "84872ea9e148e2b9a5c0fa3e4fcd14823364940e396b2b50c3792b6e349be452"
+  },
+  {
+    "slot": 7,
+    "offset": 1902,
+    "length": 19,
+    "kind": "code",
+    "path": "Source/Map/SelectBlinkingVariant.asm",
+    "origin": 51054,
+    "sha256": "1ad54e7325f26b7360393d920848497e4b4e5dfd17db8abddece98bdf58d9b19"
   },
   {
     "slot": 7,
@@ -7155,6 +7632,159 @@
     "path": "Source/Map/RefreshSecondaryPointOrder.asm",
     "origin": 51707,
     "sha256": "38d4fabd002a6e1bc03de0270386518142c33c04656adfd42b57c9a081bd5d0a"
+  },
+  {
+    "slot": 7,
+    "offset": 2629,
+    "length": 57,
+    "kind": "typed_data",
+    "path": "Source/Map/Data/VariantPath7.asm",
+    "origin": 51781,
+    "sha256": "2dabebfc5e823728cbe31ee3f4ecdce87ae04eabf04101e0d51186783685fca6"
+  },
+  {
+    "slot": 7,
+    "offset": 2686,
+    "length": 81,
+    "kind": "typed_data",
+    "path": "Source/Map/Data/VariantPath10.asm",
+    "origin": 51838,
+    "sha256": "4cfd399bd119286f00178d63fa261c4c9919d921547d25070633a6d1b2b714d4"
+  },
+  {
+    "slot": 7,
+    "offset": 2767,
+    "length": 105,
+    "kind": "typed_data",
+    "path": "Source/Map/Data/VariantPath13.asm",
+    "origin": 51919,
+    "sha256": "7cb7093a31c94cd58780f4dd2b7ad192a431c212af6ac80575c61978cfd5bcac"
+  },
+  {
+    "slot": 7,
+    "offset": 2872,
+    "length": 129,
+    "kind": "typed_data",
+    "path": "Source/Map/Data/VariantPath16.asm",
+    "origin": 52024,
+    "sha256": "cd2d9c2d2f8f814607162b9ae55b3d869971fbba4dfeae90eef8ce4f316bac11"
+  },
+  {
+    "slot": 7,
+    "offset": 3001,
+    "length": 153,
+    "kind": "typed_data",
+    "path": "Source/Map/Data/VariantPath19.asm",
+    "origin": 52153,
+    "sha256": "20146f7930cd3d7eeb0c7bfeb397c028aa5cf9fab578c12ab6ce066907cc7087"
+  },
+  {
+    "slot": 7,
+    "offset": 3154,
+    "length": 177,
+    "kind": "typed_data",
+    "path": "Source/Map/Data/VariantPath22.asm",
+    "origin": 52306,
+    "sha256": "5074c62fa9f5641162bd2f6e50ce58958750ee489f4d2916bcf72629135cd5e8"
+  },
+  {
+    "slot": 7,
+    "offset": 3331,
+    "length": 48,
+    "kind": "typed_data",
+    "path": "Source/Map/Resources/VariantDefault.asm",
+    "origin": 52483,
+    "sha256": "e3cea11856bacf755edbbeab7e0086b5684dc93c0cd33184a9fb33cf3b972e37"
+  },
+  {
+    "slot": 7,
+    "offset": 3379,
+    "length": 48,
+    "kind": "typed_data",
+    "path": "Source/Map/Resources/VariantCurrent.asm",
+    "origin": 52531,
+    "sha256": "6eb0dc0fb2f41e1336ffd183c3ce2e8a81992ad3bc64c4886c23593f3ad4d64b"
+  },
+  {
+    "slot": 7,
+    "offset": 3427,
+    "length": 48,
+    "kind": "typed_data",
+    "path": "Source/Map/Resources/VariantStored.asm",
+    "origin": 52579,
+    "sha256": "fe1ce20406ac28718f6e830bc1820e23aa5ccaf6afe02b85bb5c8b5fc955c8a8"
+  },
+  {
+    "slot": 7,
+    "offset": 3475,
+    "length": 48,
+    "kind": "typed_data",
+    "path": "Source/Map/Resources/VariantSelected.asm",
+    "origin": 52627,
+    "sha256": "1fa534f506a800357a843a43e4ecd1afc3ce796da9ad3d5d272930550868567b"
+  },
+  {
+    "slot": 7,
+    "offset": 3523,
+    "length": 128,
+    "kind": "typed_data",
+    "path": "Source/Map/Resources/MarkerSelected.asm",
+    "origin": 52675,
+    "sha256": "55fa62133ed580071e8929c1c831c467b6c468b30f506d3a36cf91cd5be7c622"
+  },
+  {
+    "slot": 7,
+    "offset": 3651,
+    "length": 128,
+    "kind": "typed_data",
+    "path": "Source/Map/Resources/MarkerSecondary.asm",
+    "origin": 52803,
+    "sha256": "0a24cfaf1d40ac2766954ef59c6dde6f79d3f2506c29c5e044dad52e28e1ad7f"
+  },
+  {
+    "slot": 7,
+    "offset": 3779,
+    "length": 128,
+    "kind": "typed_data",
+    "path": "Source/Map/Resources/MarkerActiveAux.asm",
+    "origin": 52931,
+    "sha256": "afc8506a0f6e18caf518aed466b69742425b87a201702b851d504bd070231dec"
+  },
+  {
+    "slot": 7,
+    "offset": 3907,
+    "length": 128,
+    "kind": "typed_data",
+    "path": "Source/Map/Resources/MarkerCursor.asm",
+    "origin": 53059,
+    "sha256": "d536144759d96db42c40a4aba9a7328ad9b8cf06b9eed57461bb68782b8bd2a8"
+  },
+  {
+    "slot": 7,
+    "offset": 4035,
+    "length": 128,
+    "kind": "typed_data",
+    "path": "Source/Map/Resources/MarkerPrimary.asm",
+    "origin": 53187,
+    "sha256": "77ae473d172ccb28de2408a96b8cb4405f18ca0239386787da870e08bba11b57"
+  },
+  {
+    "slot": 7,
+    "offset": 4163,
+    "length": 128,
+    "kind": "typed_data",
+    "path": "Source/Map/Resources/MarkerStored.asm",
+    "origin": 53315,
+    "sha256": "1b4433f31ec31b24bb9353f2fbb6057dcb5fa065851f7acff62a5b78f52d74ac"
+  },
+  {
+    "slot": 7,
+    "offset": 4291,
+    "length": 233,
+    "kind": "code",
+    "path": "Source/Map/SetupMapRasterWindow.asm",
+    "origin": 53443,
+    "sha256": "b3e1b1903b2c2f306bbb8737d19cbe36eb81cc383687323dd9ec9b2d89790502"
   },
   {
     "slot": 7,
@@ -7892,18 +8522,45 @@
     "offset": 91,
     "length": 33,
     "kind": "code",
-    "path": "Source/Help/FormatNumber.asm",
+    "path": "Source/Help/PrintCrRecordAndRows.asm",
     "origin": 56155,
     "sha256": "0bf783f42d0fc0a0212acefcef04f6355a6837fbd716d3498d8b1b894f0eb4fa"
   },
   {
     "slot": 8,
     "offset": 124,
-    "length": 6020,
+    "length": 2048,
+    "kind": "typed_data",
+    "path": "Source/Help/Data/LinePointers.asm",
+    "origin": 56188,
+    "sha256": "e5a00aa9991ac8a5ee3109844d84a55583bd20572ad3ffcd42792f3c36b183ad"
+  },
+  {
+    "slot": 8,
+    "offset": 2172,
+    "length": 102,
+    "kind": "binary_resource",
+    "path": "Source/Resources/08_HELP/SectionTitles.bin",
+    "origin": 58236,
+    "sha256": "f11a5e1decd7b4d1c69c041474a9553169c63d54be5c468b394f94125dcb3792"
+  },
+  {
+    "slot": 8,
+    "offset": 2274,
+    "length": 3647,
+    "kind": "binary_resource",
+    "path": "Source/Resources/08_HELP/SectionTexts.bin",
+    "origin": 58338,
+    "sha256": "56fba16f99457f6ecee797b50d55bab81c9ea4f7c55c058f5adb2df5d6d3b955"
+  },
+  {
+    "slot": 8,
+    "offset": 5921,
+    "length": 223,
     "kind": "unclassified",
-    "path": "Source/Resources/08_HELP/Unclassified000.bin",
+    "path": "Source/Resources/08_HELP/SectorTail.bin",
     "origin": null,
-    "sha256": "1b46dbef6b9a2cd2bce1d663fd83f253772cc7a1d4b0b149b6c5251c6b6d2e27"
+    "sha256": "5e6ce21ff2681d67c9c837dffe42964214e57bb14d6b5af79dde5497d5b904a2"
   },
   {
     "slot": 9,
@@ -7953,20 +8610,74 @@
   {
     "slot": 10,
     "offset": 124,
-    "length": 36,
+    "length": 16,
     "kind": "code",
     "path": "Source/Music/ClearAyRegisters.asm",
     "origin": 56188,
-    "sha256": "8a93f7d9a6610572dd1c045fff84e22b3b5847368b195d1e193828a827a95b9d"
+    "sha256": "391114a59c46a7b5325f73934c8e931caf41a62da286663bc3ad7fb354446e40"
+  },
+  {
+    "slot": 10,
+    "offset": 140,
+    "length": 20,
+    "kind": "code",
+    "path": "Source/Music/ReadEnvelopeSlide.asm",
+    "origin": 56204,
+    "sha256": "859b77edb663d22bbd6ab0891bdadfdb6fa5ffd60a299d59c7ddc2c9f8b82731"
   },
   {
     "slot": 10,
     "offset": 160,
-    "length": 554,
-    "kind": "unclassified",
-    "path": "Source/Resources/10_MUZ1/Unclassified000.bin",
-    "origin": null,
-    "sha256": "ac7ba99d8f9a2857253e28dee2280667fe41f77bffc45e669771da2ef3809901"
+    "length": 96,
+    "kind": "typed_data",
+    "path": "Source/Music/Data/DataPointers.asm",
+    "origin": 56224,
+    "sha256": "2ea9ab9198d1638007400cd2c3bef1cc745b864b76011a0e1bc52180ac6452d4"
+  },
+  {
+    "slot": 10,
+    "offset": 256,
+    "length": 14,
+    "kind": "typed_data",
+    "path": "Source/Music/Data/AyBuffer.asm",
+    "origin": 56320,
+    "sha256": "e7ecebbc590bc88b3761fa6cd03d749f87463dabb67021a5c6768c25ec68b3f2"
+  },
+  {
+    "slot": 10,
+    "offset": 270,
+    "length": 2,
+    "kind": "typed_data",
+    "path": "Source/Music/Data/RowCountersBC.asm",
+    "origin": 56334,
+    "sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7"
+  },
+  {
+    "slot": 10,
+    "offset": 272,
+    "length": 240,
+    "kind": "typed_data",
+    "path": "Source/Music/Data/Volumes.asm",
+    "origin": 56336,
+    "sha256": "b328e06f67e47579b07a16060ef5374e470b056626f49865dbeefbe66db70a4f"
+  },
+  {
+    "slot": 10,
+    "offset": 512,
+    "length": 192,
+    "kind": "typed_data",
+    "path": "Source/Music/Data/Periods.asm",
+    "origin": 56576,
+    "sha256": "684133c2a8145abd2528643b6cbaf0827a72b782ad4e4545015c765d4d5c4dfb"
+  },
+  {
+    "slot": 10,
+    "offset": 704,
+    "length": 10,
+    "kind": "typed",
+    "path": "Source/Music/Data/EffectsA.asm",
+    "origin": 56768,
+    "sha256": "9d4db0a819f68ba7004841f24bb0da64e491d8a6f583f8cadec2d4431df35a42"
   },
   {
     "slot": 10,
@@ -7981,9 +8692,9 @@
     "slot": 10,
     "offset": 718,
     "length": 4,
-    "kind": "unclassified",
-    "path": "Source/Resources/10_MUZ1/Unclassified001.bin",
-    "origin": null,
+    "kind": "typed",
+    "path": "Source/Music/Data/ExtraEffectsA.asm",
+    "origin": 56782,
     "sha256": "a293b85ebb96afe6931d2c02295720b5338c0982e5e105a66aa453bab9ede6fd"
   },
   {
@@ -7998,11 +8709,47 @@
   {
     "slot": 10,
     "offset": 736,
-    "length": 42,
-    "kind": "unclassified",
-    "path": "Source/Resources/10_MUZ1/Unclassified002.bin",
-    "origin": null,
-    "sha256": "a3a8a2feec8e9e119d1632aa41cae9d676e4f61504a98a5a90e7db422036ee73"
+    "length": 10,
+    "kind": "typed",
+    "path": "Source/Music/Data/EffectsB.asm",
+    "origin": 56800,
+    "sha256": "3731707f44e48c734785db57efa1aed22869688166d24e26e6ee0582c25b983b"
+  },
+  {
+    "slot": 10,
+    "offset": 746,
+    "length": 4,
+    "kind": "code",
+    "path": "Source/Music/ReadGateTimingB.asm",
+    "origin": 56810,
+    "sha256": "d2b910feda73ebcef9ebfc0c555db5b170d257ebe285e4167fed11ef2f051a79"
+  },
+  {
+    "slot": 10,
+    "offset": 750,
+    "length": 4,
+    "kind": "typed",
+    "path": "Source/Music/Data/ExtraEffectsB.asm",
+    "origin": 56814,
+    "sha256": "a293b85ebb96afe6931d2c02295720b5338c0982e5e105a66aa453bab9ede6fd"
+  },
+  {
+    "slot": 10,
+    "offset": 754,
+    "length": 14,
+    "kind": "code",
+    "path": "Source/Music/SetGateTimingB.asm",
+    "origin": 56818,
+    "sha256": "7612052f9490e45b1ac6cf0a2e6e0c134792c98fb3e86f154e7a3534ffb2a1bc"
+  },
+  {
+    "slot": 10,
+    "offset": 768,
+    "length": 10,
+    "kind": "typed",
+    "path": "Source/Music/Data/EffectsC.asm",
+    "origin": 56832,
+    "sha256": "93ba72b9de03a3bbebad7601a3ae847142ae9f4a0e7b47907f742402a50e823a"
   },
   {
     "slot": 10,
@@ -8017,9 +8764,9 @@
     "slot": 10,
     "offset": 782,
     "length": 4,
-    "kind": "unclassified",
-    "path": "Source/Resources/10_MUZ1/Unclassified003.bin",
-    "origin": null,
+    "kind": "typed",
+    "path": "Source/Music/Data/ExtraEffectsC.asm",
+    "origin": 56846,
     "sha256": "a293b85ebb96afe6931d2c02295720b5338c0982e5e105a66aa453bab9ede6fd"
   },
   {
@@ -8035,161 +8782,89 @@
     "slot": 10,
     "offset": 798,
     "length": 1,
-    "kind": "unclassified",
-    "path": "Source/Resources/10_MUZ1/Unclassified004.bin",
-    "origin": null,
+    "kind": "typed_data",
+    "path": "Source/Music/Data/RowCounterA.asm",
+    "origin": 56862,
     "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d"
   },
   {
     "slot": 10,
     "offset": 799,
-    "length": 85,
+    "length": 113,
     "kind": "code",
     "path": "Source/Music/TickDispatch.asm",
     "origin": 56863,
-    "sha256": "b9bf228e201b685c7c9d660a9b366cbd3505a34601c4f5d0843b5a1c466b3fb7"
-  },
-  {
-    "slot": 10,
-    "offset": 884,
-    "length": 28,
-    "kind": "unclassified",
-    "path": "Source/Resources/10_MUZ1/Unclassified005.bin",
-    "origin": null,
-    "sha256": "35b2093e8c8bb22834662073ea67708b40bee255dc97bd28a379b70406c295df"
+    "sha256": "a149b71fd84f6271a4ab8d85bcdc689b64ad18db4aea669beb8070f98ec5bcdf"
   },
   {
     "slot": 10,
     "offset": 912,
-    "length": 21,
+    "length": 30,
     "kind": "code",
-    "path": "Source/Music/UnknownDE90.asm",
+    "path": "Source/Music/StageGateAndSampleA.asm",
     "origin": 56976,
-    "sha256": "8ae9ac20ba13ae55f1c5515a19657432062434dc3aa95738974841c5dfd6bec7"
-  },
-  {
-    "slot": 10,
-    "offset": 933,
-    "length": 9,
-    "kind": "unclassified",
-    "path": "Source/Resources/10_MUZ1/Unclassified006.bin",
-    "origin": null,
-    "sha256": "7aa72b9cd8f94847f79ee23e8a379e4b3ce280038876587e3b658cd19e2d2564"
+    "sha256": "47cde15cef1c6fae60c6e42d764c5ceca08058de0108aff759d53c00141bcfbc"
   },
   {
     "slot": 10,
     "offset": 942,
-    "length": 2,
+    "length": 11,
     "kind": "code",
-    "path": "Source/Music/UnknownDEAE.asm",
+    "path": "Source/Music/StageOrnamentA.asm",
     "origin": 57006,
-    "sha256": "d5ed949ae07bd0a886af07b63a51726a05a6e23e13365bbdb4e9c8f037348651"
-  },
-  {
-    "slot": 10,
-    "offset": 944,
-    "length": 9,
-    "kind": "unclassified",
-    "path": "Source/Resources/10_MUZ1/Unclassified007.bin",
-    "origin": null,
-    "sha256": "9742dd66729004edd8adfe10959583a3e1d07838c3936232eb52ae80cbbd3064"
+    "sha256": "42dddb58899e37b2c75ff44bdf64c8f45d7f884a8daf68e0bc717790ea773417"
   },
   {
     "slot": 10,
     "offset": 953,
-    "length": 73,
+    "length": 101,
     "kind": "code",
-    "path": "Source/Music/UnknownDEB9.asm",
+    "path": "Source/Music/StageChannelBRow.asm",
     "origin": 57017,
-    "sha256": "b4156bba94b743c75efad75f1ddc7d2e924c54b4b4520fd99799481409593695"
-  },
-  {
-    "slot": 10,
-    "offset": 1026,
-    "length": 28,
-    "kind": "unclassified",
-    "path": "Source/Resources/10_MUZ1/Unclassified008.bin",
-    "origin": null,
-    "sha256": "b1aed6da8d111afa9b5d54b931a5d7d538446be6808412d572ffbc6e66692b11"
+    "sha256": "0cd463e42bc2d78bd5a13f8aecc0d07e788729fb5c2038ba3ee0eaf05d86d15a"
   },
   {
     "slot": 10,
     "offset": 1054,
-    "length": 2,
+    "length": 19,
     "kind": "code",
-    "path": "Source/Music/UnknownDF1E.asm",
+    "path": "Source/Music/StageGateB.asm",
     "origin": 57118,
-    "sha256": "5bcafa8d287011466817ab7c9f685b7f518f858a728a0eb5cbf0c18a261749d7"
-  },
-  {
-    "slot": 10,
-    "offset": 1056,
-    "length": 17,
-    "kind": "unclassified",
-    "path": "Source/Resources/10_MUZ1/Unclassified009.bin",
-    "origin": null,
-    "sha256": "02bb87a70ae0311994026512ea81d65a062d644f8a6584395e68e3c4b15be0d8"
+    "sha256": "ca3ae338b375e9aadcd3bc99e5699fbe5881df51561a44421c2f8d608bd6d71b"
   },
   {
     "slot": 10,
     "offset": 1073,
-    "length": 2,
+    "length": 11,
     "kind": "code",
-    "path": "Source/Music/UnknownDF31.asm",
+    "path": "Source/Music/StageSampleB.asm",
     "origin": 57137,
-    "sha256": "d5ed949ae07bd0a886af07b63a51726a05a6e23e13365bbdb4e9c8f037348651"
-  },
-  {
-    "slot": 10,
-    "offset": 1075,
-    "length": 9,
-    "kind": "unclassified",
-    "path": "Source/Resources/10_MUZ1/Unclassified010.bin",
-    "origin": null,
-    "sha256": "450685d670383970134c48c36e312d0bf650bde1bbbb0c3906fc90b3804b7e2e"
+    "sha256": "147367985fd8002d15abb7f2bb71d32fca2eabfa8184e2b168b7dd0f837ccb8a"
   },
   {
     "slot": 10,
     "offset": 1084,
-    "length": 2,
+    "length": 11,
     "kind": "code",
-    "path": "Source/Music/UnknownDF3C.asm",
+    "path": "Source/Music/StageOrnamentB.asm",
     "origin": 57148,
-    "sha256": "d5ed949ae07bd0a886af07b63a51726a05a6e23e13365bbdb4e9c8f037348651"
-  },
-  {
-    "slot": 10,
-    "offset": 1086,
-    "length": 9,
-    "kind": "unclassified",
-    "path": "Source/Resources/10_MUZ1/Unclassified011.bin",
-    "origin": null,
-    "sha256": "9628bce71f6f43b626cb7c0cae17ee75138aa066d74ec5796089240b3b2c2945"
+    "sha256": "f8a2a57892b3e6ddcb95d511cd3d2306056d0369ec5c2a093f4a757c3fb1cad1"
   },
   {
     "slot": 10,
     "offset": 1095,
-    "length": 38,
+    "length": 41,
     "kind": "code",
-    "path": "Source/Music/UnknownDF47.asm",
+    "path": "Source/Music/StageEnvelopeAndNoise.asm",
     "origin": 57159,
-    "sha256": "332510f3c8da385b64a4628fb35516da7b8d33072159a76cba680c377e50d499"
-  },
-  {
-    "slot": 10,
-    "offset": 1133,
-    "length": 3,
-    "kind": "unclassified",
-    "path": "Source/Resources/10_MUZ1/Unclassified012.bin",
-    "origin": null,
-    "sha256": "c8e7910bee3a7d263882fc6d8a6964b41dd05aa400f46c5079227dddf41bf6fa"
+    "sha256": "3eb7de7050f588fe21f0a1aad7d1136a46f1978fe27959215d6c1e98cf3ae7ad"
   },
   {
     "slot": 10,
     "offset": 1136,
     "length": 15,
     "kind": "code",
-    "path": "Source/Music/UnknownDF70.asm",
+    "path": "Source/Music/CommitEnvelopeSlide.asm",
     "origin": 57200,
     "sha256": "db929becc44d42159f79cb8b371b1b24a048978decfb4f580b2907015ef91b3d"
   },
@@ -8205,101 +8880,200 @@
   {
     "slot": 10,
     "offset": 1251,
-    "length": 205,
+    "length": 234,
     "kind": "code",
     "path": "Source/Music/RenderChannelA.asm",
     "origin": 57315,
-    "sha256": "c7d99cb7df82e4d1efd94ee5c0ef9fc5058882440887f4d53369c895f4827bc9"
-  },
-  {
-    "slot": 10,
-    "offset": 1456,
-    "length": 29,
-    "kind": "unclassified",
-    "path": "Source/Resources/10_MUZ1/Unclassified013.bin",
-    "origin": null,
-    "sha256": "ffaf2839e261fb8ebec2e9e70a3554574270d32b4356a0938c87f3958940ec6f"
+    "sha256": "84b9da0b483872f7c1abfd948c3efde57ce8d01b5cfd029b4ed4a5663eee5f13"
   },
   {
     "slot": 10,
     "offset": 1485,
-    "length": 227,
+    "length": 32,
     "kind": "code",
-    "path": "Source/Music/UnknownE0CD.asm",
+    "path": "Source/Music/FinishChannelA.asm",
     "origin": 57549,
-    "sha256": "f47ef19ae0e9aa6c753400485d5d413d2c828256c3fff4a90ef1ad5210fe9c95"
+    "sha256": "a95e9dac495184f3ed2cb437043663ec9585965890abdcb230a7c50c50fa47c4"
   },
   {
     "slot": 10,
-    "offset": 1712,
-    "length": 29,
-    "kind": "unclassified",
-    "path": "Source/Resources/10_MUZ1/Unclassified014.bin",
-    "origin": null,
-    "sha256": "efe4dc8230686b112c346dd1832c7880298831f8e51bb38481b0ab61e67079fb"
+    "offset": 1517,
+    "length": 224,
+    "kind": "code",
+    "path": "Source/Music/RenderChannelB.asm",
+    "origin": 57581,
+    "sha256": "b5d7d3e3d0b8b441e5e58f3e11b73b84e5227ae67c294539522424d5224efd96"
   },
   {
     "slot": 10,
     "offset": 1741,
-    "length": 225,
+    "length": 32,
     "kind": "code",
-    "path": "Source/Music/UnknownE1CD.asm",
+    "path": "Source/Music/FinishChannelB.asm",
     "origin": 57805,
-    "sha256": "ccdeb51f433e49f430fa2adca25637ff48d6dfa69691162c1d13449c6173e635"
+    "sha256": "9e7cfd766e0ac9a193beb8026810565909f60d91432b7ae197374b129ffdadd6"
   },
   {
     "slot": 10,
-    "offset": 1966,
-    "length": 29,
-    "kind": "unclassified",
-    "path": "Source/Resources/10_MUZ1/Unclassified015.bin",
-    "origin": null,
-    "sha256": "bd01b45ce04c4114e1e0dabab5fd278a18249d09fb25caf831b479915ba923aa"
+    "offset": 1773,
+    "length": 222,
+    "kind": "code",
+    "path": "Source/Music/RenderChannelC.asm",
+    "origin": 57837,
+    "sha256": "00c59fbddb8c788bc767eb901328be7626a05ae57ec7deaae566de86a53d86a0"
   },
   {
     "slot": 10,
     "offset": 1995,
-    "length": 366,
+    "length": 32,
     "kind": "code",
-    "path": "Source/Music/UnknownE2CB.asm",
+    "path": "Source/Music/FinishChannelC.asm",
     "origin": 58059,
-    "sha256": "8bbc620890136341509d49407ff16db10f8086d23128dda1ac616fe34f2bb991"
+    "sha256": "cdc6244e6cb6b1859f0d9b85ffeb8d7066879ec9d50606b144f2dfe722091f5b"
+  },
+  {
+    "slot": 10,
+    "offset": 2027,
+    "length": 145,
+    "kind": "code",
+    "path": "Source/Music/OutputAyFrame.asm",
+    "origin": 58091,
+    "sha256": "4bcd97f130f87e2a959a545797d86bfbb7a720ddace44680e24e3c4679779704"
+  },
+  {
+    "slot": 10,
+    "offset": 2172,
+    "length": 96,
+    "kind": "code",
+    "path": "Source/Music/AdvancePatternBC.asm",
+    "origin": 58236,
+    "sha256": "cd07066507877b5908eab08bebb30c9d511b243f10446ea2be48a424905f28bd"
+  },
+  {
+    "slot": 10,
+    "offset": 2268,
+    "length": 93,
+    "kind": "code",
+    "path": "Source/Music/PatternCommandsA.asm",
+    "origin": 58332,
+    "sha256": "f1e74fd0d6416217d61c8c6247d59f84db8e85827824497c58eddb1b853d9c7d"
   },
   {
     "slot": 10,
     "offset": 2361,
-    "length": 173,
+    "length": 80,
     "kind": "code",
-    "path": "Source/Music/UnknownE439.asm",
+    "path": "Source/Music/DecodePatternA.asm",
     "origin": 58425,
-    "sha256": "cf5b0b58bd32a0198c297970c31f3d8bf8823ee802081d725745513597ba8d82"
+    "sha256": "1d10034f3b74f6beb437817d79772e34b203fb3a09bd0f5c3e6ffc397f8d1c0d"
+  },
+  {
+    "slot": 10,
+    "offset": 2441,
+    "length": 93,
+    "kind": "code",
+    "path": "Source/Music/PatternCommandsB.asm",
+    "origin": 58505,
+    "sha256": "cd60137cf4a3e7bf0394385da30a0b8ee5a24c0285069681d72008cdeba1d7ad"
   },
   {
     "slot": 10,
     "offset": 2534,
-    "length": 157,
+    "length": 87,
     "kind": "code",
-    "path": "Source/Music/UnknownE4E6.asm",
+    "path": "Source/Music/DecodePatternB.asm",
     "origin": 58598,
-    "sha256": "3e1a2f3a1ae3cb601a79ad33668edeb2eb9c4f81ae17736f46354a255d371223"
+    "sha256": "28dd8b03d2ac6be819f831c3f9fc47ca5b21f7e9cfc26e75282fec6d265f4165"
+  },
+  {
+    "slot": 10,
+    "offset": 2621,
+    "length": 70,
+    "kind": "code",
+    "path": "Source/Music/PatternCommandsC.asm",
+    "origin": 58685,
+    "sha256": "03f356b359bee8dedc97331f2ebb2b4d4d552d3fdb1e4e42eb9b90205777fa9c"
   },
   {
     "slot": 10,
     "offset": 2691,
     "length": 137,
     "kind": "code",
-    "path": "Source/Music/UnknownE583.asm",
+    "path": "Source/Music/DecodePatternC.asm",
     "origin": 58755,
     "sha256": "ad22889e95a6b2ded10464ebbbca288e81b016481e9e458b42d4326eec57da4f"
   },
   {
     "slot": 10,
     "offset": 2828,
-    "length": 162,
-    "kind": "unclassified",
-    "path": "Source/Resources/10_MUZ1/Unclassified016.bin",
-    "origin": null,
-    "sha256": "75569f277e4637d0bfa5127f348bd7f17d916490d0436d56113efdbab8844b3a"
+    "length": 23,
+    "kind": "code",
+    "path": "Source/Music/SetToneSlideA.asm",
+    "origin": 58892,
+    "sha256": "d326e52b99be29d60f42b4d614f23d80ae058c4cfc4f59caac3a5febf2c738b1"
+  },
+  {
+    "slot": 10,
+    "offset": 2851,
+    "length": 36,
+    "kind": "code",
+    "path": "Source/Music/SetTonePortamentoA.asm",
+    "origin": 58915,
+    "sha256": "88fc5c643c30f25b42baccfc3f86f59a4e1fd18355294d273b8210338bf25385"
+  },
+  {
+    "slot": 10,
+    "offset": 2887,
+    "length": 11,
+    "kind": "code",
+    "path": "Source/Music/SetSamplePositionA.asm",
+    "origin": 58951,
+    "sha256": "562e11eb155f160eed0294c68ab4af154b203999b1ed844ff93263d07af29b2b"
+  },
+  {
+    "slot": 10,
+    "offset": 2898,
+    "length": 11,
+    "kind": "code",
+    "path": "Source/Music/SetOrnamentPositionA.asm",
+    "origin": 58962,
+    "sha256": "6c169088efd723be9ab23770a213f3a1e1e0162ee6308d806d29f5b2f9b08e01"
+  },
+  {
+    "slot": 10,
+    "offset": 2909,
+    "length": 23,
+    "kind": "code",
+    "path": "Source/Music/SetToneSlideB.asm",
+    "origin": 58973,
+    "sha256": "860475c1b83fafec8903e43e3fc7d3349a2ab75d0b0f8f258b63dddb51417b5d"
+  },
+  {
+    "slot": 10,
+    "offset": 2932,
+    "length": 36,
+    "kind": "code",
+    "path": "Source/Music/SetTonePortamentoB.asm",
+    "origin": 58996,
+    "sha256": "7fa7dcb458f102180e7742a15ad76ea749c7f7048d8f9f6548cff53801e75e68"
+  },
+  {
+    "slot": 10,
+    "offset": 2968,
+    "length": 11,
+    "kind": "code",
+    "path": "Source/Music/SetSamplePositionB.asm",
+    "origin": 59032,
+    "sha256": "a888e0e2e87f53e1be044e3b5cff03c288efff7194641f2089a3b7b4281ae9d2"
+  },
+  {
+    "slot": 10,
+    "offset": 2979,
+    "length": 11,
+    "kind": "code",
+    "path": "Source/Music/SetOrnamentPositionB.asm",
+    "origin": 59043,
+    "sha256": "ca83a2992683dd2ab108d6b06ec0e2aeca8fb227fd5f3eeacdb303e5b1ba294f"
   },
   {
     "slot": 10,
@@ -8313,30 +9087,768 @@
   {
     "slot": 10,
     "offset": 3017,
-    "length": 55,
-    "kind": "unclassified",
-    "path": "Source/Resources/10_MUZ1/Unclassified017.bin",
-    "origin": null,
-    "sha256": "48dec618630f1428b14a2f032c230995a3834e2532709d43db8aeac7cca1bbb9"
+    "length": 37,
+    "kind": "code",
+    "path": "Source/Music/SetTonePortamentoC.asm",
+    "origin": 59081,
+    "sha256": "018a42e2395cd7fb8cd637acd37c8771e5bb3783f96dd57929a98b666efc68f8"
+  },
+  {
+    "slot": 10,
+    "offset": 3054,
+    "length": 6,
+    "kind": "code",
+    "path": "Source/Music/SetSamplePositionC.asm",
+    "origin": 59118,
+    "sha256": "328723868aa14551733c9a158eab6593fcef002a249eccebe7f1bcab8d828cb9"
+  },
+  {
+    "slot": 10,
+    "offset": 3060,
+    "length": 6,
+    "kind": "code",
+    "path": "Source/Music/SetOrnamentPositionC.asm",
+    "origin": 59124,
+    "sha256": "7a0321436fdeccb94e97d86b4ababaab4f04a7082229d7e348d4ea90cf863890"
+  },
+  {
+    "slot": 10,
+    "offset": 3066,
+    "length": 6,
+    "kind": "code",
+    "path": "Source/Music/SetRowTempo.asm",
+    "origin": 59130,
+    "sha256": "323350b5a7fe58fa51a0ae6d3d561926cf3f857b8019fb25d92905845e53d7d5"
   },
   {
     "slot": 10,
     "offset": 3072,
-    "length": 4137,
-    "kind": "binary_resource",
-    "path": "Source/Music/Resources/Antichrist.pt3",
+    "length": 105,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/Header.asm",
     "origin": 59136,
-    "format": "PT3",
-    "sha256": "e4db291fde4d1bcbde9b4e98dccccf72547840f88397f3afea4c70f42cff1bb5"
+    "sha256": "30c5ba66bcf6c07fd648d8680a013085cb73f49b23027e1cd7d0130efb357ac1",
+    "format": "PT3_HEADER"
+  },
+  {
+    "slot": 10,
+    "offset": 3177,
+    "length": 64,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/SampleOffsets.asm",
+    "origin": 59241,
+    "sha256": "14518e3e81c7bc75cfc2fdce9337bf401b1b84b72cb592ebce53d210ba6eac49",
+    "format": "PT3_SAMPLE_OFFSETS"
+  },
+  {
+    "slot": 10,
+    "offset": 3241,
+    "length": 32,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/OrnamentOffsets.asm",
+    "origin": 59305,
+    "sha256": "076d81dc51fde1b2feb4a911cdabfebfb9796e8916ffce06c9dfbbafb13123de",
+    "format": "PT3_ORNAMENT_OFFSETS"
+  },
+  {
+    "slot": 10,
+    "offset": 3273,
+    "length": 29,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/Positions.asm",
+    "origin": 59337,
+    "sha256": "03ac2a85c0f2210a08181cde9aaa4375f851c472631a53e60a75cd04debbab3f",
+    "format": "PT3_POSITIONS"
+  },
+  {
+    "slot": 10,
+    "offset": 3302,
+    "length": 114,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/PatternOffsets.asm",
+    "origin": 59366,
+    "sha256": "807af918ab55868d9b89ca7da0a278f53b7dff8bc013ab2a4ca5aa6dc895269c",
+    "format": "PT3_PATTERN_OFFSETS"
+  },
+  {
+    "slot": 10,
+    "offset": 3416,
+    "length": 49,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/Patterns/PatternA00.asm",
+    "origin": 59480,
+    "sha256": "ae273f379adafcbc253d39c54afd779de5f070c198dd170ffdeb0dbf376a54f2",
+    "format": "PT3_PATTERN"
+  },
+  {
+    "slot": 10,
+    "offset": 3465,
+    "length": 49,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/Patterns/PatternA01.asm",
+    "origin": 59529,
+    "sha256": "9b2192222a780000db65fde7d6f7637bbc0f64b36bf4fe308c550a01e3f26743",
+    "format": "PT3_PATTERN"
+  },
+  {
+    "slot": 10,
+    "offset": 3514,
+    "length": 77,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/Patterns/PatternA02.asm",
+    "origin": 59578,
+    "sha256": "c39f9ef4c69d55d4186af70507af735871396ad68b09a224d6aefbad3d79076b",
+    "format": "PT3_PATTERN"
+  },
+  {
+    "slot": 10,
+    "offset": 3591,
+    "length": 71,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/Patterns/PatternA03.asm",
+    "origin": 59655,
+    "sha256": "f30516b36daae7c0058b5b2c7d5156ce0dc894058fcdbf649f40aaf902f1459b",
+    "format": "PT3_PATTERN"
+  },
+  {
+    "slot": 10,
+    "offset": 3662,
+    "length": 71,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/Patterns/PatternA04.asm",
+    "origin": 59726,
+    "sha256": "a680c8b0806b6c1588aa779c0e243b3f7d7fd526b91d7c9eabb4e436f380a036",
+    "format": "PT3_PATTERN"
+  },
+  {
+    "slot": 10,
+    "offset": 3733,
+    "length": 33,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/Patterns/PatternA05.asm",
+    "origin": 59797,
+    "sha256": "df660fc7ec956068c5f930d7fcfc0d6fa9737113f71b3960aa5dcd24a118f42d",
+    "format": "PT3_PATTERN"
+  },
+  {
+    "slot": 10,
+    "offset": 3766,
+    "length": 37,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/Patterns/PatternA06.asm",
+    "origin": 59830,
+    "sha256": "4b319ecfbd1c6ccfab27a794a93355e692355eb1ff9d6078b7a4702ca5f9e770",
+    "format": "PT3_PATTERN"
+  },
+  {
+    "slot": 10,
+    "offset": 3803,
+    "length": 41,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/Patterns/PatternA07.asm",
+    "origin": 59867,
+    "sha256": "62493f7ca8ac4dae5448229a611b2a7dfad8ab8439874bad81d6cc09e5290309",
+    "format": "PT3_PATTERN"
+  },
+  {
+    "slot": 10,
+    "offset": 3844,
+    "length": 45,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/Patterns/PatternA08.asm",
+    "origin": 59908,
+    "sha256": "dfca7041f1831c7c61a360d6badfd262e8f501a0aba30231264c3b86b8e21142",
+    "format": "PT3_PATTERN"
+  },
+  {
+    "slot": 10,
+    "offset": 3889,
+    "length": 49,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/Patterns/PatternA0A.asm",
+    "origin": 59953,
+    "sha256": "87f0bd1b424f72158702bd675fd3a2ac99b572f39c5afa17eaf7bbe8125ed321",
+    "format": "PT3_PATTERN"
+  },
+  {
+    "slot": 10,
+    "offset": 3938,
+    "length": 49,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/Patterns/PatternA0B.asm",
+    "origin": 60002,
+    "sha256": "d6e60ad5727b57fe8686cebd7c1c9491f7b49fc8e53465880e786825c984020f",
+    "format": "PT3_PATTERN"
+  },
+  {
+    "slot": 10,
+    "offset": 3987,
+    "length": 50,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/Patterns/PatternA0C.asm",
+    "origin": 60051,
+    "sha256": "7f1a41ff3ccc7439a3534af9304e67a071f61d1e1bb95cb80b108b16e01f29ce",
+    "format": "PT3_PATTERN"
+  },
+  {
+    "slot": 10,
+    "offset": 4037,
+    "length": 69,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/Patterns/PatternA0D.asm",
+    "origin": 60101,
+    "sha256": "a6feecd40242a23e7b24f4af1e42b05a713ed75310d49d9cfb4fe660c10205c1",
+    "format": "PT3_PATTERN"
+  },
+  {
+    "slot": 10,
+    "offset": 4106,
+    "length": 69,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/Patterns/PatternA0E.asm",
+    "origin": 60170,
+    "sha256": "b5a08d61a38e79ff36a9d0cf2d4c31a307a3241edd68b884746758793f5823f7",
+    "format": "PT3_PATTERN"
+  },
+  {
+    "slot": 10,
+    "offset": 4175,
+    "length": 74,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/Patterns/PatternA0F.asm",
+    "origin": 60239,
+    "sha256": "9c2d4f216fbb6ed77c31800a042d4f7df599b8f125f42732c6fcedd3a12d7d2e",
+    "format": "PT3_PATTERN"
+  },
+  {
+    "slot": 10,
+    "offset": 4249,
+    "length": 36,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/Patterns/PatternA10.asm",
+    "origin": 60313,
+    "sha256": "388e1238d502ea68cf4df19b549a65d3cf0c85e3f9e6b70b3dc991ea09652056",
+    "format": "PT3_PATTERN"
+  },
+  {
+    "slot": 10,
+    "offset": 4285,
+    "length": 36,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/Patterns/PatternA11.asm",
+    "origin": 60349,
+    "sha256": "c97ab1a3a1911e427f3baa056b258a87e3e10a0074e87ece7be2a9f481f9d357",
+    "format": "PT3_PATTERN"
+  },
+  {
+    "slot": 10,
+    "offset": 4321,
+    "length": 40,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/Patterns/PatternA12.asm",
+    "origin": 60385,
+    "sha256": "b83fba30e6660b7256df1bdbb6fe184124bd076a8c9feccf480d3446ab1e2c0f",
+    "format": "PT3_PATTERN"
+  },
+  {
+    "slot": 10,
+    "offset": 4361,
+    "length": 196,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/Patterns/PatternB00.asm",
+    "origin": 60425,
+    "sha256": "b1f25269ddf32dd872935773ee9e0932425ecda32bda72a9923252c5033e607c",
+    "format": "PT3_PATTERN"
+  },
+  {
+    "slot": 10,
+    "offset": 4557,
+    "length": 196,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/Patterns/PatternB01.asm",
+    "origin": 60621,
+    "sha256": "fec2f0369b3f1ebc7fad17818f429861363eec98a83480186f72cb9cdb286a42",
+    "format": "PT3_PATTERN"
+  },
+  {
+    "slot": 10,
+    "offset": 4753,
+    "length": 218,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/Patterns/PatternB02.asm",
+    "origin": 60817,
+    "sha256": "86e84c0c6abd32947877830e6a5d2336ff19d751a3bc65fb0f1836f4dc8a2f92",
+    "format": "PT3_PATTERN"
+  },
+  {
+    "slot": 10,
+    "offset": 4971,
+    "length": 214,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/Patterns/PatternB03.asm",
+    "origin": 61035,
+    "sha256": "810a65baaa7c259126dbe7309edebed93287bfc085b52bedb0b3f436e56ba26e",
+    "format": "PT3_PATTERN"
+  },
+  {
+    "slot": 10,
+    "offset": 5185,
+    "length": 21,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/Patterns/PatternB05.asm",
+    "origin": 61249,
+    "sha256": "95660b5e8e2e66b64bdf4c43a815eb0f94386d916fffb12f7ba77accaa0e3805",
+    "format": "PT3_PATTERN"
+  },
+  {
+    "slot": 10,
+    "offset": 5206,
+    "length": 21,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/Patterns/PatternB06.asm",
+    "origin": 61270,
+    "sha256": "7616e8f5b623b1ca0234145b4fd67e4648a9b6d33df3e9cee1224022ab3c24a1",
+    "format": "PT3_PATTERN"
+  },
+  {
+    "slot": 10,
+    "offset": 5227,
+    "length": 25,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/Patterns/PatternB07.asm",
+    "origin": 61291,
+    "sha256": "94ea452e36ff7773f458f8cb4f9bb492b57b0e22b5a5ea0f887ea1f65c887a57",
+    "format": "PT3_PATTERN"
+  },
+  {
+    "slot": 10,
+    "offset": 5252,
+    "length": 29,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/Patterns/PatternB08.asm",
+    "origin": 61316,
+    "sha256": "f12afe7a85895866757e2402acd0fec172792504fbeb629710c5c7b5fb3fa291",
+    "format": "PT3_PATTERN"
+  },
+  {
+    "slot": 10,
+    "offset": 5281,
+    "length": 9,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/Patterns/PatternB0D.asm",
+    "origin": 61345,
+    "sha256": "391729a7f5f62146d90782ea1deef159f59b0e8cb047a62bccc11fd83b3ed9f2",
+    "format": "PT3_PATTERN"
+  },
+  {
+    "slot": 10,
+    "offset": 5290,
+    "length": 9,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/Patterns/PatternB0E.asm",
+    "origin": 61354,
+    "sha256": "5e2cb01485d635befcf326653ba54a5bf2802a78d72132e2b984dc91a679917f",
+    "format": "PT3_PATTERN"
+  },
+  {
+    "slot": 10,
+    "offset": 5299,
+    "length": 260,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/Patterns/PatternB10.asm",
+    "origin": 61363,
+    "sha256": "f35ee1f1c7cbbc13234a530c63217308a826a9253cebeb896976f9713ad3cbab",
+    "format": "PT3_PATTERN"
+  },
+  {
+    "slot": 10,
+    "offset": 5559,
+    "length": 260,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/Patterns/PatternB11.asm",
+    "origin": 61623,
+    "sha256": "0a3138d87c2aca881e00abe28827bd5fbb684ae26dba1ef237f72458494d1dfa",
+    "format": "PT3_PATTERN"
+  },
+  {
+    "slot": 10,
+    "offset": 5819,
+    "length": 257,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/Patterns/PatternB12.asm",
+    "origin": 61883,
+    "sha256": "b8e94cabe7c1d1ccd1329ce21fb0c913da88015ce9d373789cfde7c22011fc21",
+    "format": "PT3_PATTERN"
+  },
+  {
+    "slot": 10,
+    "offset": 6076,
+    "length": 106,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/Patterns/PatternC00.asm",
+    "origin": 62140,
+    "sha256": "e0b7805146ba7488a785ac46bf4f4d1e737ae7f035bf48ed9b08c524f70b1088",
+    "format": "PT3_PATTERN"
+  },
+  {
+    "slot": 10,
+    "offset": 6182,
+    "length": 106,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/Patterns/PatternC01.asm",
+    "origin": 62246,
+    "sha256": "855a29d831465a339bce5031e4d0c1c1196d3ee997f1d1dc45c546c693da6320",
+    "format": "PT3_PATTERN"
+  },
+  {
+    "slot": 10,
+    "offset": 6288,
+    "length": 101,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/Patterns/PatternC04.asm",
+    "origin": 62352,
+    "sha256": "cd158da34dd0de485c1237056a622aec39623006692fb607cc2d7f1b33959696",
+    "format": "PT3_PATTERN"
+  },
+  {
+    "slot": 10,
+    "offset": 6389,
+    "length": 29,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/Patterns/PatternC05.asm",
+    "origin": 62453,
+    "sha256": "ee11fa97533e56e92f0aa93950a14e9aa3d64d13aa59bb3f0bee9a955754b713",
+    "format": "PT3_PATTERN"
+  },
+  {
+    "slot": 10,
+    "offset": 6418,
+    "length": 29,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/Patterns/PatternC06.asm",
+    "origin": 62482,
+    "sha256": "a18a39464275af77a509b4bc82a58bdd6484597ae4173c38cfc8e832fb3628e9",
+    "format": "PT3_PATTERN"
+  },
+  {
+    "slot": 10,
+    "offset": 6447,
+    "length": 15,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/Patterns/PatternC07.asm",
+    "origin": 62511,
+    "sha256": "f7cbf620f93c28acbc341f61ba69a0f284c2b6370fc752ec79b03fa2a4c25c68",
+    "format": "PT3_PATTERN"
+  },
+  {
+    "slot": 10,
+    "offset": 6462,
+    "length": 22,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/Patterns/PatternC08.asm",
+    "origin": 62526,
+    "sha256": "45311719caf605ed3cf32ff2c012c672068bd6621b018d038281eff31295a0ad",
+    "format": "PT3_PATTERN"
+  },
+  {
+    "slot": 10,
+    "offset": 6484,
+    "length": 106,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/Patterns/PatternC0D.asm",
+    "origin": 62548,
+    "sha256": "4aaefc847924bab06fc50b05b7d4bca59af269874e0de6e20d840e62031f75b9",
+    "format": "PT3_PATTERN"
+  },
+  {
+    "slot": 10,
+    "offset": 6590,
+    "length": 106,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/Patterns/PatternC0E.asm",
+    "origin": 62654,
+    "sha256": "248d19b65582f7118a3ce26fe0d51781ae3d5ede17cff3f988fc0868edad903d",
+    "format": "PT3_PATTERN"
+  },
+  {
+    "slot": 10,
+    "offset": 6696,
+    "length": 96,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/Patterns/PatternC0F.asm",
+    "origin": 62760,
+    "sha256": "695ac0dd2b4d444af9488d6c8cebd52486437153c30c46b8d8b876dd6e966d67",
+    "format": "PT3_PATTERN"
+  },
+  {
+    "slot": 10,
+    "offset": 6792,
+    "length": 50,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/Samples/Sample01.asm",
+    "origin": 62856,
+    "sha256": "06b45f79e828c47185f4753878e9e7dd323d818cd9a7a928469aa5e7d7c48f59",
+    "format": "PT3_SAMPLE"
+  },
+  {
+    "slot": 10,
+    "offset": 6842,
+    "length": 6,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/Samples/Sample02.asm",
+    "origin": 62906,
+    "sha256": "ad0711a0d2fdb37ec44f3ed2e143634c77d584ee7355090e1f8c177c49fbb2d1",
+    "format": "PT3_SAMPLE"
+  },
+  {
+    "slot": 10,
+    "offset": 6848,
+    "length": 6,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/Samples/Sample03.asm",
+    "origin": 62912,
+    "sha256": "36e30067609195f277f72c2c1d9352e0c9af35241725e8957d6f5b879059d72f",
+    "format": "PT3_SAMPLE"
+  },
+  {
+    "slot": 10,
+    "offset": 6854,
+    "length": 30,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/Samples/Sample04.asm",
+    "origin": 62918,
+    "sha256": "a248a8472dea72076d2d8ad0c2904928a78334690e718658f6df0c18a66f2b3c",
+    "format": "PT3_SAMPLE"
+  },
+  {
+    "slot": 10,
+    "offset": 6884,
+    "length": 50,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/Samples/Sample05.asm",
+    "origin": 62948,
+    "sha256": "366bcd961641eecad035ca3396ce7136b08f4292656429a1e0d55456da1f8ce0",
+    "format": "PT3_SAMPLE"
+  },
+  {
+    "slot": 10,
+    "offset": 6934,
+    "length": 10,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/Samples/Sample06.asm",
+    "origin": 62998,
+    "sha256": "6eea85cec808634d58a318d92245531ceb8d24f6d0b635ab6a66ce090ffeeedb",
+    "format": "PT3_SAMPLE"
+  },
+  {
+    "slot": 10,
+    "offset": 6944,
+    "length": 18,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/Samples/Sample07.asm",
+    "origin": 63008,
+    "sha256": "247142967eea5c69262c0dcd43f31f51a6944c236c801671e4bd6d25527ca9e1",
+    "format": "PT3_SAMPLE"
+  },
+  {
+    "slot": 10,
+    "offset": 6962,
+    "length": 50,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/Samples/Sample08.asm",
+    "origin": 63026,
+    "sha256": "915845bcd12a85940c93914e1727813b76fedc87e54cbe3048b064fcddbb6fd3",
+    "format": "PT3_SAMPLE"
+  },
+  {
+    "slot": 10,
+    "offset": 7012,
+    "length": 30,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/Samples/Sample0B.asm",
+    "origin": 63076,
+    "sha256": "fbf2910ff2a8522035b398e66c2ab9ee61800c1b33d575061c5705cfee68f79e",
+    "format": "PT3_SAMPLE"
+  },
+  {
+    "slot": 10,
+    "offset": 7042,
+    "length": 18,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/Samples/Sample0C.asm",
+    "origin": 63106,
+    "sha256": "5e3ace31288b392088b258df0b9c2daddb48300bdec8a87ed8bf5e349d0fcb09",
+    "format": "PT3_SAMPLE"
+  },
+  {
+    "slot": 10,
+    "offset": 7060,
+    "length": 26,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/Samples/Sample0E.asm",
+    "origin": 63124,
+    "sha256": "fc75c0ed86031d0d5768f992cafb8e36482cd903a110be98654bec6170a965c4",
+    "format": "PT3_SAMPLE"
+  },
+  {
+    "slot": 10,
+    "offset": 7086,
+    "length": 38,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/Samples/Sample0F.asm",
+    "origin": 63150,
+    "sha256": "d97b363dfd6fe3b4f6083056398e2f2790518615050e39fb0b463aea9dae9da3",
+    "format": "PT3_SAMPLE"
+  },
+  {
+    "slot": 10,
+    "offset": 7124,
+    "length": 3,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/Ornaments/Ornament00.asm",
+    "origin": 63188,
+    "sha256": "faee935763044f124d7526755a5058a33f9402a595994d59eddd4be8546ff201",
+    "format": "PT3_ORNAMENT"
+  },
+  {
+    "slot": 10,
+    "offset": 7127,
+    "length": 5,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/Ornaments/Ornament01.asm",
+    "origin": 63191,
+    "sha256": "1bf5df9d6b9f23502b86e1e416fef75630cb6ae7e59ba3b4767fd5c7f6a0b2f7",
+    "format": "PT3_ORNAMENT"
+  },
+  {
+    "slot": 10,
+    "offset": 7132,
+    "length": 5,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/Ornaments/Ornament02.asm",
+    "origin": 63196,
+    "sha256": "c42933126b79518f8d81199694fdccdfeb2f92f1211a78e5420f8978d3ee9a24",
+    "format": "PT3_ORNAMENT"
+  },
+  {
+    "slot": 10,
+    "offset": 7137,
+    "length": 5,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/Ornaments/Ornament03.asm",
+    "origin": 63201,
+    "sha256": "fd00b03c8db6ce805a36dfd77db8a42d26827d73bfddf979ced1ec4e4bb7583c",
+    "format": "PT3_ORNAMENT"
+  },
+  {
+    "slot": 10,
+    "offset": 7142,
+    "length": 6,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/Ornaments/Ornament04.asm",
+    "origin": 63206,
+    "sha256": "b25b9e1123eab4edc860562809f9f7a903dc3d7d4651e36c9d9e1b5b8bae7c22",
+    "format": "PT3_ORNAMENT"
+  },
+  {
+    "slot": 10,
+    "offset": 7148,
+    "length": 6,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/Ornaments/Ornament05.asm",
+    "origin": 63212,
+    "sha256": "7589372c435fa3f209d5bcf2e098cd713a4939abc3f51807fadd90ec20eb01fb",
+    "format": "PT3_ORNAMENT"
+  },
+  {
+    "slot": 10,
+    "offset": 7154,
+    "length": 6,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/Ornaments/Ornament06.asm",
+    "origin": 63218,
+    "sha256": "1bf94447cc2e8bc97de401fe45fff4ad2c2dba5edaacffa853964c76ce3cce38",
+    "format": "PT3_ORNAMENT"
+  },
+  {
+    "slot": 10,
+    "offset": 7160,
+    "length": 6,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/Ornaments/Ornament07.asm",
+    "origin": 63224,
+    "sha256": "022c6e6db84f803230dfc04e45a7c0986c527151e7be0982b860695701180a53",
+    "format": "PT3_ORNAMENT"
+  },
+  {
+    "slot": 10,
+    "offset": 7166,
+    "length": 6,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/Ornaments/Ornament08.asm",
+    "origin": 63230,
+    "sha256": "521d0b8f42c109fada0542a574951d7bb7f33c0170ab74d1e6255400b6eccf0f",
+    "format": "PT3_ORNAMENT"
+  },
+  {
+    "slot": 10,
+    "offset": 7172,
+    "length": 6,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/Ornaments/Ornament09.asm",
+    "origin": 63236,
+    "sha256": "62cf2c9821a798ede89972dd2116f5af0229e717a37380f11a160dd7882b56dd",
+    "format": "PT3_ORNAMENT"
+  },
+  {
+    "slot": 10,
+    "offset": 7178,
+    "length": 8,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/Ornaments/Ornament0A.asm",
+    "origin": 63242,
+    "sha256": "1d2ef8e5f2463a76947e4ce779db3557a3a798d4ec49e34089eb84d8ac41eab6",
+    "format": "PT3_ORNAMENT"
+  },
+  {
+    "slot": 10,
+    "offset": 7186,
+    "length": 12,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/Ornaments/Ornament0B.asm",
+    "origin": 63250,
+    "sha256": "0353349088d95383c18056adf038998101e4b506548635c84577460bb6f4ccae",
+    "format": "PT3_ORNAMENT"
+  },
+  {
+    "slot": 10,
+    "offset": 7198,
+    "length": 4,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/Ornaments/Ornament0C.asm",
+    "origin": 63262,
+    "sha256": "78fcafd6eb07895c571a6c1a7c036e56e409f62f813dcc91c684dc80f222bb5a",
+    "format": "PT3_ORNAMENT"
+  },
+  {
+    "slot": 10,
+    "offset": 7202,
+    "length": 7,
+    "kind": "typed_data",
+    "path": "Source/Music/Composition/Ornaments/Ornament0D.asm",
+    "origin": 63266,
+    "sha256": "bfb4b6a6ac07ba579754a069af6945d0c56d6ad284950b6f457bbaba5f8d5e62",
+    "format": "PT3_ORNAMENT"
   },
   {
     "slot": 10,
     "offset": 7209,
     "length": 215,
-    "kind": "unclassified",
-    "path": "Source/Resources/10_MUZ1/Unclassified018.bin",
+    "kind": "binary_resource",
+    "path": "Source/Music/Resources/SectorTail.bin",
     "origin": null,
-    "sha256": "1cc06ea6118566731ef7b65a6cc618415c1d4ebf1a2c0ac8c23adb99a476346c"
+    "sha256": "1cc06ea6118566731ef7b65a6cc618415c1d4ebf1a2c0ac8c23adb99a476346c",
+    "format": "TRDOS_SECTOR_TAIL"
   },
   {
     "slot": 11,
@@ -12768,617 +14280,5 @@
     "path": "Source/Resources/43_BD3/Unclassified000.bin",
     "origin": null,
     "sha256": "6e5a9a6b502ef74d855523ad69307ae0eef284d301ae52e5522005a7ed30b77b"
-  },
-  {
-    "slot": 4,
-    "offset": 2592,
-    "length": 12,
-    "kind": "code",
-    "path": "Source/Station/Unknown6774.asm",
-    "origin": 26484,
-    "sha256": "6bbab382f330de36636b60a87029b9886450aff92114c06ad7d0840be6112762"
-  },
-  {
-    "slot": 4,
-    "offset": 2645,
-    "length": 39,
-    "kind": "code",
-    "path": "Source/Station/Unknown67A9.asm",
-    "origin": 26537,
-    "sha256": "e8fe5a9d55f2ca1ae4b355d098fb09143f5dce2adf8dc74d8ded8bf93192e704"
-  },
-  {
-    "slot": 4,
-    "offset": 2790,
-    "length": 53,
-    "kind": "code",
-    "path": "Source/Station/HandleModelPreviewClick.asm",
-    "origin": 26682,
-    "sha256": "2ec19a372729be923b5f68509c2c50ca62564e922cd4b1cf257ccdfe6c521fe4"
-  },
-  {
-    "slot": 4,
-    "offset": 3010,
-    "length": 39,
-    "kind": "code",
-    "path": "Source/Station/HandleModelDescriptionClick.asm",
-    "origin": 26902,
-    "sha256": "34204b655c3480caed5e227f991a4bb934fde377f1ab9fd78a66d4a18d558183"
-  },
-  {
-    "slot": 4,
-    "offset": 3087,
-    "length": 21,
-    "kind": "code",
-    "path": "Source/Station/CountModelDescriptionRows.asm",
-    "origin": 26979,
-    "sha256": "833dd4457dfc92d9b27005aed0952c79972a2878ee4ce8fda156145db8c65888"
-  },
-  {
-    "slot": 4,
-    "offset": 3111,
-    "length": 44,
-    "kind": "code",
-    "path": "Source/Station/Unknown697B.asm",
-    "origin": 27003,
-    "sha256": "8ac99fc4a0396e615989295d344d576f9ff9fc57d9bf14aac1246085726d0fc6"
-  },
-  {
-    "slot": 4,
-    "offset": 3212,
-    "length": 107,
-    "kind": "code",
-    "path": "Source/Station/Unknown69E0.asm",
-    "origin": 27104,
-    "sha256": "531c025a5e025fa76968c1389b5f5d79a0ebf14a4b4773e0cecf99b986fad443"
-  },
-  {
-    "slot": 4,
-    "offset": 3378,
-    "length": 40,
-    "kind": "code",
-    "path": "Source/Station/Unknown6A86.asm",
-    "origin": 27270,
-    "sha256": "fdd8ebe0a9613dba90138e347b2fbeb478e85cd0e41740370cce9e58ced58067"
-  },
-  {
-    "slot": 4,
-    "offset": 3419,
-    "length": 7,
-    "kind": "code",
-    "path": "Source/Station/Unknown6AAF.asm",
-    "origin": 27311,
-    "sha256": "6984b2546d318fccc9f3e533d9b44cdd30b6e963117921354c8522161a537520"
-  },
-  {
-    "slot": 4,
-    "offset": 3480,
-    "length": 162,
-    "kind": "code",
-    "path": "Source/Station/Unknown6AEC.asm",
-    "origin": 27372,
-    "sha256": "fd86db74889cf0dfb58d6620b4ca7297e9f1e6284b49bfbce2f9aecc733d4f2a"
-  },
-  {
-    "slot": 4,
-    "offset": 3658,
-    "length": 7,
-    "kind": "code",
-    "path": "Source/Station/Unknown6B9E.asm",
-    "origin": 27550,
-    "sha256": "2d47218b12e1a5383f2e90e2984028f343dece6a19d57993328497979fd6cc49"
-  },
-  {
-    "slot": 4,
-    "offset": 3769,
-    "length": 97,
-    "kind": "code",
-    "path": "Source/Station/HandleMapPanelEvent.asm",
-    "origin": 27661,
-    "sha256": "d3bb84b88b683f177d33f08c2124c13f3bbd51bf932998efc8ec05dccde888c4"
-  },
-  {
-    "slot": 4,
-    "offset": 3866,
-    "length": 159,
-    "kind": "code",
-    "path": "Source/Station/PanMapView.asm",
-    "origin": 27758,
-    "sha256": "30f3b5007949b58e46b663870628ac456fa90da67c85231b4067588d52e761f4"
-  },
-  {
-    "slot": 4,
-    "offset": 4025,
-    "length": 54,
-    "kind": "code",
-    "path": "Source/Station/SelectMapPointAndRefresh.asm",
-    "origin": 27917,
-    "sha256": "132bdada6ca2eb11a89120d749738ea26f6167d90161ccc4c301e732fd19dfd9"
-  },
-  {
-    "slot": 4,
-    "offset": 4080,
-    "length": 10,
-    "kind": "code",
-    "path": "Source/Station/RefreshMapPanel.asm",
-    "origin": 27972,
-    "sha256": "a34065d04ec0e54ea5bf3f127b20e0cb8f884ccb1f07d936797faf475406e39c"
-  },
-  {
-    "slot": 4,
-    "offset": 4090,
-    "length": 10,
-    "kind": "code",
-    "path": "Source/Station/ClearAndDrawMapPanel.asm",
-    "origin": 27982,
-    "sha256": "f29d00008b1d602ba74549ac129c8349aeea4c845968ea94940c1190c6ac0201"
-  },
-  {
-    "slot": 4,
-    "offset": 4209,
-    "length": 14,
-    "kind": "code",
-    "path": "Source/Station/HandleDecodedMessageClick.asm",
-    "origin": 28101,
-    "sha256": "a5bcc3f0219498dc9c64c89d81fefbb4a4d909c875b6db4ebf9d78552dc400fa"
-  },
-  {
-    "slot": 4,
-    "offset": 4398,
-    "length": 7,
-    "kind": "code",
-    "path": "Source/Station/HandleQueuedMessageClick.asm",
-    "origin": 28290,
-    "sha256": "11e8d00b801d93c1a9a72cb4b7aace21f2867392bec81503fdafe2d26ee35197"
-  },
-  {
-    "slot": 4,
-    "offset": 4765,
-    "length": 83,
-    "kind": "code",
-    "path": "Source/Station/HandleTradePanelClick.asm",
-    "origin": 28657,
-    "sha256": "649e9fd5aaf7ba8649df36c6e46e801eccb6a6a077e0706fff5b489a54478236"
-  },
-  {
-    "slot": 4,
-    "offset": 5153,
-    "length": 155,
-    "kind": "code",
-    "path": "Source/Station/Unknown7175.asm",
-    "origin": 29045,
-    "sha256": "c331a41dbed32b5ff5a6e7f92ab22b78e33f78963891cd05167686234d68bec1"
-  },
-  {
-    "slot": 4,
-    "offset": 5324,
-    "length": 7,
-    "kind": "code",
-    "path": "Source/Station/Unknown7220.asm",
-    "origin": 29216,
-    "sha256": "c1fbd24c35931b902df0c95f7bce7e82ee4aee927e536ec1b0ab4b562e0f67a4"
-  },
-  {
-    "slot": 4,
-    "offset": 5837,
-    "length": 97,
-    "kind": "code",
-    "path": "Source/Station/Unknown7421.asm",
-    "origin": 29729,
-    "sha256": "e9a06fffe1097bdb8f72d02ba3f77de21164088408d9e2f04654976fd128162c"
-  },
-  {
-    "slot": 4,
-    "offset": 5974,
-    "length": 97,
-    "kind": "code",
-    "path": "Source/Station/Unknown74AA.asm",
-    "origin": 29866,
-    "sha256": "da450b977d93f0c146b425299e174ae7ffcbb20c9b74b02e62ebcf2941fa9d04"
-  },
-  {
-    "slot": 4,
-    "offset": 6216,
-    "length": 132,
-    "kind": "code",
-    "path": "Source/Station/Unknown759C.asm",
-    "origin": 30108,
-    "sha256": "056dac97572223cf908ae4ff42c0d3db686ab154b155bfc11cd40a66deb1b527"
-  },
-  {
-    "slot": 4,
-    "offset": 6364,
-    "length": 7,
-    "kind": "code",
-    "path": "Source/Station/Unknown7630.asm",
-    "origin": 30256,
-    "sha256": "c8da80679707b0970ebc0a6c1fe1fafc813087b94517360bee505c7b969959d6"
-  },
-  {
-    "slot": 4,
-    "offset": 6437,
-    "length": 14,
-    "kind": "code",
-    "path": "Source/Station/Unknown7679.asm",
-    "origin": 30329,
-    "sha256": "8876888438ce55409c37459dbbfe09bf459a40962aeba3ab7c7ef65398f7a7e7"
-  },
-  {
-    "slot": 4,
-    "offset": 6887,
-    "length": 73,
-    "kind": "code",
-    "path": "Source/Station/Unknown783B.asm",
-    "origin": 30779,
-    "sha256": "3ae1fc4d1f31d9db98e3d41e35cf7ce56a9ac671eace1d1d99f18116a9f0f6e6"
-  },
-  {
-    "slot": 4,
-    "offset": 6961,
-    "length": 7,
-    "kind": "code",
-    "path": "Source/Station/TryDrawVariantPanel.asm",
-    "origin": 30853,
-    "sha256": "c1953c2affdc09178b34b770e4fcfba89e69ed1ae72d6abf4f9b148e6e0b7875"
-  },
-  {
-    "slot": 4,
-    "offset": 7159,
-    "length": 9,
-    "kind": "code",
-    "path": "Source/Station/Unknown794B.asm",
-    "origin": 31051,
-    "sha256": "58659176f3d9f3a0ff61c9c520ae6cbcdd5153a374c141c152ca656cf35c6d9b"
-  },
-  {
-    "slot": 4,
-    "offset": 16785,
-    "length": 60,
-    "kind": "code",
-    "path": "Source/Station/ParseSettingsLabel.asm",
-    "origin": 41361,
-    "sha256": "d3ca26067bfa3e39166ed21d3a1ab3afd72e02fb88333478961e2b3146f5b8f9"
-  },
-  {
-    "slot": 4,
-    "offset": 16845,
-    "length": 9,
-    "kind": "code",
-    "path": "Source/Station/RestoreScrollPointer.asm",
-    "origin": 41421,
-    "sha256": "f4827355fc78016d422c42765a581cff2638722b80a24a1853ef5ac6bc4c70b4"
-  },
-  {
-    "slot": 4,
-    "offset": 16854,
-    "length": 153,
-    "kind": "code",
-    "path": "Source/Station/ScrollWindowRows.asm",
-    "origin": 41430,
-    "sha256": "53737caf3e8ada6752b5e02a1cc15bcdeb128ba90a452703be1bb16d37520aec"
-  },
-  {
-    "slot": 4,
-    "offset": 17007,
-    "length": 17,
-    "kind": "code",
-    "path": "Source/Station/XorRowIfSelected.asm",
-    "origin": 41583,
-    "sha256": "f8766c0dc13a2260cb35a69f5eb0623a459e97addef46321acbc509e1a4fd466"
-  },
-  {
-    "slot": 4,
-    "offset": 19032,
-    "length": 42,
-    "kind": "code",
-    "path": "Source/Station/UnknownAA58.asm",
-    "origin": 43608,
-    "sha256": "bad86852650c3d9f18744559cc125d3f450ecc6d5e1f1cc014dcbd13ab8949e2"
-  },
-  {
-    "slot": 4,
-    "offset": 19074,
-    "length": 2,
-    "kind": "unclassified",
-    "path": "Source/Resources/04_STATIONF/EventGap4A82.bin",
-    "origin": null,
-    "sha256": "2b83fca8dcc615080d0630d4b7eb699c924b6911b1ade02d557f0dabcf70e9ed"
-  },
-  {
-    "slot": 4,
-    "offset": 24091,
-    "length": 12,
-    "kind": "unclassified",
-    "path": "Source/Resources/04_STATIONF/EventGap5E1B.bin",
-    "origin": null,
-    "sha256": "117695fa9f20f67eacf455266f6a0dffa445709b96a5c292a127323176c354bd"
-  },
-  {
-    "slot": 4,
-    "offset": 24103,
-    "length": 17,
-    "kind": "code",
-    "path": "Source/Station/MoveItemToTailIfListed.asm",
-    "origin": 48679,
-    "sha256": "6fed9d87f3fccf6c81c3b715773d47d0164035f897e4b6468b7f58f3e1c4ccb6"
-  },
-  {
-    "slot": 4,
-    "offset": 26288,
-    "length": 430,
-    "kind": "code",
-    "path": "Source/Station/ClearScrollWindowBody.asm",
-    "origin": 50864,
-    "sha256": "e1a741ac1afe2739d88599f2e5e54c4a3b871023592a82ea86275b58da6a9879"
-  },
-  {
-    "slot": 7,
-    "offset": 872,
-    "length": 36,
-    "kind": "code",
-    "path": "Source/Map/SumSquares8.asm",
-    "origin": 50024,
-    "sha256": "97a5432a22d422801b556999b5d5dca54405f398ff6e280889d8f40c91a62fb0"
-  },
-  {
-    "slot": 7,
-    "offset": 908,
-    "length": 131,
-    "kind": "code",
-    "path": "Source/Map/SelectNearestVisiblePoint.asm",
-    "origin": 50060,
-    "sha256": "a92f1af1d4006ef8655acdc2b48dec04c6574eb564bd3e7aba28bbf2b280ecdf"
-  },
-  {
-    "slot": 7,
-    "offset": 1253,
-    "length": 259,
-    "kind": "code",
-    "path": "Source/Map/BuildVisibleMapPoints.asm",
-    "origin": 50405,
-    "sha256": "4077a7768aeb9a4ea7a3b950e112ecf73ea8596312c4dcf2c1f492d8be58ab29"
-  },
-  {
-    "slot": 7,
-    "offset": 1512,
-    "length": 107,
-    "kind": "code",
-    "path": "Source/Map/SelectNearestMapVariant.asm",
-    "origin": 50664,
-    "sha256": "0577b32815a36463a346cb8a33276b48873fdbd10e6f7125ec5be8f2f11e0132"
-  },
-  {
-    "slot": 7,
-    "offset": 1619,
-    "length": 36,
-    "kind": "code",
-    "path": "Source/Map/UpdateMapDistanceMinimum.asm",
-    "origin": 50771,
-    "sha256": "fa3d67b8bcecb4f025806e2aaeb20d38afa6686defe41fd3b1b825a4222d6b60"
-  },
-  {
-    "slot": 7,
-    "offset": 1655,
-    "length": 73,
-    "kind": "code",
-    "path": "Source/Map/DrawVariantCluster.asm",
-    "origin": 50807,
-    "sha256": "80bce207480f0fc94435d90290990a57d6f85e99d05a32f690821da0f3c3978e"
-  },
-  {
-    "slot": 7,
-    "offset": 1728,
-    "length": 29,
-    "kind": "code",
-    "path": "Source/Map/AnimateVariant0.asm",
-    "origin": 50880,
-    "sha256": "b38204e250b4f78c3e9913bf81d60b63e4c00831248048916ac58d4d967b5410"
-  },
-  {
-    "slot": 7,
-    "offset": 1757,
-    "length": 29,
-    "kind": "code",
-    "path": "Source/Map/AnimateVariant1.asm",
-    "origin": 50909,
-    "sha256": "8afce8b847aa4dd931e6b88889243de92c258a3747d10b569f649de683778df5"
-  },
-  {
-    "slot": 7,
-    "offset": 1786,
-    "length": 29,
-    "kind": "code",
-    "path": "Source/Map/AnimateVariant2.asm",
-    "origin": 50938,
-    "sha256": "907d759715a6467edec8a8226bb9a65b3737cbadaa0d4309a82ace8655f0eb1a"
-  },
-  {
-    "slot": 7,
-    "offset": 1815,
-    "length": 29,
-    "kind": "code",
-    "path": "Source/Map/AnimateVariant3.asm",
-    "origin": 50967,
-    "sha256": "859de24abc39cf20901ef45364853bdbdffe7d79412bc89901e8f5ddd1b08523"
-  },
-  {
-    "slot": 7,
-    "offset": 1844,
-    "length": 29,
-    "kind": "code",
-    "path": "Source/Map/AnimateVariant4.asm",
-    "origin": 50996,
-    "sha256": "b14c90c166406cabec0dbd8b2a0998508c57311da349ae34670508dcff85948d"
-  },
-  {
-    "slot": 7,
-    "offset": 1873,
-    "length": 29,
-    "kind": "code",
-    "path": "Source/Map/AnimateVariant5.asm",
-    "origin": 51025,
-    "sha256": "84872ea9e148e2b9a5c0fa3e4fcd14823364940e396b2b50c3792b6e349be452"
-  },
-  {
-    "slot": 7,
-    "offset": 1902,
-    "length": 19,
-    "kind": "code",
-    "path": "Source/Map/SelectBlinkingVariant.asm",
-    "origin": 51054,
-    "sha256": "1ad54e7325f26b7360393d920848497e4b4e5dfd17db8abddece98bdf58d9b19"
-  },
-  {
-    "slot": 7,
-    "offset": 2629,
-    "length": 57,
-    "kind": "typed_data",
-    "path": "Source/Map/Data/VariantPath7.asm",
-    "origin": 51781,
-    "sha256": "2dabebfc5e823728cbe31ee3f4ecdce87ae04eabf04101e0d51186783685fca6"
-  },
-  {
-    "slot": 7,
-    "offset": 2686,
-    "length": 81,
-    "kind": "typed_data",
-    "path": "Source/Map/Data/VariantPath10.asm",
-    "origin": 51838,
-    "sha256": "4cfd399bd119286f00178d63fa261c4c9919d921547d25070633a6d1b2b714d4"
-  },
-  {
-    "slot": 7,
-    "offset": 2767,
-    "length": 105,
-    "kind": "typed_data",
-    "path": "Source/Map/Data/VariantPath13.asm",
-    "origin": 51919,
-    "sha256": "7cb7093a31c94cd58780f4dd2b7ad192a431c212af6ac80575c61978cfd5bcac"
-  },
-  {
-    "slot": 7,
-    "offset": 2872,
-    "length": 129,
-    "kind": "typed_data",
-    "path": "Source/Map/Data/VariantPath16.asm",
-    "origin": 52024,
-    "sha256": "cd2d9c2d2f8f814607162b9ae55b3d869971fbba4dfeae90eef8ce4f316bac11"
-  },
-  {
-    "slot": 7,
-    "offset": 3001,
-    "length": 153,
-    "kind": "typed_data",
-    "path": "Source/Map/Data/VariantPath19.asm",
-    "origin": 52153,
-    "sha256": "20146f7930cd3d7eeb0c7bfeb397c028aa5cf9fab578c12ab6ce066907cc7087"
-  },
-  {
-    "slot": 7,
-    "offset": 3154,
-    "length": 177,
-    "kind": "typed_data",
-    "path": "Source/Map/Data/VariantPath22.asm",
-    "origin": 52306,
-    "sha256": "5074c62fa9f5641162bd2f6e50ce58958750ee489f4d2916bcf72629135cd5e8"
-  },
-  {
-    "slot": 7,
-    "offset": 3331,
-    "length": 48,
-    "kind": "typed_data",
-    "path": "Source/Map/Resources/VariantDefault.asm",
-    "origin": 52483,
-    "sha256": "e3cea11856bacf755edbbeab7e0086b5684dc93c0cd33184a9fb33cf3b972e37"
-  },
-  {
-    "slot": 7,
-    "offset": 3379,
-    "length": 48,
-    "kind": "typed_data",
-    "path": "Source/Map/Resources/VariantCurrent.asm",
-    "origin": 52531,
-    "sha256": "6eb0dc0fb2f41e1336ffd183c3ce2e8a81992ad3bc64c4886c23593f3ad4d64b"
-  },
-  {
-    "slot": 7,
-    "offset": 3427,
-    "length": 48,
-    "kind": "typed_data",
-    "path": "Source/Map/Resources/VariantStored.asm",
-    "origin": 52579,
-    "sha256": "fe1ce20406ac28718f6e830bc1820e23aa5ccaf6afe02b85bb5c8b5fc955c8a8"
-  },
-  {
-    "slot": 7,
-    "offset": 3475,
-    "length": 48,
-    "kind": "typed_data",
-    "path": "Source/Map/Resources/VariantSelected.asm",
-    "origin": 52627,
-    "sha256": "1fa534f506a800357a843a43e4ecd1afc3ce796da9ad3d5d272930550868567b"
-  },
-  {
-    "slot": 7,
-    "offset": 3523,
-    "length": 128,
-    "kind": "typed_data",
-    "path": "Source/Map/Resources/MarkerSelected.asm",
-    "origin": 52675,
-    "sha256": "55fa62133ed580071e8929c1c831c467b6c468b30f506d3a36cf91cd5be7c622"
-  },
-  {
-    "slot": 7,
-    "offset": 3651,
-    "length": 128,
-    "kind": "typed_data",
-    "path": "Source/Map/Resources/MarkerSecondary.asm",
-    "origin": 52803,
-    "sha256": "0a24cfaf1d40ac2766954ef59c6dde6f79d3f2506c29c5e044dad52e28e1ad7f"
-  },
-  {
-    "slot": 7,
-    "offset": 3779,
-    "length": 128,
-    "kind": "typed_data",
-    "path": "Source/Map/Resources/MarkerActiveAux.asm",
-    "origin": 52931,
-    "sha256": "afc8506a0f6e18caf518aed466b69742425b87a201702b851d504bd070231dec"
-  },
-  {
-    "slot": 7,
-    "offset": 3907,
-    "length": 128,
-    "kind": "typed_data",
-    "path": "Source/Map/Resources/MarkerCursor.asm",
-    "origin": 53059,
-    "sha256": "d536144759d96db42c40a4aba9a7328ad9b8cf06b9eed57461bb68782b8bd2a8"
-  },
-  {
-    "slot": 7,
-    "offset": 4035,
-    "length": 128,
-    "kind": "typed_data",
-    "path": "Source/Map/Resources/MarkerPrimary.asm",
-    "origin": 53187,
-    "sha256": "77ae473d172ccb28de2408a96b8cb4405f18ca0239386787da870e08bba11b57"
-  },
-  {
-    "slot": 7,
-    "offset": 4163,
-    "length": 128,
-    "kind": "typed_data",
-    "path": "Source/Map/Resources/MarkerStored.asm",
-    "origin": 53315,
-    "sha256": "1b4433f31ec31b24bb9353f2fbb6057dcb5fa065851f7acff62a5b78f52d74ac"
-  },
-  {
-    "slot": 7,
-    "offset": 4291,
-    "length": 233,
-    "kind": "code",
-    "path": "Source/Map/SetupMapRasterWindow.asm",
-    "origin": 53443,
-    "sha256": "b3e1b1903b2c2f306bbb8737d19cbe36eb81cc383687323dd9ec9b2d89790502"
   }
 ]

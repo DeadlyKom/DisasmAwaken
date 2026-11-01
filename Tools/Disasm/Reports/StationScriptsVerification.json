@@ -1,0 +1,39 @@
+{
+  "passed": true,
+  "cases_by_event_and_exit": {
+    "15": 1536,
+    "w_to_4200": 16,
+    "w_without_ship_returns": 94,
+    "16": 270,
+    "17": 256
+  },
+  "queued_messages": {
+    "15": 96,
+    "14": 1152,
+    "13": 110
+  },
+  "all_status_bytes": true,
+  "actual_interpreter_and_original_script": true,
+  "independent_credit_status_equipment_and_weight_oracle": true,
+  "equipment_explicit_indices_cleared": [
+    2,
+    3,
+    5,
+    6,
+    7,
+    8,
+    9,
+    31
+  ],
+  "o32_writes_index31_beyond_first30": true,
+  "all_key_sizes_1_to_16": true,
+  "transition_threshold_credits_le_unit": true,
+  "ordinary_charge_is_five_times_unit": true,
+  "actual_w_executed": true,
+  "native_transition_code_4200_not_executed": true,
+  "script_bytes_unchanged": true,
+  "station_display_not_executed": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "per_button": {
+    "ship_sale": 522,
+    "ship_buy": 512,
+    "equipment_buy": 512,
+    "equipment_sale": 512
+  },
+  "all_selector_bytes": true,
+  "event_bit7_guards_mode": true,
+  "actual_activation_and_mode_helpers": true,
+  "immediate_physical_continuations": true,
+  "independent_mode_and_callback_oracle": true,
+  "full_register_and_nonstack_memory_equivalence": true,
+  "fixture_stack_bytes_excluded": 256,
+  "independent_bitmap": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

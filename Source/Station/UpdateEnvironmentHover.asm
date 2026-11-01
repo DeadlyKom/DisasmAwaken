@@ -29,7 +29,7 @@
                 ; выбор запроса 30 строк и отступа 11 для установок среды
 Entry:          LD DE, @PanelHoverConst.Rows
                 ; выбор точного рисователя, который должен быть последним в списке
-                LD HL, @Station.DrawItem41.Entry
+                LD HL, @Station.DrawEnvironmentPanel.Entry
                 ; чтение изменяемого номера прежней XOR-полосы, FF означает её отсутствие
                 LD A, #FF
                 ; проверка положения указателя и обновление полосы через UpdateRowHover

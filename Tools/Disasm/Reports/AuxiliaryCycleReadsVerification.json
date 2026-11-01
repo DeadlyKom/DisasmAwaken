@@ -1,6 +1,6 @@
 {
   "passed": true,
-  "known_semantic_role": false,
+  "known_semantic_role": true,
   "absolute_rom_reads": [
     "#7CCF -> #0001",
     "#7CDE -> #0001"

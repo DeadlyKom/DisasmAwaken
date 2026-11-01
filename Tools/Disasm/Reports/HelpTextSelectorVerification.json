@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "cases": 65536,
+  "all_256_a_by_256_f": true,
+  "source_slot": 8,
+  "source_bank": 7,
+  "exact_main_alternate_index_i_im_iff_preserved": true,
+  "exact_single_byte_write_to_ld_a_operand": true,
+  "target_instruction": 56064,
+  "target_operand": 56065,
+  "sp_plus_two_and_cpu_return": true,
+  "subsequent_indexer_not_executed": true,
+  "selected_record_existence_not_checked": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

@@ -1,0 +1,48 @@
+{
+  "passed": true,
+  "new_entry": 32560,
+  "bank": 5,
+  "slot": 4,
+  "offset": 8668,
+  "new_code_bytes": 3,
+  "new_instructions": 1,
+  "evidence": [
+    {
+      "address": 32542,
+      "operation": "PUSH AF",
+      "hex": "f5",
+      "slot": 4,
+      "offset": 8650
+    },
+    {
+      "address": 32549,
+      "operation": "JP Z,#7F33",
+      "hex": "ca337f",
+      "slot": 4,
+      "offset": 8657
+    },
+    {
+      "address": 32555,
+      "operation": "LD DE,#7F30",
+      "hex": "11307f",
+      "slot": 4,
+      "offset": 8663
+    },
+    {
+      "address": 32558,
+      "operation": "PUSH DE",
+      "hex": "d5",
+      "slot": 4,
+      "offset": 8666
+    },
+    {
+      "address": 32559,
+      "operation": "JP (HL)",
+      "hex": "e9",
+      "slot": 4,
+      "offset": 8667
+    }
+  ],
+  "physical_bytes_preserved": true,
+  "assembly_executed": false
+}

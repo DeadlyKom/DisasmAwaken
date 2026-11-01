@@ -138,6 +138,72 @@ def main():
     if not all(all(c) for c in coverage.values()):
         raise ValueError("Неполное покрытие действующих областей")
 
+    # Проверка разнесённых физических указателей музыкальных эффектов, код между ними не считается таблицей.
+    from MusicEffectTables import TABLES as MUSIC_EFFECT_TABLES, parse as parse_music_effect_table
+    music_effect_records = 0
+    for table in MUSIC_EFFECT_TABLES:
+        module, path, start, entries = table
+        matches = [item for item in source_map if item['path'] == path]
+        if not matches:
+            continue
+        assert len(matches) == 1
+        item = matches[0]
+        raw, labels = parse_music_effect_table((ROOT/path).read_text('utf-8'), table, symbols)
+        assert (item['slot'], item['offset'], item['length'], item['origin']) == (10, start-0xDB00, len(entries)*2, start)
+        assert raw == sources[10][start-0xDB00:start-0xDB00+len(raw)]
+        assert all(symbols.get(k) == v for k, v in labels.items())
+        assert symbols['FMUSICEFFECTTARGET'] == 2 and symbols['FMUSICEFFECTTARGET.HANDLER'] == 0
+        music_effect_records += len(entries)
+    assert music_effect_records in (0, 21)
+
+    # Проверка физических таблиц музыки, размеров полей и каждого исходного байта.
+    from MusicPlayerTables import TABLES as MUSIC_PLAYER_TABLES, parse as parse_music_player_table
+    music_player_records = {}
+    for table in MUSIC_PLAYER_TABLES:
+        module, path, start, end, structure, fields, names = table
+        matches = [item for item in source_map if item['path'] == path]
+        if not matches:
+            continue
+        assert len(matches) == 1
+        item = matches[0]
+        raw, labels = parse_music_player_table((ROOT/path).read_text('utf-8'), table)
+        assert (item['slot'], item['offset'], item['length'], item['origin']) == (10, start, end-start, 0xDB00+start)
+        assert raw == sources[10][start:end]
+        assert all(symbols.get(key.upper()) == value for key, value in labels.items())
+        field_offset = 0
+        for name, width, _ in fields:
+            assert symbols[structure.upper()+'.'+name.upper()] == field_offset
+            field_offset += width
+        assert symbols[structure.upper()] == field_offset
+        music_player_records[path] = len(names)
+    assert len(music_player_records) in (0, 6)
+
+    # Проверка физических записей композиции и точной грамматики фактических DB-команд.
+    from MusicCompositionSource import descriptions as composition_descriptions, parse as parse_composition, STRUCTURES as COMPOSITION_STRUCTURES
+    composition = sources[10][0xC00:0x1C29]
+    music_composition_parts = 0
+    for item_description in composition_descriptions(composition):
+        path = item_description['path']
+        matches = [item for item in source_map if item['path'] == path]
+        if not matches:
+            continue
+        assert len(matches) == 1
+        item = matches[0]
+        start, length = item_description['offset'], item_description['length']
+        raw, labels = parse_composition((ROOT/path).read_text('utf-8'), composition, item_description)
+        assert (item['slot'], item['offset'], item['length'], item['origin']) == (10, 0xC00+start, length, 0xE700+start)
+        assert raw == composition[start:start+length]
+        assert all(symbols.get(key.upper()) == value for key, value in labels.items())
+        music_composition_parts += 1
+    assert music_composition_parts in (0, 72)
+    if music_composition_parts:
+        for structure, fields in COMPOSITION_STRUCTURES.items():
+            offset = 0
+            for name, width, directive, note in fields:
+                assert symbols[structure.upper()+'.'+name.upper()] == offset
+                offset += width
+            assert symbols[structure.upper()] == offset
+
     # Проверка фактически записанного CP866-сценария по DB и адресам его именованных входов.
     market_script_bytes = 0
     market_script_labels = 0
@@ -257,6 +323,30 @@ def main():
         if symbols.get(structure.upper()) != offset:
             raise ValueError('Изменился размер '+structure)
         preview_scene_records[module] = len(names)
+
+    # Проверка физической таблицы HELP с отдельным адресом загрузки банка 7.
+    from HelpLineIndexFacts import TABLE as HELP_LINE_TABLE
+    module,path,start,end,structure,fields,names = HELP_LINE_TABLE
+    entries = [item for item in source_map if item['path'] == path]
+    if len(entries) != 1 or (entries[0]['slot'],entries[0]['offset'],entries[0]['length'],entries[0]['origin']) != (8,start,end-start,0xDB00+start):
+        raise ValueError('Изменилось размещение таблицы HELP')
+    raw,labels = parse_preview_scene((ROOT/path).read_text('utf-8'), HELP_LINE_TABLE, 0xDB00)
+    if raw != sources[8][start:end] or any(symbols.get(key.upper()) != value for key,value in labels.items()):
+        raise ValueError('Изменились указатели либо поля HELP')
+    if symbols.get('FHELPLINEPOINTER') != 2 or symbols.get('FHELPLINEPOINTER.TEXTADDRESS') != 0:
+        raise ValueError('Изменилась структура указателя HELP')
+
+    # Проверка трёх физических четырёхбайтовых обозначений клавиш в фиксированном банке 2.
+    from KeyLabelFacts import TABLE as KEY_LABEL_TABLE
+    module,path,start,end,structure,fields,names = KEY_LABEL_TABLE
+    entries = [item for item in source_map if item['path'] == path]
+    if len(entries) != 1 or (entries[0]['slot'],entries[0]['offset'],entries[0]['length'],entries[0]['origin']) != (4,start,end-start,0x6000+start):
+        raise ValueError('Изменилось размещение клавишных обозначений')
+    raw,labels = parse_preview_scene((ROOT/path).read_text('utf-8'), KEY_LABEL_TABLE, 0x6000)
+    if raw != sources[4][start:end] or any(symbols.get(key.upper()) != value for key,value in labels.items()):
+        raise ValueError('Изменились клавишные обозначения либо их поля')
+    if symbols.get(structure.upper()) != 4 or any(symbols.get(structure.upper()+'.'+field.upper()) != index for index,(field,_,_) in enumerate(fields)):
+        raise ValueError('Изменилась структура клавишного обозначения')
 
     # Проверка реальных структур, меток и каждого исходного байта префиксов моделей.
     from PreviewModelGroupTables import tables as preview_model_tables, parse as parse_preview_model, STRUCTURES as PREVIEW_MODEL_STRUCTURES
@@ -655,6 +745,22 @@ def main():
             raise ValueError("Изменились имя либо тип ACTION")
         action_file_keys = 1
 
+    # Проверка исходного общего имени SAVE1 как физического FTrDosFileKey.
+    save_slot_file_keys = 0
+    path = "Source/Station/Data/SaveSlotFileName.asm"
+    entries = [item for item in source_map if item['path'] == path]
+    if entries:
+        if len(entries) != 1 or (entries[0]['slot'], entries[0]['offset'], entries[0]['length'], entries[0]['origin']) != (4, 0x17DC, 9, 0x7530):
+            raise ValueError('Изменилось размещение ключа SAVE1')
+        text = (ROOT / path).read_text(encoding='utf-8')
+        found = re.findall(r'FTrDosFileKey\s*\{\s*\{\s*"([^"]*)"\s*\}\s*,\s*#([0-9A-Fa-f]+)\s*\}', text)
+        if len(found) != 1 or len(found[0][0]) != 8:
+            raise ValueError('Не найден физический ключ SAVE1')
+        raw = found[0][0].encode('ascii') + bytes([int(found[0][1], 16)])
+        if raw != sources[4][0x17DC:0x17E5] or symbols.get('SAVESLOTFILENAME.ENTRY') != 0x7530:
+            raise ValueError('Изменились имя, тип либо адрес ключа SAVE1')
+        save_slot_file_keys = 1
+
     # Проверка физического имени FINALF в перенесённом финальном выходе.
     final_file_keys = 0
     path = "Source/StationFinalExit/Data/FinalFileName.asm"
@@ -973,6 +1079,7 @@ def main():
 
     # Проверка типизированных заголовков, потоков и секторных хвостов всех экранных блоков.
     screens = read_json("Screens.json")
+    packed_final_byte_records = 0
     for screen in screens:
         path = ROOT/screen["path"]
         text = path.read_text(encoding="utf-8")
@@ -980,17 +1087,27 @@ def main():
         header = re.search(r"FPackedHeader\s*\{([^}]+)\}",text)[1]
         values = [number(v) for v in header.split(",")]
         raw = b"".join(v.to_bytes(2,"little") for v in values)
+        final_bytes = re.search(r"FPackedFinalBytes\s*\{([^}]+)\}",text)
+        if final_bytes:
+            final_words = [number(v) for v in final_bytes[1].split(",")]
+            if len(final_words) != 3:
+                raise ValueError("Сохранённый конец HR должен содержать три слова")
+            raw += b"".join(v.to_bytes(2,"little") for v in final_words)
+            packed_final_byte_records += 1
         for name in re.findall(r'incbin\s+"([^"]+)"',text,re.I):
             raw += (path.parent/name).read_bytes()
         offset = screen["offset"]
         if raw != sources[screen["slot"]][offset:offset+screen["allocated_size"]]:
             raise ValueError("Экранный ресурс отличается от оригинала")
+    if packed_final_byte_records not in (0, len(screens)):
+        raise ValueError("Типизация финальных байтов должна охватывать все HR-ресурсы")
     report = dict(method="text_and_resource_comparison_without_assembly", passed=True,
                   instruction_count=code_count, active_allocations=len(coverage),
                   covered_bytes=sum(len(c) for c in coverage.values()),
                   interface_records=len(records), script_token_records=len(tokens), texture_phase_records=len(phases), glyph_route_records=len(glyph_routes), packed_screens=len(screens),
-                  pointer_records=pointer_counts, mouse_records=mouse_records, pointer_input_records=pointer_input_records, station_irq_records=station_irq_records, matrix_key_records=matrix_key_records, setting_records=setting_records, setting_text_bytes=setting_text_bytes, context_menu_bytes=context_menu_bytes, random_state_records=random_state_records, signature_input_records=signature_input_records, market_records=market_records, assignment_records=assignment_records, action_file_keys=action_file_keys, final_file_keys=final_file_keys, expression_stack_records=expression_stack_records, rank_threshold_records=rank_threshold_records, rank_text_bytes=rank_text_bytes, mission_offer_records=mission_offer_records, system_prefix_bytes=system_prefix_bytes, mission_message_bytes=mission_message_bytes, mission_text_bytes=mission_text_bytes, stored_map_point_records=stored_map_point_records, stored_map_order_records=stored_map_order_records, clip_work_records=clip_work_records, clip_output_size_bytes=clip_output_size_bytes, semantic_completeness_proved=False)
+                  pointer_records=pointer_counts, mouse_records=mouse_records, pointer_input_records=pointer_input_records, station_irq_records=station_irq_records, matrix_key_records=matrix_key_records, setting_records=setting_records, setting_text_bytes=setting_text_bytes, context_menu_bytes=context_menu_bytes, random_state_records=random_state_records, signature_input_records=signature_input_records, market_records=market_records, assignment_records=assignment_records, action_file_keys=action_file_keys, save_slot_file_keys=save_slot_file_keys, final_file_keys=final_file_keys, expression_stack_records=expression_stack_records, rank_threshold_records=rank_threshold_records, rank_text_bytes=rank_text_bytes, mission_offer_records=mission_offer_records, system_prefix_bytes=system_prefix_bytes, mission_message_bytes=mission_message_bytes, mission_text_bytes=mission_text_bytes, stored_map_point_records=stored_map_point_records, stored_map_order_records=stored_map_order_records, clip_work_records=clip_work_records, clip_output_size_bytes=clip_output_size_bytes, semantic_completeness_proved=False)
     report['map_line_records'] = map_line_records
+    report['packed_final_byte_records'] = packed_final_byte_records
     report['map_chain_point_records'] = map_chain_point_records
     report['arc_workspace_records'] = arc_workspace_records
     report['marker_sprite_phase_records'] = marker_sprite_phase_records
@@ -1007,10 +1124,15 @@ def main():
     report['model_availability_records'] = model_availability_records
     report['preview_queue_records'] = preview_queue_records
     report['preview_square_bytes'] = preview_square_bytes
+    report['key_abbreviation_records'] = 3
+    report['help_line_cache_records'] = 1024
     report['preview_scene_records'] = preview_scene_records
     report['preview_model_group_records'] = preview_model_records
     report['preview_projected_vertices'] = preview_projected_vertices
     report['preview_pixel_masks'] = preview_pixel_masks
+    report['music_effect_records'] = music_effect_records
+    report['music_player_records'] = music_player_records
+    report['music_composition_parts'] = music_composition_parts
     (ROOT/"Tools/Disasm/Reports/SourceVerification.json").write_text(
         json.dumps(report,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     print(json.dumps(report,ensure_ascii=False,indent=2))

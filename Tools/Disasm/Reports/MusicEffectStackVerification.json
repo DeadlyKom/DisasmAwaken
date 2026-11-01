@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "cases_by_sequence": {
+    "A.3_3": 65536,
+    "A.3_4": 65536,
+    "B.3_3": 65536,
+    "B.3_4": 65536,
+    "C.3_3": 65536,
+    "C.3_4": 65536
+  },
+  "total_cases": 393216,
+  "all_parameter_pairs": true,
+  "physical_deferred_stack_words_checked": true,
+  "lifo_execution_order_checked": true,
+  "physical_struct_fields_checked": true,
+  "duplicate_sample_command_overwrite_checked": true,
+  "every_memory_write_observed": true,
+  "all_effect_permutations_proved": false,
+  "irq_executed": false,
+  "assembly_executed": false
+}

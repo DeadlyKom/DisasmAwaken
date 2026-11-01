@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "cases_by_path": {
+    "close_same_character_row": 508,
+    "other_row_no_close": 508,
+    "selection_no_content_action": 8,
+    "high_selector_no_action": 1024,
+    "real_repaint_then_carry_return": 16,
+    "real_caption_im2": 16
+  },
+  "all_full_selectors": true,
+  "whole_512_byte_list_and_128_byte_shifts": true,
+  "real_repaint_caption_text_and_pointer": true,
+  "draw_hl_result_not_restored": true,
+  "repaint_final_page_10": true,
+  "fixture_b400_original_code_verified": true,
+  "independent_whole_repaint_bitmap": false,
+  "irq_only_at_caption_halt": true,
+  "music_disabled": true,
+  "native_execution": false,
+  "assembly_executed": false
+}

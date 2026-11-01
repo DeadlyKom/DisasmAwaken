@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "previously_named_contracts_described": 2,
+  "misleading_name_corrected": true,
+  "physical_resource_bytes": 3749,
+  "instructions_changed": 0,
+  "original_bytes_preserved": true,
+  "assembly_executed": false
+}

@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "cases_by_path": {
+    "wrapper_helper_equivalence": 288
+  },
+  "row_counts": [
+    0,
+    1,
+    2,
+    30,
+    31,
+    255
+  ],
+  "mutable_row_count_preserved": true,
+  "real_hover_xor_and_pointer_helpers": true,
+  "whole_memory_and_register_equivalence": true,
+  "independent_hover_bitmap": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

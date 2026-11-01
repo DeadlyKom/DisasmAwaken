@@ -1014,4 +1014,250 @@ Third           db #00                                                          
                 ends
                 assert FPreviewObjectAngles == #03
 
+                ; Документация [кэш строк HELP](../../Docs/HelpLineIndex.md)
+                struct FHelpLinePointer
+TextAddress     dw #0000                                                        ; начало строки в банке 7, ноль обозначает свободную запись
+                ends
+                assert FHelpLinePointer == #02
+
+                ; Документация [обозначения клавиш](../../Docs/KeyLabels.md)
+                struct FKeyAbbreviation
+Glyph0          db #00                                                          ; код символа позиции 1 четырёхсимвольного обозначения
+Glyph1          db #00                                                          ; код символа позиции 2 четырёхсимвольного обозначения
+Glyph2          db #00                                                          ; код символа позиции 3 четырёхсимвольного обозначения
+Glyph3          db #00                                                          ; код символа позиции 4 четырёхсимвольного обозначения
+                ends
+                assert FKeyAbbreviation == #04
+
+                ; Документация [динамические кадры редактора настроек](../../Docs/SettingsPanelActions.md)
+                struct FSettingsEditFrame
+SavedIndex      dw #0000                                                        ; сохранённый индекс BC перед промежуточным рисунком
+ValuePointer    dw #0000                                                        ; сохранённый HL изменяемого символа
+ReturnAddress   dw #0000                                                        ; внешний обычный CPU-возврат действия
+                ends
+                assert FSettingsEditFrame == #06
+
+                struct FSettingsWaitFrame
+ValuePointer    dw #0000                                                        ; указатель символа, остающийся на стеке во время ввода
+ReturnAddress   dw #0000                                                        ; внешний обычный CPU-возврат после снятия указателя
+                ends
+                assert FSettingsWaitFrame == #04
+
+                ; Документация [кадры непрямого действия](../../Docs/PackedWordAndActionReturn.md)
+                struct FActionDrawFrame
+DrawReturn      dw #0000                                                        ; созданный адрес 7F30, снимается RET рисователя
+SavedAF         dw #0000                                                        ; сохранённые F в младшем и A в старшем байте
+ReturnAddress   dw #0000                                                        ; внешний обычный CPU-возврат действия
+                ends
+                assert FActionDrawFrame == #06
+
+                struct FActionReturnFrame
+SavedAF         dw #0000                                                        ; сохранённый AF после снятия созданного DrawReturn
+ReturnAddress   dw #0000                                                        ; внешний обычный CPU-возврат после POP AF
+                ends
+                assert FActionReturnFrame == #04
+
+                ; Документация [кадры дискового протокола слотов](../../Docs/SaveSlots.md)
+                struct FSaveSlotFrame
+SavedDE         dw #0000                                                        ; выбранный индекс панели записи
+SavedAF         dw #0000                                                        ; A=3F и фактические флаги LD A,I
+SavedHL         dw #0000                                                        ; HL в начале TransferState, обычно выбранный рисователь
+SavedIY         dw #0000                                                        ; IY до замены на системный 5C3A
+ReturnAddress   dw #0000                                                        ; внешний CPU-возврат действия
+                ends
+                ; проверка физического размера FSaveSlotFrame
+                assert FSaveSlotFrame == #0A
+
+                struct FLoadSlotFrame
+SavedIY         dw #0000                                                        ; IY до замены на системный 5C3A
+SavedAF         dw #0000                                                        ; A=3F и флаги LD A,I после арифметики цифры
+SavedDE         dw #0000                                                        ; выбранный индекс панели чтения
+SavedHL         dw #0000                                                        ; адрес цифры имени 7534, исходный HL уже заменён
+ReturnAddress   dw #0000                                                        ; внешний CPU-возврат действия
+                ends
+                ; проверка физического размера FLoadSlotFrame
+                assert FLoadSlotFrame == #0A
+
+                ; Документация [физические кадры печати оснащения](../../Docs/EquipmentListPanels.md)
+                struct FEquipmentRowsFrame
+TopRow          dw #0000                                                        ; полное слово индекса, сохранённое последним PUSH DE
+QuantityBase    dw #0000                                                        ; исходный адрес таблицы количеств 988E
+ThresholdBase   dw #0000                                                        ; исходный адрес пар порог-вес 95F0
+ShipSetsBase    dw #0000                                                        ; исходный адрес четырёхбайтовых наборов 9400
+SavedShipAF     dw #0000                                                        ; F в младшем байте и текущий тип корабля в старшем
+PricesBase      dw #0000                                                        ; исходный адрес слов цен 9592
+ReturnAddress   dw #0000                                                        ; внешний CPU-возврат печатателя
+                ends
+                ; проверка физического размера FEquipmentRowsFrame
+                assert FEquipmentRowsFrame == #0E
+
+                struct FEquipmentMarkFrame
+TablePointer    dw #0000                                                        ; начало текущего набора четырёх типов перед поиском
+ReturnAddress   dw #0000                                                        ; внешний CPU-возврат, возможен до обратного EXX
+                ends
+                ; проверка физического размера FEquipmentMarkFrame
+                assert FEquipmentMarkFrame == #04
+
+                ; Документация [продолжения приветственного шаблона](../../Docs/WelcomePanel.md)
+                struct FWelcomeTextFrame
+Continuation    dw #0000                                                        ; фактический HL после печати части шаблона
+ReturnAddress   dw #0000                                                        ; внешний обычный CPU-возврат рисователя
+                ends
+                assert FWelcomeTextFrame == #04
+
+                ; Документация [двухсловный вход выхода из музыки](../../Docs/StopMusic.md)
+                struct FStopMusicReturnFrame
+HLWord          dw #0000                                                        ; первое входное слово снимается POP HL, его происхождение вызывающим кодом не установлено
+ReturnAddress   dw #0000                                                        ; второе входное слово становится PC через RET
+                ends
+                ; проверка физического размера двухсловного входа
+                assert FStopMusicReturnFrame == #04
+
+                ; Документация [сохранённый конец HR-ресурса](../../Docs/UnpackResource.md)
+                struct FUnpackTailFrame
+FinalWord0      dw #0000                                                        ; пара исходных байтов 6..7, последние байты результата U-6 и U-5
+FinalWord1      dw #0000                                                        ; пара исходных байтов 8..9, последние байты результата U-4 и U-3
+FinalWord2      dw #0000                                                        ; пара исходных байтов 10..11, последние байты результата U-2 и U-1
+ReturnAddress   dw #0000                                                        ; внешний CPU-возврат распаковщика под тремя сохранёнными словами
+                ends
+                ; проверка трёх сохранённых слов и внешнего возврата
+                assert FUnpackTailFrame == #08
+
+                ; Документация [физический префикс сжатых ресурсов](../../Docs/PackedResourcePrefix.md)
+                struct FPackedFinalBytes
+BytesMinus6     dw #0000                                                        ; два финальных байта результата по U-6 и U-5
+BytesMinus4     dw #0000                                                        ; два финальных байта результата по U-4 и U-3
+BytesMinus2     dw #0000                                                        ; два финальных байта результата по U-2 и U-1
+                ends
+                ; проверка трёх физических пар финальных байтов
+                assert FPackedFinalBytes == #06
+
+
+                ; Два физических байта адреса отложенного обработчика, код команды задан положением записи
+                struct FMusicEffectTarget
+Handler         dw #0000                                                        ; адрес обработчика в исходном банке MUZ1
+                ends
+                assert FMusicEffectTarget == 2
+
+                ; Два отложенных эффекта и внешний возврат, физическая динамическая рамка CPU-стека
+                struct FMusicDeferredPairFrame
+LatestHandler   dw #0000                                                        ; последний помещённый адрес, его RET исполняет первым
+EarlierHandler  dw #0000                                                        ; ранее помещённый адрес, его RET исполняет вторым
+CallerReturn    dw #0000                                                        ; исходный внешний возврат после двух обработчиков
+                ends
+                assert FMusicDeferredPairFrame == 6
+
+                ; Циклический заголовок исходных сэмплов и орнаментов, данные следуют сразу за ним
+                struct FMusicLoopHeader
+LoopPosition    db #00                                                          ; позиция возврата после достижения Length
+Length          db #00                                                          ; предел следующей позиции, нулевой предел не нормализуется
+                ends
+                assert FMusicLoopHeader == 2
+
+                ; Четыре физических байта шага сэмпла, сначала читаются как DE, затем как BC
+                ; ShiftControl, схема разрядов 7..0:
+                ;   7 6 5 4 3 2 1 0
+                ;   A D S S S S S F
+                ; A, обновить поправку уровня, D, единица увеличивает её, ноль уменьшает
+                ; S, пятибитовый вклад огибающей, шумовой путь использует весь ShiftControl >> 1
+                ; F, единица пропускает добавление маски огибающей к уровню
+                ; LevelModes, схема разрядов 7..0:
+                ;   7 6 5 4 3 2 1 0
+                ;   E T S M V V V V
+                ; E, вклад относится к огибающей, иначе к шуму, этот же бит попадает в старшую тройку микшера
+                ; T, сохранять тональную поправку, S, сохранять шумовой либо огибающий вклад между кадрами
+                ; M, бит младшей тройки микшера, V, базовый уровень 0..15
+                ; нулевые управляющие байты задают базовый уровень 0 и режим шума без накопления
+                struct FMusicSampleStep
+ShiftControl    db #00                                                          ; совмещённое управление уровнем, сдвигом и маской огибающей
+LevelModes      db #00                                                          ; базовый уровень, режим вклада и накопления, биты микшера
+ToneDelta       dw #0000                                                        ; знаковое слово текущей тональной поправки
+                ends
+                assert FMusicSampleStep == 4
+
+
+                ; Исходные физические данные проигрывателя, поля не выделяют новую память
+                struct FMusicDataPointer
+Address         dw #0000                                                        ; абсолютный указатель после InitializeModule, исходный ноль сохраняется
+                ends
+                assert FMusicDataPointer == 2
+
+                struct FMusicAyRegisters
+ToneA           dw #0000                                                        ; буфер периода тона A для регистров AY 0 и 1
+ToneB           dw #0000                                                        ; буфер периода тона B для регистров AY 2 и 3
+ToneC           dw #0000                                                        ; буфер периода тона C для регистров AY 4 и 5
+Noise           db #00                                                          ; базовый буфер шума, при выводе добавляется текущий вклад IXH
+Mixer           db #00                                                          ; буфер микшера, перед выводом заменяется IXL
+LevelA          db #00                                                          ; сформированный уровень и маска огибающей A
+LevelB          db #00                                                          ; сформированный уровень и маска огибающей B
+LevelC          db #00                                                          ; сформированный уровень и маска огибающей C
+EnvelopePeriod  dw #0000                                                        ; буфер периода общей огибающей
+EnvelopeShape   db #00                                                          ; нулевой байт пропускает OUT регистра 13, ненулевой выводится и очищается
+                ends
+                assert FMusicAyRegisters == 14
+
+                struct FMusicRowCounter
+Remaining       db #00                                                          ; байтовая длительность строки, DEC исходного нуля даёт FF
+                ends
+                assert FMusicRowCounter == 1
+
+                struct FMusicVolumeRow
+Level00         db #00                                                          ; готовый уровень для входной амплитуды 0
+Level01         db #00                                                          ; готовый уровень для входной амплитуды 1
+Level02         db #00                                                          ; готовый уровень для входной амплитуды 2
+Level03         db #00                                                          ; готовый уровень для входной амплитуды 3
+Level04         db #00                                                          ; готовый уровень для входной амплитуды 4
+Level05         db #00                                                          ; готовый уровень для входной амплитуды 5
+Level06         db #00                                                          ; готовый уровень для входной амплитуды 6
+Level07         db #00                                                          ; готовый уровень для входной амплитуды 7
+Level08         db #00                                                          ; готовый уровень для входной амплитуды 8
+Level09         db #00                                                          ; готовый уровень для входной амплитуды 9
+Level0A         db #00                                                          ; готовый уровень для входной амплитуды 10
+Level0B         db #00                                                          ; готовый уровень для входной амплитуды 11
+Level0C         db #00                                                          ; готовый уровень для входной амплитуды 12
+Level0D         db #00                                                          ; готовый уровень для входной амплитуды 13
+Level0E         db #00                                                          ; готовый уровень для входной амплитуды 14
+Level0F         db #00                                                          ; готовый уровень для входной амплитуды 15
+                ends
+                assert FMusicVolumeRow == 16
+
+                struct FMusicNotePeriod
+Period          dw #0000                                                        ; исходное little endian слово периода по индексу ноты
+                ends
+                assert FMusicNotePeriod == 2
+
+
+                ; Физические поля исходной композиции, адреса и байты не меняются
+                struct FMusicModuleHeader
+Description     text 99, { #00 }                                                ; 99 исходных символов названия, автора и строки компилятора
+Unknown63       db #00                                                          ; исходный байт 02 по смещению 99, InitializeModule его пропускает, назначение не доказано
+RowTempo        db #00                                                          ; начальное количество тиков на строку, копируется в изменяемый операнд
+PositionCount   db #00                                                          ; байт количества позиций, попадает в F при POP AF, границу списка задаёт FF
+LoopIndex       db #00                                                          ; смещение позиции возврата от начала списка в байтах
+PatternTable    dw #0000                                                        ; относительный адрес таблицы троек указателей
+                ends
+                assert FMusicModuleHeader == 105
+
+                struct FMusicRelativePointer
+Offset          dw #0000                                                        ; относительный адрес от начала композиции, ноль сохраняется буквально
+                ends
+                assert FMusicRelativePointer == 2
+
+                struct FMusicPositionByte
+Value           db #00                                                          ; смещение в единицах слова для тройки паттернов, FF завершает список
+                ends
+                assert FMusicPositionByte == 1
+
+                struct FMusicPatternPointers
+ChannelA        dw #0000                                                        ; относительный адрес потока A
+ChannelB        dw #0000                                                        ; относительный адрес потока B
+ChannelC        dw #0000                                                        ; относительный адрес потока C
+                ends
+                assert FMusicPatternPointers == 6
+
+                struct FMusicOrnamentStep
+NoteDelta       db #00                                                          ; байтовая поправка индекса ноты с оборачиванием при сложении
+                ends
+                assert FMusicOrnamentStep == 1
+
                 endif

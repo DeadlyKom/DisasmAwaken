@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "cases_by_path": {
+    "confirmed_original_trade_and_redraw": 120,
+    "real_caption_im2": 210,
+    "first_choice_updates_description_only": 60,
+    "ff_without_selection": 3,
+    "scroll_height_rejection": 127,
+    "close_four_panels": 127,
+    "high_selector_return": 256,
+    "complete_scroll_actions": 24,
+    "independent_scroll_body_bitmaps": 28,
+    "real_scroll_im2": 28,
+    "all_owned_mode_bytes": 256
+  },
+  "first_selection_does_not_trade": true,
+  "repeated_selection_uses_original_lang": true,
+  "actual_helpers_and_banks": true,
+  "independent_scroll_body_bitmap": true,
+  "independent_whole_redraw_bitmap": false,
+  "irq_only_at_halt": true,
+  "music_disabled": true,
+  "native_execution": false,
+  "assembly_executed": false
+}

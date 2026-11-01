@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "refined_contracts": 4,
+  "instructions_changed": 0,
+  "physical_bytes_preserved": true,
+  "mute_af_exhaustive": true,
+  "initialization_partial_reset_explicit": true,
+  "assembly_executed": false
+}

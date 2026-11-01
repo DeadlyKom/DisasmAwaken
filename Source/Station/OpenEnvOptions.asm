@@ -17,7 +17,7 @@
 ;   код окна не исполняется, рисование и обработка содержимого будут выполнены последующим перестроением
 ; -----------------------------------------
                 ; выбор окна установок среды по обёртке Item41
-Entry:          LD HL, @Station.DrawItem41.Entry
+Entry:          LD HL, @Station.DrawEnvironmentPanel.Entry
                 JP #CBA9
 
                 endmodule

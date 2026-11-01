@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "resources": 20,
+  "physical_bytes_preserved": true,
+  "source_files_updated": 20,
+  "payload_files_split": 20,
+  "separate_candidate_and_history": true,
+  "labels_final_bytes_at_6_and_bitstream_at_12": true,
+  "obsolete_payload_files_removed": 20,
+  "sector_tails_unchanged": true,
+  "assembly_executed": false
+}

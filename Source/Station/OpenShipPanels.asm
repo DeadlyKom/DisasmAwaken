@@ -30,10 +30,10 @@ Entry:          XOR A
                 LD HL, @Station.DrawItem30.Entry
                 CALL @Station.RestoreItemBounds.Entry
                 ; восстановление следующей панели в исходной последовательности 30, 29, 28, 25, 27, 26
-                LD HL, @Station.DrawItem29.Entry
+                LD HL, @Station.DrawPurchaseModeButton.Entry
                 CALL @Station.RestoreItemBounds.Entry
                 ; восстановление следующей панели в исходной последовательности 30, 29, 28, 25, 27, 26
-                LD HL, @Station.DrawItem28.Entry
+                LD HL, @Station.DrawSaleModeButton.Entry
                 CALL @Station.RestoreItemBounds.Entry
                 ; восстановление следующей панели в исходной последовательности 30, 29, 28, 25, 27, 26
                 LD HL, @Station.DrawModelListPanel.Entry
@@ -42,7 +42,7 @@ Entry:          XOR A
                 LD HL, @Station.DrawModelDescriptionPanel.Entry
                 CALL @Station.RestoreItemBounds.Entry
                 ; восстановление следующей панели в исходной последовательности 30, 29, 28, 25, 27, 26
-                LD HL, @Station.DrawItem26.Entry
+                LD HL, @Station.DrawShipPreview.Entry
                 JP @Station.RestoreItemBounds.Entry
 
                 endmodule

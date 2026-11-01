@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "cases_by_path": {
+    "carry_guard_af": 65536,
+    "new_index_words_before_contour": 131072,
+    "real_contour_calls": 1024,
+    "wrapper_equivalence": 8,
+    "disabled_wrapper_flags": 512
+  },
+  "physical_button_roles": [
+    {
+      "index": 36,
+      "caption": "Продажа",
+      "wrapper": 31552
+    },
+    {
+      "index": 37,
+      "caption": "Покупка",
+      "wrapper": 31525
+    }
+  ],
+  "all_previous_mode_bytes": true,
+  "independent_whole_contour_bitmap": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

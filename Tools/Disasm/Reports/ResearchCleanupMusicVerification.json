@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "archived_snapshots": 302,
+  "removed_expanded_files": 4455,
+  "archived_logical_bytes": 1149203729,
+  "unique_content_objects": 2893,
+  "unique_content_bytes": 643651853,
+  "archive_bytes": 77536565,
+  "archive": "Tools/Disasm/Research/Archives/RecentSnapshots-20261101-Music.zip",
+  "archive_sha256": "2fe281238391d8ee5e343c8833370bd1bebf231d0f7b9eb7bbdf1716c3b2bd78",
+  "retained_candidates": [
+    "AnimatedVariantCodeScoped",
+    "EventActionCodeScoped",
+    "PeriodicVariantCodeScoped"
+  ],
+  "active_files_checked": 4022,
+  "active_files_unchanged": true,
+  "originals_and_research_scripts_preserved": true,
+  "snapshot_directory_guards_preserved": true,
+  "assembly_executed": false
+}

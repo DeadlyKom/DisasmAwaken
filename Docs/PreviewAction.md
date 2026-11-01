@@ -1,6 +1,6 @@
 # Действие панели 3D-просмотра
 
-[HandleModelPreviewClick](../Source/Station/HandleModelPreviewClick.asm) занимает #683A..#686E банка станции 0. Это действие по EventHandler+3, [пустое наведение](PreviewHover.md) и рисователь DrawItem26 являются отдельными потоками.
+[HandleModelPreviewClick](../Source/Station/HandleModelPreviewClick.asm) занимает #683A..#686E банка станции 0. Это действие по EventHandler+3, [пустое наведение](PreviewHover.md) и рисователь DrawShipPreview являются отдельными потоками.
 
 ## Общий выбор
 

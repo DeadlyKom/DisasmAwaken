@@ -1,0 +1,329 @@
+{
+  "passed": true,
+  "cases_by_route": {
+    "A.deferred_pointer": 4096,
+    "A.envelope_sample": 12288,
+    "A.ornament": 4096,
+    "A.note": 24576,
+    "A.envelope_or_delay": 4096,
+    "A.volume_or_release": 4096,
+    "A.sample_or_end": 8192,
+    "A.sample_ornament": 4096,
+    "B.deferred_pointer": 4096,
+    "B.envelope_sample": 4096,
+    "B.noise": 8192,
+    "B.ornament": 4096,
+    "B.note": 24576,
+    "B.envelope_or_delay": 4096,
+    "B.volume_or_release": 4096,
+    "B.sample_or_end": 8192,
+    "B.sample_ornament": 4096,
+    "C.deferred_pointer": 4096,
+    "C.envelope_sample": 12288,
+    "C.ornament": 4096,
+    "C.note": 24576,
+    "C.envelope_or_delay": 4096,
+    "C.volume_or_release": 4096,
+    "C.sample_or_end": 8192,
+    "C.sample_ornament": 4096
+  },
+  "total_cases": 196608,
+  "all_opcode_and_input_flag_bytes": true,
+  "deferred_words": [
+    {
+      "channel": "A",
+      "opcode": 0,
+      "address": 56766,
+      "target": 13
+    },
+    {
+      "channel": "A",
+      "opcode": 1,
+      "address": 56768,
+      "target": 58892
+    },
+    {
+      "channel": "A",
+      "opcode": 10,
+      "address": 56786,
+      "target": 38706
+    },
+    {
+      "channel": "A",
+      "opcode": 11,
+      "address": 56788,
+      "target": 6878
+    },
+    {
+      "channel": "A",
+      "opcode": 12,
+      "address": 56790,
+      "target": 12819
+    },
+    {
+      "channel": "A",
+      "opcode": 13,
+      "address": 56792,
+      "target": 56991
+    },
+    {
+      "channel": "A",
+      "opcode": 14,
+      "address": 56794,
+      "target": 1598
+    },
+    {
+      "channel": "A",
+      "opcode": 15,
+      "address": 56796,
+      "target": 36914
+    },
+    {
+      "channel": "A",
+      "opcode": 2,
+      "address": 56770,
+      "target": 58915
+    },
+    {
+      "channel": "A",
+      "opcode": 3,
+      "address": 56772,
+      "target": 58951
+    },
+    {
+      "channel": "A",
+      "opcode": 4,
+      "address": 56774,
+      "target": 58962
+    },
+    {
+      "channel": "A",
+      "opcode": 5,
+      "address": 56776,
+      "target": 56778
+    },
+    {
+      "channel": "A",
+      "opcode": 6,
+      "address": 56778,
+      "target": 4890
+    },
+    {
+      "channel": "A",
+      "opcode": 7,
+      "address": 56780,
+      "target": 1048
+    },
+    {
+      "channel": "A",
+      "opcode": 8,
+      "address": 56782,
+      "target": 56204
+    },
+    {
+      "channel": "A",
+      "opcode": 9,
+      "address": 56784,
+      "target": 59130
+    },
+    {
+      "channel": "B",
+      "opcode": 0,
+      "address": 56798,
+      "target": 51678
+    },
+    {
+      "channel": "B",
+      "opcode": 1,
+      "address": 56800,
+      "target": 58973
+    },
+    {
+      "channel": "B",
+      "opcode": 10,
+      "address": 56818,
+      "target": 9522
+    },
+    {
+      "channel": "B",
+      "opcode": 11,
+      "address": 56820,
+      "target": 6879
+    },
+    {
+      "channel": "B",
+      "opcode": 12,
+      "address": 56822,
+      "target": 12819
+    },
+    {
+      "channel": "B",
+      "opcode": 13,
+      "address": 56824,
+      "target": 57133
+    },
+    {
+      "channel": "B",
+      "opcode": 14,
+      "address": 56826,
+      "target": 1598
+    },
+    {
+      "channel": "B",
+      "opcode": 15,
+      "address": 56828,
+      "target": 7730
+    },
+    {
+      "channel": "B",
+      "opcode": 2,
+      "address": 56802,
+      "target": 58996
+    },
+    {
+      "channel": "B",
+      "opcode": 3,
+      "address": 56804,
+      "target": 59032
+    },
+    {
+      "channel": "B",
+      "opcode": 4,
+      "address": 56806,
+      "target": 59043
+    },
+    {
+      "channel": "B",
+      "opcode": 5,
+      "address": 56808,
+      "target": 56810
+    },
+    {
+      "channel": "B",
+      "opcode": 6,
+      "address": 56810,
+      "target": 4890
+    },
+    {
+      "channel": "B",
+      "opcode": 7,
+      "address": 56812,
+      "target": 1048
+    },
+    {
+      "channel": "B",
+      "opcode": 8,
+      "address": 56814,
+      "target": 56204
+    },
+    {
+      "channel": "B",
+      "opcode": 9,
+      "address": 56816,
+      "target": 59130
+    },
+    {
+      "channel": "C",
+      "opcode": 0,
+      "address": 57086,
+      "target": 57654
+    },
+    {
+      "channel": "C",
+      "opcode": 1,
+      "address": 56832,
+      "target": 59054
+    },
+    {
+      "channel": "C",
+      "opcode": 10,
+      "address": 56850,
+      "target": 59186
+    },
+    {
+      "channel": "C",
+      "opcode": 11,
+      "address": 56852,
+      "target": 13026
+    },
+    {
+      "channel": "C",
+      "opcode": 12,
+      "address": 56854,
+      "target": 58069
+    },
+    {
+      "channel": "C",
+      "opcode": 13,
+      "address": 56856,
+      "target": 4890
+    },
+    {
+      "channel": "C",
+      "opcode": 14,
+      "address": 56858,
+      "target": 58162
+    },
+    {
+      "channel": "C",
+      "opcode": 15,
+      "address": 56860,
+      "target": 51682
+    },
+    {
+      "channel": "C",
+      "opcode": 2,
+      "address": 56834,
+      "target": 59081
+    },
+    {
+      "channel": "C",
+      "opcode": 3,
+      "address": 56836,
+      "target": 59118
+    },
+    {
+      "channel": "C",
+      "opcode": 4,
+      "address": 56838,
+      "target": 59124
+    },
+    {
+      "channel": "C",
+      "opcode": 5,
+      "address": 56840,
+      "target": 56842
+    },
+    {
+      "channel": "C",
+      "opcode": 6,
+      "address": 56842,
+      "target": 4890
+    },
+    {
+      "channel": "C",
+      "opcode": 7,
+      "address": 56844,
+      "target": 1048
+    },
+    {
+      "channel": "C",
+      "opcode": 8,
+      "address": 56846,
+      "target": 56204
+    },
+    {
+      "channel": "C",
+      "opcode": 9,
+      "address": 56848,
+      "target": 59130
+    }
+  ],
+  "channel_b_has_distinct_noise_range": true,
+  "all_deferred_stack_words_checked": true,
+  "reserved_pointer_words_not_executed": true,
+  "handlers_not_executed": true,
+  "irq_executed": false,
+  "full_pattern_decode_proved": false,
+  "assembly_executed": false
+}

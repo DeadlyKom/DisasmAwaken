@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "cases_by_path": {
+    "empty_callback_all_af": 65536,
+    "real_install_and_close_callback": 2,
+    "draw_tail_equivalence": 4
+  },
+  "original_caption": "Перелет",
+  "physical_text_index": 40,
+  "explicit_callback_source": 31561,
+  "callback_target": 31568,
+  "actual_indirect_callback_executed": true,
+  "flight_algorithm_present_in_callback": false,
+  "independent_bitmap": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

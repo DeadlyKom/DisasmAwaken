@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "cases_by_path": {
+    "normal_index_passes": 374,
+    "rows_indexed": 5459,
+    "capacity_boundary_stopped_before_ldir": 1,
+    "nonprogress_stopped_before_repeated_store": 1
+  },
+  "actual_disk_records": 9,
+  "all_256_selector_bytes": true,
+  "entire_2048_byte_cache_and_end_guard_checked": true,
+  "independent_lf_selection_and_justified_row_layout": true,
+  "exact_main_index_alternate_context": true,
+  "final_flags_from_actual_zero_fill_ldi": true,
+  "maximum_rows_probed": 1024,
+  "safe_complete_domain_rows": [
+    1,
+    1023
+  ],
+  "n_1024_yields_ldir_count_65535": true,
+  "destructive_boundary_ldir_not_executed": true,
+  "glyph_prefix_restored": true,
+  "no_bitmap_writes": true,
+  "nonprogress_height_14_proved": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

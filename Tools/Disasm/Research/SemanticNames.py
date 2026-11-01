@@ -134,6 +134,59 @@ def name_operands(region, function_address, operation):
     operation = trade_panel_name_operands(region, function_address, operation)
     operation = control_panel_group_name_operands(region, function_address, operation)
     operation = ship_periodic_code_name_operands(region, function_address, operation)
+    operation = ship_preview_callback_name_operands(region, function_address, operation)
+    operation = music_initialization_name_operands(region, function_address, operation)
+    operation = musicadvancea_name_operands(region, function_address, operation)
+    operation = music_pattern_name_operands(region, function_address, operation)
+    operation = musicchannelarow_name_operands(region, function_address, operation)
+    operation = music_synthesis_name_operands(region, function_address, operation)
+    operation = music_effect_name_operands(region, function_address, operation)
+    operation = music_ay_output_name_operands(region, function_address, operation)
+    operation = music_gate_tick_name_operands(region, function_address, operation)
+    operation = musicchannelbrow_name_operands(region, function_address, operation)
+    operation = musicchannelbstaging_name_operands(region, function_address, operation)
+    operation = musicchannelastaging_name_operands(region, function_address, operation)
+    operation = music_envelope_command_name_operands(region, function_address, operation)
+    operation = music_envelope_name_operands(region, function_address, operation)
+    operation = mainloopexecution_name_operands(region, function_address, operation)
+    operation = unpackresource_name_operands(region, function_address, operation)
+    operation = statuspanelaction_name_operands(region, function_address, operation)
+    operation = stopmusic_name_operands(region, function_address, operation)
+    operation = panelopenadapters_name_operands(region, function_address, operation)
+    operation = counterevent_name_operands(region, function_address, operation)
+    operation = contractmap_name_operands(region, function_address, operation)
+    operation = flightbutton_name_operands(region, function_address, operation)
+    operation = tradebuttonactions_name_operands(region, function_address, operation)
+    operation = deferredactionadapters_name_operands(region, function_address, operation)
+    operation = listhoveradapters_name_operands(region, function_address, operation)
+    operation = missionpanelactions_name_operands(region, function_address, operation)
+    operation = equipmentlistaction_name_operands(region, function_address, operation)
+    operation = shiptradeaction_name_operands(region, function_address, operation)
+    operation = systemmapaction_name_operands(region, function_address, operation)
+    operation = saveslotpanels_name_operands(region, function_address, operation)
+    operation = saveslotprotocol_name_operands(region, function_address, operation)
+    operation = equipmentlisthover_name_operands(region, function_address, operation)
+    operation = equipmentlistpanels_name_operands(region, function_address, operation)
+    operation = passivepanelactions_name_operands(region, function_address, operation)
+    operation = welcomepanel_name_operands(region, function_address, operation)
+    operation = mappanelopening_name_operands(region, function_address, operation)
+    operation = equipmentlistsetup_name_operands(region, function_address, operation)
+    operation = equipmenttrademode_name_operands(region, function_address, operation)
+    operation = modeltrademode_name_operands(region, function_address, operation)
+    operation = helpnewsopening_name_operands(region, function_address, operation)
+    operation = passivepanelhovers_name_operands(region, function_address, operation)
+    operation = packedwordandactionreturn_name_operands(region, function_address, operation)
+    operation = settingspanelactions_name_operands(region, function_address, operation)
+    operation = settingsrowpanels_name_operands(region, function_address, operation)
+    operation = keylabel_name_operands(region, function_address, operation)
+    operation = equipmentinfo_name_operands(region, function_address, operation)
+    operation = helppanelactions_name_operands(region, function_address, operation)
+    operation = helppaneldraws_name_operands(region, function_address, operation)
+    operation = stationhelpcalls_name_operands(region, function_address, operation)
+    operation = shipmodelactionsstation_name_operands(region, function_address, operation)
+    operation = help_text_selector_name_operands(region, function_address, operation)
+    operation = help_line_index_name_operands(region, function_address, operation)
+    operation = help_text_output_name_operands(region, function_address, operation)
     operation = d3d_clip_name_operands(region, function_address, operation)
     operation = d3d_third_name_operands(region, function_address, operation)
     operation = sprite_line_table_name_operands(region, function_address, operation)
@@ -1152,3 +1205,208 @@ DOCUMENTS.update(PREVIEW_QUEUE_RENDER_DOCUMENTS)
 from PreviewFrameFacts import LABELS as PREVIEW_FRAME_LABELS, DOCUMENTS as PREVIEW_FRAME_DOCUMENTS, name_operands as previewframe_name_operands
 LABELS.update(PREVIEW_FRAME_LABELS)
 DOCUMENTS.update(PREVIEW_FRAME_DOCUMENTS)
+
+from ShipPreviewCallbackFacts import LABELS as SHIP_PREVIEW_CALLBACK_LABELS, DOCUMENTS as SHIP_PREVIEW_CALLBACK_DOCUMENTS, name_operands as ship_preview_callback_name_operands
+LABELS.update(SHIP_PREVIEW_CALLBACK_LABELS)
+DOCUMENTS.update(SHIP_PREVIEW_CALLBACK_DOCUMENTS)
+
+from ShipModelActionFacts import LABELS as SHIPMODELACTIONSSTATION_LABELS, DOCUMENTS as SHIPMODELACTIONSSTATION_DOCUMENTS, name_operands as shipmodelactionsstation_name_operands
+LABELS.update(SHIPMODELACTIONSSTATION_LABELS)
+DOCUMENTS.update(SHIPMODELACTIONSSTATION_DOCUMENTS)
+
+from HelpTextSelectorFacts import DOCUMENTS as HELP_TEXT_SELECTOR_DOCUMENTS, name_operands as help_text_selector_name_operands
+DOCUMENTS.update(HELP_TEXT_SELECTOR_DOCUMENTS)
+
+from HelpLineIndexFacts import DOCUMENTS as HELP_LINE_INDEX_DOCUMENTS, name_operands as help_line_index_name_operands
+DOCUMENTS.update(HELP_LINE_INDEX_DOCUMENTS)
+
+from HelpTextOutputFacts import DOCUMENTS as HELP_TEXT_OUTPUT_DOCUMENTS, name_operands as help_text_output_name_operands
+DOCUMENTS.update(HELP_TEXT_OUTPUT_DOCUMENTS)
+
+from StationHelpCallFacts import LABELS as STATIONHELPCALLS_LABELS, DOCUMENTS as STATIONHELPCALLS_DOCUMENTS, name_operands as stationhelpcalls_name_operands
+LABELS.update(STATIONHELPCALLS_LABELS)
+DOCUMENTS.update(STATIONHELPCALLS_DOCUMENTS)
+
+from HelpPanelDrawFacts import LABELS as HELPPANELDRAWS_LABELS, DOCUMENTS as HELPPANELDRAWS_DOCUMENTS, name_operands as helppaneldraws_name_operands
+LABELS.update(HELPPANELDRAWS_LABELS)
+DOCUMENTS.update(HELPPANELDRAWS_DOCUMENTS)
+
+from HelpPanelActionFacts import LABELS as HELPPANELACTIONS_LABELS, DOCUMENTS as HELPPANELACTIONS_DOCUMENTS, name_operands as helppanelactions_name_operands
+LABELS.update(HELPPANELACTIONS_LABELS)
+DOCUMENTS.update(HELPPANELACTIONS_DOCUMENTS)
+
+from EquipmentInfoFacts import LABELS as EQUIPMENTINFO_LABELS, DOCUMENTS as EQUIPMENTINFO_DOCUMENTS, name_operands as equipmentinfo_name_operands
+LABELS.update(EQUIPMENTINFO_LABELS)
+DOCUMENTS.update(EQUIPMENTINFO_DOCUMENTS)
+
+from KeyLabelFacts import LABELS as KEYLABEL_LABELS, DOCUMENTS as KEYLABEL_DOCUMENTS, name_operands as keylabel_name_operands
+LABELS.update(KEYLABEL_LABELS)
+DOCUMENTS.update(KEYLABEL_DOCUMENTS)
+
+from SettingsRowPanelFacts import LABELS as SETTINGSROWPANELS_LABELS, DOCUMENTS as SETTINGSROWPANELS_DOCUMENTS, name_operands as settingsrowpanels_name_operands
+LABELS.update(SETTINGSROWPANELS_LABELS)
+DOCUMENTS.update(SETTINGSROWPANELS_DOCUMENTS)
+
+from SettingsPanelActionFacts import LABELS as SETTINGSPANELACTIONS_LABELS, DOCUMENTS as SETTINGSPANELACTIONS_DOCUMENTS, name_operands as settingspanelactions_name_operands
+LABELS.update(SETTINGSPANELACTIONS_LABELS)
+DOCUMENTS.update(SETTINGSPANELACTIONS_DOCUMENTS)
+
+from PackedWordAndActionReturnFacts import LABELS as PACKEDWORDANDACTIONRETURN_LABELS, DOCUMENTS as PACKEDWORDANDACTIONRETURN_DOCUMENTS, name_operands as packedwordandactionreturn_name_operands
+LABELS.update(PACKEDWORDANDACTIONRETURN_LABELS)
+DOCUMENTS.update(PACKEDWORDANDACTIONRETURN_DOCUMENTS)
+
+from PassivePanelHoverFacts import LABELS as PASSIVEPANELHOVERS_LABELS, DOCUMENTS as PASSIVEPANELHOVERS_DOCUMENTS, name_operands as passivepanelhovers_name_operands
+LABELS.update(PASSIVEPANELHOVERS_LABELS)
+DOCUMENTS.update(PASSIVEPANELHOVERS_DOCUMENTS)
+
+from HelpNewsOpeningFacts import LABELS as HELPNEWSOPENING_LABELS, DOCUMENTS as HELPNEWSOPENING_DOCUMENTS, name_operands as helpnewsopening_name_operands
+LABELS.update(HELPNEWSOPENING_LABELS)
+DOCUMENTS.update(HELPNEWSOPENING_DOCUMENTS)
+
+from ModelTradeModeFacts import LABELS as MODELTRADEMODE_LABELS, DOCUMENTS as MODELTRADEMODE_DOCUMENTS, name_operands as modeltrademode_name_operands
+LABELS.update(MODELTRADEMODE_LABELS)
+DOCUMENTS.update(MODELTRADEMODE_DOCUMENTS)
+
+from EquipmentTradeModeFacts import LABELS as EQUIPMENTTRADEMODE_LABELS, DOCUMENTS as EQUIPMENTTRADEMODE_DOCUMENTS, name_operands as equipmenttrademode_name_operands
+LABELS.update(EQUIPMENTTRADEMODE_LABELS)
+DOCUMENTS.update(EQUIPMENTTRADEMODE_DOCUMENTS)
+
+from EquipmentListSetupFacts import LABELS as EQUIPMENTLISTSETUP_LABELS, DOCUMENTS as EQUIPMENTLISTSETUP_DOCUMENTS, name_operands as equipmentlistsetup_name_operands
+LABELS.update(EQUIPMENTLISTSETUP_LABELS)
+DOCUMENTS.update(EQUIPMENTLISTSETUP_DOCUMENTS)
+
+from MapPanelOpeningFacts import LABELS as MAPPANELOPENING_LABELS, DOCUMENTS as MAPPANELOPENING_DOCUMENTS, name_operands as mappanelopening_name_operands
+LABELS.update(MAPPANELOPENING_LABELS)
+DOCUMENTS.update(MAPPANELOPENING_DOCUMENTS)
+
+from WelcomePanelFacts import LABELS as WELCOMEPANEL_LABELS, DOCUMENTS as WELCOMEPANEL_DOCUMENTS, name_operands as welcomepanel_name_operands
+LABELS.update(WELCOMEPANEL_LABELS)
+DOCUMENTS.update(WELCOMEPANEL_DOCUMENTS)
+
+from PassivePanelActionFacts import LABELS as PASSIVEPANELACTIONS_LABELS, DOCUMENTS as PASSIVEPANELACTIONS_DOCUMENTS, name_operands as passivepanelactions_name_operands
+LABELS.update(PASSIVEPANELACTIONS_LABELS)
+DOCUMENTS.update(PASSIVEPANELACTIONS_DOCUMENTS)
+
+from EquipmentListPanelFacts import LABELS as EQUIPMENTLISTPANELS_LABELS, DOCUMENTS as EQUIPMENTLISTPANELS_DOCUMENTS, name_operands as equipmentlistpanels_name_operands
+LABELS.update(EQUIPMENTLISTPANELS_LABELS)
+DOCUMENTS.update(EQUIPMENTLISTPANELS_DOCUMENTS)
+
+from EquipmentListHoverFacts import LABELS as EQUIPMENTLISTHOVER_LABELS, DOCUMENTS as EQUIPMENTLISTHOVER_DOCUMENTS, name_operands as equipmentlisthover_name_operands
+LABELS.update(EQUIPMENTLISTHOVER_LABELS)
+DOCUMENTS.update(EQUIPMENTLISTHOVER_DOCUMENTS)
+
+from SaveSlotProtocolFacts import LABELS as SAVESLOTPROTOCOL_LABELS, DOCUMENTS as SAVESLOTPROTOCOL_DOCUMENTS, name_operands as saveslotprotocol_name_operands
+LABELS.update(SAVESLOTPROTOCOL_LABELS)
+DOCUMENTS.update(SAVESLOTPROTOCOL_DOCUMENTS)
+
+from SaveSlotPanelFacts import LABELS as SAVESLOTPANELS_LABELS, DOCUMENTS as SAVESLOTPANELS_DOCUMENTS, name_operands as saveslotpanels_name_operands
+LABELS.update(SAVESLOTPANELS_LABELS)
+DOCUMENTS.update(SAVESLOTPANELS_DOCUMENTS)
+
+from SystemMapActionFacts import LABELS as SYSTEMMAPACTION_LABELS, DOCUMENTS as SYSTEMMAPACTION_DOCUMENTS, name_operands as systemmapaction_name_operands
+LABELS.update(SYSTEMMAPACTION_LABELS)
+DOCUMENTS.update(SYSTEMMAPACTION_DOCUMENTS)
+
+from ShipTradeActionFacts import LABELS as SHIPTRADEACTION_LABELS, DOCUMENTS as SHIPTRADEACTION_DOCUMENTS, name_operands as shiptradeaction_name_operands
+LABELS.update(SHIPTRADEACTION_LABELS)
+DOCUMENTS.update(SHIPTRADEACTION_DOCUMENTS)
+
+from EquipmentListActionFacts import LABELS as EQUIPMENTLISTACTION_LABELS, DOCUMENTS as EQUIPMENTLISTACTION_DOCUMENTS, name_operands as equipmentlistaction_name_operands
+LABELS.update(EQUIPMENTLISTACTION_LABELS)
+DOCUMENTS.update(EQUIPMENTLISTACTION_DOCUMENTS)
+
+from MissionPanelActionFacts import LABELS as MISSIONPANELACTIONS_LABELS, DOCUMENTS as MISSIONPANELACTIONS_DOCUMENTS, name_operands as missionpanelactions_name_operands
+LABELS.update(MISSIONPANELACTIONS_LABELS)
+DOCUMENTS.update(MISSIONPANELACTIONS_DOCUMENTS)
+
+from ListHoverAdapterFacts import LABELS as LISTHOVERADAPTERS_LABELS, DOCUMENTS as LISTHOVERADAPTERS_DOCUMENTS, name_operands as listhoveradapters_name_operands
+LABELS.update(LISTHOVERADAPTERS_LABELS)
+DOCUMENTS.update(LISTHOVERADAPTERS_DOCUMENTS)
+
+from DeferredActionAdapterFacts import LABELS as DEFERREDACTIONADAPTERS_LABELS, DOCUMENTS as DEFERREDACTIONADAPTERS_DOCUMENTS, name_operands as deferredactionadapters_name_operands
+LABELS.update(DEFERREDACTIONADAPTERS_LABELS)
+DOCUMENTS.update(DEFERREDACTIONADAPTERS_DOCUMENTS)
+
+from TradeButtonActionFacts import LABELS as TRADEBUTTONACTIONS_LABELS, DOCUMENTS as TRADEBUTTONACTIONS_DOCUMENTS, name_operands as tradebuttonactions_name_operands
+LABELS.update(TRADEBUTTONACTIONS_LABELS)
+DOCUMENTS.update(TRADEBUTTONACTIONS_DOCUMENTS)
+
+from FlightButtonFacts import LABELS as FLIGHTBUTTON_LABELS, DOCUMENTS as FLIGHTBUTTON_DOCUMENTS, name_operands as flightbutton_name_operands
+LABELS.update(FLIGHTBUTTON_LABELS)
+DOCUMENTS.update(FLIGHTBUTTON_DOCUMENTS)
+
+from ContractMapFacts import LABELS as CONTRACTMAP_LABELS, DOCUMENTS as CONTRACTMAP_DOCUMENTS, name_operands as contractmap_name_operands
+LABELS.update(CONTRACTMAP_LABELS)
+DOCUMENTS.update(CONTRACTMAP_DOCUMENTS)
+
+from CounterEventFacts import LABELS as COUNTEREVENT_LABELS, DOCUMENTS as COUNTEREVENT_DOCUMENTS, name_operands as counterevent_name_operands
+LABELS.update(COUNTEREVENT_LABELS)
+DOCUMENTS.update(COUNTEREVENT_DOCUMENTS)
+
+from PanelOpenAdapterFacts import LABELS as PANELOPENADAPTERS_LABELS, DOCUMENTS as PANELOPENADAPTERS_DOCUMENTS, name_operands as panelopenadapters_name_operands
+LABELS.update(PANELOPENADAPTERS_LABELS)
+DOCUMENTS.update(PANELOPENADAPTERS_DOCUMENTS)
+
+from StopMusicFacts import LABELS as STOPMUSIC_LABELS, DOCUMENTS as STOPMUSIC_DOCUMENTS, name_operands as stopmusic_name_operands
+LABELS.update(STOPMUSIC_LABELS)
+DOCUMENTS.update(STOPMUSIC_DOCUMENTS)
+
+from StatusPanelActionFacts import LABELS as STATUSPANELACTION_LABELS, DOCUMENTS as STATUSPANELACTION_DOCUMENTS, name_operands as statuspanelaction_name_operands
+LABELS.update(STATUSPANELACTION_LABELS)
+DOCUMENTS.update(STATUSPANELACTION_DOCUMENTS)
+
+from UnpackResourceFacts import LABELS as UNPACKRESOURCE_LABELS, DOCUMENTS as UNPACKRESOURCE_DOCUMENTS, name_operands as unpackresource_name_operands
+LABELS.update(UNPACKRESOURCE_LABELS)
+DOCUMENTS.update(UNPACKRESOURCE_DOCUMENTS)
+
+from MainLoopExecutionFacts import LABELS as MAINLOOPEXECUTION_LABELS, DOCUMENTS as MAINLOOPEXECUTION_DOCUMENTS, name_operands as mainloopexecution_name_operands
+LABELS.update(MAINLOOPEXECUTION_LABELS)
+DOCUMENTS.update(MAINLOOPEXECUTION_DOCUMENTS)
+
+from MusicEnvelopeStagingFacts import LABELS as MUSIC_ENVELOPE_LABELS, name_operands as music_envelope_name_operands
+LABELS.update(MUSIC_ENVELOPE_LABELS)
+DOCUMENTS.update({('Music',a):('MusicEnvelopeStaging','подготовка огибающей') for a in (0xDF47,0xDF70)})
+
+from MusicEnvelopeCommandFacts import name_operands as music_envelope_command_name_operands
+DOCUMENTS['Music',0xDB8C]=('MusicEnvelopeStaging','команда скольжения огибающей')
+
+from MusicChannelAStagingFacts import LABELS as MUSICCHANNELASTAGING_LABELS, name_operands as musicchannelastaging_name_operands
+LABELS.update(MUSICCHANNELASTAGING_LABELS)
+DOCUMENTS.update({("Music",a):("MusicChannelStaging","отложенные состояния каналов") for a in (56976, 57006)})
+
+from MusicChannelBStagingFacts import LABELS as MUSICCHANNELBSTAGING_LABELS, name_operands as musicchannelbstaging_name_operands
+LABELS.update(MUSICCHANNELBSTAGING_LABELS)
+DOCUMENTS.update({("Music",a):("MusicChannelStaging","отложенные состояния каналов") for a in (57118, 57137, 57148)})
+
+from MusicChannelBRowFacts import LABELS as MUSICCHANNELBROW_LABELS, name_operands as musicchannelbrow_name_operands
+LABELS.update(MUSICCHANNELBROW_LABELS)
+DOCUMENTS.update({("Music",a):("MusicChannelStaging","отложенные состояния каналов") for a in (57017,)})
+
+from MusicGateTickFacts import name_operands as music_gate_tick_name_operands
+
+from MusicAyOutputFacts import name_operands as music_ay_output_name_operands
+DOCUMENTS.update({("Music",a):("MusicAyOutput","огибающая и вывод AY") for a in (0xE2CB,0xE2EB,0xE37C)})
+LABELS.update({('Music', 58061): 'StoreSlideDelay', ('Music', 58064): 'RestoreLevel', ('Music', 58065): 'UpdateGate', ('Music', 58088): 'StoreGateDelay', ('Music', 58122): 'StoreEnvDelay', ('Music', 58125): 'FlushAy', ('Music', 58275): 'PointE3A3', ('Music', 58281): 'PointE3A9', ('Music', 58298): 'PointE3BA', ('Music', 58332): 'PointE3DC', ('Music', 58340): 'PointE3E4', ('Music', 58351): 'PointE3EF', ('Music', 58353): 'PointE3F1', ('Music', 58360): 'PointE3F8', ('Music', 58372): 'PointE404', ('Music', 58387): 'PointE413', ('Music', 58395): 'PointE41B', ('Music', 58407): 'PointE427', ('Music', 58415): 'PointE42F'})
+
+from MusicEffectFacts import name_operands as music_effect_name_operands
+DOCUMENTS.update({("Music",a):("MusicEffects","отложенные музыкальные команды") for a in (58892, 58973, 58915, 58996, 59081, 58951, 58962, 59032, 59043, 59118, 59124, 56810, 56818, 59130)})
+
+from MusicSynthesisFacts import LABELS as MUSIC_SYNTHESIS_LABELS, name_operands as music_synthesis_name_operands
+LABELS.update(MUSIC_SYNTHESIS_LABELS)
+DOCUMENTS.update({("Music",a):("MusicSynthesis","синтез трёх каналов") for a in (57315, 57549, 57581, 57805, 57837)})
+
+from MusicChannelARowFacts import LABELS as MUSICCHANNELAROW_LABELS, name_operands as musicchannelarow_name_operands
+LABELS.update(MUSICCHANNELAROW_LABELS)
+DOCUMENTS.update({("Music",a):("MusicChannelStaging","отложенные состояния каналов") for a in (56863,)})
+
+from MusicPatternFacts import name_operands as music_pattern_name_operands
+DOCUMENTS.update({("Music", a): ("MusicPattern", "декодирование паттернов") for a in (58236, 58332, 58425, 58505, 58598, 58685, 58755)})
+LABELS.update({('Music', 58275): 'SelectReset', ('Music', 58281): 'StoreReset', ('Music', 58298): 'AdvanceC', ('Music', 58340): 'SetVolume', ('Music', 58351): 'ReleaseNote', ('Music', 58353): 'StoreEnable', ('Music', 58360): 'EnvelopeOrDelay', ('Music', 58372): 'ReadEnvelope', ('Music', 58387): 'StoreEnvelope', ('Music', 58395): 'OrnamentSample', ('Music', 58407): 'EnvelopeSample', ('Music', 58415): 'StoreSample', ('Music', 58428): 'ReadCommand', ('Music', 58466): 'EnvelopeSample', ('Music', 58485): 'SampleOrEnd', ('Music', 58489): 'SetOrnament', ('Music', 58513): 'SetVolume', ('Music', 58524): 'ReleaseNote', ('Music', 58526): 'StoreEnable', ('Music', 58533): 'EnvelopeOrDelay', ('Music', 58545): 'ReadEnvelope', ('Music', 58560): 'StoreEnvelope', ('Music', 58568): 'OrnamentSample', ('Music', 58580): 'EnvelopeSample', ('Music', 58588): 'StoreSample', ('Music', 58601): 'ReadCommand', ('Music', 58641): 'SetNoise', ('Music', 58646): 'EnvelopeSample', ('Music', 58665): 'SampleOrEnd', ('Music', 58669): 'SetOrnament', ('Music', 58696): 'ReleaseNote', ('Music', 58704): 'ReadEnvelope', ('Music', 58719): 'StoreEnvelope', ('Music', 58724): 'OrnamentSample', ('Music', 58736): 'EnvelopeSample', ('Music', 58745): 'StoreSample', ('Music', 58758): 'ReadCommand', ('Music', 58802): 'EnvelopeOrDelay', ('Music', 58814): 'EnvelopeSample', ('Music', 58833): 'SampleOrEnd', ('Music', 58837): 'SetOrnament', ('Music', 58854): 'SetNote'})
+
+from MusicAdvanceAFacts import LABELS as MUSICADVANCEA_LABELS, name_operands as musicadvancea_name_operands
+LABELS.update(MUSICADVANCEA_LABELS)
+DOCUMENTS.update({("Music",a):("MusicPattern","отложенные состояния каналов") for a in (57215,)})
+
+from MusicInitializationFacts import LABELS as MUSIC_INITIALIZATION_LABELS, name_operands as music_initialization_name_operands
+LABELS.update(MUSIC_INITIALIZATION_LABELS)
+DOCUMENTS.update({("Music", a): ("MusicInitialization", "инициализация и глушение AY") for a in (0xDB00, 0xDB08, 0xDB0A, 0xDB7C)})

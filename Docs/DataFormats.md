@@ -6,6 +6,21 @@
 | --- | --- | --- |
 | FTrDosEntry | #10 | исходная запись каталога |
 | FPackedHeader | #06 | HR, распакованная и упакованная длины |
+| FPackedFinalBytes | #06 | три пары финальных байтов, [20 физических экземпляров](PackedResourcePrefix.md) |
+| FMusicEffectTarget | #02 | поле Handler, [21 физический указатель отложенных музыкальных команд](MusicEffects.md) |
+| FMusicDeferredPairFrame | #06 | [динамическая рамка двух отложенных обработчиков и внешнего возврата](MusicEffects.md) |
+| FMusicLoopHeader | #02 | LoopPosition и Length исходных сэмплов и орнаментов, [порядок обхода](MusicSynthesis.md) |
+| FMusicSampleStep | #04 | ShiftControl, LevelModes и ToneDelta, [алгоритм синтеза и схема битов](MusicSynthesis.md) |
+| FMusicDataPointer | #02 | [48 физических указателей сэмплов и орнаментов](MusicPlayerData.md) |
+| FMusicAyRegisters | #0E | [единственный буфер регистров AY](MusicPlayerData.md) |
+| FMusicRowCounter | #01 | [три физических счётчика строк](MusicPlayerData.md) |
+| FMusicVolumeRow | #10 | [15 физических строк громкости, нулевая строка наложена на AY](MusicPlayerData.md) |
+| FMusicNotePeriod | #02 | [96 физических слов периодов](MusicPlayerData.md) |
+| FMusicModuleHeader | #69 | [физический заголовок композиции, включая Unknown63](MusicComposition.md) |
+| FMusicRelativePointer | #02 | [48 физических относительных адресов](MusicComposition.md) |
+| FMusicPositionByte | #01 | [28 позиций и отдельный маркер FF](MusicComposition.md) |
+| FMusicPatternPointers | #06 | [19 физических троек указателей A/B/C](MusicComposition.md) |
+| FMusicOrnamentStep | #01 | [57 физических поправок индекса ноты](MusicComposition.md) |
 | FVisualEffect | #12 | запись эффекта, свободное состояние +7 |
 | FInterfaceItem | #10 | прямоугольник, флаги и два обработчика интерфейса |
 | FProjectedPoint | #05 | X, Y и составной код отсечения вершины |
@@ -17,6 +32,9 @@
 
 Поля Unknown сохраняют неустановленное назначение. Объявление структуры
 само по себе не выделяет новую область памяти.
+
+В [исходной композиции](MusicComposition.md) оформлены 26 физических FMusicLoopHeader
+и 77 FMusicSampleStep. Смещения полей и потребление исходным ядром проверены.
 
 В данных интерфейса сохранены 46 физических инициализаторов, затем #80.
 В `Source/Screens` сохранены 20 упакованных блоков с заголовками и хвостами.

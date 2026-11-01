@@ -1,0 +1,20 @@
+{
+  "date": "2026-11-01",
+  "performed_by": "user",
+  "emulator": "Unreal",
+  "image": "Awakenv02.trd",
+  "image_sha256_at_followup": "55a11de202a5334547e39a6db42c945242a2a53559dc1cf601522219e3463f32",
+  "user_feedback_verbatim": "вроде работает",
+  "status": "preliminary_user_confirmation",
+  "requested_scenario": [
+    "Сборка Ctrl+B и открытие образа из корня проекта",
+    "Корабельная панель, вращение около 30 секунд, переключение моделей, описание и цена",
+    "Закрытие и повторное открытие панели"
+  ],
+  "individual_scenario_steps_separately_confirmed": false,
+  "assembly_success_separately_confirmed": false,
+  "all_models_separately_confirmed": false,
+  "hardware_irq_contract_proved": false,
+  "complete_gameplay_verified": false,
+  "codex_native_execution_performed": false
+}

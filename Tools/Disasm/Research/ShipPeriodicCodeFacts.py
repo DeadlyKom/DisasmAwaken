@@ -13,3 +13,6 @@ def name_operands(region,address,operation):
  if address==0x693E:operation=operation.replace('LD DE, #6945','LD DE, @Station.DrawModelDescriptionPanel.Entry')
  if address==0x6877:operation=operation.replace('LD HL, #68EA','LD HL, @Station.Unknown68EA.Entry')
  return operation
+
+from ShipPreviewCallbackFacts import COMMENTS as PREVIEW_COMMENTS
+COMMENTS.update(PREVIEW_COMMENTS)

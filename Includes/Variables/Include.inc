@@ -34,7 +34,7 @@ OperatorAnchor  equ #C95F                                                       
 
                 module ScriptSelection
 EquipmentRow    equ #7217                                                       ; байт выбранной строки списка оснащения
-EquipmentBase   equ #71B9                                                       ; младший байт смещения списка оснащения
+EquipmentBase   equ #71B9                                                       ; слово прокрутки оснащения, сценарий читает только младший байт
 CargoRow        equ #7068                                                       ; байт выбранной строки списка товаров
 CargoBase       equ #7026                                                       ; слово индекса прокрутки, сценарий читает только младший байт
                 endmodule
@@ -156,13 +156,13 @@ Opcode07        equ #7E19                                                       
 Opcode08        equ #7F11                                                       ; первый байт DrawItem08, LD HL либо временный RET
 Opcode33        equ #AA4F                                                       ; первый байт DrawItem33, LD HL либо временный RET
 Index30         equ #7A16                                                       ; изменяемое слово индекса обёртки DrawItem30
-Index28         equ #7A56                                                       ; изменяемое слово индекса обёртки DrawItem28
-Index29         equ #7A83                                                       ; изменяемое слово индекса обёртки DrawItem29
+Index28         equ #7A56                                                       ; изменяемое слово индекса DrawSaleModeButton
+Index29         equ #7A83                                                       ; изменяемое слово индекса DrawPurchaseModeButton
 Index09         equ #7A9F                                                       ; изменяемое слово индекса обёртки DrawItem09
 Index02         equ #7AB5                                                       ; изменяемое слово индекса обёртки DrawItem02
 Index03         equ #7B0C                                                       ; изменяемое слово индекса обёртки DrawItem03
-Index37         equ #7B26                                                       ; изменяемое слово индекса обёртки DrawItem37
-Index36         equ #7B41                                                       ; изменяемое слово индекса обёртки DrawItem36
+Index37         equ #7B26                                                       ; изменяемое слово индекса DrawEquipmentPurchase
+Index36         equ #7B41                                                       ; изменяемое слово индекса DrawEquipmentSale
 Index21         equ #7B52                                                       ; изменяемое слово индекса обёртки DrawItem21
 Index12         equ #7BA9                                                       ; изменяемое слово индекса обёртки DrawItem12
 Index13         equ #7C1F                                                       ; изменяемое слово индекса обёртки DrawItem13
@@ -592,13 +592,69 @@ EventCode       equ #983A                                                       
                 endmodule
 
                 module EquipmentInfoState
+ItemIndex       equ #6AB7                                                       ; слово индекса FInterfaceItem внутри LD HL рисователя документации
+SourcePointer   equ #6AE0                                                       ; слово начала выбранной LF-записи внутри LD HL печатателя
+LineCount       equ #6A9C                                                       ; полное число сухих визуальных строк внутри LD HL действия
+TopRow          equ #6AA4                                                       ; полный индекс прокрутки, печататель использует младший байт
 TextIndex       equ #6ACC                                                       ; изменяемый индекс LF-текста описания оснащения
                 endmodule
 
+                module SaveSlotState
+Buffer          equ #983B                                                       ; существующий блок состояния длиной 512 байтов
+FileDigit       equ #7534                                                       ; пятый символ физического FTrDosFileKey по 7530
+SaveI           equ #7471                                                       ; операнд восстановления I обработчика записи
+LoadI           equ #74FF                                                       ; операнд восстановления I обработчика чтения
+SaveIndex       equ #7493                                                       ; изменяемый индекс рисователя пяти позиций записи
+LoadIndex       equ #751C                                                       ; изменяемый индекс рисователя пяти позиций чтения
+                endmodule
+
+                module SaveSlotText
+SaveOptions     equ #DE53                                                       ; пять CR-строк В позицию 1..5, конец LF
+LoadOptions     equ #DE8F                                                       ; пять CR-строк С позиции 1..5, конец LF
+                endmodule
+
+                module TrDosState
+Descriptor      equ #5CDD                                                       ; системный FTrDosEntry, начало имени и каталожного дескриптора
+                endmodule
+
+                module EquipmentTradeState
+OwnedMode       equ #71EC                                                       ; полный режим, 0 покупка, любое ненулевое значение продажа
+                endmodule
+
+                module EquipmentListState
+HoverArea       equ #7211                                                       ; слово операнда наведения, младший отступ и старший счётчик строк
+KeySize         equ #72DD                                                       ; числовая характеристика L текущего ключа, 1..16
+ItemIndex       equ #7228                                                       ; изменяемое слово индекса панели оснащения, штатно 38
+RowCount        equ #7212                                                       ; старший байт LD DE наведения, число попыток с маркером 80
+ShipOperand     equ #7306                                                       ; текущий тип корабля внутри LD A проверки четырёхбайтового набора
+                endmodule
+
+                module EquipmentListData
+Prices          equ #9592                                                       ; слова цен, шаг два байта по полному индексу
+ShipSets        equ #9400                                                       ; четыре байта типов корабля на каждую строку
+Weights         equ #95F0                                                       ; пары минимальной модели станции и байтового веса
+Quantities      equ #988E                                                       ; количества с инверсным кодированием и отдельным маркером 80
+                endmodule
+
+                module EquipmentListText
+Headings        equ #EE19                                                       ; заголовки Наименование, Кол, Цена, Вес и Уст
+Names           equ #EE57                                                       ; CR перед первым наименованием оснащения, имена разделены CR
+                endmodule
+
+                module WelcomePanelState
+ItemIndex       equ #7956                                                       ; изменяемое слово индекса приветственного окна, штатно 45
+                endmodule
+
+                module WelcomeText
+ModelLabels     equ #CCF3                                                       ; LF перед шестнадцатью подписями моделей станции
+Template        equ #CD82                                                       ; четыре части приветствия с тремя разделителями вставок 01
+                endmodule
+
                 module ShipPanelState
+PreviewIndex    equ #6878                                                       ; изменяемое слово индекса FInterfaceItem в LD HL рисователя просмотра
 Selector        equ #6906                                                       ; полный селектор корабельных панелей, назначение всех категорий ещё неизвестно
 PendingRedraw   equ #68EB                                                       ; ненулевой операнд периодического входа запрашивает обновление списка и панелей
-OwnedMode       equ #79DD                                                       ; ноль выбирает доступность системы, ненулевое значение выбирает текущие объекты
+OwnedMode       equ #79DD                                                       ; полный режим, 0 покупка, любое ненулевое значение продажа
                 endmodule
 
                 module D3DClipState
@@ -836,6 +892,266 @@ LastIndex       equ #D35F                                                       
 
                 module PreviewPolygonPrepState
 FirstRowLow     equ #D4C7                                                       ; операнд OR младшего адреса начальной экранной строки
+                endmodule
+
+                module HelpTextState
+RecordOperand   equ #DB01                                                       ; банк 7, байт номера LF-записи внутри LD A индексатора HELP
+                endmodule
+
+                module HelpPanelState
+HoverRows       equ #6A4C                                                       ; слово DE обработчика наведения, E отступ, D текущее число видимых строк
+TextIndex       equ #69A9                                                       ; слово индекса FInterfaceItem внутри LD HL рисователя текста справки
+ContentsIndex   equ #6A5C                                                       ; слово индекса FInterfaceItem внутри LD HL рисователя разделов
+TopLine         equ #699D                                                       ; слово верхней визуальной строки внутри LD HL действия панели
+ContentsTop     equ #6A15                                                       ; слово верхнего CR-заголовка внутри LD HL действия списка
+VisibleTitles   equ #6A4D                                                       ; байт D операнда LD DE обработчика наведения списка разделов
+LineCount       equ #6995                                                       ; слово числа строк HELP внутри LD HL действия панели справки
+                endmodule
+
+                module EnvironmentPanelState
+ItemIndex       equ #6BA6                                                       ; слово индекса FInterfaceItem в LD HL рисователя среды
+TopRow          equ #6B23                                                       ; полный индекс начальной подписи и значения в действии среды
+RowCount        equ #6B90                                                       ; байт D обработчика наведения, число обработанных значений
+HoverRows       equ #6B8F                                                       ; слово DE обработчика наведения, E отступ, D число строк
+                endmodule
+
+                module GameSettingsPanelState
+ItemIndex       equ #7638                                                       ; слово индекса FInterfaceItem в LD HL рисователя игры
+TopRow          equ #75D3                                                       ; полный индекс начальной подписи и значения в действии игры
+RowCount        equ #7622                                                       ; байт D обработчика наведения, число обработанных значений
+HoverRows       equ #7621                                                       ; слово DE обработчика наведения, E отступ, D число строк
+                endmodule
+
+
+                module ContractMapState
+Cursor          equ #7CCC                                                       ; изменяемое слово LD HL выбора контракта, исходно MapAuxiliaryCodes.State
+                endmodule
+
+
+                ; Изменяемые операнды огибающей MUZ1 и исходный буфер AY, память не выделяется
+                module MusicEnvelopeState
+RowTempo        equ #DF62                                                       ; изменяемый темп строки из заголовка модуля либо команды 09
+AyShape         equ #DC0D                                                       ; однократный буфер формы AY13, ноль пропускает аппаратную запись
+AyNoise         equ #DC06                                                       ; базовый шум в буфере AY6 до добавления вклада сэмплов
+EnvelopeBase    equ #E2F1                                                       ; базовый период огибающей в изменяемом операнде
+Shape           equ #DF48                                                       ; ожидающая форма, ненулевой байт перезапускает период и скольжение
+SlideOffset     equ #E2EE                                                       ; накопленное слово скольжения огибающей
+SlideCounter    equ #E2FA                                                       ; текущий байтовый счётчик задержки скольжения
+Phase           equ #E37D                                                       ; числовая стадия распределённого разбора каналов B и C
+SlideStep       equ #E302                                                       ; слово шага для прибавления к смещению огибающей
+SlideReload     equ #E309                                                       ; задержка перезагрузки после применения шага
+SlideGate       equ #DF6B                                                       ; код команды, 18 пропускает отложенную установку, 06 включает её
+Base            equ #DF50                                                       ; ожидающий базовый период для новой формы огибающей
+Noise           equ #DF67                                                       ; ожидающий базовый шум текущей строки паттерна
+Step            equ #DF6E                                                       ; ожидающий шаг отложенной команды скольжения
+Delay           equ #DF74                                                       ; ожидающая задержка отложенной команды скольжения
+                endmodule
+
+
+                ; Исходные изменяемые операнды MusicChannelAState, память не выделяется
+                module MusicChannelAState
+GateCommand     equ #DE90                                                       ; код команды длительностей, 18 пропускает тело, 06 включает его
+EnabledTicks    equ #DE97                                                       ; ожидающая длительность включённого состояния
+DisabledTicks   equ #DE9F                                                       ; ожидающая длительность выключенного состояния
+SampleCommand   equ #DEA3                                                       ; код отложенной установки позиции сэмпла
+SamplePosition  equ #DEA6                                                       ; ожидающая байтовая позиция сэмпла
+OrnamentCommand equ #DEAE                                                       ; код отложенной установки позиции орнамента
+OrnamentPos     equ #DEB1                                                       ; ожидающая байтовая позиция орнамента
+GateEnabled     equ #E0E9                                                       ; длительность после перехода в включённое состояние
+GateDisabled    equ #E0E5                                                       ; длительность после перехода в выключенное состояние
+GateCounter     equ #E0D7                                                       ; текущий счётчик до переключения разрешения канала A
+SampleCursor    equ #DFFA                                                       ; позиция шага сэмпла, используемая синтезом A
+OrnamentCursor  equ #E07C                                                       ; позиция байта орнамента, используемая синтезом A
+                endmodule
+
+
+                ; Исходные изменяемые операнды MusicChannelBState, память не выделяется
+                module MusicChannelBState
+GateCommand     equ #DF1E                                                       ; код команды длительностей, 18 пропускает тело, 06 включает его
+EnabledTicks    equ #DF25                                                       ; ожидающая длительность включённого состояния
+DisabledTicks   equ #DF2D                                                       ; ожидающая длительность выключенного состояния
+SampleCommand   equ #DF31                                                       ; код отложенной установки позиции сэмпла
+SamplePosition  equ #DF34                                                       ; ожидающая байтовая позиция сэмпла
+OrnamentCommand equ #DF3C                                                       ; код отложенной установки позиции орнамента
+OrnamentPos     equ #DF3F                                                       ; ожидающая байтовая позиция орнамента
+GateEnabled     equ #E1E9                                                       ; длительность после перехода в включённое состояние
+GateDisabled    equ #E1E5                                                       ; длительность после перехода в выключенное состояние
+GateCounter     equ #E1D7                                                       ; текущий счётчик до переключения разрешения канала B
+SampleCursor    equ #E0F9                                                       ; позиция шага сэмпла, используемая синтезом A
+OrnamentCursor  equ #E17C                                                       ; позиция байта орнамента, используемая синтезом A
+                endmodule
+
+
+                ; Исходные изменяемые операнды MusicChannelBRow, память не выделяется
+                module MusicChannelBRow
+ResetOpcode     equ #DEBC                                                       ; 22 сбрасывает SlideOffset, 01 загружает BC адресом без записи
+NoteBlock       equ #DEBF                                                       ; код пропуска сброса ноты, 18 пропускает тело, 06 включает его
+EnableCode      equ #DED6                                                       ; NOP 00 включает канал, CPL 2F задаёт выключенное состояние FF
+PendingNote     equ #DEDB                                                       ; ожидающий индекс ноты канала B
+PendingSample   equ #DEE0                                                       ; ожидающий указатель сэмпла для новой ноты
+VolumeRow       equ #DEEB                                                       ; смещение строки таблицы громкости, копируется без нормализации
+OrnamentBlock   equ #DEEF                                                       ; код пропуска настройки орнамента, сохраняется самим блоком
+PendingOrnament equ #DEF6                                                       ; ожидающий указатель орнамента
+PendingEnvelope equ #DEFC                                                       ; ожидающая маска огибающей для амплитуды канала B
+SlideBlock      equ #DF00                                                       ; код пропуска настройки скольжения, сохраняется самим блоком
+PendingTarget   equ #DF03                                                       ; ожидающая целевая нота для ограниченного скольжения
+PendingDelay    equ #DF08                                                       ; ожидающая задержка шага скольжения
+PendingStep     equ #DF10                                                       ; ожидающий знаковый шаг скольжения
+PendingBranch   equ #DF16                                                       ; ожидаемое смещение JR после прибавления шага
+SlideOffset     equ #E198                                                       ; накопленное слово скольжения, обнуляется только при ResetOpcode=22
+SampleCursor    equ #E0F9                                                       ; позиция сэмпла канала B
+NoiseAccum      equ #E13D                                                       ; накопленный вклад сэмпла B в шум
+EnvelopeAccum   equ #E154                                                       ; накопленный вклад сэмпла B в период огибающей
+OrnamentCursor  equ #E17C                                                       ; позиция орнамента канала B
+SlideCounter    equ #E19F                                                       ; текущий счётчик задержки скольжения B
+GateCounter     equ #E1D7                                                       ; текущий счётчик чередования разрешения B
+ToneAccum       equ #E16C                                                       ; накопленная тональная поправка сэмпла B
+Disabled        equ #E0EE                                                       ; 00 разрешает синтез B, FF пропускает его, это числовое состояние
+CurrentNote     equ #E1BB                                                       ; текущий индекс ноты канала B
+SamplePointer   equ #E0F5                                                       ; указатель сэмпла канала B
+AmplitudeAdjust equ #E110                                                       ; исходное 10 отключает направленное изменение амплитуды
+VolumeOffset    equ #E12C                                                       ; смещение в таблице громкости после вычисления амплитуды
+OrnamentPointer equ #E178                                                       ; указатель орнамента канала B
+EnvelopeMask    equ #E136                                                       ; маска огибающей, добавляемая к амплитуде B
+TargetNote      equ #E1B3                                                       ; индекс ноты для сравнения при ограниченном скольжении
+SlideReload     equ #E1CE                                                       ; перезагрузка счётчика после добавления шага
+SlideStep       equ #E1A8                                                       ; слово шага скольжения B
+SlideBranch     equ #E1AF                                                       ; смещение JR после обновления накопленного тона
+                endmodule
+
+
+                ; Исходные операнды счётчиков и байты буфера AY, память не выделяется
+                module MusicGateState
+AmplitudeA      equ #DC08                                                       ; буфер амплитуды AY канала A
+CounterA        equ #E0D7                                                       ; текущий счётчик чередования канала A
+StateA          equ #DFEF                                                       ; полный байт состояния, 00 разрешает синтез, FF пропускает его канала A
+DisabledTicksA  equ #E0E5                                                       ; перезагрузка после получения ненулевого состояния канала A
+EnabledTicksA   equ #E0E9                                                       ; перезагрузка после получения нулевого состояния канала A
+AmplitudeB      equ #DC09                                                       ; буфер амплитуды AY канала B
+CounterB        equ #E1D7                                                       ; текущий счётчик чередования канала B
+StateB          equ #E0EE                                                       ; полный байт состояния, 00 разрешает синтез, FF пропускает его канала B
+DisabledTicksB  equ #E1E5                                                       ; перезагрузка после получения ненулевого состояния канала B
+EnabledTicksB   equ #E1E9                                                       ; перезагрузка после получения нулевого состояния канала B
+AmplitudeC      equ #DC0A                                                       ; буфер амплитуды AY канала C
+CounterC        equ #E2D5                                                       ; текущий счётчик чередования канала C
+StateC          equ #E1EE                                                       ; полный байт состояния, 00 разрешает синтез, FF пропускает его канала C
+DisabledTicksC  equ #E2E3                                                       ; перезагрузка после получения ненулевого состояния канала C
+EnabledTicksC   equ #E2E7                                                       ; перезагрузка после получения нулевого состояния канала C
+                endmodule
+
+
+                ; Исходные операнды и буфер аппаратного вывода AY, память не выделяется
+                module MusicAyState
+Registers       equ #DC00                                                       ; начало исходного буфера четырнадцати регистров AY
+EnvelopePeriod  equ #DC0B                                                       ; слово периода огибающей в буфере AY11 и AY12
+SavedSP         equ #E30E                                                       ; изменяемое слово восстановления настоящего стека
+NoiseSeed       equ #DFE9                                                       ; старший байт начального IX для следующего кадра
+                endmodule
+
+
+                ; Исходные изменяемые операнды музыкальных команд, память не выделяется
+                module MusicEffectState
+PendingDelayA   equ #DE7A                                                       ; ожидающая задержка тонального скольжения A
+PendingStepA    equ #DE82                                                       ; ожидающее слово шага тонального скольжения A
+PendingBranchA  equ #DE88                                                       ; ожидаемое смещение JR после обновления тона A
+PendingTargetA  equ #DE75                                                       ; ожидающая целевая нота ограниченного скольжения A
+PendingNoteA    equ #DE4D                                                       ; ожидающая нота строки A
+CurrentNoteA    equ #E0BB                                                       ; текущая нота в сравнении ограниченного скольжения A
+TargetNoteC     equ #E2B1                                                       ; целевая нота ограниченного скольжения C
+CurrentNoteC    equ #E2B9                                                       ; текущий индекс ноты C
+PreviousNoteC   equ #E6EC                                                       ; сохранённая декодером прежняя нота C, изменяемый операнд LD (HL),n
+SampleCursorC   equ #E1F9                                                       ; текущая позиция сэмпла C
+OrnamentCursorC equ #E27A                                                       ; текущая позиция орнамента C
+                endmodule
+
+
+                ; Исходные операнды синтеза A, память не выделяется
+                module MusicSynthesisA
+SamplePointer   equ #DFF6                                                       ; указатель заголовка и четырёхбайтовых шагов сэмпла
+AmplitudeAdjust equ #E011                                                       ; накопленная поправка базового уровня, нейтральное значение 10
+VolumeOffset    equ #E02D                                                       ; байтовое смещение строки таблицы громкости
+EnvelopeMask    equ #E037                                                       ; маска огибающей, применяемая при нулевом FixedLevelBit
+NoiseAccum      equ #E03E                                                       ; накопленный вклад сэмпла в шум
+EnvelopeAccum   equ #E055                                                       ; накопленный вклад сэмпла в общий период огибающей
+ToneAccum       equ #E06C                                                       ; накопленная тональная поправка сэмпла
+OrnamentPointer equ #E078                                                       ; указатель заголовка и байтов орнамента
+SlideOffset     equ #E098                                                       ; накопленное слово тонального скольжения
+SlideCounter    equ #E09F                                                       ; число тиков до следующего шага скольжения
+SlideStep       equ #E0A8                                                       ; знаковое слово шага тонального скольжения
+SlideReload     equ #E0CE                                                       ; перезагрузка счётчика после добавления шага
+SlideBranch     equ #E0AF                                                       ; смещение JR, 1D пропускает ограничение, 00 выполняет его
+TargetNote      equ #E0B3                                                       ; целевая нота ограниченного скольжения
+                endmodule
+
+                ; Исходные операнды синтеза C, память не выделяется
+                module MusicSynthesisC
+SamplePointer   equ #E1F5                                                       ; указатель заголовка и четырёхбайтовых шагов сэмпла
+AmplitudeAdjust equ #E20F                                                       ; накопленная поправка базового уровня, нейтральное значение 10
+VolumeOffset    equ #E22B                                                       ; байтовое смещение строки таблицы громкости
+EnvelopeMask    equ #E235                                                       ; маска огибающей, применяемая при нулевом FixedLevelBit
+NoiseAccum      equ #E23C                                                       ; накопленный вклад сэмпла в шум
+EnvelopeAccum   equ #E253                                                       ; накопленный вклад сэмпла в общий период огибающей
+ToneAccum       equ #E26A                                                       ; накопленная тональная поправка сэмпла
+OrnamentPointer equ #E276                                                       ; указатель заголовка и байтов орнамента
+SlideOffset     equ #E296                                                       ; накопленное слово тонального скольжения
+                endmodule
+
+                module MusicSynthesisState
+EnvelopeSeed    equ #DFE4                                                       ; исходный операнд младшего байта общего вклада огибающей
+                endmodule
+
+                module MusicSynthesisState
+MixerSeed       equ #DFE8                                                       ; исходный младший байт IX, сохраняется при пропуске A
+                endmodule
+
+
+                ; Исходные изменяемые операнды MusicChannelARow, память не выделяется
+                module MusicChannelARow
+EntryOpcode     equ #DE1F                                                       ; C3 выбирает JP к синтезу, 01 исполняет LD BC и продолжает подготовку строки
+ResetOpcode     equ #DE2E                                                       ; 22 сбрасывает SlideOffset через LD (nn),HL, 01 сохраняет его через LD BC,nn
+NoteBlock       equ #DE31                                                       ; код пропуска сброса ноты, 18 пропускает тело, 06 включает его
+EnableCode      equ #DE48                                                       ; NOP 00 включает канал, CPL 2F задаёт выключенное состояние FF
+PendingNote     equ #DE4D                                                       ; ожидающий индекс ноты канала A
+PendingSample   equ #DE52                                                       ; ожидающий указатель сэмпла для новой ноты
+VolumeRow       equ #DE5D                                                       ; смещение строки таблицы громкости, копируется без нормализации
+OrnamentBlock   equ #DE61                                                       ; код пропуска настройки орнамента, сохраняется самим блоком
+PendingOrnament equ #DE68                                                       ; ожидающий указатель орнамента
+PendingEnvelope equ #DE6E                                                       ; ожидающая маска огибающей для амплитуды канала A
+SlideBlock      equ #DE72                                                       ; код пропуска настройки скольжения, сохраняется самим блоком
+PendingTarget   equ #DE75                                                       ; ожидающая целевая нота для ограниченного скольжения
+PendingDelay    equ #DE7A                                                       ; ожидающая задержка шага скольжения
+PendingStep     equ #DE82                                                       ; ожидающий знаковый шаг скольжения
+PendingBranch   equ #DE88                                                       ; ожидаемое смещение JR после прибавления шага
+                endmodule
+
+
+                ; Существующие счётчики и операнды паттернов, память не выделяется
+                module MusicPatternState
+RowCounterA     equ #DE1E                                                       ; текущий байтовый счётчик длительности строки A
+RowCounterB     equ #DC0E                                                       ; текущий байтовый счётчик длительности строки B
+RowCounterC     equ #DC0F                                                       ; текущий байтовый счётчик длительности строки C
+PatternB        equ #E393                                                       ; изменяемый указатель следующей команды B
+PatternC        equ #E3C4                                                       ; изменяемый указатель следующей команды C
+RowDelayA       equ #DFC9                                                       ; перезагрузка счётчика длительности A, команда B1 копирует байт без нормализации
+RowDelayB       equ #E39F                                                       ; перезагрузка счётчика длительности B
+RowDelayC       equ #E3D0                                                       ; перезагрузка счётчика длительности C
+                endmodule
+
+
+                ; Исходные изменяемые операнды MusicAdvanceAState, память не выделяется
+                module MusicAdvanceAState
+PatternA        equ #DF89                                                       ; изменяемый указатель следующей команды A, нулевой командный байт выбирает новую позицию
+PositionCursor  equ #DF98                                                       ; указатель следующего байта списка позиций
+LoopPosition    equ #DF9F                                                       ; указатель позиции возврата при маркере FF
+PatternTable    equ #DFA7                                                       ; база таблицы относительных указателей, к ней дважды прибавляется байт позиции
+ModuleBase      equ #DFAE                                                       ; база модуля, прибавляемая к каждому из трёх относительных указателей
+SavedStack      equ #DFBD                                                       ; исходный SP, сохраняемый перед тремя POP из таблицы и восстанавливаемый перед CALL
+                endmodule
+
+
+                ; Существующий изменяемый операнд восстановления SP, память не выделяется
+                module MusicInitializeState
+SavedStack      equ #DB4D                                                       ; слово SP в исходной команде LD SP, nn
                 endmodule
 
                 endif

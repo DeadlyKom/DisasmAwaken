@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "new_instructions": 1,
+  "new_code_bytes": 3,
+  "address": 57197,
+  "original_bytes": "210000",
+  "physical_bytes_preserved": true,
+  "assembly_executed": false
+}

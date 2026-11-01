@@ -501,7 +501,11 @@
     "target_instruction": 39560,
     "size": 2,
     "target_operation": "CALL #9A58",
-    "path": "Source/Station/Unknown6780.asm"
+    "path": "Source/Station/DropShipDetailPanels.asm",
+    "target_region": "Station",
+    "target_bank": 2,
+    "target_slot": 4,
+    "writer_bank": 5
   },
   {
     "region": "Station",
@@ -555,7 +559,7 @@
     "target_instruction": 39560,
     "size": 2,
     "target_operation": "CALL #9A58",
-    "path": "Source/Station/DrawItem26.asm"
+    "path": "Source/Station/DrawShipPreview.asm"
   },
   {
     "region": "Station",
@@ -564,7 +568,11 @@
     "target_instruction": 48421,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Station/Unknown69B8.asm"
+    "path": "Source/Station/IndexHelpText.asm",
+    "target_region": "Station",
+    "target_bank": 2,
+    "target_slot": 4,
+    "writer_bank": 5
   },
   {
     "region": "Station",
@@ -582,7 +590,11 @@
     "target_instruction": 27217,
     "size": 1,
     "target_operation": "LD A,#FF",
-    "path": "Source/Station/DrawItem22.asm"
+    "path": "Source/Station/DrawHelpContents.asm",
+    "target_region": "Station",
+    "target_bank": 5,
+    "target_slot": 4,
+    "writer_bank": 5
   },
   {
     "region": "Station",
@@ -591,7 +603,11 @@
     "target_instruction": 27211,
     "size": 1,
     "target_operation": "LD DE,#1E0B",
-    "path": "Source/Station/DrawItem22.asm"
+    "path": "Source/Station/DrawHelpContents.asm",
+    "target_region": "Station",
+    "target_bank": 5,
+    "target_slot": 4,
+    "writer_bank": 5
   },
   {
     "region": "Station",
@@ -600,7 +616,11 @@
     "target_instruction": 48421,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Station/Unknown6A7E.asm"
+    "path": "Source/Station/DisableTextWrap.asm",
+    "target_region": "Station",
+    "target_bank": 2,
+    "target_slot": 4,
+    "writer_bank": 5
   },
   {
     "region": "Station",
@@ -609,7 +629,11 @@
     "target_instruction": 48421,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Station/Unknown6AC6.asm"
+    "path": "Source/Station/UpdateEquipmentInfo.asm",
+    "target_region": "Station",
+    "target_bank": 2,
+    "target_slot": 4,
+    "writer_bank": 5
   },
   {
     "region": "Station",
@@ -618,7 +642,11 @@
     "target_instruction": 27359,
     "size": 2,
     "target_operation": "LD HL,#0000",
-    "path": "Source/Station/Unknown6AC6.asm"
+    "path": "Source/Station/UpdateEquipmentInfo.asm",
+    "target_region": "Station",
+    "target_bank": 5,
+    "target_slot": 4,
+    "writer_bank": 5
   },
   {
     "region": "Station",
@@ -636,7 +664,11 @@
     "target_instruction": 27540,
     "size": 1,
     "target_operation": "LD A,#FF",
-    "path": "Source/Station/DrawItem41.asm"
+    "path": "Source/Station/DrawEnvironmentPanel.asm",
+    "target_region": "Station",
+    "target_bank": 5,
+    "target_slot": 4,
+    "writer_bank": 5
   },
   {
     "region": "Station",
@@ -645,7 +677,11 @@
     "target_instruction": 27534,
     "size": 1,
     "target_operation": "LD DE,#1E0B",
-    "path": "Source/Station/DrawItem41.asm"
+    "path": "Source/Station/DrawEnvironmentPanel.asm",
+    "target_region": "Station",
+    "target_bank": 5,
+    "target_slot": 4,
+    "writer_bank": 5
   },
   {
     "region": "Station",
@@ -654,7 +690,11 @@
     "target_instruction": 48421,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Station/Unknown6C00.asm"
+    "path": "Source/Station/SetupEnvironmentText.asm",
+    "target_region": "Station",
+    "target_bank": 2,
+    "target_slot": 4,
+    "writer_bank": 5
   },
   {
     "region": "Station",
@@ -663,7 +703,11 @@
     "target_instruction": 48498,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Station/Unknown6C00.asm"
+    "path": "Source/Station/SetupEnvironmentText.asm",
+    "target_region": "Station",
+    "target_bank": 2,
+    "target_slot": 4,
+    "writer_bank": 5
   },
   {
     "region": "Station",
@@ -843,7 +887,11 @@
     "target_instruction": 29206,
     "size": 1,
     "target_operation": "LD A,#FF",
-    "path": "Source/Station/DrawItem38.asm"
+    "path": "Source/Station/DrawEquipmentList.asm",
+    "target_region": "Station",
+    "target_bank": 5,
+    "target_slot": 4,
+    "writer_bank": 5
   },
   {
     "region": "Station",
@@ -852,7 +900,11 @@
     "target_instruction": 29200,
     "size": 1,
     "target_operation": "LD DE,#1E1B",
-    "path": "Source/Station/DrawItem38.asm"
+    "path": "Source/Station/DrawEquipmentList.asm",
+    "target_region": "Station",
+    "target_bank": 5,
+    "target_slot": 4,
+    "writer_bank": 5
   },
   {
     "region": "Station",
@@ -861,7 +913,11 @@
     "target_instruction": 29445,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Station/Unknown724C.asm"
+    "path": "Source/Station/PrintEquipmentRows.asm",
+    "target_region": "Station",
+    "target_bank": 5,
+    "target_slot": 4,
+    "writer_bank": 5
   },
   {
     "region": "Station",
@@ -870,7 +926,7 @@
     "target_instruction": 48421,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Station/Unknown733F.asm"
+    "path": "Source/Station/SetupEquipmentColumns.asm"
   },
   {
     "region": "Station",
@@ -879,7 +935,7 @@
     "target_instruction": 48498,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Station/Unknown733F.asm"
+    "path": "Source/Station/SetupEquipmentColumns.asm"
   },
   {
     "region": "Station",
@@ -888,7 +944,7 @@
     "target_instruction": 48509,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Station/Unknown733F.asm"
+    "path": "Source/Station/SetupEquipmentColumns.asm"
   },
   {
     "region": "Station",
@@ -897,7 +953,7 @@
     "target_instruction": 48520,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Station/Unknown733F.asm"
+    "path": "Source/Station/SetupEquipmentColumns.asm"
   },
   {
     "region": "Station",
@@ -906,7 +962,7 @@
     "target_instruction": 48531,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Station/Unknown733F.asm"
+    "path": "Source/Station/SetupEquipmentColumns.asm"
   },
   {
     "region": "Station",
@@ -915,7 +971,11 @@
     "target_instruction": 29404,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Station/Unknown733F.asm"
+    "path": "Source/Station/SetupEquipmentColumns.asm",
+    "target_region": "Station",
+    "target_bank": 5,
+    "target_slot": 4,
+    "writer_bank": 5
   },
   {
     "region": "Station",
@@ -933,7 +993,11 @@
     "target_instruction": 29832,
     "size": 1,
     "target_operation": "LD A,#FF",
-    "path": "Source/Station/DrawItem43.asm"
+    "path": "Source/Station/DrawSaveSlotPanel.asm",
+    "target_region": "Station",
+    "target_bank": 5,
+    "target_slot": 4,
+    "writer_bank": 5
   },
   {
     "region": "Station",
@@ -942,7 +1006,7 @@
     "target_instruction": 48421,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Station/DrawItem43.asm"
+    "path": "Source/Station/DrawSaveSlotPanel.asm"
   },
   {
     "region": "Station",
@@ -960,7 +1024,11 @@
     "target_instruction": 29969,
     "size": 1,
     "target_operation": "LD A,#FF",
-    "path": "Source/Station/DrawItem44.asm"
+    "path": "Source/Station/DrawLoadSlotPanel.asm",
+    "target_region": "Station",
+    "target_bank": 5,
+    "target_slot": 4,
+    "writer_bank": 5
   },
   {
     "region": "Station",
@@ -969,7 +1037,7 @@
     "target_instruction": 48421,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Station/DrawItem44.asm"
+    "path": "Source/Station/DrawLoadSlotPanel.asm"
   },
   {
     "region": "Station",
@@ -1014,7 +1082,11 @@
     "target_instruction": 30246,
     "size": 1,
     "target_operation": "LD A,#FF",
-    "path": "Source/Station/DrawItem42.asm"
+    "path": "Source/Station/DrawGameSettings.asm",
+    "target_region": "Station",
+    "target_bank": 5,
+    "target_slot": 4,
+    "writer_bank": 5
   },
   {
     "region": "Station",
@@ -1023,7 +1095,11 @@
     "target_instruction": 30240,
     "size": 1,
     "target_operation": "LD DE,#1E0B",
-    "path": "Source/Station/DrawItem42.asm"
+    "path": "Source/Station/DrawGameSettings.asm",
+    "target_region": "Station",
+    "target_bank": 5,
+    "target_slot": 4,
+    "writer_bank": 5
   },
   {
     "region": "Station",
@@ -1032,7 +1108,11 @@
     "target_instruction": 48421,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Station/Unknown766C.asm"
+    "path": "Source/Station/SetupGameSettingsText.asm",
+    "target_region": "Station",
+    "target_bank": 2,
+    "target_slot": 4,
+    "writer_bank": 5
   },
   {
     "region": "Station",
@@ -1041,7 +1121,11 @@
     "target_instruction": 48498,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Station/Unknown766C.asm"
+    "path": "Source/Station/SetupGameSettingsText.asm",
+    "target_region": "Station",
+    "target_bank": 2,
+    "target_slot": 4,
+    "writer_bank": 5
   },
   {
     "region": "Station",
@@ -1068,7 +1152,7 @@
     "target_instruction": 48421,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Station/DrawItem45.asm"
+    "path": "Source/Station/DrawWelcomePanel.asm"
   },
   {
     "region": "Station",
@@ -1077,7 +1161,7 @@
     "target_instruction": 40567,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Station/Unknown79C7.asm"
+    "path": "Source/Station/ConfirmShipModelTrade.asm"
   },
   {
     "region": "Station",
@@ -1086,7 +1170,11 @@
     "target_instruction": 31196,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Station/Unknown7A24.asm"
+    "path": "Source/Station/SelectSaleMode.asm",
+    "target_region": "Station",
+    "target_bank": 5,
+    "target_slot": 4,
+    "writer_bank": 5
   },
   {
     "region": "Station",
@@ -1095,7 +1183,11 @@
     "target_instruction": 31196,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Station/Unknown7A64.asm"
+    "path": "Source/Station/SelectPurchaseMode.asm",
+    "target_region": "Station",
+    "target_bank": 5,
+    "target_slot": 4,
+    "writer_bank": 5
   },
   {
     "region": "Station",
@@ -1113,7 +1205,11 @@
     "target_instruction": 31947,
     "size": 2,
     "target_operation": "LD HL,#99A3",
-    "path": "Source/Station/Unknown7CC6.asm"
+    "path": "Source/Station/CenterContractMap.asm",
+    "target_region": "Station",
+    "target_bank": 5,
+    "target_slot": 4,
+    "writer_bank": 5
   },
   {
     "region": "Station",
@@ -2697,7 +2793,11 @@
     "target_instruction": 56064,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Help/SelectText.asm"
+    "path": "Source/Help/SelectText.asm",
+    "target_region": "Help",
+    "writer_bank": 7,
+    "target_bank": 7,
+    "target_slot": 8
   },
   {
     "region": "Music",
@@ -2904,7 +3004,7 @@
     "target_instruction": 57203,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Music/ClearAyRegisters.asm"
+    "path": "Source/Music/ReadEnvelopeSlide.asm"
   },
   {
     "region": "Music",
@@ -2913,7 +3013,7 @@
     "target_instruction": 57195,
     "size": 1,
     "target_operation": "JR #DF7F",
-    "path": "Source/Music/ClearAyRegisters.asm"
+    "path": "Source/Music/ReadEnvelopeSlide.asm"
   },
   {
     "region": "Music",
@@ -3120,7 +3220,7 @@
     "target_instruction": 56976,
     "size": 1,
     "target_operation": "JR #DEA3",
-    "path": "Source/Music/UnknownDE90.asm"
+    "path": "Source/Music/StageGateAndSampleA.asm"
   },
   {
     "region": "Music",
@@ -3129,7 +3229,7 @@
     "target_instruction": 57576,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Music/UnknownDE90.asm"
+    "path": "Source/Music/StageGateAndSampleA.asm"
   },
   {
     "region": "Music",
@@ -3138,7 +3238,7 @@
     "target_instruction": 57558,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Music/UnknownDE90.asm"
+    "path": "Source/Music/StageGateAndSampleA.asm"
   },
   {
     "region": "Music",
@@ -3147,7 +3247,7 @@
     "target_instruction": 57572,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Music/UnknownDE90.asm"
+    "path": "Source/Music/StageGateAndSampleA.asm"
   },
   {
     "region": "Music",
@@ -3156,7 +3256,7 @@
     "target_instruction": 57751,
     "size": 2,
     "target_operation": "LD BC,#0000",
-    "path": "Source/Music/UnknownDEB9.asm"
+    "path": "Source/Music/StageChannelBRow.asm"
   },
   {
     "region": "Music",
@@ -3165,7 +3265,7 @@
     "target_instruction": 57592,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Music/UnknownDEB9.asm"
+    "path": "Source/Music/StageChannelBRow.asm"
   },
   {
     "region": "Music",
@@ -3174,7 +3274,7 @@
     "target_instruction": 57660,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Music/UnknownDEB9.asm"
+    "path": "Source/Music/StageChannelBRow.asm"
   },
   {
     "region": "Music",
@@ -3183,7 +3283,7 @@
     "target_instruction": 57683,
     "size": 1,
     "target_operation": "ADD A,#00",
-    "path": "Source/Music/UnknownDEB9.asm"
+    "path": "Source/Music/StageChannelBRow.asm"
   },
   {
     "region": "Music",
@@ -3192,7 +3292,7 @@
     "target_instruction": 57723,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Music/UnknownDEB9.asm"
+    "path": "Source/Music/StageChannelBRow.asm"
   },
   {
     "region": "Music",
@@ -3201,7 +3301,7 @@
     "target_instruction": 57758,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Music/UnknownDEB9.asm"
+    "path": "Source/Music/StageChannelBRow.asm"
   },
   {
     "region": "Music",
@@ -3210,7 +3310,7 @@
     "target_instruction": 57814,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Music/UnknownDEB9.asm"
+    "path": "Source/Music/StageChannelBRow.asm"
   },
   {
     "region": "Music",
@@ -3219,7 +3319,7 @@
     "target_instruction": 57707,
     "size": 2,
     "target_operation": "LD HL,#0000",
-    "path": "Source/Music/UnknownDEB9.asm"
+    "path": "Source/Music/StageChannelBRow.asm"
   },
   {
     "region": "Music",
@@ -3228,7 +3328,7 @@
     "target_instruction": 57581,
     "size": 1,
     "target_operation": "LD A,#FF",
-    "path": "Source/Music/UnknownDEB9.asm"
+    "path": "Source/Music/StageChannelBRow.asm"
   },
   {
     "region": "Music",
@@ -3237,7 +3337,7 @@
     "target_instruction": 57588,
     "size": 2,
     "target_operation": "LD SP,#0000",
-    "path": "Source/Music/UnknownDEB9.asm"
+    "path": "Source/Music/StageChannelBRow.asm"
   },
   {
     "region": "Music",
@@ -3246,7 +3346,7 @@
     "target_instruction": 57615,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Music/UnknownDEB9.asm"
+    "path": "Source/Music/StageChannelBRow.asm"
   },
   {
     "region": "Music",
@@ -3255,7 +3355,7 @@
     "target_instruction": 57643,
     "size": 1,
     "target_operation": "ADD A,#00",
-    "path": "Source/Music/UnknownDEB9.asm"
+    "path": "Source/Music/StageChannelBRow.asm"
   },
   {
     "region": "Music",
@@ -3264,7 +3364,7 @@
     "target_instruction": 57723,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Music/UnknownDEB9.asm"
+    "path": "Source/Music/StageChannelBRow.asm"
   },
   {
     "region": "Music",
@@ -3273,7 +3373,7 @@
     "target_instruction": 57719,
     "size": 2,
     "target_operation": "LD SP,#0000",
-    "path": "Source/Music/UnknownDEB9.asm"
+    "path": "Source/Music/StageChannelBRow.asm"
   },
   {
     "region": "Music",
@@ -3282,7 +3382,7 @@
     "target_instruction": 57653,
     "size": 1,
     "target_operation": "OR #00",
-    "path": "Source/Music/UnknownDEB9.asm"
+    "path": "Source/Music/StageChannelBRow.asm"
   },
   {
     "region": "Music",
@@ -3291,7 +3391,7 @@
     "target_instruction": 58096,
     "size": 2,
     "target_operation": "LD HL,#0000",
-    "path": "Source/Music/UnknownDF47.asm"
+    "path": "Source/Music/StageEnvelopeAndNoise.asm"
   },
   {
     "region": "Music",
@@ -3300,7 +3400,7 @@
     "target_instruction": 57159,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Music/UnknownDF47.asm"
+    "path": "Source/Music/StageEnvelopeAndNoise.asm"
   },
   {
     "region": "Music",
@@ -3309,7 +3409,7 @@
     "target_instruction": 58093,
     "size": 2,
     "target_operation": "LD DE,#0000",
-    "path": "Source/Music/UnknownDF47.asm"
+    "path": "Source/Music/StageEnvelopeAndNoise.asm"
   },
   {
     "region": "Music",
@@ -3318,7 +3418,7 @@
     "target_instruction": 58105,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Music/UnknownDF47.asm"
+    "path": "Source/Music/StageEnvelopeAndNoise.asm"
   },
   {
     "region": "Music",
@@ -3327,7 +3427,7 @@
     "target_instruction": 58236,
     "size": 1,
     "target_operation": "LD A,#03",
-    "path": "Source/Music/UnknownDF47.asm"
+    "path": "Source/Music/StageEnvelopeAndNoise.asm"
   },
   {
     "region": "Music",
@@ -3336,7 +3436,7 @@
     "target_instruction": 58113,
     "size": 2,
     "target_operation": "LD HL,#0000",
-    "path": "Source/Music/UnknownDF70.asm"
+    "path": "Source/Music/CommitEnvelopeSlide.asm"
   },
   {
     "region": "Music",
@@ -3345,7 +3445,7 @@
     "target_instruction": 58105,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Music/UnknownDF70.asm"
+    "path": "Source/Music/CommitEnvelopeSlide.asm"
   },
   {
     "region": "Music",
@@ -3354,7 +3454,7 @@
     "target_instruction": 58120,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Music/UnknownDF70.asm"
+    "path": "Source/Music/CommitEnvelopeSlide.asm"
   },
   {
     "region": "Music",
@@ -3363,7 +3463,7 @@
     "target_instruction": 57195,
     "size": 1,
     "target_operation": "JR #DF7F",
-    "path": "Source/Music/UnknownDF70.asm"
+    "path": "Source/Music/CommitEnvelopeSlide.asm"
   },
   {
     "region": "Music",
@@ -3534,7 +3634,7 @@
     "target_instruction": 57502,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Music/UnknownE0CD.asm"
+    "path": "Source/Music/FinishChannelA.asm"
   },
   {
     "region": "Music",
@@ -3543,7 +3643,7 @@
     "target_instruction": 57558,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Music/UnknownE0CD.asm"
+    "path": "Source/Music/FinishChannelA.asm"
   },
   {
     "region": "Music",
@@ -3552,7 +3652,7 @@
     "target_instruction": 57592,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Music/UnknownE0CD.asm"
+    "path": "Source/Music/RenderChannelB.asm"
   },
   {
     "region": "Music",
@@ -3561,7 +3661,7 @@
     "target_instruction": 57615,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Music/UnknownE0CD.asm"
+    "path": "Source/Music/RenderChannelB.asm"
   },
   {
     "region": "Music",
@@ -3570,7 +3670,7 @@
     "target_instruction": 57660,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Music/UnknownE0CD.asm"
+    "path": "Source/Music/RenderChannelB.asm"
   },
   {
     "region": "Music",
@@ -3579,7 +3679,7 @@
     "target_instruction": 57683,
     "size": 1,
     "target_operation": "ADD A,#00",
-    "path": "Source/Music/UnknownE0CD.asm"
+    "path": "Source/Music/RenderChannelB.asm"
   },
   {
     "region": "Music",
@@ -3588,7 +3688,7 @@
     "target_instruction": 57707,
     "size": 2,
     "target_operation": "LD HL,#0000",
-    "path": "Source/Music/UnknownE0CD.asm"
+    "path": "Source/Music/RenderChannelB.asm"
   },
   {
     "region": "Music",
@@ -3597,7 +3697,7 @@
     "target_instruction": 57723,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Music/UnknownE0CD.asm"
+    "path": "Source/Music/RenderChannelB.asm"
   },
   {
     "region": "Music",
@@ -3606,7 +3706,7 @@
     "target_instruction": 57751,
     "size": 2,
     "target_operation": "LD BC,#0000",
-    "path": "Source/Music/UnknownE0CD.asm"
+    "path": "Source/Music/RenderChannelB.asm"
   },
   {
     "region": "Music",
@@ -3615,7 +3715,7 @@
     "target_instruction": 57758,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Music/UnknownE1CD.asm"
+    "path": "Source/Music/FinishChannelB.asm"
   },
   {
     "region": "Music",
@@ -3624,7 +3724,7 @@
     "target_instruction": 57814,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Music/UnknownE1CD.asm"
+    "path": "Source/Music/FinishChannelB.asm"
   },
   {
     "region": "Music",
@@ -3633,7 +3733,7 @@
     "target_instruction": 57848,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Music/UnknownE1CD.asm"
+    "path": "Source/Music/RenderChannelC.asm"
   },
   {
     "region": "Music",
@@ -3642,7 +3742,7 @@
     "target_instruction": 57870,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Music/UnknownE1CD.asm"
+    "path": "Source/Music/RenderChannelC.asm"
   },
   {
     "region": "Music",
@@ -3651,7 +3751,7 @@
     "target_instruction": 57915,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Music/UnknownE1CD.asm"
+    "path": "Source/Music/RenderChannelC.asm"
   },
   {
     "region": "Music",
@@ -3660,7 +3760,7 @@
     "target_instruction": 57938,
     "size": 1,
     "target_operation": "ADD A,#00",
-    "path": "Source/Music/UnknownE1CD.asm"
+    "path": "Source/Music/RenderChannelC.asm"
   },
   {
     "region": "Music",
@@ -3669,7 +3769,7 @@
     "target_instruction": 57961,
     "size": 2,
     "target_operation": "LD HL,#0000",
-    "path": "Source/Music/UnknownE1CD.asm"
+    "path": "Source/Music/RenderChannelC.asm"
   },
   {
     "region": "Music",
@@ -3678,7 +3778,7 @@
     "target_instruction": 57977,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Music/UnknownE1CD.asm"
+    "path": "Source/Music/RenderChannelC.asm"
   },
   {
     "region": "Music",
@@ -3687,7 +3787,7 @@
     "target_instruction": 58005,
     "size": 2,
     "target_operation": "LD BC,#0000",
-    "path": "Source/Music/UnknownE1CD.asm"
+    "path": "Source/Music/RenderChannelC.asm"
   },
   {
     "region": "Music",
@@ -3696,7 +3796,7 @@
     "target_instruction": 58012,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Music/UnknownE2CB.asm"
+    "path": "Source/Music/FinishChannelC.asm"
   },
   {
     "region": "Music",
@@ -3705,7 +3805,7 @@
     "target_instruction": 58068,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Music/UnknownE2CB.asm"
+    "path": "Source/Music/FinishChannelC.asm"
   },
   {
     "region": "Music",
@@ -3714,7 +3814,7 @@
     "target_instruction": 58093,
     "size": 2,
     "target_operation": "LD DE,#0000",
-    "path": "Source/Music/UnknownE2CB.asm"
+    "path": "Source/Music/OutputAyFrame.asm"
   },
   {
     "region": "Music",
@@ -3723,7 +3823,7 @@
     "target_instruction": 58105,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Music/UnknownE2CB.asm"
+    "path": "Source/Music/OutputAyFrame.asm"
   },
   {
     "region": "Music",
@@ -3732,7 +3832,7 @@
     "target_instruction": 57318,
     "size": 1,
     "target_operation": "LD IX,#0000",
-    "path": "Source/Music/UnknownE2CB.asm"
+    "path": "Source/Music/OutputAyFrame.asm"
   },
   {
     "region": "Music",
@@ -3741,7 +3841,7 @@
     "target_instruction": 58236,
     "size": 1,
     "target_operation": "LD A,#03",
-    "path": "Source/Music/UnknownE2CB.asm"
+    "path": "Source/Music/AdvancePatternBC.asm"
   },
   {
     "region": "Music",
@@ -3750,7 +3850,7 @@
     "target_instruction": 58258,
     "size": 2,
     "target_operation": "LD DE,#0000",
-    "path": "Source/Music/UnknownE2CB.asm"
+    "path": "Source/Music/AdvancePatternBC.asm"
   },
   {
     "region": "Music",
@@ -3759,7 +3859,7 @@
     "target_instruction": 57020,
     "size": 1,
     "target_operation": "LD (#E198),HL",
-    "path": "Source/Music/UnknownE2CB.asm"
+    "path": "Source/Music/AdvancePatternBC.asm"
   },
   {
     "region": "Music",
@@ -3768,7 +3868,7 @@
     "target_instruction": 57071,
     "size": 1,
     "target_operation": "JR #DF00",
-    "path": "Source/Music/UnknownE2CB.asm"
+    "path": "Source/Music/AdvancePatternBC.asm"
   },
   {
     "region": "Music",
@@ -3777,7 +3877,7 @@
     "target_instruction": 57023,
     "size": 1,
     "target_operation": "JR #DEEA",
-    "path": "Source/Music/UnknownE2CB.asm"
+    "path": "Source/Music/AdvancePatternBC.asm"
   },
   {
     "region": "Music",
@@ -3786,7 +3886,7 @@
     "target_instruction": 57088,
     "size": 1,
     "target_operation": "JR #DF1E",
-    "path": "Source/Music/UnknownE2CB.asm"
+    "path": "Source/Music/AdvancePatternBC.asm"
   },
   {
     "region": "Music",
@@ -3795,7 +3895,7 @@
     "target_instruction": 56863,
     "size": 1,
     "target_operation": "JP #DFE3",
-    "path": "Source/Music/UnknownE2CB.asm"
+    "path": "Source/Music/AdvancePatternBC.asm"
   },
   {
     "region": "Music",
@@ -3804,7 +3904,7 @@
     "target_instruction": 58307,
     "size": 2,
     "target_operation": "LD DE,#0000",
-    "path": "Source/Music/UnknownE2CB.asm"
+    "path": "Source/Music/AdvancePatternBC.asm"
   },
   {
     "region": "Music",
@@ -3813,7 +3913,7 @@
     "target_instruction": 58005,
     "size": 2,
     "target_operation": "LD BC,#0000",
-    "path": "Source/Music/UnknownE2CB.asm"
+    "path": "Source/Music/AdvancePatternBC.asm"
   },
   {
     "region": "Music",
@@ -3822,7 +3922,7 @@
     "target_instruction": 56908,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Music/UnknownE2CB.asm"
+    "path": "Source/Music/PatternCommandsA.asm"
   },
   {
     "region": "Music",
@@ -3831,7 +3931,7 @@
     "target_instruction": 56924,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Music/UnknownE2CB.asm"
+    "path": "Source/Music/PatternCommandsA.asm"
   },
   {
     "region": "Music",
@@ -3840,7 +3940,7 @@
     "target_instruction": 56904,
     "size": 1,
     "target_operation": "CPL",
-    "path": "Source/Music/UnknownE2CB.asm"
+    "path": "Source/Music/PatternCommandsA.asm"
   },
   {
     "region": "Music",
@@ -3849,7 +3949,7 @@
     "target_instruction": 57288,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Music/UnknownE2CB.asm"
+    "path": "Source/Music/PatternCommandsA.asm"
   },
   {
     "region": "Music",
@@ -3858,7 +3958,7 @@
     "target_instruction": 57159,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Music/UnknownE2CB.asm"
+    "path": "Source/Music/PatternCommandsA.asm"
   },
   {
     "region": "Music",
@@ -3867,7 +3967,7 @@
     "target_instruction": 57167,
     "size": 1,
     "target_operation": "LD HL,#0000",
-    "path": "Source/Music/UnknownE2CB.asm"
+    "path": "Source/Music/PatternCommandsA.asm"
   },
   {
     "region": "Music",
@@ -3876,7 +3976,7 @@
     "target_instruction": 57167,
     "size": 1,
     "target_operation": "LD HL,#0000",
-    "path": "Source/Music/UnknownE2CB.asm"
+    "path": "Source/Music/PatternCommandsA.asm"
   },
   {
     "region": "Music",
@@ -3885,7 +3985,7 @@
     "target_instruction": 56941,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Music/UnknownE2CB.asm"
+    "path": "Source/Music/PatternCommandsA.asm"
   },
   {
     "region": "Music",
@@ -3894,7 +3994,7 @@
     "target_instruction": 56935,
     "size": 2,
     "target_operation": "LD HL,#0000",
-    "path": "Source/Music/UnknownE2CB.asm"
+    "path": "Source/Music/PatternCommandsA.asm"
   },
   {
     "region": "Music",
@@ -3903,7 +4003,7 @@
     "target_instruction": 56941,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Music/UnknownE2CB.asm"
+    "path": "Source/Music/PatternCommandsA.asm"
   },
   {
     "region": "Music",
@@ -3912,7 +4012,7 @@
     "target_instruction": 56913,
     "size": 2,
     "target_operation": "LD HL,#0000",
-    "path": "Source/Music/UnknownE2CB.asm"
+    "path": "Source/Music/PatternCommandsA.asm"
   },
   {
     "region": "Music",
@@ -3921,7 +4021,7 @@
     "target_instruction": 57159,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Music/UnknownE439.asm"
+    "path": "Source/Music/DecodePatternA.asm"
   },
   {
     "region": "Music",
@@ -3930,7 +4030,7 @@
     "target_instruction": 57167,
     "size": 1,
     "target_operation": "LD HL,#0000",
-    "path": "Source/Music/UnknownE439.asm"
+    "path": "Source/Music/DecodePatternA.asm"
   },
   {
     "region": "Music",
@@ -3939,7 +4039,7 @@
     "target_instruction": 57167,
     "size": 1,
     "target_operation": "LD HL,#0000",
-    "path": "Source/Music/UnknownE439.asm"
+    "path": "Source/Music/DecodePatternA.asm"
   },
   {
     "region": "Music",
@@ -3948,7 +4048,7 @@
     "target_instruction": 56935,
     "size": 2,
     "target_operation": "LD HL,#0000",
-    "path": "Source/Music/UnknownE439.asm"
+    "path": "Source/Music/DecodePatternA.asm"
   },
   {
     "region": "Music",
@@ -3957,7 +4057,7 @@
     "target_instruction": 57050,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Music/UnknownE439.asm"
+    "path": "Source/Music/PatternCommandsB.asm"
   },
   {
     "region": "Music",
@@ -3966,7 +4066,7 @@
     "target_instruction": 57066,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Music/UnknownE439.asm"
+    "path": "Source/Music/PatternCommandsB.asm"
   },
   {
     "region": "Music",
@@ -3975,7 +4075,7 @@
     "target_instruction": 57046,
     "size": 1,
     "target_operation": "CPL",
-    "path": "Source/Music/UnknownE439.asm"
+    "path": "Source/Music/PatternCommandsB.asm"
   },
   {
     "region": "Music",
@@ -3984,7 +4084,7 @@
     "target_instruction": 58270,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Music/UnknownE439.asm"
+    "path": "Source/Music/PatternCommandsB.asm"
   },
   {
     "region": "Music",
@@ -3993,7 +4093,7 @@
     "target_instruction": 57159,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Music/UnknownE439.asm"
+    "path": "Source/Music/PatternCommandsB.asm"
   },
   {
     "region": "Music",
@@ -4002,7 +4102,7 @@
     "target_instruction": 57167,
     "size": 1,
     "target_operation": "LD HL,#0000",
-    "path": "Source/Music/UnknownE439.asm"
+    "path": "Source/Music/PatternCommandsB.asm"
   },
   {
     "region": "Music",
@@ -4011,7 +4111,7 @@
     "target_instruction": 57167,
     "size": 1,
     "target_operation": "LD HL,#0000",
-    "path": "Source/Music/UnknownE439.asm"
+    "path": "Source/Music/PatternCommandsB.asm"
   },
   {
     "region": "Music",
@@ -4020,7 +4120,7 @@
     "target_instruction": 57083,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Music/UnknownE439.asm"
+    "path": "Source/Music/PatternCommandsB.asm"
   },
   {
     "region": "Music",
@@ -4029,7 +4129,7 @@
     "target_instruction": 57077,
     "size": 2,
     "target_operation": "LD HL,#0000",
-    "path": "Source/Music/UnknownE439.asm"
+    "path": "Source/Music/PatternCommandsB.asm"
   },
   {
     "region": "Music",
@@ -4038,7 +4138,7 @@
     "target_instruction": 57083,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Music/UnknownE439.asm"
+    "path": "Source/Music/PatternCommandsB.asm"
   },
   {
     "region": "Music",
@@ -4047,7 +4147,7 @@
     "target_instruction": 57055,
     "size": 2,
     "target_operation": "LD HL,#0000",
-    "path": "Source/Music/UnknownE439.asm"
+    "path": "Source/Music/PatternCommandsB.asm"
   },
   {
     "region": "Music",
@@ -4056,7 +4156,7 @@
     "target_instruction": 57190,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Music/UnknownE4E6.asm"
+    "path": "Source/Music/DecodePatternB.asm"
   },
   {
     "region": "Music",
@@ -4065,7 +4165,7 @@
     "target_instruction": 57159,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Music/UnknownE4E6.asm"
+    "path": "Source/Music/DecodePatternB.asm"
   },
   {
     "region": "Music",
@@ -4074,7 +4174,7 @@
     "target_instruction": 57167,
     "size": 1,
     "target_operation": "LD HL,#0000",
-    "path": "Source/Music/UnknownE4E6.asm"
+    "path": "Source/Music/DecodePatternB.asm"
   },
   {
     "region": "Music",
@@ -4083,7 +4183,7 @@
     "target_instruction": 57167,
     "size": 1,
     "target_operation": "LD HL,#0000",
-    "path": "Source/Music/UnknownE4E6.asm"
+    "path": "Source/Music/DecodePatternB.asm"
   },
   {
     "region": "Music",
@@ -4092,7 +4192,7 @@
     "target_instruction": 57077,
     "size": 2,
     "target_operation": "LD HL,#0000",
-    "path": "Source/Music/UnknownE4E6.asm"
+    "path": "Source/Music/DecodePatternB.asm"
   },
   {
     "region": "Music",
@@ -4101,7 +4201,7 @@
     "target_instruction": 57898,
     "size": 1,
     "target_operation": "ADD A,#00",
-    "path": "Source/Music/UnknownE4E6.asm"
+    "path": "Source/Music/PatternCommandsC.asm"
   },
   {
     "region": "Music",
@@ -4110,7 +4210,7 @@
     "target_instruction": 58068,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Music/UnknownE4E6.asm"
+    "path": "Source/Music/PatternCommandsC.asm"
   },
   {
     "region": "Music",
@@ -4119,7 +4219,7 @@
     "target_instruction": 57837,
     "size": 1,
     "target_operation": "LD A,#FF",
-    "path": "Source/Music/UnknownE4E6.asm"
+    "path": "Source/Music/PatternCommandsC.asm"
   },
   {
     "region": "Music",
@@ -4128,7 +4228,7 @@
     "target_instruction": 57159,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Music/UnknownE4E6.asm"
+    "path": "Source/Music/PatternCommandsC.asm"
   },
   {
     "region": "Music",
@@ -4137,7 +4237,7 @@
     "target_instruction": 57167,
     "size": 1,
     "target_operation": "LD HL,#0000",
-    "path": "Source/Music/UnknownE4E6.asm"
+    "path": "Source/Music/PatternCommandsC.asm"
   },
   {
     "region": "Music",
@@ -4146,7 +4246,7 @@
     "target_instruction": 57167,
     "size": 1,
     "target_operation": "LD HL,#0000",
-    "path": "Source/Music/UnknownE4E6.asm"
+    "path": "Source/Music/PatternCommandsC.asm"
   },
   {
     "region": "Music",
@@ -4155,7 +4255,7 @@
     "target_instruction": 57908,
     "size": 1,
     "target_operation": "OR #00",
-    "path": "Source/Music/UnknownE4E6.asm"
+    "path": "Source/Music/PatternCommandsC.asm"
   },
   {
     "region": "Music",
@@ -4164,7 +4264,7 @@
     "target_instruction": 57973,
     "size": 2,
     "target_operation": "LD SP,#0000",
-    "path": "Source/Music/UnknownE4E6.asm"
+    "path": "Source/Music/PatternCommandsC.asm"
   },
   {
     "region": "Music",
@@ -4173,7 +4273,7 @@
     "target_instruction": 57908,
     "size": 1,
     "target_operation": "OR #00",
-    "path": "Source/Music/UnknownE4E6.asm"
+    "path": "Source/Music/PatternCommandsC.asm"
   },
   {
     "region": "Music",
@@ -4182,7 +4282,7 @@
     "target_instruction": 57977,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Music/UnknownE4E6.asm"
+    "path": "Source/Music/PatternCommandsC.asm"
   },
   {
     "region": "Music",
@@ -4191,7 +4291,7 @@
     "target_instruction": 57844,
     "size": 2,
     "target_operation": "LD SP,#0000",
-    "path": "Source/Music/UnknownE4E6.asm"
+    "path": "Source/Music/PatternCommandsC.asm"
   },
   {
     "region": "Music",
@@ -4200,7 +4300,7 @@
     "target_instruction": 58319,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Music/UnknownE583.asm"
+    "path": "Source/Music/DecodePatternC.asm"
   },
   {
     "region": "Music",
@@ -4209,7 +4309,7 @@
     "target_instruction": 57159,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Music/UnknownE583.asm"
+    "path": "Source/Music/DecodePatternC.asm"
   },
   {
     "region": "Music",
@@ -4218,7 +4318,7 @@
     "target_instruction": 57167,
     "size": 1,
     "target_operation": "LD HL,#0000",
-    "path": "Source/Music/UnknownE583.asm"
+    "path": "Source/Music/DecodePatternC.asm"
   },
   {
     "region": "Music",
@@ -4227,7 +4327,7 @@
     "target_instruction": 57167,
     "size": 1,
     "target_operation": "LD HL,#0000",
-    "path": "Source/Music/UnknownE583.asm"
+    "path": "Source/Music/DecodePatternC.asm"
   },
   {
     "region": "Music",
@@ -4236,7 +4336,7 @@
     "target_instruction": 57973,
     "size": 2,
     "target_operation": "LD SP,#0000",
-    "path": "Source/Music/UnknownE583.asm"
+    "path": "Source/Music/DecodePatternC.asm"
   },
   {
     "region": "Music",
@@ -4245,7 +4345,7 @@
     "target_instruction": 57977,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Music/UnknownE583.asm"
+    "path": "Source/Music/DecodePatternC.asm"
   },
   {
     "region": "Music",
@@ -4254,7 +4354,7 @@
     "target_instruction": 57848,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Music/UnknownE583.asm"
+    "path": "Source/Music/DecodePatternC.asm"
   },
   {
     "region": "Music",
@@ -4263,7 +4363,7 @@
     "target_instruction": 57915,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Music/UnknownE583.asm"
+    "path": "Source/Music/DecodePatternC.asm"
   },
   {
     "region": "Music",
@@ -4272,7 +4372,7 @@
     "target_instruction": 57938,
     "size": 1,
     "target_operation": "ADD A,#00",
-    "path": "Source/Music/UnknownE583.asm"
+    "path": "Source/Music/DecodePatternC.asm"
   },
   {
     "region": "Music",
@@ -4281,7 +4381,7 @@
     "target_instruction": 57977,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Music/UnknownE583.asm"
+    "path": "Source/Music/DecodePatternC.asm"
   },
   {
     "region": "Music",
@@ -4290,7 +4390,7 @@
     "target_instruction": 58012,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Music/UnknownE583.asm"
+    "path": "Source/Music/DecodePatternC.asm"
   },
   {
     "region": "Music",
@@ -4299,7 +4399,7 @@
     "target_instruction": 57837,
     "size": 1,
     "target_operation": "LD A,#FF",
-    "path": "Source/Music/UnknownE583.asm"
+    "path": "Source/Music/DecodePatternC.asm"
   },
   {
     "region": "Music",
@@ -4308,7 +4408,7 @@
     "target_instruction": 58068,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Music/UnknownE583.asm"
+    "path": "Source/Music/DecodePatternC.asm"
   },
   {
     "region": "Music",
@@ -4317,7 +4417,7 @@
     "target_instruction": 57961,
     "size": 2,
     "target_operation": "LD HL,#0000",
-    "path": "Source/Music/UnknownE583.asm"
+    "path": "Source/Music/DecodePatternC.asm"
   },
   {
     "region": "Music",
@@ -4326,7 +4426,7 @@
     "target_instruction": 57870,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Music/UnknownE583.asm"
+    "path": "Source/Music/DecodePatternC.asm"
   },
   {
     "region": "Music",
@@ -8539,5 +8639,1320 @@
     "size": 2,
     "target_operation": "LD DE,#0000",
     "path": "Source/D3D/RenderPreviewQueue.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 26833,
+    "target": 26859,
+    "target_instruction": 26858,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/RefreshShipPanels.asm"
+  },
+  {
+    "region": "Station",
+    "writer": 26553,
+    "target": 57670,
+    "target_instruction": 57669,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/ShipModelChoice.asm",
+    "target_region": "D3D",
+    "target_bank": 4,
+    "target_slot": 6,
+    "writer_bank": 5
+  },
+  {
+    "region": "Station",
+    "writer": 26564,
+    "target": 26931,
+    "target_instruction": 26930,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Station/ShipModelChoice.asm",
+    "target_region": "Station",
+    "target_bank": 5,
+    "target_slot": 4,
+    "writer_bank": 5
+  },
+  {
+    "region": "Station",
+    "writer": 26572,
+    "target": 26859,
+    "target_instruction": 26858,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/ShipModelChoice.asm",
+    "target_region": "Station",
+    "target_bank": 5,
+    "target_slot": 4,
+    "writer_bank": 5
+  },
+  {
+    "region": "Station",
+    "writer": 27082,
+    "target": 27029,
+    "target_instruction": 27028,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Station/IndexHelpText.asm",
+    "target_region": "Station",
+    "target_bank": 5,
+    "target_slot": 4,
+    "writer_bank": 5
+  },
+  {
+    "region": "Station",
+    "writer": 27025,
+    "target": 41573,
+    "target_instruction": 41572,
+    "size": 2,
+    "target_operation": "CALL #0000",
+    "path": "Source/Station/HandleHelpTextAction.asm",
+    "target_region": "Station",
+    "target_bank": 2,
+    "target_slot": 4,
+    "writer_bank": 5
+  },
+  {
+    "region": "Station",
+    "writer": 27031,
+    "target": 41525,
+    "target_instruction": 41524,
+    "size": 2,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/Station/HandleHelpTextAction.asm",
+    "target_region": "Station",
+    "target_bank": 2,
+    "target_slot": 4,
+    "writer_bank": 5
+  },
+  {
+    "region": "Station",
+    "writer": 27042,
+    "target": 27037,
+    "target_instruction": 27036,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Station/HandleHelpTextAction.asm",
+    "target_region": "Station",
+    "target_bank": 5,
+    "target_slot": 4,
+    "writer_bank": 5
+  },
+  {
+    "region": "Station",
+    "writer": 27139,
+    "target": 27218,
+    "target_instruction": 27217,
+    "size": 1,
+    "target_operation": "LD A,#FF",
+    "path": "Source/Station/HandleHelpContentsAction.asm",
+    "target_region": "Station",
+    "target_bank": 5,
+    "target_slot": 4,
+    "writer_bank": 5
+  },
+  {
+    "region": "Station",
+    "writer": 27145,
+    "target": 41573,
+    "target_instruction": 41572,
+    "size": 2,
+    "target_operation": "CALL #0000",
+    "path": "Source/Station/HandleHelpContentsAction.asm",
+    "target_region": "Station",
+    "target_bank": 2,
+    "target_slot": 4,
+    "writer_bank": 5
+  },
+  {
+    "region": "Station",
+    "writer": 27151,
+    "target": 41525,
+    "target_instruction": 41524,
+    "size": 2,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/Station/HandleHelpContentsAction.asm",
+    "target_region": "Station",
+    "target_bank": 2,
+    "target_slot": 4,
+    "writer_bank": 5
+  },
+  {
+    "region": "Station",
+    "writer": 27162,
+    "target": 27157,
+    "target_instruction": 27156,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Station/HandleHelpContentsAction.asm",
+    "target_region": "Station",
+    "target_bank": 5,
+    "target_slot": 4,
+    "writer_bank": 5
+  },
+  {
+    "region": "Station",
+    "writer": 27176,
+    "target": 27037,
+    "target_instruction": 27036,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Station/HandleHelpContentsAction.asm",
+    "target_region": "Station",
+    "target_bank": 5,
+    "target_slot": 4,
+    "writer_bank": 5
+  },
+  {
+    "region": "Station",
+    "writer": 27288,
+    "target": 41573,
+    "target_instruction": 41572,
+    "size": 2,
+    "target_operation": "CALL #0000",
+    "path": "Source/Station/HandleEquipmentInfoAction.asm",
+    "target_region": "Station",
+    "target_bank": 2,
+    "target_slot": 4,
+    "writer_bank": 5
+  },
+  {
+    "region": "Station",
+    "writer": 27294,
+    "target": 41525,
+    "target_instruction": 41524,
+    "size": 2,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/Station/HandleEquipmentInfoAction.asm",
+    "target_region": "Station",
+    "target_bank": 2,
+    "target_slot": 4,
+    "writer_bank": 5
+  },
+  {
+    "region": "Station",
+    "writer": 27305,
+    "target": 27300,
+    "target_instruction": 27299,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Station/HandleEquipmentInfoAction.asm",
+    "target_region": "Station",
+    "target_bank": 5,
+    "target_slot": 4,
+    "writer_bank": 5
+  },
+  {
+    "region": "Station",
+    "writer": 27353,
+    "target": 27292,
+    "target_instruction": 27291,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Station/UpdateEquipmentInfo.asm",
+    "target_region": "Station",
+    "target_bank": 5,
+    "target_slot": 4,
+    "writer_bank": 5
+  },
+  {
+    "region": "Station",
+    "writer": 27409,
+    "target": 27541,
+    "target_instruction": 27540,
+    "size": 1,
+    "target_operation": "LD A,#FF",
+    "path": "Source/Station/HandleEnvironmentAction.asm",
+    "target_region": "Station",
+    "target_bank": 5,
+    "target_slot": 4,
+    "writer_bank": 5
+  },
+  {
+    "region": "Station",
+    "writer": 27415,
+    "target": 41573,
+    "target_instruction": 41572,
+    "size": 2,
+    "target_operation": "CALL #0000",
+    "path": "Source/Station/HandleEnvironmentAction.asm",
+    "target_region": "Station",
+    "target_bank": 2,
+    "target_slot": 4,
+    "writer_bank": 5
+  },
+  {
+    "region": "Station",
+    "writer": 27421,
+    "target": 41525,
+    "target_instruction": 41524,
+    "size": 2,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/Station/HandleEnvironmentAction.asm",
+    "target_region": "Station",
+    "target_bank": 2,
+    "target_slot": 4,
+    "writer_bank": 5
+  },
+  {
+    "region": "Station",
+    "writer": 27432,
+    "target": 27427,
+    "target_instruction": 27426,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Station/HandleEnvironmentAction.asm",
+    "target_region": "Station",
+    "target_bank": 5,
+    "target_slot": 4,
+    "writer_bank": 5
+  },
+  {
+    "region": "Station",
+    "writer": 30145,
+    "target": 30247,
+    "target_instruction": 30246,
+    "size": 1,
+    "target_operation": "LD A,#FF",
+    "path": "Source/Station/HandleGameSettingsAction.asm",
+    "target_region": "Station",
+    "target_bank": 5,
+    "target_slot": 4,
+    "writer_bank": 5
+  },
+  {
+    "region": "Station",
+    "writer": 30151,
+    "target": 41573,
+    "target_instruction": 41572,
+    "size": 2,
+    "target_operation": "CALL #0000",
+    "path": "Source/Station/HandleGameSettingsAction.asm",
+    "target_region": "Station",
+    "target_bank": 2,
+    "target_slot": 4,
+    "writer_bank": 5
+  },
+  {
+    "region": "Station",
+    "writer": 30157,
+    "target": 41525,
+    "target_instruction": 41524,
+    "size": 2,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/Station/HandleGameSettingsAction.asm",
+    "target_region": "Station",
+    "target_bank": 2,
+    "target_slot": 4,
+    "writer_bank": 5
+  },
+  {
+    "region": "Station",
+    "writer": 30168,
+    "target": 30163,
+    "target_instruction": 30162,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Station/HandleGameSettingsAction.asm",
+    "target_region": "Station",
+    "target_bank": 5,
+    "target_slot": 4,
+    "writer_bank": 5
+  },
+  {
+    "region": "Station",
+    "writer": 31275,
+    "target": 57670,
+    "target_instruction": 57669,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/SelectSaleMode.asm",
+    "target_region": "D3D",
+    "target_bank": 4,
+    "target_slot": 6,
+    "writer_bank": 5
+  },
+  {
+    "region": "Station",
+    "writer": 31285,
+    "target": 26859,
+    "target_instruction": 26858,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/SelectSaleMode.asm",
+    "target_region": "Station",
+    "target_bank": 5,
+    "target_slot": 4,
+    "writer_bank": 5
+  },
+  {
+    "region": "Station",
+    "writer": 31339,
+    "target": 57670,
+    "target_instruction": 57669,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/SelectPurchaseMode.asm",
+    "target_region": "D3D",
+    "target_bank": 4,
+    "target_slot": 6,
+    "writer_bank": 5
+  },
+  {
+    "region": "Station",
+    "writer": 31349,
+    "target": 26859,
+    "target_instruction": 26858,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/SelectPurchaseMode.asm",
+    "target_region": "Station",
+    "target_bank": 5,
+    "target_slot": 4,
+    "writer_bank": 5
+  },
+  {
+    "region": "Station",
+    "writer": 31516,
+    "target": 29164,
+    "target_instruction": 29163,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/SelectEquipmentPurchase.asm",
+    "target_region": "Station",
+    "target_bank": 5,
+    "target_slot": 4,
+    "writer_bank": 5
+  },
+  {
+    "region": "Station",
+    "writer": 31543,
+    "target": 29164,
+    "target_instruction": 29163,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/SelectEquipmentSale.asm",
+    "target_region": "Station",
+    "target_bank": 5,
+    "target_slot": 4,
+    "writer_bank": 5
+  },
+  {
+    "region": "Station",
+    "writer": 31430,
+    "target": 30935,
+    "target_instruction": 30934,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/OpenMapPanelGroup.asm",
+    "target_region": "Station",
+    "target_bank": 5,
+    "target_slot": 4,
+    "writer_bank": 5
+  },
+  {
+    "region": "Station",
+    "writer": 29744,
+    "target": 29809,
+    "target_instruction": 29808,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/HandleSaveSlotAction.asm",
+    "target_region": "Station",
+    "target_bank": 5,
+    "target_slot": 4,
+    "writer_bank": 5
+  },
+  {
+    "region": "Station",
+    "writer": 29890,
+    "target": 29951,
+    "target_instruction": 29950,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/HandleLoadSlotAction.asm",
+    "target_region": "Station",
+    "target_bank": 5,
+    "target_slot": 4,
+    "writer_bank": 5
+  },
+  {
+    "region": "Station",
+    "writer": 30795,
+    "target": 39561,
+    "target_instruction": 39560,
+    "size": 2,
+    "target_operation": "CALL #9A58",
+    "path": "Source/Station/HandleSystemMapAction.asm",
+    "target_region": "Station",
+    "target_bank": 2,
+    "target_slot": 4,
+    "writer_bank": 5
+  },
+  {
+    "region": "Station",
+    "writer": 31188,
+    "target": 57670,
+    "target_instruction": 57669,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/ConfirmShipModelTrade.asm",
+    "target_region": "D3D",
+    "target_bank": 4,
+    "target_slot": 6,
+    "writer_bank": 5
+  },
+  {
+    "region": "Station",
+    "writer": 29095,
+    "target": 29207,
+    "target_instruction": 29206,
+    "size": 1,
+    "target_operation": "LD A,#FF",
+    "path": "Source/Station/HandleEquipmentListAction.asm",
+    "target_region": "Station",
+    "target_bank": 5,
+    "target_slot": 4,
+    "writer_bank": 5
+  },
+  {
+    "region": "Station",
+    "writer": 29101,
+    "target": 41573,
+    "target_instruction": 41572,
+    "size": 2,
+    "target_operation": "CALL #0000",
+    "path": "Source/Station/HandleEquipmentListAction.asm",
+    "target_region": "Station",
+    "target_bank": 2,
+    "target_slot": 4,
+    "writer_bank": 5
+  },
+  {
+    "region": "Station",
+    "writer": 29107,
+    "target": 41525,
+    "target_instruction": 41524,
+    "size": 2,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/Station/HandleEquipmentListAction.asm",
+    "target_region": "Station",
+    "target_bank": 2,
+    "target_slot": 4,
+    "writer_bank": 5
+  },
+  {
+    "region": "Station",
+    "writer": 29118,
+    "target": 29113,
+    "target_instruction": 29112,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Station/HandleEquipmentListAction.asm",
+    "target_region": "Station",
+    "target_bank": 5,
+    "target_slot": 4,
+    "writer_bank": 5
+  },
+  {
+    "region": "Station",
+    "writer": 29141,
+    "target": 27340,
+    "target_instruction": 27339,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Station/HandleEquipmentListAction.asm",
+    "target_region": "Station",
+    "target_bank": 5,
+    "target_slot": 4,
+    "writer_bank": 5
+  },
+  {
+    "region": "Station",
+    "writer": 29147,
+    "target": 27300,
+    "target_instruction": 27299,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Station/HandleEquipmentListAction.asm",
+    "target_region": "Station",
+    "target_bank": 5,
+    "target_slot": 4,
+    "writer_bank": 5
+  },
+  {
+    "region": "Station",
+    "writer": 43625,
+    "target": 39561,
+    "target_instruction": 39560,
+    "size": 2,
+    "target_operation": "CALL #9A58",
+    "path": "Source/Station/HandleMissionGroupAction.asm",
+    "target_region": "Station",
+    "target_bank": 2,
+    "target_slot": 4,
+    "writer_bank": 2
+  },
+  {
+    "region": "Music",
+    "writer": 56215,
+    "target": 57198,
+    "target_instruction": 57197,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Music/ReadEnvelopeSlide.asm",
+    "target_region": "Music",
+    "target_bank": 3,
+    "target_slot": 10,
+    "writer_bank": 3
+  },
+  {
+    "region": "Music",
+    "writer": 57003,
+    "target": 56995,
+    "target_instruction": 56995,
+    "size": 1,
+    "target_operation": "JR #DEAE",
+    "path": "Source/Music/StageGateAndSampleA.asm",
+    "target_region": "Music",
+    "target_bank": 3,
+    "target_slot": 10,
+    "writer_bank": 3
+  },
+  {
+    "region": "Music",
+    "writer": 57014,
+    "target": 57006,
+    "target_instruction": 57006,
+    "size": 1,
+    "target_operation": "JR #DEB9",
+    "path": "Source/Music/StageOrnamentA.asm",
+    "target_region": "Music",
+    "target_bank": 3,
+    "target_slot": 10,
+    "writer_bank": 3
+  },
+  {
+    "region": "Music",
+    "writer": 57121,
+    "target": 57118,
+    "target_instruction": 57118,
+    "size": 1,
+    "target_operation": "JR #DF31",
+    "path": "Source/Music/StageGateB.asm",
+    "target_region": "Music",
+    "target_bank": 3,
+    "target_slot": 10,
+    "writer_bank": 3
+  },
+  {
+    "region": "Music",
+    "writer": 57145,
+    "target": 57137,
+    "target_instruction": 57137,
+    "size": 1,
+    "target_operation": "JR #DF3C",
+    "path": "Source/Music/StageSampleB.asm",
+    "target_region": "Music",
+    "target_bank": 3,
+    "target_slot": 10,
+    "writer_bank": 3
+  },
+  {
+    "region": "Music",
+    "writer": 57156,
+    "target": 57148,
+    "target_instruction": 57148,
+    "size": 1,
+    "target_operation": "JR #DF47",
+    "path": "Source/Music/StageOrnamentB.asm",
+    "target_region": "Music",
+    "target_bank": 3,
+    "target_slot": 10,
+    "writer_bank": 3
+  },
+  {
+    "region": "Music",
+    "writer": 56818,
+    "target": 57125,
+    "target_instruction": 57124,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/SetGateTimingB.asm",
+    "target_region": "Music",
+    "target_bank": 3,
+    "target_slot": 10,
+    "writer_bank": 3,
+    "target_source_classified": true,
+    "target_original_hex": "3e00",
+    "indirect_target_proved": false
+  },
+  {
+    "region": "Music",
+    "writer": 56823,
+    "target": 57133,
+    "target_instruction": 57132,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/SetGateTimingB.asm",
+    "target_region": "Music",
+    "target_bank": 3,
+    "target_slot": 10,
+    "writer_bank": 3,
+    "target_source_classified": true,
+    "target_original_hex": "3e00",
+    "indirect_target_proved": false
+  },
+  {
+    "region": "Music",
+    "writer": 56828,
+    "target": 57118,
+    "target_instruction": 57118,
+    "size": 1,
+    "target_operation": "JR #DF31",
+    "path": "Source/Music/SetGateTimingB.asm",
+    "target_region": "Music",
+    "target_bank": 3,
+    "target_slot": 10,
+    "writer_bank": 3,
+    "target_source_classified": true,
+    "target_original_hex": "1811",
+    "indirect_target_proved": false
+  },
+  {
+    "region": "Music",
+    "writer": 58894,
+    "target": 56954,
+    "target_instruction": 56953,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/SetToneSlideA.asm",
+    "target_region": "Music",
+    "target_bank": 3,
+    "target_slot": 10,
+    "writer_bank": 3,
+    "target_source_classified": true,
+    "target_original_hex": "3e00",
+    "indirect_target_proved": false
+  },
+  {
+    "region": "Music",
+    "writer": 58903,
+    "target": 56962,
+    "target_instruction": 56961,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Music/SetToneSlideA.asm",
+    "target_region": "Music",
+    "target_bank": 3,
+    "target_slot": 10,
+    "writer_bank": 3,
+    "target_source_classified": true,
+    "target_original_hex": "210000",
+    "indirect_target_proved": false
+  },
+  {
+    "region": "Music",
+    "writer": 58908,
+    "target": 56968,
+    "target_instruction": 56967,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/SetToneSlideA.asm",
+    "target_region": "Music",
+    "target_bank": 3,
+    "target_slot": 10,
+    "writer_bank": 3,
+    "target_source_classified": true,
+    "target_original_hex": "3e00",
+    "indirect_target_proved": false
+  },
+  {
+    "region": "Music",
+    "writer": 58917,
+    "target": 56954,
+    "target_instruction": 56953,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/SetTonePortamentoA.asm",
+    "target_region": "Music",
+    "target_bank": 3,
+    "target_slot": 10,
+    "writer_bank": 3,
+    "target_source_classified": true,
+    "target_original_hex": "3e00",
+    "indirect_target_proved": false
+  },
+  {
+    "region": "Music",
+    "writer": 58928,
+    "target": 56962,
+    "target_instruction": 56961,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Music/SetTonePortamentoA.asm",
+    "target_region": "Music",
+    "target_bank": 3,
+    "target_slot": 10,
+    "writer_bank": 3,
+    "target_source_classified": true,
+    "target_original_hex": "210000",
+    "indirect_target_proved": false
+  },
+  {
+    "region": "Music",
+    "writer": 58933,
+    "target": 56968,
+    "target_instruction": 56967,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/SetTonePortamentoA.asm",
+    "target_region": "Music",
+    "target_bank": 3,
+    "target_slot": 10,
+    "writer_bank": 3,
+    "target_source_classified": true,
+    "target_original_hex": "3e00",
+    "indirect_target_proved": false
+  },
+  {
+    "region": "Music",
+    "writer": 58940,
+    "target": 56949,
+    "target_instruction": 56948,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/SetTonePortamentoA.asm",
+    "target_region": "Music",
+    "target_bank": 3,
+    "target_slot": 10,
+    "writer_bank": 3,
+    "target_source_classified": true,
+    "target_original_hex": "3e00",
+    "indirect_target_proved": false
+  },
+  {
+    "region": "Music",
+    "writer": 58953,
+    "target": 56998,
+    "target_instruction": 56997,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/SetSamplePositionA.asm",
+    "target_region": "Music",
+    "target_bank": 3,
+    "target_slot": 10,
+    "writer_bank": 3,
+    "target_source_classified": true,
+    "target_original_hex": "3e00",
+    "indirect_target_proved": false
+  },
+  {
+    "region": "Music",
+    "writer": 58958,
+    "target": 56995,
+    "target_instruction": 56995,
+    "size": 1,
+    "target_operation": "JR #DEAE",
+    "path": "Source/Music/SetSamplePositionA.asm",
+    "target_region": "Music",
+    "target_bank": 3,
+    "target_slot": 10,
+    "writer_bank": 3,
+    "target_source_classified": true,
+    "target_original_hex": "1809",
+    "indirect_target_proved": false
+  },
+  {
+    "region": "Music",
+    "writer": 58964,
+    "target": 57009,
+    "target_instruction": 57008,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/SetOrnamentPositionA.asm",
+    "target_region": "Music",
+    "target_bank": 3,
+    "target_slot": 10,
+    "writer_bank": 3,
+    "target_source_classified": true,
+    "target_original_hex": "3e00",
+    "indirect_target_proved": false
+  },
+  {
+    "region": "Music",
+    "writer": 58969,
+    "target": 57006,
+    "target_instruction": 57006,
+    "size": 1,
+    "target_operation": "JR #DEB9",
+    "path": "Source/Music/SetOrnamentPositionA.asm",
+    "target_region": "Music",
+    "target_bank": 3,
+    "target_slot": 10,
+    "writer_bank": 3,
+    "target_source_classified": true,
+    "target_original_hex": "1809",
+    "indirect_target_proved": false
+  },
+  {
+    "region": "Music",
+    "writer": 58975,
+    "target": 57096,
+    "target_instruction": 57095,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/SetToneSlideB.asm",
+    "target_region": "Music",
+    "target_bank": 3,
+    "target_slot": 10,
+    "writer_bank": 3,
+    "target_source_classified": true,
+    "target_original_hex": "3e00",
+    "indirect_target_proved": false
+  },
+  {
+    "region": "Music",
+    "writer": 58984,
+    "target": 57104,
+    "target_instruction": 57103,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Music/SetToneSlideB.asm",
+    "target_region": "Music",
+    "target_bank": 3,
+    "target_slot": 10,
+    "writer_bank": 3,
+    "target_source_classified": true,
+    "target_original_hex": "210000",
+    "indirect_target_proved": false
+  },
+  {
+    "region": "Music",
+    "writer": 58989,
+    "target": 57110,
+    "target_instruction": 57109,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/SetToneSlideB.asm",
+    "target_region": "Music",
+    "target_bank": 3,
+    "target_slot": 10,
+    "writer_bank": 3,
+    "target_source_classified": true,
+    "target_original_hex": "3e00",
+    "indirect_target_proved": false
+  },
+  {
+    "region": "Music",
+    "writer": 58998,
+    "target": 57096,
+    "target_instruction": 57095,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/SetTonePortamentoB.asm",
+    "target_region": "Music",
+    "target_bank": 3,
+    "target_slot": 10,
+    "writer_bank": 3,
+    "target_source_classified": true,
+    "target_original_hex": "3e00",
+    "indirect_target_proved": false
+  },
+  {
+    "region": "Music",
+    "writer": 59009,
+    "target": 57104,
+    "target_instruction": 57103,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Music/SetTonePortamentoB.asm",
+    "target_region": "Music",
+    "target_bank": 3,
+    "target_slot": 10,
+    "writer_bank": 3,
+    "target_source_classified": true,
+    "target_original_hex": "210000",
+    "indirect_target_proved": false
+  },
+  {
+    "region": "Music",
+    "writer": 59014,
+    "target": 57110,
+    "target_instruction": 57109,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/SetTonePortamentoB.asm",
+    "target_region": "Music",
+    "target_bank": 3,
+    "target_slot": 10,
+    "writer_bank": 3,
+    "target_source_classified": true,
+    "target_original_hex": "3e00",
+    "indirect_target_proved": false
+  },
+  {
+    "region": "Music",
+    "writer": 59021,
+    "target": 57091,
+    "target_instruction": 57090,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/SetTonePortamentoB.asm",
+    "target_region": "Music",
+    "target_bank": 3,
+    "target_slot": 10,
+    "writer_bank": 3,
+    "target_source_classified": true,
+    "target_original_hex": "3e00",
+    "indirect_target_proved": false
+  },
+  {
+    "region": "Music",
+    "writer": 59034,
+    "target": 57140,
+    "target_instruction": 57139,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/SetSamplePositionB.asm",
+    "target_region": "Music",
+    "target_bank": 3,
+    "target_slot": 10,
+    "writer_bank": 3,
+    "target_source_classified": true,
+    "target_original_hex": "3e00",
+    "indirect_target_proved": false
+  },
+  {
+    "region": "Music",
+    "writer": 59039,
+    "target": 57137,
+    "target_instruction": 57137,
+    "size": 1,
+    "target_operation": "JR #DF3C",
+    "path": "Source/Music/SetSamplePositionB.asm",
+    "target_region": "Music",
+    "target_bank": 3,
+    "target_slot": 10,
+    "writer_bank": 3,
+    "target_source_classified": true,
+    "target_original_hex": "1809",
+    "indirect_target_proved": false
+  },
+  {
+    "region": "Music",
+    "writer": 59045,
+    "target": 57151,
+    "target_instruction": 57150,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/SetOrnamentPositionB.asm",
+    "target_region": "Music",
+    "target_bank": 3,
+    "target_slot": 10,
+    "writer_bank": 3,
+    "target_source_classified": true,
+    "target_original_hex": "3e00",
+    "indirect_target_proved": false
+  },
+  {
+    "region": "Music",
+    "writer": 59050,
+    "target": 57148,
+    "target_instruction": 57148,
+    "size": 1,
+    "target_operation": "JR #DF47",
+    "path": "Source/Music/SetOrnamentPositionB.asm",
+    "target_region": "Music",
+    "target_bank": 3,
+    "target_slot": 10,
+    "writer_bank": 3,
+    "target_source_classified": true,
+    "target_original_hex": "1809",
+    "indirect_target_proved": false
+  },
+  {
+    "region": "Music",
+    "writer": 59083,
+    "target": 58013,
+    "target_instruction": 58012,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/SetTonePortamentoC.asm",
+    "target_region": "Music",
+    "target_bank": 3,
+    "target_slot": 10,
+    "writer_bank": 3,
+    "target_source_classified": true,
+    "target_original_hex": "3e00",
+    "indirect_target_proved": false
+  },
+  {
+    "region": "Music",
+    "writer": 59086,
+    "target": 58060,
+    "target_instruction": 58059,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/SetTonePortamentoC.asm",
+    "target_region": "Music",
+    "target_bank": 3,
+    "target_slot": 10,
+    "writer_bank": 3,
+    "target_source_classified": true,
+    "target_original_hex": "3e00",
+    "indirect_target_proved": false
+  },
+  {
+    "region": "Music",
+    "writer": 59097,
+    "target": 58022,
+    "target_instruction": 58021,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Music/SetTonePortamentoC.asm",
+    "target_region": "Music",
+    "target_bank": 3,
+    "target_slot": 10,
+    "writer_bank": 3,
+    "target_source_classified": true,
+    "target_original_hex": "210000",
+    "indirect_target_proved": false
+  },
+  {
+    "region": "Music",
+    "writer": 59102,
+    "target": 58069,
+    "target_instruction": 58068,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/SetTonePortamentoC.asm",
+    "target_region": "Music",
+    "target_bank": 3,
+    "target_slot": 10,
+    "writer_bank": 3,
+    "target_source_classified": true,
+    "target_original_hex": "3e00",
+    "indirect_target_proved": false
+  },
+  {
+    "region": "Music",
+    "writer": 59105,
+    "target": 58029,
+    "target_instruction": 58028,
+    "size": 1,
+    "target_operation": "JR #E2CB",
+    "path": "Source/Music/SetTonePortamentoC.asm",
+    "target_region": "Music",
+    "target_bank": 3,
+    "target_slot": 10,
+    "writer_bank": 3,
+    "target_source_classified": true,
+    "target_original_hex": "181d",
+    "indirect_target_proved": false
+  },
+  {
+    "region": "Music",
+    "writer": 59112,
+    "target": 58033,
+    "target_instruction": 58032,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/SetTonePortamentoC.asm",
+    "target_region": "Music",
+    "target_bank": 3,
+    "target_slot": 10,
+    "writer_bank": 3,
+    "target_source_classified": true,
+    "target_original_hex": "3e00",
+    "indirect_target_proved": false
+  },
+  {
+    "region": "Music",
+    "writer": 59120,
+    "target": 57849,
+    "target_instruction": 57848,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/SetSamplePositionC.asm",
+    "target_region": "Music",
+    "target_bank": 3,
+    "target_slot": 10,
+    "writer_bank": 3,
+    "target_source_classified": true,
+    "target_original_hex": "3e00",
+    "indirect_target_proved": false
+  },
+  {
+    "region": "Music",
+    "writer": 59126,
+    "target": 57978,
+    "target_instruction": 57977,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/SetOrnamentPositionC.asm",
+    "target_region": "Music",
+    "target_bank": 3,
+    "target_slot": 10,
+    "writer_bank": 3,
+    "target_source_classified": true,
+    "target_original_hex": "3e00",
+    "indirect_target_proved": false
+  },
+  {
+    "region": "Music",
+    "writer": 59132,
+    "target": 57186,
+    "target_instruction": 57185,
+    "size": 1,
+    "target_operation": "LD A,#03",
+    "path": "Source/Music/SetRowTempo.asm",
+    "target_region": "Music",
+    "target_bank": 3,
+    "target_slot": 10,
+    "writer_bank": 3,
+    "target_source_classified": true,
+    "target_original_hex": "3e03",
+    "indirect_target_proved": false
+  },
+  {
+    "region": "Music",
+    "writer": 58946,
+    "target": 56909,
+    "target_instruction": 56908,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/SetTonePortamentoA.asm",
+    "target_region": "Music",
+    "target_bank": 3,
+    "target_slot": 10,
+    "writer_bank": 3,
+    "target_source_classified": true,
+    "target_original_hex": "3e00",
+    "indirect_target_proved": true
+  },
+  {
+    "region": "Music",
+    "writer": 59027,
+    "target": 57051,
+    "target_instruction": 57050,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Music/SetTonePortamentoB.asm",
+    "target_region": "Music",
+    "target_bank": 3,
+    "target_slot": 10,
+    "writer_bank": 3,
+    "target_source_classified": true,
+    "target_original_hex": "3e00",
+    "indirect_target_proved": true
+  },
+  {
+    "region": "Music",
+    "writer": 59115,
+    "target": 58041,
+    "target_instruction": 58040,
+    "size": 1,
+    "target_operation": "CP #00",
+    "path": "Source/Music/SetTonePortamentoC.asm",
+    "target_region": "Music",
+    "target_bank": 3,
+    "target_slot": 10,
+    "writer_bank": 3,
+    "target_source_classified": true,
+    "target_original_hex": "fe00",
+    "indirect_target_proved": true
+  },
+  {
+    "region": "Music",
+    "writer": 57539,
+    "target": 57531,
+    "target_instruction": 57530,
+    "size": 1,
+    "target_operation": "CP #00",
+    "path": "Source/Music/RenderChannelA.asm",
+    "target_region": "Music",
+    "target_bank": 3,
+    "target_slot": 10,
+    "writer_bank": 3,
+    "target_source_classified": true,
+    "target_original_hex": "fe00"
+  },
+  {
+    "region": "Music",
+    "writer": 57544,
+    "target": 57496,
+    "target_instruction": 57495,
+    "size": 2,
+    "target_operation": "LD BC,#0000",
+    "path": "Source/Music/RenderChannelA.asm",
+    "target_region": "Music",
+    "target_bank": 3,
+    "target_slot": 10,
+    "writer_bank": 3,
+    "target_source_classified": true,
+    "target_original_hex": "010000"
+  },
+  {
+    "region": "Music",
+    "writer": 57795,
+    "target": 57787,
+    "target_instruction": 57786,
+    "size": 1,
+    "target_operation": "CP #00",
+    "path": "Source/Music/RenderChannelB.asm",
+    "target_region": "Music",
+    "target_bank": 3,
+    "target_slot": 10,
+    "writer_bank": 3,
+    "target_source_classified": true,
+    "target_original_hex": "fe00"
+  },
+  {
+    "region": "Music",
+    "writer": 57800,
+    "target": 57752,
+    "target_instruction": 57751,
+    "size": 2,
+    "target_operation": "LD BC,#0000",
+    "path": "Source/Music/RenderChannelB.asm",
+    "target_region": "Music",
+    "target_bank": 3,
+    "target_slot": 10,
+    "writer_bank": 3,
+    "target_source_classified": true,
+    "target_original_hex": "010000"
+  },
+  {
+    "region": "Music",
+    "writer": 58049,
+    "target": 58041,
+    "target_instruction": 58040,
+    "size": 1,
+    "target_operation": "CP #00",
+    "path": "Source/Music/RenderChannelC.asm",
+    "target_region": "Music",
+    "target_bank": 3,
+    "target_slot": 10,
+    "writer_bank": 3,
+    "target_source_classified": true,
+    "target_original_hex": "fe00"
+  },
+  {
+    "region": "Music",
+    "writer": 58054,
+    "target": 58006,
+    "target_instruction": 58005,
+    "size": 2,
+    "target_operation": "LD BC,#0000",
+    "path": "Source/Music/RenderChannelC.asm",
+    "target_region": "Music",
+    "target_bank": 3,
+    "target_slot": 10,
+    "writer_bank": 3,
+    "target_source_classified": true,
+    "target_original_hex": "010000"
   }
 ]

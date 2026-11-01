@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "cases_by_path": {
+    "close_pair": 254,
+    "body_selector_one_noop": 1,
+    "high_selector_return": 256,
+    "contents_top_ff_guard": 256,
+    "byte_choice_sum_stopped_before_select_text": 65280,
+    "section_choice_real_two_draws": 28,
+    "choice_im2_wakes": 56,
+    "scroll_actions": 24,
+    "scroll_steps_and_im2_wakes": 24,
+    "repaint_then_carry_return": 8,
+    "repaint_im2_wakes": 8,
+    "text_hover_noop_returns": 512
+  },
+  "all_256_action_selectors_covered": true,
+  "exact_pair_removal_and_fixed_tail": true,
+  "ff_guard_checks_low_byte_only": true,
+  "real_two_panel_choice_and_help_calls": true,
+  "independent_scroll_index_and_complete_step_bitmap": true,
+  "real_caption_and_scroll_im2": true,
+  "input_mutated_at_poll_boundaries": true,
+  "irq_only_at_halts": true,
+  "music_disabled": true,
+  "native_execution": false,
+  "assembly_executed": false
+}

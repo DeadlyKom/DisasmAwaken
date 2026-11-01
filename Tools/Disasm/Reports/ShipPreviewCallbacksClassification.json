@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "functions_renamed": 4,
+  "unknown_functions_described": 3,
+  "previously_named_contract_described": 1,
+  "instructions_changed": 0,
+  "physical_bytes_preserved": true,
+  "additional_registered_operand_writer": 26833,
+  "source_documentation_axis_correction": true,
+  "scoped_candidate_and_history": true,
+  "assembly_executed": false
+}

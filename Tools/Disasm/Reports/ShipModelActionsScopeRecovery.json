@@ -1,0 +1,8 @@
+{
+  "resolved": true,
+  "reason": "unscoped_unknown_name_collision_with_Action_region",
+  "restored_from_stage_history": 20,
+  "removed_only_new_station_candidates": 3,
+  "original_failed_candidate_preserved": true,
+  "git_index_changed": false
+}

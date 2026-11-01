@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "cases": 65536,
+  "all_duration_pairs": true,
+  "all_input_flag_bytes": true,
+  "entry": 56818,
+  "every_memory_write_observed": true,
+  "irq_executed": false,
+  "assembly_executed": false
+}

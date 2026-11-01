@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "physical_bytes": 4137,
+  "source_parts": 72,
+  "pattern_streams": 41,
+  "sample_headers": 12,
+  "sample_steps": 77,
+  "ornament_headers": 14,
+  "ornament_steps": 57,
+  "duplicate_references_preserved": true,
+  "zero_relative_offsets_preserved": true,
+  "header_unknown63_preserved": true,
+  "original_resource_preserved_in_extraction_and_history": true,
+  "instructions_changed": 0,
+  "assembly_executed": false
+}

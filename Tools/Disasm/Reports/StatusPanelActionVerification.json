@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "cases_by_path": {
+    "early_carry_all_af_with_z_clear": 16384,
+    "full_action": 2096,
+    "synthetic_draw_frames": 1048,
+    "actual_status_draws": 1024,
+    "ret_alias_draws": 24
+  },
+  "all_input_a_bytes": true,
+  "z_selects_geometry_independently_of_a": true,
+  "saved_af_exact_after_geometry": true,
+  "physical_action_draw_and_return_frames": true,
+  "real_status_draw_and_pointer_helpers": true,
+  "existing_ret_alias_kept_by_key_lookup": true,
+  "active_callback_fixture_is_empty": true,
+  "independent_whole_status_bitmap": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

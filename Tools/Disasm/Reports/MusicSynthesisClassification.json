@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "described_sources": 5,
+  "new_functions": 2,
+  "new_instructions": 54,
+  "new_code_bytes": 87,
+  "physical_bytes_preserved": true,
+  "assembly_executed": false
+}

@@ -84,6 +84,10 @@ def analyze(name, extra_roots=(), observed=(), initial_bank=None):
     roots = {address for chunk in chunks for address in chunk["roots"]}
     roots.update(address for address in extra_roots if address in origins)
     roots.update(address for address in FUNCTIONS.get(name, {}) if address in origins)
+    if name == "Music":
+        # Тела после превращения JR в LD B,n доказаны MusicRuntimeFlow и локальными моделями подготовки каналов.
+        # Это внутренние блоки существующих фрагментов, отдельные процедуры не создаются.
+        observed = set(observed) | {0xDF6D, 0xDEA5, 0xDEB0, 0xDF20, 0xDF33, 0xDF3E, 0xDF02, 0xE0B0, 0xE1B0, 0xE2AE}
     # Поиск девяти продолжений доказанного переходного умножителя, его JP не создаёт CPU-возврата.
     if name == "D3D":
         # Поиск исходных целей девяти достижимых кодов сторон, общих для E171 и EAB6.

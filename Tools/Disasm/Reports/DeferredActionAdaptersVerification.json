@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "per_wrapper": {
+    "79BD": 1024,
+    "7A88": 1024,
+    "AA33": 1024,
+    "7B46": 1024,
+    "7CBC": 1024,
+    "7AA4": 1024,
+    "7ABA": 1024
+  },
+  "all_selector_bytes": true,
+  "event_carry_0_and_1": true,
+  "actual_activation_and_bounds_helpers": true,
+  "no_new_callback_executed": true,
+  "exact_next_and_active_callback_addresses": true,
+  "full_register_and_nonstack_memory_equivalence": true,
+  "fixture_stack_bytes_excluded": 256,
+  "physical_irq_saved_sp_checked_separately": true,
+  "independent_bitmap": false,
+  "real_im2_at_activation_halt": true,
+  "music_disabled": true,
+  "native_execution": false,
+  "assembly_executed": false
+}

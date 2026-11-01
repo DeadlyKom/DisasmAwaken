@@ -1,6 +1,6 @@
 """Удаление распакованных устаревших снимков только после побайтовой проверки их архива."""
 from pathlib import Path
-import hashlib,json,os,subprocess,time,zipfile
+import argparse,hashlib,json,os,subprocess,time,zipfile
 ROOT=Path(__file__).resolve().parents[3]
 RESEARCH=ROOT/'Tools/Disasm/Research'
 ARCHIVE=RESEARCH/'Archives/LegacySnapshots-20261031.zip'
@@ -26,11 +26,18 @@ def active_hashes():
  return result
 
 
-def main():
- if ARCHIVE.exists() or ARCHIVE.with_suffix('.partial').exists():raise ValueError('Архив этой очистки уже существует, повторное применение запрещено')
+def main(archive_name=None,skip_archived=False,report_name='ResearchCleanupVerification.json'):
+ archive=ARCHIVE if archive_name is None else RESEARCH/'Archives'/archive_name
+ if archive.parent!=RESEARCH/'Archives' or archive.name!=str(archive_name or ARCHIVE.name) or archive.suffix!='.zip':raise ValueError('Имя архива должно быть одним ZIP-файлом в Archives')
+ if Path(report_name).name!=report_name or not report_name.endswith('.json'):raise ValueError('Отчёт должен быть JSON-файлом в Reports')
+ if archive.exists() or archive.with_suffix('.partial').exists():raise ValueError('Архив этой очистки уже существует, повторное применение запрещено')
  tracked=subprocess.run(['git','ls-files','-z','--','Tools/Disasm/Research/Candidates','Tools/Disasm/Research/History'],cwd=ROOT,capture_output=True,check=True).stdout
  if tracked:raise ValueError('Снимки содержат пользовательские отслеживаемые Git-файлы, очистка остановлена')
- roots=[p.resolve() for parent in ('Candidates','History') for p in (RESEARCH/parent).iterdir() if p.is_dir() and not (parent=='Candidates' and p.name in KEEP)]
+ selected=[p for parent in ('Candidates','History') for p in (RESEARCH/parent).iterdir() if p.is_dir() and not (parent=='Candidates' and p.name in KEEP) and not (skip_archived and (p/'ARCHIVED.json').exists())]
+ for path in selected:
+  if path.is_symlink() or getattr(path.stat(),'st_file_attributes',0)&0x400:raise ValueError('Ссылка или точка повторного анализа вместо корня снимка')
+ roots=[p.resolve() for p in selected]
+ if not roots:raise ValueError('Неархивированных снимков нет')
  # Проверка конечных абсолютных корней удаления, каждый обязан оставаться строго внутри разрешённого каталога проекта.
  for root in roots:
   if not any(root.is_relative_to(RESEARCH/folder) and root!=RESEARCH/folder for folder in ('Candidates','History')):raise ValueError('Недопустимый корень удаления')
@@ -45,7 +52,7 @@ def main():
     if p.is_symlink() or not p.resolve().is_relative_to(root) or getattr(p.stat(),'st_file_attributes',0)&0x400:raise ValueError('Ссылка или точка повторного анализа в снимке')
    files.extend(Path(base)/name for name in names)
  print('Проверены границы, старых снимков',len(roots),'файлов',len(files),flush=True)
- before=active_hashes();ARCHIVE.parent.mkdir(exist_ok=True);temporary=ARCHIVE.with_suffix('.partial');entries=[];seen=set();original_bytes=unique_bytes=0
+ before=active_hashes();archive.parent.mkdir(exist_ok=True);temporary=archive.with_suffix('.partial');entries=[];seen=set();original_bytes=unique_bytes=0
  with zipfile.ZipFile(temporary,'x',compression=zipfile.ZIP_DEFLATED,compresslevel=6,allowZip64=True) as z:
   for i,path in enumerate(files):
    data=path.read_bytes();sha=hashlib.sha256(data).hexdigest();st=path.stat();entries.append(dict(path=path.relative_to(ROOT).as_posix(),sha256=sha,size=len(data),mtime_ns=st.st_mtime_ns));original_bytes+=len(data)
@@ -64,8 +71,8 @@ def main():
  # Проверка прежнего содержимого каждого удаляемого файла защищает новые ручные изменения в старом снимке.
  for item,path in zip(entries,files):
   if digest(path)!=item['sha256']:raise ValueError('Снимок изменился, удаление не начато')
- temporary.rename(ARCHIVE);print('Архив проверен, удаление распакованных копий',flush=True)
- archive_relative=ARCHIVE.relative_to(ROOT).as_posix()
+ temporary.rename(archive);print('Архив проверен, удаление распакованных копий',flush=True)
+ archive_relative=archive.relative_to(ROOT).as_posix()
  for root in roots:
   (root/'ARCHIVED.json').write_text(json.dumps(dict(archive=archive_relative,snapshot=root.relative_to(ROOT).as_posix(),restoration='Tools/Disasm/Research/ResearchArchive.py',consumed_snapshot_directory_preserved=True),ensure_ascii=False,indent=2)+'\n','utf-8')
  # Удаление только проверенных файлов по Literal Path через pathlib, без рекурсивного удаления вычисленного каталога.
@@ -79,8 +86,13 @@ def main():
    if p!=root and not any(p.iterdir()):p.rmdir()
  after=active_hashes()
  if after!=before:raise ValueError('Контроль рабочих файлов после очистки не совпал')
- report=dict(passed=True,archived_snapshots=len(roots),removed_expanded_files=len(files),archived_logical_bytes=original_bytes,unique_content_objects=len(seen),unique_content_bytes=unique_bytes,archive_bytes=ARCHIVE.stat().st_size,archive=archive_relative,archive_sha256=digest(ARCHIVE),retained_candidates=sorted(KEEP),active_files_checked=len(before),active_files_unchanged=True,originals_and_research_scripts_preserved=True,snapshot_directory_guards_preserved=True,assembly_executed=False)
- (ROOT/'Tools/Disasm/Reports/ResearchCleanupVerification.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n','utf-8');print(json.dumps(report,ensure_ascii=False,indent=2),flush=True)
+ report=dict(passed=True,archived_snapshots=len(roots),removed_expanded_files=len(files),archived_logical_bytes=original_bytes,unique_content_objects=len(seen),unique_content_bytes=unique_bytes,archive_bytes=archive.stat().st_size,archive=archive_relative,archive_sha256=digest(archive),retained_candidates=sorted(KEEP),active_files_checked=len(before),active_files_unchanged=True,originals_and_research_scripts_preserved=True,snapshot_directory_guards_preserved=True,assembly_executed=False)
+ (ROOT/('Tools/Disasm/Reports/'+report_name)).write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n','utf-8');print(json.dumps(report,ensure_ascii=False,indent=2),flush=True)
 
 
-if __name__=='__main__':main()
+if __name__=='__main__':
+ parser=argparse.ArgumentParser(description=__doc__)
+ parser.add_argument('--archive-name')
+ parser.add_argument('--skip-archived',action='store_true')
+ parser.add_argument('--report-name',default='ResearchCleanupVerification.json')
+ args=parser.parse_args();main(args.archive_name,args.skip_archived,args.report_name)

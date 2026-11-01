@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "cases_by_path": {
+    "all_refill_words": 65536,
+    "all_counter_and_flags_pairs": 65536,
+    "all_stream_pointers": 65536,
+    "all_saved_af_words": 65536,
+    "all_return_stack_pointers_two_steps_only": 65536,
+    "real_pointer_resume_and_saved_af_return": 48
+  },
+  "stream_word_little_endian": true,
+  "flags_including_carry_preserved": true,
+  "stream_and_stack_wrap_checked": true,
+  "primitives_do_not_write_memory": true,
+  "new_return_continuation_bytes": "CD D8 63",
+  "synthetic_return_from_handle_item_00": true,
+  "independent_pointer_bitmap": true,
+  "saved_af_frame_bytes": 4,
+  "return_sp_delta": 4,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

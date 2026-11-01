@@ -17,7 +17,7 @@
 ;   код окна не исполняется, рисование и обработка содержимого будут выполнены последующим перестроением
 ; -----------------------------------------
                 ; выбор окна восстановления по обёртке Item44
-Entry:          LD HL, @Station.DrawItem44.Entry
+Entry:          LD HL, @Station.DrawLoadSlotPanel.Entry
                 JP #CBA9
 
                 endmodule

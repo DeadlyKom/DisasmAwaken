@@ -1,266 +1,375 @@
                 module Station
                 module UnpackResource
-; Документация [Station](../../Docs/FunctionDetails/Station.md)
-; -----------------------------------------
-; Распаковка ресурса с заголовком, переносом упакованного потока и обработкой ссылок
-; исходная запись 4, файловые смещения #3EFF..#4013
-; In:
-;   Unknown, регистровый контракт ещё не доказан
-; Out:
-;   исходный поток управления, включая переходы в соседние фрагменты
-; Corrupt:
-;   HL, DE, BC, AF, HL', DE', BC', AF', IX, IY, консервативная верхняя граница
-; Note:
-;   граница файла не доказывает границу логической процедуры
-;   состояние самомодификации и активной страницы учитывается отдельно
-; -----------------------------------------
+                ; Документация [грамматика HR, безопасный перенос, три сохранённых слова, все пакеты и лишнее слово пополнения](../../Docs/UnpackResource.md)
+                ; -----------------------------------------
+                ; Распаковка HR-потока со словным битовым резервуаром, LZ-ссылками, тройками и сохранённым шестибайтовым концом
+                ; исходная запись 4, файловые смещения #3EFF..#4013
+                ; In:
+                ;   HL=S начало исходного HR-ресурса, DE=T начало результата, BC и AF не являются параметрами формата
+                ;   FPackedHeader имеет UnpackedSize=U и PackedSize=P, P включает заголовок и сохранённые шесть байтов, корректный поток даёт ровно U байтов
+                ;   S+P-1 и T+U-1 не оборачиваются, U не меньше семи, P больше двенадцати, сигнатура собственным кодом не проверяется
+                ;   области источника, результата и переносимого потока не повреждают исполняемый 9EFF..A01F и CPU-стек
+                ;   доступны записи результата и переноса до максимального конца, а также два читаемых байта после перенесённого P-байтового блока
+                ;   все ссылки читают уже доступную историю, поток достигает терминатора, стек вмещает FUnpackTailFrame и вложенный возврат RefillPackedBits
+                ; Out:
+                ;   в T..T+U-1 записан результат, его последние шесть байтов восстановлены из исходных S+6..S+11
+                ;   перед декодированием база потока Snew=max(S,T+U-P), LDDR переносит ровно P-1 байтов S+1..S+P-1 в Snew+1..Snew+P-1
+                ;   HL остаток битового слова, DE содержит D адаптивную маску и E=4 терминального специального кода, BC содержит B число оставшихся битов и C=16
+                ;   AF=0F4A после распознанного терминатора, эти флаги сохраняются при восстановлении трёх финальных слов
+                ;   HL'=2758, DE'=исходное слово S+10..S+11, BC'=00xx с последним младшим рабочим счётчиком вывода, AF' сохранён
+                ;   IX=Snew+число прочитанных байтов, при последнем пополнении может оказаться на два байта дальше P
+                ;   IY, I, IFF и IM сохранены собственными инструкциями, paging и порты не меняются, SP после RET входному+2
+                ;   вне результата, переносимого диапазона и временных слов CPU-стека записей нет при указанных входных ограничениях
+                ; Corrupt:
+                ;   HL, DE, BC, AF, HL', DE', BC', IX, результат, диапазон переноса и временные слова CPU-стека
+                ; Note:
+                ;   поток байтов литералов и little-endian слов битов имеет общий IX, из каждого слова сначала берётся bit15
+                ;   RefillPackedBits вызывается сразу после шестнадцатого сдвига и сохраняет уже полученный Carry, даже если этот бит завершает поток
+                ;   маска D начинается BF и циклически вращается вправо по специальному коду, её один нулевой разряд задаёт глубину префикса, это не набор флагов
+                ;   главный счётчик вывода становится нулём после LDIR, после тройки содержит младшее значение offset-1, при терминаторе B принудительно обнулён
+                ;   назначение фиксированного выходного слова 2758 у всех вызывающих ещё не прослежено, его значение и регистровый результат доказаны
+                ;   сигнатура, границы, отрицательное смещение и длина результата не валидируются самим Z80-кодом, повреждённый поток может читать и писать другие области
+                ;   проверены все 20 исходных ресурсов в 80 вызовах, включая 27 переносов, независимы байты, пакеты, регистры и кадры, сборка и нативная игра не выполнялись
+                ; -----------------------------------------
+                ; сохранение начала результата до подготовки перекрывающегося упакованного потока
 Entry:          PUSH DE
+                ; сохранение исходного S для вычисления конца файла по PackedSize
                 PUSH HL
+                ; переход к FPackedHeader.UnpackedSize, сигнатура HR кодом не проверяется
                 INC HL
                 INC HL
+                ; чтение слова размера результата U
                 LD C, (HL)
                 INC HL
                 LD B, (HL)
+                ; переход к FPackedHeader.PackedSize
                 INC HL
+                ; расчёт расстояния U-1 до последнего байта результата
                 DEC BC
                 EX DE, HL
+                ; расчёт последнего адреса результата T+U-1
                 ADD HL, BC
                 EX DE, HL
+                ; чтение полного размера упакованного файла P
                 LD C, (HL)
                 INC HL
                 LD B, (HL)
+                ; расчёт P-1, первый байт сигнатуры переносить не требуется
                 DEC BC
+                ; восстановление исходного S для сравнения концов диапазонов
                 POP HL
+                ; расчёт последнего адреса исходного файла S+P-1
                 ADD HL, BC
+                ; расчёт разности конца файла и конца результата, входной перенос задан предыдущим ADD
                 SBC HL, DE
+                ; восстановление конца файла и получение Carry для выбора более правого конца
                 ADD HL, DE
-                JR C, @Station.UnpackResource.Point9F18                         ; переход, если флаг Carry установлен
+                JR C, @Station.UnpackResource.MovePacked                        ; переход, если конец результата правее конца файла, переносить к концу результата
 
-
+                ; выбор прежнего конца файла, если дополнительный сдвиг вправо не нужен
                 LD D, H
                 LD E, L
-Point9F18:      LDDR
+                ; перенос P-1 байтов назад, при совпавших концах он сохраняет те же байты
+MovePacked:     LDDR
+                ; получение Snew и восстановление исходного начала результата T
                 EX DE, HL
                 POP DE
-                LD C, #0C
+                ; выбор начала общего байтового потока после двенадцати байтов префикса
+                LD C, @PackedResourceConst.PrefixBytes
+                ; расчёт Snew+12 для потокового курсора IX
                 ADD HL, BC
+                ; перенос рассчитанного курсора в IX через временное слово CPU-стека
                 PUSH HL
                 POP IX
-                LD A, #03
-Point9F24:      DEC HL
+                ; выбор трёх слов, сохраняемых до завершения распаковки
+                LD A, @PackedResourceConst.TailWords
+                ; переход к старшему байту очередной пары сохранённого конца
+SaveTailWords:  DEC HL
                 LD B, (HL)
+                ; переход к младшему байту этой пары
                 DEC HL
                 LD C, (HL)
+                ; создание очередного слова FUnpackTailFrame, пара 6..7 окажется на вершине
                 PUSH BC
+                ; расчёт оставшегося числа сохраняемых пар
                 DEC A
-                JR NZ, @Station.UnpackResource.Point9F24                        ; переход, если флаг Z сброшен
+                JR NZ, @Station.UnpackResource.SaveTailWords                    ; переход, если сохранены ещё не все три слова, прочитать предыдущую пару
 
-
+                ; обнуление старшего счётчика будущих LZ-копирований после сохранения трёх слов
                 LD B, A
+                ; выбор отдельного набора регистров битового резервуара
                 EXX
-                LD D, #BF
-                LD C, #10
-                CALL @Station.UnknownA014.Entry
-Point9F35:      LD A, (IX + #00)
+                ; создание исходной адаптивной маски BF с одним нулевым разрядом
+                LD D, @PackedResourceConst.InitialWindow
+                ; выбор шестнадцати битов на очередное слово
+                LD C, @PackedResourceConst.BitsPerWord
+                ; чтение первого битового слова, дальнейшие литералы используют тот же IX
+                CALL @Station.RefillPackedBits.Entry
+                ; чтение первого либо разрешённого управляющим битом литерала
+ReadLiteral:    LD A, (IX+#00)
+                ; продвижение общего курсора после буквального байта
                 INC IX
+                ; возврат набора регистров результата для записи литерала
                 EXX
-Point9F3B:      LD (DE), A
+                ; запись одного результирующего байта, общий хвост также принимает третий байт тройки
+StoreByte:      LD (DE), A
+                ; продвижение конца готового результата после одиночной записи
                 INC DE
-Point9F3D:      EXX
-Point9F3E:      ADD HL, HL
-                DJNZ @Station.UnpackResource.Point9F44
+                ; возврат битового набора для следующего пакета
+ReadTokenBit:   EXX
+                ; извлечение очередного старшего бита резервуара в Carry
+ShiftTokenBit:  ADD HL, HL
+                DJNZ @Station.UnpackResource.TestLiteral
 
-                CALL @Station.UnknownA014.Entry
-Point9F44:      JR C, @Station.UnpackResource.Point9F35                         ; переход, если флаг Carry установлен
+                ; пополнение слова после исчерпания счётчика, полученный Carry сохраняется
+                CALL @Station.RefillPackedBits.Entry
+TestLiteral:    JR C, @Station.UnpackResource.ReadLiteral                       ; переход, если управляющий бит равен 1, прочитать следующий литерал
 
-
+                ; создание начального накопителя длины 1
                 LD E, #01
-Point9F48:      LD A, #80
-Point9F4A:      ADD HL, HL
-                DJNZ @Station.UnpackResource.Point9F50
+                ; начало двухбитовой группы длины с маркером 80
+LengthGroup:    LD A, @PackedResourceConst.GroupSeed
+                ; извлечение очередного бита группы длины
+ShiftLength:    ADD HL, HL
+                DJNZ @Station.UnpackResource.AddLengthBit
 
-                CALL @Station.UnknownA014.Entry
-Point9F50:      RLA
-                JR C, @Station.UnpackResource.Point9F4A                         ; переход, если флаг Carry установлен
+                ; пополнение резервуара без потери бита текущей группы
+                CALL @Station.RefillPackedBits.Entry
+                ; включение прочитанного бита в двухбитовую группу
+AddLengthBit:   RLA
+                JR C, @Station.UnpackResource.ShiftLength                       ; переход, если считан только первый бит двухбитовой группы, дочитать второй
 
+                ; проверка кода 3, продолжающего накопление длины
+                CP @PackedResourceConst.RepeatGroup
+                JR C, @Station.UnpackResource.FinishLength                      ; переход, если группа равна 0..2, завершить накопление длины
 
-                CP #03
-                JR C, @Station.UnpackResource.Point9F5C                         ; переход, если флаг Carry установлен
-
-
+                ; увеличение накопителя длины на группу продолжения 3
                 ADD A, E
                 LD E, A
+                ; проверка достижения предельного накопителя 16 через XOR с C=16
                 XOR C
-                JR NZ, @Station.UnpackResource.Point9F48                        ; переход, если флаг Z сброшен
+                JR NZ, @Station.UnpackResource.LengthGroup                      ; переход, если накопитель ещё не равен 16, прочитать следующую группу длины
 
+                ; расчёт полного значения длины из последней группы и накопителя
+FinishLength:   ADD A, E
+                ; проверка специального значения длины 4
+                CP @PackedResourceConst.SpecialLength
+                JR Z, @Station.UnpackResource.SpecialLength                     ; переход, если значение равно 4, разобрать специальный префикс
 
-Point9F5C:      ADD A, E
-                CP #04
-                JR Z, @Station.UnpackResource.Point9FC3                         ; переход, если флаг Z установлен
-
-
-                ADC A, #FF
-                CP #02
+                ; преобразование длины, значения 1..3 сохраняются, значения 5..16 уменьшаются на один
+                ADC A, @PackedResourceConst.LengthAdjust
+                ; проверка отдельного формата ссылки длиной один байт, Z запоминает длину два
+                CP @PackedResourceConst.ShortLength
                 EXX
-Point9F66:      LD C, A
-Point9F67:      EXX
-                LD A, #BF
-                JR C, @Station.UnpackResource.Point9F81                         ; переход, если флаг Carry установлен
+                ; обновление младшего счётчика копирования в наборе результата
+StoreLengthLow: LD C, A
+                ; возврат битового набора для декодирования смещения
+DecodeOffset:   EXX
+                ; выбор двухбитового префикса общего смещения
+                LD A, @PackedResourceConst.OffsetSeed
+                JR C, @Station.UnpackResource.SeedShortRange                    ; переход, если длина равна 1, использовать трёхбитовое короткое смещение
 
+                ; извлечение бита двухбитового префикса смещения
+OffsetPrefix:   ADD HL, HL
+                DJNZ @Station.UnpackResource.AddPrefixBit
 
-Point9F6C:      ADD HL, HL
-                DJNZ @Station.UnpackResource.Point9F72
+                ; пополнение слова при чтении префикса смещения
+                CALL @Station.RefillPackedBits.Entry
+                ; включение бита в префикс смещения с сохранением Z формата длины
+AddPrefixBit:   RLA
+                JR C, @Station.UnpackResource.OffsetPrefix                      ; переход, если считан только первый бит префикса смещения, дочитать второй
 
-                CALL @Station.UnknownA014.Entry
-Point9F72:      RLA
-                JR C, @Station.UnpackResource.Point9F6C                         ; переход, если флаг Carry установлен
+                JR Z, @Station.UnpackResource.TestShortRange                    ; переход, если длина равна 2, миновать адаптивную поправку диапазона
 
-
-                JR Z, @Station.UnpackResource.Point9F7C                         ; переход, если флаг Z установлен
-
-
+                ; расчёт признака максимального двухбитового префикса через байтовое увеличение
                 INC A
+                ; расчёт адаптивного префикса по текущей маске D
                 ADD A, D
-                JR NC, @Station.UnpackResource.Point9F83                        ; переход, если флаг Carry сброшен
+                JR NC, @Station.UnpackResource.ShortRangeBits                   ; переход, если исходный двухбитовый префикс равен 3, дочитать диапазон по адаптивной маске
 
-
+                ; удаление поправки D для остальных префиксов
                 SUB D
-Point9F7C:      INC A
-                JR NZ, @Station.UnpackResource.Point9F8C                        ; переход, если флаг Z сброшен
+                ; расчёт старшего байта смещения либо нулевого признака короткого диапазона
+TestShortRange: INC A
+                JR NZ, @Station.UnpackResource.SelectOffset                     ; переход, если подготовленный старший байт ненулевой, прочитать отдельный младший байт
 
-
-                LD A, #EF
-Point9F81:      RRCA
+                ; выбор короткого диапазона на пять битов после поворота EF
+                LD A, @PackedResourceConst.SpecialSeed
+                ; расчёт трёхбитового либо пятибитового маркера короткого диапазона
+SeedShortRange: RRCA
+                ; установка Z как признака смещения без отдельного младшего байта
                 CP A
-Point9F83:      ADD HL, HL
-                DJNZ @Station.UnpackResource.Point9F89
+                ; извлечение очередного бита переменной длины короткого диапазона
+ShortRangeBits: ADD HL, HL
+                DJNZ @Station.UnpackResource.AddRangeBit
 
-                CALL @Station.UnknownA014.Entry
-Point9F89:      RLA
-                JR C, @Station.UnpackResource.Point9F83                         ; переход, если флаг Carry установлен
+                ; пополнение резервуара внутри диапазона смещений
+                CALL @Station.RefillPackedBits.Entry
+                ; включение бита до выхода нулевого разряда маски в Carry
+AddRangeBit:    RLA
+                JR C, @Station.UnpackResource.ShortRangeBits                    ; переход, если очередной выдвинутый разряд маски равен 1, дочитать диапазон смещения
 
+                ; выбор набора результата и исходного старшего FF для короткого отрицательного смещения
+SelectOffset:   EXX
+                LD H, @PackedResourceConst.NegativeHigh
+                JR Z, @Station.UnpackResource.CopyMatch                         ; переход, если выбран короткий формат без отдельного младшего байта, копировать ссылку
 
-Point9F8C:      EXX
-                LD H, #FF
-                JR Z, @Station.UnpackResource.Point9F9A                         ; переход, если флаг Z установлен
-
-
+                ; установка декодированного старшего байта полного смещения
                 LD H, A
+                ; проверка старшего FF через переполнение увеличенного байта
                 INC A
-                LD A, (IX + #00)
+                ; чтение отдельного младшего байта смещения из общего потока
+                LD A, (IX+#00)
+                ; продвижение курсора после младшего байта смещения
                 INC IX
-                JR Z, @Station.UnpackResource.Point9FA5                         ; переход, если флаг Z установлен
+                JR Z, @Station.UnpackResource.TestEscape                        ; переход, если старший байт смещения равен FF, проверить расширение младшего байта
 
-
-Point9F9A:      LD L, A
+                ; создание полного отрицательного смещения для обычной LZ-ссылки
+CopyMatch:      LD L, A
+                ; расчёт адреса истории относительно текущего конца результата
                 ADD HL, DE
+                ; копирование BC байтов с поддержкой перекрывающейся истории, счётчик становится нулём
                 LDIR
-Point9F9E:      JR @Station.UnpackResource.Point9F3D
+                ; продолжение с очередного управляющего бита без нового безусловного литерала
+NextToken:      JR @Station.UnpackResource.ReadTokenBit
 
-
-Point9FA0:      EXX
+                ; выбор битового набора для смены диапазона без вывода байта
+RotateWindow:   EXX
+                ; циклическое перемещение единственного нуля адаптивной маски вправо
                 RRC D
-                JR @Station.UnpackResource.Point9F3E
+                JR @Station.UnpackResource.ShiftTokenBit
 
+                ; проверка расширения E0..FF после старшего байта FF
+TestEscape:     CP @PackedResourceConst.EscapeMin
+                JR C, @Station.UnpackResource.CopyMatch                         ; переход, если младший байт меньше E0, выполнить обычную LZ-ссылку
 
-Point9FA5:      CP #E0
-                JR C, @Station.UnpackResource.Point9F9A                         ; переход, если флаг Carry установлен
-
-
+                ; поворот кода расширения перед смешиванием с младшим байтом длины
                 RLCA
+                ; расчёт тега расширения через XOR с текущим C длины
                 XOR C
+                ; выделение нулевого тега смены диапазона увеличением результата
                 INC A
-                JR Z, @Station.UnpackResource.Point9FA0                         ; переход, если флаг Z установлен
+                JR Z, @Station.UnpackResource.RotateWindow                      ; переход, если код совпал с тегом смены диапазона, повернуть адаптивную маску
 
-
-                SUB #10
-Point9FB0:      LD L, A
+                ; расчёт компактного смещения тройки с поправкой 16
+                SUB @PackedResourceConst.TripleBias
+                ; подготовка ссылки для тройки история, литерал, история
+CopyTriple:     LD L, A
                 LD C, A
-                LD H, #FF
+                LD H, @PackedResourceConst.NegativeHigh
+                ; расчёт начала истории тройки относительно текущего результата
                 ADD HL, DE
+                ; копирование первого байта истории с уменьшением рабочего BC
                 LDI
-                LD A, (IX + #00)
+                ; чтение среднего буквального байта тройки
+                LD A, (IX+#00)
+                ; продвижение общего курсора после вставленного литерала
                 INC IX
+                ; вставка среднего литерала в результат
                 LD (DE), A
+                ; пропуск второго байта истории, заменённого литералом
                 INC HL
+                ; продвижение результата перед третьим байтом тройки
                 INC DE
+                ; чтение третьего байта истории после уже выполненных двух записей, перекрытие учитывается буквально
                 LD A, (HL)
-                JP @Station.UnpackResource.Point9F3B
+                JP @Station.UnpackResource.StoreByte
 
+                ; создание специального префикса, 1 выбирает тройку, 01 литералы, 00 длину либо конец
+SpecialLength:  LD A, @PackedResourceConst.GroupSeed
+                ; извлечение очередного бита специального префикса
+SpecialPrefix:  ADD HL, HL
+                DJNZ @Station.UnpackResource.AddSpecialBit
 
-Point9FC3:      LD A, #80
-Point9FC5:      ADD HL, HL
-                DJNZ @Station.UnpackResource.Point9FCB
+                ; пополнение слова с сохранением Carry специального префикса
+                CALL @Station.RefillPackedBits.Entry
+                ; расчёт специального префикса через ADC с обновлением Z и Carry
+AddSpecialBit:  ADC A, A
+                JR NZ, @Station.UnpackResource.SelectSpecial                    ; переход, если встречен единичный бит префикса, выбрать тройку либо пачку литералов
 
-                CALL @Station.UnknownA014.Entry
-Point9FCB:      ADC A, A
-                JR NZ, @Station.UnpackResource.Point9FF2                        ; переход, если флаг Z сброшен
+                JR C, @Station.UnpackResource.SpecialPrefix                     ; переход, если считан первый нулевой бит префикса, прочитать второй
 
+                ; выбор семибитового специального значения после префикса 00
+                LD A, @PackedResourceConst.LongLengthSeed
+                JR @Station.UnpackResource.SpecialBits
 
-                JR C, @Station.UnpackResource.Point9FC5                         ; переход, если флаг Carry установлен
-
-
-                LD A, #FC
-                JR @Station.UnpackResource.Point9FF5
-
-
-Point9FD4:      LD B, A
-                LD C, (IX + #00)
+                ; создание старшего байта полной длины 0..14
+WordLength:     LD B, A
+                ; чтение младшего байта полной длины из общего потока
+                LD C, (IX+#00)
+                ; продвижение курсора после младшего байта длины
                 INC IX
+                ; очистка Carry после подтверждённого сравнения меньше 15 для общего длинного формата смещения
                 CCF
-                JR @Station.UnpackResource.Point9F67
+                JR @Station.UnpackResource.DecodeOffset
 
+                ; проверка семибитового терминатора 0F
+TestEndCode:    CP @PackedResourceConst.EndCode
+                JR C, @Station.UnpackResource.WordLength                        ; переход, если специальное значение меньше 0F, прочитать младший байт полной длины
 
-Point9FDD:      CP #0F
-                JR C, @Station.UnpackResource.Point9FD4                         ; переход, если флаг Carry установлен
+                JR NZ, @Station.UnpackResource.StoreLengthLow                   ; переход, если специальное значение больше 0F, использовать его как младший байт длины
 
-
-                JR NZ, @Station.UnpackResource.Point9F66                        ; переход, если флаг Z сброшен
-
-
-                LD B, #03
+                ; выбор трёх сохранённых слов для завершения результата
+                LD B, @PackedResourceConst.TailWords
+                ; перенос текущего конца результата в HL перед снятием сохранённых слов
                 EX DE, HL
-Point9FE6:      POP DE
+                ; снятие следующего слова FUnpackTailFrame в порядке исходных байтов 6..11
+RestoreTail:    POP DE
+                ; запись младшего байта сохранённого слова в конец результата
                 LD (HL), E
+                ; переход к месту старшего байта восстановленной пары
                 INC HL
+                ; запись старшего байта сохранённого слова
                 LD (HL), D
+                ; продвижение конца результата после восстановленной пары
                 INC HL
-                DJNZ @Station.UnpackResource.Point9FE6
+                DJNZ @Station.UnpackResource.RestoreTail
 
-                LD HL, #2758
+                ; установка исходного фиксированного выходного слова 2758 в будущем HL альтернативного набора
+                LD HL, @PackedResourceConst.ResultWord
+                ; возврат битового набора как окончательных основных регистров
                 EXX
                 RET
 
+                ; создание сохраняемого Z-признака по префиксу, 1 даёт тройку, 01 пачку литералов
+SelectSpecial:  SBC A, A
+                ; выбор четырёхбитового поля короткой тройки либо пачки литералов
+                LD A, @PackedResourceConst.SpecialSeed
+                ; извлечение бита специального поля после его маркерной маски
+SpecialBits:    ADD HL, HL
+                DJNZ @Station.UnpackResource.AddSpecialNib
 
-Point9FF2:      SBC A, A
-                LD A, #EF
-Point9FF5:      ADD HL, HL
-                DJNZ @Station.UnpackResource.Point9FFB
+                ; пополнение резервуара без изменения сохранённого Z специального формата
+                CALL @Station.RefillPackedBits.Entry
+                ; включение очередного бита в специальное поле с сохранением его Z-признака
+AddSpecialNib:  RLA
+                JR C, @Station.UnpackResource.SpecialBits                       ; переход, если очередной выдвинутый разряд маркера равен 1, дочитать специальное поле
 
-                CALL @Station.UnknownA014.Entry
-Point9FFB:      RLA
-                JR C, @Station.UnpackResource.Point9FF5                         ; переход, если флаг Carry установлен
-
-
+                ; выбор набора результата для специального пакета
                 EXX
-                JR NZ, @Station.UnpackResource.Point9FB0                        ; переход, если флаг Z сброшен
+                JR NZ, @Station.UnpackResource.CopyTriple                       ; переход, если специальный префикс начинался с 1, выполнить тройку с буквальной вставкой
 
-
+                ; проверка семибитового значения против четырёхбитового поля F0..FF
                 BIT 7, A
-                JR Z, @Station.UnpackResource.Point9FDD                         ; переход, если флаг Z установлен
+                JR Z, @Station.UnpackResource.TestEndCode                       ; переход, если специальное значение меньше 80, проверить длину либо конец
 
-
-                SUB #EA
+                ; расчёт половины размера пачки литералов из значения F0..FF с поправкой EA
+                SUB @PackedResourceConst.LiteralBias
+                ; расчёт чётного числа литералов, от 12 до 42
                 ADD A, A
+                ; обновление счётчика пачки литералов
                 LD B, A
-PointA009:      LD A, (IX + #00)
+                ; чтение очередного буквального байта пачки
+CopyLiterals:   LD A, (IX+#00)
+                ; продвижение общего курсора после байта пачки
                 INC IX
+                ; запись буквального байта пачки в результат
                 LD (DE), A
+                ; продвижение конца готового результата после байта пачки
                 INC DE
-                DJNZ @Station.UnpackResource.PointA009
+                DJNZ @Station.UnpackResource.CopyLiterals
 
-                JR @Station.UnpackResource.Point9F9E
-
+                JR @Station.UnpackResource.NextToken
 
                 endmodule
                 endmodule

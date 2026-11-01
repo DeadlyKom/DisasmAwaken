@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "cases_by_path": {
+    "complete_offer_and_panels": 128,
+    "real_caption_im2": 256,
+    "selector_or_row_no_close": 385,
+    "close_group": 127
+  },
+  "generator_checked_by_existing_independent_mission_offer_model": true,
+  "actual_generator_and_draws": true,
+  "full_offer_matches_separate_generator": true,
+  "all_selector_bytes": true,
+  "exact_close_order_and_physical_tails": true,
+  "native_rom_verified": false,
+  "model_rom_sha256": "8d93c3342321e9d1e51d60afcd7d15f6a7afd978c231b43435a7c0757c60b9a3",
+  "rom_only_read_as_data": true,
+  "independent_whole_redraw_bitmap": false,
+  "irq_only_at_caption_halt": true,
+  "music_disabled": true,
+  "native_execution": false,
+  "assembly_executed": false
+}

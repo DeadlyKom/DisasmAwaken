@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "cases_by_path": {
+    "help_two_panels": 4096,
+    "news_one_panel": 4096
+  },
+  "all_saved_height_bytes": true,
+  "all_restored_geometry_bytes_and_other_fields_checked": true,
+  "entire_physical_512_byte_list_and_128_byte_shifts": true,
+  "aliases_duplicates_disabled_and_reversed_lists": true,
+  "no_immediate_drawing_or_help_selection": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

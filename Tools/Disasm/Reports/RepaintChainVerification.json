@@ -8,6 +8,7 @@
     52203
   ],
   "preserved_selector_AND_entry_checked": true,
+  "draw_hl_result_not_restored": true,
   "source_sha256": "1066914072803f32c4a670b182160072369a05d860f5c36353383f22c8217b35",
   "counts": {
     "early": 4096,

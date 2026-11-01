@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "new_functions": 14,
+  "new_instructions": 148,
+  "new_code_bytes": 235,
+  "typed_pointer_records": 21,
+  "typed_pointer_bytes": 42,
+  "unextracted_target_operands_explicit": true,
+  "physical_bytes_preserved": true,
+  "assembly_executed": false
+}

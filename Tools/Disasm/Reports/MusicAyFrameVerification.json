@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "cases": 65536,
+  "all_counter_and_contribution_bytes": true,
+  "discarded_low_byte_carry_cases": 32768,
+  "shape_port_writes": 65280,
+  "all_raw_ay_port_events_compared": true,
+  "outi_mirror_befd_checked": true,
+  "envelope_step_affects_next_frame": true,
+  "saved_sp_restored": true,
+  "alternate_register_exchange_checked": true,
+  "every_memory_write_observed": true,
+  "stop_address": 58236,
+  "pattern_parse_phase_executed": false,
+  "irq_executed": false,
+  "independent_audio_synthesis": false,
+  "assembly_executed": false
+}

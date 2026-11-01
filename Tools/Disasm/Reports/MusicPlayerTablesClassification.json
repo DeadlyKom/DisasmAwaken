@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "typed_bytes": 545,
+  "physical_instances": 163,
+  "source_files": 6,
+  "physical_bytes_preserved": true,
+  "instructions_changed": 0,
+  "volume_zero_overlay_preserved": true,
+  "assembly_executed": false
+}

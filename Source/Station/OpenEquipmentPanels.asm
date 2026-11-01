@@ -25,16 +25,16 @@
 Entry:          XOR A
                 LD (@EquipmentInfoState.TextIndex), A
                 ; восстановление следующей панели в исходной последовательности 39, 36, 37, 38
-                LD HL, @Station.DrawItem39.Entry
+                LD HL, @Station.DrawEquipmentInfo.Entry
                 CALL @Station.RestoreItemBounds.Entry
                 ; восстановление следующей панели в исходной последовательности 39, 36, 37, 38
-                LD HL, @Station.DrawItem36.Entry
+                LD HL, @Station.DrawEquipmentSale.Entry
                 CALL @Station.RestoreItemBounds.Entry
                 ; восстановление следующей панели в исходной последовательности 39, 36, 37, 38
-                LD HL, @Station.DrawItem37.Entry
+                LD HL, @Station.DrawEquipmentPurchase.Entry
                 CALL @Station.RestoreItemBounds.Entry
                 ; восстановление следующей панели в исходной последовательности 39, 36, 37, 38
-                LD HL, @Station.DrawItem38.Entry
+                LD HL, @Station.DrawEquipmentList.Entry
                 JP @Station.RestoreItemBounds.Entry
 
                 endmodule

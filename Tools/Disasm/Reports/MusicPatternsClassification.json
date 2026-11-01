@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "described_fragments": 7,
+  "net_new_fragments": 3,
+  "instructions_changed": 0,
+  "physical_bytes_preserved": true,
+  "assembly_executed": false
+}

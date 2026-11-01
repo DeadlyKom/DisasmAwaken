@@ -5,18 +5,18 @@
 | Обёртка | Рисователь | DE | Операнд прежней строки | Единицы D |
 | --- | --- | --- | --- | --- |
 | [UpdateShipListHover](../Source/Station/UpdateShipListHover.asm), 67D0 | [DrawModelListPanel](../Source/Station/DrawModelListPanel.asm), 67E0 | 1E1B | ShipsRow, 67D7 | 30 строк |
-| [UpdateIndexListHover](../Source/Station/UpdateIndexListHover.asm), 6A4B | [DrawItem22](../Source/Station/DrawItem22.asm), 6A5B | 1E0B | IndexRow, 6A52 | 30 строк |
-| [UpdateEnvironmentHover](../Source/Station/UpdateEnvironmentHover.asm), 6B8E | [DrawItem41](../Source/Station/DrawItem41.asm), 6BA5 | 1E0B | EnvironmentRow, 6B95 | 30 строк |
-| [UpdateEquipmentHover](../Source/Station/UpdateEquipmentHover.asm), 7210 | [DrawItem38](../Source/Station/DrawItem38.asm), 7227 | 1E1B | EquipmentRow, 7217 | 30 строк |
-| [UpdateToPositionHover](../Source/Station/UpdateToPositionHover.asm), 7482 | [DrawItem43](../Source/Station/DrawItem43.asm), 7492 | 2803 | ToPositionRow, 7489 | 40 пикселей |
-| [UpdateFromPositionHover](../Source/Station/UpdateFromPositionHover.asm), 750B | [DrawItem44](../Source/Station/DrawItem44.asm), 751B | 2803 | FromPositionRow, 7512 | 40 пикселей |
-| [UpdateGameSettingsHover](../Source/Station/UpdateGameSettingsHover.asm), 7620 | [DrawItem42](../Source/Station/DrawItem42.asm), 7637 | 1E0B | GameSettingsRow, 7627 | 30 строк |
+| [UpdateIndexListHover](../Source/Station/UpdateIndexListHover.asm), 6A4B | [DrawItem22](../Source/Station/DrawHelpContents.asm), 6A5B | 1E0B | IndexRow, 6A52 | 30 строк |
+| [UpdateEnvironmentHover](../Source/Station/UpdateEnvironmentHover.asm), 6B8E | [DrawItem41](../Source/Station/DrawEnvironmentPanel.asm), 6BA5 | 1E0B | EnvironmentRow, 6B95 | 30 строк |
+| [UpdateEquipmentHover](../Source/Station/UpdateEquipmentHover.asm), 7210 | [DrawItem38](../Source/Station/DrawEquipmentList.asm), 7227 | 1E1B | EquipmentRow, 7217 | 30 строк |
+| [UpdateToPositionHover](../Source/Station/UpdateToPositionHover.asm), 7482 | [DrawItem43](../Source/Station/DrawSaveSlotPanel.asm), 7492 | 2803 | ToPositionRow, 7489 | 40 пикселей |
+| [UpdateFromPositionHover](../Source/Station/UpdateFromPositionHover.asm), 750B | [DrawItem44](../Source/Station/DrawLoadSlotPanel.asm), 751B | 2803 | FromPositionRow, 7512 | 40 пикселей |
+| [UpdateGameSettingsHover](../Source/Station/UpdateGameSettingsHover.asm), 7620 | [DrawItem42](../Source/Station/DrawGameSettings.asm), 7637 | 1E0B | GameSettingsRow, 7627 | 30 строк |
 
 Поле E всегда содержит верхний отступ в пикселях. Физические записи элементов не перемещаются, их изменяемые операнды только получают имена. Для оснащения используется существующий ScriptSelection.EquipmentRow, остальные операнды названы в PanelHoverState. Значение FF означает отсутствие прежней XOR-полосы. Это числовой номер с отдельным маркером, а не флаговый байт.
 
 ## Общий алгоритм и разные единицы высоты
 
-Каждая обёртка читает свой прежний A из непосредственного операнда LD A, устанавливает HL точного рисователя и вызывает существующее ядро. Пять входов передают D=30 в [UpdateRowHover](../Source/Station/UpdateRowHover.asm), который вызывает ClampRowHeight. Запрос превращается в 240 пикселей и ограничивается исходной байтовой формулой доступной высоты элемента. Эта формула включает вращение физического Height, вычет E и пяти пикселей снизу и округление маской F8. Она не заменена вычислением с насыщением.
+Каждая обёртка читает свой прежний A из непосредственного операнда LD A, устанавливает HL точного рисователя и вызывает существующее ядро. Пять входов исходно передают D=30 в [UpdateRowHover](../Source/Station/UpdateRowHover.asm), который вызывает ClampRowHeight. Старшие операнды LD DE могут перезаписываться рисователями, поэтому 30 не является постоянной гарантией времени исполнения. Для исходного значения запрос превращается в 240 пикселей и ограничивается байтовой формулой доступной высоты элемента. Эта формула включает вращение физического Height, вычет E и пяти пикселей снизу и округление маской F8. Она не заменена вычислением с насыщением.
 
 Два списка позиций вызывают [UpdatePixelHover](../Source/Station/UpdatePixelHover.asm). Их D=40 уже означает пиксели и не ограничивается физическим Height. Тексты содержат пять строк «В позицию 1» .. «В позицию 5» и «С позиции 1» .. «С позиции 5». Игровой эффект выбора этих строк этим разбором не доказывается.
 
@@ -33,3 +33,7 @@
 В этой модели прежний фон указателя уже восстановлен и владелец ячейки нулевой. Смена PointerY между двумя проверками покрыта отдельной моделью ядра, аппаратные IRQ здесь не исполняются. Сборка и нативный игровой запуск этой проверкой не подтверждаются.
 
 Для [корабельной панели](ModelListPanel.md) старший операнд #67D2 изменяется после рисунка. Исходный запрос 30 заменяется ModelListState.HoverRows, младший отступ 27 сохраняется. Текущий [DrawModelListPanel](../Source/Station/DrawModelListPanel.asm) и [UpdateShipListHover](../Source/Station/UpdateShipListHover.asm) используют один и тот же доказанный счётчик.
+
+Для [панели оснащения](EquipmentListPanels.md) старший операнд #7212 изменяется на EquipmentListState.RowCount. Этот счётчик учитывает попытку чтения маркера 80, а после отказа заголовка равен нулю. JP [HandleEquipmentListHover](../Source/Station/HandleEquipmentListHover.asm) передаёт управление в UpdateEquipmentHover с этим текущим запросом, исходный отступ 27 сохраняется. Эквивалентность обёртки проверена отдельно для шести значений RowCount.
+
+Старший операнд наведения списка разделов справки также изменяемый, DrawHelpContents записывает HelpPanelState.VisibleTitles по 6A4D. Значение 30 является исходным. Четыре внешних JP и изменяемые счётчики дополнительно проверены в [ListHoverAdapters](ListHoverAdapters.md).

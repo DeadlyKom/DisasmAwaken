@@ -1,13 +1,13 @@
 {
   "status": "in_progress",
   "all_plan_stages_completed": false,
-  "fragments": 1163,
-  "described": 909,
-  "unknown": 254,
-  "unproved_contracts": 485,
-  "named_without_contract": 231,
-  "instruction_count": 39575,
-  "unclassified_bytes": 305843,
+  "fragments": 1186,
+  "described": 1000,
+  "unknown": 186,
+  "unproved_contracts": 370,
+  "named_without_contract": 184,
+  "instruction_count": 39824,
+  "unclassified_bytes": 298492,
   "passed_reports": [
     "Tools/Disasm/Reports/PointerVerification.json",
     "Tools/Disasm/Reports/PointerTablesVerification.json",
@@ -285,33 +285,140 @@
     "Tools/Disasm/Reports/PreviewClippedFaceStreamVerification.json",
     "Tools/Disasm/Reports/PreviewQueueRenderVerification.json",
     "Tools/Disasm/Reports/PreviewStackRestoreVerification.json",
-    "Tools/Disasm/Reports/PreviewFrameVerification.json"
+    "Tools/Disasm/Reports/PreviewFrameVerification.json",
+    "Tools/Disasm/Reports/ShipPreviewCallbacksVerification.json",
+    "Tools/Disasm/Reports/ShipModelActionsVerification.json",
+    "Tools/Disasm/Reports/HelpTextSelectorVerification.json",
+    "Tools/Disasm/Reports/HelpLineIndexVerification.json",
+    "Tools/Disasm/Reports/HelpLineIndexClassification.json",
+    "Tools/Disasm/Reports/HelpTextOutputVerification.json",
+    "Tools/Disasm/Reports/HelpTextOutputClassification.json",
+    "Tools/Disasm/Reports/StationHelpCallsVerification.json",
+    "Tools/Disasm/Reports/StationHelpCallsClassification.json",
+    "Tools/Disasm/Reports/HelpPanelDrawsVerification.json",
+    "Tools/Disasm/Reports/HelpPanelDrawsClassification.json",
+    "Tools/Disasm/Reports/HelpPanelActionsVerification.json",
+    "Tools/Disasm/Reports/HelpPanelActionsClassification.json",
+    "Tools/Disasm/Reports/EquipmentInfoVerification.json",
+    "Tools/Disasm/Reports/EquipmentInfoClassification.json",
+    "Tools/Disasm/Reports/KeyLabelVerification.json",
+    "Tools/Disasm/Reports/KeyLabelDataClassification.json",
+    "Tools/Disasm/Reports/KeyLabelClassification.json",
+    "Tools/Disasm/Reports/EnvironmentRowsVerification.json",
+    "Tools/Disasm/Reports/SettingsRowPanelsClassification.json",
+    "Tools/Disasm/Reports/SettingsPanelActionsVerification.json",
+    "Tools/Disasm/Reports/SettingsPanelActionsClassification.json",
+    "Tools/Disasm/Reports/PackedWordAndActionReturnVerification.json",
+    "Tools/Disasm/Reports/ActionReturnContinuationDiscovery.json",
+    "Tools/Disasm/Reports/PackedWordAndActionReturnClassification.json",
+    "Tools/Disasm/Reports/PassivePanelHoversVerification.json",
+    "Tools/Disasm/Reports/PassivePanelHoversClassification.json",
+    "Tools/Disasm/Reports/HelpNewsOpeningVerification.json",
+    "Tools/Disasm/Reports/HelpNewsOpeningClassification.json",
+    "Tools/Disasm/Reports/ModelTradeModeVerification.json",
+    "Tools/Disasm/Reports/ModelTradeModeClassification.json",
+    "Tools/Disasm/Reports/EquipmentTradeModeVerification.json",
+    "Tools/Disasm/Reports/EquipmentTradeModeClassification.json",
+    "Tools/Disasm/Reports/EquipmentListSetupVerification.json",
+    "Tools/Disasm/Reports/EquipmentListSetupClassification.json",
+    "Tools/Disasm/Reports/MapPanelOpeningVerification.json",
+    "Tools/Disasm/Reports/MapPanelOpeningClassification.json",
+    "Tools/Disasm/Reports/WelcomePanelVerification.json",
+    "Tools/Disasm/Reports/WelcomePanelClassification.json",
+    "Tools/Disasm/Reports/PassivePanelActionsVerification.json",
+    "Tools/Disasm/Reports/PassivePanelActionsClassification.json",
+    "Tools/Disasm/Reports/FixtureConsumersVerification.json",
+    "Tools/Disasm/Reports/WelcomeTextLayout.json",
+    "Tools/Disasm/Reports/WelcomeTextDataClassification.json",
+    "Tools/Disasm/Reports/EquipmentRowsVerification.json",
+    "Tools/Disasm/Reports/EquipmentListPanelsVerification.json",
+    "Tools/Disasm/Reports/EquipmentListPanelsClassification.json",
+    "Tools/Disasm/Reports/EquipmentListHoverVerification.json",
+    "Tools/Disasm/Reports/EquipmentListHoverClassification.json",
+    "Tools/Disasm/Reports/SaveSlotProtocolVerification.json",
+    "Tools/Disasm/Reports/SaveSlotProtocolClassification.json",
+    "Tools/Disasm/Reports/SaveSlotPanelsVerification.json",
+    "Tools/Disasm/Reports/SaveSlotPanelsClassification.json",
+    "Tools/Disasm/Reports/SaveSlotFileKeyClassification.json",
+    "Tools/Disasm/Reports/SystemMapActionVerification.json",
+    "Tools/Disasm/Reports/SystemMapActionClassification.json",
+    "Tools/Disasm/Reports/OriginalShipTradeVerification.json",
+    "Tools/Disasm/Reports/ShipTradeActionVerification.json",
+    "Tools/Disasm/Reports/ShipTradeActionClassification.json",
+    "Tools/Disasm/Reports/OriginalEquipmentTradeVerification.json",
+    "Tools/Disasm/Reports/EquipmentListActionVerification.json",
+    "Tools/Disasm/Reports/EquipmentListActionClassification.json",
+    "Tools/Disasm/Reports/MissionPanelActionsVerification.json",
+    "Tools/Disasm/Reports/MissionPanelActionsClassification.json",
+    "Tools/Disasm/Reports/ListHoverAdaptersVerification.json",
+    "Tools/Disasm/Reports/ListHoverAdaptersClassification.json",
+    "Tools/Disasm/Reports/DeferredActionAdaptersVerification.json",
+    "Tools/Disasm/Reports/DeferredActionAdaptersClassification.json",
+    "Tools/Disasm/Reports/TradeButtonActionsVerification.json",
+    "Tools/Disasm/Reports/TradeButtonActionsClassification.json",
+    "Tools/Disasm/Reports/FlightButtonVerification.json",
+    "Tools/Disasm/Reports/FlightButtonClassification.json",
+    "Tools/Disasm/Reports/ContractRomProfileVerification.json",
+    "Tools/Disasm/Reports/ContractMapClassification.json",
+    "Tools/Disasm/Reports/CounterEventVerification.json",
+    "Tools/Disasm/Reports/CounterEventClassification.json",
+    "Tools/Disasm/Reports/PanelOpenAdaptersClassification.json",
+    "Tools/Disasm/Reports/StopMusicVerification.json",
+    "Tools/Disasm/Reports/StopMusicClassification.json",
+    "Tools/Disasm/Reports/StatusPanelActionVerification.json",
+    "Tools/Disasm/Reports/StatusPanelActionClassification.json",
+    "Tools/Disasm/Reports/UnpackResourceVerification.json",
+    "Tools/Disasm/Reports/UnpackResourceClassification.json",
+    "Tools/Disasm/Reports/PackedResourcePrefixVerification.json",
+    "Tools/Disasm/Reports/PackedResourcePrefixClassification.json",
+    "Tools/Disasm/Reports/StationScriptsVerification.json",
+    "Tools/Disasm/Reports/MainLoopExecutionVerification.json",
+    "Tools/Disasm/Reports/MusicEnvelopeStagingVerification.json",
+    "Tools/Disasm/Reports/MusicEnvelopeCommandVerification.json",
+    "Tools/Disasm/Reports/MusicChannelAStagingVerification.json",
+    "Tools/Disasm/Reports/MusicChannelBStagingVerification.json",
+    "Tools/Disasm/Reports/MusicChannelBResetVerification.json",
+    "Tools/Disasm/Reports/MusicGateTicksVerification.json",
+    "Tools/Disasm/Reports/MusicGateNotesVerification.json",
+    "Tools/Disasm/Reports/MusicChannelCFinishVerification.json",
+    "Tools/Disasm/Reports/MusicAyFrameVerification.json",
+    "Tools/Disasm/Reports/MusicPatternDispatchVerification.json",
+    "Tools/Disasm/Reports/MusicPatternNotesVerification.json",
+    "Tools/Disasm/Reports/MusicEffectsVerification.json",
+    "Tools/Disasm/Reports/MusicEffectsCompositionVerification.json",
+    "Tools/Disasm/Reports/MusicGateSetterBVerification.json",
+    "Tools/Disasm/Reports/MusicEffectStackVerification.json",
+    "Tools/Disasm/Reports/MusicSynthesisVerification.json",
+    "Tools/Disasm/Reports/OriginalMusicSynthesisVerification.json",
+    "Tools/Disasm/Reports/MusicChannelABFinishVerification.json",
+    "Tools/Disasm/Reports/MusicSynthesisClassification.json",
+    "Tools/Disasm/Reports/MusicChannelARowVerification.json",
+    "Tools/Disasm/Reports/MusicChannelARowClassification.json",
+    "Tools/Disasm/Reports/MusicPatternRowsVerification.json",
+    "Tools/Disasm/Reports/MusicPatternPhasesVerification.json",
+    "Tools/Disasm/Reports/MusicPatternsClassification.json",
+    "Tools/Disasm/Reports/MusicAdvanceAVerification.json",
+    "Tools/Disasm/Reports/MusicAdvanceAClassification.json",
+    "Tools/Disasm/Reports/MusicPlayerTablesClassification.json",
+    "Tools/Disasm/Reports/MusicCompositionClassification.json",
+    "Tools/Disasm/Reports/MusicCompositionLayout.json",
+    "Tools/Disasm/Reports/MusicSectorTailClassification.json",
+    "Tools/Disasm/Reports/ResearchCleanupMusicVerification.json",
+    "Tools/Disasm/Reports/MusicInitializeAndMuteVerification.json",
+    "Tools/Disasm/Reports/MusicInitializationClassification.json"
   ],
   "next_station_work": [
     {
-      "address": "#9A59",
-      "source": "Source/Station/MainLoop.asm",
-      "task": "Управляющие развилки доказаны отдельно, требуется композиция всех изменяемых PeriodicCall, HoverCallback, сценариев и игровых событий"
-    },
-    {
-      "address": "#9C77",
-      "source": "Source/Station/RebuildInterface.asm",
-      "task": "Установленный управляющий договор проверен, остаётся композиция всех реальных игровых рисователей"
-    },
-    {
-      "address": "#9DBA",
-      "source": "Source/Station/DispatchInterfaceEvent.asm",
-      "task": "Развилка доказана, остаются собственные алгоритмы всех EventHandler+3"
-    },
-    {
-      "address": "#A91B",
       "source": "Source/Station/GenerateMarket.asm",
-      "task": "Формулы и физические таблицы установлены, рыночный bit7 запрещает продажу. Остаются назначения категорий, грузового bit7 и все писатели и потребители."
+      "task": "Установить назначение категорий рынка и грузового bit7, проследить всех писателей и потребителей."
+    },
+    {
+      "source": "Source/Station/MainLoop.asm",
+      "task": "Нативный длительный сценарий и непрерывные аппаратные IRQ, мышь и музыка, произвольные последовательности интерфейса не подтверждены ограниченной моделью."
     }
   ],
   "remaining_by_region": {
-    "Station": 54,
-    "Music": 14,
+    "Music": 0,
     "Action": 97,
     "ThreeD": 23,
     "Controls": 66
@@ -327,24 +434,24 @@
   ],
   "irq_model_execution_verified": true,
   "irq_hardware_execution_verified": false,
-  "temporary_cleanup": "695 старых снимков сохранены в проверенном дедуплицированном архиве LegacySnapshots-20261031.zip, распакованные дубликаты заменены маркерами. Новые точечные истории сохраняются для проверки, удаление их распакованных копий допустимо только после проверенного архивирования.",
+  "temporary_cleanup": "695 прежних снимков сохранены в LegacySnapshots-20261031.zip. Ещё 302 проверенных снимка, 4455 распакованных файлов и 1149203729 байтов сохранены в RecentSnapshots-20261101-Music.zip размером 77536565 байтов. Проверены 4022 неизменённых рабочих файла. Маркеры защищают от повторного экспорта, восстановление через ResearchArchive.py. Три используемых кандидата, сценарии, оригиналы, отчёты и данные сборки сохранены.",
   "pending_by_region": {
-    "Station": 54,
-    "Music": 14,
+    "Music": 0,
     "Action": 97,
     "ThreeD": 23,
     "Controls": 66
   },
   "next_semantic_work": [
-    "Station, выделенный периодический корабельный код 68CC..6912 и его зависимые рисователи, действия корабельных панелей, писатели битов грузового массива, Unknown98A0 и разбор 7CC6",
-    "D3D, все 4084 обнаруженные инструкции и 7828 байтов оформлены в 70 фрагментах, 39 физических модулей данных сохраняют 3669 байтов. Полный смысловой разбор не объявляется завершённым. Остаток касается полных конечных контрактов сложных путей, независимого bitmap кадра, ненулевых нижних границ всей цепочки, смещённого начала заливки, режимов 5..7, всех писателей C8, игрового вызова D819, трёх Seed, хвоста объекта и иных ещё не установленных данных. Далее композиция с периодическими 68CC/68EA и рисователем 26, затем остальные регионы по общему плану. IRQ не подавались, нативная игра не проверена.",
-    "LANG, ветви кораблей и оснащения, стоянка, начальная проверка, неизвестный префикс и потребители секторного хвоста",
-    "Остальные регионы по pending_by_region и все именованные фрагменты без доказанных контрактов"
+    "Все зарегистрированные Station-входы имеют описанные контракты. Остаются назначения части физических данных, игровые потребители настроек, длительная нативная проверка и произвольные IRQ.",
+    "D3D, все 4084 обнаруженные инструкции и 7828 байтов оформлены в 70 фрагментах. Станционная цепочка просмотра и действия списка также описаны. Открыты полные конечные контракты сложных путей, независимый bitmap кадра, ненулевые нижние границы, смещённое начало заливки, режимы 5..7, писатели C8, игровой вызов D819, три Seed, хвост объекта и остальные данные. Музыкальный режим, IRQ во всех точках и полный игровой цикл не доказаны.",
+    "LANG, неизвестный префикс и потребители секторного хвоста, соседний байт 98AD, физические данные языка. События 1, 2, 5, 6, 15, 16 и 17 разобраны отдельно.",
+    "Остальные регионы по pending_by_region и все именованные фрагменты без доказанных контрактов",
+    "Музыка, Unknown63 в заголовке композиции, интегральный договор PlayFrame и независимая композиция оставшейся подготовки полного кадра, аппаратные IRQ и нативный звук. Все 49 зарегистрированных блоков имеют описанный контракт, зарезервированные эффекты не исполнены."
   ],
   "next_text_algorithm": "Все зарегистрированные Text-входы имеют описанный контракт, полнота игровых назначений полей и физической разметки LANG ещё не доказана",
   "next_map_work": "Писатели сохранённых списков и их обёртки управления описаны. Остаточные назначения полей, данных, хвостов фаз и формулы запаса дальности требуют полного прохода по потребителям.",
-  "next_station_algorithm": "Сопоставить разобранную цепочку D3D с периодическими 68CC/68EA и рисователем 26. Все обнаруженные инструкции банка оформлены, но полные контракты кадра, независимый bitmap, аппаратные IRQ и игровая композиция ещё не доказаны.",
-  "documentation_links": 1751,
+  "next_station_algorithm": "Все зарегистрированные Station-входы имеют описанные контракты. Остаются назначения части физических данных, игровые потребители настроек, длительная нативная проверка и произвольные IRQ.",
+  "documentation_links": 1769,
   "updated_on": "2026-11-01",
   "d3d_discovery": {
     "report": "Tools/Disasm/Reports/D3DRuntimeFlow.json",
@@ -511,5 +618,627 @@
       "independent_bitmap_oracle": false,
       "irq_executed": false
     }
-  ]
+  ],
+  "user_native_observation": {
+    "report": "Tools/Disasm/Reports/NativeManualVerification.json",
+    "date": "2026-11-01",
+    "feedback": "вроде работает",
+    "status": "preliminary_user_confirmation",
+    "complete_gameplay_verified": false
+  },
+  "ship_preview_callbacks": {
+    "report": "Tools/Disasm/Reports/ShipPreviewCallbacksVerification.json",
+    "functions": [
+      "TryDrawShipPreview",
+      "DrawShipPreview",
+      "RefreshShipPanels",
+      "AnimateShipPreview"
+    ],
+    "real_im2_wakeups": 359,
+    "irq_only_at_halts": true,
+    "music_disabled": true,
+    "native_hardware_irq_proved": false,
+    "independent_whole_bitmap_oracle": false,
+    "textwindow_axis_documentation_corrected": true
+  },
+  "ship_model_actions": {
+    "report": "Tools/Disasm/Reports/ShipModelActionsVerification.json",
+    "functions": [
+      "HandleShipModelAction",
+      "DropShipDetailPanels",
+      "ShipModelChoice"
+    ],
+    "calls_checked": 1924,
+    "physical_bytes": 92,
+    "immediate_preview_render": false,
+    "explicit_banked_write_target": "D3D bank 4 E146",
+    "other_regions_preserved": true
+  },
+  "help_text_selector": {
+    "report": "Tools/Disasm/Reports/HelpTextSelectorVerification.json",
+    "function": "Help.SelectText",
+    "all_af_pairs": 65536,
+    "bank": 7,
+    "single_operand_write": "DB01",
+    "indexer_executed": false
+  },
+  "help_line_index": {
+    "report": "Tools/Disasm/Reports/HelpLineIndexVerification.json",
+    "normal_passes": 374,
+    "indexed_rows": 5459,
+    "safe_rows": [
+      1,
+      1023
+    ],
+    "capacity_1024_ldir_count": 65535,
+    "destructive_ldir_not_executed": true,
+    "nonprogress_height_14_proved": true,
+    "physical_cache_bytes": 2048,
+    "physical_records": 1024
+  },
+  "help_text_output": {
+    "report": "Tools/Disasm/Reports/HelpTextOutputVerification.json",
+    "null_indices": 1024,
+    "indexed_outputs": 1124,
+    "cr_outputs": 793,
+    "original_cr_titles": 8,
+    "misleading_format_number_name_corrected": true,
+    "title_and_body_resource_bytes": 3749,
+    "sector_tail_unknown_bytes": 223,
+    "independent_whole_bitmap_oracle": false
+  },
+  "station_help_calls": {
+    "report": "Tools/Disasm/Reports/StationHelpCallsVerification.json",
+    "index_calls": 216,
+    "print_calls": 72,
+    "disable_wrap_af_pairs": 65536,
+    "both_screen_page_bits": true,
+    "irq_executed": false
+  },
+  "help_panel_draws": {
+    "report": "Tools/Disasm/Reports/HelpPanelDrawsVerification.json",
+    "text_draws": 216,
+    "contents_draws": 96,
+    "caption_im2_wakes": 312,
+    "disabled_returns": 512,
+    "independent_whole_bitmap_oracle": false
+  },
+  "help_panel_actions": {
+    "report": "Tools/Disasm/Reports/HelpPanelActionsVerification.json",
+    "pair_removals": 254,
+    "high_selector_returns": 256,
+    "low_ff_guard_cases": 256,
+    "byte_sums_stopped_before_select_text": 65280,
+    "full_choices": 28,
+    "scroll_actions": 24,
+    "scroll_steps_complete_bitmap": 24,
+    "real_im2_wakes": 88,
+    "text_hover_noop_returns": 512,
+    "native_execution": false
+  },
+  "equipment_info": {
+    "report": "Tools/Disasm/Reports/EquipmentInfoVerification.json",
+    "original_records_checked": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+    ],
+    "all_selectors_on_prepared_text": 256,
+    "full_skip_words": 28,
+    "scroll_actions": 24,
+    "scroll_steps_complete_bitmap": 20,
+    "real_im2_wakes": 49,
+    "all_catalogue_records_proved": false
+  },
+  "key_labels": {
+    "report": "Tools/Disasm/Reports/KeyLabelVerification.json",
+    "cases": 2560,
+    "all_input_codes": true,
+    "physical_records": 3,
+    "typed_bytes": 12,
+    "independent_entire_bitmap": true
+  },
+  "settings_row_panels": {
+    "report": "Tools/Disasm/Reports/EnvironmentRowsVerification.json",
+    "environment_prints": 1264,
+    "game_prints": 774,
+    "setup_af_pairs": 131072,
+    "caption_draws": 112,
+    "internal_callbacks": 56,
+    "im2_wakes": 114,
+    "common_value_loop_documented": true,
+    "counter_wrap_checked": [
+      127,
+      128,
+      255,
+      256,
+      257
+    ],
+    "independent_row_bitmap": true,
+    "independent_caption_bitmap": false
+  },
+  "settings_panel_actions": {
+    "report": "Tools/Disasm/Reports/SettingsPanelActionsVerification.json",
+    "close_parse_cases": 254,
+    "byte_index_pairs_stopped_before_edit": 130560,
+    "all_old_toggle_bytes": 1280,
+    "full_toggles": 40,
+    "full_key_edits": 264,
+    "real_matrix_scans": 572,
+    "keyboard_halts_released_without_irq": 5720,
+    "real_caption_im2_wakes": 585,
+    "real_scroll_im2_wakes": 24,
+    "full_scroll_bitmap_steps": 24,
+    "edit_frame_checks": 268,
+    "wait_frame_checks": 572,
+    "hover_proxy_cases": 72,
+    "independent_whole_edit_bitmap": false,
+    "keyboard_delay_irq_executed": false
+  },
+  "packed_word_and_action_return": {
+    "report": "Tools/Disasm/Reports/PackedWordAndActionReturnVerification.json",
+    "all_words": 65536,
+    "all_counter_flags": 65536,
+    "all_ix": 65536,
+    "all_saved_af": 65536,
+    "all_sp_two_steps": 65536,
+    "real_pointer_cases": 48,
+    "new_code_entry": 32560,
+    "new_code_bytes": 3,
+    "new_instructions": 1,
+    "return_sp_delta": 4
+  },
+  "passive_panel_hovers": {
+    "report": "Tools/Disasm/Reports/PassivePanelHoversVerification.json",
+    "panels": [
+      11,
+      19,
+      20,
+      32,
+      45
+    ],
+    "proxy_calls": 327680,
+    "direct_noop_calls": 327680,
+    "roles_verified_by_physical_records_and_captions": true
+  },
+  "help_news_opening": {
+    "report": "Tools/Disasm/Reports/HelpNewsOpeningVerification.json",
+    "passed": true,
+    "assembly_executed": false,
+    "native_execution": false
+  },
+  "model_trade_mode": {
+    "report": "Tools/Disasm/Reports/ModelTradeModeVerification.json",
+    "passed": true,
+    "assembly_executed": false,
+    "native_execution": false
+  },
+  "equipment_trade_mode": {
+    "report": "Tools/Disasm/Reports/EquipmentTradeModeVerification.json",
+    "cases_by_path": {
+      "carry_guard_af": 65536,
+      "new_index_words_before_contour": 131072,
+      "real_contour_calls": 1024,
+      "wrapper_equivalence": 8,
+      "disabled_wrapper_flags": 512
+    },
+    "passed": true,
+    "assembly_executed": false,
+    "native_execution": false
+  },
+  "equipment_list_setup": {
+    "report": "Tools/Disasm/Reports/EquipmentListSetupVerification.json",
+    "cases_by_path": {
+      "real_current_key_and_column_setup": 10240
+    },
+    "passed": true,
+    "assembly_executed": false,
+    "native_execution": false
+  },
+  "map_panel_opening": {
+    "report": "Tools/Disasm/Reports/MapPanelOpeningVerification.json",
+    "full_calls": 4096,
+    "ordered_panel_keys": [
+      21,
+      18,
+      19,
+      12,
+      13,
+      14,
+      15,
+      17,
+      16,
+      11,
+      20
+    ],
+    "whole_physical_list_bytes": 512,
+    "assembly_executed": false,
+    "native_execution": false
+  },
+  "welcome_panel": {
+    "report": "Tools/Disasm/Reports/WelcomePanelVerification.json",
+    "real_draws": 96,
+    "real_caption_im2": 96,
+    "physical_continuation_frames": 864,
+    "disabled_flags": 256,
+    "physical_text_bytes": 294,
+    "models": 16,
+    "independent_whole_bitmap": false
+  },
+  "passive_panel_actions": {
+    "report": "Tools/Disasm/Reports/PassivePanelActionsVerification.json",
+    "all_selector_cases": 2048,
+    "real_repaints": 16,
+    "physical_list_bytes": 512,
+    "final_repaint_page": 16,
+    "draw_hl_result_not_restored": true
+  },
+  "fixture_draw_list_repair": {
+    "report": "Tools/Disasm/Reports/FixtureConsumersVerification.json",
+    "passed_models": 20,
+    "draw_list_address": 62430,
+    "original_b400_code_preserved": true,
+    "assembly_executed": false,
+    "native_execution": false
+  },
+  "equipment_list_panels": {
+    "rows_report": "Tools/Disasm/Reports/EquipmentRowsVerification.json",
+    "panels_report": "Tools/Disasm/Reports/EquipmentListPanelsVerification.json",
+    "row_cases": 1794,
+    "physical_setup_frames": 1794,
+    "physical_marker_frames": 3012,
+    "early_exx_return_proved": true,
+    "full_caption_im2": 180,
+    "internal_callbacks": 30,
+    "header_carry_skips": 60,
+    "independent_all_body_bitmap": true,
+    "independent_caption_bitmap": false
+  },
+  "equipment_list_hover": {
+    "report": "Tools/Disasm/Reports/EquipmentListHoverVerification.json",
+    "wrapper_equivalence_cases": 288,
+    "mutable_row_counts": [
+      0,
+      1,
+      2,
+      30,
+      31,
+      255
+    ],
+    "independent_hover_bitmap": false
+  },
+  "save_slot_protocol": {
+    "report": "Tools/Disasm/Reports/SaveSlotProtocolVerification.json",
+    "memory_only_save_cases": 572,
+    "memory_only_load_cases": 572,
+    "physical_dos_frame_checks": 3432,
+    "missing_ff_stopped_before_descriptor": 512,
+    "nonselective_actions": 510,
+    "all_i_bytes": true,
+    "iff_not_restored": true,
+    "real_dos_executed": false,
+    "physical_disk_written": false,
+    "native_execution": false,
+    "assembly_executed": false
+  },
+  "save_slot_panels": {
+    "report": "Tools/Disasm/Reports/SaveSlotPanelsVerification.json",
+    "real_caption_im2": 48,
+    "disabled_flags": 512,
+    "independent_body_bitmap": true,
+    "independent_caption_bitmap": false,
+    "physical_key_bytes": 9
+  },
+  "system_map_action": {
+    "report": "Tools/Disasm/Reports/SystemMapActionVerification.json",
+    "real_selections": 48,
+    "scene_preparation_im2": 48,
+    "real_caption_im2": 72,
+    "zero_count_cases": 512,
+    "nonselection_cases": 510,
+    "independent_whole_redraw_bitmap": false
+  },
+  "ship_trade": {
+    "script_report": "Tools/Disasm/Reports/OriginalShipTradeVerification.json",
+    "action_report": "Tools/Disasm/Reports/ShipTradeActionVerification.json",
+    "original_script_cases": 1400,
+    "full_actions": 168,
+    "mode_and_selector_bytes": 512,
+    "ff_flag_cases": 256,
+    "independent_whole_status_bitmap": false,
+    "assembly_executed": false,
+    "native_execution": false
+  },
+  "equipment_trade": {
+    "script_report": "Tools/Disasm/Reports/OriginalEquipmentTradeVerification.json",
+    "action_report": "Tools/Disasm/Reports/EquipmentListActionVerification.json",
+    "original_script_cases": 3676,
+    "full_trade_actions": 120,
+    "first_choice_actions": 60,
+    "close_groups": 127,
+    "height_rejections": 127,
+    "high_selector_returns": 256,
+    "all_mode_bytes": 256,
+    "complete_scroll_actions": 24,
+    "independent_scroll_body_bitmaps": 28,
+    "caption_im2": 210,
+    "scroll_im2": 28,
+    "assembly_executed": false,
+    "native_execution": false
+  },
+  "mission_panel_actions": {
+    "report": "Tools/Disasm/Reports/MissionPanelActionsVerification.json",
+    "complete_updates": 128,
+    "caption_im2": 256,
+    "close_groups": 127,
+    "nonclosing_cases": 385,
+    "independent_whole_redraw_bitmap": false,
+    "model_rom_verified_with_unreal": false
+  },
+  "list_hover_adapters": {
+    "report": "Tools/Disasm/Reports/ListHoverAdaptersVerification.json",
+    "wrapper_helper_equivalence_pairs": 448,
+    "mutable_ship_and_help_row_counts": true,
+    "pixel_save_load_height_40": true,
+    "independent_bitmap": false
+  },
+  "remaining_unknown_by_region": {
+    "Music": 0,
+    "Action": 97,
+    "ThreeD": 23,
+    "Controls": 66
+  },
+  "deferred_action_adapters": {
+    "report": "Tools/Disasm/Reports/DeferredActionAdaptersVerification.json",
+    "pairs": 7168,
+    "wrappers": 7,
+    "physical_irq_saved_sp_checked": true,
+    "fixture_stack_bytes_excluded": 256
+  },
+  "trade_button_actions": {
+    "report": "Tools/Disasm/Reports/TradeButtonActionsVerification.json",
+    "pairs": 2058,
+    "immediate_physical_continuations": 4,
+    "independent_mode_and_callback": true
+  },
+  "flight_button": {
+    "report": "Tools/Disasm/Reports/FlightButtonVerification.json",
+    "empty_callback_all_af": 65536,
+    "real_indirect_calls": 2,
+    "draw_tail_pairs": 4,
+    "algorithm_present_in_callback": false
+  },
+  "contract_map": {
+    "report": "Tools/Disasm/Reports/ContractRomProfileVerification.json",
+    "full_paths": 96,
+    "real_im2": 240,
+    "local_combined_rom_chunk_matches_model": true,
+    "unreal_process_state_verified": false,
+    "first_offer_key_for_stable_af": true,
+    "positive_rom_game_fields_complete": false
+  },
+  "counter_event": {
+    "report": "Tools/Disasm/Reports/CounterEventVerification.json",
+    "entry_af_cases": 65536,
+    "internal_af_cases": 65536,
+    "refresh_register_checked": true
+  },
+  "stop_music": {
+    "report": "Tools/Disasm/Reports/StopMusicVerification.json",
+    "complete_calls": 316,
+    "physical_entry_frame_bytes": 4,
+    "im_forced_to_1": true,
+    "iff_preserved": true,
+    "hl_word_caller_origin_established": false
+  },
+  "status_panel_action": {
+    "report": "Tools/Disasm/Reports/StatusPanelActionVerification.json",
+    "full_actions": 2096,
+    "early_carry_af": 16384,
+    "synthetic_draw_frames": 1048,
+    "real_status_draws": 1024,
+    "ret_alias_draws": 24,
+    "independent_whole_status_bitmap": false
+  },
+  "unpack_resource": {
+    "report": "Tools/Disasm/Reports/UnpackResourceVerification.json",
+    "resources": 20,
+    "full_calls": 80,
+    "relocated_inputs": 27,
+    "independent_output_bytes": 552960,
+    "stack_frame_checks": 320,
+    "word_lookahead_after_end": true,
+    "independent_codec": true
+  },
+  "packed_resource_prefix": {
+    "report": "Tools/Disasm/Reports/PackedResourcePrefixVerification.json",
+    "physical_instances": 20,
+    "named_final_bytes": 120,
+    "sector_tails_preserved": true,
+    "inventory_parent_kind": "resource",
+    "replaced_payload_files": 20,
+    "ordinary_build_requires_python": false
+  },
+  "station_scripts": {
+    "report": "Tools/Disasm/Reports/StationScriptsVerification.json",
+    "event15_cases": 1536,
+    "event16_cases": 270,
+    "event17_cases": 256,
+    "native_transition_4200_executed": false,
+    "index31_neighbor_role_known": false
+  },
+  "main_loop_execution": {
+    "report": "Tools/Disasm/Reports/MainLoopExecutionVerification.json",
+    "bounded_runs": 25,
+    "real_im2_in_model": 100,
+    "continuous_irq_timing_proved": false,
+    "mouse_enabled": false,
+    "music_enabled": false,
+    "native_execution": false
+  },
+  "music_staging": {
+    "runtime_report": "Tools/Disasm/Reports/MusicRuntimeFlow.json",
+    "ticks_to_first_position_loop": 5377,
+    "observed_pcs": 1010,
+    "unregistered_observed_pcs": 0,
+    "envelope_prepare_cases": 3072,
+    "envelope_commit_cases": 6144,
+    "envelope_command_cases": 3072,
+    "channel_a_cases": 2048,
+    "channel_b_cases": 2048,
+    "newly_extracted_instructions": 183,
+    "newly_extracted_code_bytes": 319,
+    "native_audio_verified": false,
+    "channel_b_row_reset_cases": 8768,
+    "both_reset_instruction_codes": true,
+    "all_tempo_bytes": true
+  },
+  "music_gate_ticks": {
+    "report": "Tools/Disasm/Reports/MusicGateTicksVerification.json",
+    "cases": 393216,
+    "all_counter_and_state_bytes": true,
+    "parent_a_b_unknown_preserved": false,
+    "parent_a_b_now_described": true
+  },
+  "music_ay_output": {
+    "report": "Tools/Disasm/Reports/MusicAyFrameVerification.json",
+    "cases": 65536,
+    "channel_c_finish_cases": 393216,
+    "exact_raw_port_trace": true,
+    "lost_low_byte_carry_preserved": true,
+    "native_audio_verified": false,
+    "pending_pattern_parse": null
+  },
+  "music_pattern_dispatch": {
+    "report": "Tools/Disasm/Reports/MusicPatternDispatchVerification.json",
+    "cases": 196608,
+    "full_decode_proved": true,
+    "unsupported_pointer_words_not_executed": true,
+    "proof_scope": "Конечные строки с эффектами 1..5, 8, 9, все фактические строки исходной композиции до первой петли"
+  },
+  "music_effects": {
+    "direct_cases": 32256,
+    "single_effect_composition_cases": 32256,
+    "gate_setter_b_cases": 65536,
+    "pair_stack_cases": 393216,
+    "physical_pointer_records": 21,
+    "typed_pointer_bytes": 42,
+    "new_described_functions": 14,
+    "unextracted_operand_targets_explicit": true,
+    "native_audio_verified": false
+  },
+  "music_synthesis": {
+    "report": "Tools/Disasm/Reports/MusicSynthesisVerification.json",
+    "cases": 67328,
+    "original_tune_frames": 5377,
+    "channel_a_b_finish_cases": 786432,
+    "new_instructions": 54,
+    "newly_extracted_bytes": 87,
+    "physical_loop_header_and_step_layout_checked": true,
+    "source_arithmetic_quirks_preserved": true,
+    "pattern_decoder_independently_proved": true,
+    "native_audio_verified": false,
+    "assembly_executed": false
+  },
+  "music_channel_a_row": {
+    "report": "Tools/Disasm/Reports/MusicChannelARowVerification.json",
+    "row_cases": 8768,
+    "direct_jump_cases": 256,
+    "newly_extracted_bytes": 28,
+    "new_instructions": 11,
+    "full_frame_contract": false,
+    "all_effect_operand_targets_now_classified": true,
+    "assembly_executed": false
+  },
+  "music_patterns": {
+    "row_cases": 46992,
+    "phase_cases": 13216,
+    "original_tune_decoder_calls": {
+      "A": 496,
+      "B": 1314,
+      "C": 494
+    },
+    "original_tune_bc_phases": 5377,
+    "described_blocks": 7,
+    "physical_bytes_preserved": true,
+    "reserved_effects_executed": false,
+    "full_game_or_arbitrary_streams_proved": false,
+    "native_audio_verified": false,
+    "assembly_executed": false
+  },
+  "music_advance_a": {
+    "report": "Tools/Disasm/Reports/MusicAdvanceAVerification.json",
+    "cases": 5712,
+    "original_tune_executions": 1793,
+    "original_tune_position_changes": 29,
+    "original_tune_position_loops": 1,
+    "original_position_times_two_preserved": true,
+    "original_sp_restore_proved": true,
+    "assembly_executed": false,
+    "native_audio_verified": false
+  },
+  "music_player_data": {
+    "report": "Tools/Disasm/Reports/MusicPlayerTablesClassification.json",
+    "typed_bytes": 545,
+    "physical_instances": 163,
+    "source_files": 6,
+    "volume_zero_overlay_preserved": true,
+    "composition_records_not_yet_typed": false,
+    "assembly_executed": false
+  },
+  "music_composition": {
+    "report": "Tools/Disasm/Reports/MusicCompositionClassification.json",
+    "source_parts": 72,
+    "preserved_bytes": 4137,
+    "physical_struct_instances": 257,
+    "command_and_parameter_groups": 2861,
+    "shared_pattern_streams": 41,
+    "sample_steps": 77,
+    "ornament_steps": 57,
+    "unknown_header_byte": "Unknown63, offset 99, original value 02",
+    "physical_placement_verified": true,
+    "assembly_executed": false,
+    "native_audio_verified": false
+  },
+  "music_sector_tail": {
+    "passed": true,
+    "logical_length": 7209,
+    "allocation_length": 7424,
+    "preserved_sector_tail_bytes": 215,
+    "source_path": "Source/Music/Resources/SectorTail.bin",
+    "unused_or_discardable_claimed": false,
+    "assembly_executed": false
+  },
+  "music_initialization": {
+    "report": "Tools/Disasm/Reports/MusicInitializeAndMuteVerification.json",
+    "cases": 132864,
+    "exact_initialize_af": "FF43",
+    "exact_mute_f": "42 OR input Carry",
+    "ay_ram_buffer_not_cleared": true,
+    "partial_reset_only": true,
+    "public_and_module_entries_checked": true,
+    "assembly_executed": false,
+    "native_audio_verified": false
+  }
 }

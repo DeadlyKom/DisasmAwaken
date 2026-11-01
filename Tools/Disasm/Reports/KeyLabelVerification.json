@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "cases_by_path": {
+    "four_glyph_lookup": 330,
+    "direct_glyph": 2230
+  },
+  "all_256_input_codes": true,
+  "all_four_calls_even_after_failure": true,
+  "wrapped_byte_index_below_1e_checked": true,
+  "three_original_labels": [
+    "ENT ",
+    "SS  ",
+    "SP  "
+  ],
+  "independent_glyph_status_and_entire_bitmap": true,
+  "exact_preserved_context": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

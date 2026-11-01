@@ -1,0 +1,107 @@
+{
+  "passed": true,
+  "model_records": [
+    {
+      "model": 1,
+      "address": 52468,
+      "length": 9,
+      "text": "Гесмест "
+    },
+    {
+      "model": 2,
+      "address": 52477,
+      "length": 9,
+      "text": "Аквадиз "
+    },
+    {
+      "model": 3,
+      "address": 52486,
+      "length": 7,
+      "text": "Асфер "
+    },
+    {
+      "model": 4,
+      "address": 52493,
+      "length": 9,
+      "text": "Квадокс "
+    },
+    {
+      "model": 5,
+      "address": 52502,
+      "length": 9,
+      "text": "Рубирон "
+    },
+    {
+      "model": 6,
+      "address": 52511,
+      "length": 9,
+      "text": "Иринекс "
+    },
+    {
+      "model": 7,
+      "address": 52520,
+      "length": 9,
+      "text": "Сервест "
+    },
+    {
+      "model": 8,
+      "address": 52529,
+      "length": 8,
+      "text": "Орегон "
+    },
+    {
+      "model": 9,
+      "address": 52537,
+      "length": 8,
+      "text": "Глидер "
+    },
+    {
+      "model": 10,
+      "address": 52545,
+      "length": 9,
+      "text": "Дистрой "
+    },
+    {
+      "model": 11,
+      "address": 52554,
+      "length": 8,
+      "text": "Ретоер "
+    },
+    {
+      "model": 12,
+      "address": 52562,
+      "length": 8,
+      "text": "Орфост "
+    },
+    {
+      "model": 13,
+      "address": 52570,
+      "length": 10,
+      "text": "Фальварк "
+    },
+    {
+      "model": 14,
+      "address": 52580,
+      "length": 10,
+      "text": "Мезатрон "
+    },
+    {
+      "model": 15,
+      "address": 52590,
+      "length": 10,
+      "text": "Левиофан "
+    },
+    {
+      "model": 16,
+      "address": 52600,
+      "length": 10,
+      "text": "Паралакс "
+    }
+  ],
+  "template_address": 52610,
+  "template_size": 151,
+  "classified_bytes": 294,
+  "remaining_unknown_bytes": 5397,
+  "original_bytes_preserved": true,
+  "assembly_executed": false
+}

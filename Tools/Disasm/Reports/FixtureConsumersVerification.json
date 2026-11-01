@@ -1,0 +1,111 @@
+{
+  "passed": true,
+  "method": "explicit_research_model_replay_after_fixture_list_relocation",
+  "original_draw_list_address": 62430,
+  "b400_code_not_overwritten_by_shared_fixture": true,
+  "models": [
+    {
+      "model": "CheckEquipmentTradeMode",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "model": "CheckEquipmentListSetup",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "model": "CheckEquipmentInfo",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "model": "CheckEnvironmentRows",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "model": "CheckHelpPanelActions",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "model": "CheckHelpPanelDraws",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "model": "CheckHelpLineIndex",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "model": "CheckHelpTextOutput",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "model": "CheckHelpNewsOpening",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "model": "CheckKeyLabel",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "model": "CheckMapPanelOpening",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "model": "CheckModelTradeMode",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "model": "CheckPackedWordAndActionReturn",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "model": "CheckPassivePanelActions",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "model": "CheckPassivePanelHovers",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "model": "CheckSettingsPanelActions",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "model": "CheckShipModelActions",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "model": "CheckShipPreviewCallbacks",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "model": "CheckStationHelpCalls",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "model": "CheckWelcomePanel",
+      "passed": true,
+      "exit_code": 0
+    }
+  ],
+  "previous_reports_replaced_by_actual_replays": true,
+  "native_execution": false,
+  "assembly_executed": false
+}

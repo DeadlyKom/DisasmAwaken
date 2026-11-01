@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "cases_by_path": {
+    "complete_action": 168,
+    "all_mode_and_selector_bytes": 512,
+    "ff_return_all_flags": 256
+  },
+  "per_event": {
+    "1": 42,
+    "3": 42,
+    "2": 42,
+    "4": 42
+  },
+  "final_bc_values": [
+    [
+      0,
+      6
+    ]
+  ],
+  "actual_original_lang": true,
+  "real_status_redraw_and_six_removals": true,
+  "independent_whole_status_bitmap": false,
+  "all_mode_and_selector_bytes": true,
+  "ff_does_not_select_bank": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

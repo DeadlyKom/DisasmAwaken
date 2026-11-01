@@ -1,0 +1,38 @@
+{
+  "passed": true,
+  "cases_by_disabled_mask": {
+    "0": 65536,
+    "1": 256,
+    "2": 256,
+    "3": 256,
+    "4": 256,
+    "5": 256,
+    "6": 256,
+    "7": 256
+  },
+  "total_cases": 67328,
+  "reference_events": {
+    "limited": 384,
+    "limit_reached": 218,
+    "limit_reached_with_high_residue": 217
+  },
+  "all_sample_control_and_mode_byte_pairs": true,
+  "all_disabled_channel_combinations": true,
+  "independent_numeric_sample_ornament_tone_noise_mixer_envelope_oracle": true,
+  "every_memory_write_address_checked": true,
+  "all_expected_written_values_checked": true,
+  "all_raw_ay_port_events_checked": true,
+  "source_ab_sample_offset_low_byte_quirk_preserved": true,
+  "source_note_table_overrun_read_semantics_preserved": true,
+  "source_tone_limit_residual_high_byte_preserved": true,
+  "per_channel_body_boundaries_checked": true,
+  "per_channel_saved_amplitude_af_prime_checked": true,
+  "physical_header_and_sample_step_layout_checked": true,
+  "disabled_path_exact_flags_checked": true,
+  "stack_restored": true,
+  "stop_address": 58236,
+  "pattern_phase_executed": false,
+  "irq_executed": false,
+  "native_audio_verified": false,
+  "assembly_executed": false
+}

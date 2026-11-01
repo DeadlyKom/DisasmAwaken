@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "per_wrapper": {
+    "6771": 192,
+    "69DD": 192,
+    "741E": 32,
+    "74A7": 32
+  },
+  "whole_memory_and_register_equivalence": true,
+  "mutable_ship_and_help_row_counts": [
+    0,
+    1,
+    2,
+    30,
+    31,
+    255
+  ],
+  "pixel_slot_height_remains_40": true,
+  "last_and_nonlast_draw_pointer": true,
+  "independent_bitmap": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

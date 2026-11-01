@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "cases_by_path": {
+    "index_and_store_count": 216,
+    "print_banked_line": 72,
+    "disable_wrap_all_af": 65536
+  },
+  "real_bank_switch_helpers_and_help_instructions": true,
+  "both_screen_page_bits": true,
+  "independent_line_index_and_print_layout": true,
+  "entire_cache_and_stored_word_checked": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

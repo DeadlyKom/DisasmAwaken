@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "previously_named_contract_described": 1,
+  "instructions_changed": 0,
+  "bank_7_operand_explicit": true,
+  "physical_bytes_preserved": true,
+  "scoped_candidate_and_history": true,
+  "assembly_executed": false
+}

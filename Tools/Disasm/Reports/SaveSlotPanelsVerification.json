@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "cases_by_path": {
+    "real_panel_draws": 48,
+    "real_caption_im2": 48,
+    "disabled_all_flags": 512
+  },
+  "five_physical_labels_each": true,
+  "independent_all_body_bitmap_and_text_status": true,
+  "original_im2_only_at_caption_halt": true,
+  "music_disabled": true,
+  "independent_caption_bitmap": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

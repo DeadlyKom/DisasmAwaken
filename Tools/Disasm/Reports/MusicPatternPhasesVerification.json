@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "total_cases": 13216,
+  "cases_by_group": {
+    "phase_bytes": 512,
+    "row_bytes": 4096,
+    "retained_working_b": 256,
+    "B.ordinary": 3840,
+    "B.effects": 336,
+    "C.ordinary": 3840,
+    "C.effects": 336
+  },
+  "all_phase_and_counter_bytes": true,
+  "all_retained_working_b_bytes": true,
+  "actual_decoder_calls_executed": true,
+  "independent_parser_reference": true,
+  "every_memory_byte_and_write_checked": true,
+  "main_and_alternate_registers_checked": true,
+  "source_call_frames_checked": true,
+  "irq_executed": false,
+  "native_audio_verified": false,
+  "assembly_executed": false
+}

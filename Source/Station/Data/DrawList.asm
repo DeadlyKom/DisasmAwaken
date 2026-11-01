@@ -9,6 +9,6 @@
                 DW @Station.DrawShipControl.Entry
                 DW @Station.DrawItem08.Entry
                 DW @Station.DrawItem09.Entry
-                DW @Station.DrawItem45.Entry
+                DW @Station.DrawWelcomePanel.Entry
 End:            DW #0101                                                        ; ограничитель списка обработчиков
                 endmodule

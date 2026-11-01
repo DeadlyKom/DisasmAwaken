@@ -16,9 +16,19 @@
                 ent
                 assert $ == #005B
                 disp #DB5B
-                include "../Help/FormatNumber.asm"
+                include "../Help/PrintCrRecordAndRows.asm"
                 ent
                 assert $ == #007C
-                ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/08_HELP/Unclassified000.bin"
+                disp #DB7C
+                include "../Help/Data/LinePointers.asm"
+                ent
+                assert $ == #087C
+                ; CR-заголовки разделов, потребитель PrintCrRecordAndRows, адрес E37C
+                incbin "../Resources/08_HELP/SectionTitles.bin"
+                assert $ == #08E2
+                ; LF-записи справки, потребитель IndexTextLines, адрес E3E2
+                incbin "../Resources/08_HELP/SectionTexts.bin"
+                assert $ == #1721
+                ; Unknown, секторный хвост после логической длины, исходные байты сохранены
+                incbin "../Resources/08_HELP/SectorTail.bin"
                 assert $ == #1800

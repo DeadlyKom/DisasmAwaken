@@ -16,6 +16,7 @@ ROOT = Path(__file__).resolve().parents[3]
 PROJECT_ROOT = ROOT
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from Analyze import BLOCKS
+from PackedResourcePrefixTable import final_lines
 from Knowledge import FUNCTIONS, REGIONS
 from Contracts import CONTRACTS
 from IntroNotes import NOTES as INTRO_NOTES, COMMENTS as INTRO_COMMENTS
@@ -117,14 +118,15 @@ def export_screens(slot, data, sizes):
         # Проверка сигнатуры, длины экрана и секторной границы по исходному заголовку.
         unpacked = int.from_bytes(block[2:4], "little")
         packed = int.from_bytes(block[4:6], "little")
-        if block[:2] != b"HR" or unpacked != 6912 or not 6 <= packed <= allocated:
+        if block[:2] != b"HR" or unpacked != 6912 or not 12 < packed <= allocated:
             raise ValueError("Не подтверждён заголовок экранного ресурса")
         stem = f"Screen{index:02d}"
         target = ROOT / folder
         target.mkdir(parents=True, exist_ok=True)
-        (target / (stem+".Payload.bin")).write_bytes(block[6:packed])
+        (target / (stem+".Bitstream.bin")).write_bytes(block[12:packed])
         (target / (stem+".Tail.bin")).write_bytes(block[packed:])
         lines = [asm(f"module PackedScreens{slot:02d}"), asm("module "+stem),
+                 asm('; Формат [сохранённый конец и общий поток](../../../Docs/PackedResourcePrefix.md)'),
                  "; -----------------------------------------",
                  f"; упакованный экран {index}, исходное смещение #{offset:04X}",
                  "; 6144 байта пикселей и 768 байт атрибутов после распаковки",
@@ -135,7 +137,7 @@ def export_screens(slot, data, sizes):
                  asm('#1B00,', "UnpackedSize, размер экрана с атрибутами"),
                  asm(f'#{packed:04X}', "PackedSize, длина файла вместе с заголовком"),
                  asm('}'),
-                 asm(f'incbin "{stem}.Payload.bin"', "упакованный поток без заголовка", "Payload:"),
+                 *final_lines(block,stem),
                  asm(f'incbin "{stem}.Tail.bin"', "байты до конца выделенных секторов", "Tail:"),
                  asm(f"assert $ - Header == #{allocated:04X}"),
                  asm("endmodule"), asm("endmodule")]
@@ -350,6 +352,24 @@ def main():
     write("Source/Station/Data/DrawList.asm", "\n".join(list_lines))
     special = {(4,0x90FD):(item_end,"Source/Station/Data/InterfaceItems.asm",0xF0FD),
                (4,item_end):(list_end,"Source/Station/Data/DrawList.asm",0xF3DE)}
+    # Выделение только доказанных разнесённых слов, исполняемый код между ними сохраняется отдельно.
+    if re.search(r"\bstruct\s+FMusicEffectTarget\b", (ROOT/"Includes/Structs/Include.inc").read_text(encoding="utf-8"), re.I):
+        from MusicEffectTables import TABLES as MUSIC_EFFECT_TABLES, render as render_music_effect_table
+        for table in MUSIC_EFFECT_TABLES:
+            module, path, start, entries = table
+            text, bindings = render_music_effect_table(data_by_slot[10], table)
+            write(path, text)
+            symbols.update(bindings)
+            special[10, start-0xDB00] = (start-0xDB00+2*len(entries), path, start)
+    # Выделение исходных физических таблиц музыки только при наличии согласованных структур.
+    if re.search(r"\bstruct\s+FMusicAyRegisters\b", (ROOT/"Includes/Structs/Include.inc").read_text(encoding="utf-8"), re.I):
+        from MusicPlayerTables import TABLES as MUSIC_PLAYER_TABLES, render as render_music_player_table
+        for table in MUSIC_PLAYER_TABLES:
+            module, path, start, end, structure, fields, record_names = table
+            text, bindings = render_music_player_table(data_by_slot[10], table)
+            write(path, text)
+            symbols.update(bindings)
+            special[10, start] = (end, path, 0xDB00+start)
     token_text, token_records = render_token_tables(language, names)
     write(TOKEN_TABLE_PATH, token_text)
     special[5, 0x935] = (0xA67, TOKEN_TABLE_PATH, 0xC935)
@@ -579,6 +599,16 @@ def main():
     # Выделение подтверждённого PT3 от исходного адреса #E700 до логического конца MUZ1.C.
     music_end = next(item["length"] for item in disk["entries"] if item["slot"] == 10)
     binary_resources = {(10, 0xC00): (music_end, "Source/Music/Resources/Antichrist.pt3", "PT3")}
+    if re.search(r"\bstruct\s+FMusicModuleHeader\b", (ROOT/"Includes/Structs/Include.inc").read_text('utf-8'), re.I):
+        from MusicCompositionSource import descriptions as composition_descriptions, render as render_composition
+        composition = data_by_slot[10][0xC00:music_end]
+        for description in composition_descriptions(composition):
+            text, bindings = render_composition(composition, description)
+            write(description['path'], text)
+            symbols.update(bindings)
+            start, length = description['offset'], description['length']
+            special[10, 0xC00+start] = (0xC00+start+length, description['path'], 0xE700+start)
+        del binary_resources[10, 0xC00]
     binary_resources[7, 0x2900] = (0x2B00, "Source/Map/Resources/Squares.bin", "Z80_SPLIT_WORD_SQUARES")
     binary_resources[7, 0x2B00] = (0x2E00, "Source/Map/Resources/RootSeeds.bin", "ROOT_SEED_AND_SPLIT_OFFSET_PAGES")
     binary_resources[4, 0x2900] = (0x2A00, "Source/Station/Resources/FontWidths.bin", "FONT_WIDTHS_256")

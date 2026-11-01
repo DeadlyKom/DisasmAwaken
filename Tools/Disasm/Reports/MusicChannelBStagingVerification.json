@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "cases": 2048,
+  "all_gate_combinations": true,
+  "all_parameter_bytes": true,
+  "all_input_flag_bytes": true,
+  "all_memory_compared": true,
+  "stop_address": 57159,
+  "sample_and_ornament_rendering_executed": false,
+  "irq_executed": false,
+  "assembly_executed": false
+}

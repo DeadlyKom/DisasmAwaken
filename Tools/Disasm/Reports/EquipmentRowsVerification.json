@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "cases_by_path": {
+    "physical_setup_frames": 1794,
+    "ordinary_register_return": 1793,
+    "physical_marker_frames": 3012,
+    "swapped_register_early_return": 1
+  },
+  "field_phases": {
+    "quantity": 3221,
+    "price": 3014,
+    "weight": 2410,
+    "mark": 3012,
+    "weight_dash": 603
+  },
+  "all_quantity_codes": true,
+  "all_ship_codes": true,
+  "exact_main_alternate_registers_and_counter": true,
+  "independent_all_bitmap_and_numeric_status_reference": true,
+  "sentinel_counted_before_test": true,
+  "early_marker_return_leaves_exx_swapped": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

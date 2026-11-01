@@ -11,7 +11,7 @@
                 ;   PanelHoverState.FromPositionRow содержит прежний номер либо FF, его операнд доступен для записи
                 ;   действуют договоры UpdatePixelHover, XorItemRow, XorPointerRow, SuspendPointer и ResumePointer
                 ; Out:
-                ;   перед UpdatePixelHover установлены HL=DrawItem44.Entry, DE=2803, A прежний номер
+                ;   перед UpdatePixelHover установлены HL=DrawLoadSlotPanel.Entry, DE=2803, A прежний номер
                 ;   D=40 пикселей передаётся прямо, E=3, высота FInterfaceItem не ограничивает область этого входа
                 ;   при Z=1 возвращённого UpdatePixelHover сохранённый номер не меняется, выходные регистры принадлежат соответствующей ветви отказа или совпадения
                 ;   при Z=0 весь возвращённый A записан в PanelHoverState.FromPositionRow, даже если A=0 либо повторная проверка вернула высоту
@@ -29,7 +29,7 @@
                 ; выбор 40 пикселей и отступа 3 для списка С позиции 1..5
 Entry:          LD DE, @PanelHoverConst.PositionsPixels
                 ; выбор точного рисователя, который должен быть последним в списке
-                LD HL, @Station.DrawItem44.Entry
+                LD HL, @Station.DrawLoadSlotPanel.Entry
                 ; чтение изменяемого номера прежней XOR-полосы, FF означает её отсутствие
                 LD A, #FF
                 ; проверка положения указателя и обновление полосы через UpdatePixelHover

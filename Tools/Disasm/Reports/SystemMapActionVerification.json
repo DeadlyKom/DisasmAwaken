@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "cases_by_path": {
+    "scene_preparation_im2": 48,
+    "real_nearest_variant_and_redraw": 48,
+    "real_caption_im2": 72,
+    "zero_count_without_selection": 512,
+    "nonselection_close_filter": 510
+  },
+  "real_resource_coordinates_after_draw": true,
+  "all_positive_counts_1_to_6": true,
+  "first_minimum_index_independent": true,
+  "zero_count_preserves_variant_and_callback": true,
+  "close_disables_callback_only_on_matching_row": true,
+  "actual_helpers_and_banks": true,
+  "independent_whole_redraw_bitmap": false,
+  "irq_only_at_caption_halt": true,
+  "music_disabled": true,
+  "native_execution": false,
+  "assembly_executed": false
+}

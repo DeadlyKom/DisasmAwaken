@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "cases": 786432,
+  "entries": [
+    57549,
+    57551,
+    57554,
+    57805,
+    57807,
+    57810
+  ],
+  "all_gate_counter_and_state_bytes": true,
+  "both_saved_carry_values": true,
+  "alternate_af_exactly_checked": true,
+  "every_memory_write_observed": true,
+  "stop_addresses": [
+    57581,
+    57837
+  ],
+  "ay_output_executed": false,
+  "irq_executed": false,
+  "assembly_executed": false
+}

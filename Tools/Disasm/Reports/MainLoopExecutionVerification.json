@@ -1,0 +1,721 @@
+{
+  "passed": true,
+  "cases_by_path": {
+    "bounded_original_main_runs": 25,
+    "native_im2_in_model": 100,
+    "copied_transition_4200_boundaries": 2,
+    "market": 25,
+    "rebuild": 59,
+    "periodic": 72,
+    "hover": 72,
+    "dispatch": 12,
+    "status_action": 12,
+    "close": 6
+  },
+  "runs": [
+    {
+      "status": 0,
+      "credits": 2000,
+      "page": 16,
+      "periodic": 39512,
+      "input_schedule": [
+        0,
+        16,
+        16,
+        0
+      ],
+      "pulse": true,
+      "owned": 255,
+      "script_events": [
+        15,
+        16
+      ],
+      "irqs": 4,
+      "instructions": 151592,
+      "exit_4200": false,
+      "final_credits": 1930,
+      "calls": {
+        "market": 1,
+        "rebuild": 2,
+        "periodic": 4,
+        "hover": 4,
+        "dispatch": 2,
+        "status_action": 2,
+        "close": 1
+      }
+    },
+    {
+      "status": 0,
+      "credits": 2000,
+      "page": 16,
+      "periodic": 26858,
+      "input_schedule": [
+        0,
+        16,
+        16,
+        0
+      ],
+      "pulse": true,
+      "owned": 255,
+      "script_events": [
+        15,
+        16
+      ],
+      "irqs": 4,
+      "instructions": 151716,
+      "exit_4200": false,
+      "final_credits": 1930,
+      "calls": {
+        "market": 1,
+        "rebuild": 2,
+        "periodic": 4,
+        "hover": 4,
+        "dispatch": 2,
+        "status_action": 2,
+        "close": 1
+      }
+    },
+    {
+      "status": 0,
+      "credits": 2000,
+      "page": 16,
+      "periodic": 32565,
+      "input_schedule": [
+        0,
+        16,
+        16,
+        0
+      ],
+      "pulse": true,
+      "owned": 255,
+      "script_events": [
+        15,
+        16
+      ],
+      "irqs": 4,
+      "instructions": 169999,
+      "exit_4200": false,
+      "final_credits": 1930,
+      "calls": {
+        "market": 1,
+        "rebuild": 2,
+        "periodic": 4,
+        "hover": 4,
+        "dispatch": 2,
+        "status_action": 2,
+        "close": 1
+      }
+    },
+    {
+      "status": 55,
+      "credits": 2000,
+      "page": 16,
+      "periodic": 39512,
+      "input_schedule": [
+        0,
+        0,
+        0
+      ],
+      "pulse": true,
+      "owned": 255,
+      "script_events": [
+        15,
+        16
+      ],
+      "irqs": 5,
+      "instructions": 283170,
+      "exit_4200": false,
+      "final_credits": 1880,
+      "calls": {
+        "market": 1,
+        "rebuild": 3,
+        "periodic": 3,
+        "hover": 3
+      }
+    },
+    {
+      "status": 55,
+      "credits": 2000,
+      "page": 16,
+      "periodic": 26858,
+      "input_schedule": [
+        0,
+        0,
+        0
+      ],
+      "pulse": true,
+      "owned": 255,
+      "script_events": [
+        15,
+        16
+      ],
+      "irqs": 5,
+      "instructions": 283278,
+      "exit_4200": false,
+      "final_credits": 1880,
+      "calls": {
+        "market": 1,
+        "rebuild": 3,
+        "periodic": 3,
+        "hover": 3
+      }
+    },
+    {
+      "status": 55,
+      "credits": 2000,
+      "page": 16,
+      "periodic": 32565,
+      "input_schedule": [
+        0,
+        0,
+        0
+      ],
+      "pulse": true,
+      "owned": 255,
+      "script_events": [
+        15,
+        16
+      ],
+      "irqs": 5,
+      "instructions": 297000,
+      "exit_4200": false,
+      "final_credits": 1880,
+      "calls": {
+        "market": 1,
+        "rebuild": 3,
+        "periodic": 3,
+        "hover": 3
+      }
+    },
+    {
+      "status": 80,
+      "credits": 2000,
+      "page": 16,
+      "periodic": 39512,
+      "input_schedule": [
+        0,
+        0,
+        0
+      ],
+      "pulse": true,
+      "owned": 255,
+      "script_events": [
+        15,
+        16
+      ],
+      "irqs": 5,
+      "instructions": 287507,
+      "exit_4200": false,
+      "final_credits": 930,
+      "calls": {
+        "market": 1,
+        "rebuild": 3,
+        "periodic": 3,
+        "hover": 3
+      }
+    },
+    {
+      "status": 80,
+      "credits": 2000,
+      "page": 16,
+      "periodic": 26858,
+      "input_schedule": [
+        0,
+        0,
+        0
+      ],
+      "pulse": true,
+      "owned": 255,
+      "script_events": [
+        15,
+        16
+      ],
+      "irqs": 5,
+      "instructions": 287615,
+      "exit_4200": false,
+      "final_credits": 930,
+      "calls": {
+        "market": 1,
+        "rebuild": 3,
+        "periodic": 3,
+        "hover": 3
+      }
+    },
+    {
+      "status": 80,
+      "credits": 2000,
+      "page": 16,
+      "periodic": 32565,
+      "input_schedule": [
+        0,
+        0,
+        0
+      ],
+      "pulse": true,
+      "owned": 255,
+      "script_events": [
+        15,
+        16
+      ],
+      "irqs": 5,
+      "instructions": 301415,
+      "exit_4200": false,
+      "final_credits": 930,
+      "calls": {
+        "market": 1,
+        "rebuild": 3,
+        "periodic": 3,
+        "hover": 3
+      }
+    },
+    {
+      "status": 0,
+      "credits": 2000,
+      "page": 24,
+      "periodic": 39512,
+      "input_schedule": [
+        0,
+        16,
+        16,
+        0
+      ],
+      "pulse": true,
+      "owned": 255,
+      "script_events": [
+        15,
+        16
+      ],
+      "irqs": 4,
+      "instructions": 151592,
+      "exit_4200": false,
+      "final_credits": 1930,
+      "calls": {
+        "market": 1,
+        "rebuild": 2,
+        "periodic": 4,
+        "hover": 4,
+        "dispatch": 2,
+        "status_action": 2,
+        "close": 1
+      }
+    },
+    {
+      "status": 0,
+      "credits": 2000,
+      "page": 24,
+      "periodic": 26858,
+      "input_schedule": [
+        0,
+        16,
+        16,
+        0
+      ],
+      "pulse": true,
+      "owned": 255,
+      "script_events": [
+        15,
+        16
+      ],
+      "irqs": 4,
+      "instructions": 151716,
+      "exit_4200": false,
+      "final_credits": 1930,
+      "calls": {
+        "market": 1,
+        "rebuild": 2,
+        "periodic": 4,
+        "hover": 4,
+        "dispatch": 2,
+        "status_action": 2,
+        "close": 1
+      }
+    },
+    {
+      "status": 0,
+      "credits": 2000,
+      "page": 24,
+      "periodic": 32565,
+      "input_schedule": [
+        0,
+        16,
+        16,
+        0
+      ],
+      "pulse": true,
+      "owned": 255,
+      "script_events": [
+        15,
+        16
+      ],
+      "irqs": 4,
+      "instructions": 169999,
+      "exit_4200": false,
+      "final_credits": 1930,
+      "calls": {
+        "market": 1,
+        "rebuild": 2,
+        "periodic": 4,
+        "hover": 4,
+        "dispatch": 2,
+        "status_action": 2,
+        "close": 1
+      }
+    },
+    {
+      "status": 55,
+      "credits": 2000,
+      "page": 24,
+      "periodic": 39512,
+      "input_schedule": [
+        0,
+        0,
+        0
+      ],
+      "pulse": true,
+      "owned": 255,
+      "script_events": [
+        15,
+        16
+      ],
+      "irqs": 5,
+      "instructions": 283170,
+      "exit_4200": false,
+      "final_credits": 1880,
+      "calls": {
+        "market": 1,
+        "rebuild": 3,
+        "periodic": 3,
+        "hover": 3
+      }
+    },
+    {
+      "status": 55,
+      "credits": 2000,
+      "page": 24,
+      "periodic": 26858,
+      "input_schedule": [
+        0,
+        0,
+        0
+      ],
+      "pulse": true,
+      "owned": 255,
+      "script_events": [
+        15,
+        16
+      ],
+      "irqs": 5,
+      "instructions": 283278,
+      "exit_4200": false,
+      "final_credits": 1880,
+      "calls": {
+        "market": 1,
+        "rebuild": 3,
+        "periodic": 3,
+        "hover": 3
+      }
+    },
+    {
+      "status": 55,
+      "credits": 2000,
+      "page": 24,
+      "periodic": 32565,
+      "input_schedule": [
+        0,
+        0,
+        0
+      ],
+      "pulse": true,
+      "owned": 255,
+      "script_events": [
+        15,
+        16
+      ],
+      "irqs": 5,
+      "instructions": 297000,
+      "exit_4200": false,
+      "final_credits": 1880,
+      "calls": {
+        "market": 1,
+        "rebuild": 3,
+        "periodic": 3,
+        "hover": 3
+      }
+    },
+    {
+      "status": 80,
+      "credits": 2000,
+      "page": 24,
+      "periodic": 39512,
+      "input_schedule": [
+        0,
+        0,
+        0
+      ],
+      "pulse": true,
+      "owned": 255,
+      "script_events": [
+        15,
+        16
+      ],
+      "irqs": 5,
+      "instructions": 287507,
+      "exit_4200": false,
+      "final_credits": 930,
+      "calls": {
+        "market": 1,
+        "rebuild": 3,
+        "periodic": 3,
+        "hover": 3
+      }
+    },
+    {
+      "status": 80,
+      "credits": 2000,
+      "page": 24,
+      "periodic": 26858,
+      "input_schedule": [
+        0,
+        0,
+        0
+      ],
+      "pulse": true,
+      "owned": 255,
+      "script_events": [
+        15,
+        16
+      ],
+      "irqs": 5,
+      "instructions": 287615,
+      "exit_4200": false,
+      "final_credits": 930,
+      "calls": {
+        "market": 1,
+        "rebuild": 3,
+        "periodic": 3,
+        "hover": 3
+      }
+    },
+    {
+      "status": 80,
+      "credits": 2000,
+      "page": 24,
+      "periodic": 32565,
+      "input_schedule": [
+        0,
+        0,
+        0
+      ],
+      "pulse": true,
+      "owned": 255,
+      "script_events": [
+        15,
+        16
+      ],
+      "irqs": 5,
+      "instructions": 301415,
+      "exit_4200": false,
+      "final_credits": 930,
+      "calls": {
+        "market": 1,
+        "rebuild": 3,
+        "periodic": 3,
+        "hover": 3
+      }
+    },
+    {
+      "status": 0,
+      "credits": 2000,
+      "page": 16,
+      "periodic": 39512,
+      "input_schedule": [
+        0,
+        0
+      ],
+      "pulse": false,
+      "owned": 255,
+      "script_events": [
+        15
+      ],
+      "irqs": 2,
+      "instructions": 74463,
+      "exit_4200": false,
+      "final_credits": 2000,
+      "calls": {
+        "market": 1,
+        "rebuild": 1,
+        "periodic": 2,
+        "hover": 2
+      }
+    },
+    {
+      "status": 55,
+      "credits": 2000,
+      "page": 16,
+      "periodic": 39512,
+      "input_schedule": [
+        0,
+        0
+      ],
+      "pulse": false,
+      "owned": 255,
+      "script_events": [
+        15
+      ],
+      "irqs": 3,
+      "instructions": 172563,
+      "exit_4200": false,
+      "final_credits": 1950,
+      "calls": {
+        "market": 1,
+        "rebuild": 2,
+        "periodic": 2,
+        "hover": 2
+      }
+    },
+    {
+      "status": 80,
+      "credits": 2000,
+      "page": 16,
+      "periodic": 39512,
+      "input_schedule": [
+        0,
+        0
+      ],
+      "pulse": false,
+      "owned": 255,
+      "script_events": [
+        15
+      ],
+      "irqs": 3,
+      "instructions": 177766,
+      "exit_4200": false,
+      "final_credits": 1000,
+      "calls": {
+        "market": 1,
+        "rebuild": 2,
+        "periodic": 2,
+        "hover": 2
+      }
+    },
+    {
+      "status": 0,
+      "credits": 0,
+      "page": 16,
+      "periodic": 39512,
+      "input_schedule": [
+        0,
+        0
+      ],
+      "pulse": true,
+      "owned": 255,
+      "script_events": [
+        15,
+        16
+      ],
+      "irqs": 3,
+      "instructions": 155552,
+      "exit_4200": false,
+      "final_credits": 0,
+      "calls": {
+        "market": 1,
+        "rebuild": 2,
+        "periodic": 2,
+        "hover": 2
+      }
+    },
+    {
+      "status": 0,
+      "credits": 0,
+      "page": 16,
+      "periodic": 39512,
+      "input_schedule": [
+        0,
+        0
+      ],
+      "pulse": true,
+      "owned": 0,
+      "script_events": [
+        15,
+        16
+      ],
+      "irqs": 1,
+      "instructions": 79884,
+      "exit_4200": true,
+      "final_credits": 0,
+      "calls": {
+        "market": 1,
+        "rebuild": 1,
+        "periodic": 1,
+        "hover": 1
+      }
+    },
+    {
+      "status": 0,
+      "credits": 0,
+      "page": 24,
+      "periodic": 39512,
+      "input_schedule": [
+        0,
+        0
+      ],
+      "pulse": true,
+      "owned": 255,
+      "script_events": [
+        15,
+        16
+      ],
+      "irqs": 3,
+      "instructions": 155552,
+      "exit_4200": false,
+      "final_credits": 0,
+      "calls": {
+        "market": 1,
+        "rebuild": 2,
+        "periodic": 2,
+        "hover": 2
+      }
+    },
+    {
+      "status": 0,
+      "credits": 0,
+      "page": 24,
+      "periodic": 39512,
+      "input_schedule": [
+        0,
+        0
+      ],
+      "pulse": true,
+      "owned": 0,
+      "script_events": [
+        15,
+        16
+      ],
+      "irqs": 1,
+      "instructions": 79884,
+      "exit_4200": true,
+      "final_credits": 0,
+      "calls": {
+        "market": 1,
+        "rebuild": 1,
+        "periodic": 1,
+        "hover": 1
+      }
+    }
+  ],
+  "actual_market_rebuild_status_counter_scripts_and_input": true,
+  "real_im2_including_unblocked_pointer_path": true,
+  "physical_irq_return_pc_and_sp_checked": true,
+  "real_boot_draw_index_fragment_executed": true,
+  "callbacks_assigned_at_call_boundaries": true,
+  "callback_bodies_not_stubbed": true,
+  "mouse_disabled": true,
+  "music_disabled": true,
+  "interrupts_only_at_halts": true,
+  "continuous_hardware_interrupt_timing_not_proved": true,
+  "independent_script_money_and_input_branch_oracle": true,
+  "independent_whole_game_bitmap": false,
+  "action_4200_code_not_executed": true,
+  "native_execution": false,
+  "assembly_executed": false
+}

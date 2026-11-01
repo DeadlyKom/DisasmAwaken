@@ -75,7 +75,7 @@ DispatchRow:    CALL #C873
                 JP Z, @Station.OpenRestoreDialog.Entry                          ; переход, если номер равен 6, открыть восстановление
 
                 ; выбор окна сохранения для номера 7 и всех остальных немаркерных байтов
-                LD HL, @Station.DrawItem43.Entry
+                LD HL, @Station.DrawSaveSlotPanel.Entry
                 ; перенос окна сохранения в конец списка и восстановление его границ
                 JP #CBA9
 

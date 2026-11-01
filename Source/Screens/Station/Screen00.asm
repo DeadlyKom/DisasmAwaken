@@ -1,5 +1,6 @@
                 module PackedScreens09
                 module Screen00
+                ; Формат [сохранённый конец и общий поток](../../../Docs/PackedResourcePrefix.md)
 ; -----------------------------------------
 ; упакованный экран 0, исходное смещение #0000
 ; 6144 байта пикселей и 768 байт атрибутов после распаковки
@@ -10,7 +11,12 @@ Header:         FPackedHeader {                                                 
                 #1B00,                                                          ; UnpackedSize, размер экрана с атрибутами
                 #0C9E                                                           ; PackedSize, длина файла вместе с заголовком
                 }
-Payload:        incbin "Screen00.Payload.bin"                                   ; упакованный поток без заголовка
+FinalBytes:     FPackedFinalBytes {                                             ; исходные последние шесть байтов результата
+                #7878,                                                          ; BytesMinus6, пара финальных байтов результата
+                #7878,                                                          ; BytesMinus4, пара финальных байтов результата
+                #7878                                                           ; BytesMinus2, пара финальных байтов результата
+                }
+Bitstream:      incbin "Screen00.Bitstream.bin"                                 ; общий поток битовых слов и литералов после префикса
 Tail:           incbin "Screen00.Tail.bin"                                      ; байты до конца выделенных секторов
                 assert $ - Header == #0D00
                 endmodule

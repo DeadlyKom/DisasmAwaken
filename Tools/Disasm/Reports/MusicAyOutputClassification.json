@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "new_fragments": 2,
+  "described_contracts": 2,
+  "remaining_unknown_continuation": true,
+  "instructions_changed": 0,
+  "physical_bytes_preserved": true,
+  "assembly_executed": false
+}

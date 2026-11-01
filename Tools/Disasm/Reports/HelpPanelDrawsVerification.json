@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "cases_by_path": {
+    "help_body_draws": 216,
+    "real_caption_im2_wakeups": 312,
+    "help_contents_draws": 96,
+    "disabled_draw_returns": 512
+  },
+  "all_original_help_records_and_titles": true,
+  "actual_caption_and_help_and_bank_helpers": true,
+  "independent_layout_and_exact_registers": true,
+  "entire_index_cache_checked": true,
+  "irq_only_at_caption_halt": true,
+  "music_disabled": true,
+  "independent_whole_bitmap_oracle": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

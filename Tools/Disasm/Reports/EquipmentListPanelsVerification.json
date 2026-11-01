@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "cases_by_path": {
+    "full_panel_body": 120,
+    "real_caption_im2": 180,
+    "header_carry_skips_body": 60,
+    "internal_callback_no_frame": 30,
+    "conditional_exact_pointer_and_c9": 4,
+    "disabled_all_flags": 256
+  },
+  "row_model_report": "Tools/Disasm/Reports/EquipmentRowsVerification.json",
+  "full_word_top_row": true,
+  "sentinel_attempt_counter_preserved": true,
+  "independent_whole_body_bitmap": true,
+  "independent_caption_bitmap": false,
+  "original_im2_only_at_caption_halt": true,
+  "music_disabled": true,
+  "native_execution": false,
+  "assembly_executed": false
+}

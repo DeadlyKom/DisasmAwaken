@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "previously_named_contract_described": 1,
+  "physical_cache_bytes": 2048,
+  "physical_records": 1024,
+  "instructions_changed": 0,
+  "bytes_preserved": true,
+  "candidate_and_history_preserved": true,
+  "assembly_executed": false
+}

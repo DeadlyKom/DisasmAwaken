@@ -1,0 +1,45 @@
+{
+  "passed": true,
+  "cases_by_path": {
+    "proxy_calls": 327680,
+    "direct_noop_calls": 327680
+  },
+  "physical_interface_records_and_captions": [
+    {
+      "index": 11,
+      "hover_entry": 27658,
+      "noop_entry": 27971,
+      "caption": "Карта галактики"
+    },
+    {
+      "index": 19,
+      "hover_entry": 30326,
+      "noop_entry": 30343,
+      "caption": "Инфо о системе"
+    },
+    {
+      "index": 20,
+      "hover_entry": 30776,
+      "noop_entry": 30852,
+      "caption": "Карта системы"
+    },
+    {
+      "index": 32,
+      "hover_entry": 43605,
+      "noop_entry": 43652,
+      "caption": "Контракт"
+    },
+    {
+      "index": 45,
+      "hover_entry": 31048,
+      "noop_entry": 31060,
+      "caption": "Добро пожаловать!"
+    }
+  ],
+  "all_af_values_for_each_entry": true,
+  "all_gpr_alternates_index_and_flags_preserved": true,
+  "no_memory_or_port_writes": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "per_event": {
+    "5": 2340,
+    "6": 1336
+  },
+  "queued_messages": {
+    "0": 95,
+    "4": 342,
+    "5": 152,
+    "7": 858,
+    "8": 242,
+    "10": 674,
+    "2": 278,
+    "12": 159,
+    "6": 96
+  },
+  "all_30_equipment_rows": true,
+  "all_quantity_bytes": true,
+  "original_script_bytes_unchanged": true,
+  "actual_interpreter_and_original_script": true,
+  "independent_quantity_credits_conditions_and_messages": true,
+  "inverse_at_checks_missing_ship": true,
+  "real_bank_switching": true,
+  "station_display_not_executed": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

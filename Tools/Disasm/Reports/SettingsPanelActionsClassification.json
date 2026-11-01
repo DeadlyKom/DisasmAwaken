@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "functions_described": 4,
+  "instructions_changed": 0,
+  "physical_bytes_preserved": true,
+  "scoped_candidate_and_history": true,
+  "explicit_banked_modified_targets": true,
+  "existing_hover_target_name_repaired": true,
+  "assembly_executed": false
+}

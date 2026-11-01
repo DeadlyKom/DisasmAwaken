@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "cases_by_path": {
+    "real_current_key_and_column_setup": 10240
+  },
+  "all_variants": true,
+  "all_key_sizes_observed": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16
+  ],
+  "independent_signature_reference": true,
+  "exact_column_bytes": true,
+  "original_bank_switches": true,
+  "key_size_gameplay_name_unproved": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

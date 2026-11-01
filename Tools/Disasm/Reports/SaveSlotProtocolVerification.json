@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "cases_by_path": {
+    "save_state_block": 572,
+    "physical_dos_frames": 3432,
+    "whole_action_selection": 12,
+    "missing_search_continues_to_descriptor_ff": 512,
+    "load_state_block": 572,
+    "nonselection_without_dos": 510
+  },
+  "all_original_i_values": true,
+  "all_slot_filename_bytes": true,
+  "six_original_save_files_checked": true,
+  "read_write_blocks_exactly_512_bytes": true,
+  "load_final_hl_is_filename_digit": true,
+  "iff_inherited_from_dos_not_restored": true,
+  "missing_file_ff_not_guarded": true,
+  "last_dos_carry_not_checked": true,
+  "last_dos_carry_values": [
+    0,
+    1
+  ],
+  "method": "original_action_instructions_with_explicit_3d13_contract_stubs_and_memory_only_sector_transfer",
+  "actual_trdos_executed": false,
+  "physical_disk_written": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

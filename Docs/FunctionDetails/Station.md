@@ -64,7 +64,7 @@
 
 [Station.StopMusic](../../Source/Station/StopMusic.asm)
 
-Остановка музыкального модуля в странице 3 и восстановление IM 1.
+Глушение AY в банке музыки, установка IM 1 и выход через двухсловную CPU-рамку. [Алгоритм и проверка](../StopMusic.md).
 
 Вход `#63AA`, запись 4, смещения `#0656..#066E`.
 
@@ -424,11 +424,11 @@
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## HandleItem25
+## HandleShipListHover
 
-[Station.HandleItem25](../../Source/Station/HandleItem25.asm)
+[Station.HandleShipListHover](../../Source/Station/HandleShipListHover.asm)
 
-обработчик события станционного элемента из записи 25 таблицы FInterfaceItem.
+Хвостовая передача наведения списка моделей кораблей в UpdateShipListHover. [Алгоритм и проверка](../ListHoverAdapters.md).
 
 Вход `#6771`, запись 4, смещения `#0A1D..#0A1F`.
 
@@ -438,11 +438,11 @@
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## Unknown6780
+## DropShipDetailPanels
 
-[Station.Unknown6780](../../Source/Station/Unknown6780.asm)
+[Station.DropShipDetailPanels](../../Source/Station/DropShipDetailPanels.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+Отключение периодического просмотра и последовательное удаление пяти связанных панелей.
 
 Вход `#6780`, запись 4, смещения `#0A2C..#0A54`.
 
@@ -508,11 +508,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## DrawItem26
+## DrawShipPreview
 
-[Station.DrawItem26](../../Source/Station/DrawItem26.asm)
+[Station.DrawShipPreview](../../Source/Station/DrawShipPreview.asm)
 
-обработчик рисования станционного элемента из записи 26 таблицы FInterfaceItem.
+Рамка корабельного просмотра, выбор периодического callback, настройка банка 4 и первый кадр.
 
 Вход `#6877`, запись 4, смещения `#0B23..#0B77`.
 
@@ -578,11 +578,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## HandleItem23
+## HandleHelpTextHover
 
-[Station.HandleItem23](../../Source/Station/HandleItem23.asm)
+[Station.HandleHelpTextHover](../../Source/Station/HandleHelpTextHover.asm)
 
-обработчик события станционного элемента из записи 23 таблицы FInterfaceItem.
+Пустая JP-обёртка наведения панели текста справки.
 
 Вход `#6978`, запись 4, смещения `#0C24..#0C26`.
 
@@ -592,11 +592,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## Unknown69A7
+## IgnoreHelpTextHover
 
-[Station.Unknown69A7](../../Source/Station/Unknown69A7.asm)
+[Station.IgnoreHelpTextHover](../../Source/Station/IgnoreHelpTextHover.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+Пустой обработчик наведения текста справки с немедленным RET.
 
 Вход `#69A7`, запись 4, смещения `#0C53..#0C53`.
 
@@ -606,11 +606,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## DrawItem23
+## DrawHelpText
 
-[Station.DrawItem23](../../Source/Station/DrawItem23.asm)
+[Station.DrawHelpText](../../Source/Station/DrawHelpText.asm)
 
-обработчик рисования станционного элемента из записи 23 таблицы FInterfaceItem.
+Рамка панели справки, повторное индексирование выбранной записи и печать от TopLine.
 
 Вход `#69A8`, запись 4, смещения `#0C54..#0C63`.
 
@@ -620,11 +620,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## Unknown69B8
+## IndexHelpText
 
-[Station.Unknown69B8](../../Source/Station/Unknown69B8.asm)
+[Station.IndexHelpText](../../Source/Station/IndexHelpText.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+Выбор банка HELP, индексирование LF-записи и сохранение полного числа строк.
 
 Вход `#69B8`, запись 4, смещения `#0C64..#0C7A`.
 
@@ -634,11 +634,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## Unknown69CF
+## PrintHelpLine
 
-[Station.Unknown69CF](../../Source/Station/Unknown69CF.asm)
+[Station.PrintHelpLine](../../Source/Station/PrintHelpLine.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+Межбанковая печать по индексу таблицы HELP с возвратом банка станции.
 
 Вход `#69CF`, запись 4, смещения `#0C7B..#0C88`.
 
@@ -648,11 +648,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## HandleItem22
+## HandleHelpIndexHover
 
-[Station.HandleItem22](../../Source/Station/HandleItem22.asm)
+[Station.HandleHelpIndexHover](../../Source/Station/HandleHelpIndexHover.asm)
 
-обработчик события станционного элемента из записи 22 таблицы FInterfaceItem.
+Хвостовая передача наведения разделов справки в UpdateIndexListHover. [Алгоритм и проверка](../ListHoverAdapters.md).
 
 Вход `#69DD`, запись 4, смещения `#0C89..#0C8B`.
 
@@ -676,11 +676,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## DrawItem22
+## DrawHelpContents
 
-[Station.DrawItem22](../../Source/Station/DrawItem22.asm)
+[Station.DrawHelpContents](../../Source/Station/DrawHelpContents.asm)
 
-обработчик рисования станционного элемента из записи 22 таблицы FInterfaceItem.
+Рамка списка разделов справки, сброс подсветки и пересчёт числа видимых CR-заголовков.
 
 Вход `#6A5B`, запись 4, смещения `#0D07..#0D29`.
 
@@ -690,11 +690,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## Unknown6A7E
+## DisableTextWrap
 
-[Station.Unknown6A7E](../../Source/Station/Unknown6A7E.asm)
+[Station.DisableTextWrap](../../Source/Station/DisableTextWrap.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+Отключение переноса текста, при отказе ширины печататель пропускает остаток строки.
 
 Вход `#6A7E`, запись 4, смещения `#0D2A..#0D2E`.
 
@@ -704,11 +704,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## HandleItem39
+## HandleEquipmentInfoHover
 
-[Station.HandleItem39](../../Source/Station/HandleItem39.asm)
+[Station.HandleEquipmentInfoHover](../../Source/Station/HandleEquipmentInfoHover.asm)
 
-обработчик события станционного элемента из записи 39 таблицы FInterfaceItem.
+Пустая JP-обёртка наведения документации оснащения.
 
 Вход `#6A83`, запись 4, смещения `#0D2F..#0D31`.
 
@@ -718,11 +718,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## Unknown6AAE
+## IgnoreEquipmentInfoHover
 
-[Station.Unknown6AAE](../../Source/Station/Unknown6AAE.asm)
+[Station.IgnoreEquipmentInfoHover](../../Source/Station/IgnoreEquipmentInfoHover.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+Пустое наведение документации оснащения с немедленным RET.
 
 Вход `#6AAE`, запись 4, смещения `#0D5A..#0D5A`.
 
@@ -732,11 +732,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## DrawItem39
+## DrawEquipmentInfo
 
-[Station.DrawItem39](../../Source/Station/DrawItem39.asm)
+[Station.DrawEquipmentInfo](../../Source/Station/DrawEquipmentInfo.asm)
 
-обработчик рисования станционного элемента из записи 39 таблицы FInterfaceItem.
+Рамка документации оснащения, поиск и подсчёт LF-текста, печать от TopRow.
 
 Вход `#6AB6`, запись 4, смещения `#0D62..#0D71`.
 
@@ -746,11 +746,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## Unknown6AC6
+## UpdateEquipmentInfo
 
-[Station.Unknown6AC6](../../Source/Station/Unknown6AC6.asm)
+[Station.UpdateEquipmentInfo](../../Source/Station/UpdateEquipmentInfo.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+Поиск LF-описания оснащения, сохранение его начала и полного числа визуальных строк.
 
 Вход `#6AC6`, запись 4, смещения `#0D72..#0D89`.
 
@@ -760,11 +760,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## Unknown6ADE
+## PrintEquipmentInfo
 
-[Station.Unknown6ADE](../../Source/Station/Unknown6ADE.asm)
+[Station.PrintEquipmentInfo](../../Source/Station/PrintEquipmentInfo.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+Печать сохранённого описания оснащения с байтовым числом пропускаемых строк.
 
 Вход `#6ADE`, запись 4, смещения `#0D8A..#0D94`.
 
@@ -774,11 +774,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## HandleItem41
+## HandleEnvironmentHover
 
-[Station.HandleItem41](../../Source/Station/HandleItem41.asm)
+[Station.HandleEnvironmentHover](../../Source/Station/HandleEnvironmentHover.asm)
 
-обработчик события станционного элемента из записи 41 таблицы FInterfaceItem.
+Передача наведения среды в обработчик её динамического числа строк.
 
 Вход `#6AE9`, запись 4, смещения `#0D95..#0D97`.
 
@@ -802,11 +802,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## DrawItem41
+## DrawEnvironmentPanel
 
-[Station.DrawItem41](../../Source/Station/DrawItem41.asm)
+[Station.DrawEnvironmentPanel](../../Source/Station/DrawEnvironmentPanel.asm)
 
-обработчик рисования станционного элемента из записи 41 таблицы FInterfaceItem.
+Рамка установок среды, сброс подсветки и сохранение числа обработанных значений.
 
 Вход `#6BA5`, запись 4, смещения `#0E51..#0E69`.
 
@@ -816,11 +816,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## Unknown6BBE
+## PrintEnvironmentRows
 
-[Station.Unknown6BBE](../../Source/Station/Unknown6BBE.asm)
+[Station.PrintEnvironmentRows](../../Source/Station/PrintEnvironmentRows.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+CR-подписи установок среды и общий цикл текущих значений со счётчиком в A'.
 
 Вход `#6BBE`, запись 4, смещения `#0E6A..#0EAB`.
 
@@ -830,11 +830,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## Unknown6C00
+## SetupEnvironmentText
 
-[Station.Unknown6C00](../../Source/Station/Unknown6C00.asm)
+[Station.SetupEnvironmentText](../../Source/Station/SetupEnvironmentText.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+Запрет переноса установок среды и выбор колонки значений X=66.
 
 Вход `#6C00`, запись 4, смещения `#0EAC..#0EB5`.
 
@@ -844,11 +844,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## HandleItem11
+## HandleGalaxyMapHover
 
-[Station.HandleItem11](../../Source/Station/HandleItem11.asm)
+[Station.HandleGalaxyMapHover](../../Source/Station/HandleGalaxyMapHover.asm)
 
-обработчик события станционного элемента из записи 11 таблицы FInterfaceItem.
+Пустая JP-обёртка наведения панели карты галактики.
 
 Вход `#6C0A`, запись 4, смещения `#0EB6..#0EB8`.
 
@@ -858,11 +858,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## Unknown6D43
+## IgnoreGalaxyMapHover
 
-[Station.Unknown6D43](../../Source/Station/Unknown6D43.asm)
+[Station.IgnoreGalaxyMapHover](../../Source/Station/IgnoreGalaxyMapHover.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+Игнорирование наведения панели карты галактики с полным сохранением контекста.
 
 Вход `#6D43`, запись 4, смещения `#0FEF..#0FEF`.
 
@@ -1110,11 +1110,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## HandleItem38
+## HandleEquipmentListHover
 
-[Station.HandleItem38](../../Source/Station/HandleItem38.asm)
+[Station.HandleEquipmentListHover](../../Source/Station/HandleEquipmentListHover.asm)
 
-обработчик события станционного элемента из записи 38 таблицы FInterfaceItem.
+JP-обёртка наведения оснащения с текущим счётчиком попыток рисователя.
 
 Вход `#7172`, запись 4, смещения `#141E..#1420`.
 
@@ -1138,11 +1138,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## DrawItem38
+## DrawEquipmentList
 
-[Station.DrawItem38](../../Source/Station/DrawItem38.asm)
+[Station.DrawEquipmentList](../../Source/Station/DrawEquipmentList.asm)
 
-обработчик рисования станционного элемента из записи 38 таблицы FInterfaceItem.
+Рамка оснащения, заголовки колонок и сохранение счётчика попыток вывода.
 
 Вход `#7227`, запись 4, смещения `#14D3..#14F7`.
 
@@ -1152,11 +1152,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## Unknown724C
+## PrintEquipmentRows
 
-[Station.Unknown724C](../../Source/Station/Unknown724C.asm)
+[Station.PrintEquipmentRows](../../Source/Station/PrintEquipmentRows.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+Имена оснащения и четыре параллельные колонки количества, цены, веса и проверки типа корабля.
 
 Вход `#724C`, запись 4, смещения `#14F8..#15EA`.
 
@@ -1166,11 +1166,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## Unknown733F
+## SetupEquipmentColumns
 
-[Station.Unknown733F](../../Source/Station/Unknown733F.asm)
+[Station.SetupEquipmentColumns](../../Source/Station/SetupEquipmentColumns.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+Подготовка четырёх X-колонок оснащения и сохранение характеристики L текущего ключа.
 
 Вход `#733F`, запись 4, смещения `#15EB..#160A`.
 
@@ -1180,11 +1180,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## HandleItem43
+## HandleSaveSlotHover
 
-[Station.HandleItem43](../../Source/Station/HandleItem43.asm)
+[Station.HandleSaveSlotHover](../../Source/Station/HandleSaveSlotHover.asm)
 
-обработчик события станционного элемента из записи 43 таблицы FInterfaceItem.
+Хвостовая передача наведения позиций записи состояния в UpdateToPositionHover. [Алгоритм и проверка](../ListHoverAdapters.md).
 
 Вход `#741E`, запись 4, смещения `#16CA..#16CC`.
 
@@ -1208,11 +1208,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## DrawItem43
+## DrawSaveSlotPanel
 
-[Station.DrawItem43](../../Source/Station/DrawItem43.asm)
+[Station.DrawSaveSlotPanel](../../Source/Station/DrawSaveSlotPanel.asm)
 
-обработчик рисования станционного элемента из записи 43 таблицы FInterfaceItem.
+Рамка и пять строк выбора позиции записи, без выполнения дискового протокола.
 
 Вход `#7492`, запись 4, смещения `#173E..#1752`.
 
@@ -1222,11 +1222,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## HandleItem44
+## HandleLoadSlotHover
 
-[Station.HandleItem44](../../Source/Station/HandleItem44.asm)
+[Station.HandleLoadSlotHover](../../Source/Station/HandleLoadSlotHover.asm)
 
-обработчик события станционного элемента из записи 44 таблицы FInterfaceItem.
+Хвостовая передача наведения позиций чтения состояния в UpdateFromPositionHover. [Алгоритм и проверка](../ListHoverAdapters.md).
 
 Вход `#74A7`, запись 4, смещения `#1753..#1755`.
 
@@ -1250,11 +1250,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## DrawItem44
+## DrawLoadSlotPanel
 
-[Station.DrawItem44](../../Source/Station/DrawItem44.asm)
+[Station.DrawLoadSlotPanel](../../Source/Station/DrawLoadSlotPanel.asm)
 
-обработчик рисования станционного элемента из записи 44 таблицы FInterfaceItem.
+Рамка и пять строк выбора позиции чтения, без выполнения дискового протокола.
 
 Вход `#751B`, запись 4, смещения `#17C7..#17DB`.
 
@@ -1321,11 +1321,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## HandleItem42
+## HandleGameSettingsHover
 
-[Station.HandleItem42](../../Source/Station/HandleItem42.asm)
+[Station.HandleGameSettingsHover](../../Source/Station/HandleGameSettingsHover.asm)
 
-обработчик события станционного элемента из записи 42 таблицы FInterfaceItem.
+Передача наведения игры в обработчик её динамического числа строк.
 
 Вход `#7599`, запись 4, смещения `#1845..#1847`.
 
@@ -1349,11 +1349,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## DrawItem42
+## DrawGameSettings
 
-[Station.DrawItem42](../../Source/Station/DrawItem42.asm)
+[Station.DrawGameSettings](../../Source/Station/DrawGameSettings.asm)
 
-обработчик рисования станционного элемента из записи 42 таблицы FInterfaceItem.
+Рамка установок игры, сброс подсветки и сохранение числа обработанных значений.
 
 Вход `#7637`, запись 4, смещения `#18E3..#18FB`.
 
@@ -1363,11 +1363,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## Unknown7650
+## PrintGameSettingsRows
 
-[Station.Unknown7650](../../Source/Station/Unknown7650.asm)
+[Station.PrintGameSettingsRows](../../Source/Station/PrintGameSettingsRows.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+CR-подписи игровых клавиш и передача значений в общий цикл среды.
 
 Вход `#7650`, запись 4, смещения `#18FC..#1917`.
 
@@ -1377,11 +1377,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## Unknown766C
+## SetupGameSettingsText
 
-[Station.Unknown766C](../../Source/Station/Unknown766C.asm)
+[Station.SetupGameSettingsText](../../Source/Station/SetupGameSettingsText.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+Запрет переноса установок игры и выбор колонки значений X=110.
 
 Вход `#766C`, запись 4, смещения `#1918..#1921`.
 
@@ -1391,11 +1391,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## HandleItem19
+## HandleSystemInfoHover
 
-[Station.HandleItem19](../../Source/Station/HandleItem19.asm)
+[Station.HandleSystemInfoHover](../../Source/Station/HandleSystemInfoHover.asm)
 
-обработчик события станционного элемента из записи 19 таблицы FInterfaceItem.
+Пустая JP-обёртка наведения панели информации о системе.
 
 Вход `#7676`, запись 4, смещения `#1922..#1924`.
 
@@ -1405,11 +1405,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## Unknown7687
+## IgnoreSystemInfoHover
 
-[Station.Unknown7687](../../Source/Station/Unknown7687.asm)
+[Station.IgnoreSystemInfoHover](../../Source/Station/IgnoreSystemInfoHover.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+Игнорирование наведения панели информации о системе с полным сохранением контекста.
 
 Вход `#7687`, запись 4, смещения `#1933..#1933`.
 
@@ -1447,11 +1447,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## HandleItem20
+## HandleSystemMapHover
 
-[Station.HandleItem20](../../Source/Station/HandleItem20.asm)
+[Station.HandleSystemMapHover](../../Source/Station/HandleSystemMapHover.asm)
 
-обработчик события станционного элемента из записи 20 таблицы FInterfaceItem.
+Пустая JP-обёртка наведения панели карты системы.
 
 Вход `#7838`, запись 4, смещения `#1AE4..#1AE6`.
 
@@ -1461,11 +1461,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## Unknown7884
+## IgnoreSystemMapHover
 
-[Station.Unknown7884](../../Source/Station/Unknown7884.asm)
+[Station.IgnoreSystemMapHover](../../Source/Station/IgnoreSystemMapHover.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+Игнорирование наведения панели карты системы с полным сохранением контекста.
 
 Вход `#7884`, запись 4, смещения `#1B30..#1B30`.
 
@@ -1489,11 +1489,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## HandleItem45
+## HandleWelcomeHover
 
-[Station.HandleItem45](../../Source/Station/HandleItem45.asm)
+[Station.HandleWelcomeHover](../../Source/Station/HandleWelcomeHover.asm)
 
-обработчик события станционного элемента из записи 45 таблицы FInterfaceItem.
+Пустая JP-обёртка наведения панели приветствия.
 
 Вход `#7948`, запись 4, смещения `#1BF4..#1BF6`.
 
@@ -1503,11 +1503,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## Unknown7954
+## IgnoreWelcomeHover
 
-[Station.Unknown7954](../../Source/Station/Unknown7954.asm)
+[Station.IgnoreWelcomeHover](../../Source/Station/IgnoreWelcomeHover.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+Игнорирование наведения панели приветствия с полным сохранением контекста.
 
 Вход `#7954`, запись 4, смещения `#1C00..#1C00`.
 
@@ -1517,11 +1517,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## DrawItem45
+## DrawWelcomePanel
 
-[Station.DrawItem45](../../Source/Station/DrawItem45.asm)
+[Station.DrawWelcomePanel](../../Source/Station/DrawWelcomePanel.asm)
 
-обработчик рисования станционного элемента из записи 45 таблицы FInterfaceItem.
+Вывод приветствия станции, её модели, имени системы и почасовой ставки 5×L.
 
 Вход `#7955`, запись 4, смещения `#1C01..#1C68`.
 
@@ -1531,11 +1531,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## HandleItem30
+## InstallShipTradeCallback
 
-[Station.HandleItem30](../../Source/Station/HandleItem30.asm)
+[Station.InstallShipTradeCallback](../../Source/Station/InstallShipTradeCallback.asm)
 
-обработчик события станционного элемента из записи 30 таблицы FInterfaceItem.
+Установка отложенной цели ConfirmShipModelTrade через общий обработчик активации элемента. [Алгоритм и проверка](../DeferredActionAdapters.md).
 
 Вход `#79BD`, запись 4, смещения `#1C69..#1C72`.
 
@@ -1545,11 +1545,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## Unknown79C7
+## ConfirmShipModelTrade
 
-[Station.Unknown79C7](../../Source/Station/Unknown79C7.asm)
+[Station.ConfirmShipModelTrade](../../Source/Station/ConfirmShipModelTrade.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+Передача выбранной модели событию LANG и закрытие списка с пятью связанными панелями. [Алгоритм и проверка](../ShipTrade.md).
 
 Вход `#79C7`, запись 4, смещения `#1C73..#1CC0`.
 
@@ -1573,11 +1573,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## HandleItem28
+## HandleShipSaleButton
 
-[Station.HandleItem28](../../Source/Station/HandleItem28.asm)
+[Station.HandleShipSaleButton](../../Source/Station/HandleShipSaleButton.asm)
 
-обработчик события станционного элемента из записи 28 таблицы FInterfaceItem.
+Установка callback и последовательный вход в SelectSaleMode после общего действия кнопки. [Алгоритм и проверка](../TradeButtonActions.md).
 
 Вход `#7A1B`, запись 4, смещения `#1CC7..#1CCF`.
 
@@ -1587,11 +1587,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## Unknown7A24
+## SelectSaleMode
 
-[Station.Unknown7A24](../../Source/Station/Unknown7A24.asm)
+[Station.SelectSaleMode](../../Source/Station/SelectSaleMode.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+Выбор продажи собственного корабля либо скимера с возвратом к покупке при типе FF.
 
 Вход `#7A24`, запись 4, смещения `#1CD0..#1D00`.
 
@@ -1601,11 +1601,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## DrawItem28
+## DrawSaleModeButton
 
-[Station.DrawItem28](../../Source/Station/DrawItem28.asm)
+[Station.DrawSaleModeButton](../../Source/Station/DrawSaleModeButton.asm)
 
-Обёртка рисования элемента 28 через изменяемый индекс и DrawCenteredItem.
+Центрируемая кнопка продажи с изменяемым индексом FInterfaceItem 28.
 
 Вход `#7A55`, запись 4, смещения `#1D01..#1D06`.
 
@@ -1615,11 +1615,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## HandleItem29
+## HandleShipPurchaseButton
 
-[Station.HandleItem29](../../Source/Station/HandleItem29.asm)
+[Station.HandleShipPurchaseButton](../../Source/Station/HandleShipPurchaseButton.asm)
 
-обработчик события станционного элемента из записи 29 таблицы FInterfaceItem.
+Установка callback и последовательный вход в SelectPurchaseMode после общего действия кнопки. [Алгоритм и проверка](../TradeButtonActions.md).
 
 Вход `#7A5B`, запись 4, смещения `#1D07..#1D0F`.
 
@@ -1629,11 +1629,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## Unknown7A64
+## SelectPurchaseMode
 
-[Station.Unknown7A64](../../Source/Station/Unknown7A64.asm)
+[Station.SelectPurchaseMode](../../Source/Station/SelectPurchaseMode.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+Выбор каталога покупки, сброс строки просмотра и переключение контура кнопок.
 
 Вход `#7A64`, запись 4, смещения `#1D10..#1D2D`.
 
@@ -1643,11 +1643,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## DrawItem29
+## DrawPurchaseModeButton
 
-[Station.DrawItem29](../../Source/Station/DrawItem29.asm)
+[Station.DrawPurchaseModeButton](../../Source/Station/DrawPurchaseModeButton.asm)
 
-Обёртка рисования элемента 29 через изменяемый индекс и DrawCenteredItem.
+Центрируемая кнопка покупки с изменяемым индексом FInterfaceItem 29.
 
 Вход `#7A82`, запись 4, смещения `#1D2E..#1D33`.
 
@@ -1657,11 +1657,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## HandleItem09
+## InstallHelpPanelsCallback
 
-[Station.HandleItem09](../../Source/Station/HandleItem09.asm)
+[Station.InstallHelpPanelsCallback](../../Source/Station/InstallHelpPanelsCallback.asm)
 
-обработчик события станционного элемента из записи 9 таблицы FInterfaceItem.
+Установка отложенной цели OpenHelpPanels через общий обработчик активации элемента. [Алгоритм и проверка](../DeferredActionAdapters.md).
 
 Вход `#7A88`, запись 4, смещения `#1D34..#1D3D`.
 
@@ -1671,11 +1671,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## Unknown7A92
+## OpenHelpPanels
 
-[Station.Unknown7A92](../../Source/Station/Unknown7A92.asm)
+[Station.OpenHelpPanels](../../Source/Station/OpenHelpPanels.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+Перенос текстовой панели и списка справки в конец рисования с восстановлением их сохранённой геометрии.
 
 Вход `#7A92`, запись 4, смещения `#1D3E..#1D49`.
 
@@ -1699,11 +1699,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## HandleItem02
+## InstallGalaxyNewsCallback
 
-[Station.HandleItem02](../../Source/Station/HandleItem02.asm)
+[Station.InstallGalaxyNewsCallback](../../Source/Station/InstallGalaxyNewsCallback.asm)
 
-обработчик события станционного элемента из записи 2 таблицы FInterfaceItem.
+Установка отложенного открытия через OpenGalaxyNewsPanel. [Алгоритм и проверка](../DeferredActionAdapters.md).
 
 Вход `#7AA4`, запись 4, смещения `#1D50..#1D59`.
 
@@ -1713,11 +1713,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## Unknown7AAE
+## OpenGalaxyNewsPanel
 
-[Station.Unknown7AAE](../../Source/Station/Unknown7AAE.asm)
+[Station.OpenGalaxyNewsPanel](../../Source/Station/OpenGalaxyNewsPanel.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+Перенос панели галактических новостей в конец рисования и восстановление сохранённой геометрии.
 
 Вход `#7AAE`, запись 4, смещения `#1D5A..#1D5F`.
 
@@ -1741,11 +1741,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## HandleItem03
+## InstallMapPanelsCallback
 
-[Station.HandleItem03](../../Source/Station/HandleItem03.asm)
+[Station.InstallMapPanelsCallback](../../Source/Station/InstallMapPanelsCallback.asm)
 
-обработчик события станционного элемента из записи 3 таблицы FInterfaceItem.
+Установка отложенного открытия через OpenMapPanelGroup. [Алгоритм и проверка](../DeferredActionAdapters.md).
 
 Вход `#7ABA`, запись 4, смещения `#1D66..#1D6F`.
 
@@ -1755,11 +1755,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## Unknown7AC4
+## OpenMapPanelGroup
 
-[Station.Unknown7AC4](../../Source/Station/Unknown7AC4.asm)
+[Station.OpenMapPanelGroup](../../Source/Station/OpenMapPanelGroup.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+Подготовка группы из одиннадцати панелей карты с восстановлением геометрии и запросом обновления.
 
 Вход `#7AC4`, запись 4, смещения `#1D70..#1DB6`.
 
@@ -1783,11 +1783,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## HandleItem37
+## HandleEquipmentPurchaseButton
 
-[Station.HandleItem37](../../Source/Station/HandleItem37.asm)
+[Station.HandleEquipmentPurchaseButton](../../Source/Station/HandleEquipmentPurchaseButton.asm)
 
-обработчик события станционного элемента из записи 37 таблицы FInterfaceItem.
+Установка callback и последовательный вход в SelectEquipmentPurchase после общего действия кнопки. [Алгоритм и проверка](../TradeButtonActions.md).
 
 Вход `#7B11`, запись 4, смещения `#1DBD..#1DC5`.
 
@@ -1797,11 +1797,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## Unknown7B1A
+## SelectEquipmentPurchase
 
-[Station.Unknown7B1A](../../Source/Station/Unknown7B1A.asm)
+[Station.SelectEquipmentPurchase](../../Source/Station/SelectEquipmentPurchase.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+Выбор покупки оборудования и переключение контура с продажи на покупку.
 
 Вход `#7B1A`, запись 4, смещения `#1DC6..#1DD0`.
 
@@ -1811,11 +1811,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## DrawItem37
+## DrawEquipmentPurchase
 
-[Station.DrawItem37](../../Source/Station/DrawItem37.asm)
+[Station.DrawEquipmentPurchase](../../Source/Station/DrawEquipmentPurchase.asm)
 
-Обёртка рисования элемента 37 через изменяемый индекс и DrawCenteredItem.
+Центрируемая кнопка покупки оборудования с изменяемым индексом 37.
 
 Вход `#7B25`, запись 4, смещения `#1DD1..#1DD6`.
 
@@ -1825,11 +1825,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## HandleItem36
+## HandleEquipmentSaleButton
 
-[Station.HandleItem36](../../Source/Station/HandleItem36.asm)
+[Station.HandleEquipmentSaleButton](../../Source/Station/HandleEquipmentSaleButton.asm)
 
-обработчик события станционного элемента из записи 36 таблицы FInterfaceItem.
+Установка callback и последовательный вход в SelectEquipmentSale после общего действия кнопки. [Алгоритм и проверка](../TradeButtonActions.md).
 
 Вход `#7B2B`, запись 4, смещения `#1DD7..#1DDF`.
 
@@ -1839,11 +1839,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## Unknown7B34
+## SelectEquipmentSale
 
-[Station.Unknown7B34](../../Source/Station/Unknown7B34.asm)
+[Station.SelectEquipmentSale](../../Source/Station/SelectEquipmentSale.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+Выбор продажи оборудования и переключение контура с покупки на продажу.
 
 Вход `#7B34`, запись 4, смещения `#1DE0..#1DEB`.
 
@@ -1853,11 +1853,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## DrawItem36
+## DrawEquipmentSale
 
-[Station.DrawItem36](../../Source/Station/DrawItem36.asm)
+[Station.DrawEquipmentSale](../../Source/Station/DrawEquipmentSale.asm)
 
-Обёртка рисования элемента 36 через изменяемый индекс и DrawCenteredItem.
+Центрируемая кнопка продажи оборудования с изменяемым индексом 36.
 
 Вход `#7B40`, запись 4, смещения `#1DEC..#1DF1`.
 
@@ -1867,11 +1867,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## HandleItem21
+## InstallFlightButtonCallback
 
-[Station.HandleItem21](../../Source/Station/HandleItem21.asm)
+[Station.InstallFlightButtonCallback](../../Source/Station/InstallFlightButtonCallback.asm)
 
-обработчик события станционного элемента из записи 21 таблицы FInterfaceItem.
+Установка пустого callback кнопки с исходной подписью Перелет. [Алгоритм и проверка](../FlightButton.md).
 
 Вход `#7B46`, запись 4, смещения `#1DF2..#1DFB`.
 
@@ -1881,11 +1881,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## Unknown7B50
+## EmptyFlightCallback
 
-[Station.Unknown7B50](../../Source/Station/Unknown7B50.asm)
+[Station.EmptyFlightCallback](../../Source/Station/EmptyFlightCallback.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+Пустой RET callback элемента 21, установленный обработчиком кнопки Перелет. [Алгоритм и проверка](../FlightButton.md).
 
 Вход `#7B50`, запись 4, смещения `#1DFC..#1DFC`.
 
@@ -1895,9 +1895,9 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## DrawItem21
+## DrawFlightButton
 
-[Station.DrawItem21](../../Source/Station/DrawItem21.asm)
+[Station.DrawFlightButton](../../Source/Station/DrawFlightButton.asm)
 
 Обёртка рисования элемента 21 через изменяемый индекс и DrawCenteredItem.
 
@@ -2077,11 +2077,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## HandleItem18
+## InstallContractMapCallback
 
-[Station.HandleItem18](../../Source/Station/HandleItem18.asm)
+[Station.InstallContractMapCallback](../../Source/Station/InstallContractMapCallback.asm)
 
-обработчик события станционного элемента из записи 18 таблицы FInterfaceItem.
+Установка отложенного центрирования карты кнопкой Контракт. [Алгоритм и проверка](../ContractMap.md).
 
 Вход `#7CBC`, запись 4, смещения `#1F68..#1F71`.
 
@@ -2091,11 +2091,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## Unknown7CC6
+## CenterContractMap
 
-[Station.Unknown7CC6](../../Source/Station/Unknown7CC6.asm)
+[Station.CenterContractMap](../../Source/Station/CenterContractMap.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+Выбор четырёхбайтового ключа и центрирование карты контракта с исходными абсолютными чтениями ROM. [Алгоритм и проверка](../ContractMap.md).
 
 Вход `#7CC6`, запись 4, смещения `#1F72..#1FA3`.
 
@@ -2105,9 +2105,9 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## DrawItem18
+## DrawContractButton
 
-[Station.DrawItem18](../../Source/Station/DrawItem18.asm)
+[Station.DrawContractButton](../../Source/Station/DrawContractButton.asm)
 
 Обёртка рисования элемента 18 через изменяемый индекс и DrawCenteredItem.
 
@@ -2455,11 +2455,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## HandleItem00
+## HandleStatusPanelAction
 
-[Station.HandleItem00](../../Source/Station/HandleItem00.asm)
+[Station.HandleStatusPanelAction](../../Source/Station/HandleStatusPanelAction.asm)
 
-обработчик события станционного элемента из записи 0 таблицы FInterfaceItem.
+Геометрия по входному Z, перенос статусного элемента и условный рисунок с восстановлением AF. [Алгоритм и проверка](../StatusPanelAction.md).
 
 Вход `#7F17`, запись 4, смещения `#21C3..#21DB`.
 
@@ -2469,11 +2469,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: `JP (HL)`.
 
-## Unknown7F33
+## RestoreActionAF
 
-[Station.Unknown7F33](../../Source/Station/Unknown7F33.asm)
+[Station.RestoreActionAF](../../Source/Station/RestoreActionAF.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+Снятие сохранённого AF из динамического кадра и возврат внешнему обработчику.
 
 Вход `#7F33`, запись 4, смещения `#21DF..#21E0`.
 
@@ -2781,7 +2781,7 @@ Unknown, назначение этого фрагмента ещё не уста
 
 [Station.UnpackResource](../../Source/Station/UnpackResource.asm)
 
-Распаковка ресурса с заголовком, переносом упакованного потока и обработкой ссылок.
+Распаковка HR-потока со словным битовым резервуаром, LZ-ссылками, тройками и сохранённым шестибайтовым концом. [Алгоритм и проверка](../UnpackResource.md).
 
 Вход `#9EFF`, запись 4, смещения `#3EFF..#4013`.
 
@@ -2791,11 +2791,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownA014
+## RefillPackedBits
 
-[Station.UnknownA014](../../Source/Station/UnknownA014.asm)
+[Station.RefillPackedBits](../../Source/Station/RefillPackedBits.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+Чтение очередного слова битового потока из IX с восстановлением счётчика B из C без изменения флагов.
 
 Вход `#A014`, запись 4, смещения `#4014..#401F`.
 
@@ -3169,11 +3169,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## HandleItem01
+## IgnoreCounterEvent
 
-[Station.HandleItem01](../../Source/Station/HandleItem01.asm)
+[Station.IgnoreCounterEvent](../../Source/Station/IgnoreCounterEvent.asm)
 
-обработчик события станционного элемента из записи 1 таблицы FInterfaceItem.
+Пустой обработчик события счётчика, исходный JP во внутренний RET без изменения данных. [Алгоритм и проверка](../CounterEvent.md).
 
 Вход `#A6EA`, запись 4, смещения `#46EA..#46ED`.
 
@@ -3518,11 +3518,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## HandleItem33
+## InstallMissionOfferCallback
 
-[Station.HandleItem33](../../Source/Station/HandleItem33.asm)
+[Station.InstallMissionOfferCallback](../../Source/Station/InstallMissionOfferCallback.asm)
 
-обработчик события станционного элемента из записи 33 таблицы FInterfaceItem.
+Установка отложенной цели RefreshMissionOfferPanels через общий обработчик активации элемента. [Алгоритм и проверка](../DeferredActionAdapters.md).
 
 Вход `#AA33`, запись 4, смещения `#4A33..#4A3C`.
 
@@ -3532,11 +3532,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownAA3D
+## RefreshMissionOfferPanels
 
-[Station.UnknownAA3D](../../Source/Station/UnknownAA3D.asm)
+[Station.RefreshMissionOfferPanels](../../Source/Station/RefreshMissionOfferPanels.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+Генерация нового предложения и последовательное обновление цели, условий миссии и статуса. [Алгоритм и проверка](../MissionPanelActions.md).
 
 Вход `#AA3D`, запись 4, смещения `#4A3D..#4A4E`.
 
@@ -3560,11 +3560,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## HandleItem32
+## HandleContractHover
 
-[Station.HandleItem32](../../Source/Station/HandleItem32.asm)
+[Station.HandleContractHover](../../Source/Station/HandleContractHover.asm)
 
-обработчик события станционного элемента из записи 32 таблицы FInterfaceItem.
+Пустая JP-обёртка наведения панели контракта.
 
 Вход `#AA55`, запись 4, смещения `#4A55..#4A57`.
 
@@ -3574,11 +3574,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownAA84
+## IgnoreContractHover
 
-[Station.UnknownAA84](../../Source/Station/UnknownAA84.asm)
+[Station.IgnoreContractHover](../../Source/Station/IgnoreContractHover.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+Игнорирование наведения панели контракта с полным сохранением контекста.
 
 Вход `#AA84`, запись 4, смещения `#4A84..#4A84`.
 
@@ -4322,11 +4322,11 @@ XOR префикса глифа до следующего знакоместа, 
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownBDF0
+## DrawKeyLabel
 
-[Station.UnknownBDF0](../../Source/Station/UnknownBDF0.asm)
+[Station.DrawKeyLabel](../../Source/Station/DrawKeyLabel.asm)
 
-Генерация координат предложения, требуемого тоннажа и награды по расстоянию.
+Вывод одного глифа либо четырёх байтов обозначения Enter, Symbol Shift или Space.
 
 Вход `#BDF0`, запись 4, смещения `#5DF0..#5E1A`.
 
@@ -5161,13 +5161,13 @@ XOR префикса глифа до следующего знакоместа, 
 
 [Исходник](../../Source/Station/CancelMission.asm). Алгоритм действия и договор общего кадра описаны в [MissionAction](../MissionAction.md). Границы модели и композиции вызовов указаны отдельно.
 
-## Unknown6774
+## HandleShipModelAction
 
-[Station.Unknown6774](../../Source/Station/Unknown6774.asm) — Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются.
+[Station.HandleShipModelAction](../../Source/Station/HandleShipModelAction.asm) — Развилка действия списка моделей после перерисовки, выбор строки либо закрытие группы.
 
-## Unknown67A9
+## ShipModelChoice
 
-[Station.Unknown67A9](../../Source/Station/Unknown67A9.asm) — Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются.
+[Station.ShipModelChoice](../../Source/Station/ShipModelChoice.asm) — Пустая ветвь действия и отдельное применение выбранной строки с отложенной перерисовкой.
 
 ## HandleModelPreviewClick
 
@@ -5181,29 +5181,29 @@ XOR префикса глифа до следующего знакоместа, 
 
 [Station.CountModelDescriptionRows](../../Source/Station/CountModelDescriptionRows.asm) — Банковый подсчёт описания модели с записью полного слова границы прокрутки.
 
-## Unknown697B
+## HandleHelpTextAction
 
-[Station.Unknown697B](../../Source/Station/Unknown697B.asm) — Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются.
+[Station.HandleHelpTextAction](../../Source/Station/HandleHelpTextAction.asm) — Закрытие связанной пары либо прокрутка LF-текста, выбор единицей ничего не делает.
 
-## Unknown69E0
+## HandleHelpContentsAction
 
-[Station.Unknown69E0](../../Source/Station/Unknown69E0.asm) — Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются.
+[Station.HandleHelpContentsAction](../../Source/Station/HandleHelpContentsAction.asm) — Закрытие пары, прокрутка CR-заголовков либо выбор раздела с перерисовкой обеих панелей.
 
-## Unknown6A86
+## HandleEquipmentInfoAction
 
-[Station.Unknown6A86](../../Source/Station/Unknown6A86.asm) — Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются.
+[Station.HandleEquipmentInfoAction](../../Source/Station/HandleEquipmentInfoAction.asm) — Закрытие либо прокрутка документации оснащения, выбор единицей пустой.
 
-## Unknown6AAF
+## TryDrawEquipmentInfo
 
-[Station.Unknown6AAF](../../Source/Station/Unknown6AAF.asm) — Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются.
+[Station.TryDrawEquipmentInfo](../../Source/Station/TryDrawEquipmentInfo.asm) — Условное рисование документации только при точном указателе в списке.
 
-## Unknown6AEC
+## HandleEnvironmentAction
 
-[Station.Unknown6AEC](../../Source/Station/Unknown6AEC.asm) — Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются.
+[Station.HandleEnvironmentAction](../../Source/Station/HandleEnvironmentAction.asm) — Закрытие с применением настроек среды, прокрутка, Y/N и ограниченный ввод клавиш или цветов.
 
-## Unknown6B9E
+## TryDrawEnvironmentPanel
 
-[Station.Unknown6B9E](../../Source/Station/Unknown6B9E.asm) — Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются.
+[Station.TryDrawEnvironmentPanel](../../Source/Station/TryDrawEnvironmentPanel.asm) — Условное рисование установок среды при точном указателе панели в списке.
 
 ## HandleMapPanelEvent
 
@@ -5229,45 +5229,45 @@ XOR префикса глифа до следующего знакоместа, 
 
 [Station.HandleTradePanelClick](../../Source/Station/HandleTradePanelClick.asm) — Закрытие торговой панели с меню, прокрутка либо выбор кода события по колонке.
 
-## Unknown7175
+## HandleEquipmentListAction
 
-[Station.Unknown7175](../../Source/Station/Unknown7175.asm) — Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются.
+[Station.HandleEquipmentListAction](../../Source/Station/HandleEquipmentListAction.asm) — Выбор описания либо подтверждение сделки оснащения, закрытие группы и прокрутка списка, [алгоритм и проверка](../EquipmentTrade.md).
 
-## Unknown7220
+## TryDrawEquipmentList
 
-[Station.Unknown7220](../../Source/Station/Unknown7220.asm) — Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются.
+[Station.TryDrawEquipmentList](../../Source/Station/TryDrawEquipmentList.asm) — Условное рисование списка оснащения только при точном указателе в списке.
 
-## Unknown7421
+## HandleSaveSlotAction
 
-[Station.Unknown7421](../../Source/Station/Unknown7421.asm) — Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются.
+[Station.HandleSaveSlotAction](../../Source/Station/HandleSaveSlotAction.asm) — Выбор позиции и запись двух секторов блока состояния в существующий SAVE-файл.
 
-## Unknown74AA
+## HandleLoadSlotAction
 
-[Station.Unknown74AA](../../Source/Station/Unknown74AA.asm) — Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются.
+[Station.HandleLoadSlotAction](../../Source/Station/HandleLoadSlotAction.asm) — Выбор позиции и чтение двух секторов существующего SAVE-файла в блок состояния.
 
-## Unknown759C
+## HandleGameSettingsAction
 
-[Station.Unknown759C](../../Source/Station/Unknown759C.asm) — Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются.
+[Station.HandleGameSettingsAction](../../Source/Station/HandleGameSettingsAction.asm) — Закрытие с применением игровых настроек, прокрутка и редактирование переключателя или клавиши.
 
-## Unknown7630
+## TryDrawGameSettings
 
-[Station.Unknown7630](../../Source/Station/Unknown7630.asm) — Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются.
+[Station.TryDrawGameSettings](../../Source/Station/TryDrawGameSettings.asm) — Условное рисование установок игры при точном указателе панели в списке.
 
-## Unknown7679
+## HandleSystemInfoAction
 
-[Station.Unknown7679](../../Source/Station/Unknown7679.asm) — Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются.
+[Station.HandleSystemInfoAction](../../Source/Station/HandleSystemInfoAction.asm) — Общая перерисовка и закрытие информационного окна, селектор 1 не меняет содержимое.
 
-## Unknown783B
+## HandleSystemMapAction
 
-[Station.Unknown783B](../../Source/Station/Unknown783B.asm) — Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются.
+[Station.HandleSystemMapAction](../../Source/Station/HandleSystemMapAction.asm) — Выбор ближайшего варианта системы либо закрытие карты с отключением её периодического обновления, [алгоритм и проверка](../SystemMapAction.md).
 
 ## TryDrawVariantPanel
 
 [Station.TryDrawVariantPanel](../../Source/Station/TryDrawVariantPanel.asm) — Проверка наличия обработчика панели в списке перед последовательным рисованием.
 
-## Unknown794B
+## HandleWelcomeAction
 
-[Station.Unknown794B](../../Source/Station/Unknown794B.asm) — Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются.
+[Station.HandleWelcomeAction](../../Source/Station/HandleWelcomeAction.asm) — Общая перерисовка и закрытие приветствия, селектор 1 не меняет содержимое.
 
 ## ParseSettingsLabel
 
@@ -5281,9 +5281,9 @@ XOR префикса глифа до следующего знакоместа, 
 
 [Station.XorRowIfSelected](../../Source/Station/XorRowIfSelected.asm) — Инверсия выбранной строки с восстановлением указателя, FF означает отсутствие строки.
 
-## UnknownAA58
+## HandleMissionGroupAction
 
-[Station.UnknownAA58](../../Source/Station/UnknownAA58.asm) — Unknown, новый достижимый участок из действия интерфейса, отдельный алгоритм и контракт ещё разбираются.
+[Station.HandleMissionGroupAction](../../Source/Station/HandleMissionGroupAction.asm) — Общее действие панели миссии и условное закрытие трёх связанных панелей, [алгоритм и проверка](../MissionPanelActions.md).
 
 ## MoveItemToTailIfListed
 
@@ -5343,12 +5343,226 @@ XOR префикса глифа до следующего знакоместа, 
 
 ## Дополнительные периодические входы корабля
 
-[Station.Unknown6870](../../Source/Station/Unknown6870.asm) — выделен исходный исполняемый код, полный договор пока Unknown.
+[Station.TryDrawShipPreview](../../Source/Station/TryDrawShipPreview.asm) — Рисование корабельного просмотра только при наличии точного указателя обработчика.
 
-[Station.Unknown68CC](../../Source/Station/Unknown68CC.asm) — выделен исходный исполняемый код, полный договор пока Unknown.
+[Station.RefreshShipPanels](../../Source/Station/RefreshShipPanels.asm) — Отложенное обновление списка моделей, описания и перенесённого в конец корабельного просмотра.
 
-[Station.Unknown68EA](../../Source/Station/Unknown68EA.asm) — выделен исходный исполняемый код, полный договор пока Unknown.
+[Station.AnimateShipPreview](../../Source/Station/AnimateShipPreview.asm) — Периодическое рисование кадра последней корабельной панели либо переход к её отложенному обновлению.
 
 [Station.TryDrawModelDescription](../../Source/Station/TryDrawModelDescription.asm) — выделен исходный исполняемый код, полный договор пока Unknown.
 
 Порядок вызовов и условные продолжения описаны в [ShipPeriodicCode](../ShipPeriodicCode.md).
+
+[TryDrawShipPreview](../../Source/Station/TryDrawShipPreview.asm) — Рисование корабельного просмотра только при наличии точного указателя обработчика, [полный алгоритм и пределы проверки](../ShipPreviewCallbacks.md).
+
+[DrawShipPreview](../../Source/Station/DrawShipPreview.asm) — Рамка корабельного просмотра, выбор периодического callback, настройка банка 4 и первый кадр, [полный алгоритм и пределы проверки](../ShipPreviewCallbacks.md).
+
+[RefreshShipPanels](../../Source/Station/RefreshShipPanels.asm) — Отложенное обновление списка моделей, описания и перенесённого в конец корабельного просмотра, [полный алгоритм и пределы проверки](../ShipPreviewCallbacks.md).
+
+[AnimateShipPreview](../../Source/Station/AnimateShipPreview.asm) — Периодическое рисование кадра последней корабельной панели либо переход к её отложенному обновлению, [полный алгоритм и пределы проверки](../ShipPreviewCallbacks.md).
+
+[HandleShipModelAction](../../Source/Station/HandleShipModelAction.asm) — Развилка действия списка моделей после перерисовки, выбор строки либо закрытие группы, [алгоритм и проверка](../ShipModelActions.md).
+
+[DropShipDetailPanels](../../Source/Station/DropShipDetailPanels.asm) — Отключение периодического просмотра и последовательное удаление пяти связанных панелей, [алгоритм и проверка](../ShipModelActions.md).
+
+[ShipModelChoice](../../Source/Station/ShipModelChoice.asm) — Пустая ветвь действия и отдельное применение выбранной строки с отложенной перерисовкой, [алгоритм и проверка](../ShipModelActions.md).
+
+[IndexHelpText](../../Source/Station/IndexHelpText.asm) — Выбор банка HELP, индексирование LF-записи и сохранение полного числа строк, [алгоритм и проверка](../StationHelpCalls.md).
+
+[PrintHelpLine](../../Source/Station/PrintHelpLine.asm) — Межбанковая печать по индексу таблицы HELP с возвратом банка станции, [алгоритм и проверка](../StationHelpCalls.md).
+
+[DisableTextWrap](../../Source/Station/DisableTextWrap.asm) — Отключение переноса текста, при отказе ширины печататель пропускает остаток строки, [алгоритм и проверка](../StationHelpCalls.md).
+
+[DrawHelpText](../../Source/Station/DrawHelpText.asm) — Рамка панели справки, повторное индексирование выбранной записи и печать от TopLine, [алгоритм и проверка](../HelpPanels.md).
+
+[DrawHelpContents](../../Source/Station/DrawHelpContents.asm) — Рамка списка разделов справки, сброс подсветки и пересчёт числа видимых CR-заголовков, [алгоритм и проверка](../HelpPanels.md).
+
+[HandleHelpTextHover](../../Source/Station/HandleHelpTextHover.asm) — Пустая JP-обёртка наведения панели текста справки, [алгоритм и проверка](../HelpPanelActions.md).
+
+[HandleHelpTextAction](../../Source/Station/HandleHelpTextAction.asm) — Закрытие связанной пары либо прокрутка LF-текста, выбор единицей ничего не делает, [алгоритм и проверка](../HelpPanelActions.md).
+
+[IgnoreHelpTextHover](../../Source/Station/IgnoreHelpTextHover.asm) — Пустой обработчик наведения текста справки с немедленным RET, [алгоритм и проверка](../HelpPanelActions.md).
+
+[HandleHelpContentsAction](../../Source/Station/HandleHelpContentsAction.asm) — Закрытие пары, прокрутка CR-заголовков либо выбор раздела с перерисовкой обеих панелей, [алгоритм и проверка](../HelpPanelActions.md).
+
+[HandleEquipmentInfoHover](../../Source/Station/HandleEquipmentInfoHover.asm) — Пустая JP-обёртка наведения документации оснащения, [алгоритм и проверка](../EquipmentInfo.md).
+
+[HandleEquipmentInfoAction](../../Source/Station/HandleEquipmentInfoAction.asm) — Закрытие либо прокрутка документации оснащения, выбор единицей пустой, [алгоритм и проверка](../EquipmentInfo.md).
+
+[IgnoreEquipmentInfoHover](../../Source/Station/IgnoreEquipmentInfoHover.asm) — Пустое наведение документации оснащения с немедленным RET, [алгоритм и проверка](../EquipmentInfo.md).
+
+[TryDrawEquipmentInfo](../../Source/Station/TryDrawEquipmentInfo.asm) — Условное рисование документации только при точном указателе в списке, [алгоритм и проверка](../EquipmentInfo.md).
+
+[DrawEquipmentInfo](../../Source/Station/DrawEquipmentInfo.asm) — Рамка документации оснащения, поиск и подсчёт LF-текста, печать от TopRow, [алгоритм и проверка](../EquipmentInfo.md).
+
+[UpdateEquipmentInfo](../../Source/Station/UpdateEquipmentInfo.asm) — Поиск LF-описания оснащения, сохранение его начала и полного числа визуальных строк, [алгоритм и проверка](../EquipmentInfo.md).
+
+[PrintEquipmentInfo](../../Source/Station/PrintEquipmentInfo.asm) — Печать сохранённого описания оснащения с байтовым числом пропускаемых строк, [алгоритм и проверка](../EquipmentInfo.md).
+
+[DrawKeyLabel](../../Source/Station/DrawKeyLabel.asm) — Вывод одного глифа либо четырёх байтов обозначения Enter, Symbol Shift или Space, [алгоритм и проверка](../KeyLabels.md).
+
+[TryDrawEnvironmentPanel](../../Source/Station/TryDrawEnvironmentPanel.asm) — Условное рисование установок среды при точном указателе панели в списке, [алгоритм и проверка](../SettingsRowPanels.md).
+
+[DrawEnvironmentPanel](../../Source/Station/DrawEnvironmentPanel.asm) — Рамка установок среды, сброс подсветки и сохранение числа обработанных значений, [алгоритм и проверка](../SettingsRowPanels.md).
+
+[PrintEnvironmentRows](../../Source/Station/PrintEnvironmentRows.asm) — CR-подписи установок среды и общий цикл текущих значений со счётчиком в A', [алгоритм и проверка](../SettingsRowPanels.md).
+
+[SetupEnvironmentText](../../Source/Station/SetupEnvironmentText.asm) — Запрет переноса установок среды и выбор колонки значений X=66, [алгоритм и проверка](../SettingsRowPanels.md).
+
+[TryDrawGameSettings](../../Source/Station/TryDrawGameSettings.asm) — Условное рисование установок игры при точном указателе панели в списке, [алгоритм и проверка](../SettingsRowPanels.md).
+
+[DrawGameSettings](../../Source/Station/DrawGameSettings.asm) — Рамка установок игры, сброс подсветки и сохранение числа обработанных значений, [алгоритм и проверка](../SettingsRowPanels.md).
+
+[PrintGameSettingsRows](../../Source/Station/PrintGameSettingsRows.asm) — CR-подписи игровых клавиш и передача значений в общий цикл среды, [алгоритм и проверка](../SettingsRowPanels.md).
+
+[SetupGameSettingsText](../../Source/Station/SetupGameSettingsText.asm) — Запрет переноса установок игры и выбор колонки значений X=110, [алгоритм и проверка](../SettingsRowPanels.md).
+
+[HandleEnvironmentHover](../../Source/Station/HandleEnvironmentHover.asm) — Передача наведения среды в обработчик её динамического числа строк, [алгоритм и проверка](../SettingsPanelActions.md).
+
+[HandleEnvironmentAction](../../Source/Station/HandleEnvironmentAction.asm) — Закрытие с применением настроек среды, прокрутка, Y/N и ограниченный ввод клавиш или цветов, [алгоритм и проверка](../SettingsPanelActions.md).
+
+[HandleGameSettingsHover](../../Source/Station/HandleGameSettingsHover.asm) — Передача наведения игры в обработчик её динамического числа строк, [алгоритм и проверка](../SettingsPanelActions.md).
+
+[HandleGameSettingsAction](../../Source/Station/HandleGameSettingsAction.asm) — Закрытие с применением игровых настроек, прокрутка и редактирование переключателя или клавиши, [алгоритм и проверка](../SettingsPanelActions.md).
+
+## ResumeActionPointer
+
+[Station.ResumeActionPointer](../../Source/Station/ResumeActionPointer.asm) — Возобновление указателя после RET непрямого рисователя с продолжением восстановления AF.
+
+[RefillPackedBits](../../Source/Station/RefillPackedBits.asm) — Чтение очередного слова битового потока из IX с восстановлением счётчика B из C без изменения флагов, [алгоритм и проверка](../PackedWordAndActionReturn.md).
+
+[ResumeActionPointer](../../Source/Station/ResumeActionPointer.asm) — Возобновление указателя после RET непрямого рисователя с продолжением восстановления AF, [алгоритм и проверка](../PackedWordAndActionReturn.md).
+
+[RestoreActionAF](../../Source/Station/RestoreActionAF.asm) — Снятие сохранённого AF из динамического кадра и возврат внешнему обработчику, [алгоритм и проверка](../PackedWordAndActionReturn.md).
+
+[HandleGalaxyMapHover](../../Source/Station/HandleGalaxyMapHover.asm) — Пустая JP-обёртка наведения панели карты галактики, [алгоритм и проверка](../PassivePanelHovers.md).
+
+[IgnoreGalaxyMapHover](../../Source/Station/IgnoreGalaxyMapHover.asm) — Игнорирование наведения панели карты галактики с полным сохранением контекста, [алгоритм и проверка](../PassivePanelHovers.md).
+
+[HandleSystemInfoHover](../../Source/Station/HandleSystemInfoHover.asm) — Пустая JP-обёртка наведения панели информации о системе, [алгоритм и проверка](../PassivePanelHovers.md).
+
+[IgnoreSystemInfoHover](../../Source/Station/IgnoreSystemInfoHover.asm) — Игнорирование наведения панели информации о системе с полным сохранением контекста, [алгоритм и проверка](../PassivePanelHovers.md).
+
+[HandleSystemMapHover](../../Source/Station/HandleSystemMapHover.asm) — Пустая JP-обёртка наведения панели карты системы, [алгоритм и проверка](../PassivePanelHovers.md).
+
+[IgnoreSystemMapHover](../../Source/Station/IgnoreSystemMapHover.asm) — Игнорирование наведения панели карты системы с полным сохранением контекста, [алгоритм и проверка](../PassivePanelHovers.md).
+
+[HandleContractHover](../../Source/Station/HandleContractHover.asm) — Пустая JP-обёртка наведения панели контракта, [алгоритм и проверка](../PassivePanelHovers.md).
+
+[IgnoreContractHover](../../Source/Station/IgnoreContractHover.asm) — Игнорирование наведения панели контракта с полным сохранением контекста, [алгоритм и проверка](../PassivePanelHovers.md).
+
+[HandleWelcomeHover](../../Source/Station/HandleWelcomeHover.asm) — Пустая JP-обёртка наведения панели приветствия, [алгоритм и проверка](../PassivePanelHovers.md).
+
+[IgnoreWelcomeHover](../../Source/Station/IgnoreWelcomeHover.asm) — Игнорирование наведения панели приветствия с полным сохранением контекста, [алгоритм и проверка](../PassivePanelHovers.md).
+
+[OpenHelpPanels](../../Source/Station/OpenHelpPanels.asm) — Перенос текстовой панели и списка справки в конец рисования с восстановлением их сохранённой геометрии, [алгоритм и проверка](../HelpNewsOpening.md).
+
+[OpenGalaxyNewsPanel](../../Source/Station/OpenGalaxyNewsPanel.asm) — Перенос панели галактических новостей в конец рисования и восстановление сохранённой геометрии, [алгоритм и проверка](../HelpNewsOpening.md).
+
+[SelectSaleMode](../../Source/Station/SelectSaleMode.asm) — Выбор продажи собственного корабля либо скимера с возвратом к покупке при типе FF, [алгоритм и проверка](../ModelTradeMode.md).
+
+[DrawSaleModeButton](../../Source/Station/DrawSaleModeButton.asm) — Центрируемая кнопка продажи с изменяемым индексом FInterfaceItem 28, [алгоритм и проверка](../ModelTradeMode.md).
+
+[SelectPurchaseMode](../../Source/Station/SelectPurchaseMode.asm) — Выбор каталога покупки, сброс строки просмотра и переключение контура кнопок, [алгоритм и проверка](../ModelTradeMode.md).
+
+[DrawPurchaseModeButton](../../Source/Station/DrawPurchaseModeButton.asm) — Центрируемая кнопка покупки с изменяемым индексом FInterfaceItem 29, [алгоритм и проверка](../ModelTradeMode.md).
+
+[SelectEquipmentPurchase](../../Source/Station/SelectEquipmentPurchase.asm) — Выбор покупки оборудования и переключение контура с продажи на покупку, [алгоритм и проверка](../EquipmentTradeMode.md).
+
+[DrawEquipmentPurchase](../../Source/Station/DrawEquipmentPurchase.asm) — Центрируемая кнопка покупки оборудования с изменяемым индексом 37, [алгоритм и проверка](../EquipmentTradeMode.md).
+
+[SelectEquipmentSale](../../Source/Station/SelectEquipmentSale.asm) — Выбор продажи оборудования и переключение контура с покупки на продажу, [алгоритм и проверка](../EquipmentTradeMode.md).
+
+[DrawEquipmentSale](../../Source/Station/DrawEquipmentSale.asm) — Центрируемая кнопка продажи оборудования с изменяемым индексом 36, [алгоритм и проверка](../EquipmentTradeMode.md).
+
+[SetupEquipmentColumns](../../Source/Station/SetupEquipmentColumns.asm) — Подготовка четырёх X-колонок оснащения и сохранение характеристики L текущего ключа, [алгоритм и проверка](../EquipmentListSetup.md).
+
+[OpenMapPanelGroup](../../Source/Station/OpenMapPanelGroup.asm) — Подготовка группы из одиннадцати панелей карты с восстановлением геометрии и запросом обновления, [алгоритм и проверка](../MapPanelOpening.md).
+
+[DrawWelcomePanel](../../Source/Station/DrawWelcomePanel.asm) — Вывод приветствия станции, её модели, имени системы и почасовой ставки 5×L, [алгоритм и проверка](../WelcomePanel.md).
+
+[HandleSystemInfoAction](../../Source/Station/HandleSystemInfoAction.asm) — Общая перерисовка и закрытие информационного окна, селектор 1 не меняет содержимое, [алгоритм и проверка](../PassivePanelActions.md).
+
+[HandleWelcomeAction](../../Source/Station/HandleWelcomeAction.asm) — Общая перерисовка и закрытие приветствия, селектор 1 не меняет содержимое, [алгоритм и проверка](../PassivePanelActions.md).
+
+[TryDrawEquipmentList](../../Source/Station/TryDrawEquipmentList.asm) — Условное рисование списка оснащения только при точном указателе в списке, [алгоритм и проверка](../EquipmentListPanels.md).
+
+[DrawEquipmentList](../../Source/Station/DrawEquipmentList.asm) — Рамка оснащения, заголовки колонок и сохранение счётчика попыток вывода, [алгоритм и проверка](../EquipmentListPanels.md).
+
+[PrintEquipmentRows](../../Source/Station/PrintEquipmentRows.asm) — Имена оснащения и четыре параллельные колонки количества, цены, веса и проверки типа корабля, [алгоритм и проверка](../EquipmentListPanels.md).
+
+[HandleEquipmentListHover](../../Source/Station/HandleEquipmentListHover.asm) — JP-обёртка наведения оснащения с текущим счётчиком попыток рисователя, [алгоритм и проверка](../EquipmentListPanels.md).
+
+[HandleSaveSlotAction](../../Source/Station/HandleSaveSlotAction.asm) — Выбор позиции и запись двух секторов блока состояния в существующий SAVE-файл, [алгоритм и проверка](../SaveSlots.md).
+
+[HandleLoadSlotAction](../../Source/Station/HandleLoadSlotAction.asm) — Выбор позиции и чтение двух секторов существующего SAVE-файла в блок состояния, [алгоритм и проверка](../SaveSlots.md).
+
+[DrawSaveSlotPanel](../../Source/Station/DrawSaveSlotPanel.asm) — Рамка и пять строк выбора позиции записи, без выполнения дискового протокола, [алгоритм и проверка](../SaveSlots.md).
+
+[DrawLoadSlotPanel](../../Source/Station/DrawLoadSlotPanel.asm) — Рамка и пять строк выбора позиции чтения, без выполнения дискового протокола, [алгоритм и проверка](../SaveSlots.md).
+
+[HandleSystemMapAction](../../Source/Station/HandleSystemMapAction.asm) — Выбор ближайшего варианта системы либо закрытие карты с отключением её периодического обновления, [алгоритм и проверка](../SystemMapAction.md).
+
+[ConfirmShipModelTrade](../../Source/Station/ConfirmShipModelTrade.asm) — Передача выбранной модели событию LANG и закрытие списка с пятью связанными панелями, [алгоритм и проверка](../ShipTrade.md).
+
+[HandleEquipmentListAction](../../Source/Station/HandleEquipmentListAction.asm) — Выбор описания либо подтверждение сделки оснащения, закрытие группы и прокрутка списка, [алгоритм и проверка](../EquipmentTrade.md).
+
+[RefreshMissionOfferPanels](../../Source/Station/RefreshMissionOfferPanels.asm) — Генерация нового предложения и последовательное обновление цели, условий миссии и статуса, [алгоритм и проверка](../MissionPanelActions.md).
+
+[HandleMissionGroupAction](../../Source/Station/HandleMissionGroupAction.asm) — Общее действие панели миссии и условное закрытие трёх связанных панелей, [алгоритм и проверка](../MissionPanelActions.md).
+
+[HandleShipListHover](../../Source/Station/HandleShipListHover.asm) — Хвостовая передача наведения списка моделей кораблей в UpdateShipListHover, [алгоритм и проверка](../ListHoverAdapters.md).
+
+[HandleHelpIndexHover](../../Source/Station/HandleHelpIndexHover.asm) — Хвостовая передача наведения разделов справки в UpdateIndexListHover, [алгоритм и проверка](../ListHoverAdapters.md).
+
+[HandleSaveSlotHover](../../Source/Station/HandleSaveSlotHover.asm) — Хвостовая передача наведения позиций записи состояния в UpdateToPositionHover, [алгоритм и проверка](../ListHoverAdapters.md).
+
+[HandleLoadSlotHover](../../Source/Station/HandleLoadSlotHover.asm) — Хвостовая передача наведения позиций чтения состояния в UpdateFromPositionHover, [алгоритм и проверка](../ListHoverAdapters.md).
+
+[InstallShipTradeCallback](../../Source/Station/InstallShipTradeCallback.asm) — Установка отложенной цели ConfirmShipModelTrade через общий обработчик активации элемента, [алгоритм и проверка](../DeferredActionAdapters.md).
+
+[InstallHelpPanelsCallback](../../Source/Station/InstallHelpPanelsCallback.asm) — Установка отложенной цели OpenHelpPanels через общий обработчик активации элемента, [алгоритм и проверка](../DeferredActionAdapters.md).
+
+[InstallMissionOfferCallback](../../Source/Station/InstallMissionOfferCallback.asm) — Установка отложенной цели RefreshMissionOfferPanels через общий обработчик активации элемента, [алгоритм и проверка](../DeferredActionAdapters.md).
+
+[HandleShipSaleButton](../../Source/Station/HandleShipSaleButton.asm) — Установка callback и последовательный вход в SelectSaleMode после общего действия кнопки, [алгоритм и проверка](../TradeButtonActions.md).
+
+[HandleShipPurchaseButton](../../Source/Station/HandleShipPurchaseButton.asm) — Установка callback и последовательный вход в SelectPurchaseMode после общего действия кнопки, [алгоритм и проверка](../TradeButtonActions.md).
+
+[HandleEquipmentPurchaseButton](../../Source/Station/HandleEquipmentPurchaseButton.asm) — Установка callback и последовательный вход в SelectEquipmentPurchase после общего действия кнопки, [алгоритм и проверка](../TradeButtonActions.md).
+
+[HandleEquipmentSaleButton](../../Source/Station/HandleEquipmentSaleButton.asm) — Установка callback и последовательный вход в SelectEquipmentSale после общего действия кнопки, [алгоритм и проверка](../TradeButtonActions.md).
+
+[SelectSaleMode](../../Source/Station/SelectSaleMode.asm) — Выбор продажи собственного корабля либо скимера с возвратом к покупке при типе FF, [алгоритм и проверка](../ModelTradeMode.md).
+
+[SelectPurchaseMode](../../Source/Station/SelectPurchaseMode.asm) — Выбор каталога покупки, сброс строки просмотра и переключение контура кнопок, [алгоритм и проверка](../ModelTradeMode.md).
+
+[SelectEquipmentPurchase](../../Source/Station/SelectEquipmentPurchase.asm) — Выбор покупки оборудования и переключение контура с продажи на покупку, [алгоритм и проверка](../EquipmentTradeMode.md).
+
+[SelectEquipmentSale](../../Source/Station/SelectEquipmentSale.asm) — Выбор продажи оборудования и переключение контура с покупки на продажу, [алгоритм и проверка](../EquipmentTradeMode.md).
+
+[InstallFlightButtonCallback](../../Source/Station/InstallFlightButtonCallback.asm) — Установка пустого callback кнопки с исходной подписью Перелет, [алгоритм и проверка](../FlightButton.md).
+
+[EmptyFlightCallback](../../Source/Station/EmptyFlightCallback.asm) — Пустой RET callback элемента 21, установленный обработчиком кнопки Перелет, [алгоритм и проверка](../FlightButton.md).
+
+[DrawFlightButton](../../Source/Station/DrawFlightButton.asm) — Центрируемая кнопка Перелет, исходный текст 40 и изменяемый индекс элемента 21, [алгоритм и проверка](../FlightButton.md).
+
+[InstallContractMapCallback](../../Source/Station/InstallContractMapCallback.asm) — Установка отложенного центрирования карты кнопкой Контракт, [алгоритм и проверка](../ContractMap.md).
+
+[CenterContractMap](../../Source/Station/CenterContractMap.asm) — Выбор четырёхбайтового ключа и центрирование карты контракта с исходными абсолютными чтениями ROM, [алгоритм и проверка](../ContractMap.md).
+
+[DrawContractButton](../../Source/Station/DrawContractButton.asm) — Центрируемая кнопка Контракт с исходным текстовым индексом 20 и изменяемым индексом элемента 18, [алгоритм и проверка](../ContractMap.md).
+
+[IgnoreCounterEvent](../../Source/Station/IgnoreCounterEvent.asm) — Пустой обработчик события счётчика, исходный JP во внутренний RET без изменения данных, [алгоритм и проверка](../CounterEvent.md).
+
+[InstallGalaxyNewsCallback](../../Source/Station/InstallGalaxyNewsCallback.asm) — Установка отложенного открытия через OpenGalaxyNewsPanel, [алгоритм и проверка](../DeferredActionAdapters.md).
+
+[InstallMapPanelsCallback](../../Source/Station/InstallMapPanelsCallback.asm) — Установка отложенного открытия через OpenMapPanelGroup, [алгоритм и проверка](../DeferredActionAdapters.md).
+
+[StopMusic](../../Source/Station/StopMusic.asm) — Глушение AY в банке музыки, установка IM 1 и выход через двухсловную CPU-рамку, [алгоритм и проверка](../StopMusic.md).
+
+[HandleStatusPanelAction](../../Source/Station/HandleStatusPanelAction.asm) — Геометрия по входному Z, перенос статусного элемента и условный рисунок с восстановлением AF, [алгоритм и проверка](../StatusPanelAction.md).
+
+[UnpackResource](../../Source/Station/UnpackResource.asm) — Распаковка HR-потока со словным битовым резервуаром, LZ-ссылками, тройками и сохранённым шестибайтовым концом, [алгоритм и проверка](../UnpackResource.md).
+
+[MainLoop](../../Source/Station/MainLoop.asm) — Цикл станции, начальный и периодический сценарии, сравнение кодов ввода и событий, [алгоритм и проверка](../MainLoopControl.md).

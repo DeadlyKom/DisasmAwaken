@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "cases": {
+    "prepare": 3072,
+    "commit": 6144
+  },
+  "all_shape_bytes": true,
+  "all_delay_bytes": true,
+  "all_tempo_bytes": true,
+  "step_boundary_words": [
+    0,
+    1,
+    32767,
+    32768,
+    42330,
+    65535
+  ],
+  "all_memory_compared": true,
+  "observed_changed_addresses": [
+    56326,
+    56333,
+    57160,
+    57195,
+    58094,
+    58095,
+    58097,
+    58098,
+    58106,
+    58114,
+    58115,
+    58121,
+    58237
+  ],
+  "returning_call_not_assumed": true,
+  "stop_address": 57215,
+  "pattern_advance_executed": false,
+  "irq_executed": false,
+  "native_audio_verified": false,
+  "assembly_executed": false
+}

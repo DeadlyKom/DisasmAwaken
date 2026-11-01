@@ -1,0 +1,212 @@
+{
+  "passed": true,
+  "resources": 20,
+  "final_word_instances": 20,
+  "typed_final_bytes": 120,
+  "records": [
+    {
+      "path": "Source/Screens/Station/Screen00.asm",
+      "slot": 9,
+      "index": 0,
+      "final_bytes_offset": 6,
+      "bitstream_offset": 12,
+      "tail_offset": 3230,
+      "allocated_size": 3328,
+      "sha256": "423087d1b36b8db7d3390874f245536abd7b3117dde00447f05bbd3341f99dd2"
+    },
+    {
+      "path": "Source/Screens/Station/Screen01.asm",
+      "slot": 9,
+      "index": 1,
+      "final_bytes_offset": 6,
+      "bitstream_offset": 12,
+      "tail_offset": 2725,
+      "allocated_size": 2816,
+      "sha256": "15e5bf03ccf9a488b1b65e7fd863cb8a1c156fffcc23ed36f41e87fb8fb015cb"
+    },
+    {
+      "path": "Source/Screens/Station/Screen02.asm",
+      "slot": 9,
+      "index": 2,
+      "final_bytes_offset": 6,
+      "bitstream_offset": 12,
+      "tail_offset": 2708,
+      "allocated_size": 2816,
+      "sha256": "0a3badc46a2b4be0451663c522b7f534d3e223b8bf6b97be620b9ca36d619e06"
+    },
+    {
+      "path": "Source/Screens/Station/Screen03.asm",
+      "slot": 9,
+      "index": 3,
+      "final_bytes_offset": 6,
+      "bitstream_offset": 12,
+      "tail_offset": 3056,
+      "allocated_size": 3072,
+      "sha256": "4c332f664430930dacdb290bc3fc70b023cb71e65140386261e371ef39b6a314"
+    },
+    {
+      "path": "Source/Screens/Station/Screen04.asm",
+      "slot": 9,
+      "index": 4,
+      "final_bytes_offset": 6,
+      "bitstream_offset": 12,
+      "tail_offset": 2002,
+      "allocated_size": 2048,
+      "sha256": "e234d3251ac5ee2b62665dd848f67f304fccb2327f9ae9a94db0d941baf192ec"
+    },
+    {
+      "path": "Source/Screens/Station/Screen05.asm",
+      "slot": 9,
+      "index": 5,
+      "final_bytes_offset": 6,
+      "bitstream_offset": 12,
+      "tail_offset": 3526,
+      "allocated_size": 3584,
+      "sha256": "33c6396420269857adcabf9366e38403f92c7fb87826f010dc64a5b82afca2a4"
+    },
+    {
+      "path": "Source/Screens/Station/Screen06.asm",
+      "slot": 9,
+      "index": 6,
+      "final_bytes_offset": 6,
+      "bitstream_offset": 12,
+      "tail_offset": 4731,
+      "allocated_size": 4864,
+      "sha256": "128274cc0ee7ea7227504a7618642e72fb2ce7e071baa2d3be11b733b6b29b30"
+    },
+    {
+      "path": "Source/Screens/Station/Screen07.asm",
+      "slot": 9,
+      "index": 7,
+      "final_bytes_offset": 6,
+      "bitstream_offset": 12,
+      "tail_offset": 3805,
+      "allocated_size": 3840,
+      "sha256": "c3eb0b87c22283a17a16ec8e9df3adf8dd17f10750c7c2caf25f566d36f36f74"
+    },
+    {
+      "path": "Source/Screens/Station/Screen08.asm",
+      "slot": 9,
+      "index": 8,
+      "final_bytes_offset": 6,
+      "bitstream_offset": 12,
+      "tail_offset": 3640,
+      "allocated_size": 3840,
+      "sha256": "f5e74af073e293adfe1876b1424abced3d34273a1b4acd40ac00780e1ea00b4f"
+    },
+    {
+      "path": "Source/Screens/Station/Screen09.asm",
+      "slot": 9,
+      "index": 9,
+      "final_bytes_offset": 6,
+      "bitstream_offset": 12,
+      "tail_offset": 3128,
+      "allocated_size": 3328,
+      "sha256": "7073df6c083d0056c282fe77853f49bd684139fa49cb2d51a26e65687902b7ed"
+    },
+    {
+      "path": "Source/Screens/Station/Screen10.asm",
+      "slot": 9,
+      "index": 10,
+      "final_bytes_offset": 6,
+      "bitstream_offset": 12,
+      "tail_offset": 4774,
+      "allocated_size": 4864,
+      "sha256": "178172eed7e19dea442958c36f7c3969406d73e948e176c49dae6a058327bfdc"
+    },
+    {
+      "path": "Source/Screens/Station/Screen11.asm",
+      "slot": 9,
+      "index": 11,
+      "final_bytes_offset": 6,
+      "bitstream_offset": 12,
+      "tail_offset": 2990,
+      "allocated_size": 3072,
+      "sha256": "06fab14e8cb262666348bc41ce092f69260eaa7009fb9f20bc7f25dc50e96190"
+    },
+    {
+      "path": "Source/Screens/Station/Screen12.asm",
+      "slot": 9,
+      "index": 12,
+      "final_bytes_offset": 6,
+      "bitstream_offset": 12,
+      "tail_offset": 4042,
+      "allocated_size": 4096,
+      "sha256": "6ee3552c5ba43a13ba21cee372ce8c192d7af3a76801cde7782afb574a25c6bc"
+    },
+    {
+      "path": "Source/Screens/Station/Screen13.asm",
+      "slot": 9,
+      "index": 13,
+      "final_bytes_offset": 6,
+      "bitstream_offset": 12,
+      "tail_offset": 4940,
+      "allocated_size": 5120,
+      "sha256": "8b255cf33d5aa9d388ff0f12c913bd07d840ecb6c2e1dae3dc3b1f3884e3746b"
+    },
+    {
+      "path": "Source/Screens/Station/Screen14.asm",
+      "slot": 9,
+      "index": 14,
+      "final_bytes_offset": 6,
+      "bitstream_offset": 12,
+      "tail_offset": 5157,
+      "allocated_size": 5376,
+      "sha256": "b56b12727f5f16da24c12bb64416062e4564118b6926d62785386a5976c5c41e"
+    },
+    {
+      "path": "Source/Screens/Station/Screen15.asm",
+      "slot": 9,
+      "index": 15,
+      "final_bytes_offset": 6,
+      "bitstream_offset": 12,
+      "tail_offset": 4940,
+      "allocated_size": 5120,
+      "sha256": "4e18420c92f6a680ff466a3f8986aeb8106e1d9a3b54512b316f1a8545865134"
+    },
+    {
+      "path": "Source/Screens/Panel25/Screen00.asm",
+      "slot": 25,
+      "index": 0,
+      "final_bytes_offset": 6,
+      "bitstream_offset": 12,
+      "tail_offset": 1463,
+      "allocated_size": 1536,
+      "sha256": "979d13f06025cdd938b5fb9c707ae8c81f2a88ff7bba8f9495fc322be8256ddc"
+    },
+    {
+      "path": "Source/Screens/Panel26/Screen00.asm",
+      "slot": 26,
+      "index": 0,
+      "final_bytes_offset": 6,
+      "bitstream_offset": 12,
+      "tail_offset": 1436,
+      "allocated_size": 1536,
+      "sha256": "9f952673993a715ae8bb88e7353998d7857e97d62d87c83d3680d4dfbac8ce8d"
+    },
+    {
+      "path": "Source/Screens/Panel27/Screen00.asm",
+      "slot": 27,
+      "index": 0,
+      "final_bytes_offset": 6,
+      "bitstream_offset": 12,
+      "tail_offset": 1423,
+      "allocated_size": 1536,
+      "sha256": "f7aaccef233911b62dec24d35c5a2edf6b54bba3cee82432bf56604fbad7f9fd"
+    },
+    {
+      "path": "Source/Screens/Panel28/Screen00.asm",
+      "slot": 28,
+      "index": 0,
+      "final_bytes_offset": 6,
+      "bitstream_offset": 12,
+      "tail_offset": 1543,
+      "allocated_size": 1792,
+      "sha256": "b01c8de4ffbccfdd2c1d81f71e897deafc11f5c14ae639c48d1828b99fc3b211"
+    }
+  ],
+  "whole_allocations_and_sector_tails_equal_original": true,
+  "label_offsets_checked": true,
+  "ordinary_build_requires_python": false,
+  "assembly_executed": false
+}

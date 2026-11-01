@@ -61,25 +61,25 @@
 | Station | #6597 | #65D1 | `RL (IX+#05)` | [ConfigureMouseButtons.asm](../Source/Station/ConfigureMouseButtons.asm) |
 | Station | #659C | #65CC | `RL (IX+#00)` | [ConfigureMouseButtons.asm](../Source/Station/ConfigureMouseButtons.asm) |
 | Station | #65A2 | #65C7 | `JR #658E` | [ConfigureMouseButtons.asm](../Source/Station/ConfigureMouseButtons.asm) |
-| Station | #6783 | #9A89 | `CALL #9A58` | [Unknown6780.asm](../Source/Station/Unknown6780.asm) |
+| Station | #6783 | #9A89 | `CALL #9A58` | [Unknown6780.asm](../Source/Station/DropShipDetailPanels.asm) |
 | Station | #67DC | #67D7 | `LD A,#FF` | [UpdateShipListHover.asm](../Source/Station/UpdateShipListHover.asm) |
 | Station | #67E7 | #BD26 | `LD A,#00` | [DrawModelListPanel.asm](../Source/Station/DrawModelListPanel.asm) |
 | Station | #67EC | #67D7 | `LD A,#FF` | [DrawModelListPanel.asm](../Source/Station/DrawModelListPanel.asm) |
 | Station | #67F1 | #BD73 | `LD A,#00` | [DrawModelListPanel.asm](../Source/Station/DrawModelListPanel.asm) |
 | Station | #6833 | #67D2 | `LD DE,#1E1B` | [DrawModelListPanel.asm](../Source/Station/DrawModelListPanel.asm) |
-| Station | #6891 | #9A89 | `CALL #9A58` | [DrawItem26.asm](../Source/Station/DrawItem26.asm) |
-| Station | #69BA | #BD26 | `LD A,#00` | [Unknown69B8.asm](../Source/Station/Unknown69B8.asm) |
+| Station | #6891 | #9A89 | `CALL #9A58` | [DrawShipPreview.asm](../Source/Station/DrawShipPreview.asm) |
+| Station | #69BA | #BD26 | `LD A,#00` | [Unknown69B8.asm](../Source/Station/IndexHelpText.asm) |
 | Station | #6A57 | #6A52 | `LD A,#FF` | [UpdateIndexListHover.asm](../Source/Station/UpdateIndexListHover.asm) |
-| Station | #6A63 | #6A52 | `LD A,#FF` | [DrawItem22.asm](../Source/Station/DrawItem22.asm) |
-| Station | #6A7A | #6A4D | `LD DE,#1E0B` | [DrawItem22.asm](../Source/Station/DrawItem22.asm) |
-| Station | #6A7F | #BD26 | `LD A,#00` | [Unknown6A7E.asm](../Source/Station/Unknown6A7E.asm) |
-| Station | #6AC8 | #BD26 | `LD A,#00` | [Unknown6AC6.asm](../Source/Station/Unknown6AC6.asm) |
-| Station | #6AD3 | #6AE0 | `LD HL,#0000` | [Unknown6AC6.asm](../Source/Station/Unknown6AC6.asm) |
+| Station | #6A63 | #6A52 | `LD A,#FF` | [DrawItem22.asm](../Source/Station/DrawHelpContents.asm) |
+| Station | #6A7A | #6A4D | `LD DE,#1E0B` | [DrawItem22.asm](../Source/Station/DrawHelpContents.asm) |
+| Station | #6A7F | #BD26 | `LD A,#00` | [Unknown6A7E.asm](../Source/Station/DisableTextWrap.asm) |
+| Station | #6AC8 | #BD26 | `LD A,#00` | [Unknown6AC6.asm](../Source/Station/UpdateEquipmentInfo.asm) |
+| Station | #6AD3 | #6AE0 | `LD HL,#0000` | [Unknown6AC6.asm](../Source/Station/UpdateEquipmentInfo.asm) |
 | Station | #6B9A | #6B95 | `LD A,#FF` | [UpdateEnvironmentHover.asm](../Source/Station/UpdateEnvironmentHover.asm) |
-| Station | #6BAD | #6B95 | `LD A,#FF` | [DrawItem41.asm](../Source/Station/DrawItem41.asm) |
-| Station | #6BBA | #6B90 | `LD DE,#1E0B` | [DrawItem41.asm](../Source/Station/DrawItem41.asm) |
-| Station | #6C01 | #BD26 | `LD A,#00` | [Unknown6C00.asm](../Source/Station/Unknown6C00.asm) |
-| Station | #6C06 | #BD73 | `LD A,#00` | [Unknown6C00.asm](../Source/Station/Unknown6C00.asm) |
+| Station | #6BAD | #6B95 | `LD A,#FF` | [DrawItem41.asm](../Source/Station/DrawEnvironmentPanel.asm) |
+| Station | #6BBA | #6B90 | `LD DE,#1E0B` | [DrawItem41.asm](../Source/Station/DrawEnvironmentPanel.asm) |
+| Station | #6C01 | #BD26 | `LD A,#00` | [Unknown6C00.asm](../Source/Station/SetupEnvironmentText.asm) |
+| Station | #6C06 | #BD73 | `LD A,#00` | [Unknown6C00.asm](../Source/Station/SetupEnvironmentText.asm) |
 | Station | #6DA1 | #6D75 | `LD A,#00` | [DrawMapPanelContents.asm](../Source/Station/DrawMapPanelContents.asm) |
 | Station | #6DA4 | #6D90 | `LD A,#00` | [DrawMapPanelContents.asm](../Source/Station/DrawMapPanelContents.asm) |
 | Station | #6DB6 | #6D7B | `LD A,#00` | [DrawMapPanel.asm](../Source/Station/DrawMapPanel.asm) |
@@ -99,37 +99,37 @@
 | Station | #7169 | #BD94 | `LD A,#00` | [SetMarketTextColumns.asm](../Source/Station/SetMarketTextColumns.asm) |
 | Station | #716E | #BD9F | `LD A,#00` | [SetMarketTextColumns.asm](../Source/Station/SetMarketTextColumns.asm) |
 | Station | #721C | #7217 | `LD A,#FF` | [UpdateEquipmentHover.asm](../Source/Station/UpdateEquipmentHover.asm) |
-| Station | #722F | #7217 | `LD A,#FF` | [DrawItem38.asm](../Source/Station/DrawItem38.asm) |
-| Station | #7248 | #7212 | `LD DE,#1E1B` | [DrawItem38.asm](../Source/Station/DrawItem38.asm) |
-| Station | #728C | #7306 | `LD A,#00` | [Unknown724C.asm](../Source/Station/Unknown724C.asm) |
-| Station | #7340 | #BD26 | `LD A,#00` | [Unknown733F.asm](../Source/Station/Unknown733F.asm) |
-| Station | #7345 | #BD73 | `LD A,#00` | [Unknown733F.asm](../Source/Station/Unknown733F.asm) |
-| Station | #734A | #BD7E | `LD A,#00` | [Unknown733F.asm](../Source/Station/Unknown733F.asm) |
-| Station | #734F | #BD89 | `LD A,#00` | [Unknown733F.asm](../Source/Station/Unknown733F.asm) |
-| Station | #7354 | #BD94 | `LD A,#00` | [Unknown733F.asm](../Source/Station/Unknown733F.asm) |
-| Station | #735B | #72DD | `LD A,#00` | [Unknown733F.asm](../Source/Station/Unknown733F.asm) |
+| Station | #722F | #7217 | `LD A,#FF` | [DrawItem38.asm](../Source/Station/DrawEquipmentList.asm) |
+| Station | #7248 | #7212 | `LD DE,#1E1B` | [DrawItem38.asm](../Source/Station/DrawEquipmentList.asm) |
+| Station | #728C | #7306 | `LD A,#00` | [Unknown724C.asm](../Source/Station/PrintEquipmentRows.asm) |
+| Station | #7340 | #BD26 | `LD A,#00` | [Unknown733F.asm](../Source/Station/SetupEquipmentColumns.asm) |
+| Station | #7345 | #BD73 | `LD A,#00` | [Unknown733F.asm](../Source/Station/SetupEquipmentColumns.asm) |
+| Station | #734A | #BD7E | `LD A,#00` | [Unknown733F.asm](../Source/Station/SetupEquipmentColumns.asm) |
+| Station | #734F | #BD89 | `LD A,#00` | [Unknown733F.asm](../Source/Station/SetupEquipmentColumns.asm) |
+| Station | #7354 | #BD94 | `LD A,#00` | [Unknown733F.asm](../Source/Station/SetupEquipmentColumns.asm) |
+| Station | #735B | #72DD | `LD A,#00` | [Unknown733F.asm](../Source/Station/SetupEquipmentColumns.asm) |
 | Station | #748E | #7489 | `LD A,#FF` | [UpdateToPositionHover.asm](../Source/Station/UpdateToPositionHover.asm) |
-| Station | #749A | #7489 | `LD A,#FF` | [DrawItem43.asm](../Source/Station/DrawItem43.asm) |
-| Station | #749E | #BD26 | `LD A,#00` | [DrawItem43.asm](../Source/Station/DrawItem43.asm) |
+| Station | #749A | #7489 | `LD A,#FF` | [DrawItem43.asm](../Source/Station/DrawSaveSlotPanel.asm) |
+| Station | #749E | #BD26 | `LD A,#00` | [DrawItem43.asm](../Source/Station/DrawSaveSlotPanel.asm) |
 | Station | #7517 | #7512 | `LD A,#FF` | [UpdateFromPositionHover.asm](../Source/Station/UpdateFromPositionHover.asm) |
-| Station | #7523 | #7512 | `LD A,#FF` | [DrawItem44.asm](../Source/Station/DrawItem44.asm) |
-| Station | #7527 | #BD26 | `LD A,#00` | [DrawItem44.asm](../Source/Station/DrawItem44.asm) |
+| Station | #7523 | #7512 | `LD A,#FF` | [DrawItem44.asm](../Source/Station/DrawLoadSlotPanel.asm) |
+| Station | #7527 | #BD26 | `LD A,#00` | [DrawItem44.asm](../Source/Station/DrawLoadSlotPanel.asm) |
 | Station | #757F | #757A | `LD A,#FF` | [HoverContextMenu.asm](../Source/Station/HoverContextMenu.asm) |
 | Station | #758B | #757A | `LD A,#FF` | [DrawItem40.asm](../Source/Station/DrawItem40.asm) |
 | Station | #7590 | #BD26 | `LD A,#00` | [DrawItem40.asm](../Source/Station/DrawItem40.asm) |
 | Station | #762C | #7627 | `LD A,#FF` | [UpdateGameSettingsHover.asm](../Source/Station/UpdateGameSettingsHover.asm) |
-| Station | #763F | #7627 | `LD A,#FF` | [DrawItem42.asm](../Source/Station/DrawItem42.asm) |
-| Station | #764C | #7622 | `LD DE,#1E0B` | [DrawItem42.asm](../Source/Station/DrawItem42.asm) |
-| Station | #766D | #BD26 | `LD A,#00` | [Unknown766C.asm](../Source/Station/Unknown766C.asm) |
-| Station | #7672 | #BD73 | `LD A,#00` | [Unknown766C.asm](../Source/Station/Unknown766C.asm) |
+| Station | #763F | #7627 | `LD A,#FF` | [DrawItem42.asm](../Source/Station/DrawGameSettings.asm) |
+| Station | #764C | #7622 | `LD DE,#1E0B` | [DrawItem42.asm](../Source/Station/DrawGameSettings.asm) |
+| Station | #766D | #BD26 | `LD A,#00` | [Unknown766C.asm](../Source/Station/SetupGameSettingsText.asm) |
+| Station | #7672 | #BD73 | `LD A,#00` | [Unknown766C.asm](../Source/Station/SetupGameSettingsText.asm) |
 | Station | #7696 | #BD26 | `LD A,#00` | [DrawSystemInfoPanel.asm](../Source/Station/DrawSystemInfoPanel.asm) |
 | Station | #78A6 | #9A89 | `CALL #9A58` | [DrawVariantPanel.asm](../Source/Station/DrawVariantPanel.asm) |
-| Station | #795D | #BD26 | `LD A,#00` | [DrawItem45.asm](../Source/Station/DrawItem45.asm) |
-| Station | #7A11 | #9E78 | `LD A,#00` | [Unknown79C7.asm](../Source/Station/Unknown79C7.asm) |
-| Station | #7A4E | #79DD | `LD A,#00` | [Unknown7A24.asm](../Source/Station/Unknown7A24.asm) |
-| Station | #7A79 | #79DD | `LD A,#00` | [Unknown7A64.asm](../Source/Station/Unknown7A64.asm) |
+| Station | #795D | #BD26 | `LD A,#00` | [DrawItem45.asm](../Source/Station/DrawWelcomePanel.asm) |
+| Station | #7A11 | #9E78 | `LD A,#00` | [Unknown79C7.asm](../Source/Station/ConfirmShipModelTrade.asm) |
+| Station | #7A4E | #79DD | `LD A,#00` | [Unknown7A24.asm](../Source/Station/SelectSaleMode.asm) |
+| Station | #7A79 | #79DD | `LD A,#00` | [Unknown7A64.asm](../Source/Station/SelectPurchaseMode.asm) |
 | Station | #7CA9 | #7C99 | `LD HL,#990A` | [CycleStoredMapPoint.asm](../Source/Station/CycleStoredMapPoint.asm) |
-| Station | #7CDB | #7CCC | `LD HL,#99A3` | [Unknown7CC6.asm](../Source/Station/Unknown7CC6.asm) |
+| Station | #7CDB | #7CCC | `LD HL,#99A3` | [Unknown7CC6.asm](../Source/Station/CenterContractMap.asm) |
 | Station | #7D73 | #7068 | `LD A,#FF` | [SellCurrentCargo.asm](../Source/Station/SellCurrentCargo.asm) |
 | Station | #7DC6 | #6ACC | `LD A,#00` | [OpenEquipmentPanels.asm](../Source/Station/OpenEquipmentPanels.asm) |
 | Station | #7E29 | #67D7 | `LD A,#FF` | [ResetShipPanelSelection.asm](../Source/Station/ResetShipPanelSelection.asm) |
@@ -352,34 +352,34 @@
 | Music | #DE64 | #E07C | `LD A,#00` | [TickDispatch.asm](../Source/Music/TickDispatch.asm) |
 | Music | #DE6A | #E078 | `LD SP,#0000` | [TickDispatch.asm](../Source/Music/TickDispatch.asm) |
 | Music | #DE6F | #E037 | `OR #00` | [TickDispatch.asm](../Source/Music/TickDispatch.asm) |
-| Music | #DE93 | #DE90 | `JR #DEA3` | [UnknownDE90.asm](../Source/Music/UnknownDE90.asm) |
-| Music | #DE98 | #E0E9 | `LD A,#00` | [UnknownDE90.asm](../Source/Music/UnknownDE90.asm) |
-| Music | #DE9B | #E0D7 | `LD A,#00` | [UnknownDE90.asm](../Source/Music/UnknownDE90.asm) |
-| Music | #DEA0 | #E0E5 | `LD A,#00` | [UnknownDE90.asm](../Source/Music/UnknownDE90.asm) |
-| Music | #DEBC | #E198 | `LD BC,#0000` | [UnknownDEB9.asm](../Source/Music/UnknownDEB9.asm) |
-| Music | #DEC1 | #E0F9 | `LD A,#00` | [UnknownDEB9.asm](../Source/Music/UnknownDEB9.asm) |
-| Music | #DEC4 | #E13D | `LD A,#00` | [UnknownDEB9.asm](../Source/Music/UnknownDEB9.asm) |
-| Music | #DEC7 | #E154 | `ADD A,#00` | [UnknownDEB9.asm](../Source/Music/UnknownDEB9.asm) |
-| Music | #DECA | #E17C | `LD A,#00` | [UnknownDEB9.asm](../Source/Music/UnknownDEB9.asm) |
-| Music | #DECD | #E19F | `LD A,#00` | [UnknownDEB9.asm](../Source/Music/UnknownDEB9.asm) |
-| Music | #DED0 | #E1D7 | `LD A,#00` | [UnknownDEB9.asm](../Source/Music/UnknownDEB9.asm) |
-| Music | #DED3 | #E16C | `LD HL,#0000` | [UnknownDEB9.asm](../Source/Music/UnknownDEB9.asm) |
-| Music | #DED7 | #E0EE | `LD A,#FF` | [UnknownDEB9.asm](../Source/Music/UnknownDEB9.asm) |
-| Music | #DEE2 | #E0F5 | `LD SP,#0000` | [UnknownDEB9.asm](../Source/Music/UnknownDEB9.asm) |
-| Music | #DEE7 | #E110 | `LD A,#00` | [UnknownDEB9.asm](../Source/Music/UnknownDEB9.asm) |
-| Music | #DEEC | #E12C | `ADD A,#00` | [UnknownDEB9.asm](../Source/Music/UnknownDEB9.asm) |
-| Music | #DEF2 | #E17C | `LD A,#00` | [UnknownDEB9.asm](../Source/Music/UnknownDEB9.asm) |
-| Music | #DEF8 | #E178 | `LD SP,#0000` | [UnknownDEB9.asm](../Source/Music/UnknownDEB9.asm) |
-| Music | #DEFD | #E136 | `OR #00` | [UnknownDEB9.asm](../Source/Music/UnknownDEB9.asm) |
-| Music | #DF52 | #E2F1 | `LD HL,#0000` | [UnknownDF47.asm](../Source/Music/UnknownDF47.asm) |
-| Music | #DF58 | #DF48 | `LD A,#00` | [UnknownDF47.asm](../Source/Music/UnknownDF47.asm) |
-| Music | #DF5B | #E2EE | `LD DE,#0000` | [UnknownDF47.asm](../Source/Music/UnknownDF47.asm) |
-| Music | #DF5E | #E2FA | `LD A,#00` | [UnknownDF47.asm](../Source/Music/UnknownDF47.asm) |
-| Music | #DF63 | #E37D | `LD A,#03` | [UnknownDF47.asm](../Source/Music/UnknownDF47.asm) |
-| Music | #DF70 | #E302 | `LD HL,#0000` | [UnknownDF70.asm](../Source/Music/UnknownDF70.asm) |
-| Music | #DF75 | #E2FA | `LD A,#00` | [UnknownDF70.asm](../Source/Music/UnknownDF70.asm) |
-| Music | #DF78 | #E309 | `LD A,#00` | [UnknownDF70.asm](../Source/Music/UnknownDF70.asm) |
-| Music | #DF7C | #DF6B | `JR #DF7F` | [UnknownDF70.asm](../Source/Music/UnknownDF70.asm) |
+| Music | #DE93 | #DE90 | `JR #DEA3` | [UnknownDE90.asm](../Source/Music/StageGateAndSampleA.asm) |
+| Music | #DE98 | #E0E9 | `LD A,#00` | [UnknownDE90.asm](../Source/Music/StageGateAndSampleA.asm) |
+| Music | #DE9B | #E0D7 | `LD A,#00` | [UnknownDE90.asm](../Source/Music/StageGateAndSampleA.asm) |
+| Music | #DEA0 | #E0E5 | `LD A,#00` | [UnknownDE90.asm](../Source/Music/StageGateAndSampleA.asm) |
+| Music | #DEBC | #E198 | `LD BC,#0000` | [UnknownDEB9.asm](../Source/Music/StageChannelBRow.asm) |
+| Music | #DEC1 | #E0F9 | `LD A,#00` | [UnknownDEB9.asm](../Source/Music/StageChannelBRow.asm) |
+| Music | #DEC4 | #E13D | `LD A,#00` | [UnknownDEB9.asm](../Source/Music/StageChannelBRow.asm) |
+| Music | #DEC7 | #E154 | `ADD A,#00` | [UnknownDEB9.asm](../Source/Music/StageChannelBRow.asm) |
+| Music | #DECA | #E17C | `LD A,#00` | [UnknownDEB9.asm](../Source/Music/StageChannelBRow.asm) |
+| Music | #DECD | #E19F | `LD A,#00` | [UnknownDEB9.asm](../Source/Music/StageChannelBRow.asm) |
+| Music | #DED0 | #E1D7 | `LD A,#00` | [UnknownDEB9.asm](../Source/Music/StageChannelBRow.asm) |
+| Music | #DED3 | #E16C | `LD HL,#0000` | [UnknownDEB9.asm](../Source/Music/StageChannelBRow.asm) |
+| Music | #DED7 | #E0EE | `LD A,#FF` | [UnknownDEB9.asm](../Source/Music/StageChannelBRow.asm) |
+| Music | #DEE2 | #E0F5 | `LD SP,#0000` | [UnknownDEB9.asm](../Source/Music/StageChannelBRow.asm) |
+| Music | #DEE7 | #E110 | `LD A,#00` | [UnknownDEB9.asm](../Source/Music/StageChannelBRow.asm) |
+| Music | #DEEC | #E12C | `ADD A,#00` | [UnknownDEB9.asm](../Source/Music/StageChannelBRow.asm) |
+| Music | #DEF2 | #E17C | `LD A,#00` | [UnknownDEB9.asm](../Source/Music/StageChannelBRow.asm) |
+| Music | #DEF8 | #E178 | `LD SP,#0000` | [UnknownDEB9.asm](../Source/Music/StageChannelBRow.asm) |
+| Music | #DEFD | #E136 | `OR #00` | [UnknownDEB9.asm](../Source/Music/StageChannelBRow.asm) |
+| Music | #DF52 | #E2F1 | `LD HL,#0000` | [UnknownDF47.asm](../Source/Music/StageEnvelopeAndNoise.asm) |
+| Music | #DF58 | #DF48 | `LD A,#00` | [UnknownDF47.asm](../Source/Music/StageEnvelopeAndNoise.asm) |
+| Music | #DF5B | #E2EE | `LD DE,#0000` | [UnknownDF47.asm](../Source/Music/StageEnvelopeAndNoise.asm) |
+| Music | #DF5E | #E2FA | `LD A,#00` | [UnknownDF47.asm](../Source/Music/StageEnvelopeAndNoise.asm) |
+| Music | #DF63 | #E37D | `LD A,#03` | [UnknownDF47.asm](../Source/Music/StageEnvelopeAndNoise.asm) |
+| Music | #DF70 | #E302 | `LD HL,#0000` | [UnknownDF70.asm](../Source/Music/CommitEnvelopeSlide.asm) |
+| Music | #DF75 | #E2FA | `LD A,#00` | [UnknownDF70.asm](../Source/Music/CommitEnvelopeSlide.asm) |
+| Music | #DF78 | #E309 | `LD A,#00` | [UnknownDF70.asm](../Source/Music/CommitEnvelopeSlide.asm) |
+| Music | #DF7C | #DF6B | `JR #DF7F` | [UnknownDF70.asm](../Source/Music/CommitEnvelopeSlide.asm) |
 | Music | #DF8F | #DF67 | `LD A,#00` | [AdvancePatternA.asm](../Source/Music/AdvancePatternA.asm) |
 | Music | #DF93 | #DFBD | `LD SP,#0000` | [AdvancePatternA.asm](../Source/Music/AdvancePatternA.asm) |
 | Music | #DFA3 | #DF98 | `LD HL,#E7C9` | [AdvancePatternA.asm](../Source/Music/AdvancePatternA.asm) |
@@ -398,95 +398,95 @@
 | Music | #E073 | #E06C | `LD HL,#0000` | [RenderChannelA.asm](../Source/Music/RenderChannelA.asm) |
 | Music | #E083 | #E07C | `LD A,#00` | [RenderChannelA.asm](../Source/Music/RenderChannelA.asm) |
 | Music | #E0AB | #E098 | `LD BC,#0000` | [RenderChannelA.asm](../Source/Music/RenderChannelA.asm) |
-| Music | #E0CF | #E09F | `LD A,#00` | [UnknownE0CD.asm](../Source/Music/UnknownE0CD.asm) |
-| Music | #E0EA | #E0D7 | `LD A,#00` | [UnknownE0CD.asm](../Source/Music/UnknownE0CD.asm) |
-| Music | #E100 | #E0F9 | `LD A,#00` | [UnknownE0CD.asm](../Source/Music/UnknownE0CD.asm) |
-| Music | #E11E | #E110 | `LD A,#00` | [UnknownE0CD.asm](../Source/Music/UnknownE0CD.asm) |
-| Music | #E143 | #E13D | `LD A,#00` | [UnknownE0CD.asm](../Source/Music/UnknownE0CD.asm) |
-| Music | #E159 | #E154 | `ADD A,#00` | [UnknownE0CD.asm](../Source/Music/UnknownE0CD.asm) |
-| Music | #E173 | #E16C | `LD HL,#0000` | [UnknownE0CD.asm](../Source/Music/UnknownE0CD.asm) |
-| Music | #E183 | #E17C | `LD A,#00` | [UnknownE0CD.asm](../Source/Music/UnknownE0CD.asm) |
-| Music | #E1AB | #E198 | `LD BC,#0000` | [UnknownE0CD.asm](../Source/Music/UnknownE0CD.asm) |
-| Music | #E1CF | #E19F | `LD A,#00` | [UnknownE1CD.asm](../Source/Music/UnknownE1CD.asm) |
-| Music | #E1EA | #E1D7 | `LD A,#00` | [UnknownE1CD.asm](../Source/Music/UnknownE1CD.asm) |
-| Music | #E200 | #E1F9 | `LD A,#00` | [UnknownE1CD.asm](../Source/Music/UnknownE1CD.asm) |
-| Music | #E21D | #E20F | `LD A,#00` | [UnknownE1CD.asm](../Source/Music/UnknownE1CD.asm) |
-| Music | #E242 | #E23C | `LD A,#00` | [UnknownE1CD.asm](../Source/Music/UnknownE1CD.asm) |
-| Music | #E258 | #E253 | `ADD A,#00` | [UnknownE1CD.asm](../Source/Music/UnknownE1CD.asm) |
-| Music | #E271 | #E26A | `LD HL,#0000` | [UnknownE1CD.asm](../Source/Music/UnknownE1CD.asm) |
-| Music | #E281 | #E27A | `LD A,#00` | [UnknownE1CD.asm](../Source/Music/UnknownE1CD.asm) |
-| Music | #E2A9 | #E296 | `LD BC,#0000` | [UnknownE1CD.asm](../Source/Music/UnknownE1CD.asm) |
-| Music | #E2CD | #E29D | `LD A,#00` | [UnknownE2CB.asm](../Source/Music/UnknownE2CB.asm) |
-| Music | #E2E8 | #E2D5 | `LD A,#00` | [UnknownE2CB.asm](../Source/Music/UnknownE2CB.asm) |
-| Music | #E305 | #E2EE | `LD DE,#0000` | [UnknownE2CB.asm](../Source/Music/UnknownE2CB.asm) |
-| Music | #E30A | #E2FA | `LD A,#00` | [UnknownE2CB.asm](../Source/Music/UnknownE2CB.asm) |
-| Music | #E341 | #DFE9 | `LD IX,#0000` | [UnknownE2CB.asm](../Source/Music/UnknownE2CB.asm) |
-| Music | #E37F | #E37D | `LD A,#03` | [UnknownE2CB.asm](../Source/Music/UnknownE2CB.asm) |
-| Music | #E39A | #E393 | `LD DE,#0000` | [UnknownE2CB.asm](../Source/Music/UnknownE2CB.asm) |
-| Music | #E3A9 | #DEBC | `LD (#E198),HL` | [UnknownE2CB.asm](../Source/Music/UnknownE2CB.asm) |
-| Music | #E3AE | #DEEF | `JR #DF00` | [UnknownE2CB.asm](../Source/Music/UnknownE2CB.asm) |
-| Music | #E3B2 | #DEBF | `JR #DEEA` | [UnknownE2CB.asm](../Source/Music/UnknownE2CB.asm) |
-| Music | #E3B6 | #DF00 | `JR #DF1E` | [UnknownE2CB.asm](../Source/Music/UnknownE2CB.asm) |
-| Music | #E3BB | #DE1F | `JP #DFE3` | [UnknownE2CB.asm](../Source/Music/UnknownE2CB.asm) |
-| Music | #E3CB | #E3C4 | `LD DE,#0000` | [UnknownE2CB.asm](../Source/Music/UnknownE2CB.asm) |
-| Music | #E3D8 | #E296 | `LD BC,#0000` | [UnknownE2CB.asm](../Source/Music/UnknownE2CB.asm) |
-| Music | #E3DC | #DE4D | `LD A,#00` | [UnknownE2CB.asm](../Source/Music/UnknownE2CB.asm) |
-| Music | #E3EA | #DE5D | `LD A,#00` | [UnknownE2CB.asm](../Source/Music/UnknownE2CB.asm) |
-| Music | #E3F1 | #DE48 | `CPL` | [UnknownE2CB.asm](../Source/Music/UnknownE2CB.asm) |
-| Music | #E3FE | #DFC9 | `LD A,#00` | [UnknownE2CB.asm](../Source/Music/UnknownE2CB.asm) |
-| Music | #E404 | #DF48 | `LD A,#00` | [UnknownE2CB.asm](../Source/Music/UnknownE2CB.asm) |
-| Music | #E409 | #DF51 | `LD HL,#0000` | [UnknownE2CB.asm](../Source/Music/UnknownE2CB.asm) |
-| Music | #E40E | #DF50 | `LD HL,#0000` | [UnknownE2CB.asm](../Source/Music/UnknownE2CB.asm) |
-| Music | #E413 | #DE6E | `LD A,#00` | [UnknownE2CB.asm](../Source/Music/UnknownE2CB.asm) |
-| Music | #E422 | #DE68 | `LD HL,#0000` | [UnknownE2CB.asm](../Source/Music/UnknownE2CB.asm) |
-| Music | #E427 | #DE6E | `LD A,#00` | [UnknownE2CB.asm](../Source/Music/UnknownE2CB.asm) |
-| Music | #E435 | #DE52 | `LD HL,#0000` | [UnknownE2CB.asm](../Source/Music/UnknownE2CB.asm) |
-| Music | #E464 | #DF48 | `LD A,#00` | [UnknownE439.asm](../Source/Music/UnknownE439.asm) |
-| Music | #E469 | #DF51 | `LD HL,#0000` | [UnknownE439.asm](../Source/Music/UnknownE439.asm) |
-| Music | #E46E | #DF50 | `LD HL,#0000` | [UnknownE439.asm](../Source/Music/UnknownE439.asm) |
-| Music | #E480 | #DE68 | `LD HL,#0000` | [UnknownE439.asm](../Source/Music/UnknownE439.asm) |
-| Music | #E489 | #DEDB | `LD A,#00` | [UnknownE439.asm](../Source/Music/UnknownE439.asm) |
-| Music | #E497 | #DEEB | `LD A,#00` | [UnknownE439.asm](../Source/Music/UnknownE439.asm) |
-| Music | #E49E | #DED6 | `CPL` | [UnknownE439.asm](../Source/Music/UnknownE439.asm) |
-| Music | #E4AB | #E39F | `LD A,#00` | [UnknownE439.asm](../Source/Music/UnknownE439.asm) |
-| Music | #E4B1 | #DF48 | `LD A,#00` | [UnknownE439.asm](../Source/Music/UnknownE439.asm) |
-| Music | #E4B6 | #DF51 | `LD HL,#0000` | [UnknownE439.asm](../Source/Music/UnknownE439.asm) |
-| Music | #E4BB | #DF50 | `LD HL,#0000` | [UnknownE439.asm](../Source/Music/UnknownE439.asm) |
-| Music | #E4C0 | #DEFC | `LD A,#00` | [UnknownE439.asm](../Source/Music/UnknownE439.asm) |
-| Music | #E4CF | #DEF6 | `LD HL,#0000` | [UnknownE439.asm](../Source/Music/UnknownE439.asm) |
-| Music | #E4D4 | #DEFC | `LD A,#00` | [UnknownE439.asm](../Source/Music/UnknownE439.asm) |
-| Music | #E4E2 | #DEE0 | `LD HL,#0000` | [UnknownE439.asm](../Source/Music/UnknownE439.asm) |
-| Music | #E511 | #DF67 | `LD A,#00` | [UnknownE4E6.asm](../Source/Music/UnknownE4E6.asm) |
-| Music | #E518 | #DF48 | `LD A,#00` | [UnknownE4E6.asm](../Source/Music/UnknownE4E6.asm) |
-| Music | #E51D | #DF51 | `LD HL,#0000` | [UnknownE4E6.asm](../Source/Music/UnknownE4E6.asm) |
-| Music | #E522 | #DF50 | `LD HL,#0000` | [UnknownE4E6.asm](../Source/Music/UnknownE4E6.asm) |
-| Music | #E534 | #DEF6 | `LD HL,#0000` | [UnknownE4E6.asm](../Source/Music/UnknownE4E6.asm) |
-| Music | #E543 | #E22B | `ADD A,#00` | [UnknownE4E6.asm](../Source/Music/UnknownE4E6.asm) |
-| Music | #E548 | #E2D5 | `LD A,#00` | [UnknownE4E6.asm](../Source/Music/UnknownE4E6.asm) |
-| Music | #E54C | #E1EE | `LD A,#FF` | [UnknownE4E6.asm](../Source/Music/UnknownE4E6.asm) |
-| Music | #E550 | #DF48 | `LD A,#00` | [UnknownE4E6.asm](../Source/Music/UnknownE4E6.asm) |
-| Music | #E555 | #DF51 | `LD HL,#0000` | [UnknownE4E6.asm](../Source/Music/UnknownE4E6.asm) |
-| Music | #E55A | #DF50 | `LD HL,#0000` | [UnknownE4E6.asm](../Source/Music/UnknownE4E6.asm) |
-| Music | #E55F | #E235 | `OR #00` | [UnknownE4E6.asm](../Source/Music/UnknownE4E6.asm) |
-| Music | #E56B | #E276 | `LD SP,#0000` | [UnknownE4E6.asm](../Source/Music/UnknownE4E6.asm) |
-| Music | #E570 | #E235 | `OR #00` | [UnknownE4E6.asm](../Source/Music/UnknownE4E6.asm) |
-| Music | #E574 | #E27A | `LD A,#00` | [UnknownE4E6.asm](../Source/Music/UnknownE4E6.asm) |
-| Music | #E57F | #E1F5 | `LD SP,#0000` | [UnknownE4E6.asm](../Source/Music/UnknownE4E6.asm) |
-| Music | #E5B8 | #E3D0 | `LD A,#00` | [UnknownE583.asm](../Source/Music/UnknownE583.asm) |
-| Music | #E5C0 | #DF48 | `LD A,#00` | [UnknownE583.asm](../Source/Music/UnknownE583.asm) |
-| Music | #E5C5 | #DF51 | `LD HL,#0000` | [UnknownE583.asm](../Source/Music/UnknownE583.asm) |
-| Music | #E5CA | #DF50 | `LD HL,#0000` | [UnknownE583.asm](../Source/Music/UnknownE583.asm) |
-| Music | #E5DC | #E276 | `LD SP,#0000` | [UnknownE583.asm](../Source/Music/UnknownE583.asm) |
-| Music | #E5E1 | #E27A | `LD A,#00` | [UnknownE583.asm](../Source/Music/UnknownE583.asm) |
-| Music | #E5EC | #E1F9 | `LD A,#00` | [UnknownE583.asm](../Source/Music/UnknownE583.asm) |
-| Music | #E5EF | #E23C | `LD A,#00` | [UnknownE583.asm](../Source/Music/UnknownE583.asm) |
-| Music | #E5F2 | #E253 | `ADD A,#00` | [UnknownE583.asm](../Source/Music/UnknownE583.asm) |
-| Music | #E5F5 | #E27A | `LD A,#00` | [UnknownE583.asm](../Source/Music/UnknownE583.asm) |
-| Music | #E5F8 | #E29D | `LD A,#00` | [UnknownE583.asm](../Source/Music/UnknownE583.asm) |
-| Music | #E5FB | #E1EE | `LD A,#FF` | [UnknownE583.asm](../Source/Music/UnknownE583.asm) |
-| Music | #E5FE | #E2D5 | `LD A,#00` | [UnknownE583.asm](../Source/Music/UnknownE583.asm) |
-| Music | #E601 | #E26A | `LD HL,#0000` | [UnknownE583.asm](../Source/Music/UnknownE583.asm) |
-| Music | #E606 | #E20F | `LD A,#00` | [UnknownE583.asm](../Source/Music/UnknownE583.asm) |
+| Music | #E0CF | #E09F | `LD A,#00` | [FinishChannelA.asm](../Source/Music/FinishChannelA.asm) |
+| Music | #E0EA | #E0D7 | `LD A,#00` | [FinishChannelA.asm](../Source/Music/FinishChannelA.asm) |
+| Music | #E100 | #E0F9 | `LD A,#00` | [RenderChannelB.asm](../Source/Music/RenderChannelB.asm) |
+| Music | #E11E | #E110 | `LD A,#00` | [RenderChannelB.asm](../Source/Music/RenderChannelB.asm) |
+| Music | #E143 | #E13D | `LD A,#00` | [RenderChannelB.asm](../Source/Music/RenderChannelB.asm) |
+| Music | #E159 | #E154 | `ADD A,#00` | [RenderChannelB.asm](../Source/Music/RenderChannelB.asm) |
+| Music | #E173 | #E16C | `LD HL,#0000` | [RenderChannelB.asm](../Source/Music/RenderChannelB.asm) |
+| Music | #E183 | #E17C | `LD A,#00` | [RenderChannelB.asm](../Source/Music/RenderChannelB.asm) |
+| Music | #E1AB | #E198 | `LD BC,#0000` | [RenderChannelB.asm](../Source/Music/RenderChannelB.asm) |
+| Music | #E1CF | #E19F | `LD A,#00` | [FinishChannelB.asm](../Source/Music/FinishChannelB.asm) |
+| Music | #E1EA | #E1D7 | `LD A,#00` | [FinishChannelB.asm](../Source/Music/FinishChannelB.asm) |
+| Music | #E200 | #E1F9 | `LD A,#00` | [RenderChannelC.asm](../Source/Music/RenderChannelC.asm) |
+| Music | #E21D | #E20F | `LD A,#00` | [RenderChannelC.asm](../Source/Music/RenderChannelC.asm) |
+| Music | #E242 | #E23C | `LD A,#00` | [RenderChannelC.asm](../Source/Music/RenderChannelC.asm) |
+| Music | #E258 | #E253 | `ADD A,#00` | [RenderChannelC.asm](../Source/Music/RenderChannelC.asm) |
+| Music | #E271 | #E26A | `LD HL,#0000` | [RenderChannelC.asm](../Source/Music/RenderChannelC.asm) |
+| Music | #E281 | #E27A | `LD A,#00` | [RenderChannelC.asm](../Source/Music/RenderChannelC.asm) |
+| Music | #E2A9 | #E296 | `LD BC,#0000` | [RenderChannelC.asm](../Source/Music/RenderChannelC.asm) |
+| Music | #E2CD | #E29D | `LD A,#00` | [FinishChannelC.asm](../Source/Music/FinishChannelC.asm) |
+| Music | #E2E8 | #E2D5 | `LD A,#00` | [FinishChannelC.asm](../Source/Music/FinishChannelC.asm) |
+| Music | #E305 | #E2EE | `LD DE,#0000` | [OutputAyFrame.asm](../Source/Music/OutputAyFrame.asm) |
+| Music | #E30A | #E2FA | `LD A,#00` | [OutputAyFrame.asm](../Source/Music/OutputAyFrame.asm) |
+| Music | #E341 | #DFE9 | `LD IX,#0000` | [OutputAyFrame.asm](../Source/Music/OutputAyFrame.asm) |
+| Music | #E37F | #E37D | `LD A,#03` | [UnknownE37C.asm](../Source/Music/AdvancePatternBC.asm) |
+| Music | #E39A | #E393 | `LD DE,#0000` | [UnknownE37C.asm](../Source/Music/AdvancePatternBC.asm) |
+| Music | #E3A9 | #DEBC | `LD (#E198),HL` | [UnknownE37C.asm](../Source/Music/AdvancePatternBC.asm) |
+| Music | #E3AE | #DEEF | `JR #DF00` | [UnknownE37C.asm](../Source/Music/AdvancePatternBC.asm) |
+| Music | #E3B2 | #DEBF | `JR #DEEA` | [UnknownE37C.asm](../Source/Music/AdvancePatternBC.asm) |
+| Music | #E3B6 | #DF00 | `JR #DF1E` | [UnknownE37C.asm](../Source/Music/AdvancePatternBC.asm) |
+| Music | #E3BB | #DE1F | `JP #DFE3` | [UnknownE37C.asm](../Source/Music/AdvancePatternBC.asm) |
+| Music | #E3CB | #E3C4 | `LD DE,#0000` | [UnknownE37C.asm](../Source/Music/AdvancePatternBC.asm) |
+| Music | #E3D8 | #E296 | `LD BC,#0000` | [UnknownE37C.asm](../Source/Music/AdvancePatternBC.asm) |
+| Music | #E3DC | #DE4D | `LD A,#00` | [UnknownE37C.asm](../Source/Music/AdvancePatternBC.asm) |
+| Music | #E3EA | #DE5D | `LD A,#00` | [UnknownE37C.asm](../Source/Music/AdvancePatternBC.asm) |
+| Music | #E3F1 | #DE48 | `CPL` | [UnknownE37C.asm](../Source/Music/AdvancePatternBC.asm) |
+| Music | #E3FE | #DFC9 | `LD A,#00` | [UnknownE37C.asm](../Source/Music/AdvancePatternBC.asm) |
+| Music | #E404 | #DF48 | `LD A,#00` | [UnknownE37C.asm](../Source/Music/AdvancePatternBC.asm) |
+| Music | #E409 | #DF51 | `LD HL,#0000` | [UnknownE37C.asm](../Source/Music/AdvancePatternBC.asm) |
+| Music | #E40E | #DF50 | `LD HL,#0000` | [UnknownE37C.asm](../Source/Music/AdvancePatternBC.asm) |
+| Music | #E413 | #DE6E | `LD A,#00` | [UnknownE37C.asm](../Source/Music/AdvancePatternBC.asm) |
+| Music | #E422 | #DE68 | `LD HL,#0000` | [UnknownE37C.asm](../Source/Music/AdvancePatternBC.asm) |
+| Music | #E427 | #DE6E | `LD A,#00` | [UnknownE37C.asm](../Source/Music/AdvancePatternBC.asm) |
+| Music | #E435 | #DE52 | `LD HL,#0000` | [UnknownE37C.asm](../Source/Music/AdvancePatternBC.asm) |
+| Music | #E464 | #DF48 | `LD A,#00` | [UnknownE439.asm](../Source/Music/DecodePatternA.asm) |
+| Music | #E469 | #DF51 | `LD HL,#0000` | [UnknownE439.asm](../Source/Music/DecodePatternA.asm) |
+| Music | #E46E | #DF50 | `LD HL,#0000` | [UnknownE439.asm](../Source/Music/DecodePatternA.asm) |
+| Music | #E480 | #DE68 | `LD HL,#0000` | [UnknownE439.asm](../Source/Music/DecodePatternA.asm) |
+| Music | #E489 | #DEDB | `LD A,#00` | [UnknownE439.asm](../Source/Music/DecodePatternA.asm) |
+| Music | #E497 | #DEEB | `LD A,#00` | [UnknownE439.asm](../Source/Music/DecodePatternA.asm) |
+| Music | #E49E | #DED6 | `CPL` | [UnknownE439.asm](../Source/Music/DecodePatternA.asm) |
+| Music | #E4AB | #E39F | `LD A,#00` | [UnknownE439.asm](../Source/Music/DecodePatternA.asm) |
+| Music | #E4B1 | #DF48 | `LD A,#00` | [UnknownE439.asm](../Source/Music/DecodePatternA.asm) |
+| Music | #E4B6 | #DF51 | `LD HL,#0000` | [UnknownE439.asm](../Source/Music/DecodePatternA.asm) |
+| Music | #E4BB | #DF50 | `LD HL,#0000` | [UnknownE439.asm](../Source/Music/DecodePatternA.asm) |
+| Music | #E4C0 | #DEFC | `LD A,#00` | [UnknownE439.asm](../Source/Music/DecodePatternA.asm) |
+| Music | #E4CF | #DEF6 | `LD HL,#0000` | [UnknownE439.asm](../Source/Music/DecodePatternA.asm) |
+| Music | #E4D4 | #DEFC | `LD A,#00` | [UnknownE439.asm](../Source/Music/DecodePatternA.asm) |
+| Music | #E4E2 | #DEE0 | `LD HL,#0000` | [UnknownE439.asm](../Source/Music/DecodePatternA.asm) |
+| Music | #E511 | #DF67 | `LD A,#00` | [UnknownE4E6.asm](../Source/Music/DecodePatternB.asm) |
+| Music | #E518 | #DF48 | `LD A,#00` | [UnknownE4E6.asm](../Source/Music/DecodePatternB.asm) |
+| Music | #E51D | #DF51 | `LD HL,#0000` | [UnknownE4E6.asm](../Source/Music/DecodePatternB.asm) |
+| Music | #E522 | #DF50 | `LD HL,#0000` | [UnknownE4E6.asm](../Source/Music/DecodePatternB.asm) |
+| Music | #E534 | #DEF6 | `LD HL,#0000` | [UnknownE4E6.asm](../Source/Music/DecodePatternB.asm) |
+| Music | #E543 | #E22B | `ADD A,#00` | [UnknownE4E6.asm](../Source/Music/DecodePatternB.asm) |
+| Music | #E548 | #E2D5 | `LD A,#00` | [UnknownE4E6.asm](../Source/Music/DecodePatternB.asm) |
+| Music | #E54C | #E1EE | `LD A,#FF` | [UnknownE4E6.asm](../Source/Music/DecodePatternB.asm) |
+| Music | #E550 | #DF48 | `LD A,#00` | [UnknownE4E6.asm](../Source/Music/DecodePatternB.asm) |
+| Music | #E555 | #DF51 | `LD HL,#0000` | [UnknownE4E6.asm](../Source/Music/DecodePatternB.asm) |
+| Music | #E55A | #DF50 | `LD HL,#0000` | [UnknownE4E6.asm](../Source/Music/DecodePatternB.asm) |
+| Music | #E55F | #E235 | `OR #00` | [UnknownE4E6.asm](../Source/Music/DecodePatternB.asm) |
+| Music | #E56B | #E276 | `LD SP,#0000` | [UnknownE4E6.asm](../Source/Music/DecodePatternB.asm) |
+| Music | #E570 | #E235 | `OR #00` | [UnknownE4E6.asm](../Source/Music/DecodePatternB.asm) |
+| Music | #E574 | #E27A | `LD A,#00` | [UnknownE4E6.asm](../Source/Music/DecodePatternB.asm) |
+| Music | #E57F | #E1F5 | `LD SP,#0000` | [UnknownE4E6.asm](../Source/Music/DecodePatternB.asm) |
+| Music | #E5B8 | #E3D0 | `LD A,#00` | [UnknownE583.asm](../Source/Music/DecodePatternC.asm) |
+| Music | #E5C0 | #DF48 | `LD A,#00` | [UnknownE583.asm](../Source/Music/DecodePatternC.asm) |
+| Music | #E5C5 | #DF51 | `LD HL,#0000` | [UnknownE583.asm](../Source/Music/DecodePatternC.asm) |
+| Music | #E5CA | #DF50 | `LD HL,#0000` | [UnknownE583.asm](../Source/Music/DecodePatternC.asm) |
+| Music | #E5DC | #E276 | `LD SP,#0000` | [UnknownE583.asm](../Source/Music/DecodePatternC.asm) |
+| Music | #E5E1 | #E27A | `LD A,#00` | [UnknownE583.asm](../Source/Music/DecodePatternC.asm) |
+| Music | #E5EC | #E1F9 | `LD A,#00` | [UnknownE583.asm](../Source/Music/DecodePatternC.asm) |
+| Music | #E5EF | #E23C | `LD A,#00` | [UnknownE583.asm](../Source/Music/DecodePatternC.asm) |
+| Music | #E5F2 | #E253 | `ADD A,#00` | [UnknownE583.asm](../Source/Music/DecodePatternC.asm) |
+| Music | #E5F5 | #E27A | `LD A,#00` | [UnknownE583.asm](../Source/Music/DecodePatternC.asm) |
+| Music | #E5F8 | #E29D | `LD A,#00` | [UnknownE583.asm](../Source/Music/DecodePatternC.asm) |
+| Music | #E5FB | #E1EE | `LD A,#FF` | [UnknownE583.asm](../Source/Music/DecodePatternC.asm) |
+| Music | #E5FE | #E2D5 | `LD A,#00` | [UnknownE583.asm](../Source/Music/DecodePatternC.asm) |
+| Music | #E601 | #E26A | `LD HL,#0000` | [UnknownE583.asm](../Source/Music/DecodePatternC.asm) |
+| Music | #E606 | #E20F | `LD A,#00` | [UnknownE583.asm](../Source/Music/DecodePatternC.asm) |
 | Music | #E6B0 | #E29D | `LD A,#00` | [SetToneSlideC.asm](../Source/Music/SetToneSlideC.asm) |
 | Music | #E6B3 | #E2CC | `LD A,#00` | [SetToneSlideC.asm](../Source/Music/SetToneSlideC.asm) |
 | Music | #E6BC | #E2A6 | `LD HL,#0000` | [SetToneSlideC.asm](../Source/Music/SetToneSlideC.asm) |
@@ -957,3 +957,171 @@
 | D3D | #EF1C | #DA38 | LD BC,#0000 | [RenderPreviewQueue.asm](../Source/D3D/RenderPreviewQueue.asm) |
 | D3D | #EF24 | #DA16 | LD DE,#0000 | [RenderPreviewQueue.asm](../Source/D3D/RenderPreviewQueue.asm) |
 | D3D | #EF2C | #EB8D | LD DE,#0000 | [RenderPreviewQueue.asm](../Source/D3D/RenderPreviewQueue.asm) |
+
+| Station | #68D1 | #68EB | LD A,#00 | [RefreshShipPanels.asm](../Source/Station/RefreshShipPanels.asm) |
+
+| Station | #67B9 | #E146 | D3D, банк 4, LD A,#00 | [ShipModelChoice.asm](../Source/Station/ShipModelChoice.asm) |
+
+| Station | #67C4 | #6933 | Station, банк 5, LD HL,#0000 | [ShipModelChoice.asm](../Source/Station/ShipModelChoice.asm) |
+
+| Station | #67CC | #68EB | Station, банк 5, LD A,#00 | [ShipModelChoice.asm](../Source/Station/ShipModelChoice.asm) |
+
+| Station | #69CA | #6995 | Station, банк 5, LD HL,#0000 | [IndexHelpText.asm](../Source/Station/IndexHelpText.asm) |
+
+| Station | #6991 | #A265 | Station, банк 2, CALL #0000 | [HandleHelpTextAction.asm](../Source/Station/HandleHelpTextAction.asm) |
+
+| Station | #6997 | #A235 | Station, банк 2, LD DE,#0000 | [HandleHelpTextAction.asm](../Source/Station/HandleHelpTextAction.asm) |
+
+| Station | #69A2 | #699D | Station, банк 5, LD HL,#0000 | [HandleHelpTextAction.asm](../Source/Station/HandleHelpTextAction.asm) |
+
+| Station | #6A03 | #6A52 | Station, банк 5, LD A,#FF | [HandleHelpContentsAction.asm](../Source/Station/HandleHelpContentsAction.asm) |
+
+| Station | #6A09 | #A265 | Station, банк 2, CALL #0000 | [HandleHelpContentsAction.asm](../Source/Station/HandleHelpContentsAction.asm) |
+
+| Station | #6A0F | #A235 | Station, банк 2, LD DE,#0000 | [HandleHelpContentsAction.asm](../Source/Station/HandleHelpContentsAction.asm) |
+
+| Station | #6A1A | #6A15 | Station, банк 5, LD HL,#0000 | [HandleHelpContentsAction.asm](../Source/Station/HandleHelpContentsAction.asm) |
+
+| Station | #6A28 | #699D | Station, банк 5, LD HL,#0000 | [HandleHelpContentsAction.asm](../Source/Station/HandleHelpContentsAction.asm) |
+
+| Station | #6A98 | #A265 | Station, банк 2, CALL #0000 | [HandleEquipmentInfoAction.asm](../Source/Station/HandleEquipmentInfoAction.asm) |
+
+| Station | #6A9E | #A235 | Station, банк 2, LD DE,#0000 | [HandleEquipmentInfoAction.asm](../Source/Station/HandleEquipmentInfoAction.asm) |
+
+| Station | #6AA9 | #6AA4 | Station, банк 5, LD HL,#0000 | [HandleEquipmentInfoAction.asm](../Source/Station/HandleEquipmentInfoAction.asm) |
+
+| Station | #6AD9 | #6A9C | Station, банк 5, LD HL,#0000 | [UpdateEquipmentInfo.asm](../Source/Station/UpdateEquipmentInfo.asm) |
+
+| Station | #6B11 | #6B95 | Station, банк 5, LD A,#FF | [HandleEnvironmentAction.asm](../Source/Station/HandleEnvironmentAction.asm) |
+
+| Station | #6B17 | #A265 | Station, банк 2, CALL #0000 | [HandleEnvironmentAction.asm](../Source/Station/HandleEnvironmentAction.asm) |
+
+| Station | #6B1D | #A235 | Station, банк 2, LD DE,#0000 | [HandleEnvironmentAction.asm](../Source/Station/HandleEnvironmentAction.asm) |
+
+| Station | #6B28 | #6B23 | Station, банк 5, LD HL,#0000 | [HandleEnvironmentAction.asm](../Source/Station/HandleEnvironmentAction.asm) |
+
+| Station | #75C1 | #7627 | Station, банк 5, LD A,#FF | [HandleGameSettingsAction.asm](../Source/Station/HandleGameSettingsAction.asm) |
+
+| Station | #75C7 | #A265 | Station, банк 2, CALL #0000 | [HandleGameSettingsAction.asm](../Source/Station/HandleGameSettingsAction.asm) |
+
+| Station | #75CD | #A235 | Station, банк 2, LD DE,#0000 | [HandleGameSettingsAction.asm](../Source/Station/HandleGameSettingsAction.asm) |
+
+| Station | #75D8 | #75D3 | Station, банк 5, LD HL,#0000 | [HandleGameSettingsAction.asm](../Source/Station/HandleGameSettingsAction.asm) |
+
+| Station | #7A2B | #E146 | D3D, банк 4, LD A,#00 | [SelectSaleMode.asm](../Source/Station/SelectSaleMode.asm) |
+
+| Station | #7A35 | #68EB | Station, банк 5, LD A,#00 | [SelectSaleMode.asm](../Source/Station/SelectSaleMode.asm) |
+
+| Station | #7A6B | #E146 | D3D, банк 4, LD A,#00 | [SelectPurchaseMode.asm](../Source/Station/SelectPurchaseMode.asm) |
+
+| Station | #7A75 | #68EB | Station, банк 5, LD A,#00 | [SelectPurchaseMode.asm](../Source/Station/SelectPurchaseMode.asm) |
+
+| Station | #7B1C | #71EC | Station, банк 5, LD A,#00 | [SelectEquipmentPurchase.asm](../Source/Station/SelectEquipmentPurchase.asm) |
+
+| Station | #7B37 | #71EC | Station, банк 5, LD A,#00 | [SelectEquipmentSale.asm](../Source/Station/SelectEquipmentSale.asm) |
+
+| Station | #7AC6 | #78D7 | Station, банк 5, LD A,#00 | [OpenMapPanelGroup.asm](../Source/Station/OpenMapPanelGroup.asm) |
+
+| Station | #7430 | #7471 | Station, банк 5, LD A,#00 | [HandleSaveSlotAction.asm](../Source/Station/HandleSaveSlotAction.asm) |
+
+| Station | #74C2 | #74FF | Station, банк 5, LD A,#00 | [HandleLoadSlotAction.asm](../Source/Station/HandleLoadSlotAction.asm) |
+
+| Station | #784B | #9A89 | Station, банк 2, CALL #9A58 | [HandleSystemMapAction.asm](../Source/Station/HandleSystemMapAction.asm) |
+
+| Station | #79D4 | #E146 | D3D, банк 4, LD A,#00 | [ConfirmShipModelTrade.asm](../Source/Station/ConfirmShipModelTrade.asm) |
+
+| Station | #71A7 | #7217 | Station, банк 5, LD A,#FF | [HandleEquipmentListAction.asm](../Source/Station/HandleEquipmentListAction.asm) |
+
+| Station | #71AD | #A265 | Station, банк 2, CALL #0000 | [HandleEquipmentListAction.asm](../Source/Station/HandleEquipmentListAction.asm) |
+
+| Station | #71B3 | #A235 | Station, банк 2, LD DE,#0000 | [HandleEquipmentListAction.asm](../Source/Station/HandleEquipmentListAction.asm) |
+
+| Station | #71BE | #71B9 | Station, банк 5, LD HL,#0000 | [HandleEquipmentListAction.asm](../Source/Station/HandleEquipmentListAction.asm) |
+
+| Station | #71D5 | #6ACC | Station, банк 5, LD A,#00 | [HandleEquipmentListAction.asm](../Source/Station/HandleEquipmentListAction.asm) |
+
+| Station | #71DB | #6AA4 | Station, банк 5, LD HL,#0000 | [HandleEquipmentListAction.asm](../Source/Station/HandleEquipmentListAction.asm) |
+
+| Station | #AA69 | #9A89 | Station, банк 2, CALL #9A58 | [HandleMissionGroupAction.asm](../Source/Station/HandleMissionGroupAction.asm) |
+
+| Music | #DB97 | #DF6E | Music, банк 3, LD HL,nn по DF6D | [ReadEnvelopeSlide.asm](../Source/Music/ReadEnvelopeSlide.asm) |
+
+| Music | #DDF2 | #DF25 | LD A,#00 | [SetGateTimingB.asm](../Source/Music/SetGateTimingB.asm) |
+
+| Music | #DDF7 | #DF2D | LD A,#00 | [SetGateTimingB.asm](../Source/Music/SetGateTimingB.asm) |
+
+| Music | #DDFC | #DF1E | JR #DF31 | [SetGateTimingB.asm](../Source/Music/SetGateTimingB.asm) |
+
+| Music | #E60E | #DE7A | LD A,#00 | [SetToneSlideA.asm](../Source/Music/SetToneSlideA.asm) |
+
+| Music | #E617 | #DE82 | LD HL,#0000 | [SetToneSlideA.asm](../Source/Music/SetToneSlideA.asm) |
+
+| Music | #E61C | #DE88 | LD A,#00 | [SetToneSlideA.asm](../Source/Music/SetToneSlideA.asm) |
+
+| Music | #E625 | #DE7A | LD A,#00 | [SetTonePortamentoA.asm](../Source/Music/SetTonePortamentoA.asm) |
+
+| Music | #E630 | #DE82 | LD HL,#0000 | [SetTonePortamentoA.asm](../Source/Music/SetTonePortamentoA.asm) |
+
+| Music | #E635 | #DE88 | LD A,#00 | [SetTonePortamentoA.asm](../Source/Music/SetTonePortamentoA.asm) |
+
+| Music | #E63C | #DE75 | LD A,#00 | [SetTonePortamentoA.asm](../Source/Music/SetTonePortamentoA.asm) |
+
+| Music | #E649 | #DEA6 | LD A,#00 | [SetSamplePositionA.asm](../Source/Music/SetSamplePositionA.asm) |
+
+| Music | #E64E | #DEA3 | JR #DEAE | [SetSamplePositionA.asm](../Source/Music/SetSamplePositionA.asm) |
+
+| Music | #E654 | #DEB1 | LD A,#00 | [SetOrnamentPositionA.asm](../Source/Music/SetOrnamentPositionA.asm) |
+
+| Music | #E659 | #DEAE | JR #DEB9 | [SetOrnamentPositionA.asm](../Source/Music/SetOrnamentPositionA.asm) |
+
+| Music | #E65F | #DF08 | LD A,#00 | [SetToneSlideB.asm](../Source/Music/SetToneSlideB.asm) |
+
+| Music | #E668 | #DF10 | LD HL,#0000 | [SetToneSlideB.asm](../Source/Music/SetToneSlideB.asm) |
+
+| Music | #E66D | #DF16 | LD A,#00 | [SetToneSlideB.asm](../Source/Music/SetToneSlideB.asm) |
+
+| Music | #E676 | #DF08 | LD A,#00 | [SetTonePortamentoB.asm](../Source/Music/SetTonePortamentoB.asm) |
+
+| Music | #E681 | #DF10 | LD HL,#0000 | [SetTonePortamentoB.asm](../Source/Music/SetTonePortamentoB.asm) |
+
+| Music | #E686 | #DF16 | LD A,#00 | [SetTonePortamentoB.asm](../Source/Music/SetTonePortamentoB.asm) |
+
+| Music | #E68D | #DF03 | LD A,#00 | [SetTonePortamentoB.asm](../Source/Music/SetTonePortamentoB.asm) |
+
+| Music | #E69A | #DF34 | LD A,#00 | [SetSamplePositionB.asm](../Source/Music/SetSamplePositionB.asm) |
+
+| Music | #E69F | #DF31 | JR #DF3C | [SetSamplePositionB.asm](../Source/Music/SetSamplePositionB.asm) |
+
+| Music | #E6A5 | #DF3F | LD A,#00 | [SetOrnamentPositionB.asm](../Source/Music/SetOrnamentPositionB.asm) |
+
+| Music | #E6AA | #DF3C | JR #DF47 | [SetOrnamentPositionB.asm](../Source/Music/SetOrnamentPositionB.asm) |
+
+| Music | #E6CB | #E29D | LD A,#00 | [SetTonePortamentoC.asm](../Source/Music/SetTonePortamentoC.asm) |
+
+| Music | #E6CE | #E2CC | LD A,#00 | [SetTonePortamentoC.asm](../Source/Music/SetTonePortamentoC.asm) |
+
+| Music | #E6D9 | #E2A6 | LD HL,#0000 | [SetTonePortamentoC.asm](../Source/Music/SetTonePortamentoC.asm) |
+
+| Music | #E6DE | #E2D5 | LD A,#00 | [SetTonePortamentoC.asm](../Source/Music/SetTonePortamentoC.asm) |
+
+| Music | #E6E1 | #E2AD | JR #E2CB | [SetTonePortamentoC.asm](../Source/Music/SetTonePortamentoC.asm) |
+
+| Music | #E6E8 | #E2B1 | LD A,#00 | [SetTonePortamentoC.asm](../Source/Music/SetTonePortamentoC.asm) |
+
+| Music | #E6F0 | #E1F9 | LD A,#00 | [SetSamplePositionC.asm](../Source/Music/SetSamplePositionC.asm) |
+
+| Music | #E6F6 | #E27A | LD A,#00 | [SetOrnamentPositionC.asm](../Source/Music/SetOrnamentPositionC.asm) |
+
+| Music | #E6FC | #DF62 | LD A,#03 | [SetRowTempo.asm](../Source/Music/SetRowTempo.asm) |
+
+| Music | #E642 | #DE4D | LD A,#00 | [SetTonePortamentoA.asm](../Source/Music/SetTonePortamentoA.asm) |
+
+| Music | #E693 | #DEDB | LD A,#00 | [SetTonePortamentoB.asm](../Source/Music/SetTonePortamentoB.asm) |
+
+| Music | #E6EB | #E2B9 | CP #00 | [SetTonePortamentoC.asm](../Source/Music/SetTonePortamentoC.asm) |
+| Music | #E0C3 | #E0BB | CP #00 | [RenderChannelA.asm](../Source/Music/RenderChannelA.asm) |
+| Music | #E0C8 | #E098 | LD BC,#0000 | [RenderChannelA.asm](../Source/Music/RenderChannelA.asm) |
+| Music | #E1C3 | #E1BB | CP #00 | [RenderChannelB.asm](../Source/Music/RenderChannelB.asm) |
+| Music | #E1C8 | #E198 | LD BC,#0000 | [RenderChannelB.asm](../Source/Music/RenderChannelB.asm) |
+| Music | #E2C1 | #E2B9 | CP #00 | [RenderChannelC.asm](../Source/Music/RenderChannelC.asm) |
+| Music | #E2C6 | #E296 | LD BC,#0000 | [RenderChannelC.asm](../Source/Music/RenderChannelC.asm) |

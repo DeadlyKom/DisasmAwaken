@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "cases_by_path": {
+    "null_pointer": 1024,
+    "indexed_output": 1124,
+    "cr_record_output": 793,
+    "original_cr_titles": 8
+  },
+  "all_1024_cache_indices": true,
+  "all_256_cr_selectors": true,
+  "exact_main_alternate_index_context": true,
+  "independent_line_selection_layout_and_row_count": true,
+  "original_glyph_renderer_executed": true,
+  "independent_whole_bitmap_oracle": false,
+  "cache_not_modified_by_indexed_output": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

@@ -1,21 +1,23 @@
 {
-  "fragments": 1163,
-  "described": 909,
-  "unknown": 254,
-  "instructions": 39575,
+  "fragments": 1186,
+  "described": 1000,
+  "unknown": 186,
+  "instructions": 39824,
   "physical_bytes_by_kind": {
-    "binary_resource": 26153,
-    "code": 69884,
+    "binary_resource": 26274,
+    "code": 70321,
     "resource": 67584,
-    "typed_data": 10280,
-    "unclassified": 305843
+    "typed": 42,
+    "typed_data": 17031,
+    "unclassified": 298492
   },
   "ranges_by_kind": {
-    "unclassified": 204,
-    "code": 1163,
-    "typed_data": 106,
-    "binary_resource": 8,
-    "resource": 5
+    "unclassified": 182,
+    "code": 1186,
+    "typed_data": 187,
+    "binary_resource": 12,
+    "resource": 5,
+    "typed": 6
   },
   "full_semantic_analysis_complete": false
 }

@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "cases_by_path": {
+    "eleven_panels_whole_physical_list": 4096
+  },
+  "ordered_panel_keys": [
+    21,
+    18,
+    19,
+    12,
+    13,
+    14,
+    15,
+    17,
+    16,
+    11,
+    20
+  ],
+  "entire_512_byte_list": true,
+  "all_saved_height_bytes": true,
+  "all_prior_request_bytes": true,
+  "independent_128_byte_shift_reference": true,
+  "aliases_duplicates_reversed_missing_and_c9": true,
+  "immediate_drawing": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

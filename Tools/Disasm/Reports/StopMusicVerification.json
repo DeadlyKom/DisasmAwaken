@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "cases_by_path": {
+    "complete_stop": 316
+  },
+  "all_initial_flag_bytes": true,
+  "all_initial_i_bytes": true,
+  "exact_14_ay_register_zero_writes": true,
+  "ay_io_registers_14_15_preserved": true,
+  "real_music_stop_executed": true,
+  "exact_physical_two_word_entry_frame": true,
+  "stack_delta": 4,
+  "im_forced_to_1": true,
+  "iff_preserved": true,
+  "hl_word_caller_origin_established": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

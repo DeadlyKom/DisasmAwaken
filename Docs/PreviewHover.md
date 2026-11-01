@@ -6,6 +6,6 @@
 
 Действие вызывается диспетчером отдельно по EventHandler+3, адрес #683A, см. [HandleModelPreviewClick](../Source/Station/HandleModelPreviewClick.asm) и [PreviewAction](PreviewAction.md). Пустое наведение туда не проваливается. Действие разобрано отдельно.
 
-Рисователь [DrawItem26](../Source/Station/DrawItem26.asm), периодические входы и кадр D3D требуют отдельного разбора, см. [ShipPeriodicCode](ShipPeriodicCode.md) и [D3DPreview](D3DPreview.md). Документирование пустого пути не закрывает их контракты и не доказывает нативную работу панели.
+Рисователь [DrawShipPreview](../Source/Station/DrawShipPreview.asm), периодические входы и кадр D3D требуют отдельного разбора, см. [ShipPeriodicCode](ShipPeriodicCode.md) и [D3DPreview](D3DPreview.md). Документирование пустого пути не закрывает их контракты и не доказывает нативную работу панели.
 
 Проверены точные операции и границы зарегистрированных диапазонов, исходные байты и ссылки. Ассемблер и эмулятор не запускались.

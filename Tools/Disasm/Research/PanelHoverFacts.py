@@ -52,6 +52,24 @@ ship_contract[3]=[*ship_contract[3],'DrawModelListPanel записывает в�
 CONTRACTS['Station',0x67D0]=tuple(ship_contract)
 COMMENTS[0x67D0]=(['выбор отступа 27 пикселей и текущего счётчика ModelListState.HoverRows, исходно 30'],None)
 
+# Рисователь разделов справки меняет старший операнд наведения полным байтовым счётчиком.
+index_contract=list(CONTRACTS['Station',0x6A4B])
+index_contract[1]=[line.replace('DrawItem22','DrawHelpContents').replace('DE=1E0B','DE с младшим отступом 0B и старшим HelpPanelState.VisibleTitles').replace('D=30 запрошенных строк','D равен текущему HelpPanelState.VisibleTitles, исходно 30') for line in index_contract[1]]
+index_contract[3]=[*index_contract[3],'DrawHelpContents записывает байтовое число начатых заголовков в 6A4D, поэтому D не обязан равняться 30']
+CONTRACTS['Station',0x6A4B]=tuple(index_contract)
+COMMENTS[0x6A4B]=(['выбор отступа 11 пикселей и текущего HelpPanelState.VisibleTitles, исходно 30'],None)
+
+# Рисователь оснащения меняет старший операнд запроса, включая посчитанную попытку маркера конца.
+equipment_contract=list(CONTRACTS['Station',0x7210])
+equipment_contract[1]=[line.replace('DrawItem38','DrawEquipmentList').replace('DE=1E1B','DE с младшим отступом 1B и старшим EquipmentListState.RowCount').replace('D=30 запрошенных строк','D равен текущему EquipmentListState.RowCount, исходно 30') for line in equipment_contract[1]]
+equipment_contract[3]=[*equipment_contract[3],'DrawEquipmentList записывает счётчик попыток, включая маркер 80, в старший операнд 7212, после отказа заголовка он равен нулю']
+CONTRACTS['Station',0x7210]=tuple(equipment_contract)
+COMMENTS[0x7210]=(['выбор отступа 27 пикселей и текущего EquipmentListState.RowCount, исходно 30'],None)
+
+# Два дисковых списка сохраняют исходный пиксельный договор, меняются только доказанные имена рисователей.
+for slot_address,old_draw,new_draw in ((0x7482,'DrawItem43','DrawSaveSlotPanel'),(0x750B,'DrawItem44','DrawLoadSlotPanel')):
+ slot_contract=list(CONTRACTS['Station',slot_address]);slot_contract[1]=[line.replace(old_draw,new_draw) for line in slot_contract[1]];CONTRACTS['Station',slot_address]=tuple(slot_contract)
+
 
 def name_operands(region,address,operation):
  if region!='Station':return operation
@@ -60,4 +78,5 @@ def name_operands(region,address,operation):
  if address not in FUNCTIONS:return operation
  panel=next(p for p in PANELS if p[0]==address)
  constant='PositionsPixels' if panel[7] else ('IndentedRows' if panel[4]&255==27 else 'Rows')
- return operation.replace('LD DE, #'+format(panel[4],'04X'),'LD DE, @PanelHoverConst.'+constant).replace('LD HL, #'+format(panel[3],'04X'),'LD HL, @Station.'+('DrawModelListPanel' if panel[2]==25 else 'DrawItem'+str(panel[2]))+'.Entry')
+ draw_names={25:'DrawModelListPanel',38:'DrawEquipmentList',43:'DrawSaveSlotPanel',44:'DrawLoadSlotPanel'}
+ return operation.replace('LD DE, #'+format(panel[4],'04X'),'LD DE, @PanelHoverConst.'+constant).replace('LD HL, #'+format(panel[3],'04X'),'LD HL, @Station.'+draw_names.get(panel[2],'DrawItem'+str(panel[2]))+'.Entry')

@@ -1,0 +1,42 @@
+{
+  "passed": true,
+  "cases_by_path": {
+    "physical_continuation_frames": 864,
+    "full_template_and_number": 32,
+    "real_caption_im2": 96,
+    "limited_windows_continue_after_text_refusal": 64,
+    "disabled_all_flags": 256
+  },
+  "all_key_sizes": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16
+  ],
+  "template_segments": [
+    52610,
+    52639,
+    52650,
+    52750
+  ],
+  "template_end": 52761,
+  "real_bank_and_text_calls": true,
+  "independent_name_and_signature_reference": true,
+  "independent_whole_bitmap": false,
+  "original_im2_only_at_caption_halt": true,
+  "music_disabled": true,
+  "native_execution": false,
+  "assembly_executed": false
+}

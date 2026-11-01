@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "insertion_cases": 132807,
+  "cases_by_entry": {
+    "EC59": 67271,
+    "EC56": 65536
+  },
+  "outcomes": {
+    "silent_drop": 4042,
+    "accepted": 128765
+  },
+  "all_free_masks": true,
+  "all_raw_de_words": true,
+  "all_number_af_values": true,
+  "all_head_and_single_free_slot_pairs": true,
+  "every_memory_byte_and_write_checked": true,
+  "exact_saved_register_frame_checked": true,
+  "all_registers_except_r_preserved_as_documented": true,
+  "silent_full_failure": true,
+  "sentinel_consumes_search_probe": true,
+  "last_slot_missed_after_wrap_preserved": true,
+  "numeric_role_cases": 256,
+  "actual_numeric_and_glyph_instructions_executed": true,
+  "byte_number_minimum_width_two": true,
+  "numeric_bitmap_independently_proved": false,
+  "consumer_whole_contract_proved": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

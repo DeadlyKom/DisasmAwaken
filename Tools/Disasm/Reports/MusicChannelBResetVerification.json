@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "cases": 8768,
+  "all_gate_and_enable_and_reset_code_combinations": true,
+  "all_parameter_low_bytes": true,
+  "nop_and_cpl_channel_enable": true,
+  "ld_memory_hl_and_ld_bc_reset_modes": true,
+  "slide_branch_values": [
+    0,
+    29
+  ],
+  "all_memory_compared": true,
+  "control_gates_not_self_cleared": true,
+  "stop_address": 57118,
+  "irq_executed": false,
+  "later_synthesis_executed": false,
+  "assembly_executed": false
+}

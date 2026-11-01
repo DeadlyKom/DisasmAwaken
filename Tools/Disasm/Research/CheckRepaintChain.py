@@ -66,6 +66,8 @@ def main():
                 ret()
             elif pc==0x7000:
                 calls.append('draw')
+                # Проверка отдельного результата HL рисователя, внешний кадр его не сохраняет.
+                r[H],r[L] = 0xCA,0xFE
                 # Рисователь может менять AF, DE и IX, сохранённые внешним кадром.
                 r[A],r[F],r[D],r[E] = 0xDE,0xAD,0xBE,0xEF
                 r[8],r[9] = 0x12,0x34
@@ -100,7 +102,7 @@ def main():
         else:
             expected = ['close','move']+([] if last else ['begin','draw','end'])+(['track'] if effective else [])
             assert calls==expected,(calls,expected)
-            assert r[A]==effective and r[H]*256+r[L]==0x7000
+            assert r[A]==effective and r[H]*256+r[L]==(0x7000 if last else 0xCAFE)
             assert r[B]*256+r[C]==0xABCD
             assert r[10:12]==[0xCE,0xDF]
             result = and_flags(effective)&~0x10
@@ -116,7 +118,7 @@ def main():
     # Проверка непрерывного покрытия всех 65 исходных байтов независимо от изменённого AND A.
     assert sum(len(bytes.fromhex(v)) for v in observed.values())==65
     report = dict(method='original_repaint_chain_with_explicit_callee_contract_stubs',passed=True,cases=cases,
-                  entries_checked=[0xCBE0,0xCBE2,0xCBEB],preserved_selector_AND_entry_checked=True,
+                  entries_checked=[0xCBE0,0xCBE2,0xCBEB],preserved_selector_AND_entry_checked=True,draw_hl_result_not_restored=True,
                   source_sha256=hashlib.sha256(source).hexdigest(),counts=counts,original_visited=observed,
                   stubs=['CloseActiveItem','MoveItemToTail','BeginScreenUpdate','SelectedDrawHandler','EndScreenUpdate','TrackItemGeometry'],
                   graphics_executed=False,irq_executed=False,native_run=False,assembly_executed=False)

@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "cases_by_channel": {
+    "A": 131072,
+    "B": 131072,
+    "C": 131072
+  },
+  "all_counter_and_state_bytes": true,
+  "both_input_carry_values": true,
+  "every_memory_write_observed": true,
+  "negative_dec_leaves_counter_unchanged": true,
+  "counter1_toggles_full_state_byte": true,
+  "no_bit_flags_assumed": true,
+  "ports_executed": false,
+  "irq_executed": false,
+  "full_synthesis_proved": false,
+  "assembly_executed": false
+}

@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "cases": 3072,
+  "entry": 56204,
+  "physical_dispatch_table_words": [
+    56782,
+    56814,
+    56846
+  ],
+  "all_delay_and_flag_bytes": true,
+  "page_crossing_stream": true,
+  "all_memory_compared": true,
+  "irq_executed": false,
+  "full_effect_playback_proved": false,
+  "assembly_executed": false
+}

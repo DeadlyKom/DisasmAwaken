@@ -1,7 +1,7 @@
 {
   "method": "text_and_resource_comparison_without_assembly",
   "passed": true,
-  "instruction_count": 39575,
+  "instruction_count": 39824,
   "active_allocations": 41,
   "covered_bytes": 479744,
   "interface_records": 46,
@@ -41,6 +41,7 @@
   },
   "assignment_records": 1,
   "action_file_keys": 1,
+  "save_slot_file_keys": 1,
   "final_file_keys": 1,
   "expression_stack_records": 1,
   "rank_threshold_records": 6,
@@ -63,6 +64,7 @@
     "FMapLineMode": 1,
     "FMapLineMaskSet": 2
   },
+  "packed_final_byte_records": 20,
   "map_chain_point_records": 2,
   "arc_workspace_records": 1,
   "marker_sprite_phase_records": 48,
@@ -79,6 +81,8 @@
   "model_availability_records": 16,
   "preview_queue_records": 18,
   "preview_square_bytes": 256,
+  "key_abbreviation_records": 3,
+  "help_line_cache_records": 1024,
   "preview_scene_records": {
     "PreviewSharedSeed": 1,
     "PreviewSceneMatrix": 1,
@@ -116,5 +120,15 @@
     "Fervest": 7
   },
   "preview_projected_vertices": 51,
-  "preview_pixel_masks": 16
+  "preview_pixel_masks": 16,
+  "music_effect_records": 21,
+  "music_player_records": {
+    "Source/Music/Data/DataPointers.asm": 48,
+    "Source/Music/Data/AyBuffer.asm": 1,
+    "Source/Music/Data/RowCountersBC.asm": 2,
+    "Source/Music/Data/Volumes.asm": 15,
+    "Source/Music/Data/Periods.asm": 96,
+    "Source/Music/Data/RowCounterA.asm": 1
+  },
+  "music_composition_parts": 72
 }

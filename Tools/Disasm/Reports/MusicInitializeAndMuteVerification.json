@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "total_cases": 132864,
+  "cases_by_entry": {
+    "mute.DB08": 65536,
+    "mute.DB7C": 65536,
+    "initialize.module": 1536,
+    "initialize.public": 256
+  },
+  "all_mute_af_values": true,
+  "every_initialization_memory_byte_and_write_checked": true,
+  "exact_ay_port_order_checked": true,
+  "exact_final_af_checked": true,
+  "initialize_af": 65347,
+  "mute_f": "42 OR input Carry",
+  "ay_ram_buffer_not_cleared": true,
+  "initialization_iff_cleared": true,
+  "mute_iff_preserved": true,
+  "all_48_relative_pointers_checked": true,
+  "partial_reset_only": true,
+  "irq_executed": false,
+  "native_audio_verified": false,
+  "assembly_executed": false
+}
