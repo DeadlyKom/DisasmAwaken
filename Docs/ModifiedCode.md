@@ -1,7 +1,7 @@
 # Изменяемые инструкции
 
-Это непосредственные записи внутрь размеченных инструкций того же
-представления памяти. Они включают сохранение SP, операнды и переключаемые
+Это непосредственные записи внутрь размеченных инструкций, включая
+отдельно доказанные межмодульные цели. Они включают сохранение SP, операнды и переключаемые
 ветви. Не перечисляют все косвенные записи и генерируемые области.
 
 | Регион | Запись из | Адрес записи | Исходная инструкция | Исходник |
@@ -622,18 +622,18 @@
 | Action | #AA76 | #CB39 | `LD C,#00` | [UpdateFrame.asm](../Source/Action/UpdateFrame.asm) |
 | Action | #AA79 | #CE0E | `LD A,(#CBA1)` | [UpdateFrame.asm](../Source/Action/UpdateFrame.asm) |
 | Action | #AA7C | #CE1C | `LD (#D60D),A` | [UpdateFrame.asm](../Source/Action/UpdateFrame.asm) |
-| Action | #AC4F | #ECA9 | `LD HL,#0000` | [UnknownAC38.asm](../Source/Action/UnknownAC38.asm) |
-| Action | #AC52 | #ECF6 | `LD HL,#0000` | [UnknownAC38.asm](../Source/Action/UnknownAC38.asm) |
-| Action | #AC61 | #F79C | `LD C,#0A` | [UnknownAC5D.asm](../Source/Action/UnknownAC5D.asm) |
-| Action | #AC68 | #F798 | `LD C,#0A` | [UnknownAC5D.asm](../Source/Action/UnknownAC5D.asm) |
-| Action | #AC6D | #A968 | `ADD A,#50` | [UnknownAC5D.asm](../Source/Action/UnknownAC5D.asm) |
-| Action | #AC77 | #A8B5 | `ADD A,#14` | [UnknownAC5D.asm](../Source/Action/UnknownAC5D.asm) |
-| Action | #AC7C | #7B6B | `CP #FD` | [UnknownAC5D.asm](../Source/Action/UnknownAC5D.asm) |
-| Action | #AC7F | #6874 | `ADD A,#00` | [UnknownAC5D.asm](../Source/Action/UnknownAC5D.asm) |
-| Action | #AC98 | #79A4 | `CP #F2` | [UnknownAC5D.asm](../Source/Action/UnknownAC5D.asm) |
-| Action | #AC9D | #7E07 | `OR #32` | [UnknownAC5D.asm](../Source/Action/UnknownAC5D.asm) |
-| Action | #ACA2 | #7E09 | `LD H,#64` | [UnknownAC5D.asm](../Source/Action/UnknownAC5D.asm) |
-| Action | #ACA7 | #7DE4 | `OR #20` | [UnknownAC5D.asm](../Source/Action/UnknownAC5D.asm) |
+| Action | #AC4F | #ECA9 | `LD HL,#0000` | [ReadWordFromIX.asm](../Source/Action/ReadWordFromIX.asm) |
+| Action | #AC52 | #ECF6 | `LD HL,#0000` | [ReadWordFromIX.asm](../Source/Action/ReadWordFromIX.asm) |
+| Action | #AC61 | #F79C | `LD C,#0A` | [ApplyParameterSet.asm](../Source/Action/ApplyParameterSet.asm) |
+| Action | #AC68 | #F798 | `LD C,#0A` | [ApplyParameterSet.asm](../Source/Action/ApplyParameterSet.asm) |
+| Action | #AC6D | #A968 | `ADD A,#50` | [ApplyParameterSet.asm](../Source/Action/ApplyParameterSet.asm) |
+| Action | #AC77 | #A8B5 | `ADD A,#14` | [ApplyParameterSet.asm](../Source/Action/ApplyParameterSet.asm) |
+| Action | #AC7C | #7B6B | `CP #FD` | [ApplyParameterSet.asm](../Source/Action/ApplyParameterSet.asm) |
+| Action | #AC7F | #6874 | `ADD A,#00` | [ApplyParameterSet.asm](../Source/Action/ApplyParameterSet.asm) |
+| Action | #AC98 | #79A4 | `CP #F2` | [ApplyParameterSet.asm](../Source/Action/ApplyParameterSet.asm) |
+| Action | #AC9D | #7E07 | `OR #32` | [ApplyParameterSet.asm](../Source/Action/ApplyParameterSet.asm) |
+| Action | #ACA2 | #7E09 | `LD H,#64` | [ApplyParameterSet.asm](../Source/Action/ApplyParameterSet.asm) |
+| Action | #ACA7 | #7DE4 | `OR #20` | [ApplyParameterSet.asm](../Source/Action/ApplyParameterSet.asm) |
 | Action | #AF10 | #AF14 | `JR NZ,#AF13` | [UnknownAE73.asm](../Source/Action/UnknownAE73.asm) |
 | Action | #AF2B | #AF2F | `JR NZ,#AF2E` | [UnknownAE73.asm](../Source/Action/UnknownAE73.asm) |
 | Action | #AF43 | #AFF1 | `LD IX,#0000` | [UnknownAE73.asm](../Source/Action/UnknownAE73.asm) |
@@ -749,30 +749,30 @@
 | Controls | #C882 | #CA8A | `LD SP,#0000` | [UnknownC882.asm](../Source/Controls/CopyScreenRows.asm) |
 | Controls | #C886 | #CA84 | `LD A,#00` | [UnknownC882.asm](../Source/Controls/CopyScreenRows.asm) |
 | Controls | #CAAD | #CA8F | `LD BC,#0000` | [UnknownCA8D.asm](../Source/Controls/NextBufferRandom.asm) |
-| Controls | #CC47 | #CE1E | `LD C,#00` | [UnknownCB00.asm](../Source/Controls/UnknownCB00.asm) |
-| Controls | #CC50 | #CCD2 | `LD E,#00` | [UnknownCB00.asm](../Source/Controls/UnknownCB00.asm) |
-| Controls | #CC55 | #CD9D | `LD E,#00` | [UnknownCB00.asm](../Source/Controls/UnknownCB00.asm) |
-| Controls | #CC5D | #CC7E | `LD E,#00` | [UnknownCB00.asm](../Source/Controls/UnknownCB00.asm) |
-| Controls | #CC60 | #CD49 | `LD E,#00` | [UnknownCB00.asm](../Source/Controls/UnknownCB00.asm) |
-| Controls | #CC6F | #CD31 | `CALL #CE16` | [UnknownCB00.asm](../Source/Controls/UnknownCB00.asm) |
-| Controls | #CC72 | #CDFC | `CALL #CE16` | [UnknownCB00.asm](../Source/Controls/UnknownCB00.asm) |
-| Controls | #CD3F | #CE0B | `LD (HL),#00` | [UnknownCB00.asm](../Source/Controls/UnknownCB00.asm) |
+| Controls | #CC47 | #CE1E | `LD C,#00` | [UnknownCB00.asm](../Source/Controls/UpdateBufferPoints.asm) |
+| Controls | #CC50 | #CCD2 | `LD E,#00` | [UnknownCB00.asm](../Source/Controls/UpdateBufferPoints.asm) |
+| Controls | #CC55 | #CD9D | `LD E,#00` | [UnknownCB00.asm](../Source/Controls/UpdateBufferPoints.asm) |
+| Controls | #CC5D | #CC7E | `LD E,#00` | [UnknownCB00.asm](../Source/Controls/UpdateBufferPoints.asm) |
+| Controls | #CC60 | #CD49 | `LD E,#00` | [UnknownCB00.asm](../Source/Controls/UpdateBufferPoints.asm) |
+| Controls | #CC6F | #CD31 | `CALL #CE16` | [UnknownCB00.asm](../Source/Controls/UpdateBufferPoints.asm) |
+| Controls | #CC72 | #CDFC | `CALL #CE16` | [UnknownCB00.asm](../Source/Controls/UpdateBufferPoints.asm) |
+| Controls | #CD3F | #CE0B | `LD (HL),#00` | [UnknownCB00.asm](../Source/Controls/UpdateBufferPoints.asm) |
 | Controls | #CE1A | #CE17 | `LD A,#00` | [UnknownCE16.asm](../Source/Controls/RespawnPointIndexPos.asm) |
-| Controls | #CEAE | #CEB4 | `JR #CEB3` | [UnknownCEA4.asm](../Source/Controls/UnknownCEA4.asm) |
+| Controls | #CEAE | #CEB4 | `JR #CEB3` | [FillEvenSpan.asm](../Source/Controls/FillEvenSpan.asm) |
 | Controls | #CEFA | #D240 | `LD IX,#0000` | [UnknownCEFA.asm](../Source/Controls/UnknownCEFA.asm) |
-| Controls | #D58D | #D5B5 | `LD DE,#0020` | [UnknownD57B.asm](../Source/Controls/UnknownD57B.asm) |
-| Controls | #D598 | #D5B5 | `LD DE,#0020` | [UnknownD57B.asm](../Source/Controls/UnknownD57B.asm) |
-| Controls | #D59E | #D600 | `CP #00` | [UnknownD57B.asm](../Source/Controls/UnknownD57B.asm) |
-| Controls | #D66B | #D672 | `LD A,#00` | [UnknownD609.asm](../Source/Controls/UnknownD609.asm) |
-| Controls | #D6FE | #D705 | `LD A,#00` | [UnknownD609.asm](../Source/Controls/UnknownD609.asm) |
-| Controls | #D70A | #D716 | `JR #D727` | [UnknownD609.asm](../Source/Controls/UnknownD609.asm) |
+| Controls | #D58D | #D5B5 | `LD DE,#0020` | [PrepareInteriorSpan.asm](../Source/Controls/PrepareInteriorSpan.asm) |
+| Controls | #D598 | #D5B5 | `LD DE,#0020` | [PrepareInteriorSpan.asm](../Source/Controls/PrepareInteriorSpan.asm) |
+| Controls | #D59E | #D600 | `CP #00`, следующий байт также меняет JR | [PrepareInteriorSpan.asm](../Source/Controls/PrepareInteriorSpan.asm) |
+| Controls | #D66B | #D672 | `LD A,#00` | [UnknownD633.asm](../Source/Controls/UnknownD633.asm) |
+| Controls | #D6FE | #D705 | `LD A,#00` | [UnknownD633.asm](../Source/Controls/UnknownD633.asm) |
+| Controls | #D70A | #D716 | `JR #D727` | [UnknownD633.asm](../Source/Controls/UnknownD633.asm) |
 | Controls | #D76B | #D772 | `LD A,#00` | [UnknownD727.asm](../Source/Controls/UnknownD727.asm) |
 | Controls | #D7F6 | #D7FD | `LD A,#00` | [UnknownD727.asm](../Source/Controls/UnknownD727.asm) |
 | Controls | #D802 | #D80E | `JR #D80D` | [UnknownD727.asm](../Source/Controls/UnknownD727.asm) |
 | Controls | #D865 | #D86C | `LD A,#00` | [UnknownD833.asm](../Source/Controls/UnknownD833.asm) |
 | Controls | #D8E8 | #D8EF | `LD A,#00` | [UnknownD833.asm](../Source/Controls/UnknownD833.asm) |
 | Controls | #D8F4 | #D900 | `JR #D8FF` | [UnknownD833.asm](../Source/Controls/UnknownD833.asm) |
-| Controls | #DA7C | #DA83 | `LD A,#00` | [UnknownD9DE.asm](../Source/Controls/UnknownD9DE.asm) |
+| Controls | #DA7C | #DA83 | `LD A,#00` | [DrawSmallBody.asm](../Source/Controls/DrawSmallBody.asm) |
 | Controls | #E021 | #E089 | `LD SP,#0000` | [UnknownE021.asm](../Source/Controls/UnknownE021.asm) |
 | Controls | #E295 | #E48F | `LD SP,#0000` | [UnknownE291.asm](../Source/Controls/UnknownE291.asm) |
 | Controls | #E2B2 | #E2B0 | `LD L,#00` | [UnknownE291.asm](../Source/Controls/UnknownE291.asm) |
@@ -1125,3 +1125,9 @@
 | Music | #E1C8 | #E198 | LD BC,#0000 | [RenderChannelB.asm](../Source/Music/RenderChannelB.asm) |
 | Music | #E2C1 | #E2B9 | CP #00 | [RenderChannelC.asm](../Source/Music/RenderChannelC.asm) |
 | Music | #E2C6 | #E296 | LD BC,#0000 | [RenderChannelC.asm](../Source/Music/RenderChannelC.asm) |
+
+| Controls | #DE1D | #688B | `LD A,#00` | [BuildParameterTables.asm](../Source/Controls/BuildParameterTables.asm) |
+
+Запись DE1D из банка 1 меняет операнд 688B общего ядра ACTION в фиксированном банке 5. Исходные байты целевой команды находятся в ACTION по смещению 0AC7, операнд по 0AC8, после переноса ядра. Цель находится в [Unknown6780.asm](../Source/Action/Unknown6780.asm), числовой индекс и проверка цепочки описаны в [ControlsParameterTables](ControlsParameterTables.md).
+
+[ApplyParameterSet](ActionApplyParameters.md) записывает 15 целевых байтов, десять из них являются доказанными непосредственными операндами. В реестре уточнены физические банки и файловые смещения этих десяти целей. Пять Unknown-целей не объявляются кодом. Порядок выбора банка и аппаратная блокировка описаны в [ActionParameterActivation](ActionParameterActivation.md).

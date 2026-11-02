@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "total_cases": 196708,
+  "cases_by_kind": {
+    "all_first_words": 65536,
+    "all_second_words": 65536,
+    "all_low_byte_pairs": 65536,
+    "edge_pairs": 100
+  },
+  "independent_word_formula": true,
+  "exact_registers_flags_r_and_sp": true,
+  "every_ram_byte_and_write_checked": true,
+  "refresh_m1": 32,
+  "all_32_bit_states_exhausted": false,
+  "period_proved": false,
+  "statistical_quality_proved": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

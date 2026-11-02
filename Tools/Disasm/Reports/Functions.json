@@ -8661,14 +8661,14 @@
   },
   {
     "region": "Action",
-    "name": "Unknown6E2B",
+    "name": "ClassifyCoordinateRegion",
     "address": 28203,
     "slot": 17,
     "offset": 4200,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Классификация пары H,L по трём непересекающимся прямоугольникам с кодом 3 вне них",
+    "semantic_status": "described",
     "end_offset": 4265,
-    "path": "Source/Action/Unknown6E2B.asm"
+    "path": "Source/Action/ClassifyCoordinateRegion.asm"
   },
   {
     "region": "Action",
@@ -8859,25 +8859,36 @@
   },
   {
     "region": "Action",
-    "name": "UnknownAC38",
+    "name": "ReadWordFromIX",
     "address": 44088,
     "slot": 17,
     "offset": 19512,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
-    "end_offset": 19549,
-    "path": "Source/Action/UnknownAC38.asm"
+    "description": "Чтение слова младшим байтом вперёд через IX, продвижение IX на два и копирование C в B",
+    "semantic_status": "described",
+    "end_offset": 19524,
+    "path": "Source/Action/ReadWordFromIX.asm"
   },
   {
     "region": "Action",
-    "name": "UnknownAC5D",
+    "name": "ActivateParameterSet",
+    "address": 44100,
+    "slot": 17,
+    "offset": 19524,
+    "description": "Выбор банка 0, применение набора параметров и обнуление двух слов и двух байтов состояния",
+    "semantic_status": "described",
+    "end_offset": 19549,
+    "path": "Source/Action/ActivateParameterSet.asm"
+  },
+  {
+    "region": "Action",
+    "name": "ApplyParameterSet",
     "address": 44125,
     "slot": 17,
     "offset": 19549,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Применение пятнадцати полей набора к исходным адресам ACTION, поле 1 читается без записи, поле 6 используется дважды",
+    "semantic_status": "described",
     "end_offset": 19627,
-    "path": "Source/Action/UnknownAC5D.asm"
+    "path": "Source/Action/ApplyParameterSet.asm"
   },
   {
     "region": "Action",
@@ -11543,14 +11554,14 @@
   },
   {
     "region": "Controls",
-    "name": "UnknownCB00",
+    "name": "UpdateBufferPoints",
     "address": 51968,
     "slot": 22,
     "offset": 2816,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Последовательная коррекция 35 точек по Y, X и двум табличным коэффициентам",
+    "semantic_status": "described",
     "end_offset": 3606,
-    "path": "Source/Controls/UnknownCB00.asm"
+    "path": "Source/Controls/UpdateBufferPoints.asm"
   },
   {
     "region": "Controls",
@@ -11576,25 +11587,36 @@
   },
   {
     "region": "Controls",
-    "name": "UnknownCEA4",
+    "name": "FillEvenSpan",
     "address": 52900,
     "slot": 22,
     "offset": 3748,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Обратное заполнение 2*A байтов через изменяемый JR в пределах страницы",
+    "semantic_status": "described",
     "end_offset": 3765,
-    "path": "Source/Controls/UnknownCEA4.asm"
+    "path": "Source/Controls/FillEvenSpan.asm"
   },
   {
     "region": "Controls",
-    "name": "UnknownCECF",
+    "name": "FillEvenSpanHead",
+    "address": 52919,
+    "slot": 22,
+    "offset": 3767,
+    "end_offset": 3791,
+    "description": "Первые 12 записей общего 30-байтового хвоста заполнителя",
+    "semantic_status": "described",
+    "path": "Source/Controls/FillEvenSpanHead.asm"
+  },
+  {
+    "region": "Controls",
+    "name": "FillEvenSpanTail",
     "address": 52943,
     "slot": 22,
     "offset": 3791,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Последние 18 записей заполнителя, восстановление HL и чтение режима",
+    "semantic_status": "described",
     "end_offset": 3833,
-    "path": "Source/Controls/UnknownCECF.asm"
+    "path": "Source/Controls/FillEvenSpanTail.asm"
   },
   {
     "region": "Controls",
@@ -11730,25 +11752,25 @@
   },
   {
     "region": "Controls",
-    "name": "UnknownD208",
+    "name": "FillInteriorRowsUp",
     "address": 53768,
     "slot": 22,
     "offset": 4616,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Заливка внутренних 30 байтов строк вверх с ограничением верхним краем",
+    "semantic_status": "described",
     "end_offset": 4625,
-    "path": "Source/Controls/UnknownD208.asm"
+    "path": "Source/Controls/FillInteriorRowsUp.asm"
   },
   {
     "region": "Controls",
-    "name": "UnknownD211",
+    "name": "FillInteriorRowsDown",
     "address": 53777,
     "slot": 22,
     "offset": 4625,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Заливка внутренних 30 байтов строк вниз с ограничением нижним краем",
+    "semantic_status": "described",
     "end_offset": 4634,
-    "path": "Source/Controls/UnknownD211.asm"
+    "path": "Source/Controls/FillInteriorRowsDown.asm"
   },
   {
     "region": "Controls",
@@ -11785,58 +11807,80 @@
   },
   {
     "region": "Controls",
-    "name": "UnknownD30B",
+    "name": "ReadByteSquare",
     "address": 54027,
     "slot": 22,
     "offset": 4875,
+    "description": "Чтение 16-битного квадрата байтового индекса из двух физических плоскостей",
+    "semantic_status": "described",
+    "end_offset": 4884,
+    "path": "Source/Controls/ReadByteSquare.asm"
+  },
+  {
+    "region": "Controls",
+    "name": "UnknownD314",
+    "address": 54036,
+    "slot": 22,
+    "offset": 4884,
     "description": "Unknown, назначение этого фрагмента ещё не установлено",
     "semantic_status": "unknown",
     "end_offset": 4896,
-    "path": "Source/Controls/UnknownD30B.asm"
+    "path": "Source/Controls/UnknownD314.asm"
   },
   {
     "region": "Controls",
-    "name": "UnknownD320",
+    "name": "BuildCircleSpan",
     "address": 54048,
     "slot": 22,
     "offset": 4896,
+    "description": "Построение адресов и включающих масок двух краёв сечения большого контура",
+    "semantic_status": "described",
+    "end_offset": 4928,
+    "path": "Source/Controls/BuildCircleSpan.asm"
+  },
+  {
+    "region": "Controls",
+    "name": "UnknownD340",
+    "address": 54080,
+    "slot": 22,
+    "offset": 4928,
     "description": "Unknown, назначение этого фрагмента ещё не установлено",
     "semantic_status": "unknown",
     "end_offset": 5323,
-    "path": "Source/Controls/UnknownD320.asm"
+    "path": "Source/Controls/UnknownD340.asm"
   },
   {
     "region": "Controls",
-    "name": "UnknownD4CB",
+    "name": "PrepareCircleRightClip",
     "address": 54475,
     "slot": 22,
     "offset": 5323,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Подготовка левого криволинейного края и фиксированного правого столбца 31",
+    "semantic_status": "described",
     "end_offset": 5348,
-    "path": "Source/Controls/UnknownD4CB.asm"
+    "path": "Source/Controls/PrepareCircleRightClip.asm"
   },
   {
     "region": "Controls",
-    "name": "UnknownD4E4",
+    "name": "PrepareCircleLeftClip",
     "address": 54500,
     "slot": 22,
     "offset": 5348,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Подготовка фиксированного левого столбца 1 и правого криволинейного края",
+    "semantic_status": "described",
     "end_offset": 5377,
-    "path": "Source/Controls/UnknownD4E4.asm"
+    "path": "Source/Controls/PrepareCircleLeftClip.asm"
   },
   {
     "region": "Controls",
-    "name": "UnknownD504",
+    "name": "LoadCircleMidpoint",
     "address": 54532,
     "slot": 22,
     "offset": 5380,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Загрузка рабочих координат, радиуса и начального состояния среднего алгоритма",
+    "semantic_status": "described",
     "end_offset": 5397,
-    "path": "Source/Controls/UnknownD504.asm"
+    "path": "Source/Controls/LoadCircleMidpoint.asm"
   },
   {
     "region": "Controls",
@@ -11862,36 +11906,47 @@
   },
   {
     "region": "Controls",
-    "name": "UnknownD56C",
+    "name": "LoadCircleClipState",
     "address": 54636,
     "slot": 22,
     "offset": 5484,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Загрузка рабочего X и состояния сечения для отсечённого контура",
+    "semantic_status": "described",
     "end_offset": 5499,
-    "path": "Source/Controls/UnknownD56C.asm"
+    "path": "Source/Controls/LoadCircleClipState.asm"
   },
   {
     "region": "Controls",
-    "name": "UnknownD57B",
+    "name": "PrepareInteriorSpan",
     "address": 54651,
     "slot": 22,
     "offset": 5499,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Подготовка полной внутренней маски и общие входы заливки строк",
+    "semantic_status": "described",
     "end_offset": 5641,
-    "path": "Source/Controls/UnknownD57B.asm"
+    "path": "Source/Controls/PrepareInteriorSpan.asm"
   },
   {
     "region": "Controls",
-    "name": "UnknownD609",
+    "name": "SqrtSquareDiff",
     "address": 54793,
     "slot": 22,
     "offset": 5641,
+    "description": "Целый корень разности квадратов с исходным входным Carry и оборачиванием слова",
+    "semantic_status": "described",
+    "end_offset": 5683,
+    "path": "Source/Controls/SqrtSquareDiff.asm"
+  },
+  {
+    "region": "Controls",
+    "name": "UnknownD633",
+    "address": 54835,
+    "slot": 22,
+    "offset": 5683,
     "description": "Unknown, назначение этого фрагмента ещё не установлено",
     "semantic_status": "unknown",
-    "end_offset": 5911,
-    "path": "Source/Controls/UnknownD609.asm"
+    "end_offset": 5927,
+    "path": "Source/Controls/UnknownD633.asm"
   },
   {
     "region": "Controls",
@@ -11901,7 +11956,7 @@
     "offset": 5927,
     "description": "Unknown, назначение этого фрагмента ещё не установлено",
     "semantic_status": "unknown",
-    "end_offset": 6159,
+    "end_offset": 6195,
     "path": "Source/Controls/UnknownD727.asm"
   },
   {
@@ -11912,30 +11967,30 @@
     "offset": 6195,
     "description": "Unknown, назначение этого фрагмента ещё не установлено",
     "semantic_status": "unknown",
-    "end_offset": 6401,
+    "end_offset": 6437,
     "path": "Source/Controls/UnknownD833.asm"
   },
   {
     "region": "Controls",
-    "name": "UnknownD925",
+    "name": "AdvanceRasterUp",
     "address": 55589,
     "slot": 22,
     "offset": 6437,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Шаг на строку вверх с чередованием рисунка и нелокальным выходом за верхним краем",
+    "semantic_status": "described",
     "end_offset": 6464,
-    "path": "Source/Controls/UnknownD925.asm"
+    "path": "Source/Controls/AdvanceRasterUp.asm"
   },
   {
     "region": "Controls",
-    "name": "UnknownD940",
+    "name": "AdvanceRasterDown",
     "address": 55616,
     "slot": 22,
     "offset": 6464,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Шаг на строку вниз с чередованием рисунка и нелокальным выходом за нижним краем",
+    "semantic_status": "described",
     "end_offset": 6491,
-    "path": "Source/Controls/UnknownD940.asm"
+    "path": "Source/Controls/AdvanceRasterDown.asm"
   },
   {
     "region": "Controls",
@@ -11950,36 +12005,36 @@
   },
   {
     "region": "Controls",
-    "name": "UnknownD9B0",
+    "name": "BuildSmallBodyMasks",
     "address": 55728,
     "slot": 22,
     "offset": 6576,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Подготовка строковых масок малой фигуры из упакованной затравки радиуса",
+    "semantic_status": "described",
     "end_offset": 6622,
-    "path": "Source/Controls/UnknownD9B0.asm"
+    "path": "Source/Controls/BuildSmallBodyMasks.asm"
   },
   {
     "region": "Controls",
-    "name": "UnknownD9DE",
+    "name": "DrawSmallBody",
     "address": 55774,
     "slot": 22,
     "offset": 6622,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Рисование малой симметричной фигуры радиуса 2..8 строковыми масками в линейном растре",
+    "semantic_status": "described",
     "end_offset": 6841,
-    "path": "Source/Controls/UnknownD9DE.asm"
+    "path": "Source/Controls/DrawSmallBody.asm"
   },
   {
     "region": "Controls",
-    "name": "UnknownDAB9",
+    "name": "CompareComponents",
     "address": 55993,
     "slot": 22,
     "offset": 6841,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Сравнение двух компонентов после перехода IY к следующей трёхбайтовой записи",
+    "semantic_status": "described",
     "end_offset": 6878,
-    "path": "Source/Controls/UnknownDAB9.asm"
+    "path": "Source/Controls/CompareComponents.asm"
   },
   {
     "region": "Controls",
@@ -12005,14 +12060,14 @@
   },
   {
     "region": "Controls",
-    "name": "UnknownDD5D",
+    "name": "StepWordRandom",
     "address": 56669,
     "slot": 23,
     "offset": 639,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Обновление двухсловного состояния генератора и возврат XOR его четырёх байтов",
+    "semantic_status": "described",
     "end_offset": 681,
-    "path": "Source/Controls/UnknownDD5D.asm"
+    "path": "Source/Controls/StepWordRandom.asm"
   },
   {
     "region": "Controls",
@@ -12027,25 +12082,25 @@
   },
   {
     "region": "Controls",
-    "name": "UnknownDE10",
+    "name": "BuildParameterTables",
     "address": 56848,
     "slot": 23,
     "offset": 818,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Формирование пятнадцати параметров и девяти строковых значений по зерну и исходным таблицам",
+    "semantic_status": "described",
     "end_offset": 956,
-    "path": "Source/Controls/UnknownDE10.asm"
+    "path": "Source/Controls/BuildParameterTables.asm"
   },
   {
     "region": "Controls",
-    "name": "UnknownDE9A",
+    "name": "BuildSeededIndices",
     "address": 56986,
     "slot": 23,
     "offset": 956,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Формирование четырёх индексов из двухсловного зерна, координатной области и числа шагов генератора",
+    "semantic_status": "described",
     "end_offset": 1022,
-    "path": "Source/Controls/UnknownDE9A.asm"
+    "path": "Source/Controls/BuildSeededIndices.asm"
   },
   {
     "region": "Controls",

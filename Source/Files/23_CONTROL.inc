@@ -18,7 +18,7 @@
                 incbin "../Resources/23_CONTROL/Unclassified001.bin"
                 assert $ == #027F
                 disp #DD5D
-                include "../Controls/UnknownDD5D.asm"
+                include "../Controls/StepWordRandom.asm"
                 ent
                 assert $ == #02A9
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
@@ -29,15 +29,22 @@
                 ent
                 assert $ == #0332
                 disp #DE10
-                include "../Controls/UnknownDE10.asm"
+                include "../Controls/BuildParameterTables.asm"
                 ent
                 assert $ == #03BC
                 disp #DE9A
-                include "../Controls/UnknownDE9A.asm"
+                include "../Controls/BuildSeededIndices.asm"
                 ent
                 assert $ == #03FE
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/23_CONTROL/Unclassified003.bin"
+                incbin "../Resources/23_CONTROL/Unclassified003_BeforeCoefficients.bin"
+                assert $ == #0486
+                disp #DF64
+                include "../Controls/Data/ParameterCoefficients.asm"
+                ent
+                assert $ == #04B3
+                ; Unknown, исходные байты после правил параметров
+                incbin "../Resources/23_CONTROL/Unclassified003_AfterCoefficients.bin"
                 assert $ == #0543
                 disp #E021
                 include "../Controls/UnknownE021.asm"                           ; (0) жёсткий порядок, последовательное исполнение

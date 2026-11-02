@@ -87,7 +87,7 @@ PointD282:      LD A, B
 
 
                 CP #78
-                JP C, @Controls.UnknownD30B.PointD314                           ; переход, если флаг Carry установлен
+                JP C, @Controls.UnknownD314.Entry                               ; переход, если флаг Carry установлен
 
 
 PointD28B:      LD A, D
@@ -96,10 +96,10 @@ PointD28B:      LD A, D
 
 
                 CP #78
-PointD291:      JP C, @Controls.UnknownD320.PointD3E4                           ; переход, если флаг Carry установлен
+PointD291:      JP C, @Controls.UnknownD340.PointD3E4                           ; переход, если флаг Carry установлен
 
 
-                JP @Controls.UnknownD320.PointD34A
+                JP @Controls.UnknownD340.PointD34A
 
 
 PointD297:      LD A, B
@@ -113,10 +113,10 @@ PointD297:      LD A, B
                 RET Z                                                           ; выход, если флаг Z установлен
 
                 SUB #F0
-                JP NC, @Controls.UnknownD320.PointD340                          ; переход, если флаг Carry сброшен
+                JP NC, @Controls.UnknownD340.Entry                              ; переход, если флаг Carry сброшен
 
 
-                JP @Controls.UnknownD320.PointD3DA
+                JP @Controls.UnknownD340.PointD3DA
 
 
 PointD2AA:      LD A, C
@@ -128,28 +128,28 @@ PointD2AA:      LD A, C
                 RET C                                                           ; выход, если флаг Carry установлен
 
                 LD A, D
-                CALL @Controls.UnknownD30B.Entry
+                CALL @Controls.ReadByteSquare.Entry
                 LD H, D
                 LD L, E
                 LD A, C
-                CALL @Controls.UnknownD30B.Entry
+                CALL @Controls.ReadByteSquare.Entry
                 SBC HL, DE
                 LD A, #78
                 SUB B
-                CALL @Controls.UnknownD30B.Entry
+                CALL @Controls.ReadByteSquare.Entry
                 SBC HL, DE
-                JP C, @Controls.UnknownD320.PointD485                           ; переход, если флаг Carry установлен
+                JP C, @Controls.UnknownD340.PointD485                           ; переход, если флаг Carry установлен
 
 
                 ADD HL, DE
                 LD A, #78
                 ADD A, B
-                CALL @Controls.UnknownD30B.Entry
+                CALL @Controls.ReadByteSquare.Entry
                 SBC HL, DE
-                JP NC, @Controls.UnknownD320.PointD396                          ; переход, если флаг Carry сброшен
+                JP NC, @Controls.UnknownD340.PointD396                          ; переход, если флаг Carry сброшен
 
 
-                JP @Controls.UnknownD320.PointD40E
+                JP @Controls.UnknownD340.PointD40E
 
 
 PointD2DA:      LD A, B
@@ -160,16 +160,16 @@ PointD2DA:      LD A, B
                 LD C, A
                 LD (#D181), BC
                 LD A, D
-                CALL @Controls.UnknownD30B.Entry
+                CALL @Controls.ReadByteSquare.Entry
                 LD H, D
                 LD L, E
                 LD A, C
-                CALL @Controls.UnknownD30B.Entry
+                CALL @Controls.ReadByteSquare.Entry
                 SBC HL, DE
                 RET C                                                           ; выход, если флаг Carry установлен
 
                 LD A, B
-                CALL @Controls.UnknownD30B.Entry
+                CALL @Controls.ReadByteSquare.Entry
                 SBC HL, DE
                 RET C                                                           ; выход, если флаг Carry установлен
 
@@ -179,12 +179,12 @@ PointD2DA:      LD A, B
                 JR C, @Controls.UnknownD236.PointD308                           ; переход, если флаг Carry установлен
 
 
-                CALL @Controls.UnknownD30B.Entry
+                CALL @Controls.ReadByteSquare.Entry
                 SBC HL, DE
-                JP NC, @Controls.UnknownD320.PointD38C                          ; переход, если флаг Carry сброшен
+                JP NC, @Controls.UnknownD340.PointD38C                          ; переход, если флаг Carry сброшен
 
 
-PointD308:      JP @Controls.UnknownD320.PointD404
+PointD308:      JP @Controls.UnknownD340.PointD404
 
 
                 endmodule

@@ -21,10 +21,10 @@
 | Help | 4 | 4 | [Факты](FunctionDetails/Help.md) |
 | Music | 49 | 49 | [Факты](FunctionDetails/Music.md) |
 | ActionBoot | 9 | 9 | [Факты](FunctionDetails/ActionBoot.md) |
-| Action | 179 | 83 | [Факты](FunctionDetails/Action.md) |
+| Action | 180 | 87 | [Факты](FunctionDetails/Action.md) |
 | ThreeD | 98 | 75 | [Факты](FunctionDetails/ThreeD.md) |
 | Voxel | 9 | 9 | [Факты](FunctionDetails/Voxel.md) |
-| Controls | 68 | 24 | [Факты](FunctionDetails/Controls.md) |
+| Controls | 72 | 46 | [Факты](FunctionDetails/Controls.md) |
 | Final | 9 | 9 | [Факты](FunctionDetails/Final.md) |
 | FinalTemplates | 2 | 2 | [Факты](FunctionDetails/FinalTemplates.md) |
 
@@ -693,7 +693,7 @@
 | #6CD6 | [Action.Unknown6CD6](../Source/Action/Unknown6CD6.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #6CEF | [Action.Unknown6CEF](../Source/Action/Unknown6CEF.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #6D38 | [Action.Unknown6D38](../Source/Action/Unknown6D38.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #6E2B | [Action.Unknown6E2B](../Source/Action/Unknown6E2B.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #6E2B | [Action.ClassifyCoordinateRegion](../Source/Action/ClassifyCoordinateRegion.asm) | Классификация пары H,L по трём непересекающимся прямоугольникам с кодом 3 вне них |
 | #6E6C | [Action.Unknown6E6C](../Source/Action/Unknown6E6C.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #6EAC | [Action.Unknown6EAC](../Source/Action/Unknown6EAC.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #6F1D | [Action.Unknown6F1D](../Source/Action/Unknown6F1D.asm) | Unknown, назначение этого фрагмента ещё не установлено |
@@ -711,8 +711,9 @@
 | #AACC | [Action.UnknownAACC](../Source/Action/UnknownAACC.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #AB1B | [Action.SelectMemoryPage](../Source/Action/SelectMemoryPage.asm) | Запись A в #7FFD с сохранением BC |
 | #AB23 | [Action.UnpackResource](../Source/Action/UnpackResource.asm) | Полётная копия распаковщика ресурсов с обработкой ссылок |
-| #AC38 | [Action.UnknownAC38](../Source/Action/UnknownAC38.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #AC5D | [Action.UnknownAC5D](../Source/Action/UnknownAC5D.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #AC38 | [Action.ReadWordFromIX](../Source/Action/ReadWordFromIX.asm) | Чтение слова младшим байтом вперёд через IX, продвижение IX на два и копирование C в B |
+| #AC44 | [Action.ActivateParameterSet](../Source/Action/ActivateParameterSet.asm) | Выбор банка 0, применение набора параметров и обнуление двух слов и двух байтов состояния |
+| #AC5D | [Action.ApplyParameterSet](../Source/Action/ApplyParameterSet.asm) | Применение пятнадцати полей набора к исходным адресам ACTION, поле 1 читается без записи, поле 6 используется дважды |
 | #AD48 | [Action.UnknownAD48](../Source/Action/UnknownAD48.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #AD5A | [Action.UnknownAD5A](../Source/Action/UnknownAD5A.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #ADB7 | [Action.UnknownADB7](../Source/Action/UnknownADB7.asm) | Unknown, назначение этого фрагмента ещё не установлено |
@@ -955,11 +956,12 @@
 | #CA8D | [Controls.NextBufferRandom](../Source/Controls/NextBufferRandom.asm) | Получение байта из изменяемого 16-битового состояния генератора |
 | #CAB3 | [Controls.InitializeBufferPoints](../Source/Controls/InitializeBufferPoints.asm) | Подготовка 35 координат Y,X с исходным ограничением диапазонов |
 | #CAE3 | [Controls.XorBufferPoints](../Source/Controls/XorBufferPoints.asm) | Наложение 35 точек на линейный буфер через четыре таблицы адресации |
-| #CB00 | [Controls.UnknownCB00](../Source/Controls/UnknownCB00.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #CB00 | [Controls.UpdateBufferPoints](../Source/Controls/UpdateBufferPoints.asm) | Последовательная коррекция 35 точек по Y, X и двум табличным коэффициентам |
 | #CE16 | [Controls.RespawnPointIndexPos](../Source/Controls/RespawnPointIndexPos.asm) | Возврат точки с чередованием сторон для неотрицательного индекса управляющей таблицы |
 | #CE5D | [Controls.RespawnPointIndexNeg](../Source/Controls/RespawnPointIndexNeg.asm) | Возврат точки с противоположным чередованием сторон для отрицательного индекса таблицы |
-| #CEA4 | [Controls.UnknownCEA4](../Source/Controls/UnknownCEA4.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #CECF | [Controls.UnknownCECF](../Source/Controls/UnknownCECF.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #CEA4 | [Controls.FillEvenSpan](../Source/Controls/FillEvenSpan.asm) | Обратное заполнение 2*A байтов через изменяемый JR в пределах страницы |
+| #CEB7 | [Controls.FillEvenSpanHead](../Source/Controls/FillEvenSpanHead.asm) | Первые 12 записей общего 30-байтового хвоста заполнителя |
+| #CECF | [Controls.FillEvenSpanTail](../Source/Controls/FillEvenSpanTail.asm) | Последние 18 записей заполнителя, восстановление HL и чтение режима |
 | #CEFA | [Controls.UnknownCEFA](../Source/Controls/UnknownCEFA.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #CF0B | [Controls.UnknownCF0B](../Source/Controls/UnknownCF0B.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #D0CA | [Controls.UnknownD0CA](../Source/Controls/UnknownD0CA.asm) | Unknown, назначение этого фрагмента ещё не установлено |
@@ -972,35 +974,38 @@
 | #D1CB | [Controls.UnknownD1CB](../Source/Controls/UnknownD1CB.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #D1DF | [Controls.UnknownD1DF](../Source/Controls/UnknownD1DF.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #D1F4 | [Controls.UnknownD1F4](../Source/Controls/UnknownD1F4.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #D208 | [Controls.UnknownD208](../Source/Controls/UnknownD208.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #D211 | [Controls.UnknownD211](../Source/Controls/UnknownD211.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #D208 | [Controls.FillInteriorRowsUp](../Source/Controls/FillInteriorRowsUp.asm) | Заливка внутренних 30 байтов строк вверх с ограничением верхним краем |
+| #D211 | [Controls.FillInteriorRowsDown](../Source/Controls/FillInteriorRowsDown.asm) | Заливка внутренних 30 байтов строк вниз с ограничением нижним краем |
 | #D21A | [Controls.UnknownD21A](../Source/Controls/UnknownD21A.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #D232 | [Controls.UnknownD232](../Source/Controls/UnknownD232.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #D236 | [Controls.UnknownD236](../Source/Controls/UnknownD236.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #D30B | [Controls.UnknownD30B](../Source/Controls/UnknownD30B.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #D320 | [Controls.UnknownD320](../Source/Controls/UnknownD320.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #D4CB | [Controls.UnknownD4CB](../Source/Controls/UnknownD4CB.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #D4E4 | [Controls.UnknownD4E4](../Source/Controls/UnknownD4E4.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #D504 | [Controls.UnknownD504](../Source/Controls/UnknownD504.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #D30B | [Controls.ReadByteSquare](../Source/Controls/ReadByteSquare.asm) | Чтение 16-битного квадрата байтового индекса из двух физических плоскостей |
+| #D314 | [Controls.UnknownD314](../Source/Controls/UnknownD314.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #D320 | [Controls.BuildCircleSpan](../Source/Controls/BuildCircleSpan.asm) | Построение адресов и включающих масок двух краёв сечения большого контура |
+| #D340 | [Controls.UnknownD340](../Source/Controls/UnknownD340.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #D4CB | [Controls.PrepareCircleRightClip](../Source/Controls/PrepareCircleRightClip.asm) | Подготовка левого криволинейного края и фиксированного правого столбца 31 |
+| #D4E4 | [Controls.PrepareCircleLeftClip](../Source/Controls/PrepareCircleLeftClip.asm) | Подготовка фиксированного левого столбца 1 и правого криволинейного края |
+| #D504 | [Controls.LoadCircleMidpoint](../Source/Controls/LoadCircleMidpoint.asm) | Загрузка рабочих координат, радиуса и начального состояния среднего алгоритма |
 | #D515 | [Controls.BuildLeftSpanMask](../Source/Controls/BuildLeftSpanMask.asm) | Вычисление адреса пиксельного байта и маски от старшего бита до X включительно |
 | #D53C | [Controls.BuildRightSpanMask](../Source/Controls/BuildRightSpanMask.asm) | Вычисление адреса пиксельного байта и маски от X до младшего бита включительно |
-| #D56C | [Controls.UnknownD56C](../Source/Controls/UnknownD56C.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #D57B | [Controls.UnknownD57B](../Source/Controls/UnknownD57B.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #D609 | [Controls.UnknownD609](../Source/Controls/UnknownD609.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #D56C | [Controls.LoadCircleClipState](../Source/Controls/LoadCircleClipState.asm) | Загрузка рабочего X и состояния сечения для отсечённого контура |
+| #D57B | [Controls.PrepareInteriorSpan](../Source/Controls/PrepareInteriorSpan.asm) | Подготовка полной внутренней маски и общие входы заливки строк |
+| #D609 | [Controls.SqrtSquareDiff](../Source/Controls/SqrtSquareDiff.asm) | Целый корень разности квадратов с исходным входным Carry и оборачиванием слова |
+| #D633 | [Controls.UnknownD633](../Source/Controls/UnknownD633.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #D727 | [Controls.UnknownD727](../Source/Controls/UnknownD727.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #D833 | [Controls.UnknownD833](../Source/Controls/UnknownD833.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #D925 | [Controls.UnknownD925](../Source/Controls/UnknownD925.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #D940 | [Controls.UnknownD940](../Source/Controls/UnknownD940.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #D925 | [Controls.AdvanceRasterUp](../Source/Controls/AdvanceRasterUp.asm) | Шаг на строку вверх с чередованием рисунка и нелокальным выходом за верхним краем |
+| #D940 | [Controls.AdvanceRasterDown](../Source/Controls/AdvanceRasterDown.asm) | Шаг на строку вниз с чередованием рисунка и нелокальным выходом за нижним краем |
 | #D95F | [Controls.UnknownD95F](../Source/Controls/UnknownD95F.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #D9B0 | [Controls.UnknownD9B0](../Source/Controls/UnknownD9B0.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #D9DE | [Controls.UnknownD9DE](../Source/Controls/UnknownD9DE.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #DAB9 | [Controls.UnknownDAB9](../Source/Controls/UnknownDAB9.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #D9B0 | [Controls.BuildSmallBodyMasks](../Source/Controls/BuildSmallBodyMasks.asm) | Подготовка строковых масок малой фигуры из упакованной затравки радиуса |
+| #D9DE | [Controls.DrawSmallBody](../Source/Controls/DrawSmallBody.asm) | Рисование малой симметричной фигуры радиуса 2..8 строковыми масками в линейном растре |
+| #DAB9 | [Controls.CompareComponents](../Source/Controls/CompareComponents.asm) | Сравнение двух компонентов после перехода IY к следующей трёхбайтовой записи |
 | #DADE | [Controls.RunTemporaryModule](../Source/Controls/RunTemporaryModule.asm) | Сохранение памяти по банкам, распаковка временного модуля и восстановление полётного кода |
 | #DC9B | [Controls.UnknownDC9B](../Source/Controls/UnknownDC9B.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #DD5D | [Controls.UnknownDD5D](../Source/Controls/UnknownDD5D.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #DD5D | [Controls.StepWordRandom](../Source/Controls/StepWordRandom.asm) | Обновление двухсловного состояния генератора и возврат XOR его четырёх байтов |
 | #DE0A | [Controls.UnknownDE0A](../Source/Controls/UnknownDE0A.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #DE10 | [Controls.UnknownDE10](../Source/Controls/UnknownDE10.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #DE9A | [Controls.UnknownDE9A](../Source/Controls/UnknownDE9A.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #DE10 | [Controls.BuildParameterTables](../Source/Controls/BuildParameterTables.asm) | Формирование пятнадцати параметров и девяти строковых значений по зерну и исходным таблицам |
+| #DE9A | [Controls.BuildSeededIndices](../Source/Controls/BuildSeededIndices.asm) | Формирование четырёх индексов из двухсловного зерна, координатной области и числа шагов генератора |
 | #E021 | [Controls.UnknownE021](../Source/Controls/UnknownE021.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #E14E | [Controls.UnknownE14E](../Source/Controls/UnknownE14E.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #E291 | [Controls.UnknownE291](../Source/Controls/UnknownE291.asm) | Unknown, назначение этого фрагмента ещё не установлено |

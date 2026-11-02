@@ -5650,7 +5650,7 @@
     "target_instruction": 60584,
     "size": 2,
     "target_operation": "LD HL,#0000",
-    "path": "Source/Action/UnknownAC38.asm"
+    "path": "Source/Action/ActivateParameterSet.asm"
   },
   {
     "region": "Action",
@@ -5659,7 +5659,7 @@
     "target_instruction": 60661,
     "size": 2,
     "target_operation": "LD HL,#0000",
-    "path": "Source/Action/UnknownAC38.asm"
+    "path": "Source/Action/ActivateParameterSet.asm"
   },
   {
     "region": "Action",
@@ -5668,7 +5668,13 @@
     "target_instruction": 63387,
     "size": 1,
     "target_operation": "LD C,#0A",
-    "path": "Source/Action/UnknownAC5D.asm"
+    "path": "Source/Action/ApplyParameterSet.asm",
+    "writer_bank": 2,
+    "target_bank": 0,
+    "target_region": "Action",
+    "target_slot": 17,
+    "target_offset": 38812,
+    "target_path": "Source/Action/UnknownF792.asm"
   },
   {
     "region": "Action",
@@ -5677,7 +5683,13 @@
     "target_instruction": 63383,
     "size": 1,
     "target_operation": "LD C,#0A",
-    "path": "Source/Action/UnknownAC5D.asm"
+    "path": "Source/Action/ApplyParameterSet.asm",
+    "writer_bank": 2,
+    "target_bank": 0,
+    "target_region": "Action",
+    "target_slot": 17,
+    "target_offset": 38808,
+    "target_path": "Source/Action/UnknownF792.asm"
   },
   {
     "region": "Action",
@@ -5686,7 +5698,13 @@
     "target_instruction": 43367,
     "size": 1,
     "target_operation": "ADD A,#50",
-    "path": "Source/Action/UnknownAC5D.asm"
+    "path": "Source/Action/ApplyParameterSet.asm",
+    "writer_bank": 2,
+    "target_bank": 2,
+    "target_region": "Action",
+    "target_slot": 17,
+    "target_offset": 18792,
+    "target_path": "Source/Action/UpdateFrame.asm"
   },
   {
     "region": "Action",
@@ -5695,7 +5713,13 @@
     "target_instruction": 43188,
     "size": 1,
     "target_operation": "ADD A,#14",
-    "path": "Source/Action/UnknownAC5D.asm"
+    "path": "Source/Action/ApplyParameterSet.asm",
+    "writer_bank": 2,
+    "target_bank": 2,
+    "target_region": "Action",
+    "target_slot": 17,
+    "target_offset": 18613,
+    "target_path": "Source/Action/UpdateFrame.asm"
   },
   {
     "region": "Action",
@@ -5704,7 +5728,13 @@
     "target_instruction": 31594,
     "size": 1,
     "target_operation": "CP #FD",
-    "path": "Source/Action/UnknownAC5D.asm"
+    "path": "Source/Action/ApplyParameterSet.asm",
+    "writer_bank": 2,
+    "target_bank": 5,
+    "target_region": "Action",
+    "target_slot": 17,
+    "target_offset": 7592,
+    "target_path": "Source/Action/Unknown7B58.asm"
   },
   {
     "region": "Action",
@@ -5713,7 +5743,13 @@
     "target_instruction": 26739,
     "size": 1,
     "target_operation": "ADD A,#00",
-    "path": "Source/Action/UnknownAC5D.asm"
+    "path": "Source/Action/ApplyParameterSet.asm",
+    "writer_bank": 2,
+    "target_bank": 5,
+    "target_region": "Action",
+    "target_slot": 17,
+    "target_offset": 2737,
+    "target_path": "Source/Action/Unknown6780.asm"
   },
   {
     "region": "Action",
@@ -5722,7 +5758,13 @@
     "target_instruction": 31139,
     "size": 1,
     "target_operation": "CP #F2",
-    "path": "Source/Action/UnknownAC5D.asm"
+    "path": "Source/Action/ApplyParameterSet.asm",
+    "writer_bank": 2,
+    "target_bank": 5,
+    "target_region": "Action",
+    "target_slot": 17,
+    "target_offset": 7137,
+    "target_path": "Source/Action/Unknown7859.asm"
   },
   {
     "region": "Action",
@@ -5731,7 +5773,13 @@
     "target_instruction": 32262,
     "size": 1,
     "target_operation": "OR #32",
-    "path": "Source/Action/UnknownAC5D.asm"
+    "path": "Source/Action/ApplyParameterSet.asm",
+    "writer_bank": 2,
+    "target_bank": 5,
+    "target_region": "Action",
+    "target_slot": 17,
+    "target_offset": 8260,
+    "target_path": "Source/Action/Unknown7B58.asm"
   },
   {
     "region": "Action",
@@ -5740,7 +5788,13 @@
     "target_instruction": 32264,
     "size": 1,
     "target_operation": "LD H,#64",
-    "path": "Source/Action/UnknownAC5D.asm"
+    "path": "Source/Action/ApplyParameterSet.asm",
+    "writer_bank": 2,
+    "target_bank": 5,
+    "target_region": "Action",
+    "target_slot": 17,
+    "target_offset": 8262,
+    "target_path": "Source/Action/Unknown7B58.asm"
   },
   {
     "region": "Action",
@@ -5749,7 +5803,13 @@
     "target_instruction": 32227,
     "size": 1,
     "target_operation": "OR #20",
-    "path": "Source/Action/UnknownAC5D.asm"
+    "path": "Source/Action/ApplyParameterSet.asm",
+    "writer_bank": 2,
+    "target_bank": 5,
+    "target_region": "Action",
+    "target_slot": 17,
+    "target_offset": 8225,
+    "target_path": "Source/Action/Unknown7B58.asm"
   },
   {
     "region": "Action",
@@ -6805,7 +6865,7 @@
     "target_instruction": 52765,
     "size": 1,
     "target_operation": "LD C,#00",
-    "path": "Source/Controls/UnknownCB00.asm"
+    "path": "Source/Controls/UpdateBufferPoints.asm"
   },
   {
     "region": "Controls",
@@ -6814,7 +6874,7 @@
     "target_instruction": 52433,
     "size": 1,
     "target_operation": "LD E,#00",
-    "path": "Source/Controls/UnknownCB00.asm"
+    "path": "Source/Controls/UpdateBufferPoints.asm"
   },
   {
     "region": "Controls",
@@ -6823,7 +6883,7 @@
     "target_instruction": 52636,
     "size": 1,
     "target_operation": "LD E,#00",
-    "path": "Source/Controls/UnknownCB00.asm"
+    "path": "Source/Controls/UpdateBufferPoints.asm"
   },
   {
     "region": "Controls",
@@ -6832,7 +6892,7 @@
     "target_instruction": 52349,
     "size": 1,
     "target_operation": "LD E,#00",
-    "path": "Source/Controls/UnknownCB00.asm"
+    "path": "Source/Controls/UpdateBufferPoints.asm"
   },
   {
     "region": "Controls",
@@ -6841,7 +6901,7 @@
     "target_instruction": 52552,
     "size": 1,
     "target_operation": "LD E,#00",
-    "path": "Source/Controls/UnknownCB00.asm"
+    "path": "Source/Controls/UpdateBufferPoints.asm"
   },
   {
     "region": "Controls",
@@ -6850,7 +6910,7 @@
     "target_instruction": 52528,
     "size": 2,
     "target_operation": "CALL #CE16",
-    "path": "Source/Controls/UnknownCB00.asm"
+    "path": "Source/Controls/UpdateBufferPoints.asm"
   },
   {
     "region": "Controls",
@@ -6859,7 +6919,7 @@
     "target_instruction": 52731,
     "size": 2,
     "target_operation": "CALL #CE16",
-    "path": "Source/Controls/UnknownCB00.asm"
+    "path": "Source/Controls/UpdateBufferPoints.asm"
   },
   {
     "region": "Controls",
@@ -6868,7 +6928,7 @@
     "target_instruction": 52746,
     "size": 1,
     "target_operation": "LD (HL),#00",
-    "path": "Source/Controls/UnknownCB00.asm"
+    "path": "Source/Controls/UpdateBufferPoints.asm"
   },
   {
     "region": "Controls",
@@ -6886,7 +6946,11 @@
     "target_instruction": 52915,
     "size": 1,
     "target_operation": "JR #CEB3",
-    "path": "Source/Controls/UnknownCEA4.asm"
+    "path": "Source/Controls/FillEvenSpan.asm",
+    "writer_bank": 1,
+    "target_bank": 1,
+    "target_region": "Controls",
+    "target_slot": 22
   },
   {
     "region": "Controls",
@@ -6904,7 +6968,11 @@
     "target_instruction": 54708,
     "size": 2,
     "target_operation": "LD DE,#0020",
-    "path": "Source/Controls/UnknownD57B.asm"
+    "path": "Source/Controls/PrepareInteriorSpan.asm",
+    "writer_bank": 1,
+    "target_bank": 1,
+    "target_region": "Controls",
+    "target_slot": 22
   },
   {
     "region": "Controls",
@@ -6913,7 +6981,11 @@
     "target_instruction": 54708,
     "size": 2,
     "target_operation": "LD DE,#0020",
-    "path": "Source/Controls/UnknownD57B.asm"
+    "path": "Source/Controls/PrepareInteriorSpan.asm",
+    "writer_bank": 1,
+    "target_bank": 1,
+    "target_region": "Controls",
+    "target_slot": 22
   },
   {
     "region": "Controls",
@@ -6922,7 +6994,11 @@
     "target_instruction": 54783,
     "size": 2,
     "target_operation": "CP #00",
-    "path": "Source/Controls/UnknownD57B.asm"
+    "path": "Source/Controls/PrepareInteriorSpan.asm",
+    "writer_bank": 1,
+    "target_bank": 1,
+    "target_region": "Controls",
+    "target_slot": 22
   },
   {
     "region": "Controls",
@@ -6931,7 +7007,7 @@
     "target_instruction": 54897,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Controls/UnknownD609.asm"
+    "path": "Source/Controls/UnknownD633.asm"
   },
   {
     "region": "Controls",
@@ -6940,7 +7016,7 @@
     "target_instruction": 55044,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Controls/UnknownD609.asm"
+    "path": "Source/Controls/UnknownD633.asm"
   },
   {
     "region": "Controls",
@@ -6949,7 +7025,11 @@
     "target_instruction": 55061,
     "size": 1,
     "target_operation": "JR #D727",
-    "path": "Source/Controls/UnknownD609.asm"
+    "path": "Source/Controls/UnknownD633.asm",
+    "writer_bank": 1,
+    "target_bank": 1,
+    "target_region": "Controls",
+    "target_slot": 22
   },
   {
     "region": "Controls",
@@ -6976,7 +7056,11 @@
     "target_instruction": 55309,
     "size": 1,
     "target_operation": "JR #D80D",
-    "path": "Source/Controls/UnknownD727.asm"
+    "path": "Source/Controls/UnknownD727.asm",
+    "writer_bank": 1,
+    "target_bank": 1,
+    "target_region": "Controls",
+    "target_slot": 22
   },
   {
     "region": "Controls",
@@ -7003,7 +7087,11 @@
     "target_instruction": 55551,
     "size": 1,
     "target_operation": "JR #D8FF",
-    "path": "Source/Controls/UnknownD833.asm"
+    "path": "Source/Controls/UnknownD833.asm",
+    "writer_bank": 1,
+    "target_bank": 1,
+    "target_region": "Controls",
+    "target_slot": 22
   },
   {
     "region": "Controls",
@@ -7012,7 +7100,11 @@
     "target_instruction": 55938,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Controls/UnknownD9DE.asm"
+    "path": "Source/Controls/DrawSmallBody.asm",
+    "writer_bank": 1,
+    "target_bank": 1,
+    "target_region": "Controls",
+    "target_slot": 22
   },
   {
     "region": "Controls",
@@ -9995,10 +10087,25 @@
     "target_instruction": 52836,
     "size": 1,
     "target_operation": "LD C,#00",
-    "path": "Source/Controls/UnknownCB00.asm",
+    "path": "Source/Controls/UpdateBufferPoints.asm",
     "writer_bank": 1,
     "target_bank": 1,
     "target_region": "Controls",
     "target_slot": 22
+  },
+  {
+    "region": "Controls",
+    "writer": 56861,
+    "target": 26763,
+    "target_instruction": 26762,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Controls/BuildParameterTables.asm",
+    "writer_bank": 1,
+    "target_bank": 5,
+    "target_region": "Action",
+    "target_slot": 17,
+    "target_offset": 2760,
+    "target_path": "Source/Action/Unknown6780.asm"
   }
 ]

@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "typed_bytes": 12,
+  "physical_records": 1,
+  "structure": "FCircleRasterWork",
+  "physical_bytes_preserved": true,
+  "mode_full_game_meaning_proved": false,
+  "assembly_executed": false
+}

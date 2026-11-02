@@ -27,7 +27,7 @@ from TextNotes import NOTES as TEXT_NOTES, COMMENTS as TEXT_COMMENTS
 from MapNotes import NOTES as MAP_NOTES, COMMENTS as MAP_COMMENTS
 from StationNotes import NOTES as STATION_NOTES, COMMENTS as STATION_COMMENTS
 from BasicNotes import NOTES as BASIC_NOTES, COMMENTS as BASIC_COMMENTS
-from SemanticNames import LABELS, name_operands, documentation_links
+from SemanticNames import LABELS, name_operands, name_instruction, documentation_links
 from SourcePresentation import continuity, format_function
 from TokenTables import render as render_token_tables, PATH as TOKEN_TABLE_PATH
 from CandidateWorkspace import create_candidate, require_candidate
@@ -306,6 +306,7 @@ def main():
             operation = operation.replace("(IX+", "(IX + ").replace("(IY+", "(IY + ")
             operation = operation.replace("(IX-", "(IX - ").replace("(IY-", "(IY - ")
             operation = name_operands(name, function["address"], operation)
+            operation = name_instruction(name, function["address"], instruction["address"], operation)
             # Локальные метки оставляются только у входов и действительных целей переходов.
             label = "Entry:" if index == 0 else LABELS.get((name, instruction["address"]), f"Point{instruction['address']:04X}") + ":"
             lines.append(asm(operation, comment, label))
@@ -398,6 +399,49 @@ def main():
         write(ACTION_SINE_TABLE[1], text)
         symbols.update(bindings)
         special[17, 0x3900] = (0x3A00, ACTION_SINE_TABLE[1], 0x9900)
+    # Две исходные плоскости квадратов оформляются по физическим байтам CONTROL0.
+    if "struct FSquareTableByte" in (ROOT/"Includes/Structs/Include.inc").read_text("utf-8"):
+        from ControlsSquareTable import TABLE as SQUARE_TABLE, render as render_squares
+        text, bindings = render_squares(data_by_slot[22])
+        write(SQUARE_TABLE[1], text)
+        symbols.update(bindings)
+        special[22, 0x300] = (0x500, SQUARE_TABLE[1], 0xC300)
+    # Исходные затравки и известная часть записываемых строковых масок.
+    if "struct FSmallMaskSeed" in (ROOT/"Includes/Structs/Include.inc").read_text("utf-8"):
+        from ControlsSmallMaskTables import TABLES as SMALL_MASK_TABLES, render as render_small_mask
+        for table in SMALL_MASK_TABLES:
+            text, bindings = render_small_mask(data_by_slot[22], table)
+            write(table[1], text)
+            symbols.update(bindings)
+            special[22, table[2]] = (table[3], table[1], 0xC000+table[2])
+    # Четыре физических входных байта проекции, остальные рабочие байты не типизируются формально.
+    if "struct FBodyProjection" in (ROOT/"Includes/Structs/Include.inc").read_text("utf-8"):
+        from ControlsBodyProjection import TABLE as BODY_PROJECTION, render as render_body_projection
+        text, bindings = render_body_projection(data_by_slot[22])
+        write(BODY_PROJECTION[1], text)
+        symbols.update(bindings)
+        special[22, 0x117D] = (0x1181, BODY_PROJECTION[1], 0xD17D)
+    # Физическая рабочая запись, сохранение исходного порядка и байтов.
+    if "struct FCircleRasterWork" in (ROOT/"Includes/Structs/Include.inc").read_text("utf-8"):
+        from ControlsCircleWork import TABLE as CIRCLE_WORK, render as render_circle_work
+        text, bindings = render_circle_work(data_by_slot[22])
+        write(CIRCLE_WORK[1], text)
+        symbols.update(bindings)
+        special[22, 0x1181] = (0x118D, CIRCLE_WORK[1], 0xD181)
+    # Четыре исходных байта двухсловного генератора ACTION.
+    if "struct FWordRandomState" in (ROOT/"Includes/Structs/Include.inc").read_text("utf-8"):
+        from ActionWordRandomState import TABLE as WORD_RANDOM_STATE, render as render_word_random
+        text, bindings = render_word_random(data_by_slot[17])
+        write(WORD_RANDOM_STATE[1], text)
+        symbols.update(bindings)
+        special[17, 0x3B15] = (0x3B19, WORD_RANDOM_STATE[1], 0x9B15)
+    # Исходные трёхбайтовые правила параметров, перекрытые шаблонные чтения сохраняются.
+    if "struct FParameterCoefficient" in (ROOT/"Includes/Structs/Include.inc").read_text("utf-8"):
+        from ControlsParameterCoefficients import TABLE as PARAMETER_COEFFICIENTS, render as render_parameter_coefficients
+        text, bindings = render_parameter_coefficients(data_by_slot[23])
+        write(PARAMETER_COEFFICIENTS[1], text)
+        symbols.update(bindings)
+        special[23, 0x486] = (0x4B3, PARAMETER_COEFFICIENTS[1], 0xDF64)
     token_text, token_records = render_token_tables(language, names)
     write(TOKEN_TABLE_PATH, token_text)
     special[5, 0x935] = (0xA67, TOKEN_TABLE_PATH, 0xC935)
@@ -818,6 +862,74 @@ REGION_COMMENTS.setdefault("Controls", {}).update(CONTROLS_SPAN_MASKS_COMMENTS)
 
 from ControlsPointRespawnFacts import COMMENTS as CONTROLS_POINT_RESPAWN_COMMENTS
 REGION_COMMENTS.setdefault("Controls", {}).update(CONTROLS_POINT_RESPAWN_COMMENTS)
+
+
+from ControlsPointMotionFacts import COMMENTS as CONTROLS_POINT_MOTION_COMMENTS
+REGION_COMMENTS.setdefault("Controls", {}).update(CONTROLS_POINT_MOTION_COMMENTS)
+
+
+from ControlsEvenSpanFacts import COMMENTS as CONTROLS_EVEN_SPAN_COMMENTS
+REGION_COMMENTS.setdefault("Controls", {}).update(CONTROLS_EVEN_SPAN_COMMENTS)
+
+
+from ControlsInteriorRowsFacts import COMMENTS as CONTROLS_INTERIOR_ROWS_COMMENTS
+REGION_COMMENTS.setdefault("Controls", {}).update(CONTROLS_INTERIOR_ROWS_COMMENTS)
+
+
+from ControlsSquaresFacts import COMMENTS as CONTROLS_SQUARES_COMMENTS
+REGION_COMMENTS.setdefault("Controls", {}).update(CONTROLS_SQUARES_COMMENTS)
+
+
+from ControlsRasterStepFacts import COMMENTS as CONTROLS_RASTER_STEP_COMMENTS
+REGION_COMMENTS.setdefault("Controls", {}).update(CONTROLS_RASTER_STEP_COMMENTS)
+
+
+from ControlsPushSpansFacts import COMMENTS as CONTROLS_PUSH_SPANS_COMMENTS
+REGION_COMMENTS.setdefault("Controls", {}).update(CONTROLS_PUSH_SPANS_COMMENTS)
+
+
+from ControlsComponentCompareFacts import COMMENTS as CONTROLS_COMPONENT_COMPARE_COMMENTS
+REGION_COMMENTS.setdefault("Controls", {}).update(CONTROLS_COMPONENT_COMPARE_COMMENTS)
+
+
+from ControlsSmallMasksFacts import COMMENTS as CONTROLS_SMALL_MASKS_COMMENTS
+REGION_COMMENTS.setdefault("Controls", {}).update(CONTROLS_SMALL_MASKS_COMMENTS)
+
+
+from ControlsSmallBodiesFacts import COMMENTS as CONTROLS_SMALL_BODIES_COMMENTS
+REGION_COMMENTS.setdefault("Controls", {}).update(CONTROLS_SMALL_BODIES_COMMENTS)
+
+
+from ControlsCircleSetupFacts import COMMENTS as CONTROLS_CIRCLE_SETUP_COMMENTS
+REGION_COMMENTS.setdefault("Controls", {}).update(CONTROLS_CIRCLE_SETUP_COMMENTS)
+
+
+from ControlsCircleSpanFacts import COMMENTS as CONTROLS_CIRCLE_SPAN_COMMENTS
+REGION_COMMENTS.setdefault("Controls", {}).update(CONTROLS_CIRCLE_SPAN_COMMENTS)
+
+
+from ControlsWordRandomFacts import COMMENTS as CONTROLS_WORD_RANDOM_COMMENTS
+REGION_COMMENTS.setdefault("Controls", {}).update(CONTROLS_WORD_RANDOM_COMMENTS)
+
+
+from ActionRegionTypeFacts import COMMENTS as ACTION_REGION_TYPE_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_REGION_TYPE_COMMENTS)
+
+
+from ControlsSeededParametersFacts import COMMENTS as CONTROLS_SEEDED_PARAMETERS_COMMENTS
+REGION_COMMENTS.setdefault("Controls", {}).update(CONTROLS_SEEDED_PARAMETERS_COMMENTS)
+
+
+from ControlsParameterTablesFacts import COMMENTS as CONTROLS_PARAMETER_TABLES_COMMENTS
+REGION_COMMENTS.setdefault("Controls", {}).update(CONTROLS_PARAMETER_TABLES_COMMENTS)
+
+
+from ActionApplyParametersFacts import COMMENTS as ACTION_APPLY_PARAMETERS_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_APPLY_PARAMETERS_COMMENTS)
+
+
+from ActionParameterActivationFacts import COMMENTS as ACTION_PARAMETER_ACTIVATION_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_PARAMETER_ACTIVATION_COMMENTS)
 
 
 if __name__ == "__main__":

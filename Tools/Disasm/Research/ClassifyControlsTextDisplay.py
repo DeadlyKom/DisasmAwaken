@@ -40,6 +40,8 @@ def main(facts=facts, tag='ControlsTextDisplay', document='ControlsTextDisplay',
         for address, f in old.items():
             name = facts.FUNCTIONS[address][0]
             text = text.replace('/Controls/' + f['name'] + '.asm', '/Controls/' + name + '.asm')
+            text = text.replace('[' + f['name'] + '.asm]', '[' + name + '.asm]')
+            text = text.replace('продолжение в ' + f['name'] + '.asm', 'продолжение в ' + name + '.asm')
             text = text.replace('Controls.' + f['name'], 'Controls.' + name)
             text = text.replace('## ' + f['name'] + '\n', '## ' + name + '\n')
         return text

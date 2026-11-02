@@ -1,5 +1,6 @@
                 module Controls
                 module UnknownCF0B
+                ; Документация [частичная нормализация отношения](../../Docs/ControlsRatioInside.md)
 ; Документация [Controls](../../Docs/FunctionDetails/Controls.md)
 ; -----------------------------------------
 ; Unknown, назначение этого фрагмента ещё не установлено

@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "total_cases": 90248,
+  "cases_by_kind": {
+    "small_divisors": 65536,
+    "coefficient_pairs": 24640,
+    "edges": 72
+  },
+  "domain": "0<=N<=Q<=7FFFFF, alternative C is 2 or 3",
+  "mathematical_normalization_and_byte_division": true,
+  "every_output_register_except_r_and_t_checked": true,
+  "exact_stack_return_target": true,
+  "nonstack_memory_unchanged": true,
+  "stack_write_values_and_r_proved": false,
+  "tiny_divisor_direct_return_preserved": true,
+  "outside_domain_proved": false,
+  "whole_procedure_proved": false,
+  "unknown_status_preserved": true,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

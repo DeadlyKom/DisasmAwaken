@@ -1,5 +1,6 @@
 {
   "passed": true,
+  "total_cases": 3712,
   "returning_frames": 3709,
   "nonprogress_frames": 3,
   "cases_by_kind": {

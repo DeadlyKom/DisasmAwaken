@@ -1222,4 +1222,119 @@ NegativeStep    equ #CE65                                                       
 NegativeYOffset equ #CE78                                                       ; смещение Y первой ветви этого входа
                 endmodule
 
+
+                ; Существующее состояние, память не выделяется
+                module ControlsPointMotionState
+YControl        equ #9B95                                                       ; управление проходом Y
+XControl        equ #9B96                                                       ; управление проходом X
+TurnControl     equ #9B97                                                       ; отрицание задаёт индекс синусоиды
+YWrapOffset     equ #CB2B                                                       ; исходное нулевое смещение нового Y
+XWrapOffset     equ #CBC4                                                       ; исходное нулевое смещение нового X
+YCosCoeff       equ #CC7E                                                       ; операнд косинуса для нового Y
+XSinCoeff       equ #CCD2                                                       ; операнд синуса для нового Y
+XCosCoeff       equ #CD49                                                       ; операнд косинуса для нового X
+YNegSinCoeff    equ #CD9D                                                       ; операнд отрицательного синуса для нового X
+YRespawnCall    equ #CD31                                                       ; операнд CALL при недопустимом Y
+XRespawnCall    equ #CDFC                                                       ; операнд CALL при недопустимом X
+TurnYStore      equ #CE0B                                                       ; отложенный новый Y, операнд LD (HL), n
+                endmodule
+
+
+                ; Существующее состояние, память не выделяется
+                module ControlsEvenSpanState
+TailOffset      equ #CEB4                                                       ; изменяемое знаковое смещение JR
+Mode            equ #D18B                                                       ; общий байт режима, Z возвращает его нулевое состояние
+                endmodule
+
+
+                ; Существующее состояние, память не выделяется
+                module ControlsInteriorRowsState
+Mode            equ #D18C                                                       ; общий байт режима, его нулевое состояние возвращается в Z
+RowStep         equ #D5B5                                                       ; операнд LD DE, nn, шаг строки -32 либо 32
+BoundaryLimit   equ #D600                                                       ; операнд CP, верхняя либо нижняя граница страницы
+BoundaryBranch  equ #D601                                                       ; сам код JR C либо JR NC после проверки границы
+                endmodule
+
+
+                ; Существующее состояние, память не выделяется
+                module ControlsSquaresState
+SquareDiff      equ #D188                                                       ; рабочее слово D*D-A*A-Carry по модулю 65536
+                endmodule
+
+
+                ; Существующее состояние, память не выделяется
+                module ControlsRasterStepState
+SavedSP         equ #D186                                                       ; указатель сохранённого AF и внешнего возврата рисователя
+                endmodule
+
+
+                ; Существующее состояние, память не выделяется
+                module ControlsSmallBodiesState
+Mode            equ #CEF9                                                       ; исходный режим, принимаются только 0..3
+Pattern         equ #D240                                                       ; два байта рисунка и XOR-чередования, операнд LD IX, nn
+LeftMask        equ #DA83                                                       ; изменяемый операнд старшего байта выровненной маски
+                endmodule
+
+
+                ; Существующее состояние, память не выделяется
+                module ControlsCircleSetupState
+WorkY           equ #D181                                                       ; младший байт исходной рабочей пары Y и X
+WorkX           equ #D182                                                       ; старший байт исходной рабочей пары Y и X
+CenterY         equ #D183                                                       ; байтовая строка центра в подготовителях края
+SectionRadius   equ #D185                                                       ; байт сечения, загружаемый в альтернативный E
+                endmodule
+
+
+                ; Существующее состояние, память не выделяется
+                module ControlsCircleSpanState
+CenterX         equ #D184                                                       ; байтовая горизонтальная координата центра сечения
+                endmodule
+
+
+                ; Существующее состояние, память не выделяется
+                module ControlsWordRandomState
+First           equ #9B15                                                       ; первое слово состояния, получает прежнее Second
+Second          equ #9B17                                                       ; второе слово состояния, результат двухсловной рекурсии
+                endmodule
+
+
+                ; Существующее состояние, память не выделяется
+                module ControlsParameterTablesState
+SeedFirst       equ #9BC1                                                       ; первое слово зерна из существующего контекста
+SeedSecond      equ #9BC3                                                       ; второе слово зерна из существующего контекста
+StepControl     equ #9BC5                                                       ; управляющий байт числа шагов генератора
+SeedIndex       equ #688B                                                       ; изменяемый операнд LD A, n по 688A общего ядра ACTION
+Parameters      equ #9BA4                                                       ; пятнадцать последовательных вычисляемых байтов
+CoordRows       equ #7B97                                                       ; первая из девяти записей с физическим шагом шесть
+                endmodule
+
+
+                ; Существующее состояние, память не выделяется
+                module ActionApplyParametersState
+CImmediate00    equ #F79C                                                       ; поле 00, операнд LD C, n в верхнем банке 0
+CImmediate02    equ #F798                                                       ; поле 02, соседний операнд LD C, n в верхнем банке 0
+AddImmediate03  equ #A968                                                       ; поле 03, операнд ADD A, n в фиксированном банке 2
+Unknown04       equ #63B9                                                       ; поле 04, целевой потребитель ещё не установлен
+AddImmediate05  equ #A8B5                                                       ; поле 05, операнд ADD A, n в фиксированном банке 2
+Compare06A      equ #7B6B                                                       ; поле 06, операнд CP n в фиксированном банке 5
+AddImmediate06B equ #6874                                                       ; поле 06, вторая цель, операнд ADD A, n в фиксированном банке 5
+Unknown07       equ #6615                                                       ; поле 07, целевой потребитель ещё не установлен
+Unknown08       equ #E6E7                                                       ; поле 08, целевой потребитель верхнего банка 0 ещё не установлен
+Unknown09       equ #E823                                                       ; поле 09, целевой потребитель верхнего банка 0 ещё не установлен
+Unknown0A       equ #65E5                                                       ; поле 0A, целевой потребитель ещё не установлен
+Compare0B       equ #79A4                                                       ; поле 0B, операнд CP n в фиксированном банке 5
+OrImmediate0C   equ #7E07                                                       ; поле 0C, операнд OR n в фиксированном банке 5
+HImmediate0D    equ #7E09                                                       ; поле 0D, операнд LD H, n в фиксированном банке 5
+OrImmediate0E   equ #7DE4                                                       ; поле 0E, операнд OR n в фиксированном банке 5
+                endmodule
+
+
+                ; Существующее состояние, память не выделяется
+                module ActionParameterActivationState
+UnknownWord0    equ #ECA9                                                       ; первое обнуляемое слово банка 0, игровой смысл не установлен
+UnknownWord1    equ #ECF6                                                       ; второе обнуляемое слово банка 0, игровой смысл не установлен
+UnknownByte0    equ #9B83                                                       ; первый обнуляемый байт фиксированного банка 2, игровой смысл не установлен
+UnknownByte1    equ #9B82                                                       ; второй обнуляемый байт фиксированного банка 2, игровой смысл не установлен
+                endmodule
+
                 endif

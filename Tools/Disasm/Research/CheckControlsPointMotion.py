@@ -107,7 +107,7 @@ def main():
         refresh=seed*7
         for controls in ([1,0,0],[0,255,1],[128,1,255],[0,0,0],[64,192,128],[255,127,64]):
             refresh=check(memory,controls,refresh,'persistent_sequence')
-    report=dict(passed=True,returning_frames=frames,nonprogress_frames=interrupted,cases_by_kind=dict(counts),
+    report=dict(passed=True,total_cases=frames+interrupted,returning_frames=frames,nonprogress_frames=interrupted,cases_by_kind=dict(counts),
         every_ram_byte_and_write_checked=True,exact_main_alternate_index_and_refresh_registers=True,
         real_rng_and_both_respawn_entries=True,no_call_stubs=True,
         arithmetic_reference_independent=True,refresh_counts_from_original_opcode_m1_profile=True,

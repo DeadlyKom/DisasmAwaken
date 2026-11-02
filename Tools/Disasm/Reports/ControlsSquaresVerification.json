@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "total_cases": 196608,
+  "cases_by_entry": {
+    "D30B": 65536,
+    "D609": 131072
+  },
+  "lookup_all_af": true,
+  "lookup_exact_registers_flags_memory_writes_and_r": true,
+  "square_root_all_radius_offset_carry": true,
+  "square_root_formula": "isqrt((radius**2-offset**2-Carry) AND FFFF)",
+  "square_root_exact_output_registers": true,
+  "square_root_internal_stack_values_proved": true,
+  "square_root_exact_r": true,
+  "every_ram_byte_and_write_checked": true,
+  "whole_d30b_fragment_proved": false,
+  "whole_d609_fragment_proved": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

@@ -1,13 +1,13 @@
 {
   "status": "in_progress",
   "all_plan_stages_completed": false,
-  "fragments": 1187,
-  "described": 1021,
-  "unknown": 166,
-  "unproved_contracts": 349,
+  "fragments": 1193,
+  "described": 1051,
+  "unknown": 142,
+  "unproved_contracts": 325,
   "named_without_contract": 183,
-  "instruction_count": 39824,
-  "unclassified_bytes": 298356,
+  "instruction_count": 39951,
+  "unclassified_bytes": 297310,
   "passed_reports": [
     "Tools/Disasm/Reports/PointerVerification.json",
     "Tools/Disasm/Reports/PointerTablesVerification.json",
@@ -425,7 +425,61 @@
     "Tools/Disasm/Reports/ControlsBufferPointsTableClassification.json",
     "Tools/Disasm/Reports/ActionBitmapTablesClassification.json",
     "Tools/Disasm/Reports/ControlsDivisionVerification.json",
-    "Tools/Disasm/Reports/ControlsDivisionClassification.json"
+    "Tools/Disasm/Reports/ControlsDivisionClassification.json",
+    "Tools/Disasm/Reports/ControlsSpanMasksVerification.json",
+    "Tools/Disasm/Reports/ControlsSpanMasksClassification.json",
+    "Tools/Disasm/Reports/ControlsPointRespawnVerification.json",
+    "Tools/Disasm/Reports/ControlsPointRespawnDispatchVerification.json",
+    "Tools/Disasm/Reports/ControlsPointRespawnCodeClassification.json",
+    "Tools/Disasm/Reports/ControlsPointRespawnClassification.json",
+    "Tools/Disasm/Reports/ControlsPointProductsVerification.json",
+    "Tools/Disasm/Reports/ControlsPointMotionVerification.json",
+    "Tools/Disasm/Reports/ControlsPointMotionClassification.json",
+    "Tools/Disasm/Reports/ActionSineTableClassification.json",
+    "Tools/Disasm/Reports/ControlsEvenSpanVerification.json",
+    "Tools/Disasm/Reports/ControlsEvenSpanClassification.json",
+    "Tools/Disasm/Reports/ControlsInteriorRowsVerification.json",
+    "Tools/Disasm/Reports/ControlsInteriorRowsClassification.json",
+    "Tools/Disasm/Reports/ControlsSquaresVerification.json",
+    "Tools/Disasm/Reports/ControlsSquaresClassification.json",
+    "Tools/Disasm/Reports/ControlsRasterStepVerification.json",
+    "Tools/Disasm/Reports/ControlsRasterStepClassification.json",
+    "Tools/Disasm/Reports/ControlsEvenSpanCodeClassification.json",
+    "Tools/Disasm/Reports/ControlsSquareTableClassification.json",
+    "Tools/Disasm/Reports/ControlsSquareEntrySplitClassification.json",
+    "Tools/Disasm/Reports/ControlsPushSpansVerification.json",
+    "Tools/Disasm/Reports/ControlsPushSpansClassification.json",
+    "Tools/Disasm/Reports/ControlsCircleSetupVerification.json",
+    "Tools/Disasm/Reports/ControlsCircleSetupClassification.json",
+    "Tools/Disasm/Reports/ControlsCircleSpanVerification.json",
+    "Tools/Disasm/Reports/ControlsCircleSpanClassification.json",
+    "Tools/Disasm/Reports/ControlsCircleEntrySplitClassification.json",
+    "Tools/Disasm/Reports/ControlsCircleWorkClassification.json",
+    "Tools/Disasm/Reports/ControlsCircleInteriorVerification.json",
+    "Tools/Disasm/Reports/ControlsComponentCompareVerification.json",
+    "Tools/Disasm/Reports/ControlsComponentCompareClassification.json",
+    "Tools/Disasm/Reports/ControlsSmallMasksVerification.json",
+    "Tools/Disasm/Reports/ControlsSmallMasksClassification.json",
+    "Tools/Disasm/Reports/ControlsSmallBodiesVerification.json",
+    "Tools/Disasm/Reports/ControlsSmallBodiesClassification.json",
+    "Tools/Disasm/Reports/ControlsSmallMaskTablesClassification.json",
+    "Tools/Disasm/Reports/ControlsBodyProjectionClassification.json",
+    "Tools/Disasm/Reports/ControlsWordRandomVerification.json",
+    "Tools/Disasm/Reports/ControlsWordRandomClassification.json",
+    "Tools/Disasm/Reports/ActionWordRandomStateClassification.json",
+    "Tools/Disasm/Reports/ControlsRatioInsideVerification.json",
+    "Tools/Disasm/Reports/ActionRegionTypeVerification.json",
+    "Tools/Disasm/Reports/ActionRegionTypeClassification.json",
+    "Tools/Disasm/Reports/ControlsSeededParametersVerification.json",
+    "Tools/Disasm/Reports/ControlsSeededParametersClassification.json",
+    "Tools/Disasm/Reports/ControlsParameterTablesVerification.json",
+    "Tools/Disasm/Reports/ControlsParameterTablesClassification.json",
+    "Tools/Disasm/Reports/ControlsParameterCoefficientsClassification.json",
+    "Tools/Disasm/Reports/ActionApplyParametersVerification.json",
+    "Tools/Disasm/Reports/ActionApplyParametersClassification.json",
+    "Tools/Disasm/Reports/ActionParameterActivationVerification.json",
+    "Tools/Disasm/Reports/ActionParameterActivationClassification.json",
+    "Tools/Disasm/Reports/ActionParameterEntrySplitClassification.json"
   ],
   "next_station_work": [
     {
@@ -439,9 +493,9 @@
   ],
   "remaining_by_region": {
     "Music": 0,
-    "Action": 96,
+    "Action": 93,
     "ThreeD": 23,
-    "Controls": 47
+    "Controls": 26
   },
   "assembly_executed": false,
   "native_execution_performed": false,
@@ -457,9 +511,9 @@
   "temporary_cleanup": "695 прежних снимков сохранены в LegacySnapshots-20261031.zip. Ещё 302 проверенных снимка, 4455 распакованных файлов и 1149203729 байтов сохранены в RecentSnapshots-20261101-Music.zip размером 77536565 байтов. Проверены 4022 неизменённых рабочих файла. Маркеры защищают от повторного экспорта, восстановление через ResearchArchive.py. Три используемых кандидата, сценарии, оригиналы, отчёты и данные сборки сохранены.",
   "pending_by_region": {
     "Music": 0,
-    "Action": 96,
+    "Action": 93,
     "ThreeD": 23,
-    "Controls": 47
+    "Controls": 26
   },
   "next_semantic_work": [
     "Все зарегистрированные Station-входы имеют описанные контракты. Остаются назначения части физических данных, игровые потребители настроек, длительная нативная проверка и произвольные IRQ.",
@@ -467,7 +521,7 @@
     "LANG, неизвестный префикс и потребители секторного хвоста, соседний байт 98AD, физические данные языка. События 1, 2, 5, 6, 15, 16 и 17 разобраны отдельно.",
     "Остальные регионы по pending_by_region и все именованные фрагменты без доказанных контрактов",
     "Музыка, Unknown63 в заголовке композиции, интегральный договор PlayFrame и независимая композиция оставшейся подготовки полного кадра, аппаратные IRQ и нативный звук. Все 49 зарегистрированных блоков имеют описанный контракт, зарезервированные эффекты не исполнены.",
-    "Controls, дальнейший разбор обновления координат CB00 и вызывающих геометрических процедур CF0B/D10A. Копировщик, генератор точек и оба входа деления описаны. Полный игровой цикл и IRQ не доказаны."
+    "Controls, дальнейший разбор геометрических процедур CF0B/D0CA/D10A и их данных. CB00, копировщик, генератор точек и оба входа деления описаны. Полный игровой цикл и IRQ не доказаны."
   ],
   "next_text_algorithm": "Все зарегистрированные Text-входы имеют описанный контракт, полнота игровых назначений полей и физической разметки LANG ещё не доказана",
   "next_map_work": "Писатели сохранённых списков и их обёртки управления описаны. Остаточные назначения полей, данных, хвостов фаз и формулы запаса дальности требуют полного прохода по потребителям.",
@@ -1026,9 +1080,9 @@
   },
   "remaining_unknown_by_region": {
     "Music": 0,
-    "Action": 96,
+    "Action": 93,
     "ThreeD": 23,
-    "Controls": 47
+    "Controls": 26
   },
   "deferred_action_adapters": {
     "report": "Tools/Disasm/Reports/DeferredActionAdaptersVerification.json",
@@ -1289,18 +1343,17 @@
     "assembly_executed": false
   },
   "manual_build_check": {
-    "status": "passed_current_sources",
+    "status": "passed_before_latest_source_changes",
     "task": "Ctrl+B, Builder/Main.asm",
     "image": "Awakenv02.trd",
     "size": 655360,
     "sha256": "55a11de202a5334547e39a6db42c945242a2a53559dc1cf601522219e3463f32",
-    "checked_at_utc": "2026-11-02T10:15:20Z",
+    "checked_at_utc": "2026-11-02T18:08:47Z",
     "active_allocations": 41,
-    "source_changes_after_build": false,
-    "current_source_assembly_verified": true,
+    "source_changes_after_build": true,
+    "current_source_assembly_verified": false,
     "codex_assembler_executed": false,
-    "requested_for_current_sources": false,
-    "fix": "Removed only the Judith Coxx prefix, all other file bytes preserved"
+    "requested_for_current_sources": false
   },
   "controls_text_display": {
     "report": "Tools/Disasm/Reports/ControlsTextDisplayVerification.json",
@@ -1387,23 +1440,244 @@
     "assembly_executed": false
   },
   "last_user_confirmed_build": {
-    "checked_at_utc": "2026-11-02T09:16:16Z",
+    "date": "2026-11-02",
     "errors": 0,
     "warnings": 0,
-    "compiled_lines": 114539,
-    "work_seconds": 1.468,
+    "compiled_lines": 120332,
+    "work_seconds": 1.391,
     "full_image_byte_identical": true,
     "size": 655360,
     "source_changes_after_build": true,
-    "codex_assembler_executed": false
+    "observation": "Пользователь подтвердил Ctrl+B, число строк и время сохранены из его сообщения",
+    "codex_assembler_executed": false,
+    "checked_at_utc": "2026-11-02T18:08:47Z"
   },
   "last_verified_build_artifact": {
-    "checked_at_utc": "2026-11-02T10:15:20Z",
+    "checked_at_utc": "2026-11-02T18:08:47Z",
     "sha256": "55a11de202a5334547e39a6db42c945242a2a53559dc1cf601522219e3463f32",
     "size": 655360,
     "active_allocations": 41,
     "includes_buffer_points_and_division": true,
     "first_line_prefix_removed": true,
-    "codex_assembler_executed": false
+    "codex_assembler_executed": false,
+    "source_changes_after_build": true
+  },
+  "controls_span_masks": {
+    "report": "Tools/Disasm/Reports/ControlsSpanMasksVerification.json",
+    "cases": 135168,
+    "exact_registers_and_flags": true,
+    "all_x_y_bytes": true,
+    "shared_d18c_has_no_local_output_effect": true,
+    "assembly_executed": false
+  },
+  "controls_point_respawn": {
+    "report": "Tools/Disasm/Reports/ControlsPointRespawnVerification.json",
+    "cases": 392192,
+    "assembly_executed": false,
+    "irq_executed": false,
+    "native_execution": false
+  },
+  "controls_point_respawn_dispatch": {
+    "report": "Tools/Disasm/Reports/ControlsPointRespawnDispatchVerification.json",
+    "cases": null,
+    "assembly_executed": false,
+    "irq_executed": false,
+    "native_execution": false
+  },
+  "controls_point_products": {
+    "report": "Tools/Disasm/Reports/ControlsPointProductsVerification.json",
+    "cases": 262144,
+    "assembly_executed": false,
+    "irq_executed": false,
+    "native_execution": false
+  },
+  "controls_point_motion": {
+    "report": "Tools/Disasm/Reports/ControlsPointMotionVerification.json",
+    "cases": 3712,
+    "assembly_executed": false,
+    "irq_executed": false,
+    "native_execution": false
+  },
+  "action_sine_table": {
+    "report": "Tools/Disasm/Reports/ActionSineTableClassification.json",
+    "typed_bytes": 256,
+    "physical_records": 256,
+    "record_type": "FFixedSineValue",
+    "original_action_offset": 14592,
+    "ram_address": 39168,
+    "assembly_executed": false
+  },
+  "controls_even_span": {
+    "report": "Tools/Disasm/Reports/ControlsEvenSpanVerification.json",
+    "cases": 23297,
+    "exact_registers_flags_memory_writes_and_r": true,
+    "assembly_executed": false,
+    "irq_executed": false,
+    "native_execution": false
+  },
+  "controls_interior_rows": {
+    "report": "Tools/Disasm/Reports/ControlsInteriorRowsVerification.json",
+    "cases": 134612,
+    "exact_registers_flags_memory_writes_and_r": true,
+    "assembly_executed": false,
+    "irq_executed": false,
+    "native_execution": false
+  },
+  "controls_squares": {
+    "report": "Tools/Disasm/Reports/ControlsSquaresVerification.json",
+    "cases": 196608,
+    "exact_registers_flags_memory_writes_and_r": true,
+    "assembly_executed": false,
+    "irq_executed": false,
+    "native_execution": false
+  },
+  "controls_raster_step": {
+    "report": "Tools/Disasm/Reports/ControlsRasterStepVerification.json",
+    "cases": 196608,
+    "exact_registers_flags_memory_writes_and_r": true,
+    "assembly_executed": false,
+    "irq_executed": false,
+    "native_execution": false
+  },
+  "controls_square_table": {
+    "typed_bytes": 512,
+    "physical_records": 512,
+    "planes": [
+      "C300",
+      "C400"
+    ],
+    "record_type": "FSquareTableByte",
+    "formula_used_for_assembly": false
+  },
+  "controls_push_spans": {
+    "cases": 65280,
+    "typed_as_code_bytes": 88,
+    "instructions": 64,
+    "full_rasterizers_proved": false,
+    "original_function_status_preserved": "unknown",
+    "actual_helpers_and_nonlocal_returns": true,
+    "assembly_executed": false,
+    "irq_executed": false,
+    "native_execution": false
+  },
+  "controls_circle_setup": {
+    "cases": 393216,
+    "report": "Tools/Disasm/Reports/ControlsCircleSetupVerification.json",
+    "exact_registers_flags_r_sp_and_all_ram": true,
+    "whole_large_renderer_proved": false,
+    "assembly_executed": false,
+    "irq_executed": false,
+    "native_execution": false
+  },
+  "controls_circle_span": {
+    "cases": 131072,
+    "report": "Tools/Disasm/Reports/ControlsCircleSpanVerification.json",
+    "exact_registers_flags_r_sp_and_all_ram": true,
+    "whole_large_renderer_proved": false,
+    "assembly_executed": false,
+    "irq_executed": false,
+    "native_execution": false
+  },
+  "controls_circle_interior_partial": {
+    "cases": 839,
+    "modeled_rows": 46449,
+    "all_output_registers_proved": false,
+    "full_renderer_proved": false,
+    "unknown_status_preserved": true
+  },
+  "controls_circle_work": {
+    "typed_bytes": 12,
+    "physical_records": 1,
+    "structure": "FCircleRasterWork",
+    "mode_full_game_meaning_proved": false
+  },
+  "controls_component_compare": {
+    "report": "Tools/Disasm/Reports/ControlsComponentCompareVerification.json",
+    "cases": 327680,
+    "exact_registers_flags_memory_writes_and_r": true,
+    "assembly_executed": false,
+    "irq_executed": false,
+    "native_execution": false
+  },
+  "controls_small_masks": {
+    "report": "Tools/Disasm/Reports/ControlsSmallMasksVerification.json",
+    "cases": 14336,
+    "exact_registers_flags_memory_writes_and_r": true,
+    "assembly_executed": false,
+    "irq_executed": false,
+    "native_execution": false
+  },
+  "controls_small_bodies": {
+    "report": "Tools/Disasm/Reports/ControlsSmallBodiesVerification.json",
+    "cases": 83152,
+    "exact_registers_flags_memory_writes_and_r": true,
+    "assembly_executed": false,
+    "irq_executed": false,
+    "native_execution": false
+  },
+  "controls_word_random": {
+    "cases": 196708,
+    "physical_state_bytes": 4,
+    "exact_registers_flags_r_sp_and_all_ram": true,
+    "all_32_bit_states_exhausted": false,
+    "period_proved": false,
+    "assembly_executed": false
+  },
+  "controls_ratio_inside_partial": {
+    "cases": 90248,
+    "domain": "0<=N<=Q<=7FFFFF, alternative C is 2 or 3",
+    "whole_procedure_proved": false,
+    "refresh_and_stack_values_proved": false,
+    "unknown_status_preserved": true,
+    "assembly_executed": false
+  },
+  "action_region_type": {
+    "cases": 65536,
+    "exact_registers_flags_r_sp_and_all_ram": true,
+    "game_meaning_proved": false,
+    "assembly_executed": false,
+    "irq_executed": false,
+    "native_execution": false
+  },
+  "controls_seeded_parameters": {
+    "cases": 68608,
+    "exact_registers_flags_r_sp_and_all_ram": true,
+    "game_meaning_proved": false,
+    "assembly_executed": false,
+    "irq_executed": false,
+    "native_execution": false
+  },
+  "controls_parameter_tables": {
+    "cases": 1289,
+    "exact_registers_flags_r_sp_and_all_ram": true,
+    "game_meaning_proved": false,
+    "assembly_executed": false,
+    "irq_executed": false,
+    "native_execution": false
+  },
+  "controls_parameter_coefficients": {
+    "typed_bytes": 45,
+    "physical_records": 15,
+    "structure": "FParameterCoefficient",
+    "overlapping_h4_template_preserved": true,
+    "shared_mutation_writer_bank": 1,
+    "shared_mutation_target_bank": 5,
+    "target_original_action_offset": 2760
+  },
+  "action_apply_parameters": {
+    "cases": 3840,
+    "exact_registers_flags_r_sp_and_all_ram": true,
+    "game_meaning_proved": false,
+    "assembly_executed": false,
+    "irq_executed": false,
+    "native_execution": false
+  },
+  "action_parameter_activation": {
+    "cases": 200800,
+    "exact_registers_flags_r_sp_and_all_ram": true,
+    "game_meaning_proved": false,
+    "assembly_executed": false,
+    "irq_executed": false,
+    "native_execution": false
   }
 }

@@ -91,9 +91,19 @@ def main():
         index.append(f"| #{function['address']:04X} | {link(function)} | {function['description']} |")
     write("Docs/Functions.md","\n".join(index))
 
+    # Доказанная запись банка 1 в фиксированное окно банка 5, перенесённое ядро ACTION.
+    if any(f['region']=='Controls' and f['address']==0xDE10 and f['name']=='BuildParameterTables' for f in functions):
+        from ControlsParameterTablesFacts import shared_mutation
+        mutations.append(shared_mutation(flow,functions))
+
+    # Десять доказанных операндов ApplyParameterSet, верхние цели относятся к выбранному банку 0.
+    if any(f['region']=='Action' and f['address']==0xAC5D and f['name']=='ApplyParameterSet' for f in functions):
+        from ActionApplyParametersFacts import qualify_mutations
+        qualify_mutations(mutations,flow,functions)
+
     # Сохранение адресов записей в инструкции без объявления каждой записи ошибкой.
-    lines = ["# Изменяемые инструкции", "", "Это непосредственные записи внутрь размеченных инструкций того же",
-             "представления памяти. Они включают сохранение SP, операнды и переключаемые",
+    lines = ["# Изменяемые инструкции", "", "Это непосредственные записи внутрь размеченных инструкций, включая",
+             "отдельно доказанные межмодульные цели. Они включают сохранение SP, операнды и переключаемые",
              "ветви. Не перечисляют все косвенные записи и генерируемые области.", "",
              "| Регион | Запись из | Адрес записи | Исходная инструкция | Исходник |",
              "| --- | --- | --- | --- | --- |"]
@@ -153,6 +163,15 @@ def main():
                "| FActionTextQueueFrame | #08 | собственная рамка межбанковой обёртки, SavedHL, SavedBC, SavedAF, возврат |",
                "| FMarkerPhaseMasks | #04 | восемь физических записей фаз XOR-маркера, Vertical и три Central-поля, см. [ControlsMarker](ControlsMarker.md) |",
                "| FBufferPoint | #02 | 35 физических записей Y,X в банке 1, см. [ControlsBufferPoints](ControlsBufferPoints.md) |",
+               "| FFixedSineValue | #01 | 256 исходных знаковых значений синусоиды ACTION, см. [ActionSineTable](ActionSineTable.md) |",
+               "| FSquareTableByte | #01 | 512 физических байтов двух плоскостей квадратов, см. [ControlsSquares](ControlsSquares.md) |",
+               "| FComponent24 | #03 | динамическая запись Low, Middle, High для сравнения усечённых ключей, см. [ControlsComponentCompare](ControlsComponentCompare.md) |",
+               "| FSmallMaskSeed | #01 | 18 физических затравок масок радиусов 0..8, см. [ControlsSmallMasks](ControlsSmallMasks.md) |",
+               "| FSmallMaskRow | #01 | 12 физических изменяемых строковых масок, см. [ControlsSmallMasks](ControlsSmallMasks.md) |",
+               "| FBodyProjection | #04 | физические OffsetY, OffsetX, Flags, Radius, остальные флаги ещё требуют разбора, см. [ControlsSmallBodies](ControlsSmallBodies.md) |",
+               "| FCircleRasterWork | #0C | физическая рабочая запись контура, Mode разобран локально, см. [ControlsCircleWork](ControlsCircleWork.md) |",
+               "| FWordRandomState | #04 | физические First и Second двухсловного генератора, см. [ControlsWordRandom](ControlsWordRandom.md) |",
+               "| FParameterCoefficient | #03 | пятнадцать физических Base, SlopeCode, ShiftMask, см. [ControlsParameterTables](ControlsParameterTables.md) |",
                "| FVisualEffect | #12 | запись эффекта, свободное состояние +7 |",
                "| FInterfaceItem | #10 | прямоугольник, флаги и два обработчика интерфейса |",
                "| FProjectedPoint | #05 | X, Y и составной код отсечения вершины |",

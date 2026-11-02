@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "typed_bytes": 45,
+  "physical_records": 15,
+  "structure": "FParameterCoefficient",
+  "logical_file_offset": 1158,
+  "runtime_address": 57188,
+  "overlapping_h4_template_preserved": true,
+  "physical_bytes_preserved": true,
+  "assembly_executed": false
+}

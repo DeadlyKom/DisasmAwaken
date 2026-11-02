@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "total_cases": 1289,
+  "cases_by_kind": {
+    "all_table_cases": 265,
+    "all_counts_by_region": 1024
+  },
+  "all_table_h_c_pairs": 80,
+  "calls_to_original_random": 131849,
+  "real_helpers_without_stubs": true,
+  "coefficient_stride": 3,
+  "coefficient_records": 15,
+  "overlapping_h4_template_preserved": true,
+  "final_exx_register_bank_checked": true,
+  "exact_registers_flags_r_and_sp": true,
+  "every_ram_byte_and_write_checked": true,
+  "all_input_combinations_exhausted": false,
+  "game_field_names_proved": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

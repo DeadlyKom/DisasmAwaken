@@ -1,5 +1,6 @@
                 module Controls
                 module UnknownD10A
+                ; Документация [частичная нормализация отношения](../../Docs/ControlsRatioInside.md)
 ; Документация [Controls](../../Docs/FunctionDetails/Controls.md)
 ; -----------------------------------------
 ; Unknown, назначение этого фрагмента ещё не установлено
@@ -100,7 +101,7 @@ PointD160:      SCF
                 RR D
 PointD163:      LD A, H
                 LD B, D
-                ; JP @Controls.DivideByteFraction.Entry, продолжение в UnknownD165.asm
+                ; JP @Controls.DivideByteFraction.Entry, продолжение в DivideByteFraction.asm
 
                 endmodule
                 endmodule

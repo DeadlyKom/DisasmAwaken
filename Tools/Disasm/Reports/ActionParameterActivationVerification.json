@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "total_cases": 200800,
+  "cases_by_entry": {
+    "AC38": 131072,
+    "AB1B": 65856,
+    "AC44": 3872
+  },
+  "all_ix_and_word_values": true,
+  "every_a_f_pair_for_page_selector": true,
+  "locked_7ffd_behavior_checked": true,
+  "all_field_values_for_activation": true,
+  "real_out_and_physical_eight_banks": true,
+  "exact_registers_flags_r_and_sp": true,
+  "every_physical_ram_byte_and_write_checked": true,
+  "original_return_addresses_and_stack_depth_checked": true,
+  "full_de0a_chain_proved": false,
+  "game_field_names_proved": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

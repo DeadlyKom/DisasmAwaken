@@ -240,6 +240,100 @@ def main():
         assert symbols['FFIXEDSINEVALUE'] == 1 and symbols['FFIXEDSINEVALUE.VALUE'] == 0
         action_sine_records = 256
 
+    # Проверка двух физических слов состояния генератора ACTION.
+    from ActionWordRandomState import TABLE as WORD_RANDOM, parse as parse_word_random
+    word_random_records = 0
+    entries = [item for item in source_map if item['path'] == WORD_RANDOM[1]]
+    if entries:
+        assert len(entries) == 1
+        item = entries[0]
+        raw, labels = parse_word_random((ROOT/WORD_RANDOM[1]).read_text('utf-8'))
+        assert (item['slot'], item['offset'], item['length'], item['origin']) == (17, 0x3B15, 4, 0x9B15)
+        assert raw == sources[17][0x3B15:0x3B19]
+        assert all(symbols.get(key.upper()) == value for key, value in labels.items())
+        assert symbols['FWORDRANDOMSTATE'] == 4
+        assert symbols['FWORDRANDOMSTATE.FIRST'] == 0 and symbols['FWORDRANDOMSTATE.SECOND'] == 2
+        word_random_records = 1
+
+    # Проверка обеих физических плоскостей квадратов и всех 512 экземпляров структуры.
+    from ControlsSquareTable import TABLE as SQUARE_TABLE, parse as parse_squares, validate as validate_squares
+    square_records = 0
+    square_entries = [item for item in source_map if item['path'] == SQUARE_TABLE[1]]
+    if square_entries:
+        assert len(square_entries) == 1
+        item = square_entries[0]
+        raw, labels = parse_squares((ROOT / SQUARE_TABLE[1]).read_text('utf-8'))
+        assert (item['slot'], item['offset'], item['length'], item['origin']) == (22, 0x300, 512, 0xC300)
+        assert raw == validate_squares(sources[22])
+        assert all(symbols.get(key.upper()) == value for key,value in labels.items())
+        assert symbols['FSQUARETABLEBYTE'] == 1 and symbols['FSQUARETABLEBYTE.VALUE'] == 0
+        square_records = 512
+
+    # Проверка затравок малых масок и реально записываемых 12 строковых байтов.
+    from ControlsSmallMaskTables import TABLES as SMALL_MASK_TABLES, parse as parse_small_masks, validate as validate_small_masks
+    small_mask_records = 0
+    for table in SMALL_MASK_TABLES:
+        matches = [item for item in source_map if item['path'] == table[1]]
+        if not matches:
+            continue
+        validate_small_masks(sources[22])
+        assert len(matches) == 1
+        item = matches[0]
+        raw, labels = parse_small_masks((ROOT / table[1]).read_text('utf-8'), table)
+        assert (item['slot'], item['offset'], item['length'], item['origin']) == (22, table[2], table[3]-table[2], 0xC000+table[2])
+        assert raw == sources[22][table[2]:table[3]]
+        assert all(symbols.get(key.upper()) == value for key,value in labels.items())
+        assert symbols[table[4].upper()] == 1 and symbols[(table[4]+'.'+table[5][0][0]).upper()] == 0
+        small_mask_records += len(table[6])
+
+    # Проверка физического экземпляра входных полей проекции без типизации неизвестного рабочего хвоста.
+    from ControlsBodyProjection import TABLE as BODY_PROJECTION, parse as parse_body_projection
+    body_projection_records = 0
+    projection_entries = [item for item in source_map if item['path'] == BODY_PROJECTION[1]]
+    if projection_entries:
+        assert len(projection_entries) == 1
+        item = projection_entries[0]
+        raw, labels = parse_body_projection((ROOT / BODY_PROJECTION[1]).read_text('utf-8'))
+        assert (item['slot'], item['offset'], item['length'], item['origin']) == (22, 0x117D, 4, 0xD17D)
+        assert raw == sources[22][0x117D:0x1181]
+        assert all(symbols.get(key.upper()) == value for key,value in labels.items())
+        assert symbols['FBODYPROJECTION'] == 4
+        assert [symbols['FBODYPROJECTION.'+name.upper()] for name,_,_ in BODY_PROJECTION[5]] == [0,1,2,3]
+        body_projection_records = 1
+
+    # Проверка каждого поля физической рабочей записи большого контура.
+    from ControlsCircleWork import TABLE as CIRCLE_WORK, parse as parse_circle_work
+    circle_work_records = 0
+    entries = [item for item in source_map if item['path'] == CIRCLE_WORK[1]]
+    if entries:
+        assert len(entries) == 1
+        item = entries[0]
+        raw, labels = parse_circle_work((ROOT/CIRCLE_WORK[1]).read_text('utf-8'))
+        assert (item['slot'], item['offset'], item['length'], item['origin']) == (22, 0x1181, 12, 0xD181)
+        assert raw == sources[22][0x1181:0x118D]
+        assert all(symbols.get(key.upper()) == value for key, value in labels.items())
+        assert symbols['FCIRCLERASTERWORK'] == 12
+        offset = 0
+        for name, width, _ in CIRCLE_WORK[5]:
+            assert symbols['FCIRCLERASTERWORK.'+name.upper()] == offset
+            offset += width
+        circle_work_records = 1
+
+    # Проверка пятнадцати физических правил формирования параметров.
+    from ControlsParameterCoefficients import TABLE as PARAMETER_RULES, parse as parse_parameter_rules
+    parameter_rule_records = 0
+    entries = [item for item in source_map if item['path'] == PARAMETER_RULES[1]]
+    if entries:
+        assert len(entries) == 1
+        item = entries[0]
+        raw, labels = parse_parameter_rules((ROOT/PARAMETER_RULES[1]).read_text('utf-8'))
+        assert (item['slot'], item['offset'], item['length'], item['origin']) == (23, 0x486, 45, 0xDF64)
+        assert raw == sources[23][0x486:0x4B3]
+        assert all(symbols.get(key.upper()) == value for key, value in labels.items())
+        assert symbols['FPARAMETERCOEFFICIENT'] == 3
+        assert [symbols['FPARAMETERCOEFFICIENT.'+name.upper()] for name,_,_ in PARAMETER_RULES[5]] == [0,1,2]
+        parameter_rule_records = 15
+
     # Проверка физических записей композиции и точной грамматики фактических DB-команд.
     from MusicCompositionSource import descriptions as composition_descriptions, parse as parse_composition, STRUCTURES as COMPOSITION_STRUCTURES
     composition = sources[10][0xC00:0x1C29]
@@ -1199,6 +1293,12 @@ def main():
     report['marker_phase_records'] = marker_records
     report['buffer_point_records'] = buffer_point_records
     report['action_sine_records'] = action_sine_records
+    report['word_random_records'] = word_random_records
+    report['square_table_records'] = square_records
+    report['small_mask_records'] = small_mask_records
+    report['body_projection_records'] = body_projection_records
+    report['circle_work_records'] = circle_work_records
+    report['parameter_rule_records'] = parameter_rule_records
     (ROOT/"Tools/Disasm/Reports/SourceVerification.json").write_text(
         json.dumps(report,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     print(json.dumps(report,ensure_ascii=False,indent=2))

@@ -1,9 +1,10 @@
                 module Controls
                 module UnknownD727
+                ; Документация [быстрая заливка через SP](../../Docs/ControlsPushSpans.md)
 ; Документация [Controls](../../Docs/FunctionDetails/Controls.md)
 ; -----------------------------------------
 ; Unknown, назначение этого фрагмента ещё не установлено
-; исходная запись 22, файловые смещения #1727..#180E
+; исходная запись 22, файловые смещения #1727..#1832
 ; In:
 ;   Unknown, регистровый контракт ещё не доказан
 ; Out:
@@ -14,18 +15,19 @@
 ;   граница файла не доказывает границу логической процедуры
 ;   состояние самомодификации и активной страницы учитывается отдельно
 ; -----------------------------------------
-Entry:          LD A, (#D18B)
+                ; (1) продолжение цепочки после UnknownD633.asm, CPU-стек ещё направлен в растр
+Entry:          LD A, (@ControlsEvenSpanState.Mode)
                 AND A
-                LD SP, (#D186)
+                LD SP, (@ControlsRasterStepState.SavedSP)
                 JR NZ, @Controls.UnknownD727.PointD736                          ; переход, если флаг Z сброшен
 
 
-                CALL @Controls.UnknownD925.Entry
-                JR @Controls.UnknownD609.PointD6C9
+                CALL @Controls.AdvanceRasterUp.Entry
+                JR @Controls.UnknownD633.PointD6C9
 
 
-PointD736:      CALL @Controls.UnknownD940.Entry
-                JR @Controls.UnknownD609.PointD6C9
+PointD736:      CALL @Controls.AdvanceRasterDown.Entry
+                JR @Controls.UnknownD633.PointD6C9
 
 
 PointD73B:      LD A, L
@@ -34,7 +36,7 @@ PointD73B:      LD A, L
                 JR NC, @Controls.UnknownD727.PointD754                          ; переход, если флаг Carry сброшен
 
 
-                LD A, (#D18B)
+                LD A, (@ControlsEvenSpanState.Mode)
                 AND A
                 JR NZ, @Controls.UnknownD727.PointD74F                          ; переход, если флаг Z сброшен
 
@@ -56,7 +58,7 @@ PointD754:      POP AF
                 RET
 
 
-PointD756:      LD (#D186), SP
+PointD756:      LD (@ControlsRasterStepState.SavedSP), SP
 PointD75A:      LD A, C
                 AND (HL)
                 LD D, A
@@ -77,15 +79,15 @@ PointD75A:      LD A, C
                 LD A, IXL
                 LD (HL), A
                 LD A, #00
-PointD773:      CALL @Controls.UnknownCEA4.Entry
+PointD773:      CALL @Controls.FillEvenSpan.Entry
                 JR NZ, @Controls.UnknownD727.PointD77D                          ; переход, если флаг Z сброшен
 
 
-                CALL @Controls.UnknownD925.Entry
+                CALL @Controls.AdvanceRasterUp.Entry
                 JR @Controls.UnknownD727.PointD780
 
 
-PointD77D:      CALL @Controls.UnknownD940.Entry
+PointD77D:      CALL @Controls.AdvanceRasterDown.Entry
 PointD780:      EXX
                 ADD HL, DE
                 INC E
@@ -136,7 +138,7 @@ PointD7A8:      EX AF, AF'
                 JR Z, @Controls.UnknownD727.PointD7BC                           ; переход, если флаг Z установлен
 
 
-                JP @Controls.UnknownD609.PointD696
+                JP @Controls.UnknownD633.PointD696
 
 
 PointD7B2:      EX AF, AF'
@@ -147,10 +149,10 @@ PointD7B2:      EX AF, AF'
                 JR Z, @Controls.UnknownD727.PointD7BC                           ; переход, если флаг Z установлен
 
 
-                JP @Controls.UnknownD609.PointD6D7
+                JP @Controls.UnknownD633.PointD6D7
 
 
-PointD7BC:      LD SP, (#D186)
+PointD7BC:      LD SP, (@ControlsRasterStepState.SavedSP)
                 POP AF
                 RET
 
@@ -213,6 +215,8 @@ PointD7D0:      EXX
                 LD A, IXL
                 LD (HL), A
                 LD A, #00
+                ; вычисление изменяемого смещения JR как 16-A для выбора A операций PUSH AF
+                ; после подготовки AF оба его байта равны IXL, затем SP заменяется адресом правой границы растра
 PointD7FE:      LD L, D
                 SUB #11
                 CPL
@@ -226,6 +230,45 @@ PointD7FE:      LD L, D
                 LD SP, HL
 PointD80D:      JR @Controls.UnknownD727.PointD80D
 
+
+                ; -----------------------------------------
+                ; Динамический хвост, SP направлен в растр и AF содержит два байта рисунка
+                ; Каждый вход PushN записывает N пар справа налево, прежний CPU-стек восстанавливается после цепочки
+                ; IRQ во время этого участка не входят в доказанный договор
+                ; -----------------------------------------
+Push16:         PUSH AF
+Push15:         PUSH AF
+Push14:         PUSH AF
+Push13:         PUSH AF
+Push12:         PUSH AF
+Push11:         PUSH AF
+Push10:         PUSH AF
+Push9:          PUSH AF
+Push8:          PUSH AF
+Push7:          PUSH AF
+Push6:          PUSH AF
+Push5:          PUSH AF
+Push4:          PUSH AF
+Push3:          PUSH AF
+Push2:          PUSH AF
+Push1:          PUSH AF
+                ; чтение Mode после заполнения, нуль выбирает движение вверх, ненулевой байт вниз
+ResumeRows:     LD A, (@ControlsEvenSpanState.Mode)
+                ; проверка направления следующей строки по нулевому состоянию Mode
+                AND A
+                ; восстановление CPU-стека из SavedSP перед настоящим CALL помощника строки
+                LD SP, (@ControlsRasterStepState.SavedSP)
+                JR NZ, @Controls.UnknownD727.ResumeDown                         ; переход, если Mode ненулевой, выполнить AdvanceRasterDown через ResumeDown
+
+                ; шаг вверх, помощник может завершить весь рисователь через сохранённую рамку
+                CALL @Controls.AdvanceRasterUp.Entry
+                JR @Controls.UnknownD727.PointD7CC
+
+                ; шаг вниз с тем же возможным нелокальным завершением рисователя
+ResumeDown:     CALL @Controls.AdvanceRasterDown.Entry
+                JR @Controls.UnknownD727.PointD7CC
+
+                ; -----------------------------------------
 
                 endmodule
                 endmodule

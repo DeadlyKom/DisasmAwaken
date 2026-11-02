@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "total_cases": 196608,
+  "cases_by_entry": {
+    "D925": 98304,
+    "D940": 98304
+  },
+  "outcomes": {
+    "page_carry": 16320,
+    "same_page": 114688,
+    "unwind": 65600
+  },
+  "all_hl_both_directions": true,
+  "all_saved_af_words": true,
+  "exact_registers_flags_r_and_sp": true,
+  "every_ram_byte_checked": true,
+  "no_memory_writes": true,
+  "actual_nonlinear_stack_return": true,
+  "e_wrap_does_not_change_d": true,
+  "ixl_toggled_before_early_return": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

@@ -201,7 +201,7 @@
                 incbin "../Resources/17_ACTION/Unclassified014.bin"
                 assert $ == #1068
                 disp #6E2B
-                include "../Action/Unknown6E2B.asm"
+                include "../Action/ClassifyCoordinateRegion.asm"
                 ent
                 assert $ == #10A9
                 disp #6E6C
@@ -271,7 +271,14 @@
                 ent
                 assert $ == #3A00
                 ; Unknown, исходные байты после синусоиды ACTION
-                incbin "../Resources/17_ACTION/Unclassified020_Suffix.bin"
+                incbin "../Resources/17_ACTION/Unclassified020_BeforeWordRandom.bin"
+                assert $ == #3B15
+                disp #9B15
+                include "../Action/Data/WordRandomState.asm"
+                ent
+                assert $ == #3B19
+                ; Unknown, исходные байты после состояния генератора
+                incbin "../Resources/17_ACTION/Unclassified020_AfterWordRandom.bin"
                 assert $ == #482D
                 disp #A82D
                 include "../Action/StartFlight.asm"                             ; (0) жёсткий порядок, последовательное исполнение
@@ -301,11 +308,15 @@
                 ent
                 assert $ == #4C38
                 disp #AC38
-                include "../Action/UnknownAC38.asm"
+                include "../Action/ReadWordFromIX.asm"
+                ent
+                assert $ == #4C44
+                disp #AC44
+                include "../Action/ActivateParameterSet.asm"
                 ent
                 assert $ == #4C5D
                 disp #AC5D
-                include "../Action/UnknownAC5D.asm"
+                include "../Action/ApplyParameterSet.asm"
                 ent
                 assert $ == #4CAB
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления

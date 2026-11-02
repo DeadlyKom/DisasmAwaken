@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "total_cases": 3840,
+  "all_field_byte_values": true,
+  "selected_bank": 0,
+  "ignored_field_index": 1,
+  "duplicated_field_index": 6,
+  "actual_destination_writes": 15,
+  "exact_registers_flags_r_and_sp": true,
+  "every_ram_byte_and_write_checked": true,
+  "original_action_core_relocation": true,
+  "game_field_names_proved": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

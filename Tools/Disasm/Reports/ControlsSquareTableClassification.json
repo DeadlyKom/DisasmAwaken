@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "typed_bytes": 512,
+  "physical_records": 512,
+  "square_indices": 256,
+  "low_plane": "C300",
+  "high_plane": "C400",
+  "all_original_values_match_squares": true,
+  "formula_used_to_regenerate_build_data": false,
+  "physical_bytes_preserved": true,
+  "assembly_executed": false
+}

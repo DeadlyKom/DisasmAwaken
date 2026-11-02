@@ -22,9 +22,9 @@ Entry:          CALL @Controls.UnknownCF0B.Entry
                 LD IX, #9B24
                 PUSH IY
                 LD IY, #9B1B
-                CALL @Controls.UnknownDAB9.Entry
-                CALL NZ, @Controls.UnknownDAB9.Entry                            ; вызов, если флаг Z сброшен
-                CALL NZ, @Controls.UnknownDAB9.Entry                            ; вызов, если флаг Z сброшен
+                CALL @Controls.CompareComponents.Entry
+                CALL NZ, @Controls.CompareComponents.Entry                      ; вызов, если флаг Z сброшен
+                CALL NZ, @Controls.CompareComponents.Entry                      ; вызов, если флаг Z сброшен
                 POP IY
                 POP IX
                 RET

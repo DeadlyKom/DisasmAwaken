@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "total_cases": 131072,
+  "cases_by_kind": {
+    "radius_x": 65536,
+    "row_x": 65536
+  },
+  "original_tail_jump_returns_to_external_caller": true,
+  "real_mask_helpers_without_stubs": true,
+  "every_ram_byte_and_write_checked": true,
+  "exact_registers_flags_r_and_sp": true,
+  "remaining_d340_branches_proved": false,
+  "whole_large_renderer_proved": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

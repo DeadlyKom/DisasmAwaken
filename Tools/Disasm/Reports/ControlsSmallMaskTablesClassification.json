@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "typed_bytes": 30,
+  "seed_records": 18,
+  "row_records": 12,
+  "remaining_unknown_bytes": 20,
+  "original_zero_initializers_preserved": true,
+  "physical_bytes_preserved": true,
+  "assembly_executed": false
+}

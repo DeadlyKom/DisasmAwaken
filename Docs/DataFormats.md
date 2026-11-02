@@ -113,6 +113,48 @@ FDrawListEntry описывает двухбайтовый указатель ru
 FDrawMoveFrame, FDrawShiftFrame и FRestoreBoundsFrame описывают динамические
 кадры изменения списка и восстановления геометрии, см. [MoveDrawItem](MoveDrawItem.md) и [InterfaceBounds](InterfaceBounds.md).
 
+## Исходная синусоида
+
+[SineTable](../Source/Action/Data/SineTable.asm) содержит 256 физических
+`FFixedSineValue` размером один байт, единственное поле Value имеет смещение 0.
+Знаковые значения -127..127 с масштабом 128 сохранены из ACTION 3900..39FF,
+соответствующих RAM 9900..99FF. Подробности и потребители описаны в
+[ActionSineTable](ActionSineTable.md).
+
+## Квадраты байтовых индексов
+
+[Squares](../Source/Controls/Data/Squares.asm) содержит 512 физических
+`FSquareTableByte` с однобайтовым полем Value. Первые 256 записей Low00..LowFF
+хранят младшие байты квадратов, следующие High00..HighFF старшие.
+Исходные страницы C3 и C4 банка 1 сохранены. Это раздельные плоскости,
+а не чередующаяся последовательность слов. Потребители и форматы описаны в
+[ControlsSquares](ControlsSquares.md).
+
+## Компонент сравниваемой последовательности
+
+`FComponent24` размером три байта описывает динамическую запись по IX или IY.
+Поля Low, Middle и High имеют смещения 0, 1 и 2. Сравнение не читает Low,
+исключает разряд 7 High и использует оставшийся 15-битовый ключ.
+Статическая память под этот формат не выделяется, общий смысл исключённого
+разряда пока не доказан. Подробности приведены в
+[ControlsComponentCompare](ControlsComponentCompare.md).
+
+## Маски малых фигур и вход проекции
+
+[SmallMaskSeeds](../Source/Controls/Data/SmallMaskSeeds.asm) содержит 18 физических
+`FSmallMaskSeed` с однобайтовым Packed, маска F8 выделяет пиксельную часть,
+07 числовое количество сдвигов. [SmallMaskRows](../Source/Controls/Data/SmallMaskRows.asm)
+содержит 12 `FSmallMaskRow` с полем Mask по смещению 0 и исходными нулями.
+Следующие 20 байтов остаются неизвестными. Подробности приведены в
+[ControlsSmallMasks](ControlsSmallMasks.md).
+
+[BodyProjection.Value](../Source/Controls/Data/BodyProjection.asm) является
+физическим экземпляром `FBodyProjection` размером четыре байта. OffsetY,
+OffsetX, Flags и Radius расположены по смещениям 0, 1, 2 и 3.
+Назначение всех разрядов Flags не объявляется установленным, малый рисователь
+использует только два направления. Следующие 12 рабочих байтов оформлены
+как физическая [FCircleRasterWork](ControlsCircleWork.md), полный игровой смысл Mode ещё не установлен. См. [ControlsSmallBodies](ControlsSmallBodies.md).
+
 ## Строки указателя
 
 [BufferPoints](../Source/Controls/Data/BufferPoints.asm) содержит 35 физических
@@ -128,3 +170,11 @@ XOR-масками, а не флагами состояния. Потребит�
 описаны в [ControlsMarker](ControlsMarker.md).
 
 [PointerSprites](../Source/Station/Data/PointerSprites.asm) содержит 192 физических FPointerRasterRow по четыре байта, MaskLeft, XorLeft, MaskRight, XorRight. Три страницы по восемь фаз сдвига и восемь строк каждой фазы сохраняют исходные #6000..#62FF. [PointerBackground](../Source/Station/Data/PointerBackground.asm) содержит восемь физических FPointerSavedRow по два байта Left, Right по #6575..#6584. Инициализаторы сохранены побайтно, во время работы заменяются сохранёнными экранными байтами. Динамический FPointerGuardFrame размером 12 байтов создаётся на CPU-стеке обёртками, отдельного статического экземпляра не имеет. Подробности и ограничения приведены в [Pointer](Pointer.md).
+
+## Рабочие записи большого контура и генератора
+
+[CircleWork](../Source/Controls/Data/CircleWork.asm) содержит физическую `FCircleRasterWork` размером 12 байтов D181..D18C, поля и границы доказательства описаны в [ControlsCircleWork](ControlsCircleWork.md).
+
+[WordRandomState](../Source/Action/Data/WordRandomState.asm) содержит физическую `FWordRandomState` размером 4 байта, First по смещению 0 и Second по смещению 2. Исходные нули ACTION по 9B15..9B18 сохранены. Потребитель и рекурсия описаны в [ControlsWordRandom](ControlsWordRandom.md).
+
+[ParameterCoefficients](../Source/Controls/Data/ParameterCoefficients.asm) содержит 15 физических `FParameterCoefficient` по три байта, Base по смещению 0, SlopeCode по смещению 1, ShiftMask по смещению 2. Исходные 45 байтов DF64..DF90 и перекрытие шаблонного чтения H=4 сохранены. Алгоритм описан в [ControlsParameterTables](ControlsParameterTables.md).

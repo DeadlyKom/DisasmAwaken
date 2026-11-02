@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "total_cases": 14336,
+  "cases_by_kind": {
+    "selectors": 7168,
+    "saved_flags": 7168
+  },
+  "all_valid_radii": true,
+  "all_selector_bytes": true,
+  "all_main_flag_bytes": true,
+  "primary_mask_signed_shift_preserved": true,
+  "first_row_always_overridden_from_alternate": true,
+  "every_ram_byte_and_write_checked": true,
+  "exact_registers_flags_and_r": true,
+  "maximum_written_bytes": 12,
+  "physical_seed_bytes": 18,
+  "radius_0_1_outside_contract": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

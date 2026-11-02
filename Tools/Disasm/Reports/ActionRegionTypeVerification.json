@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "total_cases": 65536,
+  "all_hl_coordinates": true,
+  "outputs": {
+    "3": 65499,
+    "1": 12,
+    "2": 9,
+    "0": 16
+  },
+  "refresh_m1_histogram": {
+    "10": 18176,
+    "11": 16,
+    "14": 12,
+    "18": 45568,
+    "21": 216,
+    "23": 156,
+    "24": 792,
+    "30": 9,
+    "32": 591
+  },
+  "real_action_core_relocation": true,
+  "exact_registers_flags_r_and_sp": true,
+  "every_ram_byte_unchanged": true,
+  "full_caller_de9a_proved": false,
+  "game_region_meaning_proved": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

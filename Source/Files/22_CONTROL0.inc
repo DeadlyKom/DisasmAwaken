@@ -4,7 +4,11 @@
 ; -----------------------------------------
                 assert $ == #0000
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/22_CONTROL0/Unclassified000_Prefix.bin"
+                incbin "../Resources/22_CONTROL0/Unclassified000_BeforeSquares.bin"
+                assert $ == #0300
+                disp #C300
+                include "../Controls/Data/Squares.asm"
+                ent
                 assert $ == #0500
                 disp #C500
                 include "../Controls/Data/BufferPoints.asm"
@@ -34,7 +38,7 @@
                 ent
                 assert $ == #0B00
                 disp #CB00
-                include "../Controls/UnknownCB00.asm"
+                include "../Controls/UpdateBufferPoints.asm"
                 ent
                 assert $ == #0E16
                 disp #CE16
@@ -46,14 +50,18 @@
                 ent
                 assert $ == #0EA4
                 disp #CEA4
-                include "../Controls/UnknownCEA4.asm"
+                include "../Controls/FillEvenSpan.asm"
                 ent
                 assert $ == #0EB5
-                ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/22_CONTROL0/Unclassified002.bin"
+                ; Два байта CEB5..CEB6 не достигаются при A=0..15, назначение отдельно не установлено
+                incbin "../Resources/22_CONTROL0/Unclassified002_Prefix.bin"
+                assert $ == #0EB7
+                disp #CEB7
+                include "../Controls/FillEvenSpanHead.asm"                      ; (0) жёсткий порядок, начало непрерывного хвоста
+                ent
                 assert $ == #0ECF
                 disp #CECF
-                include "../Controls/UnknownCECF.asm"
+                include "../Controls/FillEvenSpanTail.asm"                      ; (1) жёсткий порядок, продолжение хвоста
                 ent
                 assert $ == #0EF9
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
@@ -84,7 +92,13 @@
                 ent
                 assert $ == #117D
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/22_CONTROL0/Unclassified004.bin"
+                disp #D17D
+                include "../Controls/Data/BodyProjection.asm"
+                ent
+                assert $ == #1181
+                disp #D181
+                include "../Controls/Data/CircleWork.asm"
+                ent
                 assert $ == #118D
                 disp #D18D
                 include "../Controls/UnknownD18D.asm"
@@ -111,11 +125,11 @@
                 ent
                 assert $ == #1208
                 disp #D208
-                include "../Controls/UnknownD208.asm"
+                include "../Controls/FillInteriorRowsUp.asm"
                 ent
                 assert $ == #1211
                 disp #D211
-                include "../Controls/UnknownD211.asm"
+                include "../Controls/FillInteriorRowsDown.asm"
                 ent
                 assert $ == #121A
                 disp #D21A
@@ -134,26 +148,34 @@
                 ent
                 assert $ == #130B
                 disp #D30B
-                include "../Controls/UnknownD30B.asm"
+                include "../Controls/ReadByteSquare.asm"
+                ent
+                assert $ == #1314
+                disp #D314
+                include "../Controls/UnknownD314.asm"
                 ent
                 assert $ == #1320
                 disp #D320
-                include "../Controls/UnknownD320.asm"
+                include "../Controls/BuildCircleSpan.asm"
+                ent
+                assert $ == #1340
+                disp #D340
+                include "../Controls/UnknownD340.asm"
                 ent
                 assert $ == #14CB
                 disp #D4CB
-                include "../Controls/UnknownD4CB.asm"
+                include "../Controls/PrepareCircleRightClip.asm"
                 ent
                 assert $ == #14E4
                 disp #D4E4
-                include "../Controls/UnknownD4E4.asm"
+                include "../Controls/PrepareCircleLeftClip.asm"
                 ent
                 assert $ == #1501
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
                 incbin "../Resources/22_CONTROL0/Unclassified006.bin"
                 assert $ == #1504
                 disp #D504
-                include "../Controls/UnknownD504.asm"
+                include "../Controls/LoadCircleMidpoint.asm"
                 ent
                 assert $ == #1515
                 disp #D515
@@ -165,40 +187,35 @@
                 ent
                 assert $ == #156C
                 disp #D56C
-                include "../Controls/UnknownD56C.asm"
+                include "../Controls/LoadCircleClipState.asm"
                 ent
                 assert $ == #157B
                 disp #D57B
-                include "../Controls/UnknownD57B.asm"
+                include "../Controls/PrepareInteriorSpan.asm"
                 ent
                 assert $ == #1609
                 disp #D609
-                include "../Controls/UnknownD609.asm"
+                include "../Controls/SqrtSquareDiff.asm"
                 ent
-                assert $ == #1717
-                ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/22_CONTROL0/Unclassified007.bin"
+                assert $ == #1633
+                disp #D633
+                include "../Controls/UnknownD633.asm"                           ; (0) жёсткий порядок, продолжение цепочки PUSH AF
+                ent
                 assert $ == #1727
                 disp #D727
-                include "../Controls/UnknownD727.asm"
+                include "../Controls/UnknownD727.asm"                           ; (1) жёсткий порядок, продолжение цепочки PUSH AF
                 ent
-                assert $ == #180F
-                ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/22_CONTROL0/Unclassified008.bin"
                 assert $ == #1833
                 disp #D833
                 include "../Controls/UnknownD833.asm"
                 ent
-                assert $ == #1901
-                ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/22_CONTROL0/Unclassified009.bin"
                 assert $ == #1925
                 disp #D925
-                include "../Controls/UnknownD925.asm"
+                include "../Controls/AdvanceRasterUp.asm"
                 ent
                 assert $ == #1940
                 disp #D940
-                include "../Controls/UnknownD940.asm"
+                include "../Controls/AdvanceRasterDown.asm"
                 ent
                 assert $ == #195B
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
@@ -209,18 +226,27 @@
                 ent
                 assert $ == #197E
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/22_CONTROL0/Unclassified011.bin"
+                disp #D97E
+                include "../Controls/Data/SmallMaskSeeds.asm"
+                ent
+                assert $ == #1990
+                disp #D990
+                include "../Controls/Data/SmallMaskRows.asm"
+                ent
+                assert $ == #199C
+                ; Unknown, назначение следующих 20 исходных байтов отдельно не установлено
+                incbin "../Resources/22_CONTROL0/Unclassified011_AfterMasks.bin"
                 assert $ == #19B0
                 disp #D9B0
-                include "../Controls/UnknownD9B0.asm"
+                include "../Controls/BuildSmallBodyMasks.asm"
                 ent
                 assert $ == #19DE
                 disp #D9DE
-                include "../Controls/UnknownD9DE.asm"
+                include "../Controls/DrawSmallBody.asm"
                 ent
                 assert $ == #1AB9
                 disp #DAB9
-                include "../Controls/UnknownDAB9.asm"
+                include "../Controls/CompareComponents.asm"
                 ent
                 assert $ == #1ADE
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления

@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "extracted_code_bytes": 88,
+  "original_instructions_added": 64,
+  "functions_added": 0,
+  "semantic_status_of_three_rasterizers": "unknown",
+  "physical_bytes_preserved": true,
+  "independent_model_cases": 65280,
+  "whole_rasterizer_proved": false,
+  "assembly_executed": false
+}

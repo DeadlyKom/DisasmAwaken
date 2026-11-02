@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "total_cases": 134612,
+  "cases_by_entry": {
+    "D57B": 1280,
+    "D208": 66666,
+    "D211": 66666
+  },
+  "all_start_rows": true,
+  "all_row_count_bytes": true,
+  "all_fill_toggle_and_mode_bytes": true,
+  "both_direction_patches": true,
+  "thirty_inner_bytes_only": true,
+  "boundaries_clamp_to_96_rows": true,
+  "every_ram_byte_and_write_checked": true,
+  "exact_registers_flags_and_r": true,
+  "prepare_mode_read_has_no_output_effect": true,
+  "zero_count_still_writes_patches_and_stack": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

@@ -1,0 +1,31 @@
+{
+  "passed": true,
+  "total_cases": 83152,
+  "cases_by_kind": {
+    "mode_radius": 65536,
+    "horizontal": 7168,
+    "vertical": 7168,
+    "combined_edges": 3024,
+    "patterns": 256
+  },
+  "outcomes": {
+    "tiny": 8,
+    "draw": 8684,
+    "large": 988,
+    "mode": 64512,
+    "y_reject": 5376,
+    "x_reject": 3584
+  },
+  "all_mode_radius_pairs": true,
+  "all_raw_x_y_offsets": true,
+  "all_direction_bits": true,
+  "all_pattern_low_high_bytes": true,
+  "real_mask_builder_without_stubs": true,
+  "independent_symmetric_pixel_mask_formula": true,
+  "all_ram_and_write_multiplicity_checked": true,
+  "exact_main_alternate_index_flags_r_and_sp": true,
+  "whole_d9de_proved_in_original_template_domain": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

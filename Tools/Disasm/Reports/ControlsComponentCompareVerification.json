@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "total_cases": 327680,
+  "cases_by_kind": {
+    "high_pairs": 196608,
+    "middle_pairs": 65536,
+    "all_iy": 65536
+  },
+  "outcomes": {
+    "direct": 15360,
+    "high_accept": 99766,
+    "middle_reject": 33112,
+    "middle_accept": 33931,
+    "high_reject": 145511
+  },
+  "all_raw_high_pairs": true,
+  "all_middle_pairs": true,
+  "all_iy_words": true,
+  "low_byte_ignored": true,
+  "high_bit_7_ignored": true,
+  "direct_threshold": 10,
+  "exact_registers_flags_r_and_sp": true,
+  "every_ram_byte_checked": true,
+  "no_memory_writes": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

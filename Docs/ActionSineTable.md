@@ -33,7 +33,7 @@ RAM 9900..99FF. Загрузочный перенос ядра ограниче�
 сохранены в отдельных неизвестных областях. Нули в них не объявлены
 мусором или свободной памятью.
 
-[UnknownCB00](../Source/Controls/UnknownCB00.asm) читает страницу 99
+[UpdateBufferPoints](../Source/Controls/UpdateBufferPoints.asm) читает страницу 99
 по индексу `(-TurnControl) AND FF` и тому же индексу со сдвигом 40.
 Страница также читается в трёхмерном коде, например
 [Action.UnknownC88C](../Source/Action/UnknownC88C.asm) и

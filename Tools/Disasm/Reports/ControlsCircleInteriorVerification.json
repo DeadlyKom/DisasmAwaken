@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "total_cases": 839,
+  "cases_by_kind": {
+    "all_radii": 333,
+    "phases": 250,
+    "patterns": 256
+  },
+  "modeled_rows": 46449,
+  "root": "D314",
+  "horizontal_unclipped_domain": true,
+  "vertical_clipping_original_helpers": true,
+  "independent_pixel_intervals_and_second_order_error": true,
+  "every_viewport_pixel_checked": true,
+  "terminal_af_ix_iy_alternate_af_and_sp_checked": true,
+  "nonpixel_write_addresses_checked": true,
+  "nonpixel_values_and_all_output_registers_proved": false,
+  "whole_large_renderer_proved": false,
+  "unknown_status_preserved": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

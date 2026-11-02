@@ -84,6 +84,11 @@ def analyze(name, extra_roots=(), observed=(), initial_bank=None):
     roots = {address for chunk in chunks for address in chunk["roots"]}
     roots.update(address for address in extra_roots if address in origins)
     roots.update(address for address in FUNCTIONS.get(name, {}) if address in origins)
+    if name == "Controls":
+        # Цепочки PUSH AF подтверждены динамическими JR и моделью восстановления CPU-стека.
+        for start in (0xD717, 0xD80F, 0xD901):
+            assert memory[start:start+16] == bytes([0xF5])*16
+        observed = set(observed) | {0xD717, 0xD80F, 0xD901}
     if name == "Music":
         # Тела после превращения JR в LD B,n доказаны MusicRuntimeFlow и локальными моделями подготовки каналов.
         # Это внутренние блоки существующих фрагментов, отдельные процедуры не создаются.

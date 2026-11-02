@@ -10386,7 +10386,7 @@
     "offset": 4200,
     "length": 65,
     "kind": "code",
-    "path": "Source/Action/Unknown6E2B.asm",
+    "path": "Source/Action/ClassifyCoordinateRegion.asm",
     "origin": 28203,
     "sha256": "fe74b1700fc3ac0127d2e49c10318c0b943d582074381ea4245b24799e79d11c"
   },
@@ -10555,11 +10555,29 @@
   {
     "slot": 17,
     "offset": 14848,
-    "length": 3629,
+    "length": 277,
     "kind": "unclassified",
-    "path": "Source/Resources/17_ACTION/Unclassified020_Suffix.bin",
+    "path": "Source/Resources/17_ACTION/Unclassified020_BeforeWordRandom.bin",
     "origin": null,
-    "sha256": "523103b25d717d5b87cee623722f60cfa53bf5e39ddb198f6d9795164aa525d0"
+    "sha256": "936e9b8c94131259b2db83a0d642e2dafa9e4eb65cf8635b6adff2f07d7061e8"
+  },
+  {
+    "slot": 17,
+    "offset": 15125,
+    "length": 4,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/WordRandomState.asm",
+    "origin": 39701,
+    "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+  },
+  {
+    "slot": 17,
+    "offset": 15129,
+    "length": 3348,
+    "kind": "unclassified",
+    "path": "Source/Resources/17_ACTION/Unclassified020_AfterWordRandom.bin",
+    "origin": null,
+    "sha256": "abf4461281a250b260418d813319516cbd5c2f55a9cf0b84b5ca8f46fa1da565"
   },
   {
     "slot": 17,
@@ -10627,18 +10645,27 @@
   {
     "slot": 17,
     "offset": 19512,
-    "length": 37,
+    "length": 12,
     "kind": "code",
-    "path": "Source/Action/UnknownAC38.asm",
+    "path": "Source/Action/ReadWordFromIX.asm",
     "origin": 44088,
-    "sha256": "bb0df9f5586e32096fdb5244c4301283803c2ebe5fe38490daeacfa508ebb7ff"
+    "sha256": "440f0bf4b2f19696689599e8b00232322843847a85ec01f17f4b486f122625c6"
+  },
+  {
+    "slot": 17,
+    "offset": 19524,
+    "length": 25,
+    "kind": "code",
+    "path": "Source/Action/ActivateParameterSet.asm",
+    "origin": 44100,
+    "sha256": "bf08a9d2add3e12fdd7f9c49369d1d6f02f40dfd9653c55a3186beb8cb206f39"
   },
   {
     "slot": 17,
     "offset": 19549,
     "length": 78,
     "kind": "code",
-    "path": "Source/Action/UnknownAC5D.asm",
+    "path": "Source/Action/ApplyParameterSet.asm",
     "origin": 44125,
     "sha256": "da7d9e6530931e80e80a0f810cf156894052c23bafa066ed853439a88c6bacb0"
   },
@@ -13147,11 +13174,20 @@
   {
     "slot": 22,
     "offset": 0,
-    "length": 1280,
+    "length": 768,
     "kind": "unclassified",
-    "path": "Source/Resources/22_CONTROL0/Unclassified000_Prefix.bin",
+    "path": "Source/Resources/22_CONTROL0/Unclassified000_BeforeSquares.bin",
     "origin": null,
-    "sha256": "db149629e3fce00ef3372ba810e11d1898d3cc75e220470e6319e6dbbef7c360"
+    "sha256": "cda43d7059793551e9f4459537cbf5fb4d45b0247aa7715ffcea58e2bca09a27"
+  },
+  {
+    "slot": 22,
+    "offset": 768,
+    "length": 512,
+    "kind": "typed_data",
+    "path": "Source/Controls/Data/Squares.asm",
+    "origin": 49920,
+    "sha256": "b0c15b1c3eea86db9c92a7e1cb6e83d96776fa86f5ad2043318b64aae48fa569"
   },
   {
     "slot": 22,
@@ -13221,7 +13257,7 @@
     "offset": 2816,
     "length": 790,
     "kind": "code",
-    "path": "Source/Controls/UnknownCB00.asm",
+    "path": "Source/Controls/UpdateBufferPoints.asm",
     "origin": 51968,
     "sha256": "6a2a41f8edc240427f84cdce0dc079514c1ef79c931805da443790da839a01aa"
   },
@@ -13248,25 +13284,34 @@
     "offset": 3748,
     "length": 17,
     "kind": "code",
-    "path": "Source/Controls/UnknownCEA4.asm",
+    "path": "Source/Controls/FillEvenSpan.asm",
     "origin": 52900,
     "sha256": "20c46755d7a418034ce11321594facb926a629793dbbdc17ae3661bf0016bc24"
   },
   {
     "slot": 22,
     "offset": 3765,
-    "length": 26,
+    "length": 2,
     "kind": "unclassified",
-    "path": "Source/Resources/22_CONTROL0/Unclassified002.bin",
+    "path": "Source/Resources/22_CONTROL0/Unclassified002_Prefix.bin",
     "origin": null,
-    "sha256": "54ff71de5d3e9d28debb437695a205b001ef9136df3326da7d61f34f62e5e0ba"
+    "sha256": "65da4e192c92112906479883f0b4740c6434367e3d4a1da77a21dece77ab34f1"
+  },
+  {
+    "slot": 22,
+    "offset": 3767,
+    "length": 24,
+    "kind": "code",
+    "origin": 52919,
+    "path": "Source/Controls/FillEvenSpanHead.asm",
+    "sha256": "03a6319f00be69d28a9225ce92fc212e1ff175f0a3016394912f234bfad7a6f2"
   },
   {
     "slot": 22,
     "offset": 3791,
     "length": 42,
     "kind": "code",
-    "path": "Source/Controls/UnknownCECF.asm",
+    "path": "Source/Controls/FillEvenSpanTail.asm",
     "origin": 52943,
     "sha256": "d17f9ef5c7f7075ca8a229d616c5e1f2ab25d405802345d0ec070271bc7118cc"
   },
@@ -13336,11 +13381,20 @@
   {
     "slot": 22,
     "offset": 4477,
-    "length": 16,
-    "kind": "unclassified",
-    "path": "Source/Resources/22_CONTROL0/Unclassified004.bin",
-    "origin": null,
-    "sha256": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb"
+    "length": 4,
+    "kind": "typed_data",
+    "path": "Source/Controls/Data/BodyProjection.asm",
+    "origin": 53629,
+    "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+  },
+  {
+    "slot": 22,
+    "offset": 4481,
+    "length": 12,
+    "kind": "typed_data",
+    "path": "Source/Controls/Data/CircleWork.asm",
+    "origin": 53633,
+    "sha256": "15ec7bf0b50732b49f8228e07d24365338f9e3ab994b00af08e5a3bffe55fd8b"
   },
   {
     "slot": 22,
@@ -13401,7 +13455,7 @@
     "offset": 4616,
     "length": 9,
     "kind": "code",
-    "path": "Source/Controls/UnknownD208.asm",
+    "path": "Source/Controls/FillInteriorRowsUp.asm",
     "origin": 53768,
     "sha256": "f3d43a8bc11f3cda3a123db04d747ca638664dd43bd8c892386d8aba3a419004"
   },
@@ -13410,7 +13464,7 @@
     "offset": 4625,
     "length": 9,
     "kind": "code",
-    "path": "Source/Controls/UnknownD211.asm",
+    "path": "Source/Controls/FillInteriorRowsDown.asm",
     "origin": 53777,
     "sha256": "83d5de0a34c0f8b6e86f2e6ed4e77328858f2947bdb32583232f1b56613a8f5d"
   },
@@ -13453,27 +13507,45 @@
   {
     "slot": 22,
     "offset": 4875,
-    "length": 21,
+    "length": 9,
     "kind": "code",
-    "path": "Source/Controls/UnknownD30B.asm",
+    "path": "Source/Controls/ReadByteSquare.asm",
     "origin": 54027,
-    "sha256": "7e300a59e5a74acff26a7eedb313d048a83c841dfee723321636caa9b68532cc"
+    "sha256": "04e87947a6c96d93bfff1db4db06de908d5e6d2b48c422f8fe3c6d7ecdcc6b40"
+  },
+  {
+    "slot": 22,
+    "offset": 4884,
+    "length": 12,
+    "kind": "code",
+    "path": "Source/Controls/UnknownD314.asm",
+    "origin": 54036,
+    "sha256": "8adc150742121674262769ef3c82cbb5f049a27f6038011d768d84d0816dad8c"
   },
   {
     "slot": 22,
     "offset": 4896,
-    "length": 427,
+    "length": 32,
     "kind": "code",
-    "path": "Source/Controls/UnknownD320.asm",
+    "path": "Source/Controls/BuildCircleSpan.asm",
     "origin": 54048,
-    "sha256": "d9790e45375da7506a51f72900c9a3ea256a6de1f4b7eb12932970ba3b6f1610"
+    "sha256": "1d87176a89d4da389bbaf6f64cf872ca1f4111ac5c32a78efc01cd752beb7685"
+  },
+  {
+    "slot": 22,
+    "offset": 4928,
+    "length": 395,
+    "kind": "code",
+    "path": "Source/Controls/UnknownD340.asm",
+    "origin": 54080,
+    "sha256": "50bfa08fbdb388f9685d9f32a36975bb556e18f062f7e1e91b9fc9a1bc566b3b"
   },
   {
     "slot": 22,
     "offset": 5323,
     "length": 25,
     "kind": "code",
-    "path": "Source/Controls/UnknownD4CB.asm",
+    "path": "Source/Controls/PrepareCircleRightClip.asm",
     "origin": 54475,
     "sha256": "382a91268b897c608afae0004dce9443a50562cbf65b3c2d44244942f73546d0"
   },
@@ -13482,7 +13554,7 @@
     "offset": 5348,
     "length": 29,
     "kind": "code",
-    "path": "Source/Controls/UnknownD4E4.asm",
+    "path": "Source/Controls/PrepareCircleLeftClip.asm",
     "origin": 54500,
     "sha256": "4332d930dd9afd5c9289820b3b7b401a98c4e8acc9d3913e2d9c651e31266bbc"
   },
@@ -13500,7 +13572,7 @@
     "offset": 5380,
     "length": 17,
     "kind": "code",
-    "path": "Source/Controls/UnknownD504.asm",
+    "path": "Source/Controls/LoadCircleMidpoint.asm",
     "origin": 54532,
     "sha256": "a4ce539b69eee1e8ca6764f0cb0aa9952ececb8edc942a1785e5522c68033eff"
   },
@@ -13527,7 +13599,7 @@
     "offset": 5484,
     "length": 15,
     "kind": "code",
-    "path": "Source/Controls/UnknownD56C.asm",
+    "path": "Source/Controls/LoadCircleClipState.asm",
     "origin": 54636,
     "sha256": "081c17a64f8be1e386383156ca35417fd78fd28beeffdc416da8d0189e5212fb"
   },
@@ -13536,70 +13608,52 @@
     "offset": 5499,
     "length": 142,
     "kind": "code",
-    "path": "Source/Controls/UnknownD57B.asm",
+    "path": "Source/Controls/PrepareInteriorSpan.asm",
     "origin": 54651,
     "sha256": "4483cd7cba0df3628e8862e453f25ad3fdae68b4c0c017182e4cce40f5afd424"
   },
   {
     "slot": 22,
     "offset": 5641,
-    "length": 270,
+    "length": 42,
     "kind": "code",
-    "path": "Source/Controls/UnknownD609.asm",
+    "path": "Source/Controls/SqrtSquareDiff.asm",
     "origin": 54793,
-    "sha256": "b9b3e0bb2a426d61837ffd2af1dfe0011955959ec9efc99a1439b633646de600"
+    "sha256": "cbfc1c5c40a4416a037f192f2a5e5a04cc9bacb4aff443ae315211fe7cb20413"
   },
   {
     "slot": 22,
-    "offset": 5911,
-    "length": 16,
-    "kind": "unclassified",
-    "path": "Source/Resources/22_CONTROL0/Unclassified007.bin",
-    "origin": null,
-    "sha256": "70f1e6fbc46520d12d6afc81e60767cc45b02c093afd6a7f70290e578950efac"
+    "offset": 5683,
+    "length": 244,
+    "kind": "code",
+    "path": "Source/Controls/UnknownD633.asm",
+    "origin": 54835,
+    "sha256": "5797e34a0b84b88ce7eb0e0849bf159b16c5db464bc41bdf86d25de847f41402"
   },
   {
     "slot": 22,
     "offset": 5927,
-    "length": 232,
+    "length": 268,
     "kind": "code",
     "path": "Source/Controls/UnknownD727.asm",
     "origin": 55079,
-    "sha256": "d003d0986be32617e4ced63ba7d837f441157d0d95c5675ca451ed6656110f34"
-  },
-  {
-    "slot": 22,
-    "offset": 6159,
-    "length": 36,
-    "kind": "unclassified",
-    "path": "Source/Resources/22_CONTROL0/Unclassified008.bin",
-    "origin": null,
-    "sha256": "ad6c4405fb9c4e739e17e62913dfd9e2669f32204e8371068b90a4f6b02afde3"
+    "sha256": "f17284d6ebb61dd1827de24f6d22ffeb5172a716c703ec86703658ff8a7a0dcf"
   },
   {
     "slot": 22,
     "offset": 6195,
-    "length": 206,
+    "length": 242,
     "kind": "code",
     "path": "Source/Controls/UnknownD833.asm",
     "origin": 55347,
-    "sha256": "fd907d10891ebf762609c3a616ee67ace087d4569ce0fff4d8a9aad751fd1392"
-  },
-  {
-    "slot": 22,
-    "offset": 6401,
-    "length": 36,
-    "kind": "unclassified",
-    "path": "Source/Resources/22_CONTROL0/Unclassified009.bin",
-    "origin": null,
-    "sha256": "d3174e15003b9aeff471432b5d4ab56e36bd7351248013c14d38a6109afa677f"
+    "sha256": "822ac873d22de6e954e965c8308c06a1f7db914e2150507b13f5761849c56a8b"
   },
   {
     "slot": 22,
     "offset": 6437,
     "length": 27,
     "kind": "code",
-    "path": "Source/Controls/UnknownD925.asm",
+    "path": "Source/Controls/AdvanceRasterUp.asm",
     "origin": 55589,
     "sha256": "bde96ab595f941ea80beac776b12d8a2d8680e7fdf23a9145799f05a6270a70e"
   },
@@ -13608,7 +13662,7 @@
     "offset": 6464,
     "length": 27,
     "kind": "code",
-    "path": "Source/Controls/UnknownD940.asm",
+    "path": "Source/Controls/AdvanceRasterDown.asm",
     "origin": 55616,
     "sha256": "e86239661d7e41e604562f2b6677d623ad24a7776ad5f1ae23c6cbe985c9eac1"
   },
@@ -13633,18 +13687,36 @@
   {
     "slot": 22,
     "offset": 6526,
-    "length": 50,
+    "length": 18,
+    "kind": "typed_data",
+    "path": "Source/Controls/Data/SmallMaskSeeds.asm",
+    "origin": 55678,
+    "sha256": "be95e1f4f1bc37fd60b45a7f9a683adb700122a0ee9e6e83dc4cdae9d0533c86"
+  },
+  {
+    "slot": 22,
+    "offset": 6544,
+    "length": 12,
+    "kind": "typed_data",
+    "path": "Source/Controls/Data/SmallMaskRows.asm",
+    "origin": 55696,
+    "sha256": "15ec7bf0b50732b49f8228e07d24365338f9e3ab994b00af08e5a3bffe55fd8b"
+  },
+  {
+    "slot": 22,
+    "offset": 6556,
+    "length": 20,
     "kind": "unclassified",
-    "path": "Source/Resources/22_CONTROL0/Unclassified011.bin",
+    "path": "Source/Resources/22_CONTROL0/Unclassified011_AfterMasks.bin",
     "origin": null,
-    "sha256": "f784f6846e50358886aa4fcffc87622c61d0fae937b4f34da0b4f2c5fad53b06"
+    "sha256": "de47c9b27eb8d300dbb5f2c353e632c393262cf06340c4fa7f1b40c4cbd36f90"
   },
   {
     "slot": 22,
     "offset": 6576,
     "length": 46,
     "kind": "code",
-    "path": "Source/Controls/UnknownD9B0.asm",
+    "path": "Source/Controls/BuildSmallBodyMasks.asm",
     "origin": 55728,
     "sha256": "16570f064e5cd90f540b93516d83eabfb05dc769e6980082ccffc8961238a257"
   },
@@ -13653,7 +13725,7 @@
     "offset": 6622,
     "length": 219,
     "kind": "code",
-    "path": "Source/Controls/UnknownD9DE.asm",
+    "path": "Source/Controls/DrawSmallBody.asm",
     "origin": 55774,
     "sha256": "c42371d3a8aeb8d127d36d9757249993eb95b311a018c321914e7cf0040b92c2"
   },
@@ -13662,7 +13734,7 @@
     "offset": 6841,
     "length": 37,
     "kind": "code",
-    "path": "Source/Controls/UnknownDAB9.asm",
+    "path": "Source/Controls/CompareComponents.asm",
     "origin": 55993,
     "sha256": "eb35a9efda093d594d938d8423c535241edb55ba3f947e2d1168e181362cb5d5"
   },
@@ -13716,7 +13788,7 @@
     "offset": 639,
     "length": 42,
     "kind": "code",
-    "path": "Source/Controls/UnknownDD5D.asm",
+    "path": "Source/Controls/StepWordRandom.asm",
     "origin": 56669,
     "sha256": "037deb67a9c45aa47a0adb28f31cfe59ae240e81a05ccfc47a97063ee591e9dc"
   },
@@ -13743,7 +13815,7 @@
     "offset": 818,
     "length": 138,
     "kind": "code",
-    "path": "Source/Controls/UnknownDE10.asm",
+    "path": "Source/Controls/BuildParameterTables.asm",
     "origin": 56848,
     "sha256": "826a1668e80da537c9c302dbe562970e4dca876599395701dfbed30b04a3b5e9"
   },
@@ -13752,18 +13824,36 @@
     "offset": 956,
     "length": 66,
     "kind": "code",
-    "path": "Source/Controls/UnknownDE9A.asm",
+    "path": "Source/Controls/BuildSeededIndices.asm",
     "origin": 56986,
     "sha256": "8f714ad68f29e6e8b85301f3f140bff42b74a35a686d4629c9e66e0fa8d5b33a"
   },
   {
     "slot": 23,
     "offset": 1022,
-    "length": 325,
+    "length": 136,
     "kind": "unclassified",
-    "path": "Source/Resources/23_CONTROL/Unclassified003.bin",
+    "path": "Source/Resources/23_CONTROL/Unclassified003_BeforeCoefficients.bin",
     "origin": null,
-    "sha256": "c59b82da1f1da0a42dfb744f6526626d880efe62af75e92148c6776d5a9d6a89"
+    "sha256": "5e71c0fec03013978dfe0f9b34681a4633c1ec55d06607f62e2976f5d645e521"
+  },
+  {
+    "slot": 23,
+    "offset": 1158,
+    "length": 45,
+    "kind": "typed_data",
+    "path": "Source/Controls/Data/ParameterCoefficients.asm",
+    "origin": 57188,
+    "sha256": "3734e0be8035737aee766f04ff625281dc7ca95d2944f1aee8af6a54cc06b3d1"
+  },
+  {
+    "slot": 23,
+    "offset": 1203,
+    "length": 144,
+    "kind": "unclassified",
+    "path": "Source/Resources/23_CONTROL/Unclassified003_AfterCoefficients.bin",
+    "origin": null,
+    "sha256": "f248038553093437d4b201b4336111dc0ee35726578d8e1a3caad55391906c03"
   },
   {
     "slot": 23,

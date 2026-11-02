@@ -1,7 +1,7 @@
 {
   "method": "text_and_resource_comparison_without_assembly",
   "passed": true,
-  "instruction_count": 39863,
+  "instruction_count": 39951,
   "active_allocations": 41,
   "covered_bytes": 479744,
   "interface_records": 46,
@@ -134,5 +134,11 @@
   "text_queue_records": 17,
   "marker_phase_records": 8,
   "buffer_point_records": 35,
-  "action_sine_records": 256
+  "action_sine_records": 256,
+  "word_random_records": 1,
+  "square_table_records": 512,
+  "small_mask_records": 30,
+  "body_projection_records": 1,
+  "circle_work_records": 1,
+  "parameter_rule_records": 15
 }

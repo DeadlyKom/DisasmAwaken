@@ -135,6 +135,23 @@ def name_operands(region, function_address, operation):
     operation = control_panel_group_name_operands(region, function_address, operation)
     operation = ship_periodic_code_name_operands(region, function_address, operation)
     operation = ship_preview_callback_name_operands(region, function_address, operation)
+    operation = action_parameter_activation_name_operands(region, function_address, operation)
+    operation = action_apply_parameters_name_operands(region, function_address, operation)
+    operation = controls_parameter_tables_name_operands(region, function_address, operation)
+    operation = controls_seeded_parameters_name_operands(region, function_address, operation)
+    operation = action_region_type_name_operands(region, function_address, operation)
+    operation = controls_word_random_name_operands(region, function_address, operation)
+    operation = controls_circle_span_name_operands(region, function_address, operation)
+    operation = controls_circle_setup_name_operands(region, function_address, operation)
+    operation = controls_small_bodies_name_operands(region, function_address, operation)
+    operation = controls_small_masks_name_operands(region, function_address, operation)
+    operation = controls_component_compare_name_operands(region, function_address, operation)
+    operation = controls_push_spans_name_operands(region, function_address, operation)
+    operation = controls_raster_step_name_operands(region, function_address, operation)
+    operation = controls_squares_name_operands(region, function_address, operation)
+    operation = controls_interior_rows_name_operands(region, function_address, operation)
+    operation = controls_even_span_name_operands(region, function_address, operation)
+    operation = controls_point_motion_name_operands(region, function_address, operation)
     operation = controls_point_respawn_name_operands(region, function_address, operation)
     operation = controls_span_masks_name_operands(region, function_address, operation)
     operation = controls_division_name_operands(region, function_address, operation)
@@ -1464,3 +1481,83 @@ DOCUMENTS.update({("Controls", a): ("ControlsSpanMasks", "алгоритм и п
 from ControlsPointRespawnFacts import LABELS as CONTROLS_POINT_RESPAWN_LABELS, name_operands as controls_point_respawn_name_operands
 LABELS.update(CONTROLS_POINT_RESPAWN_LABELS)
 DOCUMENTS.update({("Controls", a): ("ControlsPointRespawn", "алгоритм и проверка") for a in (52758, 52829)})
+
+
+def name_instruction(region, function_address, address, operation):
+    """Уточнение одинаковых литералов с разным смыслом в конкретных инструкциях."""
+    from ControlsPointMotionFacts import name_instruction as point_motion_instruction
+    return point_motion_instruction(region, function_address, address, operation)
+
+from ControlsPointMotionFacts import LABELS as CONTROLS_POINT_MOTION_LABELS, name_operands as controls_point_motion_name_operands
+LABELS.update(CONTROLS_POINT_MOTION_LABELS)
+DOCUMENTS.update({("Controls", a): ("ControlsPointMotion", "алгоритм и проверка") for a in (51968,)})
+
+from ControlsEvenSpanFacts import LABELS as CONTROLS_EVEN_SPAN_LABELS, name_operands as controls_even_span_name_operands
+LABELS.update(CONTROLS_EVEN_SPAN_LABELS)
+DOCUMENTS.update({("Controls", a): ("ControlsEvenSpan", "алгоритм и проверка") for a in (52900, 52919, 52943)})
+
+from ControlsInteriorRowsFacts import LABELS as CONTROLS_INTERIOR_ROWS_LABELS, name_operands as controls_interior_rows_name_operands
+LABELS.update(CONTROLS_INTERIOR_ROWS_LABELS)
+DOCUMENTS.update({("Controls", a): ("ControlsInteriorRows", "алгоритм и проверка") for a in (53768, 53777, 54651)})
+
+from ControlsSquaresFacts import LABELS as CONTROLS_SQUARES_LABELS, name_operands as controls_squares_name_operands
+LABELS.update(CONTROLS_SQUARES_LABELS)
+DOCUMENTS.update({("Controls", a): ("ControlsSquares", "алгоритм и проверка") for a in (54027, 54793)})
+
+from ControlsRasterStepFacts import LABELS as CONTROLS_RASTER_STEP_LABELS, name_operands as controls_raster_step_name_operands
+LABELS.update(CONTROLS_RASTER_STEP_LABELS)
+DOCUMENTS.update({("Controls", a): ("ControlsRasterStep", "алгоритм и проверка") for a in (55589, 55616)})
+
+from ControlsPushSpansFacts import LABELS as CONTROLS_PUSH_SPANS_LABELS, name_operands as controls_push_spans_name_operands
+LABELS.update(CONTROLS_PUSH_SPANS_LABELS)
+DOCUMENTS.update({('Controls',a):('ControlsPushSpans','частичный разбор быстрой заливки') for a in (0xD633,0xD727,0xD833)})
+DOCUMENTS['Controls',0xD314]=('ControlsCircleInterior','частичный разбор контура без горизонтального отсечения')
+
+from ControlsComponentCompareFacts import LABELS as CONTROLS_COMPONENT_COMPARE_LABELS, name_operands as controls_component_compare_name_operands
+LABELS.update(CONTROLS_COMPONENT_COMPARE_LABELS)
+DOCUMENTS.update({("Controls", a): ("ControlsComponentCompare", "алгоритм и проверка") for a in (55993,)})
+
+from ControlsSmallMasksFacts import LABELS as CONTROLS_SMALL_MASKS_LABELS, name_operands as controls_small_masks_name_operands
+LABELS.update(CONTROLS_SMALL_MASKS_LABELS)
+DOCUMENTS.update({("Controls", a): ("ControlsSmallMasks", "алгоритм и проверка") for a in (55728,)})
+
+from ControlsSmallBodiesFacts import LABELS as CONTROLS_SMALL_BODIES_LABELS, name_operands as controls_small_bodies_name_operands
+LABELS.update(CONTROLS_SMALL_BODIES_LABELS)
+DOCUMENTS.update({("Controls", a): ("ControlsSmallBodies", "алгоритм и проверка") for a in (55774,)})
+
+from ControlsCircleSetupFacts import LABELS as CONTROLS_CIRCLE_SETUP_LABELS, name_operands as controls_circle_setup_name_operands
+LABELS.update(CONTROLS_CIRCLE_SETUP_LABELS)
+DOCUMENTS.update({("Controls", a): ("ControlsCircleSetup", "алгоритм и проверка") for a in (54532, 54636, 54475, 54500)})
+
+from ControlsCircleSpanFacts import LABELS as CONTROLS_CIRCLE_SPAN_LABELS, name_operands as controls_circle_span_name_operands
+LABELS.update(CONTROLS_CIRCLE_SPAN_LABELS)
+DOCUMENTS.update({("Controls", a): ("ControlsCircleSpan", "алгоритм и проверка") for a in (54048,)})
+
+from ControlsWordRandomFacts import LABELS as CONTROLS_WORD_RANDOM_LABELS, name_operands as controls_word_random_name_operands
+LABELS.update(CONTROLS_WORD_RANDOM_LABELS)
+DOCUMENTS.update({("Controls", a): ("ControlsWordRandom", "алгоритм и проверка") for a in (56669,)})
+
+# Частичная нормализация N<=Q, имена и договоры остальных ветвей не объявляются доказанными.
+DOCUMENTS.update({("Controls", a): ("ControlsRatioInside", "частичная нормализация отношения") for a in (0xCF0B, 0xD0CA, 0xD10A)})
+
+from ActionRegionTypeFacts import LABELS as ACTION_REGION_TYPE_LABELS, name_operands as action_region_type_name_operands
+LABELS.update(ACTION_REGION_TYPE_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionRegionType", "алгоритм и проверка") for a in (28203,)})
+
+from ControlsSeededParametersFacts import LABELS as CONTROLS_SEEDED_PARAMETERS_LABELS, name_operands as controls_seeded_parameters_name_operands
+LABELS.update(CONTROLS_SEEDED_PARAMETERS_LABELS)
+DOCUMENTS.update({("Controls", a): ("ControlsSeededParameters", "алгоритм и проверка") for a in (56986,)})
+
+from ControlsParameterTablesFacts import LABELS as CONTROLS_PARAMETER_TABLES_LABELS, name_operands as controls_parameter_tables_name_operands
+LABELS.update(CONTROLS_PARAMETER_TABLES_LABELS)
+DOCUMENTS.update({("Controls", a): ("ControlsParameterTables", "алгоритм и проверка") for a in (56848,)})
+
+from ActionApplyParametersFacts import LABELS as ACTION_APPLY_PARAMETERS_LABELS, name_operands as action_apply_parameters_name_operands
+LABELS.update(ACTION_APPLY_PARAMETERS_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionApplyParameters", "алгоритм и проверка") for a in (44125,)})
+
+from ActionParameterActivationFacts import LABELS as ACTION_PARAMETER_ACTIVATION_LABELS, name_operands as action_parameter_activation_name_operands
+LABELS.update(ACTION_PARAMETER_ACTIVATION_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionParameterActivation", "алгоритм и проверка") for a in (44088, 44100)})
+
+DOCUMENTS["Action", 0xAB1B] = ("ActionParameterActivation", "выбор страницы и активация параметров")

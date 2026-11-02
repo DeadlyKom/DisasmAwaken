@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "typed_bytes": 4,
+  "physical_records": 1,
+  "structure": "FBodyProjection",
+  "other_flag_bits_unproved": true,
+  "remaining_work_bytes_unknown": 12,
+  "physical_bytes_preserved": true,
+  "assembly_executed": false
+}

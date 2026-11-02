@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "total_cases": 23297,
+  "cases_by_entry": {
+    "CEA4": 20736,
+    "CEB7": 1280,
+    "CECF": 1280
+  },
+  "dynamic_targets": {
+    "CEB7": 1280,
+    "CEBB": 1280,
+    "CEBF": 1280,
+    "CEC3": 1280,
+    "CEC7": 1280,
+    "CECB": 1280,
+    "CECF": 1280,
+    "CED3": 1280,
+    "CED7": 1280,
+    "CEDB": 1280,
+    "CEDF": 1280,
+    "CEE3": 1280,
+    "CEE7": 1280,
+    "CEEB": 1280,
+    "CEEF": 1280
+  },
+  "all_valid_half_lengths": true,
+  "all_endpoint_low_bytes": true,
+  "all_fill_and_mode_bytes": true,
+  "page_local_wrap_preserved": true,
+  "every_ram_byte_and_write_checked": true,
+  "exact_registers_flags_and_r": true,
+  "count_128_skips": true,
+  "count_16_nonprogress": true,
+  "other_counts_outside_contract": true,
+  "first_unused_pair_address": "CEB5",
+  "unclassified_but_executed_bytes": 24,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

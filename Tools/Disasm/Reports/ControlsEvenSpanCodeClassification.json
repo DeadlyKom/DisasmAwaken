@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "extracted_code_bytes": 24,
+  "new_instructions": 24,
+  "registered_entry": "CEB7",
+  "original_unused_prefix_preserved": 2,
+  "dynamic_targets_proved": 15,
+  "physical_bytes_preserved": true,
+  "assembly_executed": false
+}

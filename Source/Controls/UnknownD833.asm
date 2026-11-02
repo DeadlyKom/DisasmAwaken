@@ -1,9 +1,10 @@
                 module Controls
                 module UnknownD833
+                ; Документация [быстрая заливка через SP](../../Docs/ControlsPushSpans.md)
 ; Документация [Controls](../../Docs/FunctionDetails/Controls.md)
 ; -----------------------------------------
 ; Unknown, назначение этого фрагмента ещё не установлено
-; исходная запись 22, файловые смещения #1833..#1900
+; исходная запись 22, файловые смещения #1833..#1924
 ; In:
 ;   Unknown, регистровый контракт ещё не доказан
 ; Out:
@@ -20,7 +21,7 @@ Entry:          LD A, E
                 JR NC, @Controls.UnknownD833.PointD84C                          ; переход, если флаг Carry сброшен
 
 
-                LD A, (#D18B)
+                LD A, (@ControlsEvenSpanState.Mode)
                 AND A
                 JR NZ, @Controls.UnknownD833.PointD847                          ; переход, если флаг Z сброшен
 
@@ -42,7 +43,7 @@ PointD84C:      POP AF
                 RET
 
 
-PointD84E:      LD (#D186), SP
+PointD84E:      LD (@ControlsRasterStepState.SavedSP), SP
 PointD852:      LD D, L
                 LD L, E
                 LD A, B
@@ -65,18 +66,18 @@ PointD852:      LD D, L
                 LD A, IXL
                 LD (HL), A
                 LD A, #00
-PointD86D:      CALL @Controls.UnknownCEA4.Entry
+PointD86D:      CALL @Controls.FillEvenSpan.Entry
                 JR @Controls.UnknownD833.PointD872
 
 
 PointD872:      JR NZ, @Controls.UnknownD833.PointD879                          ; переход, если флаг Z сброшен
 
 
-                CALL @Controls.UnknownD925.Entry
+                CALL @Controls.AdvanceRasterUp.Entry
                 JR @Controls.UnknownD833.PointD87C
 
 
-PointD879:      CALL @Controls.UnknownD940.Entry
+PointD879:      CALL @Controls.AdvanceRasterDown.Entry
 PointD87C:      EXX
                 ADD HL, DE
                 INC E
@@ -120,14 +121,14 @@ PointD89B:      INC E
 
 
 PointD8A4:      EX AF, AF'
-                JP @Controls.UnknownD609.PointD696
+                JP @Controls.UnknownD633.PointD696
 
 
 PointD8A8:      EX AF, AF'
-                JP @Controls.UnknownD609.PointD6D7
+                JP @Controls.UnknownD633.PointD6D7
 
 
-PointD8AC:      LD SP, (#D186)
+PointD8AC:      LD SP, (@ControlsRasterStepState.SavedSP)
                 POP AF
                 RET
 
@@ -192,6 +193,8 @@ PointD8C0:      EXX
                 LD A, IXL
                 LD (HL), A
                 LD A, #00
+                ; вычисление изменяемого смещения JR как 16-A для выбора A операций PUSH AF
+                ; после подготовки AF оба его байта равны IXL, затем SP заменяется адресом правой границы растра
 PointD8F0:      LD L, D
                 SUB #11
                 CPL
@@ -205,6 +208,45 @@ PointD8F0:      LD L, D
                 LD SP, HL
 PointD8FF:      JR @Controls.UnknownD833.PointD8FF
 
+
+                ; -----------------------------------------
+                ; Динамический хвост, SP направлен в растр и AF содержит два байта рисунка
+                ; Каждый вход PushN записывает N пар справа налево, прежний CPU-стек восстанавливается после цепочки
+                ; IRQ во время этого участка не входят в доказанный договор
+                ; -----------------------------------------
+Push16:         PUSH AF
+Push15:         PUSH AF
+Push14:         PUSH AF
+Push13:         PUSH AF
+Push12:         PUSH AF
+Push11:         PUSH AF
+Push10:         PUSH AF
+Push9:          PUSH AF
+Push8:          PUSH AF
+Push7:          PUSH AF
+Push6:          PUSH AF
+Push5:          PUSH AF
+Push4:          PUSH AF
+Push3:          PUSH AF
+Push2:          PUSH AF
+Push1:          PUSH AF
+                ; чтение Mode после заполнения, нуль выбирает движение вверх, ненулевой байт вниз
+ResumeRows:     LD A, (@ControlsEvenSpanState.Mode)
+                ; проверка направления следующей строки по нулевому состоянию Mode
+                AND A
+                ; восстановление CPU-стека из SavedSP перед настоящим CALL помощника строки
+                LD SP, (@ControlsRasterStepState.SavedSP)
+                JR NZ, @Controls.UnknownD833.ResumeDown                         ; переход, если Mode ненулевой, выполнить AdvanceRasterDown через ResumeDown
+
+                ; шаг вверх, помощник может завершить весь рисователь через сохранённую рамку
+                CALL @Controls.AdvanceRasterUp.Entry
+                JR @Controls.UnknownD833.PointD8BB
+
+                ; шаг вниз с тем же возможным нелокальным завершением рисователя
+ResumeDown:     CALL @Controls.AdvanceRasterDown.Entry
+                JR @Controls.UnknownD833.PointD8BB
+
+                ; -----------------------------------------
 
                 endmodule
                 endmodule

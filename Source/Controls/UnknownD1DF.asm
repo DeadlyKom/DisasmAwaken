@@ -24,7 +24,7 @@ Entry:          PUSH AF
                 LD (#D18B), A
                 LD A, (#D18C)
                 AND A
-                JP @Controls.UnknownD609.PointD633
+                JP @Controls.UnknownD633.Entry
 
 
                 endmodule

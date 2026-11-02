@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "total_cases": 68608,
+  "cases_by_kind": {
+    "all_first_words": 65536,
+    "all_counts_by_region": 1024,
+    "all_seed_hashes_and_counts": 2048
+  },
+  "calls_to_original_random": 460288,
+  "coordinate_regions": {
+    "3": 65755,
+    "1": 268,
+    "2": 265,
+    "0": 2320
+  },
+  "all_first_seed_words": true,
+  "all_control_bytes_in_every_region": true,
+  "all_hashes_and_counts": true,
+  "real_action_relocation_and_calls_without_stubs": true,
+  "exact_registers_flags_r_and_sp": true,
+  "every_ram_byte_and_write_checked": true,
+  "all_input_combinations_exhausted": false,
+  "game_meaning_of_indices_proved": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

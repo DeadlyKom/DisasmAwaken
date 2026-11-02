@@ -1020,3 +1020,60 @@ FUNCTIONS['Controls'].update(CONTROLS_SPAN_MASKS_FUNCTIONS)
 
 from ControlsPointRespawnFacts import FUNCTIONS as CONTROLS_POINT_RESPAWN_FUNCTIONS
 FUNCTIONS['Controls'].update(CONTROLS_POINT_RESPAWN_FUNCTIONS)
+
+from ControlsPointMotionFacts import FUNCTIONS as CONTROLS_POINT_MOTION_FUNCTIONS
+FUNCTIONS['Controls'].update(CONTROLS_POINT_MOTION_FUNCTIONS)
+
+from ControlsEvenSpanFacts import FUNCTIONS as CONTROLS_EVEN_SPAN_FUNCTIONS
+FUNCTIONS['Controls'].update(CONTROLS_EVEN_SPAN_FUNCTIONS)
+
+from ControlsInteriorRowsFacts import FUNCTIONS as CONTROLS_INTERIOR_ROWS_FUNCTIONS
+FUNCTIONS['Controls'].update(CONTROLS_INTERIOR_ROWS_FUNCTIONS)
+
+# Самостоятельные хвосты после RET арифметических входов, исходные адреса сохранены.
+FUNCTIONS['Controls'].update({0xD314: ('UnknownD314', 'Unknown, назначение этого фрагмента ещё не установлено'), 0xD633: ('UnknownD633', 'Unknown, назначение этого фрагмента ещё не установлено')})
+
+from ControlsSquaresFacts import FUNCTIONS as CONTROLS_SQUARES_FUNCTIONS
+FUNCTIONS['Controls'].update(CONTROLS_SQUARES_FUNCTIONS)
+
+from ControlsRasterStepFacts import FUNCTIONS as CONTROLS_RASTER_STEP_FUNCTIONS
+FUNCTIONS['Controls'].update(CONTROLS_RASTER_STEP_FUNCTIONS)
+
+from ControlsComponentCompareFacts import FUNCTIONS as CONTROLS_COMPONENT_COMPARE_FUNCTIONS
+FUNCTIONS['Controls'].update(CONTROLS_COMPONENT_COMPARE_FUNCTIONS)
+
+from ControlsSmallMasksFacts import FUNCTIONS as CONTROLS_SMALL_MASKS_FUNCTIONS
+FUNCTIONS['Controls'].update(CONTROLS_SMALL_MASKS_FUNCTIONS)
+
+from ControlsSmallBodiesFacts import FUNCTIONS as CONTROLS_SMALL_BODIES_FUNCTIONS
+FUNCTIONS['Controls'].update(CONTROLS_SMALL_BODIES_FUNCTIONS)
+
+from ControlsCircleSetupFacts import FUNCTIONS as CONTROLS_CIRCLE_SETUP_FUNCTIONS
+FUNCTIONS['Controls'].update(CONTROLS_CIRCLE_SETUP_FUNCTIONS)
+
+# Отдельный вход отсечения после хвостового JP построителя масок, адреса сохранены.
+FUNCTIONS['Controls'].update({0xD340: ('UnknownD340', 'Unknown, назначение этого фрагмента ещё не установлено')})
+
+from ControlsCircleSpanFacts import FUNCTIONS as CONTROLS_CIRCLE_SPAN_FUNCTIONS
+FUNCTIONS['Controls'].update(CONTROLS_CIRCLE_SPAN_FUNCTIONS)
+
+from ControlsWordRandomFacts import FUNCTIONS as CONTROLS_WORD_RANDOM_FUNCTIONS
+FUNCTIONS['Controls'].update(CONTROLS_WORD_RANDOM_FUNCTIONS)
+
+from ActionRegionTypeFacts import FUNCTIONS as ACTION_REGION_TYPE_FUNCTIONS
+FUNCTIONS['Action'].update(ACTION_REGION_TYPE_FUNCTIONS)
+
+from ControlsSeededParametersFacts import FUNCTIONS as CONTROLS_SEEDED_PARAMETERS_FUNCTIONS
+FUNCTIONS['Controls'].update(CONTROLS_SEEDED_PARAMETERS_FUNCTIONS)
+
+from ControlsParameterTablesFacts import FUNCTIONS as CONTROLS_PARAMETER_TABLES_FUNCTIONS
+FUNCTIONS['Controls'].update(CONTROLS_PARAMETER_TABLES_FUNCTIONS)
+
+from ActionApplyParametersFacts import FUNCTIONS as ACTION_APPLY_PARAMETERS_FUNCTIONS
+FUNCTIONS['Action'].update(ACTION_APPLY_PARAMETERS_FUNCTIONS)
+
+# Самостоятельный вход AC44 после RET AC43, проверены реальные OUT и страницы.
+FUNCTIONS['Action'].update({0xAC44: ('UnknownAC44', 'Unknown, назначение этого фрагмента ещё не установлено')})
+
+from ActionParameterActivationFacts import FUNCTIONS as ACTION_PARAMETER_ACTIVATION_FUNCTIONS
+FUNCTIONS['Action'].update(ACTION_PARAMETER_ACTIVATION_FUNCTIONS)

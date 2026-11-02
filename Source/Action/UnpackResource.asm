@@ -60,7 +60,7 @@ PointAB48:      DEC HL
                 EXX
                 LD D, #BF
                 LD C, #10
-                CALL @Action.UnknownAC38.Entry
+                CALL @Action.ReadWordFromIX.Entry
 PointAB59:      LD A, (IX + #00)
                 INC IX
                 EXX
@@ -70,7 +70,7 @@ PointAB61:      EXX
 PointAB62:      ADD HL, HL
                 DJNZ @Action.UnpackResource.PointAB68
 
-                CALL @Action.UnknownAC38.Entry
+                CALL @Action.ReadWordFromIX.Entry
 PointAB68:      JR C, @Action.UnpackResource.PointAB59                          ; переход, если флаг Carry установлен
 
 
@@ -79,7 +79,7 @@ PointAB6C:      LD A, #80
 PointAB6E:      ADD HL, HL
                 DJNZ @Action.UnpackResource.PointAB74
 
-                CALL @Action.UnknownAC38.Entry
+                CALL @Action.ReadWordFromIX.Entry
 PointAB74:      RLA
                 JR C, @Action.UnpackResource.PointAB6E                          ; переход, если флаг Carry установлен
 
@@ -111,7 +111,7 @@ PointAB8B:      EXX
 PointAB90:      ADD HL, HL
                 DJNZ @Action.UnpackResource.PointAB96
 
-                CALL @Action.UnknownAC38.Entry
+                CALL @Action.ReadWordFromIX.Entry
 PointAB96:      RLA
                 JR C, @Action.UnpackResource.PointAB90                          ; переход, если флаг Carry установлен
 
@@ -135,7 +135,7 @@ PointABA5:      RRCA
 PointABA7:      ADD HL, HL
                 DJNZ @Action.UnpackResource.PointABAD
 
-                CALL @Action.UnknownAC38.Entry
+                CALL @Action.ReadWordFromIX.Entry
 PointABAD:      RLA
                 JR C, @Action.UnpackResource.PointABA7                          ; переход, если флаг Carry установлен
 
@@ -192,7 +192,7 @@ PointABE7:      LD A, #80
 PointABE9:      ADD HL, HL
                 DJNZ @Action.UnpackResource.PointABEF
 
-                CALL @Action.UnknownAC38.Entry
+                CALL @Action.ReadWordFromIX.Entry
 PointABEF:      ADC A, A
                 JR NZ, @Action.UnpackResource.PointAC16                         ; переход, если флаг Z сброшен
 
@@ -237,7 +237,7 @@ PointAC16:      SBC A, A
 PointAC19:      ADD HL, HL
                 DJNZ @Action.UnpackResource.PointAC1F
 
-                CALL @Action.UnknownAC38.Entry
+                CALL @Action.ReadWordFromIX.Entry
 PointAC1F:      RLA
                 JR C, @Action.UnpackResource.PointAC19                          ; переход, если флаг Carry установлен
 
