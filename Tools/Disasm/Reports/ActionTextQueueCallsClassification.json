@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "described_wrappers": 2,
+  "net_new_fragments": 1,
+  "unknown_tail_preserved": true,
+  "physical_bytes_preserved": true,
+  "instructions_changed": 0,
+  "assembly_executed": false
+}

@@ -9999,7 +9999,7 @@
     "offset": 573,
     "length": 16,
     "kind": "code",
-    "path": "Source/Action/Unknown6000.asm",
+    "path": "Source/Action/QueueNumberBank1.asm",
     "origin": 24576,
     "sha256": "4d2ff3f73f4fd776d0522a130b12a4f47f62800f995ca9d1272d508331ddfadd"
   },
@@ -10015,11 +10015,20 @@
   {
     "slot": 17,
     "offset": 637,
-    "length": 110,
+    "length": 20,
     "kind": "code",
-    "path": "Source/Action/Unknown6040.asm",
+    "path": "Source/Action/QueueTextItemBank1.asm",
     "origin": 24640,
-    "sha256": "3c166c56ce0cd7448db6e4c36d4653beaa009cdde7a6a717df5c1b808328045c"
+    "sha256": "1ab9ec8012852a3738033d56556e471a4715fd6e9a411d2646a6e7f865dfe855"
+  },
+  {
+    "slot": 17,
+    "offset": 657,
+    "length": 90,
+    "kind": "code",
+    "path": "Source/Action/Unknown6054.asm",
+    "origin": 24660,
+    "sha256": "902fa1d4ed70431ca30cd596875c47ca85789b10d3bef07e0383d7ec0a958efe"
   },
   {
     "slot": 17,
@@ -13815,7 +13824,7 @@
     "offset": 4472,
     "length": 3,
     "kind": "code",
-    "path": "Source/Controls/UnknownEC56.asm",
+    "path": "Source/Controls/QueueNumber.asm",
     "origin": 60502,
     "sha256": "e5bbdffca2c7c982697590f5347afaf5101ea9965c0da4c3e2d21902b7893630"
   },
@@ -13824,7 +13833,7 @@
     "offset": 4475,
     "length": 39,
     "kind": "code",
-    "path": "Source/Controls/UnknownEC59.asm",
+    "path": "Source/Controls/QueueTextItem.asm",
     "origin": 60505,
     "sha256": "4ad0e50d61a092617838067c767cb6d51fdc2e8e705ed86d641c5e7ff079f9f7"
   },
@@ -13832,9 +13841,9 @@
     "slot": 23,
     "offset": 4514,
     "length": 34,
-    "kind": "unclassified",
-    "path": "Source/Resources/23_CONTROL/Unclassified008.bin",
-    "origin": null,
+    "kind": "typed_data",
+    "path": "Source/Controls/Data/TextQueue.asm",
+    "origin": 60544,
     "sha256": "98b075cfda447db59a754a673a663ade92c693256bea3b081cc278be6a1fb360"
   },
   {

@@ -802,4 +802,20 @@ MixerMaskB      equ #12                                                         
 MixerMaskC      equ #24                                                         ; два формируемых бита микшера канала C
                 endmodule
 
+
+                ; Числовые коды и лимит очереди, не набор битовых флагов
+                module TextQueueConst
+End             equ #00                                                         ; конечный маркер кольца
+Free            equ #01                                                         ; свободная запись
+Number          equ #02                                                         ; числовое значение в LowValue
+Capacity        equ #10                                                         ; максимум чтений, маркер входит в лимит
+                endmodule
+
+
+                ; Полные управляющие байты 7FFD для межбанковых вызовов Action
+                module ActionBankPage
+Runtime         equ #10                                                         ; ROM 1 и банк 0, фиксированное значение на выходе обёрток
+Controls        equ #11                                                         ; ROM 1 и банк 1 с очередью Controls
+                endmodule
+
                 endif

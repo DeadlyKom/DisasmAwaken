@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "described_functions": 2,
+  "typed_bytes": 34,
+  "physical_records": 17,
+  "physical_bytes_preserved": true,
+  "instructions_changed": 0,
+  "bounded_wrap_quirk_preserved": true,
+  "full_consumer_contract_proved": false,
+  "assembly_executed": false
+}

@@ -30,7 +30,7 @@ Entry:          DI
                 CALL @Action.Unknown6CD6.Entry
                 PUSH DE
                 LD DE, #F1AB
-                CALL @Action.Unknown6040.Entry
+                CALL @Action.QueueTextItemBank1.Entry
                 POP DE
                 ; JP @Action.MainLoop.Entry, продолжение в MainLoop.asm
 

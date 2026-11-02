@@ -1154,4 +1154,10 @@ SavedStack      equ #DFBD                                                       
 SavedStack      equ #DB4D                                                       ; слово SP в исходной команде LD SP, nn
                 endmodule
 
+
+                ; Существующий изменяемый операнд в банке 1, память не выделяется
+                module ControlsTextQueueState
+WriteCursor     equ #EC5D                                                       ; адрес следующего проверяемого элемента в LD HL, nn
+                endmodule
+
                 endif

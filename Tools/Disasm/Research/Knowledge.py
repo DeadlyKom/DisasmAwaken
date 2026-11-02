@@ -990,3 +990,9 @@ FUNCTIONS['Music'].update(MUSICADVANCEA_FUNCTIONS)
 
 from MusicInitializationFacts import FUNCTIONS as MUSIC_INITIALIZATION_FUNCTIONS
 FUNCTIONS['Music'].update(MUSIC_INITIALIZATION_FUNCTIONS)
+
+from ControlsTextQueueFacts import FUNCTIONS as CONTROLS_TEXT_QUEUE_FUNCTIONS
+FUNCTIONS['Controls'].update(CONTROLS_TEXT_QUEUE_FUNCTIONS)
+
+from ActionTextQueueFacts import FUNCTIONS as ACTION_TEXT_QUEUE_FUNCTIONS
+FUNCTIONS['Action'].update({a: value for a, value in ACTION_TEXT_QUEUE_FUNCTIONS.items() if not value[0].startswith('Unknown')})

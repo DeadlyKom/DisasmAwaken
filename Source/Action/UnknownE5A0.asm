@@ -154,6 +154,6 @@ PointE643:      LD A, #00
                 LD (#E644), A
                 PUSH DE
                 LD DE, #F3B9
-                CALL @Action.Unknown6040.Entry
+                CALL @Action.QueueTextItemBank1.Entry
                 endmodule
                 endmodule

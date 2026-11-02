@@ -1260,4 +1260,31 @@ NoteDelta       db #00                                                          
                 ends
                 assert FMusicOrnamentStep == 1
 
+
+                ; Числовая запись либо указатель строки, старший байт хранится первым
+                struct FTextQueueItem
+HighKind        db #01                                                          ; 00 маркер конца, 01 свободно, 02 число, 03..FF старший байт указателя строки
+LowValue        db #01                                                          ; числовое значение при HighKind=02, младший байт адреса при HighKind>=03
+                ends
+                assert FTextQueueItem == 2
+
+                ; Динамический кадр производителя очереди, статической памяти нет
+                struct FTextQueueInsertFrame
+SavedAF         dw #0000                                                        ; входной AF, младший байт F
+SavedBC         dw #0000                                                        ; сохранённый BC
+SavedHL         dw #0000                                                        ; сохранённый HL
+CallerReturn    dw #0000                                                        ; внешний адрес возврата
+                ends
+                assert FTextQueueInsertFrame == 8
+
+
+                ; Собственная динамическая рамка QueueTextItemBank1, порядок отличается от рамки производителя
+                struct FActionTextQueueFrame
+SavedHL         dw #0000                                                        ; сохранённый HL
+SavedBC         dw #0000                                                        ; сохранённый BC
+SavedAF         dw #0000                                                        ; сохранённый AF
+CallerReturn    dw #0000                                                        ; внешний адрес возврата Action
+                ends
+                assert FActionTextQueueFrame == 8
+
                 endif

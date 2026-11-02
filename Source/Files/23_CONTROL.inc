@@ -76,15 +76,16 @@
                 ent
                 assert $ == #1178
                 disp #EC56
-                include "../Controls/UnknownEC56.asm"                           ; (0) жёсткий порядок, последовательное исполнение
+                include "../Controls/QueueNumber.asm"                           ; (0) жёсткий порядок, последовательное исполнение
                 ent
                 assert $ == #117B
                 disp #EC59
-                include "../Controls/UnknownEC59.asm"                           ; (1) жёсткий порядок, последовательное исполнение
+                include "../Controls/QueueTextItem.asm"                         ; (1) жёсткий порядок, последовательное исполнение
                 ent
                 assert $ == #11A2
-                ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/23_CONTROL/Unclassified008.bin"
+                disp #EC80
+                include "../Controls/Data/TextQueue.asm"
+                ent
                 assert $ == #11C4
                 disp #ECA2
                 include "../Controls/UnknownECA2.asm"

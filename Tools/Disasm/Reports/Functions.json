@@ -8339,25 +8339,39 @@
   },
   {
     "region": "Action",
-    "name": "Unknown6000",
+    "name": "QueueNumberBank1",
+    "description": "Передача байтового числа A в очередь Controls банка 1 с фиксированным возвратом страницы 10",
     "address": 24576,
     "slot": 17,
     "offset": 573,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
     "end_offset": 589,
-    "path": "Source/Action/Unknown6000.asm"
+    "path": "Source/Action/QueueNumberBank1.asm",
+    "semantic_status": "described",
+    "fragment_scope": "separate_banked_queue_entry"
   },
   {
     "region": "Action",
-    "name": "Unknown6040",
+    "name": "QueueTextItemBank1",
+    "description": "Передача записи DE в очередь Controls банка 1 с сохранением регистров и возвратом страницы 10",
     "address": 24640,
     "slot": 17,
     "offset": 637,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "end_offset": 657,
+    "path": "Source/Action/QueueTextItemBank1.asm",
+    "semantic_status": "described",
+    "fragment_scope": "separate_banked_queue_entry"
+  },
+  {
+    "region": "Action",
+    "name": "Unknown6054",
+    "description": "Unknown, отдельная цепочка после обёртки очереди ещё не разобрана полностью",
+    "address": 24660,
+    "slot": 17,
+    "offset": 657,
     "end_offset": 747,
-    "path": "Source/Action/Unknown6040.asm"
+    "path": "Source/Action/Unknown6054.asm",
+    "semantic_status": "unknown",
+    "fragment_scope": "unproved_separate_control_chain"
   },
   {
     "region": "Action",
@@ -12090,25 +12104,25 @@
   },
   {
     "region": "Controls",
-    "name": "UnknownEC56",
+    "name": "QueueNumber",
     "address": 60502,
     "slot": 23,
     "offset": 4472,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Подготовка числовой записи типа 2 из A и продолжение в производителе текстовой очереди",
+    "semantic_status": "described",
     "end_offset": 4475,
-    "path": "Source/Controls/UnknownEC56.asm"
+    "path": "Source/Controls/QueueNumber.asm"
   },
   {
     "region": "Controls",
-    "name": "UnknownEC59",
+    "name": "QueueTextItem",
     "address": 60505,
     "slot": 23,
     "offset": 4475,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Ограниченный поиск свободной записи очереди и сохранение числа либо указателя строки",
+    "semantic_status": "described",
     "end_offset": 4514,
-    "path": "Source/Controls/UnknownEC59.asm"
+    "path": "Source/Controls/QueueTextItem.asm"
   },
   {
     "region": "Controls",

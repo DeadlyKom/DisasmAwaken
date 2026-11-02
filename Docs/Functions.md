@@ -21,10 +21,10 @@
 | Help | 4 | 4 | [Факты](FunctionDetails/Help.md) |
 | Music | 49 | 49 | [Факты](FunctionDetails/Music.md) |
 | ActionBoot | 9 | 9 | [Факты](FunctionDetails/ActionBoot.md) |
-| Action | 178 | 81 | [Факты](FunctionDetails/Action.md) |
+| Action | 179 | 83 | [Факты](FunctionDetails/Action.md) |
 | ThreeD | 98 | 75 | [Факты](FunctionDetails/ThreeD.md) |
 | Voxel | 9 | 9 | [Факты](FunctionDetails/Voxel.md) |
-| Controls | 67 | 1 | [Факты](FunctionDetails/Controls.md) |
+| Controls | 67 | 3 | [Факты](FunctionDetails/Controls.md) |
 | Final | 9 | 9 | [Факты](FunctionDetails/Final.md) |
 | FinalTemplates | 2 | 2 | [Факты](FunctionDetails/FinalTemplates.md) |
 
@@ -667,8 +667,6 @@
 | #4355 | [ActionBoot.BuildProjectionTable](../Source/ActionBoot/BuildProjectionTable.asm) | Создание таблицы в #9300 с вычислением через сдвиги и сложение |
 | #438F | [ActionBoot.BuildReciprocalTable](../Source/ActionBoot/BuildReciprocalTable.asm) | Создание двух страниц таблицы через двоичное деление |
 | #43CF | [ActionBoot.BuildBitmapTables](../Source/ActionBoot/BuildBitmapTables.asm) | Создание таблиц строк и битовых масок для рисования |
-| #6000 | [Action.Unknown6000](../Source/Action/Unknown6000.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #6040 | [Action.Unknown6040](../Source/Action/Unknown6040.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #6145 | [Action.Unknown6145](../Source/Action/Unknown6145.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #6172 | [Action.Unknown6172](../Source/Action/Unknown6172.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #6265 | [Action.Unknown6265](../Source/Action/Unknown6265.asm) | Unknown, назначение этого фрагмента ещё не установлено |
@@ -1008,8 +1006,8 @@
 | #E8FD | [Controls.UnknownE8FD](../Source/Controls/UnknownE8FD.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #E97A | [Controls.UnknownE97A](../Source/Controls/UnknownE97A.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #EC0E | [Controls.UnknownEC0E](../Source/Controls/UnknownEC0E.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #EC56 | [Controls.UnknownEC56](../Source/Controls/UnknownEC56.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #EC59 | [Controls.UnknownEC59](../Source/Controls/UnknownEC59.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #EC56 | [Controls.QueueNumber](../Source/Controls/QueueNumber.asm) | Подготовка числовой записи типа 2 из A и продолжение в производителе текстовой очереди |
+| #EC59 | [Controls.QueueTextItem](../Source/Controls/QueueTextItem.asm) | Ограниченный поиск свободной записи очереди и сохранение числа либо указателя строки |
 | #ECA2 | [Controls.UnknownECA2](../Source/Controls/UnknownECA2.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #ECF3 | [Controls.UnknownECF3](../Source/Controls/UnknownECF3.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #ED28 | [Controls.UnknownED28](../Source/Controls/UnknownED28.asm) | Unknown, назначение этого фрагмента ещё не установлено |
@@ -1415,3 +1413,6 @@
 | #E4E6 | [Music.DecodePatternB](../Source/Music/DecodePatternB.asm) | Декодирование строки B, включая отдельную команду базового шума и отложенные эффекты |
 | #E53D | [Music.PatternCommandsC](../Source/Music/PatternCommandsC.asm) | Внутренние входы громкости, выключения, огибающей и указателей канала C |
 | #E583 | [Music.DecodePatternC](../Source/Music/DecodePatternC.asm) | Декодирование строки C с непосредственным сбросом новой ноты и отложенными эффектами |
+| #6000 | [Action.QueueNumberBank1](../Source/Action/QueueNumberBank1.asm) | Передача байтового числа A в очередь Controls банка 1 с фиксированным возвратом страницы 10 |
+| #6040 | [Action.QueueTextItemBank1](../Source/Action/QueueTextItemBank1.asm) | Передача записи DE в очередь Controls банка 1 с сохранением регистров и возвратом страницы 10 |
+| #6054 | [Action.Unknown6054](../Source/Action/Unknown6054.asm) | Unknown, отдельная цепочка после обёртки очереди ещё не разобрана полностью |

@@ -4480,7 +4480,7 @@
     "target_instruction": 60661,
     "size": 2,
     "target_operation": "LD HL,#0000",
-    "path": "Source/Action/Unknown6040.asm"
+    "path": "Source/Action/Unknown6054.asm"
   },
   {
     "region": "Action",
@@ -7081,7 +7081,11 @@
     "target_instruction": 60508,
     "size": 2,
     "target_operation": "LD HL,#EC80",
-    "path": "Source/Controls/UnknownEC0E.asm"
+    "path": "Source/Controls/UnknownEC0E.asm",
+    "writer_bank": 1,
+    "target_bank": 1,
+    "target_region": "Controls",
+    "target_slot": 23
   },
   {
     "region": "Controls",
@@ -7090,7 +7094,11 @@
     "target_instruction": 60508,
     "size": 2,
     "target_operation": "LD HL,#EC80",
-    "path": "Source/Controls/UnknownEC59.asm"
+    "path": "Source/Controls/QueueTextItem.asm",
+    "writer_bank": 1,
+    "target_bank": 1,
+    "target_region": "Controls",
+    "target_slot": 23
   },
   {
     "region": "Controls",

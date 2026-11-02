@@ -1,13 +1,13 @@
 {
   "status": "in_progress",
   "all_plan_stages_completed": false,
-  "fragments": 1186,
-  "described": 1000,
-  "unknown": 186,
-  "unproved_contracts": 370,
+  "fragments": 1187,
+  "described": 1004,
+  "unknown": 183,
+  "unproved_contracts": 367,
   "named_without_contract": 184,
   "instruction_count": 39824,
-  "unclassified_bytes": 298492,
+  "unclassified_bytes": 298458,
   "passed_reports": [
     "Tools/Disasm/Reports/PointerVerification.json",
     "Tools/Disasm/Reports/PointerTablesVerification.json",
@@ -405,7 +405,11 @@
     "Tools/Disasm/Reports/MusicSectorTailClassification.json",
     "Tools/Disasm/Reports/ResearchCleanupMusicVerification.json",
     "Tools/Disasm/Reports/MusicInitializeAndMuteVerification.json",
-    "Tools/Disasm/Reports/MusicInitializationClassification.json"
+    "Tools/Disasm/Reports/MusicInitializationClassification.json",
+    "Tools/Disasm/Reports/ControlsTextQueueVerification.json",
+    "Tools/Disasm/Reports/ControlsTextQueueClassification.json",
+    "Tools/Disasm/Reports/ActionTextQueueCallsVerification.json",
+    "Tools/Disasm/Reports/ActionTextQueueCallsClassification.json"
   ],
   "next_station_work": [
     {
@@ -419,9 +423,9 @@
   ],
   "remaining_by_region": {
     "Music": 0,
-    "Action": 97,
+    "Action": 96,
     "ThreeD": 23,
-    "Controls": 66
+    "Controls": 64
   },
   "assembly_executed": false,
   "native_execution_performed": false,
@@ -437,16 +441,17 @@
   "temporary_cleanup": "695 прежних снимков сохранены в LegacySnapshots-20261031.zip. Ещё 302 проверенных снимка, 4455 распакованных файлов и 1149203729 байтов сохранены в RecentSnapshots-20261101-Music.zip размером 77536565 байтов. Проверены 4022 неизменённых рабочих файла. Маркеры защищают от повторного экспорта, восстановление через ResearchArchive.py. Три используемых кандидата, сценарии, оригиналы, отчёты и данные сборки сохранены.",
   "pending_by_region": {
     "Music": 0,
-    "Action": 97,
+    "Action": 96,
     "ThreeD": 23,
-    "Controls": 66
+    "Controls": 64
   },
   "next_semantic_work": [
     "Все зарегистрированные Station-входы имеют описанные контракты. Остаются назначения части физических данных, игровые потребители настроек, длительная нативная проверка и произвольные IRQ.",
     "D3D, все 4084 обнаруженные инструкции и 7828 байтов оформлены в 70 фрагментах. Станционная цепочка просмотра и действия списка также описаны. Открыты полные конечные контракты сложных путей, независимый bitmap кадра, ненулевые нижние границы, смещённое начало заливки, режимы 5..7, писатели C8, игровой вызов D819, три Seed, хвост объекта и остальные данные. Музыкальный режим, IRQ во всех точках и полный игровой цикл не доказаны.",
     "LANG, неизвестный префикс и потребители секторного хвоста, соседний байт 98AD, физические данные языка. События 1, 2, 5, 6, 15, 16 и 17 разобраны отдельно.",
     "Остальные регионы по pending_by_region и все именованные фрагменты без доказанных контрактов",
-    "Музыка, Unknown63 в заголовке композиции, интегральный договор PlayFrame и независимая композиция оставшейся подготовки полного кадра, аппаратные IRQ и нативный звук. Все 49 зарегистрированных блоков имеют описанный контракт, зарезервированные эффекты не исполнены."
+    "Музыка, Unknown63 в заголовке композиции, интегральный договор PlayFrame и независимая композиция оставшейся подготовки полного кадра, аппаратные IRQ и нативный звук. Все 49 зарегистрированных блоков имеют описанный контракт, зарезервированные эффекты не исполнены.",
+    "Controls, производитель очереди EC56/EC59 и два межбанковых входа Action описаны и проверены. Остаются потребитель ECA2, десятичный вывод, рисование глифов и прокрутка с полными контрактами, отдельный хвост Action Unknown6054."
   ],
   "next_text_algorithm": "Все зарегистрированные Text-входы имеют описанный контракт, полнота игровых назначений полей и физической разметки LANG ещё не доказана",
   "next_map_work": "Писатели сохранённых списков и их обёртки управления описаны. Остаточные назначения полей, данных, хвостов фаз и формулы запаса дальности требуют полного прохода по потребителям.",
@@ -1005,9 +1010,9 @@
   },
   "remaining_unknown_by_region": {
     "Music": 0,
-    "Action": 97,
+    "Action": 96,
     "ThreeD": 23,
-    "Controls": 66
+    "Controls": 64
   },
   "deferred_action_adapters": {
     "report": "Tools/Disasm/Reports/DeferredActionAdaptersVerification.json",
@@ -1240,5 +1245,39 @@
     "public_and_module_entries_checked": true,
     "assembly_executed": false,
     "native_audio_verified": false
+  },
+  "controls_text_queue": {
+    "report": "Tools/Disasm/Reports/ControlsTextQueueVerification.json",
+    "insertion_cases": 132807,
+    "numeric_role_cases": 256,
+    "typed_records": 17,
+    "typed_bytes": 34,
+    "last_slot_missed_after_wrap_preserved": true,
+    "all_free_masks_and_raw_de_words_and_number_af_values": true,
+    "complete_consumer_contract": false,
+    "native_execution": false,
+    "assembly_executed": false
+  },
+  "action_text_queue_calls": {
+    "report": "Tools/Disasm/Reports/ActionTextQueueCallsVerification.json",
+    "cases": 4160,
+    "physical_banks_checked": 8,
+    "page_sequence": [
+      17,
+      16
+    ],
+    "input_page_not_restored": true,
+    "numeric_alternate_a_becomes_11": true,
+    "unknown_6054_preserved": true,
+    "native_execution": false,
+    "assembly_executed": false
+  },
+  "manual_build_check": {
+    "status": "requested_pending_user_result",
+    "task": "Ctrl+B, Builder/Main.asm",
+    "expected_image": "Awakenv02.trd",
+    "expected_size": 655360,
+    "expected_sha256": "55a11de202a5334547e39a6db42c945242a2a53559dc1cf601522219e3463f32",
+    "codex_assembler_executed": false
   }
 }

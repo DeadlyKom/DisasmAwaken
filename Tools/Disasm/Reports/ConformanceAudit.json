@@ -1,19 +1,19 @@
 {
   "method": "static_source_audit_without_assembly",
-  "included_text_files": 1449,
-  "included_binary_files": 234,
-  "registered_functions": 1186,
+  "included_text_files": 1451,
+  "included_binary_files": 233,
+  "registered_functions": 1187,
   "unlinked_functions": [],
   "missing_includes_or_resources": [],
   "missing_include_order": [],
-  "global_definitions": 17302,
-  "global_references": 10507,
+  "global_definitions": 17373,
+  "global_references": 10520,
   "unresolved_global_references": [],
   "duplicate_global_definitions": [],
   "global_reference_case_mismatches": [],
   "source_files_outside_graph": [],
-  "unknown_fragments": 186,
-  "unknown_contract_fragments": 370,
+  "unknown_fragments": 183,
+  "unknown_contract_fragments": 367,
   "unknown_contract_files": [
     "Source/Intro/InitializeIntro.asm",
     "Source/Intro/LoadStation.asm",
@@ -42,8 +42,7 @@
     "Source/ActionBoot/BuildProjectionTable.asm",
     "Source/ActionBoot/BuildReciprocalTable.asm",
     "Source/ActionBoot/BuildBitmapTables.asm",
-    "Source/Action/Unknown6000.asm",
-    "Source/Action/Unknown6040.asm",
+    "Source/Action/Unknown6054.asm",
     "Source/Action/Unknown6145.asm",
     "Source/Action/Unknown6172.asm",
     "Source/Action/Unknown6265.asm",
@@ -372,8 +371,6 @@
     "Source/Controls/UnknownE8FD.asm",
     "Source/Controls/UnknownE97A.asm",
     "Source/Controls/UnknownEC0E.asm",
-    "Source/Controls/UnknownEC56.asm",
-    "Source/Controls/UnknownEC59.asm",
     "Source/Controls/UnknownECA2.asm",
     "Source/Controls/UnknownECF3.asm",
     "Source/Controls/UnknownED28.asm",
@@ -390,19 +387,19 @@
   "original_profile_only_contracts": 0,
   "runtime_profile_limits": "See RuntimeProfileQualification.json and Docs/MapRuntimeProfiles.md, whole game remains unproved",
   "pending_by_region": {
-    "Action": 97,
+    "Action": 96,
     "ThreeD": 23,
-    "Controls": 66
+    "Controls": 64
   },
   "potential_continuations": 122,
   "ordered_fragments": 221,
-  "python_scripts_parsed": 836,
+  "python_scripts_parsed": 852,
   "python_duplicate_literal_keys": [],
   "totals": {
-    "address_label": 1223,
-    "numeric_control_target": 137,
+    "address_label": 1218,
+    "numeric_control_target": 133,
     "numeric_index_operand": 352,
-    "condition_without_data_semantics": 1512
+    "condition_without_data_semantics": 1510
   },
   "findings": [
     {
@@ -1271,16 +1268,6 @@
       "issue": "numeric_index_operand"
     },
     {
-      "path": "Source/Music/RenderChannelC.asm",
-      "line": 40,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/Music/RenderChannelC.asm",
-      "line": 187,
-      "issue": "numeric_control_target"
-    },
-    {
       "path": "Source/ActionBoot/InitializeFlight.asm",
       "line": 23,
       "issue": "numeric_control_target"
@@ -1461,48 +1448,33 @@
       "issue": "condition_without_data_semantics"
     },
     {
-      "path": "Source/Action/Unknown6000.asm",
-      "line": 21,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/Action/Unknown6040.asm",
-      "line": 22,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/Action/Unknown6040.asm",
-      "line": 31,
+      "path": "Source/Action/Unknown6054.asm",
+      "line": 26,
       "issue": "address_label"
     },
     {
-      "path": "Source/Action/Unknown6040.asm",
-      "line": 41,
-      "issue": "address_label"
+      "path": "Source/Action/Unknown6054.asm",
+      "line": 38,
+      "issue": "numeric_control_target"
     },
     {
-      "path": "Source/Action/Unknown6040.asm",
+      "path": "Source/Action/Unknown6054.asm",
+      "line": 39,
+      "issue": "numeric_control_target"
+    },
+    {
+      "path": "Source/Action/Unknown6054.asm",
+      "line": 45,
+      "issue": "condition_without_data_semantics"
+    },
+    {
+      "path": "Source/Action/Unknown6054.asm",
       "line": 53,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/Action/Unknown6040.asm",
-      "line": 54,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/Action/Unknown6040.asm",
-      "line": 60,
       "issue": "condition_without_data_semantics"
     },
     {
-      "path": "Source/Action/Unknown6040.asm",
-      "line": 68,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Action/Unknown6040.asm",
-      "line": 74,
+      "path": "Source/Action/Unknown6054.asm",
+      "line": 59,
       "issue": "address_label"
     },
     {
@@ -16174,36 +16146,6 @@
       "path": "Source/Controls/UnknownEC0E.asm",
       "line": 53,
       "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownEC59.asm",
-      "line": 22,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Controls/UnknownEC59.asm",
-      "line": 24,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownEC59.asm",
-      "line": 28,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownEC59.asm",
-      "line": 35,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Controls/UnknownEC59.asm",
-      "line": 41,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Controls/UnknownEC59.asm",
-      "line": 47,
-      "issue": "address_label"
     },
     {
       "path": "Source/Controls/UnknownECA2.asm",

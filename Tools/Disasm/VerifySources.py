@@ -178,6 +178,25 @@ def main():
         music_player_records[path] = len(names)
     assert len(music_player_records) in (0, 6)
 
+    # Проверка двух байтов каждого элемента очереди банка 1 и отдельного конечного маркера.
+    from ControlsTextQueueFacts import TABLE as TEXT_QUEUE_TABLE, parse as parse_text_queue
+    text_queue_records = 0
+    queue_entries = [item for item in source_map if item['path'] == TEXT_QUEUE_TABLE[1]]
+    if queue_entries:
+        assert len(queue_entries) == 1
+        item = queue_entries[0]
+        raw, labels = parse_text_queue((ROOT/TEXT_QUEUE_TABLE[1]).read_text('utf-8'))
+        assert (item['slot'], item['offset'], item['length'], item['origin']) == (23, 0x11A2, 34, 0xEC80)
+        assert raw == sources[23][0x11A2:0x11C4]
+        assert all(symbols.get(key.upper()) == value for key, value in labels.items())
+        assert symbols['FTEXTQUEUEITEM'] == 2 and symbols['FTEXTQUEUEITEM.HIGHKIND'] == 0 and symbols['FTEXTQUEUEITEM.LOWVALUE'] == 1
+        assert symbols['FTEXTQUEUEINSERTFRAME'] == 8
+        assert [symbols['FTEXTQUEUEINSERTFRAME.'+name] for name in ('SAVEDAF','SAVEDBC','SAVEDHL','CALLERRETURN')] == [0,2,4,6]
+        if 'FACTIONTEXTQUEUEFRAME' in symbols:
+            assert symbols['FACTIONTEXTQUEUEFRAME'] == 8
+            assert [symbols['FACTIONTEXTQUEUEFRAME.'+name] for name in ('SAVEDHL','SAVEDBC','SAVEDAF','CALLERRETURN')] == [0,2,4,6]
+        text_queue_records = 17
+
     # Проверка физических записей композиции и точной грамматики фактических DB-команд.
     from MusicCompositionSource import descriptions as composition_descriptions, parse as parse_composition, STRUCTURES as COMPOSITION_STRUCTURES
     composition = sources[10][0xC00:0x1C29]
@@ -1133,6 +1152,7 @@ def main():
     report['music_effect_records'] = music_effect_records
     report['music_player_records'] = music_player_records
     report['music_composition_parts'] = music_composition_parts
+    report['text_queue_records'] = text_queue_records
     (ROOT/"Tools/Disasm/Reports/SourceVerification.json").write_text(
         json.dumps(report,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     print(json.dumps(report,ensure_ascii=False,indent=2))

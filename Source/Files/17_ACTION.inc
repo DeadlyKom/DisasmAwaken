@@ -43,14 +43,18 @@
                 ent
                 assert $ == #023D
                 disp #6000
-                include "../Action/Unknown6000.asm"
+                include "../Action/QueueNumberBank1.asm"
                 ent
                 assert $ == #024D
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
                 incbin "../Resources/17_ACTION/Unclassified001.bin"
                 assert $ == #027D
                 disp #6040
-                include "../Action/Unknown6040.asm"
+                include "../Action/QueueTextItemBank1.asm"
+                ent
+                assert $ == #0291
+                disp #6054
+                include "../Action/Unknown6054.asm"
                 ent
                 assert $ == #02EB
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления

@@ -492,7 +492,7 @@
 | Music | #E6BC | #E2A6 | `LD HL,#0000` | [SetToneSlideC.asm](../Source/Music/SetToneSlideC.asm) |
 | Music | #E6C1 | #E2AD | `JR #E2CB` | [SetToneSlideC.asm](../Source/Music/SetToneSlideC.asm) |
 | Music | #E6C5 | #E2D5 | `LD A,#00` | [SetToneSlideC.asm](../Source/Music/SetToneSlideC.asm) |
-| Action | #605F | #ECF6 | `LD HL,#0000` | [Unknown6040.asm](../Source/Action/Unknown6040.asm) |
+| Action | #605F | #ECF6 | `LD HL,#0000` | [Unknown6040.asm](../Source/Action/QueueTextItemBank1.asm) |
 | Action | #614C | #669F | `LD A,#00` | [Unknown6145.asm](../Source/Action/Unknown6145.asm) |
 | Action | #614F | #666B | `LD A,#00` | [Unknown6145.asm](../Source/Action/Unknown6145.asm) |
 | Action | #6152 | #664A | `LD A,#00` | [Unknown6145.asm](../Source/Action/Unknown6145.asm) |
@@ -782,7 +782,7 @@
 | Controls | #EC11 | #ECA3 | `LD HL,#0000` | [UnknownEC0E.asm](../Source/Controls/UnknownEC0E.asm) |
 | Controls | #EC17 | #ECAA | `LD HL,#0000` | [UnknownEC0E.asm](../Source/Controls/UnknownEC0E.asm) |
 | Controls | #EC1C | #EC5D | `LD HL,#EC80` | [UnknownEC0E.asm](../Source/Controls/UnknownEC0E.asm) |
-| Controls | #EC7B | #EC5D | `LD HL,#EC80` | [UnknownEC59.asm](../Source/Controls/UnknownEC59.asm) |
+| Controls | #EC7B | #EC5D | `LD HL,#EC80` | [UnknownEC59.asm](../Source/Controls/QueueTextItem.asm) |
 | Controls | #ECAE | #ECAA | `LD HL,#0000` | [UnknownECA2.asm](../Source/Controls/UnknownECA2.asm) |
 | Controls | #ECC5 | #EFD6 | `LD C,#00` | [UnknownECA2.asm](../Source/Controls/UnknownECA2.asm) |
 | Controls | #ECD4 | #ECA3 | `LD HL,#0000` | [UnknownECA2.asm](../Source/Controls/UnknownECA2.asm) |

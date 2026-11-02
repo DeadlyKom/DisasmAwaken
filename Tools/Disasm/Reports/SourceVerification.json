@@ -130,5 +130,6 @@
     "Source/Music/Data/Periods.asm": 96,
     "Source/Music/Data/RowCounterA.asm": 1
   },
-  "music_composition_parts": 72
+  "music_composition_parts": 72,
+  "text_queue_records": 17
 }

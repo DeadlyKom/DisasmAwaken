@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "total_cases": 4160,
+  "cases_by_entry": {
+    "6000": 2080,
+    "6040": 2080
+  },
+  "original_wrappers_paging_helper_and_queue_executed": true,
+  "eight_physical_banks_compared": true,
+  "every_memory_write_checked": true,
+  "real_7ffd_sequence": [
+    17,
+    16
+  ],
+  "all_unlocked_initial_page_values": true,
+  "previous_page_not_restored": true,
+  "numeric_af_prime_a_becomes_11": true,
+  "numeric_input_f_and_alternate_f_preserved": true,
+  "word_wrapper_all_registers_preserved": true,
+  "silent_drop_paths_included": true,
+  "full_tail_after_6054_proved": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

@@ -34,12 +34,12 @@ PointA867:      CALL @Action.Unknown7B58.Entry
                 LD (#E310), A
                 LD A, (#6693)
                 CP #2E
-                JP NC, @Action.Unknown6040.Point6054                            ; переход, если флаг Carry сброшен
+                JP NC, @Action.Unknown6054.Entry                                ; переход, если флаг Carry сброшен
 
 
                 LD A, (#6682)
                 CP #2E
-                JP NC, @Action.Unknown6040.Point6054                            ; переход, если флаг Carry сброшен
+                JP NC, @Action.Unknown6054.Entry                                ; переход, если флаг Carry сброшен
 
 
                 LD A, (#E507)
@@ -51,7 +51,7 @@ PointA867:      CALL @Action.Unknown7B58.Entry
                 LD (#E507), A
                 LD A, (#A794)
                 SUB #28
-                JP C, @Action.Unknown6040.Point6054                             ; переход, если флаг Carry установлен
+                JP C, @Action.Unknown6054.Entry                                 ; переход, если флаг Carry установлен
 
 
                 LD (#A794), A
@@ -116,7 +116,7 @@ PointA8C8:      CALL #F729
                 LD B, #04
 PointA919:      LD A, (#A794)
                 SUB B
-                JP C, @Action.Unknown6040.Point6054                             ; переход, если флаг Carry установлен
+                JP C, @Action.Unknown6054.Entry                                 ; переход, если флаг Carry установлен
 
 
                 LD (#A794), A
@@ -152,7 +152,7 @@ PointA94D:      BIT 2, C
                 LD (#A78C), A
                 LD A, (#A794)
                 SUB #28
-                JP C, @Action.Unknown6040.Point6054                             ; переход, если флаг Carry установлен
+                JP C, @Action.Unknown6054.Entry                                 ; переход, если флаг Carry установлен
 
 
                 LD (#A794), A

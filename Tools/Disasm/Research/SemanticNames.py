@@ -135,6 +135,8 @@ def name_operands(region, function_address, operation):
     operation = control_panel_group_name_operands(region, function_address, operation)
     operation = ship_periodic_code_name_operands(region, function_address, operation)
     operation = ship_preview_callback_name_operands(region, function_address, operation)
+    operation = action_text_queue_name_operands(region, function_address, operation)
+    operation = controls_text_queue_name_operands(region, function_address, operation)
     operation = music_initialization_name_operands(region, function_address, operation)
     operation = musicadvancea_name_operands(region, function_address, operation)
     operation = music_pattern_name_operands(region, function_address, operation)
@@ -1410,3 +1412,10 @@ DOCUMENTS.update({("Music",a):("MusicPattern","отложенные состоя
 from MusicInitializationFacts import LABELS as MUSIC_INITIALIZATION_LABELS, name_operands as music_initialization_name_operands
 LABELS.update(MUSIC_INITIALIZATION_LABELS)
 DOCUMENTS.update({("Music", a): ("MusicInitialization", "инициализация и глушение AY") for a in (0xDB00, 0xDB08, 0xDB0A, 0xDB7C)})
+
+from ControlsTextQueueFacts import LABELS as CONTROLS_TEXT_QUEUE_LABELS, name_operands as controls_text_queue_name_operands
+LABELS.update(CONTROLS_TEXT_QUEUE_LABELS)
+DOCUMENTS.update({("Controls", a): ("TextQueueProducer", "производитель текстовой очереди") for a in (0xEC56, 0xEC59)})
+
+from ActionTextQueueFacts import name_operands as action_text_queue_name_operands
+DOCUMENTS.update({("Action", a): ("ActionTextQueueCalls", "межбанковые вызовы очереди") for a in (0x6000, 0x6040, 0x6054)})

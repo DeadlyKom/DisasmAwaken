@@ -370,6 +370,13 @@ def main():
             write(path, text)
             symbols.update(bindings)
             special[10, start] = (end, path, 0xDB00+start)
+    # Очередь Controls остаётся двумя физическими байтами HighKind и LowValue.
+    if re.search(r"\bstruct\s+FTextQueueItem\b", (ROOT/"Includes/Structs/Include.inc").read_text('utf-8'), re.I):
+        from ControlsTextQueueFacts import TABLE as TEXT_QUEUE_TABLE, render as render_text_queue
+        text, bindings = render_text_queue(data_by_slot[23])
+        write(TEXT_QUEUE_TABLE[1], text)
+        symbols.update(bindings)
+        special[23, 0x11A2] = (0x11C4, TEXT_QUEUE_TABLE[1], 0xEC80)
     token_text, token_records = render_token_tables(language, names)
     write(TOKEN_TABLE_PATH, token_text)
     special[5, 0x935] = (0xA67, TOKEN_TABLE_PATH, 0xC935)
@@ -746,6 +753,14 @@ def main():
     write("Tools/Disasm/Disk/BuildUnits.lua", "\n".join(build_units))
     print(f"Sources: {len(functions)} fragments, {len(units)} active disk allocations")
     print(f"Described: {sum(f['semantic_status']=='described' for f in functions)}")
+
+
+from ControlsTextQueueFacts import COMMENTS as CONTROLS_TEXT_QUEUE_COMMENTS
+REGION_COMMENTS.setdefault("Controls", {}).update(CONTROLS_TEXT_QUEUE_COMMENTS)
+
+
+from ActionTextQueueFacts import COMMENTS as ACTION_TEXT_QUEUE_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_TEXT_QUEUE_COMMENTS)
 
 
 if __name__ == "__main__":
