@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "typed_bytes": 192,
+  "physical_records": 32,
+  "structure": "FThreeRowGlyphPhase",
+  "logical_file_offset": 1747,
+  "runtime_address": 57777,
+  "four_original_shapes": true,
+  "remaining_pointer_table_bytes_unknown": 32,
+  "physical_bytes_preserved": true,
+  "assembly_executed": false
+}

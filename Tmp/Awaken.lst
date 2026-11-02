@@ -932,8 +932,18 @@
  924+ 0000              Bank0Value      equ #10                                                         ; управляющий байт выбора верхнего банка 0
  925+ 0000                              endmodule
  926+ 0000
- 927+ 0000                              endif
- 928+ 0000
+ 927+ 0000
+ 928+ 0000                              ; Исходные маски упаковки адреса и шаг экранной группы
+ 929+ 0000                              module ControlsThreeRowGlyphConst
+ 930+ 0000              HighMergeMask   equ #F8                                                         ; старшие разряды для объединения группы Y и номера строки
+ 931+ 0000              LowMergeMask    equ #C7                                                         ; разряды объединения байтового X и группы Y
+ 932+ 0000              LowThreeMask    equ #07                                                         ; младшие три разряда, фаза X либо номер строки группы
+ 933+ 0000              CharRowStride   equ #20                                                         ; шаг следующего восьмистрочного знакоместа в младшем адресе
+ 934+ 0000              CharHeight      equ #08                                                         ; число страниц строк восьмистрочного знакоместа
+ 935+ 0000                              endmodule
+ 936+ 0000
+ 937+ 0000                              endif
+ 938+ 0000
 # file closed: Includes/Const/Include.inc
    7  0000                              include "../Includes/Structs/Include.inc"
 # file opened: Includes/Structs/Include.inc
@@ -2323,8 +2333,20 @@
 1384+ 0000                              ends
 1385+ 0000                              assert FParameterCoefficient == 3
 1386+ 0000
-1387+ 0000                              endif
-1388+ 0000
+1387+ 0000
+1388+ 0000                              ; Физическая фаза трёхстрочного знака, шесть последовательных масок
+1389+ 0000                              struct FThreeRowGlyphPhase
+1390+ 0000 ~            Row0Left        db #00                                                          ; левая байтовая маска верхней строки
+1391+ 0000 ~            Row0Right       db #00                                                          ; правая байтовая маска верхней строки
+1392+ 0000 ~            Row1Left        db #00                                                          ; левая байтовая маска средней строки
+1393+ 0000 ~            Row1Right       db #00                                                          ; правая байтовая маска средней строки
+1394+ 0000 ~            Row2Left        db #00                                                          ; левая байтовая маска нижней строки
+1395+ 0000 ~            Row2Right       db #00                                                          ; правая байтовая маска нижней строки
+1396+ 0000                              ends
+1397+ 0000                              assert FThreeRowGlyphPhase == 6
+1398+ 0000
+1399+ 0000                              endif
+1400+ 0000
 # file closed: Includes/Structs/Include.inc
    8  0000                              include "../Includes/Variables/Include.inc"
 # file opened: Includes/Variables/Include.inc
@@ -119355,32 +119377,46 @@
   25+ 02A9                              incbin "../Resources/23_CONTROL/Unclassified002.bin"
   26+ 032C                              assert $ == #032C
   27+ 032C                              disp #DE0A
-  28+ DE0A                              include "../Controls/UnknownDE0A.asm"
-# file opened: Source/Controls/UnknownDE0A.asm
+  28+ DE0A                              include "../Controls/BuildAndActivateParameters.asm"
+# file opened: Source/Controls/BuildAndActivateParameters.asm
    1++DE0A                              module Controls
-   2++DE0A                              module UnknownDE0A
-   3++DE0A              ; Документация [Controls](../../Docs/FunctionDetails/Controls.md)
-   4++DE0A              ; -----------------------------------------
-   5++DE0A              ; Unknown, назначение этого фрагмента ещё не установлено
-   6++DE0A              ; исходная запись 23, файловые смещения #032C..#0331
-   7++DE0A              ; In:
-   8++DE0A              ;   Unknown, регистровый контракт ещё не доказан
-   9++DE0A              ; Out:
-  10++DE0A              ;   исходный поток управления, включая переходы в соседние фрагменты
-  11++DE0A              ; Corrupt:
-  12++DE0A              ;   HL, DE, BC, AF, HL', DE', BC', AF', IX, IY, консервативная верхняя граница
-  13++DE0A              ; Note:
-  14++DE0A              ;   граница файла не доказывает границу логической процедуры
-  15++DE0A              ;   состояние самомодификации и активной страницы учитывается отдельно
-  16++DE0A              ; -----------------------------------------
-  17++DE0A CD 10 DE     Entry:          CALL @Controls.BuildParameterTables.Entry
-  18++DE0D C3 44 AC                     JP #AC44
-  19++DE10
-  20++DE10
-  21++DE10                              endmodule
-  22++DE10                              endmodule
-  23++DE10
-# file closed: Source/Controls/UnknownDE0A.asm
+   2++DE0A                              module BuildAndActivateParameters
+   3++DE0A                              ; Документация [алгоритм и проверка](../../Docs/ControlsParameterActivation.md)
+   4++DE0A                              ; -----------------------------------------
+   5++DE0A                              ; Подготовка параметров в банке 1 и хвостовая активация набора с выбором банка 0
+   6++DE0A                              ; исходная запись 23, банк 1, смещения #032C..#0331
+   7++DE0A                              ; In:
+   8++DE0A                              ;   HL, DE, BC и AF основных числовых аргументов не задают, зерно и управление читаются дочерним входом из существующего контекста
+   9++DE0A                              ;   входной DE' становится основным DE на выходе, IY сохраняется, остальные альтернативные входы не определяют вычисляемые параметры
+  10++DE0A                              ;   в верхнем окне выбран банк 1, запись в 7FFD разрешена, общее ядро ACTION перенесено и доступны исходные таблицы
+  11++DE0A                              ;   внешний возврат и рамка находятся в общей RAM вне переключаемого окна, адрес возврата действителен после выбора банка 0
+  12++DE0A                              ;   нужны десять дополнительных байтов CPU-стека, IRQ не вмешиваются
+  13++DE0A                              ; Out:
+  14++DE0A                              ;   HL=0000, DE=входной DE', BC=0000 OR C, где C является средним четырёхбитным индексом зерна, A=00, F=44
+  15++DE0A                              ;   HL'=7BCD, DE'=DEDC+16*G+9, BC'=0006, A' и F' содержат последнее поле параметров и флаги его последнего сложения с шаблоном
+  16++DE0A                              ;   IX=9BB3, IY, I, IM и IFF сохраняются, SP=входной SP+2
+  17++DE0A                              ;   параметры, девять строк, индекс свёртки и состояние генератора подготовлены BuildParameterTables, затем выполнены 15 маршрутов ApplyParameterSet
+  18++DE0A                              ;   слова ECA9 и ECF6 банка 0 и байты 9B83, 9B82 фиксированного банка 2 обнулены
+  19++DE0A                              ;   в порт 7FFD записан 10, верхнее окно банка 0 остаётся выбранным, исходный банк 1 сохраняет все физические байты
+  20++DE0A                              ;   R получает счёт BuildParameterTables плюс 64 M1, включая исходные CALL, JP и всю хвостовую ActivateParameterSet
+  21++DE0A                              ; Corrupt:
+  22++DE0A                              ;   HL, DE, BC, AF, HL', DE', BC', AF', IX, выходные данные подготовки и применения, десять байтов CPU-стека, управление 7FFD, R
+  23++DE0A                              ; Note:
+  24++DE0A                              ;   исходный JP AC44 является настоящим хвостовым переходом, дополнительный адрес возврата для активации не создаётся
+  25++DE0A                              ;   после выбора банка 0 код банка 1 больше не исполняется, внешний возврат берётся из общей рамки
+  26++DE0A                              ;   G=0..4 выбирается подготовителем, при нулевом индексе свёртки заменяется на 3
+  27++DE0A                              ;   проверка всей цепочки композиционная, независимые числовые модели дочерних процедур проверены отдельно
+  28++DE0A                              ;   игровые имена части полей, нативный запуск и аппаратные IRQ этим договором не объявляются доказанными
+  29++DE0A                              ; -----------------------------------------
+  30++DE0A                              ; подготовка пятнадцати параметров, девяти строк и изменяемого индекса настоящей цепочкой банка 1
+  31++DE0A CD 10 DE     Entry:          CALL @Controls.BuildParameterTables.Entry
+  32++DE0D                              ; хвостовая активация в общем коде, выбор банка 0 не требует возвращения в переключаемый код банка 1
+  33++DE0D C3 44 AC                     JP @Action.ActivateParameterSet.Entry
+  34++DE10
+  35++DE10                              endmodule
+  36++DE10                              endmodule
+  37++DE10
+# file closed: Source/Controls/BuildAndActivateParameters.asm
   29+ DE10                              ent
   30+ 0332                              assert $ == #0332
   31+ 0332                              disp #DE10
@@ -119913,12 +119949,12 @@
  118++E0B9 47           PointE0B9:      LD B, A
  119++E0BA 3A 8C 9B                     LD A, (#9B8C)
  120++E0BD A7                           AND A
- 121++E0BE 11 B1 E1                     LD DE, #E1B1
+ 121++E0BE 11 B1 E1                     LD DE, @ControlsThreeRowGlyphs.Plus00
  122++E0C1 F2 C7 E0                     JP P, @Controls.UnknownE021.PointE0C7                           ; переход, если флаг Sign сброшен
  123++E0C4
  124++E0C4
- 125++E0C4 11 E1 E1                     LD DE, #E1E1
- 126++E0C7 CD 4E E1     PointE0C7:      CALL @Controls.UnknownE14E.Entry
+ 125++E0C4 11 E1 E1                     LD DE, @ControlsThreeRowGlyphs.Cross00
+ 126++E0C7 CD 4E E1     PointE0C7:      CALL @Controls.OrThreeRowGlyph.Entry
  127++E0CA 3A 87 9B     PointE0CA:      LD A, (#9B87)
  128++E0CD 4F                           LD C, A
  129++E0CE 3A 88 9B                     LD A, (#9B88)
@@ -119961,12 +119997,12 @@
  166++E102 47           PointE102:      LD B, A
  167++E103 3A 89 9B                     LD A, (#9B89)
  168++E106 A7                           AND A
- 169++E107 11 11 E2                     LD DE, #E211
+ 169++E107 11 11 E2                     LD DE, @ControlsThreeRowGlyphs.Solid00
  170++E10A F2 10 E1                     JP P, @Controls.UnknownE021.PointE110                           ; переход, если флаг Sign сброшен
  171++E10D
  172++E10D
- 173++E10D 11 41 E2                     LD DE, #E241
- 174++E110 CD 4E E1     PointE110:      CALL @Controls.UnknownE14E.Entry
+ 173++E10D 11 41 E2                     LD DE, @ControlsThreeRowGlyphs.Hollow00
+ 174++E110 CD 4E E1     PointE110:      CALL @Controls.OrThreeRowGlyph.Entry
  175++E113 3A 82 9B                     LD A, (#9B82)
  176++E116 A7                           AND A
  177++E117 C0                           RET NZ                                                          ; выход, если флаг Z сброшен
@@ -120003,12 +120039,12 @@
  208++E140 47           PointE140:      LD B, A
  209++E141 3A 86 9B                     LD A, (#9B86)
  210++E144 A7                           AND A
- 211++E145 11 11 E2                     LD DE, #E211
- 212++E148 F2 4E E1                     JP P, @Controls.UnknownE14E.Entry                               ; переход, если флаг Sign сброшен
+ 211++E145 11 11 E2                     LD DE, @ControlsThreeRowGlyphs.Solid00
+ 212++E148 F2 4E E1                     JP P, @Controls.OrThreeRowGlyph.Entry                           ; переход, если флаг Sign сброшен
  213++E14B
  214++E14B
- 215++E14B 11 41 E2                     LD DE, #E241
- 216++E14E                              ; JP @Controls.UnknownE14E.Entry, продолжение в UnknownE14E.asm
+ 215++E14B 11 41 E2                     LD DE, @ControlsThreeRowGlyphs.Hollow00
+ 216++E14E                              ; JP @Controls.OrThreeRowGlyph.Entry, продолжение в OrThreeRowGlyph.asm
  217++E14E
  218++E14E                              endmodule
  219++E14E                              endmodule
@@ -120017,128 +120053,480 @@
   51+ E14E                              ent
   52+ 0670                              assert $ == #0670
   53+ 0670                              disp #E14E
-  54+ E14E                              include "../Controls/UnknownE14E.asm"                           ; (1) жёсткий порядок, последовательное исполнение
-# file opened: Source/Controls/UnknownE14E.asm
+  54+ E14E                              include "../Controls/OrThreeRowGlyph.asm"                       ; (1) жёсткий порядок, последовательное исполнение
+# file opened: Source/Controls/OrThreeRowGlyph.asm
    1++E14E                              module Controls
-   2++E14E                              module UnknownE14E
-   3++E14E              ; Документация [Controls](../../Docs/FunctionDetails/Controls.md)
-   4++E14E              ; -----------------------------------------
-   5++E14E              ; Unknown, назначение этого фрагмента ещё не установлено
-   6++E14E              ; исходная запись 23, файловые смещения #0670..#06D2
-   7++E14E              ; In:
-   8++E14E              ;   Unknown, регистровый контракт ещё не доказан
-   9++E14E              ; Out:
-  10++E14E              ;   исходный поток управления, включая переходы в соседние фрагменты
-  11++E14E              ; Corrupt:
-  12++E14E              ;   HL, DE, BC, AF, HL', DE', BC', AF', IX, IY, консервативная верхняя граница
-  13++E14E              ; Note:
-  14++E14E              ;   граница файла не доказывает границу логической процедуры
-  15++E14E              ;   состояние самомодификации и активной страницы учитывается отдельно
-  16++E14E              ; -----------------------------------------
-  17++E14E 78           Entry:          LD A, B
-  18++E14F A7                           AND A
-  19++E150 1F                           RRA
-  20++E151 37                           SCF
-  21++E152 1F                           RRA
-  22++E153 A7                           AND A
-  23++E154 1F                           RRA
-  24++E155 A8                           XOR B
-  25++E156 E6 F8                        AND #F8
-  26++E158 A8                           XOR B
-  27++E159 67                           LD H, A
-  28++E15A 79                           LD A, C
-  29++E15B 07                           RLCA
-  30++E15C 07                           RLCA
-  31++E15D 07                           RLCA
-  32++E15E A8                           XOR B
-  33++E15F E6 C7                        AND #C7
-  34++E161 A8                           XOR B
-  35++E162 07                           RLCA
-  36++E163 07                           RLCA
-  37++E164 6F                           LD L, A
-  38++E165 79                           LD A, C
-  39++E166 E6 07                        AND #07
-  40++E168 87                           ADD A, A
-  41++E169 4F                           LD C, A
-  42++E16A 87                           ADD A, A
-  43++E16B 81                           ADD A, C
-  44++E16C 83                           ADD A, E
-  45++E16D 5F                           LD E, A
-  46++E16E 7A                           LD A, D
-  47++E16F CE 00                        ADC A, #00
-  48++E171 57                           LD D, A
-  49++E172 1A                           LD A, (DE)
-  50++E173 B6                           OR (HL)
-  51++E174 77                           LD (HL), A
-  52++E175 13                           INC DE
-  53++E176 2C                           INC L
-  54++E177 1A                           LD A, (DE)
-  55++E178 B6                           OR (HL)
-  56++E179 77                           LD (HL), A
-  57++E17A 13                           INC DE
-  58++E17B 2D                           DEC L
-  59++E17C 24                           INC H
-  60++E17D 7C                           LD A, H
-  61++E17E E6 07                        AND #07
-  62++E180 C2 8D E1                     JP NZ, @Controls.UnknownE14E.PointE18D                          ; переход, если флаг Z сброшен
-  63++E183
-  64++E183
-  65++E183 7D                           LD A, L
-  66++E184 C6 20                        ADD A, #20
-  67++E186 6F                           LD L, A
-  68++E187 38 04                        JR C, @Controls.UnknownE14E.PointE18D                           ; переход, если флаг Carry установлен
-  69++E189
-  70++E189
-  71++E189 7C                           LD A, H
-  72++E18A D6 08                        SUB #08
-  73++E18C 67                           LD H, A
-  74++E18D 1A           PointE18D:      LD A, (DE)
-  75++E18E B6                           OR (HL)
-  76++E18F 77                           LD (HL), A
-  77++E190 13                           INC DE
-  78++E191 2C                           INC L
-  79++E192 1A                           LD A, (DE)
-  80++E193 B6                           OR (HL)
-  81++E194 77                           LD (HL), A
-  82++E195 13                           INC DE
-  83++E196 2D                           DEC L
-  84++E197 24                           INC H
-  85++E198 7C                           LD A, H
-  86++E199 E6 07                        AND #07
-  87++E19B C2 A8 E1                     JP NZ, @Controls.UnknownE14E.PointE1A8                          ; переход, если флаг Z сброшен
-  88++E19E
-  89++E19E
-  90++E19E 7D                           LD A, L
-  91++E19F C6 20                        ADD A, #20
-  92++E1A1 6F                           LD L, A
-  93++E1A2 38 04                        JR C, @Controls.UnknownE14E.PointE1A8                           ; переход, если флаг Carry установлен
-  94++E1A4
-  95++E1A4
-  96++E1A4 7C                           LD A, H
-  97++E1A5 D6 08                        SUB #08
-  98++E1A7 67                           LD H, A
-  99++E1A8 1A           PointE1A8:      LD A, (DE)
- 100++E1A9 B6                           OR (HL)
- 101++E1AA 77                           LD (HL), A
- 102++E1AB 13                           INC DE
- 103++E1AC 2C                           INC L
- 104++E1AD 1A                           LD A, (DE)
- 105++E1AE B6                           OR (HL)
- 106++E1AF 77                           LD (HL), A
- 107++E1B0 C9                           RET
- 108++E1B1
- 109++E1B1
- 110++E1B1                              endmodule
- 111++E1B1                              endmodule
- 112++E1B1
-# file closed: Source/Controls/UnknownE14E.asm
+   2++E14E                              module OrThreeRowGlyph
+   3++E14E                              ; Документация [алгоритм и проверка](../../Docs/ControlsThreeRowGlyph.md)
+   4++E14E                              ; -----------------------------------------
+   5++E14E                              ; Наложение трёхстрочного фазового знака операцией OR на два байта каждой строки экрана
+   6++E14E                              ; исходная запись 23, банк 1, смещения #0670..#06D2
+   7++E14E                              ; In:
+   8++E14E                              ;   HL входных аргументов не задаёт, DE задаёт начало восьми последовательных фаз по шесть байтов
+   9++E14E                              ;   BC задаёт B как верхнюю строку Y, C как левую координату X, AF входных аргументов не задаёт
+  10++E14E                              ;   банк 1 выбран, шесть байтов выбранной фазы доступны для чтения и не перекрываются с шестью целями записи
+  11++E14E                              ;   на CPU-стеке внешний возврат, рамка и исполняемый код не перекрываются с целями, IRQ не вмешиваются
+  12++E14E                              ; Out:
+  13++E14E                              ;   HL указывает правый байт нижней третьей строки, DE=(входной DE+6*(X AND 7)+5) AND FFFF
+  14++E14E                              ;   B=входной Y, C=2*(X AND 7), A содержит результат последнего OR, F соответствует этому OR, H, N, C сброшены
+  15++E14E                              ;   HL', DE', BC', AF', IX, IY, I, IM и IFF сохраняются, SP=входной SP+2
+  16++E14E                              ;   выполнены ровно шесть записей OR, никакие пиксели не очищаются и CPU-стек не записывается
+  17++E14E                              ;   R получает 69 M1 при Y AND 7<6, 73 при Y AND 3F>=3E, иначе 76
+  18++E14E                              ; Corrupt:
+  19++E14E                              ;   HL, DE, BC в части C, AF, шесть байтов растра, R
+  20++E14E                              ; Note:
+  21++E14E                              ;   B и C байтовые, отсечение по ширине и высоте не выполняется, игровые вызывающие ограничивают координаты отдельно
+  22++E14E                              ;   переход к правому байту использует INC L без переноса в H, столбец 31 сохраняет исходное нелинейное поведение
+  23++E14E                              ;   переходы строк учитывают чередование страниц Spectrum, при Y>=192 затрагиваются атрибуты и следующая RAM
+  24++E14E                              ;   адрес выбранной фазы и последовательные INC DE переходят через FFFF по модулю слова
+  25++E14E                              ;   четыре исходных знака имеют ширину три пикселя и высоту три строки, пиксельный центр находится на X+1, Y+1
+  26++E14E                              ;   общий алгоритм применим к шести масочным байтам выбранной фазы, перекрывающиеся ресурсы не входят в доказанный договор
+  27++E14E                              ; -----------------------------------------
+  28++E14E                              ; вычисление старшего адреса экранной строки из групп Y и её младших трёх разрядов
+  29++E14E 78           Entry:          LD A, B
+  30++E14F A7                           AND A
+  31++E150 1F                           RRA
+  32++E151 37                           SCF
+  33++E152 1F                           RRA
+  34++E153 A7                           AND A
+  35++E154 1F                           RRA
+  36++E155 A8                           XOR B
+  37++E156 E6 F8                        AND @ControlsThreeRowGlyphConst.HighMergeMask
+  38++E158 A8                           XOR B
+  39++E159 67                           LD H, A
+  40++E15A                              ; вычисление младшего экранного адреса из группы строк Y и байтового столбца X DIV 8
+  41++E15A 79                           LD A, C
+  42++E15B 07                           RLCA
+  43++E15C 07                           RLCA
+  44++E15D 07                           RLCA
+  45++E15E A8                           XOR B
+  46++E15F E6 C7                        AND @ControlsThreeRowGlyphConst.LowMergeMask
+  47++E161 A8                           XOR B
+  48++E162 07                           RLCA
+  49++E163 07                           RLCA
+  50++E164 6F                           LD L, A
+  51++E165                              ; вычисление номера фазы X AND LowThreeMask и её смещения 6*фаза через сохранённые 2*фаза в C
+  52++E165 79                           LD A, C
+  53++E166 E6 07                        AND @ControlsThreeRowGlyphConst.LowThreeMask
+  54++E168 87                           ADD A, A
+  55++E169 4F                           LD C, A
+  56++E16A 87                           ADD A, A
+  57++E16B 81                           ADD A, C
+  58++E16C                              ; вычисление полного адреса выбранной шестибайтовой фазы с переносом в D
+  59++E16C 83                           ADD A, E
+  60++E16D 5F                           LD E, A
+  61++E16E 7A                           LD A, D
+  62++E16F CE 00                        ADC A, #00
+  63++E171 57                           LD D, A
+  64++E172                              ; наложение двух байтов верхней строки знака операцией OR без очистки старых пикселей
+  65++E172 1A                           LD A, (DE)
+  66++E173 B6                           OR (HL)
+  67++E174 77                           LD (HL), A
+  68++E175 13                           INC DE
+  69++E176 2C                           INC L
+  70++E177 1A                           LD A, (DE)
+  71++E178 B6                           OR (HL)
+  72++E179 77                           LD (HL), A
+  73++E17A 13                           INC DE
+  74++E17B 2D                           DEC L
+  75++E17C                              ; вычисление адреса средней строки, проверка границы восьмистрочной группы
+  76++E17C 24                           INC H
+  77++E17D 7C                           LD A, H
+  78++E17E E6 07                        AND @ControlsThreeRowGlyphConst.LowThreeMask
+  79++E180 C2 8D E1                     JP NZ, @Controls.OrThreeRowGlyph.DrawMiddle                     ; переход, если младшие три разряда новой H ненулевые, адрес средней строки уже готов
+  80++E183
+  81++E183                              ; вычисление следующей группы строк прибавлением CharRowStride к младшему адресу
+  82++E183 7D                           LD A, L
+  83++E184 C6 20                        ADD A, @ControlsThreeRowGlyphConst.CharRowStride
+  84++E186 6F                           LD L, A
+  85++E187 38 04                        JR C, @Controls.OrThreeRowGlyph.DrawMiddle                      ; переход, если прибавление CharRowStride перенесло младший L, сохранить увеличенную H
+  86++E189
+  87++E189                              ; коррекция H на CharHeight страниц после перехода группы без переноса L
+  88++E189 7C                           LD A, H
+  89++E18A D6 08                        SUB @ControlsThreeRowGlyphConst.CharHeight
+  90++E18C 67                           LD H, A
+  91++E18D                              ; наложение двух байтов средней строки, младший L после пары возвращается к левому байту
+  92++E18D 1A           DrawMiddle:     LD A, (DE)
+  93++E18E B6                           OR (HL)
+  94++E18F 77                           LD (HL), A
+  95++E190 13                           INC DE
+  96++E191 2C                           INC L
+  97++E192 1A                           LD A, (DE)
+  98++E193 B6                           OR (HL)
+  99++E194 77                           LD (HL), A
+ 100++E195 13                           INC DE
+ 101++E196 2D                           DEC L
+ 102++E197                              ; вычисление адреса нижней строки, проверка следующей границы группы
+ 103++E197 24                           INC H
+ 104++E198 7C                           LD A, H
+ 105++E199 E6 07                        AND @ControlsThreeRowGlyphConst.LowThreeMask
+ 106++E19B C2 A8 E1                     JP NZ, @Controls.OrThreeRowGlyph.DrawBottom                     ; переход, если младшие три разряда новой H ненулевые, адрес нижней строки уже готов
+ 107++E19E
+ 108++E19E                              ; вычисление младшего адреса следующей группы для нижней строки
+ 109++E19E 7D                           LD A, L
+ 110++E19F C6 20                        ADD A, @ControlsThreeRowGlyphConst.CharRowStride
+ 111++E1A1 6F                           LD L, A
+ 112++E1A2 38 04                        JR C, @Controls.OrThreeRowGlyph.DrawBottom                      ; переход, если прибавление CharRowStride перенесло младший L, сохранить увеличенную H
+ 113++E1A4
+ 114++E1A4                              ; коррекция H на CharHeight страниц при переходе группы без переноса L
+ 115++E1A4 7C                           LD A, H
+ 116++E1A5 D6 08                        SUB @ControlsThreeRowGlyphConst.CharHeight
+ 117++E1A7 67                           LD H, A
+ 118++E1A8                              ; наложение нижней пары, последний OR определяет выходные A и F
+ 119++E1A8 1A           DrawBottom:     LD A, (DE)
+ 120++E1A9 B6                           OR (HL)
+ 121++E1AA 77                           LD (HL), A
+ 122++E1AB 13                           INC DE
+ 123++E1AC 2C                           INC L
+ 124++E1AD 1A                           LD A, (DE)
+ 125++E1AE B6                           OR (HL)
+ 126++E1AF 77                           LD (HL), A
+ 127++E1B0 C9                           RET
+ 128++E1B1
+ 129++E1B1                              endmodule
+ 130++E1B1                              endmodule
+ 131++E1B1
+# file closed: Source/Controls/OrThreeRowGlyph.asm
   55+ E1B1                              ent
   56+ 06D3                              assert $ == #06D3
-  57+ 06D3                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
-  58+ 06D3                              incbin "../Resources/23_CONTROL/Unclassified004.bin"
-  59+ 07B3                              assert $ == #07B3
-  60+ 07B3                              disp #E291
-  61+ E291                              include "../Controls/UnknownE291.asm"
+  57+ 06D3                              ; Четыре трёхстрочных знака, восемь исходных фаз каждого
+  58+ 06D3                              disp #E1B1
+  59+ E1B1                              include "../Controls/Data/ThreeRowGlyphs.asm"
+# file opened: Source/Controls/Data/ThreeRowGlyphs.asm
+   1++E1B1                              module ControlsThreeRowGlyphs
+   2++E1B1                              ; Документация [трёхстрочные знаки и рисователь](../../../Docs/ControlsThreeRowGlyph.md)
+   3++E1B1                              assert $ == #E1B1
+   4++E1B1                              ; -----------------------------------------
+   5++E1B1                              ; исходная физическая запись Plus00
+   6++E1B1              Plus00:         FThreeRowGlyphPhase {
+   7++E1B1 40                               #40,                                                        ; Row0Left, левая байтовая маска верхней строки
+   8++E1B2 00                               #00,                                                        ; Row0Right, правая байтовая маска верхней строки
+   9++E1B3 E0                               #E0,                                                        ; Row1Left, левая байтовая маска средней строки
+  10++E1B4 00                               #00,                                                        ; Row1Right, правая байтовая маска средней строки
+  11++E1B5 40                               #40,                                                        ; Row2Left, левая байтовая маска нижней строки
+  12++E1B6 00                               #00                                                         ; Row2Right, правая байтовая маска нижней строки
+  13++E1B7                              }
+  14++E1B7                              ; -----------------------------------------
+  15++E1B7                              ; исходная физическая запись Plus01
+  16++E1B7              Plus01:         FThreeRowGlyphPhase {
+  17++E1B7 20                               #20,                                                        ; Row0Left, левая байтовая маска верхней строки
+  18++E1B8 00                               #00,                                                        ; Row0Right, правая байтовая маска верхней строки
+  19++E1B9 70                               #70,                                                        ; Row1Left, левая байтовая маска средней строки
+  20++E1BA 00                               #00,                                                        ; Row1Right, правая байтовая маска средней строки
+  21++E1BB 20                               #20,                                                        ; Row2Left, левая байтовая маска нижней строки
+  22++E1BC 00                               #00                                                         ; Row2Right, правая байтовая маска нижней строки
+  23++E1BD                              }
+  24++E1BD                              ; -----------------------------------------
+  25++E1BD                              ; исходная физическая запись Plus02
+  26++E1BD              Plus02:         FThreeRowGlyphPhase {
+  27++E1BD 10                               #10,                                                        ; Row0Left, левая байтовая маска верхней строки
+  28++E1BE 00                               #00,                                                        ; Row0Right, правая байтовая маска верхней строки
+  29++E1BF 38                               #38,                                                        ; Row1Left, левая байтовая маска средней строки
+  30++E1C0 00                               #00,                                                        ; Row1Right, правая байтовая маска средней строки
+  31++E1C1 10                               #10,                                                        ; Row2Left, левая байтовая маска нижней строки
+  32++E1C2 00                               #00                                                         ; Row2Right, правая байтовая маска нижней строки
+  33++E1C3                              }
+  34++E1C3                              ; -----------------------------------------
+  35++E1C3                              ; исходная физическая запись Plus03
+  36++E1C3              Plus03:         FThreeRowGlyphPhase {
+  37++E1C3 08                               #08,                                                        ; Row0Left, левая байтовая маска верхней строки
+  38++E1C4 00                               #00,                                                        ; Row0Right, правая байтовая маска верхней строки
+  39++E1C5 1C                               #1C,                                                        ; Row1Left, левая байтовая маска средней строки
+  40++E1C6 00                               #00,                                                        ; Row1Right, правая байтовая маска средней строки
+  41++E1C7 08                               #08,                                                        ; Row2Left, левая байтовая маска нижней строки
+  42++E1C8 00                               #00                                                         ; Row2Right, правая байтовая маска нижней строки
+  43++E1C9                              }
+  44++E1C9                              ; -----------------------------------------
+  45++E1C9                              ; исходная физическая запись Plus04
+  46++E1C9              Plus04:         FThreeRowGlyphPhase {
+  47++E1C9 04                               #04,                                                        ; Row0Left, левая байтовая маска верхней строки
+  48++E1CA 00                               #00,                                                        ; Row0Right, правая байтовая маска верхней строки
+  49++E1CB 0E                               #0E,                                                        ; Row1Left, левая байтовая маска средней строки
+  50++E1CC 00                               #00,                                                        ; Row1Right, правая байтовая маска средней строки
+  51++E1CD 04                               #04,                                                        ; Row2Left, левая байтовая маска нижней строки
+  52++E1CE 00                               #00                                                         ; Row2Right, правая байтовая маска нижней строки
+  53++E1CF                              }
+  54++E1CF                              ; -----------------------------------------
+  55++E1CF                              ; исходная физическая запись Plus05
+  56++E1CF              Plus05:         FThreeRowGlyphPhase {
+  57++E1CF 02                               #02,                                                        ; Row0Left, левая байтовая маска верхней строки
+  58++E1D0 00                               #00,                                                        ; Row0Right, правая байтовая маска верхней строки
+  59++E1D1 07                               #07,                                                        ; Row1Left, левая байтовая маска средней строки
+  60++E1D2 00                               #00,                                                        ; Row1Right, правая байтовая маска средней строки
+  61++E1D3 02                               #02,                                                        ; Row2Left, левая байтовая маска нижней строки
+  62++E1D4 00                               #00                                                         ; Row2Right, правая байтовая маска нижней строки
+  63++E1D5                              }
+  64++E1D5                              ; -----------------------------------------
+  65++E1D5                              ; исходная физическая запись Plus06
+  66++E1D5              Plus06:         FThreeRowGlyphPhase {
+  67++E1D5 01                               #01,                                                        ; Row0Left, левая байтовая маска верхней строки
+  68++E1D6 00                               #00,                                                        ; Row0Right, правая байтовая маска верхней строки
+  69++E1D7 03                               #03,                                                        ; Row1Left, левая байтовая маска средней строки
+  70++E1D8 80                               #80,                                                        ; Row1Right, правая байтовая маска средней строки
+  71++E1D9 01                               #01,                                                        ; Row2Left, левая байтовая маска нижней строки
+  72++E1DA 00                               #00                                                         ; Row2Right, правая байтовая маска нижней строки
+  73++E1DB                              }
+  74++E1DB                              ; -----------------------------------------
+  75++E1DB                              ; исходная физическая запись Plus07
+  76++E1DB              Plus07:         FThreeRowGlyphPhase {
+  77++E1DB 00                               #00,                                                        ; Row0Left, левая байтовая маска верхней строки
+  78++E1DC 80                               #80,                                                        ; Row0Right, правая байтовая маска верхней строки
+  79++E1DD 01                               #01,                                                        ; Row1Left, левая байтовая маска средней строки
+  80++E1DE C0                               #C0,                                                        ; Row1Right, правая байтовая маска средней строки
+  81++E1DF 00                               #00,                                                        ; Row2Left, левая байтовая маска нижней строки
+  82++E1E0 80                               #80                                                         ; Row2Right, правая байтовая маска нижней строки
+  83++E1E1                              }
+  84++E1E1                              ; -----------------------------------------
+  85++E1E1                              ; исходная физическая запись Cross00
+  86++E1E1              Cross00:        FThreeRowGlyphPhase {
+  87++E1E1 A0                               #A0,                                                        ; Row0Left, левая байтовая маска верхней строки
+  88++E1E2 00                               #00,                                                        ; Row0Right, правая байтовая маска верхней строки
+  89++E1E3 40                               #40,                                                        ; Row1Left, левая байтовая маска средней строки
+  90++E1E4 00                               #00,                                                        ; Row1Right, правая байтовая маска средней строки
+  91++E1E5 A0                               #A0,                                                        ; Row2Left, левая байтовая маска нижней строки
+  92++E1E6 00                               #00                                                         ; Row2Right, правая байтовая маска нижней строки
+  93++E1E7                              }
+  94++E1E7                              ; -----------------------------------------
+  95++E1E7                              ; исходная физическая запись Cross01
+  96++E1E7              Cross01:        FThreeRowGlyphPhase {
+  97++E1E7 50                               #50,                                                        ; Row0Left, левая байтовая маска верхней строки
+  98++E1E8 00                               #00,                                                        ; Row0Right, правая байтовая маска верхней строки
+  99++E1E9 20                               #20,                                                        ; Row1Left, левая байтовая маска средней строки
+ 100++E1EA 00                               #00,                                                        ; Row1Right, правая байтовая маска средней строки
+ 101++E1EB 50                               #50,                                                        ; Row2Left, левая байтовая маска нижней строки
+ 102++E1EC 00                               #00                                                         ; Row2Right, правая байтовая маска нижней строки
+ 103++E1ED                              }
+ 104++E1ED                              ; -----------------------------------------
+ 105++E1ED                              ; исходная физическая запись Cross02
+ 106++E1ED              Cross02:        FThreeRowGlyphPhase {
+ 107++E1ED 28                               #28,                                                        ; Row0Left, левая байтовая маска верхней строки
+ 108++E1EE 00                               #00,                                                        ; Row0Right, правая байтовая маска верхней строки
+ 109++E1EF 10                               #10,                                                        ; Row1Left, левая байтовая маска средней строки
+ 110++E1F0 00                               #00,                                                        ; Row1Right, правая байтовая маска средней строки
+ 111++E1F1 28                               #28,                                                        ; Row2Left, левая байтовая маска нижней строки
+ 112++E1F2 00                               #00                                                         ; Row2Right, правая байтовая маска нижней строки
+ 113++E1F3                              }
+ 114++E1F3                              ; -----------------------------------------
+ 115++E1F3                              ; исходная физическая запись Cross03
+ 116++E1F3              Cross03:        FThreeRowGlyphPhase {
+ 117++E1F3 14                               #14,                                                        ; Row0Left, левая байтовая маска верхней строки
+ 118++E1F4 00                               #00,                                                        ; Row0Right, правая байтовая маска верхней строки
+ 119++E1F5 08                               #08,                                                        ; Row1Left, левая байтовая маска средней строки
+ 120++E1F6 00                               #00,                                                        ; Row1Right, правая байтовая маска средней строки
+ 121++E1F7 14                               #14,                                                        ; Row2Left, левая байтовая маска нижней строки
+ 122++E1F8 00                               #00                                                         ; Row2Right, правая байтовая маска нижней строки
+ 123++E1F9                              }
+ 124++E1F9                              ; -----------------------------------------
+ 125++E1F9                              ; исходная физическая запись Cross04
+ 126++E1F9              Cross04:        FThreeRowGlyphPhase {
+ 127++E1F9 0A                               #0A,                                                        ; Row0Left, левая байтовая маска верхней строки
+ 128++E1FA 00                               #00,                                                        ; Row0Right, правая байтовая маска верхней строки
+ 129++E1FB 04                               #04,                                                        ; Row1Left, левая байтовая маска средней строки
+ 130++E1FC 00                               #00,                                                        ; Row1Right, правая байтовая маска средней строки
+ 131++E1FD 0A                               #0A,                                                        ; Row2Left, левая байтовая маска нижней строки
+ 132++E1FE 00                               #00                                                         ; Row2Right, правая байтовая маска нижней строки
+ 133++E1FF                              }
+ 134++E1FF                              ; -----------------------------------------
+ 135++E1FF                              ; исходная физическая запись Cross05
+ 136++E1FF              Cross05:        FThreeRowGlyphPhase {
+ 137++E1FF 05                               #05,                                                        ; Row0Left, левая байтовая маска верхней строки
+ 138++E200 00                               #00,                                                        ; Row0Right, правая байтовая маска верхней строки
+ 139++E201 02                               #02,                                                        ; Row1Left, левая байтовая маска средней строки
+ 140++E202 00                               #00,                                                        ; Row1Right, правая байтовая маска средней строки
+ 141++E203 05                               #05,                                                        ; Row2Left, левая байтовая маска нижней строки
+ 142++E204 00                               #00                                                         ; Row2Right, правая байтовая маска нижней строки
+ 143++E205                              }
+ 144++E205                              ; -----------------------------------------
+ 145++E205                              ; исходная физическая запись Cross06
+ 146++E205              Cross06:        FThreeRowGlyphPhase {
+ 147++E205 02                               #02,                                                        ; Row0Left, левая байтовая маска верхней строки
+ 148++E206 80                               #80,                                                        ; Row0Right, правая байтовая маска верхней строки
+ 149++E207 01                               #01,                                                        ; Row1Left, левая байтовая маска средней строки
+ 150++E208 00                               #00,                                                        ; Row1Right, правая байтовая маска средней строки
+ 151++E209 02                               #02,                                                        ; Row2Left, левая байтовая маска нижней строки
+ 152++E20A 80                               #80                                                         ; Row2Right, правая байтовая маска нижней строки
+ 153++E20B                              }
+ 154++E20B                              ; -----------------------------------------
+ 155++E20B                              ; исходная физическая запись Cross07
+ 156++E20B              Cross07:        FThreeRowGlyphPhase {
+ 157++E20B 01                               #01,                                                        ; Row0Left, левая байтовая маска верхней строки
+ 158++E20C 40                               #40,                                                        ; Row0Right, правая байтовая маска верхней строки
+ 159++E20D 00                               #00,                                                        ; Row1Left, левая байтовая маска средней строки
+ 160++E20E 80                               #80,                                                        ; Row1Right, правая байтовая маска средней строки
+ 161++E20F 01                               #01,                                                        ; Row2Left, левая байтовая маска нижней строки
+ 162++E210 40                               #40                                                         ; Row2Right, правая байтовая маска нижней строки
+ 163++E211                              }
+ 164++E211                              ; -----------------------------------------
+ 165++E211                              ; исходная физическая запись Solid00
+ 166++E211              Solid00:        FThreeRowGlyphPhase {
+ 167++E211 E0                               #E0,                                                        ; Row0Left, левая байтовая маска верхней строки
+ 168++E212 00                               #00,                                                        ; Row0Right, правая байтовая маска верхней строки
+ 169++E213 E0                               #E0,                                                        ; Row1Left, левая байтовая маска средней строки
+ 170++E214 00                               #00,                                                        ; Row1Right, правая байтовая маска средней строки
+ 171++E215 E0                               #E0,                                                        ; Row2Left, левая байтовая маска нижней строки
+ 172++E216 00                               #00                                                         ; Row2Right, правая байтовая маска нижней строки
+ 173++E217                              }
+ 174++E217                              ; -----------------------------------------
+ 175++E217                              ; исходная физическая запись Solid01
+ 176++E217              Solid01:        FThreeRowGlyphPhase {
+ 177++E217 70                               #70,                                                        ; Row0Left, левая байтовая маска верхней строки
+ 178++E218 00                               #00,                                                        ; Row0Right, правая байтовая маска верхней строки
+ 179++E219 70                               #70,                                                        ; Row1Left, левая байтовая маска средней строки
+ 180++E21A 00                               #00,                                                        ; Row1Right, правая байтовая маска средней строки
+ 181++E21B 70                               #70,                                                        ; Row2Left, левая байтовая маска нижней строки
+ 182++E21C 00                               #00                                                         ; Row2Right, правая байтовая маска нижней строки
+ 183++E21D                              }
+ 184++E21D                              ; -----------------------------------------
+ 185++E21D                              ; исходная физическая запись Solid02
+ 186++E21D              Solid02:        FThreeRowGlyphPhase {
+ 187++E21D 38                               #38,                                                        ; Row0Left, левая байтовая маска верхней строки
+ 188++E21E 00                               #00,                                                        ; Row0Right, правая байтовая маска верхней строки
+ 189++E21F 38                               #38,                                                        ; Row1Left, левая байтовая маска средней строки
+ 190++E220 00                               #00,                                                        ; Row1Right, правая байтовая маска средней строки
+ 191++E221 38                               #38,                                                        ; Row2Left, левая байтовая маска нижней строки
+ 192++E222 00                               #00                                                         ; Row2Right, правая байтовая маска нижней строки
+ 193++E223                              }
+ 194++E223                              ; -----------------------------------------
+ 195++E223                              ; исходная физическая запись Solid03
+ 196++E223              Solid03:        FThreeRowGlyphPhase {
+ 197++E223 1C                               #1C,                                                        ; Row0Left, левая байтовая маска верхней строки
+ 198++E224 00                               #00,                                                        ; Row0Right, правая байтовая маска верхней строки
+ 199++E225 1C                               #1C,                                                        ; Row1Left, левая байтовая маска средней строки
+ 200++E226 00                               #00,                                                        ; Row1Right, правая байтовая маска средней строки
+ 201++E227 1C                               #1C,                                                        ; Row2Left, левая байтовая маска нижней строки
+ 202++E228 00                               #00                                                         ; Row2Right, правая байтовая маска нижней строки
+ 203++E229                              }
+ 204++E229                              ; -----------------------------------------
+ 205++E229                              ; исходная физическая запись Solid04
+ 206++E229              Solid04:        FThreeRowGlyphPhase {
+ 207++E229 0E                               #0E,                                                        ; Row0Left, левая байтовая маска верхней строки
+ 208++E22A 00                               #00,                                                        ; Row0Right, правая байтовая маска верхней строки
+ 209++E22B 0E                               #0E,                                                        ; Row1Left, левая байтовая маска средней строки
+ 210++E22C 00                               #00,                                                        ; Row1Right, правая байтовая маска средней строки
+ 211++E22D 0E                               #0E,                                                        ; Row2Left, левая байтовая маска нижней строки
+ 212++E22E 00                               #00                                                         ; Row2Right, правая байтовая маска нижней строки
+ 213++E22F                              }
+ 214++E22F                              ; -----------------------------------------
+ 215++E22F                              ; исходная физическая запись Solid05
+ 216++E22F              Solid05:        FThreeRowGlyphPhase {
+ 217++E22F 07                               #07,                                                        ; Row0Left, левая байтовая маска верхней строки
+ 218++E230 00                               #00,                                                        ; Row0Right, правая байтовая маска верхней строки
+ 219++E231 07                               #07,                                                        ; Row1Left, левая байтовая маска средней строки
+ 220++E232 00                               #00,                                                        ; Row1Right, правая байтовая маска средней строки
+ 221++E233 07                               #07,                                                        ; Row2Left, левая байтовая маска нижней строки
+ 222++E234 00                               #00                                                         ; Row2Right, правая байтовая маска нижней строки
+ 223++E235                              }
+ 224++E235                              ; -----------------------------------------
+ 225++E235                              ; исходная физическая запись Solid06
+ 226++E235              Solid06:        FThreeRowGlyphPhase {
+ 227++E235 03                               #03,                                                        ; Row0Left, левая байтовая маска верхней строки
+ 228++E236 80                               #80,                                                        ; Row0Right, правая байтовая маска верхней строки
+ 229++E237 03                               #03,                                                        ; Row1Left, левая байтовая маска средней строки
+ 230++E238 80                               #80,                                                        ; Row1Right, правая байтовая маска средней строки
+ 231++E239 03                               #03,                                                        ; Row2Left, левая байтовая маска нижней строки
+ 232++E23A 80                               #80                                                         ; Row2Right, правая байтовая маска нижней строки
+ 233++E23B                              }
+ 234++E23B                              ; -----------------------------------------
+ 235++E23B                              ; исходная физическая запись Solid07
+ 236++E23B              Solid07:        FThreeRowGlyphPhase {
+ 237++E23B 01                               #01,                                                        ; Row0Left, левая байтовая маска верхней строки
+ 238++E23C C0                               #C0,                                                        ; Row0Right, правая байтовая маска верхней строки
+ 239++E23D 01                               #01,                                                        ; Row1Left, левая байтовая маска средней строки
+ 240++E23E C0                               #C0,                                                        ; Row1Right, правая байтовая маска средней строки
+ 241++E23F 01                               #01,                                                        ; Row2Left, левая байтовая маска нижней строки
+ 242++E240 C0                               #C0                                                         ; Row2Right, правая байтовая маска нижней строки
+ 243++E241                              }
+ 244++E241                              ; -----------------------------------------
+ 245++E241                              ; исходная физическая запись Hollow00
+ 246++E241              Hollow00:       FThreeRowGlyphPhase {
+ 247++E241 E0                               #E0,                                                        ; Row0Left, левая байтовая маска верхней строки
+ 248++E242 00                               #00,                                                        ; Row0Right, правая байтовая маска верхней строки
+ 249++E243 A0                               #A0,                                                        ; Row1Left, левая байтовая маска средней строки
+ 250++E244 00                               #00,                                                        ; Row1Right, правая байтовая маска средней строки
+ 251++E245 E0                               #E0,                                                        ; Row2Left, левая байтовая маска нижней строки
+ 252++E246 00                               #00                                                         ; Row2Right, правая байтовая маска нижней строки
+ 253++E247                              }
+ 254++E247                              ; -----------------------------------------
+ 255++E247                              ; исходная физическая запись Hollow01
+ 256++E247              Hollow01:       FThreeRowGlyphPhase {
+ 257++E247 70                               #70,                                                        ; Row0Left, левая байтовая маска верхней строки
+ 258++E248 00                               #00,                                                        ; Row0Right, правая байтовая маска верхней строки
+ 259++E249 50                               #50,                                                        ; Row1Left, левая байтовая маска средней строки
+ 260++E24A 00                               #00,                                                        ; Row1Right, правая байтовая маска средней строки
+ 261++E24B 70                               #70,                                                        ; Row2Left, левая байтовая маска нижней строки
+ 262++E24C 00                               #00                                                         ; Row2Right, правая байтовая маска нижней строки
+ 263++E24D                              }
+ 264++E24D                              ; -----------------------------------------
+ 265++E24D                              ; исходная физическая запись Hollow02
+ 266++E24D              Hollow02:       FThreeRowGlyphPhase {
+ 267++E24D 38                               #38,                                                        ; Row0Left, левая байтовая маска верхней строки
+ 268++E24E 00                               #00,                                                        ; Row0Right, правая байтовая маска верхней строки
+ 269++E24F 28                               #28,                                                        ; Row1Left, левая байтовая маска средней строки
+ 270++E250 00                               #00,                                                        ; Row1Right, правая байтовая маска средней строки
+ 271++E251 38                               #38,                                                        ; Row2Left, левая байтовая маска нижней строки
+ 272++E252 00                               #00                                                         ; Row2Right, правая байтовая маска нижней строки
+ 273++E253                              }
+ 274++E253                              ; -----------------------------------------
+ 275++E253                              ; исходная физическая запись Hollow03
+ 276++E253              Hollow03:       FThreeRowGlyphPhase {
+ 277++E253 1C                               #1C,                                                        ; Row0Left, левая байтовая маска верхней строки
+ 278++E254 00                               #00,                                                        ; Row0Right, правая байтовая маска верхней строки
+ 279++E255 14                               #14,                                                        ; Row1Left, левая байтовая маска средней строки
+ 280++E256 00                               #00,                                                        ; Row1Right, правая байтовая маска средней строки
+ 281++E257 1C                               #1C,                                                        ; Row2Left, левая байтовая маска нижней строки
+ 282++E258 00                               #00                                                         ; Row2Right, правая байтовая маска нижней строки
+ 283++E259                              }
+ 284++E259                              ; -----------------------------------------
+ 285++E259                              ; исходная физическая запись Hollow04
+ 286++E259              Hollow04:       FThreeRowGlyphPhase {
+ 287++E259 0E                               #0E,                                                        ; Row0Left, левая байтовая маска верхней строки
+ 288++E25A 00                               #00,                                                        ; Row0Right, правая байтовая маска верхней строки
+ 289++E25B 0A                               #0A,                                                        ; Row1Left, левая байтовая маска средней строки
+ 290++E25C 00                               #00,                                                        ; Row1Right, правая байтовая маска средней строки
+ 291++E25D 0E                               #0E,                                                        ; Row2Left, левая байтовая маска нижней строки
+ 292++E25E 00                               #00                                                         ; Row2Right, правая байтовая маска нижней строки
+ 293++E25F                              }
+ 294++E25F                              ; -----------------------------------------
+ 295++E25F                              ; исходная физическая запись Hollow05
+ 296++E25F              Hollow05:       FThreeRowGlyphPhase {
+ 297++E25F 07                               #07,                                                        ; Row0Left, левая байтовая маска верхней строки
+ 298++E260 00                               #00,                                                        ; Row0Right, правая байтовая маска верхней строки
+ 299++E261 05                               #05,                                                        ; Row1Left, левая байтовая маска средней строки
+ 300++E262 00                               #00,                                                        ; Row1Right, правая байтовая маска средней строки
+ 301++E263 07                               #07,                                                        ; Row2Left, левая байтовая маска нижней строки
+ 302++E264 00                               #00                                                         ; Row2Right, правая байтовая маска нижней строки
+ 303++E265                              }
+ 304++E265                              ; -----------------------------------------
+ 305++E265                              ; исходная физическая запись Hollow06
+ 306++E265              Hollow06:       FThreeRowGlyphPhase {
+ 307++E265 03                               #03,                                                        ; Row0Left, левая байтовая маска верхней строки
+ 308++E266 80                               #80,                                                        ; Row0Right, правая байтовая маска верхней строки
+ 309++E267 02                               #02,                                                        ; Row1Left, левая байтовая маска средней строки
+ 310++E268 80                               #80,                                                        ; Row1Right, правая байтовая маска средней строки
+ 311++E269 03                               #03,                                                        ; Row2Left, левая байтовая маска нижней строки
+ 312++E26A 80                               #80                                                         ; Row2Right, правая байтовая маска нижней строки
+ 313++E26B                              }
+ 314++E26B                              ; -----------------------------------------
+ 315++E26B                              ; исходная физическая запись Hollow07
+ 316++E26B              Hollow07:       FThreeRowGlyphPhase {
+ 317++E26B 01                               #01,                                                        ; Row0Left, левая байтовая маска верхней строки
+ 318++E26C C0                               #C0,                                                        ; Row0Right, правая байтовая маска верхней строки
+ 319++E26D 01                               #01,                                                        ; Row1Left, левая байтовая маска средней строки
+ 320++E26E 40                               #40,                                                        ; Row1Right, правая байтовая маска средней строки
+ 321++E26F 01                               #01,                                                        ; Row2Left, левая байтовая маска нижней строки
+ 322++E270 C0                               #C0                                                         ; Row2Right, правая байтовая маска нижней строки
+ 323++E271                              }
+ 324++E271                              assert $ == #E271
+ 325++E271                              endmodule
+ 326++E271
+# file closed: Source/Controls/Data/ThreeRowGlyphs.asm
+  60+ E271                              ent
+  61+ 0793                              assert $ == #0793
+  62+ 0793                              ; Unknown, следующая таблица указателей ещё не разобрана
+  63+ 0793                              incbin "../Resources/23_CONTROL/Unclassified004_AfterGlyphs.bin"
+  64+ 07B3                              assert $ == #07B3
+  65+ 07B3                              disp #E291
+  66+ E291                              include "../Controls/UnknownE291.asm"
 # file opened: Source/Controls/UnknownE291.asm
    1++E291                              module Controls
    2++E291                              module UnknownE291
@@ -120967,13 +121355,13 @@
  825++E65D                              endmodule
  826++E65D
 # file closed: Source/Controls/UnknownE291.asm
-  62+ E65D                              ent
-  63+ 0B7F                              assert $ == #0B7F
-  64+ 0B7F                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
-  65+ 0B7F                              incbin "../Resources/23_CONTROL/Unclassified005.bin"
-  66+ 0E1F                              assert $ == #0E1F
-  67+ 0E1F                              disp #E8FD
-  68+ E8FD                              include "../Controls/UnknownE8FD.asm"
+  67+ E65D                              ent
+  68+ 0B7F                              assert $ == #0B7F
+  69+ 0B7F                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
+  70+ 0B7F                              incbin "../Resources/23_CONTROL/Unclassified005.bin"
+  71+ 0E1F                              assert $ == #0E1F
+  72+ 0E1F                              disp #E8FD
+  73+ E8FD                              include "../Controls/UnknownE8FD.asm"
 # file opened: Source/Controls/UnknownE8FD.asm
    1++E8FD                              module Controls
    2++E8FD                              module UnknownE8FD
@@ -121103,13 +121491,13 @@
  126++E973                              endmodule
  127++E973
 # file closed: Source/Controls/UnknownE8FD.asm
-  69+ E973                              ent
-  70+ 0E95                              assert $ == #0E95
-  71+ 0E95                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
-  72+ 0E95                              incbin "../Resources/23_CONTROL/Unclassified006.bin"
-  73+ 0E9C                              assert $ == #0E9C
-  74+ 0E9C                              disp #E97A
-  75+ E97A                              include "../Controls/UnknownE97A.asm"
+  74+ E973                              ent
+  75+ 0E95                              assert $ == #0E95
+  76+ 0E95                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
+  77+ 0E95                              incbin "../Resources/23_CONTROL/Unclassified006.bin"
+  78+ 0E9C                              assert $ == #0E9C
+  79+ 0E9C                              disp #E97A
+  80+ E97A                              include "../Controls/UnknownE97A.asm"
 # file opened: Source/Controls/UnknownE97A.asm
    1++E97A                              module Controls
    2++E97A                              module UnknownE97A
@@ -121441,13 +121829,13 @@
  328++EB0E                              endmodule
  329++EB0E
 # file closed: Source/Controls/UnknownE97A.asm
-  76+ EB0E                              ent
-  77+ 1030                              assert $ == #1030
-  78+ 1030                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
-  79+ 1030                              incbin "../Resources/23_CONTROL/Unclassified007.bin"
-  80+ 1130                              assert $ == #1130
-  81+ 1130                              disp #EC0E
-  82+ EC0E                              include "../Controls/InitializeTextWindow.asm"
+  81+ EB0E                              ent
+  82+ 1030                              assert $ == #1030
+  83+ 1030                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
+  84+ 1030                              incbin "../Resources/23_CONTROL/Unclassified007.bin"
+  85+ 1130                              assert $ == #1130
+  86+ 1130                              disp #EC0E
+  87+ EC0E                              include "../Controls/InitializeTextWindow.asm"
 # file opened: Source/Controls/InitializeTextWindow.asm
    1++EC0E                              module Controls
    2++EC0E                              module InitializeTextWindow
@@ -121517,10 +121905,10 @@
   66++EC56                              endmodule
   67++EC56
 # file closed: Source/Controls/InitializeTextWindow.asm
-  83+ EC56                              ent
-  84+ 1178                              assert $ == #1178
-  85+ 1178                              disp #EC56
-  86+ EC56                              include "../Controls/QueueNumber.asm"                           ; (0) жёсткий порядок, последовательное исполнение
+  88+ EC56                              ent
+  89+ 1178                              assert $ == #1178
+  90+ 1178                              disp #EC56
+  91+ EC56                              include "../Controls/QueueNumber.asm"                           ; (0) жёсткий порядок, последовательное исполнение
 # file opened: Source/Controls/QueueNumber.asm
    1++EC56                              module Controls
    2++EC56                              module QueueNumber
@@ -121561,10 +121949,10 @@
   37++EC59                              endmodule
   38++EC59
 # file closed: Source/Controls/QueueNumber.asm
-  87+ EC59                              ent
-  88+ 117B                              assert $ == #117B
-  89+ 117B                              disp #EC59
-  90+ EC59                              include "../Controls/QueueTextItem.asm"                         ; (1) жёсткий порядок, последовательное исполнение
+  92+ EC59                              ent
+  93+ 117B                              assert $ == #117B
+  94+ 117B                              disp #EC59
+  95+ EC59                              include "../Controls/QueueTextItem.asm"                         ; (1) жёсткий порядок, последовательное исполнение
 # file opened: Source/Controls/QueueTextItem.asm
    1++EC59                              module Controls
    2++EC59                              module QueueTextItem
@@ -121642,10 +122030,10 @@
   74++EC80                              endmodule
   75++EC80
 # file closed: Source/Controls/QueueTextItem.asm
-  91+ EC80                              ent
-  92+ 11A2                              assert $ == #11A2
-  93+ 11A2                              disp #EC80
-  94+ EC80                              include "../Controls/Data/TextQueue.asm"
+  96+ EC80                              ent
+  97+ 11A2                              assert $ == #11A2
+  98+ 11A2                              disp #EC80
+  99+ EC80                              include "../Controls/Data/TextQueue.asm"
 # file opened: Source/Controls/Data/TextQueue.asm
    1++EC80                              module ControlsTextQueue
    2++EC80                              ; Документация [производитель текстовой очереди](../../../Docs/TextQueueProducer.md)
@@ -121756,10 +122144,10 @@
  107++ECA2                              endmodule
  108++ECA2
 # file closed: Source/Controls/Data/TextQueue.asm
-  95+ ECA2                              ent
-  96+ 11C4                              assert $ == #11C4
-  97+ 11C4                              disp #ECA2
-  98+ ECA2                              include "../Controls/ConsumeTextQueue.asm"
+ 100+ ECA2                              ent
+ 101+ 11C4                              assert $ == #11C4
+ 102+ 11C4                              disp #ECA2
+ 103+ ECA2                              include "../Controls/ConsumeTextQueue.asm"
 # file opened: Source/Controls/ConsumeTextQueue.asm
    1++ECA2                              module Controls
    2++ECA2                              module ConsumeTextQueue
@@ -121857,10 +122245,10 @@
   94++ECF3                              endmodule
   95++ECF3
 # file closed: Source/Controls/ConsumeTextQueue.asm
-  99+ ECF3                              ent
- 100+ 1215                              assert $ == #1215
- 101+ 1215                              disp #ECF3
- 102+ ECF3                              include "../Controls/PrintByteDecimal.asm"
+ 104+ ECF3                              ent
+ 105+ 1215                              assert $ == #1215
+ 106+ 1215                              disp #ECF3
+ 107+ ECF3                              include "../Controls/PrintByteDecimal.asm"
 # file opened: Source/Controls/PrintByteDecimal.asm
    1++ECF3                              module Controls
    2++ECF3                              module PrintByteDecimal
@@ -121936,10 +122324,10 @@
   72++ED28                              endmodule
   73++ED28
 # file closed: Source/Controls/PrintByteDecimal.asm
- 103+ ED28                              ent
- 104+ 124A                              assert $ == #124A
- 105+ 124A                              disp #ED28
- 106+ ED28                              include "../Controls/ScrollTextWindow.asm"
+ 108+ ED28                              ent
+ 109+ 124A                              assert $ == #124A
+ 110+ 124A                              disp #ED28
+ 111+ ED28                              include "../Controls/ScrollTextWindow.asm"
 # file opened: Source/Controls/ScrollTextWindow.asm
    1++ED28                              module Controls
    2++ED28                              module ScrollTextWindow
@@ -122530,10 +122918,10 @@
  587++EFC4                              endmodule
  588++EFC4
 # file closed: Source/Controls/ScrollTextWindow.asm
- 107+ EFC4                              ent
- 108+ 14E6                              assert $ == #14E6
- 109+ 14E6                              disp #EFC4
- 110+ EFC4                              include "../Controls/PrintTextGlyph.asm"                        ; (0) жёсткий порядок, последовательное исполнение
+ 112+ EFC4                              ent
+ 113+ 14E6                              assert $ == #14E6
+ 114+ 14E6                              disp #EFC4
+ 115+ EFC4                              include "../Controls/PrintTextGlyph.asm"                        ; (0) жёсткий порядок, последовательное исполнение
 # file opened: Source/Controls/PrintTextGlyph.asm
    1++EFC4                              module Controls
    2++EFC4                              module PrintTextGlyph
@@ -122604,10 +122992,10 @@
   67++EFF1                              endmodule
   68++EFF1
 # file closed: Source/Controls/PrintTextGlyph.asm
- 111+ EFF1                              ent
- 112+ 1513                              assert $ == #1513
- 113+ 1513                              disp #EFF1
- 114+ EFF1                              include "../Controls/DrawGlyphRows.asm"                         ; (1) жёсткий порядок, последовательное исполнение
+ 116+ EFF1                              ent
+ 117+ 1513                              assert $ == #1513
+ 118+ 1513                              disp #EFF1
+ 119+ EFF1                              include "../Controls/DrawGlyphRows.asm"                         ; (1) жёсткий порядок, последовательное исполнение
 # file opened: Source/Controls/DrawGlyphRows.asm
    1++EFF1                              module Controls
    2++EFF1                              module DrawGlyphRows
@@ -122799,10 +123187,10 @@
  188++F094                              endmodule
  189++F094
 # file closed: Source/Controls/DrawGlyphRows.asm
- 115+ F094                              ent
- 116+ 15B6                              assert $ == #15B6
- 117+ 15B6                              disp #F094
- 118+ F094                              include "../Controls/XorBufferMarker.asm"
+ 120+ F094                              ent
+ 121+ 15B6                              assert $ == #15B6
+ 122+ 15B6                              disp #F094
+ 123+ F094                              include "../Controls/XorBufferMarker.asm"
 # file opened: Source/Controls/XorBufferMarker.asm
    1++F094                              module Controls
    2++F094                              module XorBufferMarker
@@ -122924,10 +123312,10 @@
  118++F0ED                              endmodule
  119++F0ED
 # file closed: Source/Controls/XorBufferMarker.asm
- 119+ F0ED                              ent
- 120+ 160F                              assert $ == #160F
- 121+ 160F                              disp #F0ED
- 122+ F0ED                              include "../Controls/Data/MarkerPhaseMasks.asm"
+ 124+ F0ED                              ent
+ 125+ 160F                              assert $ == #160F
+ 126+ 160F                              disp #F0ED
+ 127+ F0ED                              include "../Controls/Data/MarkerPhaseMasks.asm"
 # file opened: Source/Controls/Data/MarkerPhaseMasks.asm
    1++F0ED                              module MarkerPhaseMasks
    2++F0ED                              ; Документация [XOR-маркер буфера](../../../Docs/ControlsMarker.md)
@@ -123000,10 +123388,10 @@
   69++F10D                              endmodule
   70++F10D
 # file closed: Source/Controls/Data/MarkerPhaseMasks.asm
- 123+ F10D                              ent
- 124+ 162F                              assert $ == #162F
- 125+ 162F                              disp #F10D
- 126+ F10D                              include "../Controls/TickBcdCounter.asm"                        ; (0) жёсткий порядок, последовательное исполнение
+ 128+ F10D                              ent
+ 129+ 162F                              assert $ == #162F
+ 130+ 162F                              disp #F10D
+ 131+ F10D                              include "../Controls/TickBcdCounter.asm"                        ; (0) жёсткий порядок, последовательное исполнение
 # file opened: Source/Controls/TickBcdCounter.asm
    1++F10D                              module Controls
    2++F10D                              module TickBcdCounter
@@ -123078,10 +123466,10 @@
   71++F142                              endmodule
   72++F142
 # file closed: Source/Controls/TickBcdCounter.asm
- 127+ F142                              ent
- 128+ 1664                              assert $ == #1664
- 129+ 1664                              disp #F142
- 130+ F142                              include "../Controls/DrawBcdCounter.asm"                        ; (1) жёсткий порядок, последовательное исполнение
+ 132+ F142                              ent
+ 133+ 1664                              assert $ == #1664
+ 134+ 1664                              disp #F142
+ 135+ F142                              include "../Controls/DrawBcdCounter.asm"                        ; (1) жёсткий порядок, последовательное исполнение
 # file opened: Source/Controls/DrawBcdCounter.asm
    1++F142                              module Controls
    2++F142                              module DrawBcdCounter
@@ -123166,10 +123554,10 @@
   81++F188                              endmodule
   82++F188
 # file closed: Source/Controls/DrawBcdCounter.asm
- 131+ F188                              ent
- 132+ 16AA                              assert $ == #16AA
- 133+ 16AA                              disp #F188
- 134+ F188                              include "../Controls/DrawCounterNibble.asm"                     ; (2) жёсткий порядок, последовательное исполнение
+ 136+ F188                              ent
+ 137+ 16AA                              assert $ == #16AA
+ 138+ 16AA                              disp #F188
+ 139+ F188                              include "../Controls/DrawCounterNibble.asm"                     ; (2) жёсткий порядок, последовательное исполнение
 # file opened: Source/Controls/DrawCounterNibble.asm
    1++F188                              module Controls
    2++F188                              module DrawCounterNibble
@@ -123228,12 +123616,12 @@
   55++F1AB                              endmodule
   56++F1AB
 # file closed: Source/Controls/DrawCounterNibble.asm
- 135+ F1AB                              ent
- 136+ 16CD                              assert $ == #16CD
- 137+ 16CD                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
- 138+ 16CD                              incbin "../Resources/23_CONTROL/Unclassified010.bin"
- 139+ 1A00                              assert $ == #1A00
- 140+ 1A00
+ 140+ F1AB                              ent
+ 141+ 16CD                              assert $ == #16CD
+ 142+ 16CD                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
+ 143+ 16CD                              incbin "../Resources/23_CONTROL/Unclassified010.bin"
+ 144+ 1A00                              assert $ == #1A00
+ 145+ 1A00
 # file closed: Source/Files/23_CONTROL.inc
  138  1A00                              assert $ == #1A00
  139  1A00                              SAVETRD "Awakenv02.trd", "S23.C", 0, 6656

@@ -60,13 +60,17 @@ def main():
                 checkpoint['passed_reports'].append(path)
     for tag, key in (('ActionRegionType', 'action_region_type'), ('ControlsSeededParameters', 'controls_seeded_parameters'),
                      ('ControlsParameterTables', 'controls_parameter_tables'), ('ActionApplyParameters', 'action_apply_parameters'),
-                     ('ActionParameterActivation', 'action_parameter_activation')):
+                     ('ActionParameterActivation', 'action_parameter_activation'), ('ControlsParameterActivation', 'controls_parameter_activation'),
+                     ('ControlsThreeRowGlyph', 'controls_three_row_glyph')):
         if not (ROOT/('Tools/Disasm/Reports/'+tag+'Classification.json')).exists():
             continue
         proof = read(tag+'Verification')
         assert proof['passed'] and read(tag+'Classification')['passed']
         checkpoint[key] = dict(cases=proof['total_cases'], exact_registers_flags_r_sp_and_all_ram=True,
             game_meaning_proved=False, assembly_executed=False, irq_executed=False, native_execution=False)
+        if tag=='ControlsParameterActivation':
+            checkpoint[key].update(method=proof['method'],independent_complete_child_oracle=False,
+                maximum_additional_stack_bytes=10,wrapper_extra_refresh_m1=64)
         for suffix in ('Verification', 'Classification'):
             path = 'Tools/Disasm/Reports/'+tag+suffix+'.json'
             if path not in checkpoint['passed_reports']:
@@ -74,6 +78,14 @@ def main():
     if (ROOT/'Tools/Disasm/Reports/ActionParameterEntrySplitClassification.json').exists():
         assert read('ActionParameterEntrySplitClassification')['passed']
         path = 'Tools/Disasm/Reports/ActionParameterEntrySplitClassification.json'
+        if path not in checkpoint['passed_reports']:
+            checkpoint['passed_reports'].append(path)
+    if (ROOT/'Tools/Disasm/Reports/ControlsThreeRowGlyphsClassification.json').exists():
+        assert read('ControlsThreeRowGlyphsClassification')['passed']
+        checkpoint['controls_three_row_glyphs'] = dict(typed_bytes=192, physical_records=32,
+            structure='FThreeRowGlyphPhase', shapes=['Plus','Cross','Solid','Hollow'],
+            remaining_return_table_bytes_unclassified=32)
+        path = 'Tools/Disasm/Reports/ControlsThreeRowGlyphsClassification.json'
         if path not in checkpoint['passed_reports']:
             checkpoint['passed_reports'].append(path)
     if (ROOT/'Tools/Disasm/Reports/ControlsParameterCoefficientsClassification.json').exists():

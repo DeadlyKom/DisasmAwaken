@@ -1,19 +1,19 @@
 {
   "method": "static_source_audit_without_assembly",
-  "included_text_files": 1467,
+  "included_text_files": 1468,
   "included_binary_files": 231,
   "registered_functions": 1193,
   "unlinked_functions": [],
   "missing_includes_or_resources": [],
   "missing_include_order": [],
-  "global_definitions": 19446,
-  "global_references": 10803,
+  "global_definitions": 19682,
+  "global_references": 10819,
   "unresolved_global_references": [],
   "duplicate_global_definitions": [],
   "global_reference_case_mismatches": [],
   "source_files_outside_graph": [],
-  "unknown_fragments": 142,
-  "unknown_contract_fragments": 325,
+  "unknown_fragments": 140,
+  "unknown_contract_fragments": 323,
   "unknown_contract_files": [
     "Source/Intro/InitializeIntro.asm",
     "Source/Intro/LoadStation.asm",
@@ -332,9 +332,7 @@
     "Source/Controls/UnknownD95F.asm",
     "Source/Controls/RunTemporaryModule.asm",
     "Source/Controls/UnknownDC9B.asm",
-    "Source/Controls/UnknownDE0A.asm",
     "Source/Controls/UnknownE021.asm",
-    "Source/Controls/UnknownE14E.asm",
     "Source/Controls/UnknownE291.asm",
     "Source/Controls/UnknownE8FD.asm",
     "Source/Controls/UnknownE97A.asm",
@@ -347,17 +345,17 @@
   "pending_by_region": {
     "Action": 93,
     "ThreeD": 23,
-    "Controls": 26
+    "Controls": 24
   },
   "potential_continuations": 124,
   "ordered_fragments": 225,
-  "python_scripts_parsed": 1083,
+  "python_scripts_parsed": 1101,
   "python_duplicate_literal_keys": [],
   "totals": {
-    "address_label": 1047,
-    "numeric_control_target": 121,
+    "address_label": 1045,
+    "numeric_control_target": 120,
     "numeric_index_operand": 352,
-    "condition_without_data_semantics": 1324
+    "condition_without_data_semantics": 1320
   },
   "findings": [
     {
@@ -13341,11 +13339,6 @@
       "issue": "numeric_control_target"
     },
     {
-      "path": "Source/Controls/UnknownDE0A.asm",
-      "line": 18,
-      "issue": "numeric_control_target"
-    },
-    {
       "path": "Source/Controls/BuildParameterTables.asm",
       "line": 118,
       "issue": "numeric_index_operand"
@@ -13544,36 +13537,6 @@
       "path": "Source/Controls/UnknownE021.asm",
       "line": 212,
       "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE14E.asm",
-      "line": 62,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE14E.asm",
-      "line": 68,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE14E.asm",
-      "line": 74,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Controls/UnknownE14E.asm",
-      "line": 87,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE14E.asm",
-      "line": 93,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE14E.asm",
-      "line": 99,
-      "issue": "address_label"
     },
     {
       "path": "Source/Controls/UnknownE291.asm",

@@ -118,12 +118,12 @@ PointE0B3:      CP #76
 PointE0B9:      LD B, A
                 LD A, (#9B8C)
                 AND A
-                LD DE, #E1B1
+                LD DE, @ControlsThreeRowGlyphs.Plus00
                 JP P, @Controls.UnknownE021.PointE0C7                           ; переход, если флаг Sign сброшен
 
 
-                LD DE, #E1E1
-PointE0C7:      CALL @Controls.UnknownE14E.Entry
+                LD DE, @ControlsThreeRowGlyphs.Cross00
+PointE0C7:      CALL @Controls.OrThreeRowGlyph.Entry
 PointE0CA:      LD A, (#9B87)
                 LD C, A
                 LD A, (#9B88)
@@ -166,12 +166,12 @@ PointE0FC:      CP #76
 PointE102:      LD B, A
                 LD A, (#9B89)
                 AND A
-                LD DE, #E211
+                LD DE, @ControlsThreeRowGlyphs.Solid00
                 JP P, @Controls.UnknownE021.PointE110                           ; переход, если флаг Sign сброшен
 
 
-                LD DE, #E241
-PointE110:      CALL @Controls.UnknownE14E.Entry
+                LD DE, @ControlsThreeRowGlyphs.Hollow00
+PointE110:      CALL @Controls.OrThreeRowGlyph.Entry
                 LD A, (#9B82)
                 AND A
                 RET NZ                                                          ; выход, если флаг Z сброшен
@@ -208,12 +208,12 @@ PointE13A:      CP #76
 PointE140:      LD B, A
                 LD A, (#9B86)
                 AND A
-                LD DE, #E211
-                JP P, @Controls.UnknownE14E.Entry                               ; переход, если флаг Sign сброшен
+                LD DE, @ControlsThreeRowGlyphs.Solid00
+                JP P, @Controls.OrThreeRowGlyph.Entry                           ; переход, если флаг Sign сброшен
 
 
-                LD DE, #E241
-                ; JP @Controls.UnknownE14E.Entry, продолжение в UnknownE14E.asm
+                LD DE, @ControlsThreeRowGlyphs.Hollow00
+                ; JP @Controls.OrThreeRowGlyph.Entry, продолжение в OrThreeRowGlyph.asm
 
                 endmodule
                 endmodule

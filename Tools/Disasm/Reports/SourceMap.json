@@ -13806,7 +13806,7 @@
     "offset": 812,
     "length": 6,
     "kind": "code",
-    "path": "Source/Controls/UnknownDE0A.asm",
+    "path": "Source/Controls/BuildAndActivateParameters.asm",
     "origin": 56842,
     "sha256": "15acd171af65091682e9f873468b99302360fb0fd0b046008610a25b764a376a"
   },
@@ -13869,18 +13869,27 @@
     "offset": 1648,
     "length": 99,
     "kind": "code",
-    "path": "Source/Controls/UnknownE14E.asm",
+    "path": "Source/Controls/OrThreeRowGlyph.asm",
     "origin": 57678,
     "sha256": "53c30540feb48c0d432c34436f682183d84f833f24de44ae4548f252fe454426"
   },
   {
     "slot": 23,
     "offset": 1747,
-    "length": 224,
+    "length": 192,
+    "kind": "typed_data",
+    "path": "Source/Controls/Data/ThreeRowGlyphs.asm",
+    "origin": 57777,
+    "sha256": "83cad50b9e5bd5b0f660cb6e97c7a0000f7100b91a076caf0894c92e166a12fe"
+  },
+  {
+    "slot": 23,
+    "offset": 1939,
+    "length": 32,
     "kind": "unclassified",
-    "path": "Source/Resources/23_CONTROL/Unclassified004.bin",
+    "path": "Source/Resources/23_CONTROL/Unclassified004_AfterGlyphs.bin",
     "origin": null,
-    "sha256": "2b8846ef7fb7fd3a19a48e5176ca8138023e0bcc81651a79b485ed8128a1d325"
+    "sha256": "b986012e462b38a5a79781d93beebd23d62eb0b8e87e2257a1fe575e6989ce49"
   },
   {
     "slot": 23,

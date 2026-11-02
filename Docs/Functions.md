@@ -24,7 +24,7 @@
 | Action | 180 | 87 | [Факты](FunctionDetails/Action.md) |
 | ThreeD | 98 | 75 | [Факты](FunctionDetails/ThreeD.md) |
 | Voxel | 9 | 9 | [Факты](FunctionDetails/Voxel.md) |
-| Controls | 72 | 46 | [Факты](FunctionDetails/Controls.md) |
+| Controls | 72 | 48 | [Факты](FunctionDetails/Controls.md) |
 | Final | 9 | 9 | [Факты](FunctionDetails/Final.md) |
 | FinalTemplates | 2 | 2 | [Факты](FunctionDetails/FinalTemplates.md) |
 
@@ -1003,11 +1003,11 @@
 | #DADE | [Controls.RunTemporaryModule](../Source/Controls/RunTemporaryModule.asm) | Сохранение памяти по банкам, распаковка временного модуля и восстановление полётного кода |
 | #DC9B | [Controls.UnknownDC9B](../Source/Controls/UnknownDC9B.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #DD5D | [Controls.StepWordRandom](../Source/Controls/StepWordRandom.asm) | Обновление двухсловного состояния генератора и возврат XOR его четырёх байтов |
-| #DE0A | [Controls.UnknownDE0A](../Source/Controls/UnknownDE0A.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #DE0A | [Controls.BuildAndActivateParameters](../Source/Controls/BuildAndActivateParameters.asm) | Подготовка параметров в банке 1 и хвостовая активация набора с выбором банка 0 |
 | #DE10 | [Controls.BuildParameterTables](../Source/Controls/BuildParameterTables.asm) | Формирование пятнадцати параметров и девяти строковых значений по зерну и исходным таблицам |
 | #DE9A | [Controls.BuildSeededIndices](../Source/Controls/BuildSeededIndices.asm) | Формирование четырёх индексов из двухсловного зерна, координатной области и числа шагов генератора |
 | #E021 | [Controls.UnknownE021](../Source/Controls/UnknownE021.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #E14E | [Controls.UnknownE14E](../Source/Controls/UnknownE14E.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #E14E | [Controls.OrThreeRowGlyph](../Source/Controls/OrThreeRowGlyph.asm) | Наложение трёхстрочного фазового знака операцией OR на два байта каждой строки экрана |
 | #E291 | [Controls.UnknownE291](../Source/Controls/UnknownE291.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #E8FD | [Controls.UnknownE8FD](../Source/Controls/UnknownE8FD.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #E97A | [Controls.UnknownE97A](../Source/Controls/UnknownE97A.asm) | Unknown, назначение этого фрагмента ещё не установлено |

@@ -334,6 +334,21 @@ def main():
         assert [symbols['FPARAMETERCOEFFICIENT.'+name.upper()] for name,_,_ in PARAMETER_RULES[5]] == [0,1,2]
         parameter_rule_records = 15
 
+    # Проверка всех физических фаз четырёх трёхстрочных знаков.
+    from ControlsThreeRowGlyphs import TABLE as THREE_ROW_RULES, parse as parse_three_row_rules
+    three_row_glyph_records = 0
+    entries = [item for item in source_map if item['path'] == THREE_ROW_RULES[1]]
+    if entries:
+        assert len(entries) == 1
+        item = entries[0]
+        raw, labels = parse_three_row_rules((ROOT/THREE_ROW_RULES[1]).read_text('utf-8'))
+        assert (item['slot'], item['offset'], item['length'], item['origin']) == (23, 0x6D3, 192, 0xE1B1)
+        assert raw == sources[23][0x6D3:0x793]
+        assert all(symbols.get(key.upper()) == value for key, value in labels.items())
+        assert symbols['FTHREEROWGLYPHPHASE'] == 6
+        assert [symbols['FTHREEROWGLYPHPHASE.'+name.upper()] for name,_,_ in THREE_ROW_RULES[5]] == [0,1,2,3,4,5]
+        three_row_glyph_records = 32
+
     # Проверка физических записей композиции и точной грамматики фактических DB-команд.
     from MusicCompositionSource import descriptions as composition_descriptions, parse as parse_composition, STRUCTURES as COMPOSITION_STRUCTURES
     composition = sources[10][0xC00:0x1C29]
@@ -1298,6 +1313,7 @@ def main():
     report['small_mask_records'] = small_mask_records
     report['body_projection_records'] = body_projection_records
     report['circle_work_records'] = circle_work_records
+    report['three_row_glyph_records'] = three_row_glyph_records
     report['parameter_rule_records'] = parameter_rule_records
     (ROOT/"Tools/Disasm/Reports/SourceVerification.json").write_text(
         json.dumps(report,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")

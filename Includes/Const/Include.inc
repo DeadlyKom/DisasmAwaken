@@ -924,4 +924,14 @@ ExtraRows       equ #08                                                         
 Bank0Value      equ #10                                                         ; управляющий байт выбора верхнего банка 0
                 endmodule
 
+
+                ; Исходные маски упаковки адреса и шаг экранной группы
+                module ControlsThreeRowGlyphConst
+HighMergeMask   equ #F8                                                         ; старшие разряды для объединения группы Y и номера строки
+LowMergeMask    equ #C7                                                         ; разряды объединения байтового X и группы Y
+LowThreeMask    equ #07                                                         ; младшие три разряда, фаза X либо номер строки группы
+CharRowStride   equ #20                                                         ; шаг следующего восьмистрочного знакоместа в младшем адресе
+CharHeight      equ #08                                                         ; число страниц строк восьмистрочного знакоместа
+                endmodule
+
                 endif

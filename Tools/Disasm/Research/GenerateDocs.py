@@ -172,6 +172,7 @@ def main():
                "| FCircleRasterWork | #0C | физическая рабочая запись контура, Mode разобран локально, см. [ControlsCircleWork](ControlsCircleWork.md) |",
                "| FWordRandomState | #04 | физические First и Second двухсловного генератора, см. [ControlsWordRandom](ControlsWordRandom.md) |",
                "| FParameterCoefficient | #03 | пятнадцать физических Base, SlopeCode, ShiftMask, см. [ControlsParameterTables](ControlsParameterTables.md) |",
+               "| FThreeRowGlyphPhase | #06 | 32 физических фазы четырёх трёхстрочных знаков, см. [ControlsThreeRowGlyph](ControlsThreeRowGlyph.md) |",
                "| FVisualEffect | #12 | запись эффекта, свободное состояние +7 |",
                "| FInterfaceItem | #10 | прямоугольник, флаги и два обработчика интерфейса |",
                "| FProjectedPoint | #05 | X, Y и составной код отсечения вершины |",

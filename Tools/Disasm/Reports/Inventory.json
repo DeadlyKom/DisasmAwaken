@@ -1,12 +1,12 @@
 {
   "fragments": 1193,
-  "described": 1051,
-  "unknown": 142,
+  "described": 1053,
+  "unknown": 140,
   "instructions": 39951,
   "physical_bytes_by_kind": {
-    "unclassified": 297310,
+    "unclassified": 297118,
     "code": 70504,
-    "typed_data": 18030,
+    "typed_data": 18222,
     "binary_resource": 26274,
     "resource": 67584,
     "typed": 42
@@ -14,7 +14,7 @@
   "ranges_by_kind": {
     "unclassified": 179,
     "code": 1193,
-    "typed_data": 198,
+    "typed_data": 199,
     "binary_resource": 12,
     "resource": 5,
     "typed": 6

@@ -442,6 +442,13 @@ def main():
         write(PARAMETER_COEFFICIENTS[1], text)
         symbols.update(bindings)
         special[23, 0x486] = (0x4B3, PARAMETER_COEFFICIENTS[1], 0xDF64)
+    # Исходные 32 физических фазы четырёх трёхстрочных знаков.
+    if "struct FThreeRowGlyphPhase" in (ROOT/"Includes/Structs/Include.inc").read_text("utf-8"):
+        from ControlsThreeRowGlyphs import TABLE as THREE_ROW_GLYPHS, render as render_three_row_glyphs
+        text, bindings = render_three_row_glyphs(data_by_slot[23])
+        write(THREE_ROW_GLYPHS[1], text)
+        symbols.update(bindings)
+        special[23, 0x6D3] = (0x793, THREE_ROW_GLYPHS[1], 0xE1B1)
     token_text, token_records = render_token_tables(language, names)
     write(TOKEN_TABLE_PATH, token_text)
     special[5, 0x935] = (0xA67, TOKEN_TABLE_PATH, 0xC935)
@@ -930,6 +937,14 @@ REGION_COMMENTS.setdefault("Action", {}).update(ACTION_APPLY_PARAMETERS_COMMENTS
 
 from ActionParameterActivationFacts import COMMENTS as ACTION_PARAMETER_ACTIVATION_COMMENTS
 REGION_COMMENTS.setdefault("Action", {}).update(ACTION_PARAMETER_ACTIVATION_COMMENTS)
+
+
+from ControlsParameterActivationFacts import COMMENTS as CONTROLS_PARAMETER_ACTIVATION_COMMENTS
+REGION_COMMENTS.setdefault("Controls", {}).update(CONTROLS_PARAMETER_ACTIVATION_COMMENTS)
+
+
+from ControlsThreeRowGlyphFacts import COMMENTS as CONTROLS_THREE_ROW_GLYPH_COMMENTS
+REGION_COMMENTS.setdefault("Controls", {}).update(CONTROLS_THREE_ROW_GLYPH_COMMENTS)
 
 
 if __name__ == "__main__":

@@ -1384,4 +1384,16 @@ ShiftMask       db #00                                                          
                 ends
                 assert FParameterCoefficient == 3
 
+
+                ; Физическая фаза трёхстрочного знака, шесть последовательных масок
+                struct FThreeRowGlyphPhase
+Row0Left        db #00                                                          ; левая байтовая маска верхней строки
+Row0Right       db #00                                                          ; правая байтовая маска верхней строки
+Row1Left        db #00                                                          ; левая байтовая маска средней строки
+Row1Right       db #00                                                          ; правая байтовая маска средней строки
+Row2Left        db #00                                                          ; левая байтовая маска нижней строки
+Row2Right       db #00                                                          ; правая байтовая маска нижней строки
+                ends
+                assert FThreeRowGlyphPhase == 6
+
                 endif

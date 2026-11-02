@@ -25,7 +25,7 @@
                 incbin "../Resources/23_CONTROL/Unclassified002.bin"
                 assert $ == #032C
                 disp #DE0A
-                include "../Controls/UnknownDE0A.asm"
+                include "../Controls/BuildAndActivateParameters.asm"
                 ent
                 assert $ == #0332
                 disp #DE10
@@ -51,11 +51,16 @@
                 ent
                 assert $ == #0670
                 disp #E14E
-                include "../Controls/UnknownE14E.asm"                           ; (1) жёсткий порядок, последовательное исполнение
+                include "../Controls/OrThreeRowGlyph.asm"                       ; (1) жёсткий порядок, последовательное исполнение
                 ent
                 assert $ == #06D3
-                ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/23_CONTROL/Unclassified004.bin"
+                ; Четыре трёхстрочных знака, восемь исходных фаз каждого
+                disp #E1B1
+                include "../Controls/Data/ThreeRowGlyphs.asm"
+                ent
+                assert $ == #0793
+                ; Unknown, следующая таблица указателей ещё не разобрана
+                incbin "../Resources/23_CONTROL/Unclassified004_AfterGlyphs.bin"
                 assert $ == #07B3
                 disp #E291
                 include "../Controls/UnknownE291.asm"

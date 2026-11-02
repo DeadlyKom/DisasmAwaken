@@ -178,3 +178,5 @@ XOR-масками, а не флагами состояния. Потребит�
 [WordRandomState](../Source/Action/Data/WordRandomState.asm) содержит физическую `FWordRandomState` размером 4 байта, First по смещению 0 и Second по смещению 2. Исходные нули ACTION по 9B15..9B18 сохранены. Потребитель и рекурсия описаны в [ControlsWordRandom](ControlsWordRandom.md).
 
 [ParameterCoefficients](../Source/Controls/Data/ParameterCoefficients.asm) содержит 15 физических `FParameterCoefficient` по три байта, Base по смещению 0, SlopeCode по смещению 1, ShiftMask по смещению 2. Исходные 45 байтов DF64..DF90 и перекрытие шаблонного чтения H=4 сохранены. Алгоритм описан в [ControlsParameterTables](ControlsParameterTables.md).
+
+[ThreeRowGlyphs](../Source/Controls/Data/ThreeRowGlyphs.asm) содержит 32 физических `FThreeRowGlyphPhase` размером шесть байтов, три строки по паре Left,Right. Исходные 192 байта четырёх знаков и восьми фаз сохранены, следующие 32 байта таблицы возвратов остаются отдельно неразобранными. Потребитель и границы координат описаны в [ControlsThreeRowGlyph](ControlsThreeRowGlyph.md).

@@ -12071,14 +12071,14 @@
   },
   {
     "region": "Controls",
-    "name": "UnknownDE0A",
+    "name": "BuildAndActivateParameters",
     "address": 56842,
     "slot": 23,
     "offset": 812,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Подготовка параметров в банке 1 и хвостовая активация набора с выбором банка 0",
+    "semantic_status": "described",
     "end_offset": 818,
-    "path": "Source/Controls/UnknownDE0A.asm"
+    "path": "Source/Controls/BuildAndActivateParameters.asm"
   },
   {
     "region": "Controls",
@@ -12115,14 +12115,14 @@
   },
   {
     "region": "Controls",
-    "name": "UnknownE14E",
+    "name": "OrThreeRowGlyph",
     "address": 57678,
     "slot": 23,
     "offset": 1648,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Наложение трёхстрочного фазового знака операцией OR на два байта каждой строки экрана",
+    "semantic_status": "described",
     "end_offset": 1747,
-    "path": "Source/Controls/UnknownE14E.asm"
+    "path": "Source/Controls/OrThreeRowGlyph.asm"
   },
   {
     "region": "Controls",

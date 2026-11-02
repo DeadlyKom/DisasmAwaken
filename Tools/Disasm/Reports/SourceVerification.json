@@ -140,5 +140,6 @@
   "small_mask_records": 30,
   "body_projection_records": 1,
   "circle_work_records": 1,
+  "three_row_glyph_records": 32,
   "parameter_rule_records": 15
 }

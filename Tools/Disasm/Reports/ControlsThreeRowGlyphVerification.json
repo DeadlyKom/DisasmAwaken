@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "total_cases": 274864,
+  "cases_by_kind": {
+    "original_plus": 65536,
+    "original_cross": 65536,
+    "original_solid": 65536,
+    "original_hollow": 65536,
+    "all_mask_bytes": 12288,
+    "source_wrap": 432
+  },
+  "all_four_original_shapes_all_coordinates": true,
+  "all_six_mask_byte_values_and_phases": true,
+  "source_word_wrap_checked": true,
+  "right_byte_page_local_wrap_preserved": true,
+  "outside_192_row_bitmap_behavior_preserved": true,
+  "exact_registers_flags_r_and_sp": true,
+  "every_ram_byte_and_write_checked": true,
+  "arbitrary_overlapping_resources_proved": false,
+  "caller_e021_proved": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

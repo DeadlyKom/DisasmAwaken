@@ -135,6 +135,8 @@ def name_operands(region, function_address, operation):
     operation = control_panel_group_name_operands(region, function_address, operation)
     operation = ship_periodic_code_name_operands(region, function_address, operation)
     operation = ship_preview_callback_name_operands(region, function_address, operation)
+    operation = controls_three_row_glyph_name_operands(region, function_address, operation)
+    operation = controls_parameter_activation_name_operands(region, function_address, operation)
     operation = action_parameter_activation_name_operands(region, function_address, operation)
     operation = action_apply_parameters_name_operands(region, function_address, operation)
     operation = controls_parameter_tables_name_operands(region, function_address, operation)
@@ -1561,3 +1563,11 @@ LABELS.update(ACTION_PARAMETER_ACTIVATION_LABELS)
 DOCUMENTS.update({("Action", a): ("ActionParameterActivation", "алгоритм и проверка") for a in (44088, 44100)})
 
 DOCUMENTS["Action", 0xAB1B] = ("ActionParameterActivation", "выбор страницы и активация параметров")
+
+from ControlsParameterActivationFacts import LABELS as CONTROLS_PARAMETER_ACTIVATION_LABELS, name_operands as controls_parameter_activation_name_operands
+LABELS.update(CONTROLS_PARAMETER_ACTIVATION_LABELS)
+DOCUMENTS.update({("Controls", a): ("ControlsParameterActivation", "алгоритм и проверка") for a in (56842,)})
+
+from ControlsThreeRowGlyphFacts import LABELS as CONTROLS_THREE_ROW_GLYPH_LABELS, name_operands as controls_three_row_glyph_name_operands
+LABELS.update(CONTROLS_THREE_ROW_GLYPH_LABELS)
+DOCUMENTS.update({("Controls", a): ("ControlsThreeRowGlyph", "алгоритм и проверка") for a in (57678,)})
