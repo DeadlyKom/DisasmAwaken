@@ -4,26 +4,33 @@
 ; -----------------------------------------
                 assert $ == #0000
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/22_CONTROL0/Unclassified000.bin"
+                incbin "../Resources/22_CONTROL0/Unclassified000_Prefix.bin"
+                assert $ == #0500
+                disp #C500
+                include "../Controls/Data/BufferPoints.asm"
+                ent
+                assert $ == #0546
+                ; Unknown, исходные байты после физических записей координат
+                incbin "../Resources/22_CONTROL0/Unclassified000_Suffix.bin"
                 assert $ == #0870
                 disp #C870
-                include "../Controls/UnknownC870.asm"                           ; (0) жёсткий порядок, последовательное исполнение
+                include "../Controls/CopyViewportToScreen.asm"                  ; (0) жёсткий порядок, последовательное исполнение
                 ent
                 assert $ == #0882
                 disp #C882
-                include "../Controls/UnknownC882.asm"                           ; (1) жёсткий порядок, последовательное исполнение
+                include "../Controls/CopyScreenRows.asm"                        ; (1) жёсткий порядок, последовательное исполнение
                 ent
                 assert $ == #0A8D
                 disp #CA8D
-                include "../Controls/UnknownCA8D.asm"
+                include "../Controls/NextBufferRandom.asm"
                 ent
                 assert $ == #0AB3
                 disp #CAB3
-                include "../Controls/UnknownCAB3.asm"
+                include "../Controls/InitializeBufferPoints.asm"
                 ent
                 assert $ == #0AE3
                 disp #CAE3
-                include "../Controls/UnknownCAE3.asm"
+                include "../Controls/XorBufferPoints.asm"
                 ent
                 assert $ == #0B00
                 disp #CB00
@@ -31,11 +38,12 @@
                 ent
                 assert $ == #0E16
                 disp #CE16
-                include "../Controls/UnknownCE16.asm"
+                include "../Controls/RespawnPointIndexPos.asm"
                 ent
                 assert $ == #0E5D
-                ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/22_CONTROL0/Unclassified001.bin"
+                disp #CE5D
+                include "../Controls/RespawnPointIndexNeg.asm"
+                ent
                 assert $ == #0EA4
                 disp #CEA4
                 include "../Controls/UnknownCEA4.asm"
@@ -68,11 +76,11 @@
                 ent
                 assert $ == #1165
                 disp #D165
-                include "../Controls/UnknownD165.asm"                           ; (2) жёсткий порядок, последовательное исполнение
+                include "../Controls/DivideByteFraction.asm"                    ; (2) жёсткий порядок, последовательное исполнение
                 ent
                 assert $ == #1167
                 disp #D167
-                include "../Controls/UnknownD167.asm"                           ; (3) жёсткий порядок, последовательное исполнение
+                include "../Controls/DivideWordByByte.asm"                      ; (3) жёсткий порядок, последовательное исполнение
                 ent
                 assert $ == #117D
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
@@ -149,11 +157,11 @@
                 ent
                 assert $ == #1515
                 disp #D515
-                include "../Controls/UnknownD515.asm"
+                include "../Controls/BuildLeftSpanMask.asm"
                 ent
                 assert $ == #153C
                 disp #D53C
-                include "../Controls/UnknownD53C.asm"
+                include "../Controls/BuildRightSpanMask.asm"
                 ent
                 assert $ == #156C
                 disp #D56C

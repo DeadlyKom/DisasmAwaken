@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "typed_bytes": 256,
+  "physical_records": 256,
+  "logical_file_offset": 14592,
+  "runtime_address": 39168,
+  "signed_minimum": -127,
+  "signed_maximum": 127,
+  "scale": 128,
+  "half_period_antisymmetry": true,
+  "formula_matches_all_original_bytes": true,
+  "formula_used_to_regenerate_build_data": false,
+  "physical_bytes_preserved": true,
+  "assembly_executed": false
+}

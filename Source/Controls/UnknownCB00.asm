@@ -14,7 +14,7 @@
 ;   граница файла не доказывает границу логической процедуры
 ;   состояние самомодификации и активной страницы учитывается отдельно
 ; -----------------------------------------
-Entry:          LD HL, #C500
+Entry:          LD HL, @ControlsBufferPoints.Point00
                 LD A, (#9B95)
                 AND A
                 JP Z, @Controls.UnknownCB00.PointCB9A                           ; переход, если флаг Z установлен
@@ -54,7 +54,7 @@ PointCB24:      CP #5E
                 LD A, #5E
 PointCB2A:      ADD A, #00
                 LD (HL), A
-                CALL @Controls.UnknownCA8D.Entry
+                CALL @Controls.NextBufferRandom.Entry
                 INC L
                 CP #01
                 JR NC, @Controls.UnknownCB00.PointCB37                          ; переход, если флаг Carry сброшен
@@ -119,7 +119,7 @@ PointCB71:      LD B, A
                 LD A, #5F
                 SUB B
                 LD (HL), A
-                CALL @Controls.UnknownCA8D.Entry
+                CALL @Controls.NextBufferRandom.Entry
                 INC L
                 CP #01
                 JR NC, @Controls.UnknownCB00.PointCB80                          ; переход, если флаг Carry сброшен
@@ -171,7 +171,7 @@ PointCBAC:      LD A, (HL)
                 JR C, @Controls.UnknownCB00.PointCBE4                           ; переход, если флаг Carry установлен
 
 
-PointCBB4:      CALL @Controls.UnknownCA8D.Entry
+PointCBB4:      CALL @Controls.NextBufferRandom.Entry
 PointCBB7:      CP C
                 JR C, @Controls.UnknownCB00.PointCBBD                           ; переход, если флаг Carry установлен
 
@@ -237,7 +237,7 @@ PointCBF5:      LD A, (HL)
                 JR NC, @Controls.UnknownCB00.PointCC2F                          ; переход, если флаг Carry сброшен
 
 
-PointCBFD:      CALL @Controls.UnknownCA8D.Entry
+PointCBFD:      CALL @Controls.NextBufferRandom.Entry
 PointCC00:      CP C
                 JR C, @Controls.UnknownCB00.PointCC06                           ; переход, если флаг Carry установлен
 
@@ -299,8 +299,8 @@ PointCC38:      LD A, (#9B97)
                 NEG
 PointCC45:      RLA
                 RLA
-                LD (#CE1E), A
-                LD (#CE65), A
+                LD (@ControlsPointRespawnState.PositiveStep), A
+                LD (@ControlsPointRespawnState.NegativeStep), A
                 LD H, #99
                 LD A, (HL)
                 LD (#CCD2), A
@@ -314,14 +314,14 @@ PointCC45:      RLA
                 LD (#CD49), A
                 LD A, L
                 SUB #40
-                LD HL, #CE16
+                LD HL, @Controls.RespawnPointIndexPos.Entry
                 JP P, @Controls.UnknownCB00.PointCC6F                           ; переход, если флаг Sign сброшен
 
 
-                LD HL, #CE5D
+                LD HL, @Controls.RespawnPointIndexNeg.Entry
 PointCC6F:      LD (#CD31), HL
                 LD (#CDFC), HL
-                LD HL, #C500
+                LD HL, @ControlsBufferPoints.Point00
 PointCC78:      LD A, (HL)
                 SUB #30
                 EXX
@@ -495,7 +495,7 @@ PointCD1D:      ADD HL, DE
 
 
 PointCD2F:      EXX
-                CALL @Controls.UnknownCE16.Entry
+                CALL @Controls.RespawnPointIndexPos.Entry
                 LD (HL), D
                 DEC L
                 LD (HL), E
@@ -684,7 +684,7 @@ PointCDE8:      ADD HL, DE
 
 
 PointCDFA:      EXX
-                CALL @Controls.UnknownCE16.Entry
+                CALL @Controls.RespawnPointIndexPos.Entry
                 LD (HL), E
                 INC L
                 LD (HL), D

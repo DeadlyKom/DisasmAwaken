@@ -216815,6 +216815,7 @@
       51891,
       51939,
       51968,
+      52829,
       52900,
       52986,
       53003,
@@ -217006,6 +217007,15 @@
       52808,
       52814,
       52827,
+      52842,
+      52849,
+      52855,
+      52866,
+      52868,
+      52870,
+      52877,
+      52883,
+      52898,
       52915,
       52980,
       53052,
@@ -224566,6 +224576,279 @@
         "hex": "c9",
         "slot": 22,
         "offset": 3676
+      },
+      {
+        "address": 52829,
+        "operation": "LD A,#00",
+        "hex": "3e00",
+        "slot": 22,
+        "offset": 3677
+      },
+      {
+        "address": 52831,
+        "operation": "XOR #01",
+        "hex": "ee01",
+        "slot": 22,
+        "offset": 3679
+      },
+      {
+        "address": 52833,
+        "operation": "LD (#CE5E),A",
+        "hex": "325ece",
+        "slot": 22,
+        "offset": 3681
+      },
+      {
+        "address": 52836,
+        "operation": "LD C,#00",
+        "hex": "0e00",
+        "slot": 22,
+        "offset": 3684
+      },
+      {
+        "address": 52838,
+        "operation": "JR NZ,#CE84",
+        "hex": "201c",
+        "slot": 22,
+        "offset": 3686
+      },
+      {
+        "address": 52840,
+        "operation": "LD A,R",
+        "hex": "ed5f",
+        "slot": 22,
+        "offset": 3688
+      },
+      {
+        "address": 52842,
+        "operation": "CP C",
+        "hex": "b9",
+        "slot": 22,
+        "offset": 3690
+      },
+      {
+        "address": 52843,
+        "operation": "JR C,#CE71",
+        "hex": "3804",
+        "slot": 22,
+        "offset": 3691
+      },
+      {
+        "address": 52845,
+        "operation": "SUB C",
+        "hex": "91",
+        "slot": 22,
+        "offset": 3693
+      },
+      {
+        "address": 52846,
+        "operation": "JP #CE6A",
+        "hex": "c36ace",
+        "slot": 22,
+        "offset": 3694
+      },
+      {
+        "address": 52849,
+        "operation": "CP #5E",
+        "hex": "fe5e",
+        "slot": 22,
+        "offset": 3697
+      },
+      {
+        "address": 52851,
+        "operation": "JR C,#CE77",
+        "hex": "3802",
+        "slot": 22,
+        "offset": 3699
+      },
+      {
+        "address": 52853,
+        "operation": "LD A,#5E",
+        "hex": "3e5e",
+        "slot": 22,
+        "offset": 3701
+      },
+      {
+        "address": 52855,
+        "operation": "ADD A,#00",
+        "hex": "c600",
+        "slot": 22,
+        "offset": 3703
+      },
+      {
+        "address": 52857,
+        "operation": "LD E,A",
+        "hex": "5f",
+        "slot": 22,
+        "offset": 3705
+      },
+      {
+        "address": 52858,
+        "operation": "LD A,R",
+        "hex": "ed5f",
+        "slot": 22,
+        "offset": 3706
+      },
+      {
+        "address": 52860,
+        "operation": "CP #01",
+        "hex": "fe01",
+        "slot": 22,
+        "offset": 3708
+      },
+      {
+        "address": 52862,
+        "operation": "JR NC,#CE82",
+        "hex": "3002",
+        "slot": 22,
+        "offset": 3710
+      },
+      {
+        "address": 52864,
+        "operation": "ADD A,#01",
+        "hex": "c601",
+        "slot": 22,
+        "offset": 3712
+      },
+      {
+        "address": 52866,
+        "operation": "LD D,A",
+        "hex": "57",
+        "slot": 22,
+        "offset": 3714
+      },
+      {
+        "address": 52867,
+        "operation": "RET",
+        "hex": "c9",
+        "slot": 22,
+        "offset": 3715
+      },
+      {
+        "address": 52868,
+        "operation": "LD A,R",
+        "hex": "ed5f",
+        "slot": 22,
+        "offset": 3716
+      },
+      {
+        "address": 52870,
+        "operation": "CP C",
+        "hex": "b9",
+        "slot": 22,
+        "offset": 3718
+      },
+      {
+        "address": 52871,
+        "operation": "JR C,#CE8D",
+        "hex": "3804",
+        "slot": 22,
+        "offset": 3719
+      },
+      {
+        "address": 52873,
+        "operation": "SUB C",
+        "hex": "91",
+        "slot": 22,
+        "offset": 3721
+      },
+      {
+        "address": 52874,
+        "operation": "JP #CE86",
+        "hex": "c386ce",
+        "slot": 22,
+        "offset": 3722
+      },
+      {
+        "address": 52877,
+        "operation": "CP #5E",
+        "hex": "fe5e",
+        "slot": 22,
+        "offset": 3725
+      },
+      {
+        "address": 52879,
+        "operation": "JR C,#CE93",
+        "hex": "3802",
+        "slot": 22,
+        "offset": 3727
+      },
+      {
+        "address": 52881,
+        "operation": "LD A,#5E",
+        "hex": "3e5e",
+        "slot": 22,
+        "offset": 3729
+      },
+      {
+        "address": 52883,
+        "operation": "SUB #5F",
+        "hex": "d65f",
+        "slot": 22,
+        "offset": 3731
+      },
+      {
+        "address": 52885,
+        "operation": "NEG",
+        "hex": "ed44",
+        "slot": 22,
+        "offset": 3733
+      },
+      {
+        "address": 52887,
+        "operation": "LD E,A",
+        "hex": "5f",
+        "slot": 22,
+        "offset": 3735
+      },
+      {
+        "address": 52888,
+        "operation": "LD A,R",
+        "hex": "ed5f",
+        "slot": 22,
+        "offset": 3736
+      },
+      {
+        "address": 52890,
+        "operation": "ADD A,#80",
+        "hex": "c680",
+        "slot": 22,
+        "offset": 3738
+      },
+      {
+        "address": 52892,
+        "operation": "CP #FE",
+        "hex": "fefe",
+        "slot": 22,
+        "offset": 3740
+      },
+      {
+        "address": 52894,
+        "operation": "JR C,#CEA2",
+        "hex": "3802",
+        "slot": 22,
+        "offset": 3742
+      },
+      {
+        "address": 52896,
+        "operation": "SUB #01",
+        "hex": "d601",
+        "slot": 22,
+        "offset": 3744
+      },
+      {
+        "address": 52898,
+        "operation": "LD D,A",
+        "hex": "57",
+        "slot": 22,
+        "offset": 3746
+      },
+      {
+        "address": 52899,
+        "operation": "RET",
+        "hex": "c9",
+        "slot": 22,
+        "offset": 3747
       },
       {
         "address": 52900,
@@ -254321,10 +254604,10 @@
       }
     ],
     "overlaps": [],
-    "instruction_count": 5282,
-    "code_bytes": 8106,
+    "instruction_count": 5321,
+    "code_bytes": 8177,
     "total_bytes": 13352,
-    "classified_fraction": 0.6071000599161175
+    "classified_fraction": 0.612417615338526
   },
   {
     "name": "Final",

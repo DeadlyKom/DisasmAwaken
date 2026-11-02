@@ -1160,4 +1160,66 @@ SavedStack      equ #DB4D                                                       
 WriteCursor     equ #EC5D                                                       ; адрес следующего проверяемого элемента в LD HL, nn
                 endmodule
 
+
+                ; Существующие операнды банка 1, память не выделяется
+                module ControlsTextDisplayState
+ActiveString    equ #ECA3                                                       ; указатель следующего байта активной строки
+ReadCursor      equ #ECAA                                                       ; последний прочитанный элемент очереди
+TextColumn      equ #EFD6                                                       ; байтовая колонка следующего знака
+SavedScrollSP   equ #EFC1                                                       ; входной SP на время экранных POP и PUSH
+                endmodule
+
+
+                ; Существующее состояние, память не выделяется
+                module ControlsBcdCounterState
+RotateGate      equ #F10E                                                       ; сохраняемый вращаемый байт в операнде LD A
+LowPairs        equ #9BBF                                                       ; две младшие BCD-пары в порядке L,H
+HighPairs       equ #9BBD                                                       ; две старшие BCD-пары в порядке E,D
+                endmodule
+
+
+                ; Существующее состояние, память не выделяется
+                module ControlsMarkerState
+Position        equ #9B19                                                       ; положение маркера, смещение по битам в линейном буфере
+                endmodule
+
+
+                ; Существующее состояние, память не выделяется
+                module ControlsBufferCopyState
+SavedStack      equ #CA8A                                                       ; слово SP в исходном LD SP,nn
+RemainingPages  equ #CA84                                                       ; счётчик в исходном LD A,nn
+                endmodule
+
+
+                ; Существующее состояние, память не выделяется
+                module ControlsBufferPointsState
+Seed            equ #CA8F                                                       ; слово состояния в исходном операнде LD BC,nn
+                endmodule
+
+
+                ; Существующие страницы общей RAM, содержимое строится при загрузке Action
+                module BufferBitmapTables
+RowHigh         equ #9400                                                       ; 256 исходных байтов соответствующей страницы
+RowLow          equ #9500                                                       ; 256 исходных байтов соответствующей страницы
+ColumnByte      equ #9600                                                       ; 256 исходных байтов соответствующей страницы
+ColumnMask      equ #9700                                                       ; 256 исходных байтов соответствующей страницы
+                endmodule
+
+
+                ; Существующее состояние, память не выделяется
+                module ControlsSpanMasksState
+SavedB          equ #D18A                                                       ; существующий временный байт сохранения B
+                endmodule
+
+
+                ; Существующее состояние, память не выделяется
+                module ControlsPointRespawnState
+PositivePhase   equ #CE17                                                       ; фазовый байт входа при неотрицательном индексе
+PositiveStep    equ #CE1E                                                       ; ненулевой шаг входа при неотрицательном индексе
+PositiveYOffset equ #CE31                                                       ; смещение Y первой ветви этого входа
+NegativePhase   equ #CE5E                                                       ; фазовый байт входа при отрицательном индексе
+NegativeStep    equ #CE65                                                       ; ненулевой шаг входа при отрицательном индексе
+NegativeYOffset equ #CE78                                                       ; смещение Y первой ветви этого входа
+                endmodule
+
                 endif

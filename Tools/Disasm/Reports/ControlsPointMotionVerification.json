@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "returning_frames": 3709,
+  "nonprogress_frames": 3,
+  "cases_by_kind": {
+    "translate_y": 1024,
+    "translate_x": 1024,
+    "turn": 768,
+    "original_sine": 512,
+    "combined": 192,
+    "persistent_sequence": 192
+  },
+  "every_ram_byte_and_write_checked": true,
+  "exact_main_alternate_index_and_refresh_registers": true,
+  "real_rng_and_both_respawn_entries": true,
+  "no_call_stubs": true,
+  "arithmetic_reference_independent": true,
+  "refresh_counts_from_original_opcode_m1_profile": true,
+  "entropy_samples_independently_predicted": true,
+  "coefficient_pages_are_supplied_fixtures": true,
+  "original_action_sine_page_additionally_checked": true,
+  "original_sine_file_offset": 14592,
+  "all_control_bytes_per_axis": true,
+  "persistent_seed_and_phases": true,
+  "zero_step_nonprogress_preserved": true,
+  "whole_cb00_in_documented_domain": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

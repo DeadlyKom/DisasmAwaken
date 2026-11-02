@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "total_cases": 262144,
+  "cases_by_kernel": {
+    "CC7D": 65536,
+    "CCD1": 65536,
+    "CD48": 65536,
+    "CD9C": 65536
+  },
+  "all_signed_coordinate_and_coefficient_bytes": true,
+  "all_four_original_kernels": true,
+  "input_a_equals_c_as_in_caller": true,
+  "product_formula": "sign * (floor(abs(coordinate) * (abs(coefficient) AND 127) / 128) + 1)",
+  "zero_product_unit_bias_preserved": true,
+  "coefficient_minus_128_low_seven_bits_preserved": true,
+  "exact_result_word": true,
+  "no_memory_writes": true,
+  "main_af_and_alternate_af_independently_proved": true,
+  "all_kernel_m1_counts_checked": true,
+  "whole_cb00_proved": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

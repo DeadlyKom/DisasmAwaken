@@ -100,7 +100,7 @@ PointD160:      SCF
                 RR D
 PointD163:      LD A, H
                 LD B, D
-                ; JP @Controls.UnknownD165.Entry, продолжение в UnknownD165.asm
+                ; JP @Controls.DivideByteFraction.Entry, продолжение в UnknownD165.asm
 
                 endmodule
                 endmodule

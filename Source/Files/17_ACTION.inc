@@ -264,7 +264,14 @@
                 ent
                 assert $ == #21CC
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/17_ACTION/Unclassified020.bin"
+                incbin "../Resources/17_ACTION/Unclassified020_Prefix.bin"
+                assert $ == #3900
+                disp #9900
+                include "../Action/Data/SineTable.asm"
+                ent
+                assert $ == #3A00
+                ; Unknown, исходные байты после синусоиды ACTION
+                incbin "../Resources/17_ACTION/Unclassified020_Suffix.bin"
                 assert $ == #482D
                 disp #A82D
                 include "../Action/StartFlight.asm"                             ; (0) жёсткий порядок, последовательное исполнение

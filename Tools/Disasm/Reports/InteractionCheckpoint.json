@@ -2,12 +2,12 @@
   "status": "in_progress",
   "all_plan_stages_completed": false,
   "fragments": 1187,
-  "described": 1004,
-  "unknown": 183,
-  "unproved_contracts": 367,
-  "named_without_contract": 184,
+  "described": 1021,
+  "unknown": 166,
+  "unproved_contracts": 349,
+  "named_without_contract": 183,
   "instruction_count": 39824,
-  "unclassified_bytes": 298458,
+  "unclassified_bytes": 298356,
   "passed_reports": [
     "Tools/Disasm/Reports/PointerVerification.json",
     "Tools/Disasm/Reports/PointerTablesVerification.json",
@@ -409,7 +409,23 @@
     "Tools/Disasm/Reports/ControlsTextQueueVerification.json",
     "Tools/Disasm/Reports/ControlsTextQueueClassification.json",
     "Tools/Disasm/Reports/ActionTextQueueCallsVerification.json",
-    "Tools/Disasm/Reports/ActionTextQueueCallsClassification.json"
+    "Tools/Disasm/Reports/ActionTextQueueCallsClassification.json",
+    "Tools/Disasm/Reports/ControlsTextDisplayVerification.json",
+    "Tools/Disasm/Reports/ControlsTextDisplayClassification.json",
+    "Tools/Disasm/Reports/ControlsBcdCounterVerification.json",
+    "Tools/Disasm/Reports/ControlsBcdCounterClassification.json",
+    "Tools/Disasm/Reports/ControlsMarkerVerification.json",
+    "Tools/Disasm/Reports/ControlsMarkerTableClassification.json",
+    "Tools/Disasm/Reports/ControlsMarkerClassification.json",
+    "Tools/Disasm/Reports/ControlsBufferCopyVerification.json",
+    "Tools/Disasm/Reports/ControlsBufferCopyWorkerVerification.json",
+    "Tools/Disasm/Reports/ControlsBufferCopyClassification.json",
+    "Tools/Disasm/Reports/ControlsBufferPointsVerification.json",
+    "Tools/Disasm/Reports/ControlsBufferPointsClassification.json",
+    "Tools/Disasm/Reports/ControlsBufferPointsTableClassification.json",
+    "Tools/Disasm/Reports/ActionBitmapTablesClassification.json",
+    "Tools/Disasm/Reports/ControlsDivisionVerification.json",
+    "Tools/Disasm/Reports/ControlsDivisionClassification.json"
   ],
   "next_station_work": [
     {
@@ -425,7 +441,7 @@
     "Music": 0,
     "Action": 96,
     "ThreeD": 23,
-    "Controls": 64
+    "Controls": 47
   },
   "assembly_executed": false,
   "native_execution_performed": false,
@@ -443,7 +459,7 @@
     "Music": 0,
     "Action": 96,
     "ThreeD": 23,
-    "Controls": 64
+    "Controls": 47
   },
   "next_semantic_work": [
     "Все зарегистрированные Station-входы имеют описанные контракты. Остаются назначения части физических данных, игровые потребители настроек, длительная нативная проверка и произвольные IRQ.",
@@ -451,7 +467,7 @@
     "LANG, неизвестный префикс и потребители секторного хвоста, соседний байт 98AD, физические данные языка. События 1, 2, 5, 6, 15, 16 и 17 разобраны отдельно.",
     "Остальные регионы по pending_by_region и все именованные фрагменты без доказанных контрактов",
     "Музыка, Unknown63 в заголовке композиции, интегральный договор PlayFrame и независимая композиция оставшейся подготовки полного кадра, аппаратные IRQ и нативный звук. Все 49 зарегистрированных блоков имеют описанный контракт, зарезервированные эффекты не исполнены.",
-    "Controls, производитель очереди EC56/EC59 и два межбанковых входа Action описаны и проверены. Остаются потребитель ECA2, десятичный вывод, рисование глифов и прокрутка с полными контрактами, отдельный хвост Action Unknown6054."
+    "Controls, дальнейший разбор обновления координат CB00 и вызывающих геометрических процедур CF0B/D10A. Копировщик, генератор точек и оба входа деления описаны. Полный игровой цикл и IRQ не доказаны."
   ],
   "next_text_algorithm": "Все зарегистрированные Text-входы имеют описанный контракт, полнота игровых назначений полей и физической разметки LANG ещё не доказана",
   "next_map_work": "Писатели сохранённых списков и их обёртки управления описаны. Остаточные назначения полей, данных, хвостов фаз и формулы запаса дальности требуют полного прохода по потребителям.",
@@ -1012,7 +1028,7 @@
     "Music": 0,
     "Action": 96,
     "ThreeD": 23,
-    "Controls": 64
+    "Controls": 47
   },
   "deferred_action_adapters": {
     "report": "Tools/Disasm/Reports/DeferredActionAdaptersVerification.json",
@@ -1273,11 +1289,121 @@
     "assembly_executed": false
   },
   "manual_build_check": {
-    "status": "requested_pending_user_result",
+    "status": "passed_current_sources",
     "task": "Ctrl+B, Builder/Main.asm",
-    "expected_image": "Awakenv02.trd",
-    "expected_size": 655360,
-    "expected_sha256": "55a11de202a5334547e39a6db42c945242a2a53559dc1cf601522219e3463f32",
+    "image": "Awakenv02.trd",
+    "size": 655360,
+    "sha256": "55a11de202a5334547e39a6db42c945242a2a53559dc1cf601522219e3463f32",
+    "checked_at_utc": "2026-11-02T10:15:20Z",
+    "active_allocations": 41,
+    "source_changes_after_build": false,
+    "current_source_assembly_verified": true,
+    "codex_assembler_executed": false,
+    "requested_for_current_sources": false,
+    "fix": "Removed only the Judith Coxx prefix, all other file bytes preserved"
+  },
+  "controls_text_display": {
+    "report": "Tools/Disasm/Reports/ControlsTextDisplayVerification.json",
+    "cases": 13827,
+    "described_fragments": 6,
+    "independent_screen_model": true,
+    "actual_calls_without_stubs": true,
+    "exact_register_model": false,
+    "irq_executed": false,
+    "native_execution": false,
+    "assembly_executed": false
+  },
+  "latest_user_native_observation": {
+    "emulator": "Unreal",
+    "image": "Awakenv02.trd",
+    "observation": "вроде бы работает!",
+    "date": "2026-11-02",
+    "full_gameplay_verified": false,
+    "relates_to_build_before_controls_text_display": true
+  },
+  "controls_bcd_counter": {
+    "report": "Tools/Disasm/Reports/ControlsBcdCounterVerification.json",
+    "cases": 74752,
+    "described_fragments": 3,
+    "gate_period_calls": 8,
+    "overflow_modulus": 100000000,
+    "invalid_bcd_proved": false,
+    "independent_full_flag_model": false,
+    "assembly_executed": false
+  },
+  "controls_marker": {
+    "report": "Tools/Disasm/Reports/ControlsMarkerVerification.json",
+    "original_position_cases": 65536,
+    "physical_records": 8,
+    "typed_bytes": 32,
+    "low_byte_wrap_preserved": true,
+    "overlapping_position_caveat_explicit": true,
+    "assembly_executed": false
+  },
+  "controls_buffer_copy_research": {
+    "composite_calls": 512,
+    "direct_worker_calls": 1728,
+    "pixel_bytes_per_composite_call": 3072,
+    "semantic_source_publication": true,
+    "waiting_for_current_manual_build_result": false,
+    "all_documented_register_outputs_checked": true,
+    "documentation": "Docs/ControlsBufferCopy.md",
+    "assembly_executed": false
+  },
+  "controls_buffer_points": {
+    "report": "Tools/Disasm/Reports/ControlsBufferPointsVerification.json",
+    "cases": 66754,
+    "physical_records": 35,
+    "typed_bytes": 70,
+    "field_order": [
+      "Y",
+      "X"
+    ],
+    "zero_initializers_preserved": true,
+    "generator_orbit": {
+      "seed": 0,
+      "prefix_length": 59,
+      "cycle_length": 387,
+      "repeated_state": 8414,
+      "distinct_next_states": 65282
+    },
+    "assembly_executed": false
+  },
+  "action_bitmap_tables": {
+    "report": "Tools/Disasm/Reports/ActionBitmapTablesClassification.json",
+    "runtime_bytes": 1024,
+    "exact_af": "2062",
+    "exact_alternate_af": "8083",
+    "static_data_added": false,
+    "assembly_executed": false
+  },
+  "controls_division": {
+    "report": "Tools/Disasm/Reports/ControlsDivisionVerification.json",
+    "cases": 521984,
+    "all_fraction_a_b_pairs": true,
+    "zero_divisor_all_words": true,
+    "quotient_overflow_recurrence_explicit": true,
+    "exact_registers_and_flags": true,
+    "assembly_executed": false
+  },
+  "last_user_confirmed_build": {
+    "checked_at_utc": "2026-11-02T09:16:16Z",
+    "errors": 0,
+    "warnings": 0,
+    "compiled_lines": 114539,
+    "work_seconds": 1.468,
+    "full_image_byte_identical": true,
+    "size": 655360,
+    "source_changes_after_build": true,
+    "codex_assembler_executed": false
+  },
+  "last_verified_build_artifact": {
+    "checked_at_utc": "2026-11-02T10:15:20Z",
+    "sha256": "55a11de202a5334547e39a6db42c945242a2a53559dc1cf601522219e3463f32",
+    "size": 655360,
+    "active_allocations": 41,
+    "includes_buffer_points_and_division": true,
+    "first_line_prefix_removed": true,
     "codex_assembler_executed": false
   }
 }

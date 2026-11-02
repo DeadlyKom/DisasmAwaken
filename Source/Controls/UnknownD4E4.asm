@@ -20,7 +20,7 @@ Entry:          CALL @Controls.UnknownD504.Entry
                 LD A, #80
                 ADD A, D
                 SUB B
-                CALL @Controls.UnknownD53C.Entry
+                CALL @Controls.BuildRightSpanMask.Entry
                 LD A, L
                 AND #E0
                 OR #01

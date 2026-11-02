@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "original_calls": 512,
+  "pixel_bytes_per_call": 3072,
+  "viewport_width_pixels": 256,
+  "viewport_height_pixels": 96,
+  "screen_coordinates_independently_checked": true,
+  "all_uniform_byte_patterns": true,
+  "source_pixels_as_flags_executed": true,
+  "every_other_ram_byte_checked": true,
+  "exact_pixel_write_set": true,
+  "all_calls_executed_without_stubs": true,
+  "saved_sp_and_loop_operands_checked": true,
+  "exact_main_and_alternate_flags_checked": true,
+  "all_documented_register_outputs_checked": true,
+  "standalone_c882_arbitrary_inputs_proved": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

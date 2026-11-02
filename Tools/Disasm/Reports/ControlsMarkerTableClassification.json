@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "typed_bytes": 32,
+  "physical_records": 8,
+  "fields_per_record": 4,
+  "physical_bytes_preserved": true,
+  "assembly_executed": false
+}

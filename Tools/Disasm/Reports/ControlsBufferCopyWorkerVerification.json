@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "direct_worker_calls": 1728,
+  "all_screen_thirds": true,
+  "all_nonempty_character_row_intervals": true,
+  "source_page_profiles": 16,
+  "exact_screen_and_other_ram_checked": true,
+  "exact_pixel_write_set": true,
+  "original_instructions": true,
+  "no_call_stubs": true,
+  "all_documented_register_outputs_checked": true,
+  "exact_main_and_alternate_flags_checked": true,
+  "contract_source_page_aligned": true,
+  "contract_destination_within_one_screen_third": true,
+  "zero_count_proved": false,
+  "crossing_screen_third_proved": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

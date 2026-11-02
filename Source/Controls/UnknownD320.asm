@@ -24,12 +24,12 @@ Entry:          LD BC, (#D183)
                 EXX
                 LD A, B
                 SUB D
-                CALL @Controls.UnknownD515.Entry
+                CALL @Controls.BuildLeftSpanMask.Entry
                 LD A, (#D183)
                 LD C, A
                 LD A, (#D184)
                 ADD A, D
-                JP @Controls.UnknownD53C.Entry
+                JP @Controls.BuildRightSpanMask.Entry
 
 
 PointD340:      LD A, B
@@ -177,7 +177,7 @@ PointD411:      EX AF, AF'
 
 
                 LD C, #5F
-PointD43A:      CALL @Controls.UnknownD515.Entry
+PointD43A:      CALL @Controls.BuildLeftSpanMask.Entry
                 LD A, (#D18C)
                 AND A
                 LD A, E
@@ -208,7 +208,7 @@ PointD459:      LD A, (#D185)
 
 
                 LD C, #5F
-PointD46A:      CALL @Controls.UnknownD53C.Entry
+PointD46A:      CALL @Controls.BuildRightSpanMask.Entry
                 LD A, L
                 AND #E0
                 OR #01
@@ -246,14 +246,14 @@ PointD4A1:      LD (#D183), A
                 LD L, A
                 LD A, (#D184)
                 SUB L
-                CALL @Controls.UnknownD515.Entry
+                CALL @Controls.BuildLeftSpanMask.Entry
                 LD A, (#D183)
                 LD C, A
                 LD A, (#D185)
                 LD L, A
                 LD A, (#D184)
                 ADD A, L
-                CALL @Controls.UnknownD53C.Entry
+                CALL @Controls.BuildRightSpanMask.Entry
                 LD A, (#D17F)
                 BIT 1, A
                 CALL NZ, @Controls.UnknownD1DF.Entry                            ; вызов, если флаг Z сброшен

@@ -818,4 +818,17 @@ Runtime         equ #10                                                         
 Controls        equ #11                                                         ; ROM 1 и банк 1 с очередью Controls
                 endmodule
 
+
+                ; Размер таблицы, исходные ограничения координат и страница адресов строк
+                module BufferPointConst
+ByteCount       equ #46                                                         ; 35 физических записей по два байта
+MinCoordinate   equ #01                                                         ; нулевая координата заменяется шагом EdgeStep
+EdgeStep        equ #02                                                         ; шаг коррекции нуля и правой границы X
+XUpperLimit     equ #FE                                                         ; X от этого значения уменьшается на два
+YIndexMask      equ #7F                                                         ; семибитовый индекс Y, это числовое поле
+YUpperLimit     equ #5F                                                         ; Y от этого значения уменьшается на YFold
+YFold           equ #40                                                         ; исходное смещение больших значений Y
+LineHighPage    equ #94                                                         ; старший байт страницы таблицы HIGH адресов строк
+                endmodule
+
                 endif

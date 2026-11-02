@@ -24,8 +24,8 @@ PointA867:      CALL @Action.Unknown7B58.Entry
                 CALL #D10A
                 LD A, #11
                 CALL @Action.SelectMemoryPage.Entry
-                CALL #CAE3
-                CALL #F10D
+                CALL @Controls.XorBufferPoints.Entry
+                CALL @Controls.TickBcdCounter.Entry
                 LD A, #10
                 CALL @Action.SelectMemoryPage.Entry
                 CALL @Action.UnknownE020.Entry
@@ -280,12 +280,12 @@ PointAA96:      LD (#5A1A), A
                 CALL @Action.SelectMemoryPage.Entry
                 EX AF, AF'
                 CALL NZ, #E97A                                                  ; вызов, если флаг Z сброшен
-                CALL #ECA2
-                CALL #F094
-                CALL #C870
-                CALL #ECA2
-                CALL #ECA2
-                CALL #ECA2
+                CALL @Controls.ConsumeTextQueue.Entry
+                CALL @Controls.XorBufferMarker.Entry
+                CALL @Controls.CopyViewportToScreen.Entry
+                CALL @Controls.ConsumeTextQueue.Entry
+                CALL @Controls.ConsumeTextQueue.Entry
+                CALL @Controls.ConsumeTextQueue.Entry
                 CALL #E021
                 CALL #E291
                 LD A, #10

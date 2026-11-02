@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "cases_by_kind": {
+    "initialize": 1,
+    "glyph": 7168,
+    "shared_rows": 4096,
+    "decimal": 1536,
+    "consumer_number": 512,
+    "consumer_string": 512,
+    "consumer_free": 2
+  },
+  "total_cases": 13827,
+  "original_instructions": true,
+  "called_procedures_executed": true,
+  "calls_stubbed": false,
+  "independent_screen_and_queue_model": true,
+  "every_non_stack_ram_byte_compared": true,
+  "saved_scroll_sp_operand_excluded": true,
+  "exact_register_contract_proved": false,
+  "all_character_bytes": true,
+  "font_out_of_range_bytes_preserved": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

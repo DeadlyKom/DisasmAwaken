@@ -35,7 +35,7 @@ Point606C:      PUSH BC
                 DI
                 LD A, #11
                 CALL @Action.SelectMemoryPage.Entry
-                CALL #C870
+                CALL @Controls.CopyViewportToScreen.Entry
                 CALL #ECA2
                 LD A, #10
                 CALL @Action.SelectMemoryPage.Entry

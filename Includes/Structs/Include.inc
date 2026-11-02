@@ -1287,4 +1287,29 @@ CallerReturn    dw #0000                                                        
                 ends
                 assert FActionTextQueueFrame == 8
 
+
+                ; Четыре исходные XOR-маски одной из восьми фаз маркера
+                struct FMarkerPhaseMasks
+Vertical        db #00                                                          ; маска четырёх верхних и четырёх нижних строк
+CentralLeft     db #00                                                          ; маска левого байта центрального ряда
+CentralMiddle   db #00                                                          ; маска среднего байта центрального ряда
+CentralRight    db #00                                                          ; маска правого байта центрального ряда
+                ends
+                assert FMarkerPhaseMasks == 4
+
+
+                ; Физическая запись координат линейного буфера, Y перед X
+                struct FBufferPoint
+Y               db #00                                                          ; вертикальная координата, первый физический байт
+X               db #00                                                          ; горизонтальная координата, второй физический байт
+                ends
+                assert FBufferPoint == 2
+
+
+                ; Физический знаковый отсчёт синусоиды ACTION
+                struct FFixedSineValue
+Value           db #00                                                          ; синус в дополнительном коде, масштаб 128
+                ends
+                assert FFixedSineValue == 1
+
                 endif

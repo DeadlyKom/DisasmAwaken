@@ -16,7 +16,7 @@
 ; -----------------------------------------
 Entry:          LD A, #11
                 CALL @Action.SelectMemoryPage.Entry
-                CALL #CAB3
+                CALL @Controls.InitializeBufferPoints.Entry
                 LD A, #10
                 CALL @Action.SelectMemoryPage.Entry
                 RET

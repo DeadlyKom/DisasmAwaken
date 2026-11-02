@@ -151,6 +151,8 @@ def main():
                "| FTextQueueItem | #02 | 16 физических записей банка 1 и отдельный конечный маркер |",
                "| FTextQueueInsertFrame | #08 | динамическая рамка HL, BC, AF и внешнего возврата |",
                "| FActionTextQueueFrame | #08 | собственная рамка межбанковой обёртки, SavedHL, SavedBC, SavedAF, возврат |",
+               "| FMarkerPhaseMasks | #04 | восемь физических записей фаз XOR-маркера, Vertical и три Central-поля, см. [ControlsMarker](ControlsMarker.md) |",
+               "| FBufferPoint | #02 | 35 физических записей Y,X в банке 1, см. [ControlsBufferPoints](ControlsBufferPoints.md) |",
                "| FVisualEffect | #12 | запись эффекта, свободное состояние +7 |",
                "| FInterfaceItem | #10 | прямоугольник, флаги и два обработчика интерфейса |",
                "| FProjectedPoint | #05 | X, Y и составной код отсечения вершины |",

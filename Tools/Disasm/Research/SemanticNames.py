@@ -135,6 +135,15 @@ def name_operands(region, function_address, operation):
     operation = control_panel_group_name_operands(region, function_address, operation)
     operation = ship_periodic_code_name_operands(region, function_address, operation)
     operation = ship_preview_callback_name_operands(region, function_address, operation)
+    operation = controls_point_respawn_name_operands(region, function_address, operation)
+    operation = controls_span_masks_name_operands(region, function_address, operation)
+    operation = controls_division_name_operands(region, function_address, operation)
+    operation = action_bitmap_name_operands(region, function_address, operation)
+    operation = controls_buffer_points_name_operands(region, function_address, operation)
+    operation = controls_buffer_copy_name_operands(region, function_address, operation)
+    operation = controls_marker_name_operands(region, function_address, operation)
+    operation = controls_bcd_counter_name_operands(region, function_address, operation)
+    operation = controls_text_display_name_operands(region, function_address, operation)
     operation = action_text_queue_name_operands(region, function_address, operation)
     operation = controls_text_queue_name_operands(region, function_address, operation)
     operation = music_initialization_name_operands(region, function_address, operation)
@@ -1419,3 +1428,39 @@ DOCUMENTS.update({("Controls", a): ("TextQueueProducer", "производите
 
 from ActionTextQueueFacts import name_operands as action_text_queue_name_operands
 DOCUMENTS.update({("Action", a): ("ActionTextQueueCalls", "межбанковые вызовы очереди") for a in (0x6000, 0x6040, 0x6054)})
+
+from ControlsTextDisplayFacts import LABELS as CONTROLS_TEXT_DISPLAY_LABELS, name_operands as controls_text_display_name_operands
+LABELS.update(CONTROLS_TEXT_DISPLAY_LABELS)
+DOCUMENTS.update({("Controls", a): ("ControlsTextDisplay", "вывод текстового окна") for a in (0xEC0E, 0xECA2, 0xECF3, 0xED28, 0xEFC4, 0xEFF1)})
+
+from ControlsBcdCounterFacts import LABELS as CONTROLS_BCD_COUNTER_LABELS, name_operands as controls_bcd_counter_name_operands
+LABELS.update(CONTROLS_BCD_COUNTER_LABELS)
+DOCUMENTS.update({("Controls", a): ("ControlsBcdCounter", "алгоритм и проверка") for a in (61709, 61762, 61832)})
+
+from ControlsMarkerFacts import LABELS as CONTROLS_MARKER_LABELS, name_operands as controls_marker_name_operands
+LABELS.update(CONTROLS_MARKER_LABELS)
+DOCUMENTS.update({("Controls", a): ("ControlsMarker", "алгоритм и проверка") for a in (61588,)})
+
+from ControlsBufferCopyFacts import LABELS as CONTROLS_BUFFER_COPY_LABELS, name_operands as controls_buffer_copy_name_operands
+LABELS.update(CONTROLS_BUFFER_COPY_LABELS)
+DOCUMENTS.update({("Controls", a): ("ControlsBufferCopy", "алгоритм и проверка") for a in (51312, 51330)})
+
+from ControlsBufferPointsFacts import LABELS as CONTROLS_BUFFER_POINTS_LABELS, name_operands as controls_buffer_points_name_operands
+LABELS.update(CONTROLS_BUFFER_POINTS_LABELS)
+DOCUMENTS.update({("Controls", a): ("ControlsBufferPoints", "алгоритм и проверка") for a in (51853, 51891, 51939)})
+
+from ActionBitmapTablesFacts import LABELS as ACTION_BITMAP_LABELS, name_operands as action_bitmap_name_operands
+LABELS.update(ACTION_BITMAP_LABELS)
+DOCUMENTS[("ActionBoot",0x43CF)] = ("ControlsBufferPoints","таблицы и XOR-точки")
+
+from ControlsDivisionFacts import LABELS as CONTROLS_DIVISION_LABELS, name_operands as controls_division_name_operands
+LABELS.update(CONTROLS_DIVISION_LABELS)
+DOCUMENTS.update({("Controls", a): ("ControlsDivision", "алгоритм и проверка") for a in (53605, 53607)})
+
+from ControlsSpanMasksFacts import LABELS as CONTROLS_SPAN_MASKS_LABELS, name_operands as controls_span_masks_name_operands
+LABELS.update(CONTROLS_SPAN_MASKS_LABELS)
+DOCUMENTS.update({("Controls", a): ("ControlsSpanMasks", "алгоритм и проверка") for a in (54549, 54588)})
+
+from ControlsPointRespawnFacts import LABELS as CONTROLS_POINT_RESPAWN_LABELS, name_operands as controls_point_respawn_name_operands
+LABELS.update(CONTROLS_POINT_RESPAWN_LABELS)
+DOCUMENTS.update({("Controls", a): ("ControlsPointRespawn", "алгоритм и проверка") for a in (52758, 52829)})

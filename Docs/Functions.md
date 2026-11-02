@@ -24,7 +24,7 @@
 | Action | 179 | 83 | [Факты](FunctionDetails/Action.md) |
 | ThreeD | 98 | 75 | [Факты](FunctionDetails/ThreeD.md) |
 | Voxel | 9 | 9 | [Факты](FunctionDetails/Voxel.md) |
-| Controls | 67 | 3 | [Факты](FunctionDetails/Controls.md) |
+| Controls | 68 | 24 | [Факты](FunctionDetails/Controls.md) |
 | Final | 9 | 9 | [Факты](FunctionDetails/Final.md) |
 | FinalTemplates | 2 | 2 | [Факты](FunctionDetails/FinalTemplates.md) |
 
@@ -950,21 +950,22 @@
 | #EC7F | [Voxel.ClipSprite](../Source/Voxel/ClipSprite.asm) | Отсечение прямоугольника по горизонтали 64 и вертикали 24 с расчётом краевых смещений |
 | #F931 | [Voxel.Multiply7BitWord](../Source/Voxel/Multiply7BitWord.asm) | Умножение младших семи битов A на BC с результатом HL modulo #10000 |
 | #F957 | [Voxel.Divide7BitFixed](../Source/Voxel/Divide7BitFixed.asm) | Деление младших семи битов A на E с восемью дробными битами, подтверждённый делитель 1..128 |
-| #C870 | [Controls.UnknownC870](../Source/Controls/UnknownC870.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #C882 | [Controls.UnknownC882](../Source/Controls/UnknownC882.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #CA8D | [Controls.UnknownCA8D](../Source/Controls/UnknownCA8D.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #CAB3 | [Controls.UnknownCAB3](../Source/Controls/UnknownCAB3.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #CAE3 | [Controls.UnknownCAE3](../Source/Controls/UnknownCAE3.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #C870 | [Controls.CopyViewportToScreen](../Source/Controls/CopyViewportToScreen.asm) | Перенос линейного растра 256 на 96 пикселей в верхнюю половину экрана |
+| #C882 | [Controls.CopyScreenRows](../Source/Controls/CopyScreenRows.asm) | Стековый перенос страниц линейного растра в символьные строки экрана |
+| #CA8D | [Controls.NextBufferRandom](../Source/Controls/NextBufferRandom.asm) | Получение байта из изменяемого 16-битового состояния генератора |
+| #CAB3 | [Controls.InitializeBufferPoints](../Source/Controls/InitializeBufferPoints.asm) | Подготовка 35 координат Y,X с исходным ограничением диапазонов |
+| #CAE3 | [Controls.XorBufferPoints](../Source/Controls/XorBufferPoints.asm) | Наложение 35 точек на линейный буфер через четыре таблицы адресации |
 | #CB00 | [Controls.UnknownCB00](../Source/Controls/UnknownCB00.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #CE16 | [Controls.UnknownCE16](../Source/Controls/UnknownCE16.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #CE16 | [Controls.RespawnPointIndexPos](../Source/Controls/RespawnPointIndexPos.asm) | Возврат точки с чередованием сторон для неотрицательного индекса управляющей таблицы |
+| #CE5D | [Controls.RespawnPointIndexNeg](../Source/Controls/RespawnPointIndexNeg.asm) | Возврат точки с противоположным чередованием сторон для отрицательного индекса таблицы |
 | #CEA4 | [Controls.UnknownCEA4](../Source/Controls/UnknownCEA4.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #CECF | [Controls.UnknownCECF](../Source/Controls/UnknownCECF.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #CEFA | [Controls.UnknownCEFA](../Source/Controls/UnknownCEFA.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #CF0B | [Controls.UnknownCF0B](../Source/Controls/UnknownCF0B.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #D0CA | [Controls.UnknownD0CA](../Source/Controls/UnknownD0CA.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #D10A | [Controls.UnknownD10A](../Source/Controls/UnknownD10A.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #D165 | [Controls.UnknownD165](../Source/Controls/UnknownD165.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #D167 | [Controls.UnknownD167](../Source/Controls/UnknownD167.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #D165 | [Controls.DivideByteFraction](../Source/Controls/DivideByteFraction.asm) | Подготовка делимого A*256 и последовательное исполнение делителя |
+| #D167 | [Controls.DivideWordByByte](../Source/Controls/DivideWordByByte.asm) | Восьмишаговое деление слова A:E на B с частным в D и остатком в A |
 | #D18D | [Controls.UnknownD18D](../Source/Controls/UnknownD18D.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #D1A2 | [Controls.UnknownD1A2](../Source/Controls/UnknownD1A2.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #D1B6 | [Controls.UnknownD1B6](../Source/Controls/UnknownD1B6.asm) | Unknown, назначение этого фрагмента ещё не установлено |
@@ -981,8 +982,8 @@
 | #D4CB | [Controls.UnknownD4CB](../Source/Controls/UnknownD4CB.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #D4E4 | [Controls.UnknownD4E4](../Source/Controls/UnknownD4E4.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #D504 | [Controls.UnknownD504](../Source/Controls/UnknownD504.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #D515 | [Controls.UnknownD515](../Source/Controls/UnknownD515.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #D53C | [Controls.UnknownD53C](../Source/Controls/UnknownD53C.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #D515 | [Controls.BuildLeftSpanMask](../Source/Controls/BuildLeftSpanMask.asm) | Вычисление адреса пиксельного байта и маски от старшего бита до X включительно |
+| #D53C | [Controls.BuildRightSpanMask](../Source/Controls/BuildRightSpanMask.asm) | Вычисление адреса пиксельного байта и маски от X до младшего бита включительно |
 | #D56C | [Controls.UnknownD56C](../Source/Controls/UnknownD56C.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #D57B | [Controls.UnknownD57B](../Source/Controls/UnknownD57B.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #D609 | [Controls.UnknownD609](../Source/Controls/UnknownD609.asm) | Unknown, назначение этого фрагмента ещё не установлено |
@@ -1005,18 +1006,18 @@
 | #E291 | [Controls.UnknownE291](../Source/Controls/UnknownE291.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #E8FD | [Controls.UnknownE8FD](../Source/Controls/UnknownE8FD.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #E97A | [Controls.UnknownE97A](../Source/Controls/UnknownE97A.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #EC0E | [Controls.UnknownEC0E](../Source/Controls/UnknownEC0E.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #EC0E | [Controls.InitializeTextWindow](../Source/Controls/InitializeTextWindow.asm) | Сброс курсоров очереди и настройка тридцати строк стековой прокрутки |
 | #EC56 | [Controls.QueueNumber](../Source/Controls/QueueNumber.asm) | Подготовка числовой записи типа 2 из A и продолжение в производителе текстовой очереди |
 | #EC59 | [Controls.QueueTextItem](../Source/Controls/QueueTextItem.asm) | Ограниченный поиск свободной записи очереди и сохранение числа либо указателя строки |
-| #ECA2 | [Controls.UnknownECA2](../Source/Controls/UnknownECA2.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #ECF3 | [Controls.UnknownECF3](../Source/Controls/UnknownECF3.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #ED28 | [Controls.UnknownED28](../Source/Controls/UnknownED28.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #EFC4 | [Controls.UnknownEFC4](../Source/Controls/UnknownEFC4.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #EFF1 | [Controls.UnknownEFF1](../Source/Controls/UnknownEFF1.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #F094 | [Controls.UnknownF094](../Source/Controls/UnknownF094.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #F10D | [Controls.UnknownF10D](../Source/Controls/UnknownF10D.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #F142 | [Controls.UnknownF142](../Source/Controls/UnknownF142.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #F188 | [Controls.UnknownF188](../Source/Controls/UnknownF188.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #ECA2 | [Controls.ConsumeTextQueue](../Source/Controls/ConsumeTextQueue.asm) | Вывод очередного числа либо символа активной строки текстовой очереди |
+| #ECF3 | [Controls.PrintByteDecimal](../Source/Controls/PrintByteDecimal.asm) | Десятичный вывод байта с минимальной шириной два знака |
+| #ED28 | [Controls.ScrollTextWindow](../Source/Controls/ScrollTextWindow.asm) | Перенос пяти рядов текста вверх через SP и очистка нижнего ряда |
+| #EFC4 | [Controls.PrintTextGlyph](../Source/Controls/PrintTextGlyph.asm) | Подготовка вывода знака 4 на 6 пикселей с проверкой правой границы |
+| #EFF1 | [Controls.DrawGlyphRows](../Source/Controls/DrawGlyphRows.asm) | Слияние шести строк упакованного знака с выбранной тетрадой экрана |
+| #F094 | [Controls.XorBufferMarker](../Source/Controls/XorBufferMarker.asm) | Наложение одиннадцати байтов маркера на линейный буфер через XOR |
+| #F10D | [Controls.TickBcdCounter](../Source/Controls/TickBcdCounter.asm) | Вращение восьмитактового делителя и инкремент четырёх BCD-пар с частичным выводом |
+| #F142 | [Controls.DrawBcdCounter](../Source/Controls/DrawBcdCounter.asm) | Вывод младшей BCD-пары и старших пар, выбранных цепочкой переносов |
+| #F188 | [Controls.DrawCounterNibble](../Source/Controls/DrawCounterNibble.asm) | Рисование младшей тетрады через общую пару знаков с сохранением основных регистров |
 | #6000 | [Final.InitializeFinal](../Source/Final/InitializeFinal.asm) | Подготовка трёх экранных банков, таблицы IM 2 и финальной анимации |
 | #6123 | [Final.ReadSpeedKeys](../Source/Final/ReadSpeedKeys.asm) | Изменение счётчика задержки клавишами Q и A с границами 0..100 |
 | #6148 | [Final.HaltFinal](../Source/Final/HaltFinal.asm) | Выбор страниц и режима IM 0, очистка атрибутов теневого экрана и остановка через DI и HALT |

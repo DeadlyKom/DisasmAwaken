@@ -4,11 +4,11 @@
 Список непосредственных чтений и записей не включает косвенные обращения
 через HL, DE, BC, IX/IY и эффекты вызываемых подпрограмм.
 
-## UnknownC870
+## CopyViewportToScreen
 
-[Controls.UnknownC870](../../Source/Controls/UnknownC870.asm)
+[Controls.CopyViewportToScreen](../../Source/Controls/CopyViewportToScreen.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+Перенос линейного растра 256 на 96 пикселей в верхнюю половину экрана.
 
 Вход `#C870`, запись 22, смещения `#0870..#0881`.
 
@@ -18,11 +18,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownC882
+[Алгоритм, контракты и независимая модель](../ControlsBufferCopy.md).
 
-[Controls.UnknownC882](../../Source/Controls/UnknownC882.asm)
+## CopyScreenRows
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Controls.CopyScreenRows](../../Source/Controls/CopyScreenRows.asm)
+
+Стековый перенос страниц линейного растра в символьные строки экрана.
 
 Вход `#C882`, запись 22, смещения `#0882..#0A8C`.
 
@@ -32,11 +34,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownCA8D
+[Алгоритм, контракты и независимая модель](../ControlsBufferCopy.md).
 
-[Controls.UnknownCA8D](../../Source/Controls/UnknownCA8D.asm)
+## NextBufferRandom
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Controls.NextBufferRandom](../../Source/Controls/NextBufferRandom.asm)
+
+Получение байта из изменяемого 16-битового состояния генератора.
 
 Вход `#CA8D`, запись 22, смещения `#0A8D..#0AB2`.
 
@@ -46,11 +50,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownCAB3
+[Алгоритм, контракты и независимая модель](../ControlsBufferPoints.md).
 
-[Controls.UnknownCAB3](../../Source/Controls/UnknownCAB3.asm)
+## InitializeBufferPoints
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Controls.InitializeBufferPoints](../../Source/Controls/InitializeBufferPoints.asm)
+
+Подготовка 35 координат Y,X с исходным ограничением диапазонов.
 
 Вход `#CAB3`, запись 22, смещения `#0AB3..#0AE2`.
 
@@ -60,11 +66,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownCAE3
+[Алгоритм, контракты и независимая модель](../ControlsBufferPoints.md).
 
-[Controls.UnknownCAE3](../../Source/Controls/UnknownCAE3.asm)
+## XorBufferPoints
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Controls.XorBufferPoints](../../Source/Controls/XorBufferPoints.asm)
+
+Наложение 35 точек на линейный буфер через четыре таблицы адресации.
 
 Вход `#CAE3`, запись 22, смещения `#0AE3..#0AFF`.
 
@@ -73,6 +81,8 @@ Unknown, назначение этого фрагмента ещё не уста
 - Непосредственные записи: нет непосредственных обращений.
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
+
+[Алгоритм, контракты и независимая модель](../ControlsBufferPoints.md).
 
 ## UnknownCB00
 
@@ -88,11 +98,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownCE16
+## RespawnPointIndexPos
 
-[Controls.UnknownCE16](../../Source/Controls/UnknownCE16.asm)
+[Controls.RespawnPointIndexPos](../../Source/Controls/RespawnPointIndexPos.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+Возврат точки с чередованием сторон для неотрицательного индекса управляющей таблицы.
 
 Вход `#CE16`, запись 22, смещения `#0E16..#0E5C`.
 
@@ -101,6 +111,24 @@ Unknown, назначение этого фрагмента ещё не уста
 - Непосредственные записи: `#CE17`.
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
+
+[Алгоритм, контракты и независимая модель](../ControlsPointRespawn.md).
+
+## RespawnPointIndexNeg
+
+[Controls.RespawnPointIndexNeg](../../Source/Controls/RespawnPointIndexNeg.asm)
+
+Возврат точки с противоположным чередованием сторон для отрицательного индекса таблицы.
+
+Вход `#CE5D`, запись 22, смещения `#0E5D..#0EA3`.
+
+- Прямые вызовы: нет непосредственных обращений.
+- Непосредственные чтения: R.
+- Непосредственные записи: `#CE5E`.
+- Ввод и вывод: нет.
+- Косвенное завершение: нет в этом фрагменте.
+
+[Алгоритм, контракты и независимая модель](../ControlsPointRespawn.md).
 
 ## UnknownCEA4
 
@@ -186,11 +214,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownD165
+## DivideByteFraction
 
-[Controls.UnknownD165](../../Source/Controls/UnknownD165.asm)
+[Controls.DivideByteFraction](../../Source/Controls/DivideByteFraction.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+Подготовка делимого A*256 и последовательное исполнение делителя.
 
 Вход `#D165`, запись 22, смещения `#1165..#1166`.
 
@@ -200,11 +228,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownD167
+[Алгоритм, контракты и независимая модель](../ControlsDivision.md).
 
-[Controls.UnknownD167](../../Source/Controls/UnknownD167.asm)
+## DivideWordByByte
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Controls.DivideWordByByte](../../Source/Controls/DivideWordByByte.asm)
+
+Восьмишаговое деление слова A:E на B с частным в D и остатком в A.
 
 Вход `#D167`, запись 22, смещения `#1167..#117C`.
 
@@ -213,6 +243,8 @@ Unknown, назначение этого фрагмента ещё не уста
 - Непосредственные записи: нет непосредственных обращений.
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
+
+[Алгоритм, контракты и независимая модель](../ControlsDivision.md).
 
 ## UnknownD18D
 
@@ -438,11 +470,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownD515
+## BuildLeftSpanMask
 
-[Controls.UnknownD515](../../Source/Controls/UnknownD515.asm)
+[Controls.BuildLeftSpanMask](../../Source/Controls/BuildLeftSpanMask.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+Вычисление адреса пиксельного байта и маски от старшего бита до X включительно.
 
 Вход `#D515`, запись 22, смещения `#1515..#153B`.
 
@@ -452,11 +484,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownD53C
+[Алгоритм, контракты и независимая модель](../ControlsSpanMasks.md).
 
-[Controls.UnknownD53C](../../Source/Controls/UnknownD53C.asm)
+## BuildRightSpanMask
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Controls.BuildRightSpanMask](../../Source/Controls/BuildRightSpanMask.asm)
+
+Вычисление адреса пиксельного байта и маски от X до младшего бита включительно.
 
 Вход `#D53C`, запись 22, смещения `#153C..#156B`.
 
@@ -465,6 +499,8 @@ Unknown, назначение этого фрагмента ещё не уста
 - Непосредственные записи: `#D18A`.
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
+
+[Алгоритм, контракты и независимая модель](../ControlsSpanMasks.md).
 
 ## UnknownD56C
 
@@ -774,11 +810,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownEC0E
+## InitializeTextWindow
 
-[Controls.UnknownEC0E](../../Source/Controls/UnknownEC0E.asm)
+[Controls.InitializeTextWindow](../../Source/Controls/InitializeTextWindow.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+Сброс курсоров очереди и настройка тридцати строк стековой прокрутки.
 
 Вход `#EC0E`, запись 23, смещения `#1130..#1177`.
 
@@ -787,6 +823,8 @@ Unknown, назначение этого фрагмента ещё не уста
 - Непосредственные записи: `#EC5D`, `#ECA3`, `#ECAA`.
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
+
+[Алгоритм, контракты и независимая модель](../ControlsTextDisplay.md).
 
 ## QueueNumber
 
@@ -820,11 +858,11 @@ Unknown, назначение этого фрагмента ещё не уста
 
 [Алгоритм, рамка стека и условия отказа](../TextQueueProducer.md).
 
-## UnknownECA2
+## ConsumeTextQueue
 
-[Controls.UnknownECA2](../../Source/Controls/UnknownECA2.asm)
+[Controls.ConsumeTextQueue](../../Source/Controls/ConsumeTextQueue.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+Вывод очередного числа либо символа активной строки текстовой очереди.
 
 Вход `#ECA2`, запись 23, смещения `#11C4..#1214`.
 
@@ -834,11 +872,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownECF3
+[Алгоритм, контракты и независимая модель](../ControlsTextDisplay.md).
 
-[Controls.UnknownECF3](../../Source/Controls/UnknownECF3.asm)
+## PrintByteDecimal
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Controls.PrintByteDecimal](../../Source/Controls/PrintByteDecimal.asm)
+
+Десятичный вывод байта с минимальной шириной два знака.
 
 Вход `#ECF3`, запись 23, смещения `#1215..#1249`.
 
@@ -848,11 +888,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownED28
+[Алгоритм, контракты и независимая модель](../ControlsTextDisplay.md).
 
-[Controls.UnknownED28](../../Source/Controls/UnknownED28.asm)
+## ScrollTextWindow
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Controls.ScrollTextWindow](../../Source/Controls/ScrollTextWindow.asm)
+
+Перенос пяти рядов текста вверх через SP и очистка нижнего ряда.
 
 Вход `#ED28`, запись 23, смещения `#124A..#14E5`.
 
@@ -862,11 +904,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownEFC4
+[Алгоритм, контракты и независимая модель](../ControlsTextDisplay.md).
 
-[Controls.UnknownEFC4](../../Source/Controls/UnknownEFC4.asm)
+## PrintTextGlyph
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Controls.PrintTextGlyph](../../Source/Controls/PrintTextGlyph.asm)
+
+Подготовка вывода знака 4 на 6 пикселей с проверкой правой границы.
 
 Вход `#EFC4`, запись 23, смещения `#14E6..#1512`.
 
@@ -876,11 +920,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownEFF1
+[Алгоритм, контракты и независимая модель](../ControlsTextDisplay.md).
 
-[Controls.UnknownEFF1](../../Source/Controls/UnknownEFF1.asm)
+## DrawGlyphRows
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Controls.DrawGlyphRows](../../Source/Controls/DrawGlyphRows.asm)
+
+Слияние шести строк упакованного знака с выбранной тетрадой экрана.
 
 Вход `#EFF1`, запись 23, смещения `#1513..#15B5`.
 
@@ -890,11 +936,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownF094
+[Алгоритм, контракты и независимая модель](../ControlsTextDisplay.md).
 
-[Controls.UnknownF094](../../Source/Controls/UnknownF094.asm)
+## XorBufferMarker
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Controls.XorBufferMarker](../../Source/Controls/XorBufferMarker.asm)
+
+Наложение одиннадцати байтов маркера на линейный буфер через XOR.
 
 Вход `#F094`, запись 23, смещения `#15B6..#160E`.
 
@@ -904,11 +952,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownF10D
+[Алгоритм, контракты и независимая модель](../ControlsMarker.md).
 
-[Controls.UnknownF10D](../../Source/Controls/UnknownF10D.asm)
+## TickBcdCounter
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Controls.TickBcdCounter](../../Source/Controls/TickBcdCounter.asm)
+
+Вращение восьмитактового делителя и инкремент четырёх BCD-пар с частичным выводом.
 
 Вход `#F10D`, запись 23, смещения `#162F..#1663`.
 
@@ -918,11 +968,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownF142
+[Алгоритм, контракты и независимая модель](../ControlsBcdCounter.md).
 
-[Controls.UnknownF142](../../Source/Controls/UnknownF142.asm)
+## DrawBcdCounter
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Controls.DrawBcdCounter](../../Source/Controls/DrawBcdCounter.asm)
+
+Вывод младшей BCD-пары и старших пар, выбранных цепочкой переносов.
 
 Вход `#F142`, запись 23, смещения `#1664..#16A9`.
 
@@ -932,11 +984,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownF188
+[Алгоритм, контракты и независимая модель](../ControlsBcdCounter.md).
 
-[Controls.UnknownF188](../../Source/Controls/UnknownF188.asm)
+## DrawCounterNibble
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Controls.DrawCounterNibble](../../Source/Controls/DrawCounterNibble.asm)
+
+Рисование младшей тетрады через общую пару знаков с сохранением основных регистров.
 
 Вход `#F188`, запись 23, смещения `#16AA..#16CC`.
 
@@ -945,3 +999,5 @@ Unknown, назначение этого фрагмента ещё не уста
 - Непосредственные записи: нет непосредственных обращений.
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
+
+[Алгоритм, контракты и независимая модель](../ControlsBcdCounter.md).

@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "total_cases": 392192,
+  "cases_by_entry": {
+    "CE16": 196096,
+    "CE5D": 196096
+  },
+  "all_nonzero_steps_and_refresh_values": true,
+  "both_standard_phases": true,
+  "all_raw_phase_and_offset_bytes": true,
+  "exact_registers_flags_refresh_and_memory": true,
+  "refresh_from_independent_m1_formula": true,
+  "zero_step_nonprogress_cases": 4,
+  "dynamic_call_reachability": [
+    {
+      "rotation": 1,
+      "entry": 52829
+    },
+    {
+      "rotation": 255,
+      "entry": 52758
+    }
+  ],
+  "hidden_code_bytes": 71,
+  "lookup_coefficients_are_test_fixture": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

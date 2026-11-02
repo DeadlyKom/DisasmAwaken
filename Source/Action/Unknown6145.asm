@@ -29,7 +29,7 @@ Entry:          LD A, #10
                 LD HL, (#9BBF)
                 LD DE, (#9BBD)
                 LD B, #FF
-                JP #F142
+                JP @Controls.DrawBcdCounter.Entry
 
 
                 endmodule

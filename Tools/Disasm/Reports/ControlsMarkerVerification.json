@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "original_position_cases": 65536,
+  "reference_double_xor_cases": 9363,
+  "every_memory_byte_and_write_checked": true,
+  "exact_write_set": true,
+  "all_eight_mask_phases": true,
+  "low_byte_wrap_preserved": true,
+  "original_instructions": true,
+  "exact_primary_outputs_except_af": true,
+  "alternate_and_index_registers_preserved": true,
+  "marker_position_may_overlap_target": true,
+  "native_execution": false,
+  "irq_executed": false,
+  "assembly_executed": false
+}

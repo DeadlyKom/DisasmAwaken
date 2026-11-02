@@ -1,7 +1,7 @@
 {
   "method": "text_and_resource_comparison_without_assembly",
   "passed": true,
-  "instruction_count": 39824,
+  "instruction_count": 39863,
   "active_allocations": 41,
   "covered_bytes": 479744,
   "interface_records": 46,
@@ -131,5 +131,8 @@
     "Source/Music/Data/RowCounterA.asm": 1
   },
   "music_composition_parts": 72,
-  "text_queue_records": 17
+  "text_queue_records": 17,
+  "marker_phase_records": 8,
+  "buffer_point_records": 35,
+  "action_sine_records": 256
 }

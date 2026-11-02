@@ -6766,7 +6766,11 @@
     "target_instruction": 51849,
     "size": 2,
     "target_operation": "LD SP,#0000",
-    "path": "Source/Controls/UnknownC882.asm"
+    "path": "Source/Controls/CopyScreenRows.asm",
+    "writer_bank": 1,
+    "target_bank": 1,
+    "target_region": "Controls",
+    "target_slot": 22
   },
   {
     "region": "Controls",
@@ -6775,7 +6779,11 @@
     "target_instruction": 51843,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Controls/UnknownC882.asm"
+    "path": "Source/Controls/CopyScreenRows.asm",
+    "writer_bank": 1,
+    "target_bank": 1,
+    "target_region": "Controls",
+    "target_slot": 22
   },
   {
     "region": "Controls",
@@ -6784,7 +6792,11 @@
     "target_instruction": 51854,
     "size": 2,
     "target_operation": "LD BC,#0000",
-    "path": "Source/Controls/UnknownCA8D.asm"
+    "path": "Source/Controls/NextBufferRandom.asm",
+    "writer_bank": 1,
+    "target_bank": 1,
+    "target_region": "Controls",
+    "target_slot": 22
   },
   {
     "region": "Controls",
@@ -6865,7 +6877,7 @@
     "target_instruction": 52758,
     "size": 1,
     "target_operation": "LD A,#00",
-    "path": "Source/Controls/UnknownCE16.asm"
+    "path": "Source/Controls/RespawnPointIndexPos.asm"
   },
   {
     "region": "Controls",
@@ -7063,7 +7075,7 @@
     "target_instruction": 60578,
     "size": 2,
     "target_operation": "LD HL,#0000",
-    "path": "Source/Controls/UnknownEC0E.asm"
+    "path": "Source/Controls/InitializeTextWindow.asm"
   },
   {
     "region": "Controls",
@@ -7072,7 +7084,7 @@
     "target_instruction": 60585,
     "size": 2,
     "target_operation": "LD HL,#0000",
-    "path": "Source/Controls/UnknownEC0E.asm"
+    "path": "Source/Controls/InitializeTextWindow.asm"
   },
   {
     "region": "Controls",
@@ -7081,7 +7093,7 @@
     "target_instruction": 60508,
     "size": 2,
     "target_operation": "LD HL,#EC80",
-    "path": "Source/Controls/UnknownEC0E.asm",
+    "path": "Source/Controls/InitializeTextWindow.asm",
     "writer_bank": 1,
     "target_bank": 1,
     "target_region": "Controls",
@@ -7107,7 +7119,7 @@
     "target_instruction": 60585,
     "size": 2,
     "target_operation": "LD HL,#0000",
-    "path": "Source/Controls/UnknownECA2.asm"
+    "path": "Source/Controls/ConsumeTextQueue.asm"
   },
   {
     "region": "Controls",
@@ -7116,7 +7128,7 @@
     "target_instruction": 61397,
     "size": 1,
     "target_operation": "LD C,#00",
-    "path": "Source/Controls/UnknownECA2.asm"
+    "path": "Source/Controls/ConsumeTextQueue.asm"
   },
   {
     "region": "Controls",
@@ -7125,7 +7137,7 @@
     "target_instruction": 60578,
     "size": 2,
     "target_operation": "LD HL,#0000",
-    "path": "Source/Controls/UnknownECA2.asm"
+    "path": "Source/Controls/ConsumeTextQueue.asm"
   },
   {
     "region": "Controls",
@@ -7134,7 +7146,7 @@
     "target_instruction": 60578,
     "size": 2,
     "target_operation": "LD HL,#0000",
-    "path": "Source/Controls/UnknownECA2.asm"
+    "path": "Source/Controls/ConsumeTextQueue.asm"
   },
   {
     "region": "Controls",
@@ -7143,7 +7155,7 @@
     "target_instruction": 61397,
     "size": 1,
     "target_operation": "LD C,#00",
-    "path": "Source/Controls/UnknownECA2.asm"
+    "path": "Source/Controls/ConsumeTextQueue.asm"
   },
   {
     "region": "Controls",
@@ -7152,7 +7164,7 @@
     "target_instruction": 61376,
     "size": 2,
     "target_operation": "LD SP,#0000",
-    "path": "Source/Controls/UnknownED28.asm"
+    "path": "Source/Controls/ScrollTextWindow.asm"
   },
   {
     "region": "Controls",
@@ -7161,7 +7173,7 @@
     "target_instruction": 61397,
     "size": 1,
     "target_operation": "LD C,#00",
-    "path": "Source/Controls/UnknownEFC4.asm"
+    "path": "Source/Controls/PrintTextGlyph.asm"
   },
   {
     "region": "Controls",
@@ -7170,7 +7182,7 @@
     "target_instruction": 61709,
     "size": 1,
     "target_operation": "LD A,#80",
-    "path": "Source/Controls/UnknownF10D.asm"
+    "path": "Source/Controls/TickBcdCounter.asm"
   },
   {
     "region": "Final",
@@ -9962,5 +9974,31 @@
     "writer_bank": 3,
     "target_source_classified": true,
     "target_original_hex": "010000"
+  },
+  {
+    "region": "Controls",
+    "writer": 52833,
+    "target": 52830,
+    "target_instruction": 52829,
+    "size": 1,
+    "target_operation": "LD A,#00",
+    "path": "Source/Controls/RespawnPointIndexNeg.asm",
+    "writer_bank": 1,
+    "target_bank": 1,
+    "target_region": "Controls",
+    "target_slot": 22
+  },
+  {
+    "region": "Controls",
+    "writer": 52298,
+    "target": 52837,
+    "target_instruction": 52836,
+    "size": 1,
+    "target_operation": "LD C,#00",
+    "path": "Source/Controls/UnknownCB00.asm",
+    "writer_bank": 1,
+    "target_bank": 1,
+    "target_region": "Controls",
+    "target_slot": 22
   }
 ]

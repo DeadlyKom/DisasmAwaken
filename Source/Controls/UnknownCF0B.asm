@@ -117,7 +117,7 @@ PointCF9E:      SLA C
 
 PointCFA9:      SCF
                 RR B
-                CALL @Controls.UnknownD167.Entry
+                CALL @Controls.DivideWordByByte.Entry
                 LD A, D
                 JR @Controls.UnknownCF0B.PointCFBC
 
@@ -125,7 +125,7 @@ PointCFA9:      SCF
 PointCFB2:      LD A, (#9B25)
                 LD B, A
                 LD A, #A0
-                CALL @Controls.UnknownD165.Entry
+                CALL @Controls.DivideByteFraction.Entry
                 LD A, D
 PointCFBC:      JP @Controls.UnknownCF0B.PointD0BD
 
@@ -260,7 +260,7 @@ PointD078:      SLA C
 
 PointD084:      SCF
                 RR B
-                CALL @Controls.UnknownD167.Entry
+                CALL @Controls.DivideWordByByte.Entry
                 LD A, D
                 JR @Controls.UnknownCF0B.PointD097
 
@@ -268,7 +268,7 @@ PointD084:      SCF
 PointD08D:      LD A, (#9B1F)
                 LD B, A
                 LD A, #A0
-                CALL @Controls.UnknownD165.Entry
+                CALL @Controls.DivideByteFraction.Entry
                 LD A, D
 PointD097:      JP @Controls.UnknownCF0B.PointD0BD
 

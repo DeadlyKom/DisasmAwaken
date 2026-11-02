@@ -72,7 +72,7 @@
                 incbin "../Resources/23_CONTROL/Unclassified007.bin"
                 assert $ == #1130
                 disp #EC0E
-                include "../Controls/UnknownEC0E.asm"
+                include "../Controls/InitializeTextWindow.asm"
                 ent
                 assert $ == #1178
                 disp #EC56
@@ -88,42 +88,43 @@
                 ent
                 assert $ == #11C4
                 disp #ECA2
-                include "../Controls/UnknownECA2.asm"
+                include "../Controls/ConsumeTextQueue.asm"
                 ent
                 assert $ == #1215
                 disp #ECF3
-                include "../Controls/UnknownECF3.asm"
+                include "../Controls/PrintByteDecimal.asm"
                 ent
                 assert $ == #124A
                 disp #ED28
-                include "../Controls/UnknownED28.asm"
+                include "../Controls/ScrollTextWindow.asm"
                 ent
                 assert $ == #14E6
                 disp #EFC4
-                include "../Controls/UnknownEFC4.asm"                           ; (0) жёсткий порядок, последовательное исполнение
+                include "../Controls/PrintTextGlyph.asm"                        ; (0) жёсткий порядок, последовательное исполнение
                 ent
                 assert $ == #1513
                 disp #EFF1
-                include "../Controls/UnknownEFF1.asm"                           ; (1) жёсткий порядок, последовательное исполнение
+                include "../Controls/DrawGlyphRows.asm"                         ; (1) жёсткий порядок, последовательное исполнение
                 ent
                 assert $ == #15B6
                 disp #F094
-                include "../Controls/UnknownF094.asm"
+                include "../Controls/XorBufferMarker.asm"
                 ent
                 assert $ == #160F
-                ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/23_CONTROL/Unclassified009.bin"
+                disp #F0ED
+                include "../Controls/Data/MarkerPhaseMasks.asm"
+                ent
                 assert $ == #162F
                 disp #F10D
-                include "../Controls/UnknownF10D.asm"                           ; (0) жёсткий порядок, последовательное исполнение
+                include "../Controls/TickBcdCounter.asm"                        ; (0) жёсткий порядок, последовательное исполнение
                 ent
                 assert $ == #1664
                 disp #F142
-                include "../Controls/UnknownF142.asm"                           ; (1) жёсткий порядок, последовательное исполнение
+                include "../Controls/DrawBcdCounter.asm"                        ; (1) жёсткий порядок, последовательное исполнение
                 ent
                 assert $ == #16AA
                 disp #F188
-                include "../Controls/UnknownF188.asm"                           ; (2) жёсткий порядок, последовательное исполнение
+                include "../Controls/DrawCounterNibble.asm"                     ; (2) жёсткий порядок, последовательное исполнение
                 ent
                 assert $ == #16CD
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления

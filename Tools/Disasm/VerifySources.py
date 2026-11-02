@@ -197,6 +197,49 @@ def main():
             assert [symbols['FACTIONTEXTQUEUEFRAME.'+name] for name in ('SAVEDHL','SAVEDBC','SAVEDAF','CALLERRETURN')] == [0,2,4,6]
         text_queue_records = 17
 
+    # Проверка восьми физических фаз XOR-маркера, всех четырёх полей и исходных 32 байтов.
+    from ControlsMarkerFacts import TABLE as MARKER_TABLE, parse as parse_marker
+    marker_records = 0
+    marker_entries = [item for item in source_map if item['path'] == MARKER_TABLE[1]]
+    if marker_entries:
+        assert len(marker_entries) == 1
+        item = marker_entries[0]
+        raw, labels = parse_marker((ROOT / MARKER_TABLE[1]).read_text('utf-8'))
+        assert (item['slot'], item['offset'], item['length'], item['origin']) == (23, 0x160F, 32, 0xF0ED)
+        assert raw == sources[23][0x160F:0x162F]
+        assert all(symbols.get(key.upper()) == value for key, value in labels.items())
+        assert symbols['FMARKERPHASEMASKS'] == 4
+        assert [symbols['FMARKERPHASEMASKS.' + name] for name in ('VERTICAL', 'CENTRALLEFT', 'CENTRALMIDDLE', 'CENTRALRIGHT')] == [0, 1, 2, 3]
+        marker_records = 8
+
+    # Проверка 35 физических записей Y,X и исходных нулевых инициализаторов.
+    from ControlsBufferPointsFacts import TABLE as BUFFER_POINTS_TABLE, parse as parse_buffer_points
+    buffer_point_records = 0
+    buffer_point_entries = [item for item in source_map if item['path'] == BUFFER_POINTS_TABLE[1]]
+    if buffer_point_entries:
+        assert len(buffer_point_entries) == 1
+        item = buffer_point_entries[0]
+        raw, labels = parse_buffer_points((ROOT / BUFFER_POINTS_TABLE[1]).read_text('utf-8'))
+        assert (item['slot'], item['offset'], item['length'], item['origin']) == (22, 0x500, 70, 0xC500)
+        assert raw == sources[22][0x500:0x546]
+        assert all(symbols.get(key.upper()) == value for key,value in labels.items())
+        assert symbols['FBUFFERPOINT'] == 2 and symbols['FBUFFERPOINT.Y'] == 0 and symbols['FBUFFERPOINT.X'] == 1
+        buffer_point_records = 35
+
+    # Проверка 256 физических знаковых отсчётов исходной синусоиды ACTION.
+    from ActionSineTable import TABLE as ACTION_SINE_TABLE, parse as parse_action_sine, validate as validate_action_sine
+    action_sine_records = 0
+    action_sine_entries = [item for item in source_map if item['path'] == ACTION_SINE_TABLE[1]]
+    if action_sine_entries:
+        assert len(action_sine_entries) == 1
+        item = action_sine_entries[0]
+        raw, labels = parse_action_sine((ROOT / ACTION_SINE_TABLE[1]).read_text('utf-8'))
+        assert (item['slot'], item['offset'], item['length'], item['origin']) == (17, 0x3900, 256, 0x9900)
+        assert raw == validate_action_sine(sources[17])
+        assert all(symbols.get(key.upper()) == value for key,value in labels.items())
+        assert symbols['FFIXEDSINEVALUE'] == 1 and symbols['FFIXEDSINEVALUE.VALUE'] == 0
+        action_sine_records = 256
+
     # Проверка физических записей композиции и точной грамматики фактических DB-команд.
     from MusicCompositionSource import descriptions as composition_descriptions, parse as parse_composition, STRUCTURES as COMPOSITION_STRUCTURES
     composition = sources[10][0xC00:0x1C29]
@@ -1153,6 +1196,9 @@ def main():
     report['music_player_records'] = music_player_records
     report['music_composition_parts'] = music_composition_parts
     report['text_queue_records'] = text_queue_records
+    report['marker_phase_records'] = marker_records
+    report['buffer_point_records'] = buffer_point_records
+    report['action_sine_records'] = action_sine_records
     (ROOT/"Tools/Disasm/Reports/SourceVerification.json").write_text(
         json.dumps(report,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     print(json.dumps(report,ensure_ascii=False,indent=2))

@@ -377,6 +377,27 @@ def main():
         write(TEXT_QUEUE_TABLE[1], text)
         symbols.update(bindings)
         special[23, 0x11A2] = (0x11C4, TEXT_QUEUE_TABLE[1], 0xEC80)
+    # Восстановление восьми физических фаз XOR-маркера только в отдельном кандидате.
+    if "struct FMarkerPhaseMasks" in (ROOT/"Includes/Structs/Include.inc").read_text("utf-8"):
+        from ControlsMarkerFacts import TABLE as MARKER_TABLE, render as render_marker
+        text, bindings = render_marker(data_by_slot[23])
+        write(MARKER_TABLE[1], text)
+        symbols.update(bindings)
+        special[23, 0x160F] = (0x162F, MARKER_TABLE[1], 0xF0ED)
+    # Физические записи Y,X выделяются только в отдельном кандидате.
+    if "struct FBufferPoint" in (ROOT/"Includes/Structs/Include.inc").read_text("utf-8"):
+        from ControlsBufferPointsFacts import TABLE as BUFFER_POINTS_TABLE, render as render_buffer_points
+        text, bindings = render_buffer_points(data_by_slot[22])
+        write(BUFFER_POINTS_TABLE[1], text)
+        symbols.update(bindings)
+        special[22, 0x500] = (0x546, BUFFER_POINTS_TABLE[1], 0xC500)
+    # Исходные 256 отсчётов синуса формируются из байтов, не из новой формулы.
+    if "struct FFixedSineValue" in (ROOT/"Includes/Structs/Include.inc").read_text("utf-8"):
+        from ActionSineTable import TABLE as ACTION_SINE_TABLE, render as render_action_sine
+        text, bindings = render_action_sine(data_by_slot[17])
+        write(ACTION_SINE_TABLE[1], text)
+        symbols.update(bindings)
+        special[17, 0x3900] = (0x3A00, ACTION_SINE_TABLE[1], 0x9900)
     token_text, token_records = render_token_tables(language, names)
     write(TOKEN_TABLE_PATH, token_text)
     special[5, 0x935] = (0xA67, TOKEN_TABLE_PATH, 0xC935)
@@ -761,6 +782,42 @@ REGION_COMMENTS.setdefault("Controls", {}).update(CONTROLS_TEXT_QUEUE_COMMENTS)
 
 from ActionTextQueueFacts import COMMENTS as ACTION_TEXT_QUEUE_COMMENTS
 REGION_COMMENTS.setdefault("Action", {}).update(ACTION_TEXT_QUEUE_COMMENTS)
+
+
+from ControlsTextDisplayFacts import COMMENTS as CONTROLS_TEXT_DISPLAY_COMMENTS
+REGION_COMMENTS.setdefault("Controls", {}).update(CONTROLS_TEXT_DISPLAY_COMMENTS)
+
+
+from ControlsBcdCounterFacts import COMMENTS as CONTROLS_BCD_COUNTER_COMMENTS
+REGION_COMMENTS.setdefault("Controls", {}).update(CONTROLS_BCD_COUNTER_COMMENTS)
+
+
+from ControlsMarkerFacts import COMMENTS as CONTROLS_MARKER_COMMENTS
+REGION_COMMENTS.setdefault("Controls", {}).update(CONTROLS_MARKER_COMMENTS)
+
+
+from ControlsBufferCopyFacts import COMMENTS as CONTROLS_BUFFER_COPY_COMMENTS
+REGION_COMMENTS.setdefault("Controls", {}).update(CONTROLS_BUFFER_COPY_COMMENTS)
+
+
+from ControlsBufferPointsFacts import COMMENTS as CONTROLS_BUFFER_POINTS_COMMENTS
+REGION_COMMENTS.setdefault("Controls", {}).update(CONTROLS_BUFFER_POINTS_COMMENTS)
+
+
+from ActionBitmapTablesFacts import COMMENTS as ACTION_BITMAP_COMMENTS
+REGION_COMMENTS.setdefault("ActionBoot",{}).update(ACTION_BITMAP_COMMENTS)
+
+
+from ControlsDivisionFacts import COMMENTS as CONTROLS_DIVISION_COMMENTS
+REGION_COMMENTS.setdefault("Controls", {}).update(CONTROLS_DIVISION_COMMENTS)
+
+
+from ControlsSpanMasksFacts import COMMENTS as CONTROLS_SPAN_MASKS_COMMENTS
+REGION_COMMENTS.setdefault("Controls", {}).update(CONTROLS_SPAN_MASKS_COMMENTS)
+
+
+from ControlsPointRespawnFacts import COMMENTS as CONTROLS_POINT_RESPAWN_COMMENTS
+REGION_COMMENTS.setdefault("Controls", {}).update(CONTROLS_POINT_RESPAWN_COMMENTS)
 
 
 if __name__ == "__main__":

@@ -3,6 +3,8 @@
 local disk_size = 655360
 local image_path = "Awakenv02.trd"
 local report_path = "Tools/Disasm/Reports/BuildVerification.json"
+local report
+local report_length = 0
 local image
 local covered = {}
 local allocations = {}
@@ -15,17 +17,29 @@ local function read_file(path)
 end
 
 local function status(value, identical)
-    -- Обновление результата только для текущего запуска ассемблера.
-    local file = assert(io.open(report_path, "wb"))
-    assert(file:write(string.format(
+    -- Обновление отчёта через дескриптор, открытый один раз на первом проходе.
+    assert(report, "отчёт не открыт на первом проходе")
+    local data = string.format(
         '{\n  "status": "%s",\n  "method": "sjasmplus_lua",\n' ..
         '  "checked_at_utc": "%s",\n  "byte_identical": %s,\n' ..
         '  "disk_size": %d,\n  "active_allocations": %d\n}\n',
-        value, os.date("!%Y-%m-%dT%H:%M:%SZ"), identical, disk_size, #allocations)))
-    assert(file:close())
+        value, os.date("!%Y-%m-%dT%H:%M:%SZ"), identical, disk_size, #allocations)
+    -- Удаление остатка более длинного предыдущего JSON пробельным заполнением.
+    report_length = math.max(report_length, #data)
+    assert(report:seek("set", 0))
+    assert(report:write(data, string.rep(" ", report_length - #data)))
+    assert(report:flush())
+    if value == "passed" or value == "failed" then
+        assert(report:close())
+        report = nil
+    end
 end
 
 function reset_report()
+    -- Создание отчёта текущей сборки до выполнения EMPTYTRD и SAVETRD.
+    assert(not report, "отчёт уже открыт")
+    report = assert(io.open(report_path, "wb"))
+    report_length = 0
     status("in_progress", "null")
 end
 

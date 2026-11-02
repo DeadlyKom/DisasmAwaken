@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "prologue_cases": 256,
+  "all_control_bytes": true,
+  "call_targets_and_all_coefficients_checked": true,
+  "carry_from_neg_preserved_in_step_formula": true,
+  "zero_step_controls": [
+    192
+  ],
+  "point_loop_not_executed": true,
+  "coefficient_page_is_test_fixture": true,
+  "original_instructions": true,
+  "native_execution": false,
+  "irq_executed": false,
+  "assembly_executed": false
+}

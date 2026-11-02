@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "total_cases": 74752,
+  "cases_by_entry": {
+    "F188": 65536,
+    "F142": 1536,
+    "F10D": 7680
+  },
+  "all_nibble_inputs_and_columns": true,
+  "all_pair_selection_masks": true,
+  "all_gate_bytes": true,
+  "valid_bcd_carry_boundaries": true,
+  "overflow_modulo_100000000": true,
+  "original_instructions": true,
+  "actual_draw_rows_executed": true,
+  "calls_stubbed": false,
+  "screen_and_counter_independently_checked": true,
+  "memory_outside_test_stack_compared": true,
+  "primary_pair_preservation_checked": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "invalid_bcd_inputs_proved": false,
+  "independent_full_flag_model": false,
+  "assembly_executed": false
+}

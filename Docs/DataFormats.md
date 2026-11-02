@@ -115,4 +115,16 @@ FDrawMoveFrame, FDrawShiftFrame и FRestoreBoundsFrame описывают дин
 
 ## Строки указателя
 
+[BufferPoints](../Source/Controls/Data/BufferPoints.asm) содержит 35 физических
+`FBufferPoint` размером два байта, Y по смещению 0, X по смещению 1.
+Исходные нулевые значения всех 70 байтов C500..C545 банка 1 сохранены.
+Подготовка и XOR-потребитель описаны в [ControlsBufferPoints](ControlsBufferPoints.md).
+
+Таблица [MarkerPhaseMasks](../Source/Controls/Data/MarkerPhaseMasks.asm) содержит
+восемь физических `FMarkerPhaseMasks` размером четыре байта. Поля Vertical,
+CentralLeft, CentralMiddle и CentralRight занимают смещения 0, 1, 2 и 3.
+Всего сохранены 32 байта F0ED..F10C банка 1. Значения являются пиксельными
+XOR-масками, а не флагами состояния. Потребитель и граничная адресация
+описаны в [ControlsMarker](ControlsMarker.md).
+
 [PointerSprites](../Source/Station/Data/PointerSprites.asm) содержит 192 физических FPointerRasterRow по четыре байта, MaskLeft, XorLeft, MaskRight, XorRight. Три страницы по восемь фаз сдвига и восемь строк каждой фазы сохраняют исходные #6000..#62FF. [PointerBackground](../Source/Station/Data/PointerBackground.asm) содержит восемь физических FPointerSavedRow по два байта Left, Right по #6575..#6584. Инициализаторы сохранены побайтно, во время работы заменяются сохранёнными экранными байтами. Динамический FPointerGuardFrame размером 12 байтов создаётся на CPU-стеке обёртками, отдельного статического экземпляра не имеет. Подробности и ограничения приведены в [Pointer](Pointer.md).

@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "cases_by_kind": {
+    "bitmap_tables": 1,
+    "random_step": 65536,
+    "initialize_points": 512,
+    "draw_batches": 705
+  },
+  "total_cases": 66754,
+  "all_random_seed_words": true,
+  "all_viewport_coordinates": true,
+  "original_bitmap_builder": true,
+  "actual_random_calls_executed": true,
+  "exact_memory_and_writes_checked": true,
+  "xor_duplicates_not_removed": true,
+  "fields_order_y_then_x": true,
+  "independent_random_flags": true,
+  "generator_orbit": {
+    "seed": 0,
+    "prefix_length": 59,
+    "cycle_length": 387,
+    "repeated_state": 8414,
+    "distinct_next_states": 65282
+  },
+  "invalid_point_y_above_95_proved": false,
+  "native_execution": false,
+  "irq_executed": false,
+  "assembly_executed": false
+}

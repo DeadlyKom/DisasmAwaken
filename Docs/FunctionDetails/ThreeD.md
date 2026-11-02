@@ -1306,7 +1306,7 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: `JP (HL)`.
 
-## UnknownCAB3
+## InitializeBufferPoints
 
 [ThreeD.UnknownCAB3](../../Source/ThreeD/UnknownCAB3.asm)
 
@@ -1320,7 +1320,7 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownCAE3
+## XorBufferPoints
 
 [ThreeD.UnknownCAE3](../../Source/ThreeD/UnknownCAE3.asm)
 

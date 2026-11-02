@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "extracted_code_bytes": 71,
+  "new_instructions": 39,
+  "new_registered_entry": "CE5D",
+  "dynamic_calls_proved": true,
+  "physical_bytes_preserved": true,
+  "semantic_publication_pending": true,
+  "assembly_executed": false
+}

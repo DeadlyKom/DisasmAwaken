@@ -67,7 +67,7 @@ Entry:          PUSH IX
                 LD A, #11
                 OUT (C), A
                 PUSH BC
-                CALL @Controls.UnknownC870.Entry
+                CALL @Controls.CopyViewportToScreen.Entry
                 LD HL, #E000
                 LD DE, #6000
                 LD BC, #2000

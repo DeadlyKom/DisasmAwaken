@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "refined_named_contracts": 1,
+  "renamed_internal_labels": 3,
+  "original_table_bytes_checked": 1024,
+  "exact_af": "2062",
+  "exact_alternate_af": "8083",
+  "instructions_changed": 0,
+  "assembly_executed": false
+}

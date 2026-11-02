@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "described_functions": 3,
+  "instructions_changed": 0,
+  "physical_bytes_preserved": true,
+  "independent_model_cases": 66754,
+  "constant_label_shortened_before_publication": true,
+  "original_function_boundaries_preserved": true,
+  "assembly_executed": false
+}

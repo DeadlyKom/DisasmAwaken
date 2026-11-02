@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "total_cases": 135168,
+  "cases_by_entry": {
+    "D515": 67584,
+    "D53C": 67584
+  },
+  "all_x_y_bytes": true,
+  "all_shared_mode_bytes_and_bit_phases": true,
+  "shared_mode_has_no_output_effect": true,
+  "exact_registers_and_flags": true,
+  "every_ram_byte_and_write_checked": true,
+  "original_instructions": true,
+  "right_mask_saved_b_and_stack_checked": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

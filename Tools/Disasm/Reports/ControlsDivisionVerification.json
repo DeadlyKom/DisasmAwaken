@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "total_cases": 521984,
+  "cases_by_entry": {
+    "D167": 456448,
+    "D165": 65536
+  },
+  "all_nonzero_divisors": true,
+  "all_byte_quotients": true,
+  "boundary_and_middle_remainders": true,
+  "all_valid_fraction_inputs": true,
+  "exact_registers_and_flags": true,
+  "no_memory_writes": true,
+  "original_instructions": true,
+  "max_instruction_steps": 81,
+  "zero_divisor_all_words": true,
+  "quotient_overflow_boundary_low_bytes": true,
+  "overflow_is_original_byte_recurrence": true,
+  "all_fraction_a_b_pairs": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

@@ -260,7 +260,7 @@
 
                 IF _ERRORS = 0
                 LUA PASS3
-                    dofile("Tools/pack.lua")
+                    -- Контекст Lua и открытый отчёт сохраняются с первого прохода.
                     finish_image()
                 ENDLUA
                 ENDIF

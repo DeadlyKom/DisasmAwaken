@@ -10537,11 +10537,29 @@
   {
     "slot": 17,
     "offset": 8652,
-    "length": 9825,
+    "length": 5940,
     "kind": "unclassified",
-    "path": "Source/Resources/17_ACTION/Unclassified020.bin",
+    "path": "Source/Resources/17_ACTION/Unclassified020_Prefix.bin",
     "origin": null,
-    "sha256": "d272212ca3e06c9b8b354aebf519206ff2f4a7d1d4a0aca285e3c20741f5a7cb"
+    "sha256": "6049a093bf5c26f8e1361a50ab9987aa2014769b7743974d5b30310b195b300f"
+  },
+  {
+    "slot": 17,
+    "offset": 14592,
+    "length": 256,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/SineTable.asm",
+    "origin": 39168,
+    "sha256": "8799a0059849a16e5a942e1de4ac206cded0133f897fd7eb7cda2b6551f7d1c5"
+  },
+  {
+    "slot": 17,
+    "offset": 14848,
+    "length": 3629,
+    "kind": "unclassified",
+    "path": "Source/Resources/17_ACTION/Unclassified020_Suffix.bin",
+    "origin": null,
+    "sha256": "523103b25d717d5b87cee623722f60cfa53bf5e39ddb198f6d9795164aa525d0"
   },
   {
     "slot": 17,
@@ -13129,18 +13147,36 @@
   {
     "slot": 22,
     "offset": 0,
-    "length": 2160,
+    "length": 1280,
     "kind": "unclassified",
-    "path": "Source/Resources/22_CONTROL0/Unclassified000.bin",
+    "path": "Source/Resources/22_CONTROL0/Unclassified000_Prefix.bin",
     "origin": null,
-    "sha256": "9070fdb436f06ca7a388ef65f078eec68d2085c2a0f284471a5e3ea047591874"
+    "sha256": "db149629e3fce00ef3372ba810e11d1898d3cc75e220470e6319e6dbbef7c360"
+  },
+  {
+    "slot": 22,
+    "offset": 1280,
+    "length": 70,
+    "kind": "typed_data",
+    "path": "Source/Controls/Data/BufferPoints.asm",
+    "origin": 50432,
+    "sha256": "82fcfd5215175da9e65ca7c4fb927a1fb0e61f09d54987c368e8e16ebd9c2969"
+  },
+  {
+    "slot": 22,
+    "offset": 1350,
+    "length": 810,
+    "kind": "unclassified",
+    "path": "Source/Resources/22_CONTROL0/Unclassified000_Suffix.bin",
+    "origin": null,
+    "sha256": "505355566ce1c0fe3c5798c6af0779599cb066e885b07a5412c22863ef075126"
   },
   {
     "slot": 22,
     "offset": 2160,
     "length": 18,
     "kind": "code",
-    "path": "Source/Controls/UnknownC870.asm",
+    "path": "Source/Controls/CopyViewportToScreen.asm",
     "origin": 51312,
     "sha256": "3458c232be24b12c398fe4f3005a037e2d7f2a18dd3aff60feee0afdcbdf4fdf"
   },
@@ -13149,7 +13185,7 @@
     "offset": 2178,
     "length": 523,
     "kind": "code",
-    "path": "Source/Controls/UnknownC882.asm",
+    "path": "Source/Controls/CopyScreenRows.asm",
     "origin": 51330,
     "sha256": "0a8e02b8460a0cef37a1a1f8ee2d11cd2e2911505fdd2c90bcfcd809e19282ae"
   },
@@ -13158,7 +13194,7 @@
     "offset": 2701,
     "length": 38,
     "kind": "code",
-    "path": "Source/Controls/UnknownCA8D.asm",
+    "path": "Source/Controls/NextBufferRandom.asm",
     "origin": 51853,
     "sha256": "debbcab7ed6a2b5da5c08d8890ae18e76b99b68d3c6bcc0c5df9b149e6c77c13"
   },
@@ -13167,7 +13203,7 @@
     "offset": 2739,
     "length": 48,
     "kind": "code",
-    "path": "Source/Controls/UnknownCAB3.asm",
+    "path": "Source/Controls/InitializeBufferPoints.asm",
     "origin": 51891,
     "sha256": "eb2e662a87b6b67fbe9178fabed369850b6c9486d303d8134447f80403de330a"
   },
@@ -13176,7 +13212,7 @@
     "offset": 2787,
     "length": 29,
     "kind": "code",
-    "path": "Source/Controls/UnknownCAE3.asm",
+    "path": "Source/Controls/XorBufferPoints.asm",
     "origin": 51939,
     "sha256": "34df47e0e265be05227f39b0b7637ffbe83827c1a2072084cbb5c4b92b339488"
   },
@@ -13194,7 +13230,7 @@
     "offset": 3606,
     "length": 71,
     "kind": "code",
-    "path": "Source/Controls/UnknownCE16.asm",
+    "path": "Source/Controls/RespawnPointIndexPos.asm",
     "origin": 52758,
     "sha256": "c31169ed6cff5e8a8ff472e676c03b1a1c2588a0a1cfe64526b08123b0eff744"
   },
@@ -13202,9 +13238,9 @@
     "slot": 22,
     "offset": 3677,
     "length": 71,
-    "kind": "unclassified",
-    "path": "Source/Resources/22_CONTROL0/Unclassified001.bin",
-    "origin": null,
+    "kind": "code",
+    "path": "Source/Controls/RespawnPointIndexNeg.asm",
+    "origin": 52829,
     "sha256": "5a5462b22595d8b0d83885e70e96104e22dcd3b27d06086d5f2c34e9fbbd17bb"
   },
   {
@@ -13284,7 +13320,7 @@
     "offset": 4453,
     "length": 2,
     "kind": "code",
-    "path": "Source/Controls/UnknownD165.asm",
+    "path": "Source/Controls/DivideByteFraction.asm",
     "origin": 53605,
     "sha256": "a408e4962b09eeb917c2bcea0d94ddaedfa8207c3bf70fd90fd52bb579d13b4a"
   },
@@ -13293,7 +13329,7 @@
     "offset": 4455,
     "length": 22,
     "kind": "code",
-    "path": "Source/Controls/UnknownD167.asm",
+    "path": "Source/Controls/DivideWordByByte.asm",
     "origin": 53607,
     "sha256": "e0d9ee619d2a5d9b2132e5bba6a10bf5cbba214649f69102aaa53cb6413ab04e"
   },
@@ -13473,7 +13509,7 @@
     "offset": 5397,
     "length": 39,
     "kind": "code",
-    "path": "Source/Controls/UnknownD515.asm",
+    "path": "Source/Controls/BuildLeftSpanMask.asm",
     "origin": 54549,
     "sha256": "313e172b3b99aa4a3df2da469bc08eec26cc65cb3d0ccae244a41608450fe225"
   },
@@ -13482,7 +13518,7 @@
     "offset": 5436,
     "length": 48,
     "kind": "code",
-    "path": "Source/Controls/UnknownD53C.asm",
+    "path": "Source/Controls/BuildRightSpanMask.asm",
     "origin": 54588,
     "sha256": "7fafee72f0f7464f43a5d04b1c081db4b139a3c10aff7cc00c80075d40e75992"
   },
@@ -13815,7 +13851,7 @@
     "offset": 4400,
     "length": 72,
     "kind": "code",
-    "path": "Source/Controls/UnknownEC0E.asm",
+    "path": "Source/Controls/InitializeTextWindow.asm",
     "origin": 60430,
     "sha256": "a3db64908493725f034476c24f49e54516f034dd72c754d751404bc591315236"
   },
@@ -13851,7 +13887,7 @@
     "offset": 4548,
     "length": 81,
     "kind": "code",
-    "path": "Source/Controls/UnknownECA2.asm",
+    "path": "Source/Controls/ConsumeTextQueue.asm",
     "origin": 60578,
     "sha256": "3fab5d62356b799d4d292a3802a66cbcc45128b2d29e86eca680a662f020e365"
   },
@@ -13860,7 +13896,7 @@
     "offset": 4629,
     "length": 53,
     "kind": "code",
-    "path": "Source/Controls/UnknownECF3.asm",
+    "path": "Source/Controls/PrintByteDecimal.asm",
     "origin": 60659,
     "sha256": "45bc4b25e403de0841c5aa089d8767195a5d697ad1883d93193751e255b86a8d"
   },
@@ -13869,7 +13905,7 @@
     "offset": 4682,
     "length": 668,
     "kind": "code",
-    "path": "Source/Controls/UnknownED28.asm",
+    "path": "Source/Controls/ScrollTextWindow.asm",
     "origin": 60712,
     "sha256": "04f11cf4c9438e79dbcb20400bdaf3ea4843e89621a324eb2d718c2b191838b1"
   },
@@ -13878,7 +13914,7 @@
     "offset": 5350,
     "length": 45,
     "kind": "code",
-    "path": "Source/Controls/UnknownEFC4.asm",
+    "path": "Source/Controls/PrintTextGlyph.asm",
     "origin": 61380,
     "sha256": "989f8ec1eff328735010a14de0cb6f93684ec90cb6faa23edd08141098a40e11"
   },
@@ -13887,7 +13923,7 @@
     "offset": 5395,
     "length": 163,
     "kind": "code",
-    "path": "Source/Controls/UnknownEFF1.asm",
+    "path": "Source/Controls/DrawGlyphRows.asm",
     "origin": 61425,
     "sha256": "2e56288b326f95c396e91bf9196ad1533cc142abd90891bd6820036f36255b96"
   },
@@ -13896,7 +13932,7 @@
     "offset": 5558,
     "length": 89,
     "kind": "code",
-    "path": "Source/Controls/UnknownF094.asm",
+    "path": "Source/Controls/XorBufferMarker.asm",
     "origin": 61588,
     "sha256": "69081a9213cf2b9121f6bb7bb949dc244796c5d1ce5f5c2e3d60a7663a78c8b8"
   },
@@ -13904,9 +13940,9 @@
     "slot": 23,
     "offset": 5647,
     "length": 32,
-    "kind": "unclassified",
-    "path": "Source/Resources/23_CONTROL/Unclassified009.bin",
-    "origin": null,
+    "kind": "typed_data",
+    "path": "Source/Controls/Data/MarkerPhaseMasks.asm",
+    "origin": 61677,
     "sha256": "53ff5e7adfe647bbc263569a3ffc15437617a7b8efa8bde08653274ef82dc23a"
   },
   {
@@ -13914,7 +13950,7 @@
     "offset": 5679,
     "length": 53,
     "kind": "code",
-    "path": "Source/Controls/UnknownF10D.asm",
+    "path": "Source/Controls/TickBcdCounter.asm",
     "origin": 61709,
     "sha256": "265e842a105eb71f82e4e32d51e3f262d84f24ed40ab5ec9865d6cee184c6fb4"
   },
@@ -13923,7 +13959,7 @@
     "offset": 5732,
     "length": 70,
     "kind": "code",
-    "path": "Source/Controls/UnknownF142.asm",
+    "path": "Source/Controls/DrawBcdCounter.asm",
     "origin": 61762,
     "sha256": "2f05a890f06335c9ed7e756f49b723dfc11a8df364e955996e1025ff34a0c8dd"
   },
@@ -13932,7 +13968,7 @@
     "offset": 5802,
     "length": 35,
     "kind": "code",
-    "path": "Source/Controls/UnknownF188.asm",
+    "path": "Source/Controls/DrawCounterNibble.asm",
     "origin": 61832,
     "sha256": "345f304be8572ab3bdb3953ff34fabe579efae48a22f436789274659f3e7e270"
   },
