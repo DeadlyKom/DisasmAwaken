@@ -449,6 +449,20 @@ def main():
         write(THREE_ROW_GLYPHS[1], text)
         symbols.update(bindings)
         special[23, 0x6D3] = (0x793, THREE_ROW_GLYPHS[1], 0xE1B1)
+    # Четыре физические записи входов индикаторов, третий вектор хранит Y перед X.
+    if "struct FGlyphIndicatorControl" in (ROOT/"Includes/Structs/Include.inc").read_text("utf-8"):
+        from ActionGlyphIndicatorState import PATH as GLYPH_INPUT_PATH, render as render_glyph_inputs
+        text, bindings = render_glyph_inputs(data_by_slot[17])
+        write(GLYPH_INPUT_PATH, text)
+        symbols.update(bindings)
+        special[17, 0x3B81] = (0x3B8D, GLYPH_INPUT_PATH, 0x9B81)
+    # Шестнадцать исходных адресов для диспетчеризации через RET, полного разбора хвостов нет.
+    if "struct FReturnDispatchEntry" in (ROOT/"Includes/Structs/Include.inc").read_text("utf-8"):
+        from ControlsRasterReturns import TABLE as RASTER_RETURNS, render as render_raster_returns
+        text, bindings = render_raster_returns(data_by_slot[23])
+        write(RASTER_RETURNS[1], text)
+        symbols.update(bindings)
+        special[23, 0x793] = (0x7B3, RASTER_RETURNS[1], 0xE271)
     token_text, token_records = render_token_tables(language, names)
     write(TOKEN_TABLE_PATH, token_text)
     special[5, 0x935] = (0xA67, TOKEN_TABLE_PATH, 0xC935)
@@ -945,6 +959,10 @@ REGION_COMMENTS.setdefault("Controls", {}).update(CONTROLS_PARAMETER_ACTIVATION_
 
 from ControlsThreeRowGlyphFacts import COMMENTS as CONTROLS_THREE_ROW_GLYPH_COMMENTS
 REGION_COMMENTS.setdefault("Controls", {}).update(CONTROLS_THREE_ROW_GLYPH_COMMENTS)
+
+
+from ControlsGlyphIndicatorsFacts import COMMENTS as CONTROLS_GLYPH_INDICATORS_COMMENTS
+REGION_COMMENTS.setdefault("Controls", {}).update(CONTROLS_GLYPH_INDICATORS_COMMENTS)
 
 
 if __name__ == "__main__":

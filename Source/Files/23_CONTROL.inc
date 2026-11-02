@@ -47,7 +47,7 @@
                 incbin "../Resources/23_CONTROL/Unclassified003_AfterCoefficients.bin"
                 assert $ == #0543
                 disp #E021
-                include "../Controls/UnknownE021.asm"                           ; (0) жёсткий порядок, последовательное исполнение
+                include "../Controls/UpdateGlyphIndicators.asm"                 ; (0) жёсткий порядок, последовательное исполнение
                 ent
                 assert $ == #0670
                 disp #E14E
@@ -59,8 +59,10 @@
                 include "../Controls/Data/ThreeRowGlyphs.asm"
                 ent
                 assert $ == #0793
-                ; Unknown, следующая таблица указателей ещё не разобрана
-                incbin "../Resources/23_CONTROL/Unclassified004_AfterGlyphs.bin"
+                ; Физические адреса для перенаправленного RET, полный рисователь ещё Unknown
+                disp #E271
+                include "../Controls/Data/RasterReturns.asm"
+                ent
                 assert $ == #07B3
                 disp #E291
                 include "../Controls/UnknownE291.asm"

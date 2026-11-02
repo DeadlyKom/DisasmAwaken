@@ -934,4 +934,39 @@ CharRowStride   equ #20                                                         
 CharHeight      equ #08                                                         ; число страниц строк восьмистрочного знакоместа
                 endmodule
 
+
+                ; Исходные экранные зоны и управляющие коды трёх знаков
+                module ControlsGlyphIndicatorsConst
+SkipFirstMode   equ #01                                                         ; числовой код пропуска первого знака
+VectorSentinel  equ #80                                                         ; точный OR-маркер отсутствия второго входа
+LeftCenterX     equ #A0                                                         ; байтовый центр X первых двух знаков
+LeftMinX        equ #98                                                         ; нижняя граница левой зоны X
+LeftEndX        equ #A6                                                         ; исключённая верхняя граница левой зоны X
+LeftMaxX        equ #A5                                                         ; последний допустимый левый X
+RightCenterX    equ #B8                                                         ; байтовый центр X третьего знака
+RightMinX       equ #B0                                                         ; нижняя граница правой зоны X
+RightEndX       equ #BE                                                         ; исключённая верхняя граница правой зоны X
+RightMaxX       equ #BD                                                         ; последний допустимый правый X
+CenterY         equ #70                                                         ; байтовый центр Y всех трёх знаков
+MinY            equ #68                                                         ; нижняя граница Y
+EndY            equ #76                                                         ; исключённая верхняя граница Y
+MaxY            equ #75                                                         ; последний допустимый Y
+TopRow0SP       equ #48B8                                                       ; исходный SP очистки, верхняя группа, строка 0
+BottomRow0SP    equ #48D8                                                       ; исходный SP очистки, нижняя группа, строка 0
+TopRow1SP       equ #49B8                                                       ; исходный SP очистки, верхняя группа, строка 1
+BottomRow1SP    equ #49D8                                                       ; исходный SP очистки, нижняя группа, строка 1
+TopRow2SP       equ #4AB8                                                       ; исходный SP очистки, верхняя группа, строка 2
+BottomRow2SP    equ #4AD8                                                       ; исходный SP очистки, нижняя группа, строка 2
+TopRow3SP       equ #4BB8                                                       ; исходный SP очистки, верхняя группа, строка 3
+BottomRow3SP    equ #4BD8                                                       ; исходный SP очистки, нижняя группа, строка 3
+TopRow4SP       equ #4CB8                                                       ; исходный SP очистки, верхняя группа, строка 4
+BottomRow4SP    equ #4CD8                                                       ; исходный SP очистки, нижняя группа, строка 4
+TopRow5SP       equ #4DB8                                                       ; исходный SP очистки, верхняя группа, строка 5
+BottomRow5SP    equ #4DD8                                                       ; исходный SP очистки, нижняя группа, строка 5
+TopRow6SP       equ #4EB8                                                       ; исходный SP очистки, верхняя группа, строка 6
+BottomRow6SP    equ #4ED8                                                       ; исходный SP очистки, нижняя группа, строка 6
+TopRow7SP       equ #4FB8                                                       ; исходный SP очистки, верхняя группа, строка 7
+BottomRow7SP    equ #4FD8                                                       ; исходный SP очистки, нижняя группа, строка 7
+                endmodule
+
                 endif

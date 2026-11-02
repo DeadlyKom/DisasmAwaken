@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "typed_bytes": 12,
+  "physical_records": 4,
+  "structures": [
+    "FGlyphIndicatorControl",
+    "FGlyphIndicatorYX",
+    "FGlyphIndicatorXY"
+  ],
+  "unknown_fields": [
+    "Control.Unknown83"
+  ],
+  "full_vector_game_meaning_proved": false,
+  "physical_bytes_preserved": true,
+  "assembly_executed": false
+}

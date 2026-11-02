@@ -9,7 +9,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[3]
 sys.path[:0] = [str(ROOT / 'Tools/Disasm'), str(ROOT / 'Tools/Disasm/Research')]
 from VerifySources import main as verify
-from SourcePresentation import format_function
+from SourcePresentation import format_function, continuity
 from ValidateNotes import validate_notes
 import ControlsTextDisplayFacts as facts
 
@@ -102,6 +102,8 @@ def main(facts=facts, tag='ControlsTextDisplay', document='ControlsTextDisplay',
         following = getattr(facts, 'CONTINUATIONS', {0xEFC4: 0xEFF1}).get(address)
         continuation = None if following is None else dict(region='Controls', name=facts.FUNCTIONS[following][0],
             path='Source/Controls/' + facts.FUNCTIONS[following][0] + '.asm')
+        if continuation is None:
+            continuation = continuity([item for item in functions if item['region']=='Controls'],[controls])[0].get(f['path'])
         pending[ROOT / f['path']] = format_function('\n'.join(lines) + '\n', continuation).encode('utf-8')
     source_map = read('SourceMap')
     for item in source_map:

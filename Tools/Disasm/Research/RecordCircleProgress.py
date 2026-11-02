@@ -12,6 +12,7 @@ def main():
     parser.add_argument('--compiled-lines', type=int)
     parser.add_argument('--work-seconds', type=float)
     parser.add_argument('--sources-changed', action='store_true')
+    parser.add_argument('--byte-match-line-omitted', action='store_true')
     args = parser.parse_args()
     assert (args.compiled_lines is None) == (args.work_seconds is None)
     assert not (args.sources_changed and args.compiled_lines is not None)
@@ -61,7 +62,7 @@ def main():
     for tag, key in (('ActionRegionType', 'action_region_type'), ('ControlsSeededParameters', 'controls_seeded_parameters'),
                      ('ControlsParameterTables', 'controls_parameter_tables'), ('ActionApplyParameters', 'action_apply_parameters'),
                      ('ActionParameterActivation', 'action_parameter_activation'), ('ControlsParameterActivation', 'controls_parameter_activation'),
-                     ('ControlsThreeRowGlyph', 'controls_three_row_glyph')):
+                     ('ControlsThreeRowGlyph', 'controls_three_row_glyph'), ('ControlsGlyphIndicators', 'controls_glyph_indicators')):
         if not (ROOT/('Tools/Disasm/Reports/'+tag+'Classification.json')).exists():
             continue
         proof = read(tag+'Verification')
@@ -88,6 +89,24 @@ def main():
         path = 'Tools/Disasm/Reports/ControlsThreeRowGlyphsClassification.json'
         if path not in checkpoint['passed_reports']:
             checkpoint['passed_reports'].append(path)
+    if (ROOT/'Tools/Disasm/Reports/ActionGlyphIndicatorStateClassification.json').exists():
+        assert read('ActionGlyphIndicatorStateClassification')['passed']
+        checkpoint['action_glyph_indicator_state']=dict(typed_bytes=12,physical_records=4,
+            structures=['FGlyphIndicatorControl','FGlyphIndicatorXY','FGlyphIndicatorYX'],
+            unknown_fields=['Control.Unknown83'],full_vector_game_meaning_proved=False)
+        path='Tools/Disasm/Reports/ActionGlyphIndicatorStateClassification.json'
+        if path not in checkpoint['passed_reports']:
+            checkpoint['passed_reports'].append(path)
+    if (ROOT/'Tools/Disasm/Reports/ControlsRasterReturnsClassification.json').exists():
+        proof=read('ControlsRasterReturnsVerification')
+        assert proof['passed'] and read('ControlsRasterReturnsClassification')['passed']
+        checkpoint['controls_raster_returns_partial']=dict(typed_bytes=32,physical_records=16,cases=proof['total_cases'],
+            stopped_before_selected_tail=True,full_rasterizer_proved=False,unknown_e291_status_preserved=True)
+        checkpoint['controls_three_row_glyphs']['remaining_return_table_bytes_unclassified']=0
+        for suffix in ('Verification','Classification'):
+            path='Tools/Disasm/Reports/ControlsRasterReturns'+suffix+'.json'
+            if path not in checkpoint['passed_reports']:
+                checkpoint['passed_reports'].append(path)
     if (ROOT/'Tools/Disasm/Reports/ControlsParameterCoefficientsClassification.json').exists():
         assert read('ControlsParameterCoefficientsClassification')['passed']
         checkpoint['controls_parameter_coefficients'] = dict(typed_bytes=45, physical_records=15,
@@ -122,6 +141,8 @@ def main():
             full_image_byte_identical=True, size=len(image), checked_at_utc=build['checked_at_utc'],
             source_changes_after_build=False, codex_assembler_executed=False,
             observation='Пользователь подтвердил Ctrl+B, число строк и время сохранены из его сообщения')
+        checkpoint['last_user_confirmed_build'].update(user_reported_byte_identity_line=not args.byte_match_line_omitted,
+            byte_identity_verified_from_existing_report_and_image=True)
         checkpoint['manual_build_check'].update(status='passed', checked_at_utc=build['checked_at_utc'],
             sha256=digest, source_changes_after_build=False, current_source_assembly_verified=True)
         checkpoint['last_verified_build_artifact'].update(checked_at_utc=build['checked_at_utc'],

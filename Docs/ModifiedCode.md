@@ -773,7 +773,7 @@
 | Controls | #D8E8 | #D8EF | `LD A,#00` | [UnknownD833.asm](../Source/Controls/UnknownD833.asm) |
 | Controls | #D8F4 | #D900 | `JR #D8FF` | [UnknownD833.asm](../Source/Controls/UnknownD833.asm) |
 | Controls | #DA7C | #DA83 | `LD A,#00` | [DrawSmallBody.asm](../Source/Controls/DrawSmallBody.asm) |
-| Controls | #E021 | #E089 | `LD SP,#0000` | [UnknownE021.asm](../Source/Controls/UnknownE021.asm) |
+| Controls | #E021 | #E089 | `LD SP,#0000` | [UpdateGlyphIndicators.asm](../Source/Controls/UpdateGlyphIndicators.asm) |
 | Controls | #E295 | #E48F | `LD SP,#0000` | [UnknownE291.asm](../Source/Controls/UnknownE291.asm) |
 | Controls | #E2B2 | #E2B0 | `LD L,#00` | [UnknownE291.asm](../Source/Controls/UnknownE291.asm) |
 | Controls | #E2C1 | #E2BC | `LD A,#00` | [UnknownE291.asm](../Source/Controls/UnknownE291.asm) |
@@ -1131,3 +1131,5 @@
 Запись DE1D из банка 1 меняет операнд 688B общего ядра ACTION в фиксированном банке 5. Исходные байты целевой команды находятся в ACTION по смещению 0AC7, операнд по 0AC8, после переноса ядра. Цель находится в [Unknown6780.asm](../Source/Action/Unknown6780.asm), числовой индекс и проверка цепочки описаны в [ControlsParameterTables](ControlsParameterTables.md).
 
 [ApplyParameterSet](ActionApplyParameters.md) записывает 15 целевых байтов, десять из них являются доказанными непосредственными операндами. В реестре уточнены физические банки и файловые смещения этих десяти целей. Пять Unknown-целей не объявляются кодом. Порядок выбора банка и аппаратная блокировка описаны в [ActionParameterActivation](ActionParameterActivation.md).
+
+[UpdateGlyphIndicators](ControlsGlyphIndicators.md) записывает входной SP в операнд E089 команды LD SP,nn по E088 банка 1. Во время очистки SP направляется в пиксели, затем сохранённый операнд действительно восстанавливает рамку. Проверка охватывает записи операнда, 64 байта очистки и временные возвраты CALL.

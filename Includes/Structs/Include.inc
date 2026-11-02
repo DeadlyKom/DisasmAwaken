@@ -1396,4 +1396,34 @@ Row2Right       db #00                                                          
                 ends
                 assert FThreeRowGlyphPhase == 6
 
+
+                ; Физические входы трёх знаков, локальные роли установлены в E021
+                struct FGlyphIndicatorControl
+FirstMode       db #00                                                          ; код 01 пропускает первый знак, остальные значения допускают его
+ThirdGate       db #00                                                          ; ноль допускает третий знак после проверки второго, ненулевое значение запрещает
+Unknown83       db #00                                                          ; E021 этот байт не читает, полный игровой смысл не установлен
+                ends
+                assert FGlyphIndicatorControl == 3
+
+                struct FGlyphIndicatorYX
+Y               db #00                                                          ; байт вертикального смещения в формуле экрана
+X               db #00                                                          ; байт горизонтального смещения в формуле экрана
+SignSource      db #00                                                          ; знаковый байт выбора заполненного или полого квадрата, глобальный смысл не установлен
+                ends
+                assert FGlyphIndicatorYX == 3
+
+                struct FGlyphIndicatorXY
+X               db #00                                                          ; байт горизонтального смещения в формуле экрана
+Y               db #00                                                          ; байт вертикального смещения в формуле экрана
+SignSource      db #00                                                          ; знаковый байт выбора формы, у Second весь байт также входит в OR-маркер отсутствия
+                ends
+                assert FGlyphIndicatorXY == 3
+
+
+                ; Физический адрес для RET с временно выбранным табличным SP
+                struct FReturnDispatchEntry
+Target          dw #0000                                                        ; адрес кодового хвоста в том же банке
+                ends
+                assert FReturnDispatchEntry == 2
+
                 endif

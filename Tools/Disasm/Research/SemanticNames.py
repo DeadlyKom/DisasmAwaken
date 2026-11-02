@@ -135,6 +135,8 @@ def name_operands(region, function_address, operation):
     operation = control_panel_group_name_operands(region, function_address, operation)
     operation = ship_periodic_code_name_operands(region, function_address, operation)
     operation = ship_preview_callback_name_operands(region, function_address, operation)
+    operation = controls_raster_returns_name_operands(region, function_address, operation)
+    operation = controls_glyph_indicators_name_operands(region, function_address, operation)
     operation = controls_three_row_glyph_name_operands(region, function_address, operation)
     operation = controls_parameter_activation_name_operands(region, function_address, operation)
     operation = action_parameter_activation_name_operands(region, function_address, operation)
@@ -1571,3 +1573,11 @@ DOCUMENTS.update({("Controls", a): ("ControlsParameterActivation", "алгори
 from ControlsThreeRowGlyphFacts import LABELS as CONTROLS_THREE_ROW_GLYPH_LABELS, name_operands as controls_three_row_glyph_name_operands
 LABELS.update(CONTROLS_THREE_ROW_GLYPH_LABELS)
 DOCUMENTS.update({("Controls", a): ("ControlsThreeRowGlyph", "алгоритм и проверка") for a in (57678,)})
+
+from ControlsGlyphIndicatorsFacts import LABELS as CONTROLS_GLYPH_INDICATORS_LABELS, name_operands as controls_glyph_indicators_name_operands
+LABELS.update(CONTROLS_GLYPH_INDICATORS_LABELS)
+DOCUMENTS.update({("Controls", a): ("ControlsGlyphIndicators", "алгоритм и проверка") for a in (57377,)})
+
+from ControlsRasterReturns import name_operands as controls_raster_returns_name_operands
+LABELS["Controls", 0xE2BB] = "DispatchIndex"
+DOCUMENTS["Controls", 0xE291] = ("ControlsRasterReturns", "частичный выбор через RET")

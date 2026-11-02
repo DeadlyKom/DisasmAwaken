@@ -803,11 +803,11 @@ Unknown, назначение этого фрагмента ещё не уста
 
 [Алгоритм, контракты и независимая модель](../ControlsSeededParameters.md).
 
-## UnknownE021
+## UpdateGlyphIndicators
 
-[Controls.UnknownE021](../../Source/Controls/UnknownE021.asm)
+[Controls.UpdateGlyphIndicators](../../Source/Controls/UpdateGlyphIndicators.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+Очистка двух экранных зон и обновление до трёх трёхстрочных знаков с точными байтовыми ограничениями.
 
 Вход `#E021`, запись 23, смещения `#0543..#066F`.
 
@@ -816,6 +816,8 @@ Unknown, назначение этого фрагмента ещё не уста
 - Непосредственные записи: `#E089`.
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
+
+[Алгоритм, контракты и независимая модель](../ControlsGlyphIndicators.md).
 
 ## OrThreeRowGlyph
 

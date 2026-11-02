@@ -29,12 +29,12 @@ CONTRACTS = {
          "HL', DE', BC', AF', IX, IY, I, IM и IFF сохраняются, SP=входной SP+2, R получает 62 M1",
          'в порт 7FFD записан Bank0Value=10, выбрано верхнее окно банка 0',
          'ApplyParameterSet выполнил 15 целевых записей, UnknownWord0 и UnknownWord1 обнулены в банке 0',
-         'UnknownByte0 и UnknownByte1 обнулены в фиксированном банке 2, остальные байты кроме рамки стека сохраняются'],
+         'Control.Unknown83 и Control.ThirdGate обнулены в фиксированном банке 2, остальные байты кроме рамки стека сохраняются'],
         ['HL, AF, 15 целевых байтов, два слова, два байта, четыре байта CPU-стека, управление 7FFD, R'],
         ['переключение страницы действительно предшествует записям в верхние адреса, прежний банк после возврата не восстанавливается',
          'параметры размещены в фиксированном окне банка 2 и доступны после выбора банка 0',
          'два CALL оставляют сначала адрес AC49, затем AC4C в той же паре CPU-стека, PUSH BC селектора использует следующую пару',
-         'полный игровой смысл двух обнуляемых слов и двух байтов ещё не установлен']),
+         'роль Control.ThirdGate доказана в UpdateGlyphIndicators, смысл двух слов и Control.Unknown83 ещё не установлен']),
     ('Action',0xAB1B): (
         ['HL, DE и BC сохраняются, AF задаёт A как полный записываемый байт 7FFD, весь F сохраняется',
          'сохранённый BC и внешний возврат находятся в сохраняющемся RAM-окне, рамка не перекрывает исполняемый код',
@@ -57,7 +57,7 @@ COMMENTS = {
     0xAC4C:(['подготовка нулевого слова для обнуления двух существующих слов банка 0'],None),
     0xAC4F:(['обновление UnknownWord0 и UnknownWord1, их игровой смысл ещё не установлен'],None),
     0xAC55:(['подготовка нулевого байта и выходных A=00, F=44'],None),
-    0xAC56:(['обновление UnknownByte0 и UnknownByte1 в фиксированном банке 2'],None),
+    0xAC56:(['обновление Control.Unknown83 и Control.ThirdGate в фиксированном банке 2'],None),
     0xAB1B:(['сохранение BC в общей RAM до изменения выбранного верхнего окна'],None),
     0xAB1C:(['подготовка полного адреса порта 7FFD без изменения F'],None),
     0xAB1F:(['выдача A на шину 7FFD, исходная аппаратная блокировка может сохранить прежнее отображение'],None),
@@ -69,5 +69,6 @@ def name_operands(region,function_address,operation):
     if region=='Action' and function_address==0xAC44:
         operation = operation.replace('LD A, #10','LD A, @ActionParameterActivationConst.Bank0Value')
         for address,name in ((0xECA9,'UnknownWord0'),(0xECF6,'UnknownWord1'),(0x9B83,'UnknownByte0'),(0x9B82,'UnknownByte1')):
-            operation = operation.replace('(#'+format(address,'04X')+')','(@ActionParameterActivationState.'+name+')')
+            target = 'ActionGlyphIndicatorState.Control.'+('Unknown83' if address==0x9B83 else 'ThirdGate') if address in (0x9B83,0x9B82) else 'ActionParameterActivationState.'+name
+            operation = operation.replace('(#'+format(address,'04X')+')','(@'+target+')')
     return operation

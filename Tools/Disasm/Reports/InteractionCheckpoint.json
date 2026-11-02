@@ -2,12 +2,12 @@
   "status": "in_progress",
   "all_plan_stages_completed": false,
   "fragments": 1193,
-  "described": 1053,
-  "unknown": 140,
-  "unproved_contracts": 323,
+  "described": 1054,
+  "unknown": 139,
+  "unproved_contracts": 322,
   "named_without_contract": 183,
   "instruction_count": 39951,
-  "unclassified_bytes": 297118,
+  "unclassified_bytes": 297074,
   "passed_reports": [
     "Tools/Disasm/Reports/PointerVerification.json",
     "Tools/Disasm/Reports/PointerTablesVerification.json",
@@ -484,7 +484,12 @@
     "Tools/Disasm/Reports/ControlsParameterActivationClassification.json",
     "Tools/Disasm/Reports/ControlsThreeRowGlyphVerification.json",
     "Tools/Disasm/Reports/ControlsThreeRowGlyphClassification.json",
-    "Tools/Disasm/Reports/ControlsThreeRowGlyphsClassification.json"
+    "Tools/Disasm/Reports/ControlsThreeRowGlyphsClassification.json",
+    "Tools/Disasm/Reports/ControlsGlyphIndicatorsVerification.json",
+    "Tools/Disasm/Reports/ControlsGlyphIndicatorsClassification.json",
+    "Tools/Disasm/Reports/ActionGlyphIndicatorStateClassification.json",
+    "Tools/Disasm/Reports/ControlsRasterReturnsVerification.json",
+    "Tools/Disasm/Reports/ControlsRasterReturnsClassification.json"
   ],
   "next_station_work": [
     {
@@ -500,7 +505,7 @@
     "Music": 0,
     "Action": 93,
     "ThreeD": 23,
-    "Controls": 24
+    "Controls": 23
   },
   "assembly_executed": false,
   "native_execution_performed": false,
@@ -518,7 +523,7 @@
     "Music": 0,
     "Action": 93,
     "ThreeD": 23,
-    "Controls": 24
+    "Controls": 23
   },
   "next_semantic_work": [
     "Все зарегистрированные Station-входы имеют описанные контракты. Остаются назначения части физических данных, игровые потребители настроек, длительная нативная проверка и произвольные IRQ.",
@@ -1087,7 +1092,7 @@
     "Music": 0,
     "Action": 93,
     "ThreeD": 23,
-    "Controls": 24
+    "Controls": 23
   },
   "deferred_action_adapters": {
     "report": "Tools/Disasm/Reports/DeferredActionAdaptersVerification.json",
@@ -1353,7 +1358,7 @@
     "image": "Awakenv02.trd",
     "size": 655360,
     "sha256": "55a11de202a5334547e39a6db42c945242a2a53559dc1cf601522219e3463f32",
-    "checked_at_utc": "2026-11-02T18:50:37Z",
+    "checked_at_utc": "2026-11-02T20:33:35Z",
     "active_allocations": 41,
     "source_changes_after_build": true,
     "current_source_assembly_verified": false,
@@ -1448,17 +1453,19 @@
     "date": "2026-11-02",
     "errors": 0,
     "warnings": 0,
-    "compiled_lines": 120455,
-    "work_seconds": 1.406,
+    "compiled_lines": 120968,
+    "work_seconds": 1.485,
     "full_image_byte_identical": true,
     "size": 655360,
     "source_changes_after_build": true,
     "observation": "Пользователь подтвердил Ctrl+B, число строк и время сохранены из его сообщения",
     "codex_assembler_executed": false,
-    "checked_at_utc": "2026-11-02T18:50:37Z"
+    "checked_at_utc": "2026-11-02T20:33:35Z",
+    "user_reported_byte_identity_line": true,
+    "byte_identity_verified_from_existing_report_and_image": true
   },
   "last_verified_build_artifact": {
-    "checked_at_utc": "2026-11-02T18:50:37Z",
+    "checked_at_utc": "2026-11-02T20:33:35Z",
     "sha256": "55a11de202a5334547e39a6db42c945242a2a53559dc1cf601522219e3463f32",
     "size": 655360,
     "active_allocations": 41,
@@ -1715,6 +1722,35 @@
       "Solid",
       "Hollow"
     ],
-    "remaining_return_table_bytes_unclassified": 32
+    "remaining_return_table_bytes_unclassified": 0
+  },
+  "controls_glyph_indicators": {
+    "cases": 197880,
+    "exact_registers_flags_r_sp_and_all_ram": true,
+    "game_meaning_proved": false,
+    "assembly_executed": false,
+    "irq_executed": false,
+    "native_execution": false
+  },
+  "action_glyph_indicator_state": {
+    "typed_bytes": 12,
+    "physical_records": 4,
+    "structures": [
+      "FGlyphIndicatorControl",
+      "FGlyphIndicatorXY",
+      "FGlyphIndicatorYX"
+    ],
+    "unknown_fields": [
+      "Control.Unknown83"
+    ],
+    "full_vector_game_meaning_proved": false
+  },
+  "controls_raster_returns_partial": {
+    "typed_bytes": 32,
+    "physical_records": 16,
+    "cases": 65536,
+    "stopped_before_selected_tail": true,
+    "full_rasterizer_proved": false,
+    "unknown_e291_status_preserved": true
   }
 }

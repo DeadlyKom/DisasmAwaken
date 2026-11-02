@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "typed_bytes": 32,
+  "physical_records": 16,
+  "structure": "FReturnDispatchEntry",
+  "physical_bytes_preserved": true,
+  "selected_tails_proved": false,
+  "unknown_e291_status_preserved": true,
+  "assembly_executed": false
+}

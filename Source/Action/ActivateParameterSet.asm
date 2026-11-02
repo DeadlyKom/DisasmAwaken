@@ -14,14 +14,14 @@
                 ;   HL', DE', BC', AF', IX, IY, I, IM и IFF сохраняются, SP=входной SP+2, R получает 62 M1
                 ;   в порт 7FFD записан Bank0Value=10, выбрано верхнее окно банка 0
                 ;   ApplyParameterSet выполнил 15 целевых записей, UnknownWord0 и UnknownWord1 обнулены в банке 0
-                ;   UnknownByte0 и UnknownByte1 обнулены в фиксированном банке 2, остальные байты кроме рамки стека сохраняются
+                ;   Control.Unknown83 и Control.ThirdGate обнулены в фиксированном банке 2, остальные байты кроме рамки стека сохраняются
                 ; Corrupt:
                 ;   HL, AF, 15 целевых байтов, два слова, два байта, четыре байта CPU-стека, управление 7FFD, R
                 ; Note:
                 ;   переключение страницы действительно предшествует записям в верхние адреса, прежний банк после возврата не восстанавливается
                 ;   параметры размещены в фиксированном окне банка 2 и доступны после выбора банка 0
                 ;   два CALL оставляют сначала адрес AC49, затем AC4C в той же паре CPU-стека, PUSH BC селектора использует следующую пару
-                ;   полный игровой смысл двух обнуляемых слов и двух байтов ещё не установлен
+                ;   роль Control.ThirdGate доказана в UpdateGlyphIndicators, смысл двух слов и Control.Unknown83 ещё не установлен
                 ; -----------------------------------------
                 ; выбор управляющего байта Bank0Value перед применением верхних адресов набора
 Entry:          LD A, @ActionParameterActivationConst.Bank0Value
@@ -36,9 +36,9 @@ Entry:          LD A, @ActionParameterActivationConst.Bank0Value
                 LD (@ActionParameterActivationState.UnknownWord1), HL
                 ; подготовка нулевого байта и выходных A=00, F=44
                 XOR A
-                ; обновление UnknownByte0 и UnknownByte1 в фиксированном банке 2
-                LD (@ActionParameterActivationState.UnknownByte0), A
-                LD (@ActionParameterActivationState.UnknownByte1), A
+                ; обновление Control.Unknown83 и Control.ThirdGate в фиксированном банке 2
+                LD (@ActionGlyphIndicatorState.Control.Unknown83), A
+                LD (@ActionGlyphIndicatorState.Control.ThirdGate), A
                 RET
 
                 endmodule

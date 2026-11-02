@@ -1,5 +1,6 @@
                 module Controls
                 module UnknownE291
+                ; Документация [частичный выбор через RET](../../Docs/ControlsRasterReturns.md)
 ; Документация [Controls](../../Docs/FunctionDetails/Controls.md)
 ; -----------------------------------------
 ; Unknown, назначение этого фрагмента ещё не установлено
@@ -33,21 +34,21 @@ PointE2AF:      LD L, #00
                 ADD A, L
                 LD (#E2B0), A
                 LD C, #00
-                JP NC, @Controls.UnknownE291.PointE2BB                          ; переход, если флаг Carry сброшен
+                JP NC, @Controls.UnknownE291.DispatchIndex                      ; переход, если флаг Carry сброшен
 
 
                 LD C, B
-PointE2BB:      LD A, #00
+DispatchIndex:  LD A, #00
                 SUB C
                 EXX
                 AND #0F
-                LD (#E2BC), A
-                LD (#E471), A
+                LD (@ControlsRasterReturnsState.EntryIndex), A
+                LD (@ControlsRasterReturnsState.RepeatIndex), A
                 RLCA
                 LD L, A
                 LD H, #00
                 LD B, H
-                LD SP, #E271
+                LD SP, @ControlsRasterReturns.Index00
                 ADD HL, SP
                 LD SP, HL
                 LD HL, #48B2
@@ -428,8 +429,8 @@ PointE46B:      EX AF, AF'
                 LD L, A
                 XOR A
                 LD H, A
-                LD (#E471), A
-                LD SP, #E271
+                LD (@ControlsRasterReturnsState.RepeatIndex), A
+                LD SP, @ControlsRasterReturns.Index00
                 ADD HL, SP
                 LD SP, HL
                 LD A, #01

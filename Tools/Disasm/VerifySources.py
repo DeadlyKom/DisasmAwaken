@@ -349,6 +349,36 @@ def main():
         assert [symbols['FTHREEROWGLYPHPHASE.'+name.upper()] for name,_,_ in THREE_ROW_RULES[5]] == [0,1,2,3,4,5]
         three_row_glyph_records = 32
 
+    # Проверка четырёх физических записей входов трёх знаков.
+    from ActionGlyphIndicatorState import PATH as GLYPH_INPUT_PATH, STRUCTURES as GLYPH_INPUT_STRUCTURES, parse as parse_glyph_inputs
+    glyph_input_records = 0
+    entries = [item for item in source_map if item['path'] == GLYPH_INPUT_PATH]
+    if entries:
+        assert len(entries) == 1
+        item = entries[0]
+        raw, labels = parse_glyph_inputs((ROOT/GLYPH_INPUT_PATH).read_text('utf-8'))
+        assert (item['slot'],item['offset'],item['length'],item['origin']) == (17,0x3B81,12,0x9B81)
+        assert raw == sources[17][0x3B81:0x3B8D]
+        assert all(symbols.get(key.upper()) == value for key,value in labels.items())
+        for name,fields in GLYPH_INPUT_STRUCTURES.items():
+            assert symbols[name.upper()] == 3
+            assert [symbols[name.upper()+'.'+field.upper()] for field,_ in fields] == [0,1,2]
+        glyph_input_records = 4
+
+    # Проверка шестнадцати физических адресов для RET, смысл полных хвостов не подменяется этой проверкой.
+    from ControlsRasterReturns import TABLE as RASTER_RETURNS, parse as parse_raster_returns
+    raster_return_records = 0
+    entries = [item for item in source_map if item['path'] == RASTER_RETURNS[1]]
+    if entries:
+        assert len(entries) == 1
+        item = entries[0]
+        raw,labels = parse_raster_returns((ROOT/RASTER_RETURNS[1]).read_text('utf-8'))
+        assert (item['slot'],item['offset'],item['length'],item['origin']) == (23,0x793,32,0xE271)
+        assert raw == sources[23][0x793:0x7B3]
+        assert all(symbols.get(key.upper()) == value for key,value in labels.items())
+        assert symbols['FRETURNDISPATCHENTRY'] == 2 and symbols['FRETURNDISPATCHENTRY.TARGET'] == 0
+        raster_return_records = 16
+
     # Проверка физических записей композиции и точной грамматики фактических DB-команд.
     from MusicCompositionSource import descriptions as composition_descriptions, parse as parse_composition, STRUCTURES as COMPOSITION_STRUCTURES
     composition = sources[10][0xC00:0x1C29]
@@ -1314,6 +1344,8 @@ def main():
     report['body_projection_records'] = body_projection_records
     report['circle_work_records'] = circle_work_records
     report['three_row_glyph_records'] = three_row_glyph_records
+    report['raster_return_records'] = raster_return_records
+    report['glyph_input_records'] = glyph_input_records
     report['parameter_rule_records'] = parameter_rule_records
     (ROOT/"Tools/Disasm/Reports/SourceVerification.json").write_text(
         json.dumps(report,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")

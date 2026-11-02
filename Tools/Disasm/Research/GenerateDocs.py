@@ -101,6 +101,11 @@ def main():
         from ActionApplyParametersFacts import qualify_mutations
         qualify_mutations(mutations,flow,functions)
 
+    # Реальный операнд восстановления SP обновления трёх знаков, банк 1.
+    if any(f['region']=='Controls' and f['address']==0xE021 and f['name']=='UpdateGlyphIndicators' for f in functions):
+        from ControlsGlyphIndicatorsFacts import qualify_restore_sp
+        qualify_restore_sp(mutations,flow)
+
     # Сохранение адресов записей в инструкции без объявления каждой записи ошибкой.
     lines = ["# Изменяемые инструкции", "", "Это непосредственные записи внутрь размеченных инструкций, включая",
              "отдельно доказанные межмодульные цели. Они включают сохранение SP, операнды и переключаемые",
@@ -173,6 +178,10 @@ def main():
                "| FWordRandomState | #04 | физические First и Second двухсловного генератора, см. [ControlsWordRandom](ControlsWordRandom.md) |",
                "| FParameterCoefficient | #03 | пятнадцать физических Base, SlopeCode, ShiftMask, см. [ControlsParameterTables](ControlsParameterTables.md) |",
                "| FThreeRowGlyphPhase | #06 | 32 физических фазы четырёх трёхстрочных знаков, см. [ControlsThreeRowGlyph](ControlsThreeRowGlyph.md) |",
+               "| FReturnDispatchEntry | #02 | 16 физических адресов для RET, полный E291 остаётся Unknown, см. [ControlsRasterReturns](ControlsRasterReturns.md) |",
+               "| FGlyphIndicatorControl | #03 | физические FirstMode, ThirdGate и Unknown83, см. [ControlsGlyphIndicators](ControlsGlyphIndicators.md) |",
+               "| FGlyphIndicatorXY | #03 | два физических входа X,Y,SignSource, см. [ControlsGlyphIndicators](ControlsGlyphIndicators.md) |",
+               "| FGlyphIndicatorYX | #03 | физический третий вход Y,X,SignSource, см. [ControlsGlyphIndicators](ControlsGlyphIndicators.md) |",
                "| FVisualEffect | #12 | запись эффекта, свободное состояние +7 |",
                "| FInterfaceItem | #10 | прямоугольник, флаги и два обработчика интерфейса |",
                "| FProjectedPoint | #05 | X, Y и составной код отсечения вершины |",

@@ -12104,14 +12104,14 @@
   },
   {
     "region": "Controls",
-    "name": "UnknownE021",
+    "name": "UpdateGlyphIndicators",
     "address": 57377,
     "slot": 23,
     "offset": 1347,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Очистка двух экранных зон и обновление до трёх трёхстрочных знаков с точными байтовыми ограничениями",
+    "semantic_status": "described",
     "end_offset": 1648,
-    "path": "Source/Controls/UnknownE021.asm"
+    "path": "Source/Controls/UpdateGlyphIndicators.asm"
   },
   {
     "region": "Controls",

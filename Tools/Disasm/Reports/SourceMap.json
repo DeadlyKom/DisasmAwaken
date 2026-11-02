@@ -10573,11 +10573,29 @@
   {
     "slot": 17,
     "offset": 15129,
-    "length": 3348,
+    "length": 104,
     "kind": "unclassified",
-    "path": "Source/Resources/17_ACTION/Unclassified020_AfterWordRandom.bin",
+    "path": "Source/Resources/17_ACTION/Unclassified020_BeforeGlyphIndicators.bin",
     "origin": null,
-    "sha256": "abf4461281a250b260418d813319516cbd5c2f55a9cf0b84b5ca8f46fa1da565"
+    "sha256": "ee5c10fb9a7bd4bf4ceb947d65f0eb953b43d7f18dbb52c4cd17120f525facf8"
+  },
+  {
+    "slot": 17,
+    "offset": 15233,
+    "length": 12,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/GlyphIndicatorState.asm",
+    "origin": 39809,
+    "sha256": "15ec7bf0b50732b49f8228e07d24365338f9e3ab994b00af08e5a3bffe55fd8b"
+  },
+  {
+    "slot": 17,
+    "offset": 15245,
+    "length": 3232,
+    "kind": "unclassified",
+    "path": "Source/Resources/17_ACTION/Unclassified020_AfterGlyphIndicators.bin",
+    "origin": null,
+    "sha256": "83019abdac95a1b20db3bea52fb98efab04fcf78f6772a039a475f0848796b88"
   },
   {
     "slot": 17,
@@ -13860,7 +13878,7 @@
     "offset": 1347,
     "length": 301,
     "kind": "code",
-    "path": "Source/Controls/UnknownE021.asm",
+    "path": "Source/Controls/UpdateGlyphIndicators.asm",
     "origin": 57377,
     "sha256": "dec0aac8d47d19ec85cf49691439992d505439571a2f8857572008b1da60764f"
   },
@@ -13886,9 +13904,9 @@
     "slot": 23,
     "offset": 1939,
     "length": 32,
-    "kind": "unclassified",
-    "path": "Source/Resources/23_CONTROL/Unclassified004_AfterGlyphs.bin",
-    "origin": null,
+    "kind": "typed_data",
+    "path": "Source/Controls/Data/RasterReturns.asm",
+    "origin": 57969,
     "sha256": "b986012e462b38a5a79781d93beebd23d62eb0b8e87e2257a1fe575e6989ce49"
   },
   {

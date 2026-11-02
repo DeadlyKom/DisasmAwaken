@@ -1,0 +1,43 @@
+{
+  "passed": true,
+  "total_cases": 197880,
+  "cases_by_kind": {
+    "branch_combinations": 128,
+    "no_glyph_passthrough": 64,
+    "all_coordinates_0": 65536,
+    "all_coordinates_1": 65536,
+    "all_coordinates_2": 65536,
+    "all_mode_gate_values": 256,
+    "all_sentinel_vectors": 56,
+    "all_shape_sign_bytes": 768
+  },
+  "routes": {
+    "third_tail": 197437,
+    "third_gate": 319,
+    "second_sentinel": 124
+  },
+  "glyphs_drawn": 592916,
+  "supplement_cases": 192,
+  "first_skipped_third_drawn_checked": true,
+  "no_glyph_de_and_b_passthrough_checked": true,
+  "all_coordinates_of_each_input": true,
+  "all_mode_and_gate_byte_values": true,
+  "exact_or_sentinel_seven_vectors": true,
+  "all_sign_bytes_each_input": true,
+  "original_helpers_without_stubs": true,
+  "independent_coordinate_and_pixel_reference": true,
+  "clear_bytes": 64,
+  "preserved_gap_columns": [
+    21,
+    24
+  ],
+  "temporary_sp_and_self_modified_restore_checked": true,
+  "byte_overflow_coordinate_quirks_preserved": true,
+  "exact_registers_flags_r_and_sp": true,
+  "every_ram_byte_and_write_checked": true,
+  "all_combined_vectors_exhausted": false,
+  "game_vector_meaning_proved": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

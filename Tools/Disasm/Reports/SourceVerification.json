@@ -141,5 +141,7 @@
   "body_projection_records": 1,
   "circle_work_records": 1,
   "three_row_glyph_records": 32,
+  "raster_return_records": 16,
+  "glyph_input_records": 4,
   "parameter_rule_records": 15
 }

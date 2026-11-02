@@ -7113,7 +7113,13 @@
     "target_instruction": 57480,
     "size": 2,
     "target_operation": "LD SP,#0000",
-    "path": "Source/Controls/UnknownE021.asm"
+    "path": "Source/Controls/UpdateGlyphIndicators.asm",
+    "writer_bank": 1,
+    "target_bank": 1,
+    "target_region": "Controls",
+    "target_slot": 23,
+    "target_offset": 1451,
+    "target_path": "Source/Controls/UpdateGlyphIndicators.asm"
   },
   {
     "region": "Controls",

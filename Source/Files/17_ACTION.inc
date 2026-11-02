@@ -278,7 +278,14 @@
                 ent
                 assert $ == #3B19
                 ; Unknown, исходные байты после состояния генератора
-                incbin "../Resources/17_ACTION/Unclassified020_AfterWordRandom.bin"
+                incbin "../Resources/17_ACTION/Unclassified020_BeforeGlyphIndicators.bin"
+                assert $ == #3B81
+                disp #9B81
+                include "../Action/Data/GlyphIndicatorState.asm"
+                ent
+                assert $ == #3B8D
+                ; Unknown, исходная область после входов знаков
+                incbin "../Resources/17_ACTION/Unclassified020_AfterGlyphIndicators.bin"
                 assert $ == #482D
                 disp #A82D
                 include "../Action/StartFlight.asm"                             ; (0) жёсткий порядок, последовательное исполнение

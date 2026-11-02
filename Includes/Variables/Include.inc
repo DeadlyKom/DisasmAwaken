@@ -1337,4 +1337,17 @@ UnknownByte0    equ #9B83                                                       
 UnknownByte1    equ #9B82                                                       ; второй обнуляемый байт фиксированного банка 2, игровой смысл не установлен
                 endmodule
 
+
+                ; Существующее состояние, память не выделяется
+                module ControlsGlyphIndicatorsState
+RestoreSP       equ #E089                                                       ; изменяемый операнд LD SP,nn по E088, заполняется входным SP
+                endmodule
+
+
+                ; Существующие изменяемые операнды частичного RET-диспетчера, память не выделяется
+                module ControlsRasterReturnsState
+EntryIndex      equ #E2BC                                                       ; операнд LD A, n по E2BB, после выбора содержит младшую тетраду
+RepeatIndex     equ #E471                                                       ; операнд LD A, n по E470, полный последующий алгоритм ещё не разобран
+                endmodule
+
                 endif
