@@ -150735,6 +150735,8 @@
       28268,
       28332,
       28445,
+      28494,
+      28747,
       29947,
       31576,
       43053,
@@ -160286,6 +160288,41 @@
         "offset": 4490
       },
       {
+        "address": 28494,
+        "operation": "POP IX",
+        "hex": "dde1",
+        "slot": 17,
+        "offset": 4491
+      },
+      {
+        "address": 28496,
+        "operation": "POP BC",
+        "hex": "c1",
+        "slot": 17,
+        "offset": 4493
+      },
+      {
+        "address": 28497,
+        "operation": "POP DE",
+        "hex": "d1",
+        "slot": 17,
+        "offset": 4494
+      },
+      {
+        "address": 28498,
+        "operation": "POP HL",
+        "hex": "e1",
+        "slot": 17,
+        "offset": 4495
+      },
+      {
+        "address": 28499,
+        "operation": "JR #6F28",
+        "hex": "18d3",
+        "slot": 17,
+        "offset": 4496
+      },
+      {
         "address": 28501,
         "operation": "LD A,#00",
         "hex": "3e00",
@@ -160907,6 +160944,13 @@
         "hex": "c9",
         "slot": 17,
         "offset": 4691
+      },
+      {
+        "address": 28747,
+        "operation": "RET",
+        "hex": "c9",
+        "slot": 17,
+        "offset": 4744
       },
       {
         "address": 29947,
@@ -193810,10 +193854,10 @@
       }
     ],
     "overlaps": [],
-    "instruction_count": 5987,
-    "code_bytes": 11732,
+    "instruction_count": 5993,
+    "code_bytes": 11740,
     "total_bytes": 40387,
-    "classified_fraction": 0.2904895139525095
+    "classified_fraction": 0.2906875974942432
   },
   {
     "name": "ThreeD",

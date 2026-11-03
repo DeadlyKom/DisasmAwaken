@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "total_cases": 116008,
+  "cases_by_mode": {
+    "ordinary": 116000,
+    "forced": 8
+  },
+  "all_accepted_positions_each_20_pointer_entries": true,
+  "all_control_bytes": true,
+  "physical_shape_count": 12,
+  "physical_phase_count": 96,
+  "physical_mask_records": 8,
+  "original_resource_bytes_checked": 672,
+  "exact_registers_flags_refresh_sp": true,
+  "every_ram_byte_and_write_checked": true,
+  "maximum_additional_stack_bytes": 2,
+  "type_domain": [
+    0,
+    19
+  ],
+  "types_outside_table_proved": false,
+  "full_e291_proved": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

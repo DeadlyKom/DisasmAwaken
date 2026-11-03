@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "total_cases": 134400,
+  "cases_by_kind": {
+    "requests": 256,
+    "values": 1024,
+    "preferred": 65536,
+    "signed_word": 65536,
+    "pages": 2048
+  },
+  "method": "composition_of_checked_children_and_independent_parent_control_reference",
+  "independent_complete_child_oracle": false,
+  "children_executed_without_stubs": true,
+  "all_request_combinations": true,
+  "nonzero_request_codes": [
+    1,
+    2,
+    128,
+    255
+  ],
+  "every_byte_of_four_value_inputs": true,
+  "all_preferred_fallback_pairs": true,
+  "all_signed_source_words": true,
+  "all_unlocked_pages_and_request_combinations": true,
+  "exact_registers_flags_refresh_sp": true,
+  "every_physical_ram_byte_and_write_checked": true,
+  "real_out_and_physical_eight_banks": true,
+  "maximum_additional_stack_bytes": 6,
+  "second_request_preserved": true,
+  "other_five_requests_cleared": true,
+  "source_word_and_preferred_pair_unchanged": true,
+  "sixth_gauge_range": [
+    0,
+    46
+  ],
+  "all_joint_inputs_exhausted": false,
+  "game_meaning_of_source_fields_proved": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

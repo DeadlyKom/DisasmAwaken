@@ -501,11 +501,11 @@
 | Action | #615B | #665C | `LD A,#00` | [Unknown6145.asm](../Source/Action/Unknown6145.asm) |
 | Action | #6373 | #635C | `LD HL,#0000` | [Unknown635B.asm](../Source/Action/Unknown635B.asm) |
 | Action | #6379 | #ECA9 | `LD HL,#0000` | [Unknown635B.asm](../Source/Action/Unknown635B.asm) |
-| Action | #6658 | #664A | `LD A,#00` | [Unknown6649.asm](../Source/Action/Unknown6649.asm) |
-| Action | #6679 | #666B | `LD A,#00` | [Unknown6649.asm](../Source/Action/Unknown6649.asm) |
-| Action | #668A | #667D | `LD A,#00` | [Unknown6649.asm](../Source/Action/Unknown6649.asm) |
-| Action | #669B | #668E | `LD A,#00` | [Unknown6649.asm](../Source/Action/Unknown6649.asm) |
-| Action | #66A4 | #669F | `LD A,#00` | [Unknown6649.asm](../Source/Action/Unknown6649.asm) |
+| Action | #6658 | #664A | `LD A,#00` | [UpdatePanelGauges.asm](../Source/Action/UpdatePanelGauges.asm) |
+| Action | #6679 | #666B | `LD A,#00` | [UpdatePanelGauges.asm](../Source/Action/UpdatePanelGauges.asm) |
+| Action | #668A | #667D | `LD A,#00` | [UpdatePanelGauges.asm](../Source/Action/UpdatePanelGauges.asm) |
+| Action | #669B | #668E | `LD A,#00` | [UpdatePanelGauges.asm](../Source/Action/UpdatePanelGauges.asm) |
+| Action | #66A4 | #669F | `LD A,#00` | [UpdatePanelGauges.asm](../Source/Action/UpdatePanelGauges.asm) |
 | Action | #673F | #7B6B | `CP #FD` | [Unknown66D2.asm](../Source/Action/Unknown66D2.asm) |
 | Action | #6787 | #6781 | `LD HL,#8000` | [Unknown6780.asm](../Source/Action/Unknown6780.asm) |
 | Action | #678F | #6781 | `LD HL,#8000` | [Unknown6780.asm](../Source/Action/Unknown6780.asm) |
@@ -540,8 +540,8 @@
 | Action | #6E82 | #E5B3 | `LD DE,#0000` | [Unknown6E6C.asm](../Source/Action/Unknown6E6C.asm) |
 | Action | #6E95 | #E5D2 | `LD DE,#0000` | [Unknown6E6C.asm](../Source/Action/Unknown6E6C.asm) |
 | Action | #6EA8 | #E5ED | `LD DE,#0000` | [Unknown6E6C.asm](../Source/Action/Unknown6E6C.asm) |
-| Action | #6EB0 | #669F | `LD A,#00` | [Unknown6EAC.asm](../Source/Action/Unknown6EAC.asm) |
-| Action | #6EDA | #6EAD | `LD A,#00` | [Unknown6EAC.asm](../Source/Action/Unknown6EAC.asm) |
+| Action | #6EB0 | #669F | `LD A,#00` | [StepNearZeroWord.asm](../Source/Action/StepNearZeroWord.asm) |
+| Action | #6EDA | #6EAD | `LD A,#00` | [StepNearZeroWord.asm](../Source/Action/StepNearZeroWord.asm) |
 | Action | #6F5A | #6F59 | `LD C,#00` | [Unknown6F55.asm](../Source/Action/Unknown6F55.asm) |
 | Action | #6F73 | #669F | `LD A,#00` | [Unknown6F55.asm](../Source/Action/Unknown6F55.asm) |
 | Action | #6F77 | #6F56 | `LD A,#00` | [Unknown6F55.asm](../Source/Action/Unknown6F55.asm) |

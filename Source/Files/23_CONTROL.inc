@@ -68,15 +68,34 @@
                 include "../Controls/UnknownE291.asm"
                 ent
                 assert $ == #0B7F
-                ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/23_CONTROL/Unclassified005.bin"
+                ; Физические записи ControlsObjectGlyphPointers
+                disp #E65D
+                include "../Controls/Data/ObjectGlyphPointers.asm"
+                ent
+                assert $ == #0BA7
+                ; Физические записи ControlsObjectPixelMasks
+                disp #E685
+                include "../Controls/Data/ObjectPixelMasks.asm"
+                ent
+                assert $ == #0BAF
+                ; Физические записи ControlsObjectClearMasks
+                disp #E68D
+                include "../Controls/Data/ObjectClearMasks.asm"
+                ent
+                assert $ == #0BDF
+                ; Физические записи ControlsObjectGlyphs
+                disp #E6BD
+                include "../Controls/Data/ObjectGlyphs.asm"
+                ent
                 assert $ == #0E1F
                 disp #E8FD
-                include "../Controls/UnknownE8FD.asm"
+                include "../Controls/DrawSixRowGauge.asm"
                 ent
                 assert $ == #0E95
-                ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/23_CONTROL/Unclassified006.bin"
+                ; Семь физических масок частичного столбца шкалы
+                disp #E973
+                include "../Controls/Data/GaugeMasks.asm"
+                ent
                 assert $ == #0E9C
                 disp #E97A
                 include "../Controls/UnknownE97A.asm"

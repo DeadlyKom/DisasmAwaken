@@ -1,5 +1,6 @@
                 module Action
                 module Unknown6F1D
+                ; Документация [частичный диспетчер и рамка](../../Docs/ActionKeyDispatchPrefix.md)
 ; Документация [Action](../../Docs/FunctionDetails/Action.md)
 ; -----------------------------------------
 ; Unknown, назначение этого фрагмента ещё не установлено
@@ -14,8 +15,8 @@
 ;   граница файла не доказывает границу логической процедуры
 ;   состояние самомодификации и активной страницы учитывается отдельно
 ; -----------------------------------------
-Entry:          LD IX, #9D4C
-                LD DE, #7015
+Entry:          LD IX, @ActionKeyScanInputs.Index00.RowSelect
+                LD DE, @ActionKeyHandlerPointers.Index00 - 2
                 LD L, #1C
                 LD C, #FE
 Point6F28:      DEC L

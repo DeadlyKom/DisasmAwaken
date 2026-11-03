@@ -379,6 +379,73 @@ def main():
         assert symbols['FRETURNDISPATCHENTRY'] == 2 and symbols['FRETURNDISPATCHENTRY.TARGET'] == 0
         raster_return_records = 16
 
+    # Проверка 672 физических байтов указателей, масок и фаз объектных значков.
+    from ControlsObjectGlyphData import TABLES as OBJECT_GLYPH_TABLES, parse as parse_object_glyph_data
+    object_glyph_records = 0
+    for table in OBJECT_GLYPH_TABLES:
+        entries = [item for item in source_map if item['path']==table[1]]
+        if entries:
+            assert len(entries)==1
+            item=entries[0]
+            raw,labels=parse_object_glyph_data((ROOT/table[1]).read_text('utf-8'),table)
+            assert (item['slot'],item['offset'],item['length'],item['origin'])==(23,table[2],table[3]-table[2],0xDADE+table[2])
+            assert raw==sources[23][table[2]:table[3]]
+            assert all(symbols.get(key.upper())==value for key,value in labels.items())
+            assert symbols[table[4].upper()]==sum(field[1] for field in table[5])
+            offset=0
+            for name,width,note in table[5]:
+                assert symbols[table[4].upper()+'.'+name.upper()]==offset
+                offset+=width
+            object_glyph_records+=len(table[6])
+
+    # Проверка семи физических масок частичного столбца шкалы.
+    from ControlsGaugeMasks import TABLE as GAUGE_MASKS, parse as parse_gauge_masks
+    gauge_mask_records=0
+    entries=[item for item in source_map if item['path']==GAUGE_MASKS[1]]
+    if entries:
+        assert len(entries)==1
+        item=entries[0]
+        raw,labels=parse_gauge_masks((ROOT/GAUGE_MASKS[1]).read_text('utf-8'))
+        assert (item['slot'],item['offset'],item['length'],item['origin'])==(23,0xE95,7,0xE973)
+        assert raw==sources[23][0xE95:0xE9C]
+        assert all(symbols.get(key.upper())==value for key,value in labels.items())
+        assert symbols['FGAUGEPARTIALMASK']==1 and symbols['FGAUGEPARTIALMASK.PATTERN']==0
+        gauge_mask_records=7
+
+    # Проверка физической пары Preferred/Fallback, игровая семантика здесь не подменяется.
+    from ActionPreferredByteState import TABLE as PREFERRED_BYTES, parse as parse_preferred_bytes
+    preferred_byte_records=0
+    entries=[item for item in source_map if item['path']==PREFERRED_BYTES[1]]
+    if entries:
+        assert len(entries)==1
+        item=entries[0]
+        raw,labels=parse_preferred_bytes((ROOT/PREFERRED_BYTES[1]).read_text('utf-8'))
+        assert (item['slot'],item['offset'],item['length'],item['origin'])==(17,0x3C10,2,0x9C10)
+        assert raw==sources[17][0x3C10:0x3C12]
+        assert all(symbols.get(key.upper())==value for key,value in labels.items())
+        assert symbols['FPREFERREDBYTEPAIR']==2
+        assert symbols['FPREFERREDBYTEPAIR.PREFERRED']==0 and symbols['FPREFERREDBYTEPAIR.FALLBACK']==1
+        preferred_byte_records=1
+
+    # Проверка 26 отдельных указателей и 27 пар IN, перекрывающееся слово 704B/704C не эмитируется повторно.
+    from ActionKeyScanTables import TABLES as KEY_SCAN_TABLES, parse as parse_key_scan_table, origin as key_scan_origin
+    key_scan_records=0
+    for table in KEY_SCAN_TABLES:
+        entries=[item for item in source_map if item['path']==table[1]]
+        if entries:
+            assert len(entries)==1
+            item=entries[0]
+            raw,labels=parse_key_scan_table((ROOT/table[1]).read_text('utf-8'),table)
+            assert (item['slot'],item['offset'],item['length'],item['origin'])==(17,table[2],table[3]-table[2],key_scan_origin(table)+table[2])
+            assert raw==sources[17][table[2]:table[3]]
+            assert all(symbols.get(key.upper())==value for key,value in labels.items())
+            assert symbols[table[4].upper()]==2
+            offset=0
+            for field,width,note in table[5]:
+                assert symbols[table[4].upper()+'.'+field.upper()]==offset
+                offset+=width
+            key_scan_records+=len(table[6])
+
     # Проверка физических записей композиции и точной грамматики фактических DB-команд.
     from MusicCompositionSource import descriptions as composition_descriptions, parse as parse_composition, STRUCTURES as COMPOSITION_STRUCTURES
     composition = sources[10][0xC00:0x1C29]
@@ -1345,6 +1412,10 @@ def main():
     report['circle_work_records'] = circle_work_records
     report['three_row_glyph_records'] = three_row_glyph_records
     report['raster_return_records'] = raster_return_records
+    report['object_glyph_records'] = object_glyph_records
+    report['gauge_mask_records'] = gauge_mask_records
+    report['preferred_byte_records'] = preferred_byte_records
+    report['key_scan_records'] = key_scan_records
     report['glyph_input_records'] = glyph_input_records
     report['parameter_rule_records'] = parameter_rule_records
     (ROOT/"Tools/Disasm/Reports/SourceVerification.json").write_text(

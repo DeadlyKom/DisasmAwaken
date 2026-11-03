@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "total_cases": 48640,
+  "cases_by_path": {
+    "zero": 760,
+    "down_inside": 18224,
+    "up_clipped": 6864,
+    "up_inside": 17456,
+    "down_clipped": 5336
+  },
+  "all_height_bytes_and_allowed_y": true,
+  "all_pixel_phases": true,
+  "exact_registers_flags_refresh_sp_and_branch_target": true,
+  "every_ram_byte_and_write_checked": true,
+  "no_stack_writes": true,
+  "full_e291_proved": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

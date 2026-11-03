@@ -100,11 +100,11 @@
                 incbin "../Resources/17_ACTION/Unclassified007.bin"
                 assert $ == #0876
                 disp #6639
-                include "../Action/Unknown6639.asm"
+                include "../Action/DrawBankedGauge.asm"
                 ent
                 assert $ == #0886
                 disp #6649
-                include "../Action/Unknown6649.asm"
+                include "../Action/UpdatePanelGauges.asm"
                 ent
                 assert $ == #090F
                 disp #66D2
@@ -209,7 +209,7 @@
                 ent
                 assert $ == #10E9
                 disp #6EAC
-                include "../Action/Unknown6EAC.asm"
+                include "../Action/StepNearZeroWord.asm"
                 ent
                 assert $ == #111B
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
@@ -219,18 +219,29 @@
                 include "../Action/Unknown6F1D.asm"
                 ent
                 assert $ == #118B
-                ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/17_ACTION/Unclassified016.bin"
+                ; Подтверждённый хвост восстановления рамки клавиатуры
+                disp #6F4E
+                include "../Action/RestoreKeyScanFrame.asm"
+                ent
                 assert $ == #1192
                 disp #6F55
                 include "../Action/Unknown6F55.asm"
                 ent
                 assert $ == #1254
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/17_ACTION/Unclassified017.bin"
+                disp #7017
+                include "../Action/Data/KeyHandlerPointers.asm"
+                ent
+                assert $ == #1288
+                disp #704B
+                include "../Action/IgnoreKey.asm"
+                ent
+                assert $ == #1289
+                ; Unknown, остальные обработчики ещё не разобраны
+                incbin "../Resources/17_ACTION/Unclassified017_AfterIgnoreKey.bin"
                 assert $ == #1738
                 disp #74FB
-                include "../Action/Unknown74FB.asm"
+                include "../Action/SelectPreferredByte.asm"
                 ent
                 assert $ == #1741
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
@@ -285,7 +296,21 @@
                 ent
                 assert $ == #3B8D
                 ; Unknown, исходная область после входов знаков
-                incbin "../Resources/17_ACTION/Unclassified020_AfterGlyphIndicators.bin"
+                incbin "../Resources/17_ACTION/Unclassified020_BeforePreferredByte.bin"
+                assert $ == #3C10
+                disp #9C10
+                include "../Action/Data/PreferredByteState.asm"
+                ent
+                assert $ == #3C12
+                ; Unknown, соседний ресурс ещё не разобран
+                incbin "../Resources/17_ACTION/Unclassified020_BeforeKeyInputs.bin"
+                assert $ == #3D4C
+                disp #9D4C
+                include "../Action/Data/KeyScanInputs.asm"
+                ent
+                assert $ == #3D82
+                ; Unknown, соседние данные ещё не разобраны
+                incbin "../Resources/17_ACTION/Unclassified020_AfterKeyInputs.bin"
                 assert $ == #482D
                 disp #A82D
                 include "../Action/StartFlight.asm"                             ; (0) жёсткий порядок, последовательное исполнение

@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "total_cases": 79616,
+  "cases_by_kind": {
+    "dispatch": 10368,
+    "scan_exhausted": 3712,
+    "restore_frame": 65536
+  },
+  "every_in_byte_each_scan_position": true,
+  "every_mode_byte_each_dispatch_position": true,
+  "stopped_before_handler": true,
+  "handlers_executed": false,
+  "full_dispatcher_proved": false,
+  "exact_registers_flags_refresh_sp_and_targets": true,
+  "every_ram_byte_and_write_checked": true,
+  "maximum_prefix_stack_bytes": 10,
+  "raw_return_epilogue_bytes": "DDE1C1D1E118D3",
+  "raw_return_epilogue_separate_cases": 65536,
+  "restore_m1": 6,
+  "scan_positions": 27,
+  "last_target": "C0C9",
+  "last_pointer_overlaps_bytes_at": [
+    "704B",
+    "704C"
+  ],
+  "last_key_record_duplicates_first": true,
+  "consistent_static_keyboard_state_not_assumed": true,
+  "upper_bank_for_last_handler_unproved": true,
+  "unknown_6f1d_status_preserved": true,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

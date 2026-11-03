@@ -14,7 +14,7 @@
 ;   граница файла не доказывает границу логической процедуры
 ;   состояние самомодификации и активной страницы учитывается отдельно
 ; -----------------------------------------
-Entry:          CALL @Action.Unknown6EAC.Entry
+Entry:          CALL @Action.StepNearZeroWord.Entry
                 CALL @Action.Unknown6F1D.Entry
                 LD A, (#CBD8)
                 NOP

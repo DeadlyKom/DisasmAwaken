@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "total_cases": 256,
+  "method": "actual_prefix_ret_and_restore_chain",
+  "all_mode_values": true,
+  "handler_opcode": "C9",
+  "handler_refresh_m1": 1,
+  "original_dispatch_and_restore_executed": true,
+  "exact_registers_flags_refresh_sp": true,
+  "every_ram_byte_and_write_checked": true,
+  "no_handler_or_restore_memory_writes": true,
+  "other_keyboard_handlers_proved": false,
+  "overlapping_pointer_bytes_preserved": true,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

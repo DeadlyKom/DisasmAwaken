@@ -1350,4 +1350,26 @@ EntryIndex      equ #E2BC                                                       
 RepeatIndex     equ #E471                                                       ; операнд LD A, n по E470, полный последующий алгоритм ещё не разобран
                 endmodule
 
+
+                ; Существующее состояние, память не выделяется
+                module ActionPanelGaugesState
+FirstRequest    equ #664A                                                       ; операнд первого LD A,n, ненулевой код запрашивает обновление первой шкалы
+SecondRequest   equ #665C                                                       ; операнд второго LD A,n, запрос сохраняется после обновления
+ThirdRequest    equ #666B                                                       ; операнд третьего LD A,n, сбрасывается после вывода
+FourthRequest   equ #667D                                                       ; операнд четвёртого LD A,n, сбрасывается после вывода
+FifthRequest    equ #668E                                                       ; операнд пятого LD A,n, сбрасывается после вывода
+SixthRequest    equ #669F                                                       ; операнд шестого LD A,n, сбрасывается перед расчётом значения
+FourthValue     equ #6682                                                       ; операнд LD A,n с готовым значением четвёртой шкалы
+FifthValue      equ #6693                                                       ; операнд LD A,n с готовым значением пятой шкалы
+FirstValue      equ #A794                                                       ; существующий байтовый источник первой шкалы, игровой смысл ещё не установлен
+ThirdValue      equ #A8BC                                                       ; операнд LD A,n по A8BB внутри UpdateFrame, источник третьей шкалы
+SignedWord      equ #A78F                                                       ; существующее знаковое слово для модуля шестой шкалы, игровой смысл ещё не установлен
+                endmodule
+
+
+                ; Существующее состояние, память не выделяется
+                module ActionNearZeroWordState
+EnabledCode     equ #6EAD                                                       ; операнд LD A,n, ноль запрещает обработку, ненулевой код допускает
+                endmodule
+
                 endif

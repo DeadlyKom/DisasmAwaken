@@ -32,4 +32,6 @@ def name_operands(region,function_address,operation):
         operation=operation.replace('LD SP, #E271','LD SP, @ControlsRasterReturns.Index00')
         operation=operation.replace('(#E2BC)','(@ControlsRasterReturnsState.EntryIndex)')
         operation=operation.replace('(#E471)','(@ControlsRasterReturnsState.RepeatIndex)')
+        operation=operation.replace('LD HL, #E685','LD HL, @ControlsObjectPixelMasks.Phase00')
+        operation=operation.replace('LD HL, #E68D','LD HL, @ControlsObjectClearMasks.Phase00')
     return operation

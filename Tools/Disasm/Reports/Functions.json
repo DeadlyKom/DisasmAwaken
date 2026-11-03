@@ -8441,25 +8441,25 @@
   },
   {
     "region": "Action",
-    "name": "Unknown6639",
+    "name": "DrawBankedGauge",
     "address": 26169,
     "slot": 17,
     "offset": 2166,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Выбор банка 1, вывод шестистрочной шкалы и обязательный выбор банка 0",
+    "semantic_status": "described",
     "end_offset": 2182,
-    "path": "Source/Action/Unknown6639.asm"
+    "path": "Source/Action/DrawBankedGauge.asm"
   },
   {
     "region": "Action",
-    "name": "Unknown6649",
+    "name": "UpdatePanelGauges",
     "address": 26185,
     "slot": 17,
     "offset": 2182,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Условное обновление шести шкал, сброс пяти запросов и насыщение шестого значения",
+    "semantic_status": "described",
     "end_offset": 2319,
-    "path": "Source/Action/Unknown6649.asm"
+    "path": "Source/Action/UpdatePanelGauges.asm"
   },
   {
     "region": "Action",
@@ -8683,14 +8683,14 @@
   },
   {
     "region": "Action",
-    "name": "Unknown6EAC",
+    "name": "StepNearZeroWord",
     "address": 28332,
     "slot": 17,
     "offset": 4329,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Изменение слова около нуля, запрос шестой шкалы и выключение обработки при модуле от двух",
+    "semantic_status": "described",
     "end_offset": 4379,
-    "path": "Source/Action/Unknown6EAC.asm"
+    "path": "Source/Action/StepNearZeroWord.asm"
   },
   {
     "region": "Action",
@@ -8705,6 +8705,17 @@
   },
   {
     "region": "Action",
+    "name": "RestoreKeyScanFrame",
+    "address": 28494,
+    "slot": 17,
+    "offset": 4491,
+    "description": "Восстановление IX, BC, DE и HL после обработчика клавиши и продолжение сканирования",
+    "semantic_status": "described",
+    "end_offset": 4498,
+    "path": "Source/Action/RestoreKeyScanFrame.asm"
+  },
+  {
+    "region": "Action",
     "name": "Unknown6F55",
     "address": 28501,
     "slot": 17,
@@ -8716,14 +8727,25 @@
   },
   {
     "region": "Action",
-    "name": "Unknown74FB",
+    "name": "IgnoreKey",
+    "address": 28747,
+    "slot": 17,
+    "offset": 4744,
+    "description": "Пустой обработчик клавиши, возврат к восстановлению рамки без изменения регистров",
+    "semantic_status": "described",
+    "end_offset": 4745,
+    "path": "Source/Action/IgnoreKey.asm"
+  },
+  {
+    "region": "Action",
+    "name": "SelectPreferredByte",
     "address": 29947,
     "slot": 17,
     "offset": 5944,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Выбор ненулевого предпочтительного байта либо запасного значения с возвратом адреса выбранного поля",
+    "semantic_status": "described",
     "end_offset": 5953,
-    "path": "Source/Action/Unknown74FB.asm"
+    "path": "Source/Action/SelectPreferredByte.asm"
   },
   {
     "region": "Action",
@@ -12137,14 +12159,14 @@
   },
   {
     "region": "Controls",
-    "name": "UnknownE8FD",
+    "name": "DrawSixRowGauge",
     "address": 59645,
     "slot": 23,
     "offset": 3615,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Вывод шестистрочной шкалы узором AA, частичного столбца и нулевого хвоста",
+    "semantic_status": "described",
     "end_offset": 3733,
-    "path": "Source/Controls/UnknownE8FD.asm"
+    "path": "Source/Controls/DrawSixRowGauge.asm"
   },
   {
     "region": "Controls",

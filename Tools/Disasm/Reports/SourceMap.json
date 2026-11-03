@@ -10143,7 +10143,7 @@
     "offset": 2166,
     "length": 16,
     "kind": "code",
-    "path": "Source/Action/Unknown6639.asm",
+    "path": "Source/Action/DrawBankedGauge.asm",
     "origin": 26169,
     "sha256": "227c81cd585d1a07004ee367cd0f449c86385799545d125147f59487c7e91dfb"
   },
@@ -10152,7 +10152,7 @@
     "offset": 2182,
     "length": 137,
     "kind": "code",
-    "path": "Source/Action/Unknown6649.asm",
+    "path": "Source/Action/UpdatePanelGauges.asm",
     "origin": 26185,
     "sha256": "6e7f3d27a40394d04e148a941b568bda231a5567c57acb33d46693a0c34e1887"
   },
@@ -10404,7 +10404,7 @@
     "offset": 4329,
     "length": 50,
     "kind": "code",
-    "path": "Source/Action/Unknown6EAC.asm",
+    "path": "Source/Action/StepNearZeroWord.asm",
     "origin": 28332,
     "sha256": "ac5cb03a4d652c8f6103f6f5d6811ed5c7623862911fdfd446fc2f8fc5e368a6"
   },
@@ -10430,9 +10430,9 @@
     "slot": 17,
     "offset": 4491,
     "length": 7,
-    "kind": "unclassified",
-    "path": "Source/Resources/17_ACTION/Unclassified016.bin",
-    "origin": null,
+    "kind": "code",
+    "path": "Source/Action/RestoreKeyScanFrame.asm",
+    "origin": 28494,
     "sha256": "03b268ca43380f47992eabc270bb123efada2f8f4c25ac674c83f13b65f83e14"
   },
   {
@@ -10447,18 +10447,36 @@
   {
     "slot": 17,
     "offset": 4692,
-    "length": 1252,
+    "length": 52,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/KeyHandlerPointers.asm",
+    "origin": 28695,
+    "sha256": "99e61116f00412271225bbfe77cece9632eeb72e058d1247f69760330c18b4e1"
+  },
+  {
+    "slot": 17,
+    "offset": 4744,
+    "length": 1,
+    "kind": "code",
+    "path": "Source/Action/IgnoreKey.asm",
+    "origin": 28747,
+    "sha256": "4fb733bedb74fec8d65bedf056b935189a289e928b3302bec38a281814de523a"
+  },
+  {
+    "slot": 17,
+    "offset": 4745,
+    "length": 1199,
     "kind": "unclassified",
-    "path": "Source/Resources/17_ACTION/Unclassified017.bin",
+    "path": "Source/Resources/17_ACTION/Unclassified017_AfterIgnoreKey.bin",
     "origin": null,
-    "sha256": "c24f0ce17e877d2d24ef26a18fa79a4e217d148db183e90375bbeb816443585a"
+    "sha256": "24eb5619262069961df4173be155f17a666148519c1d330ab23942638ef86da2"
   },
   {
     "slot": 17,
     "offset": 5944,
     "length": 9,
     "kind": "code",
-    "path": "Source/Action/Unknown74FB.asm",
+    "path": "Source/Action/SelectPreferredByte.asm",
     "origin": 29947,
     "sha256": "36a7d75b2e6c136e4dd9a8f2355cb0889377a35f5c5c9013e0b7e814d870744b"
   },
@@ -10591,11 +10609,47 @@
   {
     "slot": 17,
     "offset": 15245,
-    "length": 3232,
+    "length": 131,
     "kind": "unclassified",
-    "path": "Source/Resources/17_ACTION/Unclassified020_AfterGlyphIndicators.bin",
+    "path": "Source/Resources/17_ACTION/Unclassified020_BeforePreferredByte.bin",
     "origin": null,
-    "sha256": "83019abdac95a1b20db3bea52fb98efab04fcf78f6772a039a475f0848796b88"
+    "sha256": "d9b49edcd87c4deb7638e94e3230af5b200161665229b858bfe1bd0a263e2798"
+  },
+  {
+    "slot": 17,
+    "offset": 15376,
+    "length": 2,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/PreferredByteState.asm",
+    "origin": 39952,
+    "sha256": "f431a7f47862c05a44c40ef1f447d207ba15d339cef1fb9357564974137c1673"
+  },
+  {
+    "slot": 17,
+    "offset": 15378,
+    "length": 314,
+    "kind": "unclassified",
+    "path": "Source/Resources/17_ACTION/Unclassified020_BeforeKeyInputs.bin",
+    "origin": null,
+    "sha256": "a6953fe7565e885aa4a64a01da7a0aa01f5e52c572452e2c37b3083427b1ee2a"
+  },
+  {
+    "slot": 17,
+    "offset": 15692,
+    "length": 54,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/KeyScanInputs.asm",
+    "origin": 40268,
+    "sha256": "f6fbfcc7b81a56b95fb6fff36c5e764e7a933a9781faccc0c2da724eb1b80ab4"
+  },
+  {
+    "slot": 17,
+    "offset": 15746,
+    "length": 2731,
+    "kind": "unclassified",
+    "path": "Source/Resources/17_ACTION/Unclassified020_AfterKeyInputs.bin",
+    "origin": null,
+    "sha256": "6a463d6689e8a7fec16b32b75b40976a352087151918af1ca1b3264cc8dd9fe9"
   },
   {
     "slot": 17,
@@ -13921,18 +13975,45 @@
   {
     "slot": 23,
     "offset": 2943,
-    "length": 672,
-    "kind": "unclassified",
-    "path": "Source/Resources/23_CONTROL/Unclassified005.bin",
-    "origin": null,
-    "sha256": "b61ba9350bb6b2b08841cb88acdd796473842944aebab6b7e9d4a253d408fa19"
+    "length": 40,
+    "kind": "typed_data",
+    "path": "Source/Controls/Data/ObjectGlyphPointers.asm",
+    "origin": 58973,
+    "sha256": "e2f6c49f798ca30563cee6645b9bc654ef1933b02dbbb1846db895f80fdb9b6a"
+  },
+  {
+    "slot": 23,
+    "offset": 2983,
+    "length": 8,
+    "kind": "typed_data",
+    "path": "Source/Controls/Data/ObjectPixelMasks.asm",
+    "origin": 59013,
+    "sha256": "237ee2ad60c37d29a6b16156101c55987faede67a905daf2e64453b6db2035fb"
+  },
+  {
+    "slot": 23,
+    "offset": 2991,
+    "length": 48,
+    "kind": "typed_data",
+    "path": "Source/Controls/Data/ObjectClearMasks.asm",
+    "origin": 59021,
+    "sha256": "f0f2ac7733ee00df001877593e2552c2ee74e76ffd4fe478873c9de62303e28b"
+  },
+  {
+    "slot": 23,
+    "offset": 3039,
+    "length": 576,
+    "kind": "typed_data",
+    "path": "Source/Controls/Data/ObjectGlyphs.asm",
+    "origin": 59069,
+    "sha256": "91e15e0e6e9b131acb6e5085e27e62532e2baee9f972e7f1b4672d76e089bcc0"
   },
   {
     "slot": 23,
     "offset": 3615,
     "length": 118,
     "kind": "code",
-    "path": "Source/Controls/UnknownE8FD.asm",
+    "path": "Source/Controls/DrawSixRowGauge.asm",
     "origin": 59645,
     "sha256": "5f8d44ca563e6a608b6a3b26e8e9dd25876013e9db88647ee8afb3b3edd5368e"
   },
@@ -13940,9 +14021,9 @@
     "slot": 23,
     "offset": 3733,
     "length": 7,
-    "kind": "unclassified",
-    "path": "Source/Resources/23_CONTROL/Unclassified006.bin",
-    "origin": null,
+    "kind": "typed_data",
+    "path": "Source/Controls/Data/GaugeMasks.asm",
+    "origin": 59763,
     "sha256": "c04d87fafb37a5daaf55c1d97b685fb2aa902105452b382f11ace2fc33b8472f"
   },
   {

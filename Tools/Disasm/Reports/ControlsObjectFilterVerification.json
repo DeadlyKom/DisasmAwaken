@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "total_cases": 327680,
+  "cases_by_path": {
+    "accepted": 259845,
+    "type_14": 255,
+    "type_15": 255,
+    "check_marker": 256,
+    "height_80": 511,
+    "z_80": 510,
+    "x_80": 512,
+    "sentinel_continue": 65280,
+    "sentinel_return": 256
+  },
+  "all_status_type_pairs": true,
+  "all_pairwise_coordinate_field_values": true,
+  "all_marker_values_and_initial_flag_bytes": true,
+  "exact_registers_flags_refresh_sp_and_targets": true,
+  "every_ram_byte_checked": true,
+  "no_memory_writes": true,
+  "record_stride": 64,
+  "rejected_type_codes": [
+    20,
+    21
+  ],
+  "accepted_type_domain_not_limited_to_0_19": true,
+  "full_joint_field_space_exhausted": false,
+  "full_e291_proved": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

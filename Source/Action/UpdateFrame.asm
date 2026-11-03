@@ -264,7 +264,7 @@ PointA97E:      CALL #ECA8
                 LD (#D0F6), A
                 LD A, #10
                 CALL @Action.SelectMemoryPage.Entry
-                CALL @Action.Unknown6649.Entry
+                CALL @Action.UpdatePanelGauges.Entry
                 LD A, #00
                 AND A
                 LD A, #15

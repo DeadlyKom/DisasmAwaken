@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "typed_bytes": 7,
+  "physical_records": 7,
+  "unused_by_this_consumer_indices": [
+    0
+  ],
+  "physical_bytes_preserved": true,
+  "assembly_executed": false,
+  "resumed_after_transient_write_failure": true
+}

@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "total_cases": 395008,
+  "cases_by_kind": {
+    "words": 196608,
+    "controls": 1792,
+    "alternative_af": 196608
+  },
+  "all_signed_words": true,
+  "all_control_bytes": true,
+  "all_alternative_af_words": true,
+  "exact_registers_flags_refresh_sp": true,
+  "every_ram_byte_and_write_checked": true,
+  "no_cpu_stack_writes": true,
+  "word_written_only_for_original_values": [
+    0,
+    1,
+    65535
+  ],
+  "transformed_words": {
+    "0000": "FFFE",
+    "0001": "FFFF",
+    "FFFF": "0001"
+  },
+  "magnitude_ge_two_clears_control_without_writing_word": true,
+  "original_jr_nc_preserved": true,
+  "all_joint_inputs_exhausted": false,
+  "game_meaning_of_source_word_proved": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

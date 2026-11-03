@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "typed_bytes": 2,
+  "physical_records": 1,
+  "structure": "FPreferredBytePair",
+  "physical_bytes_preserved": true,
+  "game_meaning_proved": false,
+  "assembly_executed": false
+}

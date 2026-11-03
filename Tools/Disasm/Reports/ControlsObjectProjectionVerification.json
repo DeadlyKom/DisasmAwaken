@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "total_cases": 65536,
+  "cases_by_path": {
+    "accepted": 41600,
+    "y_lower": 7168,
+    "y_upper": 7168,
+    "x_upper": 5600,
+    "x_lower": 4000
+  },
+  "all_raw_x_z_pairs": true,
+  "exact_registers_flags_refresh_sp": true,
+  "every_ram_byte_checked": true,
+  "no_memory_writes": true,
+  "accepted_screen_x": [
+    64,
+    140
+  ],
+  "accepted_screen_y": [
+    107,
+    180
+  ],
+  "raw_80_rejected_by_caller": true,
+  "direct_entry_80_also_checked": true,
+  "object_record_filter_proved": false,
+  "height_stem_proved": false,
+  "icon_drawing_proved": false,
+  "full_e291_proved": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

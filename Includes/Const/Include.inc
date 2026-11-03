@@ -969,4 +969,21 @@ TopRow7SP       equ #4FB8                                                       
 BottomRow7SP    equ #4FD8                                                       ; исходный SP очистки, нижняя группа, строка 7
                 endmodule
 
+                ; Исходные адреса и предел шестой шкалы панели ACTION
+                module ActionPanelGaugesConst
+FirstTarget     equ #49A1                                                       ; верхний байт первой шестистрочной шкалы
+SecondTarget    equ #49E1                                                       ; верхний байт второй шестистрочной шкалы
+ThirdTarget     equ #5121                                                       ; верхний байт третьей шестистрочной шкалы
+FourthTarget    equ #5181                                                       ; верхний байт четвёртой шестистрочной шкалы
+FifthTarget     equ #51C1                                                       ; верхний байт пятой шестистрочной шкалы
+SixthTarget     equ #49B9                                                       ; верхний байт шестой шестистрочной шкалы
+MaxSixthValue   equ #2E                                                         ; последний допустимый результат шестой шкалы, 46
+SixthEndValue   equ #2F                                                         ; первое значение, требующее насыщения, 47
+                endmodule
+
+                ; Исходный шаг обработки околонулевого знакового слова
+                module ActionNearZeroWordConst
+Step            equ #0002                                                       ; величина вычитания из модуля исходного слова
+                endmodule
+
                 endif

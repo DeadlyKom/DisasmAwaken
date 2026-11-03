@@ -21,10 +21,10 @@
 | Help | 4 | 4 | [Факты](FunctionDetails/Help.md) |
 | Music | 49 | 49 | [Факты](FunctionDetails/Music.md) |
 | ActionBoot | 9 | 9 | [Факты](FunctionDetails/ActionBoot.md) |
-| Action | 180 | 87 | [Факты](FunctionDetails/Action.md) |
+| Action | 182 | 93 | [Факты](FunctionDetails/Action.md) |
 | ThreeD | 98 | 75 | [Факты](FunctionDetails/ThreeD.md) |
 | Voxel | 9 | 9 | [Факты](FunctionDetails/Voxel.md) |
-| Controls | 72 | 49 | [Факты](FunctionDetails/Controls.md) |
+| Controls | 72 | 50 | [Факты](FunctionDetails/Controls.md) |
 | Final | 9 | 9 | [Факты](FunctionDetails/Final.md) |
 | FinalTemplates | 2 | 2 | [Факты](FunctionDetails/FinalTemplates.md) |
 
@@ -673,8 +673,8 @@
 | #62CF | [Action.Unknown62CF](../Source/Action/Unknown62CF.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #635B | [Action.Unknown635B](../Source/Action/Unknown635B.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #64DF | [Action.Unknown64DF](../Source/Action/Unknown64DF.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #6639 | [Action.Unknown6639](../Source/Action/Unknown6639.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #6649 | [Action.Unknown6649](../Source/Action/Unknown6649.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #6639 | [Action.DrawBankedGauge](../Source/Action/DrawBankedGauge.asm) | Выбор банка 1, вывод шестистрочной шкалы и обязательный выбор банка 0 |
+| #6649 | [Action.UpdatePanelGauges](../Source/Action/UpdatePanelGauges.asm) | Условное обновление шести шкал, сброс пяти запросов и насыщение шестого значения |
 | #66D2 | [Action.Unknown66D2](../Source/Action/Unknown66D2.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #6780 | [Action.Unknown6780](../Source/Action/Unknown6780.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #6986 | [Action.Unknown6986](../Source/Action/Unknown6986.asm) | Unknown, назначение этого фрагмента ещё не установлено |
@@ -695,10 +695,12 @@
 | #6D38 | [Action.Unknown6D38](../Source/Action/Unknown6D38.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #6E2B | [Action.ClassifyCoordinateRegion](../Source/Action/ClassifyCoordinateRegion.asm) | Классификация пары H,L по трём непересекающимся прямоугольникам с кодом 3 вне них |
 | #6E6C | [Action.Unknown6E6C](../Source/Action/Unknown6E6C.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #6EAC | [Action.Unknown6EAC](../Source/Action/Unknown6EAC.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #6EAC | [Action.StepNearZeroWord](../Source/Action/StepNearZeroWord.asm) | Изменение слова около нуля, запрос шестой шкалы и выключение обработки при модуле от двух |
 | #6F1D | [Action.Unknown6F1D](../Source/Action/Unknown6F1D.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #6F4E | [Action.RestoreKeyScanFrame](../Source/Action/RestoreKeyScanFrame.asm) | Восстановление IX, BC, DE и HL после обработчика клавиши и продолжение сканирования |
 | #6F55 | [Action.Unknown6F55](../Source/Action/Unknown6F55.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #74FB | [Action.Unknown74FB](../Source/Action/Unknown74FB.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #704B | [Action.IgnoreKey](../Source/Action/IgnoreKey.asm) | Пустой обработчик клавиши, возврат к восстановлению рамки без изменения регистров |
+| #74FB | [Action.SelectPreferredByte](../Source/Action/SelectPreferredByte.asm) | Выбор ненулевого предпочтительного байта либо запасного значения с возвратом адреса выбранного поля |
 | #7859 | [Action.Unknown7859](../Source/Action/Unknown7859.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #7B58 | [Action.Unknown7B58](../Source/Action/Unknown7B58.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #7E9D | [Action.Unknown7E9D](../Source/Action/Unknown7E9D.asm) | Unknown, назначение этого фрагмента ещё не установлено |
@@ -1009,7 +1011,7 @@
 | #E021 | [Controls.UpdateGlyphIndicators](../Source/Controls/UpdateGlyphIndicators.asm) | Очистка двух экранных зон и обновление до трёх трёхстрочных знаков с точными байтовыми ограничениями |
 | #E14E | [Controls.OrThreeRowGlyph](../Source/Controls/OrThreeRowGlyph.asm) | Наложение трёхстрочного фазового знака операцией OR на два байта каждой строки экрана |
 | #E291 | [Controls.UnknownE291](../Source/Controls/UnknownE291.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #E8FD | [Controls.UnknownE8FD](../Source/Controls/UnknownE8FD.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #E8FD | [Controls.DrawSixRowGauge](../Source/Controls/DrawSixRowGauge.asm) | Вывод шестистрочной шкалы узором AA, частичного столбца и нулевого хвоста |
 | #E97A | [Controls.UnknownE97A](../Source/Controls/UnknownE97A.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #EC0E | [Controls.InitializeTextWindow](../Source/Controls/InitializeTextWindow.asm) | Сброс курсоров очереди и настройка тридцати строк стековой прокрутки |
 | #EC56 | [Controls.QueueNumber](../Source/Controls/QueueNumber.asm) | Подготовка числовой записи типа 2 из A и продолжение в производителе текстовой очереди |

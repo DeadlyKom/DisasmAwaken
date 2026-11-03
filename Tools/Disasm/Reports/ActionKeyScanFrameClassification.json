@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "confirmed_code_bytes": 7,
+  "confirmed_instructions": 5,
+  "described_functions": 1,
+  "new_memory_allocated": false,
+  "physical_bytes_preserved": true,
+  "proof_report": "ActionKeyDispatchPrefixVerification.json",
+  "proof_case_subset": "restore_frame",
+  "proof_case_count": 65536,
+  "additional_model_run": false,
+  "unknown_dispatcher_status_preserved": true,
+  "assembly_executed": false
+}

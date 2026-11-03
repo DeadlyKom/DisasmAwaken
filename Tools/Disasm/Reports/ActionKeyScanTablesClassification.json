@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "typed_bytes": 106,
+  "physical_pointer_records": 26,
+  "physical_input_records": 27,
+  "confirmed_code_bytes": 1,
+  "confirmed_instructions": 1,
+  "described_functions": 1,
+  "physical_bytes_preserved": true,
+  "last_overlapping_pointer_not_duplicated": true,
+  "unknown_dispatcher_status_preserved": true,
+  "other_handlers_proved": false,
+  "assembly_executed": false
+}

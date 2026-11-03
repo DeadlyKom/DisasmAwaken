@@ -1426,4 +1426,57 @@ Target          dw #0000                                                        
                 ends
                 assert FReturnDispatchEntry == 2
 
+
+                ; Физическая запись ресурса ControlsObjectGlyphPointers
+                struct FObjectGlyphPointer
+Target          dw #0000                                                        ; адрес восьми фаз формы, игровое имя типа ещё не установлено
+                ends
+                assert FObjectGlyphPointer == 2
+
+                ; Физическая запись ресурса ControlsObjectPixelMasks
+                struct FObjectPixelMask
+Mask            db #00                                                          ; одиночный бит X внутри экранного байта
+                ends
+                assert FObjectPixelMask == 1
+
+                ; Физическая запись ресурса ControlsObjectClearMasks
+                struct FObjectGlyphClearPhase
+LeftMask        db #00                                                          ; сохраняемые биты левой части строки
+RightMask       db #00                                                          ; сохраняемые биты правой части строки
+Unknown02       db #00                                                          ; исходный нулевой байт, этот потребитель его не читает
+Unknown03       db #00                                                          ; исходный нулевой байт, этот потребитель его не читает
+Unknown04       db #00                                                          ; исходный нулевой байт, этот потребитель его не читает
+Unknown05       db #00                                                          ; исходный нулевой байт, этот потребитель его не читает
+                ends
+                assert FObjectGlyphClearPhase == 6
+
+
+                ; Физическая маска частичного столбца шестистрочной шкалы
+                struct FGaugePartialMask
+Pattern         db #00                                                          ; исходный байт для шести строк частичного столбца
+                ends
+                assert FGaugePartialMask == 1
+
+
+                ; Физическая пара ACTION для выбора значения и его изменяемого адреса
+                struct FPreferredBytePair
+Preferred       db #00                                                          ; выбирается вместе со своим адресом, если байт ненулевой
+Fallback        db #00                                                          ; выбирается вместе со своим адресом, если Preferred равен нулю
+                ends
+                assert FPreferredBytePair == 2
+
+
+                ; Физическая запись частично разобранного клавиатурного диспетчера
+                struct FKeyHandlerPointer
+Target          dw #0000                                                        ; адрес обработчика в общей RAM, его алгоритм требует отдельного разбора
+                ends
+                assert FKeyHandlerPointer == 2
+
+                ; Физическая запись частично разобранного клавиатурного диспетчера
+                struct FKeyScanInput
+RowSelect       db #00                                                          ; старший байт порта IN A,(C), младший байт FE
+InputMask       db #00                                                          ; маска входного байта, нулевой результат AND допускает обработчик
+                ends
+                assert FKeyScanInput == 2
+
                 endif

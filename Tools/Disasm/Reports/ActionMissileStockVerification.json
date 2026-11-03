@@ -1,0 +1,50 @@
+{
+  "passed": true,
+  "total_cases": 65536,
+  "cases_by_path": {
+    "preferred": 65280,
+    "fallback": 256
+  },
+  "all_input_byte_pairs": true,
+  "exact_registers_flags_refresh_sp": true,
+  "every_ram_byte_checked": true,
+  "no_memory_or_stack_writes": true,
+  "physical_field_order": [
+    "Fallback",
+    "Preferred"
+  ],
+  "returned_pointer_selects_source": true,
+  "flags_describe_preferred_not_fallback": true,
+  "stock_role_source": "calls at 70AC and 70DE, decrement at 70C6, queued fragments in bank 1",
+  "text_evidence": {
+    "F26D": {
+      "bank": 1,
+      "encoding": "cp866",
+      "text": "Осталось ",
+      "hex": "8ee1e2a0abaee1ec20"
+    },
+    "F277": {
+      "bank": 1,
+      "encoding": "cp866",
+      "text": " ракет.\r",
+      "hex": "20e0a0aaa5e22e0d"
+    },
+    "F280": {
+      "bank": 1,
+      "encoding": "cp866",
+      "text": "Ракеты исчерпаны.\r",
+      "hex": "90a0aaa5e2eb20a8e1e7a5e0afa0adeb2e0d"
+    },
+    "F2E9": {
+      "bank": 1,
+      "encoding": "cp866",
+      "text": "Ракета ушла.\r",
+      "hex": "90a0aaa5e2a020e3e8aba02e0d"
+    }
+  },
+  "subtype_meaning_of_two_counters_proved": false,
+  "caller_handlers_executed": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

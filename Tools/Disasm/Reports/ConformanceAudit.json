@@ -1,19 +1,19 @@
 {
   "method": "static_source_audit_without_assembly",
-  "included_text_files": 1470,
-  "included_binary_files": 231,
-  "registered_functions": 1193,
+  "included_text_files": 1480,
+  "included_binary_files": 230,
+  "registered_functions": 1195,
   "unlinked_functions": [],
   "missing_includes_or_resources": [],
   "missing_include_order": [],
-  "global_definitions": 19777,
-  "global_references": 10889,
+  "global_definitions": 20755,
+  "global_references": 10920,
   "unresolved_global_references": [],
   "duplicate_global_definitions": [],
   "global_reference_case_mismatches": [],
   "source_files_outside_graph": [],
-  "unknown_fragments": 139,
-  "unknown_contract_fragments": 322,
+  "unknown_fragments": 134,
+  "unknown_contract_fragments": 317,
   "unknown_contract_files": [
     "Source/Intro/InitializeIntro.asm",
     "Source/Intro/LoadStation.asm",
@@ -48,8 +48,6 @@
     "Source/Action/Unknown62CF.asm",
     "Source/Action/Unknown635B.asm",
     "Source/Action/Unknown64DF.asm",
-    "Source/Action/Unknown6639.asm",
-    "Source/Action/Unknown6649.asm",
     "Source/Action/Unknown66D2.asm",
     "Source/Action/Unknown6780.asm",
     "Source/Action/Unknown6986.asm",
@@ -69,10 +67,8 @@
     "Source/Action/Unknown6CEF.asm",
     "Source/Action/Unknown6D38.asm",
     "Source/Action/Unknown6E6C.asm",
-    "Source/Action/Unknown6EAC.asm",
     "Source/Action/Unknown6F1D.asm",
     "Source/Action/Unknown6F55.asm",
-    "Source/Action/Unknown74FB.asm",
     "Source/Action/Unknown7859.asm",
     "Source/Action/Unknown7B58.asm",
     "Source/Action/Unknown7E9D.asm",
@@ -333,7 +329,6 @@
     "Source/Controls/RunTemporaryModule.asm",
     "Source/Controls/UnknownDC9B.asm",
     "Source/Controls/UnknownE291.asm",
-    "Source/Controls/UnknownE8FD.asm",
     "Source/Controls/UnknownE97A.asm",
     "Source/Final/InitializeFinal.asm",
     "Source/Final/HaltFinal.asm"
@@ -342,19 +337,19 @@
   "original_profile_only_contracts": 0,
   "runtime_profile_limits": "See RuntimeProfileQualification.json and Docs/MapRuntimeProfiles.md, whole game remains unproved",
   "pending_by_region": {
-    "Action": 93,
+    "Action": 89,
     "ThreeD": 23,
-    "Controls": 23
+    "Controls": 22
   },
   "potential_continuations": 124,
   "ordered_fragments": 225,
-  "python_scripts_parsed": 1118,
+  "python_scripts_parsed": 1189,
   "python_duplicate_literal_keys": [],
   "totals": {
-    "address_label": 1026,
-    "numeric_control_target": 120,
+    "address_label": 1008,
+    "numeric_control_target": 119,
     "numeric_index_operand": 352,
-    "condition_without_data_semantics": 1299
+    "condition_without_data_semantics": 1214
   },
   "findings": [
     {
@@ -1663,101 +1658,6 @@
       "issue": "numeric_index_operand"
     },
     {
-      "path": "Source/Action/Unknown6639.asm",
-      "line": 21,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/Action/Unknown6649.asm",
-      "line": 19,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Action/Unknown6649.asm",
-      "line": 27,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Action/Unknown6649.asm",
-      "line": 29,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Action/Unknown6649.asm",
-      "line": 36,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Action/Unknown6649.asm",
-      "line": 38,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Action/Unknown6649.asm",
-      "line": 46,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Action/Unknown6649.asm",
-      "line": 48,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Action/Unknown6649.asm",
-      "line": 56,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Action/Unknown6649.asm",
-      "line": 58,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Action/Unknown6649.asm",
-      "line": 66,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Action/Unknown6649.asm",
-      "line": 68,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Action/Unknown6649.asm",
-      "line": 75,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Action/Unknown6649.asm",
-      "line": 85,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Action/Unknown6649.asm",
-      "line": 91,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Action/Unknown6649.asm",
-      "line": 95,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Action/Unknown6649.asm",
-      "line": 97,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Action/Unknown6649.asm",
-      "line": 101,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Action/Unknown6649.asm",
-      "line": 104,
-      "issue": "address_label"
-    },
-    {
       "path": "Source/Action/Unknown66D2.asm",
       "line": 22,
       "issue": "condition_without_data_semantics"
@@ -2898,63 +2798,28 @@
       "issue": "numeric_control_target"
     },
     {
-      "path": "Source/Action/Unknown6EAC.asm",
-      "line": 19,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Action/Unknown6EAC.asm",
-      "line": 24,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Action/Unknown6EAC.asm",
-      "line": 34,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Action/Unknown6EAC.asm",
-      "line": 39,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Action/Unknown6EAC.asm",
-      "line": 49,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Action/Unknown6EAC.asm",
-      "line": 50,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Action/Unknown6EAC.asm",
-      "line": 57,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Action/Unknown6F1D.asm",
-      "line": 21,
-      "issue": "address_label"
-    },
-    {
       "path": "Source/Action/Unknown6F1D.asm",
       "line": 22,
+      "issue": "address_label"
+    },
+    {
+      "path": "Source/Action/Unknown6F1D.asm",
+      "line": 23,
       "issue": "condition_without_data_semantics"
     },
     {
       "path": "Source/Action/Unknown6F1D.asm",
-      "line": 25,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/Unknown6F1D.asm",
-      "line": 31,
+      "line": 26,
       "issue": "numeric_index_operand"
     },
     {
       "path": "Source/Action/Unknown6F1D.asm",
       "line": 32,
+      "issue": "numeric_index_operand"
+    },
+    {
+      "path": "Source/Action/Unknown6F1D.asm",
+      "line": 33,
       "issue": "condition_without_data_semantics"
     },
     {
@@ -3101,11 +2966,6 @@
       "path": "Source/Action/Unknown6F55.asm",
       "line": 147,
       "issue": "address_label"
-    },
-    {
-      "path": "Source/Action/Unknown74FB.asm",
-      "line": 20,
-      "issue": "condition_without_data_semantics"
     },
     {
       "path": "Source/Action/Unknown7859.asm",
@@ -13344,213 +13204,68 @@
     },
     {
       "path": "Source/Controls/UnknownE291.asm",
-      "line": 28,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 33,
+      "line": 39,
       "issue": "address_label"
     },
     {
       "path": "Source/Controls/UnknownE291.asm",
-      "line": 37,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 62,
+      "line": 71,
       "issue": "address_label"
     },
     {
       "path": "Source/Controls/UnknownE291.asm",
-      "line": 73,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 79,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 85,
+      "line": 96,
       "issue": "address_label"
     },
     {
       "path": "Source/Controls/UnknownE291.asm",
-      "line": 95,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 101,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 107,
+      "line": 119,
       "issue": "address_label"
     },
     {
       "path": "Source/Controls/UnknownE291.asm",
-      "line": 117,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 123,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 129,
+      "line": 142,
       "issue": "address_label"
     },
     {
       "path": "Source/Controls/UnknownE291.asm",
-      "line": 139,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 145,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 151,
+      "line": 165,
       "issue": "address_label"
     },
     {
       "path": "Source/Controls/UnknownE291.asm",
-      "line": 161,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 167,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 173,
+      "line": 188,
       "issue": "address_label"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 183,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 189,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 195,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 205,
-      "issue": "condition_without_data_semantics"
     },
     {
       "path": "Source/Controls/UnknownE291.asm",
       "line": 211,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 217,
       "issue": "address_label"
     },
     {
       "path": "Source/Controls/UnknownE291.asm",
-      "line": 227,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 233,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 239,
+      "line": 234,
       "issue": "address_label"
     },
     {
       "path": "Source/Controls/UnknownE291.asm",
-      "line": 249,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 255,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 261,
+      "line": 257,
       "issue": "address_label"
     },
     {
       "path": "Source/Controls/UnknownE291.asm",
-      "line": 271,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 277,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 283,
+      "line": 280,
       "issue": "address_label"
     },
     {
       "path": "Source/Controls/UnknownE291.asm",
-      "line": 293,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 299,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 305,
+      "line": 303,
       "issue": "address_label"
     },
     {
       "path": "Source/Controls/UnknownE291.asm",
-      "line": 315,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 321,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 327,
+      "line": 326,
       "issue": "address_label"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 337,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 343,
-      "issue": "condition_without_data_semantics"
     },
     {
       "path": "Source/Controls/UnknownE291.asm",
@@ -13559,273 +13274,93 @@
     },
     {
       "path": "Source/Controls/UnknownE291.asm",
-      "line": 359,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 365,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 371,
+      "line": 372,
       "issue": "address_label"
     },
     {
       "path": "Source/Controls/UnknownE291.asm",
-      "line": 381,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 387,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 393,
+      "line": 395,
       "issue": "address_label"
     },
     {
       "path": "Source/Controls/UnknownE291.asm",
-      "line": 402,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 408,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 414,
+      "line": 418,
       "issue": "address_label"
     },
     {
       "path": "Source/Controls/UnknownE291.asm",
-      "line": 416,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 421,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 443,
+      "line": 440,
       "issue": "address_label"
     },
     {
       "path": "Source/Controls/UnknownE291.asm",
-      "line": 463,
+      "line": 472,
       "issue": "address_label"
     },
     {
       "path": "Source/Controls/UnknownE291.asm",
-      "line": 463,
+      "line": 493,
+      "issue": "address_label"
+    },
+    {
+      "path": "Source/Controls/UnknownE291.asm",
+      "line": 493,
       "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 465,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 467,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 468,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 469,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 471,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 474,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 476,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 480,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 483,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 485,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 490,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 494,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 495,
-      "issue": "condition_without_data_semantics"
     },
     {
       "path": "Source/Controls/UnknownE291.asm",
       "line": 498,
-      "issue": "numeric_index_operand"
+      "issue": "address_label"
+    },
+    {
+      "path": "Source/Controls/UnknownE291.asm",
+      "line": 500,
+      "issue": "address_label"
     },
     {
       "path": "Source/Controls/UnknownE291.asm",
       "line": 501,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 505,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 506,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 509,
       "issue": "numeric_index_operand"
     },
     {
       "path": "Source/Controls/UnknownE291.asm",
-      "line": 512,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 516,
-      "issue": "address_label"
+      "line": 507,
+      "issue": "numeric_index_operand"
     },
     {
       "path": "Source/Controls/UnknownE291.asm",
       "line": 517,
-      "issue": "condition_without_data_semantics"
+      "issue": "numeric_index_operand"
     },
     {
       "path": "Source/Controls/UnknownE291.asm",
-      "line": 539,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 543,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 550,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 554,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 596,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 599,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 610,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 615,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 620,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 623,
+      "line": 529,
       "issue": "address_label"
     },
     {
       "path": "Source/Controls/UnknownE291.asm",
-      "line": 624,
+      "line": 533,
+      "issue": "numeric_index_operand"
+    },
+    {
+      "path": "Source/Controls/UnknownE291.asm",
+      "line": 541,
       "issue": "address_label"
     },
     {
       "path": "Source/Controls/UnknownE291.asm",
-      "line": 630,
-      "issue": "condition_without_data_semantics"
+      "line": 545,
+      "issue": "numeric_index_operand"
     },
     {
       "path": "Source/Controls/UnknownE291.asm",
-      "line": 636,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 642,
+      "line": 553,
       "issue": "address_label"
     },
     {
       "path": "Source/Controls/UnknownE291.asm",
-      "line": 647,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 653,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 659,
+      "line": 672,
       "issue": "address_label"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 662,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 668,
-      "issue": "condition_without_data_semantics"
     },
     {
       "path": "Source/Controls/UnknownE291.asm",
@@ -13834,167 +13369,107 @@
     },
     {
       "path": "Source/Controls/UnknownE291.asm",
-      "line": 678,
-      "issue": "address_label"
+      "line": 680,
+      "issue": "condition_without_data_semantics"
     },
     {
       "path": "Source/Controls/UnknownE291.asm",
-      "line": 684,
+      "line": 686,
       "issue": "condition_without_data_semantics"
     },
     {
       "path": "Source/Controls/UnknownE291.asm",
       "line": 692,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 695,
-      "issue": "condition_without_data_semantics"
+      "issue": "address_label"
     },
     {
       "path": "Source/Controls/UnknownE291.asm",
       "line": 698,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 699,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 705,
       "issue": "condition_without_data_semantics"
     },
     {
       "path": "Source/Controls/UnknownE291.asm",
-      "line": 711,
+      "line": 704,
       "issue": "condition_without_data_semantics"
     },
     {
       "path": "Source/Controls/UnknownE291.asm",
-      "line": 717,
+      "line": 710,
       "issue": "address_label"
+    },
+    {
+      "path": "Source/Controls/UnknownE291.asm",
+      "line": 713,
+      "issue": "condition_without_data_semantics"
     },
     {
       "path": "Source/Controls/UnknownE291.asm",
       "line": 719,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 720,
       "issue": "condition_without_data_semantics"
     },
     {
       "path": "Source/Controls/UnknownE291.asm",
-      "line": 723,
+      "line": 725,
       "issue": "address_label"
     },
     {
       "path": "Source/Controls/UnknownE291.asm",
-      "line": 735,
+      "line": 729,
+      "issue": "address_label"
+    },
+    {
+      "path": "Source/Controls/UnknownE291.asm",
+      "line": 752,
+      "issue": "address_label"
+    },
+    {
+      "path": "Source/Controls/UnknownE291.asm",
+      "line": 754,
+      "issue": "address_label"
+    },
+    {
+      "path": "Source/Controls/UnknownE291.asm",
+      "line": 760,
+      "issue": "condition_without_data_semantics"
+    },
+    {
+      "path": "Source/Controls/UnknownE291.asm",
+      "line": 766,
+      "issue": "condition_without_data_semantics"
+    },
+    {
+      "path": "Source/Controls/UnknownE291.asm",
+      "line": 772,
+      "issue": "address_label"
+    },
+    {
+      "path": "Source/Controls/UnknownE291.asm",
+      "line": 775,
+      "issue": "address_label"
+    },
+    {
+      "path": "Source/Controls/UnknownE291.asm",
+      "line": 780,
+      "issue": "address_label"
+    },
+    {
+      "path": "Source/Controls/UnknownE291.asm",
+      "line": 793,
       "issue": "numeric_index_operand"
     },
     {
       "path": "Source/Controls/UnknownE291.asm",
-      "line": 736,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 740,
+      "line": 799,
       "issue": "address_label"
     },
     {
       "path": "Source/Controls/UnknownE291.asm",
-      "line": 773,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 779,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 785,
+      "line": 847,
       "issue": "address_label"
     },
     {
       "path": "Source/Controls/UnknownE291.asm",
-      "line": 800,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 806,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE291.asm",
-      "line": 812,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Controls/UnknownE8FD.asm",
-      "line": 19,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE8FD.asm",
-      "line": 25,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE8FD.asm",
-      "line": 31,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Controls/UnknownE8FD.asm",
-      "line": 35,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE8FD.asm",
-      "line": 40,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Controls/UnknownE8FD.asm",
-      "line": 57,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Controls/UnknownE8FD.asm",
-      "line": 61,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE8FD.asm",
-      "line": 86,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Controls/UnknownE8FD.asm",
-      "line": 90,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE8FD.asm",
-      "line": 94,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Controls/UnknownE8FD.asm",
-      "line": 99,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Controls/UnknownE8FD.asm",
-      "line": 105,
+      "line": 875,
       "issue": "address_label"
     },
     {

@@ -142,7 +142,7 @@ Point682E:      LD (#6682), A
                 JP NC, @Action.Unknown6780.Point688A                            ; переход, если флаг Carry сброшен
 
 
-                CALL @Action.Unknown74FB.Entry
+                CALL @Action.SelectPreferredByte.Entry
                 INC A
                 LD C, A
                 LD DE, (#9BD2)

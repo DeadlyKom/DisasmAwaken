@@ -4,6 +4,13 @@
 
 | Тип | Размер | Подтверждённое назначение |
 | --- | --- | --- |
+| FKeyHandlerPointer | #02 | 26 отдельных слов адресов, перекрывающееся чтение описано отдельно, см. [ActionKeyDispatchPrefix](ActionKeyDispatchPrefix.md) |
+| FKeyScanInput | #02 | 27 физических RowSelect и InputMask, см. [ActionKeyDispatchPrefix](ActionKeyDispatchPrefix.md) |
+| FPreferredBytePair | #02 | физические Preferred и Fallback ACTION, см. [ActionPreferredByte](ActionPreferredByte.md) |
+| FGaugePartialMask | #01 | 7 физических масок шестистрочной шкалы, см. [ControlsSixRowGauge](ControlsSixRowGauge.md) |
+| FObjectGlyphPointer | #02 | 20 физических указателей на 12 форм, см. [ControlsObjectProjection](ControlsObjectProjection.md) |
+| FObjectPixelMask | #01 | 8 одиночных пиксельных масок, см. [ControlsObjectProjection](ControlsObjectProjection.md) |
+| FObjectGlyphClearPhase | #06 | 8 масок очистки, поля Unknown02..Unknown05 не установлены, см. [ControlsObjectProjection](ControlsObjectProjection.md) |
 | FTrDosEntry | #10 | исходная запись каталога |
 | FPackedHeader | #06 | HR, распакованная и упакованная длины |
 | FPackedFinalBytes | #06 | три пары финальных байтов, [20 физических экземпляров](PackedResourcePrefix.md) |

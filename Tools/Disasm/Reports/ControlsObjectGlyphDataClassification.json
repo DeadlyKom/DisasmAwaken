@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "typed_bytes": 672,
+  "physical_records": 132,
+  "physical_shape_count": 12,
+  "pointer_entries": 20,
+  "unknown_clear_record_fields": [
+    "Unknown02",
+    "Unknown03",
+    "Unknown04",
+    "Unknown05"
+  ],
+  "physical_bytes_preserved": true,
+  "full_e291_proved": false,
+  "assembly_executed": false
+}

@@ -135,6 +135,12 @@ def name_operands(region, function_address, operation):
     operation = control_panel_group_name_operands(region, function_address, operation)
     operation = ship_periodic_code_name_operands(region, function_address, operation)
     operation = ship_preview_callback_name_operands(region, function_address, operation)
+    operation = action_key_scan_tables_name_operands(region,function_address,operation)
+    operation = action_near_zero_word_name_operands(region, function_address, operation)
+    operation = action_panel_gauges_name_operands(region, function_address, operation)
+    operation = action_preferred_byte_name_operands(region, function_address, operation)
+    operation = action_gauge_wrapper_name_operands(region, function_address, operation)
+    operation = controls_six_row_gauge_name_operands(region, function_address, operation)
     operation = controls_raster_returns_name_operands(region, function_address, operation)
     operation = controls_glyph_indicators_name_operands(region, function_address, operation)
     operation = controls_three_row_glyph_name_operands(region, function_address, operation)
@@ -1580,4 +1586,32 @@ DOCUMENTS.update({("Controls", a): ("ControlsGlyphIndicators", "алгоритм
 
 from ControlsRasterReturns import name_operands as controls_raster_returns_name_operands
 LABELS["Controls", 0xE2BB] = "DispatchIndex"
-DOCUMENTS["Controls", 0xE291] = ("ControlsRasterReturns", "частичный выбор через RET")
+DOCUMENTS["Controls", 0xE291] = ("ControlsRasterBackground", "частичный фон и выбор через RET")
+
+from ControlsSixRowGaugeFacts import LABELS as CONTROLS_SIX_ROW_GAUGE_LABELS, name_operands as controls_six_row_gauge_name_operands
+LABELS.update(CONTROLS_SIX_ROW_GAUGE_LABELS)
+DOCUMENTS.update({("Controls", a): ("ControlsSixRowGauge", "алгоритм и проверка") for a in (59645,)})
+
+from ActionGaugeWrapperFacts import LABELS as ACTION_GAUGE_WRAPPER_LABELS, name_operands as action_gauge_wrapper_name_operands
+LABELS.update(ACTION_GAUGE_WRAPPER_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionGaugeWrapper", "алгоритм и проверка") for a in (26169,)})
+
+from ActionPreferredByteFacts import LABELS as ACTION_PREFERRED_BYTE_LABELS, name_operands as action_preferred_byte_name_operands
+LABELS.update(ACTION_PREFERRED_BYTE_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionPreferredByte", "алгоритм и проверка") for a in (29947,)})
+
+from ActionPanelGaugesFacts import LABELS as ACTION_PANEL_GAUGES_LABELS, name_operands as action_panel_gauges_name_operands
+LABELS.update(ACTION_PANEL_GAUGES_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionPanelGauges", "алгоритм и проверка") for a in (26185,)})
+
+from ActionNearZeroWordFacts import LABELS as ACTION_NEAR_ZERO_WORD_LABELS, name_operands as action_near_zero_word_name_operands
+LABELS.update(ACTION_NEAR_ZERO_WORD_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionNearZeroWord", "алгоритм и проверка") for a in (28332,)})
+
+# Обработчики клавиш не доказаны, корневой фрагмент сохраняет Unknown.
+DOCUMENTS['Action',0x6F1D]=('ActionKeyDispatchPrefix','частичный диспетчер и рамка')
+
+DOCUMENTS['Action',0x6F4E]=('ActionKeyDispatchPrefix','рамка клавиатурного сканирования')
+
+from ActionKeyScanTables import name_operands as action_key_scan_tables_name_operands
+DOCUMENTS['Action',0x704B]=('ActionKeyDispatchPrefix','пустой обработчик клавиши')

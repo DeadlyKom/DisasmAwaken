@@ -23,7 +23,7 @@ Entry:          LD A, #10
                 LD (#668E), A
                 LD (#667D), A
                 LD (#665C), A
-                CALL @Action.Unknown6649.Entry
+                CALL @Action.UpdatePanelGauges.Entry
                 LD A, #11
                 CALL @Action.SelectMemoryPage.Entry
                 LD HL, (#9BBF)

@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "total_cases": 262144,
+  "cases_by_path": {
+    "cleared_tail": 196608,
+    "no_tail": 65536
+  },
+  "all_input_a_and_low_address_bytes": true,
+  "high_address_profiles": [
+    73,
+    81,
+    128,
+    250
+  ],
+  "all_65536_hl_values_exhausted": false,
+  "exact_registers_flags_refresh_sp": true,
+  "every_ram_byte_and_write_checked": true,
+  "no_stack_writes": true,
+  "low_address_wrap_preserved": true,
+  "six_rows": true,
+  "nominal_columns": 6,
+  "maximum_actual_columns": 14,
+  "original_algorithm_edge_cases_preserved": true,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

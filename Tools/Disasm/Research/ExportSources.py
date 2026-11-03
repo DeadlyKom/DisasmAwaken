@@ -463,6 +463,36 @@ def main():
         write(RASTER_RETURNS[1], text)
         symbols.update(bindings)
         special[23, 0x793] = (0x7B3, RASTER_RETURNS[1], 0xE271)
+    # Исходные физические ресурсы маскированных объектных значков.
+    if "struct FObjectGlyphClearPhase" in (ROOT/"Includes/Structs/Include.inc").read_text("utf-8"):
+        from ControlsObjectGlyphData import TABLES as OBJECT_GLYPH_TABLES, render as render_object_glyph_data
+        for table in OBJECT_GLYPH_TABLES:
+            text, bindings = render_object_glyph_data(data_by_slot[23],table)
+            write(table[1],text)
+            symbols.update(bindings)
+            special[23,table[2]] = (table[3],table[1],0xDADE+table[2])
+    # Семь физических масок шестистрочной шкалы.
+    if "struct FGaugePartialMask" in (ROOT/"Includes/Structs/Include.inc").read_text("utf-8"):
+        from ControlsGaugeMasks import TABLE as GAUGE_MASKS, render as render_gauge_masks
+        text,bindings=render_gauge_masks(data_by_slot[23])
+        write(GAUGE_MASKS[1],text)
+        symbols.update(bindings)
+        special[23,0xE95]=(0xE9C,GAUGE_MASKS[1],0xE973)
+    # Физическая пара байтов, выбираемых вместе с адресом в ACTION.
+    if "struct FPreferredBytePair" in (ROOT/"Includes/Structs/Include.inc").read_text("utf-8"):
+        from ActionPreferredByteState import TABLE as PREFERRED_BYTES, render as render_preferred_bytes
+        text,bindings=render_preferred_bytes(data_by_slot[17])
+        write(PREFERRED_BYTES[1],text)
+        symbols.update(bindings)
+        special[17,0x3C10]=(0x3C12,PREFERRED_BYTES[1],0x9C10)
+    # Первые 26 отдельных указателей и 27 физических пар порта и маски, без дублирования кода 704B.
+    if "struct FKeyScanInput" in (ROOT/"Includes/Structs/Include.inc").read_text("utf-8"):
+        from ActionKeyScanTables import TABLES as KEY_SCAN_TABLES, render as render_key_scan_table, origin as key_scan_origin
+        for table in KEY_SCAN_TABLES:
+            text,bindings=render_key_scan_table(data_by_slot[17],table)
+            write(table[1],text)
+            symbols.update(bindings)
+            special[17,table[2]]=(table[3],table[1],key_scan_origin(table)+table[2])
     token_text, token_records = render_token_tables(language, names)
     write(TOKEN_TABLE_PATH, token_text)
     special[5, 0x935] = (0xA67, TOKEN_TABLE_PATH, 0xC935)
@@ -963,6 +993,35 @@ REGION_COMMENTS.setdefault("Controls", {}).update(CONTROLS_THREE_ROW_GLYPH_COMME
 
 from ControlsGlyphIndicatorsFacts import COMMENTS as CONTROLS_GLYPH_INDICATORS_COMMENTS
 REGION_COMMENTS.setdefault("Controls", {}).update(CONTROLS_GLYPH_INDICATORS_COMMENTS)
+
+from ControlsRasterBackgroundFacts import COMMENTS as CONTROLS_RASTER_BACKGROUND_COMMENTS
+REGION_COMMENTS.setdefault("Controls", {}).update(CONTROLS_RASTER_BACKGROUND_COMMENTS)
+
+from ControlsObjectProjectionFacts import COMMENTS as CONTROLS_OBJECT_PROJECTION_COMMENTS
+REGION_COMMENTS.setdefault("Controls", {}).update(CONTROLS_OBJECT_PROJECTION_COMMENTS)
+
+
+from ControlsSixRowGaugeFacts import COMMENTS as CONTROLS_SIX_ROW_GAUGE_COMMENTS
+REGION_COMMENTS.setdefault("Controls", {}).update(CONTROLS_SIX_ROW_GAUGE_COMMENTS)
+
+
+from ActionGaugeWrapperFacts import COMMENTS as ACTION_GAUGE_WRAPPER_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_GAUGE_WRAPPER_COMMENTS)
+
+
+from ActionPreferredByteFacts import COMMENTS as ACTION_PREFERRED_BYTE_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_PREFERRED_BYTE_COMMENTS)
+
+
+from ActionPanelGaugesFacts import COMMENTS as ACTION_PANEL_GAUGES_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_PANEL_GAUGES_COMMENTS)
+
+
+from ActionNearZeroWordFacts import COMMENTS as ACTION_NEAR_ZERO_WORD_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_NEAR_ZERO_WORD_COMMENTS)
+
+from ActionKeyScanFrameFacts import COMMENTS as ACTION_KEY_SCAN_FRAME_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_KEY_SCAN_FRAME_COMMENTS)
 
 
 if __name__ == "__main__":
