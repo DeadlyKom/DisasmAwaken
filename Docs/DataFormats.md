@@ -4,6 +4,8 @@
 
 | Тип | Размер | Подтверждённое назначение |
 | --- | --- | --- |
+| FActionRecord | #40 | 25 физических исходных слотов и маркер, вложенные компоненты и явные неизвестные поля, см. [ActionObjectRecords](ActionObjectRecords.md) |
+| FIndexedDelta | #01 | шестнадцать физических поправок signed8, игровое соответствие индексов неизвестно, см. [ActionTypeDelta](ActionTypeDelta.md) |
 | FMissileTargets | #03 | три физических кода захвата Target0..Target2, FF означает отсутствие цели, см. [ActionMissileLaunch](ActionMissileLaunch.md) |
 | FMissileStock | #02 | физические Fallback и Preferred запаса ракет, виды запасов не установлены, см. [ActionMissileStock](ActionMissileStock.md) |
 | FKeyHandlerPointer | #02 | 26 отдельных слов адресов, перекрывающееся чтение описано отдельно, см. [ActionKeyDispatchPrefix](ActionKeyDispatchPrefix.md) |

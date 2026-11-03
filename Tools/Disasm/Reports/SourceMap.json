@@ -10096,20 +10096,38 @@
   {
     "slot": 17,
     "offset": 1358,
-    "length": 74,
+    "length": 58,
     "kind": "unclassified",
-    "path": "Source/Resources/17_ACTION/Unclassified005.bin",
+    "path": "Source/Resources/17_ACTION/Unclassified005_BeforeTypeDeltas.bin",
     "origin": null,
-    "sha256": "535e71dd672f4cbeec019998a856a0b8cb5540a4a125afe34c0627c708a32fd2"
+    "sha256": "43a70a0cb884cd20a13d4143a5e6062a29143d9d5efda15041191afde3761c10"
+  },
+  {
+    "slot": 17,
+    "offset": 1416,
+    "length": 16,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/TypeDeltas.asm",
+    "origin": 25419,
+    "sha256": "97591983807c5fe8316e865cb1f2db900499fa14a2db2ba8a6284c3af9698c63"
   },
   {
     "slot": 17,
     "offset": 1432,
-    "length": 91,
+    "length": 37,
     "kind": "code",
     "path": "Source/Action/Unknown635B.asm",
     "origin": 25435,
-    "sha256": "7a9bab28833bf87bc528b6756c49ed55f332ee768ad671aeacf61efef682cfe1"
+    "sha256": "65f8030083150f434ffa633ab4c47ec09b653805f401367f03f6e95422bf4780"
+  },
+  {
+    "slot": 17,
+    "offset": 1469,
+    "length": 54,
+    "kind": "code",
+    "path": "Source/Action/ApplyIndexedDelta.asm",
+    "origin": 25472,
+    "sha256": "901548f1b90885e1524cdcc4e533084a1deeca7d27919b572d110d3e1da28c9e"
   },
   {
     "slot": 17,
@@ -10493,9 +10511,9 @@
     "slot": 17,
     "offset": 4867,
     "length": 39,
-    "kind": "unclassified",
-    "path": "Source/Resources/17_ACTION/Unclassified017_AfterMissileChecks.bin",
-    "origin": null,
+    "kind": "code",
+    "path": "Source/Action/ConsumeMissileStock.asm",
+    "origin": 28870,
     "sha256": "9879804d876d64c20107d55e78137eb3c021ceae3841c1a6c4a543c0816662a8"
   },
   {
@@ -10717,11 +10735,29 @@
   {
     "slot": 17,
     "offset": 15746,
-    "length": 2731,
+    "length": 894,
     "kind": "unclassified",
-    "path": "Source/Resources/17_ACTION/Unclassified020_AfterKeyInputs.bin",
+    "path": "Source/Resources/17_ACTION/Unclassified020_BeforeObjectRecords.bin",
     "origin": null,
-    "sha256": "6a463d6689e8a7fec16b32b75b40976a352087151918af1ca1b3264cc8dd9fe9"
+    "sha256": "3f57cb9a00bafbdf2a76c98f7502c40b5bede83b89b21f05762f557741702d05"
+  },
+  {
+    "slot": 17,
+    "offset": 16640,
+    "length": 1664,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/ObjectRecords.asm",
+    "origin": 41216,
+    "sha256": "93da646eb5c6cdab1d3408da1f9dc23cc421984d88fe8a4969c13f1f55d2258b"
+  },
+  {
+    "slot": 17,
+    "offset": 18304,
+    "length": 173,
+    "kind": "unclassified",
+    "path": "Source/Resources/17_ACTION/Unclassified020_AfterObjectRecords.bin",
+    "origin": null,
+    "sha256": "13c07a7a7773a0caab0a7bfe18b9678900ef8fddb1f1853ad5e22e15e9fb5082"
   },
   {
     "slot": 17,
@@ -10816,11 +10852,29 @@
   {
     "slot": 17,
     "offset": 19627,
-    "length": 157,
+    "length": 63,
     "kind": "unclassified",
-    "path": "Source/Resources/17_ACTION/Unclassified022.bin",
+    "path": "Source/Resources/17_ACTION/Unclassified022_BeforeVectorWrapper.bin",
     "origin": null,
-    "sha256": "e348983069fffd4905b7253e298569af5a080cb1fd8cd872b1ce27784142678f"
+    "sha256": "490334d7fc7916a8eccb9e0b37aa0e73291f77de061498fbbc6582849727e597"
+  },
+  {
+    "slot": 17,
+    "offset": 19690,
+    "length": 51,
+    "kind": "code",
+    "path": "Source/Action/TransformVectorTransposed.asm",
+    "origin": 44266,
+    "sha256": "77a336059c736cdcc15572eff2b5be90adc570a16295e0d146f8b88f701a8cb6"
+  },
+  {
+    "slot": 17,
+    "offset": 19741,
+    "length": 43,
+    "kind": "code",
+    "path": "Source/Action/SwapCodePatchWords.asm",
+    "origin": 44317,
+    "sha256": "81777b170f3784e94f9d6af41f3adc6d1ae6d291688a14da980c59e8d7a7b13f"
   },
   {
     "slot": 17,
@@ -10870,11 +10924,20 @@
   {
     "slot": 17,
     "offset": 20083,
-    "length": 386,
+    "length": 208,
     "kind": "code",
     "path": "Source/Action/UnknownAE73.asm",
     "origin": 44659,
-    "sha256": "5eb3d952f0b8d244bc0b0f99ddbced9c21277f557a19a3dd291567105da2488c"
+    "sha256": "a39bb8d7dd9be288e3c8365f5a23ba3465f9dcbffef049083c72c0faaf47af03"
+  },
+  {
+    "slot": 17,
+    "offset": 20291,
+    "length": 178,
+    "kind": "code",
+    "path": "Source/Action/ComputePatchedVector.asm",
+    "origin": 44867,
+    "sha256": "d384926262947cd3be593d4f1ad27841e24cb264597ee3f49a519efe395c7a29"
   },
   {
     "slot": 17,
@@ -11914,36 +11977,45 @@
   {
     "slot": 17,
     "offset": 34462,
-    "length": 32,
+    "length": 9,
     "kind": "unclassified",
-    "path": "Source/Resources/17_ACTION/Unclassified035.bin",
+    "path": "Source/Resources/17_ACTION/Unclassified035_BeforeRecordIndex.bin",
     "origin": null,
-    "sha256": "5ca580baa4f9ecff279cad18e6805d52a183c1080752516c19c251066791db1f"
+    "sha256": "6c183996d947f15d0d3983821d488a49b927d94c7716bf73dd169f7ca67d6640"
+  },
+  {
+    "slot": 17,
+    "offset": 34471,
+    "length": 14,
+    "kind": "code",
+    "path": "Source/Action/RecordIndexToAddress.asm",
+    "origin": 59047,
+    "sha256": "10e15b150b0daaae9e16cba03bb0c054a476c0635fd98971ac00b5f77a6d24ec"
+  },
+  {
+    "slot": 17,
+    "offset": 34485,
+    "length": 9,
+    "kind": "code",
+    "path": "Source/Action/RecordIXToIndex.asm",
+    "origin": 59061,
+    "sha256": "6f99789ceed04e7f810a54dde47e5b94fd728a4cc871bad5c451fd01e0973aef"
   },
   {
     "slot": 17,
     "offset": 34494,
-    "length": 7,
+    "length": 9,
     "kind": "code",
-    "path": "Source/Action/UnknownE6BE.asm",
+    "path": "Source/Action/RecordIYToIndex.asm",
     "origin": 59070,
-    "sha256": "8e9f9e0fe7cc06338a9da4de480690d75d540da3cc951985266a49d2301341e4"
-  },
-  {
-    "slot": 17,
-    "offset": 34501,
-    "length": 2,
-    "kind": "unclassified",
-    "path": "Source/Resources/17_ACTION/Unclassified036.bin",
-    "origin": null,
-    "sha256": "1dd8cb7f21cc480244fa93683a81b1fced1527f59794cd76cc841adb7318bc9d"
+    "sha256": "a77901e72fdb5a94329e8cacb9aecb5fdf114aaa4e953bc4b86103b6237aac75"
   },
   {
     "slot": 17,
     "offset": 34503,
     "length": 10,
     "kind": "code",
-    "path": "Source/Action/UnknownE6C7.asm",
+    "path": "Source/Action/RecordAddressToIndex.asm",
     "origin": 59079,
     "sha256": "82fa80f56c9d7769c4eeefb51f3d6f2b7a70175eff6636c3c275c3fce9b14a9e"
   },
@@ -11952,7 +12024,7 @@
     "offset": 34513,
     "length": 17,
     "kind": "code",
-    "path": "Source/Action/UnknownE6D1.asm",
+    "path": "Source/Action/NextActiveRecord.asm",
     "origin": 59089,
     "sha256": "f00580aeaaf8237d22574bb1d0c0769c7b3185676ffe893318ed25a44ffbd21a"
   },
@@ -11970,7 +12042,7 @@
     "offset": 35213,
     "length": 20,
     "kind": "code",
-    "path": "Source/Action/UnknownE98D.asm",
+    "path": "Source/Action/FindRecordByCode.asm",
     "origin": 59789,
     "sha256": "19c7009552912cb8a98375c0e9af77ad740d4ff9c51918c0c99cf02731acffe5"
   },
@@ -11979,7 +12051,7 @@
     "offset": 35233,
     "length": 33,
     "kind": "code",
-    "path": "Source/Action/UnknownE9A1.asm",
+    "path": "Source/Action/FindReusableRecord.asm",
     "origin": 59809,
     "sha256": "1b5d9ebcbbc5385c43742b5e64cbdfc091434942d1e973dadbc2d07211f7b456"
   },

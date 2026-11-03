@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "total_cases": 264192,
+  "cases_by_kind": {
+    "all_steps": 131072,
+    "all_header_states": 65536,
+    "all_code_pairs": 65536,
+    "all_positions_and_markers": 2048
+  },
+  "found_ff_with_zero_result": 512,
+  "method": "independent_record_iterator_and_filter_with_original_child_executed",
+  "all_step_words": true,
+  "all_header_state_pairs": true,
+  "all_requested_actual_code_pairs": true,
+  "exact_registers_flags_refresh_sp": true,
+  "every_ram_byte_and_write_multiplicity_checked": true,
+  "iterator_writes_no_memory": true,
+  "filter_writes_only_cpu_stack": true,
+  "maximum_additional_stack_bytes": 2,
+  "found_ff_returns_z_set": true,
+  "termination_requires_reachable_result_or_marker": true,
+  "game_array_limit_proved": false,
+  "all_joint_inputs_exhausted": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

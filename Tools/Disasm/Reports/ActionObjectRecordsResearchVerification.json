@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "physical_bytes": 1664,
+  "initial_slots": 25,
+  "marker_address": "A740",
+  "marker_separate_from_slots": true,
+  "nested_sizes": [
+    2,
+    6,
+    64
+  ],
+  "physical_symbol_bindings": 1794,
+  "all_initial_bytes_checked": true,
+  "all_field_game_meanings_proved": false,
+  "runtime_array_limit_proved": false,
+  "active_source_published": false,
+  "assembly_executed": false
+}

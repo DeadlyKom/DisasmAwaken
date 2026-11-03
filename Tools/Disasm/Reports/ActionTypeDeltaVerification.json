@@ -1,0 +1,45 @@
+{
+  "passed": true,
+  "total_cases": 90112,
+  "cases_by_kind": {
+    "all_valid_indices_and_bytes": 8192,
+    "all_mode_bytes": 20480,
+    "rejected_indices": 61440
+  },
+  "paths": {
+    "clamp_low": 9028,
+    "in_range": 16343,
+    "clamp_high": 3301,
+    "index_rejected": 61440
+  },
+  "method": "independent_signed_clamp_and_bit5_formula_against_original_cpu_instructions",
+  "exact_registers_flags_refresh_sp": true,
+  "every_ram_byte_and_write_checked": true,
+  "no_cpu_stack_writes": true,
+  "all_type_indices": true,
+  "all_state_bytes": true,
+  "all_mode_bytes": true,
+  "all_joint_inputs_exhausted": false,
+  "table_signed_deltas": [
+    -6,
+    10,
+    15,
+    18,
+    9,
+    -6,
+    -6,
+    -6,
+    6,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "game_meaning_of_state_and_mode_proved": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

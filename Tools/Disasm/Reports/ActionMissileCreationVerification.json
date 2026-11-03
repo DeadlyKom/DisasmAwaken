@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "total_cases": 12263,
+  "paths": {
+    "created": 12063,
+    "no_record": 200
+  },
+  "method": "creation_parent_oracle_composed_with_real_geometry_stock_search_and_index_children",
+  "independent_complete_child_oracle": false,
+  "children_executed_without_stubs": true,
+  "all_distinct_initial_record_slot_pairs": true,
+  "initial_record_slots": 25,
+  "initial_marker_address": "A740",
+  "marker_is_original_seed_not_proved_runtime_limit": true,
+  "all_non80_target_state_bytes": true,
+  "all_matrix_coefficient_bytes": true,
+  "exact_registers_flags_refresh_sp": true,
+  "every_ram_byte_and_write_multiplicity_checked": true,
+  "unwritten_object_bytes_preserved": true,
+  "both_stock_fields_remain_unchanged": true,
+  "selected_parameter_0a_or_32_preserved": true,
+  "maximum_additional_stack_bytes": 10,
+  "lost_target_branch_checked_here": false,
+  "all_joint_inputs_exhausted": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

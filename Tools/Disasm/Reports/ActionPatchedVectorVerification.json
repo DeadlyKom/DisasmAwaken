@@ -1,0 +1,36 @@
+{
+  "passed": true,
+  "total_cases": 212236,
+  "cases_by_kind": {
+    "all_axis_words": 196608,
+    "all_matrix_byte_positions": 11520,
+    "six_overflow_sites": 12,
+    "mixed_vectors_and_matrices": 4096
+  },
+  "paths": {
+    "complete": 211299,
+    "overflow_0_1": 136,
+    "overflow_0_2": 225,
+    "overflow_1_1": 132,
+    "overflow_1_2": 181,
+    "overflow_2_1": 96,
+    "overflow_2_2": 167
+  },
+  "method": "parent_component_oracle_composed_with_independently_checked_real_scaled_multiplier",
+  "independent_complete_child_oracle": false,
+  "children_executed_without_stubs": true,
+  "all_words_on_each_axis": true,
+  "all_matrix_byte_positions": true,
+  "all_six_overflow_sites": true,
+  "original_carry_from_negative_products_preserved": true,
+  "partial_output_writes_preserved": true,
+  "exact_registers_flags_refresh_sp": true,
+  "every_ram_byte_and_write_multiplicity_checked": true,
+  "sp_is_arithmetic_scratch_and_not_restored": true,
+  "ix_restored_through_self_modification": true,
+  "jp_iy_continuation": true,
+  "all_joint_inputs_exhausted": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

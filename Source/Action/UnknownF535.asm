@@ -15,10 +15,10 @@
 ;   состояние самомодификации и активной страницы учитывается отдельно
 ; -----------------------------------------
 Entry:          LD D, #00
-                CALL @Action.UnknownE98D.Entry
+                CALL @Action.FindRecordByCode.Entry
                 JR Z, @Action.UnknownF541.Entry                                 ; переход, если флаг Z установлен
 
 
-                CALL @Action.UnknownE6BE.Entry
+                CALL @Action.RecordIYToIndex.Entry
                 endmodule
                 endmodule

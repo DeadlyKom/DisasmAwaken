@@ -3,7 +3,7 @@
 ; Документация [Action](../../Docs/FunctionDetails/Action.md)
 ; -----------------------------------------
 ; Unknown, назначение этого фрагмента ещё не установлено
-; исходная запись 17, файловые смещения #4E73..#4FF4
+; исходная запись 17, файловые смещения #4E73..#4F42
 ; In:
 ;   Unknown, регистровый контракт ещё не доказан
 ; Out:
@@ -197,98 +197,6 @@ PointAF37:      EX AF, AF'
                 INC HL
 PointAF41:      AND A
                 RET
-
-
-PointAF43:      LD (#AFF1), IX
-                LD DE, #0000
-                LD A, (#CB3E)
-                LD IX, #AF54
-                JP @Action.MultiplySignedScaled.Entry
-
-
-                LD SP, HL
-                LD DE, #0000
-                LD A, (#CB54)
-                LD IX, #AF62
-                JP @Action.MultiplySignedScaled.Entry
-
-
-                ADC HL, SP
-                JP PE, @Action.UnknownAE73.PointAFEF                            ; переход, если флаг P/V установлен
-
-
-                LD SP, HL
-                LD DE, #0000
-                LD A, (#CB6F)
-                LD IX, #AF75
-                JP @Action.MultiplySignedScaled.Entry
-
-
-                ADC HL, SP
-                JP PE, @Action.UnknownAE73.PointAFEF                            ; переход, если флаг P/V установлен
-
-
-                LD (#D9B6), HL
-                LD DE, (#AF48)
-                LD A, (#CB8B)
-                LD IX, #AF8B
-                JP @Action.MultiplySignedScaled.Entry
-
-
-                LD SP, HL
-                LD DE, (#AF56)
-                LD A, (#CBA1)
-                LD IX, #AF9A
-                JP @Action.MultiplySignedScaled.Entry
-
-
-                ADC HL, SP
-                JP PE, @Action.UnknownAE73.PointAFEF                            ; переход, если флаг P/V установлен
-
-
-                LD SP, HL
-                LD DE, (#AF69)
-                LD A, (#CBBC)
-                LD IX, #AFAE
-                JP @Action.MultiplySignedScaled.Entry
-
-
-                ADC HL, SP
-                JP PE, @Action.UnknownAE73.PointAFEF                            ; переход, если флаг P/V установлен
-
-
-                LD (#D7C4), HL
-                LD DE, (#AF48)
-                LD A, (#CBD8)
-                LD IX, #AFC4
-                JP @Action.MultiplySignedScaled.Entry
-
-
-                LD SP, HL
-                LD DE, (#AF56)
-                LD A, (#CBEE)
-                LD IX, #AFD3
-                JP @Action.MultiplySignedScaled.Entry
-
-
-                ADC HL, SP
-                JP PE, @Action.UnknownAE73.PointAFEF                            ; переход, если флаг P/V установлен
-
-
-                LD SP, HL
-                LD DE, (#AF69)
-                LD A, (#CC09)
-                LD IX, #AFE7
-                JP @Action.MultiplySignedScaled.Entry
-
-
-                ADC HL, SP
-                JP PE, @Action.UnknownAE73.PointAFEF                            ; переход, если флаг P/V установлен
-
-
-                LD (#D7A2), HL
-PointAFEF:      LD IX, #0000
-                JP (IY)
 
 
                 endmodule

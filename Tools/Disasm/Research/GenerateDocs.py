@@ -187,6 +187,8 @@ def main():
                "| FKeyScanInput | #02 | 27 физических RowSelect и InputMask, см. [ActionKeyDispatchPrefix](ActionKeyDispatchPrefix.md) |",
                "| FMissileStock | #02 | физические Fallback и Preferred запаса ракет, виды запасов не установлены, см. [ActionMissileStock](ActionMissileStock.md) |",
                "| FMissileTargets | #03 | три физических кода захвата Target0..Target2, FF означает отсутствие цели, см. [ActionMissileLaunch](ActionMissileLaunch.md) |",
+               "| FActionRecord | #40 | 25 физических исходных слотов и маркер, вложенные компоненты и явные неизвестные поля, см. [ActionObjectRecords](ActionObjectRecords.md) |",
+               "| FIndexedDelta | #01 | шестнадцать физических поправок signed8, игровое соответствие индексов неизвестно, см. [ActionTypeDelta](ActionTypeDelta.md) |",
                "| FObjectGlyphClearPhase | #06 | 8 масок очистки, поля Unknown02..Unknown05 не установлены, см. [ControlsObjectProjection](ControlsObjectProjection.md) |",
                "| FGlyphIndicatorControl | #03 | физические FirstMode, ThirdGate и Unknown83, см. [ControlsGlyphIndicators](ControlsGlyphIndicators.md) |",
                "| FGlyphIndicatorXY | #03 | два физических входа X,Y,SignSource, см. [ControlsGlyphIndicators](ControlsGlyphIndicators.md) |",

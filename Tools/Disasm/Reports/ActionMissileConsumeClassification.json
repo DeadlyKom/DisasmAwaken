@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "described_functions": 1,
+  "confirmed_code_bytes": 39,
+  "confirmed_instructions": 19,
+  "compositional_model_cases": 71040,
+  "independent_complete_child_oracle": false,
+  "physical_bytes_preserved": true,
+  "auxiliary_counter_game_meaning_proved": false,
+  "rocket_object_creation_proved": false,
+  "assembly_executed": false
+}

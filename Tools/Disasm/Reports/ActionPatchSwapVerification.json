@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "total_cases": 196864,
+  "cases_by_kind": {
+    "all_words_by_pair": 196608,
+    "identical_words_and_involution": 256
+  },
+  "method": "independent_three_word_permutations_against_original_instructions",
+  "all_word_values_in_each_pair": true,
+  "all_joint_word_tuples_exhausted": false,
+  "full_words_including_opcode_prefixes_swapped": true,
+  "involution_with_real_second_call_checked": true,
+  "exact_registers_flags_refresh_sp": true,
+  "every_ram_byte_and_write_multiplicity_checked": true,
+  "no_cpu_stack_writes": true,
+  "refresh_m1": 19,
+  "consumer_executed": false,
+  "game_meaning_of_patch_pairs_proved": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

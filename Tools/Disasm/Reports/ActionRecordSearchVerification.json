@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "total_cases": 132096,
+  "cases_by_kind": {
+    "all_positions": 1024,
+    "all_header_and_tag_pairs": 131072
+  },
+  "cleared_skip_records": 164350,
+  "method": "independent_record_list_search_against_original_instructions",
+  "all_header_tag_pairs": true,
+  "all_positions_within_256_records": true,
+  "explicit_end_marker_and_skip_ff": true,
+  "exact_registers_flags_refresh_sp": true,
+  "every_ram_byte_and_write_checked": true,
+  "no_cpu_stack_writes": true,
+  "maximum_records_is_not_a_proved_game_limit": true,
+  "termination_requires_reachable_match_or_marker": true,
+  "all_joint_inputs_exhausted": false,
+  "record_field_game_meanings_proved": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

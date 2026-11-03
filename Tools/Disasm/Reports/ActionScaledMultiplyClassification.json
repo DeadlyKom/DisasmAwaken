@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "described_functions": 1,
+  "instructions_changed": 0,
+  "physical_bytes_preserved": true,
+  "independent_model_cases": 786432,
+  "original_function_boundaries_preserved": true,
+  "assembly_executed": false,
+  "guarded_resume_after_same_path_deletion_prevented": true,
+  "candidate_files_checked": 12
+}

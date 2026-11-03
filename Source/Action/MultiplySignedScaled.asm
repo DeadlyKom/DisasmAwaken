@@ -1,26 +1,39 @@
                 module Action
                 module MultiplySignedScaled
-; Документация [Action](../../Docs/FunctionDetails/Action.md)
-; -----------------------------------------
-; Знаковое умножение с масштабом 1/128 для коэффициента от -127 до 127, выход через JP (IX)
-; исходная запись 17, файловые смещения #712C..#7193
-; In:
-;   Unknown, регистровый контракт ещё не доказан
-; Out:
-;   исходный поток управления, включая переходы в соседние фрагменты
-; Corrupt:
-;   HL, DE, BC, AF, HL', DE', BC', AF', IX, IY, консервативная верхняя граница
-; Note:
-;   граница файла не доказывает границу логической процедуры
-;   состояние самомодификации и активной страницы учитывается отдельно
-; -----------------------------------------
+                ; Документация [алгоритм и проверка](../../Docs/ActionScaledMultiply.md)
+                ; -----------------------------------------
+                ; Знаковое произведение DE и байтового коэффициента с усечением к нулю после деления на 128 и выходом через IX
+                ; исходная запись 17, код ACTION банка 0, адреса D12C..D193, смещения #712C..#7193
+                ; In:
+                ;   HL аргумента не задаёт, DE знаковый 16-битный множитель, B сохраняется, C аргумента не задаёт
+                ;   A знаковый коэффициент -127..127, входные флаги не влияют на результат, нештатный 80 разобран отдельно
+                ;   IX адрес продолжения, IY сохраняется, ACTION исполняется в банке 0, IRQ не вмешиваются
+                ; Out:
+                ;   HL знаковое произведение с делением на 128 и усечением к нулю, для коэффициента 80 модуль результата равен нулю
+                ;   DE модуль исходного множителя при неотрицательном знаке произведения, модуль усечённого результата при отрицательном знаке
+                ;   B сохраняется, C=0, A=входной коэффициент XOR старший байт исходного DE
+                ;   при неотрицательном знаке F от XOR знаковых байтов, при отрицательном F от SBC 0, модуль усечённого результата
+                ;   HL', DE' и BC' сохраняются, A' равен (abs(DE)*семибитный модуль коэффициента)/32768, F' описан в документации
+                ;   IX, IY, I, IM и IFF сохраняются, SP не меняется, PC получает IX без снятия внешнего возврата
+                ;   RAM, CPU-стек и порты не записываются, R определяется старшим значащим битом, числом единиц и знаками
+                ; Corrupt:
+                ;   HL, DE, C, AF, AF', R
+                ; Note:
+                ;   это переходная процедура, вызывающий код задаёт IX и не должен ожидать обычного RET
+                ;   усекается модуль до применения знака, floor для отрицательного произведения неверен
+                ;   исходный модуль коэффициента 80 теряет старший разряд, остаётся нулевой модуль, защита здесь не добавляется
+                ;   Z и Carry возвращаемого AF не являются универсальными признаками нулевого результата и переполнения
+                ; -----------------------------------------
+                ; Расчёт знака произведения по исходным старшим байтам, коэффициент временно сохраняется в L.
 Entry:          LD L, A
                 XOR D
+                ; Сохранение знакового байта и точных флагов XOR в альтернативном AF.
                 EX AF, AF'
+                ; Проверка знака исходного DE перед вычислением беззнакового модуля.
                 BIT 7, D
-                JR Z, @Action.MultiplySignedScaled.PointD13A                    ; переход, если флаг Z установлен
+                JR Z, @Action.MultiplySignedScaled.AbsoluteCoeff                ; переход, если исходный DE неотрицателен, оставить его модуль без изменения
 
-
+                ; Расчёт модуля отрицательного DE, входной 8000 остаётся беззнаковым модулем 8000.
                 LD A, E
                 CPL
                 LD E, A
@@ -28,104 +41,108 @@ Entry:          LD L, A
                 CPL
                 LD D, A
                 INC DE
-PointD13A:      LD A, L
+                ; Проверка знака сохранённого коэффициента.
+AbsoluteCoeff:  LD A, L
                 AND A
-                JP P, @Action.MultiplySignedScaled.PointD141                    ; переход, если флаг Sign сброшен
+                JP P, @Action.MultiplySignedScaled.StartProduct                 ; переход, если коэффициент неотрицателен, перейти к накоплению
 
-
+                ; Расчёт модуля коэффициента, исходный 80 остаётся 80 до отбрасывания старшего бита.
                 NEG
-PointD141:      LD C, #00
+                ; -----------------------------------------
+                ; Расчёт семибитного произведения
+                ; Нулевой C принимает только переносы, накопитель модуля создаётся в A и HL.
+StartProduct:   LD C, #00
                 LD H, C
                 LD L, C
+                ; Отбрасывание старшего бита модуля коэффициента, исходный 80 дальше обрабатывается как нулевой модуль.
                 ADD A, A
                 ADD A, A
-                JR C, @Action.MultiplySignedScaled.PointD15E                    ; переход, если флаг Carry установлен
-
-
-                ADD A, A
-                JR C, @Action.MultiplySignedScaled.PointD164                    ; переход, если флаг Carry установлен
-
+                JR C, @Action.MultiplySignedScaled.AddBit6                      ; переход, если бит 6 семибитного модуля коэффициента равен 1, начать накопление
 
                 ADD A, A
-                JR C, @Action.MultiplySignedScaled.PointD16A                    ; переход, если флаг Carry установлен
-
-
-                ADD A, A
-                JR C, @Action.MultiplySignedScaled.PointD170                    ; переход, если флаг Carry установлен
-
+                JR C, @Action.MultiplySignedScaled.AddBit5                      ; переход, если бит 5 семибитного модуля коэффициента равен 1, начать накопление
 
                 ADD A, A
-                JR C, @Action.MultiplySignedScaled.PointD176                    ; переход, если флаг Carry установлен
-
-
-                ADD A, A
-                JR C, @Action.MultiplySignedScaled.PointD17C                    ; переход, если флаг Carry установлен
-
+                JR C, @Action.MultiplySignedScaled.AddBit4                      ; переход, если бит 4 семибитного модуля коэффициента равен 1, начать накопление
 
                 ADD A, A
-                JR C, @Action.MultiplySignedScaled.PointD182                    ; переход, если флаг Carry установлен
+                JR C, @Action.MultiplySignedScaled.AddBit3                      ; переход, если бит 3 семибитного модуля коэффициента равен 1, начать накопление
 
+                ADD A, A
+                JR C, @Action.MultiplySignedScaled.AddBit2                      ; переход, если бит 2 семибитного модуля коэффициента равен 1, начать накопление
 
-                JP @Action.MultiplySignedScaled.PointD188
+                ADD A, A
+                JR C, @Action.MultiplySignedScaled.AddBit1                      ; переход, если бит 1 семибитного модуля коэффициента равен 1, начать накопление
 
+                ADD A, A
+                JR C, @Action.MultiplySignedScaled.AddBit0                      ; переход, если бит 0 семибитного модуля коэффициента равен 1, начать накопление
 
-PointD15E:      ADD HL, DE
+                ; Переход к применению знака при нулевом семибитном модуле, результат HL уже нулевой.
+                JP @Action.MultiplySignedScaled.ApplySign
+
+                ; Накопление вклада разряда 6 с переносом в старший байт A.
+AddBit6:        ADD HL, DE
                 ADC A, C
                 ADD HL, HL
                 ADC A, A
-                JR NC, @Action.MultiplySignedScaled.PointD166                   ; переход, если флаг Carry сброшен
+                JR NC, @Action.MultiplySignedScaled.ShiftBit5                   ; переход, если бит 5 модуля коэффициента равен 0, пропустить его слагаемое
 
-
-PointD164:      ADD HL, DE
+                ; Накопление вклада разряда 5 с переносом в старший байт A.
+AddBit5:        ADD HL, DE
                 ADC A, C
-PointD166:      ADD HL, HL
+ShiftBit5:      ADD HL, HL
                 ADC A, A
-                JR NC, @Action.MultiplySignedScaled.PointD16C                   ; переход, если флаг Carry сброшен
+                JR NC, @Action.MultiplySignedScaled.ShiftBit4                   ; переход, если бит 4 модуля коэффициента равен 0, пропустить его слагаемое
 
-
-PointD16A:      ADD HL, DE
+                ; Накопление вклада разряда 4 с переносом в старший байт A.
+AddBit4:        ADD HL, DE
                 ADC A, C
-PointD16C:      ADD HL, HL
+ShiftBit4:      ADD HL, HL
                 ADC A, A
-                JR NC, @Action.MultiplySignedScaled.PointD172                   ; переход, если флаг Carry сброшен
+                JR NC, @Action.MultiplySignedScaled.ShiftBit3                   ; переход, если бит 3 модуля коэффициента равен 0, пропустить его слагаемое
 
-
-PointD170:      ADD HL, DE
+                ; Накопление вклада разряда 3 с переносом в старший байт A.
+AddBit3:        ADD HL, DE
                 ADC A, C
-PointD172:      ADD HL, HL
+ShiftBit3:      ADD HL, HL
                 ADC A, A
-                JR NC, @Action.MultiplySignedScaled.PointD178                   ; переход, если флаг Carry сброшен
+                JR NC, @Action.MultiplySignedScaled.ShiftBit2                   ; переход, если бит 2 модуля коэффициента равен 0, пропустить его слагаемое
 
-
-PointD176:      ADD HL, DE
+                ; Накопление вклада разряда 2 с переносом в старший байт A.
+AddBit2:        ADD HL, DE
                 ADC A, C
-PointD178:      ADD HL, HL
+ShiftBit2:      ADD HL, HL
                 ADC A, A
-                JR NC, @Action.MultiplySignedScaled.PointD17E                   ; переход, если флаг Carry сброшен
+                JR NC, @Action.MultiplySignedScaled.ShiftBit1                   ; переход, если бит 1 модуля коэффициента равен 0, пропустить его слагаемое
 
-
-PointD17C:      ADD HL, DE
+                ; Накопление вклада разряда 1 с переносом в старший байт A.
+AddBit1:        ADD HL, DE
                 ADC A, C
-PointD17E:      ADD HL, HL
+ShiftBit1:      ADD HL, HL
                 ADC A, A
-                JR NC, @Action.MultiplySignedScaled.PointD184                   ; переход, если флаг Carry сброшен
+                JR NC, @Action.MultiplySignedScaled.ShiftBit0                   ; переход, если бит 0 модуля коэффициента равен 0, пропустить его слагаемое
 
-
-PointD182:      ADD HL, DE
+                ; Накопление вклада разряда 0 с переносом в старший байт A.
+AddBit0:        ADD HL, DE
                 ADC A, C
-PointD184:      ADD HL, HL
+ShiftBit0:      ADD HL, HL
                 ADC A, A
+                ; Усечение младших семи разрядов произведения, после последнего удвоения байты H и A образуют результат.
                 LD L, H
                 LD H, A
-PointD188:      EX AF, AF'
-                JP P, @Action.MultiplySignedScaled.PointD192                    ; переход, если флаг Sign сброшен
+                ; -----------------------------------------
+                ; Применение исходного знака к уже усечённому модулю
+                ; В основной AF возвращается знаковый XOR, старший накопитель и его флаги остаются в альтернативном AF.
+ApplySign:      EX AF, AF'
+                JP P, @Action.MultiplySignedScaled.Continue                     ; переход, если исходные знаки совпадают, модуль уже является результатом
 
-
+                ; Расчёт отрицательного результата с Carry=0 от сохранённого XOR.
                 EX DE, HL
                 LD HL, #0000
                 SBC HL, DE
-PointD192:      JP (IX)
+                ; Передача управления продолжению в IX, SP и память стека не меняются.
+Continue:       JP (IX)
 
-
+                ; -----------------------------------------
                 endmodule
                 endmodule

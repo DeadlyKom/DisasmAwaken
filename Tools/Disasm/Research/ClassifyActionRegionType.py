@@ -14,7 +14,7 @@ from ValidateNotes import validate_notes
 import ActionRegionTypeFacts as facts
 
 
-def main(facts=facts, tag='ActionTextDisplay', document='ActionTextDisplay', state_fields=None):
+def main(facts=facts, tag='ActionTextDisplay', document='ActionTextDisplay', state_fields=None, allow_named=False):
     def read(stem):
         return json.loads((ROOT / ('Tools/Disasm/Reports/' + stem + '.json')).read_text('utf-8'))
     def encode(value):
@@ -27,7 +27,12 @@ def main(facts=facts, tag='ActionTextDisplay', document='ActionTextDisplay', sta
         assert proof['cases_by_kind']['shared_rows'] == 4096
     functions = read('Functions')
     selected = [f for f in functions if f['region'] == 'Action' and f['address'] in facts.FUNCTIONS]
-    assert len(selected) == len(facts.FUNCTIONS) and all(f['semantic_status'] == 'unknown' for f in selected)
+    assert len(selected) == len(facts.FUNCTIONS)
+    if allow_named:
+        # Проверка отсутствия доказанного договора у уже именованной процедуры перед его заменой.
+        assert all('Unknown, регистровый контракт ещё не доказан' in (ROOT/f['path']).read_text('utf-8') for f in selected)
+    else:
+        assert all(f['semantic_status'] == 'unknown' for f in selected)
     old = {f['address']: dict(f) for f in selected}
     candidate = ROOT / ('Tools/Disasm/Research/Candidates/' + tag)
     history = ROOT / ('Tools/Disasm/Research/History/Before' + tag)
@@ -68,7 +73,8 @@ def main(facts=facts, tag='ActionTextDisplay', document='ActionTextDisplay', sta
     labels = {address: name for name, address in symbols.items() if name.startswith('Action.')}
     for f in selected:
         address = f['address']
-        removed[ROOT / f['path']] = (ROOT / f['path']).read_bytes()
+        if f['name'] != facts.FUNCTIONS[address][0]:
+            removed[ROOT / f['path']] = (ROOT / f['path']).read_bytes()
         pending.pop(ROOT / f['path'], None)
         name, description = facts.FUNCTIONS[address]
         f.update(name=name, description=description, semantic_status='described', path='Source/Action/' + name + '.asm')
@@ -160,15 +166,17 @@ def main(facts=facts, tag='ActionTextDisplay', document='ActionTextDisplay', sta
             total = sum(f['region'] == 'Action' for f in functions)
             text = re.sub(r'\| Action \| \d+ \| \d+ \|', f'| Action | {total} | {count} |', text)
             for f in selected:
-                needle = '| #' + format(f['address'], '04X') + ' | [Action.' + f['name'] + '](../' + f['path'] + ') | Unknown, назначение этого фрагмента ещё не установлено |'
+                previous_description = old[f['address']]['description'] if allow_named else 'Unknown, назначение этого фрагмента ещё не установлено'
+                needle = '| #' + format(f['address'], '04X') + ' | [Action.' + f['name'] + '](../' + f['path'] + ') | ' + previous_description + ' |'
                 assert text.count(needle) == 1
-                text = text.replace(needle, needle.replace('Unknown, назначение этого фрагмента ещё не установлено', f['description']))
+                text = text.replace(needle, needle.replace(previous_description, f['description']))
         else:
             for f in selected:
                 start = text.index('## ' + f['name'] + '\n')
                 end = text.find('\n## ', start + 4)
                 end = len(text) if end < 0 else end
-                block = text[start:end].replace('Unknown, назначение этого фрагмента ещё не установлено.', f['description'] + '.')
+                previous_description = old[f['address']]['description'] if allow_named else 'Unknown, назначение этого фрагмента ещё не установлено'
+                block = text[start:end].replace(previous_description + '.', f['description'] + '.')
                 text = text[:start] + block.rstrip() + '\n\n[Алгоритм, контракты и независимая модель](../' + document + '.md).\n' + text[end:]
         pending[path] = text.encode('utf-8')
     # Создание отдельного кандидата до замены активных файлов.

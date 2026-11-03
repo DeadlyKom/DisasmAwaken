@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "total_cases": 81152,
+  "cases_by_kind": {
+    "all_bc_words": 65536,
+    "all_matrix_byte_positions": 11520,
+    "mixed_vectors_and_matrices": 4096
+  },
+  "paths": {
+    "complete": 80198,
+    "overflow": 954
+  },
+  "method": "wrapper_reference_with_transposed_matrix_and_checked_real_children",
+  "independent_complete_child_oracle": false,
+  "children_executed_without_stubs": true,
+  "matrix_transposed_before_compute_and_restored_after": true,
+  "full_patch_words_and_prefix_bytes_restored": true,
+  "exact_registers_flags_refresh_sp": true,
+  "every_ram_byte_and_write_multiplicity_checked": true,
+  "sp_restored_before_second_call": true,
+  "ix_iy_restored": true,
+  "partial_outputs_returned_on_overflow": true,
+  "maximum_additional_stack_bytes": 6,
+  "wrapper_refresh_m1": 65,
+  "two_stack_fixtures": true,
+  "all_joint_inputs_exhausted": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

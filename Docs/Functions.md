@@ -21,7 +21,7 @@
 | Help | 4 | 4 | [Факты](FunctionDetails/Help.md) |
 | Music | 49 | 49 | [Факты](FunctionDetails/Music.md) |
 | ActionBoot | 9 | 9 | [Факты](FunctionDetails/ActionBoot.md) |
-| Action | 185 | 96 | [Факты](FunctionDetails/Action.md) |
+| Action | 192 | 108 | [Факты](FunctionDetails/Action.md) |
 | ThreeD | 98 | 75 | [Факты](FunctionDetails/ThreeD.md) |
 | Voxel | 9 | 9 | [Факты](FunctionDetails/Voxel.md) |
 | Controls | 72 | 50 | [Факты](FunctionDetails/Controls.md) |
@@ -672,6 +672,7 @@
 | #6265 | [Action.Unknown6265](../Source/Action/Unknown6265.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #62CF | [Action.Unknown62CF](../Source/Action/Unknown62CF.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #635B | [Action.Unknown635B](../Source/Action/Unknown635B.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #6380 | [Action.ApplyIndexedDelta](../Source/Action/ApplyIndexedDelta.asm) | Применение знаковой табличной поправки к байту 9BCD с ограничением и установкой бита 5 по прежнему значению |
 | #64DF | [Action.Unknown64DF](../Source/Action/Unknown64DF.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #6639 | [Action.DrawBankedGauge](../Source/Action/DrawBankedGauge.asm) | Выбор банка 1, вывод шестистрочной шкалы и обязательный выбор банка 0 |
 | #6649 | [Action.UpdatePanelGauges](../Source/Action/UpdatePanelGauges.asm) | Условное обновление шести шкал, сброс пяти запросов и насыщение шестого значения |
@@ -702,6 +703,7 @@
 | #704B | [Action.IgnoreKey](../Source/Action/IgnoreKey.asm) | Пустой обработчик клавиши, возврат к восстановлению рамки без изменения регистров |
 | #709B | [Action.ReportMissingMissileTarget](../Source/Action/ReportMissingMissileTarget.asm) | Передача в очередь сообщения об отсутствии захваченной цели с сохранением регистров |
 | #70A4 | [Action.CheckMissileLaunch](../Source/Action/CheckMissileLaunch.asm) | Проверка кода захваченной цели и остатка ракет, очистка трёх захватов при пустом запасе |
+| #70C6 | [Action.ConsumeMissileStock](../Source/Action/ConsumeMissileStock.asm) | Уменьшение выбранного запаса и отдельного байта 9BD2, передача сообщения о пуске и нового остатка очереди |
 | #70ED | [Action.SelectMissileStock](../Source/Action/SelectMissileStock.asm) | Выбор ненулевого приоритетного остатка ракет либо запасного счётчика с возвратом адреса |
 | #74FB | [Action.SelectPreferredByte](../Source/Action/SelectPreferredByte.asm) | Выбор ненулевого предпочтительного байта либо запасного значения с возвратом адреса выбранного поля |
 | #7859 | [Action.Unknown7859](../Source/Action/Unknown7859.asm) | Unknown, назначение этого фрагмента ещё не установлено |
@@ -719,11 +721,14 @@
 | #AC38 | [Action.ReadWordFromIX](../Source/Action/ReadWordFromIX.asm) | Чтение слова младшим байтом вперёд через IX, продвижение IX на два и копирование C в B |
 | #AC44 | [Action.ActivateParameterSet](../Source/Action/ActivateParameterSet.asm) | Выбор банка 0, применение набора параметров и обнуление двух слов и двух байтов состояния |
 | #AC5D | [Action.ApplyParameterSet](../Source/Action/ApplyParameterSet.asm) | Применение пятнадцати полей набора к исходным адресам ACTION, поле 1 читается без записи, поле 6 используется дважды |
+| #ACEA | [Action.TransformVectorTransposed](../Source/Action/TransformVectorTransposed.asm) | Вычисление трёх выходных слов с временно транспонированной матрицей, сохранением IX/IY и восстановлением CPU-стека |
+| #AD1D | [Action.SwapCodePatchWords](../Source/Action/SwapCodePatchWords.asm) | Обмен трёх пар полных слов изменяемого кода, включая байты операндов и следующие префиксы |
 | #AD48 | [Action.UnknownAD48](../Source/Action/UnknownAD48.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #AD5A | [Action.UnknownAD5A](../Source/Action/UnknownAD5A.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #ADB7 | [Action.UnknownADB7](../Source/Action/UnknownADB7.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #AE24 | [Action.UnknownAE24](../Source/Action/UnknownAE24.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #AE73 | [Action.UnknownAE73](../Source/Action/UnknownAE73.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #AF43 | [Action.ComputePatchedVector](../Source/Action/ComputePatchedVector.asm) | Расчёт трёх компонентов по девяти коэффициентам с исходным переносом отрицательных произведений и досрочным выходом по переполнению |
 | #B0E9 | [Action.UnknownB0E9](../Source/Action/UnknownB0E9.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #C000 | [Action.DispatchEdges](../Source/Action/DispatchEdges.asm) | Выбор вершин и обработчика ребра по раздельной таблице младших и старших байтов |
 | #C071 | [Action.NextEdge](../Source/Action/NextEdge.asm) | Возврат косвенного обработчика и продолжение перебора рёбер |
@@ -820,7 +825,7 @@
 | #C88C | [Action.UnknownC88C](../Source/Action/UnknownC88C.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #CF08 | [Action.UnknownCF08](../Source/Action/UnknownCF08.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #D10A | [Action.ClearWorkBuffer](../Source/Action/ClearWorkBuffer.asm) | Заполнение #0C00 байт до #8C00 значением #FF через стек с восстановлением SP |
-| #D12C | [Action.MultiplySignedScaled](../Source/Action/MultiplySignedScaled.asm) | Знаковое умножение с масштабом 1/128 для коэффициента от -127 до 127, выход через JP (IX) |
+| #D12C | [Action.MultiplySignedScaled](../Source/Action/MultiplySignedScaled.asm) | Знаковое произведение DE и байтового коэффициента с усечением к нулю после деления на 128 и выходом через IX |
 | #E020 | [Action.UnknownE020](../Source/Action/UnknownE020.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #E4A6 | [Action.UnknownE4A6](../Source/Action/UnknownE4A6.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #E4FF | [Action.UnknownE4FF](../Source/Action/UnknownE4FF.asm) | Unknown, назначение этого фрагмента ещё не установлено |
@@ -828,11 +833,13 @@
 | #E5A0 | [Action.UnknownE5A0](../Source/Action/UnknownE5A0.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #E658 | [Action.UnknownE658](../Source/Action/UnknownE658.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #E685 | [Action.UnknownE685](../Source/Action/UnknownE685.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #E6BE | [Action.UnknownE6BE](../Source/Action/UnknownE6BE.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #E6C7 | [Action.UnknownE6C7](../Source/Action/UnknownE6C7.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #E6D1 | [Action.UnknownE6D1](../Source/Action/UnknownE6D1.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #E98D | [Action.UnknownE98D](../Source/Action/UnknownE98D.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #E9A1 | [Action.UnknownE9A1](../Source/Action/UnknownE9A1.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #E6A7 | [Action.RecordIndexToAddress](../Source/Action/RecordIndexToAddress.asm) | Расчёт адреса записи A100 плюс входной код, умноженный на 64 |
+| #E6B5 | [Action.RecordIXToIndex](../Source/Action/RecordIXToIndex.asm) | Расчёт байтового кода записи по IX с сохранением HL |
+| #E6BE | [Action.RecordIYToIndex](../Source/Action/RecordIYToIndex.asm) | Расчёт байтового кода записи по IY с сохранением HL |
+| #E6C7 | [Action.RecordAddressToIndex](../Source/Action/RecordAddressToIndex.asm) | Расчёт байтового кода записи по HL, младшие шесть битов смещения не участвуют в коде |
+| #E6D1 | [Action.NextActiveRecord](../Source/Action/NextActiveRecord.asm) | Переход по шагу BC к следующей записи с байтом 1 не равным 80 либо к маркеру конца |
+| #E98D | [Action.FindRecordByCode](../Source/Action/FindRecordByCode.asm) | Поиск от A100 первой активной записи с байтом 12 равным входному D |
+| #E9A1 | [Action.FindReusableRecord](../Source/Action/FindReusableRecord.asm) | Поиск первой записи с байтом 1 равным 80, обработка маркера конца и однократного пропуска по байту 18 |
 | #EA29 | [Action.UnknownEA29](../Source/Action/UnknownEA29.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #EB72 | [Action.UnknownEB72](../Source/Action/UnknownEB72.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #EB87 | [Action.UnknownEB87](../Source/Action/UnknownEB87.asm) | Unknown, назначение этого фрагмента ещё не установлено |

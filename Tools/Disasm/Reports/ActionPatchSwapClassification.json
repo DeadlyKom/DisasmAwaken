@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "described_functions": 1,
+  "confirmed_code_bytes": 43,
+  "confirmed_instructions": 13,
+  "independent_model_cases": 196864,
+  "physical_bytes_preserved": true,
+  "full_patch_words_preserved": true,
+  "game_meaning_of_patch_pairs_proved": false,
+  "consumer_executed": false,
+  "assembly_executed": false
+}

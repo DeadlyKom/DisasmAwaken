@@ -26,7 +26,7 @@ Entry:          LD HL, (#9B1F)
                 LD (#9B21), A
                 LD (#9B24), A
                 LD IY, #6C40
-                JP @Action.UnknownAE73.PointAF43
+                JP @Action.ComputePatchedVector.Entry
 
 
                 endmodule

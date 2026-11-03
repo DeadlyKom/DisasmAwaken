@@ -636,7 +636,7 @@
 | Action | #ACA7 | #7DE4 | `OR #20` | [ApplyParameterSet.asm](../Source/Action/ApplyParameterSet.asm) |
 | Action | #AF10 | #AF14 | `JR NZ,#AF13` | [UnknownAE73.asm](../Source/Action/UnknownAE73.asm) |
 | Action | #AF2B | #AF2F | `JR NZ,#AF2E` | [UnknownAE73.asm](../Source/Action/UnknownAE73.asm) |
-| Action | #AF43 | #AFF1 | `LD IX,#0000` | [UnknownAE73.asm](../Source/Action/UnknownAE73.asm) |
+| Action | #AF43 | #AFF1 | `LD IX,#0000` | [ComputePatchedVector.asm](../Source/Action/ComputePatchedVector.asm) |
 | Action | #C9AC | #CB38 | `LD B,#00` | [UnknownC88C.asm](../Source/Action/UnknownC88C.asm) |
 | Action | #C9AF | #CC29 | `LD D,#00` | [UnknownC88C.asm](../Source/Action/UnknownC88C.asm) |
 | Action | #C9B4 | #CC25 | `LD B,#00` | [UnknownC88C.asm](../Source/Action/UnknownC88C.asm) |
@@ -1133,3 +1133,11 @@
 [ApplyParameterSet](ActionApplyParameters.md) записывает 15 целевых байтов, десять из них являются доказанными непосредственными операндами. В реестре уточнены физические банки и файловые смещения этих десяти целей. Пять Unknown-целей не объявляются кодом. Порядок выбора банка и аппаратная блокировка описаны в [ActionParameterActivation](ActionParameterActivation.md).
 
 [UpdateGlyphIndicators](ControlsGlyphIndicators.md) записывает входной SP в операнд E089 команды LD SP,nn по E088 банка 1. Во время очистки SP направляется в пиксели, затем сохранённый операнд действительно восстанавливает рамку. Проверка охватывает записи операнда, 64 байта очистки и временные возвраты CALL.
+
+## Полные слова обмена AD1D
+
+[SwapCodePatchWords](../Source/Action/SwapCodePatchWords.asm) содержит шесть двухбайтовых записей, AD24→CB54, AD27→CB8B, AD32→CB6F, AD35→CBD8, AD40→CBBC, AD43→CBEE. Каждая изменяет операнд LD A,n и следующий префикс CB. [Границы и проверка](ActionPatchSwap.md) описывают оба байта каждого слова, замена на обмен только операндов не выполняется.
+
+## Сохранение компонентов и SP в ACEA
+
+[TransformVectorTransposed](../Source/Action/TransformVectorTransposed.asm) записывает входные слова, ACEE→AF48, ACF1→AF56, ACF5→AF69, и настоящий SP, ACFC→AD08. Все записи двухбайтовые, относятся к существующим операндам. [Рамка и продолжение](ActionVectorWrapper.md) описаны отдельно.

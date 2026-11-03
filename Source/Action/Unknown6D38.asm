@@ -83,7 +83,7 @@ Point6DBF:      LD (IX + #08), L
                 EXX
                 LD (#6DD2), SP
                 LD IY, #6DD1
-                JP @Action.UnknownAE73.PointAF43
+                JP @Action.ComputePatchedVector.Entry
 
 
                 endmodule

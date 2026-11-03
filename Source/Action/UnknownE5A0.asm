@@ -102,7 +102,7 @@ PointE604:      LD SP, #0000
 
 
                 LD D, #12
-                CALL @Action.UnknownE98D.Entry
+                CALL @Action.FindRecordByCode.Entry
                 JP Z, @Action.UnknownE685.Entry                                 ; переход, если флаг Z установлен
 
 

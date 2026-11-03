@@ -995,4 +995,18 @@ NoTargetText    equ #F2C5                                                       
 EmptyStockText  equ #F280                                                       ; указатель сообщения об исчерпанных ракетах, банк 1
                 endmodule
 
+
+                ; Адреса текстов списания ракеты, Controls банка 1
+                module ActionMissileConsumeConst
+LaunchedText    equ #F2E9                                                       ; сообщение о пуске
+RemainingText   equ #F26D                                                       ; начало фразы остатка
+MissilesText    equ #F277                                                       ; конец фразы остатка
+                endmodule
+
+
+                ; Старший байт исходной базы записей A100, память не выделяется
+                module ActionRecordIndexConst
+BaseHigh        equ #A1                                                         ; база преобразований с шагом 64 байта
+                endmodule
+
                 endif

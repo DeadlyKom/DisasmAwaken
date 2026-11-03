@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "typed_bytes": 1664,
+  "physical_records": 26,
+  "initial_slots": 25,
+  "marker_separate": true,
+  "nested_structure_sizes": [
+    2,
+    6,
+    64
+  ],
+  "physical_symbol_bindings": 1794,
+  "physical_bytes_preserved": true,
+  "all_field_game_meanings_proved": false,
+  "runtime_array_limit_proved": false,
+  "assembly_executed": false
+}

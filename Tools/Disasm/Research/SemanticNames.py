@@ -135,6 +135,15 @@ def name_operands(region, function_address, operation):
     operation = control_panel_group_name_operands(region, function_address, operation)
     operation = ship_periodic_code_name_operands(region, function_address, operation)
     operation = ship_preview_callback_name_operands(region, function_address, operation)
+    operation = action_vector_wrapper_name_operands(region,function_address,operation)
+    operation = action_patched_vector_name_operands(region,function_address,operation)
+    operation = action_scaled_multiply_name_operands(region, function_address, operation)
+    operation = action_patch_swap_name_operands(region,function_address,operation)
+    operation = action_record_iterator_name_operands(region, function_address, operation)
+    operation = action_record_search_name_operands(region, function_address, operation)
+    operation = action_record_index_name_operands(region,function_address,operation)
+    operation = action_type_delta_name_operands(region,function_address,operation)
+    operation = action_missile_consume_name_operands(region,function_address,operation)
     operation = action_missile_launch_name_operands(region,function_address,operation)
     operation = action_missile_stock_name_operands(region,function_address,operation)
     operation = action_key_scan_tables_name_operands(region,function_address,operation)
@@ -1623,3 +1632,36 @@ DOCUMENTS['Action',0x70ED]=('ActionMissileStock','выбор остатка ра
 
 from ActionMissileLaunchFacts import name_operands as action_missile_launch_name_operands
 DOCUMENTS.update({('Action',a):('ActionMissileLaunch','проверка перед пуском') for a in (0x709B,0x70A4)})
+
+from ActionMissileConsumeFacts import name_operands as action_missile_consume_name_operands
+DOCUMENTS['Action',0x70C6]=('ActionMissileConsume','списание ракет')
+
+from ActionTypeDeltaFacts import name_operands as action_type_delta_name_operands
+DOCUMENTS['Action',0x6380]=('ActionTypeDelta','табличная поправка')
+LABELS.update({('Action', 25498): 'Action.ApplyIndexedDelta.ApplyDelta', ('Action', 25509): 'Action.ApplyIndexedDelta.ClampSign', ('Action', 25513): 'Action.ApplyIndexedDelta.CheckOld', ('Action', 25521): 'Action.ApplyIndexedDelta.StoreValue'})
+
+from ActionRecordIndexFacts import name_operands as action_record_index_name_operands
+DOCUMENTS.update({('Action',a):('ActionRecordIndex','коды и адреса записей') for a in (0xE6A7,0xE6B5,0xE6BE,0xE6C7)})
+
+from ActionRecordSearchFacts import LABELS as ACTION_RECORD_SEARCH_LABELS, name_operands as action_record_search_name_operands
+LABELS.update(ACTION_RECORD_SEARCH_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionRecordSearch", "алгоритм и проверка") for a in (59809,)})
+
+from ActionRecordIteratorFacts import LABELS as ACTION_RECORD_ITERATOR_LABELS, name_operands as action_record_iterator_name_operands
+LABELS.update(ACTION_RECORD_ITERATOR_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionRecordIterator", "алгоритм и проверка") for a in (59089, 59789)})
+
+from ActionPatchSwapFacts import name_operands as action_patch_swap_name_operands
+DOCUMENTS['Action',0xAD1D]=('ActionPatchSwap','обмен слов кода')
+
+from ActionScaledMultiplyFacts import LABELS as ACTION_SCALED_MULTIPLY_LABELS, name_operands as action_scaled_multiply_name_operands
+LABELS.update(ACTION_SCALED_MULTIPLY_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionScaledMultiply", "алгоритм и проверка") for a in (53548,)})
+
+from ActionPatchedVectorFacts import name_operands as action_patched_vector_name_operands
+DOCUMENTS['Action',0xAF43]=('ActionPatchedVector','три компоненты и арифметический SP')
+LABELS.update({('Action', 44884): 'NextRow0Term', ('Action', 44898): 'SumRow0Part', ('Action', 44917): 'FinishRow0', ('Action', 44939): 'NextRow1Term', ('Action', 44954): 'SumRow1Part', ('Action', 44974): 'FinishRow1', ('Action', 44996): 'NextRow2Term', ('Action', 45011): 'SumRow2Part', ('Action', 45031): 'FinishRow2', ('Action', 45039): 'RestoreIX'})
+
+from ActionVectorWrapperFacts import name_operands as action_vector_wrapper_name_operands
+DOCUMENTS['Action',0xACEA]=('ActionVectorWrapper','транспонированная матрица и CPU-стек')
+LABELS['Action',0xAD07]='Resume'

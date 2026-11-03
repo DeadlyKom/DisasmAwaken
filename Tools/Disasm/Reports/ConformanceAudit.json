@@ -1,19 +1,19 @@
 {
   "method": "static_source_audit_without_assembly",
-  "included_text_files": 1485,
-  "included_binary_files": 233,
-  "registered_functions": 1198,
+  "included_text_files": 1493,
+  "included_binary_files": 231,
+  "registered_functions": 1205,
   "unlinked_functions": [],
   "missing_includes_or_resources": [],
   "missing_include_order": [],
-  "global_definitions": 20777,
-  "global_references": 10933,
+  "global_definitions": 20854,
+  "global_references": 10996,
   "unresolved_global_references": [],
   "duplicate_global_definitions": [],
   "global_reference_case_mismatches": [],
   "source_files_outside_graph": [],
-  "unknown_fragments": 134,
-  "unknown_contract_fragments": 317,
+  "unknown_fragments": 129,
+  "unknown_contract_fragments": 311,
   "unknown_contract_files": [
     "Source/Intro/InitializeIntro.asm",
     "Source/Intro/LoadStation.asm",
@@ -181,7 +181,6 @@
     "Source/Action/UnknownC88C.asm",
     "Source/Action/UnknownCF08.asm",
     "Source/Action/ClearWorkBuffer.asm",
-    "Source/Action/MultiplySignedScaled.asm",
     "Source/Action/UnknownE020.asm",
     "Source/Action/UnknownE4A6.asm",
     "Source/Action/UnknownE4FF.asm",
@@ -189,11 +188,6 @@
     "Source/Action/UnknownE5A0.asm",
     "Source/Action/UnknownE658.asm",
     "Source/Action/UnknownE685.asm",
-    "Source/Action/UnknownE6BE.asm",
-    "Source/Action/UnknownE6C7.asm",
-    "Source/Action/UnknownE6D1.asm",
-    "Source/Action/UnknownE98D.asm",
-    "Source/Action/UnknownE9A1.asm",
     "Source/Action/UnknownEA29.asm",
     "Source/Action/UnknownEB72.asm",
     "Source/Action/UnknownEB87.asm",
@@ -333,23 +327,23 @@
     "Source/Final/InitializeFinal.asm",
     "Source/Final/HaltFinal.asm"
   ],
-  "named_fragments_without_proved_contract": 183,
+  "named_fragments_without_proved_contract": 182,
   "original_profile_only_contracts": 0,
   "runtime_profile_limits": "See RuntimeProfileQualification.json and Docs/MapRuntimeProfiles.md, whole game remains unproved",
   "pending_by_region": {
-    "Action": 89,
+    "Action": 84,
     "ThreeD": 23,
     "Controls": 22
   },
-  "potential_continuations": 124,
-  "ordered_fragments": 225,
-  "python_scripts_parsed": 1205,
+  "potential_continuations": 125,
+  "ordered_fragments": 227,
+  "python_scripts_parsed": 1270,
   "python_duplicate_literal_keys": [],
   "totals": {
-    "address_label": 1008,
+    "address_label": 983,
     "numeric_control_target": 119,
     "numeric_index_operand": 352,
-    "condition_without_data_semantics": 1214
+    "condition_without_data_semantics": 1179
   },
   "findings": [
     {
@@ -1594,63 +1588,13 @@
     },
     {
       "path": "Source/Action/Unknown635B.asm",
-      "line": 20,
+      "line": 21,
       "issue": "condition_without_data_semantics"
     },
     {
       "path": "Source/Action/Unknown635B.asm",
-      "line": 38,
+      "line": 39,
       "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Action/Unknown635B.asm",
-      "line": 42,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Action/Unknown635B.asm",
-      "line": 51,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Action/Unknown635B.asm",
-      "line": 56,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Action/Unknown635B.asm",
-      "line": 61,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Action/Unknown635B.asm",
-      "line": 64,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Action/Unknown635B.asm",
-      "line": 69,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Action/Unknown635B.asm",
-      "line": 69,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Action/Unknown635B.asm",
-      "line": 73,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Action/Unknown635B.asm",
-      "line": 76,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Action/Unknown635B.asm",
-      "line": 80,
-      "issue": "address_label"
     },
     {
       "path": "Source/Action/Unknown64DF.asm",
@@ -5328,46 +5272,6 @@
       "issue": "address_label"
     },
     {
-      "path": "Source/Action/UnknownAE73.asm",
-      "line": 202,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Action/UnknownAE73.asm",
-      "line": 217,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Action/UnknownAE73.asm",
-      "line": 228,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Action/UnknownAE73.asm",
-      "line": 246,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Action/UnknownAE73.asm",
-      "line": 257,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Action/UnknownAE73.asm",
-      "line": 275,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Action/UnknownAE73.asm",
-      "line": 286,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Action/UnknownAE73.asm",
-      "line": 290,
-      "issue": "address_label"
-    },
-    {
       "path": "Source/Action/UnknownB0E9.asm",
       "line": 19,
       "issue": "condition_without_data_semantics"
@@ -7378,171 +7282,6 @@
       "issue": "address_label"
     },
     {
-      "path": "Source/Action/MultiplySignedScaled.asm",
-      "line": 21,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Action/MultiplySignedScaled.asm",
-      "line": 31,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Action/MultiplySignedScaled.asm",
-      "line": 33,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Action/MultiplySignedScaled.asm",
-      "line": 37,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Action/MultiplySignedScaled.asm",
-      "line": 42,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Action/MultiplySignedScaled.asm",
-      "line": 46,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Action/MultiplySignedScaled.asm",
-      "line": 50,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Action/MultiplySignedScaled.asm",
-      "line": 54,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Action/MultiplySignedScaled.asm",
-      "line": 58,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Action/MultiplySignedScaled.asm",
-      "line": 62,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Action/MultiplySignedScaled.asm",
-      "line": 66,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Action/MultiplySignedScaled.asm",
-      "line": 72,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Action/MultiplySignedScaled.asm",
-      "line": 76,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Action/MultiplySignedScaled.asm",
-      "line": 79,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Action/MultiplySignedScaled.asm",
-      "line": 81,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Action/MultiplySignedScaled.asm",
-      "line": 83,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Action/MultiplySignedScaled.asm",
-      "line": 86,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Action/MultiplySignedScaled.asm",
-      "line": 88,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Action/MultiplySignedScaled.asm",
-      "line": 90,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Action/MultiplySignedScaled.asm",
-      "line": 93,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Action/MultiplySignedScaled.asm",
-      "line": 95,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Action/MultiplySignedScaled.asm",
-      "line": 97,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Action/MultiplySignedScaled.asm",
-      "line": 100,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Action/MultiplySignedScaled.asm",
-      "line": 102,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Action/MultiplySignedScaled.asm",
-      "line": 104,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Action/MultiplySignedScaled.asm",
-      "line": 107,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Action/MultiplySignedScaled.asm",
-      "line": 109,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Action/MultiplySignedScaled.asm",
-      "line": 111,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Action/MultiplySignedScaled.asm",
-      "line": 114,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Action/MultiplySignedScaled.asm",
-      "line": 116,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Action/MultiplySignedScaled.asm",
-      "line": 120,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Action/MultiplySignedScaled.asm",
-      "line": 121,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Action/MultiplySignedScaled.asm",
-      "line": 127,
-      "issue": "address_label"
-    },
-    {
       "path": "Source/Action/UnknownE020.asm",
       "line": 19,
       "issue": "condition_without_data_semantics"
@@ -8058,84 +7797,39 @@
       "issue": "condition_without_data_semantics"
     },
     {
-      "path": "Source/Action/UnknownE6D1.asm",
-      "line": 18,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/UnknownE6D1.asm",
-      "line": 20,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Action/UnknownE6D1.asm",
-      "line": 22,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/UnknownE6D1.asm",
-      "line": 24,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Action/UnknownE98D.asm",
-      "line": 19,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Action/UnknownE98D.asm",
-      "line": 20,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Action/UnknownE98D.asm",
-      "line": 22,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/UnknownE98D.asm",
-      "line": 24,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Action/UnknownE9A1.asm",
-      "line": 19,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Action/UnknownE9A1.asm",
-      "line": 20,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/UnknownE9A1.asm",
-      "line": 22,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Action/UnknownE9A1.asm",
-      "line": 25,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/UnknownE9A1.asm",
-      "line": 27,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Action/UnknownE9A1.asm",
-      "line": 29,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/UnknownE9A1.asm",
+      "path": "Source/Action/NextActiveRecord.asm",
       "line": 30,
       "issue": "numeric_index_operand"
     },
     {
-      "path": "Source/Action/UnknownE9A1.asm",
-      "line": 32,
-      "issue": "condition_without_data_semantics"
+      "path": "Source/Action/NextActiveRecord.asm",
+      "line": 35,
+      "issue": "numeric_index_operand"
+    },
+    {
+      "path": "Source/Action/FindRecordByCode.asm",
+      "line": 34,
+      "issue": "numeric_index_operand"
+    },
+    {
+      "path": "Source/Action/FindReusableRecord.asm",
+      "line": 37,
+      "issue": "numeric_index_operand"
+    },
+    {
+      "path": "Source/Action/FindReusableRecord.asm",
+      "line": 42,
+      "issue": "numeric_index_operand"
+    },
+    {
+      "path": "Source/Action/FindReusableRecord.asm",
+      "line": 49,
+      "issue": "numeric_index_operand"
+    },
+    {
+      "path": "Source/Action/FindReusableRecord.asm",
+      "line": 50,
+      "issue": "numeric_index_operand"
     },
     {
       "path": "Source/Action/UnknownEA29.asm",

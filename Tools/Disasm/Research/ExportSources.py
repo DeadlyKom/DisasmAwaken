@@ -507,6 +507,20 @@ def main():
         write(MISSILE_TARGETS[1],text)
         symbols.update(bindings)
         special[17,0x3B1B]=(0x3B1E,MISSILE_TARGETS[1],0x9B1B)
+    # Физические знаковые поправки перенесённого ядра ACTION.
+    if "struct FIndexedDelta" in (ROOT/"Includes/Structs/Include.inc").read_text("utf-8"):
+        from ActionTypeDeltaFacts import TABLE as TYPE_DELTAS, render as render_type_deltas
+        text,bindings=render_type_deltas(data_by_slot[17])
+        write(TYPE_DELTAS[1],text)
+        symbols.update(bindings)
+        special[17,0x588]=(0x598,TYPE_DELTAS[1],0x634B)
+    # Начальные 25 записей и отдельный маркер, реальные вложенные экземпляры.
+    if "struct FActionRecord" in (ROOT/"Includes/Structs/Include.inc").read_text("utf-8"):
+        from ActionObjectRecords import PATH as OBJECT_RECORDS, render as render_object_records
+        text,bindings=render_object_records(data_by_slot[17])
+        write(OBJECT_RECORDS,text)
+        symbols.update(bindings)
+        special[17,0x4100]=(0x4780,OBJECT_RECORDS,0xA100)
     token_text, token_records = render_token_tables(language, names)
     write(TOKEN_TABLE_PATH, token_text)
     special[5, 0x935] = (0xA67, TOKEN_TABLE_PATH, 0xC935)
@@ -1042,6 +1056,36 @@ REGION_COMMENTS.setdefault('Action',{}).update(ACTION_MISSILE_STOCK_COMMENTS)
 
 from ActionMissileLaunchFacts import COMMENTS as ACTION_MISSILE_LAUNCH_COMMENTS
 REGION_COMMENTS.setdefault('Action',{}).update(ACTION_MISSILE_LAUNCH_COMMENTS)
+
+from ActionMissileConsumeFacts import COMMENTS as ACTION_MISSILE_CONSUME_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_MISSILE_CONSUME_COMMENTS)
+
+from ActionTypeDeltaFacts import COMMENTS as ACTION_TYPE_DELTA_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_TYPE_DELTA_COMMENTS)
+
+from ActionRecordIndexFacts import COMMENTS as ACTION_RECORD_INDEX_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_RECORD_INDEX_COMMENTS)
+
+
+from ActionRecordSearchFacts import COMMENTS as ACTION_RECORD_SEARCH_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_RECORD_SEARCH_COMMENTS)
+
+
+from ActionRecordIteratorFacts import COMMENTS as ACTION_RECORD_ITERATOR_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_RECORD_ITERATOR_COMMENTS)
+
+from ActionPatchSwapFacts import COMMENTS as ACTION_PATCH_SWAP_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_PATCH_SWAP_COMMENTS)
+
+
+from ActionScaledMultiplyFacts import COMMENTS as ACTION_SCALED_MULTIPLY_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_SCALED_MULTIPLY_COMMENTS)
+
+from ActionPatchedVectorFacts import COMMENTS as ACTION_PATCHED_VECTOR_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_PATCHED_VECTOR_COMMENTS)
+
+from ActionVectorWrapperFacts import COMMENTS as ACTION_VECTOR_WRAPPER_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_VECTOR_WRAPPER_COMMENTS)
 
 
 if __name__ == "__main__":

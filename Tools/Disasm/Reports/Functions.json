@@ -8425,8 +8425,19 @@
     "offset": 1432,
     "description": "Unknown, назначение этого фрагмента ещё не установлено",
     "semantic_status": "unknown",
-    "end_offset": 1523,
+    "end_offset": 1469,
     "path": "Source/Action/Unknown635B.asm"
+  },
+  {
+    "region": "Action",
+    "name": "ApplyIndexedDelta",
+    "address": 25472,
+    "slot": 17,
+    "offset": 1469,
+    "description": "Применение знаковой табличной поправки к байту 9BCD с ограничением и установкой бита 5 по прежнему значению",
+    "semantic_status": "described",
+    "end_offset": 1523,
+    "path": "Source/Action/ApplyIndexedDelta.asm"
   },
   {
     "region": "Action",
@@ -8760,6 +8771,17 @@
   },
   {
     "region": "Action",
+    "name": "ConsumeMissileStock",
+    "address": 28870,
+    "slot": 17,
+    "offset": 4867,
+    "description": "Уменьшение выбранного запаса и отдельного байта 9BD2, передача сообщения о пуске и нового остатка очереди",
+    "semantic_status": "described",
+    "end_offset": 4906,
+    "path": "Source/Action/ConsumeMissileStock.asm"
+  },
+  {
+    "region": "Action",
     "name": "SelectMissileStock",
     "address": 28909,
     "slot": 17,
@@ -8947,6 +8969,28 @@
   },
   {
     "region": "Action",
+    "name": "TransformVectorTransposed",
+    "address": 44266,
+    "slot": 17,
+    "offset": 19690,
+    "description": "Вычисление трёх выходных слов с временно транспонированной матрицей, сохранением IX/IY и восстановлением CPU-стека",
+    "semantic_status": "described",
+    "end_offset": 19741,
+    "path": "Source/Action/TransformVectorTransposed.asm"
+  },
+  {
+    "region": "Action",
+    "name": "SwapCodePatchWords",
+    "address": 44317,
+    "slot": 17,
+    "offset": 19741,
+    "description": "Обмен трёх пар полных слов изменяемого кода, включая байты операндов и следующие префиксы",
+    "semantic_status": "described",
+    "end_offset": 19784,
+    "path": "Source/Action/SwapCodePatchWords.asm"
+  },
+  {
+    "region": "Action",
     "name": "UnknownAD48",
     "address": 44360,
     "slot": 17,
@@ -8997,8 +9041,19 @@
     "offset": 20083,
     "description": "Unknown, назначение этого фрагмента ещё не установлено",
     "semantic_status": "unknown",
-    "end_offset": 20469,
+    "end_offset": 20291,
     "path": "Source/Action/UnknownAE73.asm"
+  },
+  {
+    "region": "Action",
+    "name": "ComputePatchedVector",
+    "address": 44867,
+    "slot": 17,
+    "offset": 20291,
+    "description": "Расчёт трёх компонентов по девяти коэффициентам с исходным переносом отрицательных произведений и досрочным выходом по переполнению",
+    "semantic_status": "described",
+    "end_offset": 20469,
+    "path": "Source/Action/ComputePatchedVector.asm"
   },
   {
     "region": "Action",
@@ -10062,7 +10117,7 @@
     "address": 53548,
     "slot": 17,
     "offset": 28972,
-    "description": "Знаковое умножение с масштабом 1/128 для коэффициента от -127 до 127, выход через JP (IX)",
+    "description": "Знаковое произведение DE и байтового коэффициента с усечением к нулю после деления на 128 и выходом через IX",
     "semantic_status": "described",
     "end_offset": 29076,
     "path": "Source/Action/MultiplySignedScaled.asm"
@@ -10146,58 +10201,80 @@
   },
   {
     "region": "Action",
-    "name": "UnknownE6BE",
+    "name": "RecordIndexToAddress",
+    "address": 59047,
+    "slot": 17,
+    "offset": 34471,
+    "description": "Расчёт адреса записи A100 плюс входной код, умноженный на 64",
+    "semantic_status": "described",
+    "end_offset": 34485,
+    "path": "Source/Action/RecordIndexToAddress.asm"
+  },
+  {
+    "region": "Action",
+    "name": "RecordIXToIndex",
+    "address": 59061,
+    "slot": 17,
+    "offset": 34485,
+    "description": "Расчёт байтового кода записи по IX с сохранением HL",
+    "semantic_status": "described",
+    "end_offset": 34494,
+    "path": "Source/Action/RecordIXToIndex.asm"
+  },
+  {
+    "region": "Action",
+    "name": "RecordIYToIndex",
     "address": 59070,
     "slot": 17,
     "offset": 34494,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
-    "end_offset": 34501,
-    "path": "Source/Action/UnknownE6BE.asm"
+    "description": "Расчёт байтового кода записи по IY с сохранением HL",
+    "semantic_status": "described",
+    "end_offset": 34503,
+    "path": "Source/Action/RecordIYToIndex.asm"
   },
   {
     "region": "Action",
-    "name": "UnknownE6C7",
+    "name": "RecordAddressToIndex",
     "address": 59079,
     "slot": 17,
     "offset": 34503,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Расчёт байтового кода записи по HL, младшие шесть битов смещения не участвуют в коде",
+    "semantic_status": "described",
     "end_offset": 34513,
-    "path": "Source/Action/UnknownE6C7.asm"
+    "path": "Source/Action/RecordAddressToIndex.asm"
   },
   {
     "region": "Action",
-    "name": "UnknownE6D1",
+    "name": "NextActiveRecord",
     "address": 59089,
     "slot": 17,
     "offset": 34513,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Переход по шагу BC к следующей записи с байтом 1 не равным 80 либо к маркеру конца",
+    "semantic_status": "described",
     "end_offset": 34530,
-    "path": "Source/Action/UnknownE6D1.asm"
+    "path": "Source/Action/NextActiveRecord.asm"
   },
   {
     "region": "Action",
-    "name": "UnknownE98D",
+    "name": "FindRecordByCode",
     "address": 59789,
     "slot": 17,
     "offset": 35213,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Поиск от A100 первой активной записи с байтом 12 равным входному D",
+    "semantic_status": "described",
     "end_offset": 35233,
-    "path": "Source/Action/UnknownE98D.asm"
+    "path": "Source/Action/FindRecordByCode.asm"
   },
   {
     "region": "Action",
-    "name": "UnknownE9A1",
+    "name": "FindReusableRecord",
     "address": 59809,
     "slot": 17,
     "offset": 35233,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Поиск первой записи с байтом 1 равным 80, обработка маркера конца и однократного пропуска по байту 18",
+    "semantic_status": "described",
     "end_offset": 35266,
-    "path": "Source/Action/UnknownE9A1.asm"
+    "path": "Source/Action/FindReusableRecord.asm"
   },
   {
     "region": "Action",

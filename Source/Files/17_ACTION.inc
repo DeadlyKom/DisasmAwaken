@@ -83,10 +83,16 @@
                 ent
                 assert $ == #054E
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/17_ACTION/Unclassified005.bin"
+                incbin "../Resources/17_ACTION/Unclassified005_BeforeTypeDeltas.bin"
+                assert $ == #0588
+                disp #634B
+                include "../Action/Data/TypeDeltas.asm"
+                ent
+                assert $ == #0598
                 assert $ == #0598
                 disp #635B
-                include "../Action/Unknown635B.asm"
+                include "../Action/Unknown635B.asm"                             ; (0) жёсткий порядок, последовательное исполнение
+                include "../Action/ApplyIndexedDelta.asm"                       ; (1) жёсткий порядок, продолжение после условного RET Z
                 ent
                 assert $ == #05F3
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
@@ -248,8 +254,10 @@
                 include "../Action/CheckMissileLaunch.asm"
                 ent
                 assert $ == #1303
-                ; Unknown, хвост пуска ещё не разобран
-                incbin "../Resources/17_ACTION/Unclassified017_AfterMissileChecks.bin"
+                disp #70C6
+                include "../Action/ConsumeMissileStock.asm"
+                ent
+                assert $ == #132A
                 assert $ == #132A
                 disp #70ED
                 include "../Action/SelectMissileStock.asm"
@@ -340,7 +348,14 @@
                 ent
                 assert $ == #3D82
                 ; Unknown, соседние данные ещё не разобраны
-                incbin "../Resources/17_ACTION/Unclassified020_AfterKeyInputs.bin"
+                incbin "../Resources/17_ACTION/Unclassified020_BeforeObjectRecords.bin"
+                assert $ == #4100
+                disp #A100
+                include "../Action/Data/ObjectRecords.asm"
+                ent
+                assert $ == #4780
+                ; Unknown, соседнее состояние A780..A82C ещё не разобрано
+                incbin "../Resources/17_ACTION/Unclassified020_AfterObjectRecords.bin"
                 assert $ == #482D
                 disp #A82D
                 include "../Action/StartFlight.asm"                             ; (0) жёсткий порядок, последовательное исполнение
@@ -382,7 +397,15 @@
                 ent
                 assert $ == #4CAB
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/17_ACTION/Unclassified022.bin"
+                incbin "../Resources/17_ACTION/Unclassified022_BeforeVectorWrapper.bin"
+                assert $ == #4CEA
+                disp #ACEA
+                include "../Action/TransformVectorTransposed.asm"
+                ent
+                assert $ == #4D1D
+                disp #AD1D
+                include "../Action/SwapCodePatchWords.asm"
+                ent
                 assert $ == #4D48
                 disp #AD48
                 include "../Action/UnknownAD48.asm"
@@ -405,6 +428,7 @@
                 assert $ == #4E73
                 disp #AE73
                 include "../Action/UnknownAE73.asm"
+                include "../Action/ComputePatchedVector.asm"
                 ent
                 assert $ == #4FF5
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
@@ -857,32 +881,37 @@
                 ent
                 assert $ == #869E
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/17_ACTION/Unclassified035.bin"
+                incbin "../Resources/17_ACTION/Unclassified035_BeforeRecordIndex.bin"
+                assert $ == #86A7
+                disp #E6A7
+                include "../Action/RecordIndexToAddress.asm"
+                ent
+                assert $ == #86B5
+                disp #E6B5
+                include "../Action/RecordIXToIndex.asm"
+                ent
                 assert $ == #86BE
                 disp #E6BE
-                include "../Action/UnknownE6BE.asm"
+                include "../Action/RecordIYToIndex.asm"
                 ent
-                assert $ == #86C5
-                ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/17_ACTION/Unclassified036.bin"
                 assert $ == #86C7
                 disp #E6C7
-                include "../Action/UnknownE6C7.asm"
+                include "../Action/RecordAddressToIndex.asm"
                 ent
                 assert $ == #86D1
                 disp #E6D1
-                include "../Action/UnknownE6D1.asm"
+                include "../Action/NextActiveRecord.asm"
                 ent
                 assert $ == #86E2
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
                 incbin "../Resources/17_ACTION/Unclassified037.bin"
                 assert $ == #898D
                 disp #E98D
-                include "../Action/UnknownE98D.asm"
+                include "../Action/FindRecordByCode.asm"
                 ent
                 assert $ == #89A1
                 disp #E9A1
-                include "../Action/UnknownE9A1.asm"
+                include "../Action/FindReusableRecord.asm"
                 ent
                 assert $ == #89C2
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления

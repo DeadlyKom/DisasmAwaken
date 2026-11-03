@@ -32,11 +32,24 @@ def structure_fields(paths):
             elif current and code.lower() == "ends":
                 current = None
             elif current and code:
-                field = re.fullmatch(r"(\w+)\s+(?:db|dw|ds|text)\s+.+", code, re.I)
+                field = re.fullmatch(r"(\w+)\s+(\w+)(?:\s+.+)?", code, re.I)
                 if not field:
                     raise ValueError("Неподдержанное поле STRUCT: " + code)
-                structures[current].append(field[1])
-    return structures
+                structures[current].append((field[1],None if field[2].lower() in ('db','dw','ds','text') else field[2]))
+    expanded = {}
+    def expand(name,parents=()):
+        if name in parents or name not in structures:
+            raise ValueError('Неизвестный либо рекурсивный вложенный STRUCT: '+name)
+        if name not in expanded:
+            fields=[]
+            for field,child in structures[name]:
+                fields.append(field)
+                if child:fields.extend(field+'.'+nested for nested in expand(child,(*parents,name)))
+            expanded[name]=fields
+        return expanded[name]
+    # Создание полных имён вложенных полей независимо от порядка файлов в графе include.
+    for name in structures:expand(name)
+    return expanded
 
 
 def audit():

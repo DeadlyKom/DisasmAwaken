@@ -76,6 +76,14 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
+## ApplyIndexedDelta
+
+[Action.ApplyIndexedDelta](../../Source/Action/ApplyIndexedDelta.asm)
+
+Применение знаковой табличной поправки к байту 9BCD с ограничением и установкой бита 5 по прежнему значению.
+
+[Договор и независимая модель](../ActionTypeDelta.md).
+
 ## Unknown64DF
 
 [Action.Unknown64DF](../../Source/Action/Unknown64DF.asm)
@@ -488,6 +496,16 @@ Unknown, назначение этого фрагмента ещё не уста
 
 [Контракт и композиционная проверка](../ActionMissileLaunch.md).
 
+## ConsumeMissileStock
+
+[Action.ConsumeMissileStock](../../Source/Action/ConsumeMissileStock.asm)
+
+Уменьшение выбранного запаса и отдельного байта 9BD2, передача сообщения о пуске и нового остатка очереди.
+
+Вход `#70C6`, запись 17.
+
+[Контракт и композиционная проверка](../ActionMissileConsume.md).
+
 ## SelectMissileStock
 
 [Action.SelectMissileStock](../../Source/Action/SelectMissileStock.asm)
@@ -718,6 +736,22 @@ Unknown, назначение этого фрагмента ещё не уста
 
 [Алгоритм, контракты и независимая модель](../ActionApplyParameters.md).
 
+## TransformVectorTransposed
+
+[Action.TransformVectorTransposed](../../Source/Action/TransformVectorTransposed.asm)
+
+Вычисление трёх выходных слов с временно транспонированной матрицей, сохранением IX/IY и восстановлением CPU-стека.
+
+[Контракт и композиционная модель](../ActionVectorWrapper.md).
+
+## SwapCodePatchWords
+
+[Action.SwapCodePatchWords](../../Source/Action/SwapCodePatchWords.asm)
+
+Обмен трёх пар полных слов изменяемого кода, включая байты операндов и следующие префиксы.
+
+[Контракт и независимая модель](../ActionPatchSwap.md).
+
 ## UnknownAD48
 
 [Action.UnknownAD48](../../Source/Action/UnknownAD48.asm)
@@ -778,15 +812,19 @@ Unknown, назначение этого фрагмента ещё не уста
 
 [Action.UnknownAE73](../../Source/Action/UnknownAE73.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+Unknown, оставшийся фрагмент AE73..AF42 ещё не разобран.
 
-Вход `#AE73`, запись 17, смещения `#4E73..#4FF4`.
+Вход `#AE73`, запись 17, смещения `#4E73..#4F42`.
 
-- Прямые вызовы: нет непосредственных обращений.
-- Непосредственные чтения: `#AF48`, `#AF56`, `#AF69`, `#CB3E`, `#CB54`, `#CB6F`, `#CB8B`, `#CBA1`, `#CBBC`, `#CBD8`, `#CBEE`, `#CC09`.
-- Непосредственные записи: `#AF14`, `#AF2F`, `#AFF1`, `#D7A2`, `#D7C4`, `#D9B6`.
-- Ввод и вывод: нет.
-- Косвенное завершение: `JP (IY)`.
+Сохраняет неизвестный договор и записи AF14, AF2F. Вычислитель AF43 выделен отдельно, его выходы и чтения не относятся к этому оставшемуся фрагменту.
+
+## ComputePatchedVector
+
+[Action.ComputePatchedVector](../../Source/Action/ComputePatchedVector.asm)
+
+Расчёт трёх компонентов по девяти коэффициентам с исходным переносом отрицательных произведений и досрочным выходом по переполнению.
+
+[Контракт, перенос, SP и модель](../ActionPatchedVector.md).
 
 ## UnknownB0E9
 
@@ -2136,7 +2174,7 @@ Unknown, назначение этого фрагмента ещё не уста
 
 [Action.MultiplySignedScaled](../../Source/Action/MultiplySignedScaled.asm)
 
-Знаковое умножение с масштабом 1/128 для коэффициента от -127 до 127, выход через JP (IX).
+Знаковое произведение DE и байтового коэффициента с усечением к нулю после деления на 128 и выходом через IX.
 
 Вход `#D12C`, запись 17, смещения `#712C..#7193`.
 
@@ -2145,6 +2183,8 @@ Unknown, назначение этого фрагмента ещё не уста
 - Непосредственные записи: нет непосредственных обращений.
 - Ввод и вывод: нет.
 - Косвенное завершение: `JP (IX)`.
+
+[Алгоритм, контракты и независимая модель](../ActionScaledMultiply.md).
 
 ## UnknownE020
 
@@ -2244,39 +2284,45 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownE6BE
+## RecordIndexToAddress
 
-[Action.UnknownE6BE](../../Source/Action/UnknownE6BE.asm)
+[Action.RecordIndexToAddress](../../Source/Action/RecordIndexToAddress.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+Расчёт адреса записи A100 плюс входной код, умноженный на 64.
 
-Вход `#E6BE`, запись 17, смещения `#86BE..#86C4`.
+[Контракт и независимая модель](../ActionRecordIndex.md).
 
-- Прямые вызовы: `#E6C7`.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
+## RecordIXToIndex
 
-## UnknownE6C7
+[Action.RecordIXToIndex](../../Source/Action/RecordIXToIndex.asm)
 
-[Action.UnknownE6C7](../../Source/Action/UnknownE6C7.asm)
+Расчёт байтового кода записи по IX с сохранением HL.
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Контракт и независимая модель](../ActionRecordIndex.md).
 
-Вход `#E6C7`, запись 17, смещения `#86C7..#86D0`.
+## RecordIYToIndex
 
-- Прямые вызовы: нет непосредственных обращений.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
+[Action.RecordIYToIndex](../../Source/Action/RecordIYToIndex.asm)
 
-## UnknownE6D1
+Расчёт байтового кода записи по IY с сохранением HL.
 
-[Action.UnknownE6D1](../../Source/Action/UnknownE6D1.asm)
+[Контракт и независимая модель](../ActionRecordIndex.md).
 
-Unknown, назначение этого фрагмента ещё не установлено.
+
+## RecordAddressToIndex
+
+[Action.RecordAddressToIndex](../../Source/Action/RecordAddressToIndex.asm)
+
+Расчёт байтового кода записи по HL, младшие шесть битов смещения не участвуют в коде.
+
+[Контракт и независимая модель](../ActionRecordIndex.md).
+
+
+## NextActiveRecord
+
+[Action.NextActiveRecord](../../Source/Action/NextActiveRecord.asm)
+
+Переход по шагу BC к следующей записи с байтом 1 не равным 80 либо к маркеру конца.
 
 Вход `#E6D1`, запись 17, смещения `#86D1..#86E1`.
 
@@ -2286,11 +2332,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownE98D
+[Алгоритм, контракты и независимая модель](../ActionRecordIterator.md).
 
-[Action.UnknownE98D](../../Source/Action/UnknownE98D.asm)
+## FindRecordByCode
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Action.FindRecordByCode](../../Source/Action/FindRecordByCode.asm)
+
+Поиск от A100 первой активной записи с байтом 12 равным входному D.
 
 Вход `#E98D`, запись 17, смещения `#898D..#89A0`.
 
@@ -2300,11 +2348,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownE9A1
+[Алгоритм, контракты и независимая модель](../ActionRecordIterator.md).
 
-[Action.UnknownE9A1](../../Source/Action/UnknownE9A1.asm)
+## FindReusableRecord
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Action.FindReusableRecord](../../Source/Action/FindReusableRecord.asm)
+
+Поиск первой записи с байтом 1 равным 80, обработка маркера конца и однократного пропуска по байту 18.
 
 Вход `#E9A1`, запись 17, смещения `#89A1..#89C1`.
 
@@ -2313,6 +2363,8 @@ Unknown, назначение этого фрагмента ещё не уста
 - Непосредственные записи: нет непосредственных обращений.
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
+
+[Алгоритм, контракты и независимая модель](../ActionRecordSearch.md).
 
 ## UnknownEA29
 

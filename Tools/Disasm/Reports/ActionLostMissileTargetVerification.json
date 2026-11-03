@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "total_cases": 36864,
+  "queue_results": {
+    "accepted": 20480,
+    "dropped": 16384
+  },
+  "method": "lost_target_parent_oracle_with_real_banked_queue_and_index_child",
+  "independent_complete_child_oracle": false,
+  "children_executed_without_stubs": true,
+  "all_target_index_bytes": true,
+  "all_unlocked_bank0_configurations": true,
+  "queue_drop_and_end_marker_checked": true,
+  "exact_registers_flags_refresh_sp": true,
+  "every_physical_ram_byte_and_write_checked": true,
+  "actual_bank0_eca9_write_distinguished_from_bank1": true,
+  "real_out_and_physical_eight_banks": true,
+  "maximum_additional_stack_bytes": 18,
+  "word_text_f248_verified_from_bank1": true,
+  "all_joint_inputs_exhausted": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

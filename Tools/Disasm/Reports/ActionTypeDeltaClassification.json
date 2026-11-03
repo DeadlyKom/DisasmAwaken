@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "described_functions": 1,
+  "split_from_unknown": true,
+  "parent_unknown_preserved": true,
+  "typed_bytes": 16,
+  "physical_records": 16,
+  "independent_model_cases": 90112,
+  "physical_bytes_preserved": true,
+  "original_instruction_sequence_preserved": true,
+  "game_meaning_of_state_and_mode_proved": false,
+  "assembly_executed": false
+}

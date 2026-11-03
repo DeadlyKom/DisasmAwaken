@@ -206,7 +206,7 @@ PointE121:      CP #70
                 XOR A
 PointE142:      LD (#9B8D), A
                 LD IY, #E14C
-                JP @Action.UnknownAE73.PointAF43
+                JP @Action.ComputePatchedVector.Entry
 
 
                 JP PE, @Action.UnknownE020.PointE0E2                            ; переход, если флаг P/V установлен

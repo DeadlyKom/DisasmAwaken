@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "total_cases": 786432,
+  "cases_by_kind": {
+    "all_words_for_six_coefficients": 393216,
+    "all_coefficients_and_high_bytes": 393216
+  },
+  "method": "independent_integer_product_flags_and_bitcount_cost_against_original_instructions",
+  "all_words_for_coefficients": [
+    0,
+    1,
+    127,
+    128,
+    129,
+    255
+  ],
+  "all_coefficients_and_coordinate_high_bytes": true,
+  "coefficient_80_original_zero_result_preserved": true,
+  "exact_registers_flags_refresh_sp": true,
+  "every_ram_byte_checked": true,
+  "no_memory_writes": true,
+  "sp_unchanged": true,
+  "jp_ix_continuation": true,
+  "all_joint_inputs_exhausted": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

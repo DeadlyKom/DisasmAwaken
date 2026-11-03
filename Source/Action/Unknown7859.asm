@@ -48,7 +48,7 @@ Entry:          LD A, (#9B83)
                 LD IXL, A
                 LD A, (HL)
                 LD IXH, A
-Point78A1:      CALL @Action.UnknownE9A1.Entry
+Point78A1:      CALL @Action.FindReusableRecord.Entry
                 RET Z                                                           ; выход, если флаг Z установлен
 
                 EXX
@@ -238,7 +238,7 @@ Point79C0:      LD (#79DE), A
 
                 LD A, #00
 Point79C9:      LD (#7A6A), A
-Point79CC:      CALL @Action.UnknownE9A1.Entry
+Point79CC:      CALL @Action.FindReusableRecord.Entry
                 RET Z                                                           ; выход, если флаг Z установлен
 
                 PUSH IY

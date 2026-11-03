@@ -13,7 +13,7 @@ from MarketScriptTable import PATH as MARKET_SCRIPT_PATH, START as MARKET_SCRIPT
 
 
 def structure_symbols():
-    """Чтение простых DB/DW/DS полей из фактических объявлений структур."""
+    """Чтение DB/DW/DS и вложенных STRUCT из фактических объявлений, без внешнего реестра."""
     symbols = {}
     current = None
     offset = 0
@@ -28,7 +28,16 @@ def structure_symbols():
         elif current and code:
             field = re.fullmatch(r"(\w+)\s+(db|dw|ds|text)\s+(.+)", code, re.I)
             if not field:
-                raise ValueError("Не поддержано поле структуры: " + code)
+                nested = re.fullmatch(r"(\w+)\s+(\w+)", code)
+                if not nested or nested[2].upper() not in symbols:
+                    raise ValueError("Не поддержано поле структуры: " + code)
+                prefix=current+'.'+nested[1].upper();kind=nested[2].upper()
+                symbols[prefix]=offset
+                # Создание относительных имён вложенных полей по уже объявленной реальной структуре.
+                children=[(name[len(kind):],value) for name,value in symbols.items() if name.startswith(kind+'.')]
+                for suffix,value in children:symbols[prefix+suffix]=offset+value
+                offset+=symbols[kind]
+                continue
             symbols[current + "." + field[1].upper()] = offset
             if field[2].lower() in ("ds", "text"):
                 count = field[3].split(",", 1)[0].strip().replace("#", "0x")
@@ -80,7 +89,7 @@ def main():
         operation = operation.upper()
         operation = re.sub(r"@[A-Z_][A-Z0-9_.]*",lambda m:f"#{number(m[0]):04X}",operation)
         # Преобразование именованных полей в смещения для сверки с исходными командами.
-        operation = re.sub(r"\bF[A-Z][A-Z0-9_]*(?:\.[A-Z0-9_]+)?\b",
+        operation = re.sub(r"\bF[A-Z][A-Z0-9_]*(?:\.[A-Z0-9_]+)*\b",
                            lambda m: "#" + format(symbols[m[0]], "X") if m[0] in symbols else m[0], operation)
         operation = re.sub(r"#([0-9A-F]+)\s*\+\s*([0-9]+)",
                            lambda m: "#" + format(int(m[1], 16) + int(m[2]), "X"), operation)
@@ -474,6 +483,37 @@ def main():
         assert symbols['FMISSILETARGETS']==3
         assert [symbols['FMISSILETARGETS.TARGET'+str(i)] for i in range(3)]==[0,1,2]
         missile_target_records=1
+
+    # Проверка шестнадцати знаковых поправок и исходного физического смещения.
+    from ActionTypeDeltaFacts import TABLE as TYPE_DELTAS, parse as parse_type_deltas
+    type_delta_records=0
+    entries=[i for i in source_map if i['path']==TYPE_DELTAS[1]]
+    if entries:
+        assert len(entries)==1
+        item=entries[0]
+        raw,labels=parse_type_deltas((ROOT/TYPE_DELTAS[1]).read_text('utf-8'))
+        assert (item['slot'],item['offset'],item['length'],item['origin'])==(17,0x588,16,0x634B)
+        assert raw==sources[17][0x588:0x598]
+        assert all(symbols.get(k.upper())==v for k,v in labels.items())
+        assert symbols['FINDEXEDDELTA']==1 and symbols['FINDEXEDDELTA.DELTA']==0
+        type_delta_records=16
+
+    # Проверка всех байтов физических записей и вложенных смещений по реальным STRUCT.
+    from ActionObjectRecords import PATH as OBJECT_RECORDS, parse as parse_object_records, SCHEMA as OBJECT_STRUCTS, layout as object_layout
+    object_records=0
+    entries=[i for i in source_map if i['path']==OBJECT_RECORDS]
+    if entries:
+        assert len(entries)==1
+        item=entries[0]
+        raw,labels=parse_object_records((ROOT/OBJECT_RECORDS).read_text('utf-8'))
+        assert (item['slot'],item['offset'],item['length'],item['origin'])==(17,0x4100,1664,0xA100)
+        assert raw==sources[17][0x4100:0x4780]
+        assert all(symbols.get(k.upper())==v for k,v in labels.items())
+        for structure in OBJECT_STRUCTS:
+            size,fields=object_layout(structure)
+            assert symbols[structure.upper()]==size
+            assert all(symbols.get((structure+'.'+field).upper())==value for field,value in fields.items())
+        object_records=26
 
     # Проверка физических записей композиции и точной грамматики фактических DB-команд.
     from MusicCompositionSource import descriptions as composition_descriptions, parse as parse_composition, STRUCTURES as COMPOSITION_STRUCTURES
@@ -1447,6 +1487,8 @@ def main():
     report['key_scan_records'] = key_scan_records
     report['missile_stock_records'] = missile_stock_records
     report['missile_target_records'] = missile_target_records
+    report['type_delta_records'] = type_delta_records
+    report['action_object_records'] = object_records
     report['glyph_input_records'] = glyph_input_records
     report['parameter_rule_records'] = parameter_rule_records
     (ROOT/"Tools/Disasm/Reports/SourceVerification.json").write_text(

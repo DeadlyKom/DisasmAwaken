@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "described_functions": 1,
+  "parent_unknown_preserved": true,
+  "original_instruction_sequence_preserved": true,
+  "physical_bytes_preserved": true,
+  "compositional_model_cases": 212236,
+  "independent_complete_child_oracle": false,
+  "all_six_overflow_sites": true,
+  "arithmetic_sp_and_original_carry_preserved": true,
+  "assembly_executed": false,
+  "guarded_resume_after_oserror": true,
+  "candidate_files_checked": 22
+}

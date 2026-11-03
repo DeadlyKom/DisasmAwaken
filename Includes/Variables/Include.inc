@@ -1378,4 +1378,46 @@ EnabledCode     equ #6EAD                                                       
 CommandDelay    equ #A85F                                                       ; операнд LD A,n в UpdateFrame, проверка с имеющимся кодом цели записывает 5
                 endmodule
 
+
+                ; Существующие слова изменяемого кода банка 0, память не выделяется
+                module ActionPatchSwapState
+Pair0A          equ #CB8B                                                       ; операнд LD A,n и следующий байт кода, полное слово обмена
+Pair0B          equ #CB54                                                       ; операнд LD A,n и следующий байт кода, полное слово обмена
+Pair1A          equ #CBD8                                                       ; операнд LD A,n и следующий байт кода, полное слово обмена
+Pair1B          equ #CB6F                                                       ; операнд LD A,n и следующий байт кода, полное слово обмена
+Pair2A          equ #CBEE                                                       ; операнд LD A,n и следующий байт кода, полное слово обмена
+Pair2B          equ #CBBC                                                       ; операнд LD A,n и следующий байт кода, полное слово обмена
+                endmodule
+
+
+                ; Разнесённые исходные операнды и выходы, память не выделяется
+                module ActionPatchedVectorState
+Input0          equ #AF48                                                       ; существующее слово переходного вычислителя
+Input1          equ #AF56                                                       ; существующее слово переходного вычислителя
+Input2          equ #AF69                                                       ; существующее слово переходного вычислителя
+Output0         equ #D9B6                                                       ; существующее слово переходного вычислителя
+Output1         equ #D7C4                                                       ; существующее слово переходного вычислителя
+Output2         equ #D7A2                                                       ; существующее слово переходного вычислителя
+SavedIX         equ #AFF1                                                       ; существующее слово переходного вычислителя
+                endmodule
+
+                ; Исходные байтовые коэффициенты ACTION банка 0
+                module ActionPatchedVectorCoeffs
+C00             equ #CB3E                                                       ; signed8, исходный 80 даёт нулевой модуль
+C01             equ #CB54                                                       ; signed8, исходный 80 даёт нулевой модуль
+C02             equ #CB6F                                                       ; signed8, исходный 80 даёт нулевой модуль
+C10             equ #CB8B                                                       ; signed8, исходный 80 даёт нулевой модуль
+C11             equ #CBA1                                                       ; signed8, исходный 80 даёт нулевой модуль
+C12             equ #CBBC                                                       ; signed8, исходный 80 даёт нулевой модуль
+C20             equ #CBD8                                                       ; signed8, исходный 80 даёт нулевой модуль
+C21             equ #CBEE                                                       ; signed8, исходный 80 даёт нулевой модуль
+C22             equ #CC09                                                       ; signed8, исходный 80 даёт нулевой модуль
+                endmodule
+
+
+                ; Существующий операнд восстановления настоящего SP
+                module ActionVectorWrapperState
+SavedSP         equ #AD08                                                       ; значение SP после PUSH IX и PUSH IY, память не выделяется
+                endmodule
+
                 endif

@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "total_cases": 262144,
+  "cases_by_entry": {
+    "E6A7": 65536,
+    "E6C7": 65536,
+    "E6B5": 65536,
+    "E6BE": 65536
+  },
+  "method": "independent_address_division_and_bit_formulas_with_real_wrappers",
+  "all_encoder_af": true,
+  "all_decoder_hl": true,
+  "all_wrapper_ix": true,
+  "all_wrapper_iy": true,
+  "round_trip_and_all_record_offsets_checked": true,
+  "exact_registers_flags_refresh_sp": true,
+  "every_ram_byte_and_write_multiplicity_checked": true,
+  "hardware_bus_write_order_proved": false,
+  "maximum_additional_stack_bytes": 4,
+  "encoder_m1": 12,
+  "decoder_m1": 9,
+  "wrapper_m1": 16,
+  "range_checks_absent": true,
+  "record_field_meanings_proved": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}
