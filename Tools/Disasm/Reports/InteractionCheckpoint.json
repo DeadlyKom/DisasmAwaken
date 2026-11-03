@@ -1,13 +1,13 @@
 {
   "status": "in_progress",
   "all_plan_stages_completed": false,
-  "fragments": 1195,
-  "described": 1061,
+  "fragments": 1198,
+  "described": 1064,
   "unknown": 134,
   "unproved_contracts": 317,
   "named_without_contract": 183,
-  "instruction_count": 39957,
-  "unclassified_bytes": 296279,
+  "instruction_count": 39986,
+  "unclassified_bytes": 296222,
   "passed_reports": [
     "Tools/Disasm/Reports/PointerVerification.json",
     "Tools/Disasm/Reports/PointerTablesVerification.json",
@@ -512,7 +512,10 @@
     "Tools/Disasm/Reports/ActionKeyScanFrameClassification.json",
     "Tools/Disasm/Reports/ActionKeyScanTablesClassification.json",
     "Tools/Disasm/Reports/ActionIgnoreKeyVerification.json",
-    "Tools/Disasm/Reports/ActionMissileStockVerification.json"
+    "Tools/Disasm/Reports/ActionMissileStockVerification.json",
+    "Tools/Disasm/Reports/ActionMissileStockClassification.json",
+    "Tools/Disasm/Reports/ActionMissileLaunchVerification.json",
+    "Tools/Disasm/Reports/ActionMissileLaunchClassification.json"
   ],
   "next_station_work": [
     {
@@ -1376,23 +1379,17 @@
     "assembly_executed": false
   },
   "manual_build_check": {
-    "status": "passed_before_latest_source_changes",
+    "status": "passed",
     "task": "Ctrl+B, Builder/Main.asm",
     "image": "Awakenv02.trd",
     "size": 655360,
     "sha256": "55a11de202a5334547e39a6db42c945242a2a53559dc1cf601522219e3463f32",
-    "checked_at_utc": "2026-11-03T07:04:23Z",
+    "checked_at_utc": "2026-11-03T08:38:03Z",
     "active_allocations": 41,
-    "source_changes_after_build": true,
-    "current_source_assembly_verified": false,
+    "source_changes_after_build": false,
+    "current_source_assembly_verified": true,
     "codex_assembler_executed": false,
-    "requested_for_current_sources": true,
-    "requested_scope": [
-      "RestoreKeyScanFrame",
-      "IgnoreKey",
-      "KeyHandlerPointers",
-      "KeyScanInputs"
-    ]
+    "requested_for_current_sources": false
   },
   "controls_text_display": {
     "report": "Tools/Disasm/Reports/ControlsTextDisplayVerification.json",
@@ -1482,26 +1479,26 @@
     "date": "2026-11-03",
     "errors": 0,
     "warnings": 0,
-    "compiled_lines": 122605,
+    "compiled_lines": 123223,
     "work_seconds": 1.406,
     "full_image_byte_identical": true,
     "size": 655360,
-    "source_changes_after_build": true,
+    "source_changes_after_build": false,
     "observation": "Пользователь подтвердил Ctrl+B, число строк и время сохранены из его сообщения",
     "codex_assembler_executed": false,
-    "checked_at_utc": "2026-11-03T07:04:23Z",
+    "checked_at_utc": "2026-11-03T08:38:03Z",
     "user_reported_byte_identity_line": true,
     "byte_identity_verified_from_existing_report_and_image": true
   },
   "last_verified_build_artifact": {
-    "checked_at_utc": "2026-11-03T07:04:23Z",
+    "checked_at_utc": "2026-11-03T08:38:03Z",
     "sha256": "55a11de202a5334547e39a6db42c945242a2a53559dc1cf601522219e3463f32",
     "size": 655360,
     "active_allocations": 41,
     "includes_buffer_points_and_division": true,
     "first_line_prefix_removed": true,
     "codex_assembler_executed": false,
-    "source_changes_after_build": true
+    "source_changes_after_build": false
   },
   "controls_span_masks": {
     "report": "Tools/Disasm/Reports/ControlsSpanMasksVerification.json",
@@ -1930,9 +1927,28 @@
   },
   "action_missile_stock_research": {
     "cases": 65536,
-    "source_published": false,
+    "source_published": true,
     "text_evidence_bank": 1,
     "subtype_meaning_of_two_counters_proved": false,
     "caller_handlers_executed": false
+  },
+  "action_missile_stock": {
+    "cases": 65536,
+    "typed_bytes": 2,
+    "physical_records": 1,
+    "confirmed_code_bytes": 9,
+    "confirmed_instructions": 7,
+    "subtype_meaning_of_two_counters_proved": false,
+    "caller_handlers_proved": false
+  },
+  "action_missile_launch_check": {
+    "cases": 80992,
+    "method": "composition_of_independently_checked_stock_and_queue_with_parent_control_reference",
+    "independent_complete_child_oracle": false,
+    "described_functions": 2,
+    "typed_bytes": 3,
+    "maximum_additional_stack_bytes": 18,
+    "missile_launch_itself_proved": false,
+    "queue_silent_drop_and_end_boundary_checked": true
   }
 }

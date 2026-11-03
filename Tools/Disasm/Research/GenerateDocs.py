@@ -185,6 +185,8 @@ def main():
                "| FPreferredBytePair | #02 | физические Preferred и Fallback ACTION, см. [ActionPreferredByte](ActionPreferredByte.md) |",
                "| FKeyHandlerPointer | #02 | 26 отдельных слов адресов, последнее перекрывающееся чтение описано отдельно, см. [ActionKeyDispatchPrefix](ActionKeyDispatchPrefix.md) |",
                "| FKeyScanInput | #02 | 27 физических RowSelect и InputMask, см. [ActionKeyDispatchPrefix](ActionKeyDispatchPrefix.md) |",
+               "| FMissileStock | #02 | физические Fallback и Preferred запаса ракет, виды запасов не установлены, см. [ActionMissileStock](ActionMissileStock.md) |",
+               "| FMissileTargets | #03 | три физических кода захвата Target0..Target2, FF означает отсутствие цели, см. [ActionMissileLaunch](ActionMissileLaunch.md) |",
                "| FObjectGlyphClearPhase | #06 | 8 масок очистки, поля Unknown02..Unknown05 не установлены, см. [ControlsObjectProjection](ControlsObjectProjection.md) |",
                "| FGlyphIndicatorControl | #03 | физические FirstMode, ThirdGate и Unknown83, см. [ControlsGlyphIndicators](ControlsGlyphIndicators.md) |",
                "| FGlyphIndicatorXY | #03 | два физических входа X,Y,SignSource, см. [ControlsGlyphIndicators](ControlsGlyphIndicators.md) |",

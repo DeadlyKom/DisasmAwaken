@@ -10465,11 +10465,56 @@
   {
     "slot": 17,
     "offset": 4745,
-    "length": 1199,
+    "length": 79,
     "kind": "unclassified",
-    "path": "Source/Resources/17_ACTION/Unclassified017_AfterIgnoreKey.bin",
+    "path": "Source/Resources/17_ACTION/Unclassified017_BeforeMissileChecks.bin",
     "origin": null,
-    "sha256": "24eb5619262069961df4173be155f17a666148519c1d330ab23942638ef86da2"
+    "sha256": "eddd64c1222c07dd89d0dcae5963ae5dd903bd2cee477c2045bc16efdb88d963"
+  },
+  {
+    "slot": 17,
+    "offset": 4824,
+    "length": 9,
+    "kind": "code",
+    "path": "Source/Action/ReportMissingMissileTarget.asm",
+    "origin": 28827,
+    "sha256": "b8bd882549a365d1c9931946a3da048be9a80b4f16b212cbb02281f111c43470"
+  },
+  {
+    "slot": 17,
+    "offset": 4833,
+    "length": 34,
+    "kind": "code",
+    "path": "Source/Action/CheckMissileLaunch.asm",
+    "origin": 28836,
+    "sha256": "435bbf09b937f553ffefbc6516718b24a8abc0bc8c0d4c9a965dc505f350e13a"
+  },
+  {
+    "slot": 17,
+    "offset": 4867,
+    "length": 39,
+    "kind": "unclassified",
+    "path": "Source/Resources/17_ACTION/Unclassified017_AfterMissileChecks.bin",
+    "origin": null,
+    "sha256": "9879804d876d64c20107d55e78137eb3c021ceae3841c1a6c4a543c0816662a8"
+  },
+  {
+    "slot": 17,
+    "offset": 4906,
+    "length": 9,
+    "kind": "code",
+    "path": "Source/Action/SelectMissileStock.asm",
+    "origin": 28909,
+    "sha256": "8f67848ff4e4495143edc3362651d0a7d80a98aa9c1617fa173c9f6a0ea74730"
+  },
+  {
+    "slot": 17,
+    "offset": 4915,
+    "length": 1029,
+    "kind": "unclassified",
+    "path": "Source/Resources/17_ACTION/Unclassified017_AfterMissileStock.bin",
+    "origin": null,
+    "sha256": "26b46edb3b7706631e3d15743b234a46a5f047d8d6a7ee447eed418d4a417b70"
   },
   {
     "slot": 17,
@@ -10591,11 +10636,29 @@
   {
     "slot": 17,
     "offset": 15129,
-    "length": 104,
+    "length": 2,
     "kind": "unclassified",
-    "path": "Source/Resources/17_ACTION/Unclassified020_BeforeGlyphIndicators.bin",
+    "path": "Source/Resources/17_ACTION/Unclassified020_BeforeMissileTargets.bin",
     "origin": null,
-    "sha256": "ee5c10fb9a7bd4bf4ceb947d65f0eb953b43d7f18dbb52c4cd17120f525facf8"
+    "sha256": "f608f58c7b4f027ca90156cfd8279c3c3861baf7661faffdfd008f34f01539d5"
+  },
+  {
+    "slot": 17,
+    "offset": 15131,
+    "length": 3,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/MissileTargets.asm",
+    "origin": 39707,
+    "sha256": "5ae7e6a42304dc6e4176210b83c43024f99a0bce9a870c3b6d2c95fc8ebfb74c"
+  },
+  {
+    "slot": 17,
+    "offset": 15134,
+    "length": 99,
+    "kind": "unclassified",
+    "path": "Source/Resources/17_ACTION/Unclassified020_AfterMissileTargets.bin",
+    "origin": null,
+    "sha256": "bedcfd2c0c763898b900b26655eb40c2fd466d5662612141e22bfaea76623d30"
   },
   {
     "slot": 17,
@@ -10627,11 +10690,20 @@
   {
     "slot": 17,
     "offset": 15378,
-    "length": 314,
+    "length": 2,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/MissileStock.asm",
+    "origin": 39954,
+    "sha256": "4658d6abbbaf7748c172ed5a3e003cdb8997648f88724834e41f75e54520e142"
+  },
+  {
+    "slot": 17,
+    "offset": 15380,
+    "length": 312,
     "kind": "unclassified",
-    "path": "Source/Resources/17_ACTION/Unclassified020_BeforeKeyInputs.bin",
+    "path": "Source/Resources/17_ACTION/Unclassified020_AfterMissileStock.bin",
     "origin": null,
-    "sha256": "a6953fe7565e885aa4a64a01da7a0aa01f5e52c572452e2c37b3083427b1ee2a"
+    "sha256": "9a186c5a92d0fd65ec23f812070105ada4a268459d11d7171361b9276a785a8b"
   },
   {
     "slot": 17,

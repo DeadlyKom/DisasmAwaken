@@ -21,7 +21,7 @@
 | Help | 4 | 4 | [Факты](FunctionDetails/Help.md) |
 | Music | 49 | 49 | [Факты](FunctionDetails/Music.md) |
 | ActionBoot | 9 | 9 | [Факты](FunctionDetails/ActionBoot.md) |
-| Action | 182 | 93 | [Факты](FunctionDetails/Action.md) |
+| Action | 185 | 96 | [Факты](FunctionDetails/Action.md) |
 | ThreeD | 98 | 75 | [Факты](FunctionDetails/ThreeD.md) |
 | Voxel | 9 | 9 | [Факты](FunctionDetails/Voxel.md) |
 | Controls | 72 | 50 | [Факты](FunctionDetails/Controls.md) |
@@ -700,6 +700,9 @@
 | #6F4E | [Action.RestoreKeyScanFrame](../Source/Action/RestoreKeyScanFrame.asm) | Восстановление IX, BC, DE и HL после обработчика клавиши и продолжение сканирования |
 | #6F55 | [Action.Unknown6F55](../Source/Action/Unknown6F55.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #704B | [Action.IgnoreKey](../Source/Action/IgnoreKey.asm) | Пустой обработчик клавиши, возврат к восстановлению рамки без изменения регистров |
+| #709B | [Action.ReportMissingMissileTarget](../Source/Action/ReportMissingMissileTarget.asm) | Передача в очередь сообщения об отсутствии захваченной цели с сохранением регистров |
+| #70A4 | [Action.CheckMissileLaunch](../Source/Action/CheckMissileLaunch.asm) | Проверка кода захваченной цели и остатка ракет, очистка трёх захватов при пустом запасе |
+| #70ED | [Action.SelectMissileStock](../Source/Action/SelectMissileStock.asm) | Выбор ненулевого приоритетного остатка ракет либо запасного счётчика с возвратом адреса |
 | #74FB | [Action.SelectPreferredByte](../Source/Action/SelectPreferredByte.asm) | Выбор ненулевого предпочтительного байта либо запасного значения с возвратом адреса выбранного поля |
 | #7859 | [Action.Unknown7859](../Source/Action/Unknown7859.asm) | Unknown, назначение этого фрагмента ещё не установлено |
 | #7B58 | [Action.Unknown7B58](../Source/Action/Unknown7B58.asm) | Unknown, назначение этого фрагмента ещё не установлено |

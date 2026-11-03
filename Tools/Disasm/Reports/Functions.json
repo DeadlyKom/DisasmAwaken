@@ -8738,6 +8738,39 @@
   },
   {
     "region": "Action",
+    "name": "ReportMissingMissileTarget",
+    "address": 28827,
+    "slot": 17,
+    "offset": 4824,
+    "description": "Передача в очередь сообщения об отсутствии захваченной цели с сохранением регистров",
+    "semantic_status": "described",
+    "end_offset": 4833,
+    "path": "Source/Action/ReportMissingMissileTarget.asm"
+  },
+  {
+    "region": "Action",
+    "name": "CheckMissileLaunch",
+    "address": 28836,
+    "slot": 17,
+    "offset": 4833,
+    "description": "Проверка кода захваченной цели и остатка ракет, очистка трёх захватов при пустом запасе",
+    "semantic_status": "described",
+    "end_offset": 4867,
+    "path": "Source/Action/CheckMissileLaunch.asm"
+  },
+  {
+    "region": "Action",
+    "name": "SelectMissileStock",
+    "address": 28909,
+    "slot": 17,
+    "offset": 4906,
+    "description": "Выбор ненулевого приоритетного остатка ракет либо запасного счётчика с возвратом адреса",
+    "semantic_status": "described",
+    "end_offset": 4915,
+    "path": "Source/Action/SelectMissileStock.asm"
+  },
+  {
+    "region": "Action",
     "name": "SelectPreferredByte",
     "address": 29947,
     "slot": 17,

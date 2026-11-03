@@ -205,6 +205,25 @@ def main():
         path='Tools/Disasm/Reports/ActionMissileStockVerification.json'
         if path not in checkpoint['passed_reports']:
             checkpoint['passed_reports'].append(path)
+    if (ROOT/'Tools/Disasm/Reports/ActionMissileStockClassification.json').exists():
+        proof=read('ActionMissileStockClassification')
+        assert proof['passed']
+        checkpoint['action_missile_stock']=dict(cases=65536,typed_bytes=2,physical_records=1,
+            confirmed_code_bytes=9,confirmed_instructions=7,subtype_meaning_of_two_counters_proved=False,
+            caller_handlers_proved=False)
+        path='Tools/Disasm/Reports/ActionMissileStockClassification.json'
+        if path not in checkpoint['passed_reports']:
+            checkpoint['passed_reports'].append(path)
+    if (ROOT/'Tools/Disasm/Reports/ActionMissileLaunchClassification.json').exists():
+        proof=read('ActionMissileLaunchVerification');classification=read('ActionMissileLaunchClassification')
+        assert proof['passed'] and classification['passed']
+        checkpoint['action_missile_launch_check']=dict(cases=proof['total_cases'],method=proof['method'],
+            independent_complete_child_oracle=False,described_functions=2,typed_bytes=3,
+            maximum_additional_stack_bytes=18,missile_launch_itself_proved=False,
+            queue_silent_drop_and_end_boundary_checked=True)
+        for path in ('Tools/Disasm/Reports/ActionMissileLaunchVerification.json','Tools/Disasm/Reports/ActionMissileLaunchClassification.json'):
+            if path not in checkpoint['passed_reports']:
+                checkpoint['passed_reports'].append(path)
     partial_path = ROOT/'Tools/Disasm/Reports/ControlsRatioInsideVerification.json'
     if partial_path.exists():
         proof = read('ControlsRatioInsideVerification')

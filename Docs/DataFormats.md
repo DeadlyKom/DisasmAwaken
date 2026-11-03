@@ -4,6 +4,8 @@
 
 | Тип | Размер | Подтверждённое назначение |
 | --- | --- | --- |
+| FMissileTargets | #03 | три физических кода захвата Target0..Target2, FF означает отсутствие цели, см. [ActionMissileLaunch](ActionMissileLaunch.md) |
+| FMissileStock | #02 | физические Fallback и Preferred запаса ракет, виды запасов не установлены, см. [ActionMissileStock](ActionMissileStock.md) |
 | FKeyHandlerPointer | #02 | 26 отдельных слов адресов, перекрывающееся чтение описано отдельно, см. [ActionKeyDispatchPrefix](ActionKeyDispatchPrefix.md) |
 | FKeyScanInput | #02 | 27 физических RowSelect и InputMask, см. [ActionKeyDispatchPrefix](ActionKeyDispatchPrefix.md) |
 | FPreferredBytePair | #02 | физические Preferred и Fallback ACTION, см. [ActionPreferredByte](ActionPreferredByte.md) |

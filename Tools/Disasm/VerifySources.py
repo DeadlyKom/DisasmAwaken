@@ -446,6 +446,35 @@ def main():
                 offset+=width
             key_scan_records+=len(table[6])
 
+    # Проверка физической пары двух байтов остатка ракет и обратного порядка полей.
+    from ActionMissileStockFacts import TABLE as MISSILE_STOCK, parse as parse_missile_stock
+    missile_stock_records=0
+    entries=[item for item in source_map if item['path']==MISSILE_STOCK[1]]
+    if entries:
+        assert len(entries)==1
+        item=entries[0]
+        raw,labels=parse_missile_stock((ROOT/MISSILE_STOCK[1]).read_text('utf-8'))
+        assert (item['slot'],item['offset'],item['length'],item['origin'])==(17,0x3C12,2,0x9C12)
+        assert raw==sources[17][0x3C12:0x3C14]
+        assert all(symbols.get(key.upper())==value for key,value in labels.items())
+        assert symbols['FMISSILESTOCK']==2 and symbols['FMISSILESTOCK.FALLBACK']==0 and symbols['FMISSILESTOCK.PREFERRED']==1
+        missile_stock_records=1
+
+    # Проверка трёх физических кодов захвата, исходные значения не заменяются.
+    from ActionMissileLaunchFacts import TABLE as MISSILE_TARGETS, parse as parse_missile_targets
+    missile_target_records=0
+    entries=[item for item in source_map if item['path']==MISSILE_TARGETS[1]]
+    if entries:
+        assert len(entries)==1
+        item=entries[0]
+        raw,labels=parse_missile_targets((ROOT/MISSILE_TARGETS[1]).read_text('utf-8'))
+        assert (item['slot'],item['offset'],item['length'],item['origin'])==(17,0x3B1B,3,0x9B1B)
+        assert raw==sources[17][0x3B1B:0x3B1E]
+        assert all(symbols.get(k.upper())==v for k,v in labels.items())
+        assert symbols['FMISSILETARGETS']==3
+        assert [symbols['FMISSILETARGETS.TARGET'+str(i)] for i in range(3)]==[0,1,2]
+        missile_target_records=1
+
     # Проверка физических записей композиции и точной грамматики фактических DB-команд.
     from MusicCompositionSource import descriptions as composition_descriptions, parse as parse_composition, STRUCTURES as COMPOSITION_STRUCTURES
     composition = sources[10][0xC00:0x1C29]
@@ -1416,6 +1445,8 @@ def main():
     report['gauge_mask_records'] = gauge_mask_records
     report['preferred_byte_records'] = preferred_byte_records
     report['key_scan_records'] = key_scan_records
+    report['missile_stock_records'] = missile_stock_records
+    report['missile_target_records'] = missile_target_records
     report['glyph_input_records'] = glyph_input_records
     report['parameter_rule_records'] = parameter_rule_records
     (ROOT/"Tools/Disasm/Reports/SourceVerification.json").write_text(

@@ -135,6 +135,8 @@ def name_operands(region, function_address, operation):
     operation = control_panel_group_name_operands(region, function_address, operation)
     operation = ship_periodic_code_name_operands(region, function_address, operation)
     operation = ship_preview_callback_name_operands(region, function_address, operation)
+    operation = action_missile_launch_name_operands(region,function_address,operation)
+    operation = action_missile_stock_name_operands(region,function_address,operation)
     operation = action_key_scan_tables_name_operands(region,function_address,operation)
     operation = action_near_zero_word_name_operands(region, function_address, operation)
     operation = action_panel_gauges_name_operands(region, function_address, operation)
@@ -1615,3 +1617,9 @@ DOCUMENTS['Action',0x6F4E]=('ActionKeyDispatchPrefix','рамка клавиат
 
 from ActionKeyScanTables import name_operands as action_key_scan_tables_name_operands
 DOCUMENTS['Action',0x704B]=('ActionKeyDispatchPrefix','пустой обработчик клавиши')
+
+from ActionMissileStockFacts import name_operands as action_missile_stock_name_operands
+DOCUMENTS['Action',0x70ED]=('ActionMissileStock','выбор остатка ракет')
+
+from ActionMissileLaunchFacts import name_operands as action_missile_launch_name_operands
+DOCUMENTS.update({('Action',a):('ActionMissileLaunch','проверка перед пуском') for a in (0x709B,0x70A4)})

@@ -986,4 +986,13 @@ SixthEndValue   equ #2F                                                         
 Step            equ #0002                                                       ; величина вычитания из модуля исходного слова
                 endmodule
 
+
+                ; Константы проверки ракет, указатели сообщений относятся к Controls банка 1
+                module ActionMissileLaunchConst
+NoTarget        equ #00FF                                                       ; код отсутствия захвата
+DelayTicks      equ #0005                                                       ; положительное значение, уменьшаемое UpdateFrame
+NoTargetText    equ #F2C5                                                       ; указатель сообщения об отсутствии захваченной цели, банк 1
+EmptyStockText  equ #F280                                                       ; указатель сообщения об исчерпанных ракетах, банк 1
+                endmodule
+
                 endif

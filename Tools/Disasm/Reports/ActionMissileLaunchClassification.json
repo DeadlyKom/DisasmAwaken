@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "described_functions": 2,
+  "confirmed_code_bytes": 43,
+  "confirmed_instructions": 22,
+  "typed_bytes": 3,
+  "physical_records": 1,
+  "compositional_model_cases": 80992,
+  "independent_complete_child_oracle": false,
+  "cases_by_entry": {
+    "709B": 9216,
+    "70A4": 71776
+  },
+  "physical_bytes_preserved": true,
+  "missile_launch_itself_proved": false,
+  "assembly_executed": false
+}

@@ -493,6 +493,20 @@ def main():
             write(table[1],text)
             symbols.update(bindings)
             special[17,table[2]]=(table[3],table[1],key_scan_origin(table)+table[2])
+    # Физическая пара байтов остатка ракет, Fallback перед Preferred.
+    if "struct FMissileStock" in (ROOT/"Includes/Structs/Include.inc").read_text("utf-8"):
+        from ActionMissileStockFacts import TABLE as MISSILE_STOCK, render as render_missile_stock
+        text,bindings=render_missile_stock(data_by_slot[17])
+        write(MISSILE_STOCK[1],text)
+        symbols.update(bindings)
+        special[17,0x3C12]=(0x3C14,MISSILE_STOCK[1],0x9C12)
+    # Физические коды трёх захваченных целей ракет.
+    if "struct FMissileTargets" in (ROOT/"Includes/Structs/Include.inc").read_text("utf-8"):
+        from ActionMissileLaunchFacts import TABLE as MISSILE_TARGETS, render as render_missile_targets
+        text,bindings=render_missile_targets(data_by_slot[17])
+        write(MISSILE_TARGETS[1],text)
+        symbols.update(bindings)
+        special[17,0x3B1B]=(0x3B1E,MISSILE_TARGETS[1],0x9B1B)
     token_text, token_records = render_token_tables(language, names)
     write(TOKEN_TABLE_PATH, token_text)
     special[5, 0x935] = (0xA67, TOKEN_TABLE_PATH, 0xC935)
@@ -1022,6 +1036,12 @@ REGION_COMMENTS.setdefault("Action", {}).update(ACTION_NEAR_ZERO_WORD_COMMENTS)
 
 from ActionKeyScanFrameFacts import COMMENTS as ACTION_KEY_SCAN_FRAME_COMMENTS
 REGION_COMMENTS.setdefault('Action',{}).update(ACTION_KEY_SCAN_FRAME_COMMENTS)
+
+from ActionMissileStockFacts import COMMENTS as ACTION_MISSILE_STOCK_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_MISSILE_STOCK_COMMENTS)
+
+from ActionMissileLaunchFacts import COMMENTS as ACTION_MISSILE_LAUNCH_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_MISSILE_LAUNCH_COMMENTS)
 
 
 if __name__ == "__main__":

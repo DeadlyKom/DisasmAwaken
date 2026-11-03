@@ -150737,6 +150737,9 @@
       28445,
       28494,
       28747,
+      28827,
+      28836,
+      28909,
       29947,
       31576,
       43053,
@@ -150857,6 +150860,7 @@
       28268,
       28332,
       28445,
+      28909,
       29947,
       31576,
       32413,
@@ -151056,6 +151060,7 @@
       28644,
       28685,
       28691,
+      28827,
       30809,
       30881,
       30904,
@@ -160951,6 +160956,209 @@
         "hex": "c9",
         "slot": 17,
         "offset": 4744
+      },
+      {
+        "address": 28827,
+        "operation": "PUSH DE",
+        "hex": "d5",
+        "slot": 17,
+        "offset": 4824
+      },
+      {
+        "address": 28828,
+        "operation": "LD DE,#F2C5",
+        "hex": "11c5f2",
+        "slot": 17,
+        "offset": 4825
+      },
+      {
+        "address": 28831,
+        "operation": "CALL #6040",
+        "hex": "cd4060",
+        "slot": 17,
+        "offset": 4828
+      },
+      {
+        "address": 28834,
+        "operation": "POP DE",
+        "hex": "d1",
+        "slot": 17,
+        "offset": 4831
+      },
+      {
+        "address": 28835,
+        "operation": "RET",
+        "hex": "c9",
+        "slot": 17,
+        "offset": 4832
+      },
+      {
+        "address": 28836,
+        "operation": "INC A",
+        "hex": "3c",
+        "slot": 17,
+        "offset": 4833
+      },
+      {
+        "address": 28837,
+        "operation": "JR Z,#709B",
+        "hex": "28f4",
+        "slot": 17,
+        "offset": 4834
+      },
+      {
+        "address": 28839,
+        "operation": "LD A,#05",
+        "hex": "3e05",
+        "slot": 17,
+        "offset": 4836
+      },
+      {
+        "address": 28841,
+        "operation": "LD (#A85F),A",
+        "hex": "325fa8",
+        "slot": 17,
+        "offset": 4838
+      },
+      {
+        "address": 28844,
+        "operation": "CALL #70ED",
+        "hex": "cded70",
+        "slot": 17,
+        "offset": 4841
+      },
+      {
+        "address": 28847,
+        "operation": "AND A",
+        "hex": "a7",
+        "slot": 17,
+        "offset": 4844
+      },
+      {
+        "address": 28848,
+        "operation": "RET NZ",
+        "hex": "c0",
+        "slot": 17,
+        "offset": 4845
+      },
+      {
+        "address": 28849,
+        "operation": "LD A,#FF",
+        "hex": "3eff",
+        "slot": 17,
+        "offset": 4846
+      },
+      {
+        "address": 28851,
+        "operation": "LD (#9B1D),A",
+        "hex": "321d9b",
+        "slot": 17,
+        "offset": 4848
+      },
+      {
+        "address": 28854,
+        "operation": "LD (#9B1C),A",
+        "hex": "321c9b",
+        "slot": 17,
+        "offset": 4851
+      },
+      {
+        "address": 28857,
+        "operation": "LD (#9B1B),A",
+        "hex": "321b9b",
+        "slot": 17,
+        "offset": 4854
+      },
+      {
+        "address": 28860,
+        "operation": "PUSH DE",
+        "hex": "d5",
+        "slot": 17,
+        "offset": 4857
+      },
+      {
+        "address": 28861,
+        "operation": "LD DE,#F280",
+        "hex": "1180f2",
+        "slot": 17,
+        "offset": 4858
+      },
+      {
+        "address": 28864,
+        "operation": "CALL #6040",
+        "hex": "cd4060",
+        "slot": 17,
+        "offset": 4861
+      },
+      {
+        "address": 28867,
+        "operation": "POP DE",
+        "hex": "d1",
+        "slot": 17,
+        "offset": 4864
+      },
+      {
+        "address": 28868,
+        "operation": "XOR A",
+        "hex": "af",
+        "slot": 17,
+        "offset": 4865
+      },
+      {
+        "address": 28869,
+        "operation": "RET",
+        "hex": "c9",
+        "slot": 17,
+        "offset": 4866
+      },
+      {
+        "address": 28909,
+        "operation": "LD HL,#9C13",
+        "hex": "21139c",
+        "slot": 17,
+        "offset": 4906
+      },
+      {
+        "address": 28912,
+        "operation": "LD A,(HL)",
+        "hex": "7e",
+        "slot": 17,
+        "offset": 4909
+      },
+      {
+        "address": 28913,
+        "operation": "AND A",
+        "hex": "a7",
+        "slot": 17,
+        "offset": 4910
+      },
+      {
+        "address": 28914,
+        "operation": "RET NZ",
+        "hex": "c0",
+        "slot": 17,
+        "offset": 4911
+      },
+      {
+        "address": 28915,
+        "operation": "DEC HL",
+        "hex": "2b",
+        "slot": 17,
+        "offset": 4912
+      },
+      {
+        "address": 28916,
+        "operation": "LD A,(HL)",
+        "hex": "7e",
+        "slot": 17,
+        "offset": 4913
+      },
+      {
+        "address": 28917,
+        "operation": "RET",
+        "hex": "c9",
+        "slot": 17,
+        "offset": 4914
       },
       {
         "address": 29947,
@@ -193854,10 +194062,10 @@
       }
     ],
     "overlaps": [],
-    "instruction_count": 5993,
-    "code_bytes": 11740,
+    "instruction_count": 6022,
+    "code_bytes": 11792,
     "total_bytes": 40387,
-    "classified_fraction": 0.2906875974942432
+    "classified_fraction": 0.29197514051551243
   },
   {
     "name": "ThreeD",

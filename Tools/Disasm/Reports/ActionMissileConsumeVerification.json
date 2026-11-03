@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "total_cases": 71040,
+  "queue_results": {
+    "accepted": 283456,
+    "dropped": 704
+  },
+  "method": "composition_of_checked_stock_and_banked_queues_with_parent_reference",
+  "independent_complete_child_oracle": false,
+  "children_executed_without_stubs": true,
+  "all_stock_pairs": true,
+  "all_auxiliary_counter_bytes": true,
+  "all_unlocked_initial_pages": true,
+  "sequential_four_queue_requests_checked": true,
+  "queue_silent_drop_preserved": true,
+  "exact_registers_flags_refresh_sp": true,
+  "every_physical_ram_byte_and_write_checked": true,
+  "real_out_and_physical_eight_banks": true,
+  "maximum_additional_stack_bytes": 18,
+  "selected_stock_and_9bd2_byte_decremented": true,
+  "byte_underflow_preserved": true,
+  "final_de_is_number_record": true,
+  "final_af_prime_a_is_11": true,
+  "auxiliary_counter_game_meaning_proved": false,
+  "rocket_object_creation_proved": false,
+  "all_joint_inputs_exhausted": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

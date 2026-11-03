@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "total_cases": 80992,
+  "cases_by_path": {
+    "empty_stock": 2848,
+    "ready": 66333,
+    "no_target": 2595,
+    "message_only": 9216
+  },
+  "queue_results": {
+    "accepted": 8259,
+    "dropped": 6400
+  },
+  "method": "composition_of_independently_checked_stock_and_queue_with_parent_control_reference",
+  "independent_complete_child_oracle": false,
+  "children_executed_without_stubs": true,
+  "all_stock_pairs": true,
+  "all_target_codes": true,
+  "all_flag_bytes_for_failures": true,
+  "all_unlocked_initial_pages": true,
+  "queue_silent_drop_and_end_boundary_checked": true,
+  "exact_registers_flags_refresh_sp": true,
+  "every_physical_ram_byte_and_write_checked": true,
+  "real_out_and_physical_eight_banks": true,
+  "maximum_additional_stack_bytes": 18,
+  "stock_counters_not_decremented": true,
+  "empty_stock_clears_three_target_codes": true,
+  "all_joint_inputs_exhausted": false,
+  "missile_launch_itself_proved": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

@@ -16144,5 +16144,15 @@
   "ActionKeyScanInputs.Index1A": 40320,
   "ActionKeyScanInputs.Index1A.RowSelect": 40320,
   "ActionKeyScanInputs.Index1A.InputMask": 40321,
-  "Action.IgnoreKey.Entry": 28747
+  "Action.IgnoreKey.Entry": 28747,
+  "ActionMissileStockState.Value": 39954,
+  "ActionMissileStockState.Value.Fallback": 39954,
+  "ActionMissileStockState.Value.Preferred": 39955,
+  "Action.SelectMissileStock.Entry": 28909,
+  "ActionMissileTargets.Value": 39707,
+  "ActionMissileTargets.Value.Target0": 39707,
+  "ActionMissileTargets.Value.Target1": 39708,
+  "ActionMissileTargets.Value.Target2": 39709,
+  "Action.ReportMissingMissileTarget.Entry": 28827,
+  "Action.CheckMissileLaunch.Entry": 28836
 }

@@ -468,6 +468,36 @@ Unknown, назначение этого фрагмента ещё не уста
 
 [Вызов, возврат и перекрытие последнего указателя](../ActionKeyDispatchPrefix.md).
 
+## ReportMissingMissileTarget
+
+[Action.ReportMissingMissileTarget](../../Source/Action/ReportMissingMissileTarget.asm)
+
+Передача в очередь сообщения об отсутствии захваченной цели с сохранением регистров.
+
+Вход `#709B`, запись 17.
+
+[Контракт и композиционная проверка](../ActionMissileLaunch.md).
+
+## CheckMissileLaunch
+
+[Action.CheckMissileLaunch](../../Source/Action/CheckMissileLaunch.asm)
+
+Проверка кода захваченной цели и остатка ракет, очистка трёх захватов при пустом запасе.
+
+Вход `#70A4`, запись 17.
+
+[Контракт и композиционная проверка](../ActionMissileLaunch.md).
+
+## SelectMissileStock
+
+[Action.SelectMissileStock](../../Source/Action/SelectMissileStock.asm)
+
+Выбор ненулевого приоритетного остатка ракет либо запасного счётчика с возвратом адреса.
+
+Вход `#70ED`, запись 17, смещения `#132A..#1332`.
+
+[Назначение, контракт и проверка](../ActionMissileStock.md).
+
 ## SelectPreferredByte
 
 [Action.SelectPreferredByte](../../Source/Action/SelectPreferredByte.asm)

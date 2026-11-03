@@ -1372,4 +1372,10 @@ SignedWord      equ #A78F                                                       
 EnabledCode     equ #6EAD                                                       ; операнд LD A,n, ноль запрещает обработку, ненулевой код допускает
                 endmodule
 
+
+                ; Существующий операнд задержки команд, память не выделяется
+                module ActionMissileLaunchState
+CommandDelay    equ #A85F                                                       ; операнд LD A,n в UpdateFrame, проверка с имеющимся кодом цели записывает 5
+                endmodule
+
                 endif

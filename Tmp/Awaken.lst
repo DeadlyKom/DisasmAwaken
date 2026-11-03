@@ -994,8 +994,17 @@
  986+ 0000              Step            equ #0002                                                       ; величина вычитания из модуля исходного слова
  987+ 0000                              endmodule
  988+ 0000
- 989+ 0000                              endif
- 990+ 0000
+ 989+ 0000
+ 990+ 0000                              ; Константы проверки ракет, указатели сообщений относятся к Controls банка 1
+ 991+ 0000                              module ActionMissileLaunchConst
+ 992+ 0000              NoTarget        equ #00FF                                                       ; код отсутствия захвата
+ 993+ 0000              DelayTicks      equ #0005                                                       ; положительное значение, уменьшаемое UpdateFrame
+ 994+ 0000              NoTargetText    equ #F2C5                                                       ; указатель сообщения об отсутствии захваченной цели, банк 1
+ 995+ 0000              EmptyStockText  equ #F280                                                       ; указатель сообщения об исчерпанных ракетах, банк 1
+ 996+ 0000                              endmodule
+ 997+ 0000
+ 998+ 0000                              endif
+ 999+ 0000
 # file closed: Includes/Const/Include.inc
    7  0000                              include "../Includes/Structs/Include.inc"
 # file opened: Includes/Structs/Include.inc
@@ -2480,8 +2489,25 @@
 1479+ 0000                              ends
 1480+ 0000                              assert FKeyScanInput == 2
 1481+ 0000
-1482+ 0000                              endif
-1483+ 0000
+1482+ 0000
+1483+ 0000                              ; Два исходных счётчика ракет в обратном порядке приоритета
+1484+ 0000                              struct FMissileStock
+1485+ 0000 ~            Fallback        db #00                                                          ; выбирается при нулевом Preferred, вид этого запаса пока не установлен
+1486+ 0000 ~            Preferred       db #00                                                          ; выбирается первым при ненулевом значении, вид этого запаса пока не установлен
+1487+ 0000                              ends
+1488+ 0000                              assert FMissileStock == 2
+1489+ 0000
+1490+ 0000
+1491+ 0000                              ; Три физических кода захваченных целей ракет
+1492+ 0000                              struct FMissileTargets
+1493+ 0000 ~            Target0         db #00                                                          ; код захвата 0, FF означает отсутствие цели, соответствие объектам ещё не установлено
+1494+ 0000 ~            Target1         db #00                                                          ; код захвата 1, FF означает отсутствие цели, соответствие объектам ещё не установлено
+1495+ 0000 ~            Target2         db #00                                                          ; код захвата 2, FF означает отсутствие цели, соответствие объектам ещё не установлено
+1496+ 0000                              ends
+1497+ 0000                              assert FMissileTargets == 3
+1498+ 0000
+1499+ 0000                              endif
+1500+ 0000
 # file closed: Includes/Structs/Include.inc
    8  0000                              include "../Includes/Variables/Include.inc"
 # file opened: Includes/Variables/Include.inc
@@ -3859,8 +3885,14 @@
 1372+ 0000              EnabledCode     equ #6EAD                                                       ; операнд LD A,n, ноль запрещает обработку, ненулевой код допускает
 1373+ 0000                              endmodule
 1374+ 0000
-1375+ 0000                              endif
-1376+ 0000
+1375+ 0000
+1376+ 0000                              ; Существующий операнд задержки команд, память не выделяется
+1377+ 0000                              module ActionMissileLaunchState
+1378+ 0000              CommandDelay    equ #A85F                                                       ; операнд LD A,n в UpdateFrame, проверка с имеющимся кодом цели записывает 5
+1379+ 0000                              endmodule
+1380+ 0000
+1381+ 0000                              endif
+1382+ 0000
 # file closed: Includes/Variables/Include.inc
    9  0000                              LUA PASS1
   10  0000 ~                                dofile("Tools/pack.lua")
@@ -92825,10 +92857,169 @@
  238+ 704C                              ent
  239+ 1289                              assert $ == #1289
  240+ 1289                              ; Unknown, остальные обработчики ещё не разобраны
- 241+ 1289                              incbin "../Resources/17_ACTION/Unclassified017_AfterIgnoreKey.bin"
- 242+ 1738                              assert $ == #1738
- 243+ 1738                              disp #74FB
- 244+ 74FB                              include "../Action/SelectPreferredByte.asm"
+ 241+ 1289                              incbin "../Resources/17_ACTION/Unclassified017_BeforeMissileChecks.bin"
+ 242+ 12D8                              assert $ == #12D8
+ 243+ 12D8                              disp #709B
+ 244+ 709B                              include "../Action/ReportMissingMissileTarget.asm"
+# file opened: Source/Action/ReportMissingMissileTarget.asm
+   1++709B                              module Action
+   2++709B                              module ReportMissingMissileTarget
+   3++709B                              ; Документация [проверка перед пуском](../../Docs/ActionMissileLaunch.md)
+   4++709B                              ; -----------------------------------------
+   5++709B                              ; Передача в очередь сообщения об отсутствии захваченной цели с сохранением регистров
+   6++709B                              ; исходная запись 17, перенесённый код банка 5, адреса 709B..70A3
+   7++709B                              ; In:
+   8++709B                              ;   HL, DE, BC и AF сохраняются и числовых аргументов не задают
+   9++709B                              ;   действует договор QueueTextItemBank1, банк 1 содержит Controls, 7FFD не заблокирован
+  10++709B                              ;   код и внешний возврат находятся в общей RAM, доступны восемнадцать дополнительных байтов CPU-стека, IRQ не вмешиваются
+  11++709B                              ; Out:
+  12++709B                              ;   HL, DE, BC, AF, HL', DE', BC', AF', IX, IY, I, IM и IFF сохраняются
+  13++709B                              ;   SP=входной SP+2, сообщение F2C5 передано производителю очереди, очередь может молча отказать
+  14++709B                              ;   OUT 7FFD получает 11 и 10, на выходе выбран банк 0 с полной конфигурацией 10
+  15++709B                              ;   R получает стоимость QueueTextItem плюс 29 M1 обёртки и данного хвоста
+  16++709B                              ; Corrupt:
+  17++709B                              ;   R, очередь и её курсор при успешной записи, восемнадцать байтов CPU-стека, регистр 7FFD
+  18++709B                              ; Note:
+  19++709B                              ;   это отдельный вход и общий хвост отказа CheckMissileLaunch, переход на него не создаёт дополнительной рамки CALL
+  20++709B                              ;   Z не формируется этой процедурой, входные флаги сохраняются даже при отказе очереди
+  21++709B                              ; -----------------------------------------
+  22++709B                              ; Сохранение DE перед передачей фиксированного сообщения об отсутствии цели.
+  23++709B D5           Entry:          PUSH DE
+  24++709C 11 C5 F2                     LD DE, @ActionMissileLaunchConst.NoTargetText
+  25++709F                              ; Добавление записи текста банка 1, регистрового признака приёма очередь не возвращает.
+  26++709F CD 40 60                     CALL @Action.QueueTextItemBank1.Entry
+  27++70A2 D1                           POP DE
+  28++70A3 C9                           RET
+  29++70A4
+  30++70A4                              endmodule
+  31++70A4                              endmodule
+  32++70A4
+# file closed: Source/Action/ReportMissingMissileTarget.asm
+ 245+ 70A4                              ent
+ 246+ 12E1                              assert $ == #12E1
+ 247+ 12E1                              disp #70A4
+ 248+ 70A4                              include "../Action/CheckMissileLaunch.asm"
+# file opened: Source/Action/CheckMissileLaunch.asm
+   1++70A4                              module Action
+   2++70A4                              module CheckMissileLaunch
+   3++70A4                              ; Документация [проверка перед пуском](../../Docs/ActionMissileLaunch.md)
+   4++70A4                              ; -----------------------------------------
+   5++70A4                              ; Проверка кода захваченной цели и остатка ракет, очистка трёх захватов при пустом запасе
+   6++70A4                              ; исходная запись 17, перенесённый код банка 5, адреса 70A4..70C5
+   7++70A4                              ; In:
+   8++70A4                              ;   HL числового аргумента не задаёт, DE и BC сохраняются
+   9++70A4                              ;   A код цели, FF означает отсутствие захвата, остальные значения здесь не проверяются на существование объекта
+  10++70A4                              ;   входной Carry сохраняется только в результате отказа по коду FF, прочие входные флаги числового смысла не имеют
+  11++70A4                              ;   ActionMissileStockState.Value задаёт запас, ActionMissileTargets.Value содержит три кода захвата
+  12++70A4                              ;   действуют договоры SelectMissileStock и QueueTextItemBank1, очередь и общий стек доступны, 7FFD не заблокирован, IRQ не вмешиваются
+  13++70A4                              ; Out:
+  14++70A4                              ;   при входном A=FF HL, DE и BC сохраняются, A=00, F=50 OR входной Carry, сообщение об отсутствии цели передано очереди
+  15++70A4                              ;   при A не равном FF HL задаёт выбранный счётчик запаса, DE и BC сохраняются, CommandDelay получает 5
+  16++70A4                              ;   при ненулевом запасе A содержит выбранный остаток, F соответствует AND этого остатка, Z сброшен, цели не меняются
+  17++70A4                              ;   при пустом запасе HL=9C12, AF=0044, три Target0..Target2 получают FF, сообщение F280 передано очереди
+  18++70A4                              ;   HL', DE', BC', AF', IX, IY, I, IM и IFF сохраняются, SP=входной SP+2
+  19++70A4                              ;   счётчики ракет не уменьшаются, при обоих отказах 7FFD получает 11 и 10, при допуске OUT отсутствуют и страница сохраняется
+  20++70A4                              ;   допуск исполняет 11 или 14 M1 в зависимости от выбранного поля, отказ без цели исполняет стоимость QueueTextItem плюс 31 M1, отказ по запасу плюс 48 M1
+  21++70A4                              ; Corrupt:
+  22++70A4                              ;   HL, AF, R, CommandDelay при имеющемся коде цели, три кода захвата при пустом запасе, очередь и курсор при приёме сообщения, до восемнадцати байтов CPU-стека, 7FFD на путях отказа
+  23++70A4                              ; Note:
+  24++70A4                              ;   успешный допуск означает только код цели не FF и ненулевой остаток, выделение объекта и сам пуск происходят после возврата
+  25++70A4                              ;   все отказы возвращают Z установленным независимо от того, приняла ли очередь сообщение
+  26++70A4                              ;   CommandDelay не меняется при коде FF, но получает 5 даже при последующем отказе из-за пустого запаса
+  27++70A4                              ;   проверка композиционная, реальные дочерние процедуры и переключения банков исполнялись без подмен
+  28++70A4                              ; -----------------------------------------
+  29++70A4                              ; -----------------------------------------
+  30++70A4                              ; Проверка наличия кода захваченной цели
+  31++70A4                              ; Инкремент распознаёт FF, Carry сохраняется для точного результата этого отказа.
+  32++70A4 3C           Entry:          INC A
+  33++70A5 28 F4                        JR Z, @Action.ReportMissingMissileTarget.Entry                  ; переход, если входной код цели равен FF, передать сообщение и завершить проверку
+  34++70A7
+  35++70A7                              ; Установка задержки команд при любом имеющемся коде цели, до проверки запаса.
+  36++70A7 3E 05                        LD A, @ActionMissileLaunchConst.DelayTicks
+  37++70A9 32 5F A8                     LD (@ActionMissileLaunchState.CommandDelay), A
+  38++70AC                              ; -----------------------------------------
+  39++70AC                              ; Проверка выбранного остатка ракет
+  40++70AC CD ED 70                     CALL @Action.SelectMissileStock.Entry
+  41++70AF                              ; Проверка фактически возвращённого A, флаги читателя могли относиться к нулевому Preferred.
+  42++70AF A7                           AND A
+  43++70B0 C0                           RET NZ                                                          ; выход, если выбранный остаток ненулевой, два условия допуска выполнены
+  44++70B1
+  45++70B1                              ; -----------------------------------------
+  46++70B1                              ; Снятие всех трёх захватов при пустом запасе
+  47++70B1 3E FF                        LD A, @ActionMissileLaunchConst.NoTarget
+  48++70B3 32 1D 9B                     LD (@ActionMissileTargets.Value.Target2), A
+  49++70B6 32 1C 9B                     LD (@ActionMissileTargets.Value.Target1), A
+  50++70B9 32 1B 9B                     LD (@ActionMissileTargets.Value.Target0), A
+  51++70BC                              ; Сохранение DE и постановка сообщения об исчерпанных ракетах.
+  52++70BC D5                           PUSH DE
+  53++70BD 11 80 F2                     LD DE, @ActionMissileLaunchConst.EmptyStockText
+  54++70C0 CD 40 60                     CALL @Action.QueueTextItemBank1.Entry
+  55++70C3 D1                           POP DE
+  56++70C4                              ; Формирование нулевого результата отказа независимо от приёма сообщения очередью.
+  57++70C4 AF                           XOR A
+  58++70C5 C9                           RET
+  59++70C6
+  60++70C6                              ; -----------------------------------------
+  61++70C6                              endmodule
+  62++70C6                              endmodule
+  63++70C6
+# file closed: Source/Action/CheckMissileLaunch.asm
+ 249+ 70C6                              ent
+ 250+ 1303                              assert $ == #1303
+ 251+ 1303                              ; Unknown, хвост пуска ещё не разобран
+ 252+ 1303                              incbin "../Resources/17_ACTION/Unclassified017_AfterMissileChecks.bin"
+ 253+ 132A                              assert $ == #132A
+ 254+ 132A                              disp #70ED
+ 255+ 70ED                              include "../Action/SelectMissileStock.asm"
+# file opened: Source/Action/SelectMissileStock.asm
+   1++70ED                              module Action
+   2++70ED                              module SelectMissileStock
+   3++70ED                              ; Документация [остаток ракет](../../Docs/ActionMissileStock.md)
+   4++70ED                              ; -----------------------------------------
+   5++70ED                              ; Выбор ненулевого приоритетного остатка ракет либо запасного счётчика с возвратом адреса
+   6++70ED                              ; исходная запись 17, банк 5, перенесённые 70ED..70F5, смещения 132A..1332
+   7++70ED                              ; In:
+   8++70ED                              ;   HL, DE, BC и AF исходных числовых аргументов не задают
+   9++70ED                              ;   ActionMissileStockState.Value содержит два доступных байтовых счётчика, Fallback перед Preferred
+  10++70ED                              ;   исполняется перенесённое ядро ACTION, на CPU-стеке внешний возврат, IRQ не вмешиваются
+  11++70ED                              ; Out:
+  12++70ED                              ;   HL указывает на Preferred при его ненулевом значении, иначе на Fallback
+  13++70ED                              ;   DE и BC сохраняются, A содержит значение выбранного счётчика
+  14++70ED                              ;   F соответствует AND Preferred, на запасном пути F=54 независимо от возвращённого A
+  15++70ED                              ;   HL', DE', BC', AF', IX, IY, I, IM и IFF сохраняются, SP=входной SP+2
+  16++70ED                              ;   R увеличивается на 4 M1 при ненулевом Preferred и на 7 M1 при его нуле
+  17++70ED                              ; Corrupt:
+  18++70ED                              ;   HL, AF, R
+  19++70ED                              ; Note:
+  20++70ED                              ;   Carry всегда сброшен, Z показывает нулевой Preferred, проверка наличия ракет вызывающим кодом отдельно выполняет AND A
+  21++70ED                              ;   данный читатель не изменяет запас или CPU-стек, возвращённый HL используется для DEC (HL) после вызова по 706F
+  22++70ED                              ;   роль остатка ракет подтверждается вызовом QueueNumberBank1 между фрагментами Осталось и ракет банка Controls
+  23++70ED                              ;   виды двух запасов не установлены, их имена описывают только доказанный приоритет выбора
+  24++70ED                              ;   все 65536 пар проверены на исходных байтах, обработчики пуска целиком этой моделью не исполнялись
+  25++70ED                              ; -----------------------------------------
+  26++70ED                              ; Выбор адреса приоритетного остатка ракет, это второй байт физической пары.
+  27++70ED 21 13 9C     Entry:          LD HL, @ActionMissileStockState.Value.Preferred
+  28++70F0 7E                           LD A, (HL)
+  29++70F1                              ; Проверка приоритетного значения, флаги этой проверки сохраняются при чтении запасного счётчика.
+  30++70F1 A7                           AND A
+  31++70F2 C0                           RET NZ                                                          ; выход, если Preferred ненулевой, A и HL уже задают выбранный счётчик
+  32++70F3
+  33++70F3                              ; Выбор предыдущего физического байта Fallback вместе с адресом, повторной проверки флагов нет.
+  34++70F3 2B                           DEC HL
+  35++70F4 7E                           LD A, (HL)
+  36++70F5 C9                           RET
+  37++70F6
+  38++70F6                              endmodule
+  39++70F6                              endmodule
+  40++70F6
+# file closed: Source/Action/SelectMissileStock.asm
+ 256+ 70F6                              ent
+ 257+ 1333                              assert $ == #1333
+ 258+ 1333                              ; Unknown, остальные обработчики ещё не разобраны
+ 259+ 1333                              incbin "../Resources/17_ACTION/Unclassified017_AfterMissileStock.bin"
+ 260+ 1738                              assert $ == #1738
+ 261+ 1738                              disp #74FB
+ 262+ 74FB                              include "../Action/SelectPreferredByte.asm"
 # file opened: Source/Action/SelectPreferredByte.asm
    1++74FB                              module Action
    2++74FB                              module SelectPreferredByte
@@ -92870,13 +93061,13 @@
   38++7504                              endmodule
   39++7504
 # file closed: Source/Action/SelectPreferredByte.asm
- 245+ 7504                              ent
- 246+ 1741                              assert $ == #1741
- 247+ 1741                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
- 248+ 1741                              incbin "../Resources/17_ACTION/Unclassified018.bin"
- 249+ 1A96                              assert $ == #1A96
- 250+ 1A96                              disp #7859
- 251+ 7859                              include "../Action/Unknown7859.asm"
+ 263+ 7504                              ent
+ 264+ 1741                              assert $ == #1741
+ 265+ 1741                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
+ 266+ 1741                              incbin "../Resources/17_ACTION/Unclassified018.bin"
+ 267+ 1A96                              assert $ == #1A96
+ 268+ 1A96                              disp #7859
+ 269+ 7859                              include "../Action/Unknown7859.asm"
 # file opened: Source/Action/Unknown7859.asm
    1++7859                              module Action
    2++7859                              module Unknown7859
@@ -93242,13 +93433,13 @@
  362++7AC6                              endmodule
  363++7AC6
 # file closed: Source/Action/Unknown7859.asm
- 252+ 7AC6                              ent
- 253+ 1D03                              assert $ == #1D03
- 254+ 1D03                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
- 255+ 1D03                              incbin "../Resources/17_ACTION/Unclassified019.bin"
- 256+ 1D95                              assert $ == #1D95
- 257+ 1D95                              disp #7B58
- 258+ 7B58                              include "../Action/Unknown7B58.asm"
+ 270+ 7AC6                              ent
+ 271+ 1D03                              assert $ == #1D03
+ 272+ 1D03                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
+ 273+ 1D03                              incbin "../Resources/17_ACTION/Unclassified019.bin"
+ 274+ 1D95                              assert $ == #1D95
+ 275+ 1D95                              disp #7B58
+ 276+ 7B58                              include "../Action/Unknown7B58.asm"
 # file opened: Source/Action/Unknown7B58.asm
    1++7B58                              module Action
    2++7B58                              module Unknown7B58
@@ -93799,10 +93990,10 @@
  547++7E9D                              endmodule
  548++7E9D
 # file closed: Source/Action/Unknown7B58.asm
- 259+ 7E9D                              ent
- 260+ 20DA                              assert $ == #20DA
- 261+ 20DA                              disp #7E9D
- 262+ 7E9D                              include "../Action/Unknown7E9D.asm"                             ; (0) жёсткий порядок, последовательное исполнение
+ 277+ 7E9D                              ent
+ 278+ 20DA                              assert $ == #20DA
+ 279+ 20DA                              disp #7E9D
+ 280+ 7E9D                              include "../Action/Unknown7E9D.asm"                             ; (0) жёсткий порядок, последовательное исполнение
 # file opened: Source/Action/Unknown7E9D.asm
    1++7E9D                              module Action
    2++7E9D                              module Unknown7E9D
@@ -93841,10 +94032,10 @@
   35++7EB7                              endmodule
   36++7EB7
 # file closed: Source/Action/Unknown7E9D.asm
- 263+ 7EB7                              ent
- 264+ 20F4                              assert $ == #20F4
- 265+ 20F4                              disp #7EB7
- 266+ 7EB7                              include "../Action/Unknown7EB7.asm"                             ; (1) жёсткий порядок, последовательное исполнение
+ 281+ 7EB7                              ent
+ 282+ 20F4                              assert $ == #20F4
+ 283+ 20F4                              disp #7EB7
+ 284+ 7EB7                              include "../Action/Unknown7EB7.asm"                             ; (1) жёсткий порядок, последовательное исполнение
 # file opened: Source/Action/Unknown7EB7.asm
    1++7EB7                              module Action
    2++7EB7                              module Unknown7EB7
@@ -93900,10 +94091,10 @@
   52++7F0E                              endmodule
   53++7F0E
 # file closed: Source/Action/Unknown7EB7.asm
- 267+ 7F0E                              ent
- 268+ 214B                              assert $ == #214B
- 269+ 214B                              disp #7F0E
- 270+ 7F0E                              include "../Action/Unknown7F0E.asm"
+ 285+ 7F0E                              ent
+ 286+ 214B                              assert $ == #214B
+ 287+ 214B                              disp #7F0E
+ 288+ 7F0E                              include "../Action/Unknown7F0E.asm"
 # file opened: Source/Action/Unknown7F0E.asm
    1++7F0E                              module Action
    2++7F0E                              module Unknown7F0E
@@ -94002,10 +94193,10 @@
   95++7F76                              endmodule
   96++7F76
 # file closed: Source/Action/Unknown7F0E.asm
- 271+ 7F76                              ent
- 272+ 21B3                              assert $ == #21B3
- 273+ 21B3                              disp #7F76
- 274+ 7F76                              include "../Action/Unknown7F76.asm"
+ 289+ 7F76                              ent
+ 290+ 21B3                              assert $ == #21B3
+ 291+ 21B3                              disp #7F76
+ 292+ 7F76                              include "../Action/Unknown7F76.asm"
 # file opened: Source/Action/Unknown7F76.asm
    1++7F76                              module Action
    2++7F76                              module Unknown7F76
@@ -94051,13 +94242,13 @@
   42++7F8F                              endmodule
   43++7F8F
 # file closed: Source/Action/Unknown7F76.asm
- 275+ 7F8F                              ent
- 276+ 21CC                              assert $ == #21CC
- 277+ 21CC                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
- 278+ 21CC                              incbin "../Resources/17_ACTION/Unclassified020_Prefix.bin"
- 279+ 3900                              assert $ == #3900
- 280+ 3900                              disp #9900
- 281+ 9900                              include "../Action/Data/SineTable.asm"
+ 293+ 7F8F                              ent
+ 294+ 21CC                              assert $ == #21CC
+ 295+ 21CC                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
+ 296+ 21CC                              incbin "../Resources/17_ACTION/Unclassified020_Prefix.bin"
+ 297+ 3900                              assert $ == #3900
+ 298+ 3900                              disp #9900
+ 299+ 9900                              include "../Action/Data/SineTable.asm"
 # file opened: Source/Action/Data/SineTable.asm
    1++9900                              module ActionSineTable
    2++9900                              ; Документация [исходная синусоида ACTION](../../../Docs/ActionSineTable.md)
@@ -95346,13 +95537,13 @@
 1285++9A00                              endmodule
 1286++9A00
 # file closed: Source/Action/Data/SineTable.asm
- 282+ 9A00                              ent
- 283+ 3A00                              assert $ == #3A00
- 284+ 3A00                              ; Unknown, исходные байты после синусоиды ACTION
- 285+ 3A00                              incbin "../Resources/17_ACTION/Unclassified020_BeforeWordRandom.bin"
- 286+ 3B15                              assert $ == #3B15
- 287+ 3B15                              disp #9B15
- 288+ 9B15                              include "../Action/Data/WordRandomState.asm"
+ 300+ 9A00                              ent
+ 301+ 3A00                              assert $ == #3A00
+ 302+ 3A00                              ; Unknown, исходные байты после синусоиды ACTION
+ 303+ 3A00                              incbin "../Resources/17_ACTION/Unclassified020_BeforeWordRandom.bin"
+ 304+ 3B15                              assert $ == #3B15
+ 305+ 3B15                              disp #9B15
+ 306+ 9B15                              include "../Action/Data/WordRandomState.asm"
 # file opened: Source/Action/Data/WordRandomState.asm
    1++9B15                              module ActionWordRandomState
    2++9B15                              ; Документация [двухсловный генератор](../../../Docs/ControlsWordRandom.md)
@@ -95367,13 +95558,35 @@
   11++9B19                              endmodule
   12++9B19
 # file closed: Source/Action/Data/WordRandomState.asm
- 289+ 9B19                              ent
- 290+ 3B19                              assert $ == #3B19
- 291+ 3B19                              ; Unknown, исходные байты после состояния генератора
- 292+ 3B19                              incbin "../Resources/17_ACTION/Unclassified020_BeforeGlyphIndicators.bin"
- 293+ 3B81                              assert $ == #3B81
- 294+ 3B81                              disp #9B81
- 295+ 9B81                              include "../Action/Data/GlyphIndicatorState.asm"
+ 307+ 9B19                              ent
+ 308+ 3B19                              assert $ == #3B19
+ 309+ 3B19                              ; Unknown, исходные байты после состояния генератора
+ 310+ 3B19                              incbin "../Resources/17_ACTION/Unclassified020_BeforeMissileTargets.bin"
+ 311+ 3B1B                              assert $ == #3B1B
+ 312+ 3B1B                              disp #9B1B
+ 313+ 9B1B                              include "../Action/Data/MissileTargets.asm"
+# file opened: Source/Action/Data/MissileTargets.asm
+   1++9B1B                              module ActionMissileTargets
+   2++9B1B                              ; Документация [проверка перед пуском ракет](../../../Docs/ActionMissileLaunch.md)
+   3++9B1B                              assert $ == #9B1B
+   4++9B1B                              ; -----------------------------------------
+   5++9B1B                              ; исходная физическая запись Value
+   6++9B1B              Value:          FMissileTargets {
+   7++9B1B FF                               #FF,                                                        ; Target0, код захвата 0, FF означает отсутствие цели, соответствие объектам ещё не установлено
+   8++9B1C FF                               #FF,                                                        ; Target1, код захвата 1, FF означает отсутствие цели, соответствие объектам ещё не установлено
+   9++9B1D FF                               #FF                                                         ; Target2, код захвата 2, FF означает отсутствие цели, соответствие объектам ещё не установлено
+  10++9B1E                              }
+  11++9B1E                              assert $ == #9B1E
+  12++9B1E                              endmodule
+  13++9B1E
+# file closed: Source/Action/Data/MissileTargets.asm
+ 314+ 9B1E                              ent
+ 315+ 3B1E                              assert $ == #3B1E
+ 316+ 3B1E                              ; Unknown, соседние данные ещё не разобраны
+ 317+ 3B1E                              incbin "../Resources/17_ACTION/Unclassified020_AfterMissileTargets.bin"
+ 318+ 3B81                              assert $ == #3B81
+ 319+ 3B81                              disp #9B81
+ 320+ 9B81                              include "../Action/Data/GlyphIndicatorState.asm"
 # file opened: Source/Action/Data/GlyphIndicatorState.asm
    1++9B81                              module ActionGlyphIndicatorState
    2++9B81                              ; Документация [входы трёх знаков](../../../Docs/ControlsGlyphIndicators.md)
@@ -95410,13 +95623,13 @@
   33++9B8D                              endmodule
   34++9B8D
 # file closed: Source/Action/Data/GlyphIndicatorState.asm
- 296+ 9B8D                              ent
- 297+ 3B8D                              assert $ == #3B8D
- 298+ 3B8D                              ; Unknown, исходная область после входов знаков
- 299+ 3B8D                              incbin "../Resources/17_ACTION/Unclassified020_BeforePreferredByte.bin"
- 300+ 3C10                              assert $ == #3C10
- 301+ 3C10                              disp #9C10
- 302+ 9C10                              include "../Action/Data/PreferredByteState.asm"
+ 321+ 9B8D                              ent
+ 322+ 3B8D                              assert $ == #3B8D
+ 323+ 3B8D                              ; Unknown, исходная область после входов знаков
+ 324+ 3B8D                              incbin "../Resources/17_ACTION/Unclassified020_BeforePreferredByte.bin"
+ 325+ 3C10                              assert $ == #3C10
+ 326+ 3C10                              disp #9C10
+ 327+ 9C10                              include "../Action/Data/PreferredByteState.asm"
 # file opened: Source/Action/Data/PreferredByteState.asm
    1++9C10                              module ActionPreferredByteState
    2++9C10                              ; Документация [выбор байта с приоритетом](../../../Docs/ActionPreferredByte.md)
@@ -95431,13 +95644,32 @@
   11++9C12                              endmodule
   12++9C12
 # file closed: Source/Action/Data/PreferredByteState.asm
- 303+ 9C12                              ent
- 304+ 3C12                              assert $ == #3C12
- 305+ 3C12                              ; Unknown, соседний ресурс ещё не разобран
- 306+ 3C12                              incbin "../Resources/17_ACTION/Unclassified020_BeforeKeyInputs.bin"
- 307+ 3D4C                              assert $ == #3D4C
- 308+ 3D4C                              disp #9D4C
- 309+ 9D4C                              include "../Action/Data/KeyScanInputs.asm"
+ 328+ 9C12                              ent
+ 329+ 3C12                              assert $ == #3C12
+ 330+ 3C12                              ; Unknown, соседний ресурс ещё не разобран
+ 331+ 3C12                              disp #9C12
+ 332+ 9C12                              include "../Action/Data/MissileStock.asm"
+# file opened: Source/Action/Data/MissileStock.asm
+   1++9C12                              module ActionMissileStockState
+   2++9C12                              ; Документация [выбор остатка ракет](../../../Docs/ActionMissileStock.md)
+   3++9C12                              assert $ == #9C12
+   4++9C12                              ; -----------------------------------------
+   5++9C12                              ; исходная физическая запись Value
+   6++9C12              Value:          FMissileStock {
+   7++9C12 64                               #64,                                                        ; Fallback, выбирается при нулевом Preferred, вид этого запаса пока не установлен
+   8++9C13 00                               #00                                                         ; Preferred, выбирается первым при ненулевом значении, вид этого запаса пока не установлен
+   9++9C14                              }
+  10++9C14                              assert $ == #9C14
+  11++9C14                              endmodule
+  12++9C14
+# file closed: Source/Action/Data/MissileStock.asm
+ 333+ 9C14                              ent
+ 334+ 3C14                              assert $ == #3C14
+ 335+ 3C14                              ; Unknown, соседние данные ещё не разобраны
+ 336+ 3C14                              incbin "../Resources/17_ACTION/Unclassified020_AfterMissileStock.bin"
+ 337+ 3D4C                              assert $ == #3D4C
+ 338+ 3D4C                              disp #9D4C
+ 339+ 9D4C                              include "../Action/Data/KeyScanInputs.asm"
 # file opened: Source/Action/Data/KeyScanInputs.asm
    1++9D4C                              module ActionKeyScanInputs
    2++9D4C                              ; Документация [частичный диспетчер клавиш](../../../Docs/ActionKeyDispatchPrefix.md)
@@ -95608,13 +95840,13 @@
  167++9D82                              endmodule
  168++9D82
 # file closed: Source/Action/Data/KeyScanInputs.asm
- 310+ 9D82                              ent
- 311+ 3D82                              assert $ == #3D82
- 312+ 3D82                              ; Unknown, соседние данные ещё не разобраны
- 313+ 3D82                              incbin "../Resources/17_ACTION/Unclassified020_AfterKeyInputs.bin"
- 314+ 482D                              assert $ == #482D
- 315+ 482D                              disp #A82D
- 316+ A82D                              include "../Action/StartFlight.asm"                             ; (0) жёсткий порядок, последовательное исполнение
+ 340+ 9D82                              ent
+ 341+ 3D82                              assert $ == #3D82
+ 342+ 3D82                              ; Unknown, соседние данные ещё не разобраны
+ 343+ 3D82                              incbin "../Resources/17_ACTION/Unclassified020_AfterKeyInputs.bin"
+ 344+ 482D                              assert $ == #482D
+ 345+ 482D                              disp #A82D
+ 346+ A82D                              include "../Action/StartFlight.asm"                             ; (0) жёсткий порядок, последовательное исполнение
 # file opened: Source/Action/StartFlight.asm
    1++A82D                              module Action
    2++A82D                              module StartFlight
@@ -95656,10 +95888,10 @@
   38++A859                              endmodule
   39++A859
 # file closed: Source/Action/StartFlight.asm
- 317+ A859                              ent
- 318+ 4859                              assert $ == #4859
- 319+ 4859                              disp #A859
- 320+ A859                              include "../Action/MainLoop.asm"                                ; (1) жёсткий порядок, последовательное исполнение
+ 347+ A859                              ent
+ 348+ 4859                              assert $ == #4859
+ 349+ 4859                              disp #A859
+ 350+ A859                              include "../Action/MainLoop.asm"                                ; (1) жёсткий порядок, последовательное исполнение
 # file opened: Source/Action/MainLoop.asm
    1++A859                              module Action
    2++A859                              module MainLoop
@@ -95685,10 +95917,10 @@
   22++A85E                              endmodule
   23++A85E
 # file closed: Source/Action/MainLoop.asm
- 321+ A85E                              ent
- 322+ 485E                              assert $ == #485E
- 323+ 485E                              disp #A85E
- 324+ A85E                              include "../Action/UpdateFrame.asm"
+ 351+ A85E                              ent
+ 352+ 485E                              assert $ == #485E
+ 353+ 485E                              disp #A85E
+ 354+ A85E                              include "../Action/UpdateFrame.asm"
 # file opened: Source/Action/UpdateFrame.asm
    1++A85E                              module Action
    2++A85E                              module UpdateFrame
@@ -95994,10 +96226,10 @@
  302++AACC                              endmodule
  303++AACC
 # file closed: Source/Action/UpdateFrame.asm
- 325+ AACC                              ent
- 326+ 4ACC                              assert $ == #4ACC
- 327+ 4ACC                              disp #AACC
- 328+ AACC                              include "../Action/UnknownAACC.asm"
+ 355+ AACC                              ent
+ 356+ 4ACC                              assert $ == #4ACC
+ 357+ 4ACC                              disp #AACC
+ 358+ AACC                              include "../Action/UnknownAACC.asm"
 # file opened: Source/Action/UnknownAACC.asm
    1++AACC                              module Action
    2++AACC                              module UnknownAACC
@@ -96036,13 +96268,13 @@
   35++AAE2                              endmodule
   36++AAE2
 # file closed: Source/Action/UnknownAACC.asm
- 329+ AAE2                              ent
- 330+ 4AE2                              assert $ == #4AE2
- 331+ 4AE2                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
- 332+ 4AE2                              incbin "../Resources/17_ACTION/Unclassified021.bin"
- 333+ 4B1B                              assert $ == #4B1B
- 334+ 4B1B                              disp #AB1B
- 335+ AB1B                              include "../Action/SelectMemoryPage.asm"
+ 359+ AAE2                              ent
+ 360+ 4AE2                              assert $ == #4AE2
+ 361+ 4AE2                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
+ 362+ 4AE2                              incbin "../Resources/17_ACTION/Unclassified021.bin"
+ 363+ 4B1B                              assert $ == #4B1B
+ 364+ 4B1B                              disp #AB1B
+ 365+ AB1B                              include "../Action/SelectMemoryPage.asm"
 # file opened: Source/Action/SelectMemoryPage.asm
    1++AB1B                              module Action
    2++AB1B                              module SelectMemoryPage
@@ -96079,10 +96311,10 @@
   33++AB23                              endmodule
   34++AB23
 # file closed: Source/Action/SelectMemoryPage.asm
- 336+ AB23                              ent
- 337+ 4B23                              assert $ == #4B23
- 338+ 4B23                              disp #AB23
- 339+ AB23                              include "../Action/UnpackResource.asm"
+ 366+ AB23                              ent
+ 367+ 4B23                              assert $ == #4B23
+ 368+ 4B23                              disp #AB23
+ 369+ AB23                              include "../Action/UnpackResource.asm"
 # file opened: Source/Action/UnpackResource.asm
    1++AB23                              module Action
    2++AB23                              module UnpackResource
@@ -96352,10 +96584,10 @@
  266++AC38                              endmodule
  267++AC38
 # file closed: Source/Action/UnpackResource.asm
- 340+ AC38                              ent
- 341+ 4C38                              assert $ == #4C38
- 342+ 4C38                              disp #AC38
- 343+ AC38                              include "../Action/ReadWordFromIX.asm"
+ 370+ AC38                              ent
+ 371+ 4C38                              assert $ == #4C38
+ 372+ 4C38                              disp #AC38
+ 373+ AC38                              include "../Action/ReadWordFromIX.asm"
 # file opened: Source/Action/ReadWordFromIX.asm
    1++AC38                              module Action
    2++AC38                              module ReadWordFromIX
@@ -96391,10 +96623,10 @@
   32++AC44                              endmodule
   33++AC44
 # file closed: Source/Action/ReadWordFromIX.asm
- 344+ AC44                              ent
- 345+ 4C44                              assert $ == #4C44
- 346+ 4C44                              disp #AC44
- 347+ AC44                              include "../Action/ActivateParameterSet.asm"
+ 374+ AC44                              ent
+ 375+ 4C44                              assert $ == #4C44
+ 376+ 4C44                              disp #AC44
+ 377+ AC44                              include "../Action/ActivateParameterSet.asm"
 # file opened: Source/Action/ActivateParameterSet.asm
    1++AC44                              module Action
    2++AC44                              module ActivateParameterSet
@@ -96443,10 +96675,10 @@
   45++AC5D                              endmodule
   46++AC5D
 # file closed: Source/Action/ActivateParameterSet.asm
- 348+ AC5D                              ent
- 349+ 4C5D                              assert $ == #4C5D
- 350+ 4C5D                              disp #AC5D
- 351+ AC5D                              include "../Action/ApplyParameterSet.asm"
+ 378+ AC5D                              ent
+ 379+ 4C5D                              assert $ == #4C5D
+ 380+ 4C5D                              disp #AC5D
+ 381+ AC5D                              include "../Action/ApplyParameterSet.asm"
 # file opened: Source/Action/ApplyParameterSet.asm
    1++AC5D                              module Action
    2++AC5D                              module ApplyParameterSet
@@ -96537,13 +96769,13 @@
   87++ACAB                              endmodule
   88++ACAB
 # file closed: Source/Action/ApplyParameterSet.asm
- 352+ ACAB                              ent
- 353+ 4CAB                              assert $ == #4CAB
- 354+ 4CAB                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
- 355+ 4CAB                              incbin "../Resources/17_ACTION/Unclassified022.bin"
- 356+ 4D48                              assert $ == #4D48
- 357+ 4D48                              disp #AD48
- 358+ AD48                              include "../Action/UnknownAD48.asm"
+ 382+ ACAB                              ent
+ 383+ 4CAB                              assert $ == #4CAB
+ 384+ 4CAB                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
+ 385+ 4CAB                              incbin "../Resources/17_ACTION/Unclassified022.bin"
+ 386+ 4D48                              assert $ == #4D48
+ 387+ 4D48                              disp #AD48
+ 388+ AD48                              include "../Action/UnknownAD48.asm"
 # file opened: Source/Action/UnknownAD48.asm
    1++AD48                              module Action
    2++AD48                              module UnknownAD48
@@ -96577,10 +96809,10 @@
   30++AD5A                              endmodule
   31++AD5A
 # file closed: Source/Action/UnknownAD48.asm
- 359+ AD5A                              ent
- 360+ 4D5A                              assert $ == #4D5A
- 361+ 4D5A                              disp #AD5A
- 362+ AD5A                              include "../Action/UnknownAD5A.asm"
+ 389+ AD5A                              ent
+ 390+ 4D5A                              assert $ == #4D5A
+ 391+ 4D5A                              disp #AD5A
+ 392+ AD5A                              include "../Action/UnknownAD5A.asm"
 # file opened: Source/Action/UnknownAD5A.asm
    1++AD5A                              module Action
    2++AD5A                              module UnknownAD5A
@@ -96667,10 +96899,10 @@
   83++ADB7                              endmodule
   84++ADB7
 # file closed: Source/Action/UnknownAD5A.asm
- 363+ ADB7                              ent
- 364+ 4DB7                              assert $ == #4DB7
- 365+ 4DB7                              disp #ADB7
- 366+ ADB7                              include "../Action/UnknownADB7.asm"
+ 393+ ADB7                              ent
+ 394+ 4DB7                              assert $ == #4DB7
+ 395+ 4DB7                              disp #ADB7
+ 396+ ADB7                              include "../Action/UnknownADB7.asm"
 # file opened: Source/Action/UnknownADB7.asm
    1++ADB7                              module Action
    2++ADB7                              module UnknownADB7
@@ -96700,13 +96932,13 @@
   26++ADC5                              endmodule
   27++ADC5
 # file closed: Source/Action/UnknownADB7.asm
- 367+ ADC5                              ent
- 368+ 4DC5                              assert $ == #4DC5
- 369+ 4DC5                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
- 370+ 4DC5                              incbin "../Resources/17_ACTION/Unclassified023.bin"
- 371+ 4E24                              assert $ == #4E24
- 372+ 4E24                              disp #AE24
- 373+ AE24                              include "../Action/UnknownAE24.asm"
+ 397+ ADC5                              ent
+ 398+ 4DC5                              assert $ == #4DC5
+ 399+ 4DC5                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
+ 400+ 4DC5                              incbin "../Resources/17_ACTION/Unclassified023.bin"
+ 401+ 4E24                              assert $ == #4E24
+ 402+ 4E24                              disp #AE24
+ 403+ AE24                              include "../Action/UnknownAE24.asm"
 # file opened: Source/Action/UnknownAE24.asm
    1++AE24                              module Action
    2++AE24                              module UnknownAE24
@@ -96803,10 +97035,10 @@
   93++AE73                              endmodule
   94++AE73
 # file closed: Source/Action/UnknownAE24.asm
- 374+ AE73                              ent
- 375+ 4E73                              assert $ == #4E73
- 376+ 4E73                              disp #AE73
- 377+ AE73                              include "../Action/UnknownAE73.asm"
+ 404+ AE73                              ent
+ 405+ 4E73                              assert $ == #4E73
+ 406+ 4E73                              disp #AE73
+ 407+ AE73                              include "../Action/UnknownAE73.asm"
 # file opened: Source/Action/UnknownAE73.asm
    1++AE73                              module Action
    2++AE73                              module UnknownAE73
@@ -97105,13 +97337,13 @@
  295++AFF5                              endmodule
  296++AFF5
 # file closed: Source/Action/UnknownAE73.asm
- 378+ AFF5                              ent
- 379+ 4FF5                              assert $ == #4FF5
- 380+ 4FF5                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
- 381+ 4FF5                              incbin "../Resources/17_ACTION/Unclassified024.bin"
- 382+ 50E9                              assert $ == #50E9
- 383+ 50E9                              disp #B0E9
- 384+ B0E9                              include "../Action/UnknownB0E9.asm"
+ 408+ AFF5                              ent
+ 409+ 4FF5                              assert $ == #4FF5
+ 410+ 4FF5                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
+ 411+ 4FF5                              incbin "../Resources/17_ACTION/Unclassified024.bin"
+ 412+ 50E9                              assert $ == #50E9
+ 413+ 50E9                              disp #B0E9
+ 414+ B0E9                              include "../Action/UnknownB0E9.asm"
 # file opened: Source/Action/UnknownB0E9.asm
    1++B0E9                              module Action
    2++B0E9                              module UnknownB0E9
@@ -97287,13 +97519,13 @@
  172++B16F                              endmodule
  173++B16F
 # file closed: Source/Action/UnknownB0E9.asm
- 385+ B16F                              ent
- 386+ 516F                              assert $ == #516F
- 387+ 516F                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
- 388+ 516F                              incbin "../Resources/17_ACTION/Unclassified025.bin"
- 389+ 6000                              assert $ == #6000
- 390+ 6000                              disp #C000
- 391+ C000                              include "../Action/DispatchEdges.asm"
+ 415+ B16F                              ent
+ 416+ 516F                              assert $ == #516F
+ 417+ 516F                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
+ 418+ 516F                              incbin "../Resources/17_ACTION/Unclassified025.bin"
+ 419+ 6000                              assert $ == #6000
+ 420+ 6000                              disp #C000
+ 421+ C000                              include "../Action/DispatchEdges.asm"
 # file opened: Source/Action/DispatchEdges.asm
    1++C000                              module Action
    2++C000                              module DispatchEdges
@@ -97384,10 +97616,10 @@
   87++C071                              endmodule
   88++C071
 # file closed: Source/Action/DispatchEdges.asm
- 392+ C071                              ent
- 393+ 6071                              assert $ == #6071
- 394+ 6071                              disp #C071
- 395+ C071                              include "../Action/NextEdge.asm"                                ; (0) жёсткий порядок, последовательное исполнение
+ 422+ C071                              ent
+ 423+ 6071                              assert $ == #6071
+ 424+ 6071                              disp #C071
+ 425+ C071                              include "../Action/NextEdge.asm"                                ; (0) жёсткий порядок, последовательное исполнение
 # file opened: Source/Action/NextEdge.asm
    1++C071                              module Action
    2++C071                              module NextEdge
@@ -97417,10 +97649,10 @@
   26++C07A                              endmodule
   27++C07A
 # file closed: Source/Action/NextEdge.asm
- 396+ C07A                              ent
- 397+ 607A                              assert $ == #607A
- 398+ 607A                              disp #C07A
- 399+ C07A                              include "../Action/EdgeCase11.asm"                              ; (1) жёсткий порядок, последовательное исполнение
+ 426+ C07A                              ent
+ 427+ 607A                              assert $ == #607A
+ 428+ 607A                              disp #C07A
+ 429+ C07A                              include "../Action/EdgeCase11.asm"                              ; (1) жёсткий порядок, последовательное исполнение
 # file opened: Source/Action/EdgeCase11.asm
    1++C07A                              module Action
    2++C07A                              module EdgeCase11
@@ -97445,10 +97677,10 @@
   21++C07B                              endmodule
   22++C07B
 # file closed: Source/Action/EdgeCase11.asm
- 400+ C07B                              ent
- 401+ 607B                              assert $ == #607B
- 402+ 607B                              disp #C07B
- 403+ C07B                              include "../Action/EdgeCase05.asm"                              ; (0) жёсткий порядок, последовательное исполнение
+ 430+ C07B                              ent
+ 431+ 607B                              assert $ == #607B
+ 432+ 607B                              disp #C07B
+ 433+ C07B                              include "../Action/EdgeCase05.asm"                              ; (0) жёсткий порядок, последовательное исполнение
 # file opened: Source/Action/EdgeCase05.asm
    1++C07B                              module Action
    2++C07B                              module EdgeCase05
@@ -97479,10 +97711,10 @@
   27++C08A                              endmodule
   28++C08A
 # file closed: Source/Action/EdgeCase05.asm
- 404+ C08A                              ent
- 405+ 608A                              assert $ == #608A
- 406+ 608A                              disp #C08A
- 407+ C08A                              include "../Action/EdgeCase15.asm"                              ; (1) жёсткий порядок, последовательное исполнение
+ 434+ C08A                              ent
+ 435+ 608A                              assert $ == #608A
+ 436+ 608A                              disp #C08A
+ 437+ C08A                              include "../Action/EdgeCase15.asm"                              ; (1) жёсткий порядок, последовательное исполнение
 # file opened: Source/Action/EdgeCase15.asm
    1++C08A                              module Action
    2++C08A                              module EdgeCase15
@@ -97513,10 +97745,10 @@
   27++C095                              endmodule
   28++C095
 # file closed: Source/Action/EdgeCase15.asm
- 408+ C095                              ent
- 409+ 6095                              assert $ == #6095
- 410+ 6095                              disp #C095
- 411+ C095                              include "../Action/EdgeCase06.asm"                              ; (0) жёсткий порядок, последовательное исполнение
+ 438+ C095                              ent
+ 439+ 6095                              assert $ == #6095
+ 440+ 6095                              disp #C095
+ 441+ C095                              include "../Action/EdgeCase06.asm"                              ; (0) жёсткий порядок, последовательное исполнение
 # file opened: Source/Action/EdgeCase06.asm
    1++C095                              module Action
    2++C095                              module EdgeCase06
@@ -97547,10 +97779,10 @@
   27++C0A4                              endmodule
   28++C0A4
 # file closed: Source/Action/EdgeCase06.asm
- 412+ C0A4                              ent
- 413+ 60A4                              assert $ == #60A4
- 414+ 60A4                              disp #C0A4
- 415+ C0A4                              include "../Action/EdgeCase46.asm"                              ; (1) жёсткий порядок, последовательное исполнение
+ 442+ C0A4                              ent
+ 443+ 60A4                              assert $ == #60A4
+ 444+ 60A4                              disp #C0A4
+ 445+ C0A4                              include "../Action/EdgeCase46.asm"                              ; (1) жёсткий порядок, последовательное исполнение
 # file opened: Source/Action/EdgeCase46.asm
    1++C0A4                              module Action
    2++C0A4                              module EdgeCase46
@@ -97581,10 +97813,10 @@
   27++C0AF                              endmodule
   28++C0AF
 # file closed: Source/Action/EdgeCase46.asm
- 416+ C0AF                              ent
- 417+ 60AF                              assert $ == #60AF
- 418+ 60AF                              disp #C0AF
- 419+ C0AF                              include "../Action/EdgeCase09.asm"                              ; (0) жёсткий порядок, последовательное исполнение
+ 446+ C0AF                              ent
+ 447+ 60AF                              assert $ == #60AF
+ 448+ 60AF                              disp #C0AF
+ 449+ C0AF                              include "../Action/EdgeCase09.asm"                              ; (0) жёсткий порядок, последовательное исполнение
 # file opened: Source/Action/EdgeCase09.asm
    1++C0AF                              module Action
    2++C0AF                              module EdgeCase09
@@ -97615,10 +97847,10 @@
   27++C0BE                              endmodule
   28++C0BE
 # file closed: Source/Action/EdgeCase09.asm
- 420+ C0BE                              ent
- 421+ 60BE                              assert $ == #60BE
- 422+ 60BE                              disp #C0BE
- 423+ C0BE                              include "../Action/EdgeCase89.asm"                              ; (1) жёсткий порядок, последовательное исполнение
+ 450+ C0BE                              ent
+ 451+ 60BE                              assert $ == #60BE
+ 452+ 60BE                              disp #C0BE
+ 453+ C0BE                              include "../Action/EdgeCase89.asm"                              ; (1) жёсткий порядок, последовательное исполнение
 # file opened: Source/Action/EdgeCase89.asm
    1++C0BE                              module Action
    2++C0BE                              module EdgeCase89
@@ -97649,10 +97881,10 @@
   27++C0C9                              endmodule
   28++C0C9
 # file closed: Source/Action/EdgeCase89.asm
- 424+ C0C9                              ent
- 425+ 60C9                              assert $ == #60C9
- 426+ 60C9                              disp #C0C9
- 427+ C0C9                              include "../Action/EdgeCase0A.asm"                              ; (0) жёсткий порядок, последовательное исполнение
+ 454+ C0C9                              ent
+ 455+ 60C9                              assert $ == #60C9
+ 456+ 60C9                              disp #C0C9
+ 457+ C0C9                              include "../Action/EdgeCase0A.asm"                              ; (0) жёсткий порядок, последовательное исполнение
 # file opened: Source/Action/EdgeCase0A.asm
    1++C0C9                              module Action
    2++C0C9                              module EdgeCase0A
@@ -97683,10 +97915,10 @@
   27++C0D8                              endmodule
   28++C0D8
 # file closed: Source/Action/EdgeCase0A.asm
- 428+ C0D8                              ent
- 429+ 60D8                              assert $ == #60D8
- 430+ 60D8                              disp #C0D8
- 431+ C0D8                              include "../Action/EdgeCase2A.asm"                              ; (1) жёсткий порядок, последовательное исполнение
+ 458+ C0D8                              ent
+ 459+ 60D8                              assert $ == #60D8
+ 460+ 60D8                              disp #C0D8
+ 461+ C0D8                              include "../Action/EdgeCase2A.asm"                              ; (1) жёсткий порядок, последовательное исполнение
 # file opened: Source/Action/EdgeCase2A.asm
    1++C0D8                              module Action
    2++C0D8                              module EdgeCase2A
@@ -97717,10 +97949,10 @@
   27++C0E3                              endmodule
   28++C0E3
 # file closed: Source/Action/EdgeCase2A.asm
- 432+ C0E3                              ent
- 433+ 60E3                              assert $ == #60E3
- 434+ 60E3                              disp #C0E3
- 435+ C0E3                              include "../Action/EdgeCase10.asm"
+ 462+ C0E3                              ent
+ 463+ 60E3                              assert $ == #60E3
+ 464+ 60E3                              disp #C0E3
+ 465+ C0E3                              include "../Action/EdgeCase10.asm"
 # file opened: Source/Action/EdgeCase10.asm
    1++C0E3                              module Action
    2++C0E3                              module EdgeCase10
@@ -97746,10 +97978,10 @@
   22++C0E9                              endmodule
   23++C0E9
 # file closed: Source/Action/EdgeCase10.asm
- 436+ C0E9                              ent
- 437+ 60E9                              assert $ == #60E9
- 438+ 60E9                              disp #C0E9
- 439+ C0E9                              include "../Action/EdgeCase12.asm"
+ 466+ C0E9                              ent
+ 467+ 60E9                              assert $ == #60E9
+ 468+ 60E9                              disp #C0E9
+ 469+ C0E9                              include "../Action/EdgeCase12.asm"
 # file opened: Source/Action/EdgeCase12.asm
    1++C0E9                              module Action
    2++C0E9                              module EdgeCase12
@@ -97775,10 +98007,10 @@
   22++C0EF                              endmodule
   23++C0EF
 # file closed: Source/Action/EdgeCase12.asm
- 440+ C0EF                              ent
- 441+ 60EF                              assert $ == #60EF
- 442+ 60EF                              disp #C0EF
- 443+ C0EF                              include "../Action/EdgeCase14.asm"
+ 470+ C0EF                              ent
+ 471+ 60EF                              assert $ == #60EF
+ 472+ 60EF                              disp #C0EF
+ 473+ C0EF                              include "../Action/EdgeCase14.asm"
 # file opened: Source/Action/EdgeCase14.asm
    1++C0EF                              module Action
    2++C0EF                              module EdgeCase14
@@ -97810,10 +98042,10 @@
   28++C101                              endmodule
   29++C101
 # file closed: Source/Action/EdgeCase14.asm
- 444+ C101                              ent
- 445+ 6101                              assert $ == #6101
- 446+ 6101                              disp #C101
- 447+ C101                              include "../Action/EdgeCase16.asm"
+ 474+ C101                              ent
+ 475+ 6101                              assert $ == #6101
+ 476+ 6101                              disp #C101
+ 477+ C101                              include "../Action/EdgeCase16.asm"
 # file opened: Source/Action/EdgeCase16.asm
    1++C101                              module Action
    2++C101                              module EdgeCase16
@@ -97849,10 +98081,10 @@
   32++C119                              endmodule
   33++C119
 # file closed: Source/Action/EdgeCase16.asm
- 448+ C119                              ent
- 449+ 6119                              assert $ == #6119
- 450+ 6119                              disp #C119
- 451+ C119                              include "../Action/EdgeCase18.asm"
+ 478+ C119                              ent
+ 479+ 6119                              assert $ == #6119
+ 480+ 6119                              disp #C119
+ 481+ C119                              include "../Action/EdgeCase18.asm"
 # file opened: Source/Action/EdgeCase18.asm
    1++C119                              module Action
    2++C119                              module EdgeCase18
@@ -97884,10 +98116,10 @@
   28++C12B                              endmodule
   29++C12B
 # file closed: Source/Action/EdgeCase18.asm
- 452+ C12B                              ent
- 453+ 612B                              assert $ == #612B
- 454+ 612B                              disp #C12B
- 455+ C12B                              include "../Action/EdgeCase19.asm"
+ 482+ C12B                              ent
+ 483+ 612B                              assert $ == #612B
+ 484+ 612B                              disp #C12B
+ 485+ C12B                              include "../Action/EdgeCase19.asm"
 # file opened: Source/Action/EdgeCase19.asm
    1++C12B                              module Action
    2++C12B                              module EdgeCase19
@@ -97916,10 +98148,10 @@
   25++C132                              endmodule
   26++C132
 # file closed: Source/Action/EdgeCase19.asm
- 456+ C132                              ent
- 457+ 6132                              assert $ == #6132
- 458+ 6132                              disp #C132
- 459+ C132                              include "../Action/EdgeCase1A.asm"
+ 486+ C132                              ent
+ 487+ 6132                              assert $ == #6132
+ 488+ 6132                              disp #C132
+ 489+ C132                              include "../Action/EdgeCase1A.asm"
 # file opened: Source/Action/EdgeCase1A.asm
    1++C132                              module Action
    2++C132                              module EdgeCase1A
@@ -97951,10 +98183,10 @@
   28++C144                              endmodule
   29++C144
 # file closed: Source/Action/EdgeCase1A.asm
- 460+ C144                              ent
- 461+ 6144                              assert $ == #6144
- 462+ 6144                              disp #C144
- 463+ C144                              include "../Action/EdgeCase20.asm"
+ 490+ C144                              ent
+ 491+ 6144                              assert $ == #6144
+ 492+ 6144                              disp #C144
+ 493+ C144                              include "../Action/EdgeCase20.asm"
 # file opened: Source/Action/EdgeCase20.asm
    1++C144                              module Action
    2++C144                              module EdgeCase20
@@ -97980,10 +98212,10 @@
   22++C14A                              endmodule
   23++C14A
 # file closed: Source/Action/EdgeCase20.asm
- 464+ C14A                              ent
- 465+ 614A                              assert $ == #614A
- 466+ 614A                              disp #C14A
- 467+ C14A                              include "../Action/EdgeCase21.asm"
+ 494+ C14A                              ent
+ 495+ 614A                              assert $ == #614A
+ 496+ 614A                              disp #C14A
+ 497+ C14A                              include "../Action/EdgeCase21.asm"
 # file opened: Source/Action/EdgeCase21.asm
    1++C14A                              module Action
    2++C14A                              module EdgeCase21
@@ -98009,10 +98241,10 @@
   22++C150                              endmodule
   23++C150
 # file closed: Source/Action/EdgeCase21.asm
- 468+ C150                              ent
- 469+ 6150                              assert $ == #6150
- 470+ 6150                              disp #C150
- 471+ C150                              include "../Action/EdgeCase24.asm"
+ 498+ C150                              ent
+ 499+ 6150                              assert $ == #6150
+ 500+ 6150                              disp #C150
+ 501+ C150                              include "../Action/EdgeCase24.asm"
 # file opened: Source/Action/EdgeCase24.asm
    1++C150                              module Action
    2++C150                              module EdgeCase24
@@ -98044,10 +98276,10 @@
   28++C162                              endmodule
   29++C162
 # file closed: Source/Action/EdgeCase24.asm
- 472+ C162                              ent
- 473+ 6162                              assert $ == #6162
- 474+ 6162                              disp #C162
- 475+ C162                              include "../Action/EdgeCase25.asm"
+ 502+ C162                              ent
+ 503+ 6162                              assert $ == #6162
+ 504+ 6162                              disp #C162
+ 505+ C162                              include "../Action/EdgeCase25.asm"
 # file opened: Source/Action/EdgeCase25.asm
    1++C162                              module Action
    2++C162                              module EdgeCase25
@@ -98079,10 +98311,10 @@
   28++C174                              endmodule
   29++C174
 # file closed: Source/Action/EdgeCase25.asm
- 476+ C174                              ent
- 477+ 6174                              assert $ == #6174
- 478+ 6174                              disp #C174
- 479+ C174                              include "../Action/EdgeCase26.asm"
+ 506+ C174                              ent
+ 507+ 6174                              assert $ == #6174
+ 508+ 6174                              disp #C174
+ 509+ C174                              include "../Action/EdgeCase26.asm"
 # file opened: Source/Action/EdgeCase26.asm
    1++C174                              module Action
    2++C174                              module EdgeCase26
@@ -98111,10 +98343,10 @@
   25++C17B                              endmodule
   26++C17B
 # file closed: Source/Action/EdgeCase26.asm
- 480+ C17B                              ent
- 481+ 617B                              assert $ == #617B
- 482+ 617B                              disp #C17B
- 483+ C17B                              include "../Action/EdgeCase28.asm"
+ 510+ C17B                              ent
+ 511+ 617B                              assert $ == #617B
+ 512+ 617B                              disp #C17B
+ 513+ C17B                              include "../Action/EdgeCase28.asm"
 # file opened: Source/Action/EdgeCase28.asm
    1++C17B                              module Action
    2++C17B                              module EdgeCase28
@@ -98146,10 +98378,10 @@
   28++C18D                              endmodule
   29++C18D
 # file closed: Source/Action/EdgeCase28.asm
- 484+ C18D                              ent
- 485+ 618D                              assert $ == #618D
- 486+ 618D                              disp #C18D
- 487+ C18D                              include "../Action/EdgeCase29.asm"
+ 514+ C18D                              ent
+ 515+ 618D                              assert $ == #618D
+ 516+ 618D                              disp #C18D
+ 517+ C18D                              include "../Action/EdgeCase29.asm"
 # file opened: Source/Action/EdgeCase29.asm
    1++C18D                              module Action
    2++C18D                              module EdgeCase29
@@ -98185,10 +98417,10 @@
   32++C1A5                              endmodule
   33++C1A5
 # file closed: Source/Action/EdgeCase29.asm
- 488+ C1A5                              ent
- 489+ 61A5                              assert $ == #61A5
- 490+ 61A5                              disp #C1A5
- 491+ C1A5                              include "../Action/EdgeCase40.asm"
+ 518+ C1A5                              ent
+ 519+ 61A5                              assert $ == #61A5
+ 520+ 61A5                              disp #C1A5
+ 521+ C1A5                              include "../Action/EdgeCase40.asm"
 # file opened: Source/Action/EdgeCase40.asm
    1++C1A5                              module Action
    2++C1A5                              module EdgeCase40
@@ -98214,10 +98446,10 @@
   22++C1AB                              endmodule
   23++C1AB
 # file closed: Source/Action/EdgeCase40.asm
- 492+ C1AB                              ent
- 493+ 61AB                              assert $ == #61AB
- 494+ 61AB                              disp #C1AB
- 495+ C1AB                              include "../Action/EdgeCase41.asm"
+ 522+ C1AB                              ent
+ 523+ 61AB                              assert $ == #61AB
+ 524+ 61AB                              disp #C1AB
+ 525+ C1AB                              include "../Action/EdgeCase41.asm"
 # file opened: Source/Action/EdgeCase41.asm
    1++C1AB                              module Action
    2++C1AB                              module EdgeCase41
@@ -98249,10 +98481,10 @@
   28++C1BD                              endmodule
   29++C1BD
 # file closed: Source/Action/EdgeCase41.asm
- 496+ C1BD                              ent
- 497+ 61BD                              assert $ == #61BD
- 498+ 61BD                              disp #C1BD
- 499+ C1BD                              include "../Action/EdgeCase42.asm"
+ 526+ C1BD                              ent
+ 527+ 61BD                              assert $ == #61BD
+ 528+ 61BD                              disp #C1BD
+ 529+ C1BD                              include "../Action/EdgeCase42.asm"
 # file opened: Source/Action/EdgeCase42.asm
    1++C1BD                              module Action
    2++C1BD                              module EdgeCase42
@@ -98284,10 +98516,10 @@
   28++C1CF                              endmodule
   29++C1CF
 # file closed: Source/Action/EdgeCase42.asm
- 500+ C1CF                              ent
- 501+ 61CF                              assert $ == #61CF
- 502+ 61CF                              disp #C1CF
- 503+ C1CF                              include "../Action/EdgeCase45.asm"
+ 530+ C1CF                              ent
+ 531+ 61CF                              assert $ == #61CF
+ 532+ 61CF                              disp #C1CF
+ 533+ C1CF                              include "../Action/EdgeCase45.asm"
 # file opened: Source/Action/EdgeCase45.asm
    1++C1CF                              module Action
    2++C1CF                              module EdgeCase45
@@ -98316,10 +98548,10 @@
   25++C1D6                              endmodule
   26++C1D6
 # file closed: Source/Action/EdgeCase45.asm
- 504+ C1D6                              ent
- 505+ 61D6                              assert $ == #61D6
- 506+ 61D6                              disp #C1D6
- 507+ C1D6                              include "../Action/EdgeCase48.asm"
+ 534+ C1D6                              ent
+ 535+ 61D6                              assert $ == #61D6
+ 536+ 61D6                              disp #C1D6
+ 537+ C1D6                              include "../Action/EdgeCase48.asm"
 # file opened: Source/Action/EdgeCase48.asm
    1++C1D6                              module Action
    2++C1D6                              module EdgeCase48
@@ -98345,10 +98577,10 @@
   22++C1DC                              endmodule
   23++C1DC
 # file closed: Source/Action/EdgeCase48.asm
- 508+ C1DC                              ent
- 509+ 61DC                              assert $ == #61DC
- 510+ 61DC                              disp #C1DC
- 511+ C1DC                              include "../Action/EdgeCase49.asm"
+ 538+ C1DC                              ent
+ 539+ 61DC                              assert $ == #61DC
+ 540+ 61DC                              disp #C1DC
+ 541+ C1DC                              include "../Action/EdgeCase49.asm"
 # file opened: Source/Action/EdgeCase49.asm
    1++C1DC                              module Action
    2++C1DC                              module EdgeCase49
@@ -98381,10 +98613,10 @@
   29++C1F1                              endmodule
   30++C1F1
 # file closed: Source/Action/EdgeCase49.asm
- 512+ C1F1                              ent
- 513+ 61F1                              assert $ == #61F1
- 514+ 61F1                              disp #C1F1
- 515+ C1F1                              include "../Action/EdgeCase4A.asm"
+ 542+ C1F1                              ent
+ 543+ 61F1                              assert $ == #61F1
+ 544+ 61F1                              disp #C1F1
+ 545+ C1F1                              include "../Action/EdgeCase4A.asm"
 # file opened: Source/Action/EdgeCase4A.asm
    1++C1F1                              module Action
    2++C1F1                              module EdgeCase4A
@@ -98421,10 +98653,10 @@
   33++C20C                              endmodule
   34++C20C
 # file closed: Source/Action/EdgeCase4A.asm
- 516+ C20C                              ent
- 517+ 620C                              assert $ == #620C
- 518+ 620C                              disp #C20C
- 519+ C20C                              include "../Action/EdgeCase50.asm"
+ 546+ C20C                              ent
+ 547+ 620C                              assert $ == #620C
+ 548+ 620C                              disp #C20C
+ 549+ C20C                              include "../Action/EdgeCase50.asm"
 # file opened: Source/Action/EdgeCase50.asm
    1++C20C                              module Action
    2++C20C                              module EdgeCase50
@@ -98460,10 +98692,10 @@
   32++C228                              endmodule
   33++C228
 # file closed: Source/Action/EdgeCase50.asm
- 520+ C228                              ent
- 521+ 6228                              assert $ == #6228
- 522+ 6228                              disp #C228
- 523+ C228                              include "../Action/EdgeCase51.asm"
+ 550+ C228                              ent
+ 551+ 6228                              assert $ == #6228
+ 552+ 6228                              disp #C228
+ 553+ C228                              include "../Action/EdgeCase51.asm"
 # file opened: Source/Action/EdgeCase51.asm
    1++C228                              module Action
    2++C228                              module EdgeCase51
@@ -98492,10 +98724,10 @@
   25++C22F                              endmodule
   26++C22F
 # file closed: Source/Action/EdgeCase51.asm
- 524+ C22F                              ent
- 525+ 622F                              assert $ == #622F
- 526+ 622F                              disp #C22F
- 527+ C22F                              include "../Action/EdgeCase52.asm"
+ 554+ C22F                              ent
+ 555+ 622F                              assert $ == #622F
+ 556+ 622F                              disp #C22F
+ 557+ C22F                              include "../Action/EdgeCase52.asm"
 # file opened: Source/Action/EdgeCase52.asm
    1++C22F                              module Action
    2++C22F                              module EdgeCase52
@@ -98534,10 +98766,10 @@
   35++C24E                              endmodule
   36++C24E
 # file closed: Source/Action/EdgeCase52.asm
- 528+ C24E                              ent
- 529+ 624E                              assert $ == #624E
- 530+ 624E                              disp #C24E
- 531+ C24E                              include "../Action/EdgeCase54.asm"
+ 558+ C24E                              ent
+ 559+ 624E                              assert $ == #624E
+ 560+ 624E                              disp #C24E
+ 561+ C24E                              include "../Action/EdgeCase54.asm"
 # file opened: Source/Action/EdgeCase54.asm
    1++C24E                              module Action
    2++C24E                              module EdgeCase54
@@ -98568,10 +98800,10 @@
   27++C259                              endmodule
   28++C259
 # file closed: Source/Action/EdgeCase54.asm
- 532+ C259                              ent
- 533+ 6259                              assert $ == #6259
- 534+ 6259                              disp #C259
- 535+ C259                              include "../Action/EdgeCase56.asm"
+ 562+ C259                              ent
+ 563+ 6259                              assert $ == #6259
+ 564+ 6259                              disp #C259
+ 565+ C259                              include "../Action/EdgeCase56.asm"
 # file opened: Source/Action/EdgeCase56.asm
    1++C259                              module Action
    2++C259                              module EdgeCase56
@@ -98597,10 +98829,10 @@
   22++C25F                              endmodule
   23++C25F
 # file closed: Source/Action/EdgeCase56.asm
- 536+ C25F                              ent
- 537+ 625F                              assert $ == #625F
- 538+ 625F                              disp #C25F
- 539+ C25F                              include "../Action/EdgeCase58.asm"
+ 566+ C25F                              ent
+ 567+ 625F                              assert $ == #625F
+ 568+ 625F                              disp #C25F
+ 569+ C25F                              include "../Action/EdgeCase58.asm"
 # file opened: Source/Action/EdgeCase58.asm
    1++C25F                              module Action
    2++C25F                              module EdgeCase58
@@ -98633,10 +98865,10 @@
   29++C274                              endmodule
   30++C274
 # file closed: Source/Action/EdgeCase58.asm
- 540+ C274                              ent
- 541+ 6274                              assert $ == #6274
- 542+ 6274                              disp #C274
- 543+ C274                              include "../Action/EdgeCase5A.asm"
+ 570+ C274                              ent
+ 571+ 6274                              assert $ == #6274
+ 572+ 6274                              disp #C274
+ 573+ C274                              include "../Action/EdgeCase5A.asm"
 # file opened: Source/Action/EdgeCase5A.asm
    1++C274                              module Action
    2++C274                              module EdgeCase5A
@@ -98671,10 +98903,10 @@
   31++C28D                              endmodule
   32++C28D
 # file closed: Source/Action/EdgeCase5A.asm
- 544+ C28D                              ent
- 545+ 628D                              assert $ == #628D
- 546+ 628D                              disp #C28D
- 547+ C28D                              include "../Action/EdgeCase60.asm"
+ 574+ C28D                              ent
+ 575+ 628D                              assert $ == #628D
+ 576+ 628D                              disp #C28D
+ 577+ C28D                              include "../Action/EdgeCase60.asm"
 # file opened: Source/Action/EdgeCase60.asm
    1++C28D                              module Action
    2++C28D                              module EdgeCase60
@@ -98710,10 +98942,10 @@
   32++C2A9                              endmodule
   33++C2A9
 # file closed: Source/Action/EdgeCase60.asm
- 548+ C2A9                              ent
- 549+ 62A9                              assert $ == #62A9
- 550+ 62A9                              disp #C2A9
- 551+ C2A9                              include "../Action/EdgeCase61.asm"
+ 578+ C2A9                              ent
+ 579+ 62A9                              assert $ == #62A9
+ 580+ 62A9                              disp #C2A9
+ 581+ C2A9                              include "../Action/EdgeCase61.asm"
 # file opened: Source/Action/EdgeCase61.asm
    1++C2A9                              module Action
    2++C2A9                              module EdgeCase61
@@ -98746,10 +98978,10 @@
   29++C2BE                              endmodule
   30++C2BE
 # file closed: Source/Action/EdgeCase61.asm
- 552+ C2BE                              ent
- 553+ 62BE                              assert $ == #62BE
- 554+ 62BE                              disp #C2BE
- 555+ C2BE                              include "../Action/EdgeCase62.asm"
+ 582+ C2BE                              ent
+ 583+ 62BE                              assert $ == #62BE
+ 584+ 62BE                              disp #C2BE
+ 585+ C2BE                              include "../Action/EdgeCase62.asm"
 # file opened: Source/Action/EdgeCase62.asm
    1++C2BE                              module Action
    2++C2BE                              module EdgeCase62
@@ -98780,10 +99012,10 @@
   27++C2C9                              endmodule
   28++C2C9
 # file closed: Source/Action/EdgeCase62.asm
- 556+ C2C9                              ent
- 557+ 62C9                              assert $ == #62C9
- 558+ 62C9                              disp #C2C9
- 559+ C2C9                              include "../Action/EdgeCase64.asm"
+ 586+ C2C9                              ent
+ 587+ 62C9                              assert $ == #62C9
+ 588+ 62C9                              disp #C2C9
+ 589+ C2C9                              include "../Action/EdgeCase64.asm"
 # file opened: Source/Action/EdgeCase64.asm
    1++C2C9                              module Action
    2++C2C9                              module EdgeCase64
@@ -98812,10 +99044,10 @@
   25++C2D0                              endmodule
   26++C2D0
 # file closed: Source/Action/EdgeCase64.asm
- 560+ C2D0                              ent
- 561+ 62D0                              assert $ == #62D0
- 562+ 62D0                              disp #C2D0
- 563+ C2D0                              include "../Action/EdgeCase68.asm"
+ 590+ C2D0                              ent
+ 591+ 62D0                              assert $ == #62D0
+ 592+ 62D0                              disp #C2D0
+ 593+ C2D0                              include "../Action/EdgeCase68.asm"
 # file opened: Source/Action/EdgeCase68.asm
    1++C2D0                              module Action
    2++C2D0                              module EdgeCase68
@@ -98854,10 +99086,10 @@
   35++C2EF                              endmodule
   36++C2EF
 # file closed: Source/Action/EdgeCase68.asm
- 564+ C2EF                              ent
- 565+ 62EF                              assert $ == #62EF
- 566+ 62EF                              disp #C2EF
- 567+ C2EF                              include "../Action/EdgeCase69.asm"
+ 594+ C2EF                              ent
+ 595+ 62EF                              assert $ == #62EF
+ 596+ 62EF                              disp #C2EF
+ 597+ C2EF                              include "../Action/EdgeCase69.asm"
 # file opened: Source/Action/EdgeCase69.asm
    1++C2EF                              module Action
    2++C2EF                              module EdgeCase69
@@ -98892,10 +99124,10 @@
   31++C308                              endmodule
   32++C308
 # file closed: Source/Action/EdgeCase69.asm
- 568+ C308                              ent
- 569+ 6308                              assert $ == #6308
- 570+ 6308                              disp #C308
- 571+ C308                              include "../Action/EdgeCase6A.asm"
+ 598+ C308                              ent
+ 599+ 6308                              assert $ == #6308
+ 600+ 6308                              disp #C308
+ 601+ C308                              include "../Action/EdgeCase6A.asm"
 # file opened: Source/Action/EdgeCase6A.asm
    1++C308                              module Action
    2++C308                              module EdgeCase6A
@@ -98921,10 +99153,10 @@
   22++C30E                              endmodule
   23++C30E
 # file closed: Source/Action/EdgeCase6A.asm
- 572+ C30E                              ent
- 573+ 630E                              assert $ == #630E
- 574+ 630E                              disp #C30E
- 575+ C30E                              include "../Action/EdgeCase80.asm"
+ 602+ C30E                              ent
+ 603+ 630E                              assert $ == #630E
+ 604+ 630E                              disp #C30E
+ 605+ C30E                              include "../Action/EdgeCase80.asm"
 # file opened: Source/Action/EdgeCase80.asm
    1++C30E                              module Action
    2++C30E                              module EdgeCase80
@@ -98950,10 +99182,10 @@
   22++C314                              endmodule
   23++C314
 # file closed: Source/Action/EdgeCase80.asm
- 576+ C314                              ent
- 577+ 6314                              assert $ == #6314
- 578+ 6314                              disp #C314
- 579+ C314                              include "../Action/EdgeCase81.asm"
+ 606+ C314                              ent
+ 607+ 6314                              assert $ == #6314
+ 608+ 6314                              disp #C314
+ 609+ C314                              include "../Action/EdgeCase81.asm"
 # file opened: Source/Action/EdgeCase81.asm
    1++C314                              module Action
    2++C314                              module EdgeCase81
@@ -98985,10 +99217,10 @@
   28++C326                              endmodule
   29++C326
 # file closed: Source/Action/EdgeCase81.asm
- 580+ C326                              ent
- 581+ 6326                              assert $ == #6326
- 582+ 6326                              disp #C326
- 583+ C326                              include "../Action/EdgeCase82.asm"
+ 610+ C326                              ent
+ 611+ 6326                              assert $ == #6326
+ 612+ 6326                              disp #C326
+ 613+ C326                              include "../Action/EdgeCase82.asm"
 # file opened: Source/Action/EdgeCase82.asm
    1++C326                              module Action
    2++C326                              module EdgeCase82
@@ -99020,10 +99252,10 @@
   28++C338                              endmodule
   29++C338
 # file closed: Source/Action/EdgeCase82.asm
- 584+ C338                              ent
- 585+ 6338                              assert $ == #6338
- 586+ 6338                              disp #C338
- 587+ C338                              include "../Action/EdgeCase84.asm"
+ 614+ C338                              ent
+ 615+ 6338                              assert $ == #6338
+ 616+ 6338                              disp #C338
+ 617+ C338                              include "../Action/EdgeCase84.asm"
 # file opened: Source/Action/EdgeCase84.asm
    1++C338                              module Action
    2++C338                              module EdgeCase84
@@ -99049,10 +99281,10 @@
   22++C33E                              endmodule
   23++C33E
 # file closed: Source/Action/EdgeCase84.asm
- 588+ C33E                              ent
- 589+ 633E                              assert $ == #633E
- 590+ 633E                              disp #C33E
- 591+ C33E                              include "../Action/EdgeCase85.asm"
+ 618+ C33E                              ent
+ 619+ 633E                              assert $ == #633E
+ 620+ 633E                              disp #C33E
+ 621+ C33E                              include "../Action/EdgeCase85.asm"
 # file opened: Source/Action/EdgeCase85.asm
    1++C33E                              module Action
    2++C33E                              module EdgeCase85
@@ -99089,10 +99321,10 @@
   33++C359                              endmodule
   34++C359
 # file closed: Source/Action/EdgeCase85.asm
- 592+ C359                              ent
- 593+ 6359                              assert $ == #6359
- 594+ 6359                              disp #C359
- 595+ C359                              include "../Action/EdgeCase86.asm"
+ 622+ C359                              ent
+ 623+ 6359                              assert $ == #6359
+ 624+ 6359                              disp #C359
+ 625+ C359                              include "../Action/EdgeCase86.asm"
 # file opened: Source/Action/EdgeCase86.asm
    1++C359                              module Action
    2++C359                              module EdgeCase86
@@ -99125,10 +99357,10 @@
   29++C36E                              endmodule
   30++C36E
 # file closed: Source/Action/EdgeCase86.asm
- 596+ C36E                              ent
- 597+ 636E                              assert $ == #636E
- 598+ 636E                              disp #C36E
- 599+ C36E                              include "../Action/EdgeCase8A.asm"
+ 626+ C36E                              ent
+ 627+ 636E                              assert $ == #636E
+ 628+ 636E                              disp #C36E
+ 629+ C36E                              include "../Action/EdgeCase8A.asm"
 # file opened: Source/Action/EdgeCase8A.asm
    1++C36E                              module Action
    2++C36E                              module EdgeCase8A
@@ -99157,10 +99389,10 @@
   25++C375                              endmodule
   26++C375
 # file closed: Source/Action/EdgeCase8A.asm
- 600+ C375                              ent
- 601+ 6375                              assert $ == #6375
- 602+ 6375                              disp #C375
- 603+ C375                              include "../Action/EdgeCase90.asm"
+ 630+ C375                              ent
+ 631+ 6375                              assert $ == #6375
+ 632+ 6375                              disp #C375
+ 633+ C375                              include "../Action/EdgeCase90.asm"
 # file opened: Source/Action/EdgeCase90.asm
    1++C375                              module Action
    2++C375                              module EdgeCase90
@@ -99196,10 +99428,10 @@
   32++C391                              endmodule
   33++C391
 # file closed: Source/Action/EdgeCase90.asm
- 604+ C391                              ent
- 605+ 6391                              assert $ == #6391
- 606+ 6391                              disp #C391
- 607+ C391                              include "../Action/EdgeCase91.asm"
+ 634+ C391                              ent
+ 635+ 6391                              assert $ == #6391
+ 636+ 6391                              disp #C391
+ 637+ C391                              include "../Action/EdgeCase91.asm"
 # file opened: Source/Action/EdgeCase91.asm
    1++C391                              module Action
    2++C391                              module EdgeCase91
@@ -99230,10 +99462,10 @@
   27++C39C                              endmodule
   28++C39C
 # file closed: Source/Action/EdgeCase91.asm
- 608+ C39C                              ent
- 609+ 639C                              assert $ == #639C
- 610+ 639C                              disp #C39C
- 611+ C39C                              include "../Action/EdgeCase92.asm"
+ 638+ C39C                              ent
+ 639+ 639C                              assert $ == #639C
+ 640+ 639C                              disp #C39C
+ 641+ C39C                              include "../Action/EdgeCase92.asm"
 # file opened: Source/Action/EdgeCase92.asm
    1++C39C                              module Action
    2++C39C                              module EdgeCase92
@@ -99266,10 +99498,10 @@
   29++C3B1                              endmodule
   30++C3B1
 # file closed: Source/Action/EdgeCase92.asm
- 612+ C3B1                              ent
- 613+ 63B1                              assert $ == #63B1
- 614+ 63B1                              disp #C3B1
- 615+ C3B1                              include "../Action/EdgeCase94.asm"
+ 642+ C3B1                              ent
+ 643+ 63B1                              assert $ == #63B1
+ 644+ 63B1                              disp #C3B1
+ 645+ C3B1                              include "../Action/EdgeCase94.asm"
 # file opened: Source/Action/EdgeCase94.asm
    1++C3B1                              module Action
    2++C3B1                              module EdgeCase94
@@ -99308,10 +99540,10 @@
   35++C3D0                              endmodule
   36++C3D0
 # file closed: Source/Action/EdgeCase94.asm
- 616+ C3D0                              ent
- 617+ 63D0                              assert $ == #63D0
- 618+ 63D0                              disp #C3D0
- 619+ C3D0                              include "../Action/EdgeCase95.asm"
+ 646+ C3D0                              ent
+ 647+ 63D0                              assert $ == #63D0
+ 648+ 63D0                              disp #C3D0
+ 649+ C3D0                              include "../Action/EdgeCase95.asm"
 # file opened: Source/Action/EdgeCase95.asm
    1++C3D0                              module Action
    2++C3D0                              module EdgeCase95
@@ -99337,10 +99569,10 @@
   22++C3D6                              endmodule
   23++C3D6
 # file closed: Source/Action/EdgeCase95.asm
- 620+ C3D6                              ent
- 621+ 63D6                              assert $ == #63D6
- 622+ 63D6                              disp #C3D6
- 623+ C3D6                              include "../Action/EdgeCase96.asm"
+ 650+ C3D6                              ent
+ 651+ 63D6                              assert $ == #63D6
+ 652+ 63D6                              disp #C3D6
+ 653+ C3D6                              include "../Action/EdgeCase96.asm"
 # file opened: Source/Action/EdgeCase96.asm
    1++C3D6                              module Action
    2++C3D6                              module EdgeCase96
@@ -99375,10 +99607,10 @@
   31++C3EF                              endmodule
   32++C3EF
 # file closed: Source/Action/EdgeCase96.asm
- 624+ C3EF                              ent
- 625+ 63EF                              assert $ == #63EF
- 626+ 63EF                              disp #C3EF
- 627+ C3EF                              include "../Action/EdgeCase98.asm"
+ 654+ C3EF                              ent
+ 655+ 63EF                              assert $ == #63EF
+ 656+ 63EF                              disp #C3EF
+ 657+ C3EF                              include "../Action/EdgeCase98.asm"
 # file opened: Source/Action/EdgeCase98.asm
    1++C3EF                              module Action
    2++C3EF                              module EdgeCase98
@@ -99407,10 +99639,10 @@
   25++C3F6                              endmodule
   26++C3F6
 # file closed: Source/Action/EdgeCase98.asm
- 628+ C3F6                              ent
- 629+ 63F6                              assert $ == #63F6
- 630+ 63F6                              disp #C3F6
- 631+ C3F6                              include "../Action/EdgeCaseA0.asm"
+ 658+ C3F6                              ent
+ 659+ 63F6                              assert $ == #63F6
+ 660+ 63F6                              disp #C3F6
+ 661+ C3F6                              include "../Action/EdgeCaseA0.asm"
 # file opened: Source/Action/EdgeCaseA0.asm
    1++C3F6                              module Action
    2++C3F6                              module EdgeCaseA0
@@ -99446,10 +99678,10 @@
   32++C412                              endmodule
   33++C412
 # file closed: Source/Action/EdgeCaseA0.asm
- 632+ C412                              ent
- 633+ 6412                              assert $ == #6412
- 634+ 6412                              disp #C412
- 635+ C412                              include "../Action/EdgeCaseA1.asm"
+ 662+ C412                              ent
+ 663+ 6412                              assert $ == #6412
+ 664+ 6412                              disp #C412
+ 665+ C412                              include "../Action/EdgeCaseA1.asm"
 # file opened: Source/Action/EdgeCaseA1.asm
    1++C412                              module Action
    2++C412                              module EdgeCaseA1
@@ -99488,10 +99720,10 @@
   35++C431                              endmodule
   36++C431
 # file closed: Source/Action/EdgeCaseA1.asm
- 636+ C431                              ent
- 637+ 6431                              assert $ == #6431
- 638+ 6431                              disp #C431
- 639+ C431                              include "../Action/EdgeCaseA2.asm"
+ 666+ C431                              ent
+ 667+ 6431                              assert $ == #6431
+ 668+ 6431                              disp #C431
+ 669+ C431                              include "../Action/EdgeCaseA2.asm"
 # file opened: Source/Action/EdgeCaseA2.asm
    1++C431                              module Action
    2++C431                              module EdgeCaseA2
@@ -99520,10 +99752,10 @@
   25++C438                              endmodule
   26++C438
 # file closed: Source/Action/EdgeCaseA2.asm
- 640+ C438                              ent
- 641+ 6438                              assert $ == #6438
- 642+ 6438                              disp #C438
- 643+ C438                              include "../Action/EdgeCaseA4.asm"
+ 670+ C438                              ent
+ 671+ 6438                              assert $ == #6438
+ 672+ 6438                              disp #C438
+ 673+ C438                              include "../Action/EdgeCaseA4.asm"
 # file opened: Source/Action/EdgeCaseA4.asm
    1++C438                              module Action
    2++C438                              module EdgeCaseA4
@@ -99556,10 +99788,10 @@
   29++C44D                              endmodule
   30++C44D
 # file closed: Source/Action/EdgeCaseA4.asm
- 644+ C44D                              ent
- 645+ 644D                              assert $ == #644D
- 646+ 644D                              disp #C44D
- 647+ C44D                              include "../Action/EdgeCaseA5.asm"
+ 674+ C44D                              ent
+ 675+ 644D                              assert $ == #644D
+ 676+ 644D                              disp #C44D
+ 677+ C44D                              include "../Action/EdgeCaseA5.asm"
 # file opened: Source/Action/EdgeCaseA5.asm
    1++C44D                              module Action
    2++C44D                              module EdgeCaseA5
@@ -99594,10 +99826,10 @@
   31++C466                              endmodule
   32++C466
 # file closed: Source/Action/EdgeCaseA5.asm
- 648+ C466                              ent
- 649+ 6466                              assert $ == #6466
- 650+ 6466                              disp #C466
- 651+ C466                              include "../Action/EdgeCaseA8.asm"
+ 678+ C466                              ent
+ 679+ 6466                              assert $ == #6466
+ 680+ 6466                              disp #C466
+ 681+ C466                              include "../Action/EdgeCaseA8.asm"
 # file opened: Source/Action/EdgeCaseA8.asm
    1++C466                              module Action
    2++C466                              module EdgeCaseA8
@@ -99628,10 +99860,10 @@
   27++C471                              endmodule
   28++C471
 # file closed: Source/Action/EdgeCaseA8.asm
- 652+ C471                              ent
- 653+ 6471                              assert $ == #6471
- 654+ 6471                              disp #C471
- 655+ C471                              include "../Action/EdgeCaseA9.asm"
+ 682+ C471                              ent
+ 683+ 6471                              assert $ == #6471
+ 684+ 6471                              disp #C471
+ 685+ C471                              include "../Action/EdgeCaseA9.asm"
 # file opened: Source/Action/EdgeCaseA9.asm
    1++C471                              module Action
    2++C471                              module EdgeCaseA9
@@ -99657,10 +99889,10 @@
   22++C477                              endmodule
   23++C477
 # file closed: Source/Action/EdgeCaseA9.asm
- 656+ C477                              ent
- 657+ 6477                              assert $ == #6477
- 658+ 6477                              disp #C477
- 659+ C477                              include "../Action/UnknownC477.asm"
+ 686+ C477                              ent
+ 687+ 6477                              assert $ == #6477
+ 688+ 6477                              disp #C477
+ 689+ C477                              include "../Action/UnknownC477.asm"
 # file opened: Source/Action/UnknownC477.asm
    1++C477                              module Action
    2++C477                              module UnknownC477
@@ -99697,10 +99929,10 @@
   33++C496                              endmodule
   34++C496
 # file closed: Source/Action/UnknownC477.asm
- 660+ C496                              ent
- 661+ 6496                              assert $ == #6496
- 662+ 6496                              disp #C496
- 663+ C496                              include "../Action/UnknownC496.asm"
+ 690+ C496                              ent
+ 691+ 6496                              assert $ == #6496
+ 692+ 6496                              disp #C496
+ 693+ C496                              include "../Action/UnknownC496.asm"
 # file opened: Source/Action/UnknownC496.asm
    1++C496                              module Action
    2++C496                              module UnknownC496
@@ -99737,10 +99969,10 @@
   33++C4B5                              endmodule
   34++C4B5
 # file closed: Source/Action/UnknownC496.asm
- 664+ C4B5                              ent
- 665+ 64B5                              assert $ == #64B5
- 666+ 64B5                              disp #C4B5
- 667+ C4B5                              include "../Action/UnknownC4B5.asm"
+ 694+ C4B5                              ent
+ 695+ 64B5                              assert $ == #64B5
+ 696+ 64B5                              disp #C4B5
+ 697+ C4B5                              include "../Action/UnknownC4B5.asm"
 # file opened: Source/Action/UnknownC4B5.asm
    1++C4B5                              module Action
    2++C4B5                              module UnknownC4B5
@@ -99777,10 +100009,10 @@
   33++C4D4                              endmodule
   34++C4D4
 # file closed: Source/Action/UnknownC4B5.asm
- 668+ C4D4                              ent
- 669+ 64D4                              assert $ == #64D4
- 670+ 64D4                              disp #C4D4
- 671+ C4D4                              include "../Action/UnknownC4D4.asm"
+ 698+ C4D4                              ent
+ 699+ 64D4                              assert $ == #64D4
+ 700+ 64D4                              disp #C4D4
+ 701+ C4D4                              include "../Action/UnknownC4D4.asm"
 # file opened: Source/Action/UnknownC4D4.asm
    1++C4D4                              module Action
    2++C4D4                              module UnknownC4D4
@@ -99817,10 +100049,10 @@
   33++C4F3                              endmodule
   34++C4F3
 # file closed: Source/Action/UnknownC4D4.asm
- 672+ C4F3                              ent
- 673+ 64F3                              assert $ == #64F3
- 674+ 64F3                              disp #C4F3
- 675+ C4F3                              include "../Action/EdgeCase08.asm"                              ; (0) жёсткий порядок, последовательное исполнение
+ 702+ C4F3                              ent
+ 703+ 64F3                              assert $ == #64F3
+ 704+ 64F3                              disp #C4F3
+ 705+ C4F3                              include "../Action/EdgeCase08.asm"                              ; (0) жёсткий порядок, последовательное исполнение
 # file opened: Source/Action/EdgeCase08.asm
    1++C4F3                              module Action
    2++C4F3                              module EdgeCase08
@@ -99845,10 +100077,10 @@
   21++C4F6                              endmodule
   22++C4F6
 # file closed: Source/Action/EdgeCase08.asm
- 676+ C4F6                              ent
- 677+ 64F6                              assert $ == #64F6
- 678+ 64F6                              disp #C4F6
- 679+ C4F6                              include "../Action/UnknownC4F6.asm"                             ; (1) жёсткий порядок, последовательное исполнение
+ 706+ C4F6                              ent
+ 707+ 64F6                              assert $ == #64F6
+ 708+ 64F6                              disp #C4F6
+ 709+ C4F6                              include "../Action/UnknownC4F6.asm"                             ; (1) жёсткий порядок, последовательное исполнение
 # file opened: Source/Action/UnknownC4F6.asm
    1++C4F6                              module Action
    2++C4F6                              module UnknownC4F6
@@ -99917,10 +100149,10 @@
   65++C53D                              endmodule
   66++C53D
 # file closed: Source/Action/UnknownC4F6.asm
- 680+ C53D                              ent
- 681+ 653D                              assert $ == #653D
- 682+ 653D                              disp #C53D
- 683+ C53D                              include "../Action/EdgeCase04.asm"                              ; (0) жёсткий порядок, последовательное исполнение
+ 710+ C53D                              ent
+ 711+ 653D                              assert $ == #653D
+ 712+ 653D                              disp #C53D
+ 713+ C53D                              include "../Action/EdgeCase04.asm"                              ; (0) жёсткий порядок, последовательное исполнение
 # file opened: Source/Action/EdgeCase04.asm
    1++C53D                              module Action
    2++C53D                              module EdgeCase04
@@ -99945,10 +100177,10 @@
   21++C540                              endmodule
   22++C540
 # file closed: Source/Action/EdgeCase04.asm
- 684+ C540                              ent
- 685+ 6540                              assert $ == #6540
- 686+ 6540                              disp #C540
- 687+ C540                              include "../Action/UnknownC540.asm"                             ; (1) жёсткий порядок, последовательное исполнение
+ 714+ C540                              ent
+ 715+ 6540                              assert $ == #6540
+ 716+ 6540                              disp #C540
+ 717+ C540                              include "../Action/UnknownC540.asm"                             ; (1) жёсткий порядок, последовательное исполнение
 # file opened: Source/Action/UnknownC540.asm
    1++C540                              module Action
    2++C540                              module UnknownC540
@@ -100016,10 +100248,10 @@
   64++C588                              endmodule
   65++C588
 # file closed: Source/Action/UnknownC540.asm
- 688+ C588                              ent
- 689+ 6588                              assert $ == #6588
- 690+ 6588                              disp #C588
- 691+ C588                              include "../Action/EdgeCase02.asm"                              ; (0) жёсткий порядок, последовательное исполнение
+ 718+ C588                              ent
+ 719+ 6588                              assert $ == #6588
+ 720+ 6588                              disp #C588
+ 721+ C588                              include "../Action/EdgeCase02.asm"                              ; (0) жёсткий порядок, последовательное исполнение
 # file opened: Source/Action/EdgeCase02.asm
    1++C588                              module Action
    2++C588                              module EdgeCase02
@@ -100044,10 +100276,10 @@
   21++C58B                              endmodule
   22++C58B
 # file closed: Source/Action/EdgeCase02.asm
- 692+ C58B                              ent
- 693+ 658B                              assert $ == #658B
- 694+ 658B                              disp #C58B
- 695+ C58B                              include "../Action/UnknownC58B.asm"                             ; (1) жёсткий порядок, последовательное исполнение
+ 722+ C58B                              ent
+ 723+ 658B                              assert $ == #658B
+ 724+ 658B                              disp #C58B
+ 725+ C58B                              include "../Action/UnknownC58B.asm"                             ; (1) жёсткий порядок, последовательное исполнение
 # file opened: Source/Action/UnknownC58B.asm
    1++C58B                              module Action
    2++C58B                              module UnknownC58B
@@ -100129,10 +100361,10 @@
   78++C5E4                              endmodule
   79++C5E4
 # file closed: Source/Action/UnknownC58B.asm
- 696+ C5E4                              ent
- 697+ 65E4                              assert $ == #65E4
- 698+ 65E4                              disp #C5E4
- 699+ C5E4                              include "../Action/EdgeCase01.asm"                              ; (0) жёсткий порядок, последовательное исполнение
+ 726+ C5E4                              ent
+ 727+ 65E4                              assert $ == #65E4
+ 728+ 65E4                              disp #C5E4
+ 729+ C5E4                              include "../Action/EdgeCase01.asm"                              ; (0) жёсткий порядок, последовательное исполнение
 # file opened: Source/Action/EdgeCase01.asm
    1++C5E4                              module Action
    2++C5E4                              module EdgeCase01
@@ -100157,10 +100389,10 @@
   21++C5E7                              endmodule
   22++C5E7
 # file closed: Source/Action/EdgeCase01.asm
- 700+ C5E7                              ent
- 701+ 65E7                              assert $ == #65E7
- 702+ 65E7                              disp #C5E7
- 703+ C5E7                              include "../Action/UnknownC5E7.asm"                             ; (1) жёсткий порядок, последовательное исполнение
+ 730+ C5E7                              ent
+ 731+ 65E7                              assert $ == #65E7
+ 732+ 65E7                              disp #C5E7
+ 733+ C5E7                              include "../Action/UnknownC5E7.asm"                             ; (1) жёсткий порядок, последовательное исполнение
 # file opened: Source/Action/UnknownC5E7.asm
    1++C5E7                              module Action
    2++C5E7                              module UnknownC5E7
@@ -100241,10 +100473,10 @@
   77++C641                              endmodule
   78++C641
 # file closed: Source/Action/UnknownC5E7.asm
- 704+ C641                              ent
- 705+ 6641                              assert $ == #6641
- 706+ 6641                              disp #C641
- 707+ C641                              include "../Action/UnknownC641.asm"
+ 734+ C641                              ent
+ 735+ 6641                              assert $ == #6641
+ 736+ 6641                              disp #C641
+ 737+ C641                              include "../Action/UnknownC641.asm"
 # file opened: Source/Action/UnknownC641.asm
    1++C641                              module Action
    2++C641                              module UnknownC641
@@ -100274,10 +100506,10 @@
   26++C64C                              endmodule
   27++C64C
 # file closed: Source/Action/UnknownC641.asm
- 708+ C64C                              ent
- 709+ 664C                              assert $ == #664C
- 710+ 664C                              disp #C64C
- 711+ C64C                              include "../Action/UnknownC64C.asm"
+ 738+ C64C                              ent
+ 739+ 664C                              assert $ == #664C
+ 740+ 664C                              disp #C64C
+ 741+ C64C                              include "../Action/UnknownC64C.asm"
 # file opened: Source/Action/UnknownC64C.asm
    1++C64C                              module Action
    2++C64C                              module UnknownC64C
@@ -100307,10 +100539,10 @@
   26++C657                              endmodule
   27++C657
 # file closed: Source/Action/UnknownC64C.asm
- 712+ C657                              ent
- 713+ 6657                              assert $ == #6657
- 714+ 6657                              disp #C657
- 715+ C657                              include "../Action/UnknownC657.asm"
+ 742+ C657                              ent
+ 743+ 6657                              assert $ == #6657
+ 744+ 6657                              disp #C657
+ 745+ C657                              include "../Action/UnknownC657.asm"
 # file opened: Source/Action/UnknownC657.asm
    1++C657                              module Action
    2++C657                              module UnknownC657
@@ -100340,10 +100572,10 @@
   26++C662                              endmodule
   27++C662
 # file closed: Source/Action/UnknownC657.asm
- 716+ C662                              ent
- 717+ 6662                              assert $ == #6662
- 718+ 6662                              disp #C662
- 719+ C662                              include "../Action/UnknownC662.asm"
+ 746+ C662                              ent
+ 747+ 6662                              assert $ == #6662
+ 748+ 6662                              disp #C662
+ 749+ C662                              include "../Action/UnknownC662.asm"
 # file opened: Source/Action/UnknownC662.asm
    1++C662                              module Action
    2++C662                              module UnknownC662
@@ -100373,10 +100605,10 @@
   26++C66D                              endmodule
   27++C66D
 # file closed: Source/Action/UnknownC662.asm
- 720+ C66D                              ent
- 721+ 666D                              assert $ == #666D
- 722+ 666D                              disp #C66D
- 723+ C66D                              include "../Action/UnknownC66D.asm"
+ 750+ C66D                              ent
+ 751+ 666D                              assert $ == #666D
+ 752+ 666D                              disp #C66D
+ 753+ C66D                              include "../Action/UnknownC66D.asm"
 # file opened: Source/Action/UnknownC66D.asm
    1++C66D                              module Action
    2++C66D                              module UnknownC66D
@@ -100408,10 +100640,10 @@
   28++C681                              endmodule
   29++C681
 # file closed: Source/Action/UnknownC66D.asm
- 724+ C681                              ent
- 725+ 6681                              assert $ == #6681
- 726+ 6681                              disp #C681
- 727+ C681                              include "../Action/UnknownC681.asm"
+ 754+ C681                              ent
+ 755+ 6681                              assert $ == #6681
+ 756+ 6681                              disp #C681
+ 757+ C681                              include "../Action/UnknownC681.asm"
 # file opened: Source/Action/UnknownC681.asm
    1++C681                              module Action
    2++C681                              module UnknownC681
@@ -100443,10 +100675,10 @@
   28++C695                              endmodule
   29++C695
 # file closed: Source/Action/UnknownC681.asm
- 728+ C695                              ent
- 729+ 6695                              assert $ == #6695
- 730+ 6695                              disp #C695
- 731+ C695                              include "../Action/UnknownC695.asm"
+ 758+ C695                              ent
+ 759+ 6695                              assert $ == #6695
+ 760+ 6695                              disp #C695
+ 761+ C695                              include "../Action/UnknownC695.asm"
 # file opened: Source/Action/UnknownC695.asm
    1++C695                              module Action
    2++C695                              module UnknownC695
@@ -100478,10 +100710,10 @@
   28++C6A9                              endmodule
   29++C6A9
 # file closed: Source/Action/UnknownC695.asm
- 732+ C6A9                              ent
- 733+ 66A9                              assert $ == #66A9
- 734+ 66A9                              disp #C6A9
- 735+ C6A9                              include "../Action/UnknownC6A9.asm"
+ 762+ C6A9                              ent
+ 763+ 66A9                              assert $ == #66A9
+ 764+ 66A9                              disp #C6A9
+ 765+ C6A9                              include "../Action/UnknownC6A9.asm"
 # file opened: Source/Action/UnknownC6A9.asm
    1++C6A9                              module Action
    2++C6A9                              module UnknownC6A9
@@ -100513,10 +100745,10 @@
   28++C6BD                              endmodule
   29++C6BD
 # file closed: Source/Action/UnknownC6A9.asm
- 736+ C6BD                              ent
- 737+ 66BD                              assert $ == #66BD
- 738+ 66BD                              disp #C6BD
- 739+ C6BD                              include "../Action/UnknownC6BD.asm"
+ 766+ C6BD                              ent
+ 767+ 66BD                              assert $ == #66BD
+ 768+ 66BD                              disp #C6BD
+ 769+ C6BD                              include "../Action/UnknownC6BD.asm"
 # file opened: Source/Action/UnknownC6BD.asm
    1++C6BD                              module Action
    2++C6BD                              module UnknownC6BD
@@ -100545,10 +100777,10 @@
   25++C6C8                              endmodule
   26++C6C8
 # file closed: Source/Action/UnknownC6BD.asm
- 740+ C6C8                              ent
- 741+ 66C8                              assert $ == #66C8
- 742+ 66C8                              disp #C6C8
- 743+ C6C8                              include "../Action/UnknownC6C8.asm"
+ 770+ C6C8                              ent
+ 771+ 66C8                              assert $ == #66C8
+ 772+ 66C8                              disp #C6C8
+ 773+ C6C8                              include "../Action/UnknownC6C8.asm"
 # file opened: Source/Action/UnknownC6C8.asm
    1++C6C8                              module Action
    2++C6C8                              module UnknownC6C8
@@ -100577,10 +100809,10 @@
   25++C6D3                              endmodule
   26++C6D3
 # file closed: Source/Action/UnknownC6C8.asm
- 744+ C6D3                              ent
- 745+ 66D3                              assert $ == #66D3
- 746+ 66D3                              disp #C6D3
- 747+ C6D3                              include "../Action/EdgeCase00.asm"
+ 774+ C6D3                              ent
+ 775+ 66D3                              assert $ == #66D3
+ 776+ 66D3                              disp #C6D3
+ 777+ C6D3                              include "../Action/EdgeCase00.asm"
 # file opened: Source/Action/EdgeCase00.asm
    1++C6D3                              module Action
    2++C6D3                              module EdgeCase00
@@ -100618,10 +100850,10 @@
   34++C6EA                              endmodule
   35++C6EA
 # file closed: Source/Action/EdgeCase00.asm
- 748+ C6EA                              ent
- 749+ 66EA                              assert $ == #66EA
- 750+ 66EA                              disp #C6EA
- 751+ C6EA                              include "../Action/EdgeCase59.asm"
+ 778+ C6EA                              ent
+ 779+ 66EA                              assert $ == #66EA
+ 780+ 66EA                              disp #C6EA
+ 781+ C6EA                              include "../Action/EdgeCase59.asm"
 # file opened: Source/Action/EdgeCase59.asm
    1++C6EA                              module Action
    2++C6EA                              module EdgeCase59
@@ -100654,10 +100886,10 @@
   29++C6F4                              endmodule
   30++C6F4
 # file closed: Source/Action/EdgeCase59.asm
- 752+ C6F4                              ent
- 753+ 66F4                              assert $ == #66F4
- 754+ 66F4                              disp #C6F4
- 755+ C6F4                              include "../Action/UnknownC6F4.asm"
+ 782+ C6F4                              ent
+ 783+ 66F4                              assert $ == #66F4
+ 784+ 66F4                              disp #C6F4
+ 785+ C6F4                              include "../Action/UnknownC6F4.asm"
 # file opened: Source/Action/UnknownC6F4.asm
    1++C6F4                              module Action
    2++C6F4                              module UnknownC6F4
@@ -101047,10 +101279,10 @@
  386++C88C                              endmodule
  387++C88C
 # file closed: Source/Action/UnknownC6F4.asm
- 756+ C88C                              ent
- 757+ 688C                              assert $ == #688C
- 758+ 688C                              disp #C88C
- 759+ C88C                              include "../Action/UnknownC88C.asm"
+ 786+ C88C                              ent
+ 787+ 688C                              assert $ == #688C
+ 788+ 688C                              disp #C88C
+ 789+ C88C                              include "../Action/UnknownC88C.asm"
 # file opened: Source/Action/UnknownC88C.asm
    1++C88C                              module Action
    2++C88C                              module UnknownC88C
@@ -102226,13 +102458,13 @@
 1172++CEE3                              endmodule
 1173++CEE3
 # file closed: Source/Action/UnknownC88C.asm
- 760+ CEE3                              ent
- 761+ 6EE3                              assert $ == #6EE3
- 762+ 6EE3                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
- 763+ 6EE3                              incbin "../Resources/17_ACTION/Unclassified026.bin"
- 764+ 6F08                              assert $ == #6F08
- 765+ 6F08                              disp #CF08
- 766+ CF08                              include "../Action/UnknownCF08.asm"
+ 790+ CEE3                              ent
+ 791+ 6EE3                              assert $ == #6EE3
+ 792+ 6EE3                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
+ 793+ 6EE3                              incbin "../Resources/17_ACTION/Unclassified026.bin"
+ 794+ 6F08                              assert $ == #6F08
+ 795+ 6F08                              disp #CF08
+ 796+ CF08                              include "../Action/UnknownCF08.asm"
 # file opened: Source/Action/UnknownCF08.asm
    1++CF08                              module Action
    2++CF08                              module UnknownCF08
@@ -102259,13 +102491,13 @@
   23++CF0B                              endmodule
   24++CF0B
 # file closed: Source/Action/UnknownCF08.asm
- 767+ CF0B                              ent
- 768+ 6F0B                              assert $ == #6F0B
- 769+ 6F0B                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
- 770+ 6F0B                              incbin "../Resources/17_ACTION/Unclassified027.bin"
- 771+ 710A                              assert $ == #710A
- 772+ 710A                              disp #D10A
- 773+ D10A                              include "../Action/ClearWorkBuffer.asm"
+ 797+ CF0B                              ent
+ 798+ 6F0B                              assert $ == #6F0B
+ 799+ 6F0B                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
+ 800+ 6F0B                              incbin "../Resources/17_ACTION/Unclassified027.bin"
+ 801+ 710A                              assert $ == #710A
+ 802+ 710A                              disp #D10A
+ 803+ D10A                              include "../Action/ClearWorkBuffer.asm"
 # file opened: Source/Action/ClearWorkBuffer.asm
    1++D10A                              module Action
    2++D10A                              module ClearWorkBuffer
@@ -102313,10 +102545,10 @@
   44++D12C                              endmodule
   45++D12C
 # file closed: Source/Action/ClearWorkBuffer.asm
- 774+ D12C                              ent
- 775+ 712C                              assert $ == #712C
- 776+ 712C                              disp #D12C
- 777+ D12C                              include "../Action/MultiplySignedScaled.asm"
+ 804+ D12C                              ent
+ 805+ 712C                              assert $ == #712C
+ 806+ 712C                              disp #D12C
+ 807+ D12C                              include "../Action/MultiplySignedScaled.asm"
 # file opened: Source/Action/MultiplySignedScaled.asm
    1++D12C                              module Action
    2++D12C                              module MultiplySignedScaled
@@ -102451,13 +102683,13 @@
  131++D194                              endmodule
  132++D194
 # file closed: Source/Action/MultiplySignedScaled.asm
- 778+ D194                              ent
- 779+ 7194                              assert $ == #7194
- 780+ 7194                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
- 781+ 7194                              incbin "../Resources/17_ACTION/Unclassified028.bin"
- 782+ 8020                              assert $ == #8020
- 783+ 8020                              disp #E020
- 784+ E020                              include "../Action/UnknownE020.asm"
+ 808+ D194                              ent
+ 809+ 7194                              assert $ == #7194
+ 810+ 7194                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
+ 811+ 7194                              incbin "../Resources/17_ACTION/Unclassified028.bin"
+ 812+ 8020                              assert $ == #8020
+ 813+ 8020                              disp #E020
+ 814+ E020                              include "../Action/UnknownE020.asm"
 # file opened: Source/Action/UnknownE020.asm
    1++E020                              module Action
    2++E020                              module UnknownE020
@@ -102757,13 +102989,13 @@
  296++E1B9                              endmodule
  297++E1B9
 # file closed: Source/Action/UnknownE020.asm
- 785+ E1B9                              ent
- 786+ 81B9                              assert $ == #81B9
- 787+ 81B9                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
- 788+ 81B9                              incbin "../Resources/17_ACTION/Unclassified029.bin"
- 789+ 84A6                              assert $ == #84A6
- 790+ 84A6                              disp #E4A6
- 791+ E4A6                              include "../Action/UnknownE4A6.asm"
+ 815+ E1B9                              ent
+ 816+ 81B9                              assert $ == #81B9
+ 817+ 81B9                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
+ 818+ 81B9                              incbin "../Resources/17_ACTION/Unclassified029.bin"
+ 819+ 84A6                              assert $ == #84A6
+ 820+ 84A6                              disp #E4A6
+ 821+ E4A6                              include "../Action/UnknownE4A6.asm"
 # file opened: Source/Action/UnknownE4A6.asm
    1++E4A6                              module Action
    2++E4A6                              module UnknownE4A6
@@ -102812,13 +103044,13 @@
   45++E4DB                              endmodule
   46++E4DB
 # file closed: Source/Action/UnknownE4A6.asm
- 792+ E4DB                              ent
- 793+ 84DB                              assert $ == #84DB
- 794+ 84DB                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
- 795+ 84DB                              incbin "../Resources/17_ACTION/Unclassified030.bin"
- 796+ 84FF                              assert $ == #84FF
- 797+ 84FF                              disp #E4FF
- 798+ E4FF                              include "../Action/UnknownE4FF.asm"
+ 822+ E4DB                              ent
+ 823+ 84DB                              assert $ == #84DB
+ 824+ 84DB                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
+ 825+ 84DB                              incbin "../Resources/17_ACTION/Unclassified030.bin"
+ 826+ 84FF                              assert $ == #84FF
+ 827+ 84FF                              disp #E4FF
+ 828+ E4FF                              include "../Action/UnknownE4FF.asm"
 # file opened: Source/Action/UnknownE4FF.asm
    1++E4FF                              module Action
    2++E4FF                              module UnknownE4FF
@@ -102847,13 +103079,13 @@
   25++E506                              endmodule
   26++E506
 # file closed: Source/Action/UnknownE4FF.asm
- 799+ E506                              ent
- 800+ 8506                              assert $ == #8506
- 801+ 8506                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
- 802+ 8506                              incbin "../Resources/17_ACTION/Unclassified031.bin"
- 803+ 855C                              assert $ == #855C
- 804+ 855C                              disp #E55C
- 805+ E55C                              include "../Action/UnknownE55C.asm"
+ 829+ E506                              ent
+ 830+ 8506                              assert $ == #8506
+ 831+ 8506                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
+ 832+ 8506                              incbin "../Resources/17_ACTION/Unclassified031.bin"
+ 833+ 855C                              assert $ == #855C
+ 834+ 855C                              disp #E55C
+ 835+ E55C                              include "../Action/UnknownE55C.asm"
 # file opened: Source/Action/UnknownE55C.asm
    1++E55C                              module Action
    2++E55C                              module UnknownE55C
@@ -102905,13 +103137,13 @@
   48++E59F                              endmodule
   49++E59F
 # file closed: Source/Action/UnknownE55C.asm
- 806+ E59F                              ent
- 807+ 859F                              assert $ == #859F
- 808+ 859F                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
- 809+ 859F                              incbin "../Resources/17_ACTION/Unclassified032.bin"
- 810+ 85A0                              assert $ == #85A0
- 811+ 85A0                              disp #E5A0
- 812+ E5A0                              include "../Action/UnknownE5A0.asm"
+ 836+ E59F                              ent
+ 837+ 859F                              assert $ == #859F
+ 838+ 859F                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
+ 839+ 859F                              incbin "../Resources/17_ACTION/Unclassified032.bin"
+ 840+ 85A0                              assert $ == #85A0
+ 841+ 85A0                              disp #E5A0
+ 842+ E5A0                              include "../Action/UnknownE5A0.asm"
 # file opened: Source/Action/UnknownE5A0.asm
    1++E5A0                              module Action
    2++E5A0                              module UnknownE5A0
@@ -103074,13 +103306,13 @@
  159++E655                              endmodule
  160++E655
 # file closed: Source/Action/UnknownE5A0.asm
- 813+ E655                              ent
- 814+ 8655                              assert $ == #8655
- 815+ 8655                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
- 816+ 8655                              incbin "../Resources/17_ACTION/Unclassified033.bin"
- 817+ 8658                              assert $ == #8658
- 818+ 8658                              disp #E658
- 819+ E658                              include "../Action/UnknownE658.asm"
+ 843+ E655                              ent
+ 844+ 8655                              assert $ == #8655
+ 845+ 8655                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
+ 846+ 8655                              incbin "../Resources/17_ACTION/Unclassified033.bin"
+ 847+ 8658                              assert $ == #8658
+ 848+ 8658                              disp #E658
+ 849+ E658                              include "../Action/UnknownE658.asm"
 # file opened: Source/Action/UnknownE658.asm
    1++E658                              module Action
    2++E658                              module UnknownE658
@@ -103104,13 +103336,13 @@
   20++E65F                              endmodule
   21++E65F
 # file closed: Source/Action/UnknownE658.asm
- 820+ E65F                              ent
- 821+ 865F                              assert $ == #865F
- 822+ 865F                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
- 823+ 865F                              incbin "../Resources/17_ACTION/Unclassified034.bin"
- 824+ 8685                              assert $ == #8685
- 825+ 8685                              disp #E685
- 826+ E685                              include "../Action/UnknownE685.asm"
+ 850+ E65F                              ent
+ 851+ 865F                              assert $ == #865F
+ 852+ 865F                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
+ 853+ 865F                              incbin "../Resources/17_ACTION/Unclassified034.bin"
+ 854+ 8685                              assert $ == #8685
+ 855+ 8685                              disp #E685
+ 856+ E685                              include "../Action/UnknownE685.asm"
 # file opened: Source/Action/UnknownE685.asm
    1++E685                              module Action
    2++E685                              module UnknownE685
@@ -103145,13 +103377,13 @@
   31++E69E                              endmodule
   32++E69E
 # file closed: Source/Action/UnknownE685.asm
- 827+ E69E                              ent
- 828+ 869E                              assert $ == #869E
- 829+ 869E                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
- 830+ 869E                              incbin "../Resources/17_ACTION/Unclassified035.bin"
- 831+ 86BE                              assert $ == #86BE
- 832+ 86BE                              disp #E6BE
- 833+ E6BE                              include "../Action/UnknownE6BE.asm"
+ 857+ E69E                              ent
+ 858+ 869E                              assert $ == #869E
+ 859+ 869E                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
+ 860+ 869E                              incbin "../Resources/17_ACTION/Unclassified035.bin"
+ 861+ 86BE                              assert $ == #86BE
+ 862+ 86BE                              disp #E6BE
+ 863+ E6BE                              include "../Action/UnknownE6BE.asm"
 # file opened: Source/Action/UnknownE6BE.asm
    1++E6BE                              module Action
    2++E6BE                              module UnknownE6BE
@@ -103177,13 +103409,13 @@
   22++E6C5                              endmodule
   23++E6C5
 # file closed: Source/Action/UnknownE6BE.asm
- 834+ E6C5                              ent
- 835+ 86C5                              assert $ == #86C5
- 836+ 86C5                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
- 837+ 86C5                              incbin "../Resources/17_ACTION/Unclassified036.bin"
- 838+ 86C7                              assert $ == #86C7
- 839+ 86C7                              disp #E6C7
- 840+ E6C7                              include "../Action/UnknownE6C7.asm"
+ 864+ E6C5                              ent
+ 865+ 86C5                              assert $ == #86C5
+ 866+ 86C5                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
+ 867+ 86C5                              incbin "../Resources/17_ACTION/Unclassified036.bin"
+ 868+ 86C7                              assert $ == #86C7
+ 869+ 86C7                              disp #E6C7
+ 870+ E6C7                              include "../Action/UnknownE6C7.asm"
 # file opened: Source/Action/UnknownE6C7.asm
    1++E6C7                              module Action
    2++E6C7                              module UnknownE6C7
@@ -103214,10 +103446,10 @@
   27++E6D1                              endmodule
   28++E6D1
 # file closed: Source/Action/UnknownE6C7.asm
- 841+ E6D1                              ent
- 842+ 86D1                              assert $ == #86D1
- 843+ 86D1                              disp #E6D1
- 844+ E6D1                              include "../Action/UnknownE6D1.asm"
+ 871+ E6D1                              ent
+ 872+ 86D1                              assert $ == #86D1
+ 873+ 86D1                              disp #E6D1
+ 874+ E6D1                              include "../Action/UnknownE6D1.asm"
 # file opened: Source/Action/UnknownE6D1.asm
    1++E6D1                              module Action
    2++E6D1                              module UnknownE6D1
@@ -103252,13 +103484,13 @@
   31++E6E2                              endmodule
   32++E6E2
 # file closed: Source/Action/UnknownE6D1.asm
- 845+ E6E2                              ent
- 846+ 86E2                              assert $ == #86E2
- 847+ 86E2                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
- 848+ 86E2                              incbin "../Resources/17_ACTION/Unclassified037.bin"
- 849+ 898D                              assert $ == #898D
- 850+ 898D                              disp #E98D
- 851+ E98D                              include "../Action/UnknownE98D.asm"
+ 875+ E6E2                              ent
+ 876+ 86E2                              assert $ == #86E2
+ 877+ 86E2                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
+ 878+ 86E2                              incbin "../Resources/17_ACTION/Unclassified037.bin"
+ 879+ 898D                              assert $ == #898D
+ 880+ 898D                              disp #E98D
+ 881+ E98D                              include "../Action/UnknownE98D.asm"
 # file opened: Source/Action/UnknownE98D.asm
    1++E98D                              module Action
    2++E98D                              module UnknownE98D
@@ -103294,10 +103526,10 @@
   32++E9A1                              endmodule
   33++E9A1
 # file closed: Source/Action/UnknownE98D.asm
- 852+ E9A1                              ent
- 853+ 89A1                              assert $ == #89A1
- 854+ 89A1                              disp #E9A1
- 855+ E9A1                              include "../Action/UnknownE9A1.asm"
+ 882+ E9A1                              ent
+ 883+ 89A1                              assert $ == #89A1
+ 884+ 89A1                              disp #E9A1
+ 885+ E9A1                              include "../Action/UnknownE9A1.asm"
 # file opened: Source/Action/UnknownE9A1.asm
    1++E9A1                              module Action
    2++E9A1                              module UnknownE9A1
@@ -103340,13 +103572,13 @@
   39++E9C2                              endmodule
   40++E9C2
 # file closed: Source/Action/UnknownE9A1.asm
- 856+ E9C2                              ent
- 857+ 89C2                              assert $ == #89C2
- 858+ 89C2                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
- 859+ 89C2                              incbin "../Resources/17_ACTION/Unclassified038.bin"
- 860+ 8A29                              assert $ == #8A29
- 861+ 8A29                              disp #EA29
- 862+ EA29                              include "../Action/UnknownEA29.asm"
+ 886+ E9C2                              ent
+ 887+ 89C2                              assert $ == #89C2
+ 888+ 89C2                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
+ 889+ 89C2                              incbin "../Resources/17_ACTION/Unclassified038.bin"
+ 890+ 8A29                              assert $ == #8A29
+ 891+ 8A29                              disp #EA29
+ 892+ EA29                              include "../Action/UnknownEA29.asm"
 # file opened: Source/Action/UnknownEA29.asm
    1++EA29                              module Action
    2++EA29                              module UnknownEA29
@@ -103378,13 +103610,13 @@
   28++EA3D                              endmodule
   29++EA3D
 # file closed: Source/Action/UnknownEA29.asm
- 863+ EA3D                              ent
- 864+ 8A3D                              assert $ == #8A3D
- 865+ 8A3D                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
- 866+ 8A3D                              incbin "../Resources/17_ACTION/Unclassified039.bin"
- 867+ 8B72                              assert $ == #8B72
- 868+ 8B72                              disp #EB72
- 869+ EB72                              include "../Action/UnknownEB72.asm"
+ 893+ EA3D                              ent
+ 894+ 8A3D                              assert $ == #8A3D
+ 895+ 8A3D                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
+ 896+ 8A3D                              incbin "../Resources/17_ACTION/Unclassified039.bin"
+ 897+ 8B72                              assert $ == #8B72
+ 898+ 8B72                              disp #EB72
+ 899+ EB72                              include "../Action/UnknownEB72.asm"
 # file opened: Source/Action/UnknownEB72.asm
    1++EB72                              module Action
    2++EB72                              module UnknownEB72
@@ -103411,13 +103643,13 @@
   23++EB79                              endmodule
   24++EB79
 # file closed: Source/Action/UnknownEB72.asm
- 870+ EB79                              ent
- 871+ 8B79                              assert $ == #8B79
- 872+ 8B79                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
- 873+ 8B79                              incbin "../Resources/17_ACTION/Unclassified040.bin"
- 874+ 8B87                              assert $ == #8B87
- 875+ 8B87                              disp #EB87
- 876+ EB87                              include "../Action/UnknownEB87.asm"
+ 900+ EB79                              ent
+ 901+ 8B79                              assert $ == #8B79
+ 902+ 8B79                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
+ 903+ 8B79                              incbin "../Resources/17_ACTION/Unclassified040.bin"
+ 904+ 8B87                              assert $ == #8B87
+ 905+ 8B87                              disp #EB87
+ 906+ EB87                              include "../Action/UnknownEB87.asm"
 # file opened: Source/Action/UnknownEB87.asm
    1++EB87                              module Action
    2++EB87                              module UnknownEB87
@@ -103444,13 +103676,13 @@
   23++EB8E                              endmodule
   24++EB8E
 # file closed: Source/Action/UnknownEB87.asm
- 877+ EB8E                              ent
- 878+ 8B8E                              assert $ == #8B8E
- 879+ 8B8E                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
- 880+ 8B8E                              incbin "../Resources/17_ACTION/Unclassified041.bin"
- 881+ 8BB8                              assert $ == #8BB8
- 882+ 8BB8                              disp #EBB8
- 883+ EBB8                              include "../Action/UnknownEBB8.asm"
+ 907+ EB8E                              ent
+ 908+ 8B8E                              assert $ == #8B8E
+ 909+ 8B8E                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
+ 910+ 8B8E                              incbin "../Resources/17_ACTION/Unclassified041.bin"
+ 911+ 8BB8                              assert $ == #8BB8
+ 912+ 8BB8                              disp #EBB8
+ 913+ EBB8                              include "../Action/UnknownEBB8.asm"
 # file opened: Source/Action/UnknownEBB8.asm
    1++EBB8                              module Action
    2++EBB8                              module UnknownEBB8
@@ -103477,13 +103709,13 @@
   23++EBBF                              endmodule
   24++EBBF
 # file closed: Source/Action/UnknownEBB8.asm
- 884+ EBBF                              ent
- 885+ 8BBF                              assert $ == #8BBF
- 886+ 8BBF                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
- 887+ 8BBF                              incbin "../Resources/17_ACTION/Unclassified042.bin"
- 888+ 8C08                              assert $ == #8C08
- 889+ 8C08                              disp #EC08
- 890+ EC08                              include "../Action/UnknownEC08.asm"
+ 914+ EBBF                              ent
+ 915+ 8BBF                              assert $ == #8BBF
+ 916+ 8BBF                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
+ 917+ 8BBF                              incbin "../Resources/17_ACTION/Unclassified042.bin"
+ 918+ 8C08                              assert $ == #8C08
+ 919+ 8C08                              disp #EC08
+ 920+ EC08                              include "../Action/UnknownEC08.asm"
 # file opened: Source/Action/UnknownEC08.asm
    1++EC08                              module Action
    2++EC08                              module UnknownEC08
@@ -103568,13 +103800,13 @@
   81++EC54                              endmodule
   82++EC54
 # file closed: Source/Action/UnknownEC08.asm
- 891+ EC54                              ent
- 892+ 8C54                              assert $ == #8C54
- 893+ 8C54                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
- 894+ 8C54                              incbin "../Resources/17_ACTION/Unclassified043.bin"
- 895+ 8CA8                              assert $ == #8CA8
- 896+ 8CA8                              disp #ECA8
- 897+ ECA8                              include "../Action/UnknownECA8.asm"
+ 921+ EC54                              ent
+ 922+ 8C54                              assert $ == #8C54
+ 923+ 8C54                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
+ 924+ 8C54                              incbin "../Resources/17_ACTION/Unclassified043.bin"
+ 925+ 8CA8                              assert $ == #8CA8
+ 926+ 8CA8                              disp #ECA8
+ 927+ ECA8                              include "../Action/UnknownECA8.asm"
 # file opened: Source/Action/UnknownECA8.asm
    1++ECA8                              module Action
    2++ECA8                              module UnknownECA8
@@ -103731,13 +103963,13 @@
  153++ED8F                              endmodule
  154++ED8F
 # file closed: Source/Action/UnknownECA8.asm
- 898+ ED8F                              ent
- 899+ 8D8F                              assert $ == #8D8F
- 900+ 8D8F                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
- 901+ 8D8F                              incbin "../Resources/17_ACTION/Unclassified044.bin"
- 902+ 9075                              assert $ == #9075
- 903+ 9075                              disp #F075
- 904+ F075                              include "../Action/UnknownF075.asm"
+ 928+ ED8F                              ent
+ 929+ 8D8F                              assert $ == #8D8F
+ 930+ 8D8F                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
+ 931+ 8D8F                              incbin "../Resources/17_ACTION/Unclassified044.bin"
+ 932+ 9075                              assert $ == #9075
+ 933+ 9075                              disp #F075
+ 934+ F075                              include "../Action/UnknownF075.asm"
 # file opened: Source/Action/UnknownF075.asm
    1++F075                              module Action
    2++F075                              module UnknownF075
@@ -103763,13 +103995,13 @@
   22++F07C                              endmodule
   23++F07C
 # file closed: Source/Action/UnknownF075.asm
- 905+ F07C                              ent
- 906+ 907C                              assert $ == #907C
- 907+ 907C                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
- 908+ 907C                              incbin "../Resources/17_ACTION/Unclassified045.bin"
- 909+ 9394                              assert $ == #9394
- 910+ 9394                              disp #F394
- 911+ F394                              include "../Action/UnknownF394.asm"
+ 935+ F07C                              ent
+ 936+ 907C                              assert $ == #907C
+ 937+ 907C                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
+ 938+ 907C                              incbin "../Resources/17_ACTION/Unclassified045.bin"
+ 939+ 9394                              assert $ == #9394
+ 940+ 9394                              disp #F394
+ 941+ F394                              include "../Action/UnknownF394.asm"
 # file opened: Source/Action/UnknownF394.asm
    1++F394                              module Action
    2++F394                              module UnknownF394
@@ -103797,13 +104029,13 @@
   24++F3A1                              endmodule
   25++F3A1
 # file closed: Source/Action/UnknownF394.asm
- 912+ F3A1                              ent
- 913+ 93A1                              assert $ == #93A1
- 914+ 93A1                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
- 915+ 93A1                              incbin "../Resources/17_ACTION/Unclassified046.bin"
- 916+ 951E                              assert $ == #951E
- 917+ 951E                              disp #F51E
- 918+ F51E                              include "../Action/UnknownF51E.asm"
+ 942+ F3A1                              ent
+ 943+ 93A1                              assert $ == #93A1
+ 944+ 93A1                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
+ 945+ 93A1                              incbin "../Resources/17_ACTION/Unclassified046.bin"
+ 946+ 951E                              assert $ == #951E
+ 947+ 951E                              disp #F51E
+ 948+ F51E                              include "../Action/UnknownF51E.asm"
 # file opened: Source/Action/UnknownF51E.asm
    1++F51E                              module Action
    2++F51E                              module UnknownF51E
@@ -103831,13 +104063,13 @@
   24++F527                              endmodule
   25++F527
 # file closed: Source/Action/UnknownF51E.asm
- 919+ F527                              ent
- 920+ 9527                              assert $ == #9527
- 921+ 9527                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
- 922+ 9527                              incbin "../Resources/17_ACTION/Unclassified047.bin"
- 923+ 9535                              assert $ == #9535
- 924+ 9535                              disp #F535
- 925+ F535                              include "../Action/UnknownF535.asm"
+ 949+ F527                              ent
+ 950+ 9527                              assert $ == #9527
+ 951+ 9527                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
+ 952+ 9527                              incbin "../Resources/17_ACTION/Unclassified047.bin"
+ 953+ 9535                              assert $ == #9535
+ 954+ 9535                              disp #F535
+ 955+ F535                              include "../Action/UnknownF535.asm"
 # file opened: Source/Action/UnknownF535.asm
    1++F535                              module Action
    2++F535                              module UnknownF535
@@ -103865,13 +104097,13 @@
   24++F53F                              endmodule
   25++F53F
 # file closed: Source/Action/UnknownF535.asm
- 926+ F53F                              ent
- 927+ 953F                              assert $ == #953F
- 928+ 953F                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
- 929+ 953F                              incbin "../Resources/17_ACTION/Unclassified048.bin"
- 930+ 9541                              assert $ == #9541
- 931+ 9541                              disp #F541
- 932+ F541                              include "../Action/UnknownF541.asm"
+ 956+ F53F                              ent
+ 957+ 953F                              assert $ == #953F
+ 958+ 953F                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
+ 959+ 953F                              incbin "../Resources/17_ACTION/Unclassified048.bin"
+ 960+ 9541                              assert $ == #9541
+ 961+ 9541                              disp #F541
+ 962+ F541                              include "../Action/UnknownF541.asm"
 # file opened: Source/Action/UnknownF541.asm
    1++F541                              module Action
    2++F541                              module UnknownF541
@@ -103899,13 +104131,13 @@
   24++F54B                              endmodule
   25++F54B
 # file closed: Source/Action/UnknownF541.asm
- 933+ F54B                              ent
- 934+ 954B                              assert $ == #954B
- 935+ 954B                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
- 936+ 954B                              incbin "../Resources/17_ACTION/Unclassified049.bin"
- 937+ 954D                              assert $ == #954D
- 938+ 954D                              disp #F54D
- 939+ F54D                              include "../Action/UnknownF54D.asm"
+ 963+ F54B                              ent
+ 964+ 954B                              assert $ == #954B
+ 965+ 954B                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
+ 966+ 954B                              incbin "../Resources/17_ACTION/Unclassified049.bin"
+ 967+ 954D                              assert $ == #954D
+ 968+ 954D                              disp #F54D
+ 969+ F54D                              include "../Action/UnknownF54D.asm"
 # file opened: Source/Action/UnknownF54D.asm
    1++F54D                              module Action
    2++F54D                              module UnknownF54D
@@ -103933,13 +104165,13 @@
   24++F557                              endmodule
   25++F557
 # file closed: Source/Action/UnknownF54D.asm
- 940+ F557                              ent
- 941+ 9557                              assert $ == #9557
- 942+ 9557                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
- 943+ 9557                              incbin "../Resources/17_ACTION/Unclassified050.bin"
- 944+ 9572                              assert $ == #9572
- 945+ 9572                              disp #F572
- 946+ F572                              include "../Action/UnknownF572.asm"
+ 970+ F557                              ent
+ 971+ 9557                              assert $ == #9557
+ 972+ 9557                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
+ 973+ 9557                              incbin "../Resources/17_ACTION/Unclassified050.bin"
+ 974+ 9572                              assert $ == #9572
+ 975+ 9572                              disp #F572
+ 976+ F572                              include "../Action/UnknownF572.asm"
 # file opened: Source/Action/UnknownF572.asm
    1++F572                              module Action
    2++F572                              module UnknownF572
@@ -103968,13 +104200,13 @@
   25++F57F                              endmodule
   26++F57F
 # file closed: Source/Action/UnknownF572.asm
- 947+ F57F                              ent
- 948+ 957F                              assert $ == #957F
- 949+ 957F                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
- 950+ 957F                              incbin "../Resources/17_ACTION/Unclassified051.bin"
- 951+ 9729                              assert $ == #9729
- 952+ 9729                              disp #F729
- 953+ F729                              include "../Action/UpdateObjects.asm"
+ 977+ F57F                              ent
+ 978+ 957F                              assert $ == #957F
+ 979+ 957F                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
+ 980+ 957F                              incbin "../Resources/17_ACTION/Unclassified051.bin"
+ 981+ 9729                              assert $ == #9729
+ 982+ 9729                              disp #F729
+ 983+ F729                              include "../Action/UpdateObjects.asm"
 # file opened: Source/Action/UpdateObjects.asm
    1++F729                              module Action
    2++F729                              module UpdateObjects
@@ -104043,13 +104275,13 @@
   65++F775                              endmodule
   66++F775
 # file closed: Source/Action/UpdateObjects.asm
- 954+ F775                              ent
- 955+ 9775                              assert $ == #9775
- 956+ 9775                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
- 957+ 9775                              incbin "../Resources/17_ACTION/Unclassified052.bin"
- 958+ 9792                              assert $ == #9792
- 959+ 9792                              disp #F792
- 960+ F792                              include "../Action/UnknownF792.asm"
+ 984+ F775                              ent
+ 985+ 9775                              assert $ == #9775
+ 986+ 9775                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
+ 987+ 9775                              incbin "../Resources/17_ACTION/Unclassified052.bin"
+ 988+ 9792                              assert $ == #9792
+ 989+ 9792                              disp #F792
+ 990+ F792                              include "../Action/UnknownF792.asm"
 # file opened: Source/Action/UnknownF792.asm
    1++F792                              module Action
    2++F792                              module UnknownF792
@@ -104101,13 +104333,13 @@
   48++F7BF                              endmodule
   49++F7BF
 # file closed: Source/Action/UnknownF792.asm
- 961+ F7BF                              ent
- 962+ 97BF                              assert $ == #97BF
- 963+ 97BF                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
- 964+ 97BF                              incbin "../Resources/17_ACTION/Unclassified053.bin"
- 965+ 97C6                              assert $ == #97C6
- 966+ 97C6                              disp #F7C6
- 967+ F7C6                              include "../Action/UnknownF7C6.asm"
+ 991+ F7BF                              ent
+ 992+ 97BF                              assert $ == #97BF
+ 993+ 97BF                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
+ 994+ 97BF                              incbin "../Resources/17_ACTION/Unclassified053.bin"
+ 995+ 97C6                              assert $ == #97C6
+ 996+ 97C6                              disp #F7C6
+ 997+ F7C6                              include "../Action/UnknownF7C6.asm"
 # file opened: Source/Action/UnknownF7C6.asm
    1++F7C6                              module Action
    2++F7C6                              module UnknownF7C6
@@ -104239,12 +104471,12 @@
  128++F866                              endmodule
  129++F866
 # file closed: Source/Action/UnknownF7C6.asm
- 968+ F866                              ent
- 969+ 9866                              assert $ == #9866
- 970+ 9866                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
- 971+ 9866                              incbin "../Resources/17_ACTION/Unclassified054.bin"
- 972+ A000                              assert $ == #A000
- 973+ A000
+ 998+ F866                              ent
+ 999+ 9866                              assert $ == #9866
+1000+ 9866                              ; Unknown, исходные байты вне подтверждённого прямого потока управления
+1001+ 9866                              incbin "../Resources/17_ACTION/Unclassified054.bin"
+1002+ A000                              assert $ == #A000
+1003+ A000
 # file closed: Source/Files/17_ACTION.inc
  102  A000                              assert $ == #A000
  103  A000                              SAVETRD "Awakenv02.trd", "S17.C", 0, 40960

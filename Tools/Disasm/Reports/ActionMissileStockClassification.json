@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "typed_bytes": 2,
+  "physical_records": 1,
+  "confirmed_code_bytes": 9,
+  "confirmed_instructions": 7,
+  "described_functions": 1,
+  "independent_model_cases": 65536,
+  "physical_bytes_preserved": true,
+  "subtype_meaning_of_two_counters_proved": false,
+  "caller_handlers_proved": false,
+  "assembly_executed": false
+}

@@ -238,7 +238,25 @@
                 ent
                 assert $ == #1289
                 ; Unknown, остальные обработчики ещё не разобраны
-                incbin "../Resources/17_ACTION/Unclassified017_AfterIgnoreKey.bin"
+                incbin "../Resources/17_ACTION/Unclassified017_BeforeMissileChecks.bin"
+                assert $ == #12D8
+                disp #709B
+                include "../Action/ReportMissingMissileTarget.asm"
+                ent
+                assert $ == #12E1
+                disp #70A4
+                include "../Action/CheckMissileLaunch.asm"
+                ent
+                assert $ == #1303
+                ; Unknown, хвост пуска ещё не разобран
+                incbin "../Resources/17_ACTION/Unclassified017_AfterMissileChecks.bin"
+                assert $ == #132A
+                disp #70ED
+                include "../Action/SelectMissileStock.asm"
+                ent
+                assert $ == #1333
+                ; Unknown, остальные обработчики ещё не разобраны
+                incbin "../Resources/17_ACTION/Unclassified017_AfterMissileStock.bin"
                 assert $ == #1738
                 disp #74FB
                 include "../Action/SelectPreferredByte.asm"
@@ -289,7 +307,14 @@
                 ent
                 assert $ == #3B19
                 ; Unknown, исходные байты после состояния генератора
-                incbin "../Resources/17_ACTION/Unclassified020_BeforeGlyphIndicators.bin"
+                incbin "../Resources/17_ACTION/Unclassified020_BeforeMissileTargets.bin"
+                assert $ == #3B1B
+                disp #9B1B
+                include "../Action/Data/MissileTargets.asm"
+                ent
+                assert $ == #3B1E
+                ; Unknown, соседние данные ещё не разобраны
+                incbin "../Resources/17_ACTION/Unclassified020_AfterMissileTargets.bin"
                 assert $ == #3B81
                 disp #9B81
                 include "../Action/Data/GlyphIndicatorState.asm"
@@ -303,7 +328,12 @@
                 ent
                 assert $ == #3C12
                 ; Unknown, соседний ресурс ещё не разобран
-                incbin "../Resources/17_ACTION/Unclassified020_BeforeKeyInputs.bin"
+                disp #9C12
+                include "../Action/Data/MissileStock.asm"
+                ent
+                assert $ == #3C14
+                ; Unknown, соседние данные ещё не разобраны
+                incbin "../Resources/17_ACTION/Unclassified020_AfterMissileStock.bin"
                 assert $ == #3D4C
                 disp #9D4C
                 include "../Action/Data/KeyScanInputs.asm"
