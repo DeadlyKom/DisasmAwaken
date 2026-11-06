@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "total_cases": 51984,
+  "outcomes": {
+    "rejected": 41084,
+    "clipped": 10900
+  },
+  "stopped_before_resource_steps": true,
+  "assembly_executed": false,
+  "native_execution": false
+}

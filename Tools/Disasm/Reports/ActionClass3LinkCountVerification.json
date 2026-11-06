@@ -1,0 +1,42 @@
+{
+  "passed": true,
+  "total_cases": 202350,
+  "cases_by_kind": {
+    "all_class_and_state_codes": 65536,
+    "all_link_target_pairs": 65536,
+    "all_header_pairs": 65536,
+    "marker_positions": 81,
+    "one_match_positions": 78,
+    "two_match_positions": 975,
+    "initial_C_without_active_rows": 512,
+    "mixed_lists": 4096
+  },
+  "outcomes": {
+    "1_marker": 131881,
+    "2_two_matches": 69106,
+    "0_marker": 1363
+  },
+  "all_class_state_pairs": true,
+  "all_link_target_pairs": true,
+  "all_two_byte_header_pairs": true,
+  "all_initial_C_without_active_rows": true,
+  "two_match_positions_with_three_prefix_styles": true,
+  "exact_registers_including_R": true,
+  "all_physical_ram_bytes_proved": true,
+  "no_memory_or_stack_writes": true,
+  "marker_returns_byte0_pointer": true,
+  "two_matches_return_byte1_pointer": true,
+  "C_tracks_last_active_header_low": true,
+  "count_saturates_at_two": true,
+  "FF_link_is_compared_as_ordinary_byte": true,
+  "all_64_initial_paging_values_distributed": true,
+  "observed_m1_min": 15,
+  "observed_m1_max": 544,
+  "independent_list_predicate_oracle": true,
+  "full_list_product_exhausted": false,
+  "game_array_capacity_proved": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "timing_proved": false
+}

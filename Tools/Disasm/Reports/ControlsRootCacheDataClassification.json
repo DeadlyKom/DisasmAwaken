@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "typed_bytes": 768,
+  "physical_records": 768,
+  "planes": 3,
+  "records_per_plane": 256,
+  "original_upper_rows_preserved": 23,
+  "original_lower_exceptions_preserved": 3,
+  "physical_bytes_preserved": true,
+  "formula_used_to_generate_build_data": false,
+  "sha256": "cda43d7059793551e9f4459537cbf5fb4d45b0247aa7715ffcea58e2bca09a27",
+  "assembly_executed": false
+}

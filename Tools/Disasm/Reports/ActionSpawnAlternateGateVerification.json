@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "total_cases": 70361,
+  "outcomes": {
+    "79CC": 4103,
+    "3FFF": 66231,
+    "7859": 27
+  },
+  "ends_before_record_search": true,
+  "assembly_executed": false
+}

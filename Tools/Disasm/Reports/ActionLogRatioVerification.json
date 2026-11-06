@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "total_cases": 147681,
+  "paths": {
+    "log_underflow": 7192,
+    "overflow": 480,
+    "positive": 106699,
+    "negative": 33310
+  },
+  "method": "independent_normalized_table_formula_and_shift_oracle",
+  "exact_registers_flags_refresh_sp": true,
+  "every_ram_byte_and_write_checked": true,
+  "actual_tables_from_verified_integer_generator_formulas": true,
+  "all_numerator_words": true,
+  "all_denominator_words": true,
+  "original_zero_and_negative_denominator_behavior_preserved": true,
+  "self_modifying_shift_displacements_checked": true,
+  "maximum_additional_stack_bytes": 0,
+  "all_joint_inputs_exhausted": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "physical_records": 2,
+  "typed_bytes": 10,
+  "structure": "FRenderProjectedPoint",
+  "original_bytes_preserved": true,
+  "old_address_aliases_removed": true,
+  "assembly_executed": false
+}

@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "total_cases": 640,
+  "allocations": {
+    "0": 352,
+    "1": 96,
+    "3": 96,
+    "2": 48,
+    "5": 24,
+    "4": 24
+  },
+  "exact_write_order": true,
+  "refresh_samples_observed": true,
+  "synthetic_rom_sample_table": true,
+  "assembly_executed": false,
+  "native_execution": false
+}

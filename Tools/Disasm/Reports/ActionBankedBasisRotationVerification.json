@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "total_cases": 1024,
+  "basis_changed": 1023,
+  "exact_registers_and_physical_ram": true,
+  "direct_child_comparison": true,
+  "assembly_executed": false,
+  "native_execution": false
+}

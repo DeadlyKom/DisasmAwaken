@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "total_cases": 331776,
+  "cases_by_kind": {
+    "all_nibble_bytes_and_columns": 65536,
+    "all_pair_masks_and_bytes": 262144,
+    "mixed_counters": 4096
+  },
+  "exact_registers_including_R": true,
+  "all_nibble_bytes_and_columns": true,
+  "all_pair_masks_and_each_byte_each_position": true,
+  "non_BCD_tetrads_preserved": true,
+  "every_flat_RAM_byte_proved": true,
+  "write_multiplicity_proved": true,
+  "original_children_without_stubs": true,
+  "observed_m1_min": 97,
+  "observed_m1_max": 1032,
+  "complete_input_product_exhausted": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "timing_proved": false
+}

@@ -1,0 +1,54 @@
+{
+  "passed": true,
+  "total_cases": 131072,
+  "cases_by_entry": {
+    "B0E9": 65536,
+    "AD48": 65536
+  },
+  "all_input_words_each_entry": true,
+  "all_768_table_bytes_proved": true,
+  "ordinary_root_domain": [
+    0,
+    59647
+  ],
+  "different_upper_domain": [
+    59648,
+    65535
+  ],
+  "different_results_vs_isqrt": {
+    "B0E9": 5888,
+    "AD48": 5888
+  },
+  "upper_table_rows": 23,
+  "original_upper_table_behavior_preserved": true,
+  "original_lower_seed_exceptions": {
+    "9": 47,
+    "169": 207,
+    "225": 239
+  },
+  "domain_validity_in_game_callers_proved": false,
+  "exact_registers_including_R": true,
+  "observed_m1_costs": {
+    "B0E9": {
+      "min": 8,
+      "max": 80
+    },
+    "AD48": {
+      "min": 30,
+      "max": 102
+    }
+  },
+  "independent_numeric_oracle": true,
+  "all_physical_ram_bytes_proved": true,
+  "write_multiplicity_proved": true,
+  "hardware_bus_stack_write_order_proved": false,
+  "direct_entry_CPU_stack_written": false,
+  "wrapper_maximum_additional_stack_bytes": 6,
+  "real_paging_and_children_executed": true,
+  "paging_and_stack_profiles_distributed_across_words": true,
+  "full_word_paging_stack_product_exhausted": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false,
+  "timing_proved": false
+}

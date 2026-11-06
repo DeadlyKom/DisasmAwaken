@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "changed_files": [
+    "Source/Intro/PresentLookupTexture.asm",
+    "Tools/Disasm/Research/Contracts.py",
+    "Tools/Disasm/Research/SemanticNames.py",
+    "Tools/Disasm/Research/ExportSources.py",
+    "Docs/FunctionDetails/Intro.md",
+    "Includes/Const/Include.inc"
+  ],
+  "procedures": 1,
+  "original_instructions_and_bytes_preserved": true,
+  "model_cases": 3072,
+  "assembly_executed": false
+}

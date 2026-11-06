@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "typed_bytes": 256,
+  "physical_records": 256,
+  "structure": "FSignedRatioCode",
+  "original_sha256": "ba28ccb977abc96ca36b12e95e251b1804dc305fab713ae076d4f16602625497",
+  "original_bytes_preserved": true,
+  "neighbor_bytes_preserved": 18,
+  "observed_table_indices": 247,
+  "formula_used_to_generate_build_data": false,
+  "assembly_executed": false
+}

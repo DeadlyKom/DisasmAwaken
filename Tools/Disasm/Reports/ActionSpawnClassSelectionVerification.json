@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "total_cases": 65536,
+  "outcomes": {
+    "0": 3184,
+    "1": 13968,
+    "2": 3328,
+    "4": 2560,
+    "5": 1024,
+    "6": 1280,
+    "7": 2048,
+    "8": 640,
+    "rejected": 37504
+  },
+  "all_random_high_and_folded_maximum_values": true,
+  "unreachable_class_three": true,
+  "stopped_before_model_selection": true,
+  "assembly_executed": false
+}

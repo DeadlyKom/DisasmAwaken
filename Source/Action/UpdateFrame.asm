@@ -1,5 +1,7 @@
                 module Action
                 module UpdateFrame
+                ; Документация [пороговые и событийные ветки кадра](../../Docs/ActionFrameGates.md)
+                ; Документация [банковые записи кадра](../../Docs/ActionBank4Writes.md)
 ; Документация [Action](../../Docs/FunctionDetails/Action.md)
 ; -----------------------------------------
 ; Обработка таймеров, управления, визуальных модулей и игровых объектов
@@ -16,80 +18,84 @@
 ; -----------------------------------------
 Entry:          LD A, #00
                 DEC A
-                JP M, @Action.UpdateFrame.PointA867                             ; переход, если флаг Sign установлен
+                JP M, @Action.UpdateFrame.PointA867                             ; переход, если уменьшенный байт задержки отрицателен, оставить прежний операнд
 
 
                 LD (#A85F), A
-PointA867:      CALL @Action.Unknown7B58.Entry
-                CALL #D10A
+PointA867:      CALL @Action.ScheduleSpawn.Entry
+                CALL @Action.ClearWorkBuffer.Entry
                 LD A, #11
                 CALL @Action.SelectMemoryPage.Entry
                 CALL @Controls.XorBufferPoints.Entry
                 CALL @Controls.TickBcdCounter.Entry
                 LD A, #10
                 CALL @Action.SelectMemoryPage.Entry
-                CALL @Action.UnknownE020.Entry
-                CALL @Action.Unknown6C8F.Entry
+                CALL @Action.RenderSceneFrame.Entry
+                CALL @Action.UpdateThirdGlyphVector.Entry
+                ; Проверка двух порогов шкал и списание при установленном признаке близкой записи.
                 LD A, #01
                 LD (#E310), A
                 LD A, (#6693)
                 CP #2E
-                JP NC, @Action.Unknown6054.Entry                                ; переход, если флаг Carry сброшен
+                JP NC, @Action.ShowNoiseBeforeReload.Entry                      ; переход, если пятая шкала достигла #2E
 
 
                 LD A, (#6682)
                 CP #2E
-                JP NC, @Action.Unknown6054.Entry                                ; переход, если флаг Carry сброшен
+                JP NC, @Action.ShowNoiseBeforeReload.Entry                      ; переход, если четвёртая шкала достигла #2E
 
 
-                LD A, (#E507)
+                LD A, (@ActionCloseRecordState.InhibitCode)
                 AND A
-                JR Z, @Action.UpdateFrame.PointA8B2                             ; переход, если флаг Z установлен
+                JR Z, @Action.UpdateFrame.PointA8B2                             ; переход, если признак близкой записи сброшен
 
 
                 XOR A
-                LD (#E507), A
+                LD (@ActionCloseRecordState.InhibitCode), A
                 LD A, (#A794)
                 SUB #28
-                JP C, @Action.Unknown6054.Entry                                 ; переход, если флаг Carry установлен
+                JP C, @Action.ShowNoiseBeforeReload.Entry                       ; переход, если значение первой шкалы меньше 40
 
 
                 LD (#A794), A
                 LD A, #02
                 LD (#664A), A
+                ; Обновление третьей шкалы по переполнению накопителя фазы.
 PointA8B2:      LD A, #00
                 ADD A, #14
                 LD (#A8B3), A
-                JR NC, @Action.UpdateFrame.PointA8C8                            ; переход, если флаг Carry сброшен
+                JR NC, @Action.UpdateFrame.PointA8C8                            ; переход, если прибавление 20 к фазе не переполнило байт
 
 
                 LD A, #00
                 CP #2E
-                JR NC, @Action.UpdateFrame.PointA8C8                            ; переход, если флаг Carry сброшен
+                JR NC, @Action.UpdateFrame.PointA8C8                            ; переход, если третья шкала уже достигла #2E
 
 
                 INC A
                 LD (#A8BC), A
                 LD (#666B), A
-PointA8C8:      CALL #F729
+PointA8C8:      CALL @Action.UpdateObjects.Entry
                 XOR A
                 LD (#A781), A
-                CALL @Action.Unknown66D2.Entry
-                CALL @Action.Unknown6780.Entry
-                CALL @Action.Unknown6D38.Entry
-                CALL @Action.Unknown6E6C.Entry
+                CALL @Action.SubtractScaledWorkVector.Entry
+                CALL @Action.UpdateBodyMotion.Entry
+                CALL @Action.UpdateVisualEffects.Entry
+                CALL @Action.UpdateMotionFromControls.Entry
                 LD A, #11
                 CALL @Action.SelectMemoryPage.Entry
-                CALL #CB00
+                CALL @Controls.UpdateBufferPoints.Entry
                 LD A, #10
                 CALL @Action.SelectMemoryPage.Entry
-                CALL @Action.Unknown635B.Entry
+                CALL @Action.ApplyPendingRecordLink.Entry
+                ; Сохранение исходной маски событий для трёх последовательных проверок.
                 LD A, (#A78C)
                 LD C, A
                 BIT 0, C
-                JR Z, @Action.UpdateFrame.PointA928                             ; переход, если флаг Z установлен
+                JR Z, @Action.UpdateFrame.PointA928                             ; переход, если бит 0 сохранённой маски событий сброшен
 
 
+                ; Запрос потока AY и выбор стоимости события по трём байтам.
                 XOR A
                 LD (#A78C), A
                 LD HL, #EF22
@@ -98,39 +104,40 @@ PointA8C8:      CALL #F729
                 LD A, (#9C1C)
                 DEC B
                 INC A
-                JP NZ, @Action.UpdateFrame.PointA919                            ; переход, если флаг Z сброшен
+                JP NZ, @Action.UpdateFrame.PointA919                            ; переход, если первый байт отличается от #FF, стоимость равна 3
 
 
                 LD A, (#9C1D)
                 DEC B
                 INC A
-                JP NZ, @Action.UpdateFrame.PointA919                            ; переход, если флаг Z сброшен
+                JP NZ, @Action.UpdateFrame.PointA919                            ; переход, если второй байт отличается от #FF, стоимость равна 2
 
 
                 LD A, (#9C1E)
                 DEC B
                 INC A
-                JP NZ, @Action.UpdateFrame.PointA919                            ; переход, если флаг Z сброшен
+                JP NZ, @Action.UpdateFrame.PointA919                            ; переход, если третий байт отличается от #FF, стоимость равна 1
 
 
                 LD B, #04
 PointA919:      LD A, (#A794)
                 SUB B
-                JP C, @Action.Unknown6054.Entry                                 ; переход, если флаг Carry установлен
+                JP C, @Action.ShowNoiseBeforeReload.Entry                       ; переход, если первая шкала меньше выбранной стоимости
 
 
                 LD (#A794), A
                 LD A, #01
                 LD (#664A), A
 PointA928:      BIT 1, C
-                JR Z, @Action.UpdateFrame.PointA948                             ; переход, если флаг Z установлен
+                JR Z, @Action.UpdateFrame.PointA948                             ; переход, если бит 1 сохранённой маски событий сброшен
 
 
+                ; Обновление фазы мигания, цвета и запроса второго потока AY.
                 LD A, #80
                 RRCA
                 LD (#A92D), A
                 LD A, #05
-                JR NC, @Action.UpdateFrame.PointA93E                            ; переход, если флаг Carry сброшен
+                JR NC, @Action.UpdateFrame.PointA93E                            ; переход, если прежний младший бит фазы мигания сброшен
 
 
                 LD HL, #ED8F
@@ -145,35 +152,38 @@ PointA93E:      LD (#5A1C), A
 PointA948:      LD A, #05
                 LD (#5A1C), A
 PointA94D:      BIT 2, C
-                JR Z, @Action.UpdateFrame.PointA965                             ; переход, если флаг Z установлен
+                JR Z, @Action.UpdateFrame.PointA965                             ; переход, если бит 2 сохранённой маски событий сброшен
 
 
+                ; Списание 40 из первой шкалы при установленном бите 2.
                 XOR A
                 LD (#A78C), A
                 LD A, (#A794)
                 SUB #28
-                JP C, @Action.Unknown6054.Entry                                 ; переход, если флаг Carry установлен
+                JP C, @Action.ShowNoiseBeforeReload.Entry                       ; переход, если значение первой шкалы меньше 40
 
 
                 LD (#A794), A
                 LD A, #01
                 LD (#664A), A
+                ; Восстановление первой шкалы по переполнению отдельного накопителя фазы.
 PointA965:      LD A, #00
                 ADD A, #50
                 LD (#A966), A
-                JR NC, @Action.UpdateFrame.PointA97E                            ; переход, если флаг Carry сброшен
+                JR NC, @Action.UpdateFrame.PointA97E                            ; переход, если прибавление 80 к фазе не переполнило байт
 
 
                 LD A, (#A794)
                 CP #2E
-                JR NC, @Action.UpdateFrame.PointA97E                            ; переход, если флаг Carry сброшен
+                JR NC, @Action.UpdateFrame.PointA97E                            ; переход, если первая шкала уже достигла #2E
 
 
                 INC A
                 LD (#A794), A
                 LD A, #01
                 LD (#664A), A
-PointA97E:      CALL #ECA8
+PointA97E:      CALL @Action.UpdateAyEffects.Entry
+                ; Выбор банка 4 для трёх групп XOR 60 в OBJECT3D, совпадающие адреса ACTION банка 0 не меняются.
                 LD A, #14
                 CALL @Action.SelectMemoryPage.Entry
                 LD A, (#D408)
@@ -268,7 +278,7 @@ PointA97E:      CALL #ECA8
                 LD A, #00
                 AND A
                 LD A, #15
-                JR NZ, @Action.UpdateFrame.PointAA96                            ; переход, если флаг Z сброшен
+                JR NZ, @Action.UpdateFrame.PointAA96                            ; переход, если байт режима цвета ненулевой, записать #15
 
 
                 LD A, #05
@@ -279,15 +289,15 @@ PointAA96:      LD (#5A1A), A
                 LD A, #11
                 CALL @Action.SelectMemoryPage.Entry
                 EX AF, AF'
-                CALL NZ, #E97A                                                  ; вызов, если флаг Z сброшен
+                CALL NZ, @Controls.ToggleTargetOverlay.Entry                   ; вызов, если байт режима до DEC отличался от 1
                 CALL @Controls.ConsumeTextQueue.Entry
                 CALL @Controls.XorBufferMarker.Entry
                 CALL @Controls.CopyViewportToScreen.Entry
                 CALL @Controls.ConsumeTextQueue.Entry
                 CALL @Controls.ConsumeTextQueue.Entry
                 CALL @Controls.ConsumeTextQueue.Entry
-                CALL #E021
-                CALL #E291
+                CALL @Controls.UpdateGlyphIndicators.Entry
+                CALL @Controls.DrawRadar.Entry
                 LD A, #10
                 CALL @Action.SelectMemoryPage.Entry
                 RET
@@ -295,7 +305,7 @@ PointAA96:      LD (#5A1A), A
 
 PointAAC4:      LD A, #11
                 CALL @Action.SelectMemoryPage.Entry
-                JP #DC9B
+                JP @Controls.RelocateStationReload.Entry
 
 
                 endmodule

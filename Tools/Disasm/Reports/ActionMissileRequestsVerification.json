@@ -1,0 +1,35 @@
+{
+  "passed": true,
+  "total_cases": 16372,
+  "paths": {
+    "mode_blocked": 1920,
+    "created": 12568,
+    "missing_capture": 492,
+    "empty_stock": 492,
+    "lost_target": 504,
+    "no_slot": 396
+  },
+  "queue_results": {
+    "accepted": 51352,
+    "dropped": 408
+  },
+  "method": "functional_parent_oracle_with_real_children_and_banked_queue",
+  "independent_complete_child_oracle": false,
+  "children_executed_without_stubs": true,
+  "all_input_flags_for_three_entries": true,
+  "all_initial_distinct_slot_pairs": true,
+  "class_code_of_target_proved": true,
+  "capture_cleared_before_creation": true,
+  "stock_only_consumed_after_creation": true,
+  "direct_shared_entry_zero_stock_underflow_preserved": true,
+  "physical_eight_banks_and_out_checked": true,
+  "exact_contract_registers_and_flags": true,
+  "non_stack_memory_and_write_multiplicity_checked": true,
+  "temporary_stack_contents_independently_checked": false,
+  "refresh_and_timing_checked": false,
+  "maximum_additional_stack_bytes": 20,
+  "all_joint_inputs_exhausted": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

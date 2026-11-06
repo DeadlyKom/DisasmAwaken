@@ -8,6 +8,8 @@
 
 [StationBoot.RelocateBootstrap](../../Source/StationBoot/RelocateBootstrap.asm)
 
+[Алгоритм, контракт и проверка](../BootstrapRelocation.md).
+
 Очистка атрибутов и перенос #02B5 байт загрузчика в #4000.
 
 Вход `#6300`, запись 4, смещения `#0300..#0318`.

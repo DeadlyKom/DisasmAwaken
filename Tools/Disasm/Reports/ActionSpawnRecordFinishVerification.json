@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "total_cases": 32768,
+  "all_classes_and_even_model_indices": true,
+  "whole_object_record_compared": true,
+  "stops_before_class_dispatch": true,
+  "assembly_executed": false
+}

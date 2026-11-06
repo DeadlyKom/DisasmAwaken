@@ -1,0 +1,39 @@
+{
+  "passed": true,
+  "total_cases": 284672,
+  "paths": {
+    "first_axis": 68370,
+    "accepted": 111220,
+    "second_axis": 64775,
+    "negative_depth": 40307
+  },
+  "exponents": {
+    "1": 265900,
+    "2": 3720,
+    "3": 3746,
+    "4": 3779,
+    "5": 3779,
+    "6": 3748
+  },
+  "method": "action_specific_normalization_bias_complement_quotient_and_flag_oracle",
+  "exact_contract_registers_and_flags": true,
+  "refresh_and_timing_independently_checked": false,
+  "every_physical_ram_byte_and_write_multiplicity_checked": true,
+  "working_sp_and_indirect_continuation_executed": true,
+  "all_depth_words": true,
+  "all_first_axis_words_at_depths": [
+    1,
+    256
+  ],
+  "all_second_axis_words_at_depth": 3,
+  "all_local_bytes_at_six_scales": true,
+  "zero_numerator_high_depth_bypass_preserved": true,
+  "normalization_inserted_ones_bias_preserved": true,
+  "source_add_carry_in_screen_subtraction_preserved": true,
+  "no_preview_formula_substitution": true,
+  "all_joint_inputs_exhausted": false,
+  "whole_vertex_group_proved": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

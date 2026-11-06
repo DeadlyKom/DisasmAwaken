@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "total_cases": 131072,
+  "paths": {
+    "start": 65536,
+    "select_node": 65280,
+    "end_return": 256
+  },
+  "all_saved_sp_words": true,
+  "all_selector_af_words": true,
+  "exact_registers_flags_refresh_sp": true,
+  "no_ram_writes": true,
+  "start_boundary": "E4A6..E4FF, selector not executed",
+  "selector_boundary": "E4FF..E4B1 or external return",
+  "selector_h_provided_by_caller": true,
+  "saved_sp_not_validated_as_native_stack": true,
+  "full_consumer_executed": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

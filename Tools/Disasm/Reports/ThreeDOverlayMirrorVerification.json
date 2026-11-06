@@ -1,0 +1,67 @@
+{
+  "passed": true,
+  "source_slot": 17,
+  "source_offset": 24576,
+  "target_slot": 19,
+  "target_offset": 0,
+  "logical_bytes_compared": 8224,
+  "byte_identical": true,
+  "sha256": "43f2c3e1cfb9d7b233a36680dc5ce9120cf4ee1d2bf6a04f850b88db9b649d0a",
+  "target_load_address": 49152,
+  "required_runtime_bank": 0,
+  "primary_function_fragments": 122,
+  "proved_primary_contracts": 121,
+  "preserved_unknown": [
+    "UnknownCF08"
+  ],
+  "old_fragments": 98,
+  "old_unproved_template_contracts": 96,
+  "prior_documented_contracts": [
+    {
+      "name": "ClearWorkBuffer",
+      "path": "Source/ThreeD/ClearWorkBuffer.asm",
+      "contract": [
+        [
+          "SP - действующий стек вызывающего кода"
+        ],
+        [
+          "#8000..#8BFF заполнены #FF, SP восстановлен"
+        ],
+        [
+          "HL, BC"
+        ],
+        [
+          "96 повторений по 16 PUSH HL, код не выполняет DI, безопасность прерываний задаёт вызывающий код"
+        ]
+      ]
+    },
+    {
+      "name": "MultiplySignedScaled",
+      "path": "Source/ThreeD/MultiplySignedScaled.asm",
+      "contract": [
+        [
+          "DE - знаковый множитель, AF - A знаковый коэффициент от -127 до 127, IX - продолжение"
+        ],
+        [
+          "HL - произведение с масштабом 1/128 и усечением к нулю, выход через JP (IX)"
+        ],
+        [
+          "HL, DE, BC, AF, AF'"
+        ],
+        [
+          "проверены 208 сочетаний граничных и типичных входов, это не доказательство всего диапазона"
+        ]
+      ]
+    }
+  ],
+  "unrecognized_manual_comments": [],
+  "all_external_RAM_and_entry_contexts_must_match": true,
+  "native_loading_of_separate_3DPART_not_executed": true,
+  "assembly_executed": false,
+  "original_header_split_boundaries_replaced_by_proved_primary_layout": true,
+  "current_fragments": 122,
+  "current_described": 121,
+  "current_unknown": 1,
+  "rechecked_after_publication": true,
+  "current_source_instructions_and_data_verified": true
+}

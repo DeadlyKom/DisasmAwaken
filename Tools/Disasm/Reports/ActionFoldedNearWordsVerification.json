@@ -1,0 +1,52 @@
+{
+  "passed": true,
+  "total_cases": 401920,
+  "cases_by_kind": {
+    "boundary_products": 512,
+    "all_words_each_position": 196608,
+    "all_input_AF_three_exits": 196608,
+    "mixed_words": 8192
+  },
+  "paths": {
+    "2_all_three_near": 65960,
+    "2_low_at_least_60": 424,
+    "2_high_nonzero": 65056,
+    "1_low_at_least_60": 456,
+    "1_high_nonzero": 65098,
+    "0_low_at_least_60": 66103,
+    "0_high_nonzero": 138823
+  },
+  "every_word_at_every_component": true,
+  "all_input_AF_for_three_exit_types": true,
+  "exact_registers_including_R": true,
+  "carry_iff_each_signed_word_in_minus60_through59": true,
+  "complement_instead_of_negation_preserved": true,
+  "all_physical_ram_bytes_proved": true,
+  "no_memory_or_stack_writes": true,
+  "observed_m1": [
+    10,
+    13,
+    16,
+    19,
+    23,
+    26,
+    29,
+    32,
+    35,
+    36,
+    38,
+    39,
+    42,
+    45,
+    48,
+    51,
+    54,
+    57
+  ],
+  "complete_three_word_product_exhausted": false,
+  "lower_two_bytes_per_component_not_read": true,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "timing_proved": false
+}

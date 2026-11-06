@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "total_cases": 65792,
+  "cases_by_kind": {
+    "all_AF_original_source": 65536,
+    "all_source_byte_values": 256
+  },
+  "all_input_AF": true,
+  "every_source_byte_value_at_every_offset": true,
+  "complete_source_block_product_exhausted": false,
+  "exact_registers_including_R": true,
+  "all_physical_ram_bytes_proved": true,
+  "write_values_multiplicity_and_emulator_order_proved": true,
+  "no_cpu_stack_or_port_writes": true,
+  "stopped_after_JP_4000": true,
+  "relocated_payload_not_executed": true,
+  "copied_bytes": 256,
+  "refresh_m1": 516,
+  "station_file_or_TRDOS_not_executed": true,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "timing_proved": false
+}

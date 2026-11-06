@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "total_cases": 832,
+  "original_opcode": 201,
+  "common_target": 25892,
+  "all_classes_10_through_25_and_high_bit_aliases": true,
+  "all_26_record_positions": true,
+  "actual_dispatcher_and_common_RET_executed": true,
+  "exact_registers_including_R": true,
+  "all_physical_ram_bytes_proved": true,
+  "no_memory_or_stack_writes": true,
+  "return_refresh_m1": 1,
+  "full_dispatch_refresh_m1": 14,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

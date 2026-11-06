@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "total_cases": 2560,
+  "profiles": {
+    "native": 1024,
+    "synthetic": 1536
+  },
+  "projection_paths": {
+    "accepted": 14432,
+    "negative_depth": 6825,
+    "first_axis": 1885,
+    "second_axis": 2
+  },
+  "original_even_pointers": 128,
+  "maximum_original_points": 40,
+  "maximum_original_next_offset": 204,
+  "children_executed_without_stubs": true,
+  "real_eight_physical_banks_and_out_sequence": true,
+  "every_physical_ram_byte_and_write_multiplicity_checked": true,
+  "exact_registers_and_flags_except_R": true,
+  "refresh_and_timing_independently_checked": false,
+  "maximum_extra_cpu_stack_bytes": 6,
+  "all_nonzero_tag_bytes_and_six_scales": true,
+  "empty_fixed_part_checked": true,
+  "variable_records_copied_but_not_interpreted": true,
+  "all_joint_inputs_exhausted": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

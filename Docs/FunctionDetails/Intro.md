@@ -78,6 +78,8 @@
 
 [Intro.SampleTextureRows](../../Source/Intro/SampleTextureRows.asm)
 
+[Алгоритм, контракт и проверка](../IntroScrolledSampler.md).
+
 Выборка 16 строк текстуры через генерируемый обработчик в #7E00 и временный SP.
 
 Вход `#66E2`, запись 3, смещения `#03E2..#03F2`.
@@ -91,6 +93,8 @@
 ## NextSampledRow
 
 [Intro.NextSampledRow](../../Source/Intro/NextSampledRow.asm)
+
+[Алгоритм, контракт и проверка](../IntroScrolledSampler.md).
 
 Продолжение генерируемого обработчика, переход к следующей строке и восстановление SP.
 
@@ -162,6 +166,8 @@
 
 [Intro.PresentInterlacedFrame](../../Source/Intro/PresentInterlacedFrame.asm)
 
+[Алгоритм, контракт и проверка](../IntroInterlacedFrame.md).
+
 Чередование двух раскладок, синхронизация с кадром и перенос данных текстуры в экран.
 
 Вход `#67F1`, запись 3, смещения `#04F1..#0526`.
@@ -175,6 +181,8 @@
 ## ScatterTextureToScreen
 
 [Intro.ScatterTextureToScreen](../../Source/Intro/ScatterTextureToScreen.asm)
+
+[Алгоритм, контракт и проверка](../IntroInterlacedFrame.md).
 
 Копирование 38 строк по 32 байта, адреса источников берутся из временного стека.
 
@@ -190,6 +198,8 @@
 
 [Intro.RunAttributeWriter](../../Source/Intro/RunAttributeWriter.asm)
 
+[Алгоритм, контракт и проверка](../IntroPresentAttributes.md).
+
 Выполнение 32 генерируемых пар POP HL и LD (nn),HL с восстановлением SP.
 
 Вход `#68A4`, запись 3, смещения `#05A4..#062C`.
@@ -203,6 +213,8 @@
 ## BuildAttributeWriter
 
 [Intro.BuildAttributeWriter](../../Source/Intro/BuildAttributeWriter.asm)
+
+[Полный контракт и проверка](../IntroAttributeWriter.md).
 
 Создание развёрнутого писателя, таблицы выборок и двух таблиц экранных атрибутов.
 
@@ -231,6 +243,8 @@
 ## PresentAttributes
 
 [Intro.PresentAttributes](../../Source/Intro/PresentAttributes.asm)
+
+[Алгоритм, контракт и проверка](../IntroPresentAttributes.md).
 
 Ожидание кадра, выбор таблицы #60C0 либо #61C0 и вызов генерируемого писателя.
 
@@ -329,6 +343,8 @@
 ## WaitInterrupt
 
 [Intro.WaitInterrupt](../../Source/Intro/WaitInterrupt.asm)
+
+[Алгоритм, контракт и проверка](../IntroWaitInterrupt.md).
 
 Разрешение прерываний, ожидание HALT и повторный запрет прерываний.
 
@@ -442,6 +458,8 @@
 
 [Intro.RenderLookupTexture](../../Source/Intro/RenderLookupTexture.asm)
 
+[Алгоритм, контракт и проверка](../IntroLookupTransfer.md).
+
 Подготовка табличных фаз, исполнение #9900 и перенос результата через генерируемый код #A800.
 
 Вход `#6B9C`, запись 3, смещения `#089C..#08BB`.
@@ -455,6 +473,8 @@
 ## PresentLookupTexture
 
 [Intro.PresentLookupTexture](../../Source/Intro/PresentLookupTexture.asm)
+
+[Алгоритм, контракт и проверка](../IntroLookupContinuation.md).
 
 Восстановление SP после #A800, две серии выборок и общий вывод кадра.
 
@@ -470,6 +490,8 @@
 
 [Intro.RunTextureSampler](../../Source/Intro/RunTextureSampler.asm)
 
+[Алгоритм, контракт и проверка](../IntroPointerSampler.md).
+
 Запуск развёрнутого обработчика #9100 со стеком указателей источников.
 
 Вход `#6BE3`, запись 3, смещения `#08E3..#08EC`.
@@ -483,6 +505,8 @@
 ## NextTextureSampleRow
 
 [Intro.NextTextureSampleRow](../../Source/Intro/NextTextureSampleRow.asm)
+
+[Алгоритм, контракт и проверка](../IntroPointerSampler.md).
 
 Продолжение после #9100, следующий столбец BC и строка источников до восстановления SP.
 
@@ -511,6 +535,8 @@
 ## AdvanceTextureScale
 
 [Intro.AdvanceTextureScale](../../Source/Intro/AdvanceTextureScale.asm)
+
+[Полный контракт и проверка](../IntroTextureScale.md).
 
 Начальное нарастание масштаба и последующий циклический выбор из таблицы #6C62.
 

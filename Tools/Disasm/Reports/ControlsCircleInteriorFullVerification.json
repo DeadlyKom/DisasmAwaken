@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "total_cases": 4941,
+  "cases_by_kind": {
+    "all_radii": 333,
+    "all_rows_and_horizontal_phases": 2304,
+    "all_patterns_and_mode_bytes": 256,
+    "mixed_geometry": 2048
+  },
+  "paths": {
+    "vertical": 5313,
+    "byte_convergence": 4569
+  },
+  "modeled_rows": 315225,
+  "exact_registers_except_R": true,
+  "refresh_R_proved": false,
+  "all_physical_ram_bytes_proved": true,
+  "no_port_or_page_writes": true,
+  "all_nonpixel_values_and_write_multiplicity_proved": true,
+  "pixel_write_multiplicity_proved": false,
+  "independent_pixel_interval_oracle": true,
+  "independent_second_order_state_oracle": true,
+  "actual_all_children_executed": true,
+  "horizontal_unclipped_domain": true,
+  "vertical_clipping_proved": true,
+  "maximum_additional_stack_bytes": 8,
+  "stack_positions": [
+    36872,
+    40944,
+    45056,
+    49150
+  ],
+  "complete_domain_product_exhausted": false,
+  "generic_clipped_kernel_entries_proved": false,
+  "whole_large_renderer_proved": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "timing_proved": false
+}

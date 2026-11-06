@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "total_cases": 768,
+  "all_four_phase_low_bytes_covered": true,
+  "cpu_stack_locations": 3,
+  "actual_generated_chains_executed": true,
+  "sum_chain_bytes": 3840,
+  "transfer_chain_bytes": 1219,
+  "lookup_bytes_written": 256,
+  "transferred_bytes": 608,
+  "destination_pages": 38,
+  "stop_PC": 27580,
+  "cpu_SP_restored_at_stop": false,
+  "all_registers_except_R": true,
+  "all_physical_ram_bytes_proved": true,
+  "write_multiplicity_proved": true,
+  "independent_numeric_oracle": true,
+  "all_phase_combinations_exhausted": false,
+  "continuation_and_IRQ_executed": false,
+  "native_execution": false,
+  "assembly_executed": false,
+  "timing_proved": false
+}

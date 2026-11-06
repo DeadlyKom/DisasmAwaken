@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "total_cases": 56064,
+  "modes": {
+    "and": 18688,
+    "or": 18688,
+    "xor": 18688
+  },
+  "paths": {
+    "equal_no_pixels": 444,
+    "steep_left": 31597,
+    "shallow_right": 10389,
+    "steep_right": 3377,
+    "shallow_left": 10257
+  },
+  "viewport_0_to_95_cases": 49920,
+  "extended_0_to_255_cases": 6144,
+  "extended_profile_game_admissibility_proved": false,
+  "extended_profile_workspace_pixel_writes_preserved": true,
+  "all_physical_ram_bytes_proved": true,
+  "write_multiplicity_proved": true,
+  "patched_instruction_bytes_checked": true,
+  "linear_buffer_32_byte_rows": true,
+  "final_endpoint_excluded": true,
+  "equal_points_write_no_pixels": true,
+  "BC_DE_HL_SP_and_preserved_registers_checked": true,
+  "all_AF_and_alternate_AF_proved": true,
+  "refresh_and_timing_independently_checked": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

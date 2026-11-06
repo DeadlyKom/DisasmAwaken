@@ -1,0 +1,52 @@
+{
+  "passed": true,
+  "total_cases": 307200,
+  "cases_by_kind": {
+    "all_coordinates_and_validity_bits": 262144,
+    "all_radii_on_geometry_edges": 36864,
+    "mixed_full_flag_bytes": 8192
+  },
+  "paths": {
+    "reject_corner_vertical_square": 38407,
+    "reject_corner_horizontal_square": 16737,
+    "reject_vertical_gate": 87810,
+    "corner_single_edge": 21516,
+    "reject_horizontal_gate": 86213,
+    "reject_outside_y_extent": 17644,
+    "vertical_unclipped_slice": 2869,
+    "vertical_full_width": 4564,
+    "vertical_single_edge": 8685,
+    "reject_outside_x_extent": 7921,
+    "outside_x_one_edge": 6769,
+    "whole_interior": 1902,
+    "both_horizontal_edges": 2367,
+    "single_horizontal_edge": 3711,
+    "outside_x_full_width": 26,
+    "corner_full_width": 59
+  },
+  "all_original_branch_destinations_observed": true,
+  "targets": [
+    "3FFF",
+    "D314",
+    "D340",
+    "D34A",
+    "D38C",
+    "D396",
+    "D3DA",
+    "D3E4",
+    "D404",
+    "D40E",
+    "D485"
+  ],
+  "exact_registers_except_R": true,
+  "all_physical_ram_bytes_proved": true,
+  "write_multiplicity_proved": true,
+  "actual_read_byte_square_without_stubs": true,
+  "maximum_additional_stack_bytes": 4,
+  "stopped_before_raster_children": true,
+  "whole_renderer_proved": false,
+  "complete_input_product_exhausted": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

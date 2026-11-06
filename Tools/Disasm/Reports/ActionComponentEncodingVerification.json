@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "total_cases": 65792,
+  "all_words_in_each_component": true,
+  "all_input_F": true,
+  "full_word_product_exhausted": false,
+  "inverted_second_component_preserved": true,
+  "second_zero_encodes_8000": true,
+  "input_8000_edge_preserved": true,
+  "lower_bytes_of_three_components_preserved": true,
+  "exact_registers_including_R": true,
+  "publish_refresh_m1_base": 19,
+  "negative_component_m1_additions": [
+    9,
+    7,
+    9
+  ],
+  "overflow_gate_refresh_m1": 1,
+  "all_physical_ram_bytes_proved": true,
+  "write_order_and_multiplicity_proved": true,
+  "hardware_bus_word_write_order_proved": false,
+  "cpu_stack_written": false,
+  "independent_numeric_oracle": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false,
+  "timing_proved": false
+}

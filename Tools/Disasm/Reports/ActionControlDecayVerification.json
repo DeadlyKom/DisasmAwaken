@@ -1,0 +1,50 @@
+{
+  "passed": true,
+  "total_cases": 462929,
+  "cases_by_kind": {
+    "all_global_request_pairs": 65536,
+    "all_phase_value_pairs_each_channel": 196608,
+    "all_latched_request_pairs_each_channel": 196608,
+    "class14_positions_and_states": 78,
+    "uniform_lists": 3,
+    "mixed_inputs": 4096
+  },
+  "paths": {
+    "not_released": 460507,
+    "even_phase_skip": 753851,
+    "decayed": 426472,
+    "released": 2422,
+    "zero_skip": 384,
+    "latched_skip": 208080
+  },
+  "all_global_request_pairs": true,
+  "all_phase_value_pairs_each_channel": true,
+  "all_old_new_request_pairs_each_channel": true,
+  "actual_class14_release_and_all_children_executed": true,
+  "all_26_class14_positions_and_three_states": true,
+  "upper_bank_zero_required_for_actual_release": true,
+  "initial_7ffd_values": [
+    0,
+    8,
+    16,
+    24,
+    32,
+    40,
+    48,
+    56
+  ],
+  "exact_registers_including_R": true,
+  "all_physical_ram_bytes_proved": true,
+  "write_multiplicity_and_stack_residue_proved": true,
+  "delayed_channel_gate_reads_old_value_before_latch": true,
+  "phase_is_circular_rotation_not_boolean_toggle": true,
+  "signed_decay_toward_zero_preserved": true,
+  "maximum_additional_stack_bytes": 6,
+  "observed_m1_min": 22,
+  "observed_m1_max": 4344,
+  "complete_input_product_exhausted": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "timing_proved": false
+}

@@ -1,0 +1,54 @@
+{
+  "passed": true,
+  "total_cases": 37727,
+  "cases_by_entry": {
+    "6AB0": 4959
+  },
+  "paths": {
+    "large_both_horizontal_edges": 418,
+    "large_outside_x_one_edge": 83,
+    "large_reject_corner_vertical_square": 13,
+    "small_tiny": 474,
+    "component_1_reject": 7,
+    "projection_reject": 3472,
+    "large_vertical_full_width": 47,
+    "large_vertical_unclipped_slice": 16,
+    "large_reject_vertical_gate": 20,
+    "large_reject_outside_y_extent": 11,
+    "large_corner_single_edge": 22,
+    "large_reject_horizontal_gate": 26,
+    "large_reject_corner_horizontal_square": 2,
+    "large_whole_interior": 71,
+    "small_draw": 263,
+    "large_reject_outside_x_extent": 3,
+    "small_y_reject": 2,
+    "small_x_reject": 5,
+    "component_0_reject": 4
+  },
+  "cases_by_profile": {
+    "all_modes_and_signs": 64,
+    "component_edges": 4096,
+    "all_radius_depth_words": 538,
+    "ratio_boundaries": 216,
+    "mixed_components": 45
+  },
+  "exact_registers_except_R": true,
+  "actual_children_without_stubs": true,
+  "all_RAM_except_projection_scratch": true,
+  "projection_scratch_values_not_proved": true,
+  "complete_nonpixel_write_multiplicity_after_projection": true,
+  "mode_forced_zero": true,
+  "banked_pattern_FFAA": false,
+  "actual_out_sequence": [
+    17,
+    16
+  ],
+  "maximum_banked_stack_bytes": 20,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "overflow_returns": 32768,
+  "signed_high_bytes_saved_before_conversion": true,
+  "second_component_negated": true,
+  "pattern_FF_only_for_mode_two": true
+}

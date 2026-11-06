@@ -14,7 +14,7 @@ from ValidateNotes import validate_notes
 import ActionRegionTypeFacts as facts
 
 
-def main(facts=facts, tag='ActionTextDisplay', document='ActionTextDisplay', state_fields=None, allow_named=False):
+def main(facts=facts, tag='ActionTextDisplay', document='ActionTextDisplay', state_fields=None, allow_named=False, include_blocks=()):
     def read(stem):
         return json.loads((ROOT / ('Tools/Disasm/Reports/' + stem + '.json')).read_text('utf-8'))
     def encode(value):
@@ -69,6 +69,12 @@ def main(facts=facts, tag='ActionTextDisplay', document='ActionTextDisplay', sta
         assert before in symbols and after not in symbols, (before, after)
         symbols[after] = symbols.pop(before)
     controls = next(item for item in read('ControlFlow') if item['name'] == 'Action')
+    # Проверка новых внутренних входов только на границах уже декодированных инструкций выбранных функций.
+    for key,value in getattr(facts,'ADDITIONAL_SYMBOLS',{}).items():
+        assert key.startswith('Action.') and key not in symbols
+        assert any(f['address']<=value<f['address']+f['end_offset']-f['offset'] for f in selected)
+        assert any(i['address']==value for i in controls['instructions'])
+        symbols[key]=value
     validate_notes([controls], {'Action': facts.COMMENTS})
     labels = {address: name for name, address in symbols.items() if name.startswith('Action.')}
     for f in selected:
@@ -106,8 +112,12 @@ def main(facts=facts, tag='ActionTextDisplay', document='ActionTextDisplay', sta
             lines.append(line)
         lines += ['                endmodule', '                endmodule']
         following = getattr(facts, 'CONTINUATIONS', {0xEFC4: 0xEFF1}).get(address)
-        continuation = None if following is None else dict(region='Action', name=facts.FUNCTIONS[following][0],
-            path='Source/Action/' + facts.FUNCTIONS[following][0] + '.asm')
+        target = None if following is None else next(f for f in functions if f['region']=='Action' and f['address']==following)
+        continuation = None if target is None else dict(region='Action', name=target['name'],path=target['path'])
+        # Выбор окончательного имени продолжения, даже если соседний участник этого пакета ещё не обработан циклом.
+        if target is not None and target['address'] in facts.FUNCTIONS:
+            target_name=facts.FUNCTIONS[target['address']][0]
+            continuation=dict(region='Action',name=target_name,path='Source/Action/'+target_name+'.asm')
         pending[ROOT / f['path']] = format_function('\n'.join(lines) + '\n', continuation).encode('utf-8')
     source_map = read('SourceMap')
     for item in source_map:
@@ -117,6 +127,8 @@ def main(facts=facts, tag='ActionTextDisplay', document='ActionTextDisplay', sta
     modified = read('ModifiedCode')
     for item in modified:
         item['path'] = rename(item['path'])
+    if hasattr(facts, 'qualify_mutations'):
+        facts.qualify_mutations(modified, read('ControlFlow'), functions)
     inventory = read('Inventory')
     inventory.update(described=sum(f['semantic_status'] == 'described' for f in functions),
                      unknown=sum(f['semantic_status'] != 'described' for f in functions))
@@ -151,6 +163,12 @@ def main(facts=facts, tag='ActionTextDisplay', document='ActionTextDisplay', sta
             needle = '    operation = ship_preview_callback_name_operands(region, function_address, operation)'
             assert text.count(needle) == 1
             text = text.replace(needle, needle + '\n    operation = ' + operand_handler + '(region, function_address, operation)')
+            if hasattr(facts, 'name_instruction'):
+                instruction_handler = operand_handler + '_instruction'
+                needle = '    return point_motion_instruction(region, function_address, address, operation)'
+                assert text.count(needle) == 1
+                text = text.replace(needle, '    operation = ' + instruction_handler + '(region, function_address, address, operation)\n' + needle)
+                extra += f'\nfrom {tag}Facts import name_instruction as {instruction_handler}\n'
         if filename == 'ExportSources.py':
             needle = '\n\nif __name__ == "__main__":'
             assert text.count(needle) == 1
@@ -166,7 +184,7 @@ def main(facts=facts, tag='ActionTextDisplay', document='ActionTextDisplay', sta
             total = sum(f['region'] == 'Action' for f in functions)
             text = re.sub(r'\| Action \| \d+ \| \d+ \|', f'| Action | {total} | {count} |', text)
             for f in selected:
-                previous_description = old[f['address']]['description'] if allow_named else 'Unknown, назначение этого фрагмента ещё не установлено'
+                previous_description = old[f['address']]['description']
                 needle = '| #' + format(f['address'], '04X') + ' | [Action.' + f['name'] + '](../' + f['path'] + ') | ' + previous_description + ' |'
                 assert text.count(needle) == 1
                 text = text.replace(needle, needle.replace(previous_description, f['description']))
@@ -175,10 +193,17 @@ def main(facts=facts, tag='ActionTextDisplay', document='ActionTextDisplay', sta
                 start = text.index('## ' + f['name'] + '\n')
                 end = text.find('\n## ', start + 4)
                 end = len(text) if end < 0 else end
-                previous_description = old[f['address']]['description'] if allow_named else 'Unknown, назначение этого фрагмента ещё не установлено'
+                previous_description = old[f['address']]['description']
                 block = text[start:end].replace(previous_description + '.', f['description'] + '.')
-                text = text[:start] + block.rstrip() + '\n\n[Алгоритм, контракты и независимая модель](../' + document + '.md).\n' + text[end:]
+                text = text[:start] + block.rstrip() + '\n\n[Алгоритм, контракты и проверка](../' + document + '.md).\n' + text[end:]
         pending[path] = text.encode('utf-8')
+    # Подключение только явно переданных структур и констант в тот же проверяемый кандидат.
+    for relative, unique_marker, block in include_blocks:
+        path = ROOT / relative
+        assert path.resolve().is_relative_to(ROOT.resolve())
+        text = pending.get(path, path.read_bytes()).decode('utf-8')
+        assert unique_marker not in text and text.count('                endif') == 1
+        pending[path] = text.replace('                endif', block + '\n                endif').encode('utf-8')
     # Создание отдельного кандидата до замены активных файлов.
     plan = [(p, p.read_bytes() if p.exists() else None, after) for p, after in pending.items()]
     for path, before, after in plan:
@@ -203,7 +228,7 @@ def main(facts=facts, tag='ActionTextDisplay', document='ActionTextDisplay', sta
         assert path.read_bytes() == before == (history / path.relative_to(ROOT)).read_bytes()
         path.unlink()
     result = dict(passed=True, described_functions=len(selected), instructions_changed=0,
-        physical_bytes_preserved=True, independent_model_cases=proof.get('total_cases', proof.get('original_position_cases', proof.get('original_calls'))),
+        physical_bytes_preserved=True, model_cases=proof.get('total_cases', proof.get('original_position_cases', proof.get('original_calls'))),
         original_function_boundaries_preserved=True, assembly_executed=False)
     (ROOT / ('Tools/Disasm/Reports/' + tag + 'Classification.json')).write_bytes(encode(result))
     print(json.dumps(result, indent=2))

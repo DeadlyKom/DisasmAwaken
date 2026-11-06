@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "total_cases": 66816,
+  "outcomes": {
+    "wait": 1278,
+    "mode_2_return": 1,
+    "activate": 1,
+    "subtract": 65536
+  },
+  "first_hit_from_reset_in_uninterrupted_stream": 41862,
+  "stopped_at_common_continuation": true,
+  "assembly_executed": false,
+  "native_execution": false
+}

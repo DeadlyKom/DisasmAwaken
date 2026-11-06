@@ -98,6 +98,16 @@ VISUAL_EFFECT_FIELDS = {
 
 
 def name_operands(region, function_address, operation):
+    operation = action_random_cluster_name_operands(region, function_address, operation)
+    operation = intro_lookup_continuation_name_operands(region, function_address, operation)
+    operation = intro_interlaced_frame_name_operands(region, function_address, operation)
+    operation = intro_present_attributes_name_operands(region, function_address, operation)
+    operation = intro_lookup_transfer_name_operands(region, function_address, operation)
+    operation = intro_screen_name_operands(region, function_address, operation)
+    operation = bootstrap_relocation_name_operands(region, function_address, operation)
+    operation = intro_scrolled_sampler_name_operands(region, function_address, operation)
+    operation = intro_pointer_sampler_name_operands(region, function_address, operation)
+    operation = intro_texture_scale_name_operands(region, function_address, operation)
     operation = sum_squares8_name_operands(region, function_address, operation)
     operation = map_raster_setup_name_operands(region, function_address, operation)
     operation = map_distance_minimum_name_operands(region, function_address, operation)
@@ -135,6 +145,168 @@ def name_operands(region, function_address, operation):
     operation = control_panel_group_name_operands(region, function_address, operation)
     operation = ship_periodic_code_name_operands(region, function_address, operation)
     operation = ship_preview_callback_name_operands(region, function_address, operation)
+    operation = action_spawn_schedule_name_operands(region, function_address, operation)
+    operation = action_spawn_record_finish_name_operands(region, function_address, operation)
+    operation = action_visual_effect_list_name_operands(region, function_address, operation)
+    operation = controls_radar_loop_name_operands(region, function_address, operation)
+    operation = action_motion_without_keys_name_operands(region, function_address, operation)
+    operation = controls_target_overlay_name_operands(region, function_address, operation)
+    operation = action_body_motion_name_operands(region, function_address, operation)
+    operation = action_body_mode_transition_name_operands(region, function_address, operation)
+    operation = action_noise_exit_name_operands(region, function_address, operation)
+    operation = action_object_state_return_name_operands(region, function_address, operation)
+    operation = action_record_effect_threshold_name_operands(region, function_address, operation)
+    operation = action_record_effect_resume_name_operands(region,function_address,operation)
+    operation = action_large_effect_entry_name_operands(region, function_address, operation)
+    operation = action_large_effect_continuation_name_operands(region,function_address,operation)
+    operation = action_nonempty_render_frame_name_operands(region, function_address, operation)
+    operation = action_banked_basis_rotation_name_operands(region, function_address, operation)
+    operation = action_wide_projection_loop_name_operands(region, function_address, operation)
+    operation = action_visual_effect_resume_name_operands(region,function_address,operation)
+    operation = action_class18_state_name_operands(region, function_address, operation)
+    operation = action_object_offset_coefficients_name_operands(region,function_address,operation)
+    operation = action_object_offset_vector_name_operands(region,function_address,operation)
+    operation = action_object_offset_transfer_name_operands(region,function_address,operation)
+    operation = action_object_phase_wait_name_operands(region,function_address,operation)
+    operation = action_object_offset_fall_name_operands(region,function_address,operation)
+    operation = action_object_offset_rise_name_operands(region,function_address,operation)
+    operation = action_body_transform_name_operands(region, function_address, operation)
+    operation = action_restore_body_stack_name_operands(region,function_address,operation)
+    operation = action_draw_banked_body_name_operands(region, function_address, operation)
+    operation = controls_project_draw_body_name_operands(region, function_address, operation)
+    operation = controls_body_draw_name_operands(region, function_address, operation)
+    operation = controls_large_circle_name_operands(region, function_address, operation)
+    operation = controls_full_width_circle_name_operands(region, function_address, operation)
+    operation = controls_corner_circle_slice_name_operands(region, function_address, operation)
+    operation = controls_horizontal_circle_name_operands(region, function_address, operation)
+    operation = controls_vertical_circle_slice_name_operands(region, function_address, operation)
+    operation = action_refresh_panel_name_operands(region, function_address, operation)
+    operation = action_subtract_work_vector_name_operands(region, function_address, operation)
+    operation = controls_circle_kernels_name_operands(region, function_address, operation)
+    operation = controls_clipped_circle_half_name_operands(region, function_address, operation)
+    operation = controls_station_prepare_name_operands(region, function_address, operation)
+    operation = controls_station_relocation_name_operands(region, function_address, operation)
+    operation = controls_circle_half_name_operands(region, function_address, operation)
+    operation = controls_circle_interior_full_name_operands(region, function_address, operation)
+    operation = action_banked_callback_name_operands(region, function_address, operation)
+    operation = action_banked_callback_return_name_operands(region,function_address,operation)
+    operation = action_key_gauge_decrease_name_operands(region,function_address,operation)
+    operation = action_key_gauge_increase_name_operands(region,function_address,operation)
+    operation = action_keyy_positive_name_operands(region,function_address,operation)
+    operation = action_keyy_negative_name_operands(region,function_address,operation)
+    operation = action_keyx_positive_name_operands(region,function_address,operation)
+    operation = action_keyx_negative_name_operands(region,function_address,operation)
+    operation = action_key_turn_positive_name_operands(region,function_address,operation)
+    operation = action_key_turn_negative_name_operands(region,function_address,operation)
+    operation = action_control_decay_name_operands(region, function_address, operation)
+    operation = action_select_wide_target_name_operands(region, function_address, operation)
+    operation = action_near_vector_search_name_operands(region, function_address, operation)
+    operation = action_wide_target_step_name_operands(region, function_address, operation)
+    operation = action_clamp_vector_words_name_operands(region, function_address, operation)
+    operation = action_folded_near_words_name_operands(region, function_address, operation)
+    operation = action_class3_link_count_name_operands(region, function_address, operation)
+    operation = action_record_code_step_name_operands(region, function_address, operation)
+    operation = action_half_delta_codes_name_operands(region, function_address, operation)
+    operation = action_signed_ratio_code_name_operands(region, function_address, operation)
+    operation = action_vector_high_maximum_name_operands(region, function_address, operation)
+    operation = action_context_word_pairs_name_operands(region, function_address, operation)
+    operation = action_abs_signed32_name_operands(region, function_address, operation)
+    operation = action_preferred_dispatch_name_operands(region, function_address, operation)
+    operation = action_preferred_seven_bridge_name_operands(region,function_address,operation)
+    operation = action_preferred_zero_bridge_name_operands(region,function_address,operation)
+    operation = action_preferred_chance_name_operands(region,function_address,operation)
+    operation = action_preferred_apply_name_operands(region,function_address,operation)
+    operation = action_class0_link_name_operands(region,function_address,operation)
+    operation = action_ignored_classes_name_operands(region,function_address,operation)
+    operation = action_class9_link_name_operands(region,function_address,operation)
+    operation = action_random_filtered_record_name_operands(region,function_address,operation)
+    operation = action_records5_or14_name_operands(region,function_address,operation)
+    operation = action_records6_or7_name_operands(region,function_address,operation)
+    operation = action_records_except6_and7_name_operands(region,function_address,operation)
+    operation = action_link_override_name_operands(region,function_address,operation)
+    operation = action_class_dispatch_name_operands(region, function_address, operation)
+    operation = controls_projection_gate_name_operands(region, function_address, operation)
+    operation = controls_projection_algorithm_name_operands(region, function_address, operation)
+    operation = action_component_transform_name_operands(region, function_address, operation)
+    operation = action_component_stack_name_operands(region,function_address,operation)
+    operation = action_component_encoding_name_operands(region, function_address, operation)
+    operation = action_cached_root_name_operands(region, function_address, operation)
+    operation = action_third_glyph_vector_name_operands(region, function_address, operation)
+    operation = action_third_glyph_stack_name_operands(region,function_address,operation)
+    operation = action_third_glyph_publish_name_operands(region, function_address, operation)
+    operation = action_banked_buffer_init_name_operands(region, function_address, operation)
+    operation = action_class14_reuse_name_operands(region, function_address, operation)
+    operation = action_record_base_reset_name_operands(region, function_address, operation)
+    operation = action_record_update_name_operands(region, function_address, operation)
+    operation = action_record_warning_return_name_operands(region,function_address,operation)
+    operation = action_reject_record_name_operands(region, function_address, operation)
+    operation = action_class_reuse_name_operands(region,function_address,operation)
+    operation = actioniy_record_reuse_name_operands(region,function_address,operation)
+    operation = action_record_scale_name_operands(region, function_address, operation)
+    operation = action_record_selection_name_operands(region,function_address,operation)
+    operation = action_offset_restore_name_operands(region, function_address, operation)
+    operation = action_record_reuse_name_operands(region, function_address, operation)
+    operation = action_folded_random_name_operands(region, function_address, operation)
+    operation = action_unpack_name_operands(region, function_address, operation)
+    operation = three_d_overlay_names(region, function_address, operation)
+    operation = action_work_buffer_name_operands(region, function_address, operation)
+    operation = action_queued_object_name_operands(region, function_address, operation)
+    operation = action_clipped_packet_renderer_name_operands(region,function_address,operation)
+    operation = action_packet_renderer_name_operands(region,function_address,operation)
+    operation = action_polygon_flow_names(region, function_address, operation)
+    operation = action_polygon_return_name_operands(region,function_address,operation)
+    operation = action_polygon_wrap_right_top_name_operands(region,function_address,operation)
+    operation = action_polygon_wrap_left_top_name_operands(region,function_address,operation)
+    operation = action_polygon_wrap_right_name_operands(region,function_address,operation)
+    operation = action_polygon_wrap_left_name_operands(region,function_address,operation)
+    operation = action_polygon_select_right_name_operands(region,function_address,operation)
+    operation = action_polygon_fill_rows_name_operands(region,function_address,operation)
+    operation = action_polygon_right_edge_name_operands(region,function_address,operation)
+    operation = action_polygon_right_short_step_name_operands(region,function_address,operation)
+    operation = action_polygon_left_edge_name_operands(region,function_address,operation)
+    operation = action_polygon_row_selection_name_operands(region,function_address,operation)
+    operation = action_polygon_preparation_name_operands(region,function_address,operation)
+    operation = action_line_raster_name_operands(region,function_address,operation)
+    operation = action_single_edge_name_operands(region, function_address, operation)
+    operation = action_polygon_name_operands(region, function_address, operation)
+    operation = action_clip_cases_name_operands(region, function_address, operation)
+    operation = action_clip_point_writers_name_operands(region, function_address, operation)
+    operation = action_clip_comparisons_name_operands(region, function_address, operation)
+    operation = action_clip_intersections_name_operands(region, function_address, operation)
+    operation = action_clip_products_name_operands(region, function_address, operation)
+    operation = action_signed_division_name_operands(region, function_address, operation)
+    operation = action_face_orientation_name_operands(region,function_address,operation)
+    operation = action_signed_multiply_name_operands(region, function_address, operation)
+    operation = action_listed_codes_name_operands(region,function_address,operation)
+    operation = action_vertex_codes_name_operands(region,function_address,operation)
+    operation = action_vertex_abort_name_operands(region,function_address,operation)
+    operation = action_object_vertices_name_operands(region,function_address,operation)
+    operation = action_vertex_products_name_operands(region,function_address,operation)
+    operation = action_vertex_group_name_operands(region,function_address,operation)
+    operation = action_perspective_name_operands(region,function_address,operation)
+    operation = action_object_copy_name_operands(region,function_address,operation)
+    operation = action_render_matrix_name_operands(region, function_address, operation)
+    operation = action_render_coefficients_name_operands(region, function_address, operation)
+    operation = action_render_queue_control_name_operands(region, function_address, operation)
+    operation = action_render_continuation_name_operands(region,function_address,operation)
+    operation = action_render_queue_insert_name_operands(region, function_address, operation)
+    operation = action_aim_follow_name_operands(region, function_address, operation)
+    operation = action_close_bounds_name_operands(region, function_address, operation)
+    operation = action_close_record_name_operands(region,function_address,operation)
+    operation = action_station_transfer_name_operands(region,function_address,operation)
+    operation = action_vector_reverse_name_operands(region,function_address,operation)
+    operation = action_projection_clip_name_operands(region,function_address,operation)
+    operation = action_projected_bounds_name_operands(region,function_address,operation)
+    operation = action_scale_header_name_operands(region,function_address,operation)
+    operation = action_object_header_name_operands(region, function_address, operation)
+    operation = action_log_ratio_name_operands(region, function_address, operation)
+    operation = action_exponential_table_name_operands(region,function_address,operation)
+    operation = action_logarithm_table_name_operands(region,function_address,operation)
+    operation = action_projected_capture_name_operands(region,function_address,operation)
+    operation = action_record_link_event_name_operands(region, function_address, operation)
+    operation = action_ay_effects_name_operands(region, function_address, operation)
+    operation = action_missile_requests_name_operands(region,function_address,operation)
+    operation = action_missile_creation_name_operands(region,function_address,operation)
     operation = action_vector_wrapper_name_operands(region,function_address,operation)
     operation = action_patched_vector_name_operands(region,function_address,operation)
     operation = action_scaled_multiply_name_operands(region, function_address, operation)
@@ -1507,6 +1679,7 @@ DOCUMENTS.update({("Controls", a): ("ControlsPointRespawn", "алгоритм и
 def name_instruction(region, function_address, address, operation):
     """Уточнение одинаковых литералов с разным смыслом в конкретных инструкциях."""
     from ControlsPointMotionFacts import name_instruction as point_motion_instruction
+    operation = action_class3_link_count_name_operands_instruction(region, function_address, address, operation)
     return point_motion_instruction(region, function_address, address, operation)
 
 from ControlsPointMotionFacts import LABELS as CONTROLS_POINT_MOTION_LABELS, name_operands as controls_point_motion_name_operands
@@ -1665,3 +1838,712 @@ LABELS.update({('Action', 44884): 'NextRow0Term', ('Action', 44898): 'SumRow0Par
 from ActionVectorWrapperFacts import name_operands as action_vector_wrapper_name_operands
 DOCUMENTS['Action',0xACEA]=('ActionVectorWrapper','транспонированная матрица и CPU-стек')
 LABELS['Action',0xAD07]='Resume'
+
+from ActionMissileCreationFacts import name_operands as action_missile_creation_name_operands
+DOCUMENTS['Action',0x60AE]=('ActionMissileCreation','создание записи ракеты')
+LABELS.update({('Action', 24760): 'LostTarget', ('Action', 24776): 'BuildComponents', ('Action', 24806): 'FindSlot', ('Action', 24817): 'InitializeSlot'})
+
+from ActionMissileRequestsFacts import name_operands as action_missile_requests_name_operands
+DOCUMENTS['Action',28748]=('ActionMissileRequests','запросы запуска ракет')
+DOCUMENTS['Action',28765]=('ActionMissileRequests','запросы запуска ракет')
+DOCUMENTS['Action',28789]=('ActionMissileRequests','запросы запуска ракет')
+DOCUMENTS['Action',28808]=('ActionMissileRequests','запросы запуска ракет')
+
+from ActionAyEffectsFacts import LABELS as ACTION_AY_EFFECTS_LABELS, name_operands as action_ay_effects_name_operands
+LABELS.update(ACTION_AY_EFFECTS_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionAyEffects", "алгоритм и проверка") for a in (60584,)})
+
+from ActionRecordLinkEventFacts import LABELS as ACTION_RECORD_LINK_EVENT_LABELS, name_operands as action_record_link_event_name_operands
+LABELS.update(ACTION_RECORD_LINK_EVENT_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionRecordLinkEvent", "алгоритм и проверка") for a in (25435,)})
+
+from ActionProjectedCaptureFacts import name_operands as action_projected_capture_name_operands
+DOCUMENTS['Action',0xE30F]=('ActionProjectedCapture','локальная проверка допуска')
+LABELS.update({('Action', 58147): 'TranslateY', ('Action', 58160): 'CheckY', ('Action', 58186): 'TranslateX', ('Action', 58199): 'CheckX'})
+
+from ActionLogarithmTableFacts import name_operands as action_logarithm_table_name_operands
+DOCUMENTS['ActionBoot',0x438F]=('ActionLogarithmTable','построение логарифма')
+LABELS.update({('ActionBoot', 17307): 'NextEntry', ('ActionBoot', 17331): 'DivideBit', ('ActionBoot', 17341): 'QuotientBit'})
+
+from ActionExponentialTableFacts import name_operands as action_exponential_table_name_operands
+DOCUMENTS['ActionBoot',17237]=('ActionExponentialTable','формула таблицы')
+LABELS.update({('ActionBoot', 17244): 'NextEntry', ('ActionBoot', 17250): 'StoreEntry', ('ActionBoot', 17265): 'MultiplyBit', ('ActionBoot', 17277): 'ShiftProduct'})
+
+from ActionLogRatioFacts import LABELS as ACTION_LOG_RATIO_LABELS, name_operands as action_log_ratio_name_operands
+LABELS.update(ACTION_LOG_RATIO_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionLogRatio", "алгоритм и проверка") for a in (44659,)})
+
+from ActionObjectHeaderFacts import LABELS as ACTION_OBJECT_HEADER_LABELS, name_operands as action_object_header_name_operands
+LABELS.update(ACTION_OBJECT_HEADER_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionObjectHeader", "алгоритм и проверка") for a in (43724,)})
+
+from ActionScaleHeaderFacts import name_operands as action_scale_header_name_operands
+DOCUMENTS['Action',0xE1B9]=('ActionScaleHeader','масштабирование заголовка')
+LABELS['Action',0xE1C7]='SelectShifts'
+
+from ActionProjectedBoundsFacts import name_operands as action_projected_bounds_name_operands
+DOCUMENTS['Action',0xE299]=('ActionProjectedBounds','подготовка допуска и координат')
+LABELS.update({('Action', 58018): 'CheckHighX', ('Action', 58032): 'CheckHighY', ('Action', 58095): 'StoreAbsX', ('Action', 58124): 'StoreAbsY'})
+
+from ActionProjectionClipFacts import name_operands as action_projection_clip_name_operands
+DOCUMENTS['Action',0xE213]=('ActionProjectionClip','граничный отбор')
+LABELS.update({('Action', 57905): 'ScaleX', ('Action', 57962): 'ScaleY'})
+
+from ActionVectorReverseFacts import name_operands as action_vector_reverse_name_operands
+DOCUMENTS['Action',28382]=('ActionVectorReverse','алгоритм и проверка')
+LABELS.update({})
+
+from ActionStationTransferFacts import name_operands as action_station_transfer_name_operands
+DOCUMENTS['Action',27876]=('ActionStationTransfer','алгоритм и проверка')
+LABELS.update({})
+
+from ActionCloseRecordFacts import name_operands as action_close_record_name_operands
+DOCUMENTS['Action',58630]=('ActionCloseRecord','три входа обработки записи')
+DOCUMENTS['Action',58655]=('ActionCloseRecord','три входа обработки записи')
+DOCUMENTS['Action',58698]=('ActionCloseRecord','три входа обработки записи')
+LABELS.update({('Action', 58669): 'CheckComp0', ('Action', 58681): 'CheckComp1', ('Action', 58693): 'CheckComp2'})
+
+from ActionCloseBoundsFacts import LABELS as ACTION_CLOSE_BOUNDS_LABELS, name_operands as action_close_bounds_name_operands
+LABELS.update(ACTION_CLOSE_BOUNDS_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionCloseBounds", "алгоритм и проверка") for a in (57809,)})
+
+from ActionAimFollowFacts import name_operands as action_aim_follow_name_operands
+DOCUMENTS['Action',0xE36A]=('ActionAimFollow','сопровождение и цель')
+LABELS.update({('Action', 58258): 'TranslateX', ('Action', 58271): 'TranslateY', ('Action', 58285): 'StepX', ('Action', 58297): 'StepY', ('Action', 58363): 'EncodeRecord'})
+
+from ActionRenderQueueInsertFacts import LABELS as ACTION_RENDER_QUEUE_INSERT_LABELS, name_operands as action_render_queue_insert_name_operands
+LABELS.update(ACTION_RENDER_QUEUE_INSERT_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionRenderQueueInsert", "алгоритм и проверка") for a in (58383,)})
+
+from ActionRenderContinuationFacts import name_operands as action_render_continuation_name_operands
+DOCUMENTS['Action',58587]=('ActionRenderContinuation','алгоритм и проверка')
+LABELS.update({('Action', 58618): 'PointE4FA', ('Action', 58621): 'PointE4FD'})
+
+from ActionRenderQueueControlFacts import LABELS as ACTION_RENDER_QUEUE_CONTROL_LABELS, name_operands as action_render_queue_control_name_operands
+LABELS.update(ACTION_RENDER_QUEUE_CONTROL_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionRenderQueueControl", "алгоритм и проверка") for a in (58534, 58623)})
+
+from ActionRenderCoefficientsFacts import name_operands as action_render_coefficients_name_operands
+DOCUMENTS['Action',0xC99B]=('ActionRenderCoefficients','точные формулы коэффициентов')
+LABELS.update({('Action', 51663): 'ThreePhases', ('Action', 51797): 'StoreCoeff12', ('Action', 51870): 'StoreCoeff22', ('Action', 51926): 'StoreCoeff13', ('Action', 51999): 'StoreCoeff23', ('Action', 51891): 'ScaleCoeff13', ('Action', 51939): 'ReadCoeff33Base'})
+
+from ActionRenderMatrixFacts import LABELS as ACTION_RENDER_MATRIX_LABELS, name_operands as action_render_matrix_name_operands
+LABELS.update(ACTION_RENDER_MATRIX_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionRenderMatrix", "алгоритм и проверка") for a in (52003,)})
+
+from ActionObjectCopyFacts import name_operands as action_object_copy_name_operands
+DOCUMENTS['Action',43746]=('ActionObjectCopy','алгоритм и проверка')
+LABELS.update({('Action', 43764): 'NextFixed', ('Action', 43779): 'FixedEnd', ('Action', 43781): 'NextVariable', ('Action', 43795): 'VariableEnd'})
+
+from ActionPerspectiveFacts import name_operands as action_perspective_name_operands
+DOCUMENTS['Action',55200]=('ActionPerspective','алгоритм и проверка')
+LABELS.update({('Action', 55211): 'DepthShift', ('Action', 55238): 'FirstShift', ('Action', 55262): 'FirstMagnitude', ('Action', 55708): 'FirstQuotient', ('Action', 55721): 'FirstNegative', ('Action', 55736): 'SecondShift', ('Action', 55759): 'SecondMagnitude', ('Action', 56205): 'SecondQuotient', ('Action', 56223): 'SecondNegative', ('Action', 56232): 'RejectFirst', ('Action', 56243): 'RejectSecond', ('Action', 55371): 'FirstLead01', ('Action', 55377): 'FirstLead02', ('Action', 55383): 'FirstLead03', ('Action', 55389): 'FirstLead04', ('Action', 55395): 'FirstLead05', ('Action', 55401): 'FirstLead06', ('Action', 55407): 'FirstLead07', ('Action', 55413): 'FirstLead08', ('Action', 55419): 'FirstLead09', ('Action', 55426): 'FirstLead10', ('Action', 55432): 'FirstLead11', ('Action', 55438): 'FirstLead12', ('Action', 55444): 'FirstLead13', ('Action', 55450): 'FirstLead14', ('Action', 55456): 'FirstLead15', ('Action', 55462): 'FirstLead16', ('Action', 55470): 'FirstSplit01', ('Action', 55477): 'FirstSplit02', ('Action', 55484): 'FirstSplit03', ('Action', 55491): 'FirstSplit04', ('Action', 55498): 'FirstSplit05', ('Action', 55505): 'FirstSplit06', ('Action', 55512): 'FirstSplit07', ('Action', 55519): 'FirstSplit08', ('Action', 55526): 'FirstSplit09', ('Action', 55533): 'FirstSplit10', ('Action', 55540): 'FirstSplit11', ('Action', 55547): 'FirstSplit12', ('Action', 55554): 'FirstSplit13', ('Action', 55561): 'FirstSplit14', ('Action', 55568): 'FirstSplit15', ('Action', 55575): 'FirstLowDepth', ('Action', 55588): 'FirstRange15', ('Action', 55597): 'FirstBit14', ('Action', 55602): 'FirstKeep14', ('Action', 55605): 'FirstBit13', ('Action', 55610): 'FirstKeep13', ('Action', 55613): 'FirstBit12', ('Action', 55618): 'FirstKeep12', ('Action', 55621): 'FirstBit11', ('Action', 55626): 'FirstKeep11', ('Action', 55629): 'FirstBit10', ('Action', 55634): 'FirstKeep10', ('Action', 55637): 'FirstBit09', ('Action', 55642): 'FirstKeep09', ('Action', 55645): 'FirstBit08', ('Action', 55650): 'FirstKeep08', ('Action', 55653): 'FirstBit07', ('Action', 55658): 'FirstKeep07', ('Action', 55660): 'FirstBit06', ('Action', 55665): 'FirstKeep06', ('Action', 55667): 'FirstBit05', ('Action', 55672): 'FirstKeep05', ('Action', 55674): 'FirstBit04', ('Action', 55679): 'FirstKeep04', ('Action', 55681): 'FirstBit03', ('Action', 55686): 'FirstKeep03', ('Action', 55688): 'FirstBit02', ('Action', 55693): 'FirstKeep02', ('Action', 55695): 'FirstBit01', ('Action', 55700): 'FirstKeep01', ('Action', 55702): 'FirstBit00', ('Action', 55707): 'FirstKeep00', ('Action', 55868): 'SecondLead01', ('Action', 55874): 'SecondLead02', ('Action', 55880): 'SecondLead03', ('Action', 55886): 'SecondLead04', ('Action', 55892): 'SecondLead05', ('Action', 55898): 'SecondLead06', ('Action', 55904): 'SecondLead07', ('Action', 55910): 'SecondLead08', ('Action', 55916): 'SecondLead09', ('Action', 55923): 'SecondLead10', ('Action', 55929): 'SecondLead11', ('Action', 55935): 'SecondLead12', ('Action', 55941): 'SecondLead13', ('Action', 55947): 'SecondLead14', ('Action', 55953): 'SecondLead15', ('Action', 55959): 'SecondLead16', ('Action', 55967): 'SecondSplit01', ('Action', 55974): 'SecondSplit02', ('Action', 55981): 'SecondSplit03', ('Action', 55988): 'SecondSplit04', ('Action', 55995): 'SecondSplit05', ('Action', 56002): 'SecondSplit06', ('Action', 56009): 'SecondSplit07', ('Action', 56016): 'SecondSplit08', ('Action', 56023): 'SecondSplit09', ('Action', 56030): 'SecondSplit10', ('Action', 56037): 'SecondSplit11', ('Action', 56044): 'SecondSplit12', ('Action', 56051): 'SecondSplit13', ('Action', 56058): 'SecondSplit14', ('Action', 56065): 'SecondSplit15', ('Action', 56072): 'SecondLowDepth', ('Action', 56085): 'SecondRange15', ('Action', 56094): 'SecondBit14', ('Action', 56099): 'SecondKeep14', ('Action', 56102): 'SecondBit13', ('Action', 56107): 'SecondKeep13', ('Action', 56110): 'SecondBit12', ('Action', 56115): 'SecondKeep12', ('Action', 56118): 'SecondBit11', ('Action', 56123): 'SecondKeep11', ('Action', 56126): 'SecondBit10', ('Action', 56131): 'SecondKeep10', ('Action', 56134): 'SecondBit09', ('Action', 56139): 'SecondKeep09', ('Action', 56142): 'SecondBit08', ('Action', 56147): 'SecondKeep08', ('Action', 56150): 'SecondBit07', ('Action', 56155): 'SecondKeep07', ('Action', 56157): 'SecondBit06', ('Action', 56162): 'SecondKeep06', ('Action', 56164): 'SecondBit05', ('Action', 56169): 'SecondKeep05', ('Action', 56171): 'SecondBit04', ('Action', 56176): 'SecondKeep04', ('Action', 56178): 'SecondBit03', ('Action', 56183): 'SecondKeep03', ('Action', 56185): 'SecondBit02', ('Action', 56190): 'SecondKeep02', ('Action', 56192): 'SecondBit01', ('Action', 56197): 'SecondKeep01', ('Action', 56199): 'SecondBit00', ('Action', 56204): 'SecondKeep00'})
+
+LABELS['Action',0xD9AA]='StoreFirst'
+
+from ActionVertexGroupFacts import name_operands as action_vertex_group_name_operands
+DOCUMENTS['Action',54932]=('ActionVertexGroup','алгоритм и проверка')
+LABELS.update({('Action', 55065): 'NegatePair', ('Action', 55079): 'Single', ('Action', 55087): 'Masked', ('Action', 55097): 'Next1', ('Action', 55110): 'Next3', ('Action', 55123): 'Next2', ('Action', 55136): 'Next6', ('Action', 55149): 'Next7', ('Action', 55162): 'Next5', ('Action', 55175): 'Next4', ('Action', 55188): 'Finish'})
+
+from ActionVertexProductsFacts import name_operands as action_vertex_products_name_operands
+DOCUMENTS['Action',54777]=('ActionVertexProducts','алгоритм и проверка')
+LABELS.update({})
+
+from ActionObjectVerticesFacts import name_operands as action_object_vertices_name_operands
+DOCUMENTS['Action',54729]=('ActionObjectVertices','алгоритм и проверка')
+LABELS.update({('Action', 54757): 'NextGroup'})
+
+from ActionVertexAbortFacts import name_operands as action_vertex_abort_name_operands
+DOCUMENTS['Action',57072]=('ActionVertexAbort','алгоритм и проверка')
+LABELS.update({})
+
+from ActionVertexCodesFacts import name_operands as action_vertex_codes_name_operands
+DOCUMENTS['Action',57075]=('ActionVertexCodes','алгоритм и проверка')
+LABELS.update({('Action', 57087): 'NextPoint', ('Action', 57140): 'SecondNegative', ('Action', 57180): 'FirstHigh', ('Action', 57205): 'SecondHigh', ('Action', 57245): 'FirstNegative'})
+
+from ActionListedCodesFacts import name_operands as action_listed_codes_name_operands
+DOCUMENTS['Action',56785]=('ActionListedCodes','алгоритм и проверка')
+LABELS.update({('Action', 56794): 'NextIndex', ('Action', 56811): 'ZeroCode'})
+
+from ActionSignedMultiplyFacts import LABELS as ACTION_SIGNED_MULTIPLY_LABELS, name_operands as action_signed_multiply_name_operands
+LABELS.update(ACTION_SIGNED_MULTIPLY_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionSignedMultiply", "алгоритм и проверка") for a in (50932,)})
+
+from ActionFaceOrientationFacts import name_operands as action_face_orientation_name_operands
+DOCUMENTS['Action',57270]=('ActionFaceOrientation','алгоритм и проверка')
+LABELS.update({('Action', 57285): 'Alternate', ('Action', 57292): 'ReadPoints'})
+
+from ActionSignedDivisionFacts import LABELS as ACTION_SIGNED_DIVISION_LABELS, name_operands as action_signed_division_name_operands
+LABELS.update(ACTION_SIGNED_DIVISION_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionSignedDivision", "алгоритм и проверка") for a in (51340,)})
+
+from ActionClipProductsFacts import LABELS as ACTION_CLIP_PRODUCTS_LABELS, name_operands as action_clip_products_name_operands
+LABELS.update(ACTION_CLIP_PRODUCTS_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionClipProducts", "алгоритм и проверка") for a in (50295, 50326, 50357, 50388)})
+
+from ActionClipIntersectionsFacts import LABELS as ACTION_CLIP_INTERSECTIONS_LABELS, name_operands as action_clip_intersections_name_operands
+LABELS.update(ACTION_CLIP_INTERSECTIONS_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionClipIntersections", "алгоритм и проверка") for a in (50422, 50496, 50571, 50663)})
+
+from ActionClipComparisonsFacts import LABELS as ACTION_CLIP_COMPARISONS_LABELS, name_operands as action_clip_comparisons_name_operands
+LABELS.update(ACTION_CLIP_COMPARISONS_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionClipComparisons", "алгоритм и проверка") for a in (50797, 50817, 50837, 50857, 50877, 50888)})
+
+from ActionClipPointWritersFacts import LABELS as ACTION_CLIP_POINT_WRITERS_LABELS, name_operands as action_clip_point_writers_name_operands
+LABELS.update(ACTION_CLIP_POINT_WRITERS_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionClipPointWriters", "алгоритм и проверка") for a in (50753, 50764, 50775, 50786, 50899)})
+
+from ActionClipCasesFacts import LABELS as ACTION_CLIP_CASES_LABELS, name_operands as action_clip_cases_name_operands
+LABELS.update(ACTION_CLIP_CASES_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionClipCases", "алгоритм и проверка") for a in (49274, 49275, 49290, 49301, 49316, 49327, 49342, 49353, 49368, 49379, 49385, 49391, 49409, 49433, 49451, 49458, 49476, 49482, 49488, 49506, 49524, 49531, 49549, 49573, 49579, 49597, 49615, 49622, 49628, 49649, 49676, 49704, 49711, 49742, 49753, 49759, 49780, 49805, 49833, 49854, 49865, 49872, 49903, 49928, 49934, 49940, 49958, 49976, 49982, 50009, 50030, 50037, 50065, 50076, 50097, 50128, 50134, 50159, 50166, 50194, 50225, 50232, 50253, 50278, 50289, 50419, 50493, 50568, 50660, 50922)})
+
+from ActionPolygonFacts import LABELS as ACTION_POLYGON_LABELS, name_operands as action_polygon_name_operands
+LABELS.update(ACTION_POLYGON_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionPolygon", "алгоритм и проверка") for a in (49152, 49265)})
+
+from ActionSingleEdgeFacts import LABELS as ACTION_SINGLE_EDGE_LABELS, name_operands as action_single_edge_name_operands
+LABELS.update(ACTION_SINGLE_EDGE_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionSingleEdge", "алгоритм и проверка") for a in (51521,)})
+
+from ActionLineRasterFacts import name_operands as action_line_raster_name_operands
+DOCUMENTS['Action',56816]=('ActionLineRaster','алгоритм и проверка')
+LABELS.update({('Action', 56842): 'OrderedY', ('Action', 56895): 'ApplyLeft', ('Action', 56898): 'LeftBoundary', ('Action', 56900): 'LeftError', ('Action', 56911): 'LeftByte', ('Action', 56917): 'LeftRow', ('Action', 56927): 'SteepLeft', ('Action', 56945): 'LeftDownPixel', ('Action', 56946): 'ApplyDownLeft', ('Action', 56956): 'LeftDownBound', ('Action', 56958): 'LeftDownNext', ('Action', 56964): 'LeftDownByte', ('Action', 56971): 'Rightward', ('Action', 56995): 'ApplyRight', ('Action', 56998): 'RightBoundary', ('Action', 57000): 'RightError', ('Action', 57011): 'RightByte', ('Action', 57017): 'RightRow', ('Action', 57027): 'SteepRight', ('Action', 57045): 'RightDownPixel', ('Action', 57046): 'ApplyDownRight', ('Action', 57056): 'RightDownBound', ('Action', 57058): 'RightDownNext', ('Action', 57064): 'RightDownByte', ('Action', 57068): 'RestoreStack'})
+
+from ActionPolygonPreparationFacts import name_operands as action_polygon_preparation_name_operands
+DOCUMENTS['Action',54545]=('ActionPolygonPreparation','алгоритм и проверка')
+LABELS.update({('Action', 54563): 'ScanRows', ('Action', 54570): 'CheckMaximum', ('Action', 54575): 'NextVertex', ('Action', 54595): 'ScanLeftTop', ('Action', 54599): 'ReadLeftTop', ('Action', 54603): 'KeepLeftTop', ('Action', 54608): 'ScanRightTop', ('Action', 54613): 'NextRightTop', ('Action', 54615): 'ReadRightTop', ('Action', 54619): 'KeepRightTop'})
+
+from ActionPolygonRowSelectionFacts import name_operands as action_polygon_row_selection_name_operands
+DOCUMENTS['Action',54465]=('ActionPolygonRowSelection','алгоритм и проверка')
+LABELS.update({('Action', 54479): 'FinishAtMax', ('Action', 54491): 'CompareEdges', ('Action', 54494): 'FinishAtLeft', ('Action', 54506): 'FinishAtRight'})
+
+from ActionPolygonLeftEdgeFacts import name_operands as action_polygon_left_edge_name_operands
+DOCUMENTS['Action',53874]=('ActionPolygonLeftEdge','алгоритм и проверка')
+LABELS.update({('Action', 53882): 'PreviousRow', ('Action', 53886): 'ReadNextRow', ('Action', 54012): 'ExactPositive', ('Action', 54041): 'ShortPositive', ('Action', 54058): 'NegativeSlope', ('Action', 54150): 'CheckRightReady', ('Action', 54169): 'ShortNegative', ('Action', 53926): 'PositiveBit0', ('Action', 53933): 'PositiveBit1', ('Action', 53940): 'PositiveBit2', ('Action', 53947): 'PositiveBit3', ('Action', 53954): 'PositiveBit4', ('Action', 53961): 'PositiveBit5', ('Action', 53968): 'PositiveBit6', ('Action', 53975): 'PositiveBit7', ('Action', 54072): 'NegativeBit0', ('Action', 54079): 'NegativeBit1', ('Action', 54086): 'NegativeBit2', ('Action', 54093): 'NegativeBit3', ('Action', 54100): 'NegativeBit4', ('Action', 54107): 'NegativeBit5', ('Action', 54114): 'NegativeBit6', ('Action', 54121): 'NegativeBit7'})
+
+from ActionPolygonRightShortStepFacts import name_operands as action_polygon_right_short_step_name_operands
+DOCUMENTS['Action',54517]=('ActionPolygonRightShortStep','алгоритм и проверка')
+LABELS.update({})
+
+from ActionPolygonRightEdgeFacts import name_operands as action_polygon_right_edge_name_operands
+DOCUMENTS['Action',54189]=('ActionPolygonRightEdge','алгоритм и проверка')
+LABELS.update({('Action', 54197): 'NextRow', ('Action', 54204): 'ReadNextRow', ('Action', 54330): 'ExactPositive', ('Action', 54358): 'ShortPositive', ('Action', 54374): 'NegativeSlope', ('Action', 54245): 'PositiveBit0', ('Action', 54252): 'PositiveBit1', ('Action', 54259): 'PositiveBit2', ('Action', 54266): 'PositiveBit3', ('Action', 54273): 'PositiveBit4', ('Action', 54280): 'PositiveBit5', ('Action', 54287): 'PositiveBit6', ('Action', 54294): 'PositiveBit7', ('Action', 54389): 'NegativeBit0', ('Action', 54396): 'NegativeBit1', ('Action', 54403): 'NegativeBit2', ('Action', 54410): 'NegativeBit3', ('Action', 54417): 'NegativeBit4', ('Action', 54424): 'NegativeBit5', ('Action', 54431): 'NegativeBit6', ('Action', 54438): 'NegativeBit7'})
+
+from ActionPolygonFillRowsFacts import name_operands as action_polygon_fill_rows_name_operands
+DOCUMENTS['Action',53696]=('ActionPolygonFillRows','алгоритм и проверка')
+LABELS.update({('Action', 53758): 'FinishWide', ('Action', 53769): 'AdvanceRow', ('Action', 53777): 'CorrectLeft', ('Action', 53786): 'KeepLeftError', ('Action', 53798): 'KeepRightError', ('Action', 53801): 'CheckRow', ('Action', 53805): 'DrawRow', ('Action', 53830): 'SameByte', ('Action', 53846): 'FlipNarrow', ('Action', 53853): 'CarryRow', ('Action', 53859): 'RestoreStack', ('Action', 53698): 'Span30', ('Action', 53700): 'Span29', ('Action', 53702): 'Span28', ('Action', 53704): 'Span27', ('Action', 53706): 'Span26', ('Action', 53708): 'Span25', ('Action', 53710): 'Span24', ('Action', 53712): 'Span23', ('Action', 53714): 'Span22', ('Action', 53716): 'Span21', ('Action', 53718): 'Span20', ('Action', 53720): 'Span19', ('Action', 53722): 'Span18', ('Action', 53724): 'Span17', ('Action', 53726): 'Span16', ('Action', 53728): 'Span15', ('Action', 53730): 'Span14', ('Action', 53732): 'Span13', ('Action', 53734): 'Span12', ('Action', 53736): 'Span11', ('Action', 53738): 'Span10', ('Action', 53740): 'Span9', ('Action', 53742): 'Span8', ('Action', 53744): 'Span7', ('Action', 53746): 'Span6', ('Action', 53748): 'Span5', ('Action', 53750): 'Span4', ('Action', 53752): 'Span3', ('Action', 53754): 'Span2', ('Action', 53756): 'Span1'})
+
+from ActionPolygonSelectRightFacts import name_operands as action_polygon_select_right_name_operands
+DOCUMENTS['Action',53864]=('ActionPolygonSelectRight','алгоритм и проверка')
+LABELS.update({})
+
+from ActionPolygonWrapLeftFacts import name_operands as action_polygon_wrap_left_name_operands
+DOCUMENTS['Action',53867]=('ActionPolygonWrapLeft','алгоритм и проверка')
+LABELS.update({})
+
+from ActionPolygonWrapRightFacts import name_operands as action_polygon_wrap_right_name_operands
+DOCUMENTS['Action',54184]=('ActionPolygonWrapRight','алгоритм и проверка')
+LABELS.update({})
+
+from ActionPolygonWrapLeftTopFacts import name_operands as action_polygon_wrap_left_top_name_operands
+DOCUMENTS['Action',54531]=('ActionPolygonWrapLeftTop','алгоритм и проверка')
+LABELS.update({})
+
+from ActionPolygonWrapRightTopFacts import name_operands as action_polygon_wrap_right_top_name_operands
+DOCUMENTS['Action',54538]=('ActionPolygonWrapRightTop','алгоритм и проверка')
+LABELS.update({})
+
+from ActionPolygonReturnFacts import name_operands as action_polygon_return_name_operands
+DOCUMENTS['Action',54543]=('ActionPolygonReturn','алгоритм и проверка')
+LABELS.update({})
+
+from ActionPolygonFlowNames import name_operands as action_polygon_flow_names
+
+from ActionPacketRendererFacts import name_operands as action_packet_renderer_name_operands
+DOCUMENTS['Action',56611]=('ActionPacketRenderer','алгоритм и проверка')
+LABELS.update({('Action', 56652): 'NextFacePoint', ('Action', 56674): 'RejectFace', ('Action', 56679): 'SkipRecord', ('Action', 56687): 'LineRecord', ('Action', 56700): 'PrepareLineMode', ('Action', 56719): 'SetClearMode', ('Action', 56727): 'SetOrMode', ('Action', 56732): 'StoreLineMode', ('Action', 56753): 'NextLinePoint'})
+
+from ActionClippedPacketRendererFacts import name_operands as action_clipped_packet_renderer_name_operands
+DOCUMENTS['Action',56253]=('ActionClippedPacketRenderer','алгоритм и проверка')
+LABELS.update({('Action', 56309): 'NextFacePoint', ('Action', 56331): 'ClipFace', ('Action', 56340): 'RejectFace', ('Action', 56345): 'SkipRecord', ('Action', 56353): 'LineRecord', ('Action', 56366): 'PrepareLineMode', ('Action', 56385): 'SetClearMode', ('Action', 56393): 'SetOrMode', ('Action', 56398): 'StoreLineMode', ('Action', 56438): 'NextLinePoint', ('Action', 56531): 'DrawSegment', ('Action', 56534): 'NextSegment', ('Action', 56541): 'ClipSegment', ('Action', 56586): 'CopyClippedPair'})
+
+from ActionQueuedObjectFacts import LABELS as ACTION_QUEUED_OBJECT_LABELS, name_operands as action_queued_object_name_operands
+LABELS.update(ACTION_QUEUED_OBJECT_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionQueuedObject", "алгоритм и проверка") for a in (58587,)})
+
+from ActionWorkBufferFacts import LABELS as ACTION_WORK_BUFFER_LABELS, name_operands as action_work_buffer_name_operands
+LABELS.update(ACTION_WORK_BUFFER_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionWorkBuffer", "алгоритм и проверка") for a in (53514,)})
+
+from ThreeDOverlayMirrorFacts import LABELS as THREED_OVERLAY_LABELS,name_operands as three_d_overlay_names
+LABELS.update(THREED_OVERLAY_LABELS)
+DOCUMENTS.update({("ThreeD",a):("ThreeDOverlayMirror","копия и границы доказательства") for a in (49152, 49265, 49274, 49275, 49290, 49301, 49316, 49327, 49342, 49353, 49368, 49379, 49385, 49391, 49409, 49433, 49451, 49458, 49476, 49482, 49488, 49506, 49524, 49531, 49549, 49573, 49579, 49597, 49615, 49622, 49628, 49649, 49676, 49704, 49711, 49742, 49753, 49759, 49780, 49805, 49833, 49854, 49865, 49872, 49903, 49928, 49934, 49940, 49958, 49976, 49982, 50009, 50030, 50037, 50065, 50076, 50097, 50128, 50134, 50159, 50166, 50194, 50225, 50232, 50253, 50278, 50289, 50295, 50326, 50357, 50388, 50419, 50422, 50493, 50496, 50568, 50571, 50660, 50663, 50753, 50764, 50775, 50786, 50797, 50817, 50837, 50857, 50877, 50888, 50899, 50922, 50932, 51340, 51521, 51611, 52003, 53000, 53514, 53548, 53696, 53864, 53867, 53874, 54184, 54189, 54465, 54517, 54531, 54538, 54543, 54545, 54729, 54777, 54932, 55200, 56253, 56611, 56785, 56816, 57072, 57075, 57270)})
+
+DOCUMENTS["Intro", 0x692D] = ("IntroAttributeWriter", "писатель атрибутов")
+
+from IntroTextureScaleFacts import LABELS as INTRO_TEXTURE_SCALE_LABELS, name_operands as intro_texture_scale_name_operands
+LABELS.update(INTRO_TEXTURE_SCALE_LABELS)
+DOCUMENTS["Intro", 0x6C21] = ("IntroTextureScale", "масштаб текстуры")
+
+DOCUMENTS["Intro", 0x6827] = ("IntroScatter", "экранный перенос")
+DOCUMENTS["Intro", 0x67F1] = ("IntroScatter", "экранный перенос")
+
+from IntroPointerSamplerFacts import name_operands as intro_pointer_sampler_name_operands
+from IntroPointerSamplerFacts import LABELS as INTRO_POINTER_SAMPLER_LABELS
+LABELS.update(INTRO_POINTER_SAMPLER_LABELS)
+DOCUMENTS['Intro', 27619] = ('IntroPointerSampler', "алгоритм и проверка")
+DOCUMENTS['Intro', 27629] = ('IntroPointerSampler', "алгоритм и проверка")
+
+from IntroScrolledSamplerFacts import name_operands as intro_scrolled_sampler_name_operands
+from IntroScrolledSamplerFacts import LABELS as INTRO_SCROLLED_SAMPLER_LABELS
+LABELS.update(INTRO_SCROLLED_SAMPLER_LABELS)
+DOCUMENTS['Intro', 26338] = ('IntroScrolledSampler', "алгоритм и проверка")
+DOCUMENTS['Intro', 26355] = ('IntroScrolledSampler', "алгоритм и проверка")
+
+DOCUMENTS['Final', 24904] = ('FinalHalt', "алгоритм и проверка")
+
+from ActionUnpackFacts import LABELS as ACTION_UNPACK_LABELS, name_operands as action_unpack_name_operands
+LABELS.update(ACTION_UNPACK_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionUnpack", "алгоритм и проверка") for a in (43811,)})
+
+from BootstrapRelocationFacts import name_operands as bootstrap_relocation_name_operands
+DOCUMENTS['StationBoot', 25344] = ('BootstrapRelocation', "алгоритм и проверка")
+DOCUMENTS['ActionBoot', 24576] = ('BootstrapRelocation', "алгоритм и проверка")
+
+from IntroScreenFacts import name_operands as intro_screen_name_operands
+from IntroScreenFacts import LABELS as INTRO_SCREEN_LABELS
+LABELS.update(INTRO_SCREEN_LABELS)
+DOCUMENTS['IntroUnpack', 28209] = ('IntroScreen', "алгоритм и проверка")
+
+from IntroLookupTransferFacts import name_operands as intro_lookup_transfer_name_operands
+DOCUMENTS['Intro', 27548] = ('IntroLookupTransfer', "алгоритм и проверка")
+
+DOCUMENTS['Intro', 27155] = ('IntroWaitInterrupt', "алгоритм и проверка")
+
+from IntroPresentAttributesFacts import name_operands as intro_present_attributes_name_operands
+from IntroPresentAttributesFacts import LABELS as INTRO_PRESENT_ATTRIBUTES_LABELS
+LABELS.update(INTRO_PRESENT_ATTRIBUTES_LABELS)
+DOCUMENTS['Intro', 26788] = ('IntroPresentAttributes', "алгоритм и проверка")
+DOCUMENTS['Intro', 27011] = ('IntroPresentAttributes', "алгоритм и проверка")
+
+from IntroInterlacedFrameFacts import name_operands as intro_interlaced_frame_name_operands
+from IntroInterlacedFrameFacts import LABELS as INTRO_INTERLACED_FRAME_LABELS
+LABELS.update(INTRO_INTERLACED_FRAME_LABELS)
+DOCUMENTS['Intro', 26609] = ('IntroInterlacedFrame', "алгоритм и проверка")
+DOCUMENTS['Intro', 26663] = ('IntroInterlacedFrame', "алгоритм и проверка")
+
+from IntroLookupContinuationFacts import name_operands as intro_lookup_continuation_name_operands
+DOCUMENTS['Intro', 27580] = ('IntroLookupContinuation', "алгоритм и проверка")
+
+from ActionFoldedRandomFacts import LABELS as ACTION_FOLDED_RANDOM_LABELS, name_operands as action_folded_random_name_operands
+LABELS.update(ACTION_FOLDED_RANDOM_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionFoldedRandom", "алгоритм и проверка") for a in (60424, 60274, 60295, 60344)})
+
+from ActionRandomClusterFacts import name_operands as action_random_cluster_name_operands
+DOCUMENTS.update({("Action",a): ("ActionFoldedRandom", "генератор и все потоки") for a in (60281, 60288, 60302, 60309, 60316, 60323, 60330, 60337, 60351, 60358, 60365, 60372)})
+
+from ActionRecordReuseFacts import LABELS as ACTION_RECORD_REUSE_LABELS, name_operands as action_record_reuse_name_operands
+LABELS.update(ACTION_RECORD_REUSE_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionRecordReuse", "алгоритм и проверка") for a in (62356,)})
+
+from ActionOffsetRestoreFacts import LABELS as ACTION_OFFSET_RESTORE_LABELS, name_operands as action_offset_restore_name_operands
+LABELS.update(ACTION_OFFSET_RESTORE_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionOffsetRestore", "алгоритм и проверка") for a in (59013,)})
+
+from ActionRecordSelectionFacts import name_operands as action_record_selection_name_operands
+DOCUMENTS['Action',59038]=('ActionRecordSelection','алгоритм и проверка')
+LABELS.update({})
+
+from ActionRecordScaleFacts import LABELS as ACTION_RECORD_SCALE_LABELS, name_operands as action_record_scale_name_operands
+LABELS.update(ACTION_RECORD_SCALE_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionRecordScale", "алгоритм и проверка") for a in (58716,)})
+
+from ActionIYRecordReuseFacts import name_operands as actioniy_record_reuse_name_operands
+DOCUMENTS['Action',61501]=('ActionIYRecordReuse','алгоритм и проверка')
+LABELS.update({})
+
+from ActionClassReuseFacts import name_operands as action_class_reuse_name_operands
+DOCUMENTS['Action',58975]=('ActionClassReuse','алгоритм и проверка')
+LABELS.update({('Action', 58996): 'ScanNext'})
+
+from ActionRejectRecordFacts import LABELS as ACTION_REJECT_RECORD_LABELS, name_operands as action_reject_record_name_operands
+LABELS.update(ACTION_REJECT_RECORD_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionRejectRecord", "алгоритм и проверка") for a in (58968,)})
+
+from ActionRecordWarningReturnFacts import name_operands as action_record_warning_return_name_operands
+DOCUMENTS['Action',58965]=('ActionRecordWarningReturn','алгоритм и проверка')
+LABELS.update({})
+
+from ActionRecordUpdateFacts import LABELS as ACTION_RECORD_UPDATE_LABELS, name_operands as action_record_update_name_operands
+LABELS.update(ACTION_RECORD_UPDATE_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionRecordUpdate", "алгоритм и проверка") for a in (58784,)})
+
+from ActionRecordBaseResetFacts import LABELS as ACTION_RECORD_BASE_RESET_LABELS, name_operands as action_record_base_reset_name_operands
+LABELS.update(ACTION_RECORD_BASE_RESET_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionRecordBaseReset", "алгоритм и проверка") for a in (62834,)})
+
+from ActionClass14ReuseFacts import LABELS as ACTION_CLASS14_REUSE_LABELS, name_operands as action_class14_reuse_name_operands
+LABELS.update(ACTION_CLASS14_REUSE_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionClass14Reuse", "алгоритм и проверка") for a in (24946,)})
+
+from ActionBankedBufferInitFacts import LABELS as ACTION_BANKED_BUFFER_INIT_LABELS, name_operands as action_banked_buffer_init_name_operands
+LABELS.update(ACTION_BANKED_BUFFER_INIT_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionBankedBufferInit", "алгоритм и проверка") for a in (27862,)})
+
+from ActionThirdGlyphPublishFacts import LABELS as ACTION_THIRD_GLYPH_PUBLISH_LABELS, name_operands as action_third_glyph_publish_name_operands
+LABELS.update(ACTION_THIRD_GLYPH_PUBLISH_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionThirdGlyphPublish", "алгоритм и проверка") for a in (27828,)})
+
+from ActionThirdGlyphStackFacts import name_operands as action_third_glyph_stack_name_operands
+DOCUMENTS['Action',27825]=('ActionThirdGlyphStack','алгоритм и проверка')
+LABELS.update({})
+
+from ActionThirdGlyphVectorFacts import LABELS as ACTION_THIRD_GLYPH_VECTOR_LABELS, name_operands as action_third_glyph_vector_name_operands
+LABELS.update(ACTION_THIRD_GLYPH_VECTOR_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionThirdGlyphVector", "алгоритм и проверка") for a in (27791,)})
+
+from ActionCachedRootFacts import LABELS as ACTION_CACHED_ROOT_LABELS, name_operands as action_cached_root_name_operands
+LABELS.update(ACTION_CACHED_ROOT_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionCachedRoot", "алгоритм и проверка") for a in (44360, 45289)})
+
+from ActionComponentEncodingFacts import LABELS as ACTION_COMPONENT_ENCODING_LABELS, name_operands as action_component_encoding_name_operands
+LABELS.update(ACTION_COMPONENT_ENCODING_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionComponentEncoding", "алгоритм и проверка") for a in (27715,)})
+
+from ActionComponentStackFacts import name_operands as action_component_stack_name_operands
+DOCUMENTS['Action',27712]=('ActionComponentStack','алгоритм и проверка')
+LABELS.update({})
+
+from ActionComponentTransformFacts import LABELS as ACTION_COMPONENT_TRANSFORM_LABELS, name_operands as action_component_transform_name_operands
+LABELS.update(ACTION_COMPONENT_TRANSFORM_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionComponentTransform", "алгоритм и проверка") for a in (27647, 27673)})
+
+from ControlsProjectionAlgorithmFacts import LABELS as CONTROLS_PROJECTION_ALGORITHM_LABELS, name_operands as controls_projection_algorithm_name_operands
+LABELS.update(CONTROLS_PROJECTION_ALGORITHM_LABELS)
+DOCUMENTS.update({("Controls", a): ("ControlsBodyProjection", "алгоритм и проверка") for a in (53003, 53450, 53514)})
+
+from ControlsProjectionGateFacts import LABELS as CONTROLS_PROJECTION_GATE_LABELS, name_operands as controls_projection_gate_name_operands
+LABELS.update(CONTROLS_PROJECTION_GATE_LABELS)
+DOCUMENTS.update({("Controls", a): ("ControlsProjectionGate", "алгоритм и проверка") for a in (55647,)})
+
+from ActionClassDispatchFacts import LABELS as ACTION_CLASS_DISPATCH_LABELS, name_operands as action_class_dispatch_name_operands
+LABELS.update(ACTION_CLASS_DISPATCH_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionClassDispatch", "алгоритм и проверка") for a in (25823,)})
+
+from ActionLinkOverrideFacts import name_operands as action_link_override_name_operands
+DOCUMENTS['Action',26155]=('ActionLinkOverride','алгоритм и проверка')
+LABELS.update({})
+
+from ActionRecordsExcept6And7Facts import name_operands as action_records_except6_and7_name_operands
+DOCUMENTS['Action',59149]=('ActionRecordsExcept6And7','алгоритм и проверка')
+LABELS.update({('Action', 59156): 'ScanNext', ('Action', 59172): 'IndexRecord'})
+
+from ActionRecords6Or7Facts import name_operands as action_records6_or7_name_operands
+DOCUMENTS['Action',59177]=('ActionRecords6Or7','алгоритм и проверка')
+LABELS.update({('Action', 59184): 'ScanNext', ('Action', 59200): 'IndexRecord'})
+
+from ActionRecords5Or14Facts import name_operands as action_records5_or14_name_operands
+DOCUMENTS['Action',59205]=('ActionRecords5Or14','алгоритм и проверка')
+LABELS.update({('Action', 59212): 'ScanNext', ('Action', 59228): 'IndexRecord'})
+
+from ActionRandomFilteredRecordFacts import name_operands as action_random_filtered_record_name_operands
+DOCUMENTS['Action',59106]=('ActionRandomFilteredRecord','алгоритм и проверка')
+LABELS.update({('Action', 59124): 'ScanNext', ('Action', 59144): 'IndexRecord'})
+
+from ActionClass9LinkFacts import name_operands as action_class9_link_name_operands
+DOCUMENTS['Action',26054]=('ActionClass9Link','алгоритм и проверка')
+LABELS.update({('Action', 26065): 'ResetLink'})
+
+from ActionIgnoredClassesFacts import name_operands as action_ignored_classes_name_operands
+DOCUMENTS['Action',25892]=('ActionIgnoredClasses','алгоритм и проверка')
+LABELS.update({})
+
+from ActionClass0LinkFacts import name_operands as action_class0_link_name_operands
+DOCUMENTS['Action',26126]=('ActionClass0Link','алгоритм и проверка')
+LABELS.update({('Action', 26138): 'SelectLink'})
+
+from ActionPreferredApplyFacts import name_operands as action_preferred_apply_name_operands
+DOCUMENTS['Action',62807]=('ActionPreferredApply','алгоритм и проверка')
+LABELS.update({})
+
+from ActionPreferredChanceFacts import name_operands as action_preferred_chance_name_operands
+DOCUMENTS['Action',62759]=('ActionPreferredChance','алгоритм и проверка')
+LABELS.update({})
+
+from ActionPreferredZeroBridgeFacts import name_operands as action_preferred_zero_bridge_name_operands
+DOCUMENTS['Action',62783]=('ActionPreferredZeroBridge','алгоритм и проверка')
+LABELS.update({})
+
+from ActionPreferredSevenBridgeFacts import name_operands as action_preferred_seven_bridge_name_operands
+DOCUMENTS['Action',62795]=('ActionPreferredSevenBridge','алгоритм и проверка')
+LABELS.update({})
+
+from ActionPreferredDispatchFacts import LABELS as ACTION_PREFERRED_DISPATCH_LABELS, name_operands as action_preferred_dispatch_name_operands
+LABELS.update(ACTION_PREFERRED_DISPATCH_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionPreferredRecord", "алгоритм и проверка") for a in (62750, 62773, 62785, 62797)})
+
+from ActionAbsSigned32Facts import LABELS as ACTION_ABS_SIGNED32_LABELS, name_operands as action_abs_signed32_name_operands
+LABELS.update(ACTION_ABS_SIGNED32_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionAbsSigned32", "алгоритм и проверка") for a in (32630,)})
+
+from ActionContextWordPairsFacts import LABELS as ACTION_CONTEXT_WORD_PAIRS_LABELS, name_operands as action_context_word_pairs_name_operands
+LABELS.update(ACTION_CONTEXT_WORD_PAIRS_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionContextWordPairs", "алгоритм и проверка") for a in (27014,)})
+
+from ActionVectorHighMaximumFacts import LABELS as ACTION_VECTOR_HIGH_MAXIMUM_LABELS, name_operands as action_vector_high_maximum_name_operands
+LABELS.update(ACTION_VECTOR_HIGH_MAXIMUM_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionVectorHighMaximum", "алгоритм и проверка") for a in (27036,)})
+
+from ActionSignedRatioCodeFacts import LABELS as ACTION_SIGNED_RATIO_CODE_LABELS, name_operands as action_signed_ratio_code_name_operands
+LABELS.update(ACTION_SIGNED_RATIO_CODE_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionSignedRatioCode", "алгоритм и проверка") for a in (44580,)})
+
+from ActionHalfDeltaCodesFacts import LABELS as ACTION_HALF_DELTA_CODES_LABELS, name_operands as action_half_delta_codes_name_operands
+LABELS.update(ACTION_HALF_DELTA_CODES_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionHalfDeltaCodes", "алгоритм и проверка") for a in (44378,)})
+
+from ActionRecordCodeStepFacts import LABELS as ACTION_RECORD_CODE_STEP_LABELS, name_operands as action_record_code_step_name_operands
+LABELS.update(ACTION_RECORD_CODE_STEP_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionRecordCodeStep", "алгоритм и проверка") for a in (25189,)})
+
+from ActionClass3LinkCountFacts import LABELS as ACTION_CLASS3_LINK_COUNT_LABELS, name_operands as action_class3_link_count_name_operands
+LABELS.update(ACTION_CLASS3_LINK_COUNT_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionClass3LinkCount", "алгоритм и проверка") for a in (25295,)})
+
+from ActionClass3LinkCountFacts import name_instruction as action_class3_link_count_name_operands_instruction
+
+from ActionFoldedNearWordsFacts import LABELS as ACTION_FOLDED_NEAR_WORDS_LABELS, name_operands as action_folded_near_words_name_operands
+LABELS.update(ACTION_FOLDED_NEAR_WORDS_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionFoldedNearWords", "алгоритм и проверка") for a in (27177,)})
+
+from ActionClampVectorWordsFacts import LABELS as ACTION_CLAMP_VECTOR_WORDS_LABELS, name_operands as action_clamp_vector_words_name_operands
+LABELS.update(ACTION_CLAMP_VECTOR_WORDS_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionClampVectorWords", "алгоритм и проверка") for a in (32526,)})
+
+from ActionWideTargetStepFacts import LABELS as ACTION_WIDE_TARGET_STEP_LABELS, name_operands as action_wide_target_step_name_operands
+LABELS.update(ACTION_WIDE_TARGET_STEP_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionWideTargetStep", "алгоритм и проверка") for a in (32439,)})
+
+from ActionNearVectorSearchFacts import LABELS as ACTION_NEAR_VECTOR_SEARCH_LABELS, name_operands as action_near_vector_search_name_operands
+LABELS.update(ACTION_NEAR_VECTOR_SEARCH_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionNearVectorSearch", "алгоритм и проверка") for a in (27070,)})
+
+from ActionSelectWideTargetFacts import LABELS as ACTION_SELECT_WIDE_TARGET_LABELS, name_operands as action_select_wide_target_name_operands
+LABELS.update(ACTION_SELECT_WIDE_TARGET_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionSelectWideTarget", "алгоритм и проверка") for a in (32413,)})
+
+from ActionControlDecayFacts import LABELS as ACTION_CONTROL_DECAY_LABELS, name_operands as action_control_decay_name_operands
+LABELS.update(ACTION_CONTROL_DECAY_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionControlDecay", "алгоритм и проверка") for a in (28501,)})
+
+from ActionKeyTurnNegativeFacts import name_operands as action_key_turn_negative_name_operands
+DOCUMENTS['Action',30407]=('ActionKeyTurnNegative','алгоритм и проверка')
+LABELS.update({('Action', 30435): 'CheckLimit'})
+
+from ActionKeyTurnPositiveFacts import name_operands as action_key_turn_positive_name_operands
+DOCUMENTS['Action',30442]=('ActionKeyTurnPositive','алгоритм и проверка')
+LABELS.update({('Action', 30470): 'CheckLimit'})
+
+from ActionKeyXNegativeFacts import name_operands as action_keyx_negative_name_operands
+DOCUMENTS['Action',30477]=('ActionKeyXNegative','алгоритм и проверка')
+LABELS.update({('Action', 30505): 'CheckLimit'})
+
+from ActionKeyXPositiveFacts import name_operands as action_keyx_positive_name_operands
+DOCUMENTS['Action',30512]=('ActionKeyXPositive','алгоритм и проверка')
+LABELS.update({('Action', 30540): 'CheckLimit'})
+
+from ActionKeyYNegativeFacts import name_operands as action_keyy_negative_name_operands
+DOCUMENTS['Action',30547]=('ActionKeyYNegative','алгоритм и проверка')
+LABELS.update({('Action', 30575): 'CheckLimit'})
+
+from ActionKeyYPositiveFacts import name_operands as action_keyy_positive_name_operands
+DOCUMENTS['Action',30582]=('ActionKeyYPositive','алгоритм и проверка')
+LABELS.update({('Action', 30610): 'CheckLimit'})
+
+from ActionKeyGaugeIncreaseFacts import name_operands as action_key_gauge_increase_name_operands
+DOCUMENTS['Action',30336]=('ActionKeyGaugeIncrease','алгоритм и проверка')
+LABELS.update({})
+
+from ActionKeyGaugeDecreaseFacts import name_operands as action_key_gauge_decrease_name_operands
+DOCUMENTS['Action',30371]=('ActionKeyGaugeDecrease','алгоритм и проверка')
+LABELS.update({('Action', 30395): 'SubtractStep'})
+
+from ActionBankedCallbackReturnFacts import name_operands as action_banked_callback_return_name_operands
+DOCUMENTS['Action',27904]=('ActionBankedCallbackReturn','алгоритм и проверка')
+LABELS.update({})
+
+from ActionBankedCallbackFacts import LABELS as ACTION_BANKED_CALLBACK_LABELS, name_operands as action_banked_callback_name_operands
+LABELS.update(ACTION_BANKED_CALLBACK_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionBankedCallback", "алгоритм и проверка") for a in (27887,)})
+
+from ControlsCircleInteriorFullFacts import LABELS as CONTROLS_CIRCLE_INTERIOR_FULL_LABELS, name_operands as controls_circle_interior_full_name_operands
+LABELS.update(CONTROLS_CIRCLE_INTERIOR_FULL_LABELS)
+DOCUMENTS.update({("Controls", a): ("ControlsCircleInteriorFull", "алгоритм и проверка") for a in (54036,)})
+
+from ControlsCircleHalfFacts import LABELS as CONTROLS_CIRCLE_HALF_LABELS, name_operands as controls_circle_half_name_operands
+LABELS.update(CONTROLS_CIRCLE_HALF_LABELS)
+DOCUMENTS.update({("Controls", a): ("ControlsCircleHalf", "алгоритм и проверка") for a in (53727, 53748)})
+
+from ControlsStationRelocationFacts import LABELS as CONTROLS_STATION_RELOCATION_LABELS, name_operands as controls_station_relocation_name_operands
+LABELS.update(CONTROLS_STATION_RELOCATION_LABELS)
+DOCUMENTS.update({("Controls", a): ("ControlsStationRelocation", "алгоритм и проверка") for a in (56475,)})
+
+from ControlsStationPrepareFacts import LABELS as CONTROLS_STATION_PREPARE_LABELS, name_operands as controls_station_prepare_name_operands
+LABELS.update(CONTROLS_STATION_PREPARE_LABELS)
+DOCUMENTS.update({("Controls", a): ("ControlsStationPrepare", "алгоритм и проверка") for a in (56547,)})
+
+from ControlsClippedCircleHalfFacts import LABELS as CONTROLS_CLIPPED_CIRCLE_HALF_LABELS, name_operands as controls_clipped_circle_half_name_operands
+LABELS.update(CONTROLS_CLIPPED_CIRCLE_HALF_LABELS)
+DOCUMENTS.update({("Controls", a): ("ControlsClippedCircleHalf", "алгоритм и проверка") for a in (53645, 53666, 53686, 53707)})
+
+from ControlsCircleKernelsFacts import LABELS as CONTROLS_CIRCLE_KERNELS_LABELS, name_operands as controls_circle_kernels_name_operands
+LABELS.update(CONTROLS_CIRCLE_KERNELS_LABELS)
+DOCUMENTS.update({("Controls", a): ("ControlsCircleKernels", "алгоритм и проверка") for a in (54835, 55079, 55099, 55347)})
+
+from ActionSubtractWorkVectorFacts import LABELS as ACTION_SUBTRACT_WORK_VECTOR_LABELS, name_operands as action_subtract_work_vector_name_operands
+LABELS.update(ACTION_SUBTRACT_WORK_VECTOR_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionSubtractWorkVector", "алгоритм и проверка") for a in (26322,)})
+
+from ActionRefreshPanelFacts import LABELS as ACTION_REFRESH_PANEL_LABELS, name_operands as action_refresh_panel_name_operands
+LABELS.update(ACTION_REFRESH_PANEL_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionRefreshPanel", "алгоритм и проверка") for a in (24901,)})
+
+from ControlsVerticalCircleSliceFacts import LABELS as CONTROLS_VERTICAL_CIRCLE_SLICE_LABELS, name_operands as controls_vertical_circle_slice_name_operands
+LABELS.update(CONTROLS_VERTICAL_CIRCLE_SLICE_LABELS)
+DOCUMENTS.update({("Controls", a): ("ControlsVerticalCircleSlice", "алгоритм и проверка") for a in (54405,)})
+
+from ControlsHorizontalCircleFacts import LABELS as CONTROLS_HORIZONTAL_CIRCLE_LABELS, name_operands as controls_horizontal_circle_name_operands
+LABELS.update(CONTROLS_HORIZONTAL_CIRCLE_LABELS)
+DOCUMENTS.update({("Controls", a): ("ControlsHorizontalCircle", "алгоритм и проверка") for a in (54234,)})
+
+from ControlsCornerCircleSliceFacts import LABELS as CONTROLS_CORNER_CIRCLE_SLICE_LABELS, name_operands as controls_corner_circle_slice_name_operands
+LABELS.update(CONTROLS_CORNER_CIRCLE_SLICE_LABELS)
+DOCUMENTS.update({("Controls", a): ("ControlsCornerCircleSlice", "алгоритм и проверка") for a in (54276,)})
+
+from ControlsFullWidthCircleFacts import LABELS as CONTROLS_FULL_WIDTH_CIRCLE_LABELS, name_operands as controls_full_width_circle_name_operands
+LABELS.update(CONTROLS_FULL_WIDTH_CIRCLE_LABELS)
+DOCUMENTS.update({("Controls", a): ("ControlsFullWidthCircle", "алгоритм и проверка") for a in (54080, 54156)})
+
+from ControlsLargeCircleFacts import LABELS as CONTROLS_LARGE_CIRCLE_LABELS, name_operands as controls_large_circle_name_operands
+LABELS.update(CONTROLS_LARGE_CIRCLE_LABELS)
+DOCUMENTS.update({("Controls", a): ("ControlsCircleDispatch", "алгоритм и проверка") for a in (53814,)})
+
+from ControlsBodyDrawFacts import LABELS as CONTROLS_BODY_DRAW_LABELS, name_operands as controls_body_draw_name_operands
+LABELS.update(CONTROLS_BODY_DRAW_LABELS)
+DOCUMENTS.update({("Controls", a): ("ControlsBodyDraw", "алгоритм и проверка") for a in (53786, 53810)})
+
+from ControlsProjectDrawBodyFacts import LABELS as CONTROLS_PROJECT_DRAW_BODY_LABELS, name_operands as controls_project_draw_body_name_operands
+LABELS.update(CONTROLS_PROJECT_DRAW_BODY_LABELS)
+DOCUMENTS.update({("Controls", a): ("ProjectedBodyEntry", "алгоритм и проверка") for a in (52986,)})
+
+from ActionDrawBankedBodyFacts import LABELS as ACTION_DRAW_BANKED_BODY_LABELS, name_operands as action_draw_banked_body_name_operands
+LABELS.update(ACTION_DRAW_BANKED_BODY_LABELS)
+DOCUMENTS.update({("Action", a): ("ProjectedBodyEntry", "алгоритм и проверка") for a in (27774,)})
+
+from ActionRestoreBodyStackFacts import name_operands as action_restore_body_stack_name_operands
+DOCUMENTS['Action',27309]=('ActionRestoreBodyStack','алгоритм и проверка')
+LABELS.update({})
+
+from ActionBodyTransformFacts import LABELS as ACTION_BODY_TRANSFORM_LABELS, name_operands as action_body_transform_name_operands
+LABELS.update(ACTION_BODY_TRANSFORM_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionPrepareBodyTransform", "алгоритм и проверка") for a in (27246, 27312)})
+
+from ActionObjectOffsetRiseFacts import name_operands as action_object_offset_rise_name_operands
+DOCUMENTS['Action',61309]=('ActionObjectOffsetRise','алгоритм и проверка')
+LABELS.update({})
+
+from ActionObjectOffsetFallFacts import name_operands as action_object_offset_fall_name_operands
+DOCUMENTS['Action',61338]=('ActionObjectOffsetFall','алгоритм и проверка')
+LABELS.update({})
+
+from ActionObjectPhaseWaitFacts import name_operands as action_object_phase_wait_name_operands
+DOCUMENTS['Action',61365]=('ActionObjectPhaseWait','алгоритм и проверка')
+LABELS.update({('Action', 61391): 'FoldX', ('Action', 61399): 'SaveX', ('Action', 61408): 'SaveY', ('Action', 61417): 'CompareY', ('Action', 61421): 'CompareX', ('Action', 61425): 'CheckLimit', ('Action', 61430): 'ResumeState'})
+
+from ActionObjectOffsetTransferFacts import name_operands as action_object_offset_transfer_name_operands
+DOCUMENTS['Action',61688]=('ActionObjectOffsetTransfer','алгоритм и проверка')
+LABELS.update({('Action', 61725): 'StoreCounter', ('Action', 61746): 'LoadPhase'})
+
+from ActionObjectOffsetVectorFacts import name_operands as action_object_offset_vector_name_operands
+DOCUMENTS['Action',27910]=('ActionObjectOffsetVector','алгоритм и проверка')
+LABELS.update({('Action', 27927): 'Store0', ('Action', 27941): 'Store1', ('Action', 27954): 'Store2'})
+
+from ActionObjectOffsetCoefficientsFacts import name_operands as action_object_offset_coefficients_name_operands
+DOCUMENTS['Action',45124]=('ActionObjectOffsetCoefficients','алгоритм и проверка')
+LABELS.update({('Action', 45229): 'StoreSecond', ('Action', 45285): 'StoreThird'})
+
+from ActionClass18StateFacts import LABELS as ACTION_CLASS18_STATE_LABELS, name_operands as action_class18_state_name_operands
+LABELS.update(ACTION_CLASS18_STATE_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionObjectStateDispatch", "алгоритм и проверка") for a in (61557,)})
+
+from ActionVisualEffectResumeFacts import name_operands as action_visual_effect_resume_name_operands
+DOCUMENTS['Action',28113]=('ActionVisualEffectResume','алгоритм и проверка')
+LABELS.update({})
+
+from ActionWideProjectionLoopFacts import LABELS as ACTION_WIDE_PROJECTION_LOOP_LABELS, name_operands as action_wide_projection_loop_name_operands
+LABELS.update(ACTION_WIDE_PROJECTION_LOOP_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionWideProjectionInput", "алгоритм и проверка") for a in (27414,)})
+
+from ActionBankedBasisRotationFacts import LABELS as ACTION_BANKED_BASIS_ROTATION_LABELS, name_operands as action_banked_basis_rotation_name_operands
+LABELS.update(ACTION_BANKED_BASIS_ROTATION_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionRenderFrameSetup", "алгоритм и проверка") for a in (44471,)})
+
+from ActionNonemptyRenderFrameFacts import LABELS as ACTION_NONEMPTY_RENDER_FRAME_LABELS, name_operands as action_nonempty_render_frame_name_operands
+LABELS.update(ACTION_NONEMPTY_RENDER_FRAME_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionRenderFrameSetup", "алгоритм и проверка") for a in (57376,)})
+
+from ActionLargeEffectContinuationFacts import name_operands as action_large_effect_continuation_name_operands
+DOCUMENTS['Action',59965]=('ActionLargeEffectContinuation','алгоритм и проверка')
+LABELS.update({('Action', 60015): 'CheckClass', ('Action', 60032): 'SaveCount', ('Action', 60036): 'FindSlot', ('Action', 60128): 'ReleaseObject'})
+
+from ActionLargeEffectEntryFacts import LABELS as ACTION_LARGE_EFFECT_ENTRY_LABELS, name_operands as action_large_effect_entry_name_operands
+LABELS.update(ACTION_LARGE_EFFECT_ENTRY_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionLargeEffectEntry", "алгоритм и проверка") for a in (59945,)})
+
+from ActionRecordEffectResumeFacts import name_operands as action_record_effect_resume_name_operands
+DOCUMENTS['Action',63423]=('ActionRecordEffectResume','алгоритм и проверка')
+LABELS.update({})
+
+from ActionRecordEffectThresholdFacts import LABELS as ACTION_RECORD_EFFECT_THRESHOLD_LABELS, name_operands as action_record_effect_threshold_name_operands
+LABELS.update(ACTION_RECORD_EFFECT_THRESHOLD_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionRecordEffectResume", "алгоритм и проверка") for a in (63378,)})
+
+from ActionObjectStateReturnFacts import LABELS as ACTION_OBJECT_STATE_RETURN_LABELS, name_operands as action_object_state_return_name_operands
+LABELS.update(ACTION_OBJECT_STATE_RETURN_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionObjectStateDispatch", "алгоритм и проверка") for a in (63430,)})
+
+from ActionNoiseExitFacts import LABELS as ACTION_NOISE_EXIT_LABELS, name_operands as action_noise_exit_name_operands
+LABELS.update(ACTION_NOISE_EXIT_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionNoiseExit", "алгоритм и проверка") for a in (24660,)})
+
+from ActionBodyModeTransitionFacts import LABELS as ACTION_BODY_MODE_TRANSITION_LABELS, name_operands as action_body_mode_transition_name_operands
+LABELS.update(ACTION_BODY_MODE_TRANSITION_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionBodyModeTransition", "алгоритм и проверка") for a in (26407,)})
+
+from ActionBodyMotionFacts import LABELS as ACTION_BODY_MOTION_LABELS, name_operands as action_body_motion_name_operands
+LABELS.update(ACTION_BODY_MOTION_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionWideMotionPrefix", "алгоритм и проверка") for a in (26496,)})
+
+from ControlsTargetOverlayFacts import LABELS as CONTROLS_TARGET_OVERLAY_LABELS, name_operands as controls_target_overlay_name_operands
+LABELS.update(CONTROLS_TARGET_OVERLAY_LABELS)
+DOCUMENTS.update({("Controls", a): ("ControlsTargetOverlay", "алгоритм и проверка") for a in (59770,)})
+
+from ActionMotionWithoutKeysFacts import LABELS as ACTION_MOTION_WITHOUT_KEYS_LABELS, name_operands as action_motion_without_keys_name_operands
+LABELS.update(ACTION_MOTION_WITHOUT_KEYS_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionMotionVectorTail", "алгоритм и проверка") for a in (28268, 28445)})
+
+from ControlsRadarLoopFacts import LABELS as CONTROLS_RADAR_LOOP_LABELS, name_operands as controls_radar_loop_name_operands
+LABELS.update(CONTROLS_RADAR_LOOP_LABELS)
+DOCUMENTS.update({("Controls", a): ("ControlsRasterBackground", "алгоритм и проверка") for a in (58001,)})
+
+from ActionVisualEffectListFacts import LABELS as ACTION_VISUAL_EFFECT_LIST_LABELS, name_operands as action_visual_effect_list_name_operands
+LABELS.update(ACTION_VISUAL_EFFECT_LIST_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionVisualEffectWalk", "алгоритм и проверка") for a in (27960, 28113)})
+
+from ActionSpawnRecordFinishFacts import LABELS as ACTION_SPAWN_RECORD_FINISH_LABELS, name_operands as action_spawn_record_finish_name_operands
+LABELS.update(ACTION_SPAWN_RECORD_FINISH_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionSpawnRecordFinish", "алгоритм и проверка") for a in (32212,)})
+
+from ActionSpawnScheduleFacts import LABELS as ACTION_SPAWN_SCHEDULE_LABELS, name_operands as action_spawn_schedule_name_operands
+LABELS.update(ACTION_SPAWN_SCHEDULE_LABELS)
+DOCUMENTS.update({("Action", a): ("ActionSpawnSchedule", "алгоритм и проверка") for a in (30809, 31576)})

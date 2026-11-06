@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "total_cases": 8846,
+  "outcomes": {
+    "complete": 6864,
+    "(0, 2)": 471,
+    "(0, 1)": 341,
+    "(1, 1)": 258,
+    "(2, 1)": 189,
+    "(1, 2)": 398,
+    "(2, 2)": 325
+  },
+  "exact_registers_including_R": true,
+  "actual_arithmetic_and_restore_instruction": true,
+  "restored_SP_at_6AB0": true,
+  "no_cpu_stack_writes": true,
+  "all_physical_ram_bytes_proved": true,
+  "nonpixel_write_multiplicity_proved": true,
+  "stopped_before_6AB0": true,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

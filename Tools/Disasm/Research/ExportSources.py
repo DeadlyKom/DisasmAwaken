@@ -19,6 +19,7 @@ from Analyze import BLOCKS
 from PackedResourcePrefixTable import final_lines
 from Knowledge import FUNCTIONS, REGIONS
 from Contracts import CONTRACTS
+
 from IntroNotes import NOTES as INTRO_NOTES, COMMENTS as INTRO_COMMENTS
 from MusicNotes import NOTES as MUSIC_NOTES, COMMENTS as MUSIC_COMMENTS
 from EffectsNotes import NOTES as EFFECTS_NOTES, COMMENTS as EFFECTS_COMMENTS
@@ -243,7 +244,8 @@ def main():
                 current = dict(region=name, name=stem, address=address,
                                slot=instruction["slot"], offset=instruction["offset"],
                                description=known[1] if known else "Unknown, назначение этого фрагмента ещё не установлено",
-                               semantic_status="described" if known else "unknown", instructions=[])
+                               semantic_status="described" if known else "unknown",
+                               instructions=[])
                 functions.append(current)
             current["instructions"].append(instruction)
             current["end_offset"] = instruction["offset"] + len(bytes.fromhex(instruction["hex"]))
@@ -521,6 +523,121 @@ def main():
         write(OBJECT_RECORDS,text)
         symbols.update(bindings)
         special[17,0x4100]=(0x4780,OBJECT_RECORDS,0xA100)
+    # Пять потоков с доказанными границами, остальные соседние байты не классифицируются.
+    if "struct FActionAyFrame" in (ROOT/"Includes/Structs/Include.inc").read_text("utf-8"):
+        from ActionAyStreams import GROUPS as AY_STREAM_GROUPS, render as render_ay_streams, bounds as ay_stream_bounds
+        for path,streams in AY_STREAM_GROUPS:
+            text,bindings=render_ay_streams(data_by_slot[17],streams)
+            write(path,text)
+            symbols.update(bindings)
+            start,end=ay_stream_bounds(streams)
+            special[17,start]=(end,path,start+0x6000)
+    # Физические 256 нормированных квадратов исходной страницы 9800.
+    if "struct FSymmetricSquareValue" in (ROOT/"Includes/Structs/Include.inc").read_text("utf-8"):
+        from ActionProjectionClipFacts import TABLE as PROJECTION_SQUARES, render as render_projection_squares
+        text,bindings=render_projection_squares(data_by_slot[17])
+        write(PROJECTION_SQUARES[1],text)
+        symbols.update(bindings)
+        special[17,0x3800]=(0x3900,PROJECTION_SQUARES[1],0x9800)
+    # Физическая двухбайтовая точка с доказанными потребителями, X перед Y.
+    if "struct FActionAimPoint" in (ROOT/"Includes/Structs/Include.inc").read_text("utf-8"):
+        from ActionAimPointData import PATH as AIM_POINT_PATH, render as render_aim_point
+        text,bindings=render_aim_point(data_by_slot[17])
+        write(AIM_POINT_PATH,text)
+        symbols.update(bindings)
+        special[17,0x3B19]=(0x3B1B,AIM_POINT_PATH,0x9B19)
+    # Три физические фазы построителя ACTION, те же поля вложены в runtime-снимок.
+    if "struct FRenderPhases" in (ROOT/"Includes/Structs/Include.inc").read_text("utf-8"):
+        from ActionRenderPhasesData import PATH as RENDER_PHASES_PATH, render as render_render_phases
+        text,bindings=render_render_phases(data_by_slot[17])
+        write(RENDER_PHASES_PATH,text)
+        symbols.update(bindings)
+        special[17,0x3B12]=(0x3B15,RENDER_PHASES_PATH,0x9B12)
+    # Физическая таблица OBJECT3D, сохраняются все 128 записей, включая одинаковые указатели.
+    if "struct FObjectDataPointer" in (ROOT/"Includes/Structs/Include.inc").read_text("utf-8"):
+        from ActionObjectPointersData import TABLE as OBJECT_POINTER_TABLE, render as render_object_pointers
+        text,bindings=render_object_pointers(data_by_slot[17])
+        write(OBJECT_POINTER_TABLE[1],text)
+        symbols.update(bindings)
+        special[17,0x3E00]=(0x3F00,OBJECT_POINTER_TABLE[1],0x9E00)
+    # Исходные прямые и инверсные маски восьми пиксельных фаз ACTION.
+    from ActionClipProductsData import PATH as CLIP_PRODUCTS_PATH, render as render_clip_products
+    text,bindings=render_clip_products(data_by_slot[17])
+    write(CLIP_PRODUCTS_PATH,text)
+    symbols.update(bindings)
+    special[17,0x6F2B]=(0x6F3B,CLIP_PRODUCTS_PATH,0xCF2B)
+    # Реальные пиксельные маски ACTION внутри невыбираемых областей таблицы.
+    from ActionLineMasksData import PATH as LINE_MASKS_PATH, render as render_line_masks
+    text,bindings=render_line_masks(data_by_slot[17])
+    write(LINE_MASKS_PATH,text)
+    symbols.update(bindings)
+    special[17,0x8010]=(0x8020,LINE_MASKS_PATH,0xE010)
+    # Физические рабочие точки внутри невыбираемых индексов младшей таблицы ACTION.
+    from ActionClipPointsData import POINTS as CLIP_POINTS, render as render_clip_point
+    for name,offset,path in CLIP_POINTS:
+        text,bindings=render_clip_point(data_by_slot[17],name,offset)
+        write(path,text);symbols.update(bindings)
+        special[17,offset]=(offset+5,path,offset+0x6000)
+    # Три физических трёхбайтовых состояния генератора ACTION, девять исходных байтов.
+    if "struct FFoldedRandomState" in (ROOT/"Includes/Structs/Include.inc").read_text("utf-8"):
+        from ActionFoldedRandomData import TABLES as FOLDED_STATES, render as render_folded_state
+        for table in FOLDED_STATES:
+            text, bindings = render_folded_state(data_by_slot[17], table)
+            write(table[1], text)
+            symbols.update(bindings)
+            special[17, table[2]] = (table[3], table[1], table[2]+0x6000)
+    # Буквальные исходные байты трёх страниц табличного корня, значения не пересоздаются формулой.
+    if "struct FRootCacheByte" in (ROOT/"Includes/Structs/Include.inc").read_text("utf-8"):
+        from ControlsRootCacheData import TABLE as ROOT_CACHE_TABLE, render as render_root_cache
+        text, bindings = render_root_cache(data_by_slot[22])
+        write(ROOT_CACHE_TABLE[1], text)
+        symbols.update(bindings)
+        special[22, 0] = (0x300, ROOT_CACHE_TABLE[1], 0xC000)
+    # Три физические исходные компоненты в общей RAM ACTION.
+    from ActionComponentWorkData import TABLE as COMPONENT_WORK_TABLE, render as render_component_work
+    text, bindings = render_component_work(data_by_slot[17])
+    write(COMPONENT_WORK_TABLE[1], text)
+    symbols.update(bindings)
+    special[17, 0x3B1E] = (0x3B27, COMPONENT_WORK_TABLE[1], 0x9B1E)
+    # Физический знаковый рабочий вектор после соседнего отдельного блока.
+    from ActionWorkVectorData import PATH as WORK_VECTOR, TRANSFORM_PATH, TRANSFORM_MODULE, render as render_work_vector
+    text, bindings = render_work_vector(data_by_slot[17], 0x9B6F, TRANSFORM_MODULE, 'ActionPrepareBodyTransform')
+    write(TRANSFORM_PATH, text)
+    symbols.update(bindings)
+    special[17, 0x3B6F] = (0x3B78, TRANSFORM_PATH, 0x9B6F)
+    text, bindings = render_work_vector(data_by_slot[17])
+    write(WORK_VECTOR, text)
+    symbols.update(bindings)
+    special[17, 0x3B78] = (0x3B81, WORK_VECTOR, 0x9B78)
+    from ActionVisualEffectData import PATH as EFFECTS_PATH, START as EFFECTS_START, END as EFFECTS_END
+    from ActionVisualEffectData import render as render_visual_effects
+    text, bindings = render_visual_effects(data_by_slot[17])
+    write(EFFECTS_PATH, text)
+    symbols.update(bindings)
+    special[17, EFFECTS_START] = (EFFECTS_END, EFFECTS_PATH, 0xA795)
+    # Шесть начальных широких векторов, байты и вложенный физический формат сохраняются.
+    from ActionWideVectorsData import PATH as WIDE_VECTORS, render as render_wide_vectors
+    text, bindings = render_wide_vectors(data_by_slot[17])
+    write(WIDE_VECTORS, text)
+    symbols.update(bindings)
+    special[17, 0x3B27] = (0x3B6F, WIDE_VECTORS, 0x9B27)
+    # Двадцать шесть физических указателей класса до первого RET обработчиков.
+    from ActionObjectStateHandlersData import TABLE as STATE_HANDLERS_TABLE, render as render_state_handlers
+    text, bindings = render_state_handlers(data_by_slot[17])
+    write(STATE_HANDLERS_TABLE[1], text)
+    symbols.update(bindings)
+    special[17, 0x8F50] = (0x8F7C, STATE_HANDLERS_TABLE[1], 0xEF50)
+    from ActionClassHandlersData import TABLE as CLASS_HANDLERS_TABLE, render as render_class_handlers
+    text, bindings = render_class_handlers(data_by_slot[17])
+    write(CLASS_HANDLERS_TABLE[1], text)
+    symbols.update(bindings)
+    special[17, 0x72D] = (0x761, CLASS_HANDLERS_TABLE[1], 0x64F0)
+    # Двести пятьдесят шесть исходных кодов отношения, без тригонометрического пересчёта.
+    from ActionSignedRatioCodesData import TABLE as SIGNED_RATIO_CODES_TABLE, render as render_signed_ratio_codes
+    text, bindings = render_signed_ratio_codes(data_by_slot[17])
+    write(SIGNED_RATIO_CODES_TABLE[1], text)
+    symbols.update(bindings)
+    special[17, 0x3A00] = (0x3B00, SIGNED_RATIO_CODES_TABLE[1], 0x9A00)
     token_text, token_records = render_token_tables(language, names)
     write(TOKEN_TABLE_PATH, token_text)
     special[5, 0x935] = (0xA67, TOKEN_TABLE_PATH, 0xC935)
@@ -771,6 +888,9 @@ def main():
     # Сохранение каждого исходного байта ровно один раз, без подстановки целых программ из оригинала.
     source_map = []
     units = []
+    # Подготовка физических записей отдельной копии 3DPART только внутри кандидата экспорта.
+    from ThreeDOverlayData import export_data as export_three_d_overlay_data
+    export_three_d_overlay_data(data_by_slot[19],special,write,symbols)
     screen_records = []
     for item in disk["entries"]:
         if item["deleted"]:
@@ -1086,6 +1206,601 @@ REGION_COMMENTS.setdefault('Action',{}).update(ACTION_PATCHED_VECTOR_COMMENTS)
 
 from ActionVectorWrapperFacts import COMMENTS as ACTION_VECTOR_WRAPPER_COMMENTS
 REGION_COMMENTS.setdefault('Action',{}).update(ACTION_VECTOR_WRAPPER_COMMENTS)
+
+from ActionMissileCreationFacts import COMMENTS as ACTION_MISSILE_CREATION_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_MISSILE_CREATION_COMMENTS)
+
+from ActionMissileRequestsFacts import COMMENTS as ACTION_MISSILE_REQUESTS_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_MISSILE_REQUESTS_COMMENTS)
+
+
+from ActionAyEffectsFacts import COMMENTS as ACTION_AY_EFFECTS_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_AY_EFFECTS_COMMENTS)
+
+
+from ActionRecordLinkEventFacts import COMMENTS as ACTION_RECORD_LINK_EVENT_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_RECORD_LINK_EVENT_COMMENTS)
+
+from ActionProjectedCaptureFacts import COMMENTS as ACTION_PROJECTED_CAPTURE_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_PROJECTED_CAPTURE_COMMENTS)
+
+from ActionLogarithmTableFacts import COMMENTS as ACTION_LOGARITHM_TABLE_COMMENTS
+REGION_COMMENTS.setdefault('ActionBoot',{}).update(ACTION_LOGARITHM_TABLE_COMMENTS)
+
+from ActionExponentialTableFacts import COMMENTS as ACTION_EXPONENTIAL_TABLE_COMMENTS
+REGION_COMMENTS.setdefault('ActionBoot',{}).update(ACTION_EXPONENTIAL_TABLE_COMMENTS)
+
+
+from ActionLogRatioFacts import COMMENTS as ACTION_LOG_RATIO_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_LOG_RATIO_COMMENTS)
+
+
+from ActionObjectHeaderFacts import COMMENTS as ACTION_OBJECT_HEADER_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_OBJECT_HEADER_COMMENTS)
+
+from ActionScaleHeaderFacts import COMMENTS as ACTION_SCALE_HEADER_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_SCALE_HEADER_COMMENTS)
+
+from ActionProjectedBoundsFacts import COMMENTS as ACTION_PROJECTED_BOUNDS_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_PROJECTED_BOUNDS_COMMENTS)
+
+from ActionProjectionClipFacts import COMMENTS as ACTION_PROJECTION_CLIP_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_PROJECTION_CLIP_COMMENTS)
+
+from ActionVectorReverseFacts import COMMENTS as ACTION_VECTOR_REVERSE_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_VECTOR_REVERSE_COMMENTS)
+
+from ActionStationTransferFacts import COMMENTS as ACTION_STATION_TRANSFER_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_STATION_TRANSFER_COMMENTS)
+
+from ActionCloseRecordFacts import COMMENTS as ACTION_CLOSE_RECORD_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_CLOSE_RECORD_COMMENTS)
+
+
+from ActionCloseBoundsFacts import COMMENTS as ACTION_CLOSE_BOUNDS_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_CLOSE_BOUNDS_COMMENTS)
+
+from ActionAimFollowFacts import COMMENTS as ACTION_AIM_FOLLOW_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_AIM_FOLLOW_COMMENTS)
+
+
+from ActionRenderQueueInsertFacts import COMMENTS as ACTION_RENDER_QUEUE_INSERT_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_RENDER_QUEUE_INSERT_COMMENTS)
+
+from ActionRenderContinuationFacts import COMMENTS as ACTION_RENDER_CONTINUATION_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_RENDER_CONTINUATION_COMMENTS)
+
+
+from ActionRenderQueueControlFacts import COMMENTS as ACTION_RENDER_QUEUE_CONTROL_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_RENDER_QUEUE_CONTROL_COMMENTS)
+
+from ActionRenderCoefficientsFacts import COMMENTS as ACTION_RENDER_COEFFICIENTS_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_RENDER_COEFFICIENTS_COMMENTS)
+
+
+from ActionRenderMatrixFacts import COMMENTS as ACTION_RENDER_MATRIX_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_RENDER_MATRIX_COMMENTS)
+
+from ActionObjectCopyFacts import COMMENTS as ACTION_OBJECT_COPY_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_OBJECT_COPY_COMMENTS)
+
+from ActionPerspectiveFacts import COMMENTS as ACTION_PERSPECTIVE_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_PERSPECTIVE_COMMENTS)
+
+from ActionVertexGroupFacts import COMMENTS as ACTION_VERTEX_GROUP_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_VERTEX_GROUP_COMMENTS)
+
+from ActionVertexProductsFacts import COMMENTS as ACTION_VERTEX_PRODUCTS_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_VERTEX_PRODUCTS_COMMENTS)
+
+from ActionObjectVerticesFacts import COMMENTS as ACTION_OBJECT_VERTICES_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_OBJECT_VERTICES_COMMENTS)
+
+from ActionVertexAbortFacts import COMMENTS as ACTION_VERTEX_ABORT_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_VERTEX_ABORT_COMMENTS)
+
+from ActionVertexCodesFacts import COMMENTS as ACTION_VERTEX_CODES_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_VERTEX_CODES_COMMENTS)
+
+from ActionListedCodesFacts import COMMENTS as ACTION_LISTED_CODES_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_LISTED_CODES_COMMENTS)
+
+
+from ActionSignedMultiplyFacts import COMMENTS as ACTION_SIGNED_MULTIPLY_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_SIGNED_MULTIPLY_COMMENTS)
+
+from ActionFaceOrientationFacts import COMMENTS as ACTION_FACE_ORIENTATION_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_FACE_ORIENTATION_COMMENTS)
+
+
+from ActionSignedDivisionFacts import COMMENTS as ACTION_SIGNED_DIVISION_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_SIGNED_DIVISION_COMMENTS)
+
+
+from ActionClipProductsFacts import COMMENTS as ACTION_CLIP_PRODUCTS_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_CLIP_PRODUCTS_COMMENTS)
+
+
+from ActionClipIntersectionsFacts import COMMENTS as ACTION_CLIP_INTERSECTIONS_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_CLIP_INTERSECTIONS_COMMENTS)
+
+
+from ActionClipComparisonsFacts import COMMENTS as ACTION_CLIP_COMPARISONS_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_CLIP_COMPARISONS_COMMENTS)
+
+
+from ActionClipPointWritersFacts import COMMENTS as ACTION_CLIP_POINT_WRITERS_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_CLIP_POINT_WRITERS_COMMENTS)
+
+
+from ActionClipCasesFacts import COMMENTS as ACTION_CLIP_CASES_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_CLIP_CASES_COMMENTS)
+
+
+from ActionPolygonFacts import COMMENTS as ACTION_POLYGON_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_POLYGON_COMMENTS)
+
+
+from ActionSingleEdgeFacts import COMMENTS as ACTION_SINGLE_EDGE_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_SINGLE_EDGE_COMMENTS)
+
+from ActionLineRasterFacts import COMMENTS as ACTION_LINE_RASTER_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_LINE_RASTER_COMMENTS)
+
+from ActionPolygonPreparationFacts import COMMENTS as ACTION_POLYGON_PREPARATION_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_POLYGON_PREPARATION_COMMENTS)
+
+from ActionPolygonRowSelectionFacts import COMMENTS as ACTION_POLYGON_ROW_SELECTION_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_POLYGON_ROW_SELECTION_COMMENTS)
+
+from ActionPolygonLeftEdgeFacts import COMMENTS as ACTION_POLYGON_LEFT_EDGE_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_POLYGON_LEFT_EDGE_COMMENTS)
+
+from ActionPolygonRightShortStepFacts import COMMENTS as ACTION_POLYGON_RIGHT_SHORT_STEP_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_POLYGON_RIGHT_SHORT_STEP_COMMENTS)
+
+from ActionPolygonRightEdgeFacts import COMMENTS as ACTION_POLYGON_RIGHT_EDGE_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_POLYGON_RIGHT_EDGE_COMMENTS)
+
+from ActionPolygonFillRowsFacts import COMMENTS as ACTION_POLYGON_FILL_ROWS_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_POLYGON_FILL_ROWS_COMMENTS)
+
+from ActionPolygonSelectRightFacts import COMMENTS as ACTION_POLYGON_SELECT_RIGHT_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_POLYGON_SELECT_RIGHT_COMMENTS)
+
+from ActionPolygonWrapLeftFacts import COMMENTS as ACTION_POLYGON_WRAP_LEFT_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_POLYGON_WRAP_LEFT_COMMENTS)
+
+from ActionPolygonWrapRightFacts import COMMENTS as ACTION_POLYGON_WRAP_RIGHT_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_POLYGON_WRAP_RIGHT_COMMENTS)
+
+from ActionPolygonWrapLeftTopFacts import COMMENTS as ACTION_POLYGON_WRAP_LEFT_TOP_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_POLYGON_WRAP_LEFT_TOP_COMMENTS)
+
+from ActionPolygonWrapRightTopFacts import COMMENTS as ACTION_POLYGON_WRAP_RIGHT_TOP_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_POLYGON_WRAP_RIGHT_TOP_COMMENTS)
+
+from ActionPolygonReturnFacts import COMMENTS as ACTION_POLYGON_RETURN_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_POLYGON_RETURN_COMMENTS)
+
+from ActionPacketRendererFacts import COMMENTS as ACTION_PACKET_RENDERER_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_PACKET_RENDERER_COMMENTS)
+
+from ActionClippedPacketRendererFacts import COMMENTS as ACTION_CLIPPED_PACKET_RENDERER_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_CLIPPED_PACKET_RENDERER_COMMENTS)
+
+
+from ActionQueuedObjectFacts import COMMENTS as ACTION_QUEUED_OBJECT_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_QUEUED_OBJECT_COMMENTS)
+
+
+from ActionWorkBufferFacts import COMMENTS as ACTION_WORK_BUFFER_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_WORK_BUFFER_COMMENTS)
+
+from ThreeDOverlayMirrorFacts import COMMENTS as THREED_OVERLAY_COMMENTS
+REGION_COMMENTS["ThreeD"]=dict(THREED_OVERLAY_COMMENTS)
+
+
+from ActionUnpackFacts import COMMENTS as ACTION_UNPACK_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_UNPACK_COMMENTS)
+
+
+from IntroScreenFacts import COMMENTS as INTRO_SCREEN_COMMENTS
+REGION_COMMENTS.setdefault('IntroUnpack', {}).update(INTRO_SCREEN_COMMENTS)
+
+
+from IntroLookupTransferFacts import COMMENTS as INTRO_LOOKUP_TRANSFER_COMMENTS
+REGION_COMMENTS.setdefault('Intro', {}).update(INTRO_LOOKUP_TRANSFER_COMMENTS)
+
+
+from IntroWaitInterruptFacts import COMMENTS as INTRO_WAIT_INTERRUPT_COMMENTS
+REGION_COMMENTS.setdefault('Intro', {}).update(INTRO_WAIT_INTERRUPT_COMMENTS)
+
+
+from IntroPresentAttributesFacts import COMMENTS as INTRO_PRESENT_ATTRIBUTES_COMMENTS
+REGION_COMMENTS.setdefault('Intro', {}).update(INTRO_PRESENT_ATTRIBUTES_COMMENTS)
+
+
+from IntroInterlacedFrameFacts import COMMENTS as INTRO_INTERLACED_FRAME_COMMENTS
+REGION_COMMENTS.setdefault('Intro', {}).update(INTRO_INTERLACED_FRAME_COMMENTS)
+
+
+from IntroLookupContinuationFacts import COMMENTS as INTRO_LOOKUP_CONTINUATION_COMMENTS
+REGION_COMMENTS.setdefault('Intro', {}).update(INTRO_LOOKUP_CONTINUATION_COMMENTS)
+
+
+from ActionFoldedRandomFacts import COMMENTS as ACTION_FOLDED_RANDOM_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_FOLDED_RANDOM_COMMENTS)
+
+from ActionRandomClusterFacts import COMMENTS as ACTION_RANDOM_CLUSTER_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_RANDOM_CLUSTER_COMMENTS)
+
+
+from ActionRecordReuseFacts import COMMENTS as ACTION_RECORD_REUSE_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_RECORD_REUSE_COMMENTS)
+
+
+from ActionOffsetRestoreFacts import COMMENTS as ACTION_OFFSET_RESTORE_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_OFFSET_RESTORE_COMMENTS)
+
+from ActionRecordSelectionFacts import COMMENTS as ACTION_RECORD_SELECTION_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_RECORD_SELECTION_COMMENTS)
+
+
+from ActionRecordScaleFacts import COMMENTS as ACTION_RECORD_SCALE_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_RECORD_SCALE_COMMENTS)
+
+from ActionIYRecordReuseFacts import COMMENTS as ACTIONIY_RECORD_REUSE_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTIONIY_RECORD_REUSE_COMMENTS)
+
+from ActionClassReuseFacts import COMMENTS as ACTION_CLASS_REUSE_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_CLASS_REUSE_COMMENTS)
+
+
+from ActionRejectRecordFacts import COMMENTS as ACTION_REJECT_RECORD_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_REJECT_RECORD_COMMENTS)
+
+from ActionRecordWarningReturnFacts import COMMENTS as ACTION_RECORD_WARNING_RETURN_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_RECORD_WARNING_RETURN_COMMENTS)
+
+
+from ActionRecordUpdateFacts import COMMENTS as ACTION_RECORD_UPDATE_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_RECORD_UPDATE_COMMENTS)
+
+
+from ActionRecordBaseResetFacts import COMMENTS as ACTION_RECORD_BASE_RESET_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_RECORD_BASE_RESET_COMMENTS)
+
+
+from ActionClass14ReuseFacts import COMMENTS as ACTION_CLASS14_REUSE_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_CLASS14_REUSE_COMMENTS)
+
+
+from ActionBankedBufferInitFacts import COMMENTS as ACTION_BANKED_BUFFER_INIT_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_BANKED_BUFFER_INIT_COMMENTS)
+
+
+from ActionThirdGlyphPublishFacts import COMMENTS as ACTION_THIRD_GLYPH_PUBLISH_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_THIRD_GLYPH_PUBLISH_COMMENTS)
+
+from ActionThirdGlyphStackFacts import COMMENTS as ACTION_THIRD_GLYPH_STACK_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_THIRD_GLYPH_STACK_COMMENTS)
+
+
+from ActionThirdGlyphVectorFacts import COMMENTS as ACTION_THIRD_GLYPH_VECTOR_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_THIRD_GLYPH_VECTOR_COMMENTS)
+
+
+from ActionCachedRootFacts import COMMENTS as ACTION_CACHED_ROOT_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_CACHED_ROOT_COMMENTS)
+
+
+from ActionComponentEncodingFacts import COMMENTS as ACTION_COMPONENT_ENCODING_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_COMPONENT_ENCODING_COMMENTS)
+
+from ActionComponentStackFacts import COMMENTS as ACTION_COMPONENT_STACK_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_COMPONENT_STACK_COMMENTS)
+
+
+from ActionComponentTransformFacts import COMMENTS as ACTION_COMPONENT_TRANSFORM_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_COMPONENT_TRANSFORM_COMMENTS)
+
+
+from ControlsProjectionAlgorithmFacts import COMMENTS as CONTROLS_PROJECTION_ALGORITHM_COMMENTS
+REGION_COMMENTS.setdefault("Controls", {}).update(CONTROLS_PROJECTION_ALGORITHM_COMMENTS)
+
+
+from ControlsProjectionGateFacts import COMMENTS as CONTROLS_PROJECTION_GATE_COMMENTS
+REGION_COMMENTS.setdefault("Controls", {}).update(CONTROLS_PROJECTION_GATE_COMMENTS)
+
+
+from ActionClassDispatchFacts import COMMENTS as ACTION_CLASS_DISPATCH_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_CLASS_DISPATCH_COMMENTS)
+
+from ActionLinkOverrideFacts import COMMENTS as ACTION_LINK_OVERRIDE_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_LINK_OVERRIDE_COMMENTS)
+
+from ActionRecordsExcept6And7Facts import COMMENTS as ACTION_RECORDS_EXCEPT6_AND7_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_RECORDS_EXCEPT6_AND7_COMMENTS)
+
+from ActionRecords6Or7Facts import COMMENTS as ACTION_RECORDS6_OR7_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_RECORDS6_OR7_COMMENTS)
+
+from ActionRecords5Or14Facts import COMMENTS as ACTION_RECORDS5_OR14_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_RECORDS5_OR14_COMMENTS)
+
+from ActionRandomFilteredRecordFacts import COMMENTS as ACTION_RANDOM_FILTERED_RECORD_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_RANDOM_FILTERED_RECORD_COMMENTS)
+
+from ActionClass9LinkFacts import COMMENTS as ACTION_CLASS9_LINK_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_CLASS9_LINK_COMMENTS)
+
+from ActionIgnoredClassesFacts import COMMENTS as ACTION_IGNORED_CLASSES_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_IGNORED_CLASSES_COMMENTS)
+
+from ActionClass0LinkFacts import COMMENTS as ACTION_CLASS0_LINK_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_CLASS0_LINK_COMMENTS)
+
+from ActionPreferredApplyFacts import COMMENTS as ACTION_PREFERRED_APPLY_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_PREFERRED_APPLY_COMMENTS)
+
+from ActionPreferredChanceFacts import COMMENTS as ACTION_PREFERRED_CHANCE_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_PREFERRED_CHANCE_COMMENTS)
+
+from ActionPreferredZeroBridgeFacts import COMMENTS as ACTION_PREFERRED_ZERO_BRIDGE_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_PREFERRED_ZERO_BRIDGE_COMMENTS)
+
+from ActionPreferredSevenBridgeFacts import COMMENTS as ACTION_PREFERRED_SEVEN_BRIDGE_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_PREFERRED_SEVEN_BRIDGE_COMMENTS)
+
+
+from ActionPreferredDispatchFacts import COMMENTS as ACTION_PREFERRED_DISPATCH_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_PREFERRED_DISPATCH_COMMENTS)
+
+
+from ActionAbsSigned32Facts import COMMENTS as ACTION_ABS_SIGNED32_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_ABS_SIGNED32_COMMENTS)
+
+
+from ActionContextWordPairsFacts import COMMENTS as ACTION_CONTEXT_WORD_PAIRS_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_CONTEXT_WORD_PAIRS_COMMENTS)
+
+
+from ActionVectorHighMaximumFacts import COMMENTS as ACTION_VECTOR_HIGH_MAXIMUM_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_VECTOR_HIGH_MAXIMUM_COMMENTS)
+
+
+from ActionSignedRatioCodeFacts import COMMENTS as ACTION_SIGNED_RATIO_CODE_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_SIGNED_RATIO_CODE_COMMENTS)
+
+
+from ActionHalfDeltaCodesFacts import COMMENTS as ACTION_HALF_DELTA_CODES_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_HALF_DELTA_CODES_COMMENTS)
+
+
+from ActionRecordCodeStepFacts import COMMENTS as ACTION_RECORD_CODE_STEP_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_RECORD_CODE_STEP_COMMENTS)
+
+
+from ActionClass3LinkCountFacts import COMMENTS as ACTION_CLASS3_LINK_COUNT_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_CLASS3_LINK_COUNT_COMMENTS)
+
+
+from ActionFoldedNearWordsFacts import COMMENTS as ACTION_FOLDED_NEAR_WORDS_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_FOLDED_NEAR_WORDS_COMMENTS)
+
+
+from ActionClampVectorWordsFacts import COMMENTS as ACTION_CLAMP_VECTOR_WORDS_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_CLAMP_VECTOR_WORDS_COMMENTS)
+
+
+from ActionWideTargetStepFacts import COMMENTS as ACTION_WIDE_TARGET_STEP_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_WIDE_TARGET_STEP_COMMENTS)
+
+
+from ActionNearVectorSearchFacts import COMMENTS as ACTION_NEAR_VECTOR_SEARCH_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_NEAR_VECTOR_SEARCH_COMMENTS)
+
+
+from ActionSelectWideTargetFacts import COMMENTS as ACTION_SELECT_WIDE_TARGET_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_SELECT_WIDE_TARGET_COMMENTS)
+
+
+from ActionControlDecayFacts import COMMENTS as ACTION_CONTROL_DECAY_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_CONTROL_DECAY_COMMENTS)
+
+from ActionKeyTurnNegativeFacts import COMMENTS as ACTION_KEY_TURN_NEGATIVE_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_KEY_TURN_NEGATIVE_COMMENTS)
+
+from ActionKeyTurnPositiveFacts import COMMENTS as ACTION_KEY_TURN_POSITIVE_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_KEY_TURN_POSITIVE_COMMENTS)
+
+from ActionKeyXNegativeFacts import COMMENTS as ACTION_KEYX_NEGATIVE_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_KEYX_NEGATIVE_COMMENTS)
+
+from ActionKeyXPositiveFacts import COMMENTS as ACTION_KEYX_POSITIVE_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_KEYX_POSITIVE_COMMENTS)
+
+from ActionKeyYNegativeFacts import COMMENTS as ACTION_KEYY_NEGATIVE_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_KEYY_NEGATIVE_COMMENTS)
+
+from ActionKeyYPositiveFacts import COMMENTS as ACTION_KEYY_POSITIVE_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_KEYY_POSITIVE_COMMENTS)
+
+from ActionKeyGaugeIncreaseFacts import COMMENTS as ACTION_KEY_GAUGE_INCREASE_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_KEY_GAUGE_INCREASE_COMMENTS)
+
+from ActionKeyGaugeDecreaseFacts import COMMENTS as ACTION_KEY_GAUGE_DECREASE_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_KEY_GAUGE_DECREASE_COMMENTS)
+
+from ActionBankedCallbackReturnFacts import COMMENTS as ACTION_BANKED_CALLBACK_RETURN_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_BANKED_CALLBACK_RETURN_COMMENTS)
+
+
+from ActionBankedCallbackFacts import COMMENTS as ACTION_BANKED_CALLBACK_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_BANKED_CALLBACK_COMMENTS)
+
+
+from ControlsCircleInteriorFullFacts import COMMENTS as CONTROLS_CIRCLE_INTERIOR_FULL_COMMENTS
+REGION_COMMENTS.setdefault("Controls", {}).update(CONTROLS_CIRCLE_INTERIOR_FULL_COMMENTS)
+
+
+from ControlsCircleHalfFacts import COMMENTS as CONTROLS_CIRCLE_HALF_COMMENTS
+REGION_COMMENTS.setdefault("Controls", {}).update(CONTROLS_CIRCLE_HALF_COMMENTS)
+
+
+from ControlsStationRelocationFacts import COMMENTS as CONTROLS_STATION_RELOCATION_COMMENTS
+REGION_COMMENTS.setdefault("Controls", {}).update(CONTROLS_STATION_RELOCATION_COMMENTS)
+
+
+from ControlsStationPrepareFacts import COMMENTS as CONTROLS_STATION_PREPARE_COMMENTS
+REGION_COMMENTS.setdefault("Controls", {}).update(CONTROLS_STATION_PREPARE_COMMENTS)
+
+
+from ControlsClippedCircleHalfFacts import COMMENTS as CONTROLS_CLIPPED_CIRCLE_HALF_COMMENTS
+REGION_COMMENTS.setdefault("Controls", {}).update(CONTROLS_CLIPPED_CIRCLE_HALF_COMMENTS)
+
+
+from ControlsCircleKernelsFacts import COMMENTS as CONTROLS_CIRCLE_KERNELS_COMMENTS
+REGION_COMMENTS.setdefault("Controls", {}).update(CONTROLS_CIRCLE_KERNELS_COMMENTS)
+
+
+from ActionSubtractWorkVectorFacts import COMMENTS as ACTION_SUBTRACT_WORK_VECTOR_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_SUBTRACT_WORK_VECTOR_COMMENTS)
+
+
+from ActionRefreshPanelFacts import COMMENTS as ACTION_REFRESH_PANEL_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_REFRESH_PANEL_COMMENTS)
+
+
+from ControlsVerticalCircleSliceFacts import COMMENTS as CONTROLS_VERTICAL_CIRCLE_SLICE_COMMENTS
+REGION_COMMENTS.setdefault("Controls", {}).update(CONTROLS_VERTICAL_CIRCLE_SLICE_COMMENTS)
+
+
+from ControlsHorizontalCircleFacts import COMMENTS as CONTROLS_HORIZONTAL_CIRCLE_COMMENTS
+REGION_COMMENTS.setdefault("Controls", {}).update(CONTROLS_HORIZONTAL_CIRCLE_COMMENTS)
+
+
+from ControlsCornerCircleSliceFacts import COMMENTS as CONTROLS_CORNER_CIRCLE_SLICE_COMMENTS
+REGION_COMMENTS.setdefault("Controls", {}).update(CONTROLS_CORNER_CIRCLE_SLICE_COMMENTS)
+
+
+from ControlsFullWidthCircleFacts import COMMENTS as CONTROLS_FULL_WIDTH_CIRCLE_COMMENTS
+REGION_COMMENTS.setdefault("Controls", {}).update(CONTROLS_FULL_WIDTH_CIRCLE_COMMENTS)
+
+
+from ControlsLargeCircleFacts import COMMENTS as CONTROLS_LARGE_CIRCLE_COMMENTS
+REGION_COMMENTS.setdefault("Controls", {}).update(CONTROLS_LARGE_CIRCLE_COMMENTS)
+
+
+from ControlsBodyDrawFacts import COMMENTS as CONTROLS_BODY_DRAW_COMMENTS
+REGION_COMMENTS.setdefault("Controls", {}).update(CONTROLS_BODY_DRAW_COMMENTS)
+
+
+from ControlsProjectDrawBodyFacts import COMMENTS as CONTROLS_PROJECT_DRAW_BODY_COMMENTS
+REGION_COMMENTS.setdefault("Controls", {}).update(CONTROLS_PROJECT_DRAW_BODY_COMMENTS)
+
+
+from ActionDrawBankedBodyFacts import COMMENTS as ACTION_DRAW_BANKED_BODY_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_DRAW_BANKED_BODY_COMMENTS)
+
+from ActionRestoreBodyStackFacts import COMMENTS as ACTION_RESTORE_BODY_STACK_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_RESTORE_BODY_STACK_COMMENTS)
+
+
+from ActionBodyTransformFacts import COMMENTS as ACTION_BODY_TRANSFORM_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_BODY_TRANSFORM_COMMENTS)
+
+from ActionObjectOffsetRiseFacts import COMMENTS as ACTION_OBJECT_OFFSET_RISE_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_OBJECT_OFFSET_RISE_COMMENTS)
+
+from ActionObjectOffsetFallFacts import COMMENTS as ACTION_OBJECT_OFFSET_FALL_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_OBJECT_OFFSET_FALL_COMMENTS)
+
+from ActionObjectPhaseWaitFacts import COMMENTS as ACTION_OBJECT_PHASE_WAIT_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_OBJECT_PHASE_WAIT_COMMENTS)
+
+from ActionObjectOffsetTransferFacts import COMMENTS as ACTION_OBJECT_OFFSET_TRANSFER_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_OBJECT_OFFSET_TRANSFER_COMMENTS)
+
+from ActionObjectOffsetVectorFacts import COMMENTS as ACTION_OBJECT_OFFSET_VECTOR_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_OBJECT_OFFSET_VECTOR_COMMENTS)
+
+from ActionObjectOffsetCoefficientsFacts import COMMENTS as ACTION_OBJECT_OFFSET_COEFFICIENTS_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_OBJECT_OFFSET_COEFFICIENTS_COMMENTS)
+
+
+from ActionClass18StateFacts import COMMENTS as ACTION_CLASS18_STATE_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_CLASS18_STATE_COMMENTS)
+
+from ActionVisualEffectResumeFacts import COMMENTS as ACTION_VISUAL_EFFECT_RESUME_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_VISUAL_EFFECT_RESUME_COMMENTS)
+
+
+from ActionWideProjectionLoopFacts import COMMENTS as ACTION_WIDE_PROJECTION_LOOP_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_WIDE_PROJECTION_LOOP_COMMENTS)
+
+
+from ActionBankedBasisRotationFacts import COMMENTS as ACTION_BANKED_BASIS_ROTATION_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_BANKED_BASIS_ROTATION_COMMENTS)
+
+
+from ActionNonemptyRenderFrameFacts import COMMENTS as ACTION_NONEMPTY_RENDER_FRAME_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_NONEMPTY_RENDER_FRAME_COMMENTS)
+
+from ActionLargeEffectContinuationFacts import COMMENTS as ACTION_LARGE_EFFECT_CONTINUATION_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_LARGE_EFFECT_CONTINUATION_COMMENTS)
+
+
+from ActionLargeEffectEntryFacts import COMMENTS as ACTION_LARGE_EFFECT_ENTRY_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_LARGE_EFFECT_ENTRY_COMMENTS)
+
+from ActionRecordEffectResumeFacts import COMMENTS as ACTION_RECORD_EFFECT_RESUME_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_RECORD_EFFECT_RESUME_COMMENTS)
+
+
+from ActionRecordEffectThresholdFacts import COMMENTS as ACTION_RECORD_EFFECT_THRESHOLD_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_RECORD_EFFECT_THRESHOLD_COMMENTS)
+
+
+from ActionObjectStateReturnFacts import COMMENTS as ACTION_OBJECT_STATE_RETURN_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_OBJECT_STATE_RETURN_COMMENTS)
+
+
+from ActionNoiseExitFacts import COMMENTS as ACTION_NOISE_EXIT_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_NOISE_EXIT_COMMENTS)
+
+
+from ActionBodyModeTransitionFacts import COMMENTS as ACTION_BODY_MODE_TRANSITION_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_BODY_MODE_TRANSITION_COMMENTS)
+
+
+from ActionBodyMotionFacts import COMMENTS as ACTION_BODY_MOTION_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_BODY_MOTION_COMMENTS)
+
+
+from ControlsTargetOverlayFacts import COMMENTS as CONTROLS_TARGET_OVERLAY_COMMENTS
+REGION_COMMENTS.setdefault("Controls", {}).update(CONTROLS_TARGET_OVERLAY_COMMENTS)
+
+
+from ActionMotionWithoutKeysFacts import COMMENTS as ACTION_MOTION_WITHOUT_KEYS_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_MOTION_WITHOUT_KEYS_COMMENTS)
+
+
+from ControlsRadarLoopFacts import COMMENTS as CONTROLS_RADAR_LOOP_COMMENTS
+REGION_COMMENTS.setdefault("Controls", {}).update(CONTROLS_RADAR_LOOP_COMMENTS)
+
+
+from ActionVisualEffectListFacts import COMMENTS as ACTION_VISUAL_EFFECT_LIST_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_VISUAL_EFFECT_LIST_COMMENTS)
+
+
+from ActionSpawnRecordFinishFacts import COMMENTS as ACTION_SPAWN_RECORD_FINISH_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_SPAWN_RECORD_FINISH_COMMENTS)
+
+
+from ActionSpawnScheduleFacts import COMMENTS as ACTION_SPAWN_SCHEDULE_COMMENTS
+REGION_COMMENTS.setdefault("Action", {}).update(ACTION_SPAWN_SCHEDULE_COMMENTS)
 
 
 if __name__ == "__main__":

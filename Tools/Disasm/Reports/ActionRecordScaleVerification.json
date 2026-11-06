@@ -1,0 +1,44 @@
+{
+  "passed": true,
+  "total_cases": 32768,
+  "all_128_original_model_pointers": true,
+  "all_256_class_codes": true,
+  "original_header_high_histogram": {
+    "2": 48,
+    "3": 16,
+    "4": 12,
+    "1": 22,
+    "5": 30
+  },
+  "dispatch_targets": {
+    "E5A0": 7680,
+    "E5A1": 3072,
+    "E5A2": 4096,
+    "E5A3": 12288,
+    "E5A4": 5632
+  },
+  "whole_E55C_to_actual_JR_target_proved": true,
+  "following_component_update_proved": false,
+  "actual_banked_header_reader_executed": true,
+  "real_page_outputs": [
+    20,
+    16
+  ],
+  "maximum_additional_stack_bytes": 6,
+  "exact_registers_including_R": true,
+  "matched_class_refresh_m1": 62,
+  "other_class_refresh_m1": 41,
+  "all_physical_ram_bytes_proved": true,
+  "write_multiplicity_proved": true,
+  "hardware_bus_write_order_proved": false,
+  "original_header_range": [
+    1,
+    5
+  ],
+  "odd_indices_and_modified_headers_proved": false,
+  "independent_numeric_oracle": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false,
+  "timing_proved": false
+}

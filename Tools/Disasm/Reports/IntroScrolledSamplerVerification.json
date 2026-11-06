@@ -1,0 +1,47 @@
+{
+  "passed": true,
+  "total_cases": 3840,
+  "rows_per_call": 16,
+  "columns_per_row": 64,
+  "actual_generator_chain_verified": true,
+  "generated_code_bytes": 451,
+  "actual_continuation_executed": true,
+  "table_start_pages": [
+    208,
+    240
+  ],
+  "table_start_lows": [
+    0,
+    64,
+    128
+  ],
+  "destination_start_pages": [
+    64,
+    128,
+    144,
+    160,
+    176
+  ],
+  "source_offsets": [
+    32768,
+    40705,
+    48959
+  ],
+  "source_words_high_domain": [
+    48,
+    63
+  ],
+  "all_initial_flags_values": true,
+  "sequential_source_alias_cases": 878,
+  "cpu_stack_locations": 2,
+  "cpu_stack_written": false,
+  "all_registers_except_R": true,
+  "all_physical_ram_bytes_proved": true,
+  "write_multiplicity_proved": true,
+  "independent_numeric_oracle": true,
+  "arbitrary_word_and_offset_domain_proved": false,
+  "assembly_executed": false,
+  "native_execution": false,
+  "irq_executed": false,
+  "timing_proved": false
+}

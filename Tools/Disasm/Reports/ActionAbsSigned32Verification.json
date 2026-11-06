@@ -1,0 +1,31 @@
+{
+  "passed": true,
+  "total_cases": 729088,
+  "cases_by_kind": {
+    "all_low_words": 262144,
+    "all_high_words": 327680,
+    "all_input_AF": 131072,
+    "mixed_dwords": 8192
+  },
+  "paths": {
+    "nonnegative": 364566,
+    "negative": 364522
+  },
+  "all_low_words_at_four_high_boundaries": true,
+  "all_high_words_at_five_low_boundaries": true,
+  "all_input_AF_for_both_sign_paths": true,
+  "exact_registers_including_R": true,
+  "all_physical_ram_bytes_proved": true,
+  "no_memory_or_stack_writes_in_any_case": true,
+  "final_eight_banks_match_initial_state": true,
+  "minimum_80000000_preserved": true,
+  "minimum_signed_overflow_PV_preserved": true,
+  "nonnegative_refresh_m1": 3,
+  "negative_refresh_m1": 23,
+  "complete_32_bit_domain_exhausted": false,
+  "independent_integer_abs_oracle": true,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "timing_proved": false
+}

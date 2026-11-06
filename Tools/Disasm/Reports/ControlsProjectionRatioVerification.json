@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "total_cases": 369151,
+  "cases_by_kind": {
+    "all_small_numerators": 65536,
+    "all_small_divisors": 65536,
+    "normalized_high_pairs": 32768,
+    "word_edges": 512,
+    "around_twice_divisor": 196607,
+    "mixed_full_words": 8192
+  },
+  "branches": {
+    "inside_tiny": 9,
+    "outside8_reject": 548,
+    "outside16_reject": 114217,
+    "outside8": 330,
+    "outside16": 99828,
+    "outside24": 61461,
+    "outside24_reject": 80108,
+    "inside": 12650
+  },
+  "domain": "0<=N,Q<=7FFFFF, alternative C in {2,3}",
+  "inside_and_all_three_outside_normalizers_checked": true,
+  "independent_integer_normalization_and_byte_recurrence": true,
+  "exact_registers_except_R": true,
+  "direct_and_outer_return_targets_proved": true,
+  "outer_return_consumes_extra_word": true,
+  "alternative_B_inside_bits_proved": true,
+  "all_nonstack_physical_RAM_preserved": true,
+  "stack_writes_confined_to_four_bytes": true,
+  "max_observed_stack_byte_writes": 50,
+  "stack_residue_values_and_write_multiplicity_proved": false,
+  "refresh_R_proved": false,
+  "full_24_bit_input_pair_product_exhausted": false,
+  "whole_CF0B_projection_proved": false,
+  "unknown_status_preserved": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false,
+  "timing_proved": false
+}

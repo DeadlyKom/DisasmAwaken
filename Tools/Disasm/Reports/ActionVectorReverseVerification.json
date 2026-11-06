@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "total_cases": 263025,
+  "cases_by_fixture": {
+    "word_slice": 262144,
+    "flags": 256,
+    "joint_edges": 625
+  },
+  "method": "independent_modular_word_negation_and_signed_half_oracle",
+  "exact_registers_flags_refresh_sp": true,
+  "every_ram_byte_and_write_multiplicity_checked": true,
+  "all_component_and_scalar_words_by_separate_slices": true,
+  "all_input_flags": true,
+  "enables_step_near_zero_without_calling_it": true,
+  "components_negated_without_halving": true,
+  "original_8000_wrap_preserved": true,
+  "maximum_additional_stack_bytes": 0,
+  "refresh_m1": 44,
+  "game_units_proved": false,
+  "all_joint_inputs_exhausted": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "total_cases": 4096,
+  "outcomes": {
+    "effect": 260,
+    "dispatch": 3836
+  },
+  "all_threshold_input_bytes": true,
+  "real_effect_class": 16,
+  "assembly_executed": false
+}

@@ -31,11 +31,11 @@
                 ent
                 assert $ == #0198
                 disp #4355
-                include "../ActionBoot/BuildProjectionTable.asm"
+                include "../ActionBoot/BuildExponentialTable.asm"
                 ent
                 assert $ == #01D2
                 disp #438F
-                include "../ActionBoot/BuildReciprocalTable.asm"
+                include "../ActionBoot/BuildLogarithmTable.asm"
                 ent
                 assert $ == #0212
                 disp #43CF
@@ -54,32 +54,34 @@
                 ent
                 assert $ == #0291
                 disp #6054
-                include "../Action/Unknown6054.asm"
+                include "../Action/ShowNoiseBeforeReload.asm"
                 ent
                 assert $ == #02EB
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/17_ACTION/Unclassified002.bin"
+                disp #60AE
+                include "../Action/CreateMissileForTarget.asm"
+                ent
                 assert $ == #0382
                 disp #6145
-                include "../Action/Unknown6145.asm"
+                include "../Action/RefreshFlightPanel.asm"
                 ent
                 assert $ == #03AF
                 disp #6172
-                include "../Action/Unknown6172.asm"
+                include "../Action/ReleaseClass14Records.asm"
                 ent
                 assert $ == #03BA
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
                 incbin "../Resources/17_ACTION/Unclassified003.bin"
                 assert $ == #04A2
                 disp #6265
-                include "../Action/Unknown6265.asm"
+                include "../Action/StepRecordTargetCodes.asm"
                 ent
                 assert $ == #04F2
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
                 incbin "../Resources/17_ACTION/Unclassified004.bin"
                 assert $ == #050C
                 disp #62CF
-                include "../Action/Unknown62CF.asm"
+                include "../Action/CountClass3LinksUpToTwo.asm"
                 ent
                 assert $ == #054E
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
@@ -91,7 +93,7 @@
                 assert $ == #0598
                 assert $ == #0598
                 disp #635B
-                include "../Action/Unknown635B.asm"                             ; (0) жёсткий порядок, последовательное исполнение
+                include "../Action/ApplyPendingRecordLink.asm"                  ; (0) жёсткий порядок, последовательное исполнение
                 include "../Action/ApplyIndexedDelta.asm"                       ; (1) жёсткий порядок, продолжение после условного RET Z
                 ent
                 assert $ == #05F3
@@ -99,11 +101,39 @@
                 incbin "../Resources/17_ACTION/Unclassified006.bin"
                 assert $ == #071C
                 disp #64DF
-                include "../Action/Unknown64DF.asm"
+                include "../Action/DispatchRecordClass.asm"
                 ent
                 assert $ == #072D
-                ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/17_ACTION/Unclassified007.bin"
+                disp #64F0
+                include "../Action/Data/ClassHandlers.asm"
+                ent
+                assert $ == #0761
+                ; Unknown, код после 26 указателей классов
+                assert $ == #0761
+                assert $ == #0761
+                assert $ == #0761
+                disp #6524
+                include "../Action/ReturnIgnoredRecordClass.asm"
+                ent
+                assert $ == #0762
+                ; Unknown, соседние байты вне доказанного входа ReturnIgnoredRecordClass
+                incbin "../Resources/17_ACTION/Unclassified007_AfterClassHandlers_BeforeActionLinkOverride_BeforeActionClass9Link_AfterActionIgnoredClasses.bin"
+                assert $ == #0803
+                disp #65C6
+                include "../Action/ConfigureClass9Link.asm"
+                ent
+                assert $ == #081B
+                assert $ == #081B
+                ; Unknown, соседние байты вне доказанного входа ConfigureClass0Link
+                incbin "../Resources/17_ACTION/Unclassified007_AfterClassHandlers_BeforeActionLinkOverride_AfterActionClass9Link_BeforeActionClass0Link.bin"
+                assert $ == #084B
+                disp #660E
+                include "../Action/ConfigureClass0Link.asm"
+                ent
+                assert $ == #0868
+                disp #662B
+                include "../Action/CopyRecordLinkOverride.asm"
+                ent
                 assert $ == #0876
                 disp #6639
                 include "../Action/DrawBankedGauge.asm"
@@ -114,104 +144,122 @@
                 ent
                 assert $ == #090F
                 disp #66D2
-                include "../Action/Unknown66D2.asm"
+                include "../Action/SubtractScaledWorkVector.asm"
+                ent
+                assert $ == #0964
+                disp #6727
+                include "../Action/TransitionBodyMode.asm"
                 ent
                 assert $ == #09BD
                 disp #6780
-                include "../Action/Unknown6780.asm"
+                include "../Action/UpdateBodyMotion.asm"
                 ent
                 assert $ == #0BBA
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
                 incbin "../Resources/17_ACTION/Unclassified008.bin"
                 assert $ == #0BC3
                 disp #6986
-                include "../Action/Unknown6986.asm"
+                include "../Action/CompareContextWordPairs.asm"
                 ent
                 assert $ == #0BD9
                 disp #699C
-                include "../Action/Unknown699C.asm"
+                include "../Action/MaxFoldedVectorHigh.asm"
                 ent
                 assert $ == #0BFB
                 disp #69BE
-                include "../Action/Unknown69BE.asm"
+                include "../Action/FindFirstNearWideVector.asm"
                 ent
                 assert $ == #0C66
                 disp #6A29
-                include "../Action/Unknown6A29.asm"
+                include "../Action/CheckThreeUpperWordsNear.asm"
                 ent
                 assert $ == #0CAB
                 disp #6A6E
-                include "../Action/Unknown6A6E.asm"
+                include "../Action/PrepareBodyTransform.asm"
                 ent
                 assert $ == #0CEA
-                ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/17_ACTION/Unclassified009.bin"
+                disp #6AAD
+                include "../Action/RestoreBodyStack.asm"                        ; (0) жёсткий порядок, восстановление SP перед проверкой P/V
+                ent
                 assert $ == #0CED
                 disp #6AB0
-                include "../Action/Unknown6AB0.asm"
+                include "../Action/PublishTransformedBody.asm"                  ; (1) жёсткий порядок, продолжение после восстановления SP
                 ent
                 assert $ == #0D53
                 disp #6B16
-                include "../Action/Unknown6B16.asm"
+                include "../Action/ProjectWideVectors.asm"
                 ent
                 assert $ == #0E3C
                 disp #6BFF
-                include "../Action/Unknown6BFF.asm"                             ; (0) жёсткий порядок, последовательное исполнение
+                include "../Action/CopyAndTransformComponents.asm"              ; (0) жёсткий порядок, последовательное исполнение
                 ent
                 assert $ == #0E56
                 disp #6C19
-                include "../Action/Unknown6C19.asm"                             ; (1) жёсткий порядок, последовательное исполнение
+                include "../Action/TransformWorkComponents.asm"                 ; (1) жёсткий порядок, последовательное исполнение
                 ent
                 assert $ == #0E7D
-                ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/17_ACTION/Unclassified010.bin"
+                disp #6C40
+                include "../Action/RestoreComponentStack.asm"                   ; (0) жёсткий порядок, последовательное исполнение
+                ent
                 assert $ == #0E80
                 disp #6C43
-                include "../Action/Unknown6C43.asm"
+                include "../Action/EncodeSignedComponents.asm"                  ; (1) жёсткий порядок, последовательное исполнение
                 ent
                 assert $ == #0EBB
                 disp #6C7E
-                include "../Action/Unknown6C7E.asm"
+                include "../Action/DrawBankedProjectedBody.asm"
                 ent
                 assert $ == #0ECC
                 disp #6C8F
-                include "../Action/Unknown6C8F.asm"
+                include "../Action/UpdateThirdGlyphVector.asm"
                 ent
                 assert $ == #0EEE
-                ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/17_ACTION/Unclassified011.bin"
+                disp #6CB1
+                include "../Action/RestoreThirdGlyphStack.asm"                  ; (0) жёсткий порядок, последовательное исполнение
+                ent
                 assert $ == #0EF1
                 disp #6CB4
-                include "../Action/Unknown6CB4.asm"
+                include "../Action/PublishThirdGlyphVector.asm"                 ; (1) жёсткий порядок, последовательное исполнение
                 ent
                 assert $ == #0F13
                 disp #6CD6
-                include "../Action/Unknown6CD6.asm"
+                include "../Action/InitializeBankedBufferPoints.asm"
                 ent
                 assert $ == #0F21
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/17_ACTION/Unclassified012.bin"
+                disp #6CE4
+                include "../Action/TransferToStationLoader.asm"
+                ent
                 assert $ == #0F2C
                 disp #6CEF
-                include "../Action/Unknown6CEF.asm"
+                include "../Action/DispatchBank3Callback.asm"
                 ent
                 assert $ == #0F3D
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/17_ACTION/Unclassified013.bin"
+                assert $ == #0F3D
+                disp #6D00
+                include "../Action/RestoreRuntimePage.asm"
+                ent
+                assert $ == #0F43
+                assert $ == #0F43
+                disp #6D06
+                include "../Action/ApplyObjectOffsetVector.asm"
+                ent
                 assert $ == #0F75
                 disp #6D38
-                include "../Action/Unknown6D38.asm"
+                include "../Action/UpdateVisualEffects.asm"
                 ent
                 assert $ == #100E
-                ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/17_ACTION/Unclassified014.bin"
+                disp #6DD1
+                include "../Action/ResumeVisualEffect.asm"
+                ent
                 assert $ == #1068
                 disp #6E2B
                 include "../Action/ClassifyCoordinateRegion.asm"
                 ent
                 assert $ == #10A9
                 disp #6E6C
-                include "../Action/Unknown6E6C.asm"
+                include "../Action/UpdateMotionFromControls.asm"
                 ent
                 assert $ == #10E9
                 disp #6EAC
@@ -219,10 +267,12 @@
                 ent
                 assert $ == #111B
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/17_ACTION/Unclassified015.bin"
+                disp #6EDE
+                include "../Action/ReverseScaledVector.asm"
+                ent
                 assert $ == #115A
                 disp #6F1D
-                include "../Action/Unknown6F1D.asm"
+                include "../Action/ScanActionKeys.asm"
                 ent
                 assert $ == #118B
                 ; Подтверждённый хвост восстановления рамки клавиатуры
@@ -231,7 +281,7 @@
                 ent
                 assert $ == #1192
                 disp #6F55
-                include "../Action/Unknown6F55.asm"
+                include "../Action/LatchControlsAndDecay.asm"
                 ent
                 assert $ == #1254
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
@@ -244,7 +294,12 @@
                 ent
                 assert $ == #1289
                 ; Unknown, остальные обработчики ещё не разобраны
-                incbin "../Resources/17_ACTION/Unclassified017_BeforeMissileChecks.bin"
+                disp #704C
+                include "../Action/RequestMissile0.asm"                         ; (0) жёсткий порядок продолжения RequestMissile0
+                include "../Action/CompleteMissileLaunch.asm"                   ; (1) жёсткий порядок продолжения RequestMissile0
+                include "../Action/RequestMissile1.asm"
+                include "../Action/RequestMissile2.asm"
+                ent
                 assert $ == #12D8
                 disp #709B
                 include "../Action/ReportMissingMissileTarget.asm"
@@ -271,58 +326,135 @@
                 ent
                 assert $ == #1741
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/17_ACTION/Unclassified018.bin"
+                assert $ == #1741
+                assert $ == #1741
+                ; Unknown, соседние байты вне доказанного входа IncreaseGaugeWord
+                incbin "../Resources/17_ACTION/Unclassified018_BeforeGaugeKeys.bin"
+                assert $ == #18BD
+                disp #7680
+                include "../Action/IncreaseGaugeWord.asm"
+                ent
+                assert $ == #18E0
+                assert $ == #18E0
+                disp #76A3
+                include "../Action/DecreaseGaugeWord.asm"
+                ent
+                assert $ == #1904
+                disp #76C7
+                include "../Action/RequestTurnNegative.asm"
+                ent
+                assert $ == #1927
+                assert $ == #1927
+                disp #76EA
+                include "../Action/RequestTurnPositive.asm"
+                ent
+                assert $ == #194A
+                assert $ == #194A
+                disp #770D
+                include "../Action/RequestXNegative.asm"
+                ent
+                assert $ == #196D
+                assert $ == #196D
+                disp #7730
+                include "../Action/RequestXPositive.asm"
+                ent
+                assert $ == #1990
+                assert $ == #1990
+                disp #7753
+                include "../Action/RequestYNegative.asm"
+                ent
+                assert $ == #19B3
+                assert $ == #19B3
+                disp #7776
+                include "../Action/RequestYPositive.asm"
+                ent
+                assert $ == #19D6
+                ; Unknown, соседние байты вне доказанного входа RequestYPositive
+                incbin "../Resources/17_ACTION/Unclassified018_AfterRequestYPositive.bin"
                 assert $ == #1A96
                 disp #7859
-                include "../Action/Unknown7859.asm"
+                include "../Action/SpawnAlternate.asm"
                 ent
                 assert $ == #1D03
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
                 incbin "../Resources/17_ACTION/Unclassified019.bin"
                 assert $ == #1D95
                 disp #7B58
-                include "../Action/Unknown7B58.asm"
+                include "../Action/ScheduleSpawn.asm"                           ; (0) жёсткий порядок продолжения
+                ent
+                assert $ == #2011
+                disp #7DD4
+                include "../Action/FinishSpawnRecord.asm"                       ; (1) жёсткий порядок продолжения
                 ent
                 assert $ == #20DA
                 disp #7E9D
-                include "../Action/Unknown7E9D.asm"                             ; (0) жёсткий порядок, последовательное исполнение
+                include "../Action/SelectWideTargetAndStep.asm"                 ; (0) жёсткий порядок, последовательное исполнение
                 ent
                 assert $ == #20F4
                 disp #7EB7
-                include "../Action/Unknown7EB7.asm"                             ; (1) жёсткий порядок, последовательное исполнение
+                include "../Action/StepRecordTowardWideVector.asm"              ; (1) жёсткий порядок, последовательное исполнение
                 ent
                 assert $ == #214B
                 disp #7F0E
-                include "../Action/Unknown7F0E.asm"
+                include "../Action/ClampPatchedVectorWords.asm"
                 ent
                 assert $ == #21B3
                 disp #7F76
-                include "../Action/Unknown7F76.asm"
+                include "../Action/AbsSigned32.asm"
                 ent
                 assert $ == #21CC
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
                 incbin "../Resources/17_ACTION/Unclassified020_Prefix.bin"
+                assert $ == #3800
+                disp #9800
+                include "../Action/Data/ProjectionSquares.asm"
+                ent
                 assert $ == #3900
                 disp #9900
                 include "../Action/Data/SineTable.asm"
                 ent
                 assert $ == #3A00
                 ; Unknown, исходные байты после синусоиды ACTION
-                incbin "../Resources/17_ACTION/Unclassified020_BeforeWordRandom.bin"
+                disp #9A00
+                include "../Action/Data/SignedRatioCodes.asm"
+                ent
+                assert $ == #3B00
+                ; Unknown, следующие 18 байтов вне таблицы кодов отношения
+                incbin "../Resources/17_ACTION/Unclassified020_AfterRatioCodes.bin"
+                assert $ == #3B12
+                disp #9B12
+                include "../Action/Data/RenderPhases.asm"
+                ent
                 assert $ == #3B15
                 disp #9B15
                 include "../Action/Data/WordRandomState.asm"
                 ent
                 assert $ == #3B19
                 ; Unknown, исходные байты после состояния генератора
-                incbin "../Resources/17_ACTION/Unclassified020_BeforeMissileTargets.bin"
+                disp #9B19
+                include "../Action/Data/AimPoint.asm"
+                ent
                 assert $ == #3B1B
                 disp #9B1B
                 include "../Action/Data/MissileTargets.asm"
                 ent
                 assert $ == #3B1E
                 ; Unknown, соседние данные ещё не разобраны
-                incbin "../Resources/17_ACTION/Unclassified020_AfterMissileTargets.bin"
+                disp #9B1E
+                include "../Action/Data/ComponentWork.asm"
+                ent
+                assert $ == #3B27
+                disp #9B27
+                include "../Action/Data/WideVectors.asm"
+                ent
+                assert $ == #3B6F
+                disp #9B6F
+                include "../Action/Data/TransformWorkVector24.asm"
+                ent
+                assert $ == #3B78
+                disp #9B78
+                include "../Action/Data/WorkVector24.asm"
+                ent
                 assert $ == #3B81
                 disp #9B81
                 include "../Action/Data/GlyphIndicatorState.asm"
@@ -348,14 +480,27 @@
                 ent
                 assert $ == #3D82
                 ; Unknown, соседние данные ещё не разобраны
-                incbin "../Resources/17_ACTION/Unclassified020_BeforeObjectRecords.bin"
+                assert $ == #3D82
+                ; Unknown, соседние байты вне доказанной таблицы OBJECT3D
+                incbin "../Resources/17_ACTION/Unclassified020_BeforeObjectPointers.bin"
+                assert $ == #3E00
+                disp #9E00
+                include "../Action/Data/ObjectPointers.asm"
+                ent
+                assert $ == #3F00
+                ; Unknown, соседние байты вне доказанной таблицы OBJECT3D
+                incbin "../Resources/17_ACTION/Unclassified020_AfterObjectPointers.bin"
                 assert $ == #4100
                 disp #A100
                 include "../Action/Data/ObjectRecords.asm"
                 ent
                 assert $ == #4780
-                ; Unknown, соседнее состояние A780..A82C ещё не разобрано
-                incbin "../Resources/17_ACTION/Unclassified020_AfterObjectRecords.bin"
+                ; Unknown, соседнее состояние A780..A794 ещё не разобрано
+                incbin "../Resources/17_ACTION/Unclassified020_BeforeVisualEffects.bin"
+                assert $ == #4795
+                disp #A795
+                include "../Action/Data/VisualEffects.asm"
+                ent
                 assert $ == #482D
                 disp #A82D
                 include "../Action/StartFlight.asm"                             ; (0) жёсткий порядок, последовательное исполнение
@@ -370,11 +515,13 @@
                 ent
                 assert $ == #4ACC
                 disp #AACC
-                include "../Action/UnknownAACC.asm"
+                include "../Action/ReadObjectHeaderWord.asm"
                 ent
                 assert $ == #4AE2
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/17_ACTION/Unclassified021.bin"
+                disp #AAE2
+                include "../Action/CopyObjectData.asm"
+                ent
                 assert $ == #4B1B
                 disp #AB1B
                 include "../Action/SelectMemoryPage.asm"
@@ -408,409 +555,427 @@
                 ent
                 assert $ == #4D48
                 disp #AD48
-                include "../Action/UnknownAD48.asm"
+                include "../Action/SqrtWordBank1.asm"
                 ent
                 assert $ == #4D5A
                 disp #AD5A
-                include "../Action/UnknownAD5A.asm"
+                include "../Action/EncodeHalfCoordinateDeltas.asm"
                 ent
                 assert $ == #4DB7
                 disp #ADB7
-                include "../Action/UnknownADB7.asm"
+                include "../Action/RotateBankedBasis.asm"
                 ent
                 assert $ == #4DC5
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
                 incbin "../Resources/17_ACTION/Unclassified023.bin"
                 assert $ == #4E24
                 disp #AE24
-                include "../Action/UnknownAE24.asm"
+                include "../Action/EncodeSignedRatio.asm"
                 ent
                 assert $ == #4E73
                 disp #AE73
-                include "../Action/UnknownAE73.asm"
+                include "../Action/DivideScaledLogarithmic.asm"
                 include "../Action/ComputePatchedVector.asm"
                 ent
                 assert $ == #4FF5
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/17_ACTION/Unclassified024.bin"
+                assert $ == #4FF5
+                ; Unknown, соседние байты вне доказанного входа BuildObjectOffsetCoefficients
+                incbin "../Resources/17_ACTION/Unclassified024_BeforeActionObjectOffsetCoefficients.bin"
+                assert $ == #5044
+                disp #B044
+                include "../Action/BuildObjectOffsetCoefficients.asm"
+                ent
                 assert $ == #50E9
                 disp #B0E9
-                include "../Action/UnknownB0E9.asm"
+                include "../Action/SqrtWordCached.asm"
                 ent
                 assert $ == #516F
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
                 incbin "../Resources/17_ACTION/Unclassified025.bin"
                 assert $ == #6000
                 disp #C000
-                include "../Action/DispatchEdges.asm"
+                include "../Action/ClipPolygon.asm"
                 ent
                 assert $ == #6071
                 disp #C071
-                include "../Action/NextEdge.asm"                                ; (0) жёсткий порядок, последовательное исполнение
+                include "../Action/ContinueClipPolygon.asm"                     ; (0) жёсткий порядок, последовательное исполнение
                 ent
                 assert $ == #607A
                 disp #C07A
-                include "../Action/EdgeCase11.asm"                              ; (1) жёсткий порядок, последовательное исполнение
+                include "../Action/ReturnClipCase.asm"                          ; (1) жёсткий порядок, последовательное исполнение
                 ent
                 assert $ == #607B
                 disp #C07B
-                include "../Action/EdgeCase05.asm"                              ; (0) жёсткий порядок, последовательное исполнение
+                include "../Action/ClipInsideToBottomRight.asm"                 ; (0) жёсткий порядок, последовательное исполнение
                 ent
                 assert $ == #608A
                 disp #C08A
-                include "../Action/EdgeCase15.asm"                              ; (1) жёсткий порядок, последовательное исполнение
+                include "../Action/ClipRightToBottomRight.asm"                  ; (1) жёсткий порядок, последовательное исполнение
                 ent
                 assert $ == #6095
                 disp #C095
-                include "../Action/EdgeCase06.asm"                              ; (0) жёсткий порядок, последовательное исполнение
+                include "../Action/ClipInsideToBottomLeft.asm"                  ; (0) жёсткий порядок, последовательное исполнение
                 ent
                 assert $ == #60A4
                 disp #C0A4
-                include "../Action/EdgeCase46.asm"                              ; (1) жёсткий порядок, последовательное исполнение
+                include "../Action/ClipBottomToBottomLeft.asm"                  ; (1) жёсткий порядок, последовательное исполнение
                 ent
                 assert $ == #60AF
                 disp #C0AF
-                include "../Action/EdgeCase09.asm"                              ; (0) жёсткий порядок, последовательное исполнение
+                include "../Action/ClipInsideToTopRight.asm"                    ; (0) жёсткий порядок, последовательное исполнение
                 ent
                 assert $ == #60BE
                 disp #C0BE
-                include "../Action/EdgeCase89.asm"                              ; (1) жёсткий порядок, последовательное исполнение
+                include "../Action/ClipTopToTopRight.asm"                       ; (1) жёсткий порядок, последовательное исполнение
                 ent
                 assert $ == #60C9
                 disp #C0C9
-                include "../Action/EdgeCase0A.asm"                              ; (0) жёсткий порядок, последовательное исполнение
+                include "../Action/ClipInsideToTopLeft.asm"                     ; (0) жёсткий порядок, последовательное исполнение
                 ent
                 assert $ == #60D8
                 disp #C0D8
-                include "../Action/EdgeCase2A.asm"                              ; (1) жёсткий порядок, последовательное исполнение
+                include "../Action/ClipLeftToTopLeft.asm"                       ; (1) жёсткий порядок, последовательное исполнение
                 ent
                 assert $ == #60E3
                 disp #C0E3
-                include "../Action/EdgeCase10.asm"
+                include "../Action/ClipRightToInside.asm"
                 ent
                 assert $ == #60E9
                 disp #C0E9
-                include "../Action/EdgeCase12.asm"
+                include "../Action/ClipRightToLeft.asm"
                 ent
                 assert $ == #60EF
                 disp #C0EF
-                include "../Action/EdgeCase14.asm"
+                include "../Action/ClipRightToBottom.asm"
                 ent
                 assert $ == #6101
                 disp #C101
-                include "../Action/EdgeCase16.asm"
+                include "../Action/ClipRightToBottomLeft.asm"
                 ent
                 assert $ == #6119
                 disp #C119
-                include "../Action/EdgeCase18.asm"
+                include "../Action/ClipRightToTop.asm"
                 ent
                 assert $ == #612B
                 disp #C12B
-                include "../Action/EdgeCase19.asm"
+                include "../Action/ClipRightToTopRight.asm"
                 ent
                 assert $ == #6132
                 disp #C132
-                include "../Action/EdgeCase1A.asm"
+                include "../Action/ClipRightToTopLeft.asm"
                 ent
                 assert $ == #6144
                 disp #C144
-                include "../Action/EdgeCase20.asm"
+                include "../Action/ClipLeftToInside.asm"
                 ent
                 assert $ == #614A
                 disp #C14A
-                include "../Action/EdgeCase21.asm"
+                include "../Action/ClipLeftToRight.asm"
                 ent
                 assert $ == #6150
                 disp #C150
-                include "../Action/EdgeCase24.asm"
+                include "../Action/ClipLeftToBottom.asm"
                 ent
                 assert $ == #6162
                 disp #C162
-                include "../Action/EdgeCase25.asm"
+                include "../Action/ClipLeftToBottomRight.asm"
                 ent
                 assert $ == #6174
                 disp #C174
-                include "../Action/EdgeCase26.asm"
+                include "../Action/ClipLeftToBottomLeft.asm"
                 ent
                 assert $ == #617B
                 disp #C17B
-                include "../Action/EdgeCase28.asm"
+                include "../Action/ClipLeftToTop.asm"
                 ent
                 assert $ == #618D
                 disp #C18D
-                include "../Action/EdgeCase29.asm"
+                include "../Action/ClipLeftToTopRight.asm"
                 ent
                 assert $ == #61A5
                 disp #C1A5
-                include "../Action/EdgeCase40.asm"
+                include "../Action/ClipBottomToInside.asm"
                 ent
                 assert $ == #61AB
                 disp #C1AB
-                include "../Action/EdgeCase41.asm"
+                include "../Action/ClipBottomToRight.asm"
                 ent
                 assert $ == #61BD
                 disp #C1BD
-                include "../Action/EdgeCase42.asm"
+                include "../Action/ClipBottomToLeft.asm"
                 ent
                 assert $ == #61CF
                 disp #C1CF
-                include "../Action/EdgeCase45.asm"
+                include "../Action/ClipBottomToBottomRight.asm"
                 ent
                 assert $ == #61D6
                 disp #C1D6
-                include "../Action/EdgeCase48.asm"
+                include "../Action/ClipBottomToTop.asm"
                 ent
                 assert $ == #61DC
                 disp #C1DC
-                include "../Action/EdgeCase49.asm"
+                include "../Action/ClipBottomToTopRight.asm"
                 ent
                 assert $ == #61F1
                 disp #C1F1
-                include "../Action/EdgeCase4A.asm"
+                include "../Action/ClipBottomToTopLeft.asm"
                 ent
                 assert $ == #620C
                 disp #C20C
-                include "../Action/EdgeCase50.asm"
+                include "../Action/ClipBottomRightToInside.asm"
                 ent
                 assert $ == #6228
                 disp #C228
-                include "../Action/EdgeCase51.asm"
+                include "../Action/ClipBottomRightToRight.asm"
                 ent
                 assert $ == #622F
                 disp #C22F
-                include "../Action/EdgeCase52.asm"
+                include "../Action/ClipBottomRightToLeft.asm"
                 ent
                 assert $ == #624E
                 disp #C24E
-                include "../Action/EdgeCase54.asm"
+                include "../Action/ClipBottomRightToBottom.asm"
                 ent
                 assert $ == #6259
                 disp #C259
-                include "../Action/EdgeCase56.asm"
+                include "../Action/ClipBottomRightToBottomLeft.asm"
                 ent
                 assert $ == #625F
                 disp #C25F
-                include "../Action/EdgeCase58.asm"
+                include "../Action/ClipBottomRightToTop.asm"
                 ent
                 assert $ == #6274
                 disp #C274
-                include "../Action/EdgeCase5A.asm"
+                include "../Action/ClipBottomRightToTopLeft.asm"
                 ent
                 assert $ == #628D
                 disp #C28D
-                include "../Action/EdgeCase60.asm"
+                include "../Action/ClipBottomLeftToInside.asm"
                 ent
                 assert $ == #62A9
                 disp #C2A9
-                include "../Action/EdgeCase61.asm"
+                include "../Action/ClipBottomLeftToRight.asm"
                 ent
                 assert $ == #62BE
                 disp #C2BE
-                include "../Action/EdgeCase62.asm"
+                include "../Action/ClipBottomLeftToLeft.asm"
                 ent
                 assert $ == #62C9
                 disp #C2C9
-                include "../Action/EdgeCase64.asm"
+                include "../Action/ClipBottomLeftToBottom.asm"
                 ent
                 assert $ == #62D0
                 disp #C2D0
-                include "../Action/EdgeCase68.asm"
+                include "../Action/ClipBottomLeftToTop.asm"
                 ent
                 assert $ == #62EF
                 disp #C2EF
-                include "../Action/EdgeCase69.asm"
+                include "../Action/ClipBottomLeftToTopRight.asm"
                 ent
                 assert $ == #6308
                 disp #C308
-                include "../Action/EdgeCase6A.asm"
+                include "../Action/ClipBottomLeftToTopLeft.asm"
                 ent
                 assert $ == #630E
                 disp #C30E
-                include "../Action/EdgeCase80.asm"
+                include "../Action/ClipTopToInside.asm"
                 ent
                 assert $ == #6314
                 disp #C314
-                include "../Action/EdgeCase81.asm"
+                include "../Action/ClipTopToRight.asm"
                 ent
                 assert $ == #6326
                 disp #C326
-                include "../Action/EdgeCase82.asm"
+                include "../Action/ClipTopToLeft.asm"
                 ent
                 assert $ == #6338
                 disp #C338
-                include "../Action/EdgeCase84.asm"
+                include "../Action/ClipTopToBottom.asm"
                 ent
                 assert $ == #633E
                 disp #C33E
-                include "../Action/EdgeCase85.asm"
+                include "../Action/ClipTopToBottomRight.asm"
                 ent
                 assert $ == #6359
                 disp #C359
-                include "../Action/EdgeCase86.asm"
+                include "../Action/ClipTopToBottomLeft.asm"
                 ent
                 assert $ == #636E
                 disp #C36E
-                include "../Action/EdgeCase8A.asm"
+                include "../Action/ClipTopToTopLeft.asm"
                 ent
                 assert $ == #6375
                 disp #C375
-                include "../Action/EdgeCase90.asm"
+                include "../Action/ClipTopRightToInside.asm"
                 ent
                 assert $ == #6391
                 disp #C391
-                include "../Action/EdgeCase91.asm"
+                include "../Action/ClipTopRightToRight.asm"
                 ent
                 assert $ == #639C
                 disp #C39C
-                include "../Action/EdgeCase92.asm"
+                include "../Action/ClipTopRightToLeft.asm"
                 ent
                 assert $ == #63B1
                 disp #C3B1
-                include "../Action/EdgeCase94.asm"
+                include "../Action/ClipTopRightToBottom.asm"
                 ent
                 assert $ == #63D0
                 disp #C3D0
-                include "../Action/EdgeCase95.asm"
+                include "../Action/ClipTopRightToBottomRight.asm"
                 ent
                 assert $ == #63D6
                 disp #C3D6
-                include "../Action/EdgeCase96.asm"
+                include "../Action/ClipTopRightToBottomLeft.asm"
                 ent
                 assert $ == #63EF
                 disp #C3EF
-                include "../Action/EdgeCase98.asm"
+                include "../Action/ClipTopRightToTop.asm"
                 ent
                 assert $ == #63F6
                 disp #C3F6
-                include "../Action/EdgeCaseA0.asm"
+                include "../Action/ClipTopLeftToInside.asm"
                 ent
                 assert $ == #6412
                 disp #C412
-                include "../Action/EdgeCaseA1.asm"
+                include "../Action/ClipTopLeftToRight.asm"
                 ent
                 assert $ == #6431
                 disp #C431
-                include "../Action/EdgeCaseA2.asm"
+                include "../Action/ClipTopLeftToLeft.asm"
                 ent
                 assert $ == #6438
                 disp #C438
-                include "../Action/EdgeCaseA4.asm"
+                include "../Action/ClipTopLeftToBottom.asm"
                 ent
                 assert $ == #644D
                 disp #C44D
-                include "../Action/EdgeCaseA5.asm"
+                include "../Action/ClipTopLeftToBottomRight.asm"
                 ent
                 assert $ == #6466
                 disp #C466
-                include "../Action/EdgeCaseA8.asm"
+                include "../Action/ClipTopLeftToTop.asm"
                 ent
                 assert $ == #6471
                 disp #C471
-                include "../Action/EdgeCaseA9.asm"
+                include "../Action/ClipTopLeftToTopRight.asm"
                 ent
                 assert $ == #6477
                 disp #C477
-                include "../Action/UnknownC477.asm"
+                include "../Action/ComputeTopClipProduct.asm"
                 ent
                 assert $ == #6496
                 disp #C496
-                include "../Action/UnknownC496.asm"
+                include "../Action/ComputeBottomClipProduct.asm"
                 ent
                 assert $ == #64B5
                 disp #C4B5
-                include "../Action/UnknownC4B5.asm"
+                include "../Action/ComputeLeftClipProduct.asm"
                 ent
                 assert $ == #64D4
                 disp #C4D4
-                include "../Action/UnknownC4D4.asm"
+                include "../Action/ComputeRightClipProduct.asm"
                 ent
                 assert $ == #64F3
                 disp #C4F3
-                include "../Action/EdgeCase08.asm"                              ; (0) жёсткий порядок, последовательное исполнение
+                include "../Action/ClipInsideToTop.asm"                         ; (0) жёсткий порядок, последовательное исполнение
                 ent
                 assert $ == #64F6
                 disp #C4F6
-                include "../Action/UnknownC4F6.asm"                             ; (1) жёсткий порядок, последовательное исполнение
+                include "../Action/AppendTopClipIntersection.asm"               ; (1) жёсткий порядок, последовательное исполнение
                 ent
                 assert $ == #653D
                 disp #C53D
-                include "../Action/EdgeCase04.asm"                              ; (0) жёсткий порядок, последовательное исполнение
+                include "../Action/ClipInsideToBottom.asm"                      ; (0) жёсткий порядок, последовательное исполнение
                 ent
                 assert $ == #6540
                 disp #C540
-                include "../Action/UnknownC540.asm"                             ; (1) жёсткий порядок, последовательное исполнение
+                include "../Action/AppendBottomClipIntersection.asm"            ; (1) жёсткий порядок, последовательное исполнение
                 ent
                 assert $ == #6588
                 disp #C588
-                include "../Action/EdgeCase02.asm"                              ; (0) жёсткий порядок, последовательное исполнение
+                include "../Action/ClipInsideToLeft.asm"                        ; (0) жёсткий порядок, последовательное исполнение
                 ent
                 assert $ == #658B
                 disp #C58B
-                include "../Action/UnknownC58B.asm"                             ; (1) жёсткий порядок, последовательное исполнение
+                include "../Action/AppendLeftClipIntersection.asm"              ; (1) жёсткий порядок, последовательное исполнение
                 ent
                 assert $ == #65E4
                 disp #C5E4
-                include "../Action/EdgeCase01.asm"                              ; (0) жёсткий порядок, последовательное исполнение
+                include "../Action/ClipInsideToRight.asm"                       ; (0) жёсткий порядок, последовательное исполнение
                 ent
                 assert $ == #65E7
                 disp #C5E7
-                include "../Action/UnknownC5E7.asm"                             ; (1) жёсткий порядок, последовательное исполнение
+                include "../Action/AppendRightClipIntersection.asm"             ; (1) жёсткий порядок, последовательное исполнение
                 ent
                 assert $ == #6641
                 disp #C641
-                include "../Action/UnknownC641.asm"
+                include "../Action/AppendTopLeftClipCorner.asm"
                 ent
                 assert $ == #664C
                 disp #C64C
-                include "../Action/UnknownC64C.asm"
+                include "../Action/AppendTopRightClipCorner.asm"
                 ent
                 assert $ == #6657
                 disp #C657
-                include "../Action/UnknownC657.asm"
+                include "../Action/AppendBottomLeftClipCorner.asm"
                 ent
                 assert $ == #6662
                 disp #C662
-                include "../Action/UnknownC662.asm"
+                include "../Action/AppendBottomRightClipCorner.asm"
                 ent
                 assert $ == #666D
                 disp #C66D
-                include "../Action/UnknownC66D.asm"
+                include "../Action/CompareTopLeftProducts.asm"
                 ent
                 assert $ == #6681
                 disp #C681
-                include "../Action/UnknownC681.asm"
+                include "../Action/CompareTopRightProducts.asm"
                 ent
                 assert $ == #6695
                 disp #C695
-                include "../Action/UnknownC695.asm"
+                include "../Action/CompareBottomLeftProducts.asm"
                 ent
                 assert $ == #66A9
                 disp #C6A9
-                include "../Action/UnknownC6A9.asm"
+                include "../Action/CompareBottomRightProducts.asm"
                 ent
                 assert $ == #66BD
                 disp #C6BD
-                include "../Action/UnknownC6BD.asm"
+                include "../Action/ComputeSecondAxisDelta.asm"
                 ent
                 assert $ == #66C8
                 disp #C6C8
-                include "../Action/UnknownC6C8.asm"
+                include "../Action/ComputeFirstAxisDelta.asm"
                 ent
                 assert $ == #66D3
                 disp #C6D3
-                include "../Action/EdgeCase00.asm"
+                include "../Action/AppendSecondClipPoint.asm"
                 ent
                 assert $ == #66EA
                 disp #C6EA
-                include "../Action/EdgeCase59.asm"
+                include "../Action/ExitClipContour.asm"
                 ent
                 assert $ == #66F4
                 disp #C6F4
-                include "../Action/UnknownC6F4.asm"
+                include "../Action/MultiplySigned16.asm"
                 ent
                 assert $ == #688C
                 disp #C88C
-                include "../Action/UnknownC88C.asm"
+                include "../Action/DivideSigned32To16.asm"
+                ent
+                assert $ == #6941
+                disp #C941
+                include "../Action/ClipSingleEdge.asm"
+                ent
+                assert $ == #699B
+                disp #C99B
+                include "../Action/BuildRenderCoefficients.asm"
+                ent
+                assert $ == #6B23
+                disp #CB23
+                include "../Action/ComposeRenderMatrix.asm"
                 ent
                 assert $ == #6EE3
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
@@ -821,7 +986,27 @@
                 ent
                 assert $ == #6F0B
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/17_ACTION/Unclassified027.bin"
+                assert $ == #6F0B
+                assert $ == #6F0B
+                disp #CF0B
+                include "../Action/Data/ClipFirstPoint.asm"
+                ent
+                assert $ == #6F10
+                ; Соседние байты таблицы, поэлементная разметка ещё не оформлена
+                incbin "../Resources/17_ACTION/Unclassified027_BetweenClipPoints.bin"
+                assert $ == #6F1B
+                disp #CF1B
+                include "../Action/Data/ClipSecondPoint.asm"
+                ent
+                assert $ == #6F20
+                ; Соседние байты таблицы, поэлементная разметка ещё не оформлена
+                incbin "../Resources/17_ACTION/Unclassified027_AfterClipPoints.bin"
+                assert $ == #6F2B
+                disp #CF2B
+                include "../Action/Data/ClipProducts.asm"
+                ent
+                assert $ == #6F3B
+                incbin "../Resources/17_ACTION/Unclassified027_AfterProducts.bin"
                 assert $ == #710A
                 disp #D10A
                 include "../Action/ClearWorkBuffer.asm"
@@ -832,56 +1017,232 @@
                 ent
                 assert $ == #7194
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/17_ACTION/Unclassified028.bin"
+                assert $ == #7194
+                ; Unknown, соседние байты вне доказанного входа ProjectRenderVertex
+                assert $ == #7194
+                ; Unknown, соседние байты вне доказанного входа ProjectRenderVertexGroup
+                assert $ == #7194
+                ; Unknown, соседние байты вне доказанного входа PrepareRenderVertexProducts
+                assert $ == #7194
+                ; Unknown, соседние байты вне доказанного входа TransformObjectVertices
+                assert $ == #7194
+                ; Unknown, соседние байты вне доказанного входа PreparePolygonFill
+                assert $ == #7194
+                ; Unknown, соседние байты вне доказанного входа SelectPolygonRowLimit
+                assert $ == #7194
+                ; Unknown, соседние байты вне доказанного входа UpdatePolygonLeftEdge
+                assert $ == #7194
+                ; Unknown, соседние байты вне доказанного входа PolygonFillRows
+                incbin "../Resources/17_ACTION/Unclassified028_BeforePolygonRows.bin"
+                assert $ == #71C0
+                disp #D1C0
+                include "../Action/PolygonFillRows.asm"
+                ent
+                assert $ == #7268
+                ; Unknown, соседние байты вне доказанного входа PolygonFillRows
+                assert $ == #7268
+                disp #D268
+                include "../Action/SelectPolygonRightEdge.asm"
+                ent
+                assert $ == #726B
+                ; Unknown, соседние байты вне доказанного входа SelectPolygonRightEdge
+                assert $ == #726B
+                disp #D26B
+                include "../Action/WrapPolygonLeftEdge.asm"
+                ent
+                assert $ == #7272
+                disp #D272
+                include "../Action/UpdatePolygonLeftEdge.asm"
+                ent
+                assert $ == #73A8
+                ; Unknown, соседние байты вне доказанного входа UpdatePolygonLeftEdge
+                assert $ == #73A8
+                ; Unknown, соседние байты вне доказанного входа UpdatePolygonRightEdge
+                assert $ == #73A8
+                disp #D3A8
+                include "../Action/WrapPolygonRightEdge.asm"
+                ent
+                assert $ == #73AD
+                disp #D3AD
+                include "../Action/UpdatePolygonRightEdge.asm"                  ; (0) жёсткий порядок, отрицательный длинный путь продолжается в (1)
+                ent
+                assert $ == #74C1
+                disp #D4C1
+                include "../Action/SelectPolygonRowLimit.asm"                   ; (1) жёсткий порядок, общий хвост после (0)
+                ent
+                assert $ == #74F5
+                ; Unknown, соседние байты вне доказанного входа SelectPolygonRowLimit
+                assert $ == #74F5
+                disp #D4F5
+                include "../Action/SetShortNegativeRightStep.asm"
+                ent
+                assert $ == #7503
+                ; Unknown, соседние байты вне доказанного входа SetShortNegativeRightStep
+                assert $ == #7503
+                disp #D503
+                include "../Action/WrapPolygonLeftTop.asm"
+                ent
+                assert $ == #750A
+                ; Unknown, соседние байты вне доказанного входа WrapPolygonLeftTop
+                assert $ == #750A
+                disp #D50A
+                include "../Action/WrapPolygonRightTop.asm"
+                ent
+                assert $ == #750F
+                ; Unknown, соседние байты вне доказанного входа WrapPolygonRightTop
+                assert $ == #750F
+                disp #D50F
+                include "../Action/ReturnPolygonFill.asm"
+                ent
+                assert $ == #7511
+                disp #D511
+                include "../Action/PreparePolygonFill.asm"
+                ent
+                assert $ == #75C9
+                disp #D5C9
+                include "../Action/TransformObjectVertices.asm"
+                ent
+                assert $ == #75F9
+                disp #D5F9
+                include "../Action/PrepareRenderVertexProducts.asm"             ; (0) жёсткий порядок, последовательное исполнение
+                ent
+                assert $ == #7694
+                disp #D694
+                include "../Action/ProjectRenderVertexGroup.asm"                ; (1) жёсткий порядок, продолжение подготовителя
+                ent
+                assert $ == #77A0
+                disp #D7A0
+                include "../Action/ProjectRenderVertex.asm"
+                ent
+                assert $ == #7BBD
+                disp #DBBD
+                include "../Action/RenderClippedRecords.asm"
+                ent
+                assert $ == #7D23
+                disp #DD23
+                include "../Action/RenderInsideRecords.asm"
+                ent
+                assert $ == #7DD1
+                disp #DDD1
+                include "../Action/CombineListedVertexCodes.asm"
+                ent
+                assert $ == #7DF0
+                disp #DDF0
+                include "../Action/DrawLinearLine.asm"
+                ent
+                assert $ == #7EF0
+                disp #DEF0
+                include "../Action/AbortProjectedVertexScan.asm"
+                ent
+                assert $ == #7EF3
+                disp #DEF3
+                include "../Action/ClassifyProjectedVertices.asm"
+                ent
+                assert $ == #7FB6
+                ; Unknown, соседние байты вне доказанного входа ClassifyProjectedVertices
+                assert $ == #7FB6
+                disp #DFB6
+                include "../Action/CheckFaceOrientation.asm"
+                ent
+                assert $ == #8009
+                ; Unknown, соседние байты вне доказанного входа CheckFaceOrientation
+                assert $ == #8009
+                incbin "../Resources/17_ACTION/Unclassified028_BeforeLineMasks.bin"
+                assert $ == #8010
+                disp #E010
+                include "../Action/Data/LineMasks.asm"
+                ent
                 assert $ == #8020
                 disp #E020
-                include "../Action/UnknownE020.asm"
+                include "../Action/RenderSceneFrame.asm"                        ; (0) жёсткий порядок продолжения E020
                 ent
                 assert $ == #81B9
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/17_ACTION/Unclassified029.bin"
+                disp #E1B9
+                include "../Action/PrepareProjectionScale.asm"                  ; (1) жёсткий порядок продолжения E020
+                ent
+                assert $ == #81D1
+                disp #E1D1
+                include "../Action/CheckCloseRecordBounds.asm"                  ; (2) жёсткий порядок продолжения E020
+                ent
+                assert $ == #8213
+                disp #E213
+                include "../Action/ClipProjectionBounds.asm"                    ; (3) жёсткий порядок продолжения E020
+                ent
+                assert $ == #8299
+                disp #E299
+                include "../Action/PrepareProjectedBounds.asm"                  ; (4) жёсткий порядок продолжения E020
+                ent
+                disp #E30F
+                include "../Action/CaptureProjectedRecord.asm"                  ; (5) жёсткий порядок продолжения E020
+                ent
+                disp #E36A
+                include "../Action/FollowProjectedTarget.asm"                   ; (6) жёсткий порядок продолжения E020
+                ent
+                assert $ == #840F
+                disp #E40F
+                include "../Action/InsertRenderQueue.asm"                       ; (7) жёсткий порядок продолжения E020
+                ent
                 assert $ == #84A6
                 disp #E4A6
-                include "../Action/UnknownE4A6.asm"
+                include "../Action/ReadRenderQueue.asm"                         ; (0) жёсткий порядок чтения очереди
                 ent
                 assert $ == #84DB
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/17_ACTION/Unclassified030.bin"
+                disp #E4DB
+                include "../Action/RenderQueuedObject.asm"                      ; (1) жёсткий порядок чтения очереди
+                ent
                 assert $ == #84FF
                 disp #E4FF
-                include "../Action/UnknownE4FF.asm"
+                include "../Action/SelectRenderQueueNode.asm"                   ; (2) жёсткий порядок чтения очереди
                 ent
                 assert $ == #8506
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/17_ACTION/Unclassified031.bin"
+                assert $ == #8506
+                disp #E506
+                include "../Action/DispatchCloseRecord.asm"
+                ent
+                assert $ == #851F
+                disp #E51F
+                include "../Action/CheckCloseRecordComponents.asm"              ; (0) жёсткий порядок дополнительного входа E51F
+                ent
+                assert $ == #854A
+                disp #E54A
+                include "../Action/ReverseCloseRecordState.asm"                 ; (1) жёсткий порядок дополнительного входа E51F
+                ent
                 assert $ == #855C
                 disp #E55C
-                include "../Action/UnknownE55C.asm"
+                include "../Action/PrepareRecordScale.asm"
                 ent
                 assert $ == #859F
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
                 incbin "../Resources/17_ACTION/Unclassified032.bin"
                 assert $ == #85A0
                 disp #E5A0
-                include "../Action/UnknownE5A0.asm"
+                include "../Action/UpdateRecordComponents.asm"                  ; (0) жёсткий порядок, последовательное исполнение
                 ent
                 assert $ == #8655
-                ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/17_ACTION/Unclassified033.bin"
+                disp #E655
+                include "../Action/FinishRecordWarning.asm"                     ; (1) жёсткий порядок, последовательное исполнение
+                ent
                 assert $ == #8658
                 disp #E658
-                include "../Action/UnknownE658.asm"
+                include "../Action/RejectRecordUpdate.asm"                      ; (0) жёсткий порядок, последовательное исполнение
                 ent
                 assert $ == #865F
-                ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/17_ACTION/Unclassified034.bin"
+                disp #E65F
+                include "../Action/ReleaseClass12Records.asm"                   ; (1) жёсткий порядок, последовательное исполнение
+                ent
                 assert $ == #8685
                 disp #E685
-                include "../Action/UnknownE685.asm"
+                include "../Action/RestoreHalvedOffsets.asm"
                 ent
                 assert $ == #869E
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/17_ACTION/Unclassified035_BeforeRecordIndex.bin"
+                assert $ == #869E
+                disp #E69E
+                include "../Action/SelectRecordByIndex.asm"
+                ent
                 assert $ == #86A7
                 disp #E6A7
                 include "../Action/RecordIndexToAddress.asm"
@@ -904,7 +1265,28 @@
                 ent
                 assert $ == #86E2
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/17_ACTION/Unclassified037.bin"
+                assert $ == #86E2
+                assert $ == #86E2
+                disp #E6E2
+                include "../Action/FindFilteredRecordOr26.asm"
+                ent
+                assert $ == #870D
+                disp #E70D
+                include "../Action/FindRecordExcept6And7.asm"
+                ent
+                assert $ == #8729
+                assert $ == #8729
+                disp #E729
+                include "../Action/FindRecordClass6Or7.asm"
+                ent
+                assert $ == #8745
+                assert $ == #8745
+                disp #E745
+                include "../Action/FindRecordClass5Or14.asm"
+                ent
+                assert $ == #8761
+                ; Unknown, соседние байты вне доказанного входа FindRecordClass5Or14
+                incbin "../Resources/17_ACTION/Unclassified037_AfterActionRecordsExcept6And7_AfterActionRecords6Or7_AfterActionRecords5Or14.bin"
                 assert $ == #898D
                 disp #E98D
                 include "../Action/FindRecordByCode.asm"
@@ -918,91 +1300,283 @@
                 incbin "../Resources/17_ACTION/Unclassified038.bin"
                 assert $ == #8A29
                 disp #EA29
-                include "../Action/UnknownEA29.asm"
+                include "../Action/PrepareLargeEffect.asm"                      ; (0) жёсткий порядок продолжения EA29
                 ent
                 assert $ == #8A3D
-                ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/17_ACTION/Unclassified039.bin"
+                disp #EA3D
+                include "../Action/AllocateLargeEffect.asm"                     ; (1) жёсткий порядок продолжения EA29
+                ent
+                assert $ == #8AE9
+                ; Unknown, соседние байты вне доказанного входа AllocateLargeEffect
+                incbin "../Resources/17_ACTION/Unclassified039_AfterActionLargeEffectContinuation.bin"
                 assert $ == #8B72
                 disp #EB72
-                include "../Action/UnknownEB72.asm"
+                include "../Action/NextRandomWord0.asm"
                 ent
                 assert $ == #8B79
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/17_ACTION/Unclassified040.bin"
+                assert $ == #8B79
+                disp #EB79
+                include "../Action/NextRandomWord3.asm"
+                ent
+                assert $ == #8B80
+                disp #EB80
+                include "../Action/NextRandomWord4.asm"
+                ent
                 assert $ == #8B87
                 disp #EB87
-                include "../Action/UnknownEB87.asm"
+                include "../Action/NextRandomWord1.asm"
                 ent
                 assert $ == #8B8E
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/17_ACTION/Unclassified041.bin"
+                assert $ == #8B8E
+                disp #EB8E
+                include "../Action/NextRandomWord5.asm"
+                ent
+                assert $ == #8B95
+                disp #EB95
+                include "../Action/NextRandomWord6.asm"
+                ent
+                assert $ == #8B9C
+                disp #EB9C
+                include "../Action/NextRandomWord7.asm"
+                ent
+                assert $ == #8BA3
+                disp #EBA3
+                include "../Action/NextRandomWord8.asm"
+                ent
+                assert $ == #8BAA
+                disp #EBAA
+                include "../Action/NextRandomWord9.asm"
+                ent
+                assert $ == #8BB1
+                disp #EBB1
+                include "../Action/NextRandomWord10.asm"
+                ent
                 assert $ == #8BB8
                 disp #EBB8
-                include "../Action/UnknownEBB8.asm"
+                include "../Action/NextRandomWord2.asm"
                 ent
                 assert $ == #8BBF
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/17_ACTION/Unclassified042.bin"
+                assert $ == #8BBF
+                ; Соседние исходные байты, назначение не установлено
+                assert $ == #8BBF
+                disp #EBBF
+                include "../Action/NextRandomWord11.asm"
+                ent
+                assert $ == #8BC6
+                disp #EBC6
+                include "../Action/NextRandomWord12.asm"
+                ent
+                assert $ == #8BCD
+                disp #EBCD
+                include "../Action/NextRandomWord13.asm"
+                ent
+                assert $ == #8BD4
+                disp #EBD4
+                include "../Action/NextRandomWord14.asm"
+                ent
+                assert $ == #8BDB
+                disp #EBDB
+                include "../Action/Data/FoldRandomStream3.asm"
+                ent
+                assert $ == #8BDE
+                disp #EBDE
+                include "../Action/Data/FoldRandomStream0.asm"
+                ent
+                assert $ == #8BE1
+                ; Соседние исходные байты, назначение не установлено
+                assert $ == #8BE1
+                disp #EBE1
+                include "../Action/Data/FoldRandomStream8.asm"
+                ent
+                assert $ == #8BE4
+                disp #EBE4
+                include "../Action/Data/FoldRandomStream9.asm"
+                ent
+                assert $ == #8BE7
+                disp #EBE7
+                include "../Action/Data/FoldRandomStream10.asm"
+                ent
+                assert $ == #8BEA
+                disp #EBEA
+                include "../Action/Data/FoldRandomStream2.asm"
+                ent
+                assert $ == #8BED
+                ; Соседние исходные байты, назначение не установлено
+                assert $ == #8BED
+                disp #EBED
+                include "../Action/Data/FoldRandomStream11.asm"
+                ent
+                assert $ == #8BF0
+                disp #EBF0
+                include "../Action/Data/FoldRandomStream12.asm"
+                ent
+                assert $ == #8BF3
+                disp #EBF3
+                include "../Action/Data/FoldRandomStream13.asm"
+                ent
+                assert $ == #8BF6
+                disp #EBF6
+                include "../Action/Data/FoldRandomStream14.asm"
+                ent
+                assert $ == #8BF9
+                disp #EBF9
+                include "../Action/Data/FoldRandomStream6.asm"
+                ent
+                assert $ == #8BFC
+                disp #EBFC
+                include "../Action/Data/FoldRandomStream7.asm"
+                ent
+                assert $ == #8BFF
+                disp #EBFF
+                include "../Action/Data/FoldRandomStream4.asm"
+                ent
+                assert $ == #8C02
+                disp #EC02
+                include "../Action/Data/FoldRandomStream1.asm"
+                ent
+                assert $ == #8C05
+                ; Соседние исходные байты, назначение не установлено
+                assert $ == #8C05
+                disp #EC05
+                include "../Action/Data/FoldRandomStream5.asm"
+                ent
                 assert $ == #8C08
                 disp #EC08
-                include "../Action/UnknownEC08.asm"
+                include "../Action/StepFoldedRandom.asm"
                 ent
                 assert $ == #8C54
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
                 incbin "../Resources/17_ACTION/Unclassified043.bin"
                 assert $ == #8CA8
                 disp #ECA8
-                include "../Action/UnknownECA8.asm"
+                include "../Action/UpdateAyEffects.asm"
                 ent
                 assert $ == #8D8F
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/17_ACTION/Unclassified044.bin"
+                assert $ == #8D8F
+                disp #ED8F
+                include "../Action/Data/AyStreamsFirst.asm"
+                ent
+                assert $ == #8DC1
+                ; Unknown, соседние байты вне пяти доказанных потоков
+                assert $ == #8DC1
+                ; Unknown, соседние байты вне доказанных потоков назначения цели
+                incbin "../Resources/17_ACTION/Unclassified044_BeforeCaptureStreams.bin"
+                assert $ == #8E02
+                disp #EE02
+                include "../Action/Data/AyCaptureStreams.asm"
+                ent
+                assert $ == #8E34
+                ; Unknown, соседние байты вне доказанных потоков назначения цели
+                incbin "../Resources/17_ACTION/Unclassified044_AfterCaptureStreams.bin"
+                assert $ == #8E4D
+                disp #EE4D
+                include "../Action/Data/AyStreamsLater.asm"
+                ent
+                assert $ == #8F50
+                ; Unknown, соседние байты вне пяти доказанных потоков
+                assert $ == #8F50
+                ; Unknown, соседние байты вне доказанного входа MarkIYRecordForReuse
+                disp #EF50
+                include "../Action/Data/ObjectStateHandlers.asm"
+                ent
+                assert $ == #8F7C
+                assert $ == #8F7C
+                ; Unknown, соседние байты вне доказанного входа AdvanceObjectOffsetRise
+                incbin "../Resources/17_ACTION/AfterObjectStateHandlers_BeforeActionObjectOffsetRise.bin"
+                assert $ == #8F7D
+                disp #EF7D
+                include "../Action/AdvanceObjectOffsetRise.asm"
+                ent
+                assert $ == #8F9A
+                assert $ == #8F9A
+                disp #EF9A
+                include "../Action/AdvanceObjectOffsetFall.asm"
+                ent
+                assert $ == #8FB5
+                assert $ == #8FB5
+                disp #EFB5
+                include "../Action/AdvanceObjectPhaseWait.asm"
+                ent
+                assert $ == #9003
+                ; Unknown, соседние байты вне доказанного входа AdvanceObjectPhaseWait
+                incbin "../Resources/17_ACTION/AfterObjectStateHandlers_AfterActionObjectOffsetRise_AfterActionObjectOffsetFall_AfterActionObjectPhaseWait.bin"
+                assert $ == #903D
+                disp #F03D
+                include "../Action/MarkIYRecordForReuse.asm"
+                ent
+                assert $ == #904A
+                ; Unknown, соседние байты вне доказанного входа MarkIYRecordForReuse
+                incbin "../Resources/17_ACTION/Unclassified044_AfterAyStreams_AfterActionIYRecordReuse.bin"
                 assert $ == #9075
                 disp #F075
-                include "../Action/UnknownF075.asm"
+                include "../Action/SetClass18ObjectState.asm"
                 ent
                 assert $ == #907C
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/17_ACTION/Unclassified045.bin"
+                assert $ == #907C
+                ; Unknown, соседние байты вне доказанного входа PrepareObjectOffsetTransform
+                incbin "../Resources/17_ACTION/Unclassified045_BeforeActionObjectOffsetTransfer.bin"
+                assert $ == #90F8
+                disp #F0F8
+                include "../Action/PrepareObjectOffsetTransform.asm"
+                ent
+                assert $ == #9138
+                ; Unknown, соседние байты вне доказанного входа PrepareObjectOffsetTransform
+                incbin "../Resources/17_ACTION/Unclassified045_AfterActionObjectOffsetTransfer.bin"
                 assert $ == #9394
                 disp #F394
-                include "../Action/UnknownF394.asm"
+                include "../Action/MarkRecordForReuse.asm"
                 ent
                 assert $ == #93A1
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
                 incbin "../Resources/17_ACTION/Unclassified046.bin"
                 assert $ == #951E
                 disp #F51E
-                include "../Action/UnknownF51E.asm"
+                include "../Action/UpdatePreferredClass18.asm"                  ; (0) жёсткий порядок, последовательное исполнение
                 ent
                 assert $ == #9527
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/17_ACTION/Unclassified047.bin"
+                assert $ == #9527
+                disp #F527
+                include "../Action/CheckPreferredRandomWord.asm"                ; (1) жёсткий порядок, последовательное исполнение
+                ent
                 assert $ == #9535
                 disp #F535
-                include "../Action/UnknownF535.asm"
+                include "../Action/FindPreferredClass0.asm"                     ; (2) жёсткий порядок, последовательное исполнение
                 ent
                 assert $ == #953F
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/17_ACTION/Unclassified048.bin"
+                assert $ == #953F
+                disp #F53F
+                include "../Action/ContinuePreferredClass0.asm"                 ; (3) жёсткий порядок, последовательное исполнение
+                ent
                 assert $ == #9541
                 disp #F541
-                include "../Action/UnknownF541.asm"
+                include "../Action/FindPreferredClass7.asm"                     ; (0) жёсткий порядок, последовательное исполнение
                 ent
                 assert $ == #954B
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/17_ACTION/Unclassified049.bin"
+                assert $ == #954B
+                disp #F54B
+                include "../Action/ContinuePreferredClass7.asm"                 ; (1) жёсткий порядок, последовательное исполнение
+                ent
                 assert $ == #954D
                 disp #F54D
-                include "../Action/UnknownF54D.asm"
+                include "../Action/FindPreferredClass5.asm"                     ; (0) жёсткий порядок, последовательное исполнение
                 ent
                 assert $ == #9557
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/17_ACTION/Unclassified050.bin"
+                assert $ == #9557
+                disp #F557
+                include "../Action/ApplyPreferredToClass18.asm"                 ; (1) жёсткий порядок, последовательное исполнение
+                ent
                 assert $ == #9572
                 disp #F572
-                include "../Action/UnknownF572.asm"
+                include "../Action/ResetRecordUpdateBases.asm"                  ; (2) жёсткий порядок, последовательное исполнение
                 ent
                 assert $ == #957F
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
@@ -1016,14 +1590,15 @@
                 incbin "../Resources/17_ACTION/Unclassified052.bin"
                 assert $ == #9792
                 disp #F792
-                include "../Action/UnknownF792.asm"
+                include "../Action/CheckRecordEffectThreshold.asm"              ; (0) жёсткий порядок возврата большого эффекта
                 ent
                 assert $ == #97BF
-                ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/17_ACTION/Unclassified053.bin"
+                disp #F7BF
+                include "../Action/ResumeAfterRecordEffect.asm"                 ; (1) жёсткий порядок возврата большого эффекта
+                ent
                 assert $ == #97C6
                 disp #F7C6
-                include "../Action/UnknownF7C6.asm"
+                include "../Action/DispatchObjectState.asm"
                 ent
                 assert $ == #9866
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления

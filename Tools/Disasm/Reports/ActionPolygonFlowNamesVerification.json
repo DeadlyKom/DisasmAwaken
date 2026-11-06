@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "functions": 12,
+  "code_bytes": 1033,
+  "renamed_numeric_targets": 11,
+  "instructions_changed": 0,
+  "physical_bytes_preserved": true,
+  "assembly_executed": false
+}

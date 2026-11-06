@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "method": "read_existing_user_sjasmplus_symbol_output_and_byte_identical_image",
+  "user_compiled_lines": 125878,
+  "user_work_seconds": 1.453,
+  "errors": 0,
+  "warnings": 0,
+  "physical_symbol_bindings_checked": 1794,
+  "full_image_byte_identical": true,
+  "checked_at_utc": "2026-11-03T12:28:44Z",
+  "codex_assembler_executed": false
+}

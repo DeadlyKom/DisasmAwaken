@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "physical_point_bytes": 2,
+  "point_initial_xy": [
+    119,
+    43
+  ],
+  "new_sound_frames": 12,
+  "new_sound_markers": 2,
+  "new_sound_bytes": 50,
+  "original_bytes_preserved": true,
+  "unclassified_neighbor_sound_bytes": 383,
+  "sequences": 42,
+  "ticks": 570,
+  "actual_ay_hardware_executed": false,
+  "assembly_executed": false
+}

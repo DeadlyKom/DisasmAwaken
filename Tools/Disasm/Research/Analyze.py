@@ -11,6 +11,7 @@ ROOT = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(ROOT / "Tools/Disasm"))
 from InspectZ80 import decoder, entry
 from Knowledge import FUNCTIONS
+from ThreeDOverlayMirrorFacts import CODE_RANGES as THREED_OVERLAY_CODE_RANGES
 
 # Продолжение подтверждено исполнением исходной рамки и сохранением физического байта.
 CONFIRMED_CONTINUATIONS = {"Station": {0xC0C8: "af"}}
@@ -218,7 +219,7 @@ def analyze(name, extra_roots=(), observed=(), initial_bank=None):
                      for i in range(256) if memory[0xD000+i] != 0)
     # Дополнение проверенных непрерывных кодовых областей между входами обработчиков.
     ranges = {"Text": ((0xC000, 0xC935),),
-              "ThreeD": ((0xC000, 0xCEE3), (0xCF08, 0xCF0B), (0xD10A, 0xD194)),
+              "ThreeD": THREED_OVERLAY_CODE_RANGES,
               "Action": ((0xC000, 0xCEE3), (0xCF08, 0xCF0B), (0xD10A, 0xD194))}
     linear = set()
     for start, end in ranges.get(name, ()):

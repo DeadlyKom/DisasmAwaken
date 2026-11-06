@@ -109,7 +109,7 @@ I, IM и IFF сохраняются. Дополнительных PUSH и CALL �
 
 [Action.UpdateFrame](../Source/Action/UpdateFrame.asm) вызывает CAE3
 после выбора страницы 11. Подготовка вызывается из
-[Action.Unknown6CD6](../Source/Action/Unknown6CD6.asm) также после выбора
+[Action.InitializeBankedBufferPoints](../Source/Action/InitializeBankedBufferPoints.asm) также после выбора
 11 и затем возвращает страницу 10. Полные договоры этих вызывающих
 игровых процедур не объявлены доказанными. Обновление координат внутри
 UnknownCB00 остаётся отдельным неразобранным алгоритмом.

@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "total_cases": 267365,
+  "paths": {
+    "reverse_response": 34188,
+    "component_0_rejected": 66046,
+    "component_1_rejected": 65570,
+    "component_2_rejected": 98478,
+    "dispatch_blocked": 3068,
+    "ignored_class": 10,
+    "station_transfer": 5
+  },
+  "method": "word_carry_chain_parent_oracle_with_real_close_record_dispatch",
+  "independent_complete_child_oracle": false,
+  "children_executed_without_stubs": true,
+  "exact_registers_flags_refresh_sp": true,
+  "every_physical_ram_byte_and_write_multiplicity_checked": true,
+  "all_word_arguments_by_separate_slices": true,
+  "carry_propagated_between_axes": true,
+  "first_component_uses_unsigned_half_bound": true,
+  "maximum_additional_stack_bytes": 10,
+  "station_transfer_retains_six_parent_stack_bytes": true,
+  "unknown_a794_not_written_by_root_path": true,
+  "execution_boundary": "E1D1..E213 or bank1 DCE3, no continuation executed",
+  "all_joint_inputs_exhausted": false,
+  "whole_projection_scan_proved": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

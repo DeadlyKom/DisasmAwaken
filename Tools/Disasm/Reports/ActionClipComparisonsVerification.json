@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "total_cases": 803012,
+  "entries": {
+    "C66D": 69681,
+    "C681": 69681,
+    "C695": 69681,
+    "C6A9": 69681,
+    "C6BD": 262144,
+    "C6C8": 262144
+  },
+  "exact_registers_flags_refresh_sp": true,
+  "no_ram_writes": true,
+  "low_word_borrow_propagates_to_high": true,
+  "high_subtraction_overflow_not_corrected": true,
+  "all_joint_inputs_exhausted": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

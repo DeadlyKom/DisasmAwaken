@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "total_cases": 1331200,
+  "profiles": {
+    "word": 1310720,
+    "wide": 20480
+  },
+  "relocated_instructions_checked": 117,
+  "original_action_bytes_executed": true,
+  "exact_registers_and_flags_except_R": true,
+  "no_ram_writes": true,
+  "negative_numerator_and_quotient_ones_complement_preserved": true,
+  "input_F_sign_selects_denominator_sign": true,
+  "zero_divisor_and_quotient_overflow_outside_contract": true,
+  "all_joint_inputs_exhausted": false,
+  "refresh_and_timing_independently_checked": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

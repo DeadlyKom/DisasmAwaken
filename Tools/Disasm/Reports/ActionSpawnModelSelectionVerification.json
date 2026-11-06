@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "total_cases": 92160,
+  "outcomes": {
+    "7C78": 39904,
+    "7C21": 52256
+  },
+  "all_nine_rows_and_eight_offsets": true,
+  "assembly_executed": false
+}

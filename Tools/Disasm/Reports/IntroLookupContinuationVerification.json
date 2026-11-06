@@ -1,0 +1,54 @@
+{
+  "passed": true,
+  "total_cases": 3072,
+  "phase_states": [
+    0,
+    128
+  ],
+  "generated_origins": [
+    128,
+    192
+  ],
+  "warmup_values": [
+    161,
+    3,
+    2,
+    1
+  ],
+  "all_ramp_levels": true,
+  "all_cycle_indices": true,
+  "sampler_row_groups": [
+    13,
+    25
+  ],
+  "sampled_bytes": 2432,
+  "scale_updates": 2,
+  "actual_IRQ_ROM_and_all_children_executed": true,
+  "irq_executed": true,
+  "irq_count_per_case": 2,
+  "initial_IFF_required": 0,
+  "final_IFF": 0,
+  "initial_SP_is_temporary": true,
+  "restored_CPU_SP_from_operand": true,
+  "final_BC": 32768,
+  "final_IXL": 0,
+  "source_destination_alias_profile_included": true,
+  "cpu_stack_locations": 3,
+  "maximum_additional_CPU_stack_bytes": 16,
+  "start_tstates": [
+    0,
+    100,
+    69880
+  ],
+  "frame_period": 69888,
+  "all_registers_except_R": true,
+  "all_physical_ram_bytes_proved": true,
+  "write_multiplicity_proved": true,
+  "independent_numeric_oracle": true,
+  "rom_name": "48.rom",
+  "rom_sha256": "d55daa439b673b0e3f5897f99ac37ecb45f974d1862b4dadb85dec34af99cb42",
+  "arbitrary_keyboard_ROM_times_and_all_input_states_proved": false,
+  "native_execution": false,
+  "assembly_executed": false,
+  "timing_proved": false
+}

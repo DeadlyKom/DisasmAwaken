@@ -54,6 +54,7 @@ COMMENTS={
 
 def name_operands(region,function_address,operation):
     if region=='Action' and function_address==0x60AE:
+        operation=operation.replace('(IY+','(IY + ')
         for address,name in ((0xE6A7,'RecordIndexToAddress'),(0x6040,'QueueTextItemBank1'),(0xACEA,'TransformVectorTransposed'),
                              (0x70ED,'SelectMissileStock'),(0xE9A1,'FindReusableRecord'),(0xE6BE,'RecordIYToIndex')):
             operation=operation.replace('CALL #'+format(address,'04X'),'CALL @Action.'+name+'.Entry')
@@ -63,10 +64,13 @@ def name_operands(region,function_address,operation):
         operation=operation.replace('LD HL, #EDA8','LD HL, @ActionMissileCreateConst.ActionSound')
         operation=operation.replace('LD DE, #F248','LD DE, @ActionMissileCreateConst.LostText')
         operation=operation.replace('LD BC, #0190','LD BC, @ActionMissileCreateConst.InitialComp2')
+        operation=operation.replace('LD A, #0A','LD A, @ActionMissileCreateConst.FallbackParam')
+        operation=operation.replace('LD A, #32','LD A, @ActionMissileCreateConst.PreferredParam')
         operation=operation.replace('ADD A, #0C','ADD A, FActionRecord.LinkFlags')
         fields={0:'Components.Component0.Low',1:'Components.Component0.High',2:'Components.Component1.Low',
           3:'Components.Component1.High',4:'Components.Component2.Low',5:'Components.Component2.High',
           6:'Unknown06',7:'Unknown07',8:'Unknown08',9:'Unknown09',10:'Unknown0A',11:'LinkedIndex',12:'LinkFlags',
           13:'Unknown0D',15:'TargetIndex',17:'Unknown11',18:'ClassCode',19:'Unknown13',37:'Unknown25'}
         for offset,field in fields.items():operation=operation.replace('(IY + #'+format(offset,'02X')+')','(IY + FActionRecord.'+field+')')
+        operation=operation.replace('(IY + FActionRecord.ClassCode), #11','(IY + FActionRecord.ClassCode), @ActionMissileCreateConst.MissileClass')
     return operation

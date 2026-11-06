@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "typed_bytes": 9,
+  "physical_records": 1,
+  "nested_signed_components": 3,
+  "original_bytes_preserved": true,
+  "neighbor_bytes_preserved": 9,
+  "arithmetic_game_meaning_not_extended_beyond_consumers": true,
+  "assembly_executed": false
+}

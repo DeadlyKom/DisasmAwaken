@@ -1,0 +1,48 @@
+{
+  "passed": true,
+  "total_cases": 214528,
+  "cases_by_kind": {
+    "all_override_R_pairs": 65536,
+    "all_stream10_low_words": 131072,
+    "stream10_fold_edges": 2560,
+    "common_tail_all_F": 15360
+  },
+  "cases_by_entry": {
+    "0x660e": 199168,
+    "0x661a": 15360
+  },
+  "paths": {
+    "override_zero": 67072,
+    "carry_skip": 7904,
+    "stream_10": 141600,
+    "found": 45200,
+    "link_written": 96400,
+    "marker": 45200,
+    "search_Z": 45200,
+    "override_nonzero": 65024,
+    "override_return": 65024,
+    "no_override": 67072,
+    "random_gate_26": 51200
+  },
+  "actual_override_generator_filters_iterator_and_index_executed": true,
+  "independent_numeric_parent_oracle": true,
+  "all_override_bytes_and_initial_R": true,
+  "all_stream10_low_words_at_fold_0": true,
+  "all_fold_bytes_at_five_word_edges": true,
+  "common_tail_all_input_F": true,
+  "zero_override_still_continues": true,
+  "exact_registers_including_R": true,
+  "all_physical_ram_bytes_proved": true,
+  "write_multiplicity_proved": true,
+  "maximum_additional_stack_bytes": 8,
+  "hardware_bus_stack_write_order_proved": false,
+  "complete_state_and_list_product_exhausted": false,
+  "random_distribution_and_period_proved": false,
+  "observed_m1_min": 3,
+  "observed_m1_max": 449,
+  "game_array_capacity_proved": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "timing_proved": false
+}

@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "total_cases": 72192,
+  "all_byte16_and_R_pairs": true,
+  "all_26_record_positions": true,
+  "exact_registers_including_R": true,
+  "all_physical_ram_bytes_proved": true,
+  "write_order_and_multiplicity_proved": true,
+  "cpu_stack_written": false,
+  "code_13_preserves_linked_index": true,
+  "other_values_set_byte0A_1_and_linked_index_FF": true,
+  "R_comparison_affects_only_output_flags": true,
+  "read_R_after_m1": 6,
+  "code13_refresh_m1": 7,
+  "other_refresh_m1": 12,
+  "general_game_meaning_of_bytes_0A_and_16_proved": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "timing_proved": false
+}

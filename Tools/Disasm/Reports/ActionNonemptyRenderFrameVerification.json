@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "total_cases": 96,
+  "outcomes": {
+    "inside": 168,
+    "nodes": 224,
+    "clipped": 56
+  },
+  "actual_frame_entry_executed": true,
+  "original_object_bank_used": true,
+  "checked_order_payload_stack_and_paging": true,
+  "assembly_executed": false,
+  "native_execution": false
+}

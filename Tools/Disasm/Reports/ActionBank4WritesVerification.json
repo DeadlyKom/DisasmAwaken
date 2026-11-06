@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "total_cases": 3076,
+  "paths": {
+    "original_resource": 4,
+    "source_0": 1024,
+    "source_1": 1024,
+    "source_2": 1024
+  },
+  "registered_data_writes": 80,
+  "execution_boundary": "A981..AA8A, previous AY and next panel update not executed",
+  "physical_eight_banks_and_real_selector_executed": true,
+  "exact_registers_flags_refresh_sp": true,
+  "every_physical_ram_byte_and_write_multiplicity_checked": true,
+  "exact_out_values_checked": true,
+  "object3d_slot": 24,
+  "target_bank": 4,
+  "action_bank0_preserved": true,
+  "maximum_additional_stack_bytes": 4,
+  "remaining_object_byte_meanings_proved": false,
+  "whole_update_frame_proved": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

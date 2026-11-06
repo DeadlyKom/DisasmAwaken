@@ -1,0 +1,31 @@
+{
+  "passed": true,
+  "total_cases": 4608,
+  "profiles": {
+    "coordinate_boundaries": 240,
+    "multiply_exception_boundaries": 16,
+    "all_count_bytes": 256,
+    "mixed": 4096
+  },
+  "paths": {
+    "first_three": 1401,
+    "negative": 2181,
+    "nonnegative": 2427,
+    "alternating_three": 3207
+  },
+  "multiply_exception_hits": 4,
+  "children_executed_without_stubs": true,
+  "all_full_count_bytes": true,
+  "carry_from_count_comparison_preserved": true,
+  "borrow_chain_across_coordinates_preserved": true,
+  "multiply_return_carry_used_by_final_subtract": true,
+  "final_EXX_bank_change_checked": true,
+  "exact_registers_and_flags_except_R": true,
+  "every_physical_ram_byte_and_write_multiplicity_checked": true,
+  "maximum_extra_cpu_stack_bytes": 12,
+  "refresh_and_timing_independently_checked": false,
+  "all_joint_inputs_exhausted": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

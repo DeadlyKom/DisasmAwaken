@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "total_cases": 24832,
+  "exits": {
+    "normal": 19878,
+    "special": 4954
+  },
+  "maximum_output_bytes_in_series": 4,
+  "all_zone_pairs_and_corner_bytes": true,
+  "inside_first_swap_checked": true,
+  "corner_block_forced_to_one": true,
+  "all_final_registers_except_R_proved": true,
+  "all_physical_ram_bytes_proved": true,
+  "write_multiplicity_proved": true,
+  "real_helpers_without_stubs": true,
+  "independent_geometry_proof": false,
+  "all_joint_inputs_exhausted": false,
+  "refresh_and_timing_independently_checked": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

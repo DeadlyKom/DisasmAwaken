@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "total_cases": 0,
+  "method": "static_original_instruction_boundaries_only",
+  "instructions": 17,
+  "code_bytes": 36,
+  "whole_procedure_proved": false,
+  "assembly_executed": false
+}

@@ -1,0 +1,48 @@
+{
+  "passed": true,
+  "total_cases": 198834,
+  "cases_by_kind": {
+    "all_valid_x_y_pairs": 62584,
+    "all_input_AF": 131072,
+    "horizontal_phases_and_vertical_edges": 570,
+    "all_patterns_and_modes": 512,
+    "mixed_arcs": 4096
+  },
+  "cases_by_entry": {
+    "0xd1f4": 99401,
+    "0xd1df": 99433
+  },
+  "paths": {
+    "byte_convergence_initial": 724,
+    "byte_convergence": 179612,
+    "vertical": 18498
+  },
+  "modeled_rows": 1363592,
+  "all_valid_x_y_pairs_both_directions": true,
+  "initial_norm_upper_bound": 65025,
+  "initial_x_range": [
+    0,
+    127
+  ],
+  "initial_y_range": [
+    0,
+    255
+  ],
+  "all_input_AF_both_directions": true,
+  "exact_registers_except_R": true,
+  "refresh_R_proved": false,
+  "all_physical_ram_bytes_proved": true,
+  "all_nonpixel_values_and_write_multiplicity_proved": true,
+  "independent_pixel_intervals_and_second_order_error": true,
+  "pixel_write_multiplicity_proved": false,
+  "initial_same_byte_exit_preserved": true,
+  "maximum_additional_stack_bytes": 6,
+  "no_port_or_page_writes": true,
+  "complete_coordinate_pattern_product_exhausted": false,
+  "noncanonical_spans_proved": false,
+  "horizontal_clipping_kernels_proved": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "timing_proved": false
+}

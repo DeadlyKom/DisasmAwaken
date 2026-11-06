@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "total_cases": 46346,
+  "paths": {
+    "small_tiny": 6272,
+    "small_draw": 11200,
+    "small_y_reject": 4480,
+    "small_x_reject": 6273,
+    "small_mode": 14184,
+    "large_reject_corner_vertical_square": 398,
+    "large_reject_corner_horizontal_square": 249,
+    "large_reject_vertical_gate": 732,
+    "large_corner_single_edge": 246,
+    "large_reject_horizontal_gate": 636,
+    "large_reject_outside_y_extent": 234,
+    "large_vertical_unclipped_slice": 145,
+    "large_vertical_full_width": 158,
+    "large_vertical_single_edge": 189,
+    "large_reject_outside_x_extent": 176,
+    "large_outside_x_one_edge": 172,
+    "large_whole_interior": 135,
+    "large_both_horizontal_edges": 144,
+    "large_single_horizontal_edge": 153,
+    "large_outside_x_full_width": 52,
+    "large_corner_full_width": 118
+  },
+  "cases_by_entry": {
+    "D21A": 45365,
+    "D232": 981
+  },
+  "original_small_and_large_children_without_stubs": true,
+  "exact_registers_except_R": true,
+  "all_physical_ram_bytes_proved": true,
+  "nonpixel_write_multiplicity_proved": true,
+  "mode_clear_only_for_large_fallback": true,
+  "actual_large_call_frame_preserved": true,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

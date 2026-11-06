@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "total_cases": 256,
+  "physical_table_bytes": 256,
+  "exact_recurrence": "w[0]=0; T[n]=round_half_up(w[n]/256) mod 256; w[n+1]=floor((65536+w[n])*65714/65536) mod 65536",
+  "final_word": 65508,
+  "refresh_m1": 102375,
+  "maximum_additional_stack_bytes": 0,
+  "exact_registers_flags_refresh_sp": true,
+  "every_ram_byte_and_write_checked": true,
+  "min_error_from_256_pow2_minus_256": -0.6010925199857411,
+  "max_error_from_256_pow2_minus_256": 0.41347609468829205,
+  "table_is_approximate_exponential": true,
+  "consumer_ratio_proved": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

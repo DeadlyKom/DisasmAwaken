@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "total_cases": 4096,
+  "outcomes": {
+    "disabled": 16,
+    "marker": 2273,
+    "reset": 7,
+    "advance": 1800
+  },
+  "whole_procedure_proved": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

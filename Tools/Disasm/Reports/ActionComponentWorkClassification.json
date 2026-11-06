@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "typed_bytes": 9,
+  "physical_records": 3,
+  "existing_structure_reused": "FComponent24",
+  "original_bytes_preserved": true,
+  "neighbor_bytes_preserved": 90,
+  "assembly_executed": false
+}

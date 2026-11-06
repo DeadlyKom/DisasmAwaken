@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "total_cases": 80384,
+  "paths": {
+    "no_pointer": 256,
+    "delta_applied": 16368,
+    "class_outside_table": 63504,
+    "already_1a": 256
+  },
+  "method": "parent_field_transition_and_checked_delta_formula_against_real_instructions",
+  "independent_complete_child_oracle": false,
+  "exact_registers_flags_refresh_sp": true,
+  "every_ram_byte_and_write_multiplicity_checked": true,
+  "maximum_additional_stack_bytes": 0,
+  "pending_pointer_cleared_before_optional_delta": true,
+  "link_1a_skips_only_delta": true,
+  "pending_pointer_producer_proved": false,
+  "game_event_meaning_proved": false,
+  "all_joint_inputs_exhausted": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

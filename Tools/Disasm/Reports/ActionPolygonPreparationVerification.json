@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "total_cases": 3398,
+  "profiles": {
+    "flat": 480,
+    "prepared": 2918
+  },
+  "boundary": 53801,
+  "exact_registers_flags_except_R": true,
+  "all_physical_ram_bytes_proved": true,
+  "write_multiplicity_proved": true,
+  "original_instructions_without_stubs": true,
+  "counts_3_to_60": true,
+  "modes_0_to_4": true,
+  "convex_positive_winding_profile": true,
+  "whole_polygon_fill_proved": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

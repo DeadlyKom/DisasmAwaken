@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "total_cases": 297956,
+  "cases_by_kind": {
+    "all_input_AF_vertical_return": 262144,
+    "all_thresholds_at_geometry_edges": 27648,
+    "all_radius_codes_and_y_edges": 4068,
+    "mixed_clipped_spans": 4096
+  },
+  "cases_by_entry": {
+    "0xd1cb": 74452,
+    "0xd1b6": 74504,
+    "0xd1a2": 74487,
+    "0xd18d": 74513
+  },
+  "paths": {
+    "vertical": 282112,
+    "byte_convergence": 7604,
+    "counter_wrap_fast": 8216,
+    "left_transition_same_byte": 24
+  },
+  "modeled_rows": 1099536,
+  "transitions_to_unclipped_kernel": 1981,
+  "all_256_AFprime_thresholds": true,
+  "all_input_AF_at_vertical_return_all_four_entries": true,
+  "all_radius_codes_and_y_edges": true,
+  "exact_registers_except_R": true,
+  "refresh_R_proved": false,
+  "all_physical_ram_bytes_proved": true,
+  "all_nonpixel_values_and_write_multiplicity_proved": true,
+  "independent_scalar_interval_oracle": true,
+  "original_EXX_active_exit_preserved": true,
+  "pixel_write_multiplicity_proved": false,
+  "maximum_additional_stack_bytes": 6,
+  "no_port_or_page_writes": true,
+  "complete_input_product_exhausted": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "timing_proved": false
+}

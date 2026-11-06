@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "total_cases": 7016,
+  "cases_by_entry": {
+    "D396": 4564,
+    "D34A": 2367,
+    "D340": 26,
+    "D38C": 59
+  },
+  "full_rows": 491165,
+  "clipped_rows": 166252,
+  "initial_outside_half_returns": 5539,
+  "exact_registers_except_R": true,
+  "all_physical_ram_bytes_proved": true,
+  "nonpixel_write_multiplicity_proved": true,
+  "all_real_children_without_stubs": true,
+  "profiles_from_verified_D236_boundary": true,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

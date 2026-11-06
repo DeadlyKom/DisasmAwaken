@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "total_cases": 99712,
+  "paths": {
+    "complete": 66250,
+    "zero_abort": 33462
+  },
+  "all_count_bytes": true,
+  "all_zero_positions": true,
+  "all_index_and_code_byte_pairs": true,
+  "index_plus_four_wraps_within_page": true,
+  "exact_registers_flags_refresh_sp": true,
+  "every_physical_ram_byte_and_write_multiplicity_checked": true,
+  "nonzero_end_reject_code_not_hidden": true,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

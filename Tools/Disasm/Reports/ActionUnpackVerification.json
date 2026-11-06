@@ -1,0 +1,758 @@
+{
+  "passed": true,
+  "total_cases": 80,
+  "resources": 20,
+  "instruction_pairs": 184,
+  "address_delta": 3108,
+  "all_instruction_operands_verified": true,
+  "cases_by_path": {
+    "relocated_inputs": 27,
+    "output_bytes": 552960
+  },
+  "independent_packet_counts": {
+    "literal_bytes": 30919,
+    "matches": 16844,
+    "matched_bytes": 104267,
+    "five_bit_short_offset": 2764,
+    "extended_byte_lengths": 1092,
+    "word_offsets": 10420,
+    "reference_literal_reference": 978,
+    "one_byte_short_offset": 3660,
+    "literal_runs": 468,
+    "window_rotations": 39,
+    "word_lengths": 60,
+    "restored_tail_bytes": 120
+  },
+  "profiles": [
+    {
+      "slot": 9,
+      "index": 0,
+      "source": 49152,
+      "dest": 16384,
+      "relocated_base": 49152,
+      "instructions": 76981,
+      "write_count": 11121
+    },
+    {
+      "slot": 9,
+      "index": 0,
+      "source": 45056,
+      "dest": 49152,
+      "relocated_base": 52834,
+      "instructions": 76979,
+      "write_count": 11121
+    },
+    {
+      "slot": 9,
+      "index": 0,
+      "source": 53248,
+      "dest": 49152,
+      "relocated_base": 53248,
+      "instructions": 76981,
+      "write_count": 11121
+    },
+    {
+      "slot": 9,
+      "index": 0,
+      "source": 24576,
+      "dest": 16384,
+      "relocated_base": 24576,
+      "instructions": 76981,
+      "write_count": 11121
+    },
+    {
+      "slot": 9,
+      "index": 1,
+      "source": 49152,
+      "dest": 16384,
+      "relocated_base": 49152,
+      "instructions": 72518,
+      "write_count": 10584
+    },
+    {
+      "slot": 9,
+      "index": 1,
+      "source": 45056,
+      "dest": 49152,
+      "relocated_base": 53339,
+      "instructions": 72516,
+      "write_count": 10584
+    },
+    {
+      "slot": 9,
+      "index": 1,
+      "source": 53248,
+      "dest": 49152,
+      "relocated_base": 53339,
+      "instructions": 72516,
+      "write_count": 10584
+    },
+    {
+      "slot": 9,
+      "index": 1,
+      "source": 24576,
+      "dest": 16384,
+      "relocated_base": 24576,
+      "instructions": 72518,
+      "write_count": 10584
+    },
+    {
+      "slot": 9,
+      "index": 2,
+      "source": 49152,
+      "dest": 16384,
+      "relocated_base": 49152,
+      "instructions": 75996,
+      "write_count": 10617
+    },
+    {
+      "slot": 9,
+      "index": 2,
+      "source": 45056,
+      "dest": 49152,
+      "relocated_base": 53356,
+      "instructions": 75994,
+      "write_count": 10617
+    },
+    {
+      "slot": 9,
+      "index": 2,
+      "source": 53248,
+      "dest": 49152,
+      "relocated_base": 53356,
+      "instructions": 75994,
+      "write_count": 10617
+    },
+    {
+      "slot": 9,
+      "index": 2,
+      "source": 24576,
+      "dest": 16384,
+      "relocated_base": 24576,
+      "instructions": 75996,
+      "write_count": 10617
+    },
+    {
+      "slot": 9,
+      "index": 3,
+      "source": 49152,
+      "dest": 16384,
+      "relocated_base": 49152,
+      "instructions": 92589,
+      "write_count": 11197
+    },
+    {
+      "slot": 9,
+      "index": 3,
+      "source": 45056,
+      "dest": 49152,
+      "relocated_base": 53008,
+      "instructions": 92587,
+      "write_count": 11197
+    },
+    {
+      "slot": 9,
+      "index": 3,
+      "source": 53248,
+      "dest": 49152,
+      "relocated_base": 53248,
+      "instructions": 92589,
+      "write_count": 11197
+    },
+    {
+      "slot": 9,
+      "index": 3,
+      "source": 24576,
+      "dest": 16384,
+      "relocated_base": 24576,
+      "instructions": 92589,
+      "write_count": 11197
+    },
+    {
+      "slot": 9,
+      "index": 4,
+      "source": 49152,
+      "dest": 16384,
+      "relocated_base": 49152,
+      "instructions": 53371,
+      "write_count": 9599
+    },
+    {
+      "slot": 9,
+      "index": 4,
+      "source": 45056,
+      "dest": 49152,
+      "relocated_base": 54062,
+      "instructions": 53369,
+      "write_count": 9599
+    },
+    {
+      "slot": 9,
+      "index": 4,
+      "source": 53248,
+      "dest": 49152,
+      "relocated_base": 54062,
+      "instructions": 53369,
+      "write_count": 9599
+    },
+    {
+      "slot": 9,
+      "index": 4,
+      "source": 24576,
+      "dest": 16384,
+      "relocated_base": 24576,
+      "instructions": 53371,
+      "write_count": 9599
+    },
+    {
+      "slot": 9,
+      "index": 5,
+      "source": 49152,
+      "dest": 16384,
+      "relocated_base": 49152,
+      "instructions": 90649,
+      "write_count": 11625
+    },
+    {
+      "slot": 9,
+      "index": 5,
+      "source": 45056,
+      "dest": 49152,
+      "relocated_base": 52538,
+      "instructions": 90647,
+      "write_count": 11625
+    },
+    {
+      "slot": 9,
+      "index": 5,
+      "source": 53248,
+      "dest": 49152,
+      "relocated_base": 53248,
+      "instructions": 90649,
+      "write_count": 11625
+    },
+    {
+      "slot": 9,
+      "index": 5,
+      "source": 24576,
+      "dest": 16384,
+      "relocated_base": 24576,
+      "instructions": 90649,
+      "write_count": 11625
+    },
+    {
+      "slot": 9,
+      "index": 6,
+      "source": 49152,
+      "dest": 16384,
+      "relocated_base": 49152,
+      "instructions": 104207,
+      "write_count": 12956
+    },
+    {
+      "slot": 9,
+      "index": 6,
+      "source": 45056,
+      "dest": 49152,
+      "relocated_base": 51333,
+      "instructions": 104205,
+      "write_count": 12956
+    },
+    {
+      "slot": 9,
+      "index": 6,
+      "source": 53248,
+      "dest": 49152,
+      "relocated_base": 53248,
+      "instructions": 104207,
+      "write_count": 12956
+    },
+    {
+      "slot": 9,
+      "index": 6,
+      "source": 24576,
+      "dest": 16384,
+      "relocated_base": 24576,
+      "instructions": 104207,
+      "write_count": 12956
+    },
+    {
+      "slot": 9,
+      "index": 7,
+      "source": 49152,
+      "dest": 16384,
+      "relocated_base": 49152,
+      "instructions": 104698,
+      "write_count": 12092
+    },
+    {
+      "slot": 9,
+      "index": 7,
+      "source": 45056,
+      "dest": 49152,
+      "relocated_base": 52259,
+      "instructions": 104696,
+      "write_count": 12092
+    },
+    {
+      "slot": 9,
+      "index": 7,
+      "source": 53248,
+      "dest": 49152,
+      "relocated_base": 53248,
+      "instructions": 104698,
+      "write_count": 12092
+    },
+    {
+      "slot": 9,
+      "index": 7,
+      "source": 24576,
+      "dest": 16384,
+      "relocated_base": 24576,
+      "instructions": 104698,
+      "write_count": 12092
+    },
+    {
+      "slot": 9,
+      "index": 8,
+      "source": 49152,
+      "dest": 16384,
+      "relocated_base": 49152,
+      "instructions": 96197,
+      "write_count": 11827
+    },
+    {
+      "slot": 9,
+      "index": 8,
+      "source": 45056,
+      "dest": 49152,
+      "relocated_base": 52424,
+      "instructions": 96195,
+      "write_count": 11827
+    },
+    {
+      "slot": 9,
+      "index": 8,
+      "source": 53248,
+      "dest": 49152,
+      "relocated_base": 53248,
+      "instructions": 96197,
+      "write_count": 11827
+    },
+    {
+      "slot": 9,
+      "index": 8,
+      "source": 24576,
+      "dest": 16384,
+      "relocated_base": 24576,
+      "instructions": 96197,
+      "write_count": 11827
+    },
+    {
+      "slot": 9,
+      "index": 9,
+      "source": 49152,
+      "dest": 16384,
+      "relocated_base": 49152,
+      "instructions": 77827,
+      "write_count": 11047
+    },
+    {
+      "slot": 9,
+      "index": 9,
+      "source": 45056,
+      "dest": 49152,
+      "relocated_base": 52936,
+      "instructions": 77825,
+      "write_count": 11047
+    },
+    {
+      "slot": 9,
+      "index": 9,
+      "source": 53248,
+      "dest": 49152,
+      "relocated_base": 53248,
+      "instructions": 77827,
+      "write_count": 11047
+    },
+    {
+      "slot": 9,
+      "index": 9,
+      "source": 24576,
+      "dest": 16384,
+      "relocated_base": 24576,
+      "instructions": 77827,
+      "write_count": 11047
+    },
+    {
+      "slot": 9,
+      "index": 10,
+      "source": 49152,
+      "dest": 16384,
+      "relocated_base": 49152,
+      "instructions": 103657,
+      "write_count": 12999
+    },
+    {
+      "slot": 9,
+      "index": 10,
+      "source": 45056,
+      "dest": 49152,
+      "relocated_base": 51290,
+      "instructions": 103655,
+      "write_count": 12999
+    },
+    {
+      "slot": 9,
+      "index": 10,
+      "source": 53248,
+      "dest": 49152,
+      "relocated_base": 53248,
+      "instructions": 103657,
+      "write_count": 12999
+    },
+    {
+      "slot": 9,
+      "index": 10,
+      "source": 24576,
+      "dest": 16384,
+      "relocated_base": 24576,
+      "instructions": 103657,
+      "write_count": 12999
+    },
+    {
+      "slot": 9,
+      "index": 11,
+      "source": 49152,
+      "dest": 16384,
+      "relocated_base": 49152,
+      "instructions": 79895,
+      "write_count": 10951
+    },
+    {
+      "slot": 9,
+      "index": 11,
+      "source": 45056,
+      "dest": 49152,
+      "relocated_base": 53074,
+      "instructions": 79893,
+      "write_count": 10951
+    },
+    {
+      "slot": 9,
+      "index": 11,
+      "source": 53248,
+      "dest": 49152,
+      "relocated_base": 53248,
+      "instructions": 79895,
+      "write_count": 10951
+    },
+    {
+      "slot": 9,
+      "index": 11,
+      "source": 24576,
+      "dest": 16384,
+      "relocated_base": 24576,
+      "instructions": 79895,
+      "write_count": 10951
+    },
+    {
+      "slot": 9,
+      "index": 12,
+      "source": 49152,
+      "dest": 16384,
+      "relocated_base": 49152,
+      "instructions": 97274,
+      "write_count": 12215
+    },
+    {
+      "slot": 9,
+      "index": 12,
+      "source": 45056,
+      "dest": 49152,
+      "relocated_base": 52022,
+      "instructions": 97272,
+      "write_count": 12215
+    },
+    {
+      "slot": 9,
+      "index": 12,
+      "source": 53248,
+      "dest": 49152,
+      "relocated_base": 53248,
+      "instructions": 97274,
+      "write_count": 12215
+    },
+    {
+      "slot": 9,
+      "index": 12,
+      "source": 24576,
+      "dest": 16384,
+      "relocated_base": 24576,
+      "instructions": 97274,
+      "write_count": 12215
+    },
+    {
+      "slot": 9,
+      "index": 13,
+      "source": 49152,
+      "dest": 16384,
+      "relocated_base": 49152,
+      "instructions": 118729,
+      "write_count": 13373
+    },
+    {
+      "slot": 9,
+      "index": 13,
+      "source": 45056,
+      "dest": 49152,
+      "relocated_base": 51124,
+      "instructions": 118727,
+      "write_count": 13373
+    },
+    {
+      "slot": 9,
+      "index": 13,
+      "source": 53248,
+      "dest": 49152,
+      "relocated_base": 53248,
+      "instructions": 118729,
+      "write_count": 13373
+    },
+    {
+      "slot": 9,
+      "index": 13,
+      "source": 24576,
+      "dest": 16384,
+      "relocated_base": 24576,
+      "instructions": 118729,
+      "write_count": 13373
+    },
+    {
+      "slot": 9,
+      "index": 14,
+      "source": 49152,
+      "dest": 16384,
+      "relocated_base": 49152,
+      "instructions": 131727,
+      "write_count": 13802
+    },
+    {
+      "slot": 9,
+      "index": 14,
+      "source": 45056,
+      "dest": 49152,
+      "relocated_base": 50907,
+      "instructions": 131725,
+      "write_count": 13802
+    },
+    {
+      "slot": 9,
+      "index": 14,
+      "source": 53248,
+      "dest": 49152,
+      "relocated_base": 53248,
+      "instructions": 131727,
+      "write_count": 13802
+    },
+    {
+      "slot": 9,
+      "index": 14,
+      "source": 24576,
+      "dest": 16384,
+      "relocated_base": 24576,
+      "instructions": 131727,
+      "write_count": 13802
+    },
+    {
+      "slot": 9,
+      "index": 15,
+      "source": 49152,
+      "dest": 16384,
+      "relocated_base": 49152,
+      "instructions": 114306,
+      "write_count": 13335
+    },
+    {
+      "slot": 9,
+      "index": 15,
+      "source": 45056,
+      "dest": 49152,
+      "relocated_base": 51124,
+      "instructions": 114304,
+      "write_count": 13335
+    },
+    {
+      "slot": 9,
+      "index": 15,
+      "source": 53248,
+      "dest": 49152,
+      "relocated_base": 53248,
+      "instructions": 114306,
+      "write_count": 13335
+    },
+    {
+      "slot": 9,
+      "index": 15,
+      "source": 24576,
+      "dest": 16384,
+      "relocated_base": 24576,
+      "instructions": 114306,
+      "write_count": 13335
+    },
+    {
+      "slot": 25,
+      "index": 0,
+      "source": 49152,
+      "dest": 16384,
+      "relocated_base": 49152,
+      "instructions": 50360,
+      "write_count": 9022
+    },
+    {
+      "slot": 25,
+      "index": 0,
+      "source": 45056,
+      "dest": 49152,
+      "relocated_base": 54601,
+      "instructions": 50358,
+      "write_count": 9022
+    },
+    {
+      "slot": 25,
+      "index": 0,
+      "source": 53248,
+      "dest": 49152,
+      "relocated_base": 54601,
+      "instructions": 50358,
+      "write_count": 9022
+    },
+    {
+      "slot": 25,
+      "index": 0,
+      "source": 24576,
+      "dest": 16384,
+      "relocated_base": 24576,
+      "instructions": 50360,
+      "write_count": 9022
+    },
+    {
+      "slot": 26,
+      "index": 0,
+      "source": 49152,
+      "dest": 16384,
+      "relocated_base": 49152,
+      "instructions": 58023,
+      "write_count": 9113
+    },
+    {
+      "slot": 26,
+      "index": 0,
+      "source": 45056,
+      "dest": 49152,
+      "relocated_base": 54628,
+      "instructions": 58021,
+      "write_count": 9113
+    },
+    {
+      "slot": 26,
+      "index": 0,
+      "source": 53248,
+      "dest": 49152,
+      "relocated_base": 54628,
+      "instructions": 58021,
+      "write_count": 9113
+    },
+    {
+      "slot": 26,
+      "index": 0,
+      "source": 24576,
+      "dest": 16384,
+      "relocated_base": 24576,
+      "instructions": 58023,
+      "write_count": 9113
+    },
+    {
+      "slot": 27,
+      "index": 0,
+      "source": 49152,
+      "dest": 16384,
+      "relocated_base": 49152,
+      "instructions": 57507,
+      "write_count": 9092
+    },
+    {
+      "slot": 27,
+      "index": 0,
+      "source": 45056,
+      "dest": 49152,
+      "relocated_base": 54641,
+      "instructions": 57505,
+      "write_count": 9092
+    },
+    {
+      "slot": 27,
+      "index": 0,
+      "source": 53248,
+      "dest": 49152,
+      "relocated_base": 54641,
+      "instructions": 57505,
+      "write_count": 9092
+    },
+    {
+      "slot": 27,
+      "index": 0,
+      "source": 24576,
+      "dest": 16384,
+      "relocated_base": 24576,
+      "instructions": 57507,
+      "write_count": 9092
+    },
+    {
+      "slot": 28,
+      "index": 0,
+      "source": 49152,
+      "dest": 16384,
+      "relocated_base": 49152,
+      "instructions": 53690,
+      "write_count": 9152
+    },
+    {
+      "slot": 28,
+      "index": 0,
+      "source": 45056,
+      "dest": 49152,
+      "relocated_base": 54521,
+      "instructions": 53688,
+      "write_count": 9152
+    },
+    {
+      "slot": 28,
+      "index": 0,
+      "source": 53248,
+      "dest": 49152,
+      "relocated_base": 54521,
+      "instructions": 53688,
+      "write_count": 9152
+    },
+    {
+      "slot": 28,
+      "index": 0,
+      "source": 24576,
+      "dest": 16384,
+      "relocated_base": 24576,
+      "instructions": 53690,
+      "write_count": 9152
+    }
+  ],
+  "independent_numeric_decoder": true,
+  "all_registers_except_R": true,
+  "full_logical_RAM_except_stack_residue": true,
+  "tail_frame_and_return_verified": true,
+  "every_write_address_range_verified": true,
+  "write_multiplicity_independently_proved": false,
+  "physical_banks_proved": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "changed_files": [
+    "Source/ActionBoot/RelocateBootstrap.asm",
+    "Source/StationBoot/RelocateBootstrap.asm",
+    "Tools/Disasm/Research/Contracts.py",
+    "Tools/Disasm/Research/SemanticNames.py",
+    "Docs/FunctionDetails/ActionBoot.md",
+    "Docs/FunctionDetails/StationBoot.md",
+    "Includes/Const/Include.inc"
+  ],
+  "procedures": 2,
+  "original_instructions_and_bytes_preserved": true,
+  "model_cases": 1024,
+  "assembly_executed": false
+}

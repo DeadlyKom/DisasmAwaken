@@ -69,7 +69,7 @@ RET задаёт SP=входной SP+2, дополнительных PUSH и CA
 [Action.UpdateFrame](../Source/Action/UpdateFrame.asm) вызывает F094
 после выбора страницы 11, затем вызывает C870. В этом разборе
 не объявляется доказанным полный договор переноса буфера C870 на экран.
-Другой писатель Position находится в [Action.UnknownE020](../Source/Action/UnknownE020.asm).
+Другой писатель Position находится в [Action.RenderSceneFrame](../Source/Action/RenderSceneFrame.asm).
 Полный контракт этой игровой процедуры остаётся отдельной задачей.
 
 Повторный XOR при одинаковом положении, масках и неизменном фоне снимает

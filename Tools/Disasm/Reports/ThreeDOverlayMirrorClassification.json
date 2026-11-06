@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "original_logical_bytes_preserved": 8224,
+  "sector_tail_bytes_preserved": 224,
+  "source_functions": 122,
+  "described": 121,
+  "unknown": 1,
+  "typed_bytes": 42,
+  "native_loading_executed": false,
+  "assembly_executed": false
+}

@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "total_cases": 10256,
+  "ramp_cases": 10176,
+  "cycle_cases": 80,
+  "initial_countdown_domain": [
+    1,
+    161
+  ],
+  "ramp_domain": [
+    0,
+    63
+  ],
+  "cyclic_index_domain": [
+    0,
+    39
+  ],
+  "all_active_counter_combinations": true,
+  "inactive_counters_sampled": true,
+  "all_initial_flags_values": true,
+  "all_registers_except_R": true,
+  "exact_final_F": 32,
+  "all_physical_ram_bytes_proved": true,
+  "write_multiplicity_proved": true,
+  "cpu_stack_written": false,
+  "actual_tail_selector_executed": true,
+  "independent_numeric_oracle": true,
+  "arbitrary_corrupt_counter_states_proved": false,
+  "assembly_executed": false,
+  "native_execution": false,
+  "irq_executed": false,
+  "timing_proved": false
+}

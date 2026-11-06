@@ -26,4 +26,4 @@ def evaluate(vector,matrix,old_outputs):
         if stop:break
         outputs[row]=result;performed.append(row);m1+=1
     return dict(outputs=outputs,performed=performed,af=(a,f),alternate_af=alt,de=de,hl=result,
-        refresh_m1=m1+4,overflow=stop)
+        refresh_m1=m1+4,overflow=stop,stop_position=(row,column) if stop else None)

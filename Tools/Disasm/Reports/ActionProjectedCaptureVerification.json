@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "total_cases": 262550,
+  "paths": {
+    "captured": 93202,
+    "gate_blocked": 255,
+    "outside_y": 81920,
+    "outside_x": 87173
+  },
+  "method": "independent_signed_offset_absolute_distance_and_capture_oracle",
+  "exact_registers_flags_refresh_sp": true,
+  "every_ram_byte_and_write_multiplicity_checked": true,
+  "execution_boundary": "E30F..E36A, no external continuation executed",
+  "maximum_additional_stack_bytes": 0,
+  "pending_record_written_from_alternate_hl": true,
+  "gate_set_before_pointer_write": true,
+  "upstream_size_and_projection_proved": false,
+  "upstream_record_iteration_proved": false,
+  "game_event_meaning_proved": false,
+  "all_joint_inputs_exhausted": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

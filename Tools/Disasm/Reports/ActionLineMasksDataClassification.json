@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "typed_bytes": 16,
+  "physical_records": 16,
+  "structure": "FLinePixelMask",
+  "original_bytes_preserved": true,
+  "assembly_executed": false
+}

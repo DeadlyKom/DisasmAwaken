@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "total_cases": 5171,
+  "exits": {
+    "normal": 1732,
+    "special": 3439
+  },
+  "maximum_output_bytes_in_series": 52,
+  "counts_1_to_15": true,
+  "all_zone_sequences_up_to_three_vertices": true,
+  "all_low_counter_bytes": true,
+  "real_handlers_without_stubs": true,
+  "all_final_registers_except_R_proved": true,
+  "all_physical_ram_bytes_proved": true,
+  "write_multiplicity_proved": true,
+  "closed_contour_last_to_first": true,
+  "normal_and_special_stack_frames_checked": true,
+  "independent_geometry_proof": false,
+  "all_joint_inputs_exhausted": false,
+  "refresh_and_timing_independently_checked": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

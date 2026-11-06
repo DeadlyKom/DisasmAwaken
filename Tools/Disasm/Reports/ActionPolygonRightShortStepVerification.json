@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "total_cases": 65536,
+  "all_AF_values": true,
+  "exact_registers_flags_except_R": true,
+  "all_ram_writes_accounted_for": true,
+  "write_multiplicity_proved": true,
+  "temporary_stack_word_consumed": true,
+  "whole_polygon_fill_proved": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

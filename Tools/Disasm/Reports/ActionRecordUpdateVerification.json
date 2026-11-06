@@ -1,0 +1,53 @@
+{
+  "passed": true,
+  "total_cases": 265026,
+  "cases_by_kind": {
+    "all_component_words": 196608,
+    "arithmetic_edges": 588,
+    "all_scale_words": 65536,
+    "entry_and_class": 1280,
+    "class12_reject": 12,
+    "post_update_routes": 320,
+    "queue_cursor_and_mask": 578,
+    "physical_record_positions": 104
+  },
+  "routes": {
+    "three_components": 241445,
+    "state_off": 240779,
+    "bound_0": 7726,
+    "first_inactive": 285,
+    "bound_1": 7740,
+    "bound_2": 7740,
+    "overflow_0": 24,
+    "overflow_1": 33,
+    "overflow_2": 33,
+    "warning_disarmed": 71,
+    "class12_missing": 120,
+    "request_warning": 700,
+    "arm_warning": 60
+  },
+  "queue_results": {
+    "accepted": 667,
+    "dropped": 33
+  },
+  "all_words_in_each_component": true,
+  "all_scale_HL_words_at_E5A0": true,
+  "all_256_class_codes_at_five_entries": true,
+  "all_five_original_dispatch_entries": true,
+  "independent_numeric_oracle": true,
+  "exact_registers_except_R": true,
+  "all_26_physical_record_positions": true,
+  "refresh_R_proved": false,
+  "all_physical_ram_bytes_proved": true,
+  "write_multiplicity_proved": true,
+  "actual_children_and_banked_queue_executed": true,
+  "partial_component_updates_preserved_on_rejection": true,
+  "all_queue_cursors": true,
+  "queue_masks_checked": 34,
+  "full_component_product_exhausted": false,
+  "all_possible_base_offset_pairs_exhausted": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false,
+  "timing_proved": false
+}

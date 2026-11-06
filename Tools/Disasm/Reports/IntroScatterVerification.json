@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "total_cases": 1536,
+  "patches_from_actual_phase_code": [
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      20
+    ]
+  ],
+  "correction_register": "D",
+  "source_pointer_unchanged_by_patch": true,
+  "destination_page_increment": 1,
+  "transferred_bytes_per_case": 1216,
+  "table_records": 38,
+  "all_initial_flags_values": true,
+  "cpu_stack_locations": 3,
+  "all_registers_except_R": true,
+  "all_physical_ram_bytes_proved": true,
+  "write_multiplicity_proved": true,
+  "independent_numeric_oracle": true,
+  "arbitrary_source_destination_aliases_proved": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "timing_proved": false,
+  "assembly_executed": false
+}

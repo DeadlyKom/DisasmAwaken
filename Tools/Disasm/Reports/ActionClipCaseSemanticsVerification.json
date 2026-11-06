@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "total_cases": 176640,
+  "paths": {
+    "block_0": 88320,
+    "normal": 152506,
+    "block_1": 88320,
+    "special": 24134
+  },
+  "physical_pairs": 81,
+  "semantic_paths_executed": 241,
+  "all_symbolic_paths_executed": true,
+  "missing_paths": [],
+  "maximum_output_points": 4,
+  "all_initial_corner_bytes_tested": true,
+  "real_action_helpers_and_frame_returns": true,
+  "vertical_low_byte_sign_rule_preserved": true,
+  "independent_geometry_proof": false,
+  "decision_paths_derived_from_original_graph": true,
+  "all_final_registers_proved": false,
+  "all_physical_ram_bytes_proved": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

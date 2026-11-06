@@ -1,0 +1,35 @@
+{
+  "passed": true,
+  "total_cases": 525288,
+  "profiles": {
+    "second_word_slices": 327680,
+    "completed": 523060,
+    "aborted": 2228,
+    "first_word_slices": 196608,
+    "mixed_lists": 500,
+    "late_abort_lists": 500
+  },
+  "written_codes": {
+    "F0": 1171,
+    "B4": 33452,
+    "78": 33785,
+    "E1": 65620,
+    "A5": 65670,
+    "69": 98273,
+    "D2": 65344,
+    "96": 65412,
+    "5A": 98080
+  },
+  "exact_registers_and_flags_except_R": true,
+  "every_physical_ram_byte_and_write_multiplicity_checked": true,
+  "both_coordinate_words_exhausted_by_separate_slices": true,
+  "all_record_counts_1_to_50": true,
+  "marker_80xx_aborts_without_rollback": true,
+  "shared_abort_tail_executed": true,
+  "empty_and_misaligned_count_outside_contract": true,
+  "refresh_and_timing_independently_checked": false,
+  "all_joint_inputs_exhausted": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

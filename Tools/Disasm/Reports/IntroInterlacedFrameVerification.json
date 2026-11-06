@@ -1,0 +1,45 @@
+{
+  "passed": true,
+  "total_cases": 3072,
+  "phase_states": [
+    0,
+    128
+  ],
+  "generated_origins": [
+    128,
+    192
+  ],
+  "source_patterns": 256,
+  "copy_halves": 2,
+  "copied_pixel_bytes": 2432,
+  "attribute_bytes_written": 64,
+  "actual_IRQ_ROM_and_all_children_executed": true,
+  "irq_executed": true,
+  "irq_counts_per_case": [
+    1,
+    2
+  ],
+  "enabled_IFF_at_frame_boundary_can_add_early_IRQ": true,
+  "all_initial_IFF_values": true,
+  "final_IFF": 0,
+  "source_destination_alias_profile_included": true,
+  "correct_destination_patch_0014_verified": true,
+  "cpu_stack_locations": 3,
+  "maximum_additional_CPU_stack_bytes": 16,
+  "start_tstates": [
+    0,
+    100,
+    69880
+  ],
+  "frame_period": 69888,
+  "all_registers_except_R": true,
+  "all_physical_ram_bytes_proved": true,
+  "write_multiplicity_proved": true,
+  "independent_numeric_oracle": true,
+  "rom_name": "48.rom",
+  "rom_sha256": "d55daa439b673b0e3f5897f99ac37ecb45f974d1862b4dadb85dec34af99cb42",
+  "arbitrary_keyboard_ROM_and_phase_states_proved": false,
+  "native_execution": false,
+  "assembly_executed": false,
+  "timing_proved": false
+}

@@ -1,0 +1,35 @@
+{
+  "passed": true,
+  "total_cases": 30941,
+  "cases_by_kind": {
+    "zero_section_radius": 796,
+    "exact_left_guard": 4,
+    "outer_columns": 4,
+    "all_coordinates_and_validity_bits": 25622,
+    "all_radii_on_geometry_edges": 3740,
+    "mixed_full_flag_bytes": 775
+  },
+  "cases_by_entry": {
+    "D404": 22256,
+    "D40E": 8685
+  },
+  "paths": {
+    "left_inside_columns": 15367,
+    "reject_right_column_31": 473,
+    "reject_left_before_pixel_8": 3,
+    "left_outer_column": 54,
+    "right_outer_column": 48,
+    "right_inside_columns": 14996
+  },
+  "modeled_rows": 1948294,
+  "zero_roots": 799,
+  "exact_registers_except_R": true,
+  "all_physical_ram_bytes_proved": true,
+  "nonpixel_write_multiplicity_proved": true,
+  "all_real_children_without_stubs": true,
+  "maximum_additional_stack_bytes": 14,
+  "profiles_from_verified_D236_boundary": true,
+  "full_D340_proved": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

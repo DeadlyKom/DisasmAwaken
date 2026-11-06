@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "total_cases": 917504,
+  "paths": {
+    "8x8": 4088,
+    "8x16": 523266,
+    "16x16": 390150
+  },
+  "second_operand_8000_full_kernel_cases": 65028,
+  "original_action_instructions_executed": true,
+  "all_245_instructions_relocation_checked_against_map": true,
+  "exact_registers_and_flags_except_R": true,
+  "every_physical_ram_byte_and_write_multiplicity_checked": true,
+  "all_words_against_seven_boundaries_both_orders": true,
+  "extreme_operand_asymmetry_preserved": true,
+  "refresh_and_timing_independently_checked": false,
+  "all_joint_inputs_exhausted": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "total_cases": 560,
+  "outcomes": {
+    "cases": 560,
+    "far": 560,
+    "near": 1120,
+    "draw_unchanged": 1051,
+    "published": 120,
+    "draw_changed": 69
+  },
+  "actual_banked_draw_executed": true,
+  "record_counts": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "assembly_executed": false,
+  "native_execution": false
+}

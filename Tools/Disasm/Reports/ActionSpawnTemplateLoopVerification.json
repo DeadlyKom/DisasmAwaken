@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "total_cases": 256,
+  "all_original_template_pointers": true,
+  "injected_overflow_per_axis": true,
+  "whole_records_compared": true,
+  "assembly_executed": false
+}

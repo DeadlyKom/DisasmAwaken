@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "total_cases": 65536,
+  "all_input_AF": true,
+  "all_prior_words_in_each_field": true,
+  "full_three_word_product_exhausted": false,
+  "original_zero_immediate_required": true,
+  "exact_registers_including_R": true,
+  "refresh_m1": 5,
+  "all_physical_ram_bytes_proved": true,
+  "write_order_and_multiplicity_proved": true,
+  "hardware_bus_write_order_proved": false,
+  "cpu_stack_written": false,
+  "independent_numeric_oracle": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false,
+  "timing_proved": false
+}

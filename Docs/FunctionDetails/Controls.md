@@ -174,11 +174,11 @@
 
 [Алгоритм, контракты и независимая модель](../ControlsEvenSpan.md).
 
-## UnknownCEFA
+## ProjectAndDrawBody
 
-[Controls.UnknownCEFA](../../Source/Controls/UnknownCEFA.asm)
+[Controls.ProjectAndDrawBody](../../Source/Controls/ProjectAndDrawBody.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+Проекция тела в режиме 0, допуск компонент и рисование заданным рисунком.
 
 Вход `#CEFA`, запись 22, смещения `#0EFA..#0F0A`.
 
@@ -188,11 +188,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownCF0B
+[Алгоритм, контракты и независимая модель](../ProjectedBodyEntry.md).
 
-[Controls.UnknownCF0B](../../Source/Controls/UnknownCF0B.asm)
+## BuildBodyProjection
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Controls.BuildBodyProjection](../../Source/Controls/BuildBodyProjection.asm)
+
+Выбор глубины, кодирование двух смещений и расчёт радиуса проекции.
 
 Вход `#CF0B`, запись 22, смещения `#0F0B..#10C9`.
 
@@ -202,11 +204,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownD0CA
+[Алгоритм, контракты и независимая модель](../ControlsBodyProjection.md).
 
-[Controls.UnknownD0CA](../../Source/Controls/UnknownD0CA.asm)
+## EncodeProjectionRatio
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Controls.EncodeProjectionRatio](../../Source/Controls/EncodeProjectionRatio.asm)
+
+Нормализация отношения модулей с возвратом из внешней проекции при отказе.
 
 Вход `#D0CA`, запись 22, смещения `#10CA..#1109`.
 
@@ -216,11 +220,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownD10A
+[Алгоритм, контракты и независимая модель](../ControlsBodyProjection.md).
 
-[Controls.UnknownD10A](../../Source/Controls/UnknownD10A.asm)
+## ContinueProjectionRatio
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Controls.ContinueProjectionRatio](../../Source/Controls/ContinueProjectionRatio.asm)
+
+Продолжение сравнения, кодирование отношения и снятие внутреннего возврата.
 
 Вход `#D10A`, запись 22, смещения `#110A..#1164`.
 
@@ -229,6 +235,8 @@ Unknown, назначение этого фрагмента ещё не уста
 - Непосредственные записи: нет непосредственных обращений.
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
+
+[Алгоритм, контракты и независимая модель](../ControlsBodyProjection.md).
 
 ## DivideByteFraction
 
@@ -262,11 +270,11 @@ Unknown, назначение этого фрагмента ещё не уста
 
 [Алгоритм, контракты и независимая модель](../ControlsDivision.md).
 
-## UnknownD18D
+## DrawRightClippedHalfDown
 
-[Controls.UnknownD18D](../../Source/Controls/UnknownD18D.asm)
+[Controls.DrawRightClippedHalfDown](../../Source/Controls/DrawRightClippedHalfDown.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+Рисование нижней половины с неподвижной правой границей и переходом к двум криволинейным краям.
 
 Вход `#D18D`, запись 22, смещения `#118D..#11A1`.
 
@@ -276,11 +284,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownD1A2
+[Алгоритм, контракты и независимая модель](../ControlsClippedCircleHalf.md).
 
-[Controls.UnknownD1A2](../../Source/Controls/UnknownD1A2.asm)
+## DrawRightClippedHalfUp
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Controls.DrawRightClippedHalfUp](../../Source/Controls/DrawRightClippedHalfUp.asm)
+
+Рисование верхней половины с неподвижной правой границей и переходом к двум криволинейным краям.
 
 Вход `#D1A2`, запись 22, смещения `#11A2..#11B5`.
 
@@ -290,11 +300,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownD1B6
+[Алгоритм, контракты и независимая модель](../ControlsClippedCircleHalf.md).
 
-[Controls.UnknownD1B6](../../Source/Controls/UnknownD1B6.asm)
+## DrawLeftClippedHalfDown
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Controls.DrawLeftClippedHalfDown](../../Source/Controls/DrawLeftClippedHalfDown.asm)
+
+Рисование нижней половины с неподвижной левой границей и переходом к двум криволинейным краям.
 
 Вход `#D1B6`, запись 22, смещения `#11B6..#11CA`.
 
@@ -304,11 +316,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownD1CB
+[Алгоритм, контракты и независимая модель](../ControlsClippedCircleHalf.md).
 
-[Controls.UnknownD1CB](../../Source/Controls/UnknownD1CB.asm)
+## DrawLeftClippedHalfUp
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Controls.DrawLeftClippedHalfUp](../../Source/Controls/DrawLeftClippedHalfUp.asm)
+
+Рисование верхней половины с неподвижной левой границей и переходом к двум криволинейным краям.
 
 Вход `#D1CB`, запись 22, смещения `#11CB..#11DE`.
 
@@ -318,11 +332,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownD1DF
+[Алгоритм, контракты и независимая модель](../ControlsClippedCircleHalf.md).
 
-[Controls.UnknownD1DF](../../Source/Controls/UnknownD1DF.asm)
+## DrawCircleHalfDown
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Controls.DrawCircleHalfDown](../../Source/Controls/DrawCircleHalfDown.asm)
+
+Рисование нижней половины внутреннего сечения с исходной разностью квадратов.
 
 Вход `#D1DF`, запись 22, смещения `#11DF..#11F3`.
 
@@ -332,11 +348,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownD1F4
+[Алгоритм, контракты и независимая модель](../ControlsCircleHalf.md).
 
-[Controls.UnknownD1F4](../../Source/Controls/UnknownD1F4.asm)
+## DrawCircleHalfUp
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Controls.DrawCircleHalfUp](../../Source/Controls/DrawCircleHalfUp.asm)
+
+Рисование верхней половины внутреннего сечения с исходной разностью квадратов.
 
 Вход `#D1F4`, запись 22, смещения `#11F4..#1207`.
 
@@ -345,6 +363,8 @@ Unknown, назначение этого фрагмента ещё не уста
 - Непосредственные записи: `#D18B`.
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
+
+[Алгоритм, контракты и независимая модель](../ControlsCircleHalf.md).
 
 ## FillInteriorRowsUp
 
@@ -378,11 +398,11 @@ Unknown, назначение этого фрагмента ещё не уста
 
 [Алгоритм, контракты и независимая модель](../ControlsInteriorRows.md).
 
-## UnknownD21A
+## DrawProjectedBody
 
-[Controls.UnknownD21A](../../Source/Controls/UnknownD21A.asm)
+[Controls.DrawProjectedBody](../../Source/Controls/DrawProjectedBody.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+Выбор малого профиля или большого круга по результату малого рисователя.
 
 Вход `#D21A`, запись 22, смещения `#121A..#1226`.
 
@@ -392,11 +412,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownD232
+[Алгоритм, контракты и независимая модель](../ControlsBodyDraw.md).
 
-[Controls.UnknownD232](../../Source/Controls/UnknownD232.asm)
+## CallLargeCircle
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Controls.CallLargeCircle](../../Source/Controls/CallLargeCircle.asm)
+
+Вызов большого рисователя с исходной дополнительной рамкой.
 
 Вход `#D232`, запись 22, смещения `#1232..#1235`.
 
@@ -406,11 +428,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownD236
+[Алгоритм, контракты и независимая модель](../ControlsBodyDraw.md).
 
-[Controls.UnknownD236](../../Source/Controls/UnknownD236.asm)
+## DrawLargeCircle
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Controls.DrawLargeCircle](../../Source/Controls/DrawLargeCircle.asm)
+
+Выбор и рисование большого кругового тела по спроецированным смещениям.
 
 Вход `#D236`, запись 22, смещения `#1236..#130A`.
 
@@ -419,6 +443,8 @@ Unknown, назначение этого фрагмента ещё не уста
 - Непосредственные записи: `#D181`, `#D182`, `#D183`, `#D184`.
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
+
+[Алгоритм, контракты и независимая модель](../ControlsCircleDispatch.md).
 
 ## ReadByteSquare
 
@@ -430,14 +456,15 @@ Unknown, назначение этого фрагмента ещё не уста
 
 [Алгоритм, контракты и независимая модель](../ControlsSquares.md).
 
-## UnknownD314
+## DrawInteriorCircle
 
-[Controls.UnknownD314](../../Source/Controls/UnknownD314.asm)
+[Controls.DrawInteriorCircle](../../Source/Controls/DrawInteriorCircle.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+Рисование верхней и нижней половин большого контура без горизонтального отсечения.
 
 Вход `#D314`, запись 22, смещения `#1314..#131F`.
 
+[Алгоритм, контракты и независимая модель](../ControlsCircleInteriorFull.md).
 
 ## BuildCircleSpan
 
@@ -449,14 +476,55 @@ Unknown, назначение этого фрагмента ещё не уста
 
 [Алгоритм, контракты и независимая модель](../ControlsCircleSpan.md).
 
-## UnknownD340
+## DrawFullWidthCircle
 
-[Controls.UnknownD340](../../Source/Controls/UnknownD340.asm)
+[Controls.DrawFullWidthCircle](../../Source/Controls/DrawFullWidthCircle.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+Заливка внутренних полос и двух остаточных половин широкого круга.
 
-Вход `#D340`, запись 22, смещения `#1340..#14CA`.
+Вход `#D340`, запись 22, смещения `#1340..#138B`.
 
+[Алгоритм, контракты и независимая модель](../ControlsFullWidthCircle.md).
+
+## DrawFullWidthCircleSlice
+
+[Controls.DrawFullWidthCircleSlice](../../Source/Controls/DrawFullWidthCircleSlice.asm)
+
+Заливка внутренней полосы от вертикальной границы и одной остаточной половины.
+
+Вход `#D38C`, запись 22, смещения `#138C..#13D9`.
+
+[Алгоритм, контракты и независимая модель](../ControlsFullWidthCircle.md).
+
+## DrawHorizontallyClippedCircle
+
+[Controls.DrawHorizontallyClippedCircle](../../Source/Controls/DrawHorizontallyClippedCircle.asm)
+
+Рисование двух половин круга с одним исходно неподвижным горизонтальным краем.
+
+Вход `#D3DA`, запись 22, смещения `#13DA..#1403`.
+
+[Алгоритм, контракты и независимая модель](../ControlsHorizontalCircle.md).
+
+## DrawCornerCircleSlice
+
+[Controls.DrawCornerCircleSlice](../../Source/Controls/DrawCornerCircleSlice.asm)
+
+Рисование одного сечения с вертикальным и горизонтальным отсечением.
+
+Вход `#D404`, запись 22, смещения `#1404..#1484`.
+
+[Алгоритм, контракты и независимая модель](../ControlsCornerCircleSlice.md).
+
+## DrawVerticalCircleSlice
+
+[Controls.DrawVerticalCircleSlice](../../Source/Controls/DrawVerticalCircleSlice.asm)
+
+Рисование вертикально отсечённого кругового сечения с двумя криволинейными краями.
+
+Вход `#D485`, запись 22, смещения `#1485..#14CA`.
+
+[Алгоритм, контракты и независимая модель](../ControlsVerticalCircleSlice.md).
 
 ## PrepareCircleRightClip
 
@@ -580,34 +648,41 @@ Unknown, назначение этого фрагмента ещё не уста
 
 [Алгоритм, контракты и независимая модель](../ControlsSquares.md).
 
-## UnknownD633
+## CircleRasterCore
 
-[Controls.UnknownD633](../../Source/Controls/UnknownD633.asm)
+[Controls.CircleRasterCore](../../Source/Controls/CircleRasterCore.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+Двухфазное сужение кругового сечения с двумя криволинейными краями.
 
 Вход `#D633`, запись 22, смещения `#1633..#1726`.
 
+[Алгоритм, контракты и независимая модель](../ControlsCircleKernels.md).
 
-## UnknownD727
+## ResumeCirclePushSpan
 
-[Controls.UnknownD727](../../Source/Controls/UnknownD727.asm)
+[Controls.ResumeCirclePushSpan](../../Source/Controls/ResumeCirclePushSpan.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+Восстановление CPU-стека после обычной PUSH-заливки и продолжение горизонтальной фазы.
 
-Вход `#D727`, запись 22, смещения `#1727..#1832`.
+Вход `#D727`, запись 22, смещения `#1727..#173A`.
 
-- Прямые вызовы: `#CEA4`, `#D925`, `#D940`.
-- Непосредственные чтения: `#D186`, `#D18B`.
-- Непосредственные записи: `#D186`, `#D772`, `#D7FD`, `#D80E`.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
+[Алгоритм, контракты и независимая модель](../ControlsCircleKernels.md).
 
-## UnknownD833
+## LeftClippedCircleCore
 
-[Controls.UnknownD833](../../Source/Controls/UnknownD833.asm)
+[Controls.LeftClippedCircleCore](../../Source/Controls/LeftClippedCircleCore.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+Двухфазное сужение с неподвижным левым краем до совпадения порога Aprime.
+
+Вход `#D73B`, запись 22, смещения `#173B..#1832`.
+
+[Алгоритм, контракты и независимая модель](../ControlsCircleKernels.md).
+
+## RightClippedCircleCore
+
+[Controls.RightClippedCircleCore](../../Source/Controls/RightClippedCircleCore.asm)
+
+Двухфазное сужение с неподвижным правым краем до совпадения порога Aprime.
 
 Вход `#D833`, запись 22, смещения `#1833..#1924`.
 
@@ -616,6 +691,8 @@ Unknown, назначение этого фрагмента ещё не уста
 - Непосредственные записи: `#D186`, `#D86C`, `#D8EF`, `#D900`.
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
+
+[Алгоритм, контракты и независимая модель](../ControlsCircleKernels.md).
 
 ## AdvanceRasterUp
 
@@ -649,11 +726,11 @@ Unknown, назначение этого фрагмента ещё не уста
 
 [Алгоритм, контракты и независимая модель](../ControlsRasterStep.md).
 
-## UnknownD95F
+## ProjectAndCheckComponents
 
-[Controls.UnknownD95F](../../Source/Controls/UnknownD95F.asm)
+[Controls.ProjectAndCheckComponents](../../Source/Controls/ProjectAndCheckComponents.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+Построение проекции и проверка двух компонент относительно постоянной опоры Component2.
 
 Вход `#D95F`, запись 22, смещения `#195F..#197D`.
 
@@ -662,6 +739,8 @@ Unknown, назначение этого фрагмента ещё не уста
 - Непосредственные записи: нет непосредственных обращений.
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
+
+[Алгоритм, контракты и независимая модель](../ControlsProjectionGate.md).
 
 ## BuildSmallBodyMasks
 
@@ -725,11 +804,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: `OUT (C),A`.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownDC9B
+## RelocateStationReload
 
-[Controls.UnknownDC9B](../../Source/Controls/UnknownDC9B.asm)
+[Controls.RelocateStationReload](../../Source/Controls/RelocateStationReload.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+Копирование 256 байтов блока загрузки STATIONF в общую RAM и передача управления 4000.
 
 Вход `#DC9B`, запись 23, смещения `#01BD..#01CA`.
 
@@ -738,6 +817,16 @@ Unknown, назначение этого фрагмента ещё не уста
 - Непосредственные записи: нет непосредственных обращений.
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
+
+[Алгоритм, контракты и независимая модель](../ControlsStationRelocation.md).
+
+## PrepareStationReload
+
+[Controls.PrepareStationReload](../../Source/Controls/PrepareStationReload.asm)
+
+Очистка атрибутов, сохранение 512 байтов состояния и перенос следующей стадии загрузки станции.
+
+[Алгоритм, контракты и независимая модель](../ControlsStationPrepare.md).
 
 ## StepWordRandom
 
@@ -835,11 +924,11 @@ Unknown, назначение этого фрагмента ещё не уста
 
 [Алгоритм, контракты и независимая модель](../ControlsThreeRowGlyph.md).
 
-## UnknownE291
+## DrawRadar
 
-[Controls.UnknownE291](../../Source/Controls/UnknownE291.asm)
+[Controls.DrawRadar](../../Source/Controls/DrawRadar.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+Фазовый фон радара, центральная метка и вывод объектов со знаковыми линиями.
 
 Вход `#E291`, запись 23, смещения `#07B3..#0B7E`.
 
@@ -848,6 +937,8 @@ Unknown, назначение этого фрагмента ещё не уста
 - Непосредственные записи: `#E2B0`, `#E2BC`, `#E471`, `#E48F`.
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
+
+[Алгоритм, контракты и независимая модель](../ControlsRasterBackground.md).
 
 ## DrawSixRowGauge
 
@@ -865,11 +956,11 @@ Unknown, назначение этого фрагмента ещё не уста
 
 [Алгоритм, контракты и независимая модель](../ControlsSixRowGauge.md).
 
-## UnknownE97A
+## ToggleTargetOverlay
 
-[Controls.UnknownE97A](../../Source/Controls/UnknownE97A.asm)
+[Controls.ToggleTargetOverlay](../../Source/Controls/ToggleTargetOverlay.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+XOR рамки и спроецированных значков объектов в линейном буфере.
 
 Вход `#E97A`, запись 23, смещения `#0E9C..#102F`.
 
@@ -878,6 +969,8 @@ Unknown, назначение этого фрагмента ещё не уста
 - Непосредственные записи: `#842E`, `#8431`, `#87EE`, `#87F1`.
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
+
+[Алгоритм, контракты и независимая модель](../ControlsTargetOverlay.md).
 
 ## InitializeTextWindow
 

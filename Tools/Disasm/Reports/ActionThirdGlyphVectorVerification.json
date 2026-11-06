@@ -1,0 +1,42 @@
+{
+  "passed": true,
+  "total_cases": 72460,
+  "cases_by_kind": {
+    "gate_and_flags": 65536,
+    "vector_edges": 512,
+    "coefficient_positions": 2304,
+    "overflow_sites": 12,
+    "mixed_vectors_and_matrices": 4096
+  },
+  "paths": {
+    "published": 6198,
+    "gate": 65280,
+    "overflow": 982
+  },
+  "overflow_sites": {
+    "(0, 1)": 150,
+    "(0, 2)": 245,
+    "(1, 1)": 104,
+    "(1, 2)": 202,
+    "(2, 1)": 96,
+    "(2, 2)": 185
+  },
+  "all_gate_and_initial_F_pairs": true,
+  "all_matrix_byte_positions": true,
+  "all_six_overflow_sites": true,
+  "full_vector_and_matrix_product_exhausted": false,
+  "compositional_numeric_oracle": true,
+  "independent_new_vector_oracle": false,
+  "actual_arithmetic_SP_children_executed": true,
+  "real_stack_restore_and_publisher_executed": true,
+  "exact_registers_including_R": true,
+  "all_physical_ram_bytes_proved": true,
+  "write_multiplicity_proved": true,
+  "cpu_stack_written": false,
+  "partial_vector_outputs_preserved_on_overflow": true,
+  "third_fields_preserved_on_overflow": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false,
+  "timing_proved": false
+}

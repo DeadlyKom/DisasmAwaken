@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "changed_files": [
+    "Tools/Disasm/Reports/Symbols.json",
+    "Source/Intro/AdvanceTextureScale.asm",
+    "Source/Intro/SelectTexturePointerRow.asm",
+    "Includes/Variables/Include.inc",
+    "Tools/Disasm/Research/Contracts.py",
+    "Tools/Disasm/Research/SemanticNames.py",
+    "Docs/FunctionDetails/Intro.md",
+    "Docs/Intro.md"
+  ],
+  "original_instructions_and_bytes_preserved": true,
+  "new_memory_allocated": false,
+  "model_cases": 10256,
+  "assembly_executed": false
+}

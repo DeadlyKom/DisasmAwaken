@@ -4,7 +4,7 @@ from PreviewSceneTables import render as render_records,parse as parse_records
 
 FIELDS=(('OffsetY',1,'вертикальное числовое смещение до выбора знака'),
     ('OffsetX',1,'горизонтальное числовое смещение до выбора знака'),
-    ('Flags',1,'разряды 0 и 1 задают направления, остальные этим форматом не объявляются разобранными'),
+    ('Flags',1,'биты 0 и 1 задают направления, 2 и 3 задают N<=Q по X и Y, верхние биты требуют контекста писателя'),
     ('Radius',1,'радиус, малый рисователь принимает только 2..8'))
 TABLE=('ControlsBodyProjection','Source/Controls/Data/BodyProjection.asm',0x117D,0x1181,
     'FBodyProjection',FIELDS,('Value',))

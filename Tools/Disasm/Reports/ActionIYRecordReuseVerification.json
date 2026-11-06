@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "total_cases": 7450,
+  "cases_by_kind": {
+    "standalone": 7424,
+    "release_then_two_real_searches": 26
+  },
+  "entry": 61501,
+  "index_register": "IY",
+  "physical_records": 26,
+  "all_initial_flags_values": true,
+  "three_extra_boundary_pointers": true,
+  "preserved_all_registers_including_R": true,
+  "setter_refresh_m1": 7,
+  "component0_word_written": 32768,
+  "reuse_byte_written": 255,
+  "exact_store_order": [
+    "Component0.High",
+    "Component0.Low",
+    "ReuseByte"
+  ],
+  "cpu_stack_written": false,
+  "all_physical_ram_bytes_proved": true,
+  "write_order_and_multiplicity_proved": true,
+  "real_FindReusableRecord_executed": true,
+  "first_reaching_search_skips_and_clears": true,
+  "next_reaching_search_accepts": true,
+  "independent_numeric_oracle": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false,
+  "timing_proved": false
+}

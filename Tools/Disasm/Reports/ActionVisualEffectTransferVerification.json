@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "total_cases": 8846,
+  "outcomes": {
+    "nonpositive_depth": 3700,
+    "bank3": 3164,
+    "overflow": 1982
+  },
+  "raster_outcomes": {
+    "unchanged": 2832,
+    "changed": 332
+  },
+  "actual_voxel_draw_executed": true,
+  "all_3072_raster_bytes_compared": true,
+  "whole_procedure_proved": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

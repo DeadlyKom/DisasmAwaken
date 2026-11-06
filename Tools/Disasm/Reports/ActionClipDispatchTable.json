@@ -1,0 +1,660 @@
+{
+  "passed": true,
+  "original_valid_code_pairs": 81,
+  "unique_target_entries": 71,
+  "all_targets_registered": true,
+  "workspace_does_not_overlap_valid_lookup_indices": true,
+  "runtime_mutation_profiles_exhausted": false,
+  "handler_algorithms_proved": false,
+  "assembly_executed": false,
+  "rows": [
+    {
+      "first_code": 240,
+      "second_code": 240,
+      "index": 0,
+      "target": 50899,
+      "path": "Source/Action/AppendSecondClipPoint.asm",
+      "name": "AppendSecondClipPoint"
+    },
+    {
+      "first_code": 240,
+      "second_code": 225,
+      "index": 1,
+      "target": 50660,
+      "path": "Source/Action/ClipInsideToRight.asm",
+      "name": "ClipInsideToRight"
+    },
+    {
+      "first_code": 240,
+      "second_code": 210,
+      "index": 2,
+      "target": 50568,
+      "path": "Source/Action/ClipInsideToLeft.asm",
+      "name": "ClipInsideToLeft"
+    },
+    {
+      "first_code": 240,
+      "second_code": 180,
+      "index": 4,
+      "target": 50493,
+      "path": "Source/Action/ClipInsideToBottom.asm",
+      "name": "ClipInsideToBottom"
+    },
+    {
+      "first_code": 240,
+      "second_code": 120,
+      "index": 8,
+      "target": 50419,
+      "path": "Source/Action/ClipInsideToTop.asm",
+      "name": "ClipInsideToTop"
+    },
+    {
+      "first_code": 240,
+      "second_code": 165,
+      "index": 5,
+      "target": 49275,
+      "path": "Source/Action/ClipInsideToBottomRight.asm",
+      "name": "ClipInsideToBottomRight"
+    },
+    {
+      "first_code": 240,
+      "second_code": 105,
+      "index": 9,
+      "target": 49327,
+      "path": "Source/Action/ClipInsideToTopRight.asm",
+      "name": "ClipInsideToTopRight"
+    },
+    {
+      "first_code": 240,
+      "second_code": 150,
+      "index": 6,
+      "target": 49301,
+      "path": "Source/Action/ClipInsideToBottomLeft.asm",
+      "name": "ClipInsideToBottomLeft"
+    },
+    {
+      "first_code": 240,
+      "second_code": 90,
+      "index": 10,
+      "target": 49353,
+      "path": "Source/Action/ClipInsideToTopLeft.asm",
+      "name": "ClipInsideToTopLeft"
+    },
+    {
+      "first_code": 225,
+      "second_code": 240,
+      "index": 16,
+      "target": 49379,
+      "path": "Source/Action/ClipRightToInside.asm",
+      "name": "ClipRightToInside"
+    },
+    {
+      "first_code": 225,
+      "second_code": 225,
+      "index": 17,
+      "target": 49274,
+      "path": "Source/Action/ReturnClipCase.asm",
+      "name": "ReturnClipCase"
+    },
+    {
+      "first_code": 225,
+      "second_code": 210,
+      "index": 18,
+      "target": 49385,
+      "path": "Source/Action/ClipRightToLeft.asm",
+      "name": "ClipRightToLeft"
+    },
+    {
+      "first_code": 225,
+      "second_code": 180,
+      "index": 20,
+      "target": 49391,
+      "path": "Source/Action/ClipRightToBottom.asm",
+      "name": "ClipRightToBottom"
+    },
+    {
+      "first_code": 225,
+      "second_code": 120,
+      "index": 24,
+      "target": 49433,
+      "path": "Source/Action/ClipRightToTop.asm",
+      "name": "ClipRightToTop"
+    },
+    {
+      "first_code": 225,
+      "second_code": 165,
+      "index": 21,
+      "target": 49290,
+      "path": "Source/Action/ClipRightToBottomRight.asm",
+      "name": "ClipRightToBottomRight"
+    },
+    {
+      "first_code": 225,
+      "second_code": 105,
+      "index": 25,
+      "target": 49451,
+      "path": "Source/Action/ClipRightToTopRight.asm",
+      "name": "ClipRightToTopRight"
+    },
+    {
+      "first_code": 225,
+      "second_code": 150,
+      "index": 22,
+      "target": 49409,
+      "path": "Source/Action/ClipRightToBottomLeft.asm",
+      "name": "ClipRightToBottomLeft"
+    },
+    {
+      "first_code": 225,
+      "second_code": 90,
+      "index": 26,
+      "target": 49458,
+      "path": "Source/Action/ClipRightToTopLeft.asm",
+      "name": "ClipRightToTopLeft"
+    },
+    {
+      "first_code": 210,
+      "second_code": 240,
+      "index": 32,
+      "target": 49476,
+      "path": "Source/Action/ClipLeftToInside.asm",
+      "name": "ClipLeftToInside"
+    },
+    {
+      "first_code": 210,
+      "second_code": 225,
+      "index": 33,
+      "target": 49482,
+      "path": "Source/Action/ClipLeftToRight.asm",
+      "name": "ClipLeftToRight"
+    },
+    {
+      "first_code": 210,
+      "second_code": 210,
+      "index": 34,
+      "target": 49274,
+      "path": "Source/Action/ReturnClipCase.asm",
+      "name": "ReturnClipCase"
+    },
+    {
+      "first_code": 210,
+      "second_code": 180,
+      "index": 36,
+      "target": 49488,
+      "path": "Source/Action/ClipLeftToBottom.asm",
+      "name": "ClipLeftToBottom"
+    },
+    {
+      "first_code": 210,
+      "second_code": 120,
+      "index": 40,
+      "target": 49531,
+      "path": "Source/Action/ClipLeftToTop.asm",
+      "name": "ClipLeftToTop"
+    },
+    {
+      "first_code": 210,
+      "second_code": 165,
+      "index": 37,
+      "target": 49506,
+      "path": "Source/Action/ClipLeftToBottomRight.asm",
+      "name": "ClipLeftToBottomRight"
+    },
+    {
+      "first_code": 210,
+      "second_code": 105,
+      "index": 41,
+      "target": 49549,
+      "path": "Source/Action/ClipLeftToTopRight.asm",
+      "name": "ClipLeftToTopRight"
+    },
+    {
+      "first_code": 210,
+      "second_code": 150,
+      "index": 38,
+      "target": 49524,
+      "path": "Source/Action/ClipLeftToBottomLeft.asm",
+      "name": "ClipLeftToBottomLeft"
+    },
+    {
+      "first_code": 210,
+      "second_code": 90,
+      "index": 42,
+      "target": 49368,
+      "path": "Source/Action/ClipLeftToTopLeft.asm",
+      "name": "ClipLeftToTopLeft"
+    },
+    {
+      "first_code": 180,
+      "second_code": 240,
+      "index": 64,
+      "target": 49573,
+      "path": "Source/Action/ClipBottomToInside.asm",
+      "name": "ClipBottomToInside"
+    },
+    {
+      "first_code": 180,
+      "second_code": 225,
+      "index": 65,
+      "target": 49579,
+      "path": "Source/Action/ClipBottomToRight.asm",
+      "name": "ClipBottomToRight"
+    },
+    {
+      "first_code": 180,
+      "second_code": 210,
+      "index": 66,
+      "target": 49597,
+      "path": "Source/Action/ClipBottomToLeft.asm",
+      "name": "ClipBottomToLeft"
+    },
+    {
+      "first_code": 180,
+      "second_code": 180,
+      "index": 68,
+      "target": 49274,
+      "path": "Source/Action/ReturnClipCase.asm",
+      "name": "ReturnClipCase"
+    },
+    {
+      "first_code": 180,
+      "second_code": 120,
+      "index": 72,
+      "target": 49622,
+      "path": "Source/Action/ClipBottomToTop.asm",
+      "name": "ClipBottomToTop"
+    },
+    {
+      "first_code": 180,
+      "second_code": 165,
+      "index": 69,
+      "target": 49615,
+      "path": "Source/Action/ClipBottomToBottomRight.asm",
+      "name": "ClipBottomToBottomRight"
+    },
+    {
+      "first_code": 180,
+      "second_code": 105,
+      "index": 73,
+      "target": 49628,
+      "path": "Source/Action/ClipBottomToTopRight.asm",
+      "name": "ClipBottomToTopRight"
+    },
+    {
+      "first_code": 180,
+      "second_code": 150,
+      "index": 70,
+      "target": 49316,
+      "path": "Source/Action/ClipBottomToBottomLeft.asm",
+      "name": "ClipBottomToBottomLeft"
+    },
+    {
+      "first_code": 180,
+      "second_code": 90,
+      "index": 74,
+      "target": 49649,
+      "path": "Source/Action/ClipBottomToTopLeft.asm",
+      "name": "ClipBottomToTopLeft"
+    },
+    {
+      "first_code": 120,
+      "second_code": 240,
+      "index": 128,
+      "target": 49934,
+      "path": "Source/Action/ClipTopToInside.asm",
+      "name": "ClipTopToInside"
+    },
+    {
+      "first_code": 120,
+      "second_code": 225,
+      "index": 129,
+      "target": 49940,
+      "path": "Source/Action/ClipTopToRight.asm",
+      "name": "ClipTopToRight"
+    },
+    {
+      "first_code": 120,
+      "second_code": 210,
+      "index": 130,
+      "target": 49958,
+      "path": "Source/Action/ClipTopToLeft.asm",
+      "name": "ClipTopToLeft"
+    },
+    {
+      "first_code": 120,
+      "second_code": 180,
+      "index": 132,
+      "target": 49976,
+      "path": "Source/Action/ClipTopToBottom.asm",
+      "name": "ClipTopToBottom"
+    },
+    {
+      "first_code": 120,
+      "second_code": 120,
+      "index": 136,
+      "target": 49274,
+      "path": "Source/Action/ReturnClipCase.asm",
+      "name": "ReturnClipCase"
+    },
+    {
+      "first_code": 120,
+      "second_code": 165,
+      "index": 133,
+      "target": 49982,
+      "path": "Source/Action/ClipTopToBottomRight.asm",
+      "name": "ClipTopToBottomRight"
+    },
+    {
+      "first_code": 120,
+      "second_code": 105,
+      "index": 137,
+      "target": 49342,
+      "path": "Source/Action/ClipTopToTopRight.asm",
+      "name": "ClipTopToTopRight"
+    },
+    {
+      "first_code": 120,
+      "second_code": 150,
+      "index": 134,
+      "target": 50009,
+      "path": "Source/Action/ClipTopToBottomLeft.asm",
+      "name": "ClipTopToBottomLeft"
+    },
+    {
+      "first_code": 120,
+      "second_code": 90,
+      "index": 138,
+      "target": 50030,
+      "path": "Source/Action/ClipTopToTopLeft.asm",
+      "name": "ClipTopToTopLeft"
+    },
+    {
+      "first_code": 165,
+      "second_code": 240,
+      "index": 80,
+      "target": 49676,
+      "path": "Source/Action/ClipBottomRightToInside.asm",
+      "name": "ClipBottomRightToInside"
+    },
+    {
+      "first_code": 165,
+      "second_code": 225,
+      "index": 81,
+      "target": 49704,
+      "path": "Source/Action/ClipBottomRightToRight.asm",
+      "name": "ClipBottomRightToRight"
+    },
+    {
+      "first_code": 165,
+      "second_code": 210,
+      "index": 82,
+      "target": 49711,
+      "path": "Source/Action/ClipBottomRightToLeft.asm",
+      "name": "ClipBottomRightToLeft"
+    },
+    {
+      "first_code": 165,
+      "second_code": 180,
+      "index": 84,
+      "target": 49742,
+      "path": "Source/Action/ClipBottomRightToBottom.asm",
+      "name": "ClipBottomRightToBottom"
+    },
+    {
+      "first_code": 165,
+      "second_code": 120,
+      "index": 88,
+      "target": 49759,
+      "path": "Source/Action/ClipBottomRightToTop.asm",
+      "name": "ClipBottomRightToTop"
+    },
+    {
+      "first_code": 165,
+      "second_code": 165,
+      "index": 85,
+      "target": 49274,
+      "path": "Source/Action/ReturnClipCase.asm",
+      "name": "ReturnClipCase"
+    },
+    {
+      "first_code": 165,
+      "second_code": 105,
+      "index": 89,
+      "target": 50922,
+      "path": "Source/Action/ExitClipContour.asm",
+      "name": "ExitClipContour"
+    },
+    {
+      "first_code": 165,
+      "second_code": 150,
+      "index": 86,
+      "target": 49753,
+      "path": "Source/Action/ClipBottomRightToBottomLeft.asm",
+      "name": "ClipBottomRightToBottomLeft"
+    },
+    {
+      "first_code": 165,
+      "second_code": 90,
+      "index": 90,
+      "target": 49780,
+      "path": "Source/Action/ClipBottomRightToTopLeft.asm",
+      "name": "ClipBottomRightToTopLeft"
+    },
+    {
+      "first_code": 105,
+      "second_code": 240,
+      "index": 144,
+      "target": 50037,
+      "path": "Source/Action/ClipTopRightToInside.asm",
+      "name": "ClipTopRightToInside"
+    },
+    {
+      "first_code": 105,
+      "second_code": 225,
+      "index": 145,
+      "target": 50065,
+      "path": "Source/Action/ClipTopRightToRight.asm",
+      "name": "ClipTopRightToRight"
+    },
+    {
+      "first_code": 105,
+      "second_code": 210,
+      "index": 146,
+      "target": 50076,
+      "path": "Source/Action/ClipTopRightToLeft.asm",
+      "name": "ClipTopRightToLeft"
+    },
+    {
+      "first_code": 105,
+      "second_code": 180,
+      "index": 148,
+      "target": 50097,
+      "path": "Source/Action/ClipTopRightToBottom.asm",
+      "name": "ClipTopRightToBottom"
+    },
+    {
+      "first_code": 105,
+      "second_code": 120,
+      "index": 152,
+      "target": 50159,
+      "path": "Source/Action/ClipTopRightToTop.asm",
+      "name": "ClipTopRightToTop"
+    },
+    {
+      "first_code": 105,
+      "second_code": 165,
+      "index": 149,
+      "target": 50128,
+      "path": "Source/Action/ClipTopRightToBottomRight.asm",
+      "name": "ClipTopRightToBottomRight"
+    },
+    {
+      "first_code": 105,
+      "second_code": 105,
+      "index": 153,
+      "target": 49274,
+      "path": "Source/Action/ReturnClipCase.asm",
+      "name": "ReturnClipCase"
+    },
+    {
+      "first_code": 105,
+      "second_code": 150,
+      "index": 150,
+      "target": 50134,
+      "path": "Source/Action/ClipTopRightToBottomLeft.asm",
+      "name": "ClipTopRightToBottomLeft"
+    },
+    {
+      "first_code": 105,
+      "second_code": 90,
+      "index": 154,
+      "target": 50922,
+      "path": "Source/Action/ExitClipContour.asm",
+      "name": "ExitClipContour"
+    },
+    {
+      "first_code": 150,
+      "second_code": 240,
+      "index": 96,
+      "target": 49805,
+      "path": "Source/Action/ClipBottomLeftToInside.asm",
+      "name": "ClipBottomLeftToInside"
+    },
+    {
+      "first_code": 150,
+      "second_code": 225,
+      "index": 97,
+      "target": 49833,
+      "path": "Source/Action/ClipBottomLeftToRight.asm",
+      "name": "ClipBottomLeftToRight"
+    },
+    {
+      "first_code": 150,
+      "second_code": 210,
+      "index": 98,
+      "target": 49854,
+      "path": "Source/Action/ClipBottomLeftToLeft.asm",
+      "name": "ClipBottomLeftToLeft"
+    },
+    {
+      "first_code": 150,
+      "second_code": 180,
+      "index": 100,
+      "target": 49865,
+      "path": "Source/Action/ClipBottomLeftToBottom.asm",
+      "name": "ClipBottomLeftToBottom"
+    },
+    {
+      "first_code": 150,
+      "second_code": 120,
+      "index": 104,
+      "target": 49872,
+      "path": "Source/Action/ClipBottomLeftToTop.asm",
+      "name": "ClipBottomLeftToTop"
+    },
+    {
+      "first_code": 150,
+      "second_code": 165,
+      "index": 101,
+      "target": 50922,
+      "path": "Source/Action/ExitClipContour.asm",
+      "name": "ExitClipContour"
+    },
+    {
+      "first_code": 150,
+      "second_code": 105,
+      "index": 105,
+      "target": 49903,
+      "path": "Source/Action/ClipBottomLeftToTopRight.asm",
+      "name": "ClipBottomLeftToTopRight"
+    },
+    {
+      "first_code": 150,
+      "second_code": 150,
+      "index": 102,
+      "target": 49274,
+      "path": "Source/Action/ReturnClipCase.asm",
+      "name": "ReturnClipCase"
+    },
+    {
+      "first_code": 150,
+      "second_code": 90,
+      "index": 106,
+      "target": 49928,
+      "path": "Source/Action/ClipBottomLeftToTopLeft.asm",
+      "name": "ClipBottomLeftToTopLeft"
+    },
+    {
+      "first_code": 90,
+      "second_code": 240,
+      "index": 160,
+      "target": 50166,
+      "path": "Source/Action/ClipTopLeftToInside.asm",
+      "name": "ClipTopLeftToInside"
+    },
+    {
+      "first_code": 90,
+      "second_code": 225,
+      "index": 161,
+      "target": 50194,
+      "path": "Source/Action/ClipTopLeftToRight.asm",
+      "name": "ClipTopLeftToRight"
+    },
+    {
+      "first_code": 90,
+      "second_code": 210,
+      "index": 162,
+      "target": 50225,
+      "path": "Source/Action/ClipTopLeftToLeft.asm",
+      "name": "ClipTopLeftToLeft"
+    },
+    {
+      "first_code": 90,
+      "second_code": 180,
+      "index": 164,
+      "target": 50232,
+      "path": "Source/Action/ClipTopLeftToBottom.asm",
+      "name": "ClipTopLeftToBottom"
+    },
+    {
+      "first_code": 90,
+      "second_code": 120,
+      "index": 168,
+      "target": 50278,
+      "path": "Source/Action/ClipTopLeftToTop.asm",
+      "name": "ClipTopLeftToTop"
+    },
+    {
+      "first_code": 90,
+      "second_code": 165,
+      "index": 165,
+      "target": 50253,
+      "path": "Source/Action/ClipTopLeftToBottomRight.asm",
+      "name": "ClipTopLeftToBottomRight"
+    },
+    {
+      "first_code": 90,
+      "second_code": 105,
+      "index": 169,
+      "target": 50289,
+      "path": "Source/Action/ClipTopLeftToTopRight.asm",
+      "name": "ClipTopLeftToTopRight"
+    },
+    {
+      "first_code": 90,
+      "second_code": 150,
+      "index": 166,
+      "target": 50922,
+      "path": "Source/Action/ExitClipContour.asm",
+      "name": "ExitClipContour"
+    },
+    {
+      "first_code": 90,
+      "second_code": 90,
+      "index": 170,
+      "target": 49274,
+      "path": "Source/Action/ReturnClipCase.asm",
+      "name": "ReturnClipCase"
+    }
+  ]
+}

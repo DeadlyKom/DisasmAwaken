@@ -1,0 +1,49 @@
+"""Верхняя и нижняя половины канонического внутреннего сечения с ненулевым начальным Y."""
+FUNCTIONS={0xD1DF:('DrawCircleHalfDown','Рисование нижней половины внутреннего сечения с исходной разностью квадратов'),
+    0xD1F4:('DrawCircleHalfUp','Рисование верхней половины внутреннего сечения с исходной разностью квадратов')}
+LOCAL={};LABELS={};CONTINUATIONS={}
+RENAMES={}
+for address,(name,_) in FUNCTIONS.items():RENAMES['Controls.Unknown'+format(address,'04X')+'.Entry']='Controls.'+name+'.Entry'
+CONTRACTS={}
+for address,direction in ((0xD1DF,1),(0xD1F4,-1)):
+    CONTRACTS['Controls',address]=(
+        ['HL содержит адрес правой границы строки 0..95 линейного растра, DE задаёт E как младший адрес левой границы, входной D произвольный',
+         'BC содержит канонические включающие маски левого B и правого C краёв, они соответствуют CenterX-X и CenterX+X в 0..255',
+         "C'=(-X) AND FF, X=0..127, E'=Y0 в 0..255 и X*X+Y0*Y0 не больше 65025, прочие альтернативные пары будут частично сброшены",
+         'AF сохраняется полностью, IX задаёт IXL как рисунок и IXH как XOR-чередование, IY сохраняется',
+         'банк 1 выбран, растр и код доступны, CPU-стек вне них содержит внешний возврат и допускает шесть дополнительных байтов, IRQ не вмешиваются'],
+        ['HL, DE и BC содержат конечные правую и левую границы и маски, точные состояния описаны в ControlsCircleHalf.md',
+         "B'=FF, D'=0, HL' содержит ошибку, C' код оставшегося X, E' подготовленный байтовый счётчик Y",
+         "AF и AF' сохраняются, IXH и IY сохраняются, IXL получает XOR IXH после каждой нарисованной строки",
+         'Direction='+str(int(direction>0))+', при хотя бы одной строке SavedSP=входной SP-2, при пустом проходе SavedSP сохраняется',
+         'SP после RET равен входному SP+2, I, IM, IFF и 7FFD сохраняются, порты не записываются',
+         'при совпадении начальных байтов границ рисунок не меняется, HL, DE, BC сохранены, ошибка обнулена и регистровые старшие Bprime/Dprime сброшены как указано'],
+        ["HL, DE, BC, HL', DE', BC', IXL, R, растр, Direction, SavedSP, четыре условно записываемых смещения кода, шесть временных байтов CPU-стека"],
+        ['начальные HLprime, Bprime и Dprime заменяются нулевой ошибкой, FF и нулём, младшие Cprime и Eprime являются настоящими входами',
+         'Mode по D18C читается перед JP, но его значение не влияет на выход канонического входа, AF возвращается из сохранённого слова',
+         'проверены все допустимые пары X/Y0 обоих направлений, все AF, пиксельные фазы, края и смешанные сечения',
+         'сопоставлены регистры кроме R, восемь банков RAM, значения и кратность всех непиксельных записей, четыре положения стека',
+         'неканонические маски, нормы больше 65025, горизонтально отсечённые ядра, R, кратность пиксельных записей, IRQ, сборка и нативный запуск не доказаны'])
+COMMENTS={}
+for start,up in ((0xD1DF,False),(0xD1F4,True)):
+    COMMENTS[start]=(['Сохранение исходного AF, любой обычный либо нелокальный выход половины восстановит это слово.'],None)
+    COMMENTS[start+1]=(['Создание нулевой ошибки, старших Bprime=FF и Dprime=0 без изменения входных Cprime и Eprime.'],None)
+    COMMENTS[start+9]=(['Выбор '+('верхнего' if up else 'нижнего')+' направления строк в исходном физическом поле Direction.'],None)
+    read=start+(13 if up else 14)
+    COMMENTS[read]=(['Чтение общего Mode перед передачей в ядро, исходный AF уже сохранён на CPU-стеке.'],None)
+CONST_BLOCK=('\n                ; Направление и старший байт отрицательного X исходного растрового ядра\n                module ControlsCircleHalfConst\n'+
+    'DirectionDown'.ljust(16)+'equ #01'.ljust(64)+'; ненулевое направление к следующим строкам\n'+
+    'NegativeXHigh'.ljust(16)+'equ #FF'.ljust(64)+'; старший байт состояния отрицательного X, Cprime хранит его младший код\n'+
+    '                endmodule\n\n')
+STRUCT_BLOCK=('\n                ; Динамическая рамка отдельной половины контура, память не выделяется\n'+
+    '                struct FSingleCircleHalfFrame\n'+
+    'Temporary0'.ljust(16)+'dw #0000'.ljust(64)+'; правый HL либо два байта рисунка быстрой фазы\n'+
+    'Temporary1'.ljust(16)+'dw #0000'.ljust(64)+'; возврат помощника либо временный DE быстрой фазы\n'+
+    'SavedAF'.ljust(16)+'dw #0000'.ljust(64)+'; произвольный исходный AF вызывающего, полностью восстанавливается\n'+
+    'CallerReturn'.ljust(16)+'dw #0000'.ljust(64)+'; исходный внешний возврат отдельной половины\n'+
+    '                ends\n                assert FSingleCircleHalfFrame == #08\n\n')
+
+
+def name_operands(region,address,operation):
+    if region!='Controls' or address not in FUNCTIONS:return operation
+    return operation.replace('#D18B','@ControlsCircleWork.Value.Direction').replace('#D18C','@ControlsCircleWork.Value.Mode').replace('LD B, #FF','LD B, @ControlsCircleHalfConst.NegativeXHigh').replace('LD A, #01','LD A, @ControlsCircleHalfConst.DirectionDown')

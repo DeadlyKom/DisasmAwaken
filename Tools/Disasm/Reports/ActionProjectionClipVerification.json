@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "total_cases": 267008,
+  "paths": {
+    "passed": 73545,
+    "second_y_rejected": 30696,
+    "second_x_rejected": 28961,
+    "depth_rejected": 66184,
+    "first_x_rejected": 33009,
+    "first_y_rejected": 32822,
+    "mode_rejected": 1791
+  },
+  "method": "independent_byte_table_extents_and_signed_word_comparisons",
+  "exact_registers_flags_refresh_sp": true,
+  "every_ram_byte_checked": true,
+  "no_memory_writes": true,
+  "symmetric_square_table_formula_verified_for_all_256_bytes": true,
+  "all_word_arguments_by_separate_slices": true,
+  "all_span_bytes_and_valid_exponents": true,
+  "maximum_additional_stack_bytes": 0,
+  "execution_boundary": "E213..E299, E40F or E0E2, no continuation executed",
+  "all_joint_inputs_exhausted": false,
+  "whole_projection_scan_proved": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "total_cases": 46573,
+  "component_reports": [
+    "ActionPrepareBodyTransformVerification",
+    "ActionPublishBodyTransformVerification"
+  ],
+  "aggregate_boundary_and_continuation_checks": true,
+  "assembly_executed": false
+}

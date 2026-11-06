@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "total_cases": 65792,
+  "all_code_pairs_to_dispatch_boundary": true,
+  "return_tail_counts": 256,
+  "exact_dispatch_registers_flags_except_R": true,
+  "every_physical_ram_byte_and_write_multiplicity_checked": true,
+  "child_handlers_executed": false,
+  "whole_clipping_procedure_proved": false,
+  "unknown_status_preserved": true,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

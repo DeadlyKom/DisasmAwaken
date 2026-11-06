@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "total_cases": 65536,
+  "all_initial_seed_words": true,
+  "all_input_AF_coupled_to_seed": true,
+  "all_unlocked_initial_paging_values_sampled": true,
+  "two_stack_profiles": [
+    49150,
+    32770
+  ],
+  "full_seed_paging_stack_product_exhausted": false,
+  "actual_children_and_ports_executed": true,
+  "points": 35,
+  "random_calls_per_case": 70,
+  "byte_write_events_per_case": 360,
+  "maximum_additional_stack_bytes": 4,
+  "exact_registers_including_R": true,
+  "refresh_m1_base": 3030,
+  "observed_m1_min": 3030,
+  "observed_m1_max": 3052,
+  "all_physical_ram_bytes_proved": true,
+  "write_multiplicity_proved": true,
+  "hardware_bus_write_order_proved": false,
+  "original_coordinate_limits_preserved": true,
+  "independent_numeric_oracle": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false,
+  "timing_proved": false
+}

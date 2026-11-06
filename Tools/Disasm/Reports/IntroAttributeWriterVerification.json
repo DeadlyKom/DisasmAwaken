@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "total_cases": 1536,
+  "all_IXL_values": true,
+  "pointer_steps": 6,
+  "cpu_stack_locations": 3,
+  "generated_bytes": 128,
+  "paired_pointer_records": 38,
+  "attribute_matrices": 2,
+  "attribute_bytes": 128,
+  "all_registers_except_R": true,
+  "all_physical_ram_bytes_proved": true,
+  "write_multiplicity_proved": true,
+  "actual_child_procedures_executed": true,
+  "independent_numeric_oracle": true,
+  "timing_proved": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

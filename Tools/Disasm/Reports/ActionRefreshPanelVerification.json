@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "total_cases": 6624,
+  "cases_by_kind": {
+    "gauge_bytes": 1024,
+    "counter_bytes": 1024,
+    "signed_edges_and_pages": 480,
+    "mixed_panels": 4096
+  },
+  "method": "independent_parent_and_checked_child_composition_against_original_bytes",
+  "exact_registers_including_R": true,
+  "all_physical_ram_bytes_proved": true,
+  "write_multiplicity_proved": true,
+  "all_32_unlocked_initial_configurations": true,
+  "all_old_request_bytes_each_position": true,
+  "six_real_gauge_calls": true,
+  "eight_real_digit_calls": true,
+  "full_request_mask_forced": true,
+  "second_request_preserved_as_one": true,
+  "other_five_requests_cleared": true,
+  "tail_jump_keeps_external_return_frame": true,
+  "maximum_additional_stack_bytes": 8,
+  "port_writes": 14,
+  "final_7ffd": 17,
+  "locked_configuration_outside_contract": true,
+  "observed_m1_min": 1855,
+  "observed_m1_max": 2543,
+  "complete_input_product_exhausted": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "timing_proved": false
+}

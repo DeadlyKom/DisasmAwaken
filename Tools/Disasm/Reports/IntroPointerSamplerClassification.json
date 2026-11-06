@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "changed_files": [
+    "Tools/Disasm/Reports/Symbols.json",
+    "Source/Intro/NextTextureSampleRow.asm",
+    "Source/Intro/RunTextureSampler.asm",
+    "Tools/Disasm/Research/Contracts.py",
+    "Tools/Disasm/Research/SemanticNames.py",
+    "Docs/FunctionDetails/Intro.md",
+    "Includes/Variables/Include.inc",
+    "Includes/Const/Include.inc"
+  ],
+  "procedures": 2,
+  "original_instructions_and_bytes_preserved": true,
+  "model_cases": 2848,
+  "assembly_executed": false
+}

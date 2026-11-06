@@ -1,0 +1,37 @@
+{
+  "passed": true,
+  "total_cases": 1536,
+  "all_phase_byte_values": true,
+  "generated_destination_origins": [
+    128,
+    192
+  ],
+  "cpu_stack_locations": 3,
+  "start_tstates": [
+    0,
+    100,
+    69880
+  ],
+  "selected_attribute_table_on_zero": 24768,
+  "selected_attribute_table_on_nonzero": 25024,
+  "attribute_bytes_written": 64,
+  "actual_generated_writer_executed": true,
+  "actual_ROM_IRQ_executed": true,
+  "irq_executed": true,
+  "irq_count_per_case": 1,
+  "final_IFF": 1,
+  "extra_IRQ_during_temporary_SP": false,
+  "interrupt_scheduler_enabled": true,
+  "frame_period": 69888,
+  "maximum_additional_CPU_stack_bytes": 14,
+  "all_registers_except_R": true,
+  "all_physical_ram_bytes_proved": true,
+  "write_multiplicity_proved": true,
+  "independent_numeric_oracle": true,
+  "rom_name": "48.rom",
+  "rom_sha256": "d55daa439b673b0e3f5897f99ac37ecb45f974d1862b4dadb85dec34af99cb42",
+  "arbitrary_ROM_keyboard_and_interrupt_periods_proved": false,
+  "native_execution": false,
+  "assembly_executed": false,
+  "timing_proved": false
+}

@@ -1,0 +1,35 @@
+{
+  "passed": true,
+  "total_cases": 214564,
+  "paths": {
+    "follow_only": 37,
+    "x_rejected": 240,
+    "y_rejected": 240,
+    "high_rejected": 130560,
+    "frame_blocked": 255,
+    "target_0": 16640,
+    "target_2": 65791,
+    "target_1": 255,
+    "targets_full": 546
+  },
+  "queue_results": {
+    "accepted": 530,
+    "dropped": 16
+  },
+  "method": "independent_parent_follow_and_index_oracle_with_real_banked_queue",
+  "independent_complete_child_oracle": false,
+  "children_executed_without_stubs": true,
+  "exact_registers_flags_refresh_sp": true,
+  "every_non_stack_physical_ram_byte_and_write_multiplicity_checked": true,
+  "temporary_stack_contents_independently_checked": false,
+  "maximum_additional_stack_bytes": 18,
+  "all_pointer_words_tested": true,
+  "minus_one_suppressed_but_other_negative_differences_round_down": true,
+  "full_queue_preserves_prior_state_changes": true,
+  "execution_boundary": "E36A..E40F, rendering continuation not executed",
+  "all_joint_inputs_exhausted": false,
+  "whole_projection_scan_proved": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

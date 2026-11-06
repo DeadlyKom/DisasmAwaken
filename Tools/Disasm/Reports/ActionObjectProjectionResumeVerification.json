@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "total_cases": 65536,
+  "outcomes": {
+    "overflow": 8192,
+    "near_depth": 6944,
+    "nonnegative_depth": 21728,
+    "negative_depth": 28672
+  },
+  "exact_write_order": true,
+  "assembly_executed": false,
+  "native_execution": false
+}

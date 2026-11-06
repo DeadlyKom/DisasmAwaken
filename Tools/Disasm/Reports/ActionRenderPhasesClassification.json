@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "physical_phase_bytes": 3,
+  "physical_phase_records": 1,
+  "initial_phases": [
+    0,
+    0,
+    0
+  ],
+  "nested_node_offsets": [
+    5,
+    6,
+    7
+  ],
+  "node_size_preserved": 14,
+  "original_bytes_preserved": true,
+  "unclassified_prefix_bytes": 274,
+  "assembly_executed": false
+}

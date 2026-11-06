@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "method": "user_confirmed_build_symbol_table_and_original_physical_data",
+  "user_compiled_lines": 128990,
+  "user_work_seconds": 1.609,
+  "physical_bytes": 256,
+  "physical_symbol_bindings": 512,
+  "structure_bindings": 2,
+  "all_expected_bindings_checked": 514,
+  "source_sha256": "9511a17f6cd20ff375097d712f0c7cd01ed0cd151a939ec88234a4d80bd3c620",
+  "full_trd_match_reported_by_user": true,
+  "size": 655360,
+  "codex_assembler_executed": false,
+  "later_close_record_source_changes_covered_by_this_receipt": false
+}

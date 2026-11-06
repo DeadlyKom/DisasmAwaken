@@ -1,0 +1,6 @@
+{
+  "passed": true,
+  "total_cases": 4959,
+  "shared_report": "Tools/Disasm/Reports/ProjectedBodyEntryVerification.json",
+  "assembly_executed": false
+}

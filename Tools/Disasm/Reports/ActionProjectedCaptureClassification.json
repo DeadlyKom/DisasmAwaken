@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "described_functions": 1,
+  "new_explicit_unknown_fragments": 2,
+  "confirmed_code_bytes": 749,
+  "confirmed_instructions": 390,
+  "proved_local_code_bytes": 91,
+  "model_cases": 262550,
+  "whole_projection_scan_proved": false,
+  "physical_bytes_preserved": true,
+  "assembly_executed": false
+}

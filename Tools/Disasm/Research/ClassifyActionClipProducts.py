@@ -1,0 +1,6 @@
+"""Публикация четырёх проверенных числителей, сборка не запускается."""
+from ClassifyActionRegionType import main
+import ActionClipProductsFacts as facts
+
+if __name__=="__main__":
+    main(facts,"ActionClipProducts","ActionClipProducts",(('FirstPoint', 53003, 'существующая первая runtime-точка отсечения'), ('SecondPoint', 53019, 'существующая вторая runtime-точка отсечения'), ('TopProduct', 53047, 'существующий четырёхбайтовый слот произведения'), ('BottomProduct', 53043, 'существующий четырёхбайтовый слот произведения'), ('LeftProduct', 53039, 'существующий четырёхбайтовый слот произведения'), ('RightProduct', 53035, 'существующий четырёхбайтовый слот произведения')),include_blocks=(("Includes/Const/Include.inc","module ActionClipProductConst",'\n                module ActionClipProductConst\nZeroBound       equ #0000                                                       ; нулевая граница обеих осей\nFirstMaximum    equ #005F                                                       ; первая ось, последняя допустимая координата\nSecondMaximum   equ #00FF                                                       ; вторая ось, последняя допустимая координата\n                endmodule\n'),))

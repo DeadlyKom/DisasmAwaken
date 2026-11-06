@@ -1,0 +1,47 @@
+{
+  "passed": true,
+  "total_cases": 11562,
+  "profiles": {
+    "filled": 11082,
+    "flat": 480
+  },
+  "original_patterns": [
+    [
+      255,
+      0
+    ],
+    [
+      119,
+      170
+    ],
+    [
+      85,
+      255
+    ],
+    [
+      17,
+      85
+    ],
+    [
+      0,
+      0
+    ]
+  ],
+  "mask_bytes_verified": 320,
+  "linear_buffer_256_by_96": true,
+  "bitmap_exact": true,
+  "lower_scanline_excluded": true,
+  "restored_HL_and_SP_and_final_AF_checked": true,
+  "all_main_alternate_and_index_registers_proved": true,
+  "refresh_register_and_timing_proved": false,
+  "all_final_registers_proved": false,
+  "all_physical_ram_bytes_proved": true,
+  "write_multiplicity_proved": true,
+  "outside_unchanged_write_attempts": 225,
+  "actual_source_instructions_without_stubs": true,
+  "convex_positive_winding_profile": true,
+  "all_joint_inputs_exhausted": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

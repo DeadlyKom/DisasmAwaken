@@ -1,0 +1,35 @@
+{
+  "passed": true,
+  "total_cases": 666296,
+  "cases_by_kind": {
+    "edge_products": 2744,
+    "all_low_words_both_signs_each_position": 393216,
+    "all_high_words_each_position": 196608,
+    "all_input_AF": 65536,
+    "mixed_dwords": 8192
+  },
+  "paths": {
+    "0_negative_results": 99868,
+    "1_negative_results": 331845,
+    "2_negative_results": 233351,
+    "3_negative_results": 1232
+  },
+  "exact_registers_including_R": true,
+  "actual_three_AbsSigned32_calls": true,
+  "all_low_words_both_signs_each_position": true,
+  "all_high_words_each_position": true,
+  "all_input_AF": true,
+  "signs_read_from_original_bit23": true,
+  "original_saturation_threshold_8000_and_value_7F00_preserved": true,
+  "write_multiplicity_and_stack_residue_proved": true,
+  "all_physical_ram_bytes_proved": true,
+  "maximum_additional_stack_bytes": 6,
+  "observed_m1_min": 48,
+  "observed_m1_max": 133,
+  "complete_three_dword_product_exhausted": false,
+  "hardware_bus_stack_write_order_proved": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "timing_proved": false
+}

@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "data_writes": 80,
+  "removed_false_bank0_instruction_links": 41,
+  "target_bank": 4,
+  "target_slot": 24,
+  "source_instructions_changed": false,
+  "original_bytes_preserved": true,
+  "model_cases": 3076,
+  "whole_update_frame_proved": false,
+  "assembly_executed": false
+}

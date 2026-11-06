@@ -1,0 +1,34 @@
+{
+  "passed": true,
+  "total_cases": 402938,
+  "cases_by_kind": {
+    "all_middle_words_each_sign_and_position": 393216,
+    "boundary_products": 512,
+    "all_counts_without_match": 256,
+    "all_counts_match_edges_and_middle": 762,
+    "mixed_lists": 8192
+  },
+  "paths": {
+    "found": 99304,
+    "missing": 303004,
+    "empty": 630
+  },
+  "all_middle_words_for_both_signs_and_all_positions": true,
+  "all_256_counts": true,
+  "actual_near_predicate_executed": true,
+  "exact_registers_including_R": true,
+  "all_physical_ram_bytes_proved": true,
+  "write_multiplicity_and_stack_residue_proved": true,
+  "first_near_vector_selected": true,
+  "later_component_wins_equal_high_byte": true,
+  "selected_middle_word_bytes_swapped": true,
+  "maximum_additional_stack_bytes": 4,
+  "observed_m1_min": 4,
+  "observed_m1_max": 3912,
+  "complete_list_product_exhausted": false,
+  "game_count_bound_proved": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "timing_proved": false
+}

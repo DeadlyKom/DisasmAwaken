@@ -4,7 +4,16 @@
 
 | Тип | Размер | Подтверждённое назначение |
 | --- | --- | --- |
+| FActionAyFrame | #04 | 88 физических строк семи потоков и 7 терминаторов, см. [ActionAyStreams](ActionAyStreams.md) |
+| FActionAimPoint | #02 | Физические байты X и Y, см. [сопровождение](ActionAimFollow.md) |
+| FActionRenderNode | #0E | Создаваемый runtime-узел с неизвестными байтами 01 и 02, см. [очередь](ActionRenderQueueInsert.md) |
+| FRenderPhases | #03 | Три физических фазы и вложенный снимок узла, см. [коэффициенты](ActionRenderCoefficients.md) |
+| FObjectDataPointer | #02 | 128 физических указателей банка 4, см. [OBJECT3D](ActionObjectPointers.md) |
+| FClipProduct | #04 | Четыре физических произведения ACTION внутри разнесённой таблицы, см. [числители](ActionClipProducts.md) |
+| FLinePixelMask | #01 | 16 физических прямых и инверсных масок пиксельных фаз, см. [растеризатор](ActionLineRaster.md) |
+| FRenderProjectedPoint | #05 | Runtime-точка Second, First и парный ClipCode, [коды границ](ActionVertexCodes.md) и [два физических экземпляра CF0B/CF1B](ActionClipProducts.md) |
 | FActionRecord | #40 | 25 физических исходных слотов и маркер, вложенные компоненты и явные неизвестные поля, см. [ActionObjectRecords](ActionObjectRecords.md) |
+| FSymmetricSquareValue | #01 | 256 физических нормированных квадратов, см. [ActionProjectionClip](ActionProjectionClip.md) |
 | FIndexedDelta | #01 | шестнадцать физических поправок signed8, игровое соответствие индексов неизвестно, см. [ActionTypeDelta](ActionTypeDelta.md) |
 | FMissileTargets | #03 | три физических кода захвата Target0..Target2, FF означает отсутствие цели, см. [ActionMissileLaunch](ActionMissileLaunch.md) |
 | FMissileStock | #02 | физические Fallback и Preferred запаса ракет, виды запасов не установлены, см. [ActionMissileStock](ActionMissileStock.md) |
@@ -195,3 +204,31 @@ XOR-масками, а не флагами состояния. Потребит�
 [GlyphIndicatorState](../Source/Action/Data/GlyphIndicatorState.asm) содержит четыре физические записи по три байта. FGlyphIndicatorControl хранит FirstMode, ThirdGate, Unknown83, два FGlyphIndicatorXY хранят X,Y,SignSource, FGlyphIndicatorYX третьего входа хранит Y перед X. Исходные 12 байтов 9B81..9B8C сохранены, Unknown83 и полный игровой смысл векторов остаются неустановленными. Локальный алгоритм и режимы описаны в [ControlsGlyphIndicators](ControlsGlyphIndicators.md).
 
 [RasterReturns](../Source/Controls/Data/RasterReturns.asm) содержит 16 физических `FReturnDispatchEntry` по два байта, поле Target хранит адрес кодового хвоста банка 1. Исходные 32 байта E271..E290 сохранены, диспетчер E2BB проверен 65536 сценариями до первого RET. Полные обработчики и внешний E291 остаются Unknown, границы описаны в [ControlsRasterReturns](ControlsRasterReturns.md).
+
+Пятнадцать физических `FFoldedRandomState` по три байта занимают EBDB..EC07, всего 45 исходных байтов. LowWord по смещениям 0..1 и FoldByte по смещению 2 являются числовым состоянием. Все экземпляры, исходные значения, входы и ограничения приведены в [ActionFoldedRandom](ActionFoldedRandom.md).
+
+## Физические страницы табличного корня
+
+| Структура | Размер | Назначение |
+|---|---|---|
+| FRootCacheByte | #01 | 768 физических байтов трёх плоскостей корня, см. [ActionCachedRoot](ActionCachedRoot.md) |
+
+## Физические компоненты преобразования
+
+[ComponentWork](../Source/Action/Data/ComponentWork.asm) содержит три физических FComponent24 по три байта, Low/Middle/High имеют смещения 0/1/2. Старшее слово хранит знаковый код и верхние 15 разрядов модуля после [кодирования](ActionComponentEncoding.md), Low дополняет их до 23 бит в фазе [проекции](ControlsBodyProjection.md), физические девять исходных нулей сохранены.
+
+## Указатели классов ACTION
+
+[ClassHandlers](../Source/Action/Data/ClassHandlers.asm) содержит 26 физических FClassHandler размером два байта. Handler расположен по смещению 0, слова занимают 64F0..6523. Потребитель и поведение индексов вне таблицы описаны в [диспетчере](ActionClassDispatch.md). Соседние байты кода частью таблицы не являются.
+
+## Исходные коды знакового отношения
+
+[SignedRatioCodes](../Source/Action/Data/SignedRatioCodes.asm) содержит 256 физических FSignedRatioCode размером один байт, поле Code по смещению 0. Исходные значения 9A00..9AFF сохранены буквально, потребитель описан в [кодировщике отношения](ActionSignedRatioCode.md). Стандартная тригонометрическая формула для генерации сборочных данных не применяется.
+
+## Физические широкие векторы ACTION
+
+[WideVectors](../Source/Action/Data/WideVectors.asm) содержит шесть физических FActionWideVector по 12 байтов, каждый состоит из трёх FActionWideComponent по четыре байта. Все 72 исходных байта и little-endian порядок сохранены. Шесть записей описывают этот физический участок, допустимый игровой счётчик этим не ограничивается. См. [формат и потребители](ActionWideVectors.md).
+
+## Знаковый рабочий вектор ACTION
+
+[WorkVector24](../Source/Action/Data/WorkVector24.asm) содержит физический FActionWorkVector24 с тремя FActionWorkComponent24. Каждая компонента состоит из LowWord и High в дополнительном коде, всего сохранены девять байтов 9B78..9B80. Это другой числовой формат, чем знак и модуль FComponent24. См. [вычитание и ранние выходы](ActionSubtractWorkVector.md).

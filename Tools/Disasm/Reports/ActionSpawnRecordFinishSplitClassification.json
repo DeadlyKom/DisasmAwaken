@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "split_address": 32212,
+  "sequential_continuation": true,
+  "additional_physical_fragments": 1,
+  "instruction_sequence_preserved": true,
+  "physical_bytes_preserved": true,
+  "assembly_executed": false
+}

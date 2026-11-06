@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "total_cases": 32768,
+  "all_even_object_indices": true,
+  "allocation_cases": 2304,
+  "allocation_stopped_before_ea6f": true,
+  "assembly_executed": false
+}

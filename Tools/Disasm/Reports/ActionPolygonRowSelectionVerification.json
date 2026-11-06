@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "total_cases": 884736,
+  "paths": {
+    "maximum": 299536,
+    "left": 294880,
+    "right": 290320
+  },
+  "all_96_cubed_row_combinations": true,
+  "exact_registers_flags_except_R": true,
+  "all_ram_writes_accounted_for": true,
+  "write_multiplicity_proved": true,
+  "left_priority_on_equal_edges": true,
+  "no_cpu_stack_writes": true,
+  "stop": 53805,
+  "whole_polygon_fill_proved": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

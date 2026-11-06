@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "typed_bytes": 52,
+  "physical_records": 26,
+  "structure": "FClassHandler",
+  "original_bytes_preserved": true,
+  "neighbor_bytes_preserved": 277,
+  "assembly_executed": false
+}

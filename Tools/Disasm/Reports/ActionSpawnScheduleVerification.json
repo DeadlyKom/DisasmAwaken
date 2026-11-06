@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "total_cases": 196608,
+  "outcomes": {
+    "even_return": 98304,
+    "allocate": 16640,
+    "fallback": 32512,
+    "countdown": 49152
+  },
+  "all_phase_and_countdown_bytes": true,
+  "stops_before_record_selection": true,
+  "assembly_executed": false
+}

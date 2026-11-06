@@ -21,10 +21,10 @@
 | Help | 4 | 4 | [Факты](FunctionDetails/Help.md) |
 | Music | 49 | 49 | [Факты](FunctionDetails/Music.md) |
 | ActionBoot | 9 | 9 | [Факты](FunctionDetails/ActionBoot.md) |
-| Action | 192 | 108 | [Факты](FunctionDetails/Action.md) |
-| ThreeD | 98 | 75 | [Факты](FunctionDetails/ThreeD.md) |
+| Action | 288 | 287 | [Факты](FunctionDetails/Action.md) |
+| ThreeD | 122 | 121 | [Факты](FunctionDetails/ThreeD.md) |
 | Voxel | 9 | 9 | [Факты](FunctionDetails/Voxel.md) |
-| Controls | 72 | 50 | [Факты](FunctionDetails/Controls.md) |
+| Controls | 78 | 78 | [Факты](FunctionDetails/Controls.md) |
 | Final | 9 | 9 | [Факты](FunctionDetails/Final.md) |
 | FinalTemplates | 2 | 2 | [Факты](FunctionDetails/FinalTemplates.md) |
 
@@ -664,296 +664,416 @@
 | #42C6 | [ActionBoot.LoadFileToBank](../Source/ActionBoot/LoadFileToBank.asm) | Загрузка выбранного файла по адресу #C000 в уже подключённый банк |
 | #42C9 | [ActionBoot.LoadFileAtAddress](../Source/ActionBoot/LoadFileAtAddress.asm) | Загрузка выбранного файла по адресу HL через TR-DOS, A=3 и C=#0E |
 | #4306 | [ActionBoot.InitializeRandomStates](../Source/ActionBoot/InitializeRandomStates.asm) | Начальное заполнение слов состояний от регистра R и повторных вызовов обработчика #EB72 |
-| #4355 | [ActionBoot.BuildProjectionTable](../Source/ActionBoot/BuildProjectionTable.asm) | Создание таблицы в #9300 с вычислением через сдвиги и сложение |
-| #438F | [ActionBoot.BuildReciprocalTable](../Source/ActionBoot/BuildReciprocalTable.asm) | Создание двух страниц таблицы через двоичное деление |
+| #4355 | [ActionBoot.BuildExponentialTable](../Source/ActionBoot/BuildExponentialTable.asm) | Построение 256 байтов приближённой экспоненты последовательным умножением фиксированной точки |
+| #438F | [ActionBoot.BuildLogarithmTable](../Source/ActionBoot/BuildLogarithmTable.asm) | Построение двух раздельных страниц приближённого логарифма через сумму 255 точных частных |
 | #43CF | [ActionBoot.BuildBitmapTables](../Source/ActionBoot/BuildBitmapTables.asm) | Создание таблиц строк и битовых масок для рисования |
-| #6145 | [Action.Unknown6145](../Source/Action/Unknown6145.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #6172 | [Action.Unknown6172](../Source/Action/Unknown6172.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #6265 | [Action.Unknown6265](../Source/Action/Unknown6265.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #62CF | [Action.Unknown62CF](../Source/Action/Unknown62CF.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #635B | [Action.Unknown635B](../Source/Action/Unknown635B.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #60AE | [Action.CreateMissileForTarget](../Source/Action/CreateMissileForTarget.asm) | Проверка существования записи цели, поиск свободного слота, инициализация ракеты и создание обратной связи у цели |
+| #6145 | [Action.RefreshFlightPanel](../Source/Action/RefreshFlightPanel.asm) | Принудительное обновление шести шкал и четырёх пар счётчика панели полёта |
+| #6172 | [Action.ReleaseClass14Records](../Source/Action/ReleaseClass14Records.asm) | Пометка всех активных записей класса 14 через повторный поиск от начала массива |
+| #6265 | [Action.StepRecordTargetCodes](../Source/Action/StepRecordTargetCodes.asm) | Подвод двух байтов записи к рассчитанным кодам с различными правилами ограничения шага |
+| #62CF | [Action.CountClass3LinksUpToTwo](../Source/Action/CountClass3LinksUpToTwo.asm) | Подсчёт до двух активных записей класса 3 с кодом 02 и совпадающей ссылкой |
+| #635B | [Action.ApplyPendingRecordLink](../Source/Action/ApplyPendingRecordLink.asm) | Установка бита 0 LinkFlags, замена LinkedIndex на 1A и условная поправка по ClassCode записи |
 | #6380 | [Action.ApplyIndexedDelta](../Source/Action/ApplyIndexedDelta.asm) | Применение знаковой табличной поправки к байту 9BCD с ограничением и установкой бита 5 по прежнему значению |
-| #64DF | [Action.Unknown64DF](../Source/Action/Unknown64DF.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #64DF | [Action.DispatchRecordClass](../Source/Action/DispatchRecordClass.asm) | Косвенный переход по оборачиваемому байтовому индексу класса записи |
+| #6524 | [Action.ReturnIgnoredRecordClass](../Source/Action/ReturnIgnoredRecordClass.asm) | Немедленный общий возврат исходных классов 10..25 без изменения записи |
+| #65C6 | [Action.ConfigureClass9Link](../Source/Action/ConfigureClass9Link.asm) | Запись кода 0D с сохранением LinkedIndex либо кода 01 со сбросом LinkedIndex в FF |
+| #660E | [Action.ConfigureClass0Link](../Source/Action/ConfigureClass0Link.asm) | Применение подстановки либо выбор новой связи после порога R с общим входом SelectLink |
+| #662B | [Action.CopyRecordLinkOverride](../Source/Action/CopyRecordLinkOverride.asm) | Копирование разрешённого байта подстановки в LinkedIndex и запись кода 02 |
 | #6639 | [Action.DrawBankedGauge](../Source/Action/DrawBankedGauge.asm) | Выбор банка 1, вывод шестистрочной шкалы и обязательный выбор банка 0 |
 | #6649 | [Action.UpdatePanelGauges](../Source/Action/UpdatePanelGauges.asm) | Условное обновление шести шкал, сброс пяти запросов и насыщение шестого значения |
-| #66D2 | [Action.Unknown66D2](../Source/Action/Unknown66D2.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #6780 | [Action.Unknown6780](../Source/Action/Unknown6780.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #6986 | [Action.Unknown6986](../Source/Action/Unknown6986.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #699C | [Action.Unknown699C](../Source/Action/Unknown699C.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #69BE | [Action.Unknown69BE](../Source/Action/Unknown69BE.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #6A29 | [Action.Unknown6A29](../Source/Action/Unknown6A29.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #6A6E | [Action.Unknown6A6E](../Source/Action/Unknown6A6E.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #6AB0 | [Action.Unknown6AB0](../Source/Action/Unknown6AB0.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #6B16 | [Action.Unknown6B16](../Source/Action/Unknown6B16.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #6BFF | [Action.Unknown6BFF](../Source/Action/Unknown6BFF.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #6C19 | [Action.Unknown6C19](../Source/Action/Unknown6C19.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #6C43 | [Action.Unknown6C43](../Source/Action/Unknown6C43.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #6C7E | [Action.Unknown6C7E](../Source/Action/Unknown6C7E.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #6C8F | [Action.Unknown6C8F](../Source/Action/Unknown6C8F.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #6CB4 | [Action.Unknown6CB4](../Source/Action/Unknown6CB4.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #6CD6 | [Action.Unknown6CD6](../Source/Action/Unknown6CD6.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #6CEF | [Action.Unknown6CEF](../Source/Action/Unknown6CEF.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #6D38 | [Action.Unknown6D38](../Source/Action/Unknown6D38.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #66D2 | [Action.SubtractScaledWorkVector](../Source/Action/SubtractScaledWorkVector.asm) | Вычитание трёх знаковых масштабированных слов из рабочего 24-битного вектора до первого переполнения |
+| #6727 | [Action.TransitionBodyMode](../Source/Action/TransitionBodyMode.asm) | Переключение режима тела и изменение старших слов рабочего вектора |
+| #6780 | [Action.UpdateBodyMotion](../Source/Action/UpdateBodyMotion.asm) | Фазовое обновление рабочего вектора, запросов панели и широких целей |
+| #6986 | [Action.CompareContextWordPairs](../Source/Action/CompareContextWordPairs.asm) | Сравнение двух пар слов контекста с ранним выходом по первой разности |
+| #699C | [Action.MaxFoldedVectorHigh](../Source/Action/MaxFoldedVectorHigh.asm) | Максимум трёх старших байтов с дополнением отрицательных кодов через CPL |
+| #69BE | [Action.FindFirstNearWideVector](../Source/Action/FindFirstNearWideVector.asm) | Поиск первого близкого широкого вектора и выбор его наибольшего старшего байта |
+| #6A29 | [Action.CheckThreeUpperWordsNear](../Source/Action/CheckThreeUpperWordsNear.asm) | Проверка трёх знаковых верхних слов на диапазон от минус 60 до 59 |
+| #6A6E | [Action.PrepareBodyTransform](../Source/Action/PrepareBodyTransform.asm) | Подготовка компонент тела и передача арифметическому преобразованию AF43 |
+| #6AAD | [Action.RestoreBodyStack](../Source/Action/RestoreBodyStack.asm) | Восстановление настоящего SP после арифметического накопителя |
+| #6AB0 | [Action.PublishTransformedBody](../Source/Action/PublishTransformedBody.asm) | Публикация знаковых компонент, подготовка проекции и рисование преобразованного тела |
+| #6B16 | [Action.ProjectWideVectors](../Source/Action/ProjectWideVectors.asm) | Обход широких векторов с выбором масштаба, отрисовкой близких записей и публикацией выбранной |
+| #6BFF | [Action.CopyAndTransformComponents](../Source/Action/CopyAndTransformComponents.asm) | Копирование трёх трёхбайтовых компонент с шагом четыре и последующее преобразование рабочего вектора |
+| #6C19 | [Action.TransformWorkComponents](../Source/Action/TransformWorkComponents.asm) | Преобразование старших слов трёх рабочих компонент с очисткой Low и знаковым кодированием результата |
+| #6C40 | [Action.RestoreComponentStack](../Source/Action/RestoreComponentStack.asm) | Восстановление CPU SP после вычисления рабочих компонент перед знаковым кодированием |
+| #6C43 | [Action.EncodeSignedComponents](../Source/Action/EncodeSignedComponents.asm) | Кодирование трёх выходных слов в знак и модуль с обратным знаком компоненты 1 |
+| #6C7E | [Action.DrawBankedProjectedBody](../Source/Action/DrawBankedProjectedBody.asm) | Проекция и рисование тела в банке CONTROL с шахматным рисунком |
+| #6C8F | [Action.UpdateThirdGlyphVector](../Source/Action/UpdateThirdGlyphVector.asm) | Подготовка трёх входных слов, расчёт вектора с арифметическим SP и обновление третьего экранного знака |
+| #6CB1 | [Action.RestoreThirdGlyphStack](../Source/Action/RestoreThirdGlyphStack.asm) | Восстановление CPU SP после векторного вычислителя перед публикацией третьего знака |
+| #6CB4 | [Action.PublishThirdGlyphVector](../Source/Action/PublishThirdGlyphVector.asm) | Перенос четвертей двух выходных слов и знакового байта третьего слова во вход третьего экранного знака |
+| #6CD6 | [Action.InitializeBankedBufferPoints](../Source/Action/InitializeBankedBufferPoints.asm) | Подготовка 35 координат точек в Controls банка 1 с возвратом полной конфигурации 10 |
+| #6CE4 | [Action.TransferToStationLoader](../Source/Action/TransferToStationLoader.asm) | Выбор конфигурации 11 и хвостовая передача управления DCE3 загрузчика следующего режима |
+| #6CEF | [Action.DispatchBank3Callback](../Source/Action/DispatchBank3Callback.asm) | Передача управления HL с конфигурацией банка 3, обменом AF и возвратным хвостом Runtime |
+| #6D00 | [Action.RestoreRuntimePage](../Source/Action/RestoreRuntimePage.asm) | Выдача конфигурации 10 в 7FFD и возврат внешнему вызывающему после банкового обработчика |
+| #6D06 | [Action.ApplyObjectOffsetVector](../Source/Action/ApplyObjectOffsetVector.asm) | Расчёт трёх базовых слов записи по коэффициентам смещения |
+| #6D38 | [Action.UpdateVisualEffects](../Source/Action/UpdateVisualEffects.asm) | Обход эффектов, продвижение ресурсов и растеризация допущенных записей |
+| #6DD1 | [Action.ResumeVisualEffect](../Source/Action/ResumeVisualEffect.asm) | Восстановление стека и банковый вызов рисователя эффекта при положительной глубине |
 | #6E2B | [Action.ClassifyCoordinateRegion](../Source/Action/ClassifyCoordinateRegion.asm) | Классификация пары H,L по трём непересекающимся прямоугольникам с кодом 3 вне них |
-| #6E6C | [Action.Unknown6E6C](../Source/Action/Unknown6E6C.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #6E6C | [Action.UpdateMotionFromControls](../Source/Action/UpdateMotionFromControls.asm) | Обработка управления и расчёт трёх смещений из знакового слова |
 | #6EAC | [Action.StepNearZeroWord](../Source/Action/StepNearZeroWord.asm) | Изменение слова около нуля, запрос шестой шкалы и выключение обработки при модуле от двух |
-| #6F1D | [Action.Unknown6F1D](../Source/Action/Unknown6F1D.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #6EDE | [Action.ReverseScaledVector](../Source/Action/ReverseScaledVector.asm) | Инвертирование трёх масштабированных компонент и обновление общего знакового слова с разрешением его обработки |
+| #6F1D | [Action.ScanActionKeys](../Source/Action/ScanActionKeys.asm) | Обход 27 клавиатурных условий и программные вызовы обработчиков |
 | #6F4E | [Action.RestoreKeyScanFrame](../Source/Action/RestoreKeyScanFrame.asm) | Восстановление IX, BC, DE и HL после обработчика клавиши и продолжение сканирования |
-| #6F55 | [Action.Unknown6F55](../Source/Action/Unknown6F55.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #6F55 | [Action.LatchControlsAndDecay](../Source/Action/LatchControlsAndDecay.asm) | Фиксация запросов управления и фазовое приближение трёх знаковых величин к нулю |
 | #704B | [Action.IgnoreKey](../Source/Action/IgnoreKey.asm) | Пустой обработчик клавиши, возврат к восстановлению рамки без изменения регистров |
+| #704C | [Action.RequestMissile0](../Source/Action/RequestMissile0.asm) | Условный запрос запуска по Target0 с продолжением в общий хвост |
+| #705D | [Action.CompleteMissileLaunch](../Source/Action/CompleteMissileLaunch.asm) | Создание ракеты, поправка состояния по классу цели и последующее списание запаса |
+| #7075 | [Action.RequestMissile1](../Source/Action/RequestMissile1.asm) | Условный запрос запуска по Target1 с переходом в общий хвост |
+| #7088 | [Action.RequestMissile2](../Source/Action/RequestMissile2.asm) | Условный запрос запуска по Target2 с переходом в общий хвост |
 | #709B | [Action.ReportMissingMissileTarget](../Source/Action/ReportMissingMissileTarget.asm) | Передача в очередь сообщения об отсутствии захваченной цели с сохранением регистров |
 | #70A4 | [Action.CheckMissileLaunch](../Source/Action/CheckMissileLaunch.asm) | Проверка кода захваченной цели и остатка ракет, очистка трёх захватов при пустом запасе |
 | #70C6 | [Action.ConsumeMissileStock](../Source/Action/ConsumeMissileStock.asm) | Уменьшение выбранного запаса и отдельного байта 9BD2, передача сообщения о пуске и нового остатка очереди |
 | #70ED | [Action.SelectMissileStock](../Source/Action/SelectMissileStock.asm) | Выбор ненулевого приоритетного остатка ракет либо запасного счётчика с возвратом адреса |
 | #74FB | [Action.SelectPreferredByte](../Source/Action/SelectPreferredByte.asm) | Выбор ненулевого предпочтительного байта либо запасного значения с возвратом адреса выбранного поля |
-| #7859 | [Action.Unknown7859](../Source/Action/Unknown7859.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #7B58 | [Action.Unknown7B58](../Source/Action/Unknown7B58.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #7E9D | [Action.Unknown7E9D](../Source/Action/Unknown7E9D.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #7EB7 | [Action.Unknown7EB7](../Source/Action/Unknown7EB7.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #7F0E | [Action.Unknown7F0E](../Source/Action/Unknown7F0E.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #7F76 | [Action.Unknown7F76](../Source/Action/Unknown7F76.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #7680 | [Action.IncreaseGaugeWord](../Source/Action/IncreaseGaugeWord.asm) | Увеличение слова шестой шкалы с исходными клавиатурными ограничениями |
+| #76A3 | [Action.DecreaseGaugeWord](../Source/Action/DecreaseGaugeWord.asm) | Уменьшение слова шестой шкалы с исходными клавиатурными ограничениями |
+| #76C7 | [Action.RequestTurnNegative](../Source/Action/RequestTurnNegative.asm) | Запрос уменьшения управления Turn с накопителем повтора и исходной знаковой границей |
+| #76EA | [Action.RequestTurnPositive](../Source/Action/RequestTurnPositive.asm) | Запрос увеличения управления Turn с накопителем повтора и исходной знаковой границей |
+| #770D | [Action.RequestXNegative](../Source/Action/RequestXNegative.asm) | Запрос уменьшения управления X с накопителем повтора и исходной знаковой границей |
+| #7730 | [Action.RequestXPositive](../Source/Action/RequestXPositive.asm) | Запрос увеличения управления X с накопителем повтора и исходной знаковой границей |
+| #7753 | [Action.RequestYNegative](../Source/Action/RequestYNegative.asm) | Запрос уменьшения управления Y с накопителем повтора и исходной знаковой границей |
+| #7776 | [Action.RequestYPositive](../Source/Action/RequestYPositive.asm) | Запрос увеличения управления Y с накопителем повтора и исходной знаковой границей |
+| #7859 | [Action.SpawnAlternate](../Source/Action/SpawnAlternate.asm) | Создание записей по шаблону либо по альтернативной ветке планировщика |
+| #7B58 | [Action.ScheduleSpawn](../Source/Action/ScheduleSpawn.asm) | Планирование создания объекта, выбор класса, модели и начальных координат |
+| #7DD4 | [Action.FinishSpawnRecord](../Source/Action/FinishSpawnRecord.asm) | Заполнение параметров новой записи и передача диспетчеру класса |
+| #7E9D | [Action.SelectWideTargetAndStep](../Source/Action/SelectWideTargetAndStep.asm) | Выбор первой близкой широкой цели либо первой записи и обновление кодов текущего объекта |
+| #7EB7 | [Action.StepRecordTowardWideVector](../Source/Action/StepRecordTowardWideVector.asm) | Обновление двух кодов записи по трём широким компонентам выбранной цели |
+| #7F0E | [Action.ClampPatchedVectorWords](../Source/Action/ClampPatchedVectorWords.asm) | Сведение трёх изменяемых 32-битных значений к словам с исходным насыщением и знаком по биту 23 |
+| #7F76 | [Action.AbsSigned32](../Source/Action/AbsSigned32.asm) | Модуль знакового 32-битного DE:HL с сохранением исходного переполнения минимального значения |
 | #A82D | [Action.StartFlight](../Source/Action/StartFlight.asm) | Вывод панели из страницы 6 и инициализация полётного режима |
 | #A859 | [Action.MainLoop](../Source/Action/MainLoop.asm) | Повторение процедуры полётного кадра |
 | #A85E | [Action.UpdateFrame](../Source/Action/UpdateFrame.asm) | Обработка таймеров, управления, визуальных модулей и игровых объектов |
-| #AACC | [Action.UnknownAACC](../Source/Action/UnknownAACC.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #AACC | [Action.ReadObjectHeaderWord](../Source/Action/ReadObjectHeaderWord.asm) | Чтение слова по указателю страницы 9E из банка OBJECT3D с последующим выбором банка 0 |
+| #AAE2 | [Action.CopyObjectData](../Source/Action/CopyObjectData.asm) | Копирование двухчастного потока OBJECT3D в исходный рабочий буфер с возвратом банка 0 |
 | #AB1B | [Action.SelectMemoryPage](../Source/Action/SelectMemoryPage.asm) | Запись A в #7FFD с сохранением BC |
-| #AB23 | [Action.UnpackResource](../Source/Action/UnpackResource.asm) | Полётная копия распаковщика ресурсов с обработкой ссылок |
+| #AB23 | [Action.UnpackResource](../Source/Action/UnpackResource.asm) | Распаковка HR-потока в полётном коде с переносом входа, LZ-ссылками, тройками и восстановлением шестибайтового конца |
 | #AC38 | [Action.ReadWordFromIX](../Source/Action/ReadWordFromIX.asm) | Чтение слова младшим байтом вперёд через IX, продвижение IX на два и копирование C в B |
 | #AC44 | [Action.ActivateParameterSet](../Source/Action/ActivateParameterSet.asm) | Выбор банка 0, применение набора параметров и обнуление двух слов и двух байтов состояния |
 | #AC5D | [Action.ApplyParameterSet](../Source/Action/ApplyParameterSet.asm) | Применение пятнадцати полей набора к исходным адресам ACTION, поле 1 читается без записи, поле 6 используется дважды |
 | #ACEA | [Action.TransformVectorTransposed](../Source/Action/TransformVectorTransposed.asm) | Вычисление трёх выходных слов с временно транспонированной матрицей, сохранением IX/IY и восстановлением CPU-стека |
 | #AD1D | [Action.SwapCodePatchWords](../Source/Action/SwapCodePatchWords.asm) | Обмен трёх пар полных слов изменяемого кода, включая байты операндов и следующие префиксы |
-| #AD48 | [Action.UnknownAD48](../Source/Action/UnknownAD48.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #AD5A | [Action.UnknownAD5A](../Source/Action/UnknownAD5A.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #ADB7 | [Action.UnknownADB7](../Source/Action/UnknownADB7.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #AE24 | [Action.UnknownAE24](../Source/Action/UnknownAE24.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #AE73 | [Action.UnknownAE73](../Source/Action/UnknownAE73.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #AD48 | [Action.SqrtWordBank1](../Source/Action/SqrtWordBank1.asm) | Вызов табличного корня с выбором Controls банка 1 и сохранением BC |
+| #AD5A | [Action.EncodeHalfCoordinateDeltas](../Source/Action/EncodeHalfCoordinateDeltas.asm) | Два кода по трём разностям половинных координат и корню усечённых квадратов |
+| #ADB7 | [Action.RotateBankedBasis](../Source/Action/RotateBankedBasis.asm) | Поворот базисных векторов через VOXAL в странице 3 |
+| #AE24 | [Action.EncodeSignedRatio](../Source/Action/EncodeSignedRatio.asm) | Табличное кодирование знакового отношения с четырьмя смещениями и исходными ограничениями |
+| #AE73 | [Action.DivideScaledLogarithmic](../Source/Action/DivideScaledLogarithmic.asm) | Приближённое отношение с масштабом 256 через нормализацию, разность логарифмов и обратную таблицу |
 | #AF43 | [Action.ComputePatchedVector](../Source/Action/ComputePatchedVector.asm) | Расчёт трёх компонентов по девяти коэффициентам с исходным переносом отрицательных произведений и досрочным выходом по переполнению |
-| #B0E9 | [Action.UnknownB0E9](../Source/Action/UnknownB0E9.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #C000 | [Action.DispatchEdges](../Source/Action/DispatchEdges.asm) | Выбор вершин и обработчика ребра по раздельной таблице младших и старших байтов |
-| #C071 | [Action.NextEdge](../Source/Action/NextEdge.asm) | Возврат косвенного обработчика и продолжение перебора рёбер |
-| #C07A | [Action.EdgeCase11](../Source/Action/EdgeCase11.asm) | обработчик ребра для индексов таблицы #11, #22, #44, #55, #66, #88, #99, #AA |
-| #C07B | [Action.EdgeCase05](../Source/Action/EdgeCase05.asm) | обработчик ребра для индексов таблицы #05 |
-| #C08A | [Action.EdgeCase15](../Source/Action/EdgeCase15.asm) | обработчик ребра для индексов таблицы #15 |
-| #C095 | [Action.EdgeCase06](../Source/Action/EdgeCase06.asm) | обработчик ребра для индексов таблицы #06 |
-| #C0A4 | [Action.EdgeCase46](../Source/Action/EdgeCase46.asm) | обработчик ребра для индексов таблицы #46 |
-| #C0AF | [Action.EdgeCase09](../Source/Action/EdgeCase09.asm) | обработчик ребра для индексов таблицы #09 |
-| #C0BE | [Action.EdgeCase89](../Source/Action/EdgeCase89.asm) | обработчик ребра для индексов таблицы #89 |
-| #C0C9 | [Action.EdgeCase0A](../Source/Action/EdgeCase0A.asm) | обработчик ребра для индексов таблицы #0A |
-| #C0D8 | [Action.EdgeCase2A](../Source/Action/EdgeCase2A.asm) | обработчик ребра для индексов таблицы #2A |
-| #C0E3 | [Action.EdgeCase10](../Source/Action/EdgeCase10.asm) | обработчик ребра для индексов таблицы #10 |
-| #C0E9 | [Action.EdgeCase12](../Source/Action/EdgeCase12.asm) | обработчик ребра для индексов таблицы #12 |
-| #C0EF | [Action.EdgeCase14](../Source/Action/EdgeCase14.asm) | обработчик ребра для индексов таблицы #14 |
-| #C101 | [Action.EdgeCase16](../Source/Action/EdgeCase16.asm) | обработчик ребра для индексов таблицы #16 |
-| #C119 | [Action.EdgeCase18](../Source/Action/EdgeCase18.asm) | обработчик ребра для индексов таблицы #18 |
-| #C12B | [Action.EdgeCase19](../Source/Action/EdgeCase19.asm) | обработчик ребра для индексов таблицы #19 |
-| #C132 | [Action.EdgeCase1A](../Source/Action/EdgeCase1A.asm) | обработчик ребра для индексов таблицы #1A |
-| #C144 | [Action.EdgeCase20](../Source/Action/EdgeCase20.asm) | обработчик ребра для индексов таблицы #20 |
-| #C14A | [Action.EdgeCase21](../Source/Action/EdgeCase21.asm) | обработчик ребра для индексов таблицы #21 |
-| #C150 | [Action.EdgeCase24](../Source/Action/EdgeCase24.asm) | обработчик ребра для индексов таблицы #24 |
-| #C162 | [Action.EdgeCase25](../Source/Action/EdgeCase25.asm) | обработчик ребра для индексов таблицы #25 |
-| #C174 | [Action.EdgeCase26](../Source/Action/EdgeCase26.asm) | обработчик ребра для индексов таблицы #26 |
-| #C17B | [Action.EdgeCase28](../Source/Action/EdgeCase28.asm) | обработчик ребра для индексов таблицы #28 |
-| #C18D | [Action.EdgeCase29](../Source/Action/EdgeCase29.asm) | обработчик ребра для индексов таблицы #29 |
-| #C1A5 | [Action.EdgeCase40](../Source/Action/EdgeCase40.asm) | обработчик ребра для индексов таблицы #40 |
-| #C1AB | [Action.EdgeCase41](../Source/Action/EdgeCase41.asm) | обработчик ребра для индексов таблицы #41 |
-| #C1BD | [Action.EdgeCase42](../Source/Action/EdgeCase42.asm) | обработчик ребра для индексов таблицы #42 |
-| #C1CF | [Action.EdgeCase45](../Source/Action/EdgeCase45.asm) | обработчик ребра для индексов таблицы #45 |
-| #C1D6 | [Action.EdgeCase48](../Source/Action/EdgeCase48.asm) | обработчик ребра для индексов таблицы #48 |
-| #C1DC | [Action.EdgeCase49](../Source/Action/EdgeCase49.asm) | обработчик ребра для индексов таблицы #49 |
-| #C1F1 | [Action.EdgeCase4A](../Source/Action/EdgeCase4A.asm) | обработчик ребра для индексов таблицы #4A |
-| #C20C | [Action.EdgeCase50](../Source/Action/EdgeCase50.asm) | обработчик ребра для индексов таблицы #50 |
-| #C228 | [Action.EdgeCase51](../Source/Action/EdgeCase51.asm) | обработчик ребра для индексов таблицы #51 |
-| #C22F | [Action.EdgeCase52](../Source/Action/EdgeCase52.asm) | обработчик ребра для индексов таблицы #52 |
-| #C24E | [Action.EdgeCase54](../Source/Action/EdgeCase54.asm) | обработчик ребра для индексов таблицы #54 |
-| #C259 | [Action.EdgeCase56](../Source/Action/EdgeCase56.asm) | обработчик ребра для индексов таблицы #56 |
-| #C25F | [Action.EdgeCase58](../Source/Action/EdgeCase58.asm) | обработчик ребра для индексов таблицы #58 |
-| #C274 | [Action.EdgeCase5A](../Source/Action/EdgeCase5A.asm) | обработчик ребра для индексов таблицы #5A |
-| #C28D | [Action.EdgeCase60](../Source/Action/EdgeCase60.asm) | обработчик ребра для индексов таблицы #60 |
-| #C2A9 | [Action.EdgeCase61](../Source/Action/EdgeCase61.asm) | обработчик ребра для индексов таблицы #61 |
-| #C2BE | [Action.EdgeCase62](../Source/Action/EdgeCase62.asm) | обработчик ребра для индексов таблицы #62 |
-| #C2C9 | [Action.EdgeCase64](../Source/Action/EdgeCase64.asm) | обработчик ребра для индексов таблицы #64 |
-| #C2D0 | [Action.EdgeCase68](../Source/Action/EdgeCase68.asm) | обработчик ребра для индексов таблицы #68 |
-| #C2EF | [Action.EdgeCase69](../Source/Action/EdgeCase69.asm) | обработчик ребра для индексов таблицы #69 |
-| #C308 | [Action.EdgeCase6A](../Source/Action/EdgeCase6A.asm) | обработчик ребра для индексов таблицы #6A |
-| #C30E | [Action.EdgeCase80](../Source/Action/EdgeCase80.asm) | обработчик ребра для индексов таблицы #80 |
-| #C314 | [Action.EdgeCase81](../Source/Action/EdgeCase81.asm) | обработчик ребра для индексов таблицы #81 |
-| #C326 | [Action.EdgeCase82](../Source/Action/EdgeCase82.asm) | обработчик ребра для индексов таблицы #82 |
-| #C338 | [Action.EdgeCase84](../Source/Action/EdgeCase84.asm) | обработчик ребра для индексов таблицы #84 |
-| #C33E | [Action.EdgeCase85](../Source/Action/EdgeCase85.asm) | обработчик ребра для индексов таблицы #85 |
-| #C359 | [Action.EdgeCase86](../Source/Action/EdgeCase86.asm) | обработчик ребра для индексов таблицы #86 |
-| #C36E | [Action.EdgeCase8A](../Source/Action/EdgeCase8A.asm) | обработчик ребра для индексов таблицы #8A |
-| #C375 | [Action.EdgeCase90](../Source/Action/EdgeCase90.asm) | обработчик ребра для индексов таблицы #90 |
-| #C391 | [Action.EdgeCase91](../Source/Action/EdgeCase91.asm) | обработчик ребра для индексов таблицы #91 |
-| #C39C | [Action.EdgeCase92](../Source/Action/EdgeCase92.asm) | обработчик ребра для индексов таблицы #92 |
-| #C3B1 | [Action.EdgeCase94](../Source/Action/EdgeCase94.asm) | обработчик ребра для индексов таблицы #94 |
-| #C3D0 | [Action.EdgeCase95](../Source/Action/EdgeCase95.asm) | обработчик ребра для индексов таблицы #95 |
-| #C3D6 | [Action.EdgeCase96](../Source/Action/EdgeCase96.asm) | обработчик ребра для индексов таблицы #96 |
-| #C3EF | [Action.EdgeCase98](../Source/Action/EdgeCase98.asm) | обработчик ребра для индексов таблицы #98 |
-| #C3F6 | [Action.EdgeCaseA0](../Source/Action/EdgeCaseA0.asm) | обработчик ребра для индексов таблицы #A0 |
-| #C412 | [Action.EdgeCaseA1](../Source/Action/EdgeCaseA1.asm) | обработчик ребра для индексов таблицы #A1 |
-| #C431 | [Action.EdgeCaseA2](../Source/Action/EdgeCaseA2.asm) | обработчик ребра для индексов таблицы #A2 |
-| #C438 | [Action.EdgeCaseA4](../Source/Action/EdgeCaseA4.asm) | обработчик ребра для индексов таблицы #A4 |
-| #C44D | [Action.EdgeCaseA5](../Source/Action/EdgeCaseA5.asm) | обработчик ребра для индексов таблицы #A5 |
-| #C466 | [Action.EdgeCaseA8](../Source/Action/EdgeCaseA8.asm) | обработчик ребра для индексов таблицы #A8 |
-| #C471 | [Action.EdgeCaseA9](../Source/Action/EdgeCaseA9.asm) | обработчик ребра для индексов таблицы #A9 |
-| #C477 | [Action.UnknownC477](../Source/Action/UnknownC477.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #C496 | [Action.UnknownC496](../Source/Action/UnknownC496.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #C4B5 | [Action.UnknownC4B5](../Source/Action/UnknownC4B5.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #C4D4 | [Action.UnknownC4D4](../Source/Action/UnknownC4D4.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #C4F3 | [Action.EdgeCase08](../Source/Action/EdgeCase08.asm) | обработчик ребра для индексов таблицы #08 |
-| #C4F6 | [Action.UnknownC4F6](../Source/Action/UnknownC4F6.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #C53D | [Action.EdgeCase04](../Source/Action/EdgeCase04.asm) | обработчик ребра для индексов таблицы #04 |
-| #C540 | [Action.UnknownC540](../Source/Action/UnknownC540.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #C588 | [Action.EdgeCase02](../Source/Action/EdgeCase02.asm) | обработчик ребра для индексов таблицы #02 |
-| #C58B | [Action.UnknownC58B](../Source/Action/UnknownC58B.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #C5E4 | [Action.EdgeCase01](../Source/Action/EdgeCase01.asm) | обработчик ребра для индексов таблицы #01 |
-| #C5E7 | [Action.UnknownC5E7](../Source/Action/UnknownC5E7.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #C641 | [Action.UnknownC641](../Source/Action/UnknownC641.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #C64C | [Action.UnknownC64C](../Source/Action/UnknownC64C.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #C657 | [Action.UnknownC657](../Source/Action/UnknownC657.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #C662 | [Action.UnknownC662](../Source/Action/UnknownC662.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #C66D | [Action.UnknownC66D](../Source/Action/UnknownC66D.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #C681 | [Action.UnknownC681](../Source/Action/UnknownC681.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #C695 | [Action.UnknownC695](../Source/Action/UnknownC695.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #C6A9 | [Action.UnknownC6A9](../Source/Action/UnknownC6A9.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #C6BD | [Action.UnknownC6BD](../Source/Action/UnknownC6BD.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #C6C8 | [Action.UnknownC6C8](../Source/Action/UnknownC6C8.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #C6D3 | [Action.EdgeCase00](../Source/Action/EdgeCase00.asm) | обработчик ребра для индексов таблицы #00 |
-| #C6EA | [Action.EdgeCase59](../Source/Action/EdgeCase59.asm) | обработчик ребра для индексов таблицы #59, #65, #9A, #A6 |
-| #C6F4 | [Action.UnknownC6F4](../Source/Action/UnknownC6F4.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #C88C | [Action.UnknownC88C](../Source/Action/UnknownC88C.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #B044 | [Action.BuildObjectOffsetCoefficients](../Source/Action/BuildObjectOffsetCoefficients.asm) | Подготовка коэффициентов смещения по трём фазовым парам |
+| #B0E9 | [Action.SqrtWordCached](../Source/Action/SqrtWordCached.asm) | Целый корень в области 0000..E8FF и исходное особое поведение E900..FFFF по трём страницам таблиц |
+| #C000 | [Action.ClipPolygon](../Source/Action/ClipPolygon.asm) | Обход замкнутого списка вершин с табличным отсечением и ранним завершением контура |
+| #C071 | [Action.ContinueClipPolygon](../Source/Action/ContinueClipPolygon.asm) | Восстановление счётчика после ребра и продолжение либо возврат полного полигона |
+| #C07A | [Action.ReturnClipCase](../Source/Action/ReturnClipCase.asm) | Завершение текущего табличного случая обычным RET |
+| #C07B | [Action.ClipInsideToBottomRight](../Source/Action/ClipInsideToBottomRight.asm) | Отсечение ребра, первая точка внутри окна, вторая снизу справа |
+| #C08A | [Action.ClipRightToBottomRight](../Source/Action/ClipRightToBottomRight.asm) | Отсечение ребра, первая точка справа, вторая снизу справа |
+| #C095 | [Action.ClipInsideToBottomLeft](../Source/Action/ClipInsideToBottomLeft.asm) | Отсечение ребра, первая точка внутри окна, вторая снизу слева |
+| #C0A4 | [Action.ClipBottomToBottomLeft](../Source/Action/ClipBottomToBottomLeft.asm) | Отсечение ребра, первая точка снизу, вторая снизу слева |
+| #C0AF | [Action.ClipInsideToTopRight](../Source/Action/ClipInsideToTopRight.asm) | Отсечение ребра, первая точка внутри окна, вторая сверху справа |
+| #C0BE | [Action.ClipTopToTopRight](../Source/Action/ClipTopToTopRight.asm) | Отсечение ребра, первая точка сверху, вторая сверху справа |
+| #C0C9 | [Action.ClipInsideToTopLeft](../Source/Action/ClipInsideToTopLeft.asm) | Отсечение ребра, первая точка внутри окна, вторая сверху слева |
+| #C0D8 | [Action.ClipLeftToTopLeft](../Source/Action/ClipLeftToTopLeft.asm) | Отсечение ребра, первая точка слева, вторая сверху слева |
+| #C0E3 | [Action.ClipRightToInside](../Source/Action/ClipRightToInside.asm) | Отсечение ребра, первая точка справа, вторая внутри окна |
+| #C0E9 | [Action.ClipRightToLeft](../Source/Action/ClipRightToLeft.asm) | Отсечение ребра, первая точка справа, вторая слева |
+| #C0EF | [Action.ClipRightToBottom](../Source/Action/ClipRightToBottom.asm) | Отсечение ребра, первая точка справа, вторая снизу |
+| #C101 | [Action.ClipRightToBottomLeft](../Source/Action/ClipRightToBottomLeft.asm) | Отсечение ребра, первая точка справа, вторая снизу слева |
+| #C119 | [Action.ClipRightToTop](../Source/Action/ClipRightToTop.asm) | Отсечение ребра, первая точка справа, вторая сверху |
+| #C12B | [Action.ClipRightToTopRight](../Source/Action/ClipRightToTopRight.asm) | Отсечение ребра, первая точка справа, вторая сверху справа |
+| #C132 | [Action.ClipRightToTopLeft](../Source/Action/ClipRightToTopLeft.asm) | Отсечение ребра, первая точка справа, вторая сверху слева |
+| #C144 | [Action.ClipLeftToInside](../Source/Action/ClipLeftToInside.asm) | Отсечение ребра, первая точка слева, вторая внутри окна |
+| #C14A | [Action.ClipLeftToRight](../Source/Action/ClipLeftToRight.asm) | Отсечение ребра, первая точка слева, вторая справа |
+| #C150 | [Action.ClipLeftToBottom](../Source/Action/ClipLeftToBottom.asm) | Отсечение ребра, первая точка слева, вторая снизу |
+| #C162 | [Action.ClipLeftToBottomRight](../Source/Action/ClipLeftToBottomRight.asm) | Отсечение ребра, первая точка слева, вторая снизу справа |
+| #C174 | [Action.ClipLeftToBottomLeft](../Source/Action/ClipLeftToBottomLeft.asm) | Отсечение ребра, первая точка слева, вторая снизу слева |
+| #C17B | [Action.ClipLeftToTop](../Source/Action/ClipLeftToTop.asm) | Отсечение ребра, первая точка слева, вторая сверху |
+| #C18D | [Action.ClipLeftToTopRight](../Source/Action/ClipLeftToTopRight.asm) | Отсечение ребра, первая точка слева, вторая сверху справа |
+| #C1A5 | [Action.ClipBottomToInside](../Source/Action/ClipBottomToInside.asm) | Отсечение ребра, первая точка снизу, вторая внутри окна |
+| #C1AB | [Action.ClipBottomToRight](../Source/Action/ClipBottomToRight.asm) | Отсечение ребра, первая точка снизу, вторая справа |
+| #C1BD | [Action.ClipBottomToLeft](../Source/Action/ClipBottomToLeft.asm) | Отсечение ребра, первая точка снизу, вторая слева |
+| #C1CF | [Action.ClipBottomToBottomRight](../Source/Action/ClipBottomToBottomRight.asm) | Отсечение ребра, первая точка снизу, вторая снизу справа |
+| #C1D6 | [Action.ClipBottomToTop](../Source/Action/ClipBottomToTop.asm) | Отсечение ребра, первая точка снизу, вторая сверху |
+| #C1DC | [Action.ClipBottomToTopRight](../Source/Action/ClipBottomToTopRight.asm) | Отсечение ребра, первая точка снизу, вторая сверху справа |
+| #C1F1 | [Action.ClipBottomToTopLeft](../Source/Action/ClipBottomToTopLeft.asm) | Отсечение ребра, первая точка снизу, вторая сверху слева |
+| #C20C | [Action.ClipBottomRightToInside](../Source/Action/ClipBottomRightToInside.asm) | Отсечение ребра, первая точка снизу справа, вторая внутри окна |
+| #C228 | [Action.ClipBottomRightToRight](../Source/Action/ClipBottomRightToRight.asm) | Отсечение ребра, первая точка снизу справа, вторая справа |
+| #C22F | [Action.ClipBottomRightToLeft](../Source/Action/ClipBottomRightToLeft.asm) | Отсечение ребра, первая точка снизу справа, вторая слева |
+| #C24E | [Action.ClipBottomRightToBottom](../Source/Action/ClipBottomRightToBottom.asm) | Отсечение ребра, первая точка снизу справа, вторая снизу |
+| #C259 | [Action.ClipBottomRightToBottomLeft](../Source/Action/ClipBottomRightToBottomLeft.asm) | Отсечение ребра, первая точка снизу справа, вторая снизу слева |
+| #C25F | [Action.ClipBottomRightToTop](../Source/Action/ClipBottomRightToTop.asm) | Отсечение ребра, первая точка снизу справа, вторая сверху |
+| #C274 | [Action.ClipBottomRightToTopLeft](../Source/Action/ClipBottomRightToTopLeft.asm) | Отсечение ребра, первая точка снизу справа, вторая сверху слева |
+| #C28D | [Action.ClipBottomLeftToInside](../Source/Action/ClipBottomLeftToInside.asm) | Отсечение ребра, первая точка снизу слева, вторая внутри окна |
+| #C2A9 | [Action.ClipBottomLeftToRight](../Source/Action/ClipBottomLeftToRight.asm) | Отсечение ребра, первая точка снизу слева, вторая справа |
+| #C2BE | [Action.ClipBottomLeftToLeft](../Source/Action/ClipBottomLeftToLeft.asm) | Отсечение ребра, первая точка снизу слева, вторая слева |
+| #C2C9 | [Action.ClipBottomLeftToBottom](../Source/Action/ClipBottomLeftToBottom.asm) | Отсечение ребра, первая точка снизу слева, вторая снизу |
+| #C2D0 | [Action.ClipBottomLeftToTop](../Source/Action/ClipBottomLeftToTop.asm) | Отсечение ребра, первая точка снизу слева, вторая сверху |
+| #C2EF | [Action.ClipBottomLeftToTopRight](../Source/Action/ClipBottomLeftToTopRight.asm) | Отсечение ребра, первая точка снизу слева, вторая сверху справа |
+| #C308 | [Action.ClipBottomLeftToTopLeft](../Source/Action/ClipBottomLeftToTopLeft.asm) | Отсечение ребра, первая точка снизу слева, вторая сверху слева |
+| #C30E | [Action.ClipTopToInside](../Source/Action/ClipTopToInside.asm) | Отсечение ребра, первая точка сверху, вторая внутри окна |
+| #C314 | [Action.ClipTopToRight](../Source/Action/ClipTopToRight.asm) | Отсечение ребра, первая точка сверху, вторая справа |
+| #C326 | [Action.ClipTopToLeft](../Source/Action/ClipTopToLeft.asm) | Отсечение ребра, первая точка сверху, вторая слева |
+| #C338 | [Action.ClipTopToBottom](../Source/Action/ClipTopToBottom.asm) | Отсечение ребра, первая точка сверху, вторая снизу |
+| #C33E | [Action.ClipTopToBottomRight](../Source/Action/ClipTopToBottomRight.asm) | Отсечение ребра, первая точка сверху, вторая снизу справа |
+| #C359 | [Action.ClipTopToBottomLeft](../Source/Action/ClipTopToBottomLeft.asm) | Отсечение ребра, первая точка сверху, вторая снизу слева |
+| #C36E | [Action.ClipTopToTopLeft](../Source/Action/ClipTopToTopLeft.asm) | Отсечение ребра, первая точка сверху, вторая сверху слева |
+| #C375 | [Action.ClipTopRightToInside](../Source/Action/ClipTopRightToInside.asm) | Отсечение ребра, первая точка сверху справа, вторая внутри окна |
+| #C391 | [Action.ClipTopRightToRight](../Source/Action/ClipTopRightToRight.asm) | Отсечение ребра, первая точка сверху справа, вторая справа |
+| #C39C | [Action.ClipTopRightToLeft](../Source/Action/ClipTopRightToLeft.asm) | Отсечение ребра, первая точка сверху справа, вторая слева |
+| #C3B1 | [Action.ClipTopRightToBottom](../Source/Action/ClipTopRightToBottom.asm) | Отсечение ребра, первая точка сверху справа, вторая снизу |
+| #C3D0 | [Action.ClipTopRightToBottomRight](../Source/Action/ClipTopRightToBottomRight.asm) | Отсечение ребра, первая точка сверху справа, вторая снизу справа |
+| #C3D6 | [Action.ClipTopRightToBottomLeft](../Source/Action/ClipTopRightToBottomLeft.asm) | Отсечение ребра, первая точка сверху справа, вторая снизу слева |
+| #C3EF | [Action.ClipTopRightToTop](../Source/Action/ClipTopRightToTop.asm) | Отсечение ребра, первая точка сверху справа, вторая сверху |
+| #C3F6 | [Action.ClipTopLeftToInside](../Source/Action/ClipTopLeftToInside.asm) | Отсечение ребра, первая точка сверху слева, вторая внутри окна |
+| #C412 | [Action.ClipTopLeftToRight](../Source/Action/ClipTopLeftToRight.asm) | Отсечение ребра, первая точка сверху слева, вторая справа |
+| #C431 | [Action.ClipTopLeftToLeft](../Source/Action/ClipTopLeftToLeft.asm) | Отсечение ребра, первая точка сверху слева, вторая слева |
+| #C438 | [Action.ClipTopLeftToBottom](../Source/Action/ClipTopLeftToBottom.asm) | Отсечение ребра, первая точка сверху слева, вторая снизу |
+| #C44D | [Action.ClipTopLeftToBottomRight](../Source/Action/ClipTopLeftToBottomRight.asm) | Отсечение ребра, первая точка сверху слева, вторая снизу справа |
+| #C466 | [Action.ClipTopLeftToTop](../Source/Action/ClipTopLeftToTop.asm) | Отсечение ребра, первая точка сверху слева, вторая сверху |
+| #C471 | [Action.ClipTopLeftToTopRight](../Source/Action/ClipTopLeftToTopRight.asm) | Отсечение ребра, первая точка сверху слева, вторая сверху справа |
+| #C477 | [Action.ComputeTopClipProduct](../Source/Action/ComputeTopClipProduct.asm) | Подготовка числителя пересечения (First.First-0)*(First.Second-Second.Second) исходным знаковым умножителем |
+| #C496 | [Action.ComputeBottomClipProduct](../Source/Action/ComputeBottomClipProduct.asm) | Подготовка числителя пересечения (First.First-95)*(First.Second-Second.Second) исходным знаковым умножителем |
+| #C4B5 | [Action.ComputeLeftClipProduct](../Source/Action/ComputeLeftClipProduct.asm) | Подготовка числителя пересечения (First.First-Second.First)*(First.Second-0) исходным знаковым умножителем |
+| #C4D4 | [Action.ComputeRightClipProduct](../Source/Action/ComputeRightClipProduct.asm) | Подготовка числителя пересечения (First.First-Second.First)*(First.Second-255) исходным знаковым умножителем |
+| #C4F3 | [Action.ClipInsideToTop](../Source/Action/ClipInsideToTop.asm) | Отсечение ребра, первая точка внутри окна, вторая сверху |
+| #C4F6 | [Action.AppendTopClipIntersection](../Source/Action/AppendTopClipIntersection.asm) | Добавление пересечения границы с исходным делением и побайтовой проверкой координаты |
+| #C53D | [Action.ClipInsideToBottom](../Source/Action/ClipInsideToBottom.asm) | Отсечение ребра, первая точка внутри окна, вторая снизу |
+| #C540 | [Action.AppendBottomClipIntersection](../Source/Action/AppendBottomClipIntersection.asm) | Добавление пересечения границы с исходным делением и побайтовой проверкой координаты |
+| #C588 | [Action.ClipInsideToLeft](../Source/Action/ClipInsideToLeft.asm) | Отсечение ребра, первая точка внутри окна, вторая слева |
+| #C58B | [Action.AppendLeftClipIntersection](../Source/Action/AppendLeftClipIntersection.asm) | Добавление пересечения границы с исходным делением и побайтовой проверкой координаты |
+| #C5E4 | [Action.ClipInsideToRight](../Source/Action/ClipInsideToRight.asm) | Отсечение ребра, первая точка внутри окна, вторая справа |
+| #C5E7 | [Action.AppendRightClipIntersection](../Source/Action/AppendRightClipIntersection.asm) | Добавление пересечения границы с исходным делением и побайтовой проверкой координаты |
+| #C641 | [Action.AppendTopLeftClipCorner](../Source/Action/AppendTopLeftClipCorner.asm) | Добавление угла окна при нулевом CornerBlock |
+| #C64C | [Action.AppendTopRightClipCorner](../Source/Action/AppendTopRightClipCorner.asm) | Добавление угла окна при нулевом CornerBlock |
+| #C657 | [Action.AppendBottomLeftClipCorner](../Source/Action/AppendBottomLeftClipCorner.asm) | Добавление угла окна при нулевом CornerBlock |
+| #C662 | [Action.AppendBottomRightClipCorner](../Source/Action/AppendBottomRightClipCorner.asm) | Добавление угла окна при нулевом CornerBlock |
+| #C66D | [Action.CompareTopLeftProducts](../Source/Action/CompareTopLeftProducts.asm) | Вычитание LeftProduct из TopProduct с передачей заёма младшего слова |
+| #C681 | [Action.CompareTopRightProducts](../Source/Action/CompareTopRightProducts.asm) | Вычитание RightProduct из TopProduct с передачей заёма младшего слова |
+| #C695 | [Action.CompareBottomLeftProducts](../Source/Action/CompareBottomLeftProducts.asm) | Вычитание LeftProduct из BottomProduct с передачей заёма младшего слова |
+| #C6A9 | [Action.CompareBottomRightProducts](../Source/Action/CompareBottomRightProducts.asm) | Вычитание RightProduct из BottomProduct с передачей заёма младшего слова |
+| #C6BD | [Action.ComputeSecondAxisDelta](../Source/Action/ComputeSecondAxisDelta.asm) | Разность координат Second второй и первой точки с оборачиванием до слова |
+| #C6C8 | [Action.ComputeFirstAxisDelta](../Source/Action/ComputeFirstAxisDelta.asm) | Разность координат First второй и первой точки с оборачиванием до слова |
+| #C6D3 | [Action.AppendSecondClipPoint](../Source/Action/AppendSecondClipPoint.asm) | Добавление младших байтов второй точки с общим входом записи пары DE |
+| #C6EA | [Action.ExitClipContour](../Source/Action/ExitClipContour.asm) | Специальное завершение контура со снятием трёх служебных слов |
+| #C6F4 | [Action.MultiplySigned16](../Source/Action/MultiplySigned16.asm) | Знаковое произведение двух слов с тремя ядрами и исходным исключением второго операнда 8000 |
+| #C88C | [Action.DivideSigned32To16](../Source/Action/DivideSigned32To16.asm) | Деление числителя HL, A, альтернативного A на signed16 с исходным побитовым дополнением |
+| #C941 | [Action.ClipSingleEdge](../Source/Action/ClipSingleEdge.asm) | Отсечение одиночного ребра с обменом внутренней первой точки и рамкой трёх возвратов |
+| #C99B | [Action.BuildRenderCoefficients](../Source/Action/BuildRenderCoefficients.asm) | Построение девяти байтовых коэффициентов по трём фазам либо по одной фазе |
+| #CB23 | [Action.ComposeRenderMatrix](../Source/Action/ComposeRenderMatrix.asm) | Композиция исходной матрицы и ориентации с одноосным режимом и точными четвертями |
 | #CF08 | [Action.UnknownCF08](../Source/Action/UnknownCF08.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #D10A | [Action.ClearWorkBuffer](../Source/Action/ClearWorkBuffer.asm) | Заполнение #0C00 байт до #8C00 значением #FF через стек с восстановлением SP |
+| #D10A | [Action.ClearWorkBuffer](../Source/Action/ClearWorkBuffer.asm) | Заполнение линейного буфера 8000..8BFF байтами FF через временный SP с восстановлением CPU-стека |
 | #D12C | [Action.MultiplySignedScaled](../Source/Action/MultiplySignedScaled.asm) | Знаковое произведение DE и байтового коэффициента с усечением к нулю после деления на 128 и выходом через IX |
-| #E020 | [Action.UnknownE020](../Source/Action/UnknownE020.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #E4A6 | [Action.UnknownE4A6](../Source/Action/UnknownE4A6.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #E4FF | [Action.UnknownE4FF](../Source/Action/UnknownE4FF.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #E55C | [Action.UnknownE55C](../Source/Action/UnknownE55C.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #E5A0 | [Action.UnknownE5A0](../Source/Action/UnknownE5A0.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #E658 | [Action.UnknownE658](../Source/Action/UnknownE658.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #E685 | [Action.UnknownE685](../Source/Action/UnknownE685.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #D1C0 | [Action.PolygonFillRows](../Source/Action/PolygonFillRows.asm) | Строковое ядро линейной заливки с развёрнутой записью, крайними масками и коррекцией двух рёбер |
+| #D268 | [Action.SelectPolygonRightEdge](../Source/Action/SelectPolygonRightEdge.asm) | Передача управления правому обновлению без изменения контекста |
+| #D26B | [Action.WrapPolygonLeftEdge](../Source/Action/WrapPolygonLeftEdge.asm) | Оборачивание обратного поиска к последней First кольца |
+| #D272 | [Action.UpdatePolygonLeftEdge](../Source/Action/UpdatePolygonLeftEdge.asm) | Поиск восходящего левого ребра, вычисление целого шага и ошибки, выбор продолжения заливки |
+| #D3A8 | [Action.WrapPolygonRightEdge](../Source/Action/WrapPolygonRightEdge.asm) | Оборачивание прямого поиска к первой First кольца |
+| #D3AD | [Action.UpdatePolygonRightEdge](../Source/Action/UpdatePolygonRightEdge.asm) | Поиск восходящего правого ребра и вычисление его упакованного шага и дробной ошибки |
+| #D4C1 | [Action.SelectPolygonRowLimit](../Source/Action/SelectPolygonRowLimit.asm) | Выбор ближайшего предела строк с приоритетом левого ребра и настройкой следующего перехода |
+| #D4F5 | [Action.SetShortNegativeRightStep](../Source/Action/SetShortNegativeRightStep.asm) | Настройка нулевого целого шага короткого отрицательного правого наклона и восстановление временного контекста |
+| #D503 | [Action.WrapPolygonLeftTop](../Source/Action/WrapPolygonLeftTop.asm) | Оборачивание поиска левого конца верхней горизонтали |
+| #D50A | [Action.WrapPolygonRightTop](../Source/Action/WrapPolygonRightTop.asm) | Оборачивание поиска правого конца верхней горизонтали |
+| #D50F | [Action.ReturnPolygonFill](../Source/Action/ReturnPolygonFill.asm) | Восстановление сохранённого HL и внешний возврат плоского контура |
+| #D511 | [Action.PreparePolygonFill](../Source/Action/PreparePolygonFill.asm) | Подготовка диапазона строк, верхних вершин двух цепочек, масок и временного стека заливки |
+| #D5C9 | [Action.TransformObjectVertices](../Source/Action/TransformObjectVertices.asm) | Копирование потока объекта и преобразование всех его фиксированных групп вершин |
+| #D5F9 | [Action.PrepareRenderVertexProducts](../Source/Action/PrepareRenderVertexProducts.asm) | Подготовка трёх пар координат и трёх глубин табличным произведением матрицы и входных компонентов |
+| #D694 | [Action.ProjectRenderVertexGroup](../Source/Action/ProjectRenderVertexGroup.asm) | Построение комбинаций координат и перспективная запись выбранной группы вершин |
+| #D7A0 | [Action.ProjectRenderVertex](../Source/Action/ProjectRenderVertex.asm) | Перспективная запись одной вершины с исходной нормализацией и косвенным продолжением |
+| #DBBD | [Action.RenderClippedRecords](../Source/Action/RenderClippedRecords.asm) | Вывод записей объекта с проверкой кодов точек и отсечением граней и открытых сегментов |
+| #DD23 | [Action.RenderInsideRecords](../Source/Action/RenderInsideRecords.asm) | Вывод граней и ломаных объекта с внутренними точками без дополнительного отсечения |
+| #DDD1 | [Action.CombineListedVertexCodes](../Source/Action/CombineListedVertexCodes.asm) | Объединение кодов границ перечисленных точек с ранним выходом по нулевому коду |
+| #DDF0 | [Action.DrawLinearLine](../Source/Action/DrawLinearLine.asm) | Растеризация отрезка в линейный буфер страницы 80 с режимами AND, OR и XOR без конечной точки |
+| #DEF0 | [Action.AbortProjectedVertexScan](../Source/Action/AbortProjectedVertexScan.asm) | Завершение сканирования точек по маркеру отказа перспективы без отката предыдущих кодов |
+| #DEF3 | [Action.ClassifyProjectedVertices](../Source/Action/ClassifyProjectedVertices.asm) | Заполнение кодов границ экранных точек и накопление общего кода объекта |
+| #DFB6 | [Action.CheckFaceOrientation](../Source/Action/CheckFaceOrientation.asm) | Проверка ориентации выбранной тройки экранных точек по знаку разности двух произведений |
+| #E020 | [Action.RenderSceneFrame](../Source/Action/RenderSceneFrame.asm) | Подготовка кадра, проекция объектов и передача в очередь отрисовки |
+| #E1B9 | [Action.PrepareProjectionScale](../Source/Action/PrepareProjectionScale.asm) | Масштабирование мантиссы заголовка на степень двух и настройка трёх относительных переходов |
+| #E1D1 | [Action.CheckCloseRecordBounds](../Source/Action/CheckCloseRecordBounds.asm) | Проверка трёх исходных компонент с цепочкой Carry и условная обработка близкой записи |
+| #E213 | [Action.ClipProjectionBounds](../Source/Action/ClipProjectionBounds.asm) | Проверка глубины и двух осей с табличной поправкой масштаба и выбором следующего пути проекции |
+| #E299 | [Action.PrepareProjectedBounds](../Source/Action/PrepareProjectedBounds.asm) | Фильтрация старших байтов координат и подготовка допуска, знакового X и модулей двух проекций |
+| #E30F | [Action.CaptureProjectedRecord](../Source/Action/CaptureProjectedRecord.asm) | Условная запись альтернативного HL в PendingRecord после двух проверок координатного допуска |
+| #E36A | [Action.FollowProjectedTarget](../Source/Action/FollowProjectedTarget.asm) | Сглаживание экранной точки и назначение первой свободной цели по запросу |
+| #E40F | [Action.InsertRenderQueue](../Source/Action/InsertRenderQueue.asm) | Вставка снимка объекта в связанную очередь по исходному знаковому сравнению глубины |
+| #E4A6 | [Action.ReadRenderQueue](../Source/Action/ReadRenderQueue.asm) | Восстановление стека чтения очереди и загрузка снимка узла с обновлением AY |
+| #E4DB | [Action.RenderQueuedObject](../Source/Action/RenderQueuedObject.asm) | Подготовка и вывод текущего объекта очереди с выбором рисователя и чтением следующего узла |
+| #E4FF | [Action.SelectRenderQueueNode](../Source/Action/SelectRenderQueueNode.asm) | Проверка конца очереди либо переход к загрузке выбранного узла |
+| #E506 | [Action.DispatchCloseRecord](../Source/Action/DispatchCloseRecord.asm) | Отбор близкой записи по коду запрета и классу с передачей в следующий режим либо инвертированием компонент |
+| #E51F | [Action.CheckCloseRecordComponents](../Source/Action/CheckCloseRecordComponents.asm) | Дополнительный отбор по биту 4 ReuseByte и старшим байтам трёх компонент |
+| #E54A | [Action.ReverseCloseRecordState](../Source/Action/ReverseCloseRecordState.asm) | Уменьшение кода запрета, инвертирование масштабированных компонент и особое обнуление состояния класса 12 |
+| #E55C | [Action.PrepareRecordScale](../Source/Action/PrepareRecordScale.asm) | Сохранение CPU SP, временное деление смещений класса 14 и выбор числа удвоений по заголовку модели |
+| #E5A0 | [Action.UpdateRecordComponents](../Source/Action/UpdateRecordComponents.asm) | Обновление трёх компонент с проверкой переполнения и границы, обработкой отказа и запросом предупреждения о стыковке |
+| #E655 | [Action.FinishRecordWarning](../Source/Action/FinishRecordWarning.asm) | Восстановление DE после запроса предупреждения и завершение через восстановитель смещений |
+| #E658 | [Action.RejectRecordUpdate](../Source/Action/RejectRecordUpdate.asm) | Восстановление CPU-стека, пометка записи IX для повторного использования и продолжение очистки класса 12 |
+| #E65F | [Action.ReleaseClass12Records](../Source/Action/ReleaseClass12Records.asm) | Обнуление двух байтов состояния и пометка всех активных записей класса 12 либо хвост восстановления смещений |
+| #E685 | [Action.RestoreHalvedOffsets](../Source/Action/RestoreHalvedOffsets.asm) | Восстановление трёх исходных вычитаемых слов после временного арифметического деления для класса 14 |
+| #E69E | [Action.SelectRecordByIndex](../Source/Action/SelectRecordByIndex.asm) | Расчёт адреса записи в IY по коду A с сохранением HL |
 | #E6A7 | [Action.RecordIndexToAddress](../Source/Action/RecordIndexToAddress.asm) | Расчёт адреса записи A100 плюс входной код, умноженный на 64 |
 | #E6B5 | [Action.RecordIXToIndex](../Source/Action/RecordIXToIndex.asm) | Расчёт байтового кода записи по IX с сохранением HL |
 | #E6BE | [Action.RecordIYToIndex](../Source/Action/RecordIYToIndex.asm) | Расчёт байтового кода записи по IY с сохранением HL |
 | #E6C7 | [Action.RecordAddressToIndex](../Source/Action/RecordAddressToIndex.asm) | Расчёт байтового кода записи по HL, младшие шесть битов смещения не участвуют в коде |
 | #E6D1 | [Action.NextActiveRecord](../Source/Action/NextActiveRecord.asm) | Переход по шагу BC к следующей записи с байтом 1 не равным 80 либо к маркеру конца |
+| #E6E2 | [Action.FindFilteredRecordOr26](../Source/Action/FindFilteredRecordOr26.asm) | Выбор кода 26 по потоку 10 либо поиск активного класса 1..15 или 18 |
+| #E70D | [Action.FindRecordExcept6And7](../Source/Action/FindRecordExcept6And7.asm) | Поиск первой активной записи с классом вне пары 6 и 7 |
+| #E729 | [Action.FindRecordClass6Or7](../Source/Action/FindRecordClass6Or7.asm) | Поиск первой активной записи с классом 6 либо 7 |
+| #E745 | [Action.FindRecordClass5Or14](../Source/Action/FindRecordClass5Or14.asm) | Поиск первой активной записи с классом 5 либо 14 |
 | #E98D | [Action.FindRecordByCode](../Source/Action/FindRecordByCode.asm) | Поиск от A100 первой активной записи с байтом 12 равным входному D |
 | #E9A1 | [Action.FindReusableRecord](../Source/Action/FindReusableRecord.asm) | Поиск первой записи с байтом 1 равным 80, обработка маркера конца и однократного пропуска по байту 18 |
-| #EA29 | [Action.UnknownEA29](../Source/Action/UnknownEA29.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #EB72 | [Action.UnknownEB72](../Source/Action/UnknownEB72.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #EB87 | [Action.UnknownEB87](../Source/Action/UnknownEB87.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #EBB8 | [Action.UnknownEBB8](../Source/Action/UnknownEBB8.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #EC08 | [Action.UnknownEC08](../Source/Action/UnknownEC08.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #ECA8 | [Action.UnknownECA8](../Source/Action/UnknownECA8.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #F075 | [Action.UnknownF075](../Source/Action/UnknownF075.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #F394 | [Action.UnknownF394](../Source/Action/UnknownF394.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #F51E | [Action.UnknownF51E](../Source/Action/UnknownF51E.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #F535 | [Action.UnknownF535](../Source/Action/UnknownF535.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #F541 | [Action.UnknownF541](../Source/Action/UnknownF541.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #F54D | [Action.UnknownF54D](../Source/Action/UnknownF54D.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #F572 | [Action.UnknownF572](../Source/Action/UnknownF572.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #EA29 | [Action.PrepareLargeEffect](../Source/Action/PrepareLargeEffect.asm) | Настройка дочернего кода и чтение заголовка большого эффекта |
+| #EA3D | [Action.AllocateLargeEffect](../Source/Action/AllocateLargeEffect.asm) | Выделение большого эффекта и создание дочерних записей перед освобождением объекта |
+| #EB72 | [Action.NextRandomWord0](../Source/Action/NextRandomWord0.asm) | Следующее слово независимого потока 0 с физическим состоянием Stream0 |
+| #EB79 | [Action.NextRandomWord3](../Source/Action/NextRandomWord3.asm) | Следующее слово независимого потока 3 с физическим состоянием Stream3 |
+| #EB80 | [Action.NextRandomWord4](../Source/Action/NextRandomWord4.asm) | Следующее слово независимого потока 4 с физическим состоянием Stream4 |
+| #EB87 | [Action.NextRandomWord1](../Source/Action/NextRandomWord1.asm) | Следующее слово независимого потока 1 с физическим состоянием Stream1 |
+| #EB8E | [Action.NextRandomWord5](../Source/Action/NextRandomWord5.asm) | Следующее слово независимого потока 5 с физическим состоянием Stream5 |
+| #EB95 | [Action.NextRandomWord6](../Source/Action/NextRandomWord6.asm) | Следующее слово независимого потока 6 с физическим состоянием Stream6 |
+| #EB9C | [Action.NextRandomWord7](../Source/Action/NextRandomWord7.asm) | Следующее слово независимого потока 7 с физическим состоянием Stream7 |
+| #EBA3 | [Action.NextRandomWord8](../Source/Action/NextRandomWord8.asm) | Следующее слово независимого потока 8 с физическим состоянием Stream8 |
+| #EBAA | [Action.NextRandomWord9](../Source/Action/NextRandomWord9.asm) | Следующее слово независимого потока 9 с физическим состоянием Stream9 |
+| #EBB1 | [Action.NextRandomWord10](../Source/Action/NextRandomWord10.asm) | Следующее слово независимого потока 10 с физическим состоянием Stream10 |
+| #EBB8 | [Action.NextRandomWord2](../Source/Action/NextRandomWord2.asm) | Следующее слово независимого потока 2 с физическим состоянием Stream2 |
+| #EBBF | [Action.NextRandomWord11](../Source/Action/NextRandomWord11.asm) | Следующее слово независимого потока 11 с физическим состоянием Stream11 |
+| #EBC6 | [Action.NextRandomWord12](../Source/Action/NextRandomWord12.asm) | Следующее слово независимого потока 12 с физическим состоянием Stream12 |
+| #EBCD | [Action.NextRandomWord13](../Source/Action/NextRandomWord13.asm) | Следующее слово независимого потока 13 с физическим состоянием Stream13 |
+| #EBD4 | [Action.NextRandomWord14](../Source/Action/NextRandomWord14.asm) | Следующее слово независимого потока 14 с физическим состоянием Stream14 |
+| #EC08 | [Action.StepFoldedRandom](../Source/Action/StepFoldedRandom.asm) | Обновление трёхбайтового состояния свёрткой переносов и возврат нового 16-битного слова через обратный EXX |
+| #ECA8 | [Action.UpdateAyEffects](../Source/Action/UpdateAyEffects.asm) | Вывод очередных строк потоков AY-каналов A и B и формирование канала C по R и изменяемому уровню |
+| #EF7D | [Action.AdvanceObjectOffsetRise](../Source/Action/AdvanceObjectOffsetRise.asm) | Увеличение байта смещения и переход к обратному ходу по таймеру |
+| #EF9A | [Action.AdvanceObjectOffsetFall](../Source/Action/AdvanceObjectOffsetFall.asm) | Уменьшение байта смещения и возврат сохранённого состояния по таймеру |
+| #EFB5 | [Action.AdvanceObjectPhaseWait](../Source/Action/AdvanceObjectPhaseWait.asm) | Обновление фазового счётчика и завершение ожидания по классу и компонентам |
+| #F03D | [Action.MarkIYRecordForReuse](../Source/Action/MarkIYRecordForReuse.asm) | Пометка записи по IY кодом Component0=8000 и однократным пропуском ReuseByte=FF |
+| #F075 | [Action.SetClass18ObjectState](../Source/Action/SetClass18ObjectState.asm) | Установка состояния 0A у записи класса 12h перед диспетчеризацией |
+| #F0F8 | [Action.PrepareObjectOffsetTransform](../Source/Action/PrepareObjectOffsetTransform.asm) | Проверка маркера записи и подготовка смещений для вычислителя 6D06 |
+| #F394 | [Action.MarkRecordForReuse](../Source/Action/MarkRecordForReuse.asm) | Пометка записи кодом Component0=8000 и однократным пропуском ReuseByte=FF при поиске доступной записи |
+| #F51E | [Action.UpdatePreferredClass18](../Source/Action/UpdatePreferredClass18.asm) | Выбор опоры по R и потоку 2 либо по приоритету классов с обновлением класса 18 |
+| #F527 | [Action.CheckPreferredRandomWord](../Source/Action/CheckPreferredRandomWord.asm) | Проверка младшего слова потока 2 и внешнего байта для выбора отдельного кода 26 |
+| #F535 | [Action.FindPreferredClass0](../Source/Action/FindPreferredClass0.asm) | Поиск опорного класса 0 с продолжением к классам 7 и 5 при отсутствии |
+| #F53F | [Action.ContinuePreferredClass0](../Source/Action/ContinuePreferredClass0.asm) | Передача выбранного индекса класса 0 в общую проверку класса 18 |
+| #F541 | [Action.FindPreferredClass7](../Source/Action/FindPreferredClass7.asm) | Поиск опорного класса 7 с продолжением к классу 5 при отсутствии |
+| #F54B | [Action.ContinuePreferredClass7](../Source/Action/ContinuePreferredClass7.asm) | Передача выбранного индекса класса 7 в общую проверку класса 18 |
+| #F54D | [Action.FindPreferredClass5](../Source/Action/FindPreferredClass5.asm) | Поиск последнего опорного класса 5 либо переход к сбросу баз |
+| #F557 | [Action.ApplyPreferredToClass18](../Source/Action/ApplyPreferredToClass18.asm) | Запись выбранной опоры в первый класс 18 только при отсутствии класса 3 |
+| #F572 | [Action.ResetRecordUpdateBases](../Source/Action/ResetRecordUpdateBases.asm) | Обнуление трёх базовых слов в изменяемых операндах обновления компонент |
 | #F729 | [Action.UpdateObjects](../Source/Action/UpdateObjects.asm) | Обход записей по #40 байт от #A100 с ограничителем #80 и обновление состояний |
-| #F792 | [Action.UnknownF792](../Source/Action/UnknownF792.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #F7C6 | [Action.UnknownF7C6](../Source/Action/UnknownF7C6.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #C000 | [ThreeD.DispatchEdges](../Source/ThreeD/DispatchEdges.asm) | Перебор индексов вершин и вызов обработчиков из таблиц #CF00 и #D000 |
-| #C071 | [ThreeD.NextEdge](../Source/ThreeD/NextEdge.asm) | Возврат косвенного обработчика и продолжение перебора рёбер |
-| #C07A | [ThreeD.EdgeCase11](../Source/ThreeD/EdgeCase11.asm) | обработчик ребра для индексов таблицы #11, #22, #44, #55, #66, #88, #99, #AA |
-| #C07B | [ThreeD.EdgeCase05](../Source/ThreeD/EdgeCase05.asm) | обработчик ребра для индексов таблицы #05 |
-| #C08A | [ThreeD.EdgeCase15](../Source/ThreeD/EdgeCase15.asm) | обработчик ребра для индексов таблицы #15 |
-| #C095 | [ThreeD.EdgeCase06](../Source/ThreeD/EdgeCase06.asm) | обработчик ребра для индексов таблицы #06 |
-| #C0A4 | [ThreeD.EdgeCase46](../Source/ThreeD/EdgeCase46.asm) | обработчик ребра для индексов таблицы #46 |
-| #C0AF | [ThreeD.EdgeCase09](../Source/ThreeD/EdgeCase09.asm) | обработчик ребра для индексов таблицы #09 |
-| #C0BE | [ThreeD.EdgeCase89](../Source/ThreeD/EdgeCase89.asm) | обработчик ребра для индексов таблицы #89 |
-| #C0C9 | [ThreeD.EdgeCase0A](../Source/ThreeD/EdgeCase0A.asm) | обработчик ребра для индексов таблицы #0A |
-| #C0D8 | [ThreeD.EdgeCase2A](../Source/ThreeD/EdgeCase2A.asm) | обработчик ребра для индексов таблицы #2A |
-| #C0E3 | [ThreeD.EdgeCase10](../Source/ThreeD/EdgeCase10.asm) | обработчик ребра для индексов таблицы #10 |
-| #C0E9 | [ThreeD.EdgeCase12](../Source/ThreeD/EdgeCase12.asm) | обработчик ребра для индексов таблицы #12 |
-| #C0EF | [ThreeD.EdgeCase14](../Source/ThreeD/EdgeCase14.asm) | обработчик ребра для индексов таблицы #14 |
-| #C101 | [ThreeD.EdgeCase16](../Source/ThreeD/EdgeCase16.asm) | обработчик ребра для индексов таблицы #16 |
-| #C119 | [ThreeD.EdgeCase18](../Source/ThreeD/EdgeCase18.asm) | обработчик ребра для индексов таблицы #18 |
-| #C12B | [ThreeD.EdgeCase19](../Source/ThreeD/EdgeCase19.asm) | обработчик ребра для индексов таблицы #19 |
-| #C132 | [ThreeD.EdgeCase1A](../Source/ThreeD/EdgeCase1A.asm) | обработчик ребра для индексов таблицы #1A |
-| #C144 | [ThreeD.EdgeCase20](../Source/ThreeD/EdgeCase20.asm) | обработчик ребра для индексов таблицы #20 |
-| #C14A | [ThreeD.EdgeCase21](../Source/ThreeD/EdgeCase21.asm) | обработчик ребра для индексов таблицы #21 |
-| #C150 | [ThreeD.EdgeCase24](../Source/ThreeD/EdgeCase24.asm) | обработчик ребра для индексов таблицы #24 |
-| #C162 | [ThreeD.EdgeCase25](../Source/ThreeD/EdgeCase25.asm) | обработчик ребра для индексов таблицы #25 |
-| #C174 | [ThreeD.EdgeCase26](../Source/ThreeD/EdgeCase26.asm) | обработчик ребра для индексов таблицы #26 |
-| #C17B | [ThreeD.EdgeCase28](../Source/ThreeD/EdgeCase28.asm) | обработчик ребра для индексов таблицы #28 |
-| #C18D | [ThreeD.EdgeCase29](../Source/ThreeD/EdgeCase29.asm) | обработчик ребра для индексов таблицы #29 |
-| #C1A5 | [ThreeD.EdgeCase40](../Source/ThreeD/EdgeCase40.asm) | обработчик ребра для индексов таблицы #40 |
-| #C1AB | [ThreeD.EdgeCase41](../Source/ThreeD/EdgeCase41.asm) | обработчик ребра для индексов таблицы #41 |
-| #C1BD | [ThreeD.EdgeCase42](../Source/ThreeD/EdgeCase42.asm) | обработчик ребра для индексов таблицы #42 |
-| #C1CF | [ThreeD.EdgeCase45](../Source/ThreeD/EdgeCase45.asm) | обработчик ребра для индексов таблицы #45 |
-| #C1D6 | [ThreeD.EdgeCase48](../Source/ThreeD/EdgeCase48.asm) | обработчик ребра для индексов таблицы #48 |
-| #C1DC | [ThreeD.EdgeCase49](../Source/ThreeD/EdgeCase49.asm) | обработчик ребра для индексов таблицы #49 |
-| #C1F1 | [ThreeD.EdgeCase4A](../Source/ThreeD/EdgeCase4A.asm) | обработчик ребра для индексов таблицы #4A |
-| #C20C | [ThreeD.EdgeCase50](../Source/ThreeD/EdgeCase50.asm) | обработчик ребра для индексов таблицы #50 |
-| #C228 | [ThreeD.EdgeCase51](../Source/ThreeD/EdgeCase51.asm) | обработчик ребра для индексов таблицы #51 |
-| #C22F | [ThreeD.EdgeCase52](../Source/ThreeD/EdgeCase52.asm) | обработчик ребра для индексов таблицы #52 |
-| #C24E | [ThreeD.EdgeCase54](../Source/ThreeD/EdgeCase54.asm) | обработчик ребра для индексов таблицы #54 |
-| #C259 | [ThreeD.EdgeCase56](../Source/ThreeD/EdgeCase56.asm) | обработчик ребра для индексов таблицы #56 |
-| #C25F | [ThreeD.EdgeCase58](../Source/ThreeD/EdgeCase58.asm) | обработчик ребра для индексов таблицы #58 |
-| #C274 | [ThreeD.EdgeCase5A](../Source/ThreeD/EdgeCase5A.asm) | обработчик ребра для индексов таблицы #5A |
-| #C28D | [ThreeD.EdgeCase60](../Source/ThreeD/EdgeCase60.asm) | обработчик ребра для индексов таблицы #60 |
-| #C2A9 | [ThreeD.EdgeCase61](../Source/ThreeD/EdgeCase61.asm) | обработчик ребра для индексов таблицы #61 |
-| #C2BE | [ThreeD.EdgeCase62](../Source/ThreeD/EdgeCase62.asm) | обработчик ребра для индексов таблицы #62 |
-| #C2C9 | [ThreeD.EdgeCase64](../Source/ThreeD/EdgeCase64.asm) | обработчик ребра для индексов таблицы #64 |
-| #C2D0 | [ThreeD.EdgeCase68](../Source/ThreeD/EdgeCase68.asm) | обработчик ребра для индексов таблицы #68 |
-| #C2EF | [ThreeD.EdgeCase69](../Source/ThreeD/EdgeCase69.asm) | обработчик ребра для индексов таблицы #69 |
-| #C308 | [ThreeD.EdgeCase6A](../Source/ThreeD/EdgeCase6A.asm) | обработчик ребра для индексов таблицы #6A |
-| #C30E | [ThreeD.EdgeCase80](../Source/ThreeD/EdgeCase80.asm) | обработчик ребра для индексов таблицы #80 |
-| #C314 | [ThreeD.EdgeCase81](../Source/ThreeD/EdgeCase81.asm) | обработчик ребра для индексов таблицы #81 |
-| #C326 | [ThreeD.EdgeCase82](../Source/ThreeD/EdgeCase82.asm) | обработчик ребра для индексов таблицы #82 |
-| #C338 | [ThreeD.EdgeCase84](../Source/ThreeD/EdgeCase84.asm) | обработчик ребра для индексов таблицы #84 |
-| #C33E | [ThreeD.EdgeCase85](../Source/ThreeD/EdgeCase85.asm) | обработчик ребра для индексов таблицы #85 |
-| #C359 | [ThreeD.EdgeCase86](../Source/ThreeD/EdgeCase86.asm) | обработчик ребра для индексов таблицы #86 |
-| #C36E | [ThreeD.EdgeCase8A](../Source/ThreeD/EdgeCase8A.asm) | обработчик ребра для индексов таблицы #8A |
-| #C375 | [ThreeD.EdgeCase90](../Source/ThreeD/EdgeCase90.asm) | обработчик ребра для индексов таблицы #90 |
-| #C391 | [ThreeD.EdgeCase91](../Source/ThreeD/EdgeCase91.asm) | обработчик ребра для индексов таблицы #91 |
-| #C39C | [ThreeD.EdgeCase92](../Source/ThreeD/EdgeCase92.asm) | обработчик ребра для индексов таблицы #92 |
-| #C3B1 | [ThreeD.EdgeCase94](../Source/ThreeD/EdgeCase94.asm) | обработчик ребра для индексов таблицы #94 |
-| #C3D0 | [ThreeD.EdgeCase95](../Source/ThreeD/EdgeCase95.asm) | обработчик ребра для индексов таблицы #95 |
-| #C3D6 | [ThreeD.EdgeCase96](../Source/ThreeD/EdgeCase96.asm) | обработчик ребра для индексов таблицы #96 |
-| #C3EF | [ThreeD.EdgeCase98](../Source/ThreeD/EdgeCase98.asm) | обработчик ребра для индексов таблицы #98 |
-| #C3F6 | [ThreeD.EdgeCaseA0](../Source/ThreeD/EdgeCaseA0.asm) | обработчик ребра для индексов таблицы #A0 |
-| #C412 | [ThreeD.EdgeCaseA1](../Source/ThreeD/EdgeCaseA1.asm) | обработчик ребра для индексов таблицы #A1 |
-| #C431 | [ThreeD.EdgeCaseA2](../Source/ThreeD/EdgeCaseA2.asm) | обработчик ребра для индексов таблицы #A2 |
-| #C438 | [ThreeD.EdgeCaseA4](../Source/ThreeD/EdgeCaseA4.asm) | обработчик ребра для индексов таблицы #A4 |
-| #C44D | [ThreeD.EdgeCaseA5](../Source/ThreeD/EdgeCaseA5.asm) | обработчик ребра для индексов таблицы #A5 |
-| #C466 | [ThreeD.EdgeCaseA8](../Source/ThreeD/EdgeCaseA8.asm) | обработчик ребра для индексов таблицы #A8 |
-| #C471 | [ThreeD.EdgeCaseA9](../Source/ThreeD/EdgeCaseA9.asm) | обработчик ребра для индексов таблицы #A9 |
-| #C477 | [ThreeD.UnknownC477](../Source/ThreeD/UnknownC477.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #C496 | [ThreeD.UnknownC496](../Source/ThreeD/UnknownC496.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #C4B5 | [ThreeD.UnknownC4B5](../Source/ThreeD/UnknownC4B5.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #C4D4 | [ThreeD.UnknownC4D4](../Source/ThreeD/UnknownC4D4.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #C4F3 | [ThreeD.EdgeCase08](../Source/ThreeD/EdgeCase08.asm) | обработчик ребра для индексов таблицы #08 |
-| #C4F6 | [ThreeD.UnknownC4F6](../Source/ThreeD/UnknownC4F6.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #C53D | [ThreeD.EdgeCase04](../Source/ThreeD/EdgeCase04.asm) | обработчик ребра для индексов таблицы #04 |
-| #C540 | [ThreeD.UnknownC540](../Source/ThreeD/UnknownC540.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #C588 | [ThreeD.EdgeCase02](../Source/ThreeD/EdgeCase02.asm) | обработчик ребра для индексов таблицы #02 |
-| #C58B | [ThreeD.UnknownC58B](../Source/ThreeD/UnknownC58B.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #C5E4 | [ThreeD.EdgeCase01](../Source/ThreeD/EdgeCase01.asm) | обработчик ребра для индексов таблицы #01 |
-| #C5E7 | [ThreeD.UnknownC5E7](../Source/ThreeD/UnknownC5E7.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #C641 | [ThreeD.UnknownC641](../Source/ThreeD/UnknownC641.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #C64C | [ThreeD.UnknownC64C](../Source/ThreeD/UnknownC64C.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #C657 | [ThreeD.UnknownC657](../Source/ThreeD/UnknownC657.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #C662 | [ThreeD.UnknownC662](../Source/ThreeD/UnknownC662.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #C66D | [ThreeD.UnknownC66D](../Source/ThreeD/UnknownC66D.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #C681 | [ThreeD.UnknownC681](../Source/ThreeD/UnknownC681.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #C695 | [ThreeD.UnknownC695](../Source/ThreeD/UnknownC695.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #C6A9 | [ThreeD.UnknownC6A9](../Source/ThreeD/UnknownC6A9.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #C6BD | [ThreeD.UnknownC6BD](../Source/ThreeD/UnknownC6BD.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #C6C8 | [ThreeD.UnknownC6C8](../Source/ThreeD/UnknownC6C8.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #C6D3 | [ThreeD.EdgeCase00](../Source/ThreeD/EdgeCase00.asm) | обработчик ребра для индексов таблицы #00 |
-| #C6EA | [ThreeD.EdgeCase59](../Source/ThreeD/EdgeCase59.asm) | обработчик ребра для индексов таблицы #59, #65, #9A, #A6 |
-| #C6F4 | [ThreeD.UnknownC6F4](../Source/ThreeD/UnknownC6F4.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #C88C | [ThreeD.UnknownC88C](../Source/ThreeD/UnknownC88C.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #CAB3 | [ThreeD.UnknownCAB3](../Source/ThreeD/UnknownCAB3.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #CAE3 | [ThreeD.UnknownCAE3](../Source/ThreeD/UnknownCAE3.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #F792 | [Action.CheckRecordEffectThreshold](../Source/Action/CheckRecordEffectThreshold.asm) | Выбор порога запуска большого эффекта для текущей записи |
+| #F7BF | [Action.ResumeAfterRecordEffect](../Source/Action/ResumeAfterRecordEffect.asm) | Сброс флагов связи и продолжение обхода объектов |
+| #F7C6 | [Action.DispatchObjectState](../Source/Action/DispatchObjectState.asm) | Выбор состояния объекта, косвенный вызов обработчика и последующее обновление записи |
+| #C000 | [ThreeD.ClipPolygon](../Source/ThreeD/ClipPolygon.asm) | Обход замкнутого списка вершин с табличным отсечением и ранним завершением контура |
+| #C071 | [ThreeD.ContinueClipPolygon](../Source/ThreeD/ContinueClipPolygon.asm) | Восстановление счётчика после ребра и продолжение либо возврат полного полигона |
+| #C07A | [ThreeD.ReturnClipCase](../Source/ThreeD/ReturnClipCase.asm) | Завершение текущего табличного случая обычным RET |
+| #C07B | [ThreeD.ClipInsideToBottomRight](../Source/ThreeD/ClipInsideToBottomRight.asm) | Отсечение ребра, первая точка внутри окна, вторая снизу справа |
+| #C08A | [ThreeD.ClipRightToBottomRight](../Source/ThreeD/ClipRightToBottomRight.asm) | Отсечение ребра, первая точка справа, вторая снизу справа |
+| #C095 | [ThreeD.ClipInsideToBottomLeft](../Source/ThreeD/ClipInsideToBottomLeft.asm) | Отсечение ребра, первая точка внутри окна, вторая снизу слева |
+| #C0A4 | [ThreeD.ClipBottomToBottomLeft](../Source/ThreeD/ClipBottomToBottomLeft.asm) | Отсечение ребра, первая точка снизу, вторая снизу слева |
+| #C0AF | [ThreeD.ClipInsideToTopRight](../Source/ThreeD/ClipInsideToTopRight.asm) | Отсечение ребра, первая точка внутри окна, вторая сверху справа |
+| #C0BE | [ThreeD.ClipTopToTopRight](../Source/ThreeD/ClipTopToTopRight.asm) | Отсечение ребра, первая точка сверху, вторая сверху справа |
+| #C0C9 | [ThreeD.ClipInsideToTopLeft](../Source/ThreeD/ClipInsideToTopLeft.asm) | Отсечение ребра, первая точка внутри окна, вторая сверху слева |
+| #C0D8 | [ThreeD.ClipLeftToTopLeft](../Source/ThreeD/ClipLeftToTopLeft.asm) | Отсечение ребра, первая точка слева, вторая сверху слева |
+| #C0E3 | [ThreeD.ClipRightToInside](../Source/ThreeD/ClipRightToInside.asm) | Отсечение ребра, первая точка справа, вторая внутри окна |
+| #C0E9 | [ThreeD.ClipRightToLeft](../Source/ThreeD/ClipRightToLeft.asm) | Отсечение ребра, первая точка справа, вторая слева |
+| #C0EF | [ThreeD.ClipRightToBottom](../Source/ThreeD/ClipRightToBottom.asm) | Отсечение ребра, первая точка справа, вторая снизу |
+| #C101 | [ThreeD.ClipRightToBottomLeft](../Source/ThreeD/ClipRightToBottomLeft.asm) | Отсечение ребра, первая точка справа, вторая снизу слева |
+| #C119 | [ThreeD.ClipRightToTop](../Source/ThreeD/ClipRightToTop.asm) | Отсечение ребра, первая точка справа, вторая сверху |
+| #C12B | [ThreeD.ClipRightToTopRight](../Source/ThreeD/ClipRightToTopRight.asm) | Отсечение ребра, первая точка справа, вторая сверху справа |
+| #C132 | [ThreeD.ClipRightToTopLeft](../Source/ThreeD/ClipRightToTopLeft.asm) | Отсечение ребра, первая точка справа, вторая сверху слева |
+| #C144 | [ThreeD.ClipLeftToInside](../Source/ThreeD/ClipLeftToInside.asm) | Отсечение ребра, первая точка слева, вторая внутри окна |
+| #C14A | [ThreeD.ClipLeftToRight](../Source/ThreeD/ClipLeftToRight.asm) | Отсечение ребра, первая точка слева, вторая справа |
+| #C150 | [ThreeD.ClipLeftToBottom](../Source/ThreeD/ClipLeftToBottom.asm) | Отсечение ребра, первая точка слева, вторая снизу |
+| #C162 | [ThreeD.ClipLeftToBottomRight](../Source/ThreeD/ClipLeftToBottomRight.asm) | Отсечение ребра, первая точка слева, вторая снизу справа |
+| #C174 | [ThreeD.ClipLeftToBottomLeft](../Source/ThreeD/ClipLeftToBottomLeft.asm) | Отсечение ребра, первая точка слева, вторая снизу слева |
+| #C17B | [ThreeD.ClipLeftToTop](../Source/ThreeD/ClipLeftToTop.asm) | Отсечение ребра, первая точка слева, вторая сверху |
+| #C18D | [ThreeD.ClipLeftToTopRight](../Source/ThreeD/ClipLeftToTopRight.asm) | Отсечение ребра, первая точка слева, вторая сверху справа |
+| #C1A5 | [ThreeD.ClipBottomToInside](../Source/ThreeD/ClipBottomToInside.asm) | Отсечение ребра, первая точка снизу, вторая внутри окна |
+| #C1AB | [ThreeD.ClipBottomToRight](../Source/ThreeD/ClipBottomToRight.asm) | Отсечение ребра, первая точка снизу, вторая справа |
+| #C1BD | [ThreeD.ClipBottomToLeft](../Source/ThreeD/ClipBottomToLeft.asm) | Отсечение ребра, первая точка снизу, вторая слева |
+| #C1CF | [ThreeD.ClipBottomToBottomRight](../Source/ThreeD/ClipBottomToBottomRight.asm) | Отсечение ребра, первая точка снизу, вторая снизу справа |
+| #C1D6 | [ThreeD.ClipBottomToTop](../Source/ThreeD/ClipBottomToTop.asm) | Отсечение ребра, первая точка снизу, вторая сверху |
+| #C1DC | [ThreeD.ClipBottomToTopRight](../Source/ThreeD/ClipBottomToTopRight.asm) | Отсечение ребра, первая точка снизу, вторая сверху справа |
+| #C1F1 | [ThreeD.ClipBottomToTopLeft](../Source/ThreeD/ClipBottomToTopLeft.asm) | Отсечение ребра, первая точка снизу, вторая сверху слева |
+| #C20C | [ThreeD.ClipBottomRightToInside](../Source/ThreeD/ClipBottomRightToInside.asm) | Отсечение ребра, первая точка снизу справа, вторая внутри окна |
+| #C228 | [ThreeD.ClipBottomRightToRight](../Source/ThreeD/ClipBottomRightToRight.asm) | Отсечение ребра, первая точка снизу справа, вторая справа |
+| #C22F | [ThreeD.ClipBottomRightToLeft](../Source/ThreeD/ClipBottomRightToLeft.asm) | Отсечение ребра, первая точка снизу справа, вторая слева |
+| #C24E | [ThreeD.ClipBottomRightToBottom](../Source/ThreeD/ClipBottomRightToBottom.asm) | Отсечение ребра, первая точка снизу справа, вторая снизу |
+| #C259 | [ThreeD.ClipBottomRightToBottomLeft](../Source/ThreeD/ClipBottomRightToBottomLeft.asm) | Отсечение ребра, первая точка снизу справа, вторая снизу слева |
+| #C25F | [ThreeD.ClipBottomRightToTop](../Source/ThreeD/ClipBottomRightToTop.asm) | Отсечение ребра, первая точка снизу справа, вторая сверху |
+| #C274 | [ThreeD.ClipBottomRightToTopLeft](../Source/ThreeD/ClipBottomRightToTopLeft.asm) | Отсечение ребра, первая точка снизу справа, вторая сверху слева |
+| #C28D | [ThreeD.ClipBottomLeftToInside](../Source/ThreeD/ClipBottomLeftToInside.asm) | Отсечение ребра, первая точка снизу слева, вторая внутри окна |
+| #C2A9 | [ThreeD.ClipBottomLeftToRight](../Source/ThreeD/ClipBottomLeftToRight.asm) | Отсечение ребра, первая точка снизу слева, вторая справа |
+| #C2BE | [ThreeD.ClipBottomLeftToLeft](../Source/ThreeD/ClipBottomLeftToLeft.asm) | Отсечение ребра, первая точка снизу слева, вторая слева |
+| #C2C9 | [ThreeD.ClipBottomLeftToBottom](../Source/ThreeD/ClipBottomLeftToBottom.asm) | Отсечение ребра, первая точка снизу слева, вторая снизу |
+| #C2D0 | [ThreeD.ClipBottomLeftToTop](../Source/ThreeD/ClipBottomLeftToTop.asm) | Отсечение ребра, первая точка снизу слева, вторая сверху |
+| #C2EF | [ThreeD.ClipBottomLeftToTopRight](../Source/ThreeD/ClipBottomLeftToTopRight.asm) | Отсечение ребра, первая точка снизу слева, вторая сверху справа |
+| #C308 | [ThreeD.ClipBottomLeftToTopLeft](../Source/ThreeD/ClipBottomLeftToTopLeft.asm) | Отсечение ребра, первая точка снизу слева, вторая сверху слева |
+| #C30E | [ThreeD.ClipTopToInside](../Source/ThreeD/ClipTopToInside.asm) | Отсечение ребра, первая точка сверху, вторая внутри окна |
+| #C314 | [ThreeD.ClipTopToRight](../Source/ThreeD/ClipTopToRight.asm) | Отсечение ребра, первая точка сверху, вторая справа |
+| #C326 | [ThreeD.ClipTopToLeft](../Source/ThreeD/ClipTopToLeft.asm) | Отсечение ребра, первая точка сверху, вторая слева |
+| #C338 | [ThreeD.ClipTopToBottom](../Source/ThreeD/ClipTopToBottom.asm) | Отсечение ребра, первая точка сверху, вторая снизу |
+| #C33E | [ThreeD.ClipTopToBottomRight](../Source/ThreeD/ClipTopToBottomRight.asm) | Отсечение ребра, первая точка сверху, вторая снизу справа |
+| #C359 | [ThreeD.ClipTopToBottomLeft](../Source/ThreeD/ClipTopToBottomLeft.asm) | Отсечение ребра, первая точка сверху, вторая снизу слева |
+| #C36E | [ThreeD.ClipTopToTopLeft](../Source/ThreeD/ClipTopToTopLeft.asm) | Отсечение ребра, первая точка сверху, вторая сверху слева |
+| #C375 | [ThreeD.ClipTopRightToInside](../Source/ThreeD/ClipTopRightToInside.asm) | Отсечение ребра, первая точка сверху справа, вторая внутри окна |
+| #C391 | [ThreeD.ClipTopRightToRight](../Source/ThreeD/ClipTopRightToRight.asm) | Отсечение ребра, первая точка сверху справа, вторая справа |
+| #C39C | [ThreeD.ClipTopRightToLeft](../Source/ThreeD/ClipTopRightToLeft.asm) | Отсечение ребра, первая точка сверху справа, вторая слева |
+| #C3B1 | [ThreeD.ClipTopRightToBottom](../Source/ThreeD/ClipTopRightToBottom.asm) | Отсечение ребра, первая точка сверху справа, вторая снизу |
+| #C3D0 | [ThreeD.ClipTopRightToBottomRight](../Source/ThreeD/ClipTopRightToBottomRight.asm) | Отсечение ребра, первая точка сверху справа, вторая снизу справа |
+| #C3D6 | [ThreeD.ClipTopRightToBottomLeft](../Source/ThreeD/ClipTopRightToBottomLeft.asm) | Отсечение ребра, первая точка сверху справа, вторая снизу слева |
+| #C3EF | [ThreeD.ClipTopRightToTop](../Source/ThreeD/ClipTopRightToTop.asm) | Отсечение ребра, первая точка сверху справа, вторая сверху |
+| #C3F6 | [ThreeD.ClipTopLeftToInside](../Source/ThreeD/ClipTopLeftToInside.asm) | Отсечение ребра, первая точка сверху слева, вторая внутри окна |
+| #C412 | [ThreeD.ClipTopLeftToRight](../Source/ThreeD/ClipTopLeftToRight.asm) | Отсечение ребра, первая точка сверху слева, вторая справа |
+| #C431 | [ThreeD.ClipTopLeftToLeft](../Source/ThreeD/ClipTopLeftToLeft.asm) | Отсечение ребра, первая точка сверху слева, вторая слева |
+| #C438 | [ThreeD.ClipTopLeftToBottom](../Source/ThreeD/ClipTopLeftToBottom.asm) | Отсечение ребра, первая точка сверху слева, вторая снизу |
+| #C44D | [ThreeD.ClipTopLeftToBottomRight](../Source/ThreeD/ClipTopLeftToBottomRight.asm) | Отсечение ребра, первая точка сверху слева, вторая снизу справа |
+| #C466 | [ThreeD.ClipTopLeftToTop](../Source/ThreeD/ClipTopLeftToTop.asm) | Отсечение ребра, первая точка сверху слева, вторая сверху |
+| #C471 | [ThreeD.ClipTopLeftToTopRight](../Source/ThreeD/ClipTopLeftToTopRight.asm) | Отсечение ребра, первая точка сверху слева, вторая сверху справа |
+| #C477 | [ThreeD.ComputeTopClipProduct](../Source/ThreeD/ComputeTopClipProduct.asm) | Подготовка числителя пересечения (First.First-0)*(First.Second-Second.Second) исходным знаковым умножителем |
+| #C496 | [ThreeD.ComputeBottomClipProduct](../Source/ThreeD/ComputeBottomClipProduct.asm) | Подготовка числителя пересечения (First.First-95)*(First.Second-Second.Second) исходным знаковым умножителем |
+| #C4B5 | [ThreeD.ComputeLeftClipProduct](../Source/ThreeD/ComputeLeftClipProduct.asm) | Подготовка числителя пересечения (First.First-Second.First)*(First.Second-0) исходным знаковым умножителем |
+| #C4D4 | [ThreeD.ComputeRightClipProduct](../Source/ThreeD/ComputeRightClipProduct.asm) | Подготовка числителя пересечения (First.First-Second.First)*(First.Second-255) исходным знаковым умножителем |
+| #C4F3 | [ThreeD.ClipInsideToTop](../Source/ThreeD/ClipInsideToTop.asm) | Отсечение ребра, первая точка внутри окна, вторая сверху |
+| #C4F6 | [ThreeD.AppendTopClipIntersection](../Source/ThreeD/AppendTopClipIntersection.asm) | Добавление пересечения границы с исходным делением и побайтовой проверкой координаты |
+| #C53D | [ThreeD.ClipInsideToBottom](../Source/ThreeD/ClipInsideToBottom.asm) | Отсечение ребра, первая точка внутри окна, вторая снизу |
+| #C540 | [ThreeD.AppendBottomClipIntersection](../Source/ThreeD/AppendBottomClipIntersection.asm) | Добавление пересечения границы с исходным делением и побайтовой проверкой координаты |
+| #C588 | [ThreeD.ClipInsideToLeft](../Source/ThreeD/ClipInsideToLeft.asm) | Отсечение ребра, первая точка внутри окна, вторая слева |
+| #C58B | [ThreeD.AppendLeftClipIntersection](../Source/ThreeD/AppendLeftClipIntersection.asm) | Добавление пересечения границы с исходным делением и побайтовой проверкой координаты |
+| #C5E4 | [ThreeD.ClipInsideToRight](../Source/ThreeD/ClipInsideToRight.asm) | Отсечение ребра, первая точка внутри окна, вторая справа |
+| #C5E7 | [ThreeD.AppendRightClipIntersection](../Source/ThreeD/AppendRightClipIntersection.asm) | Добавление пересечения границы с исходным делением и побайтовой проверкой координаты |
+| #C641 | [ThreeD.AppendTopLeftClipCorner](../Source/ThreeD/AppendTopLeftClipCorner.asm) | Добавление угла окна при нулевом CornerBlock |
+| #C64C | [ThreeD.AppendTopRightClipCorner](../Source/ThreeD/AppendTopRightClipCorner.asm) | Добавление угла окна при нулевом CornerBlock |
+| #C657 | [ThreeD.AppendBottomLeftClipCorner](../Source/ThreeD/AppendBottomLeftClipCorner.asm) | Добавление угла окна при нулевом CornerBlock |
+| #C662 | [ThreeD.AppendBottomRightClipCorner](../Source/ThreeD/AppendBottomRightClipCorner.asm) | Добавление угла окна при нулевом CornerBlock |
+| #C66D | [ThreeD.CompareTopLeftProducts](../Source/ThreeD/CompareTopLeftProducts.asm) | Вычитание LeftProduct из TopProduct с передачей заёма младшего слова |
+| #C681 | [ThreeD.CompareTopRightProducts](../Source/ThreeD/CompareTopRightProducts.asm) | Вычитание RightProduct из TopProduct с передачей заёма младшего слова |
+| #C695 | [ThreeD.CompareBottomLeftProducts](../Source/ThreeD/CompareBottomLeftProducts.asm) | Вычитание LeftProduct из BottomProduct с передачей заёма младшего слова |
+| #C6A9 | [ThreeD.CompareBottomRightProducts](../Source/ThreeD/CompareBottomRightProducts.asm) | Вычитание RightProduct из BottomProduct с передачей заёма младшего слова |
+| #C6BD | [ThreeD.ComputeSecondAxisDelta](../Source/ThreeD/ComputeSecondAxisDelta.asm) | Разность координат Second второй и первой точки с оборачиванием до слова |
+| #C6C8 | [ThreeD.ComputeFirstAxisDelta](../Source/ThreeD/ComputeFirstAxisDelta.asm) | Разность координат First второй и первой точки с оборачиванием до слова |
+| #C6D3 | [ThreeD.AppendSecondClipPoint](../Source/ThreeD/AppendSecondClipPoint.asm) | Добавление младших байтов второй точки с общим входом записи пары DE |
+| #C6EA | [ThreeD.ExitClipContour](../Source/ThreeD/ExitClipContour.asm) | Специальное завершение контура со снятием трёх служебных слов |
+| #C6F4 | [ThreeD.MultiplySigned16](../Source/ThreeD/MultiplySigned16.asm) | Знаковое произведение двух слов с тремя ядрами и исходным исключением второго операнда 8000 |
+| #C88C | [ThreeD.DivideSigned32To16](../Source/ThreeD/DivideSigned32To16.asm) | Деление числителя HL, A, альтернативного A на signed16 с исходным побитовым дополнением |
+| #C941 | [ThreeD.ClipSingleEdge](../Source/ThreeD/ClipSingleEdge.asm) | Отсечение одиночного ребра с обменом внутренней первой точки и рамкой трёх возвратов |
+| #C99B | [ThreeD.BuildRenderCoefficients](../Source/ThreeD/BuildRenderCoefficients.asm) | Построение девяти байтовых коэффициентов по трём фазам либо по одной фазе |
+| #CB23 | [ThreeD.ComposeRenderMatrix](../Source/ThreeD/ComposeRenderMatrix.asm) | Композиция исходной матрицы и ориентации с одноосным режимом и точными четвертями |
 | #CF08 | [ThreeD.UnknownCF08](../Source/ThreeD/UnknownCF08.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #D10A | [ThreeD.ClearWorkBuffer](../Source/ThreeD/ClearWorkBuffer.asm) | Заполнение #0C00 байт до #8C00 значением #FF через стек с восстановлением SP |
-| #D12C | [ThreeD.MultiplySignedScaled](../Source/ThreeD/MultiplySignedScaled.asm) | Знаковое умножение с масштабом 1/128 для коэффициента от -127 до 127, выход через JP (IX) |
+| #D10A | [ThreeD.ClearWorkBuffer](../Source/ThreeD/ClearWorkBuffer.asm) | Заполнение линейного буфера 8000..8BFF байтами FF через временный SP с восстановлением CPU-стека |
+| #D12C | [ThreeD.MultiplySignedScaled](../Source/ThreeD/MultiplySignedScaled.asm) | Знаковое произведение DE и байтового коэффициента с усечением к нулю после деления на 128 и выходом через IX |
+| #D1C0 | [ThreeD.PolygonFillRows](../Source/ThreeD/PolygonFillRows.asm) | Строковое ядро линейной заливки с развёрнутой записью, крайними масками и коррекцией двух рёбер |
+| #D268 | [ThreeD.SelectPolygonRightEdge](../Source/ThreeD/SelectPolygonRightEdge.asm) | Передача управления правому обновлению без изменения контекста |
+| #D26B | [ThreeD.WrapPolygonLeftEdge](../Source/ThreeD/WrapPolygonLeftEdge.asm) | Оборачивание обратного поиска к последней First кольца |
+| #D272 | [ThreeD.UpdatePolygonLeftEdge](../Source/ThreeD/UpdatePolygonLeftEdge.asm) | Поиск восходящего левого ребра, вычисление целого шага и ошибки, выбор продолжения заливки |
+| #D3A8 | [ThreeD.WrapPolygonRightEdge](../Source/ThreeD/WrapPolygonRightEdge.asm) | Оборачивание прямого поиска к первой First кольца |
+| #D3AD | [ThreeD.UpdatePolygonRightEdge](../Source/ThreeD/UpdatePolygonRightEdge.asm) | Поиск восходящего правого ребра и вычисление его упакованного шага и дробной ошибки |
+| #D4C1 | [ThreeD.SelectPolygonRowLimit](../Source/ThreeD/SelectPolygonRowLimit.asm) | Выбор ближайшего предела строк с приоритетом левого ребра и настройкой следующего перехода |
+| #D4F5 | [ThreeD.SetShortNegativeRightStep](../Source/ThreeD/SetShortNegativeRightStep.asm) | Настройка нулевого целого шага короткого отрицательного правого наклона и восстановление временного контекста |
+| #D503 | [ThreeD.WrapPolygonLeftTop](../Source/ThreeD/WrapPolygonLeftTop.asm) | Оборачивание поиска левого конца верхней горизонтали |
+| #D50A | [ThreeD.WrapPolygonRightTop](../Source/ThreeD/WrapPolygonRightTop.asm) | Оборачивание поиска правого конца верхней горизонтали |
+| #D50F | [ThreeD.ReturnPolygonFill](../Source/ThreeD/ReturnPolygonFill.asm) | Восстановление сохранённого HL и внешний возврат плоского контура |
+| #D511 | [ThreeD.PreparePolygonFill](../Source/ThreeD/PreparePolygonFill.asm) | Подготовка диапазона строк, верхних вершин двух цепочек, масок и временного стека заливки |
+| #D5C9 | [ThreeD.TransformObjectVertices](../Source/ThreeD/TransformObjectVertices.asm) | Копирование потока объекта и преобразование всех его фиксированных групп вершин |
+| #D5F9 | [ThreeD.PrepareRenderVertexProducts](../Source/ThreeD/PrepareRenderVertexProducts.asm) | Подготовка трёх пар координат и трёх глубин табличным произведением матрицы и входных компонентов |
+| #D694 | [ThreeD.ProjectRenderVertexGroup](../Source/ThreeD/ProjectRenderVertexGroup.asm) | Построение комбинаций координат и перспективная запись выбранной группы вершин |
+| #D7A0 | [ThreeD.ProjectRenderVertex](../Source/ThreeD/ProjectRenderVertex.asm) | Перспективная запись одной вершины с исходной нормализацией и косвенным продолжением |
+| #DBBD | [ThreeD.RenderClippedRecords](../Source/ThreeD/RenderClippedRecords.asm) | Вывод записей объекта с проверкой кодов точек и отсечением граней и открытых сегментов |
+| #DD23 | [ThreeD.RenderInsideRecords](../Source/ThreeD/RenderInsideRecords.asm) | Вывод граней и ломаных объекта с внутренними точками без дополнительного отсечения |
+| #DDD1 | [ThreeD.CombineListedVertexCodes](../Source/ThreeD/CombineListedVertexCodes.asm) | Объединение кодов границ перечисленных точек с ранним выходом по нулевому коду |
+| #DDF0 | [ThreeD.DrawLinearLine](../Source/ThreeD/DrawLinearLine.asm) | Растеризация отрезка в линейный буфер страницы 80 с режимами AND, OR и XOR без конечной точки |
+| #DEF0 | [ThreeD.AbortProjectedVertexScan](../Source/ThreeD/AbortProjectedVertexScan.asm) | Завершение сканирования точек по маркеру отказа перспективы без отката предыдущих кодов |
+| #DEF3 | [ThreeD.ClassifyProjectedVertices](../Source/ThreeD/ClassifyProjectedVertices.asm) | Заполнение кодов границ экранных точек и накопление общего кода объекта |
+| #DFB6 | [ThreeD.CheckFaceOrientation](../Source/ThreeD/CheckFaceOrientation.asm) | Проверка ориентации выбранной тройки экранных точек по знаку разности двух произведений |
 | #E500 | [Voxel.RotateBasisVectors](../Source/Voxel/RotateBasisVectors.asm) | Последовательное преобразование трёх векторов ориентации #9B00..#9B11 по углам #9B14, #9B12 и #9B13 |
 | #E8A1 | [Voxel.SignedSeededProduct](../Source/Voxel/SignedSeededProduct.asm) | Знаковое табличное произведение с использованием входного IY как младшей части накопителя |
 | #EC00 | [Voxel.CreateSmallEffect](../Source/Voxel/CreateSmallEffect.asm) | Инициализация эффекта с ресурсом #D800 и параметрами #0C, #0C, #0D |
@@ -974,27 +1094,31 @@
 | #CEA4 | [Controls.FillEvenSpan](../Source/Controls/FillEvenSpan.asm) | Обратное заполнение 2*A байтов через изменяемый JR в пределах страницы |
 | #CEB7 | [Controls.FillEvenSpanHead](../Source/Controls/FillEvenSpanHead.asm) | Первые 12 записей общего 30-байтового хвоста заполнителя |
 | #CECF | [Controls.FillEvenSpanTail](../Source/Controls/FillEvenSpanTail.asm) | Последние 18 записей заполнителя, восстановление HL и чтение режима |
-| #CEFA | [Controls.UnknownCEFA](../Source/Controls/UnknownCEFA.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #CF0B | [Controls.UnknownCF0B](../Source/Controls/UnknownCF0B.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #D0CA | [Controls.UnknownD0CA](../Source/Controls/UnknownD0CA.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #D10A | [Controls.UnknownD10A](../Source/Controls/UnknownD10A.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #CEFA | [Controls.ProjectAndDrawBody](../Source/Controls/ProjectAndDrawBody.asm) | Проекция тела в режиме 0, допуск компонент и рисование заданным рисунком |
+| #CF0B | [Controls.BuildBodyProjection](../Source/Controls/BuildBodyProjection.asm) | Выбор глубины, кодирование двух смещений и расчёт радиуса проекции |
+| #D0CA | [Controls.EncodeProjectionRatio](../Source/Controls/EncodeProjectionRatio.asm) | Нормализация отношения модулей с возвратом из внешней проекции при отказе |
+| #D10A | [Controls.ContinueProjectionRatio](../Source/Controls/ContinueProjectionRatio.asm) | Продолжение сравнения, кодирование отношения и снятие внутреннего возврата |
 | #D165 | [Controls.DivideByteFraction](../Source/Controls/DivideByteFraction.asm) | Подготовка делимого A*256 и последовательное исполнение делителя |
 | #D167 | [Controls.DivideWordByByte](../Source/Controls/DivideWordByByte.asm) | Восьмишаговое деление слова A:E на B с частным в D и остатком в A |
-| #D18D | [Controls.UnknownD18D](../Source/Controls/UnknownD18D.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #D1A2 | [Controls.UnknownD1A2](../Source/Controls/UnknownD1A2.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #D1B6 | [Controls.UnknownD1B6](../Source/Controls/UnknownD1B6.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #D1CB | [Controls.UnknownD1CB](../Source/Controls/UnknownD1CB.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #D1DF | [Controls.UnknownD1DF](../Source/Controls/UnknownD1DF.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #D1F4 | [Controls.UnknownD1F4](../Source/Controls/UnknownD1F4.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #D18D | [Controls.DrawRightClippedHalfDown](../Source/Controls/DrawRightClippedHalfDown.asm) | Рисование нижней половины с неподвижной правой границей и переходом к двум криволинейным краям |
+| #D1A2 | [Controls.DrawRightClippedHalfUp](../Source/Controls/DrawRightClippedHalfUp.asm) | Рисование верхней половины с неподвижной правой границей и переходом к двум криволинейным краям |
+| #D1B6 | [Controls.DrawLeftClippedHalfDown](../Source/Controls/DrawLeftClippedHalfDown.asm) | Рисование нижней половины с неподвижной левой границей и переходом к двум криволинейным краям |
+| #D1CB | [Controls.DrawLeftClippedHalfUp](../Source/Controls/DrawLeftClippedHalfUp.asm) | Рисование верхней половины с неподвижной левой границей и переходом к двум криволинейным краям |
+| #D1DF | [Controls.DrawCircleHalfDown](../Source/Controls/DrawCircleHalfDown.asm) | Рисование нижней половины внутреннего сечения с исходной разностью квадратов |
+| #D1F4 | [Controls.DrawCircleHalfUp](../Source/Controls/DrawCircleHalfUp.asm) | Рисование верхней половины внутреннего сечения с исходной разностью квадратов |
 | #D208 | [Controls.FillInteriorRowsUp](../Source/Controls/FillInteriorRowsUp.asm) | Заливка внутренних 30 байтов строк вверх с ограничением верхним краем |
 | #D211 | [Controls.FillInteriorRowsDown](../Source/Controls/FillInteriorRowsDown.asm) | Заливка внутренних 30 байтов строк вниз с ограничением нижним краем |
-| #D21A | [Controls.UnknownD21A](../Source/Controls/UnknownD21A.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #D232 | [Controls.UnknownD232](../Source/Controls/UnknownD232.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #D236 | [Controls.UnknownD236](../Source/Controls/UnknownD236.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #D21A | [Controls.DrawProjectedBody](../Source/Controls/DrawProjectedBody.asm) | Выбор малого профиля или большого круга по результату малого рисователя |
+| #D232 | [Controls.CallLargeCircle](../Source/Controls/CallLargeCircle.asm) | Вызов большого рисователя с исходной дополнительной рамкой |
+| #D236 | [Controls.DrawLargeCircle](../Source/Controls/DrawLargeCircle.asm) | Выбор и рисование большого кругового тела по спроецированным смещениям |
 | #D30B | [Controls.ReadByteSquare](../Source/Controls/ReadByteSquare.asm) | Чтение 16-битного квадрата байтового индекса из двух физических плоскостей |
-| #D314 | [Controls.UnknownD314](../Source/Controls/UnknownD314.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #D314 | [Controls.DrawInteriorCircle](../Source/Controls/DrawInteriorCircle.asm) | Рисование верхней и нижней половин большого контура без горизонтального отсечения |
 | #D320 | [Controls.BuildCircleSpan](../Source/Controls/BuildCircleSpan.asm) | Построение адресов и включающих масок двух краёв сечения большого контура |
-| #D340 | [Controls.UnknownD340](../Source/Controls/UnknownD340.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #D340 | [Controls.DrawFullWidthCircle](../Source/Controls/DrawFullWidthCircle.asm) | Заливка внутренних полос и двух остаточных половин широкого круга |
+| #D38C | [Controls.DrawFullWidthCircleSlice](../Source/Controls/DrawFullWidthCircleSlice.asm) | Заливка внутренней полосы от вертикальной границы и одной остаточной половины |
+| #D3DA | [Controls.DrawHorizontallyClippedCircle](../Source/Controls/DrawHorizontallyClippedCircle.asm) | Рисование двух половин круга с одним исходно неподвижным горизонтальным краем |
+| #D404 | [Controls.DrawCornerCircleSlice](../Source/Controls/DrawCornerCircleSlice.asm) | Рисование одного сечения с вертикальным и горизонтальным отсечением |
+| #D485 | [Controls.DrawVerticalCircleSlice](../Source/Controls/DrawVerticalCircleSlice.asm) | Рисование вертикально отсечённого кругового сечения с двумя криволинейными краями |
 | #D4CB | [Controls.PrepareCircleRightClip](../Source/Controls/PrepareCircleRightClip.asm) | Подготовка левого криволинейного края и фиксированного правого столбца 31 |
 | #D4E4 | [Controls.PrepareCircleLeftClip](../Source/Controls/PrepareCircleLeftClip.asm) | Подготовка фиксированного левого столбца 1 и правого криволинейного края |
 | #D504 | [Controls.LoadCircleMidpoint](../Source/Controls/LoadCircleMidpoint.asm) | Загрузка рабочих координат, радиуса и начального состояния среднего алгоритма |
@@ -1003,26 +1127,28 @@
 | #D56C | [Controls.LoadCircleClipState](../Source/Controls/LoadCircleClipState.asm) | Загрузка рабочего X и состояния сечения для отсечённого контура |
 | #D57B | [Controls.PrepareInteriorSpan](../Source/Controls/PrepareInteriorSpan.asm) | Подготовка полной внутренней маски и общие входы заливки строк |
 | #D609 | [Controls.SqrtSquareDiff](../Source/Controls/SqrtSquareDiff.asm) | Целый корень разности квадратов с исходным входным Carry и оборачиванием слова |
-| #D633 | [Controls.UnknownD633](../Source/Controls/UnknownD633.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #D727 | [Controls.UnknownD727](../Source/Controls/UnknownD727.asm) | Unknown, назначение этого фрагмента ещё не установлено |
-| #D833 | [Controls.UnknownD833](../Source/Controls/UnknownD833.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #D633 | [Controls.CircleRasterCore](../Source/Controls/CircleRasterCore.asm) | Двухфазное сужение кругового сечения с двумя криволинейными краями |
+| #D727 | [Controls.ResumeCirclePushSpan](../Source/Controls/ResumeCirclePushSpan.asm) | Восстановление CPU-стека после обычной PUSH-заливки и продолжение горизонтальной фазы |
+| #D73B | [Controls.LeftClippedCircleCore](../Source/Controls/LeftClippedCircleCore.asm) | Двухфазное сужение с неподвижным левым краем до совпадения порога Aprime |
+| #D833 | [Controls.RightClippedCircleCore](../Source/Controls/RightClippedCircleCore.asm) | Двухфазное сужение с неподвижным правым краем до совпадения порога Aprime |
 | #D925 | [Controls.AdvanceRasterUp](../Source/Controls/AdvanceRasterUp.asm) | Шаг на строку вверх с чередованием рисунка и нелокальным выходом за верхним краем |
 | #D940 | [Controls.AdvanceRasterDown](../Source/Controls/AdvanceRasterDown.asm) | Шаг на строку вниз с чередованием рисунка и нелокальным выходом за нижним краем |
-| #D95F | [Controls.UnknownD95F](../Source/Controls/UnknownD95F.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #D95F | [Controls.ProjectAndCheckComponents](../Source/Controls/ProjectAndCheckComponents.asm) | Построение проекции и проверка двух компонент относительно постоянной опоры Component2 |
 | #D9B0 | [Controls.BuildSmallBodyMasks](../Source/Controls/BuildSmallBodyMasks.asm) | Подготовка строковых масок малой фигуры из упакованной затравки радиуса |
 | #D9DE | [Controls.DrawSmallBody](../Source/Controls/DrawSmallBody.asm) | Рисование малой симметричной фигуры радиуса 2..8 строковыми масками в линейном растре |
 | #DAB9 | [Controls.CompareComponents](../Source/Controls/CompareComponents.asm) | Сравнение двух компонентов после перехода IY к следующей трёхбайтовой записи |
 | #DADE | [Controls.RunTemporaryModule](../Source/Controls/RunTemporaryModule.asm) | Сохранение памяти по банкам, распаковка временного модуля и восстановление полётного кода |
-| #DC9B | [Controls.UnknownDC9B](../Source/Controls/UnknownDC9B.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #DC9B | [Controls.RelocateStationReload](../Source/Controls/RelocateStationReload.asm) | Копирование 256 байтов блока загрузки STATIONF в общую RAM и передача управления 4000 |
+| #DCE3 | [Controls.PrepareStationReload](../Source/Controls/PrepareStationReload.asm) | Очистка атрибутов, сохранение 512 байтов состояния и перенос следующей стадии загрузки станции |
 | #DD5D | [Controls.StepWordRandom](../Source/Controls/StepWordRandom.asm) | Обновление двухсловного состояния генератора и возврат XOR его четырёх байтов |
 | #DE0A | [Controls.BuildAndActivateParameters](../Source/Controls/BuildAndActivateParameters.asm) | Подготовка параметров в банке 1 и хвостовая активация набора с выбором банка 0 |
 | #DE10 | [Controls.BuildParameterTables](../Source/Controls/BuildParameterTables.asm) | Формирование пятнадцати параметров и девяти строковых значений по зерну и исходным таблицам |
 | #DE9A | [Controls.BuildSeededIndices](../Source/Controls/BuildSeededIndices.asm) | Формирование четырёх индексов из двухсловного зерна, координатной области и числа шагов генератора |
 | #E021 | [Controls.UpdateGlyphIndicators](../Source/Controls/UpdateGlyphIndicators.asm) | Очистка двух экранных зон и обновление до трёх трёхстрочных знаков с точными байтовыми ограничениями |
 | #E14E | [Controls.OrThreeRowGlyph](../Source/Controls/OrThreeRowGlyph.asm) | Наложение трёхстрочного фазового знака операцией OR на два байта каждой строки экрана |
-| #E291 | [Controls.UnknownE291](../Source/Controls/UnknownE291.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #E291 | [Controls.DrawRadar](../Source/Controls/DrawRadar.asm) | Фазовый фон радара, центральная метка и вывод объектов со знаковыми линиями |
 | #E8FD | [Controls.DrawSixRowGauge](../Source/Controls/DrawSixRowGauge.asm) | Вывод шестистрочной шкалы узором AA, частичного столбца и нулевого хвоста |
-| #E97A | [Controls.UnknownE97A](../Source/Controls/UnknownE97A.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #E97A | [Controls.ToggleTargetOverlay](../Source/Controls/ToggleTargetOverlay.asm) | XOR рамки и спроецированных значков объектов в линейном буфере |
 | #EC0E | [Controls.InitializeTextWindow](../Source/Controls/InitializeTextWindow.asm) | Сброс курсоров очереди и настройка тридцати строк стековой прокрутки |
 | #EC56 | [Controls.QueueNumber](../Source/Controls/QueueNumber.asm) | Подготовка числовой записи типа 2 из A и продолжение в производителе текстовой очереди |
 | #EC59 | [Controls.QueueTextItem](../Source/Controls/QueueTextItem.asm) | Ограниченный поиск свободной записи очереди и сохранение числа либо указателя строки |
@@ -1433,4 +1559,4 @@
 | #E583 | [Music.DecodePatternC](../Source/Music/DecodePatternC.asm) | Декодирование строки C с непосредственным сбросом новой ноты и отложенными эффектами |
 | #6000 | [Action.QueueNumberBank1](../Source/Action/QueueNumberBank1.asm) | Передача байтового числа A в очередь Controls банка 1 с фиксированным возвратом страницы 10 |
 | #6040 | [Action.QueueTextItemBank1](../Source/Action/QueueTextItemBank1.asm) | Передача записи DE в очередь Controls банка 1 с сохранением регистров и возвратом страницы 10 |
-| #6054 | [Action.Unknown6054](../Source/Action/Unknown6054.asm) | Unknown, отдельная цепочка после обёртки очереди ещё не разобрана полностью |
+| #6054 | [Action.ShowNoiseBeforeReload](../Source/Action/ShowNoiseBeforeReload.asm) | Вывод шумовых кадров и ожидание клавиши перед загрузкой станции |

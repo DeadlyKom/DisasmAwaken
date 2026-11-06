@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "typed_bytes": 9,
+  "physical_records": 1,
+  "reused_structure": "FActionWorkVector24",
+  "original_bytes_preserved": true,
+  "assembly_executed": false
+}

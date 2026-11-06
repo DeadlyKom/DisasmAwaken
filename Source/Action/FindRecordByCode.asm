@@ -31,7 +31,7 @@ FindNext:       CALL @Action.NextActiveRecord.Entry
                 RET Z                                                           ; выход, если дочерний итератор достиг маркера конца, совпадение кода не проверяется
 
                 ; Проверка полного кода байта 12 с требуемым D, игровые значения кодов здесь не угадываются.
-                LD A, (IY+#12)
+                LD A, (IY + FActionRecord.ClassCode)
                 CP D
                 JP NZ, @Action.FindRecordByCode.FindNext                        ; переход, если код записи не равен D, искать следующую активную запись
 

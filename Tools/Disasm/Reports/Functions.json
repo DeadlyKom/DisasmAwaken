@@ -8306,25 +8306,25 @@
   },
   {
     "region": "ActionBoot",
-    "name": "BuildProjectionTable",
+    "name": "BuildExponentialTable",
     "address": 17237,
     "slot": 17,
     "offset": 408,
-    "description": "Создание таблицы в #9300 с вычислением через сдвиги и сложение",
+    "description": "Построение 256 байтов приближённой экспоненты последовательным умножением фиксированной точки",
     "semantic_status": "described",
     "end_offset": 466,
-    "path": "Source/ActionBoot/BuildProjectionTable.asm"
+    "path": "Source/ActionBoot/BuildExponentialTable.asm"
   },
   {
     "region": "ActionBoot",
-    "name": "BuildReciprocalTable",
+    "name": "BuildLogarithmTable",
     "address": 17295,
     "slot": 17,
     "offset": 466,
-    "description": "Создание двух страниц таблицы через двоичное деление",
+    "description": "Построение двух раздельных страниц приближённого логарифма через сумму 255 точных частных",
     "semantic_status": "described",
     "end_offset": 530,
-    "path": "Source/ActionBoot/BuildReciprocalTable.asm"
+    "path": "Source/ActionBoot/BuildLogarithmTable.asm"
   },
   {
     "region": "ActionBoot",
@@ -8363,70 +8363,81 @@
   },
   {
     "region": "Action",
-    "name": "Unknown6054",
-    "description": "Unknown, отдельная цепочка после обёртки очереди ещё не разобрана полностью",
+    "name": "ShowNoiseBeforeReload",
+    "description": "Вывод шумовых кадров и ожидание клавиши перед загрузкой станции",
     "address": 24660,
     "slot": 17,
     "offset": 657,
     "end_offset": 747,
-    "path": "Source/Action/Unknown6054.asm",
-    "semantic_status": "unknown",
+    "path": "Source/Action/ShowNoiseBeforeReload.asm",
+    "semantic_status": "described",
     "fragment_scope": "unproved_separate_control_chain"
   },
   {
     "region": "Action",
-    "name": "Unknown6145",
+    "name": "CreateMissileForTarget",
+    "address": 24750,
+    "slot": 17,
+    "offset": 747,
+    "description": "Проверка существования записи цели, поиск свободного слота, инициализация ракеты и создание обратной связи у цели",
+    "semantic_status": "described",
+    "end_offset": 898,
+    "path": "Source/Action/CreateMissileForTarget.asm"
+  },
+  {
+    "region": "Action",
+    "name": "RefreshFlightPanel",
     "address": 24901,
     "slot": 17,
     "offset": 898,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Принудительное обновление шести шкал и четырёх пар счётчика панели полёта",
+    "semantic_status": "described",
     "end_offset": 943,
-    "path": "Source/Action/Unknown6145.asm"
+    "path": "Source/Action/RefreshFlightPanel.asm"
   },
   {
     "region": "Action",
-    "name": "Unknown6172",
+    "name": "ReleaseClass14Records",
     "address": 24946,
     "slot": 17,
     "offset": 943,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Пометка всех активных записей класса 14 через повторный поиск от начала массива",
+    "semantic_status": "described",
     "end_offset": 954,
-    "path": "Source/Action/Unknown6172.asm"
+    "path": "Source/Action/ReleaseClass14Records.asm"
   },
   {
     "region": "Action",
-    "name": "Unknown6265",
+    "name": "StepRecordTargetCodes",
     "address": 25189,
     "slot": 17,
     "offset": 1186,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Подвод двух байтов записи к рассчитанным кодам с различными правилами ограничения шага",
+    "semantic_status": "described",
     "end_offset": 1266,
-    "path": "Source/Action/Unknown6265.asm"
+    "path": "Source/Action/StepRecordTargetCodes.asm"
   },
   {
     "region": "Action",
-    "name": "Unknown62CF",
+    "name": "CountClass3LinksUpToTwo",
     "address": 25295,
     "slot": 17,
     "offset": 1292,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Подсчёт до двух активных записей класса 3 с кодом 02 и совпадающей ссылкой",
+    "semantic_status": "described",
     "end_offset": 1358,
-    "path": "Source/Action/Unknown62CF.asm"
+    "path": "Source/Action/CountClass3LinksUpToTwo.asm"
   },
   {
     "region": "Action",
-    "name": "Unknown635B",
+    "name": "ApplyPendingRecordLink",
     "address": 25435,
     "slot": 17,
     "offset": 1432,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Установка бита 0 LinkFlags, замена LinkedIndex на 1A и условная поправка по ClassCode записи",
+    "semantic_status": "described",
     "end_offset": 1469,
-    "path": "Source/Action/Unknown635B.asm"
+    "path": "Source/Action/ApplyPendingRecordLink.asm"
   },
   {
     "region": "Action",
@@ -8441,14 +8452,58 @@
   },
   {
     "region": "Action",
-    "name": "Unknown64DF",
+    "name": "DispatchRecordClass",
     "address": 25823,
     "slot": 17,
     "offset": 1820,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Косвенный переход по оборачиваемому байтовому индексу класса записи",
+    "semantic_status": "described",
     "end_offset": 1837,
-    "path": "Source/Action/Unknown64DF.asm"
+    "path": "Source/Action/DispatchRecordClass.asm"
+  },
+  {
+    "region": "Action",
+    "name": "ReturnIgnoredRecordClass",
+    "address": 25892,
+    "slot": 17,
+    "offset": 1889,
+    "end_offset": 1890,
+    "path": "Source/Action/ReturnIgnoredRecordClass.asm",
+    "description": "Немедленный общий возврат исходных классов 10..25 без изменения записи",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "ConfigureClass9Link",
+    "address": 26054,
+    "slot": 17,
+    "offset": 2051,
+    "end_offset": 2075,
+    "path": "Source/Action/ConfigureClass9Link.asm",
+    "description": "Запись кода 0D с сохранением LinkedIndex либо кода 01 со сбросом LinkedIndex в FF",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "ConfigureClass0Link",
+    "address": 26126,
+    "slot": 17,
+    "offset": 2123,
+    "end_offset": 2152,
+    "path": "Source/Action/ConfigureClass0Link.asm",
+    "description": "Применение подстановки либо выбор новой связи после порога R с общим входом SelectLink",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "CopyRecordLinkOverride",
+    "address": 26155,
+    "slot": 17,
+    "offset": 2152,
+    "end_offset": 2166,
+    "path": "Source/Action/CopyRecordLinkOverride.asm",
+    "description": "Копирование разрешённого байта подстановки в LinkedIndex и запись кода 02",
+    "semantic_status": "described"
   },
   {
     "region": "Action",
@@ -8474,201 +8529,289 @@
   },
   {
     "region": "Action",
-    "name": "Unknown66D2",
+    "name": "SubtractScaledWorkVector",
     "address": 26322,
     "slot": 17,
     "offset": 2319,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
-    "end_offset": 2493,
-    "path": "Source/Action/Unknown66D2.asm"
+    "description": "Вычитание трёх знаковых масштабированных слов из рабочего 24-битного вектора до первого переполнения",
+    "semantic_status": "described",
+    "end_offset": 2404,
+    "path": "Source/Action/SubtractScaledWorkVector.asm"
   },
   {
     "region": "Action",
-    "name": "Unknown6780",
+    "name": "TransitionBodyMode",
+    "address": 26407,
+    "slot": 17,
+    "offset": 2404,
+    "description": "Переключение режима тела и изменение старших слов рабочего вектора",
+    "semantic_status": "described",
+    "end_offset": 2493,
+    "path": "Source/Action/TransitionBodyMode.asm"
+  },
+  {
+    "region": "Action",
+    "name": "UpdateBodyMotion",
     "address": 26496,
     "slot": 17,
     "offset": 2493,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Фазовое обновление рабочего вектора, запросов панели и широких целей",
+    "semantic_status": "described",
     "end_offset": 3002,
-    "path": "Source/Action/Unknown6780.asm"
+    "path": "Source/Action/UpdateBodyMotion.asm"
   },
   {
     "region": "Action",
-    "name": "Unknown6986",
+    "name": "CompareContextWordPairs",
     "address": 27014,
     "slot": 17,
     "offset": 3011,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Сравнение двух пар слов контекста с ранним выходом по первой разности",
+    "semantic_status": "described",
     "end_offset": 3033,
-    "path": "Source/Action/Unknown6986.asm"
+    "path": "Source/Action/CompareContextWordPairs.asm"
   },
   {
     "region": "Action",
-    "name": "Unknown699C",
+    "name": "MaxFoldedVectorHigh",
     "address": 27036,
     "slot": 17,
     "offset": 3033,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Максимум трёх старших байтов с дополнением отрицательных кодов через CPL",
+    "semantic_status": "described",
     "end_offset": 3067,
-    "path": "Source/Action/Unknown699C.asm"
+    "path": "Source/Action/MaxFoldedVectorHigh.asm"
   },
   {
     "region": "Action",
-    "name": "Unknown69BE",
+    "name": "FindFirstNearWideVector",
     "address": 27070,
     "slot": 17,
     "offset": 3067,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Поиск первого близкого широкого вектора и выбор его наибольшего старшего байта",
+    "semantic_status": "described",
     "end_offset": 3174,
-    "path": "Source/Action/Unknown69BE.asm"
+    "path": "Source/Action/FindFirstNearWideVector.asm"
   },
   {
     "region": "Action",
-    "name": "Unknown6A29",
+    "name": "CheckThreeUpperWordsNear",
     "address": 27177,
     "slot": 17,
     "offset": 3174,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Проверка трёх знаковых верхних слов на диапазон от минус 60 до 59",
+    "semantic_status": "described",
     "end_offset": 3243,
-    "path": "Source/Action/Unknown6A29.asm"
+    "path": "Source/Action/CheckThreeUpperWordsNear.asm"
   },
   {
     "region": "Action",
-    "name": "Unknown6A6E",
+    "name": "PrepareBodyTransform",
     "address": 27246,
     "slot": 17,
     "offset": 3243,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Подготовка компонент тела и передача арифметическому преобразованию AF43",
+    "semantic_status": "described",
     "end_offset": 3306,
-    "path": "Source/Action/Unknown6A6E.asm"
+    "path": "Source/Action/PrepareBodyTransform.asm"
   },
   {
     "region": "Action",
-    "name": "Unknown6AB0",
+    "name": "RestoreBodyStack",
+    "address": 27309,
+    "slot": 17,
+    "offset": 3306,
+    "end_offset": 3309,
+    "path": "Source/Action/RestoreBodyStack.asm",
+    "description": "Восстановление настоящего SP после арифметического накопителя",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "PublishTransformedBody",
     "address": 27312,
     "slot": 17,
     "offset": 3309,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Публикация знаковых компонент, подготовка проекции и рисование преобразованного тела",
+    "semantic_status": "described",
     "end_offset": 3411,
-    "path": "Source/Action/Unknown6AB0.asm"
+    "path": "Source/Action/PublishTransformedBody.asm"
   },
   {
     "region": "Action",
-    "name": "Unknown6B16",
+    "name": "ProjectWideVectors",
     "address": 27414,
     "slot": 17,
     "offset": 3411,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Обход широких векторов с выбором масштаба, отрисовкой близких записей и публикацией выбранной",
+    "semantic_status": "described",
     "end_offset": 3644,
-    "path": "Source/Action/Unknown6B16.asm"
+    "path": "Source/Action/ProjectWideVectors.asm"
   },
   {
     "region": "Action",
-    "name": "Unknown6BFF",
+    "name": "CopyAndTransformComponents",
     "address": 27647,
     "slot": 17,
     "offset": 3644,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Копирование трёх трёхбайтовых компонент с шагом четыре и последующее преобразование рабочего вектора",
+    "semantic_status": "described",
     "end_offset": 3670,
-    "path": "Source/Action/Unknown6BFF.asm"
+    "path": "Source/Action/CopyAndTransformComponents.asm"
   },
   {
     "region": "Action",
-    "name": "Unknown6C19",
+    "name": "TransformWorkComponents",
     "address": 27673,
     "slot": 17,
     "offset": 3670,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Преобразование старших слов трёх рабочих компонент с очисткой Low и знаковым кодированием результата",
+    "semantic_status": "described",
     "end_offset": 3709,
-    "path": "Source/Action/Unknown6C19.asm"
+    "path": "Source/Action/TransformWorkComponents.asm"
   },
   {
     "region": "Action",
-    "name": "Unknown6C43",
+    "name": "RestoreComponentStack",
+    "address": 27712,
+    "slot": 17,
+    "offset": 3709,
+    "end_offset": 3712,
+    "path": "Source/Action/RestoreComponentStack.asm",
+    "description": "Восстановление CPU SP после вычисления рабочих компонент перед знаковым кодированием",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "EncodeSignedComponents",
     "address": 27715,
     "slot": 17,
     "offset": 3712,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Кодирование трёх выходных слов в знак и модуль с обратным знаком компоненты 1",
+    "semantic_status": "described",
     "end_offset": 3771,
-    "path": "Source/Action/Unknown6C43.asm"
+    "path": "Source/Action/EncodeSignedComponents.asm"
   },
   {
     "region": "Action",
-    "name": "Unknown6C7E",
+    "name": "DrawBankedProjectedBody",
     "address": 27774,
     "slot": 17,
     "offset": 3771,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Проекция и рисование тела в банке CONTROL с шахматным рисунком",
+    "semantic_status": "described",
     "end_offset": 3788,
-    "path": "Source/Action/Unknown6C7E.asm"
+    "path": "Source/Action/DrawBankedProjectedBody.asm"
   },
   {
     "region": "Action",
-    "name": "Unknown6C8F",
+    "name": "UpdateThirdGlyphVector",
     "address": 27791,
     "slot": 17,
     "offset": 3788,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Подготовка трёх входных слов, расчёт вектора с арифметическим SP и обновление третьего экранного знака",
+    "semantic_status": "described",
     "end_offset": 3822,
-    "path": "Source/Action/Unknown6C8F.asm"
+    "path": "Source/Action/UpdateThirdGlyphVector.asm"
   },
   {
     "region": "Action",
-    "name": "Unknown6CB4",
+    "name": "RestoreThirdGlyphStack",
+    "address": 27825,
+    "slot": 17,
+    "offset": 3822,
+    "end_offset": 3825,
+    "path": "Source/Action/RestoreThirdGlyphStack.asm",
+    "description": "Восстановление CPU SP после векторного вычислителя перед публикацией третьего знака",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "PublishThirdGlyphVector",
     "address": 27828,
     "slot": 17,
     "offset": 3825,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Перенос четвертей двух выходных слов и знакового байта третьего слова во вход третьего экранного знака",
+    "semantic_status": "described",
     "end_offset": 3859,
-    "path": "Source/Action/Unknown6CB4.asm"
+    "path": "Source/Action/PublishThirdGlyphVector.asm"
   },
   {
     "region": "Action",
-    "name": "Unknown6CD6",
+    "name": "InitializeBankedBufferPoints",
     "address": 27862,
     "slot": 17,
     "offset": 3859,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Подготовка 35 координат точек в Controls банка 1 с возвратом полной конфигурации 10",
+    "semantic_status": "described",
     "end_offset": 3873,
-    "path": "Source/Action/Unknown6CD6.asm"
+    "path": "Source/Action/InitializeBankedBufferPoints.asm"
   },
   {
     "region": "Action",
-    "name": "Unknown6CEF",
+    "name": "TransferToStationLoader",
+    "address": 27876,
+    "slot": 17,
+    "offset": 3873,
+    "end_offset": 3884,
+    "path": "Source/Action/TransferToStationLoader.asm",
+    "description": "Выбор конфигурации 11 и хвостовая передача управления DCE3 загрузчика следующего режима",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "DispatchBank3Callback",
     "address": 27887,
     "slot": 17,
     "offset": 3884,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Передача управления HL с конфигурацией банка 3, обменом AF и возвратным хвостом Runtime",
+    "semantic_status": "described",
     "end_offset": 3901,
-    "path": "Source/Action/Unknown6CEF.asm"
+    "path": "Source/Action/DispatchBank3Callback.asm"
   },
   {
     "region": "Action",
-    "name": "Unknown6D38",
+    "name": "RestoreRuntimePage",
+    "address": 27904,
+    "slot": 17,
+    "offset": 3901,
+    "end_offset": 3907,
+    "path": "Source/Action/RestoreRuntimePage.asm",
+    "description": "Выдача конфигурации 10 в 7FFD и возврат внешнему вызывающему после банкового обработчика",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "ApplyObjectOffsetVector",
+    "address": 27910,
+    "slot": 17,
+    "offset": 3907,
+    "end_offset": 3957,
+    "path": "Source/Action/ApplyObjectOffsetVector.asm",
+    "description": "Расчёт трёх базовых слов записи по коэффициентам смещения",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "UpdateVisualEffects",
     "address": 27960,
     "slot": 17,
     "offset": 3957,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Обход эффектов, продвижение ресурсов и растеризация допущенных записей",
+    "semantic_status": "described",
     "end_offset": 4110,
-    "path": "Source/Action/Unknown6D38.asm"
+    "path": "Source/Action/UpdateVisualEffects.asm"
+  },
+  {
+    "region": "Action",
+    "name": "ResumeVisualEffect",
+    "address": 28113,
+    "slot": 17,
+    "offset": 4110,
+    "end_offset": 4200,
+    "path": "Source/Action/ResumeVisualEffect.asm",
+    "description": "Восстановление стека и банковый вызов рисователя эффекта при положительной глубине",
+    "semantic_status": "described"
   },
   {
     "region": "Action",
@@ -8683,14 +8826,14 @@
   },
   {
     "region": "Action",
-    "name": "Unknown6E6C",
+    "name": "UpdateMotionFromControls",
     "address": 28268,
     "slot": 17,
     "offset": 4265,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Обработка управления и расчёт трёх смещений из знакового слова",
+    "semantic_status": "described",
     "end_offset": 4329,
-    "path": "Source/Action/Unknown6E6C.asm"
+    "path": "Source/Action/UpdateMotionFromControls.asm"
   },
   {
     "region": "Action",
@@ -8705,14 +8848,25 @@
   },
   {
     "region": "Action",
-    "name": "Unknown6F1D",
+    "name": "ReverseScaledVector",
+    "address": 28382,
+    "slot": 17,
+    "offset": 4379,
+    "end_offset": 4442,
+    "path": "Source/Action/ReverseScaledVector.asm",
+    "description": "Инвертирование трёх масштабированных компонент и обновление общего знакового слова с разрешением его обработки",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "ScanActionKeys",
     "address": 28445,
     "slot": 17,
     "offset": 4442,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Обход 27 клавиатурных условий и программные вызовы обработчиков",
+    "semantic_status": "described",
     "end_offset": 4491,
-    "path": "Source/Action/Unknown6F1D.asm"
+    "path": "Source/Action/ScanActionKeys.asm"
   },
   {
     "region": "Action",
@@ -8727,14 +8881,14 @@
   },
   {
     "region": "Action",
-    "name": "Unknown6F55",
+    "name": "LatchControlsAndDecay",
     "address": 28501,
     "slot": 17,
     "offset": 4498,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Фиксация запросов управления и фазовое приближение трёх знаковых величин к нулю",
+    "semantic_status": "described",
     "end_offset": 4692,
-    "path": "Source/Action/Unknown6F55.asm"
+    "path": "Source/Action/LatchControlsAndDecay.asm"
   },
   {
     "region": "Action",
@@ -8746,6 +8900,50 @@
     "semantic_status": "described",
     "end_offset": 4745,
     "path": "Source/Action/IgnoreKey.asm"
+  },
+  {
+    "region": "Action",
+    "name": "RequestMissile0",
+    "address": 28748,
+    "slot": 17,
+    "offset": 4745,
+    "description": "Условный запрос запуска по Target0 с продолжением в общий хвост",
+    "semantic_status": "described",
+    "end_offset": 4762,
+    "path": "Source/Action/RequestMissile0.asm"
+  },
+  {
+    "region": "Action",
+    "name": "CompleteMissileLaunch",
+    "address": 28765,
+    "slot": 17,
+    "offset": 4762,
+    "description": "Создание ракеты, поправка состояния по классу цели и последующее списание запаса",
+    "semantic_status": "described",
+    "end_offset": 4786,
+    "path": "Source/Action/CompleteMissileLaunch.asm"
+  },
+  {
+    "region": "Action",
+    "name": "RequestMissile1",
+    "address": 28789,
+    "slot": 17,
+    "offset": 4786,
+    "description": "Условный запрос запуска по Target1 с переходом в общий хвост",
+    "semantic_status": "described",
+    "end_offset": 4805,
+    "path": "Source/Action/RequestMissile1.asm"
+  },
+  {
+    "region": "Action",
+    "name": "RequestMissile2",
+    "address": 28808,
+    "slot": 17,
+    "offset": 4805,
+    "description": "Условный запрос запуска по Target2 с переходом в общий хвост",
+    "semantic_status": "described",
+    "end_offset": 4824,
+    "path": "Source/Action/RequestMissile2.asm"
   },
   {
     "region": "Action",
@@ -8804,69 +9002,168 @@
   },
   {
     "region": "Action",
-    "name": "Unknown7859",
+    "name": "IncreaseGaugeWord",
+    "address": 30336,
+    "slot": 17,
+    "offset": 6333,
+    "end_offset": 6368,
+    "path": "Source/Action/IncreaseGaugeWord.asm",
+    "description": "Увеличение слова шестой шкалы с исходными клавиатурными ограничениями",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "DecreaseGaugeWord",
+    "address": 30371,
+    "slot": 17,
+    "offset": 6368,
+    "end_offset": 6404,
+    "path": "Source/Action/DecreaseGaugeWord.asm",
+    "description": "Уменьшение слова шестой шкалы с исходными клавиатурными ограничениями",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "RequestTurnNegative",
+    "address": 30407,
+    "slot": 17,
+    "offset": 6404,
+    "end_offset": 6439,
+    "path": "Source/Action/RequestTurnNegative.asm",
+    "description": "Запрос уменьшения управления Turn с накопителем повтора и исходной знаковой границей",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "RequestTurnPositive",
+    "address": 30442,
+    "slot": 17,
+    "offset": 6439,
+    "end_offset": 6474,
+    "path": "Source/Action/RequestTurnPositive.asm",
+    "description": "Запрос увеличения управления Turn с накопителем повтора и исходной знаковой границей",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "RequestXNegative",
+    "address": 30477,
+    "slot": 17,
+    "offset": 6474,
+    "end_offset": 6509,
+    "path": "Source/Action/RequestXNegative.asm",
+    "description": "Запрос уменьшения управления X с накопителем повтора и исходной знаковой границей",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "RequestXPositive",
+    "address": 30512,
+    "slot": 17,
+    "offset": 6509,
+    "end_offset": 6544,
+    "path": "Source/Action/RequestXPositive.asm",
+    "description": "Запрос увеличения управления X с накопителем повтора и исходной знаковой границей",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "RequestYNegative",
+    "address": 30547,
+    "slot": 17,
+    "offset": 6544,
+    "end_offset": 6579,
+    "path": "Source/Action/RequestYNegative.asm",
+    "description": "Запрос уменьшения управления Y с накопителем повтора и исходной знаковой границей",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "RequestYPositive",
+    "address": 30582,
+    "slot": 17,
+    "offset": 6579,
+    "end_offset": 6614,
+    "path": "Source/Action/RequestYPositive.asm",
+    "description": "Запрос увеличения управления Y с накопителем повтора и исходной знаковой границей",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "SpawnAlternate",
     "address": 30809,
     "slot": 17,
     "offset": 6806,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Создание записей по шаблону либо по альтернативной ветке планировщика",
+    "semantic_status": "described",
     "end_offset": 7427,
-    "path": "Source/Action/Unknown7859.asm"
+    "path": "Source/Action/SpawnAlternate.asm"
   },
   {
     "region": "Action",
-    "name": "Unknown7B58",
+    "name": "ScheduleSpawn",
     "address": 31576,
     "slot": 17,
     "offset": 7573,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
-    "end_offset": 8410,
-    "path": "Source/Action/Unknown7B58.asm"
+    "description": "Планирование создания объекта, выбор класса, модели и начальных координат",
+    "semantic_status": "described",
+    "end_offset": 8209,
+    "path": "Source/Action/ScheduleSpawn.asm"
   },
   {
     "region": "Action",
-    "name": "Unknown7E9D",
+    "name": "FinishSpawnRecord",
+    "address": 32212,
+    "slot": 17,
+    "offset": 8209,
+    "description": "Заполнение параметров новой записи и передача диспетчеру класса",
+    "semantic_status": "described",
+    "end_offset": 8410,
+    "path": "Source/Action/FinishSpawnRecord.asm"
+  },
+  {
+    "region": "Action",
+    "name": "SelectWideTargetAndStep",
     "address": 32413,
     "slot": 17,
     "offset": 8410,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Выбор первой близкой широкой цели либо первой записи и обновление кодов текущего объекта",
+    "semantic_status": "described",
     "end_offset": 8436,
-    "path": "Source/Action/Unknown7E9D.asm"
+    "path": "Source/Action/SelectWideTargetAndStep.asm"
   },
   {
     "region": "Action",
-    "name": "Unknown7EB7",
+    "name": "StepRecordTowardWideVector",
     "address": 32439,
     "slot": 17,
     "offset": 8436,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Обновление двух кодов записи по трём широким компонентам выбранной цели",
+    "semantic_status": "described",
     "end_offset": 8523,
-    "path": "Source/Action/Unknown7EB7.asm"
+    "path": "Source/Action/StepRecordTowardWideVector.asm"
   },
   {
     "region": "Action",
-    "name": "Unknown7F0E",
+    "name": "ClampPatchedVectorWords",
     "address": 32526,
     "slot": 17,
     "offset": 8523,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Сведение трёх изменяемых 32-битных значений к словам с исходным насыщением и знаком по биту 23",
+    "semantic_status": "described",
     "end_offset": 8627,
-    "path": "Source/Action/Unknown7F0E.asm"
+    "path": "Source/Action/ClampPatchedVectorWords.asm"
   },
   {
     "region": "Action",
-    "name": "Unknown7F76",
+    "name": "AbsSigned32",
     "address": 32630,
     "slot": 17,
     "offset": 8627,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Модуль знакового 32-битного DE:HL с сохранением исходного переполнения минимального значения",
+    "semantic_status": "described",
     "end_offset": 8652,
-    "path": "Source/Action/Unknown7F76.asm"
+    "path": "Source/Action/AbsSigned32.asm"
   },
   {
     "region": "Action",
@@ -8903,14 +9200,25 @@
   },
   {
     "region": "Action",
-    "name": "UnknownAACC",
+    "name": "ReadObjectHeaderWord",
     "address": 43724,
     "slot": 17,
     "offset": 19148,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Чтение слова по указателю страницы 9E из банка OBJECT3D с последующим выбором банка 0",
+    "semantic_status": "described",
     "end_offset": 19170,
-    "path": "Source/Action/UnknownAACC.asm"
+    "path": "Source/Action/ReadObjectHeaderWord.asm"
+  },
+  {
+    "region": "Action",
+    "name": "CopyObjectData",
+    "address": 43746,
+    "slot": 17,
+    "offset": 19170,
+    "end_offset": 19227,
+    "path": "Source/Action/CopyObjectData.asm",
+    "description": "Копирование двухчастного потока OBJECT3D в исходный рабочий буфер с возвратом банка 0",
+    "semantic_status": "described"
   },
   {
     "region": "Action",
@@ -8929,7 +9237,7 @@
     "address": 43811,
     "slot": 17,
     "offset": 19235,
-    "description": "Полётная копия распаковщика ресурсов с обработкой ссылок",
+    "description": "Распаковка HR-потока в полётном коде с переносом входа, LZ-ссылками, тройками и восстановлением шестибайтового конца",
     "semantic_status": "described",
     "end_offset": 19512,
     "path": "Source/Action/UnpackResource.asm"
@@ -8991,58 +9299,58 @@
   },
   {
     "region": "Action",
-    "name": "UnknownAD48",
+    "name": "SqrtWordBank1",
     "address": 44360,
     "slot": 17,
     "offset": 19784,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Вызов табличного корня с выбором Controls банка 1 и сохранением BC",
+    "semantic_status": "described",
     "end_offset": 19802,
-    "path": "Source/Action/UnknownAD48.asm"
+    "path": "Source/Action/SqrtWordBank1.asm"
   },
   {
     "region": "Action",
-    "name": "UnknownAD5A",
+    "name": "EncodeHalfCoordinateDeltas",
     "address": 44378,
     "slot": 17,
     "offset": 19802,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Два кода по трём разностям половинных координат и корню усечённых квадратов",
+    "semantic_status": "described",
     "end_offset": 19895,
-    "path": "Source/Action/UnknownAD5A.asm"
+    "path": "Source/Action/EncodeHalfCoordinateDeltas.asm"
   },
   {
     "region": "Action",
-    "name": "UnknownADB7",
+    "name": "RotateBankedBasis",
     "address": 44471,
     "slot": 17,
     "offset": 19895,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Поворот базисных векторов через VOXAL в странице 3",
+    "semantic_status": "described",
     "end_offset": 19909,
-    "path": "Source/Action/UnknownADB7.asm"
+    "path": "Source/Action/RotateBankedBasis.asm"
   },
   {
     "region": "Action",
-    "name": "UnknownAE24",
+    "name": "EncodeSignedRatio",
     "address": 44580,
     "slot": 17,
     "offset": 20004,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Табличное кодирование знакового отношения с четырьмя смещениями и исходными ограничениями",
+    "semantic_status": "described",
     "end_offset": 20083,
-    "path": "Source/Action/UnknownAE24.asm"
+    "path": "Source/Action/EncodeSignedRatio.asm"
   },
   {
     "region": "Action",
-    "name": "UnknownAE73",
+    "name": "DivideScaledLogarithmic",
     "address": 44659,
     "slot": 17,
     "offset": 20083,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Приближённое отношение с масштабом 256 через нормализацию, разность логарифмов и обратную таблицу",
+    "semantic_status": "described",
     "end_offset": 20291,
-    "path": "Source/Action/UnknownAE73.asm"
+    "path": "Source/Action/DivideScaledLogarithmic.asm"
   },
   {
     "region": "Action",
@@ -9057,1037 +9365,1081 @@
   },
   {
     "region": "Action",
-    "name": "UnknownB0E9",
+    "name": "BuildObjectOffsetCoefficients",
+    "address": 45124,
+    "slot": 17,
+    "offset": 20548,
+    "end_offset": 20713,
+    "path": "Source/Action/BuildObjectOffsetCoefficients.asm",
+    "description": "Подготовка коэффициентов смещения по трём фазовым парам",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "SqrtWordCached",
     "address": 45289,
     "slot": 17,
     "offset": 20713,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Целый корень в области 0000..E8FF и исходное особое поведение E900..FFFF по трём страницам таблиц",
+    "semantic_status": "described",
     "end_offset": 20847,
-    "path": "Source/Action/UnknownB0E9.asm"
+    "path": "Source/Action/SqrtWordCached.asm"
   },
   {
     "region": "Action",
-    "name": "DispatchEdges",
+    "name": "ClipPolygon",
     "address": 49152,
     "slot": 17,
     "offset": 24576,
-    "description": "Выбор вершин и обработчика ребра по раздельной таблице младших и старших байтов",
+    "description": "Обход замкнутого списка вершин с табличным отсечением и ранним завершением контура",
     "semantic_status": "described",
     "end_offset": 24689,
-    "path": "Source/Action/DispatchEdges.asm"
+    "path": "Source/Action/ClipPolygon.asm"
   },
   {
     "region": "Action",
-    "name": "NextEdge",
+    "name": "ContinueClipPolygon",
     "address": 49265,
     "slot": 17,
     "offset": 24689,
-    "description": "Возврат косвенного обработчика и продолжение перебора рёбер",
+    "description": "Восстановление счётчика после ребра и продолжение либо возврат полного полигона",
     "semantic_status": "described",
     "end_offset": 24698,
-    "path": "Source/Action/NextEdge.asm"
+    "path": "Source/Action/ContinueClipPolygon.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCase11",
+    "name": "ReturnClipCase",
     "address": 49274,
     "slot": 17,
     "offset": 24698,
-    "description": "обработчик ребра для индексов таблицы #11, #22, #44, #55, #66, #88, #99, #AA",
+    "description": "Завершение текущего табличного случая обычным RET",
     "semantic_status": "described",
     "end_offset": 24699,
-    "path": "Source/Action/EdgeCase11.asm"
+    "path": "Source/Action/ReturnClipCase.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCase05",
+    "name": "ClipInsideToBottomRight",
     "address": 49275,
     "slot": 17,
     "offset": 24699,
-    "description": "обработчик ребра для индексов таблицы #05",
+    "description": "Отсечение ребра, первая точка внутри окна, вторая снизу справа",
     "semantic_status": "described",
     "end_offset": 24714,
-    "path": "Source/Action/EdgeCase05.asm"
+    "path": "Source/Action/ClipInsideToBottomRight.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCase15",
+    "name": "ClipRightToBottomRight",
     "address": 49290,
     "slot": 17,
     "offset": 24714,
-    "description": "обработчик ребра для индексов таблицы #15",
+    "description": "Отсечение ребра, первая точка справа, вторая снизу справа",
     "semantic_status": "described",
     "end_offset": 24725,
-    "path": "Source/Action/EdgeCase15.asm"
+    "path": "Source/Action/ClipRightToBottomRight.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCase06",
+    "name": "ClipInsideToBottomLeft",
     "address": 49301,
     "slot": 17,
     "offset": 24725,
-    "description": "обработчик ребра для индексов таблицы #06",
+    "description": "Отсечение ребра, первая точка внутри окна, вторая снизу слева",
     "semantic_status": "described",
     "end_offset": 24740,
-    "path": "Source/Action/EdgeCase06.asm"
+    "path": "Source/Action/ClipInsideToBottomLeft.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCase46",
+    "name": "ClipBottomToBottomLeft",
     "address": 49316,
     "slot": 17,
     "offset": 24740,
-    "description": "обработчик ребра для индексов таблицы #46",
+    "description": "Отсечение ребра, первая точка снизу, вторая снизу слева",
     "semantic_status": "described",
     "end_offset": 24751,
-    "path": "Source/Action/EdgeCase46.asm"
+    "path": "Source/Action/ClipBottomToBottomLeft.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCase09",
+    "name": "ClipInsideToTopRight",
     "address": 49327,
     "slot": 17,
     "offset": 24751,
-    "description": "обработчик ребра для индексов таблицы #09",
+    "description": "Отсечение ребра, первая точка внутри окна, вторая сверху справа",
     "semantic_status": "described",
     "end_offset": 24766,
-    "path": "Source/Action/EdgeCase09.asm"
+    "path": "Source/Action/ClipInsideToTopRight.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCase89",
+    "name": "ClipTopToTopRight",
     "address": 49342,
     "slot": 17,
     "offset": 24766,
-    "description": "обработчик ребра для индексов таблицы #89",
+    "description": "Отсечение ребра, первая точка сверху, вторая сверху справа",
     "semantic_status": "described",
     "end_offset": 24777,
-    "path": "Source/Action/EdgeCase89.asm"
+    "path": "Source/Action/ClipTopToTopRight.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCase0A",
+    "name": "ClipInsideToTopLeft",
     "address": 49353,
     "slot": 17,
     "offset": 24777,
-    "description": "обработчик ребра для индексов таблицы #0A",
+    "description": "Отсечение ребра, первая точка внутри окна, вторая сверху слева",
     "semantic_status": "described",
     "end_offset": 24792,
-    "path": "Source/Action/EdgeCase0A.asm"
+    "path": "Source/Action/ClipInsideToTopLeft.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCase2A",
+    "name": "ClipLeftToTopLeft",
     "address": 49368,
     "slot": 17,
     "offset": 24792,
-    "description": "обработчик ребра для индексов таблицы #2A",
+    "description": "Отсечение ребра, первая точка слева, вторая сверху слева",
     "semantic_status": "described",
     "end_offset": 24803,
-    "path": "Source/Action/EdgeCase2A.asm"
+    "path": "Source/Action/ClipLeftToTopLeft.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCase10",
+    "name": "ClipRightToInside",
     "address": 49379,
     "slot": 17,
     "offset": 24803,
-    "description": "обработчик ребра для индексов таблицы #10",
+    "description": "Отсечение ребра, первая точка справа, вторая внутри окна",
     "semantic_status": "described",
     "end_offset": 24809,
-    "path": "Source/Action/EdgeCase10.asm"
+    "path": "Source/Action/ClipRightToInside.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCase12",
+    "name": "ClipRightToLeft",
     "address": 49385,
     "slot": 17,
     "offset": 24809,
-    "description": "обработчик ребра для индексов таблицы #12",
+    "description": "Отсечение ребра, первая точка справа, вторая слева",
     "semantic_status": "described",
     "end_offset": 24815,
-    "path": "Source/Action/EdgeCase12.asm"
+    "path": "Source/Action/ClipRightToLeft.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCase14",
+    "name": "ClipRightToBottom",
     "address": 49391,
     "slot": 17,
     "offset": 24815,
-    "description": "обработчик ребра для индексов таблицы #14",
+    "description": "Отсечение ребра, первая точка справа, вторая снизу",
     "semantic_status": "described",
     "end_offset": 24833,
-    "path": "Source/Action/EdgeCase14.asm"
+    "path": "Source/Action/ClipRightToBottom.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCase16",
+    "name": "ClipRightToBottomLeft",
     "address": 49409,
     "slot": 17,
     "offset": 24833,
-    "description": "обработчик ребра для индексов таблицы #16",
+    "description": "Отсечение ребра, первая точка справа, вторая снизу слева",
     "semantic_status": "described",
     "end_offset": 24857,
-    "path": "Source/Action/EdgeCase16.asm"
+    "path": "Source/Action/ClipRightToBottomLeft.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCase18",
+    "name": "ClipRightToTop",
     "address": 49433,
     "slot": 17,
     "offset": 24857,
-    "description": "обработчик ребра для индексов таблицы #18",
+    "description": "Отсечение ребра, первая точка справа, вторая сверху",
     "semantic_status": "described",
     "end_offset": 24875,
-    "path": "Source/Action/EdgeCase18.asm"
+    "path": "Source/Action/ClipRightToTop.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCase19",
+    "name": "ClipRightToTopRight",
     "address": 49451,
     "slot": 17,
     "offset": 24875,
-    "description": "обработчик ребра для индексов таблицы #19",
+    "description": "Отсечение ребра, первая точка справа, вторая сверху справа",
     "semantic_status": "described",
     "end_offset": 24882,
-    "path": "Source/Action/EdgeCase19.asm"
+    "path": "Source/Action/ClipRightToTopRight.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCase1A",
+    "name": "ClipRightToTopLeft",
     "address": 49458,
     "slot": 17,
     "offset": 24882,
-    "description": "обработчик ребра для индексов таблицы #1A",
+    "description": "Отсечение ребра, первая точка справа, вторая сверху слева",
     "semantic_status": "described",
     "end_offset": 24900,
-    "path": "Source/Action/EdgeCase1A.asm"
+    "path": "Source/Action/ClipRightToTopLeft.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCase20",
+    "name": "ClipLeftToInside",
     "address": 49476,
     "slot": 17,
     "offset": 24900,
-    "description": "обработчик ребра для индексов таблицы #20",
+    "description": "Отсечение ребра, первая точка слева, вторая внутри окна",
     "semantic_status": "described",
     "end_offset": 24906,
-    "path": "Source/Action/EdgeCase20.asm"
+    "path": "Source/Action/ClipLeftToInside.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCase21",
+    "name": "ClipLeftToRight",
     "address": 49482,
     "slot": 17,
     "offset": 24906,
-    "description": "обработчик ребра для индексов таблицы #21",
+    "description": "Отсечение ребра, первая точка слева, вторая справа",
     "semantic_status": "described",
     "end_offset": 24912,
-    "path": "Source/Action/EdgeCase21.asm"
+    "path": "Source/Action/ClipLeftToRight.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCase24",
+    "name": "ClipLeftToBottom",
     "address": 49488,
     "slot": 17,
     "offset": 24912,
-    "description": "обработчик ребра для индексов таблицы #24",
+    "description": "Отсечение ребра, первая точка слева, вторая снизу",
     "semantic_status": "described",
     "end_offset": 24930,
-    "path": "Source/Action/EdgeCase24.asm"
+    "path": "Source/Action/ClipLeftToBottom.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCase25",
+    "name": "ClipLeftToBottomRight",
     "address": 49506,
     "slot": 17,
     "offset": 24930,
-    "description": "обработчик ребра для индексов таблицы #25",
+    "description": "Отсечение ребра, первая точка слева, вторая снизу справа",
     "semantic_status": "described",
     "end_offset": 24948,
-    "path": "Source/Action/EdgeCase25.asm"
+    "path": "Source/Action/ClipLeftToBottomRight.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCase26",
+    "name": "ClipLeftToBottomLeft",
     "address": 49524,
     "slot": 17,
     "offset": 24948,
-    "description": "обработчик ребра для индексов таблицы #26",
+    "description": "Отсечение ребра, первая точка слева, вторая снизу слева",
     "semantic_status": "described",
     "end_offset": 24955,
-    "path": "Source/Action/EdgeCase26.asm"
+    "path": "Source/Action/ClipLeftToBottomLeft.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCase28",
+    "name": "ClipLeftToTop",
     "address": 49531,
     "slot": 17,
     "offset": 24955,
-    "description": "обработчик ребра для индексов таблицы #28",
+    "description": "Отсечение ребра, первая точка слева, вторая сверху",
     "semantic_status": "described",
     "end_offset": 24973,
-    "path": "Source/Action/EdgeCase28.asm"
+    "path": "Source/Action/ClipLeftToTop.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCase29",
+    "name": "ClipLeftToTopRight",
     "address": 49549,
     "slot": 17,
     "offset": 24973,
-    "description": "обработчик ребра для индексов таблицы #29",
+    "description": "Отсечение ребра, первая точка слева, вторая сверху справа",
     "semantic_status": "described",
     "end_offset": 24997,
-    "path": "Source/Action/EdgeCase29.asm"
+    "path": "Source/Action/ClipLeftToTopRight.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCase40",
+    "name": "ClipBottomToInside",
     "address": 49573,
     "slot": 17,
     "offset": 24997,
-    "description": "обработчик ребра для индексов таблицы #40",
+    "description": "Отсечение ребра, первая точка снизу, вторая внутри окна",
     "semantic_status": "described",
     "end_offset": 25003,
-    "path": "Source/Action/EdgeCase40.asm"
+    "path": "Source/Action/ClipBottomToInside.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCase41",
+    "name": "ClipBottomToRight",
     "address": 49579,
     "slot": 17,
     "offset": 25003,
-    "description": "обработчик ребра для индексов таблицы #41",
+    "description": "Отсечение ребра, первая точка снизу, вторая справа",
     "semantic_status": "described",
     "end_offset": 25021,
-    "path": "Source/Action/EdgeCase41.asm"
+    "path": "Source/Action/ClipBottomToRight.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCase42",
+    "name": "ClipBottomToLeft",
     "address": 49597,
     "slot": 17,
     "offset": 25021,
-    "description": "обработчик ребра для индексов таблицы #42",
+    "description": "Отсечение ребра, первая точка снизу, вторая слева",
     "semantic_status": "described",
     "end_offset": 25039,
-    "path": "Source/Action/EdgeCase42.asm"
+    "path": "Source/Action/ClipBottomToLeft.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCase45",
+    "name": "ClipBottomToBottomRight",
     "address": 49615,
     "slot": 17,
     "offset": 25039,
-    "description": "обработчик ребра для индексов таблицы #45",
+    "description": "Отсечение ребра, первая точка снизу, вторая снизу справа",
     "semantic_status": "described",
     "end_offset": 25046,
-    "path": "Source/Action/EdgeCase45.asm"
+    "path": "Source/Action/ClipBottomToBottomRight.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCase48",
+    "name": "ClipBottomToTop",
     "address": 49622,
     "slot": 17,
     "offset": 25046,
-    "description": "обработчик ребра для индексов таблицы #48",
+    "description": "Отсечение ребра, первая точка снизу, вторая сверху",
     "semantic_status": "described",
     "end_offset": 25052,
-    "path": "Source/Action/EdgeCase48.asm"
+    "path": "Source/Action/ClipBottomToTop.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCase49",
+    "name": "ClipBottomToTopRight",
     "address": 49628,
     "slot": 17,
     "offset": 25052,
-    "description": "обработчик ребра для индексов таблицы #49",
+    "description": "Отсечение ребра, первая точка снизу, вторая сверху справа",
     "semantic_status": "described",
     "end_offset": 25073,
-    "path": "Source/Action/EdgeCase49.asm"
+    "path": "Source/Action/ClipBottomToTopRight.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCase4A",
+    "name": "ClipBottomToTopLeft",
     "address": 49649,
     "slot": 17,
     "offset": 25073,
-    "description": "обработчик ребра для индексов таблицы #4A",
+    "description": "Отсечение ребра, первая точка снизу, вторая сверху слева",
     "semantic_status": "described",
     "end_offset": 25100,
-    "path": "Source/Action/EdgeCase4A.asm"
+    "path": "Source/Action/ClipBottomToTopLeft.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCase50",
+    "name": "ClipBottomRightToInside",
     "address": 49676,
     "slot": 17,
     "offset": 25100,
-    "description": "обработчик ребра для индексов таблицы #50",
+    "description": "Отсечение ребра, первая точка снизу справа, вторая внутри окна",
     "semantic_status": "described",
     "end_offset": 25128,
-    "path": "Source/Action/EdgeCase50.asm"
+    "path": "Source/Action/ClipBottomRightToInside.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCase51",
+    "name": "ClipBottomRightToRight",
     "address": 49704,
     "slot": 17,
     "offset": 25128,
-    "description": "обработчик ребра для индексов таблицы #51",
+    "description": "Отсечение ребра, первая точка снизу справа, вторая справа",
     "semantic_status": "described",
     "end_offset": 25135,
-    "path": "Source/Action/EdgeCase51.asm"
+    "path": "Source/Action/ClipBottomRightToRight.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCase52",
+    "name": "ClipBottomRightToLeft",
     "address": 49711,
     "slot": 17,
     "offset": 25135,
-    "description": "обработчик ребра для индексов таблицы #52",
+    "description": "Отсечение ребра, первая точка снизу справа, вторая слева",
     "semantic_status": "described",
     "end_offset": 25166,
-    "path": "Source/Action/EdgeCase52.asm"
+    "path": "Source/Action/ClipBottomRightToLeft.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCase54",
+    "name": "ClipBottomRightToBottom",
     "address": 49742,
     "slot": 17,
     "offset": 25166,
-    "description": "обработчик ребра для индексов таблицы #54",
+    "description": "Отсечение ребра, первая точка снизу справа, вторая снизу",
     "semantic_status": "described",
     "end_offset": 25177,
-    "path": "Source/Action/EdgeCase54.asm"
+    "path": "Source/Action/ClipBottomRightToBottom.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCase56",
+    "name": "ClipBottomRightToBottomLeft",
     "address": 49753,
     "slot": 17,
     "offset": 25177,
-    "description": "обработчик ребра для индексов таблицы #56",
+    "description": "Отсечение ребра, первая точка снизу справа, вторая снизу слева",
     "semantic_status": "described",
     "end_offset": 25183,
-    "path": "Source/Action/EdgeCase56.asm"
+    "path": "Source/Action/ClipBottomRightToBottomLeft.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCase58",
+    "name": "ClipBottomRightToTop",
     "address": 49759,
     "slot": 17,
     "offset": 25183,
-    "description": "обработчик ребра для индексов таблицы #58",
+    "description": "Отсечение ребра, первая точка снизу справа, вторая сверху",
     "semantic_status": "described",
     "end_offset": 25204,
-    "path": "Source/Action/EdgeCase58.asm"
+    "path": "Source/Action/ClipBottomRightToTop.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCase5A",
+    "name": "ClipBottomRightToTopLeft",
     "address": 49780,
     "slot": 17,
     "offset": 25204,
-    "description": "обработчик ребра для индексов таблицы #5A",
+    "description": "Отсечение ребра, первая точка снизу справа, вторая сверху слева",
     "semantic_status": "described",
     "end_offset": 25229,
-    "path": "Source/Action/EdgeCase5A.asm"
+    "path": "Source/Action/ClipBottomRightToTopLeft.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCase60",
+    "name": "ClipBottomLeftToInside",
     "address": 49805,
     "slot": 17,
     "offset": 25229,
-    "description": "обработчик ребра для индексов таблицы #60",
+    "description": "Отсечение ребра, первая точка снизу слева, вторая внутри окна",
     "semantic_status": "described",
     "end_offset": 25257,
-    "path": "Source/Action/EdgeCase60.asm"
+    "path": "Source/Action/ClipBottomLeftToInside.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCase61",
+    "name": "ClipBottomLeftToRight",
     "address": 49833,
     "slot": 17,
     "offset": 25257,
-    "description": "обработчик ребра для индексов таблицы #61",
+    "description": "Отсечение ребра, первая точка снизу слева, вторая справа",
     "semantic_status": "described",
     "end_offset": 25278,
-    "path": "Source/Action/EdgeCase61.asm"
+    "path": "Source/Action/ClipBottomLeftToRight.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCase62",
+    "name": "ClipBottomLeftToLeft",
     "address": 49854,
     "slot": 17,
     "offset": 25278,
-    "description": "обработчик ребра для индексов таблицы #62",
+    "description": "Отсечение ребра, первая точка снизу слева, вторая слева",
     "semantic_status": "described",
     "end_offset": 25289,
-    "path": "Source/Action/EdgeCase62.asm"
+    "path": "Source/Action/ClipBottomLeftToLeft.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCase64",
+    "name": "ClipBottomLeftToBottom",
     "address": 49865,
     "slot": 17,
     "offset": 25289,
-    "description": "обработчик ребра для индексов таблицы #64",
+    "description": "Отсечение ребра, первая точка снизу слева, вторая снизу",
     "semantic_status": "described",
     "end_offset": 25296,
-    "path": "Source/Action/EdgeCase64.asm"
+    "path": "Source/Action/ClipBottomLeftToBottom.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCase68",
+    "name": "ClipBottomLeftToTop",
     "address": 49872,
     "slot": 17,
     "offset": 25296,
-    "description": "обработчик ребра для индексов таблицы #68",
+    "description": "Отсечение ребра, первая точка снизу слева, вторая сверху",
     "semantic_status": "described",
     "end_offset": 25327,
-    "path": "Source/Action/EdgeCase68.asm"
+    "path": "Source/Action/ClipBottomLeftToTop.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCase69",
+    "name": "ClipBottomLeftToTopRight",
     "address": 49903,
     "slot": 17,
     "offset": 25327,
-    "description": "обработчик ребра для индексов таблицы #69",
+    "description": "Отсечение ребра, первая точка снизу слева, вторая сверху справа",
     "semantic_status": "described",
     "end_offset": 25352,
-    "path": "Source/Action/EdgeCase69.asm"
+    "path": "Source/Action/ClipBottomLeftToTopRight.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCase6A",
+    "name": "ClipBottomLeftToTopLeft",
     "address": 49928,
     "slot": 17,
     "offset": 25352,
-    "description": "обработчик ребра для индексов таблицы #6A",
+    "description": "Отсечение ребра, первая точка снизу слева, вторая сверху слева",
     "semantic_status": "described",
     "end_offset": 25358,
-    "path": "Source/Action/EdgeCase6A.asm"
+    "path": "Source/Action/ClipBottomLeftToTopLeft.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCase80",
+    "name": "ClipTopToInside",
     "address": 49934,
     "slot": 17,
     "offset": 25358,
-    "description": "обработчик ребра для индексов таблицы #80",
+    "description": "Отсечение ребра, первая точка сверху, вторая внутри окна",
     "semantic_status": "described",
     "end_offset": 25364,
-    "path": "Source/Action/EdgeCase80.asm"
+    "path": "Source/Action/ClipTopToInside.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCase81",
+    "name": "ClipTopToRight",
     "address": 49940,
     "slot": 17,
     "offset": 25364,
-    "description": "обработчик ребра для индексов таблицы #81",
+    "description": "Отсечение ребра, первая точка сверху, вторая справа",
     "semantic_status": "described",
     "end_offset": 25382,
-    "path": "Source/Action/EdgeCase81.asm"
+    "path": "Source/Action/ClipTopToRight.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCase82",
+    "name": "ClipTopToLeft",
     "address": 49958,
     "slot": 17,
     "offset": 25382,
-    "description": "обработчик ребра для индексов таблицы #82",
+    "description": "Отсечение ребра, первая точка сверху, вторая слева",
     "semantic_status": "described",
     "end_offset": 25400,
-    "path": "Source/Action/EdgeCase82.asm"
+    "path": "Source/Action/ClipTopToLeft.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCase84",
+    "name": "ClipTopToBottom",
     "address": 49976,
     "slot": 17,
     "offset": 25400,
-    "description": "обработчик ребра для индексов таблицы #84",
+    "description": "Отсечение ребра, первая точка сверху, вторая снизу",
     "semantic_status": "described",
     "end_offset": 25406,
-    "path": "Source/Action/EdgeCase84.asm"
+    "path": "Source/Action/ClipTopToBottom.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCase85",
+    "name": "ClipTopToBottomRight",
     "address": 49982,
     "slot": 17,
     "offset": 25406,
-    "description": "обработчик ребра для индексов таблицы #85",
+    "description": "Отсечение ребра, первая точка сверху, вторая снизу справа",
     "semantic_status": "described",
     "end_offset": 25433,
-    "path": "Source/Action/EdgeCase85.asm"
+    "path": "Source/Action/ClipTopToBottomRight.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCase86",
+    "name": "ClipTopToBottomLeft",
     "address": 50009,
     "slot": 17,
     "offset": 25433,
-    "description": "обработчик ребра для индексов таблицы #86",
+    "description": "Отсечение ребра, первая точка сверху, вторая снизу слева",
     "semantic_status": "described",
     "end_offset": 25454,
-    "path": "Source/Action/EdgeCase86.asm"
+    "path": "Source/Action/ClipTopToBottomLeft.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCase8A",
+    "name": "ClipTopToTopLeft",
     "address": 50030,
     "slot": 17,
     "offset": 25454,
-    "description": "обработчик ребра для индексов таблицы #8A",
+    "description": "Отсечение ребра, первая точка сверху, вторая сверху слева",
     "semantic_status": "described",
     "end_offset": 25461,
-    "path": "Source/Action/EdgeCase8A.asm"
+    "path": "Source/Action/ClipTopToTopLeft.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCase90",
+    "name": "ClipTopRightToInside",
     "address": 50037,
     "slot": 17,
     "offset": 25461,
-    "description": "обработчик ребра для индексов таблицы #90",
+    "description": "Отсечение ребра, первая точка сверху справа, вторая внутри окна",
     "semantic_status": "described",
     "end_offset": 25489,
-    "path": "Source/Action/EdgeCase90.asm"
+    "path": "Source/Action/ClipTopRightToInside.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCase91",
+    "name": "ClipTopRightToRight",
     "address": 50065,
     "slot": 17,
     "offset": 25489,
-    "description": "обработчик ребра для индексов таблицы #91",
+    "description": "Отсечение ребра, первая точка сверху справа, вторая справа",
     "semantic_status": "described",
     "end_offset": 25500,
-    "path": "Source/Action/EdgeCase91.asm"
+    "path": "Source/Action/ClipTopRightToRight.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCase92",
+    "name": "ClipTopRightToLeft",
     "address": 50076,
     "slot": 17,
     "offset": 25500,
-    "description": "обработчик ребра для индексов таблицы #92",
+    "description": "Отсечение ребра, первая точка сверху справа, вторая слева",
     "semantic_status": "described",
     "end_offset": 25521,
-    "path": "Source/Action/EdgeCase92.asm"
+    "path": "Source/Action/ClipTopRightToLeft.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCase94",
+    "name": "ClipTopRightToBottom",
     "address": 50097,
     "slot": 17,
     "offset": 25521,
-    "description": "обработчик ребра для индексов таблицы #94",
+    "description": "Отсечение ребра, первая точка сверху справа, вторая снизу",
     "semantic_status": "described",
     "end_offset": 25552,
-    "path": "Source/Action/EdgeCase94.asm"
+    "path": "Source/Action/ClipTopRightToBottom.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCase95",
+    "name": "ClipTopRightToBottomRight",
     "address": 50128,
     "slot": 17,
     "offset": 25552,
-    "description": "обработчик ребра для индексов таблицы #95",
+    "description": "Отсечение ребра, первая точка сверху справа, вторая снизу справа",
     "semantic_status": "described",
     "end_offset": 25558,
-    "path": "Source/Action/EdgeCase95.asm"
+    "path": "Source/Action/ClipTopRightToBottomRight.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCase96",
+    "name": "ClipTopRightToBottomLeft",
     "address": 50134,
     "slot": 17,
     "offset": 25558,
-    "description": "обработчик ребра для индексов таблицы #96",
+    "description": "Отсечение ребра, первая точка сверху справа, вторая снизу слева",
     "semantic_status": "described",
     "end_offset": 25583,
-    "path": "Source/Action/EdgeCase96.asm"
+    "path": "Source/Action/ClipTopRightToBottomLeft.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCase98",
+    "name": "ClipTopRightToTop",
     "address": 50159,
     "slot": 17,
     "offset": 25583,
-    "description": "обработчик ребра для индексов таблицы #98",
+    "description": "Отсечение ребра, первая точка сверху справа, вторая сверху",
     "semantic_status": "described",
     "end_offset": 25590,
-    "path": "Source/Action/EdgeCase98.asm"
+    "path": "Source/Action/ClipTopRightToTop.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCaseA0",
+    "name": "ClipTopLeftToInside",
     "address": 50166,
     "slot": 17,
     "offset": 25590,
-    "description": "обработчик ребра для индексов таблицы #A0",
+    "description": "Отсечение ребра, первая точка сверху слева, вторая внутри окна",
     "semantic_status": "described",
     "end_offset": 25618,
-    "path": "Source/Action/EdgeCaseA0.asm"
+    "path": "Source/Action/ClipTopLeftToInside.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCaseA1",
+    "name": "ClipTopLeftToRight",
     "address": 50194,
     "slot": 17,
     "offset": 25618,
-    "description": "обработчик ребра для индексов таблицы #A1",
+    "description": "Отсечение ребра, первая точка сверху слева, вторая справа",
     "semantic_status": "described",
     "end_offset": 25649,
-    "path": "Source/Action/EdgeCaseA1.asm"
+    "path": "Source/Action/ClipTopLeftToRight.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCaseA2",
+    "name": "ClipTopLeftToLeft",
     "address": 50225,
     "slot": 17,
     "offset": 25649,
-    "description": "обработчик ребра для индексов таблицы #A2",
+    "description": "Отсечение ребра, первая точка сверху слева, вторая слева",
     "semantic_status": "described",
     "end_offset": 25656,
-    "path": "Source/Action/EdgeCaseA2.asm"
+    "path": "Source/Action/ClipTopLeftToLeft.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCaseA4",
+    "name": "ClipTopLeftToBottom",
     "address": 50232,
     "slot": 17,
     "offset": 25656,
-    "description": "обработчик ребра для индексов таблицы #A4",
+    "description": "Отсечение ребра, первая точка сверху слева, вторая снизу",
     "semantic_status": "described",
     "end_offset": 25677,
-    "path": "Source/Action/EdgeCaseA4.asm"
+    "path": "Source/Action/ClipTopLeftToBottom.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCaseA5",
+    "name": "ClipTopLeftToBottomRight",
     "address": 50253,
     "slot": 17,
     "offset": 25677,
-    "description": "обработчик ребра для индексов таблицы #A5",
+    "description": "Отсечение ребра, первая точка сверху слева, вторая снизу справа",
     "semantic_status": "described",
     "end_offset": 25702,
-    "path": "Source/Action/EdgeCaseA5.asm"
+    "path": "Source/Action/ClipTopLeftToBottomRight.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCaseA8",
+    "name": "ClipTopLeftToTop",
     "address": 50278,
     "slot": 17,
     "offset": 25702,
-    "description": "обработчик ребра для индексов таблицы #A8",
+    "description": "Отсечение ребра, первая точка сверху слева, вторая сверху",
     "semantic_status": "described",
     "end_offset": 25713,
-    "path": "Source/Action/EdgeCaseA8.asm"
+    "path": "Source/Action/ClipTopLeftToTop.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCaseA9",
+    "name": "ClipTopLeftToTopRight",
     "address": 50289,
     "slot": 17,
     "offset": 25713,
-    "description": "обработчик ребра для индексов таблицы #A9",
+    "description": "Отсечение ребра, первая точка сверху слева, вторая сверху справа",
     "semantic_status": "described",
     "end_offset": 25719,
-    "path": "Source/Action/EdgeCaseA9.asm"
+    "path": "Source/Action/ClipTopLeftToTopRight.asm"
   },
   {
     "region": "Action",
-    "name": "UnknownC477",
+    "name": "ComputeTopClipProduct",
     "address": 50295,
     "slot": 17,
     "offset": 25719,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Подготовка числителя пересечения (First.First-0)*(First.Second-Second.Second) исходным знаковым умножителем",
+    "semantic_status": "described",
     "end_offset": 25750,
-    "path": "Source/Action/UnknownC477.asm"
+    "path": "Source/Action/ComputeTopClipProduct.asm"
   },
   {
     "region": "Action",
-    "name": "UnknownC496",
+    "name": "ComputeBottomClipProduct",
     "address": 50326,
     "slot": 17,
     "offset": 25750,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Подготовка числителя пересечения (First.First-95)*(First.Second-Second.Second) исходным знаковым умножителем",
+    "semantic_status": "described",
     "end_offset": 25781,
-    "path": "Source/Action/UnknownC496.asm"
+    "path": "Source/Action/ComputeBottomClipProduct.asm"
   },
   {
     "region": "Action",
-    "name": "UnknownC4B5",
+    "name": "ComputeLeftClipProduct",
     "address": 50357,
     "slot": 17,
     "offset": 25781,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Подготовка числителя пересечения (First.First-Second.First)*(First.Second-0) исходным знаковым умножителем",
+    "semantic_status": "described",
     "end_offset": 25812,
-    "path": "Source/Action/UnknownC4B5.asm"
+    "path": "Source/Action/ComputeLeftClipProduct.asm"
   },
   {
     "region": "Action",
-    "name": "UnknownC4D4",
+    "name": "ComputeRightClipProduct",
     "address": 50388,
     "slot": 17,
     "offset": 25812,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Подготовка числителя пересечения (First.First-Second.First)*(First.Second-255) исходным знаковым умножителем",
+    "semantic_status": "described",
     "end_offset": 25843,
-    "path": "Source/Action/UnknownC4D4.asm"
+    "path": "Source/Action/ComputeRightClipProduct.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCase08",
+    "name": "ClipInsideToTop",
     "address": 50419,
     "slot": 17,
     "offset": 25843,
-    "description": "обработчик ребра для индексов таблицы #08",
+    "description": "Отсечение ребра, первая точка внутри окна, вторая сверху",
     "semantic_status": "described",
     "end_offset": 25846,
-    "path": "Source/Action/EdgeCase08.asm"
+    "path": "Source/Action/ClipInsideToTop.asm"
   },
   {
     "region": "Action",
-    "name": "UnknownC4F6",
+    "name": "AppendTopClipIntersection",
     "address": 50422,
     "slot": 17,
     "offset": 25846,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Добавление пересечения границы с исходным делением и побайтовой проверкой координаты",
+    "semantic_status": "described",
     "end_offset": 25917,
-    "path": "Source/Action/UnknownC4F6.asm"
+    "path": "Source/Action/AppendTopClipIntersection.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCase04",
+    "name": "ClipInsideToBottom",
     "address": 50493,
     "slot": 17,
     "offset": 25917,
-    "description": "обработчик ребра для индексов таблицы #04",
+    "description": "Отсечение ребра, первая точка внутри окна, вторая снизу",
     "semantic_status": "described",
     "end_offset": 25920,
-    "path": "Source/Action/EdgeCase04.asm"
+    "path": "Source/Action/ClipInsideToBottom.asm"
   },
   {
     "region": "Action",
-    "name": "UnknownC540",
+    "name": "AppendBottomClipIntersection",
     "address": 50496,
     "slot": 17,
     "offset": 25920,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Добавление пересечения границы с исходным делением и побайтовой проверкой координаты",
+    "semantic_status": "described",
     "end_offset": 25992,
-    "path": "Source/Action/UnknownC540.asm"
+    "path": "Source/Action/AppendBottomClipIntersection.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCase02",
+    "name": "ClipInsideToLeft",
     "address": 50568,
     "slot": 17,
     "offset": 25992,
-    "description": "обработчик ребра для индексов таблицы #02",
+    "description": "Отсечение ребра, первая точка внутри окна, вторая слева",
     "semantic_status": "described",
     "end_offset": 25995,
-    "path": "Source/Action/EdgeCase02.asm"
+    "path": "Source/Action/ClipInsideToLeft.asm"
   },
   {
     "region": "Action",
-    "name": "UnknownC58B",
+    "name": "AppendLeftClipIntersection",
     "address": 50571,
     "slot": 17,
     "offset": 25995,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Добавление пересечения границы с исходным делением и побайтовой проверкой координаты",
+    "semantic_status": "described",
     "end_offset": 26084,
-    "path": "Source/Action/UnknownC58B.asm"
+    "path": "Source/Action/AppendLeftClipIntersection.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCase01",
+    "name": "ClipInsideToRight",
     "address": 50660,
     "slot": 17,
     "offset": 26084,
-    "description": "обработчик ребра для индексов таблицы #01",
+    "description": "Отсечение ребра, первая точка внутри окна, вторая справа",
     "semantic_status": "described",
     "end_offset": 26087,
-    "path": "Source/Action/EdgeCase01.asm"
+    "path": "Source/Action/ClipInsideToRight.asm"
   },
   {
     "region": "Action",
-    "name": "UnknownC5E7",
+    "name": "AppendRightClipIntersection",
     "address": 50663,
     "slot": 17,
     "offset": 26087,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Добавление пересечения границы с исходным делением и побайтовой проверкой координаты",
+    "semantic_status": "described",
     "end_offset": 26177,
-    "path": "Source/Action/UnknownC5E7.asm"
+    "path": "Source/Action/AppendRightClipIntersection.asm"
   },
   {
     "region": "Action",
-    "name": "UnknownC641",
+    "name": "AppendTopLeftClipCorner",
     "address": 50753,
     "slot": 17,
     "offset": 26177,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Добавление угла окна при нулевом CornerBlock",
+    "semantic_status": "described",
     "end_offset": 26188,
-    "path": "Source/Action/UnknownC641.asm"
+    "path": "Source/Action/AppendTopLeftClipCorner.asm"
   },
   {
     "region": "Action",
-    "name": "UnknownC64C",
+    "name": "AppendTopRightClipCorner",
     "address": 50764,
     "slot": 17,
     "offset": 26188,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Добавление угла окна при нулевом CornerBlock",
+    "semantic_status": "described",
     "end_offset": 26199,
-    "path": "Source/Action/UnknownC64C.asm"
+    "path": "Source/Action/AppendTopRightClipCorner.asm"
   },
   {
     "region": "Action",
-    "name": "UnknownC657",
+    "name": "AppendBottomLeftClipCorner",
     "address": 50775,
     "slot": 17,
     "offset": 26199,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Добавление угла окна при нулевом CornerBlock",
+    "semantic_status": "described",
     "end_offset": 26210,
-    "path": "Source/Action/UnknownC657.asm"
+    "path": "Source/Action/AppendBottomLeftClipCorner.asm"
   },
   {
     "region": "Action",
-    "name": "UnknownC662",
+    "name": "AppendBottomRightClipCorner",
     "address": 50786,
     "slot": 17,
     "offset": 26210,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Добавление угла окна при нулевом CornerBlock",
+    "semantic_status": "described",
     "end_offset": 26221,
-    "path": "Source/Action/UnknownC662.asm"
+    "path": "Source/Action/AppendBottomRightClipCorner.asm"
   },
   {
     "region": "Action",
-    "name": "UnknownC66D",
+    "name": "CompareTopLeftProducts",
     "address": 50797,
     "slot": 17,
     "offset": 26221,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Вычитание LeftProduct из TopProduct с передачей заёма младшего слова",
+    "semantic_status": "described",
     "end_offset": 26241,
-    "path": "Source/Action/UnknownC66D.asm"
+    "path": "Source/Action/CompareTopLeftProducts.asm"
   },
   {
     "region": "Action",
-    "name": "UnknownC681",
+    "name": "CompareTopRightProducts",
     "address": 50817,
     "slot": 17,
     "offset": 26241,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Вычитание RightProduct из TopProduct с передачей заёма младшего слова",
+    "semantic_status": "described",
     "end_offset": 26261,
-    "path": "Source/Action/UnknownC681.asm"
+    "path": "Source/Action/CompareTopRightProducts.asm"
   },
   {
     "region": "Action",
-    "name": "UnknownC695",
+    "name": "CompareBottomLeftProducts",
     "address": 50837,
     "slot": 17,
     "offset": 26261,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Вычитание LeftProduct из BottomProduct с передачей заёма младшего слова",
+    "semantic_status": "described",
     "end_offset": 26281,
-    "path": "Source/Action/UnknownC695.asm"
+    "path": "Source/Action/CompareBottomLeftProducts.asm"
   },
   {
     "region": "Action",
-    "name": "UnknownC6A9",
+    "name": "CompareBottomRightProducts",
     "address": 50857,
     "slot": 17,
     "offset": 26281,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Вычитание RightProduct из BottomProduct с передачей заёма младшего слова",
+    "semantic_status": "described",
     "end_offset": 26301,
-    "path": "Source/Action/UnknownC6A9.asm"
+    "path": "Source/Action/CompareBottomRightProducts.asm"
   },
   {
     "region": "Action",
-    "name": "UnknownC6BD",
+    "name": "ComputeSecondAxisDelta",
     "address": 50877,
     "slot": 17,
     "offset": 26301,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Разность координат Second второй и первой точки с оборачиванием до слова",
+    "semantic_status": "described",
     "end_offset": 26312,
-    "path": "Source/Action/UnknownC6BD.asm"
+    "path": "Source/Action/ComputeSecondAxisDelta.asm"
   },
   {
     "region": "Action",
-    "name": "UnknownC6C8",
+    "name": "ComputeFirstAxisDelta",
     "address": 50888,
     "slot": 17,
     "offset": 26312,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Разность координат First второй и первой точки с оборачиванием до слова",
+    "semantic_status": "described",
     "end_offset": 26323,
-    "path": "Source/Action/UnknownC6C8.asm"
+    "path": "Source/Action/ComputeFirstAxisDelta.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCase00",
+    "name": "AppendSecondClipPoint",
     "address": 50899,
     "slot": 17,
     "offset": 26323,
-    "description": "обработчик ребра для индексов таблицы #00",
+    "description": "Добавление младших байтов второй точки с общим входом записи пары DE",
     "semantic_status": "described",
     "end_offset": 26346,
-    "path": "Source/Action/EdgeCase00.asm"
+    "path": "Source/Action/AppendSecondClipPoint.asm"
   },
   {
     "region": "Action",
-    "name": "EdgeCase59",
+    "name": "ExitClipContour",
     "address": 50922,
     "slot": 17,
     "offset": 26346,
-    "description": "обработчик ребра для индексов таблицы #59, #65, #9A, #A6",
+    "description": "Специальное завершение контура со снятием трёх служебных слов",
     "semantic_status": "described",
     "end_offset": 26356,
-    "path": "Source/Action/EdgeCase59.asm"
+    "path": "Source/Action/ExitClipContour.asm"
   },
   {
     "region": "Action",
-    "name": "UnknownC6F4",
+    "name": "MultiplySigned16",
     "address": 50932,
     "slot": 17,
     "offset": 26356,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Знаковое произведение двух слов с тремя ядрами и исходным исключением второго операнда 8000",
+    "semantic_status": "described",
     "end_offset": 26764,
-    "path": "Source/Action/UnknownC6F4.asm"
+    "path": "Source/Action/MultiplySigned16.asm"
   },
   {
     "region": "Action",
-    "name": "UnknownC88C",
+    "name": "DivideSigned32To16",
     "address": 51340,
     "slot": 17,
     "offset": 26764,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Деление числителя HL, A, альтернативного A на signed16 с исходным побитовым дополнением",
+    "semantic_status": "described",
+    "end_offset": 26945,
+    "path": "Source/Action/DivideSigned32To16.asm"
+  },
+  {
+    "region": "Action",
+    "name": "ClipSingleEdge",
+    "address": 51521,
+    "slot": 17,
+    "offset": 26945,
+    "description": "Отсечение одиночного ребра с обменом внутренней первой точки и рамкой трёх возвратов",
+    "semantic_status": "described",
+    "end_offset": 27035,
+    "path": "Source/Action/ClipSingleEdge.asm"
+  },
+  {
+    "region": "Action",
+    "name": "BuildRenderCoefficients",
+    "address": 51611,
+    "slot": 17,
+    "offset": 27035,
+    "description": "Построение девяти байтовых коэффициентов по трём фазам либо по одной фазе",
+    "semantic_status": "described",
+    "end_offset": 27427,
+    "path": "Source/Action/BuildRenderCoefficients.asm"
+  },
+  {
+    "region": "Action",
+    "name": "ComposeRenderMatrix",
+    "address": 52003,
+    "slot": 17,
+    "offset": 27427,
+    "description": "Композиция исходной матрицы и ориентации с одноосным режимом и точными четвертями",
+    "semantic_status": "described",
     "end_offset": 28387,
-    "path": "Source/Action/UnknownC88C.asm"
+    "path": "Source/Action/ComposeRenderMatrix.asm"
   },
   {
     "region": "Action",
@@ -10106,7 +10458,7 @@
     "address": 53514,
     "slot": 17,
     "offset": 28938,
-    "description": "Заполнение #0C00 байт до #8C00 значением #FF через стек с восстановлением SP",
+    "description": "Заполнение линейного буфера 8000..8BFF байтами FF через временный SP с восстановлением CPU-стека",
     "semantic_status": "described",
     "end_offset": 28972,
     "path": "Source/Action/ClearWorkBuffer.asm"
@@ -10124,80 +10476,487 @@
   },
   {
     "region": "Action",
-    "name": "UnknownE020",
+    "name": "PolygonFillRows",
+    "address": 53696,
+    "slot": 17,
+    "offset": 29120,
+    "end_offset": 29288,
+    "path": "Source/Action/PolygonFillRows.asm",
+    "description": "Строковое ядро линейной заливки с развёрнутой записью, крайними масками и коррекцией двух рёбер",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "SelectPolygonRightEdge",
+    "address": 53864,
+    "slot": 17,
+    "offset": 29288,
+    "end_offset": 29291,
+    "path": "Source/Action/SelectPolygonRightEdge.asm",
+    "description": "Передача управления правому обновлению без изменения контекста",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "WrapPolygonLeftEdge",
+    "address": 53867,
+    "slot": 17,
+    "offset": 29291,
+    "end_offset": 29298,
+    "path": "Source/Action/WrapPolygonLeftEdge.asm",
+    "description": "Оборачивание обратного поиска к последней First кольца",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "UpdatePolygonLeftEdge",
+    "address": 53874,
+    "slot": 17,
+    "offset": 29298,
+    "end_offset": 29608,
+    "path": "Source/Action/UpdatePolygonLeftEdge.asm",
+    "description": "Поиск восходящего левого ребра, вычисление целого шага и ошибки, выбор продолжения заливки",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "WrapPolygonRightEdge",
+    "address": 54184,
+    "slot": 17,
+    "offset": 29608,
+    "end_offset": 29613,
+    "path": "Source/Action/WrapPolygonRightEdge.asm",
+    "description": "Оборачивание прямого поиска к первой First кольца",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "UpdatePolygonRightEdge",
+    "address": 54189,
+    "slot": 17,
+    "offset": 29613,
+    "end_offset": 29889,
+    "path": "Source/Action/UpdatePolygonRightEdge.asm",
+    "description": "Поиск восходящего правого ребра и вычисление его упакованного шага и дробной ошибки",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "SelectPolygonRowLimit",
+    "address": 54465,
+    "slot": 17,
+    "offset": 29889,
+    "end_offset": 29941,
+    "path": "Source/Action/SelectPolygonRowLimit.asm",
+    "description": "Выбор ближайшего предела строк с приоритетом левого ребра и настройкой следующего перехода",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "SetShortNegativeRightStep",
+    "address": 54517,
+    "slot": 17,
+    "offset": 29941,
+    "end_offset": 29955,
+    "path": "Source/Action/SetShortNegativeRightStep.asm",
+    "description": "Настройка нулевого целого шага короткого отрицательного правого наклона и восстановление временного контекста",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "WrapPolygonLeftTop",
+    "address": 54531,
+    "slot": 17,
+    "offset": 29955,
+    "end_offset": 29962,
+    "path": "Source/Action/WrapPolygonLeftTop.asm",
+    "description": "Оборачивание поиска левого конца верхней горизонтали",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "WrapPolygonRightTop",
+    "address": 54538,
+    "slot": 17,
+    "offset": 29962,
+    "end_offset": 29967,
+    "path": "Source/Action/WrapPolygonRightTop.asm",
+    "description": "Оборачивание поиска правого конца верхней горизонтали",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "ReturnPolygonFill",
+    "address": 54543,
+    "slot": 17,
+    "offset": 29967,
+    "end_offset": 29969,
+    "path": "Source/Action/ReturnPolygonFill.asm",
+    "description": "Восстановление сохранённого HL и внешний возврат плоского контура",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "PreparePolygonFill",
+    "address": 54545,
+    "slot": 17,
+    "offset": 29969,
+    "end_offset": 30153,
+    "path": "Source/Action/PreparePolygonFill.asm",
+    "description": "Подготовка диапазона строк, верхних вершин двух цепочек, масок и временного стека заливки",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "TransformObjectVertices",
+    "address": 54729,
+    "slot": 17,
+    "offset": 30153,
+    "end_offset": 30201,
+    "path": "Source/Action/TransformObjectVertices.asm",
+    "description": "Копирование потока объекта и преобразование всех его фиксированных групп вершин",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "PrepareRenderVertexProducts",
+    "address": 54777,
+    "slot": 17,
+    "offset": 30201,
+    "end_offset": 30356,
+    "path": "Source/Action/PrepareRenderVertexProducts.asm",
+    "description": "Подготовка трёх пар координат и трёх глубин табличным произведением матрицы и входных компонентов",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "ProjectRenderVertexGroup",
+    "address": 54932,
+    "slot": 17,
+    "offset": 30356,
+    "end_offset": 30624,
+    "path": "Source/Action/ProjectRenderVertexGroup.asm",
+    "description": "Построение комбинаций координат и перспективная запись выбранной группы вершин",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "ProjectRenderVertex",
+    "address": 55200,
+    "slot": 17,
+    "offset": 30624,
+    "end_offset": 31677,
+    "path": "Source/Action/ProjectRenderVertex.asm",
+    "description": "Перспективная запись одной вершины с исходной нормализацией и косвенным продолжением",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "RenderClippedRecords",
+    "address": 56253,
+    "slot": 17,
+    "offset": 31677,
+    "end_offset": 32035,
+    "path": "Source/Action/RenderClippedRecords.asm",
+    "description": "Вывод записей объекта с проверкой кодов точек и отсечением граней и открытых сегментов",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "RenderInsideRecords",
+    "address": 56611,
+    "slot": 17,
+    "offset": 32035,
+    "end_offset": 32209,
+    "path": "Source/Action/RenderInsideRecords.asm",
+    "description": "Вывод граней и ломаных объекта с внутренними точками без дополнительного отсечения",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "CombineListedVertexCodes",
+    "address": 56785,
+    "slot": 17,
+    "offset": 32209,
+    "end_offset": 32240,
+    "path": "Source/Action/CombineListedVertexCodes.asm",
+    "description": "Объединение кодов границ перечисленных точек с ранним выходом по нулевому коду",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "DrawLinearLine",
+    "address": 56816,
+    "slot": 17,
+    "offset": 32240,
+    "end_offset": 32496,
+    "path": "Source/Action/DrawLinearLine.asm",
+    "description": "Растеризация отрезка в линейный буфер страницы 80 с режимами AND, OR и XOR без конечной точки",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "AbortProjectedVertexScan",
+    "address": 57072,
+    "slot": 17,
+    "offset": 32496,
+    "end_offset": 32499,
+    "path": "Source/Action/AbortProjectedVertexScan.asm",
+    "description": "Завершение сканирования точек по маркеру отказа перспективы без отката предыдущих кодов",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "ClassifyProjectedVertices",
+    "address": 57075,
+    "slot": 17,
+    "offset": 32499,
+    "end_offset": 32694,
+    "path": "Source/Action/ClassifyProjectedVertices.asm",
+    "description": "Заполнение кодов границ экранных точек и накопление общего кода объекта",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "CheckFaceOrientation",
+    "address": 57270,
+    "slot": 17,
+    "offset": 32694,
+    "end_offset": 32777,
+    "path": "Source/Action/CheckFaceOrientation.asm",
+    "description": "Проверка ориентации выбранной тройки экранных точек по знаку разности двух произведений",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "RenderSceneFrame",
     "address": 57376,
     "slot": 17,
     "offset": 32800,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Подготовка кадра, проекция объектов и передача в очередь отрисовки",
+    "semantic_status": "described",
     "end_offset": 33209,
-    "path": "Source/Action/UnknownE020.asm"
+    "path": "Source/Action/RenderSceneFrame.asm"
   },
   {
     "region": "Action",
-    "name": "UnknownE4A6",
+    "name": "PrepareProjectionScale",
+    "address": 57785,
+    "slot": 17,
+    "offset": 33209,
+    "description": "Масштабирование мантиссы заголовка на степень двух и настройка трёх относительных переходов",
+    "semantic_status": "described",
+    "end_offset": 33233,
+    "path": "Source/Action/PrepareProjectionScale.asm"
+  },
+  {
+    "region": "Action",
+    "name": "CheckCloseRecordBounds",
+    "address": 57809,
+    "slot": 17,
+    "offset": 33233,
+    "description": "Проверка трёх исходных компонент с цепочкой Carry и условная обработка близкой записи",
+    "semantic_status": "described",
+    "end_offset": 33299,
+    "path": "Source/Action/CheckCloseRecordBounds.asm"
+  },
+  {
+    "region": "Action",
+    "name": "ClipProjectionBounds",
+    "address": 57875,
+    "slot": 17,
+    "offset": 33299,
+    "description": "Проверка глубины и двух осей с табличной поправкой масштаба и выбором следующего пути проекции",
+    "semantic_status": "described",
+    "end_offset": 33433,
+    "path": "Source/Action/ClipProjectionBounds.asm"
+  },
+  {
+    "region": "Action",
+    "name": "PrepareProjectedBounds",
+    "address": 58009,
+    "slot": 17,
+    "offset": 33433,
+    "description": "Фильтрация старших байтов координат и подготовка допуска, знакового X и модулей двух проекций",
+    "semantic_status": "described",
+    "end_offset": 33551,
+    "path": "Source/Action/PrepareProjectedBounds.asm"
+  },
+  {
+    "region": "Action",
+    "name": "CaptureProjectedRecord",
+    "address": 58127,
+    "slot": 17,
+    "offset": 33551,
+    "description": "Условная запись альтернативного HL в PendingRecord после двух проверок координатного допуска",
+    "semantic_status": "described",
+    "end_offset": 33642,
+    "path": "Source/Action/CaptureProjectedRecord.asm"
+  },
+  {
+    "region": "Action",
+    "name": "FollowProjectedTarget",
+    "address": 58218,
+    "slot": 17,
+    "offset": 33642,
+    "description": "Сглаживание экранной точки и назначение первой свободной цели по запросу",
+    "semantic_status": "described",
+    "end_offset": 33807,
+    "path": "Source/Action/FollowProjectedTarget.asm"
+  },
+  {
+    "region": "Action",
+    "name": "InsertRenderQueue",
+    "address": 58383,
+    "slot": 17,
+    "offset": 33807,
+    "description": "Вставка снимка объекта в связанную очередь по исходному знаковому сравнению глубины",
+    "semantic_status": "described",
+    "end_offset": 33958,
+    "path": "Source/Action/InsertRenderQueue.asm"
+  },
+  {
+    "region": "Action",
+    "name": "ReadRenderQueue",
     "address": 58534,
     "slot": 17,
     "offset": 33958,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Восстановление стека чтения очереди и загрузка снимка узла с обновлением AY",
+    "semantic_status": "described",
     "end_offset": 34011,
-    "path": "Source/Action/UnknownE4A6.asm"
+    "path": "Source/Action/ReadRenderQueue.asm"
   },
   {
     "region": "Action",
-    "name": "UnknownE4FF",
+    "name": "RenderQueuedObject",
+    "address": 58587,
+    "slot": 17,
+    "offset": 34011,
+    "end_offset": 34047,
+    "path": "Source/Action/RenderQueuedObject.asm",
+    "description": "Подготовка и вывод текущего объекта очереди с выбором рисователя и чтением следующего узла",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "SelectRenderQueueNode",
     "address": 58623,
     "slot": 17,
     "offset": 34047,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Проверка конца очереди либо переход к загрузке выбранного узла",
+    "semantic_status": "described",
     "end_offset": 34054,
-    "path": "Source/Action/UnknownE4FF.asm"
+    "path": "Source/Action/SelectRenderQueueNode.asm"
   },
   {
     "region": "Action",
-    "name": "UnknownE55C",
+    "name": "DispatchCloseRecord",
+    "address": 58630,
+    "slot": 17,
+    "offset": 34054,
+    "end_offset": 34079,
+    "path": "Source/Action/DispatchCloseRecord.asm",
+    "description": "Отбор близкой записи по коду запрета и классу с передачей в следующий режим либо инвертированием компонент",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "CheckCloseRecordComponents",
+    "address": 58655,
+    "slot": 17,
+    "offset": 34079,
+    "end_offset": 34122,
+    "path": "Source/Action/CheckCloseRecordComponents.asm",
+    "description": "Дополнительный отбор по биту 4 ReuseByte и старшим байтам трёх компонент",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "ReverseCloseRecordState",
+    "address": 58698,
+    "slot": 17,
+    "offset": 34122,
+    "end_offset": 34140,
+    "path": "Source/Action/ReverseCloseRecordState.asm",
+    "description": "Уменьшение кода запрета, инвертирование масштабированных компонент и особое обнуление состояния класса 12",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "PrepareRecordScale",
     "address": 58716,
     "slot": 17,
     "offset": 34140,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Сохранение CPU SP, временное деление смещений класса 14 и выбор числа удвоений по заголовку модели",
+    "semantic_status": "described",
     "end_offset": 34207,
-    "path": "Source/Action/UnknownE55C.asm"
+    "path": "Source/Action/PrepareRecordScale.asm"
   },
   {
     "region": "Action",
-    "name": "UnknownE5A0",
+    "name": "UpdateRecordComponents",
     "address": 58784,
     "slot": 17,
     "offset": 34208,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Обновление трёх компонент с проверкой переполнения и границы, обработкой отказа и запросом предупреждения о стыковке",
+    "semantic_status": "described",
     "end_offset": 34389,
-    "path": "Source/Action/UnknownE5A0.asm"
+    "path": "Source/Action/UpdateRecordComponents.asm"
   },
   {
     "region": "Action",
-    "name": "UnknownE658",
+    "name": "FinishRecordWarning",
+    "address": 58965,
+    "slot": 17,
+    "offset": 34389,
+    "end_offset": 34392,
+    "path": "Source/Action/FinishRecordWarning.asm",
+    "description": "Восстановление DE после запроса предупреждения и завершение через восстановитель смещений",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "RejectRecordUpdate",
     "address": 58968,
     "slot": 17,
     "offset": 34392,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Восстановление CPU-стека, пометка записи IX для повторного использования и продолжение очистки класса 12",
+    "semantic_status": "described",
     "end_offset": 34399,
-    "path": "Source/Action/UnknownE658.asm"
+    "path": "Source/Action/RejectRecordUpdate.asm"
   },
   {
     "region": "Action",
-    "name": "UnknownE685",
+    "name": "ReleaseClass12Records",
+    "address": 58975,
+    "slot": 17,
+    "offset": 34399,
+    "end_offset": 34437,
+    "path": "Source/Action/ReleaseClass12Records.asm",
+    "description": "Обнуление двух байтов состояния и пометка всех активных записей класса 12 либо хвост восстановления смещений",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "RestoreHalvedOffsets",
     "address": 59013,
     "slot": 17,
     "offset": 34437,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Восстановление трёх исходных вычитаемых слов после временного арифметического деления для класса 14",
+    "semantic_status": "described",
     "end_offset": 34462,
-    "path": "Source/Action/UnknownE685.asm"
+    "path": "Source/Action/RestoreHalvedOffsets.asm"
+  },
+  {
+    "region": "Action",
+    "name": "SelectRecordByIndex",
+    "address": 59038,
+    "slot": 17,
+    "offset": 34462,
+    "end_offset": 34471,
+    "path": "Source/Action/SelectRecordByIndex.asm",
+    "description": "Расчёт адреса записи в IY по коду A с сохранением HL",
+    "semantic_status": "described"
   },
   {
     "region": "Action",
@@ -10256,6 +11015,50 @@
   },
   {
     "region": "Action",
+    "name": "FindFilteredRecordOr26",
+    "address": 59106,
+    "slot": 17,
+    "offset": 34530,
+    "end_offset": 34573,
+    "path": "Source/Action/FindFilteredRecordOr26.asm",
+    "description": "Выбор кода 26 по потоку 10 либо поиск активного класса 1..15 или 18",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "FindRecordExcept6And7",
+    "address": 59149,
+    "slot": 17,
+    "offset": 34573,
+    "end_offset": 34601,
+    "path": "Source/Action/FindRecordExcept6And7.asm",
+    "description": "Поиск первой активной записи с классом вне пары 6 и 7",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "FindRecordClass6Or7",
+    "address": 59177,
+    "slot": 17,
+    "offset": 34601,
+    "end_offset": 34629,
+    "path": "Source/Action/FindRecordClass6Or7.asm",
+    "description": "Поиск первой активной записи с классом 6 либо 7",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "FindRecordClass5Or14",
+    "address": 59205,
+    "slot": 17,
+    "offset": 34629,
+    "end_offset": 34657,
+    "path": "Source/Action/FindRecordClass5Or14.asm",
+    "description": "Поиск первой активной записи с классом 5 либо 14",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
     "name": "FindRecordByCode",
     "address": 59789,
     "slot": 17,
@@ -10278,146 +11081,388 @@
   },
   {
     "region": "Action",
-    "name": "UnknownEA29",
+    "name": "PrepareLargeEffect",
     "address": 59945,
     "slot": 17,
     "offset": 35369,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Настройка дочернего кода и чтение заголовка большого эффекта",
+    "semantic_status": "described",
     "end_offset": 35389,
-    "path": "Source/Action/UnknownEA29.asm"
+    "path": "Source/Action/PrepareLargeEffect.asm"
   },
   {
     "region": "Action",
-    "name": "UnknownEB72",
+    "name": "AllocateLargeEffect",
+    "address": 59965,
+    "slot": 17,
+    "offset": 35389,
+    "end_offset": 35561,
+    "path": "Source/Action/AllocateLargeEffect.asm",
+    "description": "Выделение большого эффекта и создание дочерних записей перед освобождением объекта",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "NextRandomWord0",
     "address": 60274,
     "slot": 17,
     "offset": 35698,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Следующее слово независимого потока 0 с физическим состоянием Stream0",
+    "semantic_status": "described",
     "end_offset": 35705,
-    "path": "Source/Action/UnknownEB72.asm"
+    "path": "Source/Action/NextRandomWord0.asm"
   },
   {
     "region": "Action",
-    "name": "UnknownEB87",
+    "name": "NextRandomWord3",
+    "address": 60281,
+    "slot": 17,
+    "offset": 35705,
+    "end_offset": 35712,
+    "path": "Source/Action/NextRandomWord3.asm",
+    "description": "Следующее слово независимого потока 3 с физическим состоянием Stream3",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "NextRandomWord4",
+    "address": 60288,
+    "slot": 17,
+    "offset": 35712,
+    "end_offset": 35719,
+    "path": "Source/Action/NextRandomWord4.asm",
+    "description": "Следующее слово независимого потока 4 с физическим состоянием Stream4",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "NextRandomWord1",
     "address": 60295,
     "slot": 17,
     "offset": 35719,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Следующее слово независимого потока 1 с физическим состоянием Stream1",
+    "semantic_status": "described",
     "end_offset": 35726,
-    "path": "Source/Action/UnknownEB87.asm"
+    "path": "Source/Action/NextRandomWord1.asm"
   },
   {
     "region": "Action",
-    "name": "UnknownEBB8",
+    "name": "NextRandomWord5",
+    "address": 60302,
+    "slot": 17,
+    "offset": 35726,
+    "end_offset": 35733,
+    "path": "Source/Action/NextRandomWord5.asm",
+    "description": "Следующее слово независимого потока 5 с физическим состоянием Stream5",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "NextRandomWord6",
+    "address": 60309,
+    "slot": 17,
+    "offset": 35733,
+    "end_offset": 35740,
+    "path": "Source/Action/NextRandomWord6.asm",
+    "description": "Следующее слово независимого потока 6 с физическим состоянием Stream6",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "NextRandomWord7",
+    "address": 60316,
+    "slot": 17,
+    "offset": 35740,
+    "end_offset": 35747,
+    "path": "Source/Action/NextRandomWord7.asm",
+    "description": "Следующее слово независимого потока 7 с физическим состоянием Stream7",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "NextRandomWord8",
+    "address": 60323,
+    "slot": 17,
+    "offset": 35747,
+    "end_offset": 35754,
+    "path": "Source/Action/NextRandomWord8.asm",
+    "description": "Следующее слово независимого потока 8 с физическим состоянием Stream8",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "NextRandomWord9",
+    "address": 60330,
+    "slot": 17,
+    "offset": 35754,
+    "end_offset": 35761,
+    "path": "Source/Action/NextRandomWord9.asm",
+    "description": "Следующее слово независимого потока 9 с физическим состоянием Stream9",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "NextRandomWord10",
+    "address": 60337,
+    "slot": 17,
+    "offset": 35761,
+    "end_offset": 35768,
+    "path": "Source/Action/NextRandomWord10.asm",
+    "description": "Следующее слово независимого потока 10 с физическим состоянием Stream10",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "NextRandomWord2",
     "address": 60344,
     "slot": 17,
     "offset": 35768,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Следующее слово независимого потока 2 с физическим состоянием Stream2",
+    "semantic_status": "described",
     "end_offset": 35775,
-    "path": "Source/Action/UnknownEBB8.asm"
+    "path": "Source/Action/NextRandomWord2.asm"
   },
   {
     "region": "Action",
-    "name": "UnknownEC08",
+    "name": "NextRandomWord11",
+    "address": 60351,
+    "slot": 17,
+    "offset": 35775,
+    "end_offset": 35782,
+    "path": "Source/Action/NextRandomWord11.asm",
+    "description": "Следующее слово независимого потока 11 с физическим состоянием Stream11",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "NextRandomWord12",
+    "address": 60358,
+    "slot": 17,
+    "offset": 35782,
+    "end_offset": 35789,
+    "path": "Source/Action/NextRandomWord12.asm",
+    "description": "Следующее слово независимого потока 12 с физическим состоянием Stream12",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "NextRandomWord13",
+    "address": 60365,
+    "slot": 17,
+    "offset": 35789,
+    "end_offset": 35796,
+    "path": "Source/Action/NextRandomWord13.asm",
+    "description": "Следующее слово независимого потока 13 с физическим состоянием Stream13",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "NextRandomWord14",
+    "address": 60372,
+    "slot": 17,
+    "offset": 35796,
+    "end_offset": 35803,
+    "path": "Source/Action/NextRandomWord14.asm",
+    "description": "Следующее слово независимого потока 14 с физическим состоянием Stream14",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "StepFoldedRandom",
     "address": 60424,
     "slot": 17,
     "offset": 35848,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Обновление трёхбайтового состояния свёрткой переносов и возврат нового 16-битного слова через обратный EXX",
+    "semantic_status": "described",
     "end_offset": 35924,
-    "path": "Source/Action/UnknownEC08.asm"
+    "path": "Source/Action/StepFoldedRandom.asm"
   },
   {
     "region": "Action",
-    "name": "UnknownECA8",
+    "name": "UpdateAyEffects",
     "address": 60584,
     "slot": 17,
     "offset": 36008,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Вывод очередных строк потоков AY-каналов A и B и формирование канала C по R и изменяемому уровню",
+    "semantic_status": "described",
     "end_offset": 36239,
-    "path": "Source/Action/UnknownECA8.asm"
+    "path": "Source/Action/UpdateAyEffects.asm"
   },
   {
     "region": "Action",
-    "name": "UnknownF075",
+    "name": "AdvanceObjectOffsetRise",
+    "address": 61309,
+    "slot": 17,
+    "offset": 36733,
+    "end_offset": 36762,
+    "path": "Source/Action/AdvanceObjectOffsetRise.asm",
+    "description": "Увеличение байта смещения и переход к обратному ходу по таймеру",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "AdvanceObjectOffsetFall",
+    "address": 61338,
+    "slot": 17,
+    "offset": 36762,
+    "end_offset": 36789,
+    "path": "Source/Action/AdvanceObjectOffsetFall.asm",
+    "description": "Уменьшение байта смещения и возврат сохранённого состояния по таймеру",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "AdvanceObjectPhaseWait",
+    "address": 61365,
+    "slot": 17,
+    "offset": 36789,
+    "end_offset": 36867,
+    "path": "Source/Action/AdvanceObjectPhaseWait.asm",
+    "description": "Обновление фазового счётчика и завершение ожидания по классу и компонентам",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "MarkIYRecordForReuse",
+    "address": 61501,
+    "slot": 17,
+    "offset": 36925,
+    "end_offset": 36938,
+    "path": "Source/Action/MarkIYRecordForReuse.asm",
+    "description": "Пометка записи по IY кодом Component0=8000 и однократным пропуском ReuseByte=FF",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "SetClass18ObjectState",
     "address": 61557,
     "slot": 17,
     "offset": 36981,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Установка состояния 0A у записи класса 12h перед диспетчеризацией",
+    "semantic_status": "described",
     "end_offset": 36988,
-    "path": "Source/Action/UnknownF075.asm"
+    "path": "Source/Action/SetClass18ObjectState.asm"
   },
   {
     "region": "Action",
-    "name": "UnknownF394",
+    "name": "PrepareObjectOffsetTransform",
+    "address": 61688,
+    "slot": 17,
+    "offset": 37112,
+    "end_offset": 37176,
+    "path": "Source/Action/PrepareObjectOffsetTransform.asm",
+    "description": "Проверка маркера записи и подготовка смещений для вычислителя 6D06",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "MarkRecordForReuse",
     "address": 62356,
     "slot": 17,
     "offset": 37780,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Пометка записи кодом Component0=8000 и однократным пропуском ReuseByte=FF при поиске доступной записи",
+    "semantic_status": "described",
     "end_offset": 37793,
-    "path": "Source/Action/UnknownF394.asm"
+    "path": "Source/Action/MarkRecordForReuse.asm"
   },
   {
     "region": "Action",
-    "name": "UnknownF51E",
+    "name": "UpdatePreferredClass18",
     "address": 62750,
     "slot": 17,
     "offset": 38174,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Выбор опоры по R и потоку 2 либо по приоритету классов с обновлением класса 18",
+    "semantic_status": "described",
     "end_offset": 38183,
-    "path": "Source/Action/UnknownF51E.asm"
+    "path": "Source/Action/UpdatePreferredClass18.asm"
   },
   {
     "region": "Action",
-    "name": "UnknownF535",
+    "name": "CheckPreferredRandomWord",
+    "address": 62759,
+    "slot": 17,
+    "offset": 38183,
+    "end_offset": 38197,
+    "path": "Source/Action/CheckPreferredRandomWord.asm",
+    "description": "Проверка младшего слова потока 2 и внешнего байта для выбора отдельного кода 26",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "FindPreferredClass0",
     "address": 62773,
     "slot": 17,
     "offset": 38197,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Поиск опорного класса 0 с продолжением к классам 7 и 5 при отсутствии",
+    "semantic_status": "described",
     "end_offset": 38207,
-    "path": "Source/Action/UnknownF535.asm"
+    "path": "Source/Action/FindPreferredClass0.asm"
   },
   {
     "region": "Action",
-    "name": "UnknownF541",
+    "name": "ContinuePreferredClass0",
+    "address": 62783,
+    "slot": 17,
+    "offset": 38207,
+    "end_offset": 38209,
+    "path": "Source/Action/ContinuePreferredClass0.asm",
+    "description": "Передача выбранного индекса класса 0 в общую проверку класса 18",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "FindPreferredClass7",
     "address": 62785,
     "slot": 17,
     "offset": 38209,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Поиск опорного класса 7 с продолжением к классу 5 при отсутствии",
+    "semantic_status": "described",
     "end_offset": 38219,
-    "path": "Source/Action/UnknownF541.asm"
+    "path": "Source/Action/FindPreferredClass7.asm"
   },
   {
     "region": "Action",
-    "name": "UnknownF54D",
+    "name": "ContinuePreferredClass7",
+    "address": 62795,
+    "slot": 17,
+    "offset": 38219,
+    "end_offset": 38221,
+    "path": "Source/Action/ContinuePreferredClass7.asm",
+    "description": "Передача выбранного индекса класса 7 в общую проверку класса 18",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "FindPreferredClass5",
     "address": 62797,
     "slot": 17,
     "offset": 38221,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Поиск последнего опорного класса 5 либо переход к сбросу баз",
+    "semantic_status": "described",
     "end_offset": 38231,
-    "path": "Source/Action/UnknownF54D.asm"
+    "path": "Source/Action/FindPreferredClass5.asm"
   },
   {
     "region": "Action",
-    "name": "UnknownF572",
+    "name": "ApplyPreferredToClass18",
+    "address": 62807,
+    "slot": 17,
+    "offset": 38231,
+    "end_offset": 38258,
+    "path": "Source/Action/ApplyPreferredToClass18.asm",
+    "description": "Запись выбранной опоры в первый класс 18 только при отсутствии класса 3",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "ResetRecordUpdateBases",
     "address": 62834,
     "slot": 17,
     "offset": 38258,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Обнуление трёх базовых слов в изменяемых операндах обновления компонент",
+    "semantic_status": "described",
     "end_offset": 38271,
-    "path": "Source/Action/UnknownF572.asm"
+    "path": "Source/Action/ResetRecordUpdateBases.asm"
   },
   {
     "region": "Action",
@@ -10432,1070 +11477,1092 @@
   },
   {
     "region": "Action",
-    "name": "UnknownF792",
+    "name": "CheckRecordEffectThreshold",
     "address": 63378,
     "slot": 17,
     "offset": 38802,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Выбор порога запуска большого эффекта для текущей записи",
+    "semantic_status": "described",
     "end_offset": 38847,
-    "path": "Source/Action/UnknownF792.asm"
+    "path": "Source/Action/CheckRecordEffectThreshold.asm"
   },
   {
     "region": "Action",
-    "name": "UnknownF7C6",
+    "name": "ResumeAfterRecordEffect",
+    "address": 63423,
+    "slot": 17,
+    "offset": 38847,
+    "end_offset": 38854,
+    "path": "Source/Action/ResumeAfterRecordEffect.asm",
+    "description": "Сброс флагов связи и продолжение обхода объектов",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "DispatchObjectState",
     "address": 63430,
     "slot": 17,
     "offset": 38854,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Выбор состояния объекта, косвенный вызов обработчика и последующее обновление записи",
+    "semantic_status": "described",
     "end_offset": 39014,
-    "path": "Source/Action/UnknownF7C6.asm"
+    "path": "Source/Action/DispatchObjectState.asm"
   },
   {
     "region": "ThreeD",
-    "name": "DispatchEdges",
+    "name": "ClipPolygon",
     "address": 49152,
     "slot": 19,
     "offset": 0,
-    "description": "Перебор индексов вершин и вызов обработчиков из таблиц #CF00 и #D000",
+    "description": "Обход замкнутого списка вершин с табличным отсечением и ранним завершением контура",
     "semantic_status": "described",
     "end_offset": 113,
-    "path": "Source/ThreeD/DispatchEdges.asm"
+    "path": "Source/ThreeD/ClipPolygon.asm"
   },
   {
     "region": "ThreeD",
-    "name": "NextEdge",
+    "name": "ContinueClipPolygon",
     "address": 49265,
     "slot": 19,
     "offset": 113,
-    "description": "Возврат косвенного обработчика и продолжение перебора рёбер",
+    "description": "Восстановление счётчика после ребра и продолжение либо возврат полного полигона",
     "semantic_status": "described",
     "end_offset": 122,
-    "path": "Source/ThreeD/NextEdge.asm"
+    "path": "Source/ThreeD/ContinueClipPolygon.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCase11",
+    "name": "ReturnClipCase",
     "address": 49274,
     "slot": 19,
     "offset": 122,
-    "description": "обработчик ребра для индексов таблицы #11, #22, #44, #55, #66, #88, #99, #AA",
+    "description": "Завершение текущего табличного случая обычным RET",
     "semantic_status": "described",
     "end_offset": 123,
-    "path": "Source/ThreeD/EdgeCase11.asm"
+    "path": "Source/ThreeD/ReturnClipCase.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCase05",
+    "name": "ClipInsideToBottomRight",
     "address": 49275,
     "slot": 19,
     "offset": 123,
-    "description": "обработчик ребра для индексов таблицы #05",
+    "description": "Отсечение ребра, первая точка внутри окна, вторая снизу справа",
     "semantic_status": "described",
     "end_offset": 138,
-    "path": "Source/ThreeD/EdgeCase05.asm"
+    "path": "Source/ThreeD/ClipInsideToBottomRight.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCase15",
+    "name": "ClipRightToBottomRight",
     "address": 49290,
     "slot": 19,
     "offset": 138,
-    "description": "обработчик ребра для индексов таблицы #15",
+    "description": "Отсечение ребра, первая точка справа, вторая снизу справа",
     "semantic_status": "described",
     "end_offset": 149,
-    "path": "Source/ThreeD/EdgeCase15.asm"
+    "path": "Source/ThreeD/ClipRightToBottomRight.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCase06",
+    "name": "ClipInsideToBottomLeft",
     "address": 49301,
     "slot": 19,
     "offset": 149,
-    "description": "обработчик ребра для индексов таблицы #06",
+    "description": "Отсечение ребра, первая точка внутри окна, вторая снизу слева",
     "semantic_status": "described",
     "end_offset": 164,
-    "path": "Source/ThreeD/EdgeCase06.asm"
+    "path": "Source/ThreeD/ClipInsideToBottomLeft.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCase46",
+    "name": "ClipBottomToBottomLeft",
     "address": 49316,
     "slot": 19,
     "offset": 164,
-    "description": "обработчик ребра для индексов таблицы #46",
+    "description": "Отсечение ребра, первая точка снизу, вторая снизу слева",
     "semantic_status": "described",
     "end_offset": 175,
-    "path": "Source/ThreeD/EdgeCase46.asm"
+    "path": "Source/ThreeD/ClipBottomToBottomLeft.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCase09",
+    "name": "ClipInsideToTopRight",
     "address": 49327,
     "slot": 19,
     "offset": 175,
-    "description": "обработчик ребра для индексов таблицы #09",
+    "description": "Отсечение ребра, первая точка внутри окна, вторая сверху справа",
     "semantic_status": "described",
     "end_offset": 190,
-    "path": "Source/ThreeD/EdgeCase09.asm"
+    "path": "Source/ThreeD/ClipInsideToTopRight.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCase89",
+    "name": "ClipTopToTopRight",
     "address": 49342,
     "slot": 19,
     "offset": 190,
-    "description": "обработчик ребра для индексов таблицы #89",
+    "description": "Отсечение ребра, первая точка сверху, вторая сверху справа",
     "semantic_status": "described",
     "end_offset": 201,
-    "path": "Source/ThreeD/EdgeCase89.asm"
+    "path": "Source/ThreeD/ClipTopToTopRight.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCase0A",
+    "name": "ClipInsideToTopLeft",
     "address": 49353,
     "slot": 19,
     "offset": 201,
-    "description": "обработчик ребра для индексов таблицы #0A",
+    "description": "Отсечение ребра, первая точка внутри окна, вторая сверху слева",
     "semantic_status": "described",
     "end_offset": 216,
-    "path": "Source/ThreeD/EdgeCase0A.asm"
+    "path": "Source/ThreeD/ClipInsideToTopLeft.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCase2A",
+    "name": "ClipLeftToTopLeft",
     "address": 49368,
     "slot": 19,
     "offset": 216,
-    "description": "обработчик ребра для индексов таблицы #2A",
+    "description": "Отсечение ребра, первая точка слева, вторая сверху слева",
     "semantic_status": "described",
     "end_offset": 227,
-    "path": "Source/ThreeD/EdgeCase2A.asm"
+    "path": "Source/ThreeD/ClipLeftToTopLeft.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCase10",
+    "name": "ClipRightToInside",
     "address": 49379,
     "slot": 19,
     "offset": 227,
-    "description": "обработчик ребра для индексов таблицы #10",
+    "description": "Отсечение ребра, первая точка справа, вторая внутри окна",
     "semantic_status": "described",
     "end_offset": 233,
-    "path": "Source/ThreeD/EdgeCase10.asm"
+    "path": "Source/ThreeD/ClipRightToInside.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCase12",
+    "name": "ClipRightToLeft",
     "address": 49385,
     "slot": 19,
     "offset": 233,
-    "description": "обработчик ребра для индексов таблицы #12",
+    "description": "Отсечение ребра, первая точка справа, вторая слева",
     "semantic_status": "described",
     "end_offset": 239,
-    "path": "Source/ThreeD/EdgeCase12.asm"
+    "path": "Source/ThreeD/ClipRightToLeft.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCase14",
+    "name": "ClipRightToBottom",
     "address": 49391,
     "slot": 19,
     "offset": 239,
-    "description": "обработчик ребра для индексов таблицы #14",
+    "description": "Отсечение ребра, первая точка справа, вторая снизу",
     "semantic_status": "described",
     "end_offset": 257,
-    "path": "Source/ThreeD/EdgeCase14.asm"
+    "path": "Source/ThreeD/ClipRightToBottom.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCase16",
+    "name": "ClipRightToBottomLeft",
     "address": 49409,
     "slot": 19,
     "offset": 257,
-    "description": "обработчик ребра для индексов таблицы #16",
+    "description": "Отсечение ребра, первая точка справа, вторая снизу слева",
     "semantic_status": "described",
     "end_offset": 281,
-    "path": "Source/ThreeD/EdgeCase16.asm"
+    "path": "Source/ThreeD/ClipRightToBottomLeft.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCase18",
+    "name": "ClipRightToTop",
     "address": 49433,
     "slot": 19,
     "offset": 281,
-    "description": "обработчик ребра для индексов таблицы #18",
+    "description": "Отсечение ребра, первая точка справа, вторая сверху",
     "semantic_status": "described",
     "end_offset": 299,
-    "path": "Source/ThreeD/EdgeCase18.asm"
+    "path": "Source/ThreeD/ClipRightToTop.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCase19",
+    "name": "ClipRightToTopRight",
     "address": 49451,
     "slot": 19,
     "offset": 299,
-    "description": "обработчик ребра для индексов таблицы #19",
+    "description": "Отсечение ребра, первая точка справа, вторая сверху справа",
     "semantic_status": "described",
     "end_offset": 306,
-    "path": "Source/ThreeD/EdgeCase19.asm"
+    "path": "Source/ThreeD/ClipRightToTopRight.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCase1A",
+    "name": "ClipRightToTopLeft",
     "address": 49458,
     "slot": 19,
     "offset": 306,
-    "description": "обработчик ребра для индексов таблицы #1A",
+    "description": "Отсечение ребра, первая точка справа, вторая сверху слева",
     "semantic_status": "described",
     "end_offset": 324,
-    "path": "Source/ThreeD/EdgeCase1A.asm"
+    "path": "Source/ThreeD/ClipRightToTopLeft.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCase20",
+    "name": "ClipLeftToInside",
     "address": 49476,
     "slot": 19,
     "offset": 324,
-    "description": "обработчик ребра для индексов таблицы #20",
+    "description": "Отсечение ребра, первая точка слева, вторая внутри окна",
     "semantic_status": "described",
     "end_offset": 330,
-    "path": "Source/ThreeD/EdgeCase20.asm"
+    "path": "Source/ThreeD/ClipLeftToInside.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCase21",
+    "name": "ClipLeftToRight",
     "address": 49482,
     "slot": 19,
     "offset": 330,
-    "description": "обработчик ребра для индексов таблицы #21",
+    "description": "Отсечение ребра, первая точка слева, вторая справа",
     "semantic_status": "described",
     "end_offset": 336,
-    "path": "Source/ThreeD/EdgeCase21.asm"
+    "path": "Source/ThreeD/ClipLeftToRight.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCase24",
+    "name": "ClipLeftToBottom",
     "address": 49488,
     "slot": 19,
     "offset": 336,
-    "description": "обработчик ребра для индексов таблицы #24",
+    "description": "Отсечение ребра, первая точка слева, вторая снизу",
     "semantic_status": "described",
     "end_offset": 354,
-    "path": "Source/ThreeD/EdgeCase24.asm"
+    "path": "Source/ThreeD/ClipLeftToBottom.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCase25",
+    "name": "ClipLeftToBottomRight",
     "address": 49506,
     "slot": 19,
     "offset": 354,
-    "description": "обработчик ребра для индексов таблицы #25",
+    "description": "Отсечение ребра, первая точка слева, вторая снизу справа",
     "semantic_status": "described",
     "end_offset": 372,
-    "path": "Source/ThreeD/EdgeCase25.asm"
+    "path": "Source/ThreeD/ClipLeftToBottomRight.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCase26",
+    "name": "ClipLeftToBottomLeft",
     "address": 49524,
     "slot": 19,
     "offset": 372,
-    "description": "обработчик ребра для индексов таблицы #26",
+    "description": "Отсечение ребра, первая точка слева, вторая снизу слева",
     "semantic_status": "described",
     "end_offset": 379,
-    "path": "Source/ThreeD/EdgeCase26.asm"
+    "path": "Source/ThreeD/ClipLeftToBottomLeft.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCase28",
+    "name": "ClipLeftToTop",
     "address": 49531,
     "slot": 19,
     "offset": 379,
-    "description": "обработчик ребра для индексов таблицы #28",
+    "description": "Отсечение ребра, первая точка слева, вторая сверху",
     "semantic_status": "described",
     "end_offset": 397,
-    "path": "Source/ThreeD/EdgeCase28.asm"
+    "path": "Source/ThreeD/ClipLeftToTop.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCase29",
+    "name": "ClipLeftToTopRight",
     "address": 49549,
     "slot": 19,
     "offset": 397,
-    "description": "обработчик ребра для индексов таблицы #29",
+    "description": "Отсечение ребра, первая точка слева, вторая сверху справа",
     "semantic_status": "described",
     "end_offset": 421,
-    "path": "Source/ThreeD/EdgeCase29.asm"
+    "path": "Source/ThreeD/ClipLeftToTopRight.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCase40",
+    "name": "ClipBottomToInside",
     "address": 49573,
     "slot": 19,
     "offset": 421,
-    "description": "обработчик ребра для индексов таблицы #40",
+    "description": "Отсечение ребра, первая точка снизу, вторая внутри окна",
     "semantic_status": "described",
     "end_offset": 427,
-    "path": "Source/ThreeD/EdgeCase40.asm"
+    "path": "Source/ThreeD/ClipBottomToInside.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCase41",
+    "name": "ClipBottomToRight",
     "address": 49579,
     "slot": 19,
     "offset": 427,
-    "description": "обработчик ребра для индексов таблицы #41",
+    "description": "Отсечение ребра, первая точка снизу, вторая справа",
     "semantic_status": "described",
     "end_offset": 445,
-    "path": "Source/ThreeD/EdgeCase41.asm"
+    "path": "Source/ThreeD/ClipBottomToRight.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCase42",
+    "name": "ClipBottomToLeft",
     "address": 49597,
     "slot": 19,
     "offset": 445,
-    "description": "обработчик ребра для индексов таблицы #42",
+    "description": "Отсечение ребра, первая точка снизу, вторая слева",
     "semantic_status": "described",
     "end_offset": 463,
-    "path": "Source/ThreeD/EdgeCase42.asm"
+    "path": "Source/ThreeD/ClipBottomToLeft.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCase45",
+    "name": "ClipBottomToBottomRight",
     "address": 49615,
     "slot": 19,
     "offset": 463,
-    "description": "обработчик ребра для индексов таблицы #45",
+    "description": "Отсечение ребра, первая точка снизу, вторая снизу справа",
     "semantic_status": "described",
     "end_offset": 470,
-    "path": "Source/ThreeD/EdgeCase45.asm"
+    "path": "Source/ThreeD/ClipBottomToBottomRight.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCase48",
+    "name": "ClipBottomToTop",
     "address": 49622,
     "slot": 19,
     "offset": 470,
-    "description": "обработчик ребра для индексов таблицы #48",
+    "description": "Отсечение ребра, первая точка снизу, вторая сверху",
     "semantic_status": "described",
     "end_offset": 476,
-    "path": "Source/ThreeD/EdgeCase48.asm"
+    "path": "Source/ThreeD/ClipBottomToTop.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCase49",
+    "name": "ClipBottomToTopRight",
     "address": 49628,
     "slot": 19,
     "offset": 476,
-    "description": "обработчик ребра для индексов таблицы #49",
+    "description": "Отсечение ребра, первая точка снизу, вторая сверху справа",
     "semantic_status": "described",
     "end_offset": 497,
-    "path": "Source/ThreeD/EdgeCase49.asm"
+    "path": "Source/ThreeD/ClipBottomToTopRight.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCase4A",
+    "name": "ClipBottomToTopLeft",
     "address": 49649,
     "slot": 19,
     "offset": 497,
-    "description": "обработчик ребра для индексов таблицы #4A",
+    "description": "Отсечение ребра, первая точка снизу, вторая сверху слева",
     "semantic_status": "described",
     "end_offset": 524,
-    "path": "Source/ThreeD/EdgeCase4A.asm"
+    "path": "Source/ThreeD/ClipBottomToTopLeft.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCase50",
+    "name": "ClipBottomRightToInside",
     "address": 49676,
     "slot": 19,
     "offset": 524,
-    "description": "обработчик ребра для индексов таблицы #50",
+    "description": "Отсечение ребра, первая точка снизу справа, вторая внутри окна",
     "semantic_status": "described",
     "end_offset": 552,
-    "path": "Source/ThreeD/EdgeCase50.asm"
+    "path": "Source/ThreeD/ClipBottomRightToInside.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCase51",
+    "name": "ClipBottomRightToRight",
     "address": 49704,
     "slot": 19,
     "offset": 552,
-    "description": "обработчик ребра для индексов таблицы #51",
+    "description": "Отсечение ребра, первая точка снизу справа, вторая справа",
     "semantic_status": "described",
     "end_offset": 559,
-    "path": "Source/ThreeD/EdgeCase51.asm"
+    "path": "Source/ThreeD/ClipBottomRightToRight.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCase52",
+    "name": "ClipBottomRightToLeft",
     "address": 49711,
     "slot": 19,
     "offset": 559,
-    "description": "обработчик ребра для индексов таблицы #52",
+    "description": "Отсечение ребра, первая точка снизу справа, вторая слева",
     "semantic_status": "described",
     "end_offset": 590,
-    "path": "Source/ThreeD/EdgeCase52.asm"
+    "path": "Source/ThreeD/ClipBottomRightToLeft.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCase54",
+    "name": "ClipBottomRightToBottom",
     "address": 49742,
     "slot": 19,
     "offset": 590,
-    "description": "обработчик ребра для индексов таблицы #54",
+    "description": "Отсечение ребра, первая точка снизу справа, вторая снизу",
     "semantic_status": "described",
     "end_offset": 601,
-    "path": "Source/ThreeD/EdgeCase54.asm"
+    "path": "Source/ThreeD/ClipBottomRightToBottom.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCase56",
+    "name": "ClipBottomRightToBottomLeft",
     "address": 49753,
     "slot": 19,
     "offset": 601,
-    "description": "обработчик ребра для индексов таблицы #56",
+    "description": "Отсечение ребра, первая точка снизу справа, вторая снизу слева",
     "semantic_status": "described",
     "end_offset": 607,
-    "path": "Source/ThreeD/EdgeCase56.asm"
+    "path": "Source/ThreeD/ClipBottomRightToBottomLeft.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCase58",
+    "name": "ClipBottomRightToTop",
     "address": 49759,
     "slot": 19,
     "offset": 607,
-    "description": "обработчик ребра для индексов таблицы #58",
+    "description": "Отсечение ребра, первая точка снизу справа, вторая сверху",
     "semantic_status": "described",
     "end_offset": 628,
-    "path": "Source/ThreeD/EdgeCase58.asm"
+    "path": "Source/ThreeD/ClipBottomRightToTop.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCase5A",
+    "name": "ClipBottomRightToTopLeft",
     "address": 49780,
     "slot": 19,
     "offset": 628,
-    "description": "обработчик ребра для индексов таблицы #5A",
+    "description": "Отсечение ребра, первая точка снизу справа, вторая сверху слева",
     "semantic_status": "described",
     "end_offset": 653,
-    "path": "Source/ThreeD/EdgeCase5A.asm"
+    "path": "Source/ThreeD/ClipBottomRightToTopLeft.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCase60",
+    "name": "ClipBottomLeftToInside",
     "address": 49805,
     "slot": 19,
     "offset": 653,
-    "description": "обработчик ребра для индексов таблицы #60",
+    "description": "Отсечение ребра, первая точка снизу слева, вторая внутри окна",
     "semantic_status": "described",
     "end_offset": 681,
-    "path": "Source/ThreeD/EdgeCase60.asm"
+    "path": "Source/ThreeD/ClipBottomLeftToInside.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCase61",
+    "name": "ClipBottomLeftToRight",
     "address": 49833,
     "slot": 19,
     "offset": 681,
-    "description": "обработчик ребра для индексов таблицы #61",
+    "description": "Отсечение ребра, первая точка снизу слева, вторая справа",
     "semantic_status": "described",
     "end_offset": 702,
-    "path": "Source/ThreeD/EdgeCase61.asm"
+    "path": "Source/ThreeD/ClipBottomLeftToRight.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCase62",
+    "name": "ClipBottomLeftToLeft",
     "address": 49854,
     "slot": 19,
     "offset": 702,
-    "description": "обработчик ребра для индексов таблицы #62",
+    "description": "Отсечение ребра, первая точка снизу слева, вторая слева",
     "semantic_status": "described",
     "end_offset": 713,
-    "path": "Source/ThreeD/EdgeCase62.asm"
+    "path": "Source/ThreeD/ClipBottomLeftToLeft.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCase64",
+    "name": "ClipBottomLeftToBottom",
     "address": 49865,
     "slot": 19,
     "offset": 713,
-    "description": "обработчик ребра для индексов таблицы #64",
+    "description": "Отсечение ребра, первая точка снизу слева, вторая снизу",
     "semantic_status": "described",
     "end_offset": 720,
-    "path": "Source/ThreeD/EdgeCase64.asm"
+    "path": "Source/ThreeD/ClipBottomLeftToBottom.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCase68",
+    "name": "ClipBottomLeftToTop",
     "address": 49872,
     "slot": 19,
     "offset": 720,
-    "description": "обработчик ребра для индексов таблицы #68",
+    "description": "Отсечение ребра, первая точка снизу слева, вторая сверху",
     "semantic_status": "described",
     "end_offset": 751,
-    "path": "Source/ThreeD/EdgeCase68.asm"
+    "path": "Source/ThreeD/ClipBottomLeftToTop.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCase69",
+    "name": "ClipBottomLeftToTopRight",
     "address": 49903,
     "slot": 19,
     "offset": 751,
-    "description": "обработчик ребра для индексов таблицы #69",
+    "description": "Отсечение ребра, первая точка снизу слева, вторая сверху справа",
     "semantic_status": "described",
     "end_offset": 776,
-    "path": "Source/ThreeD/EdgeCase69.asm"
+    "path": "Source/ThreeD/ClipBottomLeftToTopRight.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCase6A",
+    "name": "ClipBottomLeftToTopLeft",
     "address": 49928,
     "slot": 19,
     "offset": 776,
-    "description": "обработчик ребра для индексов таблицы #6A",
+    "description": "Отсечение ребра, первая точка снизу слева, вторая сверху слева",
     "semantic_status": "described",
     "end_offset": 782,
-    "path": "Source/ThreeD/EdgeCase6A.asm"
+    "path": "Source/ThreeD/ClipBottomLeftToTopLeft.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCase80",
+    "name": "ClipTopToInside",
     "address": 49934,
     "slot": 19,
     "offset": 782,
-    "description": "обработчик ребра для индексов таблицы #80",
+    "description": "Отсечение ребра, первая точка сверху, вторая внутри окна",
     "semantic_status": "described",
     "end_offset": 788,
-    "path": "Source/ThreeD/EdgeCase80.asm"
+    "path": "Source/ThreeD/ClipTopToInside.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCase81",
+    "name": "ClipTopToRight",
     "address": 49940,
     "slot": 19,
     "offset": 788,
-    "description": "обработчик ребра для индексов таблицы #81",
+    "description": "Отсечение ребра, первая точка сверху, вторая справа",
     "semantic_status": "described",
     "end_offset": 806,
-    "path": "Source/ThreeD/EdgeCase81.asm"
+    "path": "Source/ThreeD/ClipTopToRight.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCase82",
+    "name": "ClipTopToLeft",
     "address": 49958,
     "slot": 19,
     "offset": 806,
-    "description": "обработчик ребра для индексов таблицы #82",
+    "description": "Отсечение ребра, первая точка сверху, вторая слева",
     "semantic_status": "described",
     "end_offset": 824,
-    "path": "Source/ThreeD/EdgeCase82.asm"
+    "path": "Source/ThreeD/ClipTopToLeft.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCase84",
+    "name": "ClipTopToBottom",
     "address": 49976,
     "slot": 19,
     "offset": 824,
-    "description": "обработчик ребра для индексов таблицы #84",
+    "description": "Отсечение ребра, первая точка сверху, вторая снизу",
     "semantic_status": "described",
     "end_offset": 830,
-    "path": "Source/ThreeD/EdgeCase84.asm"
+    "path": "Source/ThreeD/ClipTopToBottom.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCase85",
+    "name": "ClipTopToBottomRight",
     "address": 49982,
     "slot": 19,
     "offset": 830,
-    "description": "обработчик ребра для индексов таблицы #85",
+    "description": "Отсечение ребра, первая точка сверху, вторая снизу справа",
     "semantic_status": "described",
     "end_offset": 857,
-    "path": "Source/ThreeD/EdgeCase85.asm"
+    "path": "Source/ThreeD/ClipTopToBottomRight.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCase86",
+    "name": "ClipTopToBottomLeft",
     "address": 50009,
     "slot": 19,
     "offset": 857,
-    "description": "обработчик ребра для индексов таблицы #86",
+    "description": "Отсечение ребра, первая точка сверху, вторая снизу слева",
     "semantic_status": "described",
     "end_offset": 878,
-    "path": "Source/ThreeD/EdgeCase86.asm"
+    "path": "Source/ThreeD/ClipTopToBottomLeft.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCase8A",
+    "name": "ClipTopToTopLeft",
     "address": 50030,
     "slot": 19,
     "offset": 878,
-    "description": "обработчик ребра для индексов таблицы #8A",
+    "description": "Отсечение ребра, первая точка сверху, вторая сверху слева",
     "semantic_status": "described",
     "end_offset": 885,
-    "path": "Source/ThreeD/EdgeCase8A.asm"
+    "path": "Source/ThreeD/ClipTopToTopLeft.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCase90",
+    "name": "ClipTopRightToInside",
     "address": 50037,
     "slot": 19,
     "offset": 885,
-    "description": "обработчик ребра для индексов таблицы #90",
+    "description": "Отсечение ребра, первая точка сверху справа, вторая внутри окна",
     "semantic_status": "described",
     "end_offset": 913,
-    "path": "Source/ThreeD/EdgeCase90.asm"
+    "path": "Source/ThreeD/ClipTopRightToInside.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCase91",
+    "name": "ClipTopRightToRight",
     "address": 50065,
     "slot": 19,
     "offset": 913,
-    "description": "обработчик ребра для индексов таблицы #91",
+    "description": "Отсечение ребра, первая точка сверху справа, вторая справа",
     "semantic_status": "described",
     "end_offset": 924,
-    "path": "Source/ThreeD/EdgeCase91.asm"
+    "path": "Source/ThreeD/ClipTopRightToRight.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCase92",
+    "name": "ClipTopRightToLeft",
     "address": 50076,
     "slot": 19,
     "offset": 924,
-    "description": "обработчик ребра для индексов таблицы #92",
+    "description": "Отсечение ребра, первая точка сверху справа, вторая слева",
     "semantic_status": "described",
     "end_offset": 945,
-    "path": "Source/ThreeD/EdgeCase92.asm"
+    "path": "Source/ThreeD/ClipTopRightToLeft.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCase94",
+    "name": "ClipTopRightToBottom",
     "address": 50097,
     "slot": 19,
     "offset": 945,
-    "description": "обработчик ребра для индексов таблицы #94",
+    "description": "Отсечение ребра, первая точка сверху справа, вторая снизу",
     "semantic_status": "described",
     "end_offset": 976,
-    "path": "Source/ThreeD/EdgeCase94.asm"
+    "path": "Source/ThreeD/ClipTopRightToBottom.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCase95",
+    "name": "ClipTopRightToBottomRight",
     "address": 50128,
     "slot": 19,
     "offset": 976,
-    "description": "обработчик ребра для индексов таблицы #95",
+    "description": "Отсечение ребра, первая точка сверху справа, вторая снизу справа",
     "semantic_status": "described",
     "end_offset": 982,
-    "path": "Source/ThreeD/EdgeCase95.asm"
+    "path": "Source/ThreeD/ClipTopRightToBottomRight.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCase96",
+    "name": "ClipTopRightToBottomLeft",
     "address": 50134,
     "slot": 19,
     "offset": 982,
-    "description": "обработчик ребра для индексов таблицы #96",
+    "description": "Отсечение ребра, первая точка сверху справа, вторая снизу слева",
     "semantic_status": "described",
     "end_offset": 1007,
-    "path": "Source/ThreeD/EdgeCase96.asm"
+    "path": "Source/ThreeD/ClipTopRightToBottomLeft.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCase98",
+    "name": "ClipTopRightToTop",
     "address": 50159,
     "slot": 19,
     "offset": 1007,
-    "description": "обработчик ребра для индексов таблицы #98",
+    "description": "Отсечение ребра, первая точка сверху справа, вторая сверху",
     "semantic_status": "described",
     "end_offset": 1014,
-    "path": "Source/ThreeD/EdgeCase98.asm"
+    "path": "Source/ThreeD/ClipTopRightToTop.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCaseA0",
+    "name": "ClipTopLeftToInside",
     "address": 50166,
     "slot": 19,
     "offset": 1014,
-    "description": "обработчик ребра для индексов таблицы #A0",
+    "description": "Отсечение ребра, первая точка сверху слева, вторая внутри окна",
     "semantic_status": "described",
     "end_offset": 1042,
-    "path": "Source/ThreeD/EdgeCaseA0.asm"
+    "path": "Source/ThreeD/ClipTopLeftToInside.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCaseA1",
+    "name": "ClipTopLeftToRight",
     "address": 50194,
     "slot": 19,
     "offset": 1042,
-    "description": "обработчик ребра для индексов таблицы #A1",
+    "description": "Отсечение ребра, первая точка сверху слева, вторая справа",
     "semantic_status": "described",
     "end_offset": 1073,
-    "path": "Source/ThreeD/EdgeCaseA1.asm"
+    "path": "Source/ThreeD/ClipTopLeftToRight.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCaseA2",
+    "name": "ClipTopLeftToLeft",
     "address": 50225,
     "slot": 19,
     "offset": 1073,
-    "description": "обработчик ребра для индексов таблицы #A2",
+    "description": "Отсечение ребра, первая точка сверху слева, вторая слева",
     "semantic_status": "described",
     "end_offset": 1080,
-    "path": "Source/ThreeD/EdgeCaseA2.asm"
+    "path": "Source/ThreeD/ClipTopLeftToLeft.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCaseA4",
+    "name": "ClipTopLeftToBottom",
     "address": 50232,
     "slot": 19,
     "offset": 1080,
-    "description": "обработчик ребра для индексов таблицы #A4",
+    "description": "Отсечение ребра, первая точка сверху слева, вторая снизу",
     "semantic_status": "described",
     "end_offset": 1101,
-    "path": "Source/ThreeD/EdgeCaseA4.asm"
+    "path": "Source/ThreeD/ClipTopLeftToBottom.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCaseA5",
+    "name": "ClipTopLeftToBottomRight",
     "address": 50253,
     "slot": 19,
     "offset": 1101,
-    "description": "обработчик ребра для индексов таблицы #A5",
+    "description": "Отсечение ребра, первая точка сверху слева, вторая снизу справа",
     "semantic_status": "described",
     "end_offset": 1126,
-    "path": "Source/ThreeD/EdgeCaseA5.asm"
+    "path": "Source/ThreeD/ClipTopLeftToBottomRight.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCaseA8",
+    "name": "ClipTopLeftToTop",
     "address": 50278,
     "slot": 19,
     "offset": 1126,
-    "description": "обработчик ребра для индексов таблицы #A8",
+    "description": "Отсечение ребра, первая точка сверху слева, вторая сверху",
     "semantic_status": "described",
     "end_offset": 1137,
-    "path": "Source/ThreeD/EdgeCaseA8.asm"
+    "path": "Source/ThreeD/ClipTopLeftToTop.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCaseA9",
+    "name": "ClipTopLeftToTopRight",
     "address": 50289,
     "slot": 19,
     "offset": 1137,
-    "description": "обработчик ребра для индексов таблицы #A9",
+    "description": "Отсечение ребра, первая точка сверху слева, вторая сверху справа",
     "semantic_status": "described",
     "end_offset": 1143,
-    "path": "Source/ThreeD/EdgeCaseA9.asm"
+    "path": "Source/ThreeD/ClipTopLeftToTopRight.asm"
   },
   {
     "region": "ThreeD",
-    "name": "UnknownC477",
+    "name": "ComputeTopClipProduct",
     "address": 50295,
     "slot": 19,
     "offset": 1143,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Подготовка числителя пересечения (First.First-0)*(First.Second-Second.Second) исходным знаковым умножителем",
+    "semantic_status": "described",
     "end_offset": 1174,
-    "path": "Source/ThreeD/UnknownC477.asm"
+    "path": "Source/ThreeD/ComputeTopClipProduct.asm"
   },
   {
     "region": "ThreeD",
-    "name": "UnknownC496",
+    "name": "ComputeBottomClipProduct",
     "address": 50326,
     "slot": 19,
     "offset": 1174,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Подготовка числителя пересечения (First.First-95)*(First.Second-Second.Second) исходным знаковым умножителем",
+    "semantic_status": "described",
     "end_offset": 1205,
-    "path": "Source/ThreeD/UnknownC496.asm"
+    "path": "Source/ThreeD/ComputeBottomClipProduct.asm"
   },
   {
     "region": "ThreeD",
-    "name": "UnknownC4B5",
+    "name": "ComputeLeftClipProduct",
     "address": 50357,
     "slot": 19,
     "offset": 1205,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Подготовка числителя пересечения (First.First-Second.First)*(First.Second-0) исходным знаковым умножителем",
+    "semantic_status": "described",
     "end_offset": 1236,
-    "path": "Source/ThreeD/UnknownC4B5.asm"
+    "path": "Source/ThreeD/ComputeLeftClipProduct.asm"
   },
   {
     "region": "ThreeD",
-    "name": "UnknownC4D4",
+    "name": "ComputeRightClipProduct",
     "address": 50388,
     "slot": 19,
     "offset": 1236,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Подготовка числителя пересечения (First.First-Second.First)*(First.Second-255) исходным знаковым умножителем",
+    "semantic_status": "described",
     "end_offset": 1267,
-    "path": "Source/ThreeD/UnknownC4D4.asm"
+    "path": "Source/ThreeD/ComputeRightClipProduct.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCase08",
+    "name": "ClipInsideToTop",
     "address": 50419,
     "slot": 19,
     "offset": 1267,
-    "description": "обработчик ребра для индексов таблицы #08",
+    "description": "Отсечение ребра, первая точка внутри окна, вторая сверху",
     "semantic_status": "described",
     "end_offset": 1270,
-    "path": "Source/ThreeD/EdgeCase08.asm"
+    "path": "Source/ThreeD/ClipInsideToTop.asm"
   },
   {
     "region": "ThreeD",
-    "name": "UnknownC4F6",
+    "name": "AppendTopClipIntersection",
     "address": 50422,
     "slot": 19,
     "offset": 1270,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Добавление пересечения границы с исходным делением и побайтовой проверкой координаты",
+    "semantic_status": "described",
     "end_offset": 1341,
-    "path": "Source/ThreeD/UnknownC4F6.asm"
+    "path": "Source/ThreeD/AppendTopClipIntersection.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCase04",
+    "name": "ClipInsideToBottom",
     "address": 50493,
     "slot": 19,
     "offset": 1341,
-    "description": "обработчик ребра для индексов таблицы #04",
+    "description": "Отсечение ребра, первая точка внутри окна, вторая снизу",
     "semantic_status": "described",
     "end_offset": 1344,
-    "path": "Source/ThreeD/EdgeCase04.asm"
+    "path": "Source/ThreeD/ClipInsideToBottom.asm"
   },
   {
     "region": "ThreeD",
-    "name": "UnknownC540",
+    "name": "AppendBottomClipIntersection",
     "address": 50496,
     "slot": 19,
     "offset": 1344,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Добавление пересечения границы с исходным делением и побайтовой проверкой координаты",
+    "semantic_status": "described",
     "end_offset": 1416,
-    "path": "Source/ThreeD/UnknownC540.asm"
+    "path": "Source/ThreeD/AppendBottomClipIntersection.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCase02",
+    "name": "ClipInsideToLeft",
     "address": 50568,
     "slot": 19,
     "offset": 1416,
-    "description": "обработчик ребра для индексов таблицы #02",
+    "description": "Отсечение ребра, первая точка внутри окна, вторая слева",
     "semantic_status": "described",
     "end_offset": 1419,
-    "path": "Source/ThreeD/EdgeCase02.asm"
+    "path": "Source/ThreeD/ClipInsideToLeft.asm"
   },
   {
     "region": "ThreeD",
-    "name": "UnknownC58B",
+    "name": "AppendLeftClipIntersection",
     "address": 50571,
     "slot": 19,
     "offset": 1419,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Добавление пересечения границы с исходным делением и побайтовой проверкой координаты",
+    "semantic_status": "described",
     "end_offset": 1508,
-    "path": "Source/ThreeD/UnknownC58B.asm"
+    "path": "Source/ThreeD/AppendLeftClipIntersection.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCase01",
+    "name": "ClipInsideToRight",
     "address": 50660,
     "slot": 19,
     "offset": 1508,
-    "description": "обработчик ребра для индексов таблицы #01",
+    "description": "Отсечение ребра, первая точка внутри окна, вторая справа",
     "semantic_status": "described",
     "end_offset": 1511,
-    "path": "Source/ThreeD/EdgeCase01.asm"
+    "path": "Source/ThreeD/ClipInsideToRight.asm"
   },
   {
     "region": "ThreeD",
-    "name": "UnknownC5E7",
+    "name": "AppendRightClipIntersection",
     "address": 50663,
     "slot": 19,
     "offset": 1511,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Добавление пересечения границы с исходным делением и побайтовой проверкой координаты",
+    "semantic_status": "described",
     "end_offset": 1601,
-    "path": "Source/ThreeD/UnknownC5E7.asm"
+    "path": "Source/ThreeD/AppendRightClipIntersection.asm"
   },
   {
     "region": "ThreeD",
-    "name": "UnknownC641",
+    "name": "AppendTopLeftClipCorner",
     "address": 50753,
     "slot": 19,
     "offset": 1601,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Добавление угла окна при нулевом CornerBlock",
+    "semantic_status": "described",
     "end_offset": 1612,
-    "path": "Source/ThreeD/UnknownC641.asm"
+    "path": "Source/ThreeD/AppendTopLeftClipCorner.asm"
   },
   {
     "region": "ThreeD",
-    "name": "UnknownC64C",
+    "name": "AppendTopRightClipCorner",
     "address": 50764,
     "slot": 19,
     "offset": 1612,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Добавление угла окна при нулевом CornerBlock",
+    "semantic_status": "described",
     "end_offset": 1623,
-    "path": "Source/ThreeD/UnknownC64C.asm"
+    "path": "Source/ThreeD/AppendTopRightClipCorner.asm"
   },
   {
     "region": "ThreeD",
-    "name": "UnknownC657",
+    "name": "AppendBottomLeftClipCorner",
     "address": 50775,
     "slot": 19,
     "offset": 1623,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Добавление угла окна при нулевом CornerBlock",
+    "semantic_status": "described",
     "end_offset": 1634,
-    "path": "Source/ThreeD/UnknownC657.asm"
+    "path": "Source/ThreeD/AppendBottomLeftClipCorner.asm"
   },
   {
     "region": "ThreeD",
-    "name": "UnknownC662",
+    "name": "AppendBottomRightClipCorner",
     "address": 50786,
     "slot": 19,
     "offset": 1634,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Добавление угла окна при нулевом CornerBlock",
+    "semantic_status": "described",
     "end_offset": 1645,
-    "path": "Source/ThreeD/UnknownC662.asm"
+    "path": "Source/ThreeD/AppendBottomRightClipCorner.asm"
   },
   {
     "region": "ThreeD",
-    "name": "UnknownC66D",
+    "name": "CompareTopLeftProducts",
     "address": 50797,
     "slot": 19,
     "offset": 1645,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Вычитание LeftProduct из TopProduct с передачей заёма младшего слова",
+    "semantic_status": "described",
     "end_offset": 1665,
-    "path": "Source/ThreeD/UnknownC66D.asm"
+    "path": "Source/ThreeD/CompareTopLeftProducts.asm"
   },
   {
     "region": "ThreeD",
-    "name": "UnknownC681",
+    "name": "CompareTopRightProducts",
     "address": 50817,
     "slot": 19,
     "offset": 1665,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Вычитание RightProduct из TopProduct с передачей заёма младшего слова",
+    "semantic_status": "described",
     "end_offset": 1685,
-    "path": "Source/ThreeD/UnknownC681.asm"
+    "path": "Source/ThreeD/CompareTopRightProducts.asm"
   },
   {
     "region": "ThreeD",
-    "name": "UnknownC695",
+    "name": "CompareBottomLeftProducts",
     "address": 50837,
     "slot": 19,
     "offset": 1685,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Вычитание LeftProduct из BottomProduct с передачей заёма младшего слова",
+    "semantic_status": "described",
     "end_offset": 1705,
-    "path": "Source/ThreeD/UnknownC695.asm"
+    "path": "Source/ThreeD/CompareBottomLeftProducts.asm"
   },
   {
     "region": "ThreeD",
-    "name": "UnknownC6A9",
+    "name": "CompareBottomRightProducts",
     "address": 50857,
     "slot": 19,
     "offset": 1705,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Вычитание RightProduct из BottomProduct с передачей заёма младшего слова",
+    "semantic_status": "described",
     "end_offset": 1725,
-    "path": "Source/ThreeD/UnknownC6A9.asm"
+    "path": "Source/ThreeD/CompareBottomRightProducts.asm"
   },
   {
     "region": "ThreeD",
-    "name": "UnknownC6BD",
+    "name": "ComputeSecondAxisDelta",
     "address": 50877,
     "slot": 19,
     "offset": 1725,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Разность координат Second второй и первой точки с оборачиванием до слова",
+    "semantic_status": "described",
     "end_offset": 1736,
-    "path": "Source/ThreeD/UnknownC6BD.asm"
+    "path": "Source/ThreeD/ComputeSecondAxisDelta.asm"
   },
   {
     "region": "ThreeD",
-    "name": "UnknownC6C8",
+    "name": "ComputeFirstAxisDelta",
     "address": 50888,
     "slot": 19,
     "offset": 1736,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Разность координат First второй и первой точки с оборачиванием до слова",
+    "semantic_status": "described",
     "end_offset": 1747,
-    "path": "Source/ThreeD/UnknownC6C8.asm"
+    "path": "Source/ThreeD/ComputeFirstAxisDelta.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCase00",
+    "name": "AppendSecondClipPoint",
     "address": 50899,
     "slot": 19,
     "offset": 1747,
-    "description": "обработчик ребра для индексов таблицы #00",
+    "description": "Добавление младших байтов второй точки с общим входом записи пары DE",
     "semantic_status": "described",
     "end_offset": 1770,
-    "path": "Source/ThreeD/EdgeCase00.asm"
+    "path": "Source/ThreeD/AppendSecondClipPoint.asm"
   },
   {
     "region": "ThreeD",
-    "name": "EdgeCase59",
+    "name": "ExitClipContour",
     "address": 50922,
     "slot": 19,
     "offset": 1770,
-    "description": "обработчик ребра для индексов таблицы #59, #65, #9A, #A6",
+    "description": "Специальное завершение контура со снятием трёх служебных слов",
     "semantic_status": "described",
     "end_offset": 1780,
-    "path": "Source/ThreeD/EdgeCase59.asm"
+    "path": "Source/ThreeD/ExitClipContour.asm"
   },
   {
     "region": "ThreeD",
-    "name": "UnknownC6F4",
+    "name": "MultiplySigned16",
     "address": 50932,
     "slot": 19,
     "offset": 1780,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Знаковое произведение двух слов с тремя ядрами и исходным исключением второго операнда 8000",
+    "semantic_status": "described",
     "end_offset": 2188,
-    "path": "Source/ThreeD/UnknownC6F4.asm"
+    "path": "Source/ThreeD/MultiplySigned16.asm"
   },
   {
     "region": "ThreeD",
-    "name": "UnknownC88C",
+    "name": "DivideSigned32To16",
     "address": 51340,
     "slot": 19,
     "offset": 2188,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
-    "end_offset": 2739,
-    "path": "Source/ThreeD/UnknownC88C.asm"
+    "description": "Деление числителя HL, A, альтернативного A на signed16 с исходным побитовым дополнением",
+    "semantic_status": "described",
+    "end_offset": 2369,
+    "path": "Source/ThreeD/DivideSigned32To16.asm"
   },
   {
     "region": "ThreeD",
-    "name": "UnknownCAB3",
-    "address": 51891,
+    "name": "ClipSingleEdge",
+    "address": 51521,
     "slot": 19,
-    "offset": 2739,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
-    "end_offset": 2787,
-    "path": "Source/ThreeD/UnknownCAB3.asm"
+    "offset": 2369,
+    "description": "Отсечение одиночного ребра с обменом внутренней первой точки и рамкой трёх возвратов",
+    "semantic_status": "described",
+    "end_offset": 2459,
+    "path": "Source/ThreeD/ClipSingleEdge.asm"
   },
   {
     "region": "ThreeD",
-    "name": "UnknownCAE3",
-    "address": 51939,
+    "name": "BuildRenderCoefficients",
+    "address": 51611,
     "slot": 19,
-    "offset": 2787,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "offset": 2459,
+    "description": "Построение девяти байтовых коэффициентов по трём фазам либо по одной фазе",
+    "semantic_status": "described",
+    "end_offset": 2851,
+    "path": "Source/ThreeD/BuildRenderCoefficients.asm"
+  },
+  {
+    "region": "ThreeD",
+    "name": "ComposeRenderMatrix",
+    "address": 52003,
+    "slot": 19,
+    "offset": 2851,
+    "description": "Композиция исходной матрицы и ориентации с одноосным режимом и точными четвертями",
+    "semantic_status": "described",
     "end_offset": 3811,
-    "path": "Source/ThreeD/UnknownCAE3.asm"
+    "path": "Source/ThreeD/ComposeRenderMatrix.asm"
   },
   {
     "region": "ThreeD",
@@ -11514,7 +12581,7 @@
     "address": 53514,
     "slot": 19,
     "offset": 4362,
-    "description": "Заполнение #0C00 байт до #8C00 значением #FF через стек с восстановлением SP",
+    "description": "Заполнение линейного буфера 8000..8BFF байтами FF через временный SP с восстановлением CPU-стека",
     "semantic_status": "described",
     "end_offset": 4396,
     "path": "Source/ThreeD/ClearWorkBuffer.asm"
@@ -11525,10 +12592,263 @@
     "address": 53548,
     "slot": 19,
     "offset": 4396,
-    "description": "Знаковое умножение с масштабом 1/128 для коэффициента от -127 до 127, выход через JP (IX)",
+    "description": "Знаковое произведение DE и байтового коэффициента с усечением к нулю после деления на 128 и выходом через IX",
     "semantic_status": "described",
     "end_offset": 4500,
     "path": "Source/ThreeD/MultiplySignedScaled.asm"
+  },
+  {
+    "region": "ThreeD",
+    "name": "PolygonFillRows",
+    "address": 53696,
+    "slot": 19,
+    "offset": 4544,
+    "end_offset": 4712,
+    "path": "Source/ThreeD/PolygonFillRows.asm",
+    "description": "Строковое ядро линейной заливки с развёрнутой записью, крайними масками и коррекцией двух рёбер",
+    "semantic_status": "described"
+  },
+  {
+    "region": "ThreeD",
+    "name": "SelectPolygonRightEdge",
+    "address": 53864,
+    "slot": 19,
+    "offset": 4712,
+    "end_offset": 4715,
+    "path": "Source/ThreeD/SelectPolygonRightEdge.asm",
+    "description": "Передача управления правому обновлению без изменения контекста",
+    "semantic_status": "described"
+  },
+  {
+    "region": "ThreeD",
+    "name": "WrapPolygonLeftEdge",
+    "address": 53867,
+    "slot": 19,
+    "offset": 4715,
+    "end_offset": 4722,
+    "path": "Source/ThreeD/WrapPolygonLeftEdge.asm",
+    "description": "Оборачивание обратного поиска к последней First кольца",
+    "semantic_status": "described"
+  },
+  {
+    "region": "ThreeD",
+    "name": "UpdatePolygonLeftEdge",
+    "address": 53874,
+    "slot": 19,
+    "offset": 4722,
+    "end_offset": 5032,
+    "path": "Source/ThreeD/UpdatePolygonLeftEdge.asm",
+    "description": "Поиск восходящего левого ребра, вычисление целого шага и ошибки, выбор продолжения заливки",
+    "semantic_status": "described"
+  },
+  {
+    "region": "ThreeD",
+    "name": "WrapPolygonRightEdge",
+    "address": 54184,
+    "slot": 19,
+    "offset": 5032,
+    "end_offset": 5037,
+    "path": "Source/ThreeD/WrapPolygonRightEdge.asm",
+    "description": "Оборачивание прямого поиска к первой First кольца",
+    "semantic_status": "described"
+  },
+  {
+    "region": "ThreeD",
+    "name": "UpdatePolygonRightEdge",
+    "address": 54189,
+    "slot": 19,
+    "offset": 5037,
+    "end_offset": 5313,
+    "path": "Source/ThreeD/UpdatePolygonRightEdge.asm",
+    "description": "Поиск восходящего правого ребра и вычисление его упакованного шага и дробной ошибки",
+    "semantic_status": "described"
+  },
+  {
+    "region": "ThreeD",
+    "name": "SelectPolygonRowLimit",
+    "address": 54465,
+    "slot": 19,
+    "offset": 5313,
+    "end_offset": 5365,
+    "path": "Source/ThreeD/SelectPolygonRowLimit.asm",
+    "description": "Выбор ближайшего предела строк с приоритетом левого ребра и настройкой следующего перехода",
+    "semantic_status": "described"
+  },
+  {
+    "region": "ThreeD",
+    "name": "SetShortNegativeRightStep",
+    "address": 54517,
+    "slot": 19,
+    "offset": 5365,
+    "end_offset": 5379,
+    "path": "Source/ThreeD/SetShortNegativeRightStep.asm",
+    "description": "Настройка нулевого целого шага короткого отрицательного правого наклона и восстановление временного контекста",
+    "semantic_status": "described"
+  },
+  {
+    "region": "ThreeD",
+    "name": "WrapPolygonLeftTop",
+    "address": 54531,
+    "slot": 19,
+    "offset": 5379,
+    "end_offset": 5386,
+    "path": "Source/ThreeD/WrapPolygonLeftTop.asm",
+    "description": "Оборачивание поиска левого конца верхней горизонтали",
+    "semantic_status": "described"
+  },
+  {
+    "region": "ThreeD",
+    "name": "WrapPolygonRightTop",
+    "address": 54538,
+    "slot": 19,
+    "offset": 5386,
+    "end_offset": 5391,
+    "path": "Source/ThreeD/WrapPolygonRightTop.asm",
+    "description": "Оборачивание поиска правого конца верхней горизонтали",
+    "semantic_status": "described"
+  },
+  {
+    "region": "ThreeD",
+    "name": "ReturnPolygonFill",
+    "address": 54543,
+    "slot": 19,
+    "offset": 5391,
+    "end_offset": 5393,
+    "path": "Source/ThreeD/ReturnPolygonFill.asm",
+    "description": "Восстановление сохранённого HL и внешний возврат плоского контура",
+    "semantic_status": "described"
+  },
+  {
+    "region": "ThreeD",
+    "name": "PreparePolygonFill",
+    "address": 54545,
+    "slot": 19,
+    "offset": 5393,
+    "end_offset": 5577,
+    "path": "Source/ThreeD/PreparePolygonFill.asm",
+    "description": "Подготовка диапазона строк, верхних вершин двух цепочек, масок и временного стека заливки",
+    "semantic_status": "described"
+  },
+  {
+    "region": "ThreeD",
+    "name": "TransformObjectVertices",
+    "address": 54729,
+    "slot": 19,
+    "offset": 5577,
+    "end_offset": 5625,
+    "path": "Source/ThreeD/TransformObjectVertices.asm",
+    "description": "Копирование потока объекта и преобразование всех его фиксированных групп вершин",
+    "semantic_status": "described"
+  },
+  {
+    "region": "ThreeD",
+    "name": "PrepareRenderVertexProducts",
+    "address": 54777,
+    "slot": 19,
+    "offset": 5625,
+    "end_offset": 5780,
+    "path": "Source/ThreeD/PrepareRenderVertexProducts.asm",
+    "description": "Подготовка трёх пар координат и трёх глубин табличным произведением матрицы и входных компонентов",
+    "semantic_status": "described"
+  },
+  {
+    "region": "ThreeD",
+    "name": "ProjectRenderVertexGroup",
+    "address": 54932,
+    "slot": 19,
+    "offset": 5780,
+    "end_offset": 6048,
+    "path": "Source/ThreeD/ProjectRenderVertexGroup.asm",
+    "description": "Построение комбинаций координат и перспективная запись выбранной группы вершин",
+    "semantic_status": "described"
+  },
+  {
+    "region": "ThreeD",
+    "name": "ProjectRenderVertex",
+    "address": 55200,
+    "slot": 19,
+    "offset": 6048,
+    "end_offset": 7101,
+    "path": "Source/ThreeD/ProjectRenderVertex.asm",
+    "description": "Перспективная запись одной вершины с исходной нормализацией и косвенным продолжением",
+    "semantic_status": "described"
+  },
+  {
+    "region": "ThreeD",
+    "name": "RenderClippedRecords",
+    "address": 56253,
+    "slot": 19,
+    "offset": 7101,
+    "end_offset": 7459,
+    "path": "Source/ThreeD/RenderClippedRecords.asm",
+    "description": "Вывод записей объекта с проверкой кодов точек и отсечением граней и открытых сегментов",
+    "semantic_status": "described"
+  },
+  {
+    "region": "ThreeD",
+    "name": "RenderInsideRecords",
+    "address": 56611,
+    "slot": 19,
+    "offset": 7459,
+    "end_offset": 7633,
+    "path": "Source/ThreeD/RenderInsideRecords.asm",
+    "description": "Вывод граней и ломаных объекта с внутренними точками без дополнительного отсечения",
+    "semantic_status": "described"
+  },
+  {
+    "region": "ThreeD",
+    "name": "CombineListedVertexCodes",
+    "address": 56785,
+    "slot": 19,
+    "offset": 7633,
+    "end_offset": 7664,
+    "path": "Source/ThreeD/CombineListedVertexCodes.asm",
+    "description": "Объединение кодов границ перечисленных точек с ранним выходом по нулевому коду",
+    "semantic_status": "described"
+  },
+  {
+    "region": "ThreeD",
+    "name": "DrawLinearLine",
+    "address": 56816,
+    "slot": 19,
+    "offset": 7664,
+    "end_offset": 7920,
+    "path": "Source/ThreeD/DrawLinearLine.asm",
+    "description": "Растеризация отрезка в линейный буфер страницы 80 с режимами AND, OR и XOR без конечной точки",
+    "semantic_status": "described"
+  },
+  {
+    "region": "ThreeD",
+    "name": "AbortProjectedVertexScan",
+    "address": 57072,
+    "slot": 19,
+    "offset": 7920,
+    "end_offset": 7923,
+    "path": "Source/ThreeD/AbortProjectedVertexScan.asm",
+    "description": "Завершение сканирования точек по маркеру отказа перспективы без отката предыдущих кодов",
+    "semantic_status": "described"
+  },
+  {
+    "region": "ThreeD",
+    "name": "ClassifyProjectedVertices",
+    "address": 57075,
+    "slot": 19,
+    "offset": 7923,
+    "end_offset": 8118,
+    "path": "Source/ThreeD/ClassifyProjectedVertices.asm",
+    "description": "Заполнение кодов границ экранных точек и накопление общего кода объекта",
+    "semantic_status": "described"
+  },
+  {
+    "region": "ThreeD",
+    "name": "CheckFaceOrientation",
+    "address": 57270,
+    "slot": 19,
+    "offset": 8118,
+    "end_offset": 8201,
+    "path": "Source/ThreeD/CheckFaceOrientation.asm",
+    "description": "Проверка ориентации выбранной тройки экранных точек по знаку разности двух произведений",
+    "semantic_status": "described"
   },
   {
     "region": "Voxel",
@@ -11752,47 +13072,47 @@
   },
   {
     "region": "Controls",
-    "name": "UnknownCEFA",
+    "name": "ProjectAndDrawBody",
     "address": 52986,
     "slot": 22,
     "offset": 3834,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Проекция тела в режиме 0, допуск компонент и рисование заданным рисунком",
+    "semantic_status": "described",
     "end_offset": 3851,
-    "path": "Source/Controls/UnknownCEFA.asm"
+    "path": "Source/Controls/ProjectAndDrawBody.asm"
   },
   {
     "region": "Controls",
-    "name": "UnknownCF0B",
+    "name": "BuildBodyProjection",
     "address": 53003,
     "slot": 22,
     "offset": 3851,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Выбор глубины, кодирование двух смещений и расчёт радиуса проекции",
+    "semantic_status": "described",
     "end_offset": 4298,
-    "path": "Source/Controls/UnknownCF0B.asm"
+    "path": "Source/Controls/BuildBodyProjection.asm"
   },
   {
     "region": "Controls",
-    "name": "UnknownD0CA",
+    "name": "EncodeProjectionRatio",
     "address": 53450,
     "slot": 22,
     "offset": 4298,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Нормализация отношения модулей с возвратом из внешней проекции при отказе",
+    "semantic_status": "described",
     "end_offset": 4362,
-    "path": "Source/Controls/UnknownD0CA.asm"
+    "path": "Source/Controls/EncodeProjectionRatio.asm"
   },
   {
     "region": "Controls",
-    "name": "UnknownD10A",
+    "name": "ContinueProjectionRatio",
     "address": 53514,
     "slot": 22,
     "offset": 4362,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Продолжение сравнения, кодирование отношения и снятие внутреннего возврата",
+    "semantic_status": "described",
     "end_offset": 4453,
-    "path": "Source/Controls/UnknownD10A.asm"
+    "path": "Source/Controls/ContinueProjectionRatio.asm"
   },
   {
     "region": "Controls",
@@ -11818,69 +13138,69 @@
   },
   {
     "region": "Controls",
-    "name": "UnknownD18D",
+    "name": "DrawRightClippedHalfDown",
     "address": 53645,
     "slot": 22,
     "offset": 4493,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Рисование нижней половины с неподвижной правой границей и переходом к двум криволинейным краям",
+    "semantic_status": "described",
     "end_offset": 4514,
-    "path": "Source/Controls/UnknownD18D.asm"
+    "path": "Source/Controls/DrawRightClippedHalfDown.asm"
   },
   {
     "region": "Controls",
-    "name": "UnknownD1A2",
+    "name": "DrawRightClippedHalfUp",
     "address": 53666,
     "slot": 22,
     "offset": 4514,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Рисование верхней половины с неподвижной правой границей и переходом к двум криволинейным краям",
+    "semantic_status": "described",
     "end_offset": 4534,
-    "path": "Source/Controls/UnknownD1A2.asm"
+    "path": "Source/Controls/DrawRightClippedHalfUp.asm"
   },
   {
     "region": "Controls",
-    "name": "UnknownD1B6",
+    "name": "DrawLeftClippedHalfDown",
     "address": 53686,
     "slot": 22,
     "offset": 4534,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Рисование нижней половины с неподвижной левой границей и переходом к двум криволинейным краям",
+    "semantic_status": "described",
     "end_offset": 4555,
-    "path": "Source/Controls/UnknownD1B6.asm"
+    "path": "Source/Controls/DrawLeftClippedHalfDown.asm"
   },
   {
     "region": "Controls",
-    "name": "UnknownD1CB",
+    "name": "DrawLeftClippedHalfUp",
     "address": 53707,
     "slot": 22,
     "offset": 4555,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Рисование верхней половины с неподвижной левой границей и переходом к двум криволинейным краям",
+    "semantic_status": "described",
     "end_offset": 4575,
-    "path": "Source/Controls/UnknownD1CB.asm"
+    "path": "Source/Controls/DrawLeftClippedHalfUp.asm"
   },
   {
     "region": "Controls",
-    "name": "UnknownD1DF",
+    "name": "DrawCircleHalfDown",
     "address": 53727,
     "slot": 22,
     "offset": 4575,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Рисование нижней половины внутреннего сечения с исходной разностью квадратов",
+    "semantic_status": "described",
     "end_offset": 4596,
-    "path": "Source/Controls/UnknownD1DF.asm"
+    "path": "Source/Controls/DrawCircleHalfDown.asm"
   },
   {
     "region": "Controls",
-    "name": "UnknownD1F4",
+    "name": "DrawCircleHalfUp",
     "address": 53748,
     "slot": 22,
     "offset": 4596,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Рисование верхней половины внутреннего сечения с исходной разностью квадратов",
+    "semantic_status": "described",
     "end_offset": 4616,
-    "path": "Source/Controls/UnknownD1F4.asm"
+    "path": "Source/Controls/DrawCircleHalfUp.asm"
   },
   {
     "region": "Controls",
@@ -11906,36 +13226,36 @@
   },
   {
     "region": "Controls",
-    "name": "UnknownD21A",
+    "name": "DrawProjectedBody",
     "address": 53786,
     "slot": 22,
     "offset": 4634,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Выбор малого профиля или большого круга по результату малого рисователя",
+    "semantic_status": "described",
     "end_offset": 4647,
-    "path": "Source/Controls/UnknownD21A.asm"
+    "path": "Source/Controls/DrawProjectedBody.asm"
   },
   {
     "region": "Controls",
-    "name": "UnknownD232",
+    "name": "CallLargeCircle",
     "address": 53810,
     "slot": 22,
     "offset": 4658,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Вызов большого рисователя с исходной дополнительной рамкой",
+    "semantic_status": "described",
     "end_offset": 4662,
-    "path": "Source/Controls/UnknownD232.asm"
+    "path": "Source/Controls/CallLargeCircle.asm"
   },
   {
     "region": "Controls",
-    "name": "UnknownD236",
+    "name": "DrawLargeCircle",
     "address": 53814,
     "slot": 22,
     "offset": 4662,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Выбор и рисование большого кругового тела по спроецированным смещениям",
+    "semantic_status": "described",
     "end_offset": 4875,
-    "path": "Source/Controls/UnknownD236.asm"
+    "path": "Source/Controls/DrawLargeCircle.asm"
   },
   {
     "region": "Controls",
@@ -11950,14 +13270,14 @@
   },
   {
     "region": "Controls",
-    "name": "UnknownD314",
+    "name": "DrawInteriorCircle",
     "address": 54036,
     "slot": 22,
     "offset": 4884,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Рисование верхней и нижней половин большого контура без горизонтального отсечения",
+    "semantic_status": "described",
     "end_offset": 4896,
-    "path": "Source/Controls/UnknownD314.asm"
+    "path": "Source/Controls/DrawInteriorCircle.asm"
   },
   {
     "region": "Controls",
@@ -11972,14 +13292,58 @@
   },
   {
     "region": "Controls",
-    "name": "UnknownD340",
+    "name": "DrawFullWidthCircle",
     "address": 54080,
     "slot": 22,
     "offset": 4928,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Заливка внутренних полос и двух остаточных половин широкого круга",
+    "semantic_status": "described",
+    "end_offset": 5004,
+    "path": "Source/Controls/DrawFullWidthCircle.asm"
+  },
+  {
+    "region": "Controls",
+    "name": "DrawFullWidthCircleSlice",
+    "address": 54156,
+    "slot": 22,
+    "offset": 5004,
+    "description": "Заливка внутренней полосы от вертикальной границы и одной остаточной половины",
+    "semantic_status": "described",
+    "end_offset": 5082,
+    "path": "Source/Controls/DrawFullWidthCircleSlice.asm"
+  },
+  {
+    "region": "Controls",
+    "name": "DrawHorizontallyClippedCircle",
+    "address": 54234,
+    "slot": 22,
+    "offset": 5082,
+    "description": "Рисование двух половин круга с одним исходно неподвижным горизонтальным краем",
+    "semantic_status": "described",
+    "end_offset": 5124,
+    "path": "Source/Controls/DrawHorizontallyClippedCircle.asm"
+  },
+  {
+    "region": "Controls",
+    "name": "DrawCornerCircleSlice",
+    "address": 54276,
+    "slot": 22,
+    "offset": 5124,
+    "description": "Рисование одного сечения с вертикальным и горизонтальным отсечением",
+    "semantic_status": "described",
+    "end_offset": 5253,
+    "path": "Source/Controls/DrawCornerCircleSlice.asm"
+  },
+  {
+    "region": "Controls",
+    "name": "DrawVerticalCircleSlice",
+    "address": 54405,
+    "slot": 22,
+    "offset": 5253,
+    "description": "Рисование вертикально отсечённого кругового сечения с двумя криволинейными краями",
+    "semantic_status": "described",
     "end_offset": 5323,
-    "path": "Source/Controls/UnknownD340.asm"
+    "path": "Source/Controls/DrawVerticalCircleSlice.asm"
   },
   {
     "region": "Controls",
@@ -12071,36 +13435,47 @@
   },
   {
     "region": "Controls",
-    "name": "UnknownD633",
+    "name": "CircleRasterCore",
     "address": 54835,
     "slot": 22,
     "offset": 5683,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Двухфазное сужение кругового сечения с двумя криволинейными краями",
+    "semantic_status": "described",
     "end_offset": 5927,
-    "path": "Source/Controls/UnknownD633.asm"
+    "path": "Source/Controls/CircleRasterCore.asm"
   },
   {
     "region": "Controls",
-    "name": "UnknownD727",
+    "name": "ResumeCirclePushSpan",
     "address": 55079,
     "slot": 22,
     "offset": 5927,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
-    "end_offset": 6195,
-    "path": "Source/Controls/UnknownD727.asm"
+    "description": "Восстановление CPU-стека после обычной PUSH-заливки и продолжение горизонтальной фазы",
+    "semantic_status": "described",
+    "end_offset": 5947,
+    "path": "Source/Controls/ResumeCirclePushSpan.asm"
   },
   {
     "region": "Controls",
-    "name": "UnknownD833",
+    "name": "LeftClippedCircleCore",
+    "address": 55099,
+    "slot": 22,
+    "offset": 5947,
+    "description": "Двухфазное сужение с неподвижным левым краем до совпадения порога Aprime",
+    "semantic_status": "described",
+    "end_offset": 6195,
+    "path": "Source/Controls/LeftClippedCircleCore.asm"
+  },
+  {
+    "region": "Controls",
+    "name": "RightClippedCircleCore",
     "address": 55347,
     "slot": 22,
     "offset": 6195,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Двухфазное сужение с неподвижным правым краем до совпадения порога Aprime",
+    "semantic_status": "described",
     "end_offset": 6437,
-    "path": "Source/Controls/UnknownD833.asm"
+    "path": "Source/Controls/RightClippedCircleCore.asm"
   },
   {
     "region": "Controls",
@@ -12126,14 +13501,14 @@
   },
   {
     "region": "Controls",
-    "name": "UnknownD95F",
+    "name": "ProjectAndCheckComponents",
     "address": 55647,
     "slot": 22,
     "offset": 6495,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Построение проекции и проверка двух компонент относительно постоянной опоры Component2",
+    "semantic_status": "described",
     "end_offset": 6526,
-    "path": "Source/Controls/UnknownD95F.asm"
+    "path": "Source/Controls/ProjectAndCheckComponents.asm"
   },
   {
     "region": "Controls",
@@ -12181,14 +13556,25 @@
   },
   {
     "region": "Controls",
-    "name": "UnknownDC9B",
+    "name": "RelocateStationReload",
     "address": 56475,
     "slot": 23,
     "offset": 445,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Копирование 256 байтов блока загрузки STATIONF в общую RAM и передача управления 4000",
+    "semantic_status": "described",
     "end_offset": 459,
-    "path": "Source/Controls/UnknownDC9B.asm"
+    "path": "Source/Controls/RelocateStationReload.asm"
+  },
+  {
+    "region": "Controls",
+    "name": "PrepareStationReload",
+    "address": 56547,
+    "slot": 23,
+    "offset": 517,
+    "end_offset": 581,
+    "path": "Source/Controls/PrepareStationReload.asm",
+    "description": "Очистка атрибутов, сохранение 512 байтов состояния и перенос следующей стадии загрузки станции",
+    "semantic_status": "described"
   },
   {
     "region": "Controls",
@@ -12258,14 +13644,14 @@
   },
   {
     "region": "Controls",
-    "name": "UnknownE291",
+    "name": "DrawRadar",
     "address": 58001,
     "slot": 23,
     "offset": 1971,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "Фазовый фон радара, центральная метка и вывод объектов со знаковыми линиями",
+    "semantic_status": "described",
     "end_offset": 2943,
-    "path": "Source/Controls/UnknownE291.asm"
+    "path": "Source/Controls/DrawRadar.asm"
   },
   {
     "region": "Controls",
@@ -12280,14 +13666,14 @@
   },
   {
     "region": "Controls",
-    "name": "UnknownE97A",
+    "name": "ToggleTargetOverlay",
     "address": 59770,
     "slot": 23,
     "offset": 3740,
-    "description": "Unknown, назначение этого фрагмента ещё не установлено",
-    "semantic_status": "unknown",
+    "description": "XOR рамки и спроецированных значков объектов в линейном буфере",
+    "semantic_status": "described",
     "end_offset": 4144,
-    "path": "Source/Controls/UnknownE97A.asm"
+    "path": "Source/Controls/ToggleTargetOverlay.asm"
   },
   {
     "region": "Controls",

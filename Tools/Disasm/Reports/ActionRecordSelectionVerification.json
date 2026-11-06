@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "total_cases": 65536,
+  "all_input_AF": true,
+  "real_RecordIndexToAddress_executed": true,
+  "exact_registers_including_R": true,
+  "refresh_m1": 19,
+  "all_physical_ram_bytes_proved": true,
+  "simulator_write_order_and_multiplicity_proved": true,
+  "hardware_bus_write_order_proved": false,
+  "maximum_additional_stack_bytes": 4,
+  "stack_profiles": [
+    32770,
+    49154,
+    49150
+  ],
+  "all_AF_cross_stack_product_exhausted": false,
+  "independent_numeric_oracle": true,
+  "record_contents_checked": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false,
+  "timing_proved": false
+}

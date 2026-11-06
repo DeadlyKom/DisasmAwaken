@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "total_cases": 72192,
+  "all_override_bytes_and_input_F": true,
+  "all_26_record_positions": true,
+  "exact_registers_including_R": true,
+  "all_physical_ram_bytes_proved": true,
+  "write_order_and_multiplicity_proved": true,
+  "cpu_stack_written": false,
+  "ff_is_no_override": true,
+  "non_ff_copied_to_linked_index": true,
+  "byte_0A_set_to_02_only_when_override_exists": true,
+  "general_game_meaning_of_byte_0A_and_source_15_proved": false,
+  "no_override_refresh_m1": 4,
+  "override_refresh_m1": 10,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "timing_proved": false
+}

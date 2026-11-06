@@ -27,7 +27,7 @@ Entry:          POP IX
                 POP DE
                 POP HL
                 ; Продолжение следующего шага исходного сканирования, адрес и относительное смещение не меняются.
-                JR @Action.Unknown6F1D.Point6F28
+                JR @Action.ScanActionKeys.ScanNext
 
                 endmodule
                 endmodule

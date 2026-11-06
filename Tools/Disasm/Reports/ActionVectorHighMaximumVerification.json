@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "total_cases": 16777216,
+  "complete_three_byte_product_exhausted": true,
+  "independent_folded_maximum_oracle": true,
+  "CPL_not_NEG_preserved": true,
+  "exact_registers_including_R": true,
+  "all_physical_ram_bytes_proved": true,
+  "no_memory_or_stack_writes_in_any_case": true,
+  "final_eight_banks_match_input_fixture": true,
+  "high_H_preserved": true,
+  "L_is_maximum": true,
+  "A_is_folded_third_byte": true,
+  "flags_from_comparison_of_third_with_previous_maximum": true,
+  "observed_m1": [
+    15,
+    16,
+    17,
+    18,
+    19,
+    20
+  ],
+  "game_units_and_role_proved": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "timing_proved": false
+}

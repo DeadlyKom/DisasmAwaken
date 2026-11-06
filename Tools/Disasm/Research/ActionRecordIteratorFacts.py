@@ -53,6 +53,7 @@ COMMENTS={
 
 def name_operands(region,function_address,operation):
     if region=='Action' and function_address in (59089, 59789):
+        operation=operation.replace('(IY+','(IY + ')
         operation=operation.replace('(IY + #00)','(IY + FActionRecord.Components.Component0.Low)')
         operation=operation.replace('(IY + #01)','(IY + FActionRecord.Components.Component0.High)')
         operation=operation.replace('(IY + #12)','(IY + FActionRecord.ClassCode)')

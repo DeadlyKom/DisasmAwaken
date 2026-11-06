@@ -1,0 +1,37 @@
+{
+  "passed": true,
+  "total_cases": 393216,
+  "cases_by_entry": {
+    "0x6cef": 393216,
+    "0x6d00": 393216
+  },
+  "every_HL_dispatch_target": true,
+  "every_AF_and_alternate_AF_value_in_dispatch": true,
+  "every_BC_value": true,
+  "exact_registers_including_R": true,
+  "all_physical_ram_bytes_proved": true,
+  "write_multiplicity_and_stack_residue_proved": true,
+  "actual_SelectMemoryPage_executed": true,
+  "real_ports_and_lock_behaviour": true,
+  "initial_7ffd_values": [
+    0,
+    16,
+    32,
+    35,
+    56,
+    59
+  ],
+  "dispatch_stopped_after_indirect_jump": true,
+  "arbitrary_callback_not_executed": true,
+  "callback_semantics_proved": false,
+  "dispatch_refresh_m1": 16,
+  "return_refresh_m1": 9,
+  "maximum_additional_stack_bytes": 4,
+  "complete_AF_alternate_AF_product_exhausted": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "timing_proved": false,
+  "parent_total_cases": 786432,
+  "entry": 27887
+}

@@ -23,11 +23,11 @@ Entry:          DI
                 LDIR
                 LD A, #10
                 CALL @Action.SelectMemoryPage.Entry
-                CALL @Action.Unknown6145.Entry
+                CALL @Action.RefreshFlightPanel.Entry
                 LD A, #11
                 CALL @Action.SelectMemoryPage.Entry
                 CALL #DE0A
-                CALL @Action.Unknown6CD6.Entry
+                CALL @Action.InitializeBankedBufferPoints.Entry
                 PUSH DE
                 LD DE, #F1AB
                 CALL @Action.QueueTextItemBank1.Entry

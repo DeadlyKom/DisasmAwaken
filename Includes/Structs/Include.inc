@@ -1322,9 +1322,9 @@ Value           db #00                                                          
 
                 ; Динамическая трёхбайтовая запись сравниваемого компонента
                 struct FComponent24
-Low             db #00                                                          ; младший байт, CompareComponents его не читает
-Middle          db #00                                                          ; средний байт числового ключа
-High            db #00                                                          ; старшая часть, разряд 7 исключается перед сравнением
+Low             db #00                                                          ; биты 7..0 модуля проекции, вес 1, CompareComponents их не читает
+Middle          db #00                                                          ; биты 15..8 модуля проекции, вес байта 256
+High            db #00                                                          ; бит 7 задаёт знак, биты 6..0 задают 22..16 модуля в фазе проекции
                 ends
                 assert FComponent24 == 3
 
@@ -1346,7 +1346,7 @@ Mask            db #00                                                          
                 struct FBodyProjection
 OffsetY         db #00                                                          ; вертикальное числовое смещение до выбора знака
 OffsetX         db #00                                                          ; горизонтальное числовое смещение до выбора знака
-Flags           db #00                                                          ; разряды 0 и 1 задают направления, остальные этим форматом не объявляются разобранными
+Flags           db #00                                                          ; биты 0 и 1 задают направления, 2 и 3 задают N<=Q по X и Y, верхние биты требуют контекста писателя
 Radius          db #00                                                          ; радиус, малый рисователь принимает только 2..8
                 ends
                 assert FBodyProjection == 4
@@ -1585,5 +1585,313 @@ Unknown3E       db #00                                                          
 Unknown3F       db #00                                                          ; игровой смысл ещё неизвестен
                 ends
                 assert FActionRecord == #40
+
+
+                ; Физическая четырёхбайтовая строка потоков эффектов ACTION
+                struct FActionAyFrame
+ToneLow         db 0                                                            ; младший байт периода
+ToneHigh        db 0                                                            ; старший байт периода, полный исходный байт
+MixerBits       db 0                                                            ; байт для OR со смесителем, B предварительно выполняет RLCA
+Volume          db 0                                                            ; байт записи уровня, полный исходный байт
+                ends
+
+
+                ; Физический байт исходной таблицы граничных поправок
+                struct FSymmetricSquareValue
+Value           db 0                                                            ; нормированный квадрат min(i,255-i)^2 DIV 127
+                ends
+
+
+                ; Три физических байтовых фазы исходной синусоиды, оборот равен 256
+                struct FRenderPhases
+Phase0          db #00                                                          ; фаза 0, индекс страницы синусоиды
+Phase1          db #00                                                          ; фаза 1, индекс страницы синусоиды
+Phase2          db #00                                                          ; фаза 2, индекс страницы синусоиды
+                ends
+                assert FRenderPhases == #03
+                assert FRenderPhases.Phase0 == #00
+                assert FRenderPhases.Phase1 == #01
+                assert FRenderPhases.Phase2 == #02
+
+                ; Физическая раскладка создаваемого runtime-узла, дисковые экземпляры не подменяются
+                struct FActionRenderNode
+Next            db #00                                                          ; младший байт следующего узла в странице 8F, 01 конец
+Unknown01       db #00                                                          ; неизвестный байт, вставка не читает и не меняет
+Unknown02       db #00                                                          ; неизвестный байт, вставка не читает и не меняет
+HeaderWord0     dw #0000                                                        ; снимок слова 9B8D, игровой смысл ещё неизвестен
+Phases          FRenderPhases                                                   ; Phase0, Phase1 и Phase2, снимок 9B12..9B14
+Components      FActionComponents                                               ; снимок Output0, Output1 и Output2, глубина по +0C
+                ends
+                assert FActionRenderNode == #0E
+                assert FActionRenderNode.HeaderWord0 == #03
+                assert FActionRenderNode.Phases == #05
+                assert FActionRenderNode.Phases.Phase2 == #07
+                assert FActionRenderNode.Components == #08
+                assert FActionRenderNode.Components.Component2 == #0C
+
+
+                ; Физическая экранная точка, X перед Y
+                struct FActionAimPoint
+X               db #00                                                          ; горизонтальный экранный байт
+Y               db #00                                                          ; вертикальный экранный байт
+                ends
+                assert FActionAimPoint == #02
+                assert FActionAimPoint.X == #00
+                assert FActionAimPoint.Y == #01
+
+
+                ; Исходный little-endian указатель потока OBJECT3D банка 4
+                struct FObjectDataPointer
+Target          dw #0000                                                        ; адрес данных банка 4, не адрес кода
+                ends
+                assert FObjectDataPointer == #02
+                assert FObjectDataPointer.Target == #00
+
+
+                ; Создаваемая перспективой runtime-запись, пятый байт сохраняется
+                struct FRenderProjectedPoint
+Second          dw #0000                                                        ; второе экранное слово, при отказе high=80 и low=LOW(depth)
+First           dw #0000                                                        ; первое экранное слово либо глубина при раннем отказе
+ClipCode        db #00                                                          ; парные признаки границ заполняет ClassifyProjectedVertices, перспектива байт сохраняет
+                ends
+                assert FRenderProjectedPoint == #05
+                assert FRenderProjectedPoint.Second == #00
+                assert FRenderProjectedPoint.First == #02
+                assert FRenderProjectedPoint.ClipCode == #04
+
+
+                struct FLinePixelMask
+Mask            db #00                                                          ; физическая маска одной пиксельной фазы
+                ends
+                assert FLinePixelMask == #01
+                assert FLinePixelMask.Mask == #00
+
+
+                ; Физическая запись трёхбайтового состояния генератора ACTION
+                struct FFoldedRandomState
+LowWord         dw #0000                                                        ; слово смешивания и возвращаемого 16-битного результата
+FoldByte        db #00                                                          ; байт свёртки переносов, числовая величина modulo 256
+                ends
+                assert FFoldedRandomState == 3
+
+
+                ; Физический байт одной из трёх плоскостей табличного корня
+                struct FRootCacheByte
+Value           db #00                                                          ; значение исходного байта, плоскость и индекс заданы именем экземпляра
+                ends
+                assert FRootCacheByte == 1
+
+
+                ; Физический указатель косвенного диспетчера класса ACTION
+                struct FClassHandler
+Handler         dw #0000                                                        ; исходный адрес обработчика, младший байт записан первым
+                ends
+                assert FClassHandler == #02
+
+
+                ; Физический исходный код одного индекса знакового отношения
+                struct FSignedRatioCode
+Code            db #00                                                          ; исходный код, смещения четырёх знаковых ветвей добавляет EncodeSignedRatio
+                ends
+                assert FSignedRatioCode == #01
+
+
+                ; Динамические физические рамки EncodeHalfCoordinateDeltas, статическая RAM не выделяется
+                struct FDeltaCodeRootFrame
+SavedPortBC     dw #0000                                                        ; BC текущего SelectMemoryPage, второй раз содержит BC кэша корня
+ReturnSelect    dw #0000                                                        ; возврат выбора банка AD4E либо AD57
+SavedSquareBC   dw #0000                                                        ; половина Right1 при малом втором квадрате либо ноль при полном ядре
+ReturnRoot      dw #0000                                                        ; возврат банкового корня AD8C
+Delta1          dw #0000                                                        ; сохранённый d1
+Delta0          dw #0000                                                        ; сохранённый d0
+SavedIX         dw #0000                                                        ; входной IX
+CallerReturn    dw #0000                                                        ; внешний возврат исходного вызывающего
+                ends
+                assert FDeltaCodeRootFrame == #10
+
+                struct FDeltaCodeFirstFrame
+ReturnRatio     dw #0000                                                        ; возврат логарифмического делителя AE36
+SavedDen        dw #0000                                                        ; исходный знаменатель d2 первого кодировщика
+SignAF          dw #0000                                                        ; совместный признак исходных знаков и XOR-флаги
+ReturnCode      dw #0000                                                        ; возврат первого кодировщика ADA4
+Delta1          dw #0000                                                        ; сохранённый d1
+Delta0          dw #0000                                                        ; сохранённый d0
+SavedIX         dw #0000                                                        ; входной IX
+CallerReturn    dw #0000                                                        ; внешний возврат
+                ends
+                assert FDeltaCodeFirstFrame == #10
+
+                struct FDeltaCodeSecondFrame
+ReturnRatio     dw #0000                                                        ; возврат логарифмического делителя AE36
+SavedDen        dw #0000                                                        ; исходный знаменатель d0 второго кодировщика
+SignAF          dw #0000                                                        ; совместный признак исходных знаков и XOR-флаги
+ReturnCode      dw #0000                                                        ; возврат второго кодировщика ADB2
+FirstCodeAF     dw #0000                                                        ; будущий B в старшем байте и флаги его сложения в младшем
+SavedIX         dw #0000                                                        ; входной IX
+CallerReturn    dw #0000                                                        ; внешний возврат
+                ends
+                assert FDeltaCodeSecondFrame == #0E
+
+
+
+                ; Динамические вложенные рамки основного StepRecordTargetCodes, память не выделяется
+                struct FRecordStepRootFrame
+ChildFrame      FDeltaCodeRootFrame                                             ; реальная рамка дочерней геометрии, её внешний возврат равен 6268
+CallerReturn    dw #0000                                                        ; внешний возврат вызывающего StepRecordTargetCodes
+                ends
+                assert FRecordStepRootFrame == #12
+
+                struct FRecordStepFirstFrame
+ChildFrame      FDeltaCodeFirstFrame                                            ; реальная рамка дочерней геометрии, её внешний возврат равен 6268
+CallerReturn    dw #0000                                                        ; внешний возврат вызывающего StepRecordTargetCodes
+                ends
+                assert FRecordStepFirstFrame == #12
+
+                struct FRecordStepSecondFrame
+ChildFrame      FDeltaCodeSecondFrame                                           ; реальная рамка дочерней геометрии, её внешний возврат равен 6268
+CallerReturn    dw #0000                                                        ; внешний возврат вызывающего StepRecordTargetCodes
+                ends
+                assert FRecordStepSecondFrame == #10
+
+
+
+                ; Динамическая рамка в третьем AbsSigned32, память не выделяется
+                struct FClampVectorFrame
+ReturnAbs       dw #7F3F                                                        ; возврат третьего вызова AbsSigned32
+SecondMagnitude dw #0000                                                        ; сохранённый насыщенный модуль второй компоненты
+FirstMagnitude  dw #0000                                                        ; сохранённый насыщенный модуль первой компоненты
+CallerReturn    dw #0000                                                        ; внешний возврат ClampPatchedVectorWords
+                ends
+                assert FClampVectorFrame == #08
+
+
+
+                ; Три исходных signed32, формат доказан чтениями 7EB7 и вычитаниями 68CD
+                struct FActionWideComponent
+Byte0           db #00                                                          ; разряды 7..0 исходной компоненты
+Byte1           db #00                                                          ; разряды 15..8 исходной компоненты
+Byte2           db #00                                                          ; разряды 23..16, бит 7 используется 7F0E как знак выходного слова
+Byte3           db #00                                                          ; разряды 31..24, бит 7 задаёт знак полного signed32
+                ends
+                assert FActionWideComponent == #04
+
+                struct FActionWideVector
+Component0      FActionWideComponent                                            ; исходная широкая компонента 0
+Component1      FActionWideComponent                                            ; исходная широкая компонента 1
+Component2      FActionWideComponent                                            ; исходная широкая компонента 2
+                ends
+                assert FActionWideVector == #0C
+
+
+
+                ; Динамическая рамка во вложенной проверке близости, память не выделяется
+                struct FNearVectorSearchFrame
+ReturnPredicate dw #69D2                                                        ; возврат настоящего CheckThreeUpperWordsNear
+SavedIY         dw #0000                                                        ; сохранённый указатель внешнего вызывающего
+CallerReturn    dw #0000                                                        ; внешний адрес возврата поиска
+                ends
+                assert FNearVectorSearchFrame == #06
+
+
+
+                ; Динамическая рамка внутри NextActiveRecord при падающем фронте Request
+                struct FControlDecayFrame
+ReturnIterator  dw #E997                                                        ; возврат итератора в FindRecordByCode
+ReturnFindCode  dw #6177                                                        ; возврат поиска в ReleaseClass14Records
+ReturnRelease   dw #6F65                                                        ; возврат освобождения в обработку падающего фронта
+CallerReturn    dw #0000                                                        ; внешний возврат LatchControlsAndDecay
+                ends
+                assert FControlDecayFrame == #08
+
+
+
+                ; Динамические рамки межбанкового диспетчера, новая память не выделяется
+                struct FBankCallbackFrame
+Continuation    dw #6D00                                                        ; адрес возвратного хвоста, снимается RET обработчика
+CallerReturn    dw #0000                                                        ; внешний возврат, снимается RestoreRuntimePage
+                ends
+                assert FBankCallbackFrame == #04
+
+                struct FBankCallbackSelectFrame
+SavedBC         dw #0000                                                        ; сохранённый BC внутри SelectMemoryPage
+ReturnSelect    dw #0000                                                        ; 6CF6 при входе в обработчик либо 6D05 при возврате
+CallerReturn    dw #0000                                                        ; внешний возврат исходного диспетчера либо хвоста
+                ends
+                assert FBankCallbackSelectFrame == #06
+
+
+
+                ; Динамические рамки двух половин внутреннего контура, память не выделяется
+                struct FInteriorCircleUpFrame
+Temporary0      dw #0000                                                        ; правый HL внутри FillEvenSpan либо два байта рисунка в быстрой фазе
+Temporary1      dw #0000                                                        ; возврат помощника либо сохранённый DE быстрой подготовки
+SavedAF         dw #0000                                                        ; левая включающая маска и F=42, восстанавливаются при выходе половины
+ReturnHalf      dw #D31A                                                        ; возврат верхней половины к повторному построению сечения
+CallerReturn    dw #0000                                                        ; исходный внешний возврат внутреннего контура
+                ends
+                assert FInteriorCircleUpFrame == #0A
+
+                struct FInteriorCircleDownFrame
+Temporary0      dw #0000                                                        ; правый HL внутри FillEvenSpan либо два байта рисунка в быстрой фазе
+Temporary1      dw #0000                                                        ; возврат помощника либо сохранённый DE быстрой подготовки
+SavedAF         dw #0000                                                        ; левая включающая маска и F=42, восстанавливаются при выходе половины
+CallerReturn    dw #0000                                                        ; исходный внешний возврат внутреннего контура
+                ends
+                assert FInteriorCircleDownFrame == #08
+
+
+
+                ; Динамическая рамка отдельной половины контура, память не выделяется
+                struct FSingleCircleHalfFrame
+Temporary0      dw #0000                                                        ; правый HL либо два байта рисунка быстрой фазы
+Temporary1      dw #0000                                                        ; возврат помощника либо временный DE быстрой фазы
+SavedAF         dw #0000                                                        ; произвольный исходный AF вызывающего, полностью восстанавливается
+CallerReturn    dw #0000                                                        ; исходный внешний возврат отдельной половины
+                ends
+                assert FSingleCircleHalfFrame == #08
+
+
+
+                ; Единственное слово нового CPU-стека перед переходом загрузчика
+                struct FStationReloadFrame
+NextEntry       dw #4200                                                        ; реальное слово по 5FFD, снимается RET и оставляет SP=5FFF
+                ends
+                assert FStationReloadFrame == #02
+
+
+
+                ; Знаковая 24-битная компонента в дополнительном коде, не формат модуля проекции
+                struct FActionWorkComponent24
+LowWord         dw #0000                                                        ; разряды 15..0, записываются до проверки переполнения старшего байта
+High            db #00                                                          ; разряды 23..16, бит 7 задаёт знак всей 24-битной компоненты
+                ends
+                assert FActionWorkComponent24 == 3
+
+                ; Физический рабочий вектор вычитателя 66D2
+                struct FActionWorkVector24
+Component0      FActionWorkComponent24                                          ; первая компонента в дополнительном коде
+Component1      FActionWorkComponent24                                          ; вторая компонента в дополнительном коде
+Component2      FActionWorkComponent24                                          ; третья компонента в дополнительном коде
+                ends
+                assert FActionWorkVector24 == 9
+
+
+                ; Самая глубокая динамическая рамка обновления шкалы, память не выделяется
+                struct FPanelRefreshGaugeFrame
+SavedBC         dw #0000                                                        ; сохранённые BC при выборе банка внутри DrawBankedGauge
+SelectorRet     dw #0000                                                        ; возврат селектора к банковой обёртке шкалы
+GaugeRet        dw #0000                                                        ; возврат DrawBankedGauge к обработчику одной из шести шкал
+PanelRet        dw #6161                                                        ; возврат UpdatePanelGauges к выбору банка CONTROL
+CallerRet       dw #0000                                                        ; исходный возврат, используется после хвостового вывода BCD
+                ends
+                assert FPanelRefreshGaugeFrame == #0A
+
+
+
+                ; Физический указатель обработчика состояния объекта
+                struct FObjectStateHandler
+Handler         dw #0000                                                        ; адрес в банке ACTION
+                ends
+                assert FObjectStateHandler == 2
 
                 endif

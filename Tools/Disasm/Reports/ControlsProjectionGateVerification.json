@@ -1,0 +1,34 @@
+{
+  "passed": true,
+  "total_cases": 40960,
+  "cases_by_kind": {
+    "all_modes_and_signs": 16384,
+    "component_edges": 16384,
+    "mixed_components": 8192
+  },
+  "paths": {
+    "all_three_accept": 12055,
+    "component_1_reject": 162,
+    "projection_reject": 27076,
+    "component_0_reject": 1667
+  },
+  "comparisons": {
+    "3": 12055,
+    "2": 162,
+    "0": 27076,
+    "1": 1667
+  },
+  "actual_projection_ratios_dividers_and_comparisons_executed": true,
+  "independent_numeric_parent_oracle": true,
+  "fixed_reference_component_2_proved": true,
+  "short_circuit_and_index_restoration_proved": true,
+  "exact_registers_except_R": true,
+  "all_nonstack_physical_ram_and_write_multiplicity_proved": true,
+  "maximum_additional_stack_bytes": 8,
+  "stack_residue_values_and_R_proved": false,
+  "full_component_product_exhausted": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "timing_proved": false
+}

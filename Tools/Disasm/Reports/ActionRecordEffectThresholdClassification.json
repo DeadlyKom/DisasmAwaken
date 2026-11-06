@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "described_functions": 1,
+  "instructions_changed": 0,
+  "physical_bytes_preserved": true,
+  "model_cases": 4096,
+  "original_function_boundaries_preserved": true,
+  "assembly_executed": false
+}

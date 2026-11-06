@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "total_cases": 262144,
+  "paths": {
+    "688A": 131072,
+    "679B": 65536,
+    "6742": 32768,
+    "6765": 32768
+  },
+  "all_operand_words": true,
+  "assembly_executed": false,
+  "native_execution": false
+}

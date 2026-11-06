@@ -22,7 +22,7 @@ Entry:          LD L, A
                 ADD HL, HL
                 LD DE, #F000
                 ADD HL, DE
-                LD (#6BB2), HL
+                LD (@IntroScaleState.PointerRow), HL
                 RET
 
 

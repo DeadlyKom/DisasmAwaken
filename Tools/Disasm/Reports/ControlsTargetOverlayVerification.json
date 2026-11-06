@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "total_cases": 288,
+  "outcomes": {
+    "icon": 81,
+    "cases": 288,
+    "highlight": 81
+  },
+  "actual_perspective_executed": true,
+  "whole_raster_compared": true,
+  "assembly_executed": false
+}

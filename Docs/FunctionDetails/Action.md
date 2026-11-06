@@ -6,11 +6,19 @@
 
 
 
-## Unknown6145
+## CreateMissileForTarget
 
-[Action.Unknown6145](../../Source/Action/Unknown6145.asm)
+[Action.CreateMissileForTarget](../../Source/Action/CreateMissileForTarget.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+Проверка существования записи цели, поиск свободного слота, инициализация ракеты и создание обратной связи у цели.
+
+[Три пути, поля, флаги и модели](../ActionMissileCreation.md).
+
+## RefreshFlightPanel
+
+[Action.RefreshFlightPanel](../../Source/Action/RefreshFlightPanel.asm)
+
+Принудительное обновление шести шкал и четырёх пар счётчика панели полёта.
 
 Вход `#6145`, запись 17, смещения `#0382..#03AE`.
 
@@ -20,11 +28,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## Unknown6172
+[Алгоритм, контракты и проверка](../ActionRefreshPanel.md).
 
-[Action.Unknown6172](../../Source/Action/Unknown6172.asm)
+## ReleaseClass14Records
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Action.ReleaseClass14Records](../../Source/Action/ReleaseClass14Records.asm)
+
+Пометка всех активных записей класса 14 через повторный поиск от начала массива.
 
 Вход `#6172`, запись 17, смещения `#03AF..#03B9`.
 
@@ -34,11 +44,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## Unknown6265
+[Алгоритм, контракты и проверка](../ActionClass14Reuse.md).
 
-[Action.Unknown6265](../../Source/Action/Unknown6265.asm)
+## StepRecordTargetCodes
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Action.StepRecordTargetCodes](../../Source/Action/StepRecordTargetCodes.asm)
+
+Подвод двух байтов записи к рассчитанным кодам с различными правилами ограничения шага.
 
 Вход `#6265`, запись 17, смещения `#04A2..#04F1`.
 
@@ -48,11 +60,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## Unknown62CF
+[Алгоритм, контракты и проверка](../ActionRecordCodeStep.md).
 
-[Action.Unknown62CF](../../Source/Action/Unknown62CF.asm)
+## CountClass3LinksUpToTwo
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Action.CountClass3LinksUpToTwo](../../Source/Action/CountClass3LinksUpToTwo.asm)
+
+Подсчёт до двух активных записей класса 3 с кодом 02 и совпадающей ссылкой.
 
 Вход `#62CF`, запись 17, смещения `#050C..#054D`.
 
@@ -62,11 +76,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## Unknown635B
+[Алгоритм, контракты и проверка](../ActionClass3LinkCount.md).
 
-[Action.Unknown635B](../../Source/Action/Unknown635B.asm)
+## ApplyPendingRecordLink
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Action.ApplyPendingRecordLink](../../Source/Action/ApplyPendingRecordLink.asm)
+
+Установка бита 0 LinkFlags, замена LinkedIndex на 1A и условная поправка по ClassCode записи.
 
 Вход `#635B`, запись 17, смещения `#0598..#05F2`.
 
@@ -76,6 +92,8 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
+[Алгоритм, контракты и независимая модель](../ActionRecordLinkEvent.md).
+
 ## ApplyIndexedDelta
 
 [Action.ApplyIndexedDelta](../../Source/Action/ApplyIndexedDelta.asm)
@@ -84,11 +102,11 @@ Unknown, назначение этого фрагмента ещё не уста
 
 [Договор и независимая модель](../ActionTypeDelta.md).
 
-## Unknown64DF
+## DispatchRecordClass
 
-[Action.Unknown64DF](../../Source/Action/Unknown64DF.asm)
+[Action.DispatchRecordClass](../../Source/Action/DispatchRecordClass.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+Косвенный переход по оборачиваемому байтовому индексу класса записи.
 
 Вход `#64DF`, запись 17, смещения `#071C..#072C`.
 
@@ -97,6 +115,40 @@ Unknown, назначение этого фрагмента ещё не уста
 - Непосредственные записи: нет непосредственных обращений.
 - Ввод и вывод: нет.
 - Косвенное завершение: `JP (HL)`.
+
+[Алгоритм, контракты и проверка](../ActionClassDispatch.md).
+
+## ReturnIgnoredRecordClass
+
+[Action.ReturnIgnoredRecordClass](../../Source/Action/ReturnIgnoredRecordClass.asm)
+
+Немедленный общий возврат исходных классов 10..25 без изменения записи.
+
+[Алгоритм, точные регистры и модель](../ActionIgnoredClasses.md).
+
+## ConfigureClass9Link
+
+[Action.ConfigureClass9Link](../../Source/Action/ConfigureClass9Link.asm)
+
+Запись кода 0D с сохранением LinkedIndex либо кода 01 со сбросом LinkedIndex в FF.
+
+[Алгоритм, точные регистры и модель](../ActionClass9Link.md).
+
+## ConfigureClass0Link
+
+[Action.ConfigureClass0Link](../../Source/Action/ConfigureClass0Link.asm)
+
+Применение подстановки либо выбор новой связи после порога R с общим входом SelectLink.
+
+[Алгоритм, точные регистры и модель](../ActionClass0Link.md).
+
+## CopyRecordLinkOverride
+
+[Action.CopyRecordLinkOverride](../../Source/Action/CopyRecordLinkOverride.asm)
+
+Копирование разрешённого байта подстановки в LinkedIndex и запись кода 02.
+
+[Алгоритм, точные регистры и модель](../ActionLinkOverride.md).
 
 ## DrawBankedGauge
 
@@ -130,25 +182,31 @@ Unknown, назначение этого фрагмента ещё не уста
 
 [Алгоритм, контракты и композиционная проверка](../ActionPanelGauges.md).
 
-## Unknown66D2
+## SubtractScaledWorkVector
 
-[Action.Unknown66D2](../../Source/Action/Unknown66D2.asm)
+[Action.SubtractScaledWorkVector](../../Source/Action/SubtractScaledWorkVector.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+Вычитание трёх знаковых масштабированных слов из рабочего 24-битного вектора до первого переполнения.
 
-Вход `#66D2`, запись 17, смещения `#090F..#09BC`.
+Вход `#66D2`, запись 17, смещения `#090F..#0963`.
 
-- Прямые вызовы: `#EBD4`.
-- Непосредственные чтения: `#9B70`, `#9B73`, `#9B76`, `#9B78`, `#9B7A`, `#9B7B`, `#9B7D`, `#9B7E`, `#9B80`, `#9B81`, `#E5B3`, `#E5D2`, `#E5ED`.
-- Непосредственные записи: `#7B6B`, `#9B70`, `#9B73`, `#9B76`, `#9B78`, `#9B7A`, `#9B7B`, `#9B7D`, `#9B7E`, `#9B80`, `#9B81`, `#EBF6`, `#EBF8`.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
+[Алгоритм, контракты и проверка](../ActionSubtractWorkVector.md).
 
-## Unknown6780
+## TransitionBodyMode
 
-[Action.Unknown6780](../../Source/Action/Unknown6780.asm)
+[Action.TransitionBodyMode](../../Source/Action/TransitionBodyMode.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+Переключение режима тела и изменение старших слов рабочего вектора.
+
+Вход `#6727`, запись 17, смещения `#0964..#09BC`.
+
+[Алгоритм, контракты и проверка](../ActionBodyModeTransition.md).
+
+## UpdateBodyMotion
+
+[Action.UpdateBodyMotion](../../Source/Action/UpdateBodyMotion.asm)
+
+Фазовое обновление рабочего вектора, запросов панели и широких целей.
 
 Вход `#6780`, запись 17, смещения `#09BD..#0BB9`.
 
@@ -158,11 +216,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## Unknown6986
+[Алгоритм, контракты и проверка](../ActionWideMotionPrefix.md).
 
-[Action.Unknown6986](../../Source/Action/Unknown6986.asm)
+## CompareContextWordPairs
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Action.CompareContextWordPairs](../../Source/Action/CompareContextWordPairs.asm)
+
+Сравнение двух пар слов контекста с ранним выходом по первой разности.
 
 Вход `#6986`, запись 17, смещения `#0BC3..#0BD8`.
 
@@ -172,11 +232,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## Unknown699C
+[Алгоритм, контракты и проверка](../ActionContextWordPairs.md).
 
-[Action.Unknown699C](../../Source/Action/Unknown699C.asm)
+## MaxFoldedVectorHigh
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Action.MaxFoldedVectorHigh](../../Source/Action/MaxFoldedVectorHigh.asm)
+
+Максимум трёх старших байтов с дополнением отрицательных кодов через CPL.
 
 Вход `#699C`, запись 17, смещения `#0BD9..#0BFA`.
 
@@ -186,11 +248,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## Unknown69BE
+[Алгоритм, контракты и проверка](../ActionVectorHighMaximum.md).
 
-[Action.Unknown69BE](../../Source/Action/Unknown69BE.asm)
+## FindFirstNearWideVector
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Action.FindFirstNearWideVector](../../Source/Action/FindFirstNearWideVector.asm)
+
+Поиск первого близкого широкого вектора и выбор его наибольшего старшего байта.
 
 Вход `#69BE`, запись 17, смещения `#0BFB..#0C65`.
 
@@ -200,11 +264,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## Unknown6A29
+[Алгоритм, контракты и проверка](../ActionNearVectorSearch.md).
 
-[Action.Unknown6A29](../../Source/Action/Unknown6A29.asm)
+## CheckThreeUpperWordsNear
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Action.CheckThreeUpperWordsNear](../../Source/Action/CheckThreeUpperWordsNear.asm)
+
+Проверка трёх знаковых верхних слов на диапазон от минус 60 до 59.
 
 Вход `#6A29`, запись 17, смещения `#0C66..#0CAA`.
 
@@ -214,11 +280,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## Unknown6A6E
+[Алгоритм, контракты и проверка](../ActionFoldedNearWords.md).
 
-[Action.Unknown6A6E](../../Source/Action/Unknown6A6E.asm)
+## PrepareBodyTransform
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Action.PrepareBodyTransform](../../Source/Action/PrepareBodyTransform.asm)
+
+Подготовка компонент тела и передача арифметическому преобразованию AF43.
 
 Вход `#6A6E`, запись 17, смещения `#0CAB..#0CE9`.
 
@@ -228,11 +296,21 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## Unknown6AB0
+[Алгоритм, контракты и проверка](../ActionPrepareBodyTransform.md).
 
-[Action.Unknown6AB0](../../Source/Action/Unknown6AB0.asm)
+## RestoreBodyStack
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Action.RestoreBodyStack](../../Source/Action/RestoreBodyStack.asm)
+
+Восстановление настоящего SP после арифметического накопителя.
+
+[Алгоритм, точные регистры и модель](../ActionRestoreBodyStack.md).
+
+## PublishTransformedBody
+
+[Action.PublishTransformedBody](../../Source/Action/PublishTransformedBody.asm)
+
+Публикация знаковых компонент, подготовка проекции и рисование преобразованного тела.
 
 Вход `#6AB0`, запись 17, смещения `#0CED..#0D52`.
 
@@ -242,11 +320,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## Unknown6B16
+[Алгоритм, контракты и проверка](../ActionPrepareBodyTransform.md).
 
-[Action.Unknown6B16](../../Source/Action/Unknown6B16.asm)
+## ProjectWideVectors
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Action.ProjectWideVectors](../../Source/Action/ProjectWideVectors.asm)
+
+Обход широких векторов с выбором масштаба, отрисовкой близких записей и публикацией выбранной.
 
 Вход `#6B16`, запись 17, смещения `#0D53..#0E3B`.
 
@@ -256,11 +336,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## Unknown6BFF
+[Алгоритм, контракты и проверка](../ActionWideProjectionInput.md).
 
-[Action.Unknown6BFF](../../Source/Action/Unknown6BFF.asm)
+## CopyAndTransformComponents
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Action.CopyAndTransformComponents](../../Source/Action/CopyAndTransformComponents.asm)
+
+Копирование трёх трёхбайтовых компонент с шагом четыре и последующее преобразование рабочего вектора.
 
 Вход `#6BFF`, запись 17, смещения `#0E3C..#0E55`.
 
@@ -270,11 +352,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## Unknown6C19
+[Алгоритм, контракты и проверка](../ActionComponentTransform.md).
 
-[Action.Unknown6C19](../../Source/Action/Unknown6C19.asm)
+## TransformWorkComponents
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Action.TransformWorkComponents](../../Source/Action/TransformWorkComponents.asm)
+
+Преобразование старших слов трёх рабочих компонент с очисткой Low и знаковым кодированием результата.
 
 Вход `#6C19`, запись 17, смещения `#0E56..#0E7C`.
 
@@ -284,11 +368,21 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## Unknown6C43
+[Алгоритм, контракты и проверка](../ActionComponentTransform.md).
 
-[Action.Unknown6C43](../../Source/Action/Unknown6C43.asm)
+## RestoreComponentStack
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Action.RestoreComponentStack](../../Source/Action/RestoreComponentStack.asm)
+
+Восстановление CPU SP после вычисления рабочих компонент перед знаковым кодированием.
+
+[Алгоритм, точные регистры и модель](../ActionComponentStack.md).
+
+## EncodeSignedComponents
+
+[Action.EncodeSignedComponents](../../Source/Action/EncodeSignedComponents.asm)
+
+Кодирование трёх выходных слов в знак и модуль с обратным знаком компоненты 1.
 
 Вход `#6C43`, запись 17, смещения `#0E80..#0EBA`.
 
@@ -298,11 +392,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## Unknown6C7E
+[Алгоритм, контракты и проверка](../ActionComponentEncoding.md).
 
-[Action.Unknown6C7E](../../Source/Action/Unknown6C7E.asm)
+## DrawBankedProjectedBody
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Action.DrawBankedProjectedBody](../../Source/Action/DrawBankedProjectedBody.asm)
+
+Проекция и рисование тела в банке CONTROL с шахматным рисунком.
 
 Вход `#6C7E`, запись 17, смещения `#0EBB..#0ECB`.
 
@@ -312,11 +408,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## Unknown6C8F
+[Алгоритм, контракты и проверка](../ProjectedBodyEntry.md).
 
-[Action.Unknown6C8F](../../Source/Action/Unknown6C8F.asm)
+## UpdateThirdGlyphVector
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Action.UpdateThirdGlyphVector](../../Source/Action/UpdateThirdGlyphVector.asm)
+
+Подготовка трёх входных слов, расчёт вектора с арифметическим SP и обновление третьего экранного знака.
 
 Вход `#6C8F`, запись 17, смещения `#0ECC..#0EED`.
 
@@ -326,11 +424,21 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## Unknown6CB4
+[Алгоритм, контракты и проверка](../ActionThirdGlyphVector.md).
 
-[Action.Unknown6CB4](../../Source/Action/Unknown6CB4.asm)
+## RestoreThirdGlyphStack
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Action.RestoreThirdGlyphStack](../../Source/Action/RestoreThirdGlyphStack.asm)
+
+Восстановление CPU SP после векторного вычислителя перед публикацией третьего знака.
+
+[Алгоритм, точные регистры и модель](../ActionThirdGlyphStack.md).
+
+## PublishThirdGlyphVector
+
+[Action.PublishThirdGlyphVector](../../Source/Action/PublishThirdGlyphVector.asm)
+
+Перенос четвертей двух выходных слов и знакового байта третьего слова во вход третьего экранного знака.
 
 Вход `#6CB4`, запись 17, смещения `#0EF1..#0F12`.
 
@@ -340,11 +448,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## Unknown6CD6
+[Алгоритм, контракты и проверка](../ActionThirdGlyphPublish.md).
 
-[Action.Unknown6CD6](../../Source/Action/Unknown6CD6.asm)
+## InitializeBankedBufferPoints
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Action.InitializeBankedBufferPoints](../../Source/Action/InitializeBankedBufferPoints.asm)
+
+Подготовка 35 координат точек в Controls банка 1 с возвратом полной конфигурации 10.
 
 Вход `#6CD6`, запись 17, смещения `#0F13..#0F20`.
 
@@ -354,11 +464,21 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## Unknown6CEF
+[Алгоритм, контракты и проверка](../ActionBankedBufferInit.md).
 
-[Action.Unknown6CEF](../../Source/Action/Unknown6CEF.asm)
+## TransferToStationLoader
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Action.TransferToStationLoader](../../Source/Action/TransferToStationLoader.asm)
+
+Выбор конфигурации 11 и хвостовая передача управления DCE3 загрузчика следующего режима.
+
+[Алгоритм, точные регистры и модель](../ActionStationTransfer.md).
+
+## DispatchBank3Callback
+
+[Action.DispatchBank3Callback](../../Source/Action/DispatchBank3Callback.asm)
+
+Передача управления HL с конфигурацией банка 3, обменом AF и возвратным хвостом Runtime.
 
 Вход `#6CEF`, запись 17, смещения `#0F2C..#0F3C`.
 
@@ -368,11 +488,29 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: `JP (HL)`.
 
-## Unknown6D38
+[Алгоритм, контракты и проверка](../ActionBankedCallback.md).
 
-[Action.Unknown6D38](../../Source/Action/Unknown6D38.asm)
+## RestoreRuntimePage
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Action.RestoreRuntimePage](../../Source/Action/RestoreRuntimePage.asm)
+
+Выдача конфигурации 10 в 7FFD и возврат внешнему вызывающему после банкового обработчика.
+
+[Алгоритм, точные регистры и модель](../ActionBankedCallbackReturn.md).
+
+## ApplyObjectOffsetVector
+
+[Action.ApplyObjectOffsetVector](../../Source/Action/ApplyObjectOffsetVector.asm)
+
+Расчёт трёх базовых слов записи по коэффициентам смещения.
+
+[Алгоритм, точные регистры и модель](../ActionObjectOffsetVector.md).
+
+## UpdateVisualEffects
+
+[Action.UpdateVisualEffects](../../Source/Action/UpdateVisualEffects.asm)
+
+Обход эффектов, продвижение ресурсов и растеризация допущенных записей.
 
 Вход `#6D38`, запись 17, смещения `#0F75..#100D`.
 
@@ -381,6 +519,18 @@ Unknown, назначение этого фрагмента ещё не уста
 - Непосредственные записи: `#6D39`, `#6D3D`, `#6DD2`, `#AF48`, `#AF56`, `#AF69`.
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
+
+[Алгоритм, контракты и проверка](../ActionVisualEffectWalk.md).
+
+## ResumeVisualEffect
+
+[Action.ResumeVisualEffect](../../Source/Action/ResumeVisualEffect.asm)
+
+Восстановление стека и банковый вызов рисователя эффекта при положительной глубине.
+
+[Алгоритм, точные регистры и модель](../ActionVisualEffectResume.md).
+
+[Алгоритм, контракты и проверка](../ActionVisualEffectWalk.md).
 
 ## ClassifyCoordinateRegion
 
@@ -398,11 +548,11 @@ Unknown, назначение этого фрагмента ещё не уста
 
 [Алгоритм, контракты и независимая модель](../ActionRegionType.md).
 
-## Unknown6E6C
+## UpdateMotionFromControls
 
-[Action.Unknown6E6C](../../Source/Action/Unknown6E6C.asm)
+[Action.UpdateMotionFromControls](../../Source/Action/UpdateMotionFromControls.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+Обработка управления и расчёт трёх смещений из знакового слова.
 
 Вход `#6E6C`, запись 17, смещения `#10A9..#10E8`.
 
@@ -411,6 +561,8 @@ Unknown, назначение этого фрагмента ещё не уста
 - Непосредственные записи: `#E5B3`, `#E5D2`, `#E5ED`.
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
+
+[Алгоритм, контракты и проверка](../ActionMotionVectorTail.md).
 
 ## StepNearZeroWord
 
@@ -428,11 +580,19 @@ Unknown, назначение этого фрагмента ещё не уста
 
 [Алгоритм, контракты и независимая модель](../ActionNearZeroWord.md).
 
-## Unknown6F1D
+## ReverseScaledVector
 
-[Action.Unknown6F1D](../../Source/Action/Unknown6F1D.asm)
+[Action.ReverseScaledVector](../../Source/Action/ReverseScaledVector.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+Инвертирование трёх масштабированных компонент и обновление общего знакового слова с разрешением его обработки.
+
+[Алгоритм, точные регистры и модель](../ActionVectorReverse.md).
+
+## ScanActionKeys
+
+[Action.ScanActionKeys](../../Source/Action/ScanActionKeys.asm)
+
+Обход 27 клавиатурных условий и программные вызовы обработчиков.
 
 Вход `#6F1D`, запись 17, смещения `#115A..#118A`.
 
@@ -441,6 +601,8 @@ Unknown, назначение этого фрагмента ещё не уста
 - Непосредственные записи: нет непосредственных обращений.
 - Ввод и вывод: `IN A,(C)`.
 - Косвенное завершение: `JP (HL)`.
+
+[Алгоритм, контракты и проверка](../ActionMotionVectorTail.md).
 
 ## RestoreKeyScanFrame
 
@@ -452,11 +614,11 @@ Unknown, назначение этого фрагмента ещё не уста
 
 [Рамка и отдельная проверка хвоста](../ActionKeyDispatchPrefix.md).
 
-## Unknown6F55
+## LatchControlsAndDecay
 
-[Action.Unknown6F55](../../Source/Action/Unknown6F55.asm)
+[Action.LatchControlsAndDecay](../../Source/Action/LatchControlsAndDecay.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+Фиксация запросов управления и фазовое приближение трёх знаковых величин к нулю.
 
 Вход `#6F55`, запись 17, смещения `#1192..#1253`.
 
@@ -465,6 +627,8 @@ Unknown, назначение этого фрагмента ещё не уста
 - Непосредственные записи: `#669F`, `#6F56`, `#6F59`, `#6F7B`, `#6F8D`, `#6FB0`, `#6FC2`, `#6FE5`, `#6FF6`, `#7693`, `#76CD`, `#76F0`, `#7713`, `#7736`, `#7759`, `#777C`, `#9B95`, `#9B96`, `#9B97`, `#A78F`.
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
+
+[Алгоритм, контракты и проверка](../ActionControlDecay.md).
 
 ## IgnoreKey
 
@@ -475,6 +639,38 @@ Unknown, назначение этого фрагмента ещё не уста
 Вход `#704B`, запись 17, смещение `#1288`.
 
 [Вызов, возврат и перекрытие последнего указателя](../ActionKeyDispatchPrefix.md).
+
+## RequestMissile0
+
+[Action.RequestMissile0](../../Source/Action/RequestMissile0.asm)
+
+Условный запрос запуска по Target0 с продолжением в общий хвост.
+
+[Пути, состояние и границы проверки](../ActionMissileRequests.md).
+
+## CompleteMissileLaunch
+
+[Action.CompleteMissileLaunch](../../Source/Action/CompleteMissileLaunch.asm)
+
+Создание ракеты, поправка состояния по классу цели и последующее списание запаса.
+
+[Пути, состояние и границы проверки](../ActionMissileRequests.md).
+
+## RequestMissile1
+
+[Action.RequestMissile1](../../Source/Action/RequestMissile1.asm)
+
+Условный запрос запуска по Target1 с переходом в общий хвост.
+
+[Пути, состояние и границы проверки](../ActionMissileRequests.md).
+
+## RequestMissile2
+
+[Action.RequestMissile2](../../Source/Action/RequestMissile2.asm)
+
+Условный запрос запуска по Target2 с переходом в общий хвост.
+
+[Пути, состояние и границы проверки](../ActionMissileRequests.md).
 
 ## ReportMissingMissileTarget
 
@@ -532,11 +728,75 @@ Unknown, назначение этого фрагмента ещё не уста
 
 [Алгоритм, контракты и независимая модель](../ActionPreferredByte.md).
 
-## Unknown7859
+## IncreaseGaugeWord
 
-[Action.Unknown7859](../../Source/Action/Unknown7859.asm)
+[Action.IncreaseGaugeWord](../../Source/Action/IncreaseGaugeWord.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+Увеличение слова шестой шкалы с исходными клавиатурными ограничениями.
+
+[Алгоритм, точные регистры и модель](../ActionKeyGaugeIncrease.md).
+
+## DecreaseGaugeWord
+
+[Action.DecreaseGaugeWord](../../Source/Action/DecreaseGaugeWord.asm)
+
+Уменьшение слова шестой шкалы с исходными клавиатурными ограничениями.
+
+[Алгоритм, точные регистры и модель](../ActionKeyGaugeDecrease.md).
+
+## RequestTurnNegative
+
+[Action.RequestTurnNegative](../../Source/Action/RequestTurnNegative.asm)
+
+Запрос уменьшения управления Turn с накопителем повтора и исходной знаковой границей.
+
+[Алгоритм, точные регистры и модель](../ActionKeyTurnNegative.md).
+
+## RequestTurnPositive
+
+[Action.RequestTurnPositive](../../Source/Action/RequestTurnPositive.asm)
+
+Запрос увеличения управления Turn с накопителем повтора и исходной знаковой границей.
+
+[Алгоритм, точные регистры и модель](../ActionKeyTurnPositive.md).
+
+## RequestXNegative
+
+[Action.RequestXNegative](../../Source/Action/RequestXNegative.asm)
+
+Запрос уменьшения управления X с накопителем повтора и исходной знаковой границей.
+
+[Алгоритм, точные регистры и модель](../ActionKeyXNegative.md).
+
+## RequestXPositive
+
+[Action.RequestXPositive](../../Source/Action/RequestXPositive.asm)
+
+Запрос увеличения управления X с накопителем повтора и исходной знаковой границей.
+
+[Алгоритм, точные регистры и модель](../ActionKeyXPositive.md).
+
+## RequestYNegative
+
+[Action.RequestYNegative](../../Source/Action/RequestYNegative.asm)
+
+Запрос уменьшения управления Y с накопителем повтора и исходной знаковой границей.
+
+[Алгоритм, точные регистры и модель](../ActionKeyYNegative.md).
+
+## RequestYPositive
+
+[Action.RequestYPositive](../../Source/Action/RequestYPositive.asm)
+
+Запрос увеличения управления Y с накопителем повтора и исходной знаковой границей.
+
+[Алгоритм, точные регистры и модель](../ActionKeyYPositive.md).
+
+## SpawnAlternate
+
+[Action.SpawnAlternate](../../Source/Action/SpawnAlternate.asm)
+
+Создание записей по шаблону либо по альтернативной ветке планировщика.
 
 Вход `#7859`, запись 17, смещения `#1A96..#1D02`.
 
@@ -546,25 +806,33 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## Unknown7B58
+[Алгоритм, контракты и проверка](../ActionSpawnSchedule.md).
 
-[Action.Unknown7B58](../../Source/Action/Unknown7B58.asm)
+## ScheduleSpawn
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Action.ScheduleSpawn](../../Source/Action/ScheduleSpawn.asm)
 
-Вход `#7B58`, запись 17, смещения `#1D95..#20D9`.
+Планирование создания объекта, выбор класса, модели и начальных координат.
 
-- Прямые вызовы: `#699C`, `#6CEF`, `#7E9D`, `#7EB7`, `#AACC`, `#E98D`, `#E9A1`, `#EB72`, `#EB80`, `#EB87`, `#EB8E`, `#EBB8`, `#EBC6`, `#EBCD`.
-- Непосредственные чтения: `#688B`, `#6D3D`, `#9B70`, `#9B71`, `#9B73`, `#9B74`, `#9B76`, `#9B77`, `#9B82`, `#9B83`, `#EBDB`.
-- Непосредственные записи: `#6D39`, `#6D3D`, `#7B59`, `#EBDD`.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
+Вход `#7B58`, запись 17, смещения `#1D95..#2010`.
 
-## Unknown7E9D
+[Алгоритм, контракты и проверка](../ActionSpawnSchedule.md).
 
-[Action.Unknown7E9D](../../Source/Action/Unknown7E9D.asm)
+## FinishSpawnRecord
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Action.FinishSpawnRecord](../../Source/Action/FinishSpawnRecord.asm)
+
+Заполнение параметров новой записи и передача диспетчеру класса.
+
+Вход `#7DD4`, запись 17, смещения `#2011..#20D9`.
+
+[Алгоритм, контракты и проверка](../ActionSpawnRecordFinish.md).
+
+## SelectWideTargetAndStep
+
+[Action.SelectWideTargetAndStep](../../Source/Action/SelectWideTargetAndStep.asm)
+
+Выбор первой близкой широкой цели либо первой записи и обновление кодов текущего объекта.
 
 Вход `#7E9D`, запись 17, смещения `#20DA..#20F3`.
 
@@ -574,11 +842,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## Unknown7EB7
+[Алгоритм, контракты и проверка](../ActionSelectWideTarget.md).
 
-[Action.Unknown7EB7](../../Source/Action/Unknown7EB7.asm)
+## StepRecordTowardWideVector
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Action.StepRecordTowardWideVector](../../Source/Action/StepRecordTowardWideVector.asm)
+
+Обновление двух кодов записи по трём широким компонентам выбранной цели.
 
 Вход `#7EB7`, запись 17, смещения `#20F4..#214A`.
 
@@ -588,11 +858,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## Unknown7F0E
+[Алгоритм, контракты и проверка](../ActionWideTargetStep.md).
 
-[Action.Unknown7F0E](../../Source/Action/Unknown7F0E.asm)
+## ClampPatchedVectorWords
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Action.ClampPatchedVectorWords](../../Source/Action/ClampPatchedVectorWords.asm)
+
+Сведение трёх изменяемых 32-битных значений к словам с исходным насыщением и знаком по биту 23.
 
 Вход `#7F0E`, запись 17, смещения `#214B..#21B2`.
 
@@ -602,11 +874,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## Unknown7F76
+[Алгоритм, контракты и проверка](../ActionClampVectorWords.md).
 
-[Action.Unknown7F76](../../Source/Action/Unknown7F76.asm)
+## AbsSigned32
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Action.AbsSigned32](../../Source/Action/AbsSigned32.asm)
+
+Модуль знакового 32-битного DE:HL с сохранением исходного переполнения минимального значения.
 
 Вход `#7F76`, запись 17, смещения `#21B3..#21CB`.
 
@@ -615,6 +889,8 @@ Unknown, назначение этого фрагмента ещё не уста
 - Непосредственные записи: нет непосредственных обращений.
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
+
+[Алгоритм, контракты и проверка](../ActionAbsSigned32.md).
 
 ## StartFlight
 
@@ -658,11 +934,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownAACC
+## ReadObjectHeaderWord
 
-[Action.UnknownAACC](../../Source/Action/UnknownAACC.asm)
+[Action.ReadObjectHeaderWord](../../Source/Action/ReadObjectHeaderWord.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+Чтение слова по указателю страницы 9E из банка OBJECT3D с последующим выбором банка 0.
 
 Вход `#AACC`, запись 17, смещения `#4ACC..#4AE1`.
 
@@ -671,6 +947,16 @@ Unknown, назначение этого фрагмента ещё не уста
 - Непосредственные записи: нет непосредственных обращений.
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
+
+[Алгоритм, контракты и независимая модель](../ActionObjectHeader.md).
+
+## CopyObjectData
+
+[Action.CopyObjectData](../../Source/Action/CopyObjectData.asm)
+
+Копирование двухчастного потока OBJECT3D в исходный рабочий буфер с возвратом банка 0.
+
+[Алгоритм, точные регистры и модель](../ActionObjectCopy.md).
 
 ## SelectMemoryPage
 
@@ -690,7 +976,7 @@ Unknown, назначение этого фрагмента ещё не уста
 
 [Action.UnpackResource](../../Source/Action/UnpackResource.asm)
 
-Полётная копия распаковщика ресурсов с обработкой ссылок.
+Распаковка HR-потока в полётном коде с переносом входа, LZ-ссылками, тройками и восстановлением шестибайтового конца.
 
 Вход `#AB23`, запись 17, смещения `#4B23..#4C37`.
 
@@ -699,6 +985,8 @@ Unknown, назначение этого фрагмента ещё не уста
 - Непосредственные записи: нет непосредственных обращений.
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
+
+[Алгоритм, контракты и проверка](../ActionUnpack.md).
 
 ## ReadWordFromIX
 
@@ -752,11 +1040,11 @@ Unknown, назначение этого фрагмента ещё не уста
 
 [Контракт и независимая модель](../ActionPatchSwap.md).
 
-## UnknownAD48
+## SqrtWordBank1
 
-[Action.UnknownAD48](../../Source/Action/UnknownAD48.asm)
+[Action.SqrtWordBank1](../../Source/Action/SqrtWordBank1.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+Вызов табличного корня с выбором Controls банка 1 и сохранением BC.
 
 Вход `#AD48`, запись 17, смещения `#4D48..#4D59`.
 
@@ -766,11 +1054,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownAD5A
+[Алгоритм, контракты и проверка](../ActionCachedRoot.md).
 
-[Action.UnknownAD5A](../../Source/Action/UnknownAD5A.asm)
+## EncodeHalfCoordinateDeltas
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Action.EncodeHalfCoordinateDeltas](../../Source/Action/EncodeHalfCoordinateDeltas.asm)
+
+Два кода по трём разностям половинных координат и корню усечённых квадратов.
 
 Вход `#AD5A`, запись 17, смещения `#4D5A..#4DB6`.
 
@@ -780,11 +1070,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownADB7
+[Алгоритм, контракты и проверка](../ActionHalfDeltaCodes.md).
 
-[Action.UnknownADB7](../../Source/Action/UnknownADB7.asm)
+## RotateBankedBasis
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Action.RotateBankedBasis](../../Source/Action/RotateBankedBasis.asm)
+
+Поворот базисных векторов через VOXAL в странице 3.
 
 Вход `#ADB7`, запись 17, смещения `#4DB7..#4DC4`.
 
@@ -794,11 +1086,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownAE24
+[Алгоритм, контракты и проверка](../ActionRenderFrameSetup.md).
 
-[Action.UnknownAE24](../../Source/Action/UnknownAE24.asm)
+## EncodeSignedRatio
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Action.EncodeSignedRatio](../../Source/Action/EncodeSignedRatio.asm)
+
+Табличное кодирование знакового отношения с четырьмя смещениями и исходными ограничениями.
 
 Вход `#AE24`, запись 17, смещения `#4E24..#4E72`.
 
@@ -808,15 +1102,19 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownAE73
+[Алгоритм, контракты и проверка](../ActionSignedRatioCode.md).
 
-[Action.UnknownAE73](../../Source/Action/UnknownAE73.asm)
+## DivideScaledLogarithmic
+
+[Action.DivideScaledLogarithmic](../../Source/Action/DivideScaledLogarithmic.asm)
 
 Unknown, оставшийся фрагмент AE73..AF42 ещё не разобран.
 
 Вход `#AE73`, запись 17, смещения `#4E73..#4F42`.
 
 Сохраняет неизвестный договор и записи AF14, AF2F. Вычислитель AF43 выделен отдельно, его выходы и чтения не относятся к этому оставшемуся фрагменту.
+
+[Алгоритм, контракты и независимая модель](../ActionLogRatio.md).
 
 ## ComputePatchedVector
 
@@ -826,11 +1124,19 @@ Unknown, оставшийся фрагмент AE73..AF42 ещё не разоб
 
 [Контракт, перенос, SP и модель](../ActionPatchedVector.md).
 
-## UnknownB0E9
+## BuildObjectOffsetCoefficients
 
-[Action.UnknownB0E9](../../Source/Action/UnknownB0E9.asm)
+[Action.BuildObjectOffsetCoefficients](../../Source/Action/BuildObjectOffsetCoefficients.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+Подготовка коэффициентов смещения по трём фазовым парам.
+
+[Алгоритм, точные регистры и модель](../ActionObjectOffsetCoefficients.md).
+
+## SqrtWordCached
+
+[Action.SqrtWordCached](../../Source/Action/SqrtWordCached.asm)
+
+Целый корень в области 0000..E8FF и исходное особое поведение E900..FFFF по трём страницам таблиц.
 
 Вход `#B0E9`, запись 17, смещения `#50E9..#516E`.
 
@@ -840,11 +1146,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## DispatchEdges
+[Алгоритм, контракты и проверка](../ActionCachedRoot.md).
 
-[Action.DispatchEdges](../../Source/Action/DispatchEdges.asm)
+## ClipPolygon
 
-Выбор вершин и обработчика ребра по раздельной таблице младших и старших байтов.
+[Action.ClipPolygon](../../Source/Action/ClipPolygon.asm)
+
+Обход замкнутого списка вершин с табличным отсечением и ранним завершением контура.
 
 Вход `#C000`, запись 17, смещения `#6000..#6070`.
 
@@ -854,11 +1162,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: `JP (HL)`.
 
-## NextEdge
+[Алгоритм, контракты и композиционная проверка](../ActionPolygon.md).
 
-[Action.NextEdge](../../Source/Action/NextEdge.asm)
+## ContinueClipPolygon
 
-Возврат косвенного обработчика и продолжение перебора рёбер.
+[Action.ContinueClipPolygon](../../Source/Action/ContinueClipPolygon.asm)
+
+Восстановление счётчика после ребра и продолжение либо возврат полного полигона.
 
 Вход `#C071`, запись 17, смещения `#6071..#6079`.
 
@@ -868,11 +1178,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCase11
+[Алгоритм, контракты и композиционная проверка](../ActionPolygon.md).
 
-[Action.EdgeCase11](../../Source/Action/EdgeCase11.asm)
+## ReturnClipCase
 
-обработчик ребра для индексов таблицы #11, #22, #44, #55, #66, #88, #99, #AA.
+[Action.ReturnClipCase](../../Source/Action/ReturnClipCase.asm)
+
+Завершение текущего табличного случая обычным RET.
 
 Вход `#C07A`, запись 17, смещения `#607A..#607A`.
 
@@ -882,11 +1194,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCase05
+[Алгоритм, контракты и композиционная проверка](../ActionClipCases.md).
 
-[Action.EdgeCase05](../../Source/Action/EdgeCase05.asm)
+## ClipInsideToBottomRight
 
-обработчик ребра для индексов таблицы #05.
+[Action.ClipInsideToBottomRight](../../Source/Action/ClipInsideToBottomRight.asm)
+
+Отсечение ребра, первая точка внутри окна, вторая снизу справа.
 
 Вход `#C07B`, запись 17, смещения `#607B..#6089`.
 
@@ -896,11 +1210,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCase15
+[Алгоритм, контракты и композиционная проверка](../ActionClipCases.md).
 
-[Action.EdgeCase15](../../Source/Action/EdgeCase15.asm)
+## ClipRightToBottomRight
 
-обработчик ребра для индексов таблицы #15.
+[Action.ClipRightToBottomRight](../../Source/Action/ClipRightToBottomRight.asm)
+
+Отсечение ребра, первая точка справа, вторая снизу справа.
 
 Вход `#C08A`, запись 17, смещения `#608A..#6094`.
 
@@ -910,11 +1226,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCase06
+[Алгоритм, контракты и композиционная проверка](../ActionClipCases.md).
 
-[Action.EdgeCase06](../../Source/Action/EdgeCase06.asm)
+## ClipInsideToBottomLeft
 
-обработчик ребра для индексов таблицы #06.
+[Action.ClipInsideToBottomLeft](../../Source/Action/ClipInsideToBottomLeft.asm)
+
+Отсечение ребра, первая точка внутри окна, вторая снизу слева.
 
 Вход `#C095`, запись 17, смещения `#6095..#60A3`.
 
@@ -924,11 +1242,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCase46
+[Алгоритм, контракты и композиционная проверка](../ActionClipCases.md).
 
-[Action.EdgeCase46](../../Source/Action/EdgeCase46.asm)
+## ClipBottomToBottomLeft
 
-обработчик ребра для индексов таблицы #46.
+[Action.ClipBottomToBottomLeft](../../Source/Action/ClipBottomToBottomLeft.asm)
+
+Отсечение ребра, первая точка снизу, вторая снизу слева.
 
 Вход `#C0A4`, запись 17, смещения `#60A4..#60AE`.
 
@@ -938,11 +1258,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCase09
+[Алгоритм, контракты и композиционная проверка](../ActionClipCases.md).
 
-[Action.EdgeCase09](../../Source/Action/EdgeCase09.asm)
+## ClipInsideToTopRight
 
-обработчик ребра для индексов таблицы #09.
+[Action.ClipInsideToTopRight](../../Source/Action/ClipInsideToTopRight.asm)
+
+Отсечение ребра, первая точка внутри окна, вторая сверху справа.
 
 Вход `#C0AF`, запись 17, смещения `#60AF..#60BD`.
 
@@ -952,11 +1274,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCase89
+[Алгоритм, контракты и композиционная проверка](../ActionClipCases.md).
 
-[Action.EdgeCase89](../../Source/Action/EdgeCase89.asm)
+## ClipTopToTopRight
 
-обработчик ребра для индексов таблицы #89.
+[Action.ClipTopToTopRight](../../Source/Action/ClipTopToTopRight.asm)
+
+Отсечение ребра, первая точка сверху, вторая сверху справа.
 
 Вход `#C0BE`, запись 17, смещения `#60BE..#60C8`.
 
@@ -966,11 +1290,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCase0A
+[Алгоритм, контракты и композиционная проверка](../ActionClipCases.md).
 
-[Action.EdgeCase0A](../../Source/Action/EdgeCase0A.asm)
+## ClipInsideToTopLeft
 
-обработчик ребра для индексов таблицы #0A.
+[Action.ClipInsideToTopLeft](../../Source/Action/ClipInsideToTopLeft.asm)
+
+Отсечение ребра, первая точка внутри окна, вторая сверху слева.
 
 Вход `#C0C9`, запись 17, смещения `#60C9..#60D7`.
 
@@ -980,11 +1306,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCase2A
+[Алгоритм, контракты и композиционная проверка](../ActionClipCases.md).
 
-[Action.EdgeCase2A](../../Source/Action/EdgeCase2A.asm)
+## ClipLeftToTopLeft
 
-обработчик ребра для индексов таблицы #2A.
+[Action.ClipLeftToTopLeft](../../Source/Action/ClipLeftToTopLeft.asm)
+
+Отсечение ребра, первая точка слева, вторая сверху слева.
 
 Вход `#C0D8`, запись 17, смещения `#60D8..#60E2`.
 
@@ -994,11 +1322,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCase10
+[Алгоритм, контракты и композиционная проверка](../ActionClipCases.md).
 
-[Action.EdgeCase10](../../Source/Action/EdgeCase10.asm)
+## ClipRightToInside
 
-обработчик ребра для индексов таблицы #10.
+[Action.ClipRightToInside](../../Source/Action/ClipRightToInside.asm)
+
+Отсечение ребра, первая точка справа, вторая внутри окна.
 
 Вход `#C0E3`, запись 17, смещения `#60E3..#60E8`.
 
@@ -1008,11 +1338,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCase12
+[Алгоритм, контракты и композиционная проверка](../ActionClipCases.md).
 
-[Action.EdgeCase12](../../Source/Action/EdgeCase12.asm)
+## ClipRightToLeft
 
-обработчик ребра для индексов таблицы #12.
+[Action.ClipRightToLeft](../../Source/Action/ClipRightToLeft.asm)
+
+Отсечение ребра, первая точка справа, вторая слева.
 
 Вход `#C0E9`, запись 17, смещения `#60E9..#60EE`.
 
@@ -1022,11 +1354,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCase14
+[Алгоритм, контракты и композиционная проверка](../ActionClipCases.md).
 
-[Action.EdgeCase14](../../Source/Action/EdgeCase14.asm)
+## ClipRightToBottom
 
-обработчик ребра для индексов таблицы #14.
+[Action.ClipRightToBottom](../../Source/Action/ClipRightToBottom.asm)
+
+Отсечение ребра, первая точка справа, вторая снизу.
 
 Вход `#C0EF`, запись 17, смещения `#60EF..#6100`.
 
@@ -1036,11 +1370,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCase16
+[Алгоритм, контракты и композиционная проверка](../ActionClipCases.md).
 
-[Action.EdgeCase16](../../Source/Action/EdgeCase16.asm)
+## ClipRightToBottomLeft
 
-обработчик ребра для индексов таблицы #16.
+[Action.ClipRightToBottomLeft](../../Source/Action/ClipRightToBottomLeft.asm)
+
+Отсечение ребра, первая точка справа, вторая снизу слева.
 
 Вход `#C101`, запись 17, смещения `#6101..#6118`.
 
@@ -1050,11 +1386,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCase18
+[Алгоритм, контракты и композиционная проверка](../ActionClipCases.md).
 
-[Action.EdgeCase18](../../Source/Action/EdgeCase18.asm)
+## ClipRightToTop
 
-обработчик ребра для индексов таблицы #18.
+[Action.ClipRightToTop](../../Source/Action/ClipRightToTop.asm)
+
+Отсечение ребра, первая точка справа, вторая сверху.
 
 Вход `#C119`, запись 17, смещения `#6119..#612A`.
 
@@ -1064,11 +1402,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCase19
+[Алгоритм, контракты и композиционная проверка](../ActionClipCases.md).
 
-[Action.EdgeCase19](../../Source/Action/EdgeCase19.asm)
+## ClipRightToTopRight
 
-обработчик ребра для индексов таблицы #19.
+[Action.ClipRightToTopRight](../../Source/Action/ClipRightToTopRight.asm)
+
+Отсечение ребра, первая точка справа, вторая сверху справа.
 
 Вход `#C12B`, запись 17, смещения `#612B..#6131`.
 
@@ -1078,11 +1418,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCase1A
+[Алгоритм, контракты и композиционная проверка](../ActionClipCases.md).
 
-[Action.EdgeCase1A](../../Source/Action/EdgeCase1A.asm)
+## ClipRightToTopLeft
 
-обработчик ребра для индексов таблицы #1A.
+[Action.ClipRightToTopLeft](../../Source/Action/ClipRightToTopLeft.asm)
+
+Отсечение ребра, первая точка справа, вторая сверху слева.
 
 Вход `#C132`, запись 17, смещения `#6132..#6143`.
 
@@ -1092,11 +1434,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCase20
+[Алгоритм, контракты и композиционная проверка](../ActionClipCases.md).
 
-[Action.EdgeCase20](../../Source/Action/EdgeCase20.asm)
+## ClipLeftToInside
 
-обработчик ребра для индексов таблицы #20.
+[Action.ClipLeftToInside](../../Source/Action/ClipLeftToInside.asm)
+
+Отсечение ребра, первая точка слева, вторая внутри окна.
 
 Вход `#C144`, запись 17, смещения `#6144..#6149`.
 
@@ -1106,11 +1450,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCase21
+[Алгоритм, контракты и композиционная проверка](../ActionClipCases.md).
 
-[Action.EdgeCase21](../../Source/Action/EdgeCase21.asm)
+## ClipLeftToRight
 
-обработчик ребра для индексов таблицы #21.
+[Action.ClipLeftToRight](../../Source/Action/ClipLeftToRight.asm)
+
+Отсечение ребра, первая точка слева, вторая справа.
 
 Вход `#C14A`, запись 17, смещения `#614A..#614F`.
 
@@ -1120,11 +1466,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCase24
+[Алгоритм, контракты и композиционная проверка](../ActionClipCases.md).
 
-[Action.EdgeCase24](../../Source/Action/EdgeCase24.asm)
+## ClipLeftToBottom
 
-обработчик ребра для индексов таблицы #24.
+[Action.ClipLeftToBottom](../../Source/Action/ClipLeftToBottom.asm)
+
+Отсечение ребра, первая точка слева, вторая снизу.
 
 Вход `#C150`, запись 17, смещения `#6150..#6161`.
 
@@ -1134,11 +1482,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCase25
+[Алгоритм, контракты и композиционная проверка](../ActionClipCases.md).
 
-[Action.EdgeCase25](../../Source/Action/EdgeCase25.asm)
+## ClipLeftToBottomRight
 
-обработчик ребра для индексов таблицы #25.
+[Action.ClipLeftToBottomRight](../../Source/Action/ClipLeftToBottomRight.asm)
+
+Отсечение ребра, первая точка слева, вторая снизу справа.
 
 Вход `#C162`, запись 17, смещения `#6162..#6173`.
 
@@ -1148,11 +1498,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCase26
+[Алгоритм, контракты и композиционная проверка](../ActionClipCases.md).
 
-[Action.EdgeCase26](../../Source/Action/EdgeCase26.asm)
+## ClipLeftToBottomLeft
 
-обработчик ребра для индексов таблицы #26.
+[Action.ClipLeftToBottomLeft](../../Source/Action/ClipLeftToBottomLeft.asm)
+
+Отсечение ребра, первая точка слева, вторая снизу слева.
 
 Вход `#C174`, запись 17, смещения `#6174..#617A`.
 
@@ -1162,11 +1514,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCase28
+[Алгоритм, контракты и композиционная проверка](../ActionClipCases.md).
 
-[Action.EdgeCase28](../../Source/Action/EdgeCase28.asm)
+## ClipLeftToTop
 
-обработчик ребра для индексов таблицы #28.
+[Action.ClipLeftToTop](../../Source/Action/ClipLeftToTop.asm)
+
+Отсечение ребра, первая точка слева, вторая сверху.
 
 Вход `#C17B`, запись 17, смещения `#617B..#618C`.
 
@@ -1176,11 +1530,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCase29
+[Алгоритм, контракты и композиционная проверка](../ActionClipCases.md).
 
-[Action.EdgeCase29](../../Source/Action/EdgeCase29.asm)
+## ClipLeftToTopRight
 
-обработчик ребра для индексов таблицы #29.
+[Action.ClipLeftToTopRight](../../Source/Action/ClipLeftToTopRight.asm)
+
+Отсечение ребра, первая точка слева, вторая сверху справа.
 
 Вход `#C18D`, запись 17, смещения `#618D..#61A4`.
 
@@ -1190,11 +1546,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCase40
+[Алгоритм, контракты и композиционная проверка](../ActionClipCases.md).
 
-[Action.EdgeCase40](../../Source/Action/EdgeCase40.asm)
+## ClipBottomToInside
 
-обработчик ребра для индексов таблицы #40.
+[Action.ClipBottomToInside](../../Source/Action/ClipBottomToInside.asm)
+
+Отсечение ребра, первая точка снизу, вторая внутри окна.
 
 Вход `#C1A5`, запись 17, смещения `#61A5..#61AA`.
 
@@ -1204,11 +1562,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCase41
+[Алгоритм, контракты и композиционная проверка](../ActionClipCases.md).
 
-[Action.EdgeCase41](../../Source/Action/EdgeCase41.asm)
+## ClipBottomToRight
 
-обработчик ребра для индексов таблицы #41.
+[Action.ClipBottomToRight](../../Source/Action/ClipBottomToRight.asm)
+
+Отсечение ребра, первая точка снизу, вторая справа.
 
 Вход `#C1AB`, запись 17, смещения `#61AB..#61BC`.
 
@@ -1218,11 +1578,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCase42
+[Алгоритм, контракты и композиционная проверка](../ActionClipCases.md).
 
-[Action.EdgeCase42](../../Source/Action/EdgeCase42.asm)
+## ClipBottomToLeft
 
-обработчик ребра для индексов таблицы #42.
+[Action.ClipBottomToLeft](../../Source/Action/ClipBottomToLeft.asm)
+
+Отсечение ребра, первая точка снизу, вторая слева.
 
 Вход `#C1BD`, запись 17, смещения `#61BD..#61CE`.
 
@@ -1232,11 +1594,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCase45
+[Алгоритм, контракты и композиционная проверка](../ActionClipCases.md).
 
-[Action.EdgeCase45](../../Source/Action/EdgeCase45.asm)
+## ClipBottomToBottomRight
 
-обработчик ребра для индексов таблицы #45.
+[Action.ClipBottomToBottomRight](../../Source/Action/ClipBottomToBottomRight.asm)
+
+Отсечение ребра, первая точка снизу, вторая снизу справа.
 
 Вход `#C1CF`, запись 17, смещения `#61CF..#61D5`.
 
@@ -1246,11 +1610,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCase48
+[Алгоритм, контракты и композиционная проверка](../ActionClipCases.md).
 
-[Action.EdgeCase48](../../Source/Action/EdgeCase48.asm)
+## ClipBottomToTop
 
-обработчик ребра для индексов таблицы #48.
+[Action.ClipBottomToTop](../../Source/Action/ClipBottomToTop.asm)
+
+Отсечение ребра, первая точка снизу, вторая сверху.
 
 Вход `#C1D6`, запись 17, смещения `#61D6..#61DB`.
 
@@ -1260,11 +1626,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCase49
+[Алгоритм, контракты и композиционная проверка](../ActionClipCases.md).
 
-[Action.EdgeCase49](../../Source/Action/EdgeCase49.asm)
+## ClipBottomToTopRight
 
-обработчик ребра для индексов таблицы #49.
+[Action.ClipBottomToTopRight](../../Source/Action/ClipBottomToTopRight.asm)
+
+Отсечение ребра, первая точка снизу, вторая сверху справа.
 
 Вход `#C1DC`, запись 17, смещения `#61DC..#61F0`.
 
@@ -1274,11 +1642,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCase4A
+[Алгоритм, контракты и композиционная проверка](../ActionClipCases.md).
 
-[Action.EdgeCase4A](../../Source/Action/EdgeCase4A.asm)
+## ClipBottomToTopLeft
 
-обработчик ребра для индексов таблицы #4A.
+[Action.ClipBottomToTopLeft](../../Source/Action/ClipBottomToTopLeft.asm)
+
+Отсечение ребра, первая точка снизу, вторая сверху слева.
 
 Вход `#C1F1`, запись 17, смещения `#61F1..#620B`.
 
@@ -1288,11 +1658,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCase50
+[Алгоритм, контракты и композиционная проверка](../ActionClipCases.md).
 
-[Action.EdgeCase50](../../Source/Action/EdgeCase50.asm)
+## ClipBottomRightToInside
 
-обработчик ребра для индексов таблицы #50.
+[Action.ClipBottomRightToInside](../../Source/Action/ClipBottomRightToInside.asm)
+
+Отсечение ребра, первая точка снизу справа, вторая внутри окна.
 
 Вход `#C20C`, запись 17, смещения `#620C..#6227`.
 
@@ -1302,11 +1674,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCase51
+[Алгоритм, контракты и композиционная проверка](../ActionClipCases.md).
 
-[Action.EdgeCase51](../../Source/Action/EdgeCase51.asm)
+## ClipBottomRightToRight
 
-обработчик ребра для индексов таблицы #51.
+[Action.ClipBottomRightToRight](../../Source/Action/ClipBottomRightToRight.asm)
+
+Отсечение ребра, первая точка снизу справа, вторая справа.
 
 Вход `#C228`, запись 17, смещения `#6228..#622E`.
 
@@ -1316,11 +1690,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCase52
+[Алгоритм, контракты и композиционная проверка](../ActionClipCases.md).
 
-[Action.EdgeCase52](../../Source/Action/EdgeCase52.asm)
+## ClipBottomRightToLeft
 
-обработчик ребра для индексов таблицы #52.
+[Action.ClipBottomRightToLeft](../../Source/Action/ClipBottomRightToLeft.asm)
+
+Отсечение ребра, первая точка снизу справа, вторая слева.
 
 Вход `#C22F`, запись 17, смещения `#622F..#624D`.
 
@@ -1330,11 +1706,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCase54
+[Алгоритм, контракты и композиционная проверка](../ActionClipCases.md).
 
-[Action.EdgeCase54](../../Source/Action/EdgeCase54.asm)
+## ClipBottomRightToBottom
 
-обработчик ребра для индексов таблицы #54.
+[Action.ClipBottomRightToBottom](../../Source/Action/ClipBottomRightToBottom.asm)
+
+Отсечение ребра, первая точка снизу справа, вторая снизу.
 
 Вход `#C24E`, запись 17, смещения `#624E..#6258`.
 
@@ -1344,11 +1722,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCase56
+[Алгоритм, контракты и композиционная проверка](../ActionClipCases.md).
 
-[Action.EdgeCase56](../../Source/Action/EdgeCase56.asm)
+## ClipBottomRightToBottomLeft
 
-обработчик ребра для индексов таблицы #56.
+[Action.ClipBottomRightToBottomLeft](../../Source/Action/ClipBottomRightToBottomLeft.asm)
+
+Отсечение ребра, первая точка снизу справа, вторая снизу слева.
 
 Вход `#C259`, запись 17, смещения `#6259..#625E`.
 
@@ -1358,11 +1738,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCase58
+[Алгоритм, контракты и композиционная проверка](../ActionClipCases.md).
 
-[Action.EdgeCase58](../../Source/Action/EdgeCase58.asm)
+## ClipBottomRightToTop
 
-обработчик ребра для индексов таблицы #58.
+[Action.ClipBottomRightToTop](../../Source/Action/ClipBottomRightToTop.asm)
+
+Отсечение ребра, первая точка снизу справа, вторая сверху.
 
 Вход `#C25F`, запись 17, смещения `#625F..#6273`.
 
@@ -1372,11 +1754,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCase5A
+[Алгоритм, контракты и композиционная проверка](../ActionClipCases.md).
 
-[Action.EdgeCase5A](../../Source/Action/EdgeCase5A.asm)
+## ClipBottomRightToTopLeft
 
-обработчик ребра для индексов таблицы #5A.
+[Action.ClipBottomRightToTopLeft](../../Source/Action/ClipBottomRightToTopLeft.asm)
+
+Отсечение ребра, первая точка снизу справа, вторая сверху слева.
 
 Вход `#C274`, запись 17, смещения `#6274..#628C`.
 
@@ -1386,11 +1770,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCase60
+[Алгоритм, контракты и композиционная проверка](../ActionClipCases.md).
 
-[Action.EdgeCase60](../../Source/Action/EdgeCase60.asm)
+## ClipBottomLeftToInside
 
-обработчик ребра для индексов таблицы #60.
+[Action.ClipBottomLeftToInside](../../Source/Action/ClipBottomLeftToInside.asm)
+
+Отсечение ребра, первая точка снизу слева, вторая внутри окна.
 
 Вход `#C28D`, запись 17, смещения `#628D..#62A8`.
 
@@ -1400,11 +1786,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCase61
+[Алгоритм, контракты и композиционная проверка](../ActionClipCases.md).
 
-[Action.EdgeCase61](../../Source/Action/EdgeCase61.asm)
+## ClipBottomLeftToRight
 
-обработчик ребра для индексов таблицы #61.
+[Action.ClipBottomLeftToRight](../../Source/Action/ClipBottomLeftToRight.asm)
+
+Отсечение ребра, первая точка снизу слева, вторая справа.
 
 Вход `#C2A9`, запись 17, смещения `#62A9..#62BD`.
 
@@ -1414,11 +1802,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCase62
+[Алгоритм, контракты и композиционная проверка](../ActionClipCases.md).
 
-[Action.EdgeCase62](../../Source/Action/EdgeCase62.asm)
+## ClipBottomLeftToLeft
 
-обработчик ребра для индексов таблицы #62.
+[Action.ClipBottomLeftToLeft](../../Source/Action/ClipBottomLeftToLeft.asm)
+
+Отсечение ребра, первая точка снизу слева, вторая слева.
 
 Вход `#C2BE`, запись 17, смещения `#62BE..#62C8`.
 
@@ -1428,11 +1818,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCase64
+[Алгоритм, контракты и композиционная проверка](../ActionClipCases.md).
 
-[Action.EdgeCase64](../../Source/Action/EdgeCase64.asm)
+## ClipBottomLeftToBottom
 
-обработчик ребра для индексов таблицы #64.
+[Action.ClipBottomLeftToBottom](../../Source/Action/ClipBottomLeftToBottom.asm)
+
+Отсечение ребра, первая точка снизу слева, вторая снизу.
 
 Вход `#C2C9`, запись 17, смещения `#62C9..#62CF`.
 
@@ -1442,11 +1834,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCase68
+[Алгоритм, контракты и композиционная проверка](../ActionClipCases.md).
 
-[Action.EdgeCase68](../../Source/Action/EdgeCase68.asm)
+## ClipBottomLeftToTop
 
-обработчик ребра для индексов таблицы #68.
+[Action.ClipBottomLeftToTop](../../Source/Action/ClipBottomLeftToTop.asm)
+
+Отсечение ребра, первая точка снизу слева, вторая сверху.
 
 Вход `#C2D0`, запись 17, смещения `#62D0..#62EE`.
 
@@ -1456,11 +1850,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCase69
+[Алгоритм, контракты и композиционная проверка](../ActionClipCases.md).
 
-[Action.EdgeCase69](../../Source/Action/EdgeCase69.asm)
+## ClipBottomLeftToTopRight
 
-обработчик ребра для индексов таблицы #69.
+[Action.ClipBottomLeftToTopRight](../../Source/Action/ClipBottomLeftToTopRight.asm)
+
+Отсечение ребра, первая точка снизу слева, вторая сверху справа.
 
 Вход `#C2EF`, запись 17, смещения `#62EF..#6307`.
 
@@ -1470,11 +1866,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCase6A
+[Алгоритм, контракты и композиционная проверка](../ActionClipCases.md).
 
-[Action.EdgeCase6A](../../Source/Action/EdgeCase6A.asm)
+## ClipBottomLeftToTopLeft
 
-обработчик ребра для индексов таблицы #6A.
+[Action.ClipBottomLeftToTopLeft](../../Source/Action/ClipBottomLeftToTopLeft.asm)
+
+Отсечение ребра, первая точка снизу слева, вторая сверху слева.
 
 Вход `#C308`, запись 17, смещения `#6308..#630D`.
 
@@ -1484,11 +1882,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCase80
+[Алгоритм, контракты и композиционная проверка](../ActionClipCases.md).
 
-[Action.EdgeCase80](../../Source/Action/EdgeCase80.asm)
+## ClipTopToInside
 
-обработчик ребра для индексов таблицы #80.
+[Action.ClipTopToInside](../../Source/Action/ClipTopToInside.asm)
+
+Отсечение ребра, первая точка сверху, вторая внутри окна.
 
 Вход `#C30E`, запись 17, смещения `#630E..#6313`.
 
@@ -1498,11 +1898,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCase81
+[Алгоритм, контракты и композиционная проверка](../ActionClipCases.md).
 
-[Action.EdgeCase81](../../Source/Action/EdgeCase81.asm)
+## ClipTopToRight
 
-обработчик ребра для индексов таблицы #81.
+[Action.ClipTopToRight](../../Source/Action/ClipTopToRight.asm)
+
+Отсечение ребра, первая точка сверху, вторая справа.
 
 Вход `#C314`, запись 17, смещения `#6314..#6325`.
 
@@ -1512,11 +1914,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCase82
+[Алгоритм, контракты и композиционная проверка](../ActionClipCases.md).
 
-[Action.EdgeCase82](../../Source/Action/EdgeCase82.asm)
+## ClipTopToLeft
 
-обработчик ребра для индексов таблицы #82.
+[Action.ClipTopToLeft](../../Source/Action/ClipTopToLeft.asm)
+
+Отсечение ребра, первая точка сверху, вторая слева.
 
 Вход `#C326`, запись 17, смещения `#6326..#6337`.
 
@@ -1526,11 +1930,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCase84
+[Алгоритм, контракты и композиционная проверка](../ActionClipCases.md).
 
-[Action.EdgeCase84](../../Source/Action/EdgeCase84.asm)
+## ClipTopToBottom
 
-обработчик ребра для индексов таблицы #84.
+[Action.ClipTopToBottom](../../Source/Action/ClipTopToBottom.asm)
+
+Отсечение ребра, первая точка сверху, вторая снизу.
 
 Вход `#C338`, запись 17, смещения `#6338..#633D`.
 
@@ -1540,11 +1946,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCase85
+[Алгоритм, контракты и композиционная проверка](../ActionClipCases.md).
 
-[Action.EdgeCase85](../../Source/Action/EdgeCase85.asm)
+## ClipTopToBottomRight
 
-обработчик ребра для индексов таблицы #85.
+[Action.ClipTopToBottomRight](../../Source/Action/ClipTopToBottomRight.asm)
+
+Отсечение ребра, первая точка сверху, вторая снизу справа.
 
 Вход `#C33E`, запись 17, смещения `#633E..#6358`.
 
@@ -1554,11 +1962,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCase86
+[Алгоритм, контракты и композиционная проверка](../ActionClipCases.md).
 
-[Action.EdgeCase86](../../Source/Action/EdgeCase86.asm)
+## ClipTopToBottomLeft
 
-обработчик ребра для индексов таблицы #86.
+[Action.ClipTopToBottomLeft](../../Source/Action/ClipTopToBottomLeft.asm)
+
+Отсечение ребра, первая точка сверху, вторая снизу слева.
 
 Вход `#C359`, запись 17, смещения `#6359..#636D`.
 
@@ -1568,11 +1978,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCase8A
+[Алгоритм, контракты и композиционная проверка](../ActionClipCases.md).
 
-[Action.EdgeCase8A](../../Source/Action/EdgeCase8A.asm)
+## ClipTopToTopLeft
 
-обработчик ребра для индексов таблицы #8A.
+[Action.ClipTopToTopLeft](../../Source/Action/ClipTopToTopLeft.asm)
+
+Отсечение ребра, первая точка сверху, вторая сверху слева.
 
 Вход `#C36E`, запись 17, смещения `#636E..#6374`.
 
@@ -1582,11 +1994,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCase90
+[Алгоритм, контракты и композиционная проверка](../ActionClipCases.md).
 
-[Action.EdgeCase90](../../Source/Action/EdgeCase90.asm)
+## ClipTopRightToInside
 
-обработчик ребра для индексов таблицы #90.
+[Action.ClipTopRightToInside](../../Source/Action/ClipTopRightToInside.asm)
+
+Отсечение ребра, первая точка сверху справа, вторая внутри окна.
 
 Вход `#C375`, запись 17, смещения `#6375..#6390`.
 
@@ -1596,11 +2010,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCase91
+[Алгоритм, контракты и композиционная проверка](../ActionClipCases.md).
 
-[Action.EdgeCase91](../../Source/Action/EdgeCase91.asm)
+## ClipTopRightToRight
 
-обработчик ребра для индексов таблицы #91.
+[Action.ClipTopRightToRight](../../Source/Action/ClipTopRightToRight.asm)
+
+Отсечение ребра, первая точка сверху справа, вторая справа.
 
 Вход `#C391`, запись 17, смещения `#6391..#639B`.
 
@@ -1610,11 +2026,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCase92
+[Алгоритм, контракты и композиционная проверка](../ActionClipCases.md).
 
-[Action.EdgeCase92](../../Source/Action/EdgeCase92.asm)
+## ClipTopRightToLeft
 
-обработчик ребра для индексов таблицы #92.
+[Action.ClipTopRightToLeft](../../Source/Action/ClipTopRightToLeft.asm)
+
+Отсечение ребра, первая точка сверху справа, вторая слева.
 
 Вход `#C39C`, запись 17, смещения `#639C..#63B0`.
 
@@ -1624,11 +2042,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCase94
+[Алгоритм, контракты и композиционная проверка](../ActionClipCases.md).
 
-[Action.EdgeCase94](../../Source/Action/EdgeCase94.asm)
+## ClipTopRightToBottom
 
-обработчик ребра для индексов таблицы #94.
+[Action.ClipTopRightToBottom](../../Source/Action/ClipTopRightToBottom.asm)
+
+Отсечение ребра, первая точка сверху справа, вторая снизу.
 
 Вход `#C3B1`, запись 17, смещения `#63B1..#63CF`.
 
@@ -1638,11 +2058,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCase95
+[Алгоритм, контракты и композиционная проверка](../ActionClipCases.md).
 
-[Action.EdgeCase95](../../Source/Action/EdgeCase95.asm)
+## ClipTopRightToBottomRight
 
-обработчик ребра для индексов таблицы #95.
+[Action.ClipTopRightToBottomRight](../../Source/Action/ClipTopRightToBottomRight.asm)
+
+Отсечение ребра, первая точка сверху справа, вторая снизу справа.
 
 Вход `#C3D0`, запись 17, смещения `#63D0..#63D5`.
 
@@ -1652,11 +2074,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCase96
+[Алгоритм, контракты и композиционная проверка](../ActionClipCases.md).
 
-[Action.EdgeCase96](../../Source/Action/EdgeCase96.asm)
+## ClipTopRightToBottomLeft
 
-обработчик ребра для индексов таблицы #96.
+[Action.ClipTopRightToBottomLeft](../../Source/Action/ClipTopRightToBottomLeft.asm)
+
+Отсечение ребра, первая точка сверху справа, вторая снизу слева.
 
 Вход `#C3D6`, запись 17, смещения `#63D6..#63EE`.
 
@@ -1666,11 +2090,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCase98
+[Алгоритм, контракты и композиционная проверка](../ActionClipCases.md).
 
-[Action.EdgeCase98](../../Source/Action/EdgeCase98.asm)
+## ClipTopRightToTop
 
-обработчик ребра для индексов таблицы #98.
+[Action.ClipTopRightToTop](../../Source/Action/ClipTopRightToTop.asm)
+
+Отсечение ребра, первая точка сверху справа, вторая сверху.
 
 Вход `#C3EF`, запись 17, смещения `#63EF..#63F5`.
 
@@ -1680,11 +2106,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCaseA0
+[Алгоритм, контракты и композиционная проверка](../ActionClipCases.md).
 
-[Action.EdgeCaseA0](../../Source/Action/EdgeCaseA0.asm)
+## ClipTopLeftToInside
 
-обработчик ребра для индексов таблицы #A0.
+[Action.ClipTopLeftToInside](../../Source/Action/ClipTopLeftToInside.asm)
+
+Отсечение ребра, первая точка сверху слева, вторая внутри окна.
 
 Вход `#C3F6`, запись 17, смещения `#63F6..#6411`.
 
@@ -1694,11 +2122,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCaseA1
+[Алгоритм, контракты и композиционная проверка](../ActionClipCases.md).
 
-[Action.EdgeCaseA1](../../Source/Action/EdgeCaseA1.asm)
+## ClipTopLeftToRight
 
-обработчик ребра для индексов таблицы #A1.
+[Action.ClipTopLeftToRight](../../Source/Action/ClipTopLeftToRight.asm)
+
+Отсечение ребра, первая точка сверху слева, вторая справа.
 
 Вход `#C412`, запись 17, смещения `#6412..#6430`.
 
@@ -1708,11 +2138,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCaseA2
+[Алгоритм, контракты и композиционная проверка](../ActionClipCases.md).
 
-[Action.EdgeCaseA2](../../Source/Action/EdgeCaseA2.asm)
+## ClipTopLeftToLeft
 
-обработчик ребра для индексов таблицы #A2.
+[Action.ClipTopLeftToLeft](../../Source/Action/ClipTopLeftToLeft.asm)
+
+Отсечение ребра, первая точка сверху слева, вторая слева.
 
 Вход `#C431`, запись 17, смещения `#6431..#6437`.
 
@@ -1722,11 +2154,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCaseA4
+[Алгоритм, контракты и композиционная проверка](../ActionClipCases.md).
 
-[Action.EdgeCaseA4](../../Source/Action/EdgeCaseA4.asm)
+## ClipTopLeftToBottom
 
-обработчик ребра для индексов таблицы #A4.
+[Action.ClipTopLeftToBottom](../../Source/Action/ClipTopLeftToBottom.asm)
+
+Отсечение ребра, первая точка сверху слева, вторая снизу.
 
 Вход `#C438`, запись 17, смещения `#6438..#644C`.
 
@@ -1736,11 +2170,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCaseA5
+[Алгоритм, контракты и композиционная проверка](../ActionClipCases.md).
 
-[Action.EdgeCaseA5](../../Source/Action/EdgeCaseA5.asm)
+## ClipTopLeftToBottomRight
 
-обработчик ребра для индексов таблицы #A5.
+[Action.ClipTopLeftToBottomRight](../../Source/Action/ClipTopLeftToBottomRight.asm)
+
+Отсечение ребра, первая точка сверху слева, вторая снизу справа.
 
 Вход `#C44D`, запись 17, смещения `#644D..#6465`.
 
@@ -1750,11 +2186,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCaseA8
+[Алгоритм, контракты и композиционная проверка](../ActionClipCases.md).
 
-[Action.EdgeCaseA8](../../Source/Action/EdgeCaseA8.asm)
+## ClipTopLeftToTop
 
-обработчик ребра для индексов таблицы #A8.
+[Action.ClipTopLeftToTop](../../Source/Action/ClipTopLeftToTop.asm)
+
+Отсечение ребра, первая точка сверху слева, вторая сверху.
 
 Вход `#C466`, запись 17, смещения `#6466..#6470`.
 
@@ -1764,11 +2202,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCaseA9
+[Алгоритм, контракты и композиционная проверка](../ActionClipCases.md).
 
-[Action.EdgeCaseA9](../../Source/Action/EdgeCaseA9.asm)
+## ClipTopLeftToTopRight
 
-обработчик ребра для индексов таблицы #A9.
+[Action.ClipTopLeftToTopRight](../../Source/Action/ClipTopLeftToTopRight.asm)
+
+Отсечение ребра, первая точка сверху слева, вторая сверху справа.
 
 Вход `#C471`, запись 17, смещения `#6471..#6476`.
 
@@ -1778,11 +2218,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownC477
+[Алгоритм, контракты и композиционная проверка](../ActionClipCases.md).
 
-[Action.UnknownC477](../../Source/Action/UnknownC477.asm)
+## ComputeTopClipProduct
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Action.ComputeTopClipProduct](../../Source/Action/ComputeTopClipProduct.asm)
+
+Подготовка числителя пересечения (First.First-0)*(First.Second-Second.Second) исходным знаковым умножителем.
 
 Вход `#C477`, запись 17, смещения `#6477..#6495`.
 
@@ -1792,11 +2234,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownC496
+[Алгоритм, контракты и независимая модель](../ActionClipProducts.md).
 
-[Action.UnknownC496](../../Source/Action/UnknownC496.asm)
+## ComputeBottomClipProduct
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Action.ComputeBottomClipProduct](../../Source/Action/ComputeBottomClipProduct.asm)
+
+Подготовка числителя пересечения (First.First-95)*(First.Second-Second.Second) исходным знаковым умножителем.
 
 Вход `#C496`, запись 17, смещения `#6496..#64B4`.
 
@@ -1806,11 +2250,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownC4B5
+[Алгоритм, контракты и независимая модель](../ActionClipProducts.md).
 
-[Action.UnknownC4B5](../../Source/Action/UnknownC4B5.asm)
+## ComputeLeftClipProduct
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Action.ComputeLeftClipProduct](../../Source/Action/ComputeLeftClipProduct.asm)
+
+Подготовка числителя пересечения (First.First-Second.First)*(First.Second-0) исходным знаковым умножителем.
 
 Вход `#C4B5`, запись 17, смещения `#64B5..#64D3`.
 
@@ -1820,11 +2266,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownC4D4
+[Алгоритм, контракты и независимая модель](../ActionClipProducts.md).
 
-[Action.UnknownC4D4](../../Source/Action/UnknownC4D4.asm)
+## ComputeRightClipProduct
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Action.ComputeRightClipProduct](../../Source/Action/ComputeRightClipProduct.asm)
+
+Подготовка числителя пересечения (First.First-Second.First)*(First.Second-255) исходным знаковым умножителем.
 
 Вход `#C4D4`, запись 17, смещения `#64D4..#64F2`.
 
@@ -1834,11 +2282,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCase08
+[Алгоритм, контракты и независимая модель](../ActionClipProducts.md).
 
-[Action.EdgeCase08](../../Source/Action/EdgeCase08.asm)
+## ClipInsideToTop
 
-обработчик ребра для индексов таблицы #08.
+[Action.ClipInsideToTop](../../Source/Action/ClipInsideToTop.asm)
+
+Отсечение ребра, первая точка внутри окна, вторая сверху.
 
 Вход `#C4F3`, запись 17, смещения `#64F3..#64F5`.
 
@@ -1848,11 +2298,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownC4F6
+[Алгоритм, контракты и композиционная проверка](../ActionClipCases.md).
 
-[Action.UnknownC4F6](../../Source/Action/UnknownC4F6.asm)
+## AppendTopClipIntersection
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Action.AppendTopClipIntersection](../../Source/Action/AppendTopClipIntersection.asm)
+
+Добавление пересечения границы с исходным делением и побайтовой проверкой координаты.
 
 Вход `#C4F6`, запись 17, смещения `#64F6..#653C`.
 
@@ -1862,11 +2314,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCase04
+[Алгоритм, контракты и независимая модель](../ActionClipIntersections.md).
 
-[Action.EdgeCase04](../../Source/Action/EdgeCase04.asm)
+## ClipInsideToBottom
 
-обработчик ребра для индексов таблицы #04.
+[Action.ClipInsideToBottom](../../Source/Action/ClipInsideToBottom.asm)
+
+Отсечение ребра, первая точка внутри окна, вторая снизу.
 
 Вход `#C53D`, запись 17, смещения `#653D..#653F`.
 
@@ -1876,11 +2330,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownC540
+[Алгоритм, контракты и композиционная проверка](../ActionClipCases.md).
 
-[Action.UnknownC540](../../Source/Action/UnknownC540.asm)
+## AppendBottomClipIntersection
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Action.AppendBottomClipIntersection](../../Source/Action/AppendBottomClipIntersection.asm)
+
+Добавление пересечения границы с исходным делением и побайтовой проверкой координаты.
 
 Вход `#C540`, запись 17, смещения `#6540..#6587`.
 
@@ -1890,11 +2346,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCase02
+[Алгоритм, контракты и независимая модель](../ActionClipIntersections.md).
 
-[Action.EdgeCase02](../../Source/Action/EdgeCase02.asm)
+## ClipInsideToLeft
 
-обработчик ребра для индексов таблицы #02.
+[Action.ClipInsideToLeft](../../Source/Action/ClipInsideToLeft.asm)
+
+Отсечение ребра, первая точка внутри окна, вторая слева.
 
 Вход `#C588`, запись 17, смещения `#6588..#658A`.
 
@@ -1904,11 +2362,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownC58B
+[Алгоритм, контракты и композиционная проверка](../ActionClipCases.md).
 
-[Action.UnknownC58B](../../Source/Action/UnknownC58B.asm)
+## AppendLeftClipIntersection
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Action.AppendLeftClipIntersection](../../Source/Action/AppendLeftClipIntersection.asm)
+
+Добавление пересечения границы с исходным делением и побайтовой проверкой координаты.
 
 Вход `#C58B`, запись 17, смещения `#658B..#65E3`.
 
@@ -1918,11 +2378,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCase01
+[Алгоритм, контракты и независимая модель](../ActionClipIntersections.md).
 
-[Action.EdgeCase01](../../Source/Action/EdgeCase01.asm)
+## ClipInsideToRight
 
-обработчик ребра для индексов таблицы #01.
+[Action.ClipInsideToRight](../../Source/Action/ClipInsideToRight.asm)
+
+Отсечение ребра, первая точка внутри окна, вторая справа.
 
 Вход `#C5E4`, запись 17, смещения `#65E4..#65E6`.
 
@@ -1932,11 +2394,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownC5E7
+[Алгоритм, контракты и композиционная проверка](../ActionClipCases.md).
 
-[Action.UnknownC5E7](../../Source/Action/UnknownC5E7.asm)
+## AppendRightClipIntersection
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Action.AppendRightClipIntersection](../../Source/Action/AppendRightClipIntersection.asm)
+
+Добавление пересечения границы с исходным делением и побайтовой проверкой координаты.
 
 Вход `#C5E7`, запись 17, смещения `#65E7..#6640`.
 
@@ -1946,11 +2410,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownC641
+[Алгоритм, контракты и независимая модель](../ActionClipIntersections.md).
 
-[Action.UnknownC641](../../Source/Action/UnknownC641.asm)
+## AppendTopLeftClipCorner
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Action.AppendTopLeftClipCorner](../../Source/Action/AppendTopLeftClipCorner.asm)
+
+Добавление угла окна при нулевом CornerBlock.
 
 Вход `#C641`, запись 17, смещения `#6641..#664B`.
 
@@ -1960,11 +2426,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownC64C
+[Алгоритм, контракты и независимая модель](../ActionClipPointWriters.md).
 
-[Action.UnknownC64C](../../Source/Action/UnknownC64C.asm)
+## AppendTopRightClipCorner
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Action.AppendTopRightClipCorner](../../Source/Action/AppendTopRightClipCorner.asm)
+
+Добавление угла окна при нулевом CornerBlock.
 
 Вход `#C64C`, запись 17, смещения `#664C..#6656`.
 
@@ -1974,11 +2442,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownC657
+[Алгоритм, контракты и независимая модель](../ActionClipPointWriters.md).
 
-[Action.UnknownC657](../../Source/Action/UnknownC657.asm)
+## AppendBottomLeftClipCorner
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Action.AppendBottomLeftClipCorner](../../Source/Action/AppendBottomLeftClipCorner.asm)
+
+Добавление угла окна при нулевом CornerBlock.
 
 Вход `#C657`, запись 17, смещения `#6657..#6661`.
 
@@ -1988,11 +2458,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownC662
+[Алгоритм, контракты и независимая модель](../ActionClipPointWriters.md).
 
-[Action.UnknownC662](../../Source/Action/UnknownC662.asm)
+## AppendBottomRightClipCorner
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Action.AppendBottomRightClipCorner](../../Source/Action/AppendBottomRightClipCorner.asm)
+
+Добавление угла окна при нулевом CornerBlock.
 
 Вход `#C662`, запись 17, смещения `#6662..#666C`.
 
@@ -2002,11 +2474,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownC66D
+[Алгоритм, контракты и независимая модель](../ActionClipPointWriters.md).
 
-[Action.UnknownC66D](../../Source/Action/UnknownC66D.asm)
+## CompareTopLeftProducts
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Action.CompareTopLeftProducts](../../Source/Action/CompareTopLeftProducts.asm)
+
+Вычитание LeftProduct из TopProduct с передачей заёма младшего слова.
 
 Вход `#C66D`, запись 17, смещения `#666D..#6680`.
 
@@ -2016,11 +2490,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownC681
+[Алгоритм, контракты и независимая модель](../ActionClipComparisons.md).
 
-[Action.UnknownC681](../../Source/Action/UnknownC681.asm)
+## CompareTopRightProducts
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Action.CompareTopRightProducts](../../Source/Action/CompareTopRightProducts.asm)
+
+Вычитание RightProduct из TopProduct с передачей заёма младшего слова.
 
 Вход `#C681`, запись 17, смещения `#6681..#6694`.
 
@@ -2030,11 +2506,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownC695
+[Алгоритм, контракты и независимая модель](../ActionClipComparisons.md).
 
-[Action.UnknownC695](../../Source/Action/UnknownC695.asm)
+## CompareBottomLeftProducts
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Action.CompareBottomLeftProducts](../../Source/Action/CompareBottomLeftProducts.asm)
+
+Вычитание LeftProduct из BottomProduct с передачей заёма младшего слова.
 
 Вход `#C695`, запись 17, смещения `#6695..#66A8`.
 
@@ -2044,11 +2522,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownC6A9
+[Алгоритм, контракты и независимая модель](../ActionClipComparisons.md).
 
-[Action.UnknownC6A9](../../Source/Action/UnknownC6A9.asm)
+## CompareBottomRightProducts
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Action.CompareBottomRightProducts](../../Source/Action/CompareBottomRightProducts.asm)
+
+Вычитание RightProduct из BottomProduct с передачей заёма младшего слова.
 
 Вход `#C6A9`, запись 17, смещения `#66A9..#66BC`.
 
@@ -2058,11 +2538,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownC6BD
+[Алгоритм, контракты и независимая модель](../ActionClipComparisons.md).
 
-[Action.UnknownC6BD](../../Source/Action/UnknownC6BD.asm)
+## ComputeSecondAxisDelta
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Action.ComputeSecondAxisDelta](../../Source/Action/ComputeSecondAxisDelta.asm)
+
+Разность координат Second второй и первой точки с оборачиванием до слова.
 
 Вход `#C6BD`, запись 17, смещения `#66BD..#66C7`.
 
@@ -2072,11 +2554,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownC6C8
+[Алгоритм, контракты и независимая модель](../ActionClipComparisons.md).
 
-[Action.UnknownC6C8](../../Source/Action/UnknownC6C8.asm)
+## ComputeFirstAxisDelta
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Action.ComputeFirstAxisDelta](../../Source/Action/ComputeFirstAxisDelta.asm)
+
+Разность координат First второй и первой точки с оборачиванием до слова.
 
 Вход `#C6C8`, запись 17, смещения `#66C8..#66D2`.
 
@@ -2086,11 +2570,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCase00
+[Алгоритм, контракты и независимая модель](../ActionClipComparisons.md).
 
-[Action.EdgeCase00](../../Source/Action/EdgeCase00.asm)
+## AppendSecondClipPoint
 
-обработчик ребра для индексов таблицы #00.
+[Action.AppendSecondClipPoint](../../Source/Action/AppendSecondClipPoint.asm)
+
+Добавление младших байтов второй точки с общим входом записи пары DE.
 
 Вход `#C6D3`, запись 17, смещения `#66D3..#66E9`.
 
@@ -2100,11 +2586,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## EdgeCase59
+[Алгоритм, контракты и независимая модель](../ActionClipPointWriters.md).
 
-[Action.EdgeCase59](../../Source/Action/EdgeCase59.asm)
+## ExitClipContour
 
-обработчик ребра для индексов таблицы #59, #65, #9A, #A6.
+[Action.ExitClipContour](../../Source/Action/ExitClipContour.asm)
+
+Специальное завершение контура со снятием трёх служебных слов.
 
 Вход `#C6EA`, запись 17, смещения `#66EA..#66F3`.
 
@@ -2114,11 +2602,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownC6F4
+[Алгоритм, контракты и композиционная проверка](../ActionClipCases.md).
 
-[Action.UnknownC6F4](../../Source/Action/UnknownC6F4.asm)
+## MultiplySigned16
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Action.MultiplySigned16](../../Source/Action/MultiplySigned16.asm)
+
+Знаковое произведение двух слов с тремя ядрами и исходным исключением второго операнда 8000.
 
 Вход `#C6F4`, запись 17, смещения `#66F4..#688B`.
 
@@ -2128,19 +2618,39 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownC88C
+[Алгоритм, контракты и независимая модель](../ActionSignedMultiply.md).
 
-[Action.UnknownC88C](../../Source/Action/UnknownC88C.asm)
+## DivideSigned32To16
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Action.DivideSigned32To16](../../Source/Action/DivideSigned32To16.asm)
 
-Вход `#C88C`, запись 17, смещения `#688C..#6EE2`.
+Деление числителя HL, A, альтернативного A на signed16 с исходным побитовым дополнением.
 
-- Прямые вызовы: нет непосредственных обращений.
-- Непосредственные чтения: `#9B12`, `#9B13`, `#9B14`, `#9BA3`, `#CB3E`, `#CB54`, `#CB6F`, `#CB8B`, `#CBA1`, `#CBBC`, `#CBD8`, `#CBEE`, `#CC09`, `#CF0B`, `#CF0D`, `#CF0F`, `#CF1B`, `#CF1D`, `#CF1F`.
-- Непосредственные записи: `#9BA3`, `#CB38`, `#CB3A`, `#CB3C`, `#CC25`, `#CC27`, `#CC29`, `#CD22`, `#CD24`, `#CD26`, `#CF03`, `#CF0B`, `#CF0D`, `#CF0F`, `#CF1B`, `#CF1D`, `#CF1F`, `#D5FC`, `#D60D`, `#D61E`, `#D62F`, `#D640`, `#D651`, `#D662`, `#D673`, `#D684`.
-- Ввод и вывод: нет.
-- Косвенное завершение: `JP (HL)`.
+[Алгоритм, контракты и независимая модель](../ActionSignedDivision.md).
+
+## ClipSingleEdge
+
+[Action.ClipSingleEdge](../../Source/Action/ClipSingleEdge.asm)
+
+Отсечение одиночного ребра с обменом внутренней первой точки и рамкой трёх возвратов.
+
+[Алгоритм, контракты и композиционная проверка](../ActionSingleEdge.md).
+
+## BuildRenderCoefficients
+
+[Action.BuildRenderCoefficients](../../Source/Action/BuildRenderCoefficients.asm)
+
+Построение девяти байтовых коэффициентов по трём фазам либо по одной фазе.
+
+## ComposeRenderMatrix
+
+[Action.ComposeRenderMatrix](../../Source/Action/ComposeRenderMatrix.asm)
+
+Композиция исходной матрицы и ориентации с одноосным режимом и точными четвертями.
+
+[Построитель и границы локального доказательства](../ActionRenderCoefficients.md).
+
+[Алгоритм, контракты и независимая модель](../ActionRenderMatrix.md).
 
 ## UnknownCF08
 
@@ -2160,7 +2670,7 @@ Unknown, назначение этого фрагмента ещё не уста
 
 [Action.ClearWorkBuffer](../../Source/Action/ClearWorkBuffer.asm)
 
-Заполнение #0C00 байт до #8C00 значением #FF через стек с восстановлением SP.
+Заполнение линейного буфера 8000..8BFF байтами FF через временный SP с восстановлением CPU-стека.
 
 Вход `#D10A`, запись 17, смещения `#710A..#712B`.
 
@@ -2169,6 +2679,8 @@ Unknown, назначение этого фрагмента ещё не уста
 - Непосредственные записи: `#D129`.
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
+
+[Алгоритм, контракты и проверка](../ActionWorkBuffer.md).
 
 ## MultiplySignedScaled
 
@@ -2186,11 +2698,195 @@ Unknown, назначение этого фрагмента ещё не уста
 
 [Алгоритм, контракты и независимая модель](../ActionScaledMultiply.md).
 
-## UnknownE020
+## PolygonFillRows
 
-[Action.UnknownE020](../../Source/Action/UnknownE020.asm)
+[Action.PolygonFillRows](../../Source/Action/PolygonFillRows.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+Строковое ядро линейной заливки с развёрнутой записью, крайними масками и коррекцией двух рёбер.
+
+[Алгоритм, точные регистры и модель](../ActionPolygonFillRows.md).
+
+## SelectPolygonRightEdge
+
+[Action.SelectPolygonRightEdge](../../Source/Action/SelectPolygonRightEdge.asm)
+
+Передача управления правому обновлению без изменения контекста.
+
+[Алгоритм, точные регистры и модель](../ActionPolygonSelectRight.md).
+
+## WrapPolygonLeftEdge
+
+[Action.WrapPolygonLeftEdge](../../Source/Action/WrapPolygonLeftEdge.asm)
+
+Оборачивание обратного поиска к последней First кольца.
+
+[Алгоритм, точные регистры и модель](../ActionPolygonWrapLeft.md).
+
+## UpdatePolygonLeftEdge
+
+[Action.UpdatePolygonLeftEdge](../../Source/Action/UpdatePolygonLeftEdge.asm)
+
+Поиск восходящего левого ребра, вычисление целого шага и ошибки, выбор продолжения заливки.
+
+[Алгоритм, точные регистры и модель](../ActionPolygonLeftEdge.md).
+
+## WrapPolygonRightEdge
+
+[Action.WrapPolygonRightEdge](../../Source/Action/WrapPolygonRightEdge.asm)
+
+Оборачивание прямого поиска к первой First кольца.
+
+[Алгоритм, точные регистры и модель](../ActionPolygonWrapRight.md).
+
+## UpdatePolygonRightEdge
+
+[Action.UpdatePolygonRightEdge](../../Source/Action/UpdatePolygonRightEdge.asm)
+
+Поиск восходящего правого ребра и вычисление его упакованного шага и дробной ошибки.
+
+[Алгоритм, точные регистры и модель](../ActionPolygonRightEdge.md).
+
+## SelectPolygonRowLimit
+
+[Action.SelectPolygonRowLimit](../../Source/Action/SelectPolygonRowLimit.asm)
+
+Выбор ближайшего предела строк с приоритетом левого ребра и настройкой следующего перехода.
+
+[Алгоритм, точные регистры и модель](../ActionPolygonRowSelection.md).
+
+## SetShortNegativeRightStep
+
+[Action.SetShortNegativeRightStep](../../Source/Action/SetShortNegativeRightStep.asm)
+
+Настройка нулевого целого шага короткого отрицательного правого наклона и восстановление временного контекста.
+
+[Алгоритм, точные регистры и модель](../ActionPolygonRightShortStep.md).
+
+## WrapPolygonLeftTop
+
+[Action.WrapPolygonLeftTop](../../Source/Action/WrapPolygonLeftTop.asm)
+
+Оборачивание поиска левого конца верхней горизонтали.
+
+[Алгоритм, точные регистры и модель](../ActionPolygonWrapLeftTop.md).
+
+## WrapPolygonRightTop
+
+[Action.WrapPolygonRightTop](../../Source/Action/WrapPolygonRightTop.asm)
+
+Оборачивание поиска правого конца верхней горизонтали.
+
+[Алгоритм, точные регистры и модель](../ActionPolygonWrapRightTop.md).
+
+## ReturnPolygonFill
+
+[Action.ReturnPolygonFill](../../Source/Action/ReturnPolygonFill.asm)
+
+Восстановление сохранённого HL и внешний возврат плоского контура.
+
+[Алгоритм, точные регистры и модель](../ActionPolygonReturn.md).
+
+## PreparePolygonFill
+
+[Action.PreparePolygonFill](../../Source/Action/PreparePolygonFill.asm)
+
+Подготовка диапазона строк, верхних вершин двух цепочек, масок и временного стека заливки.
+
+[Алгоритм, точные регистры и модель](../ActionPolygonPreparation.md).
+
+## TransformObjectVertices
+
+[Action.TransformObjectVertices](../../Source/Action/TransformObjectVertices.asm)
+
+Копирование потока объекта и преобразование всех его фиксированных групп вершин.
+
+[Алгоритм, точные регистры и модель](../ActionObjectVertices.md).
+
+## PrepareRenderVertexProducts
+
+[Action.PrepareRenderVertexProducts](../../Source/Action/PrepareRenderVertexProducts.asm)
+
+Подготовка трёх пар координат и трёх глубин табличным произведением матрицы и входных компонентов.
+
+[Алгоритм, точные регистры и модель](../ActionVertexProducts.md).
+
+## ProjectRenderVertexGroup
+
+[Action.ProjectRenderVertexGroup](../../Source/Action/ProjectRenderVertexGroup.asm)
+
+Построение комбинаций координат и перспективная запись выбранной группы вершин.
+
+[Алгоритм, точные регистры и модель](../ActionVertexGroup.md).
+
+## ProjectRenderVertex
+
+[Action.ProjectRenderVertex](../../Source/Action/ProjectRenderVertex.asm)
+
+Перспективная запись одной вершины с исходной нормализацией и косвенным продолжением.
+
+[Алгоритм, точные регистры и модель](../ActionPerspective.md).
+
+## RenderClippedRecords
+
+[Action.RenderClippedRecords](../../Source/Action/RenderClippedRecords.asm)
+
+Вывод записей объекта с проверкой кодов точек и отсечением граней и открытых сегментов.
+
+[Алгоритм, точные регистры и модель](../ActionClippedPacketRenderer.md).
+
+## RenderInsideRecords
+
+[Action.RenderInsideRecords](../../Source/Action/RenderInsideRecords.asm)
+
+Вывод граней и ломаных объекта с внутренними точками без дополнительного отсечения.
+
+[Алгоритм, точные регистры и модель](../ActionPacketRenderer.md).
+
+## CombineListedVertexCodes
+
+[Action.CombineListedVertexCodes](../../Source/Action/CombineListedVertexCodes.asm)
+
+Объединение кодов границ перечисленных точек с ранним выходом по нулевому коду.
+
+[Алгоритм, точные регистры и модель](../ActionListedCodes.md).
+
+## DrawLinearLine
+
+[Action.DrawLinearLine](../../Source/Action/DrawLinearLine.asm)
+
+Растеризация отрезка в линейный буфер страницы 80 с режимами AND, OR и XOR без конечной точки.
+
+[Алгоритм, точные регистры и модель](../ActionLineRaster.md).
+
+## AbortProjectedVertexScan
+
+[Action.AbortProjectedVertexScan](../../Source/Action/AbortProjectedVertexScan.asm)
+
+Завершение сканирования точек по маркеру отказа перспективы без отката предыдущих кодов.
+
+[Алгоритм, точные регистры и модель](../ActionVertexAbort.md).
+
+## ClassifyProjectedVertices
+
+[Action.ClassifyProjectedVertices](../../Source/Action/ClassifyProjectedVertices.asm)
+
+Заполнение кодов границ экранных точек и накопление общего кода объекта.
+
+[Алгоритм, точные регистры и модель](../ActionVertexCodes.md).
+
+## CheckFaceOrientation
+
+[Action.CheckFaceOrientation](../../Source/Action/CheckFaceOrientation.asm)
+
+Проверка ориентации выбранной тройки экранных точек по знаку разности двух произведений.
+
+[Алгоритм, точные регистры и модель](../ActionFaceOrientation.md).
+
+## RenderSceneFrame
+
+[Action.RenderSceneFrame](../../Source/Action/RenderSceneFrame.asm)
+
+Подготовка кадра, проекция объектов и передача в очередь отрисовки.
 
 Вход `#E020`, запись 17, смещения `#8020..#81B8`.
 
@@ -2200,11 +2896,73 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownE4A6
+[Алгоритм, контракты и проверка](../ActionRenderFrameSetup.md).
 
-[Action.UnknownE4A6](../../Source/Action/UnknownE4A6.asm)
+## PrepareProjectionScale
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Action.PrepareProjectionScale](../../Source/Action/PrepareProjectionScale.asm)
+
+Масштабирование мантиссы заголовка на степень двух и настройка трёх относительных переходов.
+
+[Масштаб и границы проверки](../ActionScaleHeader.md).
+
+## CheckCloseRecordBounds
+
+[Action.CheckCloseRecordBounds](../../Source/Action/CheckCloseRecordBounds.asm)
+
+Проверка трёх исходных компонент с цепочкой Carry и условная обработка близкой записи.
+
+[Масштаб и границы проверки](../ActionScaleHeader.md).
+
+[Алгоритм, контракты и независимая модель](../ActionCloseBounds.md).
+
+## ClipProjectionBounds
+
+[Action.ClipProjectionBounds](../../Source/Action/ClipProjectionBounds.asm)
+
+Проверка глубины и двух осей с табличной поправкой масштаба и выбором следующего пути проекции.
+
+[Граничные проверки, физическая таблица и модель](../ActionProjectionClip.md).
+
+## PrepareProjectedBounds
+
+[Action.PrepareProjectedBounds](../../Source/Action/PrepareProjectedBounds.asm)
+
+Фильтрация старших байтов координат и подготовка допуска, знакового X и модулей двух проекций.
+
+[Три отношения, ранние выходы и модели](../ActionProjectedBounds.md).
+
+## CaptureProjectedRecord
+
+[Action.CaptureProjectedRecord](../../Source/Action/CaptureProjectedRecord.asm)
+
+Условная запись альтернативного HL в PendingRecord после двух проверок координатного допуска.
+
+[Границы локального доказательства](../ActionProjectedCapture.md).
+
+## FollowProjectedTarget
+
+[Action.FollowProjectedTarget](../../Source/Action/FollowProjectedTarget.asm)
+
+Сглаживание экранной точки и назначение первой свободной цели по запросу.
+
+[Сопровождение и границы проверки](../ActionAimFollow.md).
+
+## InsertRenderQueue
+
+[Action.InsertRenderQueue](../../Source/Action/InsertRenderQueue.asm)
+
+Вставка снимка объекта в связанную очередь по исходному знаковому сравнению глубины.
+
+[Сопровождение и границы проверки](../ActionAimFollow.md).
+
+[Алгоритм, контракты и независимая модель](../ActionRenderQueueInsert.md).
+
+## ReadRenderQueue
+
+[Action.ReadRenderQueue](../../Source/Action/ReadRenderQueue.asm)
+
+Восстановление стека чтения очереди и загрузка снимка узла с обновлением AY.
 
 Вход `#E4A6`, запись 17, смещения `#84A6..#84DA`.
 
@@ -2214,11 +2972,23 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownE4FF
+[Алгоритм, контракты и независимая модель](../ActionRenderQueueControl.md).
 
-[Action.UnknownE4FF](../../Source/Action/UnknownE4FF.asm)
+## RenderQueuedObject
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Action.RenderQueuedObject](../../Source/Action/RenderQueuedObject.asm)
+
+Подготовка и вывод текущего объекта очереди с выбором рисователя и чтением следующего узла.
+
+[Алгоритм, точные регистры и модель](../ActionRenderContinuation.md).
+
+[Алгоритм, контракты и проверка](../ActionQueuedObject.md).
+
+## SelectRenderQueueNode
+
+[Action.SelectRenderQueueNode](../../Source/Action/SelectRenderQueueNode.asm)
+
+Проверка конца очереди либо переход к загрузке выбранного узла.
 
 Вход `#E4FF`, запись 17, смещения `#84FF..#8505`.
 
@@ -2228,11 +2998,37 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownE55C
+[Алгоритм, контракты и независимая модель](../ActionRenderQueueControl.md).
 
-[Action.UnknownE55C](../../Source/Action/UnknownE55C.asm)
+## DispatchCloseRecord
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Action.DispatchCloseRecord](../../Source/Action/DispatchCloseRecord.asm)
+
+Отбор близкой записи по коду запрета и классу с передачей в следующий режим либо инвертированием компонент.
+
+[Различия трёх входов и модели](../ActionCloseRecord.md).
+
+## CheckCloseRecordComponents
+
+[Action.CheckCloseRecordComponents](../../Source/Action/CheckCloseRecordComponents.asm)
+
+Дополнительный отбор по биту 4 ReuseByte и старшим байтам трёх компонент.
+
+[Различия трёх входов и модели](../ActionCloseRecord.md).
+
+## ReverseCloseRecordState
+
+[Action.ReverseCloseRecordState](../../Source/Action/ReverseCloseRecordState.asm)
+
+Уменьшение кода запрета, инвертирование масштабированных компонент и особое обнуление состояния класса 12.
+
+[Различия трёх входов и модели](../ActionCloseRecord.md).
+
+## PrepareRecordScale
+
+[Action.PrepareRecordScale](../../Source/Action/PrepareRecordScale.asm)
+
+Сохранение CPU SP, временное деление смещений класса 14 и выбор числа удвоений по заголовку модели.
 
 Вход `#E55C`, запись 17, смещения `#855C..#859E`.
 
@@ -2242,11 +3038,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownE5A0
+[Алгоритм, контракты и проверка](../ActionRecordScale.md).
 
-[Action.UnknownE5A0](../../Source/Action/UnknownE5A0.asm)
+## UpdateRecordComponents
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Action.UpdateRecordComponents](../../Source/Action/UpdateRecordComponents.asm)
+
+Обновление трёх компонент с проверкой переполнения и границы, обработкой отказа и запросом предупреждения о стыковке.
 
 Вход `#E5A0`, запись 17, смещения `#85A0..#8654`.
 
@@ -2256,11 +3054,21 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownE658
+[Алгоритм, контракты и проверка](../ActionRecordUpdate.md).
 
-[Action.UnknownE658](../../Source/Action/UnknownE658.asm)
+## FinishRecordWarning
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Action.FinishRecordWarning](../../Source/Action/FinishRecordWarning.asm)
+
+Восстановление DE после запроса предупреждения и завершение через восстановитель смещений.
+
+[Алгоритм, точные регистры и модель](../ActionRecordWarningReturn.md).
+
+## RejectRecordUpdate
+
+[Action.RejectRecordUpdate](../../Source/Action/RejectRecordUpdate.asm)
+
+Восстановление CPU-стека, пометка записи IX для повторного использования и продолжение очистки класса 12.
 
 Вход `#E658`, запись 17, смещения `#8658..#865E`.
 
@@ -2270,11 +3078,21 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownE685
+[Алгоритм, контракты и проверка](../ActionRejectRecord.md).
 
-[Action.UnknownE685](../../Source/Action/UnknownE685.asm)
+## ReleaseClass12Records
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Action.ReleaseClass12Records](../../Source/Action/ReleaseClass12Records.asm)
+
+Обнуление двух байтов состояния и пометка всех активных записей класса 12 либо хвост восстановления смещений.
+
+[Алгоритм, точные регистры и модель](../ActionClassReuse.md).
+
+## RestoreHalvedOffsets
+
+[Action.RestoreHalvedOffsets](../../Source/Action/RestoreHalvedOffsets.asm)
+
+Восстановление трёх исходных вычитаемых слов после временного арифметического деления для класса 14.
 
 Вход `#E685`, запись 17, смещения `#8685..#869D`.
 
@@ -2283,6 +3101,16 @@ Unknown, назначение этого фрагмента ещё не уста
 - Непосредственные записи: `#E5B3`, `#E5D2`, `#E5ED`.
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
+
+[Алгоритм, контракты и проверка](../ActionOffsetRestore.md).
+
+## SelectRecordByIndex
+
+[Action.SelectRecordByIndex](../../Source/Action/SelectRecordByIndex.asm)
+
+Расчёт адреса записи в IY по коду A с сохранением HL.
+
+[Алгоритм, точные регистры и модель](../ActionRecordSelection.md).
 
 ## RecordIndexToAddress
 
@@ -2334,6 +3162,38 @@ Unknown, назначение этого фрагмента ещё не уста
 
 [Алгоритм, контракты и независимая модель](../ActionRecordIterator.md).
 
+## FindFilteredRecordOr26
+
+[Action.FindFilteredRecordOr26](../../Source/Action/FindFilteredRecordOr26.asm)
+
+Выбор кода 26 по потоку 10 либо поиск активного класса 1..15 или 18.
+
+[Алгоритм, точные регистры и модель](../ActionRandomFilteredRecord.md).
+
+## FindRecordExcept6And7
+
+[Action.FindRecordExcept6And7](../../Source/Action/FindRecordExcept6And7.asm)
+
+Поиск первой активной записи с классом вне пары 6 и 7.
+
+[Алгоритм, точные регистры и модель](../ActionRecordsExcept6And7.md).
+
+## FindRecordClass6Or7
+
+[Action.FindRecordClass6Or7](../../Source/Action/FindRecordClass6Or7.asm)
+
+Поиск первой активной записи с классом 6 либо 7.
+
+[Алгоритм, точные регистры и модель](../ActionRecords6Or7.md).
+
+## FindRecordClass5Or14
+
+[Action.FindRecordClass5Or14](../../Source/Action/FindRecordClass5Or14.asm)
+
+Поиск первой активной записи с классом 5 либо 14.
+
+[Алгоритм, точные регистры и модель](../ActionRecords5Or14.md).
+
 ## FindRecordByCode
 
 [Action.FindRecordByCode](../../Source/Action/FindRecordByCode.asm)
@@ -2366,11 +3226,11 @@ Unknown, назначение этого фрагмента ещё не уста
 
 [Алгоритм, контракты и независимая модель](../ActionRecordSearch.md).
 
-## UnknownEA29
+## PrepareLargeEffect
 
-[Action.UnknownEA29](../../Source/Action/UnknownEA29.asm)
+[Action.PrepareLargeEffect](../../Source/Action/PrepareLargeEffect.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+Настройка дочернего кода и чтение заголовка большого эффекта.
 
 Вход `#EA29`, запись 17, смещения `#8A29..#8A3C`.
 
@@ -2380,11 +3240,21 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownEB72
+[Алгоритм, контракты и проверка](../ActionLargeEffectEntry.md).
 
-[Action.UnknownEB72](../../Source/Action/UnknownEB72.asm)
+## AllocateLargeEffect
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Action.AllocateLargeEffect](../../Source/Action/AllocateLargeEffect.asm)
+
+Выделение большого эффекта и создание дочерних записей перед освобождением объекта.
+
+[Алгоритм, точные регистры и модель](../ActionLargeEffectContinuation.md).
+
+## NextRandomWord0
+
+[Action.NextRandomWord0](../../Source/Action/NextRandomWord0.asm)
+
+Следующее слово независимого потока 0 с физическим состоянием Stream0.
 
 Вход `#EB72`, запись 17, смещения `#8B72..#8B78`.
 
@@ -2394,11 +3264,29 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownEB87
+[Алгоритм, контракты и проверка](../ActionFoldedRandom.md).
 
-[Action.UnknownEB87](../../Source/Action/UnknownEB87.asm)
+## NextRandomWord3
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Action.NextRandomWord3](../../Source/Action/NextRandomWord3.asm)
+
+Следующее слово независимого потока 3 с физическим состоянием Stream3.
+
+[Алгоритм и полный договор](../ActionFoldedRandom.md).
+
+## NextRandomWord4
+
+[Action.NextRandomWord4](../../Source/Action/NextRandomWord4.asm)
+
+Следующее слово независимого потока 4 с физическим состоянием Stream4.
+
+[Алгоритм и полный договор](../ActionFoldedRandom.md).
+
+## NextRandomWord1
+
+[Action.NextRandomWord1](../../Source/Action/NextRandomWord1.asm)
+
+Следующее слово независимого потока 1 с физическим состоянием Stream1.
 
 Вход `#EB87`, запись 17, смещения `#8B87..#8B8D`.
 
@@ -2408,11 +3296,61 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownEBB8
+[Алгоритм, контракты и проверка](../ActionFoldedRandom.md).
 
-[Action.UnknownEBB8](../../Source/Action/UnknownEBB8.asm)
+## NextRandomWord5
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Action.NextRandomWord5](../../Source/Action/NextRandomWord5.asm)
+
+Следующее слово независимого потока 5 с физическим состоянием Stream5.
+
+[Алгоритм и полный договор](../ActionFoldedRandom.md).
+
+## NextRandomWord6
+
+[Action.NextRandomWord6](../../Source/Action/NextRandomWord6.asm)
+
+Следующее слово независимого потока 6 с физическим состоянием Stream6.
+
+[Алгоритм и полный договор](../ActionFoldedRandom.md).
+
+## NextRandomWord7
+
+[Action.NextRandomWord7](../../Source/Action/NextRandomWord7.asm)
+
+Следующее слово независимого потока 7 с физическим состоянием Stream7.
+
+[Алгоритм и полный договор](../ActionFoldedRandom.md).
+
+## NextRandomWord8
+
+[Action.NextRandomWord8](../../Source/Action/NextRandomWord8.asm)
+
+Следующее слово независимого потока 8 с физическим состоянием Stream8.
+
+[Алгоритм и полный договор](../ActionFoldedRandom.md).
+
+## NextRandomWord9
+
+[Action.NextRandomWord9](../../Source/Action/NextRandomWord9.asm)
+
+Следующее слово независимого потока 9 с физическим состоянием Stream9.
+
+[Алгоритм и полный договор](../ActionFoldedRandom.md).
+
+## NextRandomWord10
+
+[Action.NextRandomWord10](../../Source/Action/NextRandomWord10.asm)
+
+Следующее слово независимого потока 10 с физическим состоянием Stream10.
+
+[Алгоритм и полный договор](../ActionFoldedRandom.md).
+
+## NextRandomWord2
+
+[Action.NextRandomWord2](../../Source/Action/NextRandomWord2.asm)
+
+Следующее слово независимого потока 2 с физическим состоянием Stream2.
 
 Вход `#EBB8`, запись 17, смещения `#8BB8..#8BBE`.
 
@@ -2422,11 +3360,45 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownEC08
+[Алгоритм, контракты и проверка](../ActionFoldedRandom.md).
 
-[Action.UnknownEC08](../../Source/Action/UnknownEC08.asm)
+## NextRandomWord11
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Action.NextRandomWord11](../../Source/Action/NextRandomWord11.asm)
+
+Следующее слово независимого потока 11 с физическим состоянием Stream11.
+
+[Алгоритм и полный договор](../ActionFoldedRandom.md).
+
+## NextRandomWord12
+
+[Action.NextRandomWord12](../../Source/Action/NextRandomWord12.asm)
+
+Следующее слово независимого потока 12 с физическим состоянием Stream12.
+
+[Алгоритм и полный договор](../ActionFoldedRandom.md).
+
+## NextRandomWord13
+
+[Action.NextRandomWord13](../../Source/Action/NextRandomWord13.asm)
+
+Следующее слово независимого потока 13 с физическим состоянием Stream13.
+
+[Алгоритм и полный договор](../ActionFoldedRandom.md).
+
+## NextRandomWord14
+
+[Action.NextRandomWord14](../../Source/Action/NextRandomWord14.asm)
+
+Следующее слово независимого потока 14 с физическим состоянием Stream14.
+
+[Алгоритм и полный договор](../ActionFoldedRandom.md).
+
+## StepFoldedRandom
+
+[Action.StepFoldedRandom](../../Source/Action/StepFoldedRandom.asm)
+
+Обновление трёхбайтового состояния свёрткой переносов и возврат нового 16-битного слова через обратный EXX.
 
 Вход `#EC08`, запись 17, смещения `#8C08..#8C53`.
 
@@ -2436,11 +3408,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownECA8
+[Алгоритм, контракты и проверка](../ActionFoldedRandom.md).
 
-[Action.UnknownECA8](../../Source/Action/UnknownECA8.asm)
+## UpdateAyEffects
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Action.UpdateAyEffects](../../Source/Action/UpdateAyEffects.asm)
+
+Вывод очередных строк потоков AY-каналов A и B и формирование канала C по R и изменяемому уровню.
 
 Вход `#ECA8`, запись 17, смещения `#8CA8..#8D8E`.
 
@@ -2450,11 +3424,45 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: `IN A,(C)`, `OUT (C),A`.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownF075
+[Алгоритм, контракты и независимая модель](../ActionAyEffects.md).
 
-[Action.UnknownF075](../../Source/Action/UnknownF075.asm)
+## AdvanceObjectOffsetRise
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Action.AdvanceObjectOffsetRise](../../Source/Action/AdvanceObjectOffsetRise.asm)
+
+Увеличение байта смещения и переход к обратному ходу по таймеру.
+
+[Алгоритм, точные регистры и модель](../ActionObjectOffsetRise.md).
+
+## AdvanceObjectOffsetFall
+
+[Action.AdvanceObjectOffsetFall](../../Source/Action/AdvanceObjectOffsetFall.asm)
+
+Уменьшение байта смещения и возврат сохранённого состояния по таймеру.
+
+[Алгоритм, точные регистры и модель](../ActionObjectOffsetFall.md).
+
+## AdvanceObjectPhaseWait
+
+[Action.AdvanceObjectPhaseWait](../../Source/Action/AdvanceObjectPhaseWait.asm)
+
+Обновление фазового счётчика и завершение ожидания по классу и компонентам.
+
+[Алгоритм, точные регистры и модель](../ActionObjectPhaseWait.md).
+
+## MarkIYRecordForReuse
+
+[Action.MarkIYRecordForReuse](../../Source/Action/MarkIYRecordForReuse.asm)
+
+Пометка записи по IY кодом Component0=8000 и однократным пропуском ReuseByte=FF.
+
+[Алгоритм, точные регистры и модель](../ActionIYRecordReuse.md).
+
+## SetClass18ObjectState
+
+[Action.SetClass18ObjectState](../../Source/Action/SetClass18ObjectState.asm)
+
+Установка состояния 0A у записи класса 12h перед диспетчеризацией.
 
 Вход `#F075`, запись 17, смещения `#9075..#907B`.
 
@@ -2464,11 +3472,21 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownF394
+[Алгоритм, контракты и проверка](../ActionObjectStateDispatch.md).
 
-[Action.UnknownF394](../../Source/Action/UnknownF394.asm)
+## PrepareObjectOffsetTransform
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Action.PrepareObjectOffsetTransform](../../Source/Action/PrepareObjectOffsetTransform.asm)
+
+Проверка маркера записи и подготовка смещений для вычислителя 6D06.
+
+[Алгоритм, точные регистры и модель](../ActionObjectOffsetTransfer.md).
+
+## MarkRecordForReuse
+
+[Action.MarkRecordForReuse](../../Source/Action/MarkRecordForReuse.asm)
+
+Пометка записи кодом Component0=8000 и однократным пропуском ReuseByte=FF при поиске доступной записи.
 
 Вход `#F394`, запись 17, смещения `#9394..#93A0`.
 
@@ -2478,11 +3496,13 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownF51E
+[Алгоритм, контракты и проверка](../ActionRecordReuse.md).
 
-[Action.UnknownF51E](../../Source/Action/UnknownF51E.asm)
+## UpdatePreferredClass18
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Action.UpdatePreferredClass18](../../Source/Action/UpdatePreferredClass18.asm)
+
+Выбор опоры по R и потоку 2 либо по приоритету классов с обновлением класса 18.
 
 Вход `#F51E`, запись 17, смещения `#951E..#9526`.
 
@@ -2492,11 +3512,21 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownF535
+[Алгоритм, контракты и проверка](../ActionPreferredRecord.md).
 
-[Action.UnknownF535](../../Source/Action/UnknownF535.asm)
+## CheckPreferredRandomWord
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Action.CheckPreferredRandomWord](../../Source/Action/CheckPreferredRandomWord.asm)
+
+Проверка младшего слова потока 2 и внешнего байта для выбора отдельного кода 26.
+
+[Алгоритм, точные регистры и модель](../ActionPreferredChance.md).
+
+## FindPreferredClass0
+
+[Action.FindPreferredClass0](../../Source/Action/FindPreferredClass0.asm)
+
+Поиск опорного класса 0 с продолжением к классам 7 и 5 при отсутствии.
 
 Вход `#F535`, запись 17, смещения `#9535..#953E`.
 
@@ -2506,11 +3536,21 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownF541
+[Алгоритм, контракты и проверка](../ActionPreferredRecord.md).
 
-[Action.UnknownF541](../../Source/Action/UnknownF541.asm)
+## ContinuePreferredClass0
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Action.ContinuePreferredClass0](../../Source/Action/ContinuePreferredClass0.asm)
+
+Передача выбранного индекса класса 0 в общую проверку класса 18.
+
+[Алгоритм, точные регистры и модель](../ActionPreferredZeroBridge.md).
+
+## FindPreferredClass7
+
+[Action.FindPreferredClass7](../../Source/Action/FindPreferredClass7.asm)
+
+Поиск опорного класса 7 с продолжением к классу 5 при отсутствии.
 
 Вход `#F541`, запись 17, смещения `#9541..#954A`.
 
@@ -2520,11 +3560,21 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownF54D
+[Алгоритм, контракты и проверка](../ActionPreferredRecord.md).
 
-[Action.UnknownF54D](../../Source/Action/UnknownF54D.asm)
+## ContinuePreferredClass7
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Action.ContinuePreferredClass7](../../Source/Action/ContinuePreferredClass7.asm)
+
+Передача выбранного индекса класса 7 в общую проверку класса 18.
+
+[Алгоритм, точные регистры и модель](../ActionPreferredSevenBridge.md).
+
+## FindPreferredClass5
+
+[Action.FindPreferredClass5](../../Source/Action/FindPreferredClass5.asm)
+
+Поиск последнего опорного класса 5 либо переход к сбросу баз.
 
 Вход `#F54D`, запись 17, смещения `#954D..#9556`.
 
@@ -2534,11 +3584,21 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownF572
+[Алгоритм, контракты и проверка](../ActionPreferredRecord.md).
 
-[Action.UnknownF572](../../Source/Action/UnknownF572.asm)
+## ApplyPreferredToClass18
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Action.ApplyPreferredToClass18](../../Source/Action/ApplyPreferredToClass18.asm)
+
+Запись выбранной опоры в первый класс 18 только при отсутствии класса 3.
+
+[Алгоритм, точные регистры и модель](../ActionPreferredApply.md).
+
+## ResetRecordUpdateBases
+
+[Action.ResetRecordUpdateBases](../../Source/Action/ResetRecordUpdateBases.asm)
+
+Обнуление трёх базовых слов в изменяемых операндах обновления компонент.
 
 Вход `#F572`, запись 17, смещения `#9572..#957E`.
 
@@ -2547,6 +3607,8 @@ Unknown, назначение этого фрагмента ещё не уста
 - Непосредственные записи: `#E5B0`, `#E5CF`, `#E5EA`.
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
+
+[Алгоритм, контракты и проверка](../ActionRecordBaseReset.md).
 
 ## UpdateObjects
 
@@ -2562,11 +3624,11 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownF792
+## CheckRecordEffectThreshold
 
-[Action.UnknownF792](../../Source/Action/UnknownF792.asm)
+[Action.CheckRecordEffectThreshold](../../Source/Action/CheckRecordEffectThreshold.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+Выбор порога запуска большого эффекта для текущей записи.
 
 Вход `#F792`, запись 17, смещения `#9792..#97BE`.
 
@@ -2576,11 +3638,21 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## UnknownF7C6
+[Алгоритм, контракты и проверка](../ActionRecordEffectResume.md).
 
-[Action.UnknownF7C6](../../Source/Action/UnknownF7C6.asm)
+## ResumeAfterRecordEffect
 
-Unknown, назначение этого фрагмента ещё не установлено.
+[Action.ResumeAfterRecordEffect](../../Source/Action/ResumeAfterRecordEffect.asm)
+
+Сброс флагов связи и продолжение обхода объектов.
+
+[Алгоритм, точные регистры и модель](../ActionRecordEffectResume.md).
+
+## DispatchObjectState
+
+[Action.DispatchObjectState](../../Source/Action/DispatchObjectState.asm)
+
+Выбор состояния объекта, косвенный вызов обработчика и последующее обновление записи.
 
 Вход `#F7C6`, запись 17, смещения `#97C6..#9865`.
 
@@ -2589,6 +3661,8 @@ Unknown, назначение этого фрагмента ещё не уста
 - Непосредственные записи: нет непосредственных обращений.
 - Ввод и вывод: нет.
 - Косвенное завершение: `JP (HL)`.
+
+[Алгоритм, контракты и проверка](../ActionObjectStateDispatch.md).
 
 ## QueueNumberBank1
 
@@ -2602,8 +3676,10 @@ Unknown, назначение этого фрагмента ещё не уста
 
 Начало #6040, смещения #027D..#0290. [Проверка и границы](../ActionTextQueueCalls.md).
 
-## Unknown6054
+## ShowNoiseBeforeReload
 
-[Action.Unknown6054](../../Source/Action/Unknown6054.asm) — Unknown, отдельная цепочка после обёртки очереди ещё не разобрана полностью.
+[Action.ShowNoiseBeforeReload](../../Source/Action/ShowNoiseBeforeReload.asm) — Вывод шумовых кадров и ожидание клавиши перед загрузкой станции.
 
 Начало #6054, смещения #0291..#02EA. [Проверка и границы](../ActionTextQueueCalls.md).
+
+[Алгоритм, контракты и проверка](../ActionNoiseExit.md).

@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "total_cases": 93184,
+  "paths": {
+    "0xe506:reverse": 1016,
+    "0xe506:blocked": 6128,
+    "0xe506:ignored_11": 8,
+    "0xe506:transfer_root": 8,
+    "0xe506:ignored_14": 8,
+    "0xe51f:reverse": 12320,
+    "0xe51f:reverse_class12": 4832,
+    "0xe51f:transfer_components": 3328,
+    "0xe54a:reverse": 65280,
+    "0xe54a:reverse_class12": 256
+  },
+  "method": "three_entry_parent_oracle_with_real_vector_reverse_and_station_transfer",
+  "independent_complete_child_oracle": false,
+  "children_executed_without_stubs": true,
+  "exact_registers_flags_refresh_sp": true,
+  "every_physical_ram_byte_and_write_multiplicity_checked": true,
+  "all_class_and_inhibit_bytes": true,
+  "all_reuse_bytes_and_component_high_bytes": true,
+  "three_distinct_entry_contracts_checked": true,
+  "auxiliary_entry_native_caller_proved": false,
+  "nonreturning_bank1_transfer_boundary_checked": true,
+  "station_disk_load_executed": false,
+  "maximum_additional_stack_bytes": 4,
+  "real_out_and_eight_banks": true,
+  "all_joint_inputs_exhausted": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

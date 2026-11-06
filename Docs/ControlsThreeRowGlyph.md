@@ -30,7 +30,7 @@ Row1Right, Row2Left, Row2Right занимают смещения 0..5 именн
 Сохранены исходные 192 байта E1B1..E270, смещения 06D3..0792 файла CONTROL,
 запись 23. Следующие 32 байта E271..E290 оформлены отдельной
 [таблицей RasterReturns](ControlsRasterReturns.md) после проверки диспетчеризации. Они используются через SP и RET внутри
-[UnknownE291](../Source/Controls/UnknownE291.asm), полный контракт этого
+[UnknownE291](../Source/Controls/DrawRadar.asm), полный контракт этого
 рисователя ещё не доказан.
 
 ## Адресация и края

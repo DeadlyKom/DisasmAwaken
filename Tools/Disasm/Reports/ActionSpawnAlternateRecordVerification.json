@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "total_cases": 1728,
+  "whole_object_and_effect_pool_compared": true,
+  "all_eight_stream_states_compared": true,
+  "stops_before_final_header": true,
+  "assembly_executed": false
+}

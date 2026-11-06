@@ -38,7 +38,7 @@ def main():
     pending[path]=text.replace(needle,repl).encode('utf-8')
     # Именование только доказанных индексных полей трёх опубликованных читателей.
     for name in ('FindReusableRecord','NextActiveRecord','FindRecordByCode'):
-        path=ROOT/('Source/Action/'+name+'.asm');text=path.read_text('utf-8')
+        path=ROOT/('Source/Action/'+name+'.asm');text=path.read_text('utf-8').replace('(IY+','(IY + ')
         for number,field in (('00','Components.Component0.Low'),('01','Components.Component0.High'),('12','ClassCode'),('18','ReuseByte')):
             text=text.replace('(IY + #'+number+')','(IY + FActionRecord.'+field+')')
         pending[path]=text.encode('utf-8')
@@ -78,7 +78,7 @@ def main():
         if filename=='ActionRecordSearchFacts.py':
             assert text.count(needle+'return operation')==1;text=text.replace(needle+'return operation',needle+'\n    return operation')
         assert text.count(needle)==1
-        hook="\n    if region=='Action' and function_address in "+repr(addresses)+":\n"
+        hook="\n    if region=='Action' and function_address in "+repr(addresses)+":\n        operation=operation.replace('(IY+','(IY + ')\n"
         for number,field in (('00','Components.Component0.Low'),('01','Components.Component0.High'),('12','ClassCode'),('18','ReuseByte')):
             hook+="        operation=operation.replace('(IY + #"+number+")','(IY + FActionRecord."+field+")')\n"
         pending[path]=text.replace(needle,needle+hook).encode('utf-8')

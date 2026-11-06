@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "total_cases": 360704,
+  "by_window": {
+    "thresholds": 32768,
+    "events": 262144,
+    "entry_countdown": 256,
+    "overlay_gate": 65536
+  },
+  "exact_write_order": true,
+  "original_page_selector_executed": true,
+  "assembly_executed": false
+}

@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "described_functions": 3,
+  "confirmed_code_bytes": 86,
+  "confirmed_instructions": 44,
+  "inhibit_writers_registered": 2,
+  "model_cases": 93184,
+  "original_bytes_preserved": true,
+  "auxiliary_entry_native_caller_proved": false,
+  "station_disk_load_executed": false,
+  "assembly_executed": false
+}

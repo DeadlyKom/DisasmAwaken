@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "described_functions": 1,
+  "previously_named_contract_proved": true,
+  "instructions_changed": 0,
+  "physical_bytes_preserved": true,
+  "independent_model_cases": 256,
+  "generated_table_bytes": 512,
+  "assembly_executed": false
+}

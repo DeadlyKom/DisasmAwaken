@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "extracted_code_bytes": 64,
+  "new_instructions": 27,
+  "physical_bytes_preserved": true,
+  "code_reached_from_Action_TransferToStationLoader": true,
+  "neighbor_bytes_preserved": 116,
+  "assembly_executed": false
+}

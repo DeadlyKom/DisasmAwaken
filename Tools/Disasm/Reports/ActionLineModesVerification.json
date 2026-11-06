@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "total_cases": 7168,
+  "entries": {
+    "DC2E": 3584,
+    "DD7C": 3584
+  },
+  "all_header_bytes": true,
+  "counts_2_to_15": true,
+  "numeric_mode_bits_5_4": true,
+  "mode_20_and_30_both_xor": true,
+  "exact_registers_flags_except_R": true,
+  "all_physical_ram_bytes_proved": true,
+  "write_multiplicity_proved": true,
+  "no_cpu_stack_writes": true,
+  "full_parent_procedures_proved": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

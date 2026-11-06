@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "total_cases": 65536,
+  "entry": 27825,
+  "all_saved_SP_words": true,
+  "stop_before_first_stack_read": true,
+  "exact_registers_including_R": true,
+  "refresh_m1": 1,
+  "all_physical_ram_bytes_proved": true,
+  "no_RAM_writes": true,
+  "fallthrough_target": 27828,
+  "independent_numeric_oracle": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false,
+  "timing_proved": false
+}

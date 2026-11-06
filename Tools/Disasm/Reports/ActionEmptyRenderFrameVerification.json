@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "total_cases": 288,
+  "actual_frame_entry_executed": true,
+  "empty_object_queue_only": true,
+  "assembly_executed": false,
+  "native_execution": false
+}

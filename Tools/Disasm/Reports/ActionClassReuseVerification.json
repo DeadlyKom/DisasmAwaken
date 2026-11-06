@@ -1,0 +1,31 @@
+{
+  "passed": true,
+  "total_cases": 2129,
+  "cases_by_kind": {
+    "tail_without_restore": 254,
+    "list_scan": 1874,
+    "tail_restore": 1
+  },
+  "entry": 58975,
+  "restored_CPU_SP_before_first_CALL_proved": false,
+  "all_256_class_codes": true,
+  "all_256_initial_flags": true,
+  "list_records": 26,
+  "marker_address": 42880,
+  "all_record_positions_and_three_states": true,
+  "random_list_patterns": 1024,
+  "all_list_combinations_exhausted": false,
+  "real_iterator_setter_and_restorer_executed": true,
+  "independent_numeric_oracle": true,
+  "exact_registers_including_R": true,
+  "all_physical_ram_bytes_proved": true,
+  "write_multiplicity_proved": true,
+  "hardware_bus_write_order_proved": false,
+  "class12_maximum_additional_stack_bytes": 2,
+  "other_classes_cpu_stack_not_written": true,
+  "marker_ret_bypasses_restorer": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false,
+  "timing_proved": false
+}

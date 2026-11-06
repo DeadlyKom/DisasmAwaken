@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "total_cases": 81920,
+  "cases_by_fixture": {
+    "original_table": 16384,
+    "forced_pointer": 65536
+  },
+  "method": "physical_banked_pointer_and_word_read_oracle_with_real_selector",
+  "original_bank4_file": "Tools/Disasm/Extracted/Active/24_OBJECT3D.C.bin",
+  "bank4_unloaded_tail_fixture_fill": 164,
+  "all_original_byte_indices": true,
+  "all_unlocked_7ffd_configurations": true,
+  "all_forced_pointer_words": true,
+  "pointer_index_wraps_within_9e_page": true,
+  "word_read_wraps_full_address_space": true,
+  "exact_registers_flags_refresh_sp": true,
+  "every_physical_ram_byte_and_write_multiplicity_checked": true,
+  "maximum_additional_stack_bytes": 4,
+  "real_out_and_eight_banks": true,
+  "object_header_field_meanings_proved": false,
+  "valid_game_index_range_proved": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

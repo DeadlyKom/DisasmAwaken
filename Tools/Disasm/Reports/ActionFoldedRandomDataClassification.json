@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "typed_bytes": 9,
+  "physical_records": 3,
+  "structure": "FFoldedRandomState",
+  "offsets": [
+    35806,
+    35818,
+    35842
+  ],
+  "neighboring_unknown_bytes_preserved": 64,
+  "full_original_block_preserved": true,
+  "assembly_executed": false
+}

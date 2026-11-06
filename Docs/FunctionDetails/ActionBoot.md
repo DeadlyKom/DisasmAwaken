@@ -8,6 +8,8 @@
 
 [ActionBoot.RelocateBootstrap](../../Source/ActionBoot/RelocateBootstrap.asm)
 
+[Алгоритм, контракт и проверка](../BootstrapRelocation.md).
+
 Подготовка экранов и перенос #01FA байт загрузчика в #4200.
 
 Вход `#6000`, запись 17, смещения `#0000..#0042`.
@@ -88,11 +90,11 @@
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## BuildProjectionTable
+## BuildExponentialTable
 
-[ActionBoot.BuildProjectionTable](../../Source/ActionBoot/BuildProjectionTable.asm)
+[ActionBoot.BuildExponentialTable](../../Source/ActionBoot/BuildExponentialTable.asm)
 
-Создание таблицы в #9300 с вычислением через сдвиги и сложение.
+Построение 256 байтов приближённой экспоненты последовательным умножением фиксированной точки.
 
 Вход `#4355`, запись 17, смещения `#0198..#01D1`.
 
@@ -102,11 +104,13 @@
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## BuildReciprocalTable
+[Формула, оба регистровых набора и независимая модель](../ActionExponentialTable.md).
 
-[ActionBoot.BuildReciprocalTable](../../Source/ActionBoot/BuildReciprocalTable.asm)
+## BuildLogarithmTable
 
-Создание двух страниц таблицы через двоичное деление.
+[ActionBoot.BuildLogarithmTable](../../Source/ActionBoot/BuildLogarithmTable.asm)
+
+Построение двух раздельных страниц приближённого логарифма через сумму 255 точных частных.
 
 Вход `#438F`, запись 17, смещения `#01D2..#0211`.
 
@@ -115,6 +119,8 @@
 - Непосредственные записи: нет непосредственных обращений.
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
+
+[Формула, оба регистровых набора и независимая модель](../ActionLogarithmTable.md).
 
 ## BuildBitmapTables
 

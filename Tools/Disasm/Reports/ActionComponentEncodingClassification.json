@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "described_functions": 1,
+  "instructions_changed": 0,
+  "physical_bytes_preserved": true,
+  "model_cases": 65792,
+  "original_function_boundaries_preserved": true,
+  "assembly_executed": false,
+  "decimal_constant_normalized_to_existing_hex_style": true
+}

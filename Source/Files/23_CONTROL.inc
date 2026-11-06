@@ -11,11 +11,18 @@
                 incbin "../Resources/23_CONTROL/Unclassified000.bin"
                 assert $ == #01BD
                 disp #DC9B
-                include "../Controls/UnknownDC9B.asm"
+                include "../Controls/RelocateStationReload.asm"
                 ent
                 assert $ == #01CB
-                ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/23_CONTROL/Unclassified001.bin"
+                ; Unknown, соседние исходные байты перед подготовкой станции
+                incbin "../Resources/23_CONTROL/Unclassified001_BeforeStationPrepare.bin"
+                assert $ == #0205
+                disp #DCE3
+                include "../Controls/PrepareStationReload.asm"
+                ent
+                assert $ == #0245
+                ; Unknown, переносимый загрузочный блок после подготовки станции
+                incbin "../Resources/23_CONTROL/Unclassified001_AfterStationPrepare.bin"
                 assert $ == #027F
                 disp #DD5D
                 include "../Controls/StepWordRandom.asm"
@@ -65,7 +72,7 @@
                 ent
                 assert $ == #07B3
                 disp #E291
-                include "../Controls/UnknownE291.asm"
+                include "../Controls/DrawRadar.asm"
                 ent
                 assert $ == #0B7F
                 ; Физические записи ControlsObjectGlyphPointers
@@ -98,7 +105,7 @@
                 ent
                 assert $ == #0E9C
                 disp #E97A
-                include "../Controls/UnknownE97A.asm"
+                include "../Controls/ToggleTargetOverlay.asm"
                 ent
                 assert $ == #1030
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления

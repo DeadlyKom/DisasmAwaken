@@ -7,6 +7,16 @@ from CheckMusic import Simulator, get_registers, PC, SP
 from CheckMusicGateTicks import Memory
 
 
+def divide_fraction(high_n,high_d,low=0):
+    quotient,remainder=0,high_n
+    for bit in range(7,-1,-1):
+        expanded=2*remainder+((low>>bit)&1);accepted=expanded>=high_d
+        remainder=((expanded-high_d) if accepted else expanded)&255
+        quotient=2*quotient+accepted
+    flags=(quotient&0xA8)|(0x40 if quotient==0 else 0)|(4 if quotient.bit_count()%2==0 else 0)
+    return quotient,remainder,flags
+
+
 def reference(numerator, divisor):
     if divisor<2:
         return dict(hl=((numerator<<23)>>8)&65535, de=((divisor<<23)>>8)&65535,
@@ -16,13 +26,7 @@ def reference(numerator, divisor):
     normalized_n, normalized_d = numerator<<shift, divisor<<shift
     high_n, high_d = normalized_n>>16, normalized_d>>16
     # Расчёт исходного восьмишагового частного, равенство коэффициентов допускает переполнение.
-    quotient, remainder = 0, high_n
-    for _ in range(8):
-        expanded = 2*remainder
-        accepted = expanded>=high_d
-        remainder = ((expanded-high_d) if accepted else expanded)&255
-        quotient = 2*quotient+accepted
-    flags = (quotient&0xA8) | (0x40 if quotient==0 else 0) | (4 if quotient.bit_count()%2==0 else 0)
+    quotient,remainder,flags=divide_fraction(high_n,high_d)
     return dict(hl=(high_n<<8)|(((normalized_n<<1)>>8)&255), de=quotient<<8,
                 bc=(high_d<<8)|((normalized_n<<1)&255), a=remainder, f=flags, normalized=True)
 

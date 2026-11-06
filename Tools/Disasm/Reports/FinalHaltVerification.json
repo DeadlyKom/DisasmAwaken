@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "total_cases": 16384,
+  "all_initial_flags_values": true,
+  "all_six_bit_initial_paging_values": true,
+  "locked_paging_cases": 8192,
+  "paging_write_attempts": [
+    23,
+    31
+  ],
+  "unlocked_final_paging": 31,
+  "locked_paging_preserved": true,
+  "cleared_attribute_bytes": 768,
+  "final_PC": 24939,
+  "halted": true,
+  "returns": false,
+  "final_I": 60,
+  "final_IM": 0,
+  "final_IFF": 0,
+  "all_registers_except_R": true,
+  "all_physical_ram_bytes_proved": true,
+  "write_multiplicity_proved": true,
+  "cpu_stack_written": false,
+  "irq_during_EI_window_executed": false,
+  "nmi_executed": false,
+  "timing_proved": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

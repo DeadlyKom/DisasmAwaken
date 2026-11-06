@@ -249,6 +249,23 @@ def main():
         assert symbols['FFIXEDSINEVALUE'] == 1 and symbols['FFIXEDSINEVALUE.VALUE'] == 0
         action_sine_records = 256
 
+    # Проверка трёх физических записей LowWord и FoldByte, не адресных псевдонимов.
+    from ActionFoldedRandomData import TABLES as FOLDED_STATES, parse as parse_folded_state
+    folded_random_records = 0
+    for table in FOLDED_STATES:
+        entries = [item for item in source_map if item['path']==table[1]]
+        if not entries:
+            continue
+        assert len(entries)==1
+        item=entries[0]
+        assert (item['slot'],item['offset'],item['length'],item['origin'])==(17,table[2],3,table[2]+0x6000)
+        raw,bindings=parse_folded_state((ROOT/table[1]).read_text('utf-8'),table)
+        assert raw==sources[17][table[2]:table[3]]
+        assert all(symbols.get(key.upper())==value for key,value in bindings.items())
+        assert symbols['FFOLDEDRANDOMSTATE']==3
+        assert symbols['FFOLDEDRANDOMSTATE.LOWWORD']==0 and symbols['FFOLDEDRANDOMSTATE.FOLDBYTE']==2
+        folded_random_records+=1
+
     # Проверка двух физических слов состояния генератора ACTION.
     from ActionWordRandomState import TABLE as WORD_RANDOM, parse as parse_word_random
     word_random_records = 0
@@ -263,6 +280,128 @@ def main():
         assert symbols['FWORDRANDOMSTATE'] == 4
         assert symbols['FWORDRANDOMSTATE.FIRST'] == 0 and symbols['FWORDRANDOMSTATE.SECOND'] == 2
         word_random_records = 1
+
+    # Проверка 256 исходных кодов отношения, без генерации идеальной тригонометрической таблицы.
+    from ActionSignedRatioCodesData import TABLE as RATIO_CODES, parse as parse_ratio_codes, validate as validate_ratio_codes
+    signed_ratio_code_records = 0
+    entries = [item for item in source_map if item['path'] == RATIO_CODES[1]]
+    if entries:
+        assert len(entries) == 1
+        item = entries[0]
+        raw, labels = parse_ratio_codes((ROOT / RATIO_CODES[1]).read_text('utf-8'))
+        assert (item['slot'],item['offset'],item['length'],item['origin']) == (17,0x3A00,256,0x9A00)
+        assert raw == validate_ratio_codes(sources[17])
+        assert all(symbols.get(key.upper()) == value for key,value in labels.items())
+        assert symbols['FSIGNEDRATIOCODE'] == 1 and symbols['FSIGNEDRATIOCODE.CODE'] == 0
+        signed_ratio_code_records = 256
+
+    # Проверка ровно 26 физических адресов классов, без соседних инструкций.
+    from ActionObjectStateHandlersData import TABLE as STATE_HANDLERS, parse as parse_state_handlers
+    state_handler_records = 0
+    entries = [item for item in source_map if item['path'] == STATE_HANDLERS[1]]
+    if entries:
+        assert len(entries) == 1
+        item = entries[0]
+        raw, labels = parse_state_handlers((ROOT / STATE_HANDLERS[1]).read_text('utf-8'))
+        assert (item['slot'], item['offset'], item['length'], item['origin']) == (17, 0x8F50, 44, 0xEF50)
+        assert raw == sources[17][0x8F50:0x8F7C]
+        assert all(symbols.get(key.upper()) == value for key, value in labels.items())
+        assert symbols['FOBJECTSTATEHANDLER'] == 2 and symbols['FOBJECTSTATEHANDLER.HANDLER'] == 0
+        state_handler_records = 22
+
+    from ActionClassHandlersData import TABLE as CLASS_HANDLERS, parse as parse_class_handlers
+    class_handler_records = 0
+    entries = [item for item in source_map if item['path'] == CLASS_HANDLERS[1]]
+    if entries:
+        assert len(entries) == 1
+        item = entries[0]
+        raw, labels = parse_class_handlers((ROOT / CLASS_HANDLERS[1]).read_text('utf-8'))
+        assert (item['slot'],item['offset'],item['length'],item['origin']) == (17,0x72D,52,0x64F0)
+        assert raw == sources[17][0x72D:0x761]
+        assert all(symbols.get(key.upper()) == value for key,value in labels.items())
+        assert symbols['FCLASSHANDLER'] == 2 and symbols['FCLASSHANDLER.HANDLER'] == 0
+        class_handler_records = 26
+
+    # Проверка трёх физических FComponent24, старших знаковых слов и сохранённых младших байтов.
+    from ActionComponentWorkData import TABLE as COMPONENT_WORK, parse as parse_component_work, validate as validate_component_work
+    component_work_records = 0
+    component_entries = [item for item in source_map if item['path'] == COMPONENT_WORK[1]]
+    if component_entries:
+        assert len(component_entries) == 1
+        item = component_entries[0]
+        raw, labels = parse_component_work((ROOT / COMPONENT_WORK[1]).read_text('utf-8'))
+        assert (item['slot'], item['offset'], item['length'], item['origin']) == (17, 0x3B1E, 9, 0x9B1E)
+        assert raw == validate_component_work(sources[17])
+        assert all(symbols.get(key.upper()) == value for key,value in labels.items())
+        assert symbols['FCOMPONENT24'] == 3
+        assert [symbols['FCOMPONENT24.'+field] for field in ('LOW','MIDDLE','HIGH')] == [0,1,2]
+        component_work_records = 3
+
+    # Проверка всех физических байтов и вложенных полей шести исходных широких векторов.
+    from ActionWideVectorsData import PATH as WIDE_VECTORS, parse as parse_wide_vectors
+    wide_vector_records = 0
+    wide_entries = [item for item in source_map if item['path'] == WIDE_VECTORS]
+    if wide_entries:
+        assert len(wide_entries) == 1
+        item = wide_entries[0]
+        raw, labels = parse_wide_vectors((ROOT / WIDE_VECTORS).read_text('utf-8'))
+        assert (item['slot'], item['offset'], item['length'], item['origin']) == (17, 0x3B27, 72, 0x9B27)
+        assert raw == sources[17][0x3B27:0x3B6F]
+        assert all(symbols.get(key.upper()) == value for key,value in labels.items())
+        assert symbols['FACTIONWIDECOMPONENT'] == 4 and symbols['FACTIONWIDEVECTOR'] == 12
+        for component in range(3):
+            assert symbols['FACTIONWIDEVECTOR.COMPONENT'+str(component)] == 4*component
+            for byte in range(4):
+                assert symbols['FACTIONWIDEVECTOR.COMPONENT'+str(component)+'.BYTE'+str(byte)] == 4*component+byte
+        wide_vector_records = 6
+
+    # Проверка физического 24-битного рабочего вектора и смещений всех вложенных полей.
+    from ActionWorkVectorData import PATH as WORK_VECTOR, MODULE as WORK_MODULE, TRANSFORM_PATH, TRANSFORM_MODULE, parse as parse_work_vector
+    signed_work_vector_records = 0
+    for path, origin, module in ((WORK_VECTOR, 0x9B78, WORK_MODULE), (TRANSFORM_PATH, 0x9B6F, TRANSFORM_MODULE)):
+        work_entries = [item for item in source_map if item['path'] == path]
+        if not work_entries:
+            continue
+        assert len(work_entries) == 1
+        item = work_entries[0]
+        raw, labels = parse_work_vector((ROOT / path).read_text('utf-8'), origin, module)
+        start = origin - 0x6000
+        assert (item['slot'], item['offset'], item['length'], item['origin']) == (17, start, 9, origin)
+        assert raw == sources[17][start:start+9]
+        assert all(symbols.get(key.upper()) == value for key,value in labels.items())
+        assert symbols['FACTIONWORKCOMPONENT24'] == 3 and symbols['FACTIONWORKVECTOR24'] == 9
+        assert symbols['FACTIONWORKCOMPONENT24.LOWWORD'] == 0 and symbols['FACTIONWORKCOMPONENT24.HIGH'] == 2
+        for component in range(3):
+            assert symbols['FACTIONWORKVECTOR24.COMPONENT'+str(component)] == 3*component
+        signed_work_vector_records += 1
+
+    from ActionVisualEffectData import PATH as EFFECTS_PATH, START as EFFECTS_START, END as EFFECTS_END
+    from ActionVisualEffectData import parse as parse_visual_effects
+    visual_effect_records = 0
+    visual_effect_entries = [item for item in source_map if item['path'] == EFFECTS_PATH]
+    if visual_effect_entries:
+        assert len(visual_effect_entries) == 1
+        item = visual_effect_entries[0]
+        assert (item['slot'], item['offset'], item['length'], item['origin']) == (17, EFFECTS_START, EFFECTS_END - EFFECTS_START, 0xA795)
+        raw, labels = parse_visual_effects((ROOT / EFFECTS_PATH).read_text('utf-8'))
+        assert raw == sources[17][EFFECTS_START:EFFECTS_END]
+        assert all(symbols.get(key.upper()) == value for key, value in labels.items())
+        assert symbols['FVISUALEFFECT'] == 18
+        visual_effect_records = 8
+
+    # Проверка трёх физических страниц корня, включая особый старший диапазон и исходные исключения.
+    from ControlsRootCacheData import TABLE as ROOT_CACHE, parse as parse_root_cache, validate as validate_root_cache
+    root_cache_records = 0
+    root_cache_entries = [item for item in source_map if item['path'] == ROOT_CACHE[1]]
+    if root_cache_entries:
+        assert len(root_cache_entries) == 1
+        item = root_cache_entries[0]
+        raw, labels = parse_root_cache((ROOT / ROOT_CACHE[1]).read_text('utf-8'))
+        assert (item['slot'], item['offset'], item['length'], item['origin']) == (22, 0, 768, 0xC000)
+        assert raw == validate_root_cache(sources[22])
+        assert all(symbols.get(key.upper()) == value for key,value in labels.items())
+        assert symbols['FROOTCACHEBYTE'] == 1 and symbols['FROOTCACHEBYTE.VALUE'] == 0
+        root_cache_records = 768
 
     # Проверка обеих физических плоскостей квадратов и всех 512 экземпляров структуры.
     from ControlsSquareTable import TABLE as SQUARE_TABLE, parse as parse_squares, validate as validate_squares
@@ -514,6 +653,107 @@ def main():
             assert symbols[structure.upper()]==size
             assert all(symbols.get((structure+'.'+field).upper())==value for field,value in fields.items())
         object_records=26
+
+    # Проверка пяти исходных потоков, физических строк, терминаторов и каждого поля STRUCT.
+    from ActionAyStreams import GROUPS as AY_STREAM_GROUPS, parse as parse_ay_streams, bounds as ay_stream_bounds
+    ay_stream_records=0
+    for path,streams in AY_STREAM_GROUPS:
+        entries=[i for i in source_map if i['path']==path]
+        if not entries:continue
+        assert len(entries)==1
+        start,end=ay_stream_bounds(streams);item=entries[0]
+        raw,labels=parse_ay_streams((ROOT/path).read_text('utf-8'),streams)
+        assert (item['slot'],item['offset'],item['length'],item['origin'])==(17,start,end-start,start+0x6000)
+        assert raw==sources[17][start:end]
+        assert all(symbols.get(k.upper())==v for k,v in labels.items())
+        assert symbols['FACTIONAYFRAME']==4
+        for offset,field in enumerate(('ToneLow','ToneHigh','MixerBits','Volume')):
+            assert symbols[('FActionAyFrame.'+field).upper()]==offset
+        ay_stream_records+=sum(s[2] for s in streams)
+
+    # Проверка всех исходных байтов нормированных квадратов и каждого физического поля.
+    from ActionProjectionClipFacts import TABLE as PROJECTION_SQUARES, parse as parse_projection_squares
+    projection_square_values=0
+    entries=[i for i in source_map if i['path']==PROJECTION_SQUARES[1]]
+    if entries:
+        assert len(entries)==1
+        item=entries[0]
+        raw,labels=parse_projection_squares((ROOT/PROJECTION_SQUARES[1]).read_text('utf-8'))
+        assert (item['slot'],item['offset'],item['length'],item['origin'])==(17,0x3800,256,0x9800)
+        assert raw==sources[17][0x3800:0x3900]
+        assert list(raw)==[min(i,255-i)**2//127 for i in range(256)]
+        assert all(symbols.get(k.upper())==v for k,v in labels.items())
+        assert symbols['FSYMMETRICSQUAREVALUE']==1 and symbols['FSYMMETRICSQUAREVALUE.VALUE']==0
+        projection_square_values=256
+
+    # Проверка всех исходных little-endian указателей OBJECT3D и полей реальных STRUCT.
+    from ActionObjectPointersData import TABLE as OBJECT_POINTER_TABLE, parse as parse_object_pointers
+    pointer_path=OBJECT_POINTER_TABLE[1]
+    pointer_records=[i for i in source_map if i['path']==pointer_path]
+    assert len(pointer_records)==1
+    pointer_item=pointer_records[0]
+    assert (pointer_item['slot'],pointer_item['offset'],pointer_item['length'],pointer_item['origin'])==(17,0x3E00,256,0x9E00)
+    pointer_raw,pointer_labels=parse_object_pointers((ROOT/pointer_path).read_text('utf-8'))
+    assert pointer_raw==sources[17][0x3E00:0x3F00]
+    assert all(symbols.get(k.upper())==v for k,v in pointer_labels.items())
+    assert symbols['FOBJECTDATAPOINTER']==2 and symbols['FOBJECTDATAPOINTER.TARGET']==0
+
+    # Проверка реальных четырёх FClipProduct, всех полей и физических исходных байтов.
+    from ActionClipProductsData import PATH as CLIP_PRODUCTS_PATH, parse as parse_clip_products
+    clip_raw,clip_labels=parse_clip_products((ROOT/CLIP_PRODUCTS_PATH).read_text('utf-8'))
+    assert clip_raw==sources[17][0x6F2B:0x6F3B]
+    assert all(symbols.get(k.upper())==v for k,v in clip_labels.items())
+    assert symbols['FCLIPPRODUCT']==4 and symbols['FCLIPPRODUCT.LOWWORD']==0 and symbols['FCLIPPRODUCT.HIGHWORD']==2
+    clip_items=[x for x in source_map if x['path']==CLIP_PRODUCTS_PATH]
+    assert len(clip_items)==1 and (clip_items[0]['offset'],clip_items[0]['length'],clip_items[0]['origin'])==(0x6F2B,16,0xCF2B)
+
+    # Проверка шестнадцати FLinePixelMask, всех полей и физических исходных байтов.
+    from ActionLineMasksData import PATH as LINE_MASKS_PATH, parse as parse_line_masks
+    line_mask_raw,line_mask_labels=parse_line_masks((ROOT/LINE_MASKS_PATH).read_text('utf-8'))
+    assert line_mask_raw==sources[17][0x8010:0x8020]
+    assert all(symbols.get(k.upper())==v for k,v in line_mask_labels.items())
+    assert symbols['FLINEPIXELMASK']==1 and symbols['FLINEPIXELMASK.MASK']==0
+    line_mask_items=[x for x in source_map if x['path']==LINE_MASKS_PATH]
+    assert len(line_mask_items)==1 and (line_mask_items[0]['offset'],line_mask_items[0]['length'],line_mask_items[0]['origin'])==(0x8010,16,0xE010)
+
+    # Проверка двух физических точек, их вложенных координат и кода, а не только адресных EQU.
+    from ActionClipPointsData import POINTS as CLIP_POINTS, parse as parse_clip_point
+    for name,offset,path in CLIP_POINTS:
+        point_raw,point_labels=parse_clip_point((ROOT/path).read_text('utf-8'),name,offset)
+        assert point_raw==sources[17][offset:offset+5]
+        assert all(symbols.get(k.upper())==v for k,v in point_labels.items())
+        items=[x for x in source_map if x['path']==path]
+        assert len(items)==1 and (items[0]['offset'],items[0]['length'],items[0]['origin'])==(offset,5,offset+0x6000)
+    assert symbols['FRENDERPROJECTEDPOINT']==5 and symbols['FRENDERPROJECTEDPOINT.CLIPCODE']==4
+
+    # Проверка отдельно собираемых физических записей побайтовой копии 3DPART, со своими метками слота 19.
+    from ThreeDOverlayData import verify_data as verify_three_d_overlay_data
+    verify_three_d_overlay_data(ROOT,sources,source_map,symbols)
+
+    # Проверка трёх физических фаз и вложенных полей создаваемого узла очереди.
+    from ActionRenderPhasesData import PATH as RENDER_PHASES_PATH, parse as parse_render_phases
+    phase_records=[i for i in source_map if i['path']==RENDER_PHASES_PATH]
+    assert len(phase_records)==1
+    phase_item=phase_records[0]
+    assert (phase_item['slot'],phase_item['offset'],phase_item['length'],phase_item['origin'])==(17,0x3B12,3,0x9B12)
+    phase_raw,phase_labels=parse_render_phases((ROOT/RENDER_PHASES_PATH).read_text('utf-8'))
+    assert phase_raw==sources[17][0x3B12:0x3B15]
+    assert all(symbols.get(k.upper())==v for k,v in phase_labels.items())
+    assert symbols['FRENDERPHASES']==3 and symbols['FACTIONRENDERNODE']==14
+    for index in range(3):
+        assert symbols['FRENDERPHASES.PHASE'+str(index)]==index
+        assert symbols['FACTIONRENDERNODE.PHASES.PHASE'+str(index)]==5+index
+
+    # Проверка двух исходных байтов сопровождающей точки и физических полей X/Y.
+    from ActionAimPointData import PATH as AIM_POINT_PATH, parse as parse_aim_point
+    aim_records=[i for i in source_map if i['path']==AIM_POINT_PATH]
+    assert len(aim_records)==1
+    aim_item=aim_records[0]
+    assert (aim_item['slot'],aim_item['offset'],aim_item['length'],aim_item['origin'])==(17,0x3B19,2,0x9B19)
+    aim_raw,aim_labels=parse_aim_point((ROOT/AIM_POINT_PATH).read_text('utf-8'))
+    assert aim_raw==sources[17][0x3B19:0x3B1B]
+    assert all(symbols.get(k.upper())==v for k,v in aim_labels.items())
+    assert (symbols['FACTIONAIMPOINT'],symbols['FACTIONAIMPOINT.X'],symbols['FACTIONAIMPOINT.Y'])==(2,0,1)
 
     # Проверка физических записей композиции и точной грамматики фактических DB-команд.
     from MusicCompositionSource import descriptions as composition_descriptions, parse as parse_composition, STRUCTURES as COMPOSITION_STRUCTURES
@@ -1475,6 +1715,15 @@ def main():
     report['buffer_point_records'] = buffer_point_records
     report['action_sine_records'] = action_sine_records
     report['word_random_records'] = word_random_records
+    report['folded_random_records'] = folded_random_records
+    report['signed_ratio_code_records'] = signed_ratio_code_records
+    report['class_handler_records'] = class_handler_records
+    report['state_handler_records'] = state_handler_records
+    report['component_work_records'] = component_work_records
+    report['wide_vector_records'] = wide_vector_records
+    report['signed_work_vector_records'] = signed_work_vector_records
+    report['visual_effect_records'] = visual_effect_records
+    report['root_cache_records'] = root_cache_records
     report['square_table_records'] = square_records
     report['small_mask_records'] = small_mask_records
     report['body_projection_records'] = body_projection_records
@@ -1488,6 +1737,9 @@ def main():
     report['missile_stock_records'] = missile_stock_records
     report['missile_target_records'] = missile_target_records
     report['type_delta_records'] = type_delta_records
+    report['projection_square_values'] = projection_square_values
+    report['action_ay_stream_records'] = ay_stream_records
+    report['object_data_pointer_records'] = len(OBJECT_POINTER_TABLE[-1])
     report['action_object_records'] = object_records
     report['glyph_input_records'] = glyph_input_records
     report['parameter_rule_records'] = parameter_rule_records

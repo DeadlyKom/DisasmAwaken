@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "described_functions": 1,
+  "semantic_status": "described",
+  "confirmed_code_bytes": 165,
+  "confirmed_instructions": 116,
+  "model_cases": 8192,
+  "original_bytes_preserved": true,
+  "self_modifying_writers_registered": 3,
+  "assembly_executed": false
+}

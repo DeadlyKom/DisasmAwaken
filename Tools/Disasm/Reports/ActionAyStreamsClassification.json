@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "physical_frames": 76,
+  "terminators": 5,
+  "physical_stream_bytes": 309,
+  "unclassified_neighbor_bytes": 433,
+  "sequences": 30,
+  "ticks": 486,
+  "physical_bytes_preserved": true,
+  "assembly_executed": false
+}

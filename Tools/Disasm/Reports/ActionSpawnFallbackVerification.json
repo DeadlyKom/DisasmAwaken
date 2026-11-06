@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "total_cases": 5768,
+  "repeating_vectors": 8,
+  "whole_object_record_compared": true,
+  "stops_before_geometry_call": true,
+  "assembly_executed": false
+}

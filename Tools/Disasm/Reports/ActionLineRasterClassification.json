@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "described_functions": 1,
+  "semantic_status": "described",
+  "confirmed_code_bytes": 256,
+  "confirmed_instructions": 153,
+  "model_cases": 49920,
+  "original_bytes_preserved": true,
+  "self_modifying_writers_registered": 9,
+  "assembly_executed": false,
+  "opcode_writers_registered": 8,
+  "saved_sp_writers_registered": 1
+}

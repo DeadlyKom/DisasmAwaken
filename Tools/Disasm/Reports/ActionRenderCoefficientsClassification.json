@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "described_functions": 1,
+  "confirmed_code_bytes": 392,
+  "confirmed_instructions": 258,
+  "remaining_unknown_prefix_bytes": 271,
+  "remaining_unknown_suffix_bytes": 960,
+  "model_cases": 353280,
+  "self_modifying_writers_registered": 18,
+  "original_bytes_preserved": true,
+  "assembly_executed": false
+}

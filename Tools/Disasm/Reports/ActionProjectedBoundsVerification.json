@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "total_cases": 393417,
+  "paths": {
+    "bound_overflow": 178,
+    "x_overflow": 23,
+    "y_overflow": 3,
+    "prepared": 147719,
+    "y_high_rejected": 65175,
+    "mask_rejected": 58975,
+    "x_high_rejected": 121344
+  },
+  "method": "parent_projection_state_oracle_composed_with_verified_log_ratio_reference",
+  "independent_complete_child_oracle": false,
+  "children_executed_without_stubs": true,
+  "exact_registers_flags_refresh_sp": true,
+  "every_ram_byte_and_write_multiplicity_checked": true,
+  "all_word_arguments_by_separate_slices": true,
+  "all_mask_pairs": true,
+  "partial_writes_preserved": true,
+  "arithmetic_half_of_scaled_ratio_preserved": true,
+  "maximum_additional_stack_bytes": 2,
+  "execution_boundary": "E299..E30F or E40F, no continuation executed",
+  "whole_projection_scan_proved": false,
+  "all_joint_inputs_exhausted": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

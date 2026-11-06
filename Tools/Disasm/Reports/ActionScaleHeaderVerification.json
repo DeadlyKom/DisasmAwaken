@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "total_cases": 1920,
+  "cases_by_exponent": {
+    "exponent_1": 321,
+    "exponent_2": 347,
+    "exponent_3": 315,
+    "exponent_4": 311,
+    "exponent_5": 328,
+    "exponent_6": 298
+  },
+  "method": "independent_integer_scaling_flags_and_patch_oracle",
+  "all_valid_header_words": true,
+  "valid_exponents": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "original_even_table_headers_checked": 128,
+  "original_header_exponents": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "exact_registers_flags_refresh_sp": true,
+  "every_ram_byte_and_write_checked": true,
+  "execution_boundary": "E1B9..E1D1, no continuation executed",
+  "maximum_additional_stack_bytes": 0,
+  "invalid_exponents_executed": false,
+  "whole_projection_scan_proved": false,
+  "all_joint_inputs_exhausted": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "total_cases": 1536,
+  "all_flags_values": true,
+  "all_A_and_C_values_covered": true,
+  "cpu_stack_locations": 6,
+  "buffer_start": 32768,
+  "buffer_end_exclusive": 35840,
+  "filled_bytes": 3072,
+  "original_write_value": 255,
+  "exact_registers_flags_R_SP": true,
+  "all_physical_ram_bytes_proved": true,
+  "write_multiplicity_proved": true,
+  "saved_sp_operand": 53545,
+  "refresh_m1": 1639,
+  "uncontended_tstates": 18206,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

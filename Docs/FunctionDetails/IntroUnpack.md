@@ -8,6 +8,8 @@
 
 [IntroUnpack.UnpackScreen](../../Source/IntroUnpack/UnpackScreen.asm)
 
+[Алгоритм, контракт и проверка](../IntroScreen.md).
+
 Распаковка экранного потока после переноса из #8931 в #6E31.
 
 Вход `#6E31`, запись 3, смещения `#2631..#26CA`.

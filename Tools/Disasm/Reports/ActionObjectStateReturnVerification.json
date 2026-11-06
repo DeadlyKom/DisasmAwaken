@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "total_cases": 33536,
+  "outcomes": {
+    "rejected": 18360,
+    "reusable": 6656,
+    "accepted": 7752
+  },
+  "all_classes_and_even_model_offsets": true,
+  "warning_disabled": true,
+  "actual_scale_and_update_executed": true,
+  "callback_cases": 768,
+  "callback_states": [
+    19,
+    20,
+    21
+  ],
+  "callback_reusable_marker": true,
+  "assembly_executed": false
+}

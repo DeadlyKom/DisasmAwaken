@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "total_cases": 16384,
+  "cases_by_paging": {
+    "paging_changed": 8192,
+    "paging_locked": 8192
+  },
+  "method": "actual_selector_and_eight_physical_banks_with_tail_jump_boundary",
+  "all_64_initial_paging_values": true,
+  "all_input_flags": true,
+  "exact_registers_flags_refresh_sp": true,
+  "every_physical_ram_byte_and_write_multiplicity_checked": true,
+  "maximum_additional_stack_bytes": 4,
+  "external_return_not_consumed": true,
+  "refresh_m1": 10,
+  "execution_boundary": "6CE4..DCE3, target instruction not executed",
+  "controls_target_requires_bank1_selected": true,
+  "station_disk_load_executed": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

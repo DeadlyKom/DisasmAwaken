@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "total_cases": 256,
+  "entry": 53864,
+  "stop": 54189,
+  "exact_registers_flags_except_R": true,
+  "no_memory_writes": true,
+  "whole_polygon_fill_proved": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

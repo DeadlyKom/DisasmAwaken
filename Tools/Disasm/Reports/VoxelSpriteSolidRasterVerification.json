@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "total_cases": 3520,
+  "outcomes": {
+    "transparent": 220,
+    "opaque": 3300
+  },
+  "uniform_source_only": true,
+  "all_3072_raster_bytes_compared": true,
+  "assembly_executed": false,
+  "native_execution": false
+}

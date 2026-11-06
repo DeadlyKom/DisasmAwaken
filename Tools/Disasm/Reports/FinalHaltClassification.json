@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "changed_files": [
+    "Source/Final/HaltFinal.asm",
+    "Tools/Disasm/Research/Contracts.py",
+    "Tools/Disasm/Research/SemanticNames.py",
+    "Docs/FunctionDetails/Final.md"
+  ],
+  "procedures": 1,
+  "original_instructions_and_bytes_preserved": true,
+  "model_cases": 16384,
+  "assembly_executed": false
+}

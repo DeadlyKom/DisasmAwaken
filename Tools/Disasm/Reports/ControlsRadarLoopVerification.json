@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "total_cases": 2080,
+  "outcomes": {
+    "glyph": 384,
+    "cases": 2080,
+    "skipped": 1504,
+    "clipped_stem": 192
+  },
+  "whole_screen_bitmap_compared": true,
+  "assembly_executed": false,
+  "native_execution": false
+}

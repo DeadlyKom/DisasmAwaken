@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "total_cases": 3938,
+  "outcomes": {
+    "size_rejected": 1702,
+    "first_rejected": 1838,
+    "clip_sprite": 395,
+    "second_rejected": 3
+  },
+  "stopped_before_clip_sprite": true,
+  "assembly_executed": false,
+  "native_execution": false
+}

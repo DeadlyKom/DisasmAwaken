@@ -61,7 +61,7 @@
 | Station | #6597 | #65D1 | `RL (IX+#05)` | [ConfigureMouseButtons.asm](../Source/Station/ConfigureMouseButtons.asm) |
 | Station | #659C | #65CC | `RL (IX+#00)` | [ConfigureMouseButtons.asm](../Source/Station/ConfigureMouseButtons.asm) |
 | Station | #65A2 | #65C7 | `JR #658E` | [ConfigureMouseButtons.asm](../Source/Station/ConfigureMouseButtons.asm) |
-| Station | #6783 | #9A89 | `CALL #9A58` | [Unknown6780.asm](../Source/Station/DropShipDetailPanels.asm) |
+| Station | #6783 | #9A89 | `CALL #9A58` | [UpdateBodyMotion.asm](../Source/Station/DropShipDetailPanels.asm) |
 | Station | #67DC | #67D7 | `LD A,#FF` | [UpdateShipListHover.asm](../Source/Station/UpdateShipListHover.asm) |
 | Station | #67E7 | #BD26 | `LD A,#00` | [DrawModelListPanel.asm](../Source/Station/DrawModelListPanel.asm) |
 | Station | #67EC | #67D7 | `LD A,#FF` | [DrawModelListPanel.asm](../Source/Station/DrawModelListPanel.asm) |
@@ -493,82 +493,82 @@
 | Music | #E6C1 | #E2AD | `JR #E2CB` | [SetToneSlideC.asm](../Source/Music/SetToneSlideC.asm) |
 | Music | #E6C5 | #E2D5 | `LD A,#00` | [SetToneSlideC.asm](../Source/Music/SetToneSlideC.asm) |
 | Action | #605F | #ECF6 | `LD HL,#0000` | [Unknown6040.asm](../Source/Action/QueueTextItemBank1.asm) |
-| Action | #614C | #669F | `LD A,#00` | [Unknown6145.asm](../Source/Action/Unknown6145.asm) |
-| Action | #614F | #666B | `LD A,#00` | [Unknown6145.asm](../Source/Action/Unknown6145.asm) |
-| Action | #6152 | #664A | `LD A,#00` | [Unknown6145.asm](../Source/Action/Unknown6145.asm) |
-| Action | #6155 | #668E | `LD A,#00` | [Unknown6145.asm](../Source/Action/Unknown6145.asm) |
-| Action | #6158 | #667D | `LD A,#00` | [Unknown6145.asm](../Source/Action/Unknown6145.asm) |
-| Action | #615B | #665C | `LD A,#00` | [Unknown6145.asm](../Source/Action/Unknown6145.asm) |
-| Action | #6373 | #635C | `LD HL,#0000` | [Unknown635B.asm](../Source/Action/Unknown635B.asm) |
-| Action | #6379 | #ECA9 | `LD HL,#0000` | [Unknown635B.asm](../Source/Action/Unknown635B.asm) |
+| Action | #614C | #669F | `LD A,#00` | [RefreshFlightPanel.asm](../Source/Action/RefreshFlightPanel.asm) |
+| Action | #614F | #666B | `LD A,#00` | [RefreshFlightPanel.asm](../Source/Action/RefreshFlightPanel.asm) |
+| Action | #6152 | #664A | `LD A,#00` | [RefreshFlightPanel.asm](../Source/Action/RefreshFlightPanel.asm) |
+| Action | #6155 | #668E | `LD A,#00` | [RefreshFlightPanel.asm](../Source/Action/RefreshFlightPanel.asm) |
+| Action | #6158 | #667D | `LD A,#00` | [RefreshFlightPanel.asm](../Source/Action/RefreshFlightPanel.asm) |
+| Action | #615B | #665C | `LD A,#00` | [RefreshFlightPanel.asm](../Source/Action/RefreshFlightPanel.asm) |
+| Action | #6373 | #635C | `LD HL,#0000` | [ApplyPendingRecordLink.asm](../Source/Action/ApplyPendingRecordLink.asm) |
+| Action | #6379 | #ECA9 | `LD HL,#0000` | [ApplyPendingRecordLink.asm](../Source/Action/ApplyPendingRecordLink.asm) |
 | Action | #6658 | #664A | `LD A,#00` | [UpdatePanelGauges.asm](../Source/Action/UpdatePanelGauges.asm) |
 | Action | #6679 | #666B | `LD A,#00` | [UpdatePanelGauges.asm](../Source/Action/UpdatePanelGauges.asm) |
 | Action | #668A | #667D | `LD A,#00` | [UpdatePanelGauges.asm](../Source/Action/UpdatePanelGauges.asm) |
 | Action | #669B | #668E | `LD A,#00` | [UpdatePanelGauges.asm](../Source/Action/UpdatePanelGauges.asm) |
 | Action | #66A4 | #669F | `LD A,#00` | [UpdatePanelGauges.asm](../Source/Action/UpdatePanelGauges.asm) |
-| Action | #673F | #7B6B | `CP #FD` | [Unknown66D2.asm](../Source/Action/Unknown66D2.asm) |
-| Action | #6787 | #6781 | `LD HL,#8000` | [Unknown6780.asm](../Source/Action/Unknown6780.asm) |
-| Action | #678F | #6781 | `LD HL,#8000` | [Unknown6780.asm](../Source/Action/Unknown6780.asm) |
-| Action | #682E | #6682 | `LD A,#00` | [Unknown6780.asm](../Source/Action/Unknown6780.asm) |
-| Action | #6833 | #667D | `LD A,#00` | [Unknown6780.asm](../Source/Action/Unknown6780.asm) |
-| Action | #683E | #683C | `LD A,#80` | [Unknown6780.asm](../Source/Action/Unknown6780.asm) |
-| Action | #6859 | #665C | `LD A,#00` | [Unknown6780.asm](../Source/Action/Unknown6780.asm) |
-| Action | #6865 | #667D | `LD A,#00` | [Unknown6780.asm](../Source/Action/Unknown6780.asm) |
-| Action | #6869 | #6682 | `LD A,#00` | [Unknown6780.asm](../Source/Action/Unknown6780.asm) |
-| Action | #6879 | #7B6B | `CP #FD` | [Unknown6780.asm](../Source/Action/Unknown6780.asm) |
-| Action | #689F | #68D5 | `LD DE,#0000` | [Unknown6780.asm](../Source/Action/Unknown6780.asm) |
-| Action | #68B2 | #68FD | `LD DE,#0000` | [Unknown6780.asm](../Source/Action/Unknown6780.asm) |
-| Action | #68C5 | #6925 | `LD DE,#0000` | [Unknown6780.asm](../Source/Action/Unknown6780.asm) |
-| Action | #6962 | #6693 | `LD A,#00` | [Unknown6780.asm](../Source/Action/Unknown6780.asm) |
-| Action | #6967 | #668E | `LD A,#00` | [Unknown6780.asm](../Source/Action/Unknown6780.asm) |
-| Action | #6971 | #668E | `LD A,#00` | [Unknown6780.asm](../Source/Action/Unknown6780.asm) |
-| Action | #6975 | #6693 | `LD A,#00` | [Unknown6780.asm](../Source/Action/Unknown6780.asm) |
-| Action | #6A89 | #AF48 | `LD DE,#0000` | [Unknown6A6E.asm](../Source/Action/Unknown6A6E.asm) |
-| Action | #6A8F | #AF56 | `LD DE,#0000` | [Unknown6A6E.asm](../Source/Action/Unknown6A6E.asm) |
-| Action | #6A95 | #AF69 | `LD DE,#0000` | [Unknown6A6E.asm](../Source/Action/Unknown6A6E.asm) |
-| Action | #6C1C | #AF48 | `LD DE,#0000` | [Unknown6C19.asm](../Source/Action/Unknown6C19.asm) |
-| Action | #6C22 | #AF56 | `LD DE,#0000` | [Unknown6C19.asm](../Source/Action/Unknown6C19.asm) |
-| Action | #6C28 | #AF69 | `LD DE,#0000` | [Unknown6C19.asm](../Source/Action/Unknown6C19.asm) |
-| Action | #6C97 | #AF48 | `LD DE,#0000` | [Unknown6C8F.asm](../Source/Action/Unknown6C8F.asm) |
-| Action | #6C9D | #AF56 | `LD DE,#0000` | [Unknown6C8F.asm](../Source/Action/Unknown6C8F.asm) |
-| Action | #6CA3 | #AF69 | `LD DE,#0000` | [Unknown6C8F.asm](../Source/Action/Unknown6C8F.asm) |
-| Action | #6D42 | #6D39 | `LD A,#00` | [Unknown6D38.asm](../Source/Action/Unknown6D38.asm) |
-| Action | #6D45 | #6D3D | `LD A,#00` | [Unknown6D38.asm](../Source/Action/Unknown6D38.asm) |
-| Action | #6D61 | #AF69 | `LD DE,#0000` | [Unknown6D38.asm](../Source/Action/Unknown6D38.asm) |
-| Action | #6D77 | #AF48 | `LD DE,#0000` | [Unknown6D38.asm](../Source/Action/Unknown6D38.asm) |
-| Action | #6D8D | #AF56 | `LD DE,#0000` | [Unknown6D38.asm](../Source/Action/Unknown6D38.asm) |
-| Action | #6E82 | #E5B3 | `LD DE,#0000` | [Unknown6E6C.asm](../Source/Action/Unknown6E6C.asm) |
-| Action | #6E95 | #E5D2 | `LD DE,#0000` | [Unknown6E6C.asm](../Source/Action/Unknown6E6C.asm) |
-| Action | #6EA8 | #E5ED | `LD DE,#0000` | [Unknown6E6C.asm](../Source/Action/Unknown6E6C.asm) |
+| Action | #673F | #7B6B | `CP #FD` | [SubtractScaledWorkVector.asm](../Source/Action/SubtractScaledWorkVector.asm) |
+| Action | #6787 | #6781 | `LD HL,#8000` | [UpdateBodyMotion.asm](../Source/Action/UpdateBodyMotion.asm) |
+| Action | #678F | #6781 | `LD HL,#8000` | [UpdateBodyMotion.asm](../Source/Action/UpdateBodyMotion.asm) |
+| Action | #682E | #6682 | `LD A,#00` | [UpdateBodyMotion.asm](../Source/Action/UpdateBodyMotion.asm) |
+| Action | #6833 | #667D | `LD A,#00` | [UpdateBodyMotion.asm](../Source/Action/UpdateBodyMotion.asm) |
+| Action | #683E | #683C | `LD A,#80` | [UpdateBodyMotion.asm](../Source/Action/UpdateBodyMotion.asm) |
+| Action | #6859 | #665C | `LD A,#00` | [UpdateBodyMotion.asm](../Source/Action/UpdateBodyMotion.asm) |
+| Action | #6865 | #667D | `LD A,#00` | [UpdateBodyMotion.asm](../Source/Action/UpdateBodyMotion.asm) |
+| Action | #6869 | #6682 | `LD A,#00` | [UpdateBodyMotion.asm](../Source/Action/UpdateBodyMotion.asm) |
+| Action | #6879 | #7B6B | `CP #FD` | [UpdateBodyMotion.asm](../Source/Action/UpdateBodyMotion.asm) |
+| Action | #689F | #68D5 | `LD DE,#0000` | [UpdateBodyMotion.asm](../Source/Action/UpdateBodyMotion.asm) |
+| Action | #68B2 | #68FD | `LD DE,#0000` | [UpdateBodyMotion.asm](../Source/Action/UpdateBodyMotion.asm) |
+| Action | #68C5 | #6925 | `LD DE,#0000` | [UpdateBodyMotion.asm](../Source/Action/UpdateBodyMotion.asm) |
+| Action | #6962 | #6693 | `LD A,#00` | [UpdateBodyMotion.asm](../Source/Action/UpdateBodyMotion.asm) |
+| Action | #6967 | #668E | `LD A,#00` | [UpdateBodyMotion.asm](../Source/Action/UpdateBodyMotion.asm) |
+| Action | #6971 | #668E | `LD A,#00` | [UpdateBodyMotion.asm](../Source/Action/UpdateBodyMotion.asm) |
+| Action | #6975 | #6693 | `LD A,#00` | [UpdateBodyMotion.asm](../Source/Action/UpdateBodyMotion.asm) |
+| Action | #6A89 | #AF48 | `LD DE,#0000` | [PrepareBodyTransform.asm](../Source/Action/PrepareBodyTransform.asm) |
+| Action | #6A8F | #AF56 | `LD DE,#0000` | [PrepareBodyTransform.asm](../Source/Action/PrepareBodyTransform.asm) |
+| Action | #6A95 | #AF69 | `LD DE,#0000` | [PrepareBodyTransform.asm](../Source/Action/PrepareBodyTransform.asm) |
+| Action | #6C1C | #AF48 | `LD DE,#0000` | [TransformWorkComponents.asm](../Source/Action/TransformWorkComponents.asm) |
+| Action | #6C22 | #AF56 | `LD DE,#0000` | [TransformWorkComponents.asm](../Source/Action/TransformWorkComponents.asm) |
+| Action | #6C28 | #AF69 | `LD DE,#0000` | [TransformWorkComponents.asm](../Source/Action/TransformWorkComponents.asm) |
+| Action | #6C97 | #AF48 | `LD DE,#0000` | [UpdateThirdGlyphVector.asm](../Source/Action/UpdateThirdGlyphVector.asm) |
+| Action | #6C9D | #AF56 | `LD DE,#0000` | [UpdateThirdGlyphVector.asm](../Source/Action/UpdateThirdGlyphVector.asm) |
+| Action | #6CA3 | #AF69 | `LD DE,#0000` | [UpdateThirdGlyphVector.asm](../Source/Action/UpdateThirdGlyphVector.asm) |
+| Action | #6D42 | #6D39 | `LD A,#00` | [UpdateVisualEffects.asm](../Source/Action/UpdateVisualEffects.asm) |
+| Action | #6D45 | #6D3D | `LD A,#00` | [UpdateVisualEffects.asm](../Source/Action/UpdateVisualEffects.asm) |
+| Action | #6D61 | #AF69 | `LD DE,#0000` | [UpdateVisualEffects.asm](../Source/Action/UpdateVisualEffects.asm) |
+| Action | #6D77 | #AF48 | `LD DE,#0000` | [UpdateVisualEffects.asm](../Source/Action/UpdateVisualEffects.asm) |
+| Action | #6D8D | #AF56 | `LD DE,#0000` | [UpdateVisualEffects.asm](../Source/Action/UpdateVisualEffects.asm) |
+| Action | #6E82 | #E5B3 | `LD DE,#0000` | [UpdateMotionFromControls.asm](../Source/Action/UpdateMotionFromControls.asm) |
+| Action | #6E95 | #E5D2 | `LD DE,#0000` | [UpdateMotionFromControls.asm](../Source/Action/UpdateMotionFromControls.asm) |
+| Action | #6EA8 | #E5ED | `LD DE,#0000` | [UpdateMotionFromControls.asm](../Source/Action/UpdateMotionFromControls.asm) |
 | Action | #6EB0 | #669F | `LD A,#00` | [StepNearZeroWord.asm](../Source/Action/StepNearZeroWord.asm) |
 | Action | #6EDA | #6EAD | `LD A,#00` | [StepNearZeroWord.asm](../Source/Action/StepNearZeroWord.asm) |
-| Action | #6F5A | #6F59 | `LD C,#00` | [Unknown6F55.asm](../Source/Action/Unknown6F55.asm) |
-| Action | #6F73 | #669F | `LD A,#00` | [Unknown6F55.asm](../Source/Action/Unknown6F55.asm) |
-| Action | #6F77 | #6F56 | `LD A,#00` | [Unknown6F55.asm](../Source/Action/Unknown6F55.asm) |
-| Action | #6F7F | #6F7B | `LD A,#00` | [Unknown6F55.asm](../Source/Action/Unknown6F55.asm) |
-| Action | #6F8F | #6F8D | `LD A,#92` | [Unknown6F55.asm](../Source/Action/Unknown6F55.asm) |
-| Action | #6FB4 | #6FB0 | `LD A,#00` | [Unknown6F55.asm](../Source/Action/Unknown6F55.asm) |
-| Action | #6FC4 | #6FC2 | `LD A,#92` | [Unknown6F55.asm](../Source/Action/Unknown6F55.asm) |
-| Action | #6FE9 | #6FE5 | `LD A,#00` | [Unknown6F55.asm](../Source/Action/Unknown6F55.asm) |
-| Action | #6FF8 | #6FF6 | `LD A,#92` | [Unknown6F55.asm](../Source/Action/Unknown6F55.asm) |
-| Action | #7876 | #792E | `LD (IY+#18),#10` | [Unknown7859.asm](../Source/Action/Unknown7859.asm) |
-| Action | #792F | #792E | `LD (IY+#18),#10` | [Unknown7859.asm](../Source/Action/Unknown7859.asm) |
-| Action | #794B | #799C | `LD DE,#0000` | [Unknown7859.asm](../Source/Action/Unknown7859.asm) |
-| Action | #79A8 | #7B61 | `LD A,#00` | [Unknown7859.asm](../Source/Action/Unknown7859.asm) |
-| Action | #79B4 | #7B61 | `LD A,#00` | [Unknown7859.asm](../Source/Action/Unknown7859.asm) |
-| Action | #79C0 | #79DE | `ADD A,#00` | [Unknown7859.asm](../Source/Action/Unknown7859.asm) |
-| Action | #79C9 | #7A6A | `LD (IX+#12),#00` | [Unknown7859.asm](../Source/Action/Unknown7859.asm) |
-| Action | #7A25 | #6D39 | `LD A,#00` | [Unknown7859.asm](../Source/Action/Unknown7859.asm) |
-| Action | #7A31 | #6D3D | `LD A,#00` | [Unknown7859.asm](../Source/Action/Unknown7859.asm) |
-| Action | #7B5B | #7B59 | `LD A,#80` | [Unknown7B58.asm](../Source/Action/Unknown7B58.asm) |
-| Action | #7C5F | #6D39 | `LD A,#00` | [Unknown7B58.asm](../Source/Action/Unknown7B58.asm) |
-| Action | #7C6B | #6D3D | `LD A,#00` | [Unknown7B58.asm](../Source/Action/Unknown7B58.asm) |
-| Action | #7EC3 | #7F0F | `LD DE,#0000` | [Unknown7EB7.asm](../Source/Action/Unknown7EB7.asm) |
-| Action | #7EC7 | #7F12 | `LD HL,#0000` | [Unknown7EB7.asm](../Source/Action/Unknown7EB7.asm) |
-| Action | #7ED6 | #7F23 | `LD DE,#0000` | [Unknown7EB7.asm](../Source/Action/Unknown7EB7.asm) |
-| Action | #7EDA | #7F26 | `LD HL,#0000` | [Unknown7EB7.asm](../Source/Action/Unknown7EB7.asm) |
-| Action | #7EE9 | #7F37 | `LD DE,#0000` | [Unknown7EB7.asm](../Source/Action/Unknown7EB7.asm) |
-| Action | #7EED | #7F3A | `LD HL,#0000` | [Unknown7EB7.asm](../Source/Action/Unknown7EB7.asm) |
+| Action | #6F5A | #6F59 | `LD C,#00` | [LatchControlsAndDecay.asm](../Source/Action/LatchControlsAndDecay.asm) |
+| Action | #6F73 | #669F | `LD A,#00` | [LatchControlsAndDecay.asm](../Source/Action/LatchControlsAndDecay.asm) |
+| Action | #6F77 | #6F56 | `LD A,#00` | [LatchControlsAndDecay.asm](../Source/Action/LatchControlsAndDecay.asm) |
+| Action | #6F7F | #6F7B | `LD A,#00` | [LatchControlsAndDecay.asm](../Source/Action/LatchControlsAndDecay.asm) |
+| Action | #6F8F | #6F8D | `LD A,#92` | [LatchControlsAndDecay.asm](../Source/Action/LatchControlsAndDecay.asm) |
+| Action | #6FB4 | #6FB0 | `LD A,#00` | [LatchControlsAndDecay.asm](../Source/Action/LatchControlsAndDecay.asm) |
+| Action | #6FC4 | #6FC2 | `LD A,#92` | [LatchControlsAndDecay.asm](../Source/Action/LatchControlsAndDecay.asm) |
+| Action | #6FE9 | #6FE5 | `LD A,#00` | [LatchControlsAndDecay.asm](../Source/Action/LatchControlsAndDecay.asm) |
+| Action | #6FF8 | #6FF6 | `LD A,#92` | [LatchControlsAndDecay.asm](../Source/Action/LatchControlsAndDecay.asm) |
+| Action | #7876 | #792E | `LD (IY+#18),#10` | [SpawnAlternate.asm](../Source/Action/SpawnAlternate.asm) |
+| Action | #792F | #792E | `LD (IY+#18),#10` | [SpawnAlternate.asm](../Source/Action/SpawnAlternate.asm) |
+| Action | #794B | #799C | `LD DE,#0000` | [SpawnAlternate.asm](../Source/Action/SpawnAlternate.asm) |
+| Action | #79A8 | #7B61 | `LD A,#00` | [SpawnAlternate.asm](../Source/Action/SpawnAlternate.asm) |
+| Action | #79B4 | #7B61 | `LD A,#00` | [SpawnAlternate.asm](../Source/Action/SpawnAlternate.asm) |
+| Action | #79C0 | #79DE | `ADD A,#00` | [SpawnAlternate.asm](../Source/Action/SpawnAlternate.asm) |
+| Action | #79C9 | #7A6A | `LD (IX+#12),#00` | [SpawnAlternate.asm](../Source/Action/SpawnAlternate.asm) |
+| Action | #7A25 | #6D39 | `LD A,#00` | [SpawnAlternate.asm](../Source/Action/SpawnAlternate.asm) |
+| Action | #7A31 | #6D3D | `LD A,#00` | [SpawnAlternate.asm](../Source/Action/SpawnAlternate.asm) |
+| Action | #7B5B | #7B59 | `LD A,#80` | [ScheduleSpawn.asm](../Source/Action/ScheduleSpawn.asm) |
+| Action | #7C5F | #6D39 | `LD A,#00` | [ScheduleSpawn.asm](../Source/Action/ScheduleSpawn.asm) |
+| Action | #7C6B | #6D3D | `LD A,#00` | [ScheduleSpawn.asm](../Source/Action/ScheduleSpawn.asm) |
+| Action | #7EC3 | #7F0F | `LD DE,#0000` | [StepRecordTowardWideVector.asm](../Source/Action/StepRecordTowardWideVector.asm) |
+| Action | #7EC7 | #7F12 | `LD HL,#0000` | [StepRecordTowardWideVector.asm](../Source/Action/StepRecordTowardWideVector.asm) |
+| Action | #7ED6 | #7F23 | `LD DE,#0000` | [StepRecordTowardWideVector.asm](../Source/Action/StepRecordTowardWideVector.asm) |
+| Action | #7EDA | #7F26 | `LD HL,#0000` | [StepRecordTowardWideVector.asm](../Source/Action/StepRecordTowardWideVector.asm) |
+| Action | #7EE9 | #7F37 | `LD DE,#0000` | [StepRecordTowardWideVector.asm](../Source/Action/StepRecordTowardWideVector.asm) |
+| Action | #7EED | #7F3A | `LD HL,#0000` | [StepRecordTowardWideVector.asm](../Source/Action/StepRecordTowardWideVector.asm) |
 | Action | #A864 | #A85F | `LD A,#00` | [UpdateFrame.asm](../Source/Action/UpdateFrame.asm) |
 | Action | #A8AF | #664A | `LD A,#00` | [UpdateFrame.asm](../Source/Action/UpdateFrame.asm) |
 | Action | #A8B6 | #A8B3 | `LD A,#00` | [UpdateFrame.asm](../Source/Action/UpdateFrame.asm) |
@@ -581,47 +581,6 @@
 | Action | #A962 | #664A | `LD A,#00` | [UpdateFrame.asm](../Source/Action/UpdateFrame.asm) |
 | Action | #A969 | #A966 | `LD A,#00` | [UpdateFrame.asm](../Source/Action/UpdateFrame.asm) |
 | Action | #A97B | #664A | `LD A,#00` | [UpdateFrame.asm](../Source/Action/UpdateFrame.asm) |
-| Action | #A9A5 | #C09F | `JP M,#C58B` | [UpdateFrame.asm](../Source/Action/UpdateFrame.asm) |
-| Action | #A9A8 | #C13A | `CALL #C681` | [UpdateFrame.asm](../Source/Action/UpdateFrame.asm) |
-| Action | #A9AB | #D138 | `LD D,A` | [UpdateFrame.asm](../Source/Action/UpdateFrame.asm) |
-| Action | #A9B1 | #C1DC | `CALL #C496` | [UpdateFrame.asm](../Source/Action/UpdateFrame.asm) |
-| Action | #A9B4 | #C2B8 | `CALL #C58B` | [UpdateFrame.asm](../Source/Action/UpdateFrame.asm) |
-| Action | #A9B7 | #C301 | `SET 1,(HL)` | [UpdateFrame.asm](../Source/Action/UpdateFrame.asm) |
-| Action | #A9BA | #C370 | `CALL #C6C8` | [UpdateFrame.asm](../Source/Action/UpdateFrame.asm) |
-| Action | #A9BD | #C3D5 | `JP #C08A` | [UpdateFrame.asm](../Source/Action/UpdateFrame.asm) |
-| Action | #A9C0 | #C44E | `CALL #C477` | [UpdateFrame.asm](../Source/Action/UpdateFrame.asm) |
-| Action | #A9C3 | #C545 | `LD A,(#CF34)` | [UpdateFrame.asm](../Source/Action/UpdateFrame.asm) |
-| Action | #A9C6 | #C649 | `JP #C6DB` | [UpdateFrame.asm](../Source/Action/UpdateFrame.asm) |
-| Action | #A9C9 | #C6B2 | `SBC HL,BC` | [UpdateFrame.asm](../Source/Action/UpdateFrame.asm) |
-| Action | #A9CF | #C787 | `ADD IX,IX` | [UpdateFrame.asm](../Source/Action/UpdateFrame.asm) |
-| Action | #A9D2 | #C820 | `JR NC,#C823` | [UpdateFrame.asm](../Source/Action/UpdateFrame.asm) |
-| Action | #A9D5 | #C92F | `JR NC,#C932` | [UpdateFrame.asm](../Source/Action/UpdateFrame.asm) |
-| Action | #A9E4 | #CA96 | `JP PO,#CA9E` | [UpdateFrame.asm](../Source/Action/UpdateFrame.asm) |
-| Action | #A9EA | #CB9F | `JR NZ,#CBBB` | [UpdateFrame.asm](../Source/Action/UpdateFrame.asm) |
-| Action | #A9ED | #CBA4 | `LD L,C` | [UpdateFrame.asm](../Source/Action/UpdateFrame.asm) |
-| Action | #A9F0 | #CC77 | `LD (#D61E),A` | [UpdateFrame.asm](../Source/Action/UpdateFrame.asm) |
-| Action | #A9F3 | #CCE5 | `SRA A` | [UpdateFrame.asm](../Source/Action/UpdateFrame.asm) |
-| Action | #A9F6 | #CD79 | `SUB L` | [UpdateFrame.asm](../Source/Action/UpdateFrame.asm) |
-| Action | #A9F9 | #CDC3 | `SUB L` | [UpdateFrame.asm](../Source/Action/UpdateFrame.asm) |
-| Action | #A9FC | #CE28 | `LD (#D673),A` | [UpdateFrame.asm](../Source/Action/UpdateFrame.asm) |
-| Action | #A9FF | #CE6C | `LD (#D62F),A` | [UpdateFrame.asm](../Source/Action/UpdateFrame.asm) |
-| Action | #AA02 | #CE9D | `LD (#D662),A` | [UpdateFrame.asm](../Source/Action/UpdateFrame.asm) |
-| Action | #AA3A | #C243 | `CALL NZ,#C662` | [UpdateFrame.asm](../Source/Action/UpdateFrame.asm) |
-| Action | #AA3D | #C247 | `JP #C1C0` | [UpdateFrame.asm](../Source/Action/UpdateFrame.asm) |
-| Action | #AA40 | #C5CA | `LD (HL),A` | [UpdateFrame.asm](../Source/Action/UpdateFrame.asm) |
-| Action | #AA43 | #C5E7 | `LD A,(#CF2B)` | [UpdateFrame.asm](../Source/Action/UpdateFrame.asm) |
-| Action | #AA46 | #C672 | `LD BC,(#CF2F)` | [UpdateFrame.asm](../Source/Action/UpdateFrame.asm) |
-| Action | #AA49 | #C6AE | `LD BC,(#CF2B)` | [UpdateFrame.asm](../Source/Action/UpdateFrame.asm) |
-| Action | #AA5B | #C733 | `JP C,#C764` | [UpdateFrame.asm](../Source/Action/UpdateFrame.asm) |
-| Action | #AA5E | #C765 | `ADD IX,DE` | [UpdateFrame.asm](../Source/Action/UpdateFrame.asm) |
-| Action | #AA61 | #C9A2 | `LD A,(#9B13)` | [UpdateFrame.asm](../Source/Action/UpdateFrame.asm) |
-| Action | #AA64 | #C9C4 | `LD (#CC27),A` | [UpdateFrame.asm](../Source/Action/UpdateFrame.asm) |
-| Action | #AA67 | #CA24 | `LD L,B` | [UpdateFrame.asm](../Source/Action/UpdateFrame.asm) |
-| Action | #AA6A | #CA2F | `LD IXH,A` | [UpdateFrame.asm](../Source/Action/UpdateFrame.asm) |
-| Action | #AA73 | #CB29 | `BIT 0,(IY+#00)` | [UpdateFrame.asm](../Source/Action/UpdateFrame.asm) |
-| Action | #AA76 | #CB39 | `LD C,#00` | [UpdateFrame.asm](../Source/Action/UpdateFrame.asm) |
-| Action | #AA79 | #CE0E | `LD A,(#CBA1)` | [UpdateFrame.asm](../Source/Action/UpdateFrame.asm) |
-| Action | #AA7C | #CE1C | `LD (#D60D),A` | [UpdateFrame.asm](../Source/Action/UpdateFrame.asm) |
 | Action | #AC4F | #ECA9 | `LD HL,#0000` | [ReadWordFromIX.asm](../Source/Action/ReadWordFromIX.asm) |
 | Action | #AC52 | #ECF6 | `LD HL,#0000` | [ReadWordFromIX.asm](../Source/Action/ReadWordFromIX.asm) |
 | Action | #AC61 | #F79C | `LD C,#0A` | [ApplyParameterSet.asm](../Source/Action/ApplyParameterSet.asm) |
@@ -634,84 +593,65 @@
 | Action | #AC9D | #7E07 | `OR #32` | [ApplyParameterSet.asm](../Source/Action/ApplyParameterSet.asm) |
 | Action | #ACA2 | #7E09 | `LD H,#64` | [ApplyParameterSet.asm](../Source/Action/ApplyParameterSet.asm) |
 | Action | #ACA7 | #7DE4 | `OR #20` | [ApplyParameterSet.asm](../Source/Action/ApplyParameterSet.asm) |
-| Action | #AF10 | #AF14 | `JR NZ,#AF13` | [UnknownAE73.asm](../Source/Action/UnknownAE73.asm) |
-| Action | #AF2B | #AF2F | `JR NZ,#AF2E` | [UnknownAE73.asm](../Source/Action/UnknownAE73.asm) |
+| Action | #AF10 | #AF14 | `JR NZ,#AF13` | [DivideScaledLogarithmic.asm](../Source/Action/DivideScaledLogarithmic.asm) |
+| Action | #AF2B | #AF2F | `JR NZ,#AF2E` | [DivideScaledLogarithmic.asm](../Source/Action/DivideScaledLogarithmic.asm) |
 | Action | #AF43 | #AFF1 | `LD IX,#0000` | [ComputePatchedVector.asm](../Source/Action/ComputePatchedVector.asm) |
-| Action | #C9AC | #CB38 | `LD B,#00` | [UnknownC88C.asm](../Source/Action/UnknownC88C.asm) |
-| Action | #C9AF | #CC29 | `LD D,#00` | [UnknownC88C.asm](../Source/Action/UnknownC88C.asm) |
-| Action | #C9B4 | #CC25 | `LD B,#00` | [UnknownC88C.asm](../Source/Action/UnknownC88C.asm) |
-| Action | #C9B9 | #CB3C | `LD D,#00` | [UnknownC88C.asm](../Source/Action/UnknownC88C.asm) |
-| Action | #C9BD | #CD22 | `LD B,#00` | [UnknownC88C.asm](../Source/Action/UnknownC88C.asm) |
-| Action | #C9C0 | #CB3A | `LD C,#00` | [UnknownC88C.asm](../Source/Action/UnknownC88C.asm) |
-| Action | #C9C3 | #CC27 | `LD C,#00` | [UnknownC88C.asm](../Source/Action/UnknownC88C.asm) |
-| Action | #C9C6 | #CD26 | `LD D,#00` | [UnknownC88C.asm](../Source/Action/UnknownC88C.asm) |
-| Action | #C9CB | #CD24 | `LD C,#00` | [UnknownC88C.asm](../Source/Action/UnknownC88C.asm) |
-| Action | #C9F0 | #CD22 | `LD B,#00` | [UnknownC88C.asm](../Source/Action/UnknownC88C.asm) |
-| Action | #CA0A | #CB38 | `LD B,#00` | [UnknownC88C.asm](../Source/Action/UnknownC88C.asm) |
-| Action | #CA1D | #CC25 | `LD B,#00` | [UnknownC88C.asm](../Source/Action/UnknownC88C.asm) |
-| Action | #CA55 | #CB3A | `LD C,#00` | [UnknownC88C.asm](../Source/Action/UnknownC88C.asm) |
-| Action | #CA66 | #CD24 | `LD C,#00` | [UnknownC88C.asm](../Source/Action/UnknownC88C.asm) |
-| Action | #CA9E | #CC27 | `LD C,#00` | [UnknownC88C.asm](../Source/Action/UnknownC88C.asm) |
-| Action | #CAD6 | #CB3C | `LD D,#00` | [UnknownC88C.asm](../Source/Action/UnknownC88C.asm) |
-| Action | #CAE7 | #CD26 | `LD D,#00` | [UnknownC88C.asm](../Source/Action/UnknownC88C.asm) |
-| Action | #CB1F | #CC29 | `LD D,#00` | [UnknownC88C.asm](../Source/Action/UnknownC88C.asm) |
+| Action | #C9AC | #CB38 | `LD B,#00` | [BuildRenderCoefficients.asm](../Source/Action/BuildRenderCoefficients.asm) |
+| Action | #C9AF | #CC29 | `LD D,#00` | [BuildRenderCoefficients.asm](../Source/Action/BuildRenderCoefficients.asm) |
+| Action | #C9B4 | #CC25 | `LD B,#00` | [BuildRenderCoefficients.asm](../Source/Action/BuildRenderCoefficients.asm) |
+| Action | #C9B9 | #CB3C | `LD D,#00` | [BuildRenderCoefficients.asm](../Source/Action/BuildRenderCoefficients.asm) |
+| Action | #C9BD | #CD22 | `LD B,#00` | [BuildRenderCoefficients.asm](../Source/Action/BuildRenderCoefficients.asm) |
+| Action | #C9C0 | #CB3A | `LD C,#00` | [BuildRenderCoefficients.asm](../Source/Action/BuildRenderCoefficients.asm) |
+| Action | #C9C3 | #CC27 | `LD C,#00` | [BuildRenderCoefficients.asm](../Source/Action/BuildRenderCoefficients.asm) |
+| Action | #C9C6 | #CD26 | `LD D,#00` | [BuildRenderCoefficients.asm](../Source/Action/BuildRenderCoefficients.asm) |
+| Action | #C9CB | #CD24 | `LD C,#00` | [BuildRenderCoefficients.asm](../Source/Action/BuildRenderCoefficients.asm) |
+| Action | #C9F0 | #CD22 | `LD B,#00` | [BuildRenderCoefficients.asm](../Source/Action/BuildRenderCoefficients.asm) |
+| Action | #CA0A | #CB38 | `LD B,#00` | [BuildRenderCoefficients.asm](../Source/Action/BuildRenderCoefficients.asm) |
+| Action | #CA1D | #CC25 | `LD B,#00` | [BuildRenderCoefficients.asm](../Source/Action/BuildRenderCoefficients.asm) |
+| Action | #CA55 | #CB3A | `LD C,#00` | [BuildRenderCoefficients.asm](../Source/Action/BuildRenderCoefficients.asm) |
+| Action | #CA66 | #CD24 | `LD C,#00` | [BuildRenderCoefficients.asm](../Source/Action/BuildRenderCoefficients.asm) |
+| Action | #CA9E | #CC27 | `LD C,#00` | [BuildRenderCoefficients.asm](../Source/Action/BuildRenderCoefficients.asm) |
+| Action | #CAD6 | #CB3C | `LD D,#00` | [BuildRenderCoefficients.asm](../Source/Action/BuildRenderCoefficients.asm) |
+| Action | #CAE7 | #CD26 | `LD D,#00` | [BuildRenderCoefficients.asm](../Source/Action/BuildRenderCoefficients.asm) |
+| Action | #CB1F | #CC29 | `LD D,#00` | [BuildRenderCoefficients.asm](../Source/Action/BuildRenderCoefficients.asm) |
 | Action | #D10A | #D129 | `LD SP,#0000` | [ClearWorkBuffer.asm](../Source/Action/ClearWorkBuffer.asm) |
-| Action | #E048 | #E021 | `LD A,#00` | [UnknownE020.asm](../Source/Action/UnknownE020.asm) |
-| Action | #E04B | #ED83 | `LD A,#00` | [UnknownE020.asm](../Source/Action/UnknownE020.asm) |
-| Action | #E065 | #CB3E | `LD A,#00` | [UnknownE020.asm](../Source/Action/UnknownE020.asm) |
-| Action | #E070 | #CB8B | `LD A,#00` | [UnknownE020.asm](../Source/Action/UnknownE020.asm) |
-| Action | #E07B | #CBD8 | `LD A,#00` | [UnknownE020.asm](../Source/Action/UnknownE020.asm) |
-| Action | #E086 | #CB54 | `LD A,#00` | [UnknownE020.asm](../Source/Action/UnknownE020.asm) |
-| Action | #E091 | #CBA1 | `LD A,#00` | [UnknownE020.asm](../Source/Action/UnknownE020.asm) |
-| Action | #E09C | #CBEE | `LD A,#00` | [UnknownE020.asm](../Source/Action/UnknownE020.asm) |
-| Action | #E0A7 | #CB6F | `LD A,#00` | [UnknownE020.asm](../Source/Action/UnknownE020.asm) |
-| Action | #E0B2 | #CBBC | `LD A,#00` | [UnknownE020.asm](../Source/Action/UnknownE020.asm) |
-| Action | #E0BD | #CC09 | `LD A,#00` | [UnknownE020.asm](../Source/Action/UnknownE020.asm) |
-| Action | #E0D7 | #E4A7 | `LD SP,#0000` | [UnknownE020.asm](../Source/Action/UnknownE020.asm) |
-| Action | #E101 | #AF48 | `LD DE,#0000` | [UnknownE020.asm](../Source/Action/UnknownE020.asm) |
-| Action | #E113 | #AF56 | `LD DE,#0000` | [UnknownE020.asm](../Source/Action/UnknownE020.asm) |
-| Action | #E125 | #AF69 | `LD DE,#0000` | [UnknownE020.asm](../Source/Action/UnknownE020.asm) |
-| Action | #E19D | #ED83 | `LD A,#00` | [UnknownE020.asm](../Source/Action/UnknownE020.asm) |
-| Action | #E4B2 | #E4D6 | `LD SP,#0000` | [UnknownE4A6.asm](../Source/Action/UnknownE4A6.asm) |
-| Action | #E55C | #E605 | `LD SP,#0000` | [UnknownE55C.asm](../Source/Action/UnknownE55C.asm) |
-| Action | #E56A | #E68C | `LD HL,#0000` | [UnknownE55C.asm](../Source/Action/UnknownE55C.asm) |
-| Action | #E571 | #E5B3 | `LD DE,#0000` | [UnknownE55C.asm](../Source/Action/UnknownE55C.asm) |
-| Action | #E577 | #E692 | `LD HL,#0000` | [UnknownE55C.asm](../Source/Action/UnknownE55C.asm) |
-| Action | #E57E | #E5D2 | `LD DE,#0000` | [UnknownE55C.asm](../Source/Action/UnknownE55C.asm) |
-| Action | #E584 | #E698 | `LD HL,#0000` | [UnknownE55C.asm](../Source/Action/UnknownE55C.asm) |
-| Action | #E58B | #E5ED | `LD DE,#0000` | [UnknownE55C.asm](../Source/Action/UnknownE55C.asm) |
-| Action | #E59A | #E59E | `JR #E59D` | [UnknownE55C.asm](../Source/Action/UnknownE55C.asm) |
-| Action | #E63E | #E644 | `LD A,#00` | [UnknownE5A0.asm](../Source/Action/UnknownE5A0.asm) |
-| Action | #E64B | #E644 | `LD A,#00` | [UnknownE5A0.asm](../Source/Action/UnknownE5A0.asm) |
-| Action | #E68E | #E5B3 | `LD DE,#0000` | [UnknownE685.asm](../Source/Action/UnknownE685.asm) |
-| Action | #E694 | #E5D2 | `LD DE,#0000` | [UnknownE685.asm](../Source/Action/UnknownE685.asm) |
-| Action | #E69A | #E5ED | `LD DE,#0000` | [UnknownE685.asm](../Source/Action/UnknownE685.asm) |
-| Action | #ECDD | #ECA9 | `LD HL,#0000` | [UnknownECA8.asm](../Source/Action/UnknownECA8.asm) |
-| Action | #ECE4 | #ECAA | `LD HL,#0000` | [UnknownECA8.asm](../Source/Action/UnknownECA8.asm) |
-| Action | #ED2E | #ECF6 | `LD HL,#0000` | [UnknownECA8.asm](../Source/Action/UnknownECA8.asm) |
-| Action | #ED35 | #ECF7 | `LD HL,#0000` | [UnknownECA8.asm](../Source/Action/UnknownECA8.asm) |
-| Action | #F575 | #E5B0 | `LD HL,#0000` | [UnknownF572.asm](../Source/Action/UnknownF572.asm) |
-| Action | #F578 | #E5CF | `LD HL,#0000` | [UnknownF572.asm](../Source/Action/UnknownF572.asm) |
-| Action | #F57B | #E5EA | `LD HL,#0000` | [UnknownF572.asm](../Source/Action/UnknownF572.asm) |
-| ThreeD | #C9AC | #CB38 | `LD B,#00` | [UnknownC88C.asm](../Source/ThreeD/UnknownC88C.asm) |
-| ThreeD | #C9AF | #CC29 | `LD D,#00` | [UnknownC88C.asm](../Source/ThreeD/UnknownC88C.asm) |
-| ThreeD | #C9B4 | #CC25 | `LD B,#00` | [UnknownC88C.asm](../Source/ThreeD/UnknownC88C.asm) |
-| ThreeD | #C9B9 | #CB3C | `LD D,#00` | [UnknownC88C.asm](../Source/ThreeD/UnknownC88C.asm) |
-| ThreeD | #C9BD | #CD22 | `LD B,#00` | [UnknownC88C.asm](../Source/ThreeD/UnknownC88C.asm) |
-| ThreeD | #C9C0 | #CB3A | `LD C,#00` | [UnknownC88C.asm](../Source/ThreeD/UnknownC88C.asm) |
-| ThreeD | #C9C3 | #CC27 | `LD C,#00` | [UnknownC88C.asm](../Source/ThreeD/UnknownC88C.asm) |
-| ThreeD | #C9C6 | #CD26 | `LD D,#00` | [UnknownC88C.asm](../Source/ThreeD/UnknownC88C.asm) |
-| ThreeD | #C9CB | #CD24 | `LD C,#00` | [UnknownC88C.asm](../Source/ThreeD/UnknownC88C.asm) |
-| ThreeD | #C9F0 | #CD22 | `LD B,#00` | [UnknownC88C.asm](../Source/ThreeD/UnknownC88C.asm) |
-| ThreeD | #CA0A | #CB38 | `LD B,#00` | [UnknownC88C.asm](../Source/ThreeD/UnknownC88C.asm) |
-| ThreeD | #CA1D | #CC25 | `LD B,#00` | [UnknownC88C.asm](../Source/ThreeD/UnknownC88C.asm) |
-| ThreeD | #CA55 | #CB3A | `LD C,#00` | [UnknownC88C.asm](../Source/ThreeD/UnknownC88C.asm) |
-| ThreeD | #CA66 | #CD24 | `LD C,#00` | [UnknownC88C.asm](../Source/ThreeD/UnknownC88C.asm) |
-| ThreeD | #CA9E | #CC27 | `LD C,#00` | [UnknownC88C.asm](../Source/ThreeD/UnknownC88C.asm) |
-| ThreeD | #CAD6 | #CB3C | `LD D,#00` | [UnknownCAB3.asm](../Source/ThreeD/UnknownCAB3.asm) |
-| ThreeD | #CAE7 | #CD26 | `LD D,#00` | [UnknownCAE3.asm](../Source/ThreeD/UnknownCAE3.asm) |
-| ThreeD | #CB1F | #CC29 | `LD D,#00` | [UnknownCAE3.asm](../Source/ThreeD/UnknownCAE3.asm) |
-| ThreeD | #D10A | #D129 | `LD SP,#0000` | [ClearWorkBuffer.asm](../Source/ThreeD/ClearWorkBuffer.asm) |
+| Action | #E048 | #E021 | `LD A,#00` | [RenderSceneFrame.asm](../Source/Action/RenderSceneFrame.asm) |
+| Action | #E04B | #ED83 | `LD A,#00` | [RenderSceneFrame.asm](../Source/Action/RenderSceneFrame.asm) |
+| Action | #E065 | #CB3E | `LD A,#00` | [RenderSceneFrame.asm](../Source/Action/RenderSceneFrame.asm) |
+| Action | #E070 | #CB8B | `LD A,#00` | [RenderSceneFrame.asm](../Source/Action/RenderSceneFrame.asm) |
+| Action | #E07B | #CBD8 | `LD A,#00` | [RenderSceneFrame.asm](../Source/Action/RenderSceneFrame.asm) |
+| Action | #E086 | #CB54 | `LD A,#00` | [RenderSceneFrame.asm](../Source/Action/RenderSceneFrame.asm) |
+| Action | #E091 | #CBA1 | `LD A,#00` | [RenderSceneFrame.asm](../Source/Action/RenderSceneFrame.asm) |
+| Action | #E09C | #CBEE | `LD A,#00` | [RenderSceneFrame.asm](../Source/Action/RenderSceneFrame.asm) |
+| Action | #E0A7 | #CB6F | `LD A,#00` | [RenderSceneFrame.asm](../Source/Action/RenderSceneFrame.asm) |
+| Action | #E0B2 | #CBBC | `LD A,#00` | [RenderSceneFrame.asm](../Source/Action/RenderSceneFrame.asm) |
+| Action | #E0BD | #CC09 | `LD A,#00` | [RenderSceneFrame.asm](../Source/Action/RenderSceneFrame.asm) |
+| Action | #E0D7 | #E4A7 | `LD SP,#0000` | [RenderSceneFrame.asm](../Source/Action/RenderSceneFrame.asm) |
+| Action | #E101 | #AF48 | `LD DE,#0000` | [RenderSceneFrame.asm](../Source/Action/RenderSceneFrame.asm) |
+| Action | #E113 | #AF56 | `LD DE,#0000` | [RenderSceneFrame.asm](../Source/Action/RenderSceneFrame.asm) |
+| Action | #E125 | #AF69 | `LD DE,#0000` | [RenderSceneFrame.asm](../Source/Action/RenderSceneFrame.asm) |
+| Action | #E19D | #ED83 | `LD A,#00` | [RenderSceneFrame.asm](../Source/Action/RenderSceneFrame.asm) |
+| Action | #E4B2 | #E4D6 | `LD SP,#0000` | [ReadRenderQueue.asm](../Source/Action/ReadRenderQueue.asm) |
+| Action | #E55C | #E605 | `LD SP,#0000` | [PrepareRecordScale.asm](../Source/Action/PrepareRecordScale.asm) |
+| Action | #E56A | #E68C | `LD HL,#0000` | [PrepareRecordScale.asm](../Source/Action/PrepareRecordScale.asm) |
+| Action | #E571 | #E5B3 | `LD DE,#0000` | [PrepareRecordScale.asm](../Source/Action/PrepareRecordScale.asm) |
+| Action | #E577 | #E692 | `LD HL,#0000` | [PrepareRecordScale.asm](../Source/Action/PrepareRecordScale.asm) |
+| Action | #E57E | #E5D2 | `LD DE,#0000` | [PrepareRecordScale.asm](../Source/Action/PrepareRecordScale.asm) |
+| Action | #E584 | #E698 | `LD HL,#0000` | [PrepareRecordScale.asm](../Source/Action/PrepareRecordScale.asm) |
+| Action | #E58B | #E5ED | `LD DE,#0000` | [PrepareRecordScale.asm](../Source/Action/PrepareRecordScale.asm) |
+| Action | #E59A | #E59E | `JR #E59D` | [PrepareRecordScale.asm](../Source/Action/PrepareRecordScale.asm) |
+| Action | #E63E | #E644 | `LD A,#00` | [UpdateRecordComponents.asm](../Source/Action/UpdateRecordComponents.asm) |
+| Action | #E64B | #E644 | `LD A,#00` | [UpdateRecordComponents.asm](../Source/Action/UpdateRecordComponents.asm) |
+| Action | #E68E | #E5B3 | `LD DE,#0000` | [RestoreHalvedOffsets.asm](../Source/Action/RestoreHalvedOffsets.asm) |
+| Action | #E694 | #E5D2 | `LD DE,#0000` | [RestoreHalvedOffsets.asm](../Source/Action/RestoreHalvedOffsets.asm) |
+| Action | #E69A | #E5ED | `LD DE,#0000` | [RestoreHalvedOffsets.asm](../Source/Action/RestoreHalvedOffsets.asm) |
+| Action | #ECDD | #ECA9 | `LD HL,#0000` | [UpdateAyEffects.asm](../Source/Action/UpdateAyEffects.asm) |
+| Action | #ECE4 | #ECAA | `LD HL,#0000` | [UpdateAyEffects.asm](../Source/Action/UpdateAyEffects.asm) |
+| Action | #ED2E | #ECF6 | `LD HL,#0000` | [UpdateAyEffects.asm](../Source/Action/UpdateAyEffects.asm) |
+| Action | #ED35 | #ECF7 | `LD HL,#0000` | [UpdateAyEffects.asm](../Source/Action/UpdateAyEffects.asm) |
+| Action | #F575 | #E5B0 | `LD HL,#0000` | [ResetRecordUpdateBases.asm](../Source/Action/ResetRecordUpdateBases.asm) |
+| Action | #F578 | #E5CF | `LD HL,#0000` | [ResetRecordUpdateBases.asm](../Source/Action/ResetRecordUpdateBases.asm) |
+| Action | #F57B | #E5EA | `LD HL,#0000` | [ResetRecordUpdateBases.asm](../Source/Action/ResetRecordUpdateBases.asm) |
 | Voxel | #E50A | #E7AF | `LD HL,#0000` | [RotateBasisVectors.asm](../Source/Voxel/RotateBasisVectors.asm) |
 | Voxel | #E510 | #E801 | `LD HL,#0000` | [RotateBasisVectors.asm](../Source/Voxel/RotateBasisVectors.asm) |
 | Voxel | #E516 | #E853 | `LD HL,#0000` | [RotateBasisVectors.asm](../Source/Voxel/RotateBasisVectors.asm) |
@@ -746,6 +686,142 @@
 | Voxel | #ED23 | #EE17 | `LD A,#00` | [ClipSprite.asm](../Source/Voxel/ClipSprite.asm) |
 | Voxel | #ED30 | #EE4A | `JR NC,#EE53` | [ClipSprite.asm](../Source/Voxel/ClipSprite.asm) |
 | Voxel | #EE53 | #EE78 | `JP #0000` | [ClipSprite.asm](../Source/Voxel/ClipSprite.asm) |
+| ThreeD | #C9AC | #CB38 | `LD B,#00` | [BuildRenderCoefficients.asm](../Source/ThreeD/BuildRenderCoefficients.asm) |
+| ThreeD | #C9AF | #CC29 | `LD D,#00` | [BuildRenderCoefficients.asm](../Source/ThreeD/BuildRenderCoefficients.asm) |
+| ThreeD | #C9B4 | #CC25 | `LD B,#00` | [BuildRenderCoefficients.asm](../Source/ThreeD/BuildRenderCoefficients.asm) |
+| ThreeD | #C9B9 | #CB3C | `LD D,#00` | [BuildRenderCoefficients.asm](../Source/ThreeD/BuildRenderCoefficients.asm) |
+| ThreeD | #C9BD | #CD22 | `LD B,#00` | [BuildRenderCoefficients.asm](../Source/ThreeD/BuildRenderCoefficients.asm) |
+| ThreeD | #C9C0 | #CB3A | `LD C,#00` | [BuildRenderCoefficients.asm](../Source/ThreeD/BuildRenderCoefficients.asm) |
+| ThreeD | #C9C3 | #CC27 | `LD C,#00` | [BuildRenderCoefficients.asm](../Source/ThreeD/BuildRenderCoefficients.asm) |
+| ThreeD | #C9C6 | #CD26 | `LD D,#00` | [BuildRenderCoefficients.asm](../Source/ThreeD/BuildRenderCoefficients.asm) |
+| ThreeD | #C9CB | #CD24 | `LD C,#00` | [BuildRenderCoefficients.asm](../Source/ThreeD/BuildRenderCoefficients.asm) |
+| ThreeD | #C9F0 | #CD22 | `LD B,#00` | [BuildRenderCoefficients.asm](../Source/ThreeD/BuildRenderCoefficients.asm) |
+| ThreeD | #CA0A | #CB38 | `LD B,#00` | [BuildRenderCoefficients.asm](../Source/ThreeD/BuildRenderCoefficients.asm) |
+| ThreeD | #CA1D | #CC25 | `LD B,#00` | [BuildRenderCoefficients.asm](../Source/ThreeD/BuildRenderCoefficients.asm) |
+| ThreeD | #CA55 | #CB3A | `LD C,#00` | [BuildRenderCoefficients.asm](../Source/ThreeD/BuildRenderCoefficients.asm) |
+| ThreeD | #CA66 | #CD24 | `LD C,#00` | [BuildRenderCoefficients.asm](../Source/ThreeD/BuildRenderCoefficients.asm) |
+| ThreeD | #CA9E | #CC27 | `LD C,#00` | [BuildRenderCoefficients.asm](../Source/ThreeD/BuildRenderCoefficients.asm) |
+| ThreeD | #CAD6 | #CB3C | `LD D,#00` | [BuildRenderCoefficients.asm](../Source/ThreeD/BuildRenderCoefficients.asm) |
+| ThreeD | #CAE7 | #CD26 | `LD D,#00` | [BuildRenderCoefficients.asm](../Source/ThreeD/BuildRenderCoefficients.asm) |
+| ThreeD | #CB1F | #CC29 | `LD D,#00` | [BuildRenderCoefficients.asm](../Source/ThreeD/BuildRenderCoefficients.asm) |
+| ThreeD | #CB87 | #D5FC | `LD A,#00` | [ComposeRenderMatrix.asm](../Source/ThreeD/ComposeRenderMatrix.asm) |
+| ThreeD | #CBD4 | #D62F | `LD A,#00` | [ComposeRenderMatrix.asm](../Source/ThreeD/ComposeRenderMatrix.asm) |
+| ThreeD | #CC21 | #D662 | `LD A,#00` | [ComposeRenderMatrix.asm](../Source/ThreeD/ComposeRenderMatrix.asm) |
+| ThreeD | #CC77 | #D61E | `LD A,#00` | [ComposeRenderMatrix.asm](../Source/ThreeD/ComposeRenderMatrix.asm) |
+| ThreeD | #CCC7 | #D651 | `LD A,#00` | [ComposeRenderMatrix.asm](../Source/ThreeD/ComposeRenderMatrix.asm) |
+| ThreeD | #CD17 | #D684 | `LD A,#00` | [ComposeRenderMatrix.asm](../Source/ThreeD/ComposeRenderMatrix.asm) |
+| ThreeD | #CD6E | #D60D | `LD A,#00` | [ComposeRenderMatrix.asm](../Source/ThreeD/ComposeRenderMatrix.asm) |
+| ThreeD | #CDB8 | #D640 | `LD A,#00` | [ComposeRenderMatrix.asm](../Source/ThreeD/ComposeRenderMatrix.asm) |
+| ThreeD | #CE02 | #D673 | `LD A,#00` | [ComposeRenderMatrix.asm](../Source/ThreeD/ComposeRenderMatrix.asm) |
+| ThreeD | #CE09 | #D60D | `LD A,#00` | [ComposeRenderMatrix.asm](../Source/ThreeD/ComposeRenderMatrix.asm) |
+| ThreeD | #CE0F | #D640 | `LD A,#00` | [ComposeRenderMatrix.asm](../Source/ThreeD/ComposeRenderMatrix.asm) |
+| ThreeD | #CE15 | #D673 | `LD A,#00` | [ComposeRenderMatrix.asm](../Source/ThreeD/ComposeRenderMatrix.asm) |
+| ThreeD | #CE1C | #D60D | `LD A,#00` | [ComposeRenderMatrix.asm](../Source/ThreeD/ComposeRenderMatrix.asm) |
+| ThreeD | #CE22 | #D640 | `LD A,#00` | [ComposeRenderMatrix.asm](../Source/ThreeD/ComposeRenderMatrix.asm) |
+| ThreeD | #CE28 | #D673 | `LD A,#00` | [ComposeRenderMatrix.asm](../Source/ThreeD/ComposeRenderMatrix.asm) |
+| ThreeD | #CE3A | #D5FC | `LD A,#00` | [ComposeRenderMatrix.asm](../Source/ThreeD/ComposeRenderMatrix.asm) |
+| ThreeD | #CE40 | #D62F | `LD A,#00` | [ComposeRenderMatrix.asm](../Source/ThreeD/ComposeRenderMatrix.asm) |
+| ThreeD | #CE46 | #D662 | `LD A,#00` | [ComposeRenderMatrix.asm](../Source/ThreeD/ComposeRenderMatrix.asm) |
+| ThreeD | #CE4E | #D61E | `LD A,#00` | [ComposeRenderMatrix.asm](../Source/ThreeD/ComposeRenderMatrix.asm) |
+| ThreeD | #CE56 | #D651 | `LD A,#00` | [ComposeRenderMatrix.asm](../Source/ThreeD/ComposeRenderMatrix.asm) |
+| ThreeD | #CE5E | #D684 | `LD A,#00` | [ComposeRenderMatrix.asm](../Source/ThreeD/ComposeRenderMatrix.asm) |
+| ThreeD | #CE65 | #D5FC | `LD A,#00` | [ComposeRenderMatrix.asm](../Source/ThreeD/ComposeRenderMatrix.asm) |
+| ThreeD | #CE6B | #D62F | `LD A,#00` | [ComposeRenderMatrix.asm](../Source/ThreeD/ComposeRenderMatrix.asm) |
+| ThreeD | #CE71 | #D662 | `LD A,#00` | [ComposeRenderMatrix.asm](../Source/ThreeD/ComposeRenderMatrix.asm) |
+| ThreeD | #CE77 | #D61E | `LD A,#00` | [ComposeRenderMatrix.asm](../Source/ThreeD/ComposeRenderMatrix.asm) |
+| ThreeD | #CE7D | #D651 | `LD A,#00` | [ComposeRenderMatrix.asm](../Source/ThreeD/ComposeRenderMatrix.asm) |
+| ThreeD | #CE83 | #D684 | `LD A,#00` | [ComposeRenderMatrix.asm](../Source/ThreeD/ComposeRenderMatrix.asm) |
+| ThreeD | #CE8C | #D5FC | `LD A,#00` | [ComposeRenderMatrix.asm](../Source/ThreeD/ComposeRenderMatrix.asm) |
+| ThreeD | #CE94 | #D62F | `LD A,#00` | [ComposeRenderMatrix.asm](../Source/ThreeD/ComposeRenderMatrix.asm) |
+| ThreeD | #CE9C | #D662 | `LD A,#00` | [ComposeRenderMatrix.asm](../Source/ThreeD/ComposeRenderMatrix.asm) |
+| ThreeD | #CEA2 | #D61E | `LD A,#00` | [ComposeRenderMatrix.asm](../Source/ThreeD/ComposeRenderMatrix.asm) |
+| ThreeD | #CEA8 | #D651 | `LD A,#00` | [ComposeRenderMatrix.asm](../Source/ThreeD/ComposeRenderMatrix.asm) |
+| ThreeD | #CEAE | #D684 | `LD A,#00` | [ComposeRenderMatrix.asm](../Source/ThreeD/ComposeRenderMatrix.asm) |
+| ThreeD | #CEB7 | #D5FC | `LD A,#00` | [ComposeRenderMatrix.asm](../Source/ThreeD/ComposeRenderMatrix.asm) |
+| ThreeD | #CEBF | #D62F | `LD A,#00` | [ComposeRenderMatrix.asm](../Source/ThreeD/ComposeRenderMatrix.asm) |
+| ThreeD | #CEC7 | #D662 | `LD A,#00` | [ComposeRenderMatrix.asm](../Source/ThreeD/ComposeRenderMatrix.asm) |
+| ThreeD | #CECF | #D61E | `LD A,#00` | [ComposeRenderMatrix.asm](../Source/ThreeD/ComposeRenderMatrix.asm) |
+| ThreeD | #CED7 | #D651 | `LD A,#00` | [ComposeRenderMatrix.asm](../Source/ThreeD/ComposeRenderMatrix.asm) |
+| ThreeD | #CEDF | #D684 | `LD A,#00` | [ComposeRenderMatrix.asm](../Source/ThreeD/ComposeRenderMatrix.asm) |
+| ThreeD | #D10A | #D129 | `LD SP,#0000` | [ClearWorkBuffer.asm](../Source/ThreeD/ClearWorkBuffer.asm) |
+| ThreeD | #D239 | #D244 | `JP #D100` | [PolygonFillRows.asm](../Source/ThreeD/PolygonFillRows.asm) |
+| ThreeD | #D284 | #D275 | `LD HL,#0000` | [UpdatePolygonLeftEdge.asm](../Source/ThreeD/UpdatePolygonLeftEdge.asm) |
+| ThreeD | #D288 | #D217 | `ADD A,#00` | [UpdatePolygonLeftEdge.asm](../Source/ThreeD/UpdatePolygonLeftEdge.asm) |
+| ThreeD | #D290 | #D4C4 | `LD E,#00` | [UpdatePolygonLeftEdge.asm](../Source/ThreeD/UpdatePolygonLeftEdge.asm) |
+| ThreeD | #D2DF | #D213 | `SUB #00` | [UpdatePolygonLeftEdge.asm](../Source/ThreeD/UpdatePolygonLeftEdge.asm) |
+| ThreeD | #D2FC | #D213 | `SUB #00` | [UpdatePolygonLeftEdge.asm](../Source/ThreeD/UpdatePolygonLeftEdge.asm) |
+| ThreeD | #D31C | #D213 | `SUB #00` | [UpdatePolygonLeftEdge.asm](../Source/ThreeD/UpdatePolygonLeftEdge.asm) |
+| ThreeD | #D36B | #D213 | `SUB #00` | [UpdatePolygonLeftEdge.asm](../Source/ThreeD/UpdatePolygonLeftEdge.asm) |
+| ThreeD | #D38D | #D22A | `CP #00` | [UpdatePolygonLeftEdge.asm](../Source/ThreeD/UpdatePolygonLeftEdge.asm) |
+| ThreeD | #D392 | #D22C | `JR NC,#D263` | [UpdatePolygonLeftEdge.asm](../Source/ThreeD/UpdatePolygonLeftEdge.asm) |
+| ThreeD | #D399 | #D213 | `SUB #00` | [UpdatePolygonLeftEdge.asm](../Source/ThreeD/UpdatePolygonLeftEdge.asm) |
+| ThreeD | #D3C2 | #D3B0 | `LD HL,#0000` | [UpdatePolygonRightEdge.asm](../Source/ThreeD/UpdatePolygonRightEdge.asm) |
+| ThreeD | #D3C6 | #D223 | `ADD A,#00` | [UpdatePolygonRightEdge.asm](../Source/ThreeD/UpdatePolygonRightEdge.asm) |
+| ThreeD | #D3CF | #D387 | `LD L,#00` | [UpdatePolygonRightEdge.asm](../Source/ThreeD/UpdatePolygonRightEdge.asm) |
+| ThreeD | #D41E | #D21F | `SUB #00` | [UpdatePolygonRightEdge.asm](../Source/ThreeD/UpdatePolygonRightEdge.asm) |
+| ThreeD | #D43A | #D21F | `SUB #00` | [UpdatePolygonRightEdge.asm](../Source/ThreeD/UpdatePolygonRightEdge.asm) |
+| ThreeD | #D459 | #D21F | `SUB #00` | [UpdatePolygonRightEdge.asm](../Source/ThreeD/UpdatePolygonRightEdge.asm) |
+| ThreeD | #D4A6 | #D21F | `SUB #00` | [UpdatePolygonRightEdge.asm](../Source/ThreeD/UpdatePolygonRightEdge.asm) |
+| ThreeD | #D4D0 | #D22A | `CP #00` | [SelectPolygonRowLimit.asm](../Source/ThreeD/SelectPolygonRowLimit.asm) |
+| ThreeD | #D4D5 | #D22C | `JR NC,#D263` | [SelectPolygonRowLimit.asm](../Source/ThreeD/SelectPolygonRowLimit.asm) |
+| ThreeD | #D4DF | #D22A | `CP #00` | [SelectPolygonRowLimit.asm](../Source/ThreeD/SelectPolygonRowLimit.asm) |
+| ThreeD | #D4E4 | #D22C | `JR NC,#D263` | [SelectPolygonRowLimit.asm](../Source/ThreeD/SelectPolygonRowLimit.asm) |
+| ThreeD | #D4EA | #D22A | `CP #00` | [SelectPolygonRowLimit.asm](../Source/ThreeD/SelectPolygonRowLimit.asm) |
+| ThreeD | #D4EF | #D22C | `JR NC,#D263` | [SelectPolygonRowLimit.asm](../Source/ThreeD/SelectPolygonRowLimit.asm) |
+| ThreeD | #D4F5 | #D21F | `SUB #00` | [SetShortNegativeRightStep.asm](../Source/ThreeD/SetShortNegativeRightStep.asm) |
+| ThreeD | #D517 | #D3B7 | `CP #00` | [PreparePolygonFill.asm](../Source/ThreeD/PreparePolygonFill.asm) |
+| ThreeD | #D537 | #D4C2 | `LD L,#00` | [PreparePolygonFill.asm](../Source/ThreeD/PreparePolygonFill.asm) |
+| ThreeD | #D53B | #D4C4 | `LD E,#00` | [PreparePolygonFill.asm](../Source/ThreeD/PreparePolygonFill.asm) |
+| ThreeD | #D53E | #D387 | `LD L,#00` | [PreparePolygonFill.asm](../Source/ThreeD/PreparePolygonFill.asm) |
+| ThreeD | #D54C | #D275 | `LD HL,#0000` | [PreparePolygonFill.asm](../Source/ThreeD/PreparePolygonFill.asm) |
+| ThreeD | #D55C | #D3B0 | `LD HL,#0000` | [PreparePolygonFill.asm](../Source/ThreeD/PreparePolygonFill.asm) |
+| ThreeD | #D56A | #D1FF | `XOR #00` | [PreparePolygonFill.asm](../Source/ThreeD/PreparePolygonFill.asm) |
+| ThreeD | #D56D | #D258 | `XOR #00` | [PreparePolygonFill.asm](../Source/ThreeD/PreparePolygonFill.asm) |
+| ThreeD | #D5AA | #D264 | `LD SP,#0000` | [PreparePolygonFill.asm](../Source/ThreeD/PreparePolygonFill.asm) |
+| ThreeD | #D5BA | #D22A | `CP #00` | [PreparePolygonFill.asm](../Source/ThreeD/PreparePolygonFill.asm) |
+| ThreeD | #D5BF | #D22C | `JR NC,#D263` | [PreparePolygonFill.asm](../Source/ThreeD/PreparePolygonFill.asm) |
+| ThreeD | #D5D5 | #D699 | `LD SP,#8E00` | [TransformObjectVertices.asm](../Source/ThreeD/TransformObjectVertices.asm) |
+| ThreeD | #D5DB | #D7AC | `JR #D7AB` | [TransformObjectVertices.asm](../Source/ThreeD/TransformObjectVertices.asm) |
+| ThreeD | #D5DE | #D7C7 | `JR #D7C6` | [TransformObjectVertices.asm](../Source/ThreeD/TransformObjectVertices.asm) |
+| ThreeD | #D5E1 | #D9B9 | `JR #D9B8` | [TransformObjectVertices.asm](../Source/ThreeD/TransformObjectVertices.asm) |
+| ThreeD | #D609 | #D69D | `LD BC,#0000` | [PrepareRenderVertexProducts.asm](../Source/ThreeD/PrepareRenderVertexProducts.asm) |
+| ThreeD | #D61A | #D6A0 | `LD DE,#0000` | [PrepareRenderVertexProducts.asm](../Source/ThreeD/PrepareRenderVertexProducts.asm) |
+| ThreeD | #D62B | #D6A3 | `LD HL,#0000` | [PrepareRenderVertexProducts.asm](../Source/ThreeD/PrepareRenderVertexProducts.asm) |
+| ThreeD | #D63C | #D69C | `LD BC,#0000` | [PrepareRenderVertexProducts.asm](../Source/ThreeD/PrepareRenderVertexProducts.asm) |
+| ThreeD | #D64D | #D69F | `LD DE,#0000` | [PrepareRenderVertexProducts.asm](../Source/ThreeD/PrepareRenderVertexProducts.asm) |
+| ThreeD | #D65E | #D6A2 | `LD HL,#0000` | [PrepareRenderVertexProducts.asm](../Source/ThreeD/PrepareRenderVertexProducts.asm) |
+| ThreeD | #D66F | #D6E2 | `LD DE,#0000` | [PrepareRenderVertexProducts.asm](../Source/ThreeD/PrepareRenderVertexProducts.asm) |
+| ThreeD | #D680 | #D6E1 | `LD DE,#0000` | [PrepareRenderVertexProducts.asm](../Source/ThreeD/PrepareRenderVertexProducts.asm) |
+| ThreeD | #D691 | #D6DF | `LD A,#00` | [PrepareRenderVertexProducts.asm](../Source/ThreeD/PrepareRenderVertexProducts.asm) |
+| ThreeD | #D694 | #D79D | `LD SP,#0000` | [ProjectRenderVertexGroup.asm](../Source/ThreeD/ProjectRenderVertexGroup.asm) |
+| ThreeD | #D6A6 | #D706 | `LD DE,#0000` | [ProjectRenderVertexGroup.asm](../Source/ThreeD/ProjectRenderVertexGroup.asm) |
+| ThreeD | #D6B4 | #D73A | `LD DE,#0000` | [ProjectRenderVertexGroup.asm](../Source/ThreeD/ProjectRenderVertexGroup.asm) |
+| ThreeD | #D6BA | #D747 | `LD DE,#0000` | [ProjectRenderVertexGroup.asm](../Source/ThreeD/ProjectRenderVertexGroup.asm) |
+| ThreeD | #D6BE | #D756 | `LD DE,#0000` | [ProjectRenderVertexGroup.asm](../Source/ThreeD/ProjectRenderVertexGroup.asm) |
+| ThreeD | #D6C9 | #D77B | `LD DE,#0000` | [ProjectRenderVertexGroup.asm](../Source/ThreeD/ProjectRenderVertexGroup.asm) |
+| ThreeD | #D6CD | #D788 | `LD DE,#0000` | [ProjectRenderVertexGroup.asm](../Source/ThreeD/ProjectRenderVertexGroup.asm) |
+| ThreeD | #D6D3 | #D761 | `LD DE,#0000` | [ProjectRenderVertexGroup.asm](../Source/ThreeD/ProjectRenderVertexGroup.asm) |
+| ThreeD | #D6D9 | #D76E | `LD DE,#0000` | [ProjectRenderVertexGroup.asm](../Source/ThreeD/ProjectRenderVertexGroup.asm) |
+| ThreeD | #D6F6 | #D77E | `LD A,#00` | [ProjectRenderVertexGroup.asm](../Source/ThreeD/ProjectRenderVertexGroup.asm) |
+| ThreeD | #D6FA | #D78B | `LD A,#00` | [ProjectRenderVertexGroup.asm](../Source/ThreeD/ProjectRenderVertexGroup.asm) |
+| ThreeD | #D6FE | #D764 | `LD A,#00` | [ProjectRenderVertexGroup.asm](../Source/ThreeD/ProjectRenderVertexGroup.asm) |
+| ThreeD | #D702 | #D771 | `LD A,#00` | [ProjectRenderVertexGroup.asm](../Source/ThreeD/ProjectRenderVertexGroup.asm) |
+| ThreeD | #D799 | #D699 | `LD SP,#8E00` | [ProjectRenderVertexGroup.asm](../Source/ThreeD/ProjectRenderVertexGroup.asm) |
+| ThreeD | #D7D0 | #D9C3 | `LD DE,#0000` | [ProjectRenderVertex.asm](../Source/ThreeD/ProjectRenderVertex.asm) |
+| ThreeD | #DBE2 | #D560 | `LD A,#00` | [RenderClippedRecords.asm](../Source/ThreeD/RenderClippedRecords.asm) |
+| ThreeD | #DC52 | #DE0F | `ADD A,#00` | [RenderClippedRecords.asm](../Source/ThreeD/RenderClippedRecords.asm) |
+| ThreeD | #DD3E | #D560 | `LD A,#00` | [RenderInsideRecords.asm](../Source/ThreeD/RenderInsideRecords.asm) |
+| ThreeD | #DDA0 | #DE0F | `ADD A,#00` | [RenderInsideRecords.asm](../Source/ThreeD/RenderInsideRecords.asm) |
+| ThreeD | #DDFC | #DEED | `LD SP,#0000` | [DrawLinearLine.asm](../Source/ThreeD/DrawLinearLine.asm) |
+| ThreeD | #DE35 | #DE3F | `NOP` | [DrawLinearLine.asm](../Source/ThreeD/DrawLinearLine.asm) |
+| ThreeD | #DE3B | #DE42 | `JR C,#DE4F` | [DrawLinearLine.asm](../Source/ThreeD/DrawLinearLine.asm) |
+| ThreeD | #DE68 | #DE72 | `NOP` | [DrawLinearLine.asm](../Source/ThreeD/DrawLinearLine.asm) |
+| ThreeD | #DE6E | #DE7C | `JR C,#DE84` | [DrawLinearLine.asm](../Source/ThreeD/DrawLinearLine.asm) |
+| ThreeD | #DE99 | #DEA3 | `NOP` | [DrawLinearLine.asm](../Source/ThreeD/DrawLinearLine.asm) |
+| ThreeD | #DE9F | #DEA6 | `JR C,#DEB3` | [DrawLinearLine.asm](../Source/ThreeD/DrawLinearLine.asm) |
+| ThreeD | #DECC | #DED6 | `NOP` | [DrawLinearLine.asm](../Source/ThreeD/DrawLinearLine.asm) |
+| ThreeD | #DED2 | #DEE0 | `JR C,#DEE8` | [DrawLinearLine.asm](../Source/ThreeD/DrawLinearLine.asm) |
+| ThreeD | #DFCF | #DFE4 | `LD SP,#0000` | [CheckFaceOrientation.asm](../Source/ThreeD/CheckFaceOrientation.asm) |
 | Controls | #C882 | #CA8A | `LD SP,#0000` | [UnknownC882.asm](../Source/Controls/CopyScreenRows.asm) |
 | Controls | #C886 | #CA84 | `LD A,#00` | [UnknownC882.asm](../Source/Controls/CopyScreenRows.asm) |
 | Controls | #CAAD | #CA8F | `LD BC,#0000` | [UnknownCA8D.asm](../Source/Controls/NextBufferRandom.asm) |
@@ -759,26 +835,26 @@
 | Controls | #CD3F | #CE0B | `LD (HL),#00` | [UnknownCB00.asm](../Source/Controls/UpdateBufferPoints.asm) |
 | Controls | #CE1A | #CE17 | `LD A,#00` | [UnknownCE16.asm](../Source/Controls/RespawnPointIndexPos.asm) |
 | Controls | #CEAE | #CEB4 | `JR #CEB3` | [FillEvenSpan.asm](../Source/Controls/FillEvenSpan.asm) |
-| Controls | #CEFA | #D240 | `LD IX,#0000` | [UnknownCEFA.asm](../Source/Controls/UnknownCEFA.asm) |
+| Controls | #CEFA | #D240 | `LD IX,#0000` | [ProjectAndDrawBody.asm](../Source/Controls/ProjectAndDrawBody.asm) |
 | Controls | #D58D | #D5B5 | `LD DE,#0020` | [PrepareInteriorSpan.asm](../Source/Controls/PrepareInteriorSpan.asm) |
 | Controls | #D598 | #D5B5 | `LD DE,#0020` | [PrepareInteriorSpan.asm](../Source/Controls/PrepareInteriorSpan.asm) |
 | Controls | #D59E | #D600 | `CP #00`, следующий байт также меняет JR | [PrepareInteriorSpan.asm](../Source/Controls/PrepareInteriorSpan.asm) |
-| Controls | #D66B | #D672 | `LD A,#00` | [UnknownD633.asm](../Source/Controls/UnknownD633.asm) |
-| Controls | #D6FE | #D705 | `LD A,#00` | [UnknownD633.asm](../Source/Controls/UnknownD633.asm) |
-| Controls | #D70A | #D716 | `JR #D727` | [UnknownD633.asm](../Source/Controls/UnknownD633.asm) |
-| Controls | #D76B | #D772 | `LD A,#00` | [UnknownD727.asm](../Source/Controls/UnknownD727.asm) |
-| Controls | #D7F6 | #D7FD | `LD A,#00` | [UnknownD727.asm](../Source/Controls/UnknownD727.asm) |
-| Controls | #D802 | #D80E | `JR #D80D` | [UnknownD727.asm](../Source/Controls/UnknownD727.asm) |
-| Controls | #D865 | #D86C | `LD A,#00` | [UnknownD833.asm](../Source/Controls/UnknownD833.asm) |
-| Controls | #D8E8 | #D8EF | `LD A,#00` | [UnknownD833.asm](../Source/Controls/UnknownD833.asm) |
-| Controls | #D8F4 | #D900 | `JR #D8FF` | [UnknownD833.asm](../Source/Controls/UnknownD833.asm) |
+| Controls | #D66B | #D672 | `LD A,#00` | [CircleRasterCore.asm](../Source/Controls/CircleRasterCore.asm) |
+| Controls | #D6FE | #D705 | `LD A,#00` | [CircleRasterCore.asm](../Source/Controls/CircleRasterCore.asm) |
+| Controls | #D70A | #D716 | `JR #D727` | [CircleRasterCore.asm](../Source/Controls/CircleRasterCore.asm) |
+| Controls | #D76B | #D772 | `LD A,#00` | [ResumeCirclePushSpan.asm](../Source/Controls/ResumeCirclePushSpan.asm) |
+| Controls | #D7F6 | #D7FD | `LD A,#00` | [ResumeCirclePushSpan.asm](../Source/Controls/ResumeCirclePushSpan.asm) |
+| Controls | #D802 | #D80E | `JR #D80D` | [ResumeCirclePushSpan.asm](../Source/Controls/ResumeCirclePushSpan.asm) |
+| Controls | #D865 | #D86C | `LD A,#00` | [RightClippedCircleCore.asm](../Source/Controls/RightClippedCircleCore.asm) |
+| Controls | #D8E8 | #D8EF | `LD A,#00` | [RightClippedCircleCore.asm](../Source/Controls/RightClippedCircleCore.asm) |
+| Controls | #D8F4 | #D900 | `JR #D8FF` | [RightClippedCircleCore.asm](../Source/Controls/RightClippedCircleCore.asm) |
 | Controls | #DA7C | #DA83 | `LD A,#00` | [DrawSmallBody.asm](../Source/Controls/DrawSmallBody.asm) |
 | Controls | #E021 | #E089 | `LD SP,#0000` | [UpdateGlyphIndicators.asm](../Source/Controls/UpdateGlyphIndicators.asm) |
-| Controls | #E295 | #E48F | `LD SP,#0000` | [UnknownE291.asm](../Source/Controls/UnknownE291.asm) |
-| Controls | #E2B2 | #E2B0 | `LD L,#00` | [UnknownE291.asm](../Source/Controls/UnknownE291.asm) |
-| Controls | #E2C1 | #E2BC | `LD A,#00` | [UnknownE291.asm](../Source/Controls/UnknownE291.asm) |
-| Controls | #E2C4 | #E471 | `LD A,#00` | [UnknownE291.asm](../Source/Controls/UnknownE291.asm) |
-| Controls | #E47E | #E471 | `LD A,#00` | [UnknownE291.asm](../Source/Controls/UnknownE291.asm) |
+| Controls | #E295 | #E48F | `LD SP,#0000` | [DrawRadar.asm](../Source/Controls/DrawRadar.asm) |
+| Controls | #E2B2 | #E2B0 | `LD L,#00` | [DrawRadar.asm](../Source/Controls/DrawRadar.asm) |
+| Controls | #E2C1 | #E2BC | `LD A,#00` | [DrawRadar.asm](../Source/Controls/DrawRadar.asm) |
+| Controls | #E2C4 | #E471 | `LD A,#00` | [DrawRadar.asm](../Source/Controls/DrawRadar.asm) |
+| Controls | #E47E | #E471 | `LD A,#00` | [DrawRadar.asm](../Source/Controls/DrawRadar.asm) |
 | Controls | #EC11 | #ECA3 | `LD HL,#0000` | [UnknownEC0E.asm](../Source/Controls/InitializeTextWindow.asm) |
 | Controls | #EC17 | #ECAA | `LD HL,#0000` | [UnknownEC0E.asm](../Source/Controls/InitializeTextWindow.asm) |
 | Controls | #EC1C | #EC5D | `LD HL,#EC80` | [UnknownEC0E.asm](../Source/Controls/InitializeTextWindow.asm) |
@@ -1128,7 +1204,7 @@
 
 | Controls | #DE1D | #688B | `LD A,#00` | [BuildParameterTables.asm](../Source/Controls/BuildParameterTables.asm) |
 
-Запись DE1D из банка 1 меняет операнд 688B общего ядра ACTION в фиксированном банке 5. Исходные байты целевой команды находятся в ACTION по смещению 0AC7, операнд по 0AC8, после переноса ядра. Цель находится в [Unknown6780.asm](../Source/Action/Unknown6780.asm), числовой индекс и проверка цепочки описаны в [ControlsParameterTables](ControlsParameterTables.md).
+Запись DE1D из банка 1 меняет операнд 688B общего ядра ACTION в фиксированном банке 5. Исходные байты целевой команды находятся в ACTION по смещению 0AC7, операнд по 0AC8, после переноса ядра. Цель находится в [UpdateBodyMotion.asm](../Source/Action/UpdateBodyMotion.asm), числовой индекс и проверка цепочки описаны в [ControlsParameterTables](ControlsParameterTables.md).
 
 [ApplyParameterSet](ActionApplyParameters.md) записывает 15 целевых байтов, десять из них являются доказанными непосредственными операндами. В реестре уточнены физические банки и файловые смещения этих десяти целей. Пять Unknown-целей не объявляются кодом. Порядок выбора банка и аппаратная блокировка описаны в [ActionParameterActivation](ActionParameterActivation.md).
 
@@ -1141,3 +1217,351 @@
 ## Сохранение компонентов и SP в ACEA
 
 [TransformVectorTransposed](../Source/Action/TransformVectorTransposed.asm) записывает входные слова, ACEE→AF48, ACF1→AF56, ACF5→AF69, и настоящий SP, ACFC→AD08. Все записи двухбайтовые, относятся к существующим операндам. [Рамка и продолжение](ActionVectorWrapper.md) описаны отдельно.
+
+## Параметр записи и звук в 60AE
+
+[CreateMissileForTarget](../Source/Action/CreateMissileForTarget.asm) записывает слово потока канала A, 60BB→ECA9 в банке 0, и байт параметра, 60E8→612E. Последний является непосредственным байтом LD (IY+Unknown13),n. [Три пути и банковый контекст](ActionMissileCreation.md) описаны отдельно.
+
+## Общий хвост запуска ракет
+
+[CompleteMissileLaunch](../Source/Action/CompleteMissileLaunch.asm) записывает слово потока AY-канала A, 7060→ECA9 в банке 0. При потерянной цели CreateMissileForTarget повторяет ту же запись. [Порядок и отказы](ActionMissileRequests.md) описаны отдельно.
+
+## ReverseScaledVector
+
+[ReverseScaledVector](../Source/Action/ReverseScaledVector.asm) обновляет существующие операнды в фиксированном банке 5 и банке 0 ACTION.
+
+- 6EE0→6EAD, один байт допуска StepNearZeroWord, инструкция по 6EAC.
+- 6EED→E5B3, слово Component0, инструкция по E5B2.
+- 6EFA→E5ED, слово Component2, инструкция по E5EC.
+- 6F07→E5D2, слово Component1, инструкция по E5D1.
+
+[Алгоритм, порядок записей и ограничения](ActionVectorReverse.md) описаны отдельно. SignedWord по A78F является обычным состоянием, не изменяемым кодом.
+
+## Код запрета близкой записи
+
+Операнд E507 принадлежит [DispatchCloseRecord](../Source/Action/DispatchCloseRecord.asm). Установлены писатели.
+
+- [A89F](../Source/Action/UpdateFrame.asm)→E507, один байт.
+- [E54D](../Source/Action/ReverseCloseRecordState.asm)→E507, один байт.
+
+[Уменьшение кода и различия входов](ActionCloseRecord.md) описаны отдельно.
+
+## Писатели сопровождения и назначения цели
+
+[FollowProjectedTarget](ActionAimFollow.md) записывает CompanionMask по E3C2, снимает Request по E3CC и дважды выбирает CursorA по E3D2 и E3ED. Все четыре писателя зарегистрированы с исходными размерами операндов, новые области RAM не выделяются. AbsoluteX и AbsoluteY остаются изменяемыми операндами LD BC,nn и LD DE,nn, которые заполняет PrepareProjectedBounds.
+
+## Сохранение стеков чтения очереди
+
+[ReadRenderQueue](ActionRenderQueueControl.md) использует SavedEntrySP по E4A7, записанный прологом UnknownE020, и SavedNodeSP по E4D6, который обновляет LoadNode по E4B2. Оба поля являются исходными двухбайтовыми операндами LD SP,nn. LoadNode сохраняет слово указателя узла на CPU-стеке, затем восстанавливает именно адрес этого слова перед CALL UpdateAyEffects. Изменяемые операнды и банковый контекст не являются новой выделенной памятью.
+
+## Уточнение банковых записей кадра
+
+[Блок A981..AA89](ActionBank4Writes.md) пишет OBJECT3D в банке 4, код ACTION банка 0 по совпадающим адресам не изменяется. 41 ошибочных связей исключены из таблицы инструкций, все 80 фактических записей сохранены в [отдельном банковом реестре](../Tools/Disasm/Reports/ActionBank4DataWrites.json).
+
+## Девять коэффициентов ACTION
+
+[BuildRenderCoefficients](ActionRenderCoefficients.md) имеет 18 прямых писателей девяти раздельных байтов Coeff11..Coeff33. Писатель и цель находятся в банке 0, записи OBJECT3D банка 4 по совпадающим адресам выделены в отдельный реестр. Новая непрерывная область матрицы не создаётся.
+
+## Выходные коэффициенты композиции ACTION
+
+[ComposeRenderMatrix](ActionRenderMatrix.md) содержит 39 прямых писателей девяти исходных операндов LD A,n банка 0. Целевые инструкции остаются в неразобранном диапазоне, их границы подтверждены линейным продолжением от непосредственного CALL D5C9. Назначение всей следующей процедуры этим не считается доказанным.
+
+| Цель | Писатели банка 0 |
+|---|---|
+| D5FC | CB87, CE3A, CE65, CE8C, CEB7 |
+| D60D | CD6E, CE09, CE1C |
+| D61E | CC77, CE4E, CE77, CEA2, CECF |
+| D62F | CBD4, CE40, CE6B, CE94, CEBF |
+| D640 | CDB8, CE0F, CE22 |
+| D651 | CCC7, CE56, CE7D, CEA8, CED7 |
+| D662 | CC21, CE46, CE71, CE9C, CEC7 |
+| D673 | CE02, CE15, CE28 |
+| D684 | CD17, CE5E, CE83, CEAE, CEDF |
+
+## ProjectRenderVertex
+
+[ProjectRenderVertex](../Source/Action/ProjectRenderVertex.asm) обновляет следующие существующие операнды в контексте своего договора.
+
+- D7D0→D9C3, 2 байт, инструкция по D9C2.
+
+[Алгоритм и ограничения](./ActionPerspective.md) описаны отдельно.
+
+## ProjectRenderVertexGroup
+
+[ProjectRenderVertexGroup](../Source/Action/ProjectRenderVertexGroup.asm) обновляет следующие существующие операнды в контексте своего договора.
+
+- D694→D79D, 2 байт, инструкция по D79C.
+- D6A6→D706, 2 байт, инструкция по D705.
+- D6B4→D73A, 2 байт, инструкция по D739.
+- D6BA→D747, 2 байт, инструкция по D746.
+- D6BE→D756, 2 байт, инструкция по D755.
+- D6C9→D77B, 2 байт, инструкция по D77A.
+- D6CD→D788, 2 байт, инструкция по D787.
+- D6D3→D761, 2 байт, инструкция по D760.
+- D6D9→D76E, 2 байт, инструкция по D76D.
+- D6F6→D77E, 1 байт, инструкция по D77D.
+- D6FA→D78B, 1 байт, инструкция по D78A.
+- D6FE→D764, 1 байт, инструкция по D763.
+- D702→D771, 1 байт, инструкция по D770.
+- D799→D699, 1 байт, инструкция по D698.
+
+[Алгоритм и ограничения](./ActionVertexGroup.md) описаны отдельно.
+
+## PrepareRenderVertexProducts
+
+[PrepareRenderVertexProducts](../Source/Action/PrepareRenderVertexProducts.asm) обновляет следующие существующие операнды в контексте своего договора.
+
+- D609→D69D, 1 байт, инструкция по D69B.
+- D61A→D6A0, 1 байт, инструкция по D69E.
+- D62B→D6A3, 1 байт, инструкция по D6A1.
+- D63C→D69C, 1 байт, инструкция по D69B.
+- D64D→D69F, 1 байт, инструкция по D69E.
+- D65E→D6A2, 1 байт, инструкция по D6A1.
+- D66F→D6E2, 1 байт, инструкция по D6E0.
+- D680→D6E1, 1 байт, инструкция по D6E0.
+- D691→D6DF, 1 байт, инструкция по D6DE.
+
+[Алгоритм и ограничения](./ActionVertexProducts.md) описаны отдельно.
+
+## TransformObjectVertices
+
+[TransformObjectVertices](../Source/Action/TransformObjectVertices.asm) обновляет следующие существующие операнды в контексте своего договора.
+
+- D5D5→D699, 1 байт, инструкция по D698.
+
+[Алгоритм и ограничения](./ActionObjectVertices.md) описаны отдельно.
+
+## CheckFaceOrientation
+
+[CheckFaceOrientation](../Source/Action/CheckFaceOrientation.asm) обновляет следующие существующие операнды в контексте своего договора.
+
+- DFCF→DFE4, 2 байт, инструкция по DFE3.
+
+[Алгоритм и ограничения](./ActionFaceOrientation.md) описаны отдельно.
+
+## DrawLinearLine
+
+[DrawLinearLine](../Source/Action/DrawLinearLine.asm) обновляет следующие существующие операнды в контексте своего договора.
+
+- DDFC→DEED, 2 байт, инструкция по DEEC.
+
+[Алгоритм и ограничения](./ActionLineRaster.md) описаны отдельно.
+
+## Opcode четырёх ядер DrawLinearLine
+
+[Растеризатор](ActionLineRaster.md) пишет первые байты инструкций, не только операнды. Контекст всех записей ACTION банка 0.
+
+| Писатель | Цель | Исполняемые значения |
+| --- | --- | --- |
+| DE35 | DE3F | A1 AND C, B1 OR C, A9 XOR C |
+| DE3B | DE42 | 30 JR NC, 38 JR C |
+| DE68 | DE72 | A1 AND C, B1 OR C, A9 XOR C |
+| DE6E | DE7C | 30 JR NC, 38 JR C |
+| DE99 | DEA3 | A1 AND C, B1 OR C, A9 XOR C |
+| DE9F | DEA6 | 30 JR NC, 38 JR C |
+| DECC | DED6 | A1 AND C, B1 OR C, A9 XOR C |
+| DED2 | DEE0 | 30 JR NC, 38 JR C |
+
+Исходные NOP и исходные JR C сохраняются в собираемом образе. SavedSP по DEED записывает DDFC. Показатель MaskOffset по DE0F подготавливает вызывающий код, это отдельная запись вне растеризатора.
+
+## Подготовители режима линии ACTION
+
+Писатели DC52 и DDA0 банка 0 сохраняют 10 либо 18 в операнде DE0F инструкции ADD A,nn по DE0E. DC4E и DD9C обновляют рабочие байты PixelOpcode/BranchOpcode по 8D4E/8D4F. Поле заголовка 5..4 выбирает AND, OR либо XOR, значения 10 и 11 оба дают XOR. [Договоры подготовителей](ActionLineRaster.md) проверены на всех 256 заголовках и счётчиках 2..15. Родительские процедуры пока остаются в неразобранном бинарном диапазоне, этот статус в реестре писателей сохранён.
+
+## PreparePolygonFill
+
+[PreparePolygonFill](../Source/Action/PreparePolygonFill.asm) обновляет следующие существующие операнды в контексте своего договора.
+
+- D517→D3B7, 1 байт, инструкция по D3B6.
+- D537→D4C2, 1 байт, инструкция по D4C1.
+- D53B→D4C4, 1 байт, инструкция по D4C3.
+- D53E→D387, 1 байт, инструкция по D386.
+- D54C→D275, 2 байт, инструкция по D274.
+- D55C→D3B0, 2 байт, инструкция по D3AF.
+- D56A→D1FF, 1 байт, инструкция по D1FE.
+- D56D→D258, 1 байт, инструкция по D257.
+- D5AA→D264, 2 байт, инструкция по D263.
+- D5BA→D22A, 1 байт, инструкция по D229.
+- D5BF→D22C, 1 байт, инструкция по D22B.
+
+[Алгоритм и ограничения](./ActionPolygonPreparation.md) описаны отдельно.
+
+## SelectPolygonRowLimit
+
+[SelectPolygonRowLimit](../Source/Action/SelectPolygonRowLimit.asm) обновляет следующие существующие операнды в контексте своего договора.
+
+- D4D0→D22A, 1 байт, инструкция по D229.
+- D4D5→D22C, 1 байт, инструкция по D22B.
+- D4DF→D22A, 1 байт, инструкция по D229.
+- D4E4→D22C, 1 байт, инструкция по D22B.
+- D4EA→D22A, 1 байт, инструкция по D229.
+- D4EF→D22C, 1 байт, инструкция по D22B.
+
+[Алгоритм и ограничения](./ActionPolygonRowSelection.md) описаны отдельно.
+
+## UpdatePolygonLeftEdge
+
+[UpdatePolygonLeftEdge](../Source/Action/UpdatePolygonLeftEdge.asm) обновляет следующие существующие операнды в контексте своего договора.
+
+- D284→D275, 2 байт, инструкция по D274.
+- D288→D217, 1 байт, инструкция по D216.
+- D290→D4C4, 1 байт, инструкция по D4C3.
+- D2DF→D213, 1 байт, инструкция по D212.
+- D2FC→D213, 1 байт, инструкция по D212.
+- D31C→D213, 1 байт, инструкция по D212.
+- D36B→D213, 1 байт, инструкция по D212.
+- D399→D213, 1 байт, инструкция по D212.
+- D38D→D22A, 1 байт, инструкция по D229.
+- D392→D22C, 1 байт, инструкция по D22B.
+
+[Алгоритм и ограничения](./ActionPolygonLeftEdge.md) описаны отдельно.
+
+## SetShortNegativeRightStep
+
+[SetShortNegativeRightStep](../Source/Action/SetShortNegativeRightStep.asm) обновляет следующие существующие операнды в контексте своего договора.
+
+- D4F5→D21F, 1 байт, инструкция по D21E.
+
+[Алгоритм и ограничения](./ActionPolygonRightShortStep.md) описаны отдельно.
+
+## UpdatePolygonRightEdge
+
+[UpdatePolygonRightEdge](../Source/Action/UpdatePolygonRightEdge.asm) обновляет следующие существующие операнды в контексте своего договора.
+
+- D3C2→D3B0, 2 байт, инструкция по D3AF.
+- D3C6→D223, 1 байт, инструкция по D222.
+- D3CF→D387, 1 байт, инструкция по D386.
+- D41E→D21F, 1 байт, инструкция по D21E.
+- D43A→D21F, 1 байт, инструкция по D21E.
+- D459→D21F, 1 байт, инструкция по D21E.
+- D4A6→D21F, 1 байт, инструкция по D21E.
+
+[Алгоритм и ограничения](./ActionPolygonRightEdge.md) описаны отдельно.
+
+## PolygonFillRows
+
+[PolygonFillRows](../Source/Action/PolygonFillRows.asm) обновляет следующие существующие операнды в контексте своего договора.
+
+- D239→D244, 1 байт, инструкция по D243.
+
+[Алгоритм и ограничения](./ActionPolygonFillRows.md) описаны отдельно.
+
+## RenderInsideRecords
+
+[RenderInsideRecords](../Source/Action/RenderInsideRecords.asm) обновляет следующие существующие операнды в контексте своего договора.
+
+- DD3E→D560, 1 байт, инструкция по D55F.
+
+[Алгоритм и ограничения](./ActionPacketRenderer.md) описаны отдельно.
+
+## RenderClippedRecords
+
+[RenderClippedRecords](../Source/Action/RenderClippedRecords.asm) обновляет следующие существующие операнды в контексте своего договора.
+
+- DBE2→D560, 1 байт, инструкция по D55F.
+
+[Алгоритм и ограничения](./ActionClippedPacketRenderer.md) описаны отдельно.
+
+## RequestTurnNegative
+
+[RequestTurnNegative](../Source/Action/RequestTurnNegative.asm) обновляет следующие существующие операнды в контексте своего договора.
+
+- 76C9→6FE5, 1 байт, инструкция по 6FE4.
+- 76D0→76CD, 1 байт, инструкция по 76CC.
+- 76D5→76F0, 1 байт, инструкция по 76EF.
+
+[Алгоритм и ограничения](./ActionKeyTurnNegative.md) описаны отдельно.
+
+## RequestTurnPositive
+
+[RequestTurnPositive](../Source/Action/RequestTurnPositive.asm) обновляет следующие существующие операнды в контексте своего договора.
+
+- 76EC→6FE5, 1 байт, инструкция по 6FE4.
+- 76F3→76F0, 1 байт, инструкция по 76EF.
+- 76F8→76CD, 1 байт, инструкция по 76CC.
+
+[Алгоритм и ограничения](./ActionKeyTurnPositive.md) описаны отдельно.
+
+## RequestXNegative
+
+[RequestXNegative](../Source/Action/RequestXNegative.asm) обновляет следующие существующие операнды в контексте своего договора.
+
+- 770F→6F7B, 1 байт, инструкция по 6F7A.
+- 7716→7713, 1 байт, инструкция по 7712.
+- 771B→7736, 1 байт, инструкция по 7735.
+
+[Алгоритм и ограничения](./ActionKeyXNegative.md) описаны отдельно.
+
+## RequestXPositive
+
+[RequestXPositive](../Source/Action/RequestXPositive.asm) обновляет следующие существующие операнды в контексте своего договора.
+
+- 7732→6F7B, 1 байт, инструкция по 6F7A.
+- 7739→7736, 1 байт, инструкция по 7735.
+- 773E→7713, 1 байт, инструкция по 7712.
+
+[Алгоритм и ограничения](./ActionKeyXPositive.md) описаны отдельно.
+
+## RequestYNegative
+
+[RequestYNegative](../Source/Action/RequestYNegative.asm) обновляет следующие существующие операнды в контексте своего договора.
+
+- 7755→6FB0, 1 байт, инструкция по 6FAF.
+- 775C→7759, 1 байт, инструкция по 7758.
+- 7761→777C, 1 байт, инструкция по 777B.
+
+[Алгоритм и ограничения](./ActionKeyYNegative.md) описаны отдельно.
+
+## RequestYPositive
+
+[RequestYPositive](../Source/Action/RequestYPositive.asm) обновляет следующие существующие операнды в контексте своего договора.
+
+- 7778→6FB0, 1 байт, инструкция по 6FAF.
+- 777F→777C, 1 байт, инструкция по 777B.
+- 7784→7759, 1 байт, инструкция по 7758.
+
+[Алгоритм и ограничения](./ActionKeyYPositive.md) описаны отдельно.
+
+## IncreaseGaugeWord
+
+[IncreaseGaugeWord](../Source/Action/IncreaseGaugeWord.asm) обновляет следующие существующие операнды в контексте своего договора.
+
+- 769F→669F, 1 байт, инструкция по 669E.
+
+[Алгоритм и ограничения](./ActionKeyGaugeIncrease.md) описаны отдельно.
+
+## DecreaseGaugeWord
+
+[DecreaseGaugeWord](../Source/Action/DecreaseGaugeWord.asm) обновляет следующие существующие операнды в контексте своего договора.
+
+- 76C3→669F, 1 байт, инструкция по 669E.
+
+[Алгоритм и ограничения](./ActionKeyGaugeDecrease.md) описаны отдельно.
+
+## AdvanceObjectPhaseWait
+
+[AdvanceObjectPhaseWait](../Source/Action/AdvanceObjectPhaseWait.asm) обновляет следующие существующие операнды в контексте своего договора.
+
+- EFBF→EFBD, 1 байт, инструкция по EFBC.
+
+[Алгоритм и ограничения](./ActionObjectPhaseWait.md) описаны отдельно.
+
+## PrepareObjectOffsetTransform
+
+[PrepareObjectOffsetTransform](../Source/Action/PrepareObjectOffsetTransform.asm) обновляет следующие существующие операнды в контексте своего договора.
+
+- F101→B045, 1 байт, инструкция по B044.
+- F109→B04F, 1 байт, инструкция по B04E.
+- F10F→B05C, 1 байт, инструкция по B05B.
+
+[Алгоритм и ограничения](./ActionObjectOffsetTransfer.md) описаны отдельно.
+
+## BuildObjectOffsetCoefficients
+
+[BuildObjectOffsetCoefficients](../Source/Action/BuildObjectOffsetCoefficients.asm) обновляет следующие существующие операнды в контексте своего договора.
+
+- B075→6D0E, 1 байт, инструкция по 6D0D.
+- B0AD→6D1C, 1 байт, инструкция по 6D1B.
+- B0E5→6D2A, 1 байт, инструкция по 6D29.
+
+[Алгоритм и ограничения](./ActionObjectOffsetCoefficients.md) описаны отдельно.

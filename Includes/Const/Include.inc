@@ -1009,4 +1009,549 @@ MissilesText    equ #F277                                                       
 BaseHigh        equ #A1                                                         ; база преобразований с шагом 64 байта
                 endmodule
 
+
+                ; Подтверждённые значения создания записи ракеты
+                module ActionMissileCreateConst
+ActionSound     equ #EDA8                                                       ; поток канала A в ACTION банка 0
+LostText        equ #F248                                                       ; сообщение о потерянной цели, Controls банка 1
+InitialComp2    equ #0190                                                       ; третье входное слово, единицы ещё неизвестны
+FallbackParam   equ #000A                                                       ; Unknown13 при поле Fallback
+PreferredParam  equ #0032                                                       ; Unknown13 при поле Preferred
+MissileClass    equ #0011                                                       ; ClassCode создаваемой записи
+                endmodule
+
+
+                ; Подтверждённый предел модуля старшего байта координаты
+                module ActionProjectedBoundsConst
+HighByteLimit   equ #0A                                                         ; модуль signed8 старшего байта должен быть меньше 10
+                endmodule
+
+
+                ; Исходные параметры таблицы двух граничных осей
+                module ActionProjectionClipConst
+SquarePage      equ #98                                                         ; старший байт исходной страницы нормированных квадратов
+WidthBase       equ #48                                                         ; перед SRA задаёт центр первой оси 36
+HeightBase      equ #42                                                         ; перед SRA задаёт центр второй оси 33
+                endmodule
+
+
+                ; Проверенные коды и пределы локальных входов E506 и E51F
+                module ActionCloseRecordConst
+IgnoredClass    equ #14                                                         ; второй класс без обработки в корневом входе
+TransferClass   equ #12                                                         ; корневой класс передачи следующему режиму
+ComponentBit    equ #04                                                         ; номер проверяемого бита ReuseByte дополнительного входа
+HighLimit       equ #04                                                         ; верхний исключённый предел преобразованного старшего байта
+                endmodule
+
+
+                ; Исходные параметры сопровождения и назначения цели
+                module ActionAimFollowConst
+DistanceLimit   equ #0010                                                       ; оба модуля должны быть строго меньше 16
+CenterX         equ #0077                                                       ; экранный центр X
+CenterY         equ #002B                                                       ; экранный центр Y
+CaptureSound    equ #EE02                                                       ; шесть строк потока назначения цели
+FullSound       equ #EE1B                                                       ; шесть строк потока трёх занятых целей
+FullText        equ #F258                                                       ; указатель сообщения Controls банка 1
+RecordBias      equ #5F00                                                       ; прибавление эквивалентно вычитанию A100 по модулю 65536
+                endmodule
+
+
+                ; Исходные маркеры связанной очереди, это полные числовые значения
+                module ActionRenderQueueConst
+EndLink         equ #01                                                         ; конец цепочки Next, не свободное физическое смещение
+FullOffset      equ #FC                                                         ; буфер из 18 узлов исчерпан
+Page            equ #8F                                                         ; старший байт адресов runtime-узлов
+                endmodule
+
+
+                ; Исходные параметры выбора и единичного коэффициента
+                module ActionRenderCoefficientsConst
+OneAxisBit      equ #00                                                         ; номер бита режима одной фазы
+Unit            equ #7F                                                         ; исходный единичный байтовый коэффициент
+                endmodule
+
+
+                ; Исходные параметры копирования OBJECT3D
+                module ActionObjectCopyConst
+PointerPage     equ #9E                                                         ; страница исходных little-endian указателей
+DataPage        equ #14                                                         ; полная конфигурация 7FFD для OBJECT3D банка 4
+LengthMask      equ #0F                                                         ; число следующих байтов переменной записи, нуль задаёт конец
+                endmodule
+
+
+                ; Исходные центры и полный код отказа перспективы ACTION
+                module ActionPerspectiveConst
+FirstCentre     equ #30                                                         ; исходный центр первого экранного слова
+SecondCentre    equ #80                                                         ; исходный центр второго экранного слова
+RejectedHigh    equ #80                                                         ; полный числовой код старшего байта при отказе, не битовая маска
+                endmodule
+
+
+                ; Исходные коды группы и страница рабочего стека
+                module ActionVertexGroupConst
+WorkHigh        equ #8E                                                         ; старший байт страницы рабочего стека и кодов
+WorkPage        equ #8E00                                                       ; исходная страница рабочего SP
+SingleCode      equ #0001                                                       ; одна комбинация 0
+AntipodeCode    equ #0081                                                       ; комбинация 0 и её покомпонентное отрицание
+                endmodule
+
+
+                ; Исходная подготовка прохода объекта
+                module ActionObjectVerticesConst
+InitialOffset   equ #04                                                         ; рабочий SP первой точки на четыре байта выше начала страницы
+ScaleLimit      equ #06                                                         ; верхний показатель масштаба для выбора смещений JR
+                endmodule
+
+
+                ; Парные признаки границ, младшая тетрада снаружи, старшая её отрицание
+                module ActionVertexCodeConst
+FirstLimit      equ #60                                                         ; первая координата допустима от 0 до 95
+InverseMask     equ #F0                                                         ; инверсия старшей копии тетрады сторон
+SecondHighBit   equ #00                                                         ; Second не меньше 256
+SecondNegBit    equ #01                                                         ; Second отрицателен
+FirstHighBit    equ #02                                                         ; First не меньше 96
+FirstNegBit     equ #03                                                         ; First отрицателен
+                endmodule
+
+
+                module ActionClipProductConst
+ZeroBound       equ #0000                                                       ; нулевая граница обеих осей
+FirstMaximum    equ #005F                                                       ; первая ось, последняя допустимая координата
+SecondMaximum   equ #00FF                                                       ; вторая ось, последняя допустимая координата
+                endmodule
+
+
+                module ActionClipIntersectionConst
+OutputPage      equ #90                                                         ; существующая страница пар выходных байтов
+                endmodule
+
+
+                module ActionClipCornerConst
+TopLeft         equ #0000                                                       ; упакованный угол, E как Second, D как First
+TopRight        equ #00FF                                                       ; упакованный угол, E как Second, D как First
+BottomLeft      equ #5F00                                                       ; упакованный угол, E как Second, D как First
+BottomRight     equ #5FFF                                                       ; упакованный угол, E как Second, D как First
+                endmodule
+
+
+                ; SeenFlags, младшие биты отметок углов, старшая тетрада сохраняется
+                module ActionClipSeenBits
+BottomRight     equ #00                                                         ; номер разряда отметки угла
+BottomRightMask equ #01                                                         ; маска одной отметки, нуль означает угол ещё не отмечен
+BottomLeft      equ #01                                                         ; номер разряда отметки угла
+BottomLeftMask  equ #02                                                         ; маска одной отметки, нуль означает угол ещё не отмечен
+TopRight        equ #02                                                         ; номер разряда отметки угла
+TopRightMask    equ #04                                                         ; маска одной отметки, нуль означает угол ещё не отмечен
+TopLeft         equ #03                                                         ; номер разряда отметки угла
+TopLeftMask     equ #08                                                         ; маска одной отметки, нуль означает угол ещё не отмечен
+                endmodule
+
+
+                module ActionPolygonConst
+TableLowPage    equ #CF                                                         ; страница младших байтов целей
+OutsideMask     equ #0F                                                         ; младшие признаки выхода за границы
+MinimumBytes    equ #06                                                         ; три пары байтов выходного полигона
+                endmodule
+
+
+                module ActionSingleEdgeConst
+NoCorners       equ #01                                                         ; полный запрет фактического добавления углов
+SegmentBytes    equ #04                                                         ; две пары выходного ребра
+                endmodule
+
+
+                module ActionLineRasterConst
+RowBytes        equ #20                                                         ; шаг строки линейного буфера
+PhaseMask       equ #07                                                         ; фаза пикселя внутри байта
+MaskPage        equ #E0                                                         ; страница исходных масок
+SetOffset       equ #10                                                         ; смещение прямых масок OR/XOR
+ClearOffset     equ #18                                                         ; смещение инверсных масок AND
+AndOpcode       equ #A1                                                         ; команда AND C
+OrOpcode        equ #B1                                                         ; команда OR C
+XorOpcode       equ #A9                                                         ; команда XOR C
+CarryBranch     equ #38                                                         ; команда JR C
+NoCarryBranch   equ #30                                                         ; команда JR NC
+                endmodule
+
+
+                module ActionPolygonRowSelectionConst
+StopOffset      equ #36                                                         ; смещение JR NC из D22B к восстановлению CPU-стека D263
+LeftOffset      equ #45                                                         ; смещение JR NC из D22B к подготовке левого ребра D272
+RightOffset     equ #3B                                                         ; смещение JR NC из D22B к переходнику правого ребра D268
+                endmodule
+
+
+                module ActionPacketRendererConst
+CountMask       equ #0F                                                         ; число вершин в младшей тетраде
+MaterialMask    equ #07                                                         ; числовое поле материала грани после четырёх сдвигов
+LineModeMask    equ #30                                                         ; числовое поле операции линии в разрядах 5..4
+AttachBit       equ #06                                                         ; бит связи линии с предыдущей ориентацией
+PointPage       equ #8E                                                         ; страница исходных пятибайтовых проецированных точек
+XorModeWord     equ #38A9                                                       ; пара XOR C и JR C
+AndModeWord     equ #30A1                                                       ; пара AND C и JR NC
+OrModeWord      equ #38B1                                                       ; пара OR C и JR C
+OrSelector      equ #10                                                         ; числовой селектор OR в исходном положении поля
+                endmodule
+
+
+                module ActionClippedPacketRendererConst
+LowNibbleMask   equ #0F                                                         ; младшая тетрада длины записи либо сторон отсечения, роль определяется блоком
+                endmodule
+
+
+                module ActionWorkBufferConst
+BufferEnd       equ #8C00                                                       ; исключённый верхний адрес 96 линейных строк
+FillWord        equ #FFFF                                                       ; два исходных байта заполнения FF
+BlockCount      equ #60                                                         ; 96 блоков по 16 PUSH и 32 байта
+                endmodule
+
+
+                module IntroSamplerConst
+ChainEntry      equ #9100                                                       ; вход 64 развёрнутых выборок, уже существующий код
+LookupPage      equ #93                                                         ; старший байт таблицы замены младшего адреса
+                endmodule
+
+
+                module IntroScrolledConst
+ChainEntry      equ #7E00                                                       ; вход 64 семибайтовых выборок
+RowCount        equ #10                                                         ; число страниц назначения на один вызов
+FirstColumn     equ #C0                                                         ; начальная колонка 64-байтового хвоста страницы
+                endmodule
+
+
+                module BootstrapMoveConst
+StationSource   equ #6319                                                       ; исходный адрес загруженного станционного загрузчика
+StationBytes    equ #02B5                                                       ; 693 байта кода и данных, переносимых в 4000
+ActionSource    equ #6043                                                       ; исходный адрес загруженного полётного загрузчика
+ActionBytes     equ #01FA                                                       ; 506 байтов кода и данных, переносимых в 4200
+                endmodule
+
+
+                module IntroScreenConst
+GetPC           equ #1FC6                                                       ; ROM POP HL, RET Z, JP (HL), требуется Z=0
+PCDeltaSeed     equ #8E                                                         ; после INC E смещение от адреса продолжения до потока равно 008F
+GroupMarker     equ #56                                                         ; маска управляющих позиций переменной группы из семи битов
+GroupSeed       equ #FE                                                         ; начальный накопитель группы E9..FF
+ExtendedCode    equ #F9                                                         ; код расширения длины, нулевое расширение завершает поток
+LongOffsetLimit equ #FD                                                         ; порог старшего байта смещения для поправки длины
+AttributesHigh  equ #58                                                         ; граница логических пикселей и линейных атрибутов
+                endmodule
+
+
+                module IntroLookupConst
+LookupBase      equ #9300                                                       ; таблица 256 результатов суммы четырёх фаз
+ResultPage      equ #98                                                         ; старший байт таблицы результата по сумме
+FirstPhase      equ #9400                                                       ; первая таблица выборок
+SecondPhase     equ #9500                                                       ; вторая таблица выборок
+ThirdPhase      equ #9600                                                       ; третья таблица выборок
+FourthPhase     equ #9700                                                       ; четвёртая таблица выборок
+SumChain        equ #9900                                                       ; 256 созданных копий PhaseSum
+CopyChain       equ #A800                                                       ; 304 пары POP HL и LD (nn),HL с завершающим JP
+                endmodule
+
+
+                module IntroAttrConst
+FirstMatrix     equ #60C0                                                       ; первая матрица 32 слов атрибутов
+SecondMatrix    equ #61C0                                                       ; вторая матрица 32 слов атрибутов
+                endmodule
+
+
+                module IntroFrameConst
+FirstRecords    equ #6000                                                       ; первая таблица 38 записей источника и назначения
+SecondRecords   equ #6100                                                       ; вторая таблица 38 записей источника и назначения
+IncrementD      equ #14                                                         ; исходный opcode INC D для коррекции страницы назначения
+                endmodule
+
+
+                module IntroLookupRowsConst
+FirstRows       equ #0D                                                         ; первый участок из 13 строк по 64 байта
+SecondRows      equ #19                                                         ; второй участок из 25 строк по 64 байта
+FirstWords      equ #AD00                                                       ; начало первых 13 строк, по 128 байтов указателей на строку
+SecondWords     equ #B380                                                       ; продолжение после 13 умножить на 128 байтов
+FirstBuffer     equ #8000                                                       ; начало 2432-байтового буфера выборок
+SecondBuffer    equ #8340                                                       ; продолжение после 13 умножить на 64 байта
+                endmodule
+
+
+                module ActionReuseConst
+ReusableHigh    equ #80                                                         ; полный старший байт Component0 доступной записи
+ReusableLow     equ #00                                                         ; младший байт кода 8000, отличается от маркера конца 80
+SkipOnce        equ #FF                                                         ; первое достижение записи поиском обнуляет код и пропускает её
+                endmodule
+
+
+                module ActionOffsetConst
+HalvedClass     equ #14                                                         ; полный код класса с временно делимыми вычитаемыми словами
+                endmodule
+
+
+                module ActionRecordScaleConst
+SkipBase        equ #0006                                                       ; из старшего байта заголовка получается смещение JR 6-e
+InitialValue    equ #00C8                                                       ; исходное слово перед цепью удвоений
+                endmodule
+
+
+                module ActionRecordUpdateConst
+LimitBias       equ #007D                                                       ; из старшего байта масштабированного HL получается граница B
+NearLimit       equ #0008                                                       ; исключённый предел нормализованных старших байтов в близкой области
+WarningArmed    equ #0080                                                       ; бит 7 разрешает однократный запрос после входа в близкую область
+WarningSent     equ #0018                                                       ; после запроса бит 7 сброшен, отказ очереди не вооружает защёлку повторно
+DockingText     equ #F3B9                                                       ; адрес сообщения о зоне стыковки в Controls банка 1
+                endmodule
+
+
+                module ActionRootCacheConst
+InitialPage     equ #00C0                                                       ; страница начальной оценки в Controls банка 1, следующие две страницы дают базовое слово
+NegativeHigh    equ #00FF                                                       ; старший байт подготовки отрицательной нечётной разности
+FirstOddStep    equ #FFFF                                                       ; первая разность -1 для малого слова
+                endmodule
+
+
+                module ActionComponentEncodeConst
+SignBit         equ #07                                                         ; знаковый разряд старшего байта кодируемого слова
+                endmodule
+
+
+                ; Константы исходного алгоритма CF0B..D164, память не выделяется
+                module ControlsProjectConst
+SignBit         equ #0007                                                       ; разряд знака High в фазе проекции
+HighMask        equ #007F                                                       ; старшие семь бит 23-разрядного модуля
+FirstCoord      equ #0003                                                       ; начальный счётчик двух координат в альтернативном C
+DepthLimit      equ #A000                                                       ; порог максимального радиуса и исходная дальняя граница
+RadiusScale     equ #00A0                                                       ; числитель масштабирования радиуса
+RadiusMax       equ #00FF                                                       ; радиус ближней области
+WordBits        equ #0008                                                       ; число сдвигов одной ступени нормализации
+FullShiftMax    equ #0017                                                       ; предельное число сдвигов внутреннего отношения
+XPlusBit        equ #0000                                                       ; разряд направления прибавления OffsetX
+YMinusBit       equ #0001                                                       ; разряд направления вычитания OffsetY
+XWithinBit      equ #0002                                                       ; разряд горизонтального N<=Q
+YWithinBit      equ #0003                                                       ; разряд вертикального N<=Q
+ProjectionOK    equ #0001                                                       ; успешное завершение проекции
+                endmodule
+
+
+                ; Числовые классы существующих фильтров ACTION
+                module ActionFilterClassConst
+Class5          equ #05                                                         ; исходный числовой код класса 5
+Class6          equ #06                                                         ; исходный числовой код класса 6
+Class7          equ #07                                                         ; исходный числовой код класса 7
+Class14         equ #0E                                                         ; исходный числовой код класса 14
+                endmodule
+
+
+
+                ; Числовые пороги исходного выбора записи по потоку 10
+                module ActionRandomRecordConst
+Threshold       equ #A0                                                         ; граница младшего байта нового слова
+DefaultCode     equ #1A                                                         ; отдельный исходный результат без поиска
+ClassZero       equ #00                                                         ; исключённый нулевой класс
+Class18         equ #12                                                         ; отдельный разрешённый класс 18
+ClassLimit      equ #10                                                         ; первая запрещённая граница после классов 1..15
+                endmodule
+
+
+
+                ; Числовые коды исходной цели Class09
+                module ActionClass9Const
+SpecialCode     equ #0D                                                         ; значение Unknown16, сохраняющее LinkedIndex
+DefaultCode     equ #01                                                         ; запись в Unknown0A в остальных случаях
+DefaultIndex    equ #FF                                                         ; исходная запись в LinkedIndex для обычной ветви
+FlagThreshold   equ #70                                                         ; порог сравнения R, влияющий только на выходные флаги
+                endmodule
+
+
+
+                ; Исходный код записи при выборе связи класса 0
+                module ActionClass0Const
+RecordCode      equ #02                                                         ; запись в Unknown0A перед выбором либо после принятого результата
+                endmodule
+
+
+
+                ; Пороги и числовые классы исходного выбора опоры F51E
+                module ActionPreferredRecordConst
+RLimit          equ #E6                                                         ; граница чтения R для дополнительного выбора
+WordLimit       equ #28                                                         ; верхняя исключённая граница нового L
+GateLimit       equ #50                                                         ; нижняя включённая граница UnknownGate
+Class3          equ #03                                                         ; класс, запрещающий обновление
+RecordCode      equ #0B                                                         ; код Unknown0A целевой записи класса 18
+                endmodule
+
+
+
+                ; Бит знака и единица исходного отрицания DE:HL
+                module ActionAbs32Const
+SignBit         equ #07                                                         ; разряд знака полного числа в старшем байте D
+NegateUnit      equ #0001                                                       ; единица, прибавляемая к дополненному младшему слову
+                endmodule
+
+
+
+                ; Исходная страница и смещения кодировщика знакового отношения
+                module ActionRatioCodeConst
+SignBit         equ #07                                                         ; разряд знака старшего байта слова
+TableHigh       equ #9A                                                         ; старший байт исходной страницы 9A00
+QuarterCode     equ #40                                                         ; смещение одной четверти либо положительный код ограничения
+HalfCode        equ #80                                                         ; дополнительное смещение половины диапазона
+NegativeLimit   equ #C0                                                         ; код ограничения при разных входных знаках
+                endmodule
+
+
+
+                ; Исходная граница записи первого байтового кода
+                module ActionCodeStepConst
+FirstMinDiff    equ #02                                                         ; первый код записывается только при модуле разности не меньше двух
+                endmodule
+
+
+
+                ; Граница и маркер исходного счётчика записей класса 3
+                module ActionClass3CountConst
+BeforeHigh      equ #A0C1                                                       ; исходная позиция High перед первым шагом списка, память не выделяется
+EndLow          equ #80                                                         ; полный Low маркера при High=80
+MaxCount        equ #02                                                         ; насыщение счётчика и конечное сравнение
+                endmodule
+
+
+
+                ; Смещения читаемого представления, формат остальных байтов не переопределяется
+                module ActionNearWordsConst
+Upper0Low       equ #02                                                         ; младший байт первого читаемого слова
+Upper0High      equ #03                                                         ; старший байт первого слова
+Upper1Low       equ #06                                                         ; младший байт второго читаемого слова
+Upper1High      equ #07                                                         ; старший байт второго слова
+Upper2Low       equ #0A                                                         ; младший байт третьего читаемого слова
+Upper2High      equ #0B                                                         ; старший байт третьего слова
+SignBit         equ #07                                                         ; знаковый бит старшего байта
+Limit           equ #3C                                                         ; исключённая верхняя граница свёрнутого слова
+                endmodule
+
+
+
+                ; Исходное насыщение трёх изменяемых координат
+                module ActionClampWordsConst
+HighMask        equ #80                                                         ; бит 15 модуля исключает сохранение нижнего слова
+Saturation      equ #7F00                                                       ; исходная подстановка при модуле не меньше 8000
+                endmodule
+
+
+
+                ; Признак отсутствия близкой широкой цели
+                module ActionNearSearchConst
+NotFoundLow     equ #7F                                                         ; L при отсутствии, найденный L всегда от 0 до 59
+                endmodule
+
+
+
+                ; Исходные значения сброса управления и накопителей клавиатурных каналов
+                module ActionControlDecayConst
+ResetWord       equ #0088                                                       ; значение LimitWord и SignedWord на падающем фронте
+RequestOn       equ #01                                                         ; запрос перерисовки шкалы
+XYReset         equ #C8                                                         ; исходный байт сброса двух накопителей X либо Y
+TurnReset       equ #FA                                                         ; исходный байт сброса накопителей поворота
+PhaseSeed       equ #92                                                         ; начальный восьмибитный цикл, три единичных бита
+StepUnit        equ #01                                                         ; шаг signed8 к нулю
+                endmodule
+
+
+
+                ; Исходные шаги накопителей клавиатурного повтора и границы signed8
+                module ActionControlKeyConst
+One             equ #01                                                         ; единичный запрос либо шаг знакового значения
+OppositeReset   equ #C8                                                         ; сброс накопителя противоположного направления
+TurnAdd         equ #5E                                                         ; приращение накопителя поворота
+XAdd            equ #46                                                         ; приращение накопителя X
+YAdd            equ #48                                                         ; приращение накопителя Y
+TurnPositive    equ #08                                                         ; исключённая верхняя граница положительного поворота
+TurnNegative    equ #F9                                                         ; включённая нижняя граница отрицательного поворота
+XYPositive      equ #04                                                         ; исключённая верхняя граница положительного X либо Y
+XYNegative      equ #FD                                                         ; включённая нижняя граница отрицательного X либо Y
+NegativeFirst   equ #FF                                                         ; исходная подстановка минус единицы после неотрицательного кандидата
+                endmodule
+
+
+
+                ; Исходные проверки опкода и шага слова шестой шкалы
+                module ActionGaugeKeyConst
+MotionOpcode    equ #3A                                                         ; опкод LD A,(nn) в начале координатной цепочки 6E72
+StepWord        equ #0008                                                       ; величина изменения слова по модулю 65536
+NegAllowBit     equ #04                                                         ; бит младшего байта, допускающий уменьшение отрицательного слова
+                endmodule
+
+
+
+                ; Полное значение конфигурации межбанкового обработчика
+                module ActionBankCallbackConst
+CallbackPage    equ #13                                                         ; банк 3 и ROM 1, при блокировке запись игнорируется аппаратурой
+                endmodule
+
+
+
+                ; Направление и старший байт отрицательного X исходного растрового ядра
+                module ControlsCircleHalfConst
+DirectionDown   equ #01                                                         ; ненулевое направление к следующим строкам
+NegativeXHigh   equ #FF                                                         ; старший байт состояния отрицательного X, Cprime хранит его младший код
+                endmodule
+
+
+
+                ; Исходные адреса переноса загрузочного участка станции, память не выделяется
+                module ControlsStationRelayConst
+SourceCode      equ #DCA9                                                       ; первый исходный байт копируемого участка банка 1
+RuntimeCode     equ #4000                                                       ; исходное назначение в фиксированной RAM банка 5
+BlockSize       equ #0100                                                       ; исходные 256 байтов копии
+                endmodule
+
+
+
+                ; Исходные блоки подготовки возврата к станции, память не выделяется
+                module ControlsStationPrepareConst
+SaveBytes       equ #0200                                                       ; исходная длина сохраняемого состояния от четырёх байтов BCD
+CodeSource      equ #DD23                                                       ; источник следующей стадии в банке 1
+NextEntry       equ #4200                                                       ; исходное назначение следующей стадии в фиксированном банке 5
+                endmodule
+
+
+
+                ; Коды принудительного обновления исходной панели
+                module ActionPanelRefreshConst
+RequestAll      equ #01                                                         ; записывается в каждый из шести операндов запроса
+AllCounterPairs equ #FF                                                         ; биты 0..2 допускают H, E и D по цепочке, биты 7..3 не читаются
+                endmodule
+
+
+
+                ; Порог и поправка горизонтального сечения
+                module ControlsHorizontalCircleConst
+OffsetLimit     equ #78                                                         ; порог внешнего горизонтального смещения
+ReleaseBias     equ #77                                                         ; вычитаемое при подготовке порога A prime
+                endmodule
+
+
+
+                ; Размеры и пороги исходного большого кругового окна
+                module ControlsLargeCircleConst
+HalfHeight      equ #30                                                         ; вертикальный порог и базовая строка центра
+CenterX         equ #80                                                         ; базовый горизонтальный центр
+FullWidth       equ #F0                                                         ; порог полной полосы
+FarCornerX      equ #F8                                                         ; прибавляемое дальнего углового плеча
+                endmodule
+
+
+
+                ; Шахматный рисунок проецируемого тела
+                module ActionBodyPattern
+Checker         equ #FFAA                                                       ; младший AA, XOR FF меняет фазу на 55
+                endmodule
+
+
+
+                ; Страницы и шаг фазовых пар вычислителя смещения
+                module ActionObjectOffsetConst
+PhasePage       equ #99                                                         ; страница фазовых пар
+SquarePage      equ #98                                                         ; страница табличных квадратов
+PhaseStep       equ #40                                                         ; смещение второго элемента пары
+                endmodule
+
+
                 endif

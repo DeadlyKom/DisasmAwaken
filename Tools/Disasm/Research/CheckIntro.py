@@ -151,12 +151,15 @@ def main():
     results.append(dict(name="BuildAttributeWriterAndRun", words=32, generated_code_bytes=128, passed=True))
 
     # Проверка двух исполняемых вариантов вставки, разрозненных источников и всех 38 строк.
-    for patch in ([0, 0], [0x24, 0]):
+    for phase, patch in ((0, [0, 0]), (0x80, [0, 0x14])):
         memory = original_memory()
-        memory[0x6839:0x683B] = patch
+        memory[0x67F2] = phase
+        # Проверка вставки, созданной настоящим выбором фазы до ожидания аппаратного IRQ.
+        execute(memory, {"PC": 0x67F1}, stop=0x6802)
+        require(memory[0x6839:0x683B] == patch, "Неверная исходная вставка NOP / INC D")
         for row in range(38):
             pointer_table = 0x7200 + row * 64
-            word(memory, 0x7100 + row * 4, pointer_table - (0x100 if patch[0] else 0))
+            word(memory, 0x7100 + row * 4, pointer_table)
             word(memory, 0x7102 + row * 4, 0x9000 + row * 32)
             for column in range(32):
                 source_address = 0x8000 + row * 32 + (31 - column)
@@ -164,7 +167,9 @@ def main():
                 memory[source_address] = (row * 17 + column * 7) & 255
         simulator, _ = execute(memory, {"PC": 0x6827, "HL": 0x7100})
         expected = [(row * 17 + column * 7) & 255 for row in range(38) for column in range(32)]
-        require(memory[0x9000:0x94C0] == expected, "Не совпала адресация ScatterTextureToScreen")
+        destination_shift = 0x100 if patch[1] else 0
+        require(memory[0x9000 + destination_shift:0x94C0 + destination_shift] == expected,
+                "Не совпала адресация приёмника ScatterTextureToScreen")
         require(simulator.registers[SP] == 0xC000, "SP не восстановлен после экранного переноса")
     results.append(dict(name="ScatterTextureToScreen", patches=2, bytes_per_patch=1216, passed=True))
 

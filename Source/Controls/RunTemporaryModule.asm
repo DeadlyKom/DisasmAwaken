@@ -62,7 +62,7 @@ Entry:          PUSH IX
                 LD A, #10
                 OUT (C), A
                 EXX
-                CALL @Controls.UnknownD10A.Entry
+                CALL @Controls.ContinueProjectionRatio.Entry
                 EXX
                 LD A, #11
                 OUT (C), A

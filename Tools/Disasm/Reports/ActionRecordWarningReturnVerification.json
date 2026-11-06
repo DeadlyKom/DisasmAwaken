@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "total_cases": 65536,
+  "all_saved_DE_words": true,
+  "all_class_codes": true,
+  "full_DE_cross_class_product_exhausted": false,
+  "exact_registers_including_R": true,
+  "all_physical_ram_bytes_proved": true,
+  "write_order_and_multiplicity_proved": true,
+  "cpu_stack_written": false,
+  "real_restorer_executed": true,
+  "matched_class_refresh_m1": 13,
+  "other_class_refresh_m1": 6,
+  "independent_numeric_oracle": true,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false,
+  "timing_proved": false
+}

@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "typed_bytes": 44,
+  "physical_records": 22,
+  "preserved_following_bytes": 193,
+  "original_bytes_preserved": true,
+  "handler_execution_proved": false,
+  "assembly_executed": false
+}

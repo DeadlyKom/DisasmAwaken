@@ -1,0 +1,48 @@
+{
+  "passed": true,
+  "total_cases": 353280,
+  "paths": {
+    "three_phases": 320512,
+    "single_phase": 32768
+  },
+  "correction_paths": {
+    "1:plain": 315749,
+    "4:plain": 316423,
+    "2:plain": 316679,
+    "5:plain": 315749,
+    "5:negated": 3169,
+    "5:negate_then_decrement": 1594,
+    "4:negated": 3041,
+    "1:negated": 3553,
+    "2:negated": 2785,
+    "1:negate_then_decrement": 1210,
+    "4:negate_then_decrement": 1048,
+    "2:negate_then_decrement": 1048
+  },
+  "method": "shared_proved_quarter_square_formulas_with_action_specific_register_refresh_and_write_oracle",
+  "arithmetic_oracle": "PreviewModelMatrixOracle, no original model bytes assumed from another version",
+  "exact_registers_flags_refresh_sp": true,
+  "every_physical_ram_byte_and_write_multiplicity_checked": true,
+  "output_operands": [
+    52024,
+    52026,
+    52028,
+    52261,
+    52263,
+    52265,
+    52514,
+    52516,
+    52518
+  ],
+  "output_bytes": 9,
+  "no_extra_stack_frame": true,
+  "all_mode_bytes": true,
+  "all_first_two_phase_pairs_at_four_third_phases": true,
+  "all_third_phases_at_selected_extrema": true,
+  "all_joint_inputs_exhausted": false,
+  "correction_primitives_all_byte_pairs_checked": false,
+  "native_geometry_consumer_proved": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

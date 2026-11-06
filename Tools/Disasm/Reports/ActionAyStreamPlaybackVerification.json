@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "sequences": 42,
+  "ticks": 570,
+  "streams": 7,
+  "physical_frames": 88,
+  "physical_stream_bytes": 359,
+  "both_channels": true,
+  "original_stream_addresses_used": true,
+  "full_streams_to_marker_and_one_disabled_tick": true,
+  "every_memory_write_and_port_checked": true,
+  "actual_ay_hardware_executed": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

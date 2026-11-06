@@ -1,0 +1,34 @@
+{
+  "passed": true,
+  "total_cases": 1920,
+  "paths": {
+    "inside": 604,
+    "projection_reject": 466,
+    "common_outside": 638,
+    "clipped": 212
+  },
+  "renderer_child_calls": {
+    "orientation": 13760,
+    "fill": 5748,
+    "face_rejected": 7610,
+    "line": 918,
+    "listed_codes": 2186,
+    "clip_polygon": 818,
+    "clip_segment": 214
+  },
+  "all_128_original_even_model_indices": true,
+  "original_OBJECT3D_bank4_used": true,
+  "four_preparatory_children_execute_in_expected_model": true,
+  "independent_preparation_math": false,
+  "numeric_renderer_oracles": true,
+  "independent_dispatch_flags_stack_and_Next": true,
+  "all_physical_ram_bytes_and_write_multiplicity_checked": true,
+  "exact_registers_flags_except_R": true,
+  "real_paging_two_out_values_checked": true,
+  "stop": 58623,
+  "subsequent_queue_selection_executed": false,
+  "all_scene_matrices_exhausted": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

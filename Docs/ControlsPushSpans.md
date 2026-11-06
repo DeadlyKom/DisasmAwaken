@@ -1,11 +1,13 @@
 # Динамические цепочки PUSH AF в рисователях
 
-Установлены три внутренние фазы пока не завершённых рисователей
-[UnknownD633](../Source/Controls/UnknownD633.asm),
-[UnknownD727](../Source/Controls/UnknownD727.asm) и
-[UnknownD833](../Source/Controls/UnknownD833.asm).
-Полные функции сохраняют Unknown, приведённые ниже проверки относятся только
-к быстрой заливке и восстановлению стека перед следующей итерацией.
+Установлены три внутренние фазы рисователей
+[CircleRasterCore](../Source/Controls/CircleRasterCore.asm),
+[LeftClippedCircleCore](../Source/Controls/LeftClippedCircleCore.asm) и
+[RightClippedCircleCore](../Source/Controls/RightClippedCircleCore.asm).
+Приведённые ниже проверки относятся только к быстрой заливке и
+восстановлению стека перед следующей итерацией. Последующий разбор
+[общих ядер](ControlsCircleKernels.md) связывает эти фазы с моделями
+полных проходов и отдельно описывает внутренние регистровые состояния.
 
 | Вход подготовки | Операнд JR | 16 операций PUSH AF | Продолжение после цепочки | Следующая итерация |
 | --- | --- | --- | --- | --- |

@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "total_cases": 393216,
+  "entries": {
+    "C6D3": 131072,
+    "C641": 65536,
+    "C64C": 65536,
+    "C657": 65536,
+    "C662": 65536
+  },
+  "all_endpoint_pairs_and_carry_values": true,
+  "all_corner_block_and_output_offset_pairs": true,
+  "exact_registers_flags_refresh_sp": true,
+  "every_physical_ram_byte_and_write_multiplicity_checked": true,
+  "blocked_path_no_writes": true,
+  "all_joint_inputs_exhausted": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "total_cases": 663552,
+  "cases_by_kind": {
+    "all_first_words": 262144,
+    "all_second_words": 262144,
+    "all_input_AF": 131072,
+    "mixed_words": 8192
+  },
+  "paths": {
+    "second_comparison": 327684,
+    "first_difference": 335868
+  },
+  "all_first_words_at_four_other_edges": true,
+  "all_second_words_at_four_other_edges": true,
+  "all_input_AF_for_both_paths": true,
+  "exact_registers_including_R": true,
+  "A_preserved": true,
+  "Z_iff_both_word_pairs_equal": true,
+  "step_control_bytes_not_compared": true,
+  "all_physical_ram_bytes_proved": true,
+  "no_memory_or_stack_writes_in_any_case": true,
+  "final_eight_banks_match_input_fixture": true,
+  "first_difference_refresh_m1": 7,
+  "second_comparison_refresh_m1": 14,
+  "complete_four_word_product_exhausted": false,
+  "independent_word_pair_oracle": true,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "timing_proved": false
+}

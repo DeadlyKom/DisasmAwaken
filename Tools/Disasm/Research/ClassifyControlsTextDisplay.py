@@ -14,7 +14,7 @@ from ValidateNotes import validate_notes
 import ControlsTextDisplayFacts as facts
 
 
-def main(facts=facts, tag='ControlsTextDisplay', document='ControlsTextDisplay', state_fields=None):
+def main(facts=facts, tag='ControlsTextDisplay', document='ControlsTextDisplay', state_fields=None, include_blocks=()):
     def read(stem):
         return json.loads((ROOT / ('Tools/Disasm/Reports/' + stem + '.json')).read_text('utf-8'))
     def encode(value):
@@ -173,6 +173,12 @@ def main(facts=facts, tag='ControlsTextDisplay', document='ControlsTextDisplay',
                 block = text[start:end].replace('Unknown, назначение этого фрагмента ещё не установлено.', f['description'] + '.')
                 text = text[:start] + block.rstrip() + '\n\n[Алгоритм, контракты и независимая модель](../' + document + '.md).\n' + text[end:]
         pending[path] = text.encode('utf-8')
+    # Подключение только явно переданных структур в тот же защищённый кандидат.
+    for relative,marker,block in include_blocks:
+        path=ROOT/relative;assert path.resolve().is_relative_to(ROOT.resolve())
+        text=pending.get(path,path.read_bytes()).decode('utf-8')
+        assert marker not in text and text.count('                endif')==1
+        pending[path]=text.replace('                endif',block+'\n                endif').encode('utf-8')
     # Создание отдельного кандидата до замены активных файлов.
     plan = [(p, p.read_bytes() if p.exists() else None, after) for p, after in pending.items()]
     for path, before, after in plan:

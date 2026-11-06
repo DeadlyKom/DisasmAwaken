@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "described_functions": 1,
+  "confirmed_code_bytes": 151,
+  "confirmed_instructions": 72,
+  "compositional_model_cases": 49127,
+  "independent_complete_child_oracle": false,
+  "physical_bytes_preserved": true,
+  "actual_ay_bank0_and_text_bank1_distinguished": true,
+  "all_three_paths_checked": true,
+  "maximum_additional_stack_bytes": 18,
+  "assembly_executed": false
+}

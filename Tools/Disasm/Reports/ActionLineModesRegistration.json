@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "operand_writers": [
+    56402,
+    56736
+  ],
+  "target": 56847,
+  "state_word_writers": [
+    56398,
+    56732
+  ],
+  "state_word_address": 36174,
+  "model_cases": 7168,
+  "parent_procedures_classified": true,
+  "original_bytes_changed": false,
+  "assembly_executed": false
+}

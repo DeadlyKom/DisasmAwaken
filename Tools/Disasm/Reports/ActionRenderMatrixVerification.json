@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "total_cases": 75264,
+  "paths": {
+    "general": 40423,
+    "quadrant0": 138,
+    "one_axis": 34299,
+    "quadrant1": 136,
+    "quadrant2": 130,
+    "quadrant3": 138
+  },
+  "correction_paths": {
+    "plain": 928860,
+    "negate_then_decrement": 433,
+    "negated": 4115
+  },
+  "method": "shared_proved_functional_matrix_composition_with_action_specific_register_refresh_and_memory_oracle",
+  "arithmetic_oracle": "PreviewMatrixComposeOracle, ACTION bytes and banking checked independently",
+  "real_coefficient_producer_cases": 1024,
+  "producer_and_consumer_register_frames_separately_initialized": true,
+  "exact_registers_flags_refresh_sp": true,
+  "every_physical_ram_byte_and_write_multiplicity_checked": true,
+  "all_flags_and_second_phase_bytes": true,
+  "all_input_operand_bytes_by_separate_slices": true,
+  "one_axis_quadrants_copy_and_negate_without_table_rounding": true,
+  "original_negative_80_wrap_preserved": true,
+  "no_extra_stack_frame_or_ports": true,
+  "all_joint_inputs_exhausted": false,
+  "full_vertex_transform_proved": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

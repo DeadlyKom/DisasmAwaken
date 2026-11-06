@@ -63,9 +63,9 @@ A=10, здесь и далее числа шестнадцатеричные, з
 Диапазоны всех игровых вызывающих процедур ещё не установлены.
 
 Потребители этого помощника находятся в
-[D633](../Source/Controls/UnknownD633.asm),
-[D727](../Source/Controls/UnknownD727.asm) и
-[D833](../Source/Controls/UnknownD833.asm). Имена этих процедур остаются Unknown,
+[D633](../Source/Controls/CircleRasterCore.asm),
+[D727](../Source/Controls/ResumeCirclePushSpan.asm) и
+[D833](../Source/Controls/RightClippedCircleCore.asm). Имена этих процедур остаются Unknown,
 их полные алгоритмы не объявляются разобранными по одному установленному вызову.
 
 ## Проверка

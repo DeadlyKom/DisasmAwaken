@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "total_cases": 671232,
+  "outcomes": {
+    "complete": 408843,
+    "overflow_0": 65621,
+    "overflow_1": 65619,
+    "overflow_2": 131149
+  },
+  "exact_registers_and_write_order": true,
+  "stopped_at_branch_boundary": true,
+  "assembly_executed": false,
+  "native_execution": false
+}

@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "original_bytes_preserved": true,
+  "instructions_changed": 0,
+  "division_bytes": 181,
+  "dispatcher_bytes": 90,
+  "semantic_status_of_both_fragments": "unknown_pending_separate_publication",
+  "assembly_executed": false
+}

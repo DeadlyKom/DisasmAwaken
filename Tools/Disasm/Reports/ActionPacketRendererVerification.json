@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "total_cases": 1850,
+  "profiles": {
+    "faces": 130,
+    "lines": 336,
+    "boundary_faces": 40,
+    "flat_faces": 480,
+    "all_40_point_slots": 480,
+    "mixed": 128,
+    "empty": 256
+  },
+  "child_calls_and_paths": {
+    "orientation": 857,
+    "fill": 666,
+    "face_rejected": 191,
+    "line": 2645,
+    "attached_line_rejected": 157
+  },
+  "entry": 56611,
+  "actual_children_executed_without_stubs": true,
+  "composition_oracle": true,
+  "independent_full_geometry": false,
+  "exact_registers_flags_except_R": true,
+  "all_physical_ram_bytes_proved": true,
+  "write_multiplicity_proved": true,
+  "convex_onscreen_face_profile": true,
+  "clipped_convex_face_profile": false,
+  "horizontal_degenerate_faces_checked": true,
+  "all_40_native_point_slots": true,
+  "line_counts_2_to_15": true,
+  "face_counts_3_to_15": true,
+  "record_stream_cross_page_boundaries_checked": true,
+  "modes_0_to_4_for_faces": true,
+  "all_four_line_selectors": true,
+  "clipped_parent_DBBD_proved": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

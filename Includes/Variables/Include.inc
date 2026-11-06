@@ -1420,4 +1420,518 @@ C22             equ #CC09                                                       
 SavedSP         equ #AD08                                                       ; значение SP после PUSH IX и PUSH IY, память не выделяется
                 endmodule
 
+
+                ; Существующий непосредственный байт инициализации Unknown13
+                module ActionMissileCreateState
+InitParameter   equ #612E                                                       ; четвёртый байт LD (IY+d),n, память не выделяется
+                endmodule
+
+                ; Исходный операнд AY-потребителя ACTION банка 0
+                module ActionAyEffectState
+CursorA         equ #ECA9                                                       ; операнд LD HL,nn по ECA8, поток канала A, не Controls банка 1
+                endmodule
+
+
+                ; Существующее состояние, память не выделяется
+                module ActionAyEffectsState
+CursorB         equ #ECF6                                                       ; операнд LD HL,nn по ECF5, поток канала B, банк 0
+ChannelCLevel   equ #ED83                                                       ; операнд LD A,n по ED82, исходный байт уровня C до деления на два
+                endmodule
+
+
+                ; Существующее состояние, память не выделяется
+                module ActionRecordLinkEventState
+PendingRecord   equ #635C                                                       ; операнд LD HL,nn по 635B, CaptureProjectedRecord записывает сюда HL'
+                endmodule
+
+
+                ; Существующие операнды локальной проверки двух допусков
+                module ActionProjectedCaptureState
+Gate            equ #E310                                                       ; ненулевой байт запрещает запись результата
+Limit           equ #E331                                                       ; беззнаковое слово допуска обеих осей
+ProjectedX      equ #E33A                                                       ; слово второй координаты до signed8-поправки
+                endmodule
+
+
+                ; Исходные раздельные страницы генерируемого логарифма, память не выделяется
+                module ActionLogarithmTable
+LowPage         equ #9100                                                       ; младшие байты T[0..255]
+HighPage        equ #9200                                                       ; старшие байты T[0..255]
+                endmodule
+
+
+                ; Исходные страницы генерируемой таблицы, память не выделяется
+                module ActionExponentialTable
+Values          equ #9300                                                       ; 256 физических байтов приближённой экспоненты
+                endmodule
+
+
+                ; Существующее состояние, память не выделяется
+                module ActionLogRatioState
+ShiftFraction   equ #AF14                                                       ; изменяемое смещение JR NZ по AF13, обычные значения 0..7
+ShiftInteger    equ #AF2F                                                       ; изменяемое смещение JR NZ по AF2E, обычные значения 0..7
+                endmodule
+
+
+                ; Существующие операнды масштаба заголовка, память не выделяется
+                module ActionScaleHeaderState
+SizeSkip        equ #E1C8                                                       ; смещение первого JR, число пропущенных удвоений
+FirstAxisSkip   equ #E232                                                       ; смещение следующего JR первой оси
+SecondAxisSkip  equ #E26B                                                       ; смещение следующего JR второй оси
+ScaledBound     equ #E2C5                                                       ; операнд LD HL,nn, результат масштабирования мантиссы
+                endmodule
+
+
+                ; Существующие маска и операнды проекционного отбора, память не выделяется
+                module ActionProjectedBoundsState
+CompanionMask   equ #E021                                                       ; полный байт маски, AND с Gate, игровой смысл ещё не установлен
+AbsoluteX       equ #E372                                                       ; операнд LD BC,nn в E371, модуль отношения X
+AbsoluteY       equ #E375                                                       ; операнд LD DE,nn в E374, модуль отношения Y
+                endmodule
+
+
+                ; Исходный байт выбора продолжения после граничного отбора
+                module ActionProjectionClipState
+SkipDetail      equ #6F59                                                       ; 00 допускает E299, полный ненулевой байт переводит E40F
+                endmodule
+
+
+                ; Существующие операнды и состояние, память не выделяется
+                module ActionScaledVectorState
+Component0      equ #E5B3                                                       ; операнд LD DE,nn по E5B2, первая масштабированная компонента
+Component1      equ #E5D2                                                       ; операнд LD DE,nn по E5D1, вторая масштабированная компонента
+Component2      equ #E5ED                                                       ; операнд LD DE,nn по E5EC, третья масштабированная компонента
+                endmodule
+
+
+                ; Исходные байты обработчика близкой записи, память не выделяется
+                module ActionCloseRecordState
+InhibitCode     equ #E507                                                       ; операнд LD A,n, 00 допускает корневой вход, ненулевой байт запрещает
+UnknownA794     equ #A794                                                       ; состояние, обнуляемое общим хвостом для класса 12, игровой смысл не доказан
+                endmodule
+
+
+                ; Исходные состояние точки и изменяемый запрос, память не выделяется
+                module ActionAimFollowState
+Position        equ #9B19                                                       ; два байта X и Y сопровождающей точки
+Request         equ #AA8E                                                       ; операнд LD A,n по AA8D, ненулевой запрос назначения цели
+                endmodule
+
+
+                ; Существующее состояние, память не выделяется
+                module ActionRenderQueueInsertState
+Head            equ #9BA1                                                       ; младший байт головы страницы 8F, 01 конец цепочки
+FreeOffset      equ #9BA2                                                       ; свободное смещение с шагом 14, FC буфер исчерпан
+HeaderWord0     equ #9B8D                                                       ; первое исходное слово снимка, полный игровой смысл неизвестен
+PhasePair       equ #9B12                                                       ; слово Phase0/Phase1, low и high физической FRenderPhases
+Phase2          equ #9B14                                                       ; третий байт физической FRenderPhases
+                endmodule
+
+
+                ; Существующее состояние, память не выделяется
+                module ActionRenderQueueControlState
+SavedEntrySP    equ #E4A7                                                       ; операнд LD SP,nn по E4A6, исходный стек всего обхода
+SavedNodeSP     equ #E4D6                                                       ; операнд LD SP,nn по E4D5, стек со словом указателя узла
+                endmodule
+
+
+                ; Раздельные существующие операнды коэффициентов и три исходные фазы
+                module ActionRenderCoefficientsState
+Coeff11         equ #CB38                                                       ; непосредственный байт коэффициента следующего вычислителя
+Coeff21         equ #CB3A                                                       ; непосредственный байт коэффициента следующего вычислителя
+Coeff31         equ #CB3C                                                       ; непосредственный байт коэффициента следующего вычислителя
+Coeff12         equ #CC25                                                       ; непосредственный байт коэффициента следующего вычислителя
+Coeff22         equ #CC27                                                       ; непосредственный байт коэффициента следующего вычислителя
+Coeff32         equ #CC29                                                       ; непосредственный байт коэффициента следующего вычислителя
+Coeff13         equ #CD22                                                       ; непосредственный байт коэффициента следующего вычислителя
+Coeff23         equ #CD24                                                       ; непосредственный байт коэффициента следующего вычислителя
+Coeff33         equ #CD26                                                       ; непосредственный байт коэффициента следующего вычислителя
+                endmodule
+
+
+                ; Существующее состояние, память не выделяется
+                module ActionRenderMatrixState
+Coeff11         equ #D5FC                                                       ; непосредственный байт LD A,n следующего преобразования
+Coeff12         equ #D61E                                                       ; непосредственный байт LD A,n следующего преобразования
+Coeff13         equ #D60D                                                       ; непосредственный байт LD A,n следующего преобразования
+Coeff21         equ #D62F                                                       ; непосредственный байт LD A,n следующего преобразования
+Coeff22         equ #D651                                                       ; непосредственный байт LD A,n следующего преобразования
+Coeff23         equ #D640                                                       ; непосредственный байт LD A,n следующего преобразования
+Coeff31         equ #D662                                                       ; непосредственный байт LD A,n следующего преобразования
+Coeff32         equ #D684                                                       ; непосредственный байт LD A,n следующего преобразования
+Coeff33         equ #D673                                                       ; непосредственный байт LD A,n следующего преобразования
+                endmodule
+
+
+                ; Существующие операнды и состояние, память не выделяется
+                module ActionObjectCopyState
+Buffer          equ #9F1C                                                       ; существующий рабочий буфер потока OBJECT3D, не новая область памяти
+                endmodule
+
+
+                ; Существующие операнды и состояние, память не выделяется
+                module ActionPerspectiveState
+DepthShiftSkip  equ #D7AC                                                       ; изменяемый JR глубины, допустимое смещение 6-exponent от 0 до 5
+FirstShiftSkip  equ #D7C7                                                       ; изменяемый JR первой координаты, тот же показатель масштаба
+SecondShiftSkip equ #D9B9                                                       ; изменяемый JR второй координаты, тот же показатель масштаба
+SavedDepth      equ #D9C3                                                       ; операнд LD DE,nn перед делением второй координаты
+                endmodule
+
+
+                ; Существующие операнды и состояние, память не выделяется
+                module ActionVertexGroupState
+NextOffset      equ #D699                                                       ; младший байт рабочего SP страницы 8E, сохраняется только младший байт результата
+PackedFirst     equ #D69C                                                       ; первая пара локальных координат, младшая первая ось и старшая вторая
+PackedSecond    equ #D69F                                                       ; вторая пара локальных координат
+PackedThird     equ #D6A2                                                       ; третья пара локальных координат
+DepthFirst      equ #D6E2                                                       ; первая локальная компонента глубины
+DepthSecond     equ #D6E1                                                       ; вторая локальная компонента глубины
+DepthThird      equ #D6DF                                                       ; третья локальная компонента глубины
+Corner0         equ #D706                                                       ; пара координат комбинации 0
+Corner1         equ #D73A                                                       ; пара координат комбинации 1
+Corner3         equ #D747                                                       ; пара координат комбинации 3
+Corner2         equ #D756                                                       ; пара координат комбинации 2
+Corner5         equ #D77B                                                       ; пара координат комбинации 5
+Corner4         equ #D788                                                       ; пара координат комбинации 4
+Corner6         equ #D761                                                       ; пара координат комбинации 6
+Corner7         equ #D76E                                                       ; пара координат комбинации 7
+Depth5          equ #D77E                                                       ; локальная глубина комбинации 5
+Depth4          equ #D78B                                                       ; локальная глубина комбинации 4
+Depth6          equ #D764                                                       ; локальная глубина комбинации 6
+Depth7          equ #D771                                                       ; локальная глубина комбинации 7
+SavedSP         equ #D79D                                                       ; исходный CPU-стек с адресом возврата, восстанавливается перед RET
+                endmodule
+
+
+                ; Существующие операнды и состояние, память не выделяется
+                module ActionObjectVerticesState
+ModelByteOffset equ #9B8E                                                       ; байтовое смещение указателя OBJECT3D в исходной таблице 9E00
+                endmodule
+
+
+                ; Существующие операнды и состояние, память не выделяется
+                module ActionFaceOrientationState
+SavedSP         equ #DFE4                                                       ; операнд восстановления CPU-стека после POP координат из страницы 8E
+                endmodule
+
+
+                ; Существующее состояние, память не выделяется
+
+
+                ; Существующее состояние, память не выделяется
+                module ActionClipIntersectionsState
+OutputSize      equ #9BA3                                                       ; байтовое смещение выхода в странице 90
+                endmodule
+
+
+                ; Существующее состояние, память не выделяется
+                module ActionClipPointWritersState
+CornerBlock     equ #CF03                                                       ; полный байт запрета вывода углов
+                endmodule
+
+
+                ; Существующее состояние, память не выделяется
+                module ActionClipCasesState
+SeenFlags       equ #CF07                                                       ; отметки TL, TR, BL, BR в битах 3..0, старшая тетрада сохраняется
+                endmodule
+
+
+                ; Существующие операнды и состояние, память не выделяется
+                module ActionLineRasterState
+FirstPoint      equ #8D2A                                                       ; упакованные пиксельные координаты, Second в младшем байте и First в старшем
+SecondPoint     equ #8D2C                                                       ; второй упакованный конец отрезка
+PixelOpcode     equ #8D4E                                                       ; числовая команда A1 для AND, B1 для OR либо A9 для XOR
+BranchOpcode    equ #8D4F                                                       ; числовая команда 30 для JR NC режима AND либо 38 для JR C режимов OR/XOR
+MaskOffset      equ #DE0F                                                       ; изменяемый операнд ADD A,nn, 18 для AND либо 10 для OR/XOR
+SavedSP         equ #DEED                                                       ; операнд восстановления CPU SP перед RET
+                endmodule
+
+
+                ; Существующие операнды и состояние, память не выделяется
+                module ActionPolygonPreparationState
+Vertices        equ #9000                                                       ; исходные пары Second, First, длина задаётся OutputSize
+Patterns        equ #D100                                                       ; пять исходных пар шаблон и XOR соседней строки
+Mode            equ #D560                                                       ; операнд LD A,nn, номер шаблона от 0 до 4 в проверенном профиле
+LastIndex       equ #D3B7                                                       ; операнд CP, последний нечётный индекс списка
+MaximumRow      equ #D4C2                                                       ; операнд LD L,nn, нижняя исключённая строка
+LeftEndRow      equ #D4C4                                                       ; операнд LD E,nn, предел левого ребра, сначала минимальная строка
+RightEndRow     equ #D387                                                       ; операнд LD L,nn, предел правого ребра, сначала минимальная строка
+LeftCursor      equ #D275                                                       ; операнд LD HL,nn, строковый байт текущей вершины левой цепочки
+RightCursor     equ #D3B0                                                       ; операнд LD HL,nn, строковый байт текущей вершины правой цепочки
+WideDelta       equ #D1FF                                                       ; операнд XOR для переключения шаблона многобайтовой строки
+NarrowDelta     equ #D258                                                       ; операнд XOR для переключения шаблона однобайтовой строки
+SavedSP         equ #D264                                                       ; операнд LD SP,nn, CPU-стек после сохранения входного HL
+RowLimit        equ #D22A                                                       ; операнд CP, ближайший предел строкового цикла
+RowBranch       equ #D22C                                                       ; смещение JR NC, значение 45 выбирает подготовку левого ребра
+                endmodule
+
+
+                ; Существующие операнды и состояние, память не выделяется
+                module ActionPolygonLeftEdgeState
+Height          equ #D217                                                       ; операнд ADD A,nn, высота текущего левого ребра
+Subtract        equ #D213                                                       ; операнд SUB nn, вычитаемая часть ошибки левой границы
+                endmodule
+
+
+                ; Существующие операнды и состояние, память не выделяется
+                module ActionPolygonRightEdgeState
+Height          equ #D223                                                       ; операнд ADD A,nn, высота правого ребра
+Subtract        equ #D21F                                                       ; операнд SUB nn, вычитаемая часть ошибки правой границы
+                endmodule
+
+
+                ; Существующие операнды и состояние, память не выделяется
+                module ActionPacketRendererState
+FaceGate        equ #8D5A                                                       ; полный байт состояния ориентации, 0 отрицательный результат, 1 неотрицательный
+                endmodule
+
+
+                ; Существующие операнды и состояние, память не выделяется
+                module ActionClippedPacketRendererState
+CurrentSecond   equ #8D3A                                                       ; полное слово Second первой точки текущего сегмента
+CurrentFirst    equ #8D3C                                                       ; полное слово First первой точки текущего сегмента
+NextSecond      equ #8D3E                                                       ; полное слово Second следующей точки ломаной
+NextFirst       equ #8D4A                                                       ; полное слово First следующей точки ломаной
+CurrentCode     equ #8D4C                                                       ; ClipCode первой точки текущего сегмента
+NextCode        equ #8D4D                                                       ; ClipCode следующей точки ломаной
+                endmodule
+
+
+                ; Существующее состояние, память не выделяется
+                module ActionWorkBufferState
+SavedSP         equ #D129                                                       ; операнд LD SP,nn, исходный CPU SP перед временной записью буфера
+                endmodule
+
+
+                ; Операнды исходного кода, новая память не выделяется
+                module IntroScaleState
+WarmupLeft      equ #6C22                                                       ; оставшееся начальное нарастание, операнд LD A,n, исходно A1
+RampLevel       equ #6C2E                                                       ; нарастающий уровень 0..63, операнд LD A,n
+CycleIndex      equ #6C3F                                                       ; индекс цикла 0..39, операнд LD A,n
+PointerRow      equ #6BB2                                                       ; выбранный адрес строки F000+16*A, операнд LD HL,nn
+                endmodule
+
+
+                ; Существующий операнд восстановления CPU SP
+                module IntroSamplerState
+SavedSP         equ #6BF3                                                       ; слово непосредственного операнда LD SP,nn продолжения 6BED
+                endmodule
+
+
+                ; Существующий операнд восстановления CPU SP
+                module IntroScrolledState
+SavedSP         equ #66F8                                                       ; операнд LD SP,nn продолжения NextSampledRow
+                endmodule
+
+
+                module IntroLookupState
+SavedSP         equ #6BBD                                                       ; исходный операнд LD SP,nn в PresentLookupTexture
+                endmodule
+
+
+                module IntroAttrState
+FramePhase      equ #67F2                                                       ; байт фазы PresentInterlacedFrame, ноль либо 80 в штатном чередовании
+SavedSP         equ #692A                                                       ; операнд LD SP,nn после 128 байтов созданного писателя
+                endmodule
+
+
+                module IntroScatterState
+RecordCursor    equ #6831                                                       ; операнд LD SP,nn, указатель следующей записи длиной четыре байта
+CpuSavedSP      equ #68A1                                                       ; операнд восстановления CPU SP после 38 строк
+AddressPatch    equ #6839                                                       ; два исходных NOP, заменяются на 00 00 либо 00 14
+                endmodule
+
+
+                ; Существующие операнды кода, отдельная память не выделяется
+                module ActionOffsetState
+Active0         equ #E5B3                                                       ; операнд LD DE,nn перед вычитанием для Component0
+Active1         equ #E5D2                                                       ; операнд LD DE,nn перед вычитанием для Component1
+Active2         equ #E5ED                                                       ; операнд LD DE,nn перед вычитанием для Component2
+Original0       equ #E68C                                                       ; операнд LoadOriginal0, исходное Active0 до арифметического деления
+Original1       equ #E692                                                       ; операнд LoadOriginal1, исходное Active1 до арифметического деления
+Original2       equ #E698                                                       ; операнд LoadOriginal2, исходное Active2 до арифметического деления
+SavedCpuSP      equ #E605                                                       ; операнд восстановления CPU SP, заполняемый в E55C
+                endmodule
+
+
+                ; Существующее состояние, память не выделяется
+                module ActionRecordScaleState
+ShiftSkip       equ #E59E                                                       ; изменяемое смещение JR по E59D, 6-e
+                endmodule
+
+
+                ; Существующее состояние, память не выделяется
+                module ActionRecordUpdateState
+Base0           equ #E5B0                                                       ; изменяемый операнд LoadBase0 перед вычитанием Active0
+Base1           equ #E5CF                                                       ; изменяемый операнд LoadBase1 перед вычитанием Active1
+Base2           equ #E5EA                                                       ; изменяемый операнд LoadBase2 перед вычитанием Active2
+WarningLatch    equ #E644                                                       ; операнд LD A,n, бит 7 разрешает однократное сообщение о зоне стыковки
+                endmodule
+
+
+                ; Существующие операнды и состояние, память не выделяется
+                module ActionThirdGlyphStackState
+SavedCpuSP      equ #6CB2                                                       ; существующее слово LD SP,nn по 6CB1, заполняется перед векторным вычислением
+                endmodule
+
+
+                ; Существующее состояние, память не выделяется
+                module ActionThirdGlyphVectorState
+SourceWord0     equ #9B79                                                       ; первое читаемое слово источника третьего знака, единицы ещё не установлены
+SourceWord1     equ #9B7C                                                       ; второе читаемое слово источника, промежуточный байт не копируется
+SourceWord2     equ #9B7F                                                       ; третье читаемое слово источника, полного типа соседних байтов пока нет
+                endmodule
+
+
+                ; Существующие операнды и состояние, память не выделяется
+                module ActionComponentStackState
+SavedCpuSP      equ #6C41                                                       ; существующий операнд LD SP,nn перед EncodeSignedComponents
+                endmodule
+
+
+                ; Существующее состояние, память не выделяется
+                module ActionClassDispatchState
+ClassTable      equ #64F0                                                       ; существующие 26 адресов, индекс вне таблицы исходный код не ограничивает
+                endmodule
+
+
+                ; Существующие операнды и состояние, память не выделяется
+                module ActionPreferredChanceState
+UnknownGate     equ #9BCD                                                       ; исходный внешний байт порога, полный игровой смысл ещё не доказан
+                endmodule
+
+
+                ; Существующее состояние, память не выделяется
+                module ActionContextWordPairsState
+OtherFirst      equ #9BC6                                                       ; первое сравниваемое слово другого контекста, полный игровой смысл ещё не доказан
+OtherSecond     equ #9BC8                                                       ; второе сравниваемое слово другого контекста
+                endmodule
+
+
+                ; Существующее состояние, память не выделяется
+                module ActionVectorHighMaximumState
+High0           equ #9B71                                                       ; старший байт первой трёхбайтовой рабочей компоненты
+High1           equ #9B74                                                       ; старший байт второй трёхбайтовой рабочей компоненты
+High2           equ #9B77                                                       ; старший байт третьей трёхбайтовой рабочей компоненты
+                endmodule
+
+
+                ; Существующее состояние, память не выделяется
+                module ActionClampVectorWordsState
+FirstHigh       equ #7F0F                                                       ; старшее слово первого signed32, младший байт задаёт исходный бит 23
+FirstLow        equ #7F12                                                       ; младшее слово первого signed32
+SecondHigh      equ #7F23                                                       ; старшее слово второго signed32, младший байт задаёт исходный бит 23
+SecondLow       equ #7F26                                                       ; младшее слово второго signed32
+ThirdHigh       equ #7F37                                                       ; старшее слово третьего signed32, младший байт задаёт исходный бит 23
+ThirdLow        equ #7F3A                                                       ; младшее слово третьего signed32
+                endmodule
+
+
+                ; Существующее состояние, память не выделяется
+                module ActionControlDecayState
+Request         equ #6F56                                                       ; текущий общий запрос, очищается после переноса в SkipDetail
+XPrev           equ #6F7B                                                       ; старый запрет затухания X, проверяется до замены
+XNext           equ #6F7E                                                       ; новый запрет X для следующего вызова
+XPhase          equ #6F8D                                                       ; восьмибитная кольцевая фаза X
+YPrev           equ #6FB0                                                       ; старый запрет затухания Y
+YNext           equ #6FB3                                                       ; новый запрет Y для следующего вызова
+YPhase          equ #6FC2                                                       ; восьмибитная кольцевая фаза Y
+TurnPrev        equ #6FE5                                                       ; старый запрет затухания поворота
+TurnNext        equ #6FE8                                                       ; новый запрет поворота для следующего вызова
+TurnPhase       equ #6FF6                                                       ; восьмибитная кольцевая фаза поворота
+LimitWord       equ #7693                                                       ; исходный операнд LD DE,nn обработчика 7680, игровой смысл ограничения ещё не полностью установлен
+XStep0          equ #7736                                                       ; байтовый операнд обработчика 7730
+XStep1          equ #7713                                                       ; байтовый операнд обработчика 770D
+YStep0          equ #7759                                                       ; байтовый операнд обработчика 7753
+YStep1          equ #777C                                                       ; байтовый операнд обработчика 7776
+TurnStep0       equ #76CD                                                       ; байтовый операнд обработчика 76C7
+TurnStep1       equ #76F0                                                       ; байтовый операнд обработчика 76EA
+                endmodule
+
+
+                ; Существующие операнды и состояние, память не выделяется
+                module ActionGaugeWordKeysState
+MotionOpcode    equ #6E72                                                       ; исходный опкод LD A,(nn), только 3A допускает изменение слова
+                endmodule
+
+
+                ; Существующее состояние, память не выделяется
+                module ActionBankedCallbackState
+ContextBase     equ #A783                                                       ; исходное значение IY при косвенном вызове, полный формат цели ещё не установлен
+                endmodule
+
+
+                ; Существующее состояние, память не выделяется
+                module ControlsCircleKernelsState
+NormalOdd       equ #D672                                                       ; изменяемый байт LD A,n после одиночного байта обычного ядра
+NormalFastOdd   equ #D705                                                       ; изменяемый байт LD A,n перед обычной PUSH-заливкой
+NormalPushJump  equ #D716                                                       ; изменяемое смещение JR к обычному PUSH-хвосту
+LeftOdd         equ #D772                                                       ; изменяемый байт LD A,n после левого неподвижного края
+LeftFastOdd     equ #D7FD                                                       ; изменяемый байт LD A,n перед левой PUSH-заливкой
+LeftPushJump    equ #D80E                                                       ; изменяемое смещение JR к левому PUSH-хвосту
+RightOdd        equ #D86C                                                       ; изменяемый байт LD A,n после правого неподвижного края
+RightFastOdd    equ #D8EF                                                       ; изменяемый байт LD A,n перед правой PUSH-заливкой
+RightPushJump   equ #D900                                                       ; изменяемое смещение JR к правому PUSH-хвосту
+                endmodule
+
+
+                ; Существующие операнды и состояние, память не выделяется
+                module ActionRestoreBodyStackState
+SavedSP         equ #6AAE                                                       ; операнд LD SP,nn, записанный входом подготовки тела
+                endmodule
+
+
+                ; Существующие операнды и состояние, память не выделяется
+                module ActionObjectPhaseWaitState
+PhaseGate       equ #EFBD                                                       ; вращаемый байт в операнде LD A,n, младший бит допускает инкремент
+                endmodule
+
+
+                ; Существующие операнды и состояние, память не выделяется
+                module ActionObjectOffsetTransferState
+Offset0         equ #B045                                                       ; операнд первого LD A,n вычислителя B044
+Offset1         equ #B04F                                                       ; операнд второго LD A,n, исходный байт плюс 128
+Offset2         equ #B05C                                                       ; операнд третьего LD A,n
+                endmodule
+
+
+                ; Существующие операнды и состояние, память не выделяется
+                module ActionObjectOffsetVectorState
+Coefficient0    equ #6D0E                                                       ; операнд LD A,n для очередного масштабированного умножения
+Coefficient1    equ #6D1C                                                       ; операнд LD A,n для очередного масштабированного умножения
+Coefficient2    equ #6D2A                                                       ; операнд LD A,n для очередного масштабированного умножения
+                endmodule
+
+
+                ; Существующее состояние, память не выделяется
+                module ActionWideProjectionLoopState
+Published0      equ #9B87                                                       ; старший байт первого результата выбранной записи
+Published1      equ #9B88                                                       ; старший байт второго результата выбранной записи
+Published2      equ #9B89                                                       ; старший байт третьего результата выбранной записи
+SelectedIndex   equ #9BCA                                                       ; индекс для публикации при совпадении пар контекста
+                endmodule
+
+
+                ; Существующие операнды и состояние, память не выделяется
+                module ActionLargeEffectContinuationState
+ChildMask       equ #EAC4                                                       ; операнд OR для кода дочерней записи
+                endmodule
+
+
+                ; Существующее состояние, память не выделяется
+                module ActionBodyMotionState
+PhaseWord       equ #6781                                                       ; изменяемое слово фазового входа
+WideStepX       equ #68D5                                                       ; знаковый шаг X для широких векторов
+WideStepY       equ #68FD                                                       ; знаковый шаг Y для широких векторов
+WideStepDepth   equ #6925                                                       ; знаковый шаг глубины для широких векторов
+                endmodule
+
+
+                ; Существующее состояние, память не выделяется
+                module ActionVisualEffectListState
+Enabled         equ #6D39                                                       ; операнд допуска кадрового обхода
+Frames          equ #6D3D                                                       ; операнд числа оставшихся кадров
+SavedSP         equ #6DD2                                                       ; операнд восстановления настоящего SP
+                endmodule
+
                 endif

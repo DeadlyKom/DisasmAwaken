@@ -1,0 +1,34 @@
+{
+  "passed": true,
+  "total_cases": 671232,
+  "cases_by_kind": {
+    "all_deltas_at_signed_bounds": 393216,
+    "all_low_words_each_position": 196608,
+    "all_high_bytes_and_borrow_edges": 7680,
+    "all_input_AF": 65536,
+    "mixed_vectors": 8192
+  },
+  "paths": {
+    "complete": 408843,
+    "overflow_component_0": 65621,
+    "overflow_component_1": 65619,
+    "overflow_component_2": 131149
+  },
+  "exact_registers_including_R": true,
+  "all_physical_ram_bytes_proved": true,
+  "write_multiplicity_proved": true,
+  "all_signed_16bit_deltas_at_both_24bit_bounds_each_component": true,
+  "all_low_words_each_component": true,
+  "all_high_bytes_and_selected_borrow_edges_each_component": true,
+  "all_input_AF": true,
+  "low_word_written_before_overflow_return": true,
+  "overflow_high_byte_and_later_components_unchanged": true,
+  "cpu_stack_written": false,
+  "observed_m1_min": 14,
+  "observed_m1_max": 49,
+  "complete_input_product_exhausted": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "timing_proved": false
+}

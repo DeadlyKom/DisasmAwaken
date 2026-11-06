@@ -2,7 +2,7 @@
 
 [BuildCircleSpan](../Source/Controls/BuildCircleSpan.asm), банк 1,
 вход D320, занимает исходные байты D320..D33F. Дальнейший D340 является
-[отдельным входом отсечения](../Source/Controls/UnknownD340.asm),
+[отдельным входом отсечения](../Source/Controls/DrawFullWidthCircle.asm),
 он не исполняется после этой процедуры. Последний JP D33D передаёт
 управление BuildRightSpanMask, чей RET использует внешний адрес возврата.
 

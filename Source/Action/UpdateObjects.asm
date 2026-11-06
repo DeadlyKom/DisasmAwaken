@@ -46,20 +46,20 @@ PointF735:      LD DE, #0040
                 LD (IX + #13), A
 PointF759:      LD A, (IX + #0C)
                 AND A
-                JP Z, @Action.UnknownF7C6.PointF843                             ; переход, если флаг Z установлен
+                JP Z, @Action.DispatchObjectState.CallHandler                   ; переход, если флаг Z установлен
 
 
                 BIT 1, A
-                JP NZ, @Action.UnknownF7C6.Entry                                ; переход, если флаг Z сброшен
+                JP NZ, @Action.DispatchObjectState.Entry                        ; переход, если флаг Z сброшен
 
 
                 LD A, (IX + #12)
                 CP #12
-                JR NZ, @Action.UnknownF792.Entry                                ; переход, если флаг Z сброшен
+                JR NZ, @Action.CheckRecordEffectThreshold.Entry                 ; переход, если флаг Z сброшен
 
 
                 LD A, (IX + #0B)
                 LD (IX + #0D), A
-                CALL @Action.Unknown62CF.Entry
+                CALL @Action.CountClass3LinksUpToTwo.Entry
                 endmodule
                 endmodule

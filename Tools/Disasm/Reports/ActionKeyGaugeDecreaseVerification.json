@@ -1,0 +1,53 @@
+{
+  "passed": true,
+  "total_cases": 135164,
+  "cases_by_kind": {
+    "all_request_opcode_pairs": 131072,
+    "all_decrement_words": 65536,
+    "all_increment_words_seven_limits": 458752,
+    "all_limit_words": 65536,
+    "mixed_inputs": 8192
+  },
+  "cases_by_entry": {
+    "0x7680": 593924,
+    "0x76a3": 135164
+  },
+  "paths": {
+    "0x7680_opcode_block": 266,
+    "0x7680_difference_sign_block": 262145,
+    "0x7680_request_block": 69369,
+    "0x76a3_opcode_block": 69357,
+    "0x76a3_word_written": 49153,
+    "0x76a3_request_block": 270,
+    "0x7680_word_written": 262144,
+    "0x76a3_negative_bit4_block": 16384
+  },
+  "all_request_opcode_pairs_both_entries": true,
+  "all_decrement_words": true,
+  "all_increment_words_at_seven_limits": true,
+  "all_limit_words": true,
+  "exact_registers_including_R": true,
+  "all_physical_ram_bytes_proved": true,
+  "write_multiplicity_proved": true,
+  "no_cpu_stack_writes": true,
+  "increment_uses_sign_of_wrapped_difference": true,
+  "increment_ADD_keeps_SBC_sign_Z_and_PV": true,
+  "decrement_checks_low_bit4_for_negative_word": true,
+  "original_wraps_preserved": true,
+  "observed_m1": [
+    3,
+    6,
+    14,
+    15,
+    18,
+    19,
+    21
+  ],
+  "complete_word_limit_product_exhausted": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "timing_proved": false,
+  "parent_total_cases": 729088,
+  "entry": 30371
+}

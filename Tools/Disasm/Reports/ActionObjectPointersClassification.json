@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "physical_records": 128,
+  "physical_bytes": 256,
+  "unique_targets": 95,
+  "maximum_packet_bytes": 238,
+  "neighboring_unknown_bytes": 638,
+  "all_target_fields_and_instance_addresses_checked": true,
+  "original_bytes_preserved": true,
+  "native_index_reachability_proved": false,
+  "assembly_executed": false
+}

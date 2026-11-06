@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "described_functions": 1,
+  "proved_local_code_bytes": 134,
+  "confirmed_instructions": 79,
+  "physical_table_bytes": 256,
+  "physical_table_records": 256,
+  "physical_symbol_bindings": 512,
+  "remaining_unknown_code_bytes": 66,
+  "original_bytes_preserved": true,
+  "model_cases": 267008,
+  "whole_projection_scan_proved": false,
+  "assembly_executed": false
+}

@@ -74,8 +74,8 @@ Entry:          LD SP, #C000
                 LD A, #18
                 CALL #AB1B
                 CALL @ActionBoot.InitializeRandomStates.Entry
-                CALL @ActionBoot.BuildProjectionTable.Entry
-                CALL @ActionBoot.BuildReciprocalTable.Entry
+                CALL @ActionBoot.BuildExponentialTable.Entry
+                CALL @ActionBoot.BuildLogarithmTable.Entry
                 CALL @ActionBoot.BuildBitmapTables.Entry
                 LD A, #19
                 CALL #AB1B

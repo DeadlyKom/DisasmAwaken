@@ -1,1338 +1,582 @@
 # ThreeD
 
-Операционные факты ниже получены из исходных инструкций.
-Список непосредственных чтений и записей не включает косвенные обращения
-через HL, DE, BC, IX/IY и эффекты вызываемых подпрограмм.
+[Контекст копии и границы доказательства](../ThreeDOverlayMirror.md).
 
-## DispatchEdges
+## ClipPolygon
 
-[ThreeD.DispatchEdges](../../Source/ThreeD/DispatchEdges.asm)
+[ThreeD.ClipPolygon](../../Source/ThreeD/ClipPolygon.asm)
 
-Перебор индексов вершин и вызов обработчиков из таблиц #CF00 и #D000.
+Обход замкнутого списка вершин с табличным отсечением и ранним завершением контура.
 
-Вход `#C000`, запись 19, смещения `#0000..#0070`.
+## ContinueClipPolygon
 
-- Прямые вызовы: нет непосредственных обращений.
-- Непосредственные чтения: `#CF0F`, `#CF1B`, `#CF1D`, `#CF1F`.
-- Непосредственные записи: `#9BA3`, `#CF03`, `#CF07`, `#CF0B`, `#CF0D`, `#CF0F`, `#CF1B`, `#CF1D`, `#CF1F`.
-- Ввод и вывод: нет.
-- Косвенное завершение: `JP (HL)`.
+[ThreeD.ContinueClipPolygon](../../Source/ThreeD/ContinueClipPolygon.asm)
 
-## NextEdge
+Восстановление счётчика после ребра и продолжение либо возврат полного полигона.
 
-[ThreeD.NextEdge](../../Source/ThreeD/NextEdge.asm)
+## ReturnClipCase
 
-Возврат косвенного обработчика и продолжение перебора рёбер.
+[ThreeD.ReturnClipCase](../../Source/ThreeD/ReturnClipCase.asm)
 
-Вход `#C071`, запись 19, смещения `#0071..#0079`.
+Завершение текущего табличного случая обычным RET.
 
-- Прямые вызовы: нет непосредственных обращений.
-- Непосредственные чтения: `#9BA3`.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
+## ClipInsideToBottomRight
 
-## EdgeCase11
+[ThreeD.ClipInsideToBottomRight](../../Source/ThreeD/ClipInsideToBottomRight.asm)
 
-[ThreeD.EdgeCase11](../../Source/ThreeD/EdgeCase11.asm)
+Отсечение ребра, первая точка внутри окна, вторая снизу справа.
 
-обработчик ребра для индексов таблицы #11, #22, #44, #55, #66, #88, #99, #AA.
+## ClipRightToBottomRight
 
-Вход `#C07A`, запись 19, смещения `#007A..#007A`.
+[ThreeD.ClipRightToBottomRight](../../Source/ThreeD/ClipRightToBottomRight.asm)
 
-- Прямые вызовы: нет непосредственных обращений.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
+Отсечение ребра, первая точка справа, вторая снизу справа.
 
-## EdgeCase05
+## ClipInsideToBottomLeft
 
-[ThreeD.EdgeCase05](../../Source/ThreeD/EdgeCase05.asm)
+[ThreeD.ClipInsideToBottomLeft](../../Source/ThreeD/ClipInsideToBottomLeft.asm)
 
-обработчик ребра для индексов таблицы #05.
+Отсечение ребра, первая точка внутри окна, вторая снизу слева.
 
-Вход `#C07B`, запись 19, смещения `#007B..#0089`.
+## ClipBottomToBottomLeft
 
-- Прямые вызовы: `#C496`, `#C4D4`, `#C5E7`, `#C6A9`.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
+[ThreeD.ClipBottomToBottomLeft](../../Source/ThreeD/ClipBottomToBottomLeft.asm)
 
-## EdgeCase15
+Отсечение ребра, первая точка снизу, вторая снизу слева.
 
-[ThreeD.EdgeCase15](../../Source/ThreeD/EdgeCase15.asm)
+## ClipInsideToTopRight
 
-обработчик ребра для индексов таблицы #15.
+[ThreeD.ClipInsideToTopRight](../../Source/ThreeD/ClipInsideToTopRight.asm)
 
-Вход `#C08A`, запись 19, смещения `#008A..#0094`.
+Отсечение ребра, первая точка внутри окна, вторая сверху справа.
 
-- Прямые вызовы: нет непосредственных обращений.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
+## ClipTopToTopRight
 
-## EdgeCase06
+[ThreeD.ClipTopToTopRight](../../Source/ThreeD/ClipTopToTopRight.asm)
 
-[ThreeD.EdgeCase06](../../Source/ThreeD/EdgeCase06.asm)
+Отсечение ребра, первая точка сверху, вторая сверху справа.
 
-обработчик ребра для индексов таблицы #06.
+## ClipInsideToTopLeft
 
-Вход `#C095`, запись 19, смещения `#0095..#00A3`.
+[ThreeD.ClipInsideToTopLeft](../../Source/ThreeD/ClipInsideToTopLeft.asm)
 
-- Прямые вызовы: `#C496`, `#C4B5`, `#C540`, `#C695`.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
+Отсечение ребра, первая точка внутри окна, вторая сверху слева.
 
-## EdgeCase46
+## ClipLeftToTopLeft
 
-[ThreeD.EdgeCase46](../../Source/ThreeD/EdgeCase46.asm)
+[ThreeD.ClipLeftToTopLeft](../../Source/ThreeD/ClipLeftToTopLeft.asm)
 
-обработчик ребра для индексов таблицы #46.
+Отсечение ребра, первая точка слева, вторая сверху слева.
 
-Вход `#C0A4`, запись 19, смещения `#00A4..#00AE`.
+## ClipRightToInside
 
-- Прямые вызовы: нет непосредственных обращений.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
+[ThreeD.ClipRightToInside](../../Source/ThreeD/ClipRightToInside.asm)
 
-## EdgeCase09
+Отсечение ребра, первая точка справа, вторая внутри окна.
 
-[ThreeD.EdgeCase09](../../Source/ThreeD/EdgeCase09.asm)
+## ClipRightToLeft
 
-обработчик ребра для индексов таблицы #09.
+[ThreeD.ClipRightToLeft](../../Source/ThreeD/ClipRightToLeft.asm)
 
-Вход `#C0AF`, запись 19, смещения `#00AF..#00BD`.
+Отсечение ребра, первая точка справа, вторая слева.
 
-- Прямые вызовы: `#C477`, `#C4D4`, `#C4F6`, `#C681`.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
+## ClipRightToBottom
 
-## EdgeCase89
+[ThreeD.ClipRightToBottom](../../Source/ThreeD/ClipRightToBottom.asm)
 
-[ThreeD.EdgeCase89](../../Source/ThreeD/EdgeCase89.asm)
+Отсечение ребра, первая точка справа, вторая снизу.
 
-обработчик ребра для индексов таблицы #89.
+## ClipRightToBottomLeft
 
-Вход `#C0BE`, запись 19, смещения `#00BE..#00C8`.
+[ThreeD.ClipRightToBottomLeft](../../Source/ThreeD/ClipRightToBottomLeft.asm)
 
-- Прямые вызовы: нет непосредственных обращений.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
+Отсечение ребра, первая точка справа, вторая снизу слева.
 
-## EdgeCase0A
+## ClipRightToTop
 
-[ThreeD.EdgeCase0A](../../Source/ThreeD/EdgeCase0A.asm)
+[ThreeD.ClipRightToTop](../../Source/ThreeD/ClipRightToTop.asm)
 
-обработчик ребра для индексов таблицы #0A.
+Отсечение ребра, первая точка справа, вторая сверху.
 
-Вход `#C0C9`, запись 19, смещения `#00C9..#00D7`.
+## ClipRightToTopRight
 
-- Прямые вызовы: `#C477`, `#C4B5`, `#C58B`, `#C66D`.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
+[ThreeD.ClipRightToTopRight](../../Source/ThreeD/ClipRightToTopRight.asm)
 
-## EdgeCase2A
+Отсечение ребра, первая точка справа, вторая сверху справа.
 
-[ThreeD.EdgeCase2A](../../Source/ThreeD/EdgeCase2A.asm)
+## ClipRightToTopLeft
 
-обработчик ребра для индексов таблицы #2A.
+[ThreeD.ClipRightToTopLeft](../../Source/ThreeD/ClipRightToTopLeft.asm)
 
-Вход `#C0D8`, запись 19, смещения `#00D8..#00E2`.
+Отсечение ребра, первая точка справа, вторая сверху слева.
 
-- Прямые вызовы: нет непосредственных обращений.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
+## ClipLeftToInside
 
-## EdgeCase10
+[ThreeD.ClipLeftToInside](../../Source/ThreeD/ClipLeftToInside.asm)
 
-[ThreeD.EdgeCase10](../../Source/ThreeD/EdgeCase10.asm)
+Отсечение ребра, первая точка слева, вторая внутри окна.
 
-обработчик ребра для индексов таблицы #10.
+## ClipLeftToRight
 
-Вход `#C0E3`, запись 19, смещения `#00E3..#00E8`.
+[ThreeD.ClipLeftToRight](../../Source/ThreeD/ClipLeftToRight.asm)
 
-- Прямые вызовы: `#C5E4`.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
+Отсечение ребра, первая точка слева, вторая справа.
 
-## EdgeCase12
+## ClipLeftToBottom
 
-[ThreeD.EdgeCase12](../../Source/ThreeD/EdgeCase12.asm)
+[ThreeD.ClipLeftToBottom](../../Source/ThreeD/ClipLeftToBottom.asm)
 
-обработчик ребра для индексов таблицы #12.
+Отсечение ребра, первая точка слева, вторая снизу.
 
-Вход `#C0E9`, запись 19, смещения `#00E9..#00EE`.
+## ClipLeftToBottomRight
 
-- Прямые вызовы: `#C5E4`.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
+[ThreeD.ClipLeftToBottomRight](../../Source/ThreeD/ClipLeftToBottomRight.asm)
 
-## EdgeCase14
+Отсечение ребра, первая точка слева, вторая снизу справа.
 
-[ThreeD.EdgeCase14](../../Source/ThreeD/EdgeCase14.asm)
+## ClipLeftToBottomLeft
 
-обработчик ребра для индексов таблицы #14.
+[ThreeD.ClipLeftToBottomLeft](../../Source/ThreeD/ClipLeftToBottomLeft.asm)
 
-Вход `#C0EF`, запись 19, смещения `#00EF..#0100`.
+Отсечение ребра, первая точка слева, вторая снизу слева.
 
-- Прямые вызовы: `#C496`, `#C4D4`, `#C5E7`, `#C6A9`.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
+## ClipLeftToTop
 
-## EdgeCase16
+[ThreeD.ClipLeftToTop](../../Source/ThreeD/ClipLeftToTop.asm)
 
-[ThreeD.EdgeCase16](../../Source/ThreeD/EdgeCase16.asm)
+Отсечение ребра, первая точка слева, вторая сверху.
 
-обработчик ребра для индексов таблицы #16.
+## ClipLeftToTopRight
 
-Вход `#C101`, запись 19, смещения `#0101..#0118`.
+[ThreeD.ClipLeftToTopRight](../../Source/ThreeD/ClipLeftToTopRight.asm)
 
-- Прямые вызовы: `#C496`, `#C4D4`, `#C5E7`, `#C662`, `#C6A9`.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
+Отсечение ребра, первая точка слева, вторая сверху справа.
 
-## EdgeCase18
+## ClipBottomToInside
 
-[ThreeD.EdgeCase18](../../Source/ThreeD/EdgeCase18.asm)
+[ThreeD.ClipBottomToInside](../../Source/ThreeD/ClipBottomToInside.asm)
 
-обработчик ребра для индексов таблицы #18.
+Отсечение ребра, первая точка снизу, вторая внутри окна.
 
-Вход `#C119`, запись 19, смещения `#0119..#012A`.
+## ClipBottomToRight
 
-- Прямые вызовы: `#C477`, `#C4D4`, `#C5E7`, `#C681`.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
+[ThreeD.ClipBottomToRight](../../Source/ThreeD/ClipBottomToRight.asm)
 
-## EdgeCase19
+Отсечение ребра, первая точка снизу, вторая справа.
 
-[ThreeD.EdgeCase19](../../Source/ThreeD/EdgeCase19.asm)
+## ClipBottomToLeft
 
-обработчик ребра для индексов таблицы #19.
+[ThreeD.ClipBottomToLeft](../../Source/ThreeD/ClipBottomToLeft.asm)
 
-Вход `#C12B`, запись 19, смещения `#012B..#0131`.
+Отсечение ребра, первая точка снизу, вторая слева.
 
-- Прямые вызовы: `#C6BD`.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
+## ClipBottomToBottomRight
 
-## EdgeCase1A
+[ThreeD.ClipBottomToBottomRight](../../Source/ThreeD/ClipBottomToBottomRight.asm)
 
-[ThreeD.EdgeCase1A](../../Source/ThreeD/EdgeCase1A.asm)
+Отсечение ребра, первая точка снизу, вторая снизу справа.
 
-обработчик ребра для индексов таблицы #1A.
+## ClipBottomToTop
 
-Вход `#C132`, запись 19, смещения `#0132..#0143`.
+[ThreeD.ClipBottomToTop](../../Source/ThreeD/ClipBottomToTop.asm)
 
-- Прямые вызовы: `#C477`, `#C4D4`, `#C5E7`, `#C681`.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
+Отсечение ребра, первая точка снизу, вторая сверху.
 
-## EdgeCase20
+## ClipBottomToTopRight
 
-[ThreeD.EdgeCase20](../../Source/ThreeD/EdgeCase20.asm)
+[ThreeD.ClipBottomToTopRight](../../Source/ThreeD/ClipBottomToTopRight.asm)
 
-обработчик ребра для индексов таблицы #20.
+Отсечение ребра, первая точка снизу, вторая сверху справа.
 
-Вход `#C144`, запись 19, смещения `#0144..#0149`.
+## ClipBottomToTopLeft
 
-- Прямые вызовы: `#C588`.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
+[ThreeD.ClipBottomToTopLeft](../../Source/ThreeD/ClipBottomToTopLeft.asm)
 
-## EdgeCase21
+Отсечение ребра, первая точка снизу, вторая сверху слева.
 
-[ThreeD.EdgeCase21](../../Source/ThreeD/EdgeCase21.asm)
+## ClipBottomRightToInside
 
-обработчик ребра для индексов таблицы #21.
+[ThreeD.ClipBottomRightToInside](../../Source/ThreeD/ClipBottomRightToInside.asm)
 
-Вход `#C14A`, запись 19, смещения `#014A..#014F`.
+Отсечение ребра, первая точка снизу справа, вторая внутри окна.
 
-- Прямые вызовы: `#C588`.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
+## ClipBottomRightToRight
 
-## EdgeCase24
+[ThreeD.ClipBottomRightToRight](../../Source/ThreeD/ClipBottomRightToRight.asm)
 
-[ThreeD.EdgeCase24](../../Source/ThreeD/EdgeCase24.asm)
+Отсечение ребра, первая точка снизу справа, вторая справа.
 
-обработчик ребра для индексов таблицы #24.
+## ClipBottomRightToLeft
 
-Вход `#C150`, запись 19, смещения `#0150..#0161`.
+[ThreeD.ClipBottomRightToLeft](../../Source/ThreeD/ClipBottomRightToLeft.asm)
 
-- Прямые вызовы: `#C496`, `#C4B5`, `#C58B`, `#C695`.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
+Отсечение ребра, первая точка снизу справа, вторая слева.
 
-## EdgeCase25
+## ClipBottomRightToBottom
 
-[ThreeD.EdgeCase25](../../Source/ThreeD/EdgeCase25.asm)
+[ThreeD.ClipBottomRightToBottom](../../Source/ThreeD/ClipBottomRightToBottom.asm)
 
-обработчик ребра для индексов таблицы #25.
+Отсечение ребра, первая точка снизу справа, вторая снизу.
 
-Вход `#C162`, запись 19, смещения `#0162..#0173`.
+## ClipBottomRightToBottomLeft
 
-- Прямые вызовы: `#C496`, `#C4B5`, `#C58B`, `#C695`.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
+[ThreeD.ClipBottomRightToBottomLeft](../../Source/ThreeD/ClipBottomRightToBottomLeft.asm)
 
-## EdgeCase26
+Отсечение ребра, первая точка снизу справа, вторая снизу слева.
 
-[ThreeD.EdgeCase26](../../Source/ThreeD/EdgeCase26.asm)
+## ClipBottomRightToTop
 
-обработчик ребра для индексов таблицы #26.
+[ThreeD.ClipBottomRightToTop](../../Source/ThreeD/ClipBottomRightToTop.asm)
 
-Вход `#C174`, запись 19, смещения `#0174..#017A`.
+Отсечение ребра, первая точка снизу справа, вторая сверху.
 
-- Прямые вызовы: `#C6BD`.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
+## ClipBottomRightToTopLeft
 
-## EdgeCase28
+[ThreeD.ClipBottomRightToTopLeft](../../Source/ThreeD/ClipBottomRightToTopLeft.asm)
 
-[ThreeD.EdgeCase28](../../Source/ThreeD/EdgeCase28.asm)
+Отсечение ребра, первая точка снизу справа, вторая сверху слева.
 
-обработчик ребра для индексов таблицы #28.
+## ClipBottomLeftToInside
 
-Вход `#C17B`, запись 19, смещения `#017B..#018C`.
+[ThreeD.ClipBottomLeftToInside](../../Source/ThreeD/ClipBottomLeftToInside.asm)
 
-- Прямые вызовы: `#C477`, `#C4B5`, `#C58B`, `#C66D`.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
+Отсечение ребра, первая точка снизу слева, вторая внутри окна.
 
-## EdgeCase29
+## ClipBottomLeftToRight
 
-[ThreeD.EdgeCase29](../../Source/ThreeD/EdgeCase29.asm)
+[ThreeD.ClipBottomLeftToRight](../../Source/ThreeD/ClipBottomLeftToRight.asm)
 
-обработчик ребра для индексов таблицы #29.
+Отсечение ребра, первая точка снизу слева, вторая справа.
 
-Вход `#C18D`, запись 19, смещения `#018D..#01A4`.
+## ClipBottomLeftToLeft
 
-- Прямые вызовы: `#C477`, `#C4B5`, `#C58B`, `#C641`, `#C66D`.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
+[ThreeD.ClipBottomLeftToLeft](../../Source/ThreeD/ClipBottomLeftToLeft.asm)
 
-## EdgeCase40
+Отсечение ребра, первая точка снизу слева, вторая слева.
 
-[ThreeD.EdgeCase40](../../Source/ThreeD/EdgeCase40.asm)
+## ClipBottomLeftToBottom
 
-обработчик ребра для индексов таблицы #40.
+[ThreeD.ClipBottomLeftToBottom](../../Source/ThreeD/ClipBottomLeftToBottom.asm)
 
-Вход `#C1A5`, запись 19, смещения `#01A5..#01AA`.
+Отсечение ребра, первая точка снизу слева, вторая снизу.
 
-- Прямые вызовы: `#C53D`.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
+## ClipBottomLeftToTop
 
-## EdgeCase41
+[ThreeD.ClipBottomLeftToTop](../../Source/ThreeD/ClipBottomLeftToTop.asm)
 
-[ThreeD.EdgeCase41](../../Source/ThreeD/EdgeCase41.asm)
+Отсечение ребра, первая точка снизу слева, вторая сверху.
 
-обработчик ребра для индексов таблицы #41.
+## ClipBottomLeftToTopRight
 
-Вход `#C1AB`, запись 19, смещения `#01AB..#01BC`.
+[ThreeD.ClipBottomLeftToTopRight](../../Source/ThreeD/ClipBottomLeftToTopRight.asm)
 
-- Прямые вызовы: `#C496`, `#C4D4`, `#C540`, `#C6A9`.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
+Отсечение ребра, первая точка снизу слева, вторая сверху справа.
 
-## EdgeCase42
+## ClipBottomLeftToTopLeft
 
-[ThreeD.EdgeCase42](../../Source/ThreeD/EdgeCase42.asm)
+[ThreeD.ClipBottomLeftToTopLeft](../../Source/ThreeD/ClipBottomLeftToTopLeft.asm)
 
-обработчик ребра для индексов таблицы #42.
+Отсечение ребра, первая точка снизу слева, вторая сверху слева.
 
-Вход `#C1BD`, запись 19, смещения `#01BD..#01CE`.
+## ClipTopToInside
 
-- Прямые вызовы: `#C496`, `#C4B5`, `#C540`, `#C695`.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
+[ThreeD.ClipTopToInside](../../Source/ThreeD/ClipTopToInside.asm)
 
-## EdgeCase45
+Отсечение ребра, первая точка сверху, вторая внутри окна.
 
-[ThreeD.EdgeCase45](../../Source/ThreeD/EdgeCase45.asm)
+## ClipTopToRight
 
-обработчик ребра для индексов таблицы #45.
+[ThreeD.ClipTopToRight](../../Source/ThreeD/ClipTopToRight.asm)
 
-Вход `#C1CF`, запись 19, смещения `#01CF..#01D5`.
+Отсечение ребра, первая точка сверху, вторая справа.
 
-- Прямые вызовы: `#C6C8`.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
+## ClipTopToLeft
 
-## EdgeCase48
+[ThreeD.ClipTopToLeft](../../Source/ThreeD/ClipTopToLeft.asm)
 
-[ThreeD.EdgeCase48](../../Source/ThreeD/EdgeCase48.asm)
+Отсечение ребра, первая точка сверху, вторая слева.
 
-обработчик ребра для индексов таблицы #48.
+## ClipTopToBottom
 
-Вход `#C1D6`, запись 19, смещения `#01D6..#01DB`.
+[ThreeD.ClipTopToBottom](../../Source/ThreeD/ClipTopToBottom.asm)
 
-- Прямые вызовы: `#C53D`.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
+Отсечение ребра, первая точка сверху, вторая снизу.
 
-## EdgeCase49
+## ClipTopToBottomRight
 
-[ThreeD.EdgeCase49](../../Source/ThreeD/EdgeCase49.asm)
+[ThreeD.ClipTopToBottomRight](../../Source/ThreeD/ClipTopToBottomRight.asm)
 
-обработчик ребра для индексов таблицы #49.
+Отсечение ребра, первая точка сверху, вторая снизу справа.
 
-Вход `#C1DC`, запись 19, смещения `#01DC..#01F0`.
+## ClipTopToBottomLeft
 
-- Прямые вызовы: `#C477`, `#C496`, `#C4D4`, `#C540`, `#C6A9`.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
+[ThreeD.ClipTopToBottomLeft](../../Source/ThreeD/ClipTopToBottomLeft.asm)
 
-## EdgeCase4A
+Отсечение ребра, первая точка сверху, вторая снизу слева.
 
-[ThreeD.EdgeCase4A](../../Source/ThreeD/EdgeCase4A.asm)
+## ClipTopToTopLeft
 
-обработчик ребра для индексов таблицы #4A.
+[ThreeD.ClipTopToTopLeft](../../Source/ThreeD/ClipTopToTopLeft.asm)
 
-Вход `#C1F1`, запись 19, смещения `#01F1..#020B`.
+Отсечение ребра, первая точка сверху, вторая сверху слева.
 
-- Прямые вызовы: `#C477`, `#C496`, `#C4B5`, `#C540`, `#C657`, `#C695`.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
+## ClipTopRightToInside
 
-## EdgeCase50
+[ThreeD.ClipTopRightToInside](../../Source/ThreeD/ClipTopRightToInside.asm)
 
-[ThreeD.EdgeCase50](../../Source/ThreeD/EdgeCase50.asm)
+Отсечение ребра, первая точка сверху справа, вторая внутри окна.
 
-обработчик ребра для индексов таблицы #50.
+## ClipTopRightToRight
 
-Вход `#C20C`, запись 19, смещения `#020C..#0227`.
+[ThreeD.ClipTopRightToRight](../../Source/ThreeD/ClipTopRightToRight.asm)
 
-- Прямые вызовы: `#C496`, `#C4D4`, `#C540`, `#C662`, `#C6A9`.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
+Отсечение ребра, первая точка сверху справа, вторая справа.
 
-## EdgeCase51
+## ClipTopRightToLeft
 
-[ThreeD.EdgeCase51](../../Source/ThreeD/EdgeCase51.asm)
+[ThreeD.ClipTopRightToLeft](../../Source/ThreeD/ClipTopRightToLeft.asm)
 
-обработчик ребра для индексов таблицы #51.
+Отсечение ребра, первая точка сверху справа, вторая слева.
 
-Вход `#C228`, запись 19, смещения `#0228..#022E`.
+## ClipTopRightToBottom
 
-- Прямые вызовы: `#C6BD`.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
+[ThreeD.ClipTopRightToBottom](../../Source/ThreeD/ClipTopRightToBottom.asm)
 
-## EdgeCase52
+Отсечение ребра, первая точка сверху справа, вторая снизу.
 
-[ThreeD.EdgeCase52](../../Source/ThreeD/EdgeCase52.asm)
+## ClipTopRightToBottomRight
 
-обработчик ребра для индексов таблицы #52.
+[ThreeD.ClipTopRightToBottomRight](../../Source/ThreeD/ClipTopRightToBottomRight.asm)
 
-Вход `#C22F`, запись 19, смещения `#022F..#024D`.
+Отсечение ребра, первая точка сверху справа, вторая снизу справа.
 
-- Прямые вызовы: `#C496`, `#C4D4`, `#C5E7`, `#C662`, `#C6A9`.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
+## ClipTopRightToBottomLeft
 
-## EdgeCase54
+[ThreeD.ClipTopRightToBottomLeft](../../Source/ThreeD/ClipTopRightToBottomLeft.asm)
 
-[ThreeD.EdgeCase54](../../Source/ThreeD/EdgeCase54.asm)
+Отсечение ребра, первая точка сверху справа, вторая снизу слева.
 
-обработчик ребра для индексов таблицы #54.
+## ClipTopRightToTop
 
-Вход `#C24E`, запись 19, смещения `#024E..#0258`.
+[ThreeD.ClipTopRightToTop](../../Source/ThreeD/ClipTopRightToTop.asm)
 
-- Прямые вызовы: нет непосредственных обращений.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
+Отсечение ребра, первая точка сверху справа, вторая сверху.
 
-## EdgeCase56
+## ClipTopLeftToInside
 
-[ThreeD.EdgeCase56](../../Source/ThreeD/EdgeCase56.asm)
+[ThreeD.ClipTopLeftToInside](../../Source/ThreeD/ClipTopLeftToInside.asm)
 
-обработчик ребра для индексов таблицы #56.
+Отсечение ребра, первая точка сверху слева, вторая внутри окна.
 
-Вход `#C259`, запись 19, смещения `#0259..#025E`.
+## ClipTopLeftToRight
 
-- Прямые вызовы: `#C24E`.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
+[ThreeD.ClipTopLeftToRight](../../Source/ThreeD/ClipTopLeftToRight.asm)
 
-## EdgeCase58
+Отсечение ребра, первая точка сверху слева, вторая справа.
 
-[ThreeD.EdgeCase58](../../Source/ThreeD/EdgeCase58.asm)
+## ClipTopLeftToLeft
 
-обработчик ребра для индексов таблицы #58.
+[ThreeD.ClipTopLeftToLeft](../../Source/ThreeD/ClipTopLeftToLeft.asm)
 
-Вход `#C25F`, запись 19, смещения `#025F..#0273`.
+Отсечение ребра, первая точка сверху слева, вторая слева.
 
-- Прямые вызовы: `#C24E`, `#C496`, `#C4D4`, `#C540`, `#C6A9`.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
+## ClipTopLeftToBottom
 
-## EdgeCase5A
+[ThreeD.ClipTopLeftToBottom](../../Source/ThreeD/ClipTopLeftToBottom.asm)
 
-[ThreeD.EdgeCase5A](../../Source/ThreeD/EdgeCase5A.asm)
+Отсечение ребра, первая точка сверху слева, вторая снизу.
 
-обработчик ребра для индексов таблицы #5A.
+## ClipTopLeftToBottomRight
 
-Вход `#C274`, запись 19, смещения `#0274..#028C`.
+[ThreeD.ClipTopLeftToBottomRight](../../Source/ThreeD/ClipTopLeftToBottomRight.asm)
 
-- Прямые вызовы: `#C496`, `#C4D4`, `#C662`, `#C6A9`.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
+Отсечение ребра, первая точка сверху слева, вторая снизу справа.
 
-## EdgeCase60
+## ClipTopLeftToTop
 
-[ThreeD.EdgeCase60](../../Source/ThreeD/EdgeCase60.asm)
+[ThreeD.ClipTopLeftToTop](../../Source/ThreeD/ClipTopLeftToTop.asm)
 
-обработчик ребра для индексов таблицы #60.
+Отсечение ребра, первая точка сверху слева, вторая сверху.
 
-Вход `#C28D`, запись 19, смещения `#028D..#02A8`.
+## ClipTopLeftToTopRight
 
-- Прямые вызовы: `#C496`, `#C4B5`, `#C58B`, `#C657`, `#C695`.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
+[ThreeD.ClipTopLeftToTopRight](../../Source/ThreeD/ClipTopLeftToTopRight.asm)
 
-## EdgeCase61
+Отсечение ребра, первая точка сверху слева, вторая сверху справа.
 
-[ThreeD.EdgeCase61](../../Source/ThreeD/EdgeCase61.asm)
+## ComputeTopClipProduct
 
-обработчик ребра для индексов таблицы #61.
+[ThreeD.ComputeTopClipProduct](../../Source/ThreeD/ComputeTopClipProduct.asm)
 
-Вход `#C2A9`, запись 19, смещения `#02A9..#02BD`.
+Подготовка числителя пересечения (First.First-0)*(First.Second-Second.Second) исходным знаковым умножителем.
 
-- Прямые вызовы: `#C2BE`, `#C496`, `#C4B5`, `#C58B`, `#C695`.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
+## ComputeBottomClipProduct
 
-## EdgeCase62
+[ThreeD.ComputeBottomClipProduct](../../Source/ThreeD/ComputeBottomClipProduct.asm)
 
-[ThreeD.EdgeCase62](../../Source/ThreeD/EdgeCase62.asm)
+Подготовка числителя пересечения (First.First-95)*(First.Second-Second.Second) исходным знаковым умножителем.
 
-обработчик ребра для индексов таблицы #62.
+## ComputeLeftClipProduct
 
-Вход `#C2BE`, запись 19, смещения `#02BE..#02C8`.
+[ThreeD.ComputeLeftClipProduct](../../Source/ThreeD/ComputeLeftClipProduct.asm)
 
-- Прямые вызовы: нет непосредственных обращений.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
+Подготовка числителя пересечения (First.First-Second.First)*(First.Second-0) исходным знаковым умножителем.
 
-## EdgeCase64
+## ComputeRightClipProduct
 
-[ThreeD.EdgeCase64](../../Source/ThreeD/EdgeCase64.asm)
+[ThreeD.ComputeRightClipProduct](../../Source/ThreeD/ComputeRightClipProduct.asm)
 
-обработчик ребра для индексов таблицы #64.
+Подготовка числителя пересечения (First.First-Second.First)*(First.Second-255) исходным знаковым умножителем.
 
-Вход `#C2C9`, запись 19, смещения `#02C9..#02CF`.
+## ClipInsideToTop
 
-- Прямые вызовы: `#C6C8`.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
+[ThreeD.ClipInsideToTop](../../Source/ThreeD/ClipInsideToTop.asm)
 
-## EdgeCase68
+Отсечение ребра, первая точка внутри окна, вторая сверху.
 
-[ThreeD.EdgeCase68](../../Source/ThreeD/EdgeCase68.asm)
+## AppendTopClipIntersection
 
-обработчик ребра для индексов таблицы #68.
+[ThreeD.AppendTopClipIntersection](../../Source/ThreeD/AppendTopClipIntersection.asm)
 
-Вход `#C2D0`, запись 19, смещения `#02D0..#02EE`.
+Добавление пересечения границы с исходным делением и побайтовой проверкой координаты.
 
-- Прямые вызовы: `#C496`, `#C4B5`, `#C540`, `#C657`, `#C695`.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
+## ClipInsideToBottom
 
-## EdgeCase69
+[ThreeD.ClipInsideToBottom](../../Source/ThreeD/ClipInsideToBottom.asm)
 
-[ThreeD.EdgeCase69](../../Source/ThreeD/EdgeCase69.asm)
+Отсечение ребра, первая точка внутри окна, вторая снизу.
 
-обработчик ребра для индексов таблицы #69.
+## AppendBottomClipIntersection
 
-Вход `#C2EF`, запись 19, смещения `#02EF..#0307`.
+[ThreeD.AppendBottomClipIntersection](../../Source/ThreeD/AppendBottomClipIntersection.asm)
 
-- Прямые вызовы: `#C496`, `#C4B5`, `#C657`, `#C695`.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
+Добавление пересечения границы с исходным делением и побайтовой проверкой координаты.
 
-## EdgeCase6A
+## ClipInsideToLeft
 
-[ThreeD.EdgeCase6A](../../Source/ThreeD/EdgeCase6A.asm)
+[ThreeD.ClipInsideToLeft](../../Source/ThreeD/ClipInsideToLeft.asm)
 
-обработчик ребра для индексов таблицы #6A.
+Отсечение ребра, первая точка внутри окна, вторая слева.
 
-Вход `#C308`, запись 19, смещения `#0308..#030D`.
+## AppendLeftClipIntersection
 
-- Прямые вызовы: `#C2BE`.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
+[ThreeD.AppendLeftClipIntersection](../../Source/ThreeD/AppendLeftClipIntersection.asm)
 
-## EdgeCase80
+Добавление пересечения границы с исходным делением и побайтовой проверкой координаты.
 
-[ThreeD.EdgeCase80](../../Source/ThreeD/EdgeCase80.asm)
+## ClipInsideToRight
 
-обработчик ребра для индексов таблицы #80.
+[ThreeD.ClipInsideToRight](../../Source/ThreeD/ClipInsideToRight.asm)
 
-Вход `#C30E`, запись 19, смещения `#030E..#0313`.
+Отсечение ребра, первая точка внутри окна, вторая справа.
 
-- Прямые вызовы: `#C4F3`.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
+## AppendRightClipIntersection
 
-## EdgeCase81
+[ThreeD.AppendRightClipIntersection](../../Source/ThreeD/AppendRightClipIntersection.asm)
 
-[ThreeD.EdgeCase81](../../Source/ThreeD/EdgeCase81.asm)
+Добавление пересечения границы с исходным делением и побайтовой проверкой координаты.
 
-обработчик ребра для индексов таблицы #81.
+## AppendTopLeftClipCorner
 
-Вход `#C314`, запись 19, смещения `#0314..#0325`.
+[ThreeD.AppendTopLeftClipCorner](../../Source/ThreeD/AppendTopLeftClipCorner.asm)
 
-- Прямые вызовы: `#C477`, `#C4D4`, `#C4F6`, `#C681`.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
+Добавление угла окна при нулевом CornerBlock.
 
-## EdgeCase82
+## AppendTopRightClipCorner
 
-[ThreeD.EdgeCase82](../../Source/ThreeD/EdgeCase82.asm)
+[ThreeD.AppendTopRightClipCorner](../../Source/ThreeD/AppendTopRightClipCorner.asm)
 
-обработчик ребра для индексов таблицы #82.
+Добавление угла окна при нулевом CornerBlock.
 
-Вход `#C326`, запись 19, смещения `#0326..#0337`.
+## AppendBottomLeftClipCorner
 
-- Прямые вызовы: `#C477`, `#C4B5`, `#C4F6`, `#C66D`.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
+[ThreeD.AppendBottomLeftClipCorner](../../Source/ThreeD/AppendBottomLeftClipCorner.asm)
 
-## EdgeCase84
+Добавление угла окна при нулевом CornerBlock.
 
-[ThreeD.EdgeCase84](../../Source/ThreeD/EdgeCase84.asm)
+## AppendBottomRightClipCorner
 
-обработчик ребра для индексов таблицы #84.
+[ThreeD.AppendBottomRightClipCorner](../../Source/ThreeD/AppendBottomRightClipCorner.asm)
 
-Вход `#C338`, запись 19, смещения `#0338..#033D`.
+Добавление угла окна при нулевом CornerBlock.
 
-- Прямые вызовы: `#C4F3`.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
+## CompareTopLeftProducts
 
-## EdgeCase85
+[ThreeD.CompareTopLeftProducts](../../Source/ThreeD/CompareTopLeftProducts.asm)
 
-[ThreeD.EdgeCase85](../../Source/ThreeD/EdgeCase85.asm)
+Вычитание LeftProduct из TopProduct с передачей заёма младшего слова.
 
-обработчик ребра для индексов таблицы #85.
+## CompareTopRightProducts
 
-Вход `#C33E`, запись 19, смещения `#033E..#0358`.
+[ThreeD.CompareTopRightProducts](../../Source/ThreeD/CompareTopRightProducts.asm)
 
-- Прямые вызовы: `#C477`, `#C496`, `#C4D4`, `#C4F6`, `#C64C`, `#C681`.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
+Вычитание RightProduct из TopProduct с передачей заёма младшего слова.
 
-## EdgeCase86
+## CompareBottomLeftProducts
 
-[ThreeD.EdgeCase86](../../Source/ThreeD/EdgeCase86.asm)
+[ThreeD.CompareBottomLeftProducts](../../Source/ThreeD/CompareBottomLeftProducts.asm)
 
-обработчик ребра для индексов таблицы #86.
+Вычитание LeftProduct из BottomProduct с передачей заёма младшего слова.
 
-Вход `#C359`, запись 19, смещения `#0359..#036D`.
+## CompareBottomRightProducts
 
-- Прямые вызовы: `#C477`, `#C496`, `#C4B5`, `#C4F6`, `#C66D`.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
+[ThreeD.CompareBottomRightProducts](../../Source/ThreeD/CompareBottomRightProducts.asm)
 
-## EdgeCase8A
+Вычитание RightProduct из BottomProduct с передачей заёма младшего слова.
 
-[ThreeD.EdgeCase8A](../../Source/ThreeD/EdgeCase8A.asm)
+## ComputeSecondAxisDelta
 
-обработчик ребра для индексов таблицы #8A.
+[ThreeD.ComputeSecondAxisDelta](../../Source/ThreeD/ComputeSecondAxisDelta.asm)
 
-Вход `#C36E`, запись 19, смещения `#036E..#0374`.
+Разность координат Second второй и первой точки с оборачиванием до слова.
 
-- Прямые вызовы: `#C6C8`.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
+## ComputeFirstAxisDelta
 
-## EdgeCase90
+[ThreeD.ComputeFirstAxisDelta](../../Source/ThreeD/ComputeFirstAxisDelta.asm)
 
-[ThreeD.EdgeCase90](../../Source/ThreeD/EdgeCase90.asm)
+Разность координат First второй и первой точки с оборачиванием до слова.
 
-обработчик ребра для индексов таблицы #90.
+## AppendSecondClipPoint
 
-Вход `#C375`, запись 19, смещения `#0375..#0390`.
+[ThreeD.AppendSecondClipPoint](../../Source/ThreeD/AppendSecondClipPoint.asm)
 
-- Прямые вызовы: `#C477`, `#C4D4`, `#C5E7`, `#C64C`, `#C681`.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
+Добавление младших байтов второй точки с общим входом записи пары DE.
 
-## EdgeCase91
+## ExitClipContour
 
-[ThreeD.EdgeCase91](../../Source/ThreeD/EdgeCase91.asm)
+[ThreeD.ExitClipContour](../../Source/ThreeD/ExitClipContour.asm)
 
-обработчик ребра для индексов таблицы #91.
+Специальное завершение контура со снятием трёх служебных слов.
 
-Вход `#C391`, запись 19, смещения `#0391..#039B`.
+## MultiplySigned16
 
-- Прямые вызовы: нет непосредственных обращений.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
+[ThreeD.MultiplySigned16](../../Source/ThreeD/MultiplySigned16.asm)
 
-## EdgeCase92
+Знаковое произведение двух слов с тремя ядрами и исходным исключением второго операнда 8000.
 
-[ThreeD.EdgeCase92](../../Source/ThreeD/EdgeCase92.asm)
+## DivideSigned32To16
 
-обработчик ребра для индексов таблицы #92.
+[ThreeD.DivideSigned32To16](../../Source/ThreeD/DivideSigned32To16.asm)
 
-Вход `#C39C`, запись 19, смещения `#039C..#03B0`.
+Деление числителя HL, A, альтернативного A на signed16 с исходным побитовым дополнением.
 
-- Прямые вызовы: `#C391`, `#C477`, `#C4D4`, `#C5E7`, `#C681`.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
+## ClipSingleEdge
 
-## EdgeCase94
+[ThreeD.ClipSingleEdge](../../Source/ThreeD/ClipSingleEdge.asm)
 
-[ThreeD.EdgeCase94](../../Source/ThreeD/EdgeCase94.asm)
+Отсечение одиночного ребра с обменом внутренней первой точки и рамкой трёх возвратов.
 
-обработчик ребра для индексов таблицы #94.
+## BuildRenderCoefficients
 
-Вход `#C3B1`, запись 19, смещения `#03B1..#03CF`.
+[ThreeD.BuildRenderCoefficients](../../Source/ThreeD/BuildRenderCoefficients.asm)
 
-- Прямые вызовы: `#C477`, `#C4D4`, `#C4F6`, `#C64C`, `#C681`.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
+Построение девяти байтовых коэффициентов по трём фазам либо по одной фазе.
 
-## EdgeCase95
+## ComposeRenderMatrix
 
-[ThreeD.EdgeCase95](../../Source/ThreeD/EdgeCase95.asm)
+[ThreeD.ComposeRenderMatrix](../../Source/ThreeD/ComposeRenderMatrix.asm)
 
-обработчик ребра для индексов таблицы #95.
-
-Вход `#C3D0`, запись 19, смещения `#03D0..#03D5`.
-
-- Прямые вызовы: `#C391`.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
-
-## EdgeCase96
-
-[ThreeD.EdgeCase96](../../Source/ThreeD/EdgeCase96.asm)
-
-обработчик ребра для индексов таблицы #96.
-
-Вход `#C3D6`, запись 19, смещения `#03D6..#03EE`.
-
-- Прямые вызовы: `#C477`, `#C4D4`, `#C64C`, `#C681`.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
-
-## EdgeCase98
-
-[ThreeD.EdgeCase98](../../Source/ThreeD/EdgeCase98.asm)
-
-обработчик ребра для индексов таблицы #98.
-
-Вход `#C3EF`, запись 19, смещения `#03EF..#03F5`.
-
-- Прямые вызовы: `#C6C8`.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
-
-## EdgeCaseA0
-
-[ThreeD.EdgeCaseA0](../../Source/ThreeD/EdgeCaseA0.asm)
-
-обработчик ребра для индексов таблицы #A0.
-
-Вход `#C3F6`, запись 19, смещения `#03F6..#0411`.
-
-- Прямые вызовы: `#C477`, `#C4B5`, `#C4F6`, `#C641`, `#C66D`.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
-
-## EdgeCaseA1
-
-[ThreeD.EdgeCaseA1](../../Source/ThreeD/EdgeCaseA1.asm)
-
-обработчик ребра для индексов таблицы #A1.
-
-Вход `#C412`, запись 19, смещения `#0412..#0430`.
-
-- Прямые вызовы: `#C477`, `#C4B5`, `#C58B`, `#C641`, `#C66D`.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
-
-## EdgeCaseA2
-
-[ThreeD.EdgeCaseA2](../../Source/ThreeD/EdgeCaseA2.asm)
-
-обработчик ребра для индексов таблицы #A2.
-
-Вход `#C431`, запись 19, смещения `#0431..#0437`.
-
-- Прямые вызовы: `#C6BD`.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
-
-## EdgeCaseA4
-
-[ThreeD.EdgeCaseA4](../../Source/ThreeD/EdgeCaseA4.asm)
-
-обработчик ребра для индексов таблицы #A4.
-
-Вход `#C438`, запись 19, смещения `#0438..#044C`.
-
-- Прямые вызовы: `#C466`, `#C477`, `#C4B5`, `#C4F6`, `#C66D`.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
-
-## EdgeCaseA5
-
-[ThreeD.EdgeCaseA5](../../Source/ThreeD/EdgeCaseA5.asm)
-
-обработчик ребра для индексов таблицы #A5.
-
-Вход `#C44D`, запись 19, смещения `#044D..#0465`.
-
-- Прямые вызовы: `#C477`, `#C4B5`, `#C641`, `#C66D`.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
-
-## EdgeCaseA8
-
-[ThreeD.EdgeCaseA8](../../Source/ThreeD/EdgeCaseA8.asm)
-
-обработчик ребра для индексов таблицы #A8.
-
-Вход `#C466`, запись 19, смещения `#0466..#0470`.
-
-- Прямые вызовы: нет непосредственных обращений.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
-
-## EdgeCaseA9
-
-[ThreeD.EdgeCaseA9](../../Source/ThreeD/EdgeCaseA9.asm)
-
-обработчик ребра для индексов таблицы #A9.
-
-Вход `#C471`, запись 19, смещения `#0471..#0476`.
-
-- Прямые вызовы: `#C466`.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
-
-## UnknownC477
-
-[ThreeD.UnknownC477](../../Source/ThreeD/UnknownC477.asm)
-
-Unknown, назначение этого фрагмента ещё не установлено.
-
-Вход `#C477`, запись 19, смещения `#0477..#0495`.
-
-- Прямые вызовы: `#C6F4`.
-- Непосредственные чтения: `#CF0B`, `#CF0D`, `#CF1B`.
-- Непосредственные записи: `#CF37`, `#CF39`.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
-
-## UnknownC496
-
-[ThreeD.UnknownC496](../../Source/ThreeD/UnknownC496.asm)
-
-Unknown, назначение этого фрагмента ещё не установлено.
-
-Вход `#C496`, запись 19, смещения `#0496..#04B4`.
-
-- Прямые вызовы: `#C6F4`.
-- Непосредственные чтения: `#CF0B`, `#CF0D`, `#CF1B`.
-- Непосредственные записи: `#CF33`, `#CF35`.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
-
-## UnknownC4B5
-
-[ThreeD.UnknownC4B5](../../Source/ThreeD/UnknownC4B5.asm)
-
-Unknown, назначение этого фрагмента ещё не установлено.
-
-Вход `#C4B5`, запись 19, смещения `#04B5..#04D3`.
-
-- Прямые вызовы: `#C6F4`.
-- Непосредственные чтения: `#CF0B`, `#CF0D`, `#CF1D`.
-- Непосредственные записи: `#CF2F`, `#CF31`.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
-
-## UnknownC4D4
-
-[ThreeD.UnknownC4D4](../../Source/ThreeD/UnknownC4D4.asm)
-
-Unknown, назначение этого фрагмента ещё не установлено.
-
-Вход `#C4D4`, запись 19, смещения `#04D4..#04F2`.
-
-- Прямые вызовы: `#C6F4`.
-- Непосредственные чтения: `#CF0B`, `#CF0D`, `#CF1D`.
-- Непосредственные записи: `#CF2B`, `#CF2D`.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
-
-## EdgeCase08
-
-[ThreeD.EdgeCase08](../../Source/ThreeD/EdgeCase08.asm)
-
-обработчик ребра для индексов таблицы #08.
-
-Вход `#C4F3`, запись 19, смещения `#04F3..#04F5`.
-
-- Прямые вызовы: `#C477`.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
-
-## UnknownC4F6
-
-[ThreeD.UnknownC4F6](../../Source/ThreeD/UnknownC4F6.asm)
-
-Unknown, назначение этого фрагмента ещё не установлено.
-
-Вход `#C4F6`, запись 19, смещения `#04F6..#053C`.
-
-- Прямые вызовы: `#C88C`.
-- Непосредственные чтения: `#9BA3`, `#CF0B`, `#CF0D`, `#CF1D`, `#CF37`, `#CF38`, `#CF39`.
-- Непосредственные записи: `#9BA3`.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
-
-## EdgeCase04
-
-[ThreeD.EdgeCase04](../../Source/ThreeD/EdgeCase04.asm)
-
-обработчик ребра для индексов таблицы #04.
-
-Вход `#C53D`, запись 19, смещения `#053D..#053F`.
-
-- Прямые вызовы: `#C496`.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
-
-## UnknownC540
-
-[ThreeD.UnknownC540](../../Source/ThreeD/UnknownC540.asm)
-
-Unknown, назначение этого фрагмента ещё не установлено.
-
-Вход `#C540`, запись 19, смещения `#0540..#0587`.
-
-- Прямые вызовы: `#C88C`.
-- Непосредственные чтения: `#9BA3`, `#CF0B`, `#CF0D`, `#CF1D`, `#CF33`, `#CF34`, `#CF35`.
-- Непосредственные записи: `#9BA3`.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
-
-## EdgeCase02
-
-[ThreeD.EdgeCase02](../../Source/ThreeD/EdgeCase02.asm)
-
-обработчик ребра для индексов таблицы #02.
-
-Вход `#C588`, запись 19, смещения `#0588..#058A`.
-
-- Прямые вызовы: `#C4B5`.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
-
-## UnknownC58B
-
-[ThreeD.UnknownC58B](../../Source/ThreeD/UnknownC58B.asm)
-
-Unknown, назначение этого фрагмента ещё не установлено.
-
-Вход `#C58B`, запись 19, смещения `#058B..#05E3`.
-
-- Прямые вызовы: `#C88C`.
-- Непосредственные чтения: `#9BA3`, `#CF0B`, `#CF0D`, `#CF1B`, `#CF2F`, `#CF30`, `#CF31`.
-- Непосредственные записи: `#9BA3`.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
-
-## EdgeCase01
-
-[ThreeD.EdgeCase01](../../Source/ThreeD/EdgeCase01.asm)
-
-обработчик ребра для индексов таблицы #01.
-
-Вход `#C5E4`, запись 19, смещения `#05E4..#05E6`.
-
-- Прямые вызовы: `#C4D4`.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
-
-## UnknownC5E7
-
-[ThreeD.UnknownC5E7](../../Source/ThreeD/UnknownC5E7.asm)
-
-Unknown, назначение этого фрагмента ещё не установлено.
-
-Вход `#C5E7`, запись 19, смещения `#05E7..#0640`.
-
-- Прямые вызовы: `#C88C`.
-- Непосредственные чтения: `#9BA3`, `#CF0B`, `#CF0D`, `#CF1B`, `#CF2B`, `#CF2C`, `#CF2D`.
-- Непосредственные записи: `#9BA3`.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
-
-## UnknownC641
-
-[ThreeD.UnknownC641](../../Source/ThreeD/UnknownC641.asm)
-
-Unknown, назначение этого фрагмента ещё не установлено.
-
-Вход `#C641`, запись 19, смещения `#0641..#064B`.
-
-- Прямые вызовы: нет непосредственных обращений.
-- Непосредственные чтения: `#CF03`.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
-
-## UnknownC64C
-
-[ThreeD.UnknownC64C](../../Source/ThreeD/UnknownC64C.asm)
-
-Unknown, назначение этого фрагмента ещё не установлено.
-
-Вход `#C64C`, запись 19, смещения `#064C..#0656`.
-
-- Прямые вызовы: нет непосредственных обращений.
-- Непосредственные чтения: `#CF03`.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
-
-## UnknownC657
-
-[ThreeD.UnknownC657](../../Source/ThreeD/UnknownC657.asm)
-
-Unknown, назначение этого фрагмента ещё не установлено.
-
-Вход `#C657`, запись 19, смещения `#0657..#0661`.
-
-- Прямые вызовы: нет непосредственных обращений.
-- Непосредственные чтения: `#CF03`.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
-
-## UnknownC662
-
-[ThreeD.UnknownC662](../../Source/ThreeD/UnknownC662.asm)
-
-Unknown, назначение этого фрагмента ещё не установлено.
-
-Вход `#C662`, запись 19, смещения `#0662..#066C`.
-
-- Прямые вызовы: нет непосредственных обращений.
-- Непосредственные чтения: `#CF03`.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
-
-## UnknownC66D
-
-[ThreeD.UnknownC66D](../../Source/ThreeD/UnknownC66D.asm)
-
-Unknown, назначение этого фрагмента ещё не установлено.
-
-Вход `#C66D`, запись 19, смещения `#066D..#0680`.
-
-- Прямые вызовы: нет непосредственных обращений.
-- Непосредственные чтения: `#CF2F`, `#CF31`, `#CF37`, `#CF39`.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
-
-## UnknownC681
-
-[ThreeD.UnknownC681](../../Source/ThreeD/UnknownC681.asm)
-
-Unknown, назначение этого фрагмента ещё не установлено.
-
-Вход `#C681`, запись 19, смещения `#0681..#0694`.
-
-- Прямые вызовы: нет непосредственных обращений.
-- Непосредственные чтения: `#CF2B`, `#CF2D`, `#CF37`, `#CF39`.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
-
-## UnknownC695
-
-[ThreeD.UnknownC695](../../Source/ThreeD/UnknownC695.asm)
-
-Unknown, назначение этого фрагмента ещё не установлено.
-
-Вход `#C695`, запись 19, смещения `#0695..#06A8`.
-
-- Прямые вызовы: нет непосредственных обращений.
-- Непосредственные чтения: `#CF2F`, `#CF31`, `#CF33`, `#CF35`.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
-
-## UnknownC6A9
-
-[ThreeD.UnknownC6A9](../../Source/ThreeD/UnknownC6A9.asm)
-
-Unknown, назначение этого фрагмента ещё не установлено.
-
-Вход `#C6A9`, запись 19, смещения `#06A9..#06BC`.
-
-- Прямые вызовы: нет непосредственных обращений.
-- Непосредственные чтения: `#CF2B`, `#CF2D`, `#CF33`, `#CF35`.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
-
-## UnknownC6BD
-
-[ThreeD.UnknownC6BD](../../Source/ThreeD/UnknownC6BD.asm)
-
-Unknown, назначение этого фрагмента ещё не установлено.
-
-Вход `#C6BD`, запись 19, смещения `#06BD..#06C7`.
-
-- Прямые вызовы: нет непосредственных обращений.
-- Непосредственные чтения: `#CF0B`, `#CF1B`.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
-
-## UnknownC6C8
-
-[ThreeD.UnknownC6C8](../../Source/ThreeD/UnknownC6C8.asm)
-
-Unknown, назначение этого фрагмента ещё не установлено.
-
-Вход `#C6C8`, запись 19, смещения `#06C8..#06D2`.
-
-- Прямые вызовы: нет непосредственных обращений.
-- Непосредственные чтения: `#CF0D`, `#CF1D`.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
-
-## EdgeCase00
-
-[ThreeD.EdgeCase00](../../Source/ThreeD/EdgeCase00.asm)
-
-обработчик ребра для индексов таблицы #00.
-
-Вход `#C6D3`, запись 19, смещения `#06D3..#06E9`.
-
-- Прямые вызовы: нет непосредственных обращений.
-- Непосредственные чтения: `#9BA3`, `#CF1B`, `#CF1D`.
-- Непосредственные записи: `#9BA3`.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
-
-## EdgeCase59
-
-[ThreeD.EdgeCase59](../../Source/ThreeD/EdgeCase59.asm)
-
-обработчик ребра для индексов таблицы #59, #65, #9A, #A6.
-
-Вход `#C6EA`, запись 19, смещения `#06EA..#06F3`.
-
-- Прямые вызовы: нет непосредственных обращений.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
-
-## UnknownC6F4
-
-[ThreeD.UnknownC6F4](../../Source/ThreeD/UnknownC6F4.asm)
-
-Unknown, назначение этого фрагмента ещё не установлено.
-
-Вход `#C6F4`, запись 19, смещения `#06F4..#088B`.
-
-- Прямые вызовы: нет непосредственных обращений.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
-
-## UnknownC88C
-
-[ThreeD.UnknownC88C](../../Source/ThreeD/UnknownC88C.asm)
-
-Unknown, назначение этого фрагмента ещё не установлено.
-
-Вход `#C88C`, запись 19, смещения `#088C..#0AB2`.
-
-- Прямые вызовы: нет непосредственных обращений.
-- Непосредственные чтения: `#9B12`, `#9B13`, `#9B14`, `#9BA3`, `#CF0B`, `#CF0D`, `#CF0F`, `#CF1B`, `#CF1D`, `#CF1F`.
-- Непосредственные записи: `#9BA3`, `#CB38`, `#CB3A`, `#CB3C`, `#CC25`, `#CC27`, `#CC29`, `#CD22`, `#CD24`, `#CD26`, `#CF03`, `#CF0B`, `#CF0D`, `#CF0F`, `#CF1B`, `#CF1D`, `#CF1F`.
-- Ввод и вывод: нет.
-- Косвенное завершение: `JP (HL)`.
-
-## InitializeBufferPoints
-
-[ThreeD.UnknownCAB3](../../Source/ThreeD/UnknownCAB3.asm)
-
-Unknown, назначение этого фрагмента ещё не установлено.
-
-Вход `#CAB3`, запись 19, смещения `#0AB3..#0AE2`.
-
-- Прямые вызовы: нет непосредственных обращений.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: `#CB3C`.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
-
-## XorBufferPoints
-
-[ThreeD.UnknownCAE3](../../Source/ThreeD/UnknownCAE3.asm)
-
-Unknown, назначение этого фрагмента ещё не установлено.
-
-Вход `#CAE3`, запись 19, смещения `#0AE3..#0EE2`.
-
-- Прямые вызовы: нет непосредственных обращений.
-- Непосредственные чтения: `#9B13`, `#CB3E`, `#CB54`, `#CB6F`, `#CB8B`, `#CBA1`, `#CBBC`, `#CBD8`, `#CBEE`, `#CC09`.
-- Непосредственные записи: `#CC29`, `#CD26`, `#D5FC`, `#D60D`, `#D61E`, `#D62F`, `#D640`, `#D651`, `#D662`, `#D673`, `#D684`.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
+Композиция исходной матрицы и ориентации с одноосным режимом и точными четвертями.
 
 ## UnknownCF08
 
@@ -1340,38 +584,152 @@ Unknown, назначение этого фрагмента ещё не уста
 
 Unknown, назначение этого фрагмента ещё не установлено.
 
-Вход `#CF08`, запись 19, смещения `#0F08..#0F0A`.
-
-- Прямые вызовы: нет непосредственных обращений.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
-
 ## ClearWorkBuffer
 
 [ThreeD.ClearWorkBuffer](../../Source/ThreeD/ClearWorkBuffer.asm)
 
-Заполнение #0C00 байт до #8C00 значением #FF через стек с восстановлением SP.
-
-Вход `#D10A`, запись 19, смещения `#110A..#112B`.
-
-- Прямые вызовы: нет непосредственных обращений.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: `#D129`.
-- Ввод и вывод: нет.
-- Косвенное завершение: нет в этом фрагменте.
+Заполнение линейного буфера 8000..8BFF байтами FF через временный SP с восстановлением CPU-стека.
 
 ## MultiplySignedScaled
 
 [ThreeD.MultiplySignedScaled](../../Source/ThreeD/MultiplySignedScaled.asm)
 
-Знаковое умножение с масштабом 1/128 для коэффициента от -127 до 127, выход через JP (IX).
+Знаковое произведение DE и байтового коэффициента с усечением к нулю после деления на 128 и выходом через IX.
 
-Вход `#D12C`, запись 19, смещения `#112C..#1193`.
+## PolygonFillRows
 
-- Прямые вызовы: нет непосредственных обращений.
-- Непосредственные чтения: нет непосредственных обращений.
-- Непосредственные записи: нет непосредственных обращений.
-- Ввод и вывод: нет.
-- Косвенное завершение: `JP (IX)`.
+[ThreeD.PolygonFillRows](../../Source/ThreeD/PolygonFillRows.asm)
+
+Строковое ядро линейной заливки с развёрнутой записью, крайними масками и коррекцией двух рёбер.
+
+## SelectPolygonRightEdge
+
+[ThreeD.SelectPolygonRightEdge](../../Source/ThreeD/SelectPolygonRightEdge.asm)
+
+Передача управления правому обновлению без изменения контекста.
+
+## WrapPolygonLeftEdge
+
+[ThreeD.WrapPolygonLeftEdge](../../Source/ThreeD/WrapPolygonLeftEdge.asm)
+
+Оборачивание обратного поиска к последней First кольца.
+
+## UpdatePolygonLeftEdge
+
+[ThreeD.UpdatePolygonLeftEdge](../../Source/ThreeD/UpdatePolygonLeftEdge.asm)
+
+Поиск восходящего левого ребра, вычисление целого шага и ошибки, выбор продолжения заливки.
+
+## WrapPolygonRightEdge
+
+[ThreeD.WrapPolygonRightEdge](../../Source/ThreeD/WrapPolygonRightEdge.asm)
+
+Оборачивание прямого поиска к первой First кольца.
+
+## UpdatePolygonRightEdge
+
+[ThreeD.UpdatePolygonRightEdge](../../Source/ThreeD/UpdatePolygonRightEdge.asm)
+
+Поиск восходящего правого ребра и вычисление его упакованного шага и дробной ошибки.
+
+## SelectPolygonRowLimit
+
+[ThreeD.SelectPolygonRowLimit](../../Source/ThreeD/SelectPolygonRowLimit.asm)
+
+Выбор ближайшего предела строк с приоритетом левого ребра и настройкой следующего перехода.
+
+## SetShortNegativeRightStep
+
+[ThreeD.SetShortNegativeRightStep](../../Source/ThreeD/SetShortNegativeRightStep.asm)
+
+Настройка нулевого целого шага короткого отрицательного правого наклона и восстановление временного контекста.
+
+## WrapPolygonLeftTop
+
+[ThreeD.WrapPolygonLeftTop](../../Source/ThreeD/WrapPolygonLeftTop.asm)
+
+Оборачивание поиска левого конца верхней горизонтали.
+
+## WrapPolygonRightTop
+
+[ThreeD.WrapPolygonRightTop](../../Source/ThreeD/WrapPolygonRightTop.asm)
+
+Оборачивание поиска правого конца верхней горизонтали.
+
+## ReturnPolygonFill
+
+[ThreeD.ReturnPolygonFill](../../Source/ThreeD/ReturnPolygonFill.asm)
+
+Восстановление сохранённого HL и внешний возврат плоского контура.
+
+## PreparePolygonFill
+
+[ThreeD.PreparePolygonFill](../../Source/ThreeD/PreparePolygonFill.asm)
+
+Подготовка диапазона строк, верхних вершин двух цепочек, масок и временного стека заливки.
+
+## TransformObjectVertices
+
+[ThreeD.TransformObjectVertices](../../Source/ThreeD/TransformObjectVertices.asm)
+
+Копирование потока объекта и преобразование всех его фиксированных групп вершин.
+
+## PrepareRenderVertexProducts
+
+[ThreeD.PrepareRenderVertexProducts](../../Source/ThreeD/PrepareRenderVertexProducts.asm)
+
+Подготовка трёх пар координат и трёх глубин табличным произведением матрицы и входных компонентов.
+
+## ProjectRenderVertexGroup
+
+[ThreeD.ProjectRenderVertexGroup](../../Source/ThreeD/ProjectRenderVertexGroup.asm)
+
+Построение комбинаций координат и перспективная запись выбранной группы вершин.
+
+## ProjectRenderVertex
+
+[ThreeD.ProjectRenderVertex](../../Source/ThreeD/ProjectRenderVertex.asm)
+
+Перспективная запись одной вершины с исходной нормализацией и косвенным продолжением.
+
+## RenderClippedRecords
+
+[ThreeD.RenderClippedRecords](../../Source/ThreeD/RenderClippedRecords.asm)
+
+Вывод записей объекта с проверкой кодов точек и отсечением граней и открытых сегментов.
+
+## RenderInsideRecords
+
+[ThreeD.RenderInsideRecords](../../Source/ThreeD/RenderInsideRecords.asm)
+
+Вывод граней и ломаных объекта с внутренними точками без дополнительного отсечения.
+
+## CombineListedVertexCodes
+
+[ThreeD.CombineListedVertexCodes](../../Source/ThreeD/CombineListedVertexCodes.asm)
+
+Объединение кодов границ перечисленных точек с ранним выходом по нулевому коду.
+
+## DrawLinearLine
+
+[ThreeD.DrawLinearLine](../../Source/ThreeD/DrawLinearLine.asm)
+
+Растеризация отрезка в линейный буфер страницы 80 с режимами AND, OR и XOR без конечной точки.
+
+## AbortProjectedVertexScan
+
+[ThreeD.AbortProjectedVertexScan](../../Source/ThreeD/AbortProjectedVertexScan.asm)
+
+Завершение сканирования точек по маркеру отказа перспективы без отката предыдущих кодов.
+
+## ClassifyProjectedVertices
+
+[ThreeD.ClassifyProjectedVertices](../../Source/ThreeD/ClassifyProjectedVertices.asm)
+
+Заполнение кодов границ экранных точек и накопление общего кода объекта.
+
+## CheckFaceOrientation
+
+[ThreeD.CheckFaceOrientation](../../Source/ThreeD/CheckFaceOrientation.asm)
+
+Проверка ориентации выбранной тройки экранных точек по знаку разности двух произведений.

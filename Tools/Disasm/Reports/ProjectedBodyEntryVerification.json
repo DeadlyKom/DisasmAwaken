@@ -1,0 +1,52 @@
+{
+  "passed": true,
+  "total_cases": 9918,
+  "cases_by_entry": {
+    "CEFA": 4959,
+    "6C7E": 4959
+  },
+  "paths": {
+    "large_both_horizontal_edges": 496,
+    "large_corner_single_edge": 208,
+    "large_outside_x_one_edge": 320,
+    "large_reject_corner_vertical_square": 54,
+    "small_tiny": 948,
+    "component_1_reject": 14,
+    "projection_reject": 6544,
+    "large_vertical_full_width": 186,
+    "large_reject_vertical_gate": 126,
+    "large_vertical_unclipped_slice": 64,
+    "large_reject_outside_y_extent": 38,
+    "large_reject_horizontal_gate": 198,
+    "large_reject_corner_horizontal_square": 16,
+    "large_whole_interior": 142,
+    "small_draw": 526,
+    "large_outside_x_full_width": 2,
+    "large_reject_outside_x_extent": 4,
+    "component_0_reject": 18,
+    "small_y_reject": 4,
+    "small_x_reject": 10
+  },
+  "cases_by_profile": {
+    "all_modes_and_signs": 128,
+    "component_edges": 8192,
+    "all_radius_depth_words": 1076,
+    "ratio_boundaries": 432,
+    "mixed_components": 90
+  },
+  "exact_registers_except_R": true,
+  "actual_children_without_stubs": true,
+  "all_RAM_except_projection_scratch": true,
+  "projection_scratch_values_not_proved": true,
+  "complete_nonpixel_write_multiplicity_after_projection": true,
+  "mode_forced_zero": true,
+  "banked_pattern_FFAA": true,
+  "actual_out_sequence": [
+    17,
+    16
+  ],
+  "maximum_banked_stack_bytes": 20,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

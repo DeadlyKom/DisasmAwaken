@@ -44,9 +44,9 @@ IXH, IY, I, IM и IFF сохраняются. Ветви только читаю
 памяти и не записывают RAM. Предполагается банк 1 и отсутствие IRQ.
 
 Вызовы находятся в пока не полностью разобранных рисователях
-[UnknownD633](../Source/Controls/UnknownD633.asm),
-[UnknownD727](../Source/Controls/UnknownD727.asm) и
-[UnknownD833](../Source/Controls/UnknownD833.asm). Их полные договоры по этим
+[UnknownD633](../Source/Controls/CircleRasterCore.asm),
+[UnknownD727](../Source/Controls/ResumeCirclePushSpan.asm) и
+[UnknownD833](../Source/Controls/RightClippedCircleCore.asm). Их полные договоры по этим
 помощникам не выводятся.
 
 ## Проверка

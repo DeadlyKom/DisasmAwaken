@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "changed_files": [
+    "Source/Intro/ScatterTextureToScreen.asm",
+    "Source/Intro/PresentInterlacedFrame.asm",
+    "Tools/Disasm/Research/IntroNotes.py",
+    "Tools/Disasm/Research/Contracts.py",
+    "Docs/Intro.md",
+    "Tools/Disasm/Research/SemanticNames.py"
+  ],
+  "instruction_bytes_unchanged": true,
+  "old_source_page_interpretation_rejected": true,
+  "actual_patch": [
+    0,
+    20
+  ],
+  "model_cases": 1536,
+  "assembly_executed": false
+}

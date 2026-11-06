@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "total_cases": 384,
+  "outcomes": {
+    "cases": 384,
+    "draws": 1400,
+    "active_records": 1640
+  },
+  "all_eight_record_positions": true,
+  "whole_raster_compared": true,
+  "assembly_executed": false,
+  "native_execution": false
+}

@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "total_cases": 50808,
+  "cases_by_kind": {
+    "outside_pairs": 32468,
+    "inside_pairs": 14244,
+    "mixed_outside": 4096
+  },
+  "cases_by_entry_and_side": {
+    "D3DA_right": 18358,
+    "D3DA_left": 18206,
+    "D3E4_left": 7120,
+    "D3E4_right": 7124
+  },
+  "modeled_rows": 4590839,
+  "transitions_to_unclipped_kernel": 5187,
+  "exact_registers_except_R": true,
+  "all_physical_ram_bytes_proved": true,
+  "nonpixel_write_multiplicity_proved": true,
+  "two_real_preparations_and_halves": true,
+  "upward_half_tail_jump": true,
+  "full_D340_proved": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "total_cases": 200704,
+  "cases_by_entry": {
+    "EF7D": 65536,
+    "EF9A": 65536,
+    "EFB5": 69632
+  },
+  "paths": {
+    "EF7D_countdown": 65280,
+    "EF7D_transition": 256,
+    "EF9A_countdown": 65280,
+    "EF9A_transition": 256,
+    "EFB5_component_release": 598,
+    "EFB5_class_release": 36737,
+    "EFB5_continue": 32297
+  },
+  "exact_registers_including_R": true,
+  "exact_write_multiplicity": true,
+  "no_cpu_stack_writes": true,
+  "stops_before_shared_F0F8": true,
+  "no_ports": true,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

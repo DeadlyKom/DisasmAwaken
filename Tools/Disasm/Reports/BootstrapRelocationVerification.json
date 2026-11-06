@@ -1,0 +1,38 @@
+{
+  "passed": true,
+  "total_cases": 1024,
+  "cases_by_region": {
+    "StationBoot": 768,
+    "ActionBoot": 256
+  },
+  "profiles": [
+    {
+      "region": "StationBoot",
+      "entry": 25344,
+      "source": 25369,
+      "destination": 16384,
+      "size": 693
+    },
+    {
+      "region": "ActionBoot",
+      "entry": 24576,
+      "source": 24643,
+      "destination": 16896,
+      "size": 506
+    }
+  ],
+  "all_initial_flags_values": true,
+  "all_A_values_for_station": true,
+  "all_six_bit_paging_values_for_action": true,
+  "locked_paging_for_action": true,
+  "all_registers_except_R": true,
+  "all_physical_ram_bytes_proved": true,
+  "write_multiplicity_proved": true,
+  "exact_ports": true,
+  "external_return_not_consumed": true,
+  "relocated_code_executed": false,
+  "assembly_executed": false,
+  "native_execution": false,
+  "irq_executed": false,
+  "timing_proved": false
+}

@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "total_cases": 11652,
+  "outcomes": {
+    "success": 5474,
+    "first_overflow": 2100,
+    "negative_depth": 3782,
+    "second_overflow": 296
+  },
+  "modes": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "whole_draw_proved": false,
+  "assembly_executed": false
+}

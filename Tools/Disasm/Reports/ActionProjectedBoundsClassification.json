@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "described_functions": 1,
+  "proved_local_code_bytes": 118,
+  "confirmed_instructions": 55,
+  "remaining_unknown_code_bytes": 200,
+  "original_bytes_preserved": true,
+  "model_cases": 393417,
+  "all_seven_paths_checked": true,
+  "partial_writes_preserved": true,
+  "whole_projection_scan_proved": false,
+  "assembly_executed": false
+}

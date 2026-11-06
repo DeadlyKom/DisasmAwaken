@@ -3,8 +3,9 @@
 ; логическая длина 6878, полный секторный размер 6912
 ; -----------------------------------------
                 assert $ == #0000
-                ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/22_CONTROL0/Unclassified000_BeforeSquares.bin"
+                disp #C000
+                include "../Controls/Data/RootCache.asm"
+                ent
                 assert $ == #0300
                 disp #C300
                 include "../Controls/Data/Squares.asm"
@@ -68,19 +69,19 @@
                 incbin "../Resources/22_CONTROL0/Unclassified003.bin"
                 assert $ == #0EFA
                 disp #CEFA
-                include "../Controls/UnknownCEFA.asm"
+                include "../Controls/ProjectAndDrawBody.asm"
                 ent
                 assert $ == #0F0B
                 disp #CF0B
-                include "../Controls/UnknownCF0B.asm"
+                include "../Controls/BuildBodyProjection.asm"
                 ent
                 assert $ == #10CA
                 disp #D0CA
-                include "../Controls/UnknownD0CA.asm"                           ; (0) жёсткий порядок, последовательное исполнение
+                include "../Controls/EncodeProjectionRatio.asm"                 ; (0) жёсткий порядок, последовательное исполнение
                 ent
                 assert $ == #110A
                 disp #D10A
-                include "../Controls/UnknownD10A.asm"                           ; (1) жёсткий порядок, последовательное исполнение
+                include "../Controls/ContinueProjectionRatio.asm"               ; (1) жёсткий порядок, последовательное исполнение
                 ent
                 assert $ == #1165
                 disp #D165
@@ -101,27 +102,27 @@
                 ent
                 assert $ == #118D
                 disp #D18D
-                include "../Controls/UnknownD18D.asm"
+                include "../Controls/DrawRightClippedHalfDown.asm"
                 ent
                 assert $ == #11A2
                 disp #D1A2
-                include "../Controls/UnknownD1A2.asm"
+                include "../Controls/DrawRightClippedHalfUp.asm"
                 ent
                 assert $ == #11B6
                 disp #D1B6
-                include "../Controls/UnknownD1B6.asm"
+                include "../Controls/DrawLeftClippedHalfDown.asm"
                 ent
                 assert $ == #11CB
                 disp #D1CB
-                include "../Controls/UnknownD1CB.asm"
+                include "../Controls/DrawLeftClippedHalfUp.asm"
                 ent
                 assert $ == #11DF
                 disp #D1DF
-                include "../Controls/UnknownD1DF.asm"
+                include "../Controls/DrawCircleHalfDown.asm"
                 ent
                 assert $ == #11F4
                 disp #D1F4
-                include "../Controls/UnknownD1F4.asm"
+                include "../Controls/DrawCircleHalfUp.asm"
                 ent
                 assert $ == #1208
                 disp #D208
@@ -133,18 +134,18 @@
                 ent
                 assert $ == #121A
                 disp #D21A
-                include "../Controls/UnknownD21A.asm"
+                include "../Controls/DrawProjectedBody.asm"
                 ent
                 assert $ == #1227
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
                 incbin "../Resources/22_CONTROL0/Unclassified005.bin"
                 assert $ == #1232
                 disp #D232
-                include "../Controls/UnknownD232.asm"
+                include "../Controls/CallLargeCircle.asm"
                 ent
                 assert $ == #1236
                 disp #D236
-                include "../Controls/UnknownD236.asm"
+                include "../Controls/DrawLargeCircle.asm"
                 ent
                 assert $ == #130B
                 disp #D30B
@@ -152,7 +153,7 @@
                 ent
                 assert $ == #1314
                 disp #D314
-                include "../Controls/UnknownD314.asm"
+                include "../Controls/DrawInteriorCircle.asm"
                 ent
                 assert $ == #1320
                 disp #D320
@@ -160,7 +161,23 @@
                 ent
                 assert $ == #1340
                 disp #D340
-                include "../Controls/UnknownD340.asm"
+                include "../Controls/DrawFullWidthCircle.asm"
+                ent
+                assert $ == #138C
+                disp #D38C
+                include "../Controls/DrawFullWidthCircleSlice.asm"
+                ent
+                assert $ == #13DA
+                disp #D3DA
+                include "../Controls/DrawHorizontallyClippedCircle.asm"
+                ent
+                assert $ == #1404
+                disp #D404
+                include "../Controls/DrawCornerCircleSlice.asm"
+                ent
+                assert $ == #1485
+                disp #D485
+                include "../Controls/DrawVerticalCircleSlice.asm"
                 ent
                 assert $ == #14CB
                 disp #D4CB
@@ -199,15 +216,19 @@
                 ent
                 assert $ == #1633
                 disp #D633
-                include "../Controls/UnknownD633.asm"                           ; (0) жёсткий порядок, продолжение цепочки PUSH AF
+                include "../Controls/CircleRasterCore.asm"                      ; (0) жёсткий порядок, продолжение цепочки PUSH AF
                 ent
                 assert $ == #1727
                 disp #D727
-                include "../Controls/UnknownD727.asm"                           ; (1) жёсткий порядок, продолжение цепочки PUSH AF
+                include "../Controls/ResumeCirclePushSpan.asm"                  ; (1) жёсткий порядок, продолжение цепочки PUSH AF
+                ent
+                assert $ == #173B
+                disp #D73B
+                include "../Controls/LeftClippedCircleCore.asm"
                 ent
                 assert $ == #1833
                 disp #D833
-                include "../Controls/UnknownD833.asm"
+                include "../Controls/RightClippedCircleCore.asm"
                 ent
                 assert $ == #1925
                 disp #D925
@@ -222,7 +243,7 @@
                 incbin "../Resources/22_CONTROL0/Unclassified010.bin"
                 assert $ == #195F
                 disp #D95F
-                include "../Controls/UnknownD95F.asm"
+                include "../Controls/ProjectAndCheckComponents.asm"
                 ent
                 assert $ == #197E
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления

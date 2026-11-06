@@ -36,8 +36,8 @@ RAM 9900..99FF. Загрузочный перенос ядра ограниче�
 [UpdateBufferPoints](../Source/Controls/UpdateBufferPoints.asm) читает страницу 99
 по индексу `(-TurnControl) AND FF` и тому же индексу со сдвигом 40.
 Страница также читается в трёхмерном коде, например
-[Action.UnknownC88C](../Source/Action/UnknownC88C.asm) и
-[ThreeD.UnknownC88C](../Source/ThreeD/UnknownC88C.asm).
+[Action.DivideSigned32To16](../Source/Action/DivideSigned32To16.asm) и
+[ThreeD.UnknownC88C](../Source/ThreeD/DivideSigned32To16.asm).
 Полный смысл этих трёхмерных процедур отдельно не объявляется доказанным.
 
 [Проверка и строгий разбор источника](../Tools/Disasm/Research/ActionSineTable.py)

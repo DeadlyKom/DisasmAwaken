@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "total_cases": 2848,
+  "aligned_cases": 1824,
+  "unaligned_cases": 1024,
+  "rows_domain": [
+    1,
+    38
+  ],
+  "columns_per_row": 64,
+  "lookup_values_are_permutations": true,
+  "actual_generator_chain_verified": true,
+  "generated_code_bytes": 386,
+  "actual_continuation_executed": true,
+  "all_initial_flags_values": true,
+  "all_C_values_for_unaligned_cases": true,
+  "discarded_C_carries_observed": 882,
+  "cpu_stack_locations": 3,
+  "cpu_stack_written": false,
+  "all_registers_except_R": true,
+  "all_physical_ram_bytes_proved": true,
+  "write_multiplicity_proved": true,
+  "independent_numeric_oracle": true,
+  "arbitrary_aliases_proved": false,
+  "zero_row_count_256_rows_proved": false,
+  "assembly_executed": false,
+  "native_execution": false,
+  "irq_executed": false,
+  "timing_proved": false
+}

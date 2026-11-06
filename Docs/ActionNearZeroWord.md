@@ -2,7 +2,7 @@
 
 [StepNearZeroWord](../Source/Action/StepNearZeroWord.asm) находится в перенесённом
 ядре ACTION, исходная запись 17, смещения 10E9..111A, банк 5.
-Процедура вызывается из [Unknown6E6C](../Source/Action/Unknown6E6C.asm).
+Процедура вызывается из [Unknown6E6C](../Source/Action/UpdateMotionFromControls.asm).
 Игровое назначение исходного слова пока не установлено.
 
 Код допуска EnabledCode хранится в операнде LD A,n по 6EAD.

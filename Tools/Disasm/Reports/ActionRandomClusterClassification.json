@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "new_functions": 12,
+  "total_stream_functions": 15,
+  "shared_core_functions": 1,
+  "new_code_bytes": 84,
+  "new_instructions": 36,
+  "new_typed_bytes": 36,
+  "total_typed_state_bytes": 45,
+  "original_bytes_preserved": true,
+  "model_cases": 218383,
+  "full_candidate_checked_before_publication": true,
+  "original_three_physical_sources_preserved": true,
+  "assembly_executed": false
+}

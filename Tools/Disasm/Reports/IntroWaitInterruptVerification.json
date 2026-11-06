@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "total_cases": 3072,
+  "all_initial_flags_values": true,
+  "frame_values": [
+    0,
+    65535,
+    16777214,
+    16777215
+  ],
+  "start_tstates": [
+    0,
+    100,
+    69880
+  ],
+  "frame_period": 69888,
+  "actual_ROM_instructions_executed": true,
+  "actual_EI_HALT_DI_executed": true,
+  "interrupt_scheduler_enabled": true,
+  "IM": 1,
+  "irq_executed": true,
+  "irq_count_per_case": 1,
+  "keyboard_pressed": false,
+  "KSTATE_first_bytes": [
+    255,
+    255
+  ],
+  "IY_required": 23610,
+  "exact_registers_except_R": true,
+  "full_logical_RAM_including_stack": true,
+  "write_multiplicity_proved": true,
+  "maximum_additional_stack_bytes": 14,
+  "independent_numeric_oracle": true,
+  "rom_name": "48.rom",
+  "rom_sha256": "d55daa439b673b0e3f5897f99ac37ecb45f974d1862b4dadb85dec34af99cb42",
+  "arbitrary_keyboard_and_ROM_profiles_proved": false,
+  "physical_banks_separately_proved": false,
+  "native_execution": false,
+  "assembly_executed": false,
+  "timing_proved": false
+}

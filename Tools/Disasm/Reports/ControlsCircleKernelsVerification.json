@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "method": "aggregation_of_actual_original_byte_execution_reports",
+  "total_cases": 567011,
+  "reports": [
+    "Tools/Disasm/Reports/ControlsCircleHalfVerification.json",
+    "Tools/Disasm/Reports/ControlsClippedCircleHalfVerification.json",
+    "Tools/Disasm/Reports/ControlsCircleInteriorFullVerification.json",
+    "Tools/Disasm/Reports/ControlsPushSpansVerification.json"
+  ],
+  "entry_states_restricted_to_documented_initializers": true,
+  "arbitrary_internal_entry_states_exhausted": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

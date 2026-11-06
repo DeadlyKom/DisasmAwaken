@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "typed_bytes": 72,
+  "physical_records": 6,
+  "nested_structures": true,
+  "original_bytes_preserved": true,
+  "neighbor_bytes_preserved": 18,
+  "physical_records_not_asserted_as_game_count_limit": true,
+  "assembly_executed": false
+}

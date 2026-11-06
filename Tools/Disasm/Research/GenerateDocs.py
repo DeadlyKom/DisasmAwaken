@@ -106,6 +106,11 @@ def main():
         from ControlsGlyphIndicatorsFacts import qualify_restore_sp
         qualify_restore_sp(mutations,flow)
 
+    # Доказанный блок UpdateFrame пишет выбранный банк 4, а не инструкции ACTION по тем же адресам.
+    from ActionBank4Writes import qualify_mutations as qualify_bank4_writes, records as bank4_write_records
+    qualify_bank4_writes(mutations,flow)
+    write("Tools/Disasm/Reports/ActionBank4DataWrites.json",json.dumps(bank4_write_records(flow),ensure_ascii=False,indent=2))
+
     # Сохранение адресов записей в инструкции без объявления каждой записи ошибкой.
     lines = ["# Изменяемые инструкции", "", "Это непосредственные записи внутрь размеченных инструкций, включая",
              "отдельно доказанные межмодульные цели. Они включают сохранение SP, операнды и переключаемые",
@@ -170,12 +175,18 @@ def main():
                "| FBufferPoint | #02 | 35 физических записей Y,X в банке 1, см. [ControlsBufferPoints](ControlsBufferPoints.md) |",
                "| FFixedSineValue | #01 | 256 исходных знаковых значений синусоиды ACTION, см. [ActionSineTable](ActionSineTable.md) |",
                "| FSquareTableByte | #01 | 512 физических байтов двух плоскостей квадратов, см. [ControlsSquares](ControlsSquares.md) |",
-               "| FComponent24 | #03 | динамическая запись Low, Middle, High для сравнения усечённых ключей, см. [ControlsComponentCompare](ControlsComponentCompare.md) |",
+               "| FRootCacheByte | #01 | 768 физических байтов трёх плоскостей корня, см. [ActionCachedRoot](ActionCachedRoot.md) |",
+               "| FComponent24 | #03 | Low, Middle, High, три физических [ComponentWork](../Source/Action/Data/ComponentWork.asm), см. [ActionComponentEncoding](ActionComponentEncoding.md) и [ControlsComponentCompare](ControlsComponentCompare.md) |",
+               "| FActionWideVector | #0C | Три FActionWideComponent, шесть физических [WideVectors](../Source/Action/Data/WideVectors.asm), см. [ActionWideVectors](ActionWideVectors.md) |",
+               "| FActionWorkVector24 | #09 | Три FActionWorkComponent24 в дополнительном коде, физический [WorkVector24](../Source/Action/Data/WorkVector24.asm), см. [ActionSubtractWorkVector](ActionSubtractWorkVector.md) |",
+               "| FClassHandler | #02 | Handler, 26 физических [ClassHandlers](../Source/Action/Data/ClassHandlers.asm), см. [ActionClassDispatch](ActionClassDispatch.md) |",
+               "| FSignedRatioCode | #01 | Code, 256 физических [SignedRatioCodes](../Source/Action/Data/SignedRatioCodes.asm), см. [ActionSignedRatioCode](ActionSignedRatioCode.md) |",
                "| FSmallMaskSeed | #01 | 18 физических затравок масок радиусов 0..8, см. [ControlsSmallMasks](ControlsSmallMasks.md) |",
                "| FSmallMaskRow | #01 | 12 физических изменяемых строковых масок, см. [ControlsSmallMasks](ControlsSmallMasks.md) |",
                "| FBodyProjection | #04 | физические OffsetY, OffsetX, Flags, Radius, остальные флаги ещё требуют разбора, см. [ControlsSmallBodies](ControlsSmallBodies.md) |",
                "| FCircleRasterWork | #0C | физическая рабочая запись контура, Mode разобран локально, см. [ControlsCircleWork](ControlsCircleWork.md) |",
                "| FWordRandomState | #04 | физические First и Second двухсловного генератора, см. [ControlsWordRandom](ControlsWordRandom.md) |",
+               "| FFoldedRandomState | #03 | 15 физических экземпляров LowWord и FoldByte, 45 байтов, см. [ActionFoldedRandom](ActionFoldedRandom.md) |",
                "| FParameterCoefficient | #03 | пятнадцать физических Base, SlopeCode, ShiftMask, см. [ControlsParameterTables](ControlsParameterTables.md) |",
                "| FThreeRowGlyphPhase | #06 | 32 физических фазы четырёх трёхстрочных знаков, см. [ControlsThreeRowGlyph](ControlsThreeRowGlyph.md) |",
                "| FReturnDispatchEntry | #02 | 16 физических адресов для RET, полный E291 остаётся Unknown, см. [ControlsRasterReturns](ControlsRasterReturns.md) |",
@@ -187,7 +198,16 @@ def main():
                "| FKeyScanInput | #02 | 27 физических RowSelect и InputMask, см. [ActionKeyDispatchPrefix](ActionKeyDispatchPrefix.md) |",
                "| FMissileStock | #02 | физические Fallback и Preferred запаса ракет, виды запасов не установлены, см. [ActionMissileStock](ActionMissileStock.md) |",
                "| FMissileTargets | #03 | три физических кода захвата Target0..Target2, FF означает отсутствие цели, см. [ActionMissileLaunch](ActionMissileLaunch.md) |",
+               "| FActionAyFrame | #04 | 88 физических строк семи потоков и 7 терминаторов, см. [ActionAyStreams](ActionAyStreams.md) |",
+               "| FActionAimPoint | #02 | Физические байты X и Y, см. [сопровождение](ActionAimFollow.md) |",
+               "| FActionRenderNode | #0E | Создаваемый runtime-узел с неизвестными байтами 01 и 02, см. [очередь](ActionRenderQueueInsert.md) |",
+               "| FRenderPhases | #03 | Три физических фазы и вложенный снимок узла, см. [коэффициенты](ActionRenderCoefficients.md) |",
+               "| FObjectDataPointer | #02 | 128 физических указателей банка 4, см. [OBJECT3D](ActionObjectPointers.md) |",
+               "| FClipProduct | #04 | Четыре физических произведения ACTION внутри разнесённой таблицы, см. [числители](ActionClipProducts.md) |",
+               "| FLinePixelMask | #01 | 16 физических прямых и инверсных масок пиксельных фаз, см. [растеризатор](ActionLineRaster.md) |",
+               "| FRenderProjectedPoint | #05 | Runtime-точка Second, First и парный ClipCode, [коды границ](ActionVertexCodes.md) и [два физических экземпляра CF0B/CF1B](ActionClipProducts.md) |",
                "| FActionRecord | #40 | 25 физических исходных слотов и маркер, вложенные компоненты и явные неизвестные поля, см. [ActionObjectRecords](ActionObjectRecords.md) |",
+               "| FSymmetricSquareValue | #01 | 256 физических нормированных квадратов, см. [ActionProjectionClip](ActionProjectionClip.md) |",
                "| FIndexedDelta | #01 | шестнадцать физических поправок signed8, игровое соответствие индексов неизвестно, см. [ActionTypeDelta](ActionTypeDelta.md) |",
                "| FObjectGlyphClearPhase | #06 | 8 масок очистки, поля Unknown02..Unknown05 не установлены, см. [ControlsObjectProjection](ControlsObjectProjection.md) |",
                "| FGlyphIndicatorControl | #03 | физические FirstMode, ThirdGate и Unknown83, см. [ControlsGlyphIndicators](ControlsGlyphIndicators.md) |",

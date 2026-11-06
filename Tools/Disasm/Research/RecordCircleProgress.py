@@ -23,6 +23,12 @@ def main():
     for name in ('SourceVerification', 'DocumentationVerification', 'SourceLabelsVerification', 'FilePlacementVerification'):
         assert read(name)['passed']
     assert audit['registered_functions'] == inventory['fragments']
+    # Проверка обязательных условий целостности до записи новой контрольной точки.
+    for key in ('unlinked_functions','missing_includes_or_resources','missing_include_order',
+                'unresolved_global_references','duplicate_global_definitions',
+                'global_reference_case_mismatches','source_files_outside_graph','python_duplicate_literal_keys'):
+        assert not audit[key],(key,audit[key])
+    assert not audit['totals'].get('missing_continuation',0),audit['totals']
     checkpoint.update(fragments=inventory['fragments'], described=inventory['described'], unknown=inventory['unknown'],
         instruction_count=inventory['instructions'], unclassified_bytes=inventory['physical_bytes_by_kind']['unclassified'],
         unproved_contracts=audit['unknown_contract_fragments'], named_without_contract=audit['named_fragments_without_proved_contract'])
@@ -309,16 +315,777 @@ def main():
         for path in ('Tools/Disasm/Reports/ActionVectorWrapperVerification.json','Tools/Disasm/Reports/ActionVectorWrapperClassification.json'):
             if path not in checkpoint['passed_reports']:
                 checkpoint['passed_reports'].append(path)
+    if (ROOT/'Tools/Disasm/Reports/ActionObjectRecordsClassification.json').exists():
+        proof=read('ActionObjectRecordsClassification');assert proof['passed']
+        checkpoint['action_object_records']=dict(typed_bytes=1664,physical_records=26,initial_slots=25,
+            nested_structure_sizes=[2,6,64],physical_symbol_bindings=1794,
+            all_field_game_meanings_proved=False,runtime_array_limit_proved=False)
+        for path in ('Tools/Disasm/Reports/ActionObjectRecordsResearchVerification.json','Tools/Disasm/Reports/ActionObjectRecordsClassification.json'):
+            if path not in checkpoint['passed_reports']:
+                checkpoint['passed_reports'].append(path)
+        if (ROOT/'Tools/Disasm/Reports/ActionObjectRecordsAssemblyObservation.json').exists():
+            observed=read('ActionObjectRecordsAssemblyObservation');assert observed['passed']
+            checkpoint['action_object_records']['user_assembled_nested_symbols_checked']=1794
+            path='Tools/Disasm/Reports/ActionObjectRecordsAssemblyObservation.json'
+            if path not in checkpoint['passed_reports']:
+                checkpoint['passed_reports'].append(path)
+    if (ROOT/'Tools/Disasm/Reports/ActionMissileCreationClassification.json').exists():
+        created=read('ActionMissileCreationVerification');lost=read('ActionLostMissileTargetVerification')
+        assert created['passed'] and lost['passed'] and read('ActionMissileCreationClassification')['passed']
+        checkpoint['action_missile_creation']=dict(cases=created['total_cases']+lost['total_cases'],
+            created_path_cases=created['total_cases'],lost_target_path_cases=lost['total_cases'],
+            independent_complete_child_oracle=False,confirmed_code_bytes=151,confirmed_instructions=72,
+            real_ay_bank0_pointer_and_banked_text_distinguished=True,maximum_additional_stack_bytes=18,
+            physical_record_fields_used=True,stock_not_decremented_here=True,missile_movement_proved=False)
+        for path in ('Tools/Disasm/Reports/ActionMissileCreationVerification.json','Tools/Disasm/Reports/ActionLostMissileTargetVerification.json',
+                     'Tools/Disasm/Reports/ActionMissileCreationClassification.json'):
+            if path not in checkpoint['passed_reports']:
+                checkpoint['passed_reports'].append(path)
+    if (ROOT/'Tools/Disasm/Reports/ActionMissileRequestsClassification.json').exists():
+        proof=read('ActionMissileRequestsVerification');publication=read('ActionMissileRequestsClassification')
+        assert proof['passed'] and publication['passed']
+        checkpoint['action_missile_requests']=dict(cases=proof['total_cases'],paths=proof['paths'],
+            described_functions=4,confirmed_code_bytes=79,confirmed_instructions=36,
+            class_code_of_target_proved=True,capture_cleared_before_creation=True,
+            stock_only_consumed_after_creation=True,maximum_additional_stack_bytes=20,
+            independent_complete_child_oracle=False,temporary_stack_contents_independently_checked=False,
+            refresh_and_timing_checked=False,assembly_executed=False)
+        for stem in ('ActionMissileRequestsVerification','ActionMissileRequestsClassification'):
+            path='Tools/Disasm/Reports/'+stem+'.json'
+            if path not in checkpoint['passed_reports']:checkpoint['passed_reports'].append(path)
+    if (ROOT/'Tools/Disasm/Reports/ActionAyEffectsClassification.json').exists():
+        proof=read('ActionAyEffectsVerification');assert proof['passed'] and read('ActionAyEffectsClassification')['passed']
+        checkpoint['action_ay_effects']=dict(cases=proof['total_cases'],described_functions=1,
+            exact_registers_flags_refresh_sp=True,every_ram_byte_and_write_checked=True,
+            exact_ports_and_reads_checked=True,maximum_additional_stack_bytes=0,
+            channel_c_uses_r_threshold_not_single_bit=True,real_ay_hardware_executed=False,
+            ay_readback_model=proof['ay_readback_model'],assembly_executed=False)
+        for stem in ('ActionAyEffectsVerification','ActionAyEffectsClassification'):
+            path='Tools/Disasm/Reports/'+stem+'.json'
+            if path not in checkpoint['passed_reports']:checkpoint['passed_reports'].append(path)
+    if (ROOT/'Tools/Disasm/Reports/ActionAyStreamsClassification.json').exists():
+        proof=read('ActionAyStreamPlaybackVerification');assert proof['passed'] and read('ActionAyStreamsClassification')['passed']
+        checkpoint['action_ay_streams']=dict(physical_frames=proof['physical_frames'],terminators=proof['streams'],physical_bytes=proof['physical_stream_bytes'],
+            unclassified_neighbor_bytes=742-proof['physical_stream_bytes'],sequences=proof['sequences'],ticks=proof['ticks'],
+            original_stream_addresses_used=True,actual_ay_hardware_executed=False,assembly_executed=False)
+        for stem in ('ActionAyStreamPlaybackVerification','ActionAyStreamsClassification'):
+            path='Tools/Disasm/Reports/'+stem+'.json'
+            if path not in checkpoint['passed_reports']:checkpoint['passed_reports'].append(path)
+    if (ROOT/'Tools/Disasm/Reports/ActionRecordLinkEventClassification.json').exists():
+        proof=read('ActionRecordLinkEventVerification');assert proof['passed'] and read('ActionRecordLinkEventClassification')['passed']
+        checkpoint['action_record_link_event']=dict(cases=proof['total_cases'],paths=proof['paths'],
+            described_functions=1,exact_registers_flags_refresh_sp=True,every_ram_byte_and_write_multiplicity_checked=True,
+            maximum_additional_stack_bytes=0,pending_pointer_producer_proved=False,game_event_meaning_proved=False,
+            independent_complete_child_oracle=False,assembly_executed=False)
+        for stem in ('ActionRecordLinkEventVerification','ActionRecordLinkEventClassification'):
+            path='Tools/Disasm/Reports/'+stem+'.json'
+            if path not in checkpoint['passed_reports']:checkpoint['passed_reports'].append(path)
+    if (ROOT/'Tools/Disasm/Reports/ActionProjectedCaptureClassification.json').exists():
+        proof=read('ActionProjectedCaptureVerification');publication=read('ActionProjectedCaptureClassification')
+        assert proof['passed'] and publication['passed']
+        checkpoint['action_projected_capture']=dict(cases=proof['total_cases'],paths=proof['paths'],
+            described_functions=1,new_explicit_unknown_fragments=2,confirmed_code_bytes=749,
+            confirmed_instructions=390,proved_local_code_bytes=91,exact_registers_flags_refresh_sp=True,
+            every_ram_byte_and_write_multiplicity_checked=True,maximum_additional_stack_bytes=0,
+            pending_record_written_from_alternate_hl=True,whole_projection_scan_proved=False,
+            upstream_record_iteration_proved=False,assembly_executed=False)
+        checkpoint['action_record_link_event']['local_pending_pointer_writer_proved']=True
+        for stem in ('ActionProjectedCaptureVerification','ActionProjectedCaptureClassification'):
+            path='Tools/Disasm/Reports/'+stem+'.json'
+            if path not in checkpoint['passed_reports']:checkpoint['passed_reports'].append(path)
+    if (ROOT/'Tools/Disasm/Reports/ActionLogarithmTableClassification.json').exists():
+        proof=read('ActionLogarithmTableVerification');assert proof['passed'] and read('ActionLogarithmTableClassification')['passed']
+        checkpoint['action_logarithm_table']=dict(cases=proof['total_cases'],generated_table_bytes=512,
+            previously_named_contract_proved=True,exact_registers_flags_refresh_sp=True,
+            every_ram_byte_and_write_multiplicity_checked=True,maximum_additional_stack_bytes=4,
+            refresh_m1=proof['refresh_m1'],consumer_ratio_proved=False,assembly_executed=False)
+        for stem in ('ActionLogarithmTableVerification','ActionLogarithmTableClassification'):
+            path='Tools/Disasm/Reports/'+stem+'.json'
+            if path not in checkpoint['passed_reports']:checkpoint['passed_reports'].append(path)
+    if (ROOT/'Tools/Disasm/Reports/ActionExponentialTableClassification.json').exists():
+        proof=read('ActionExponentialTableVerification');assert proof['passed'] and read('ActionExponentialTableClassification')['passed']
+        checkpoint['action_exponential_table']=dict(cases=proof['total_cases'],generated_table_bytes=256,
+            previously_named_contract_proved=True,exact_registers_flags_refresh_sp=True,
+            every_ram_byte_and_write_checked=True,maximum_additional_stack_bytes=0,
+            refresh_m1=proof['refresh_m1'],consumer_ratio_proved=False,assembly_executed=False)
+        for stem in ('ActionExponentialTableVerification','ActionExponentialTableClassification'):
+            path='Tools/Disasm/Reports/'+stem+'.json'
+            if path not in checkpoint['passed_reports']:checkpoint['passed_reports'].append(path)
+    if (ROOT/'Tools/Disasm/Reports/ActionLogRatioClassification.json').exists():
+        proof=read('ActionLogRatioVerification');assert proof['passed'] and read('ActionLogRatioClassification')['passed']
+        checkpoint['action_log_ratio']=dict(cases=proof['total_cases'],paths=proof['paths'],
+            exact_registers_flags_refresh_sp=True,every_ram_byte_and_write_checked=True,
+            actual_tables_from_verified_integer_generator_formulas=True,
+            maximum_additional_stack_bytes=0,original_zero_and_negative_denominator_behavior_preserved=True,
+            self_modifying_shift_displacements_checked=True,assembly_executed=False)
+        for key in ('action_logarithm_table','action_exponential_table'):
+            checkpoint[key]['local_consumer_ratio_proved']=True
+        for stem in ('ActionLogRatioVerification','ActionLogRatioClassification'):
+            path='Tools/Disasm/Reports/'+stem+'.json'
+            if path not in checkpoint['passed_reports']:checkpoint['passed_reports'].append(path)
+    if (ROOT/'Tools/Disasm/Reports/ActionObjectHeaderClassification.json').exists():
+        proof=read('ActionObjectHeaderVerification');assert proof['passed'] and read('ActionObjectHeaderClassification')['passed']
+        checkpoint['action_object_header']=dict(cases=proof['total_cases'],cases_by_fixture=proof['cases_by_fixture'],
+            exact_registers_flags_refresh_sp=True,every_physical_ram_byte_and_write_multiplicity_checked=True,
+            maximum_additional_stack_bytes=4,real_out_and_eight_banks=True,
+            valid_game_index_range_proved=False,object_header_field_meanings_proved=False,assembly_executed=False)
+        for stem in ('ActionObjectHeaderVerification','ActionObjectHeaderClassification'):
+            path='Tools/Disasm/Reports/'+stem+'.json'
+            if path not in checkpoint['passed_reports']:checkpoint['passed_reports'].append(path)
+    if (ROOT/'Tools/Disasm/Reports/ActionScaleHeaderClassification.json').exists():
+        proof=read('ActionScaleHeaderVerification');assert proof['passed'] and read('ActionScaleHeaderClassification')['passed']
+        checkpoint['action_scale_header']=dict(cases=proof['total_cases'],proved_local_code_bytes=24,
+            confirmed_instructions=13,original_even_table_headers_checked=128,
+            exact_registers_flags_refresh_sp=True,every_ram_byte_and_write_checked=True,
+            maximum_additional_stack_bytes=0,whole_projection_scan_proved=False,assembly_executed=False)
+        for stem in ('ActionScaleHeaderVerification','ActionScaleHeaderClassification'):
+            path='Tools/Disasm/Reports/'+stem+'.json'
+            if path not in checkpoint['passed_reports']:checkpoint['passed_reports'].append(path)
+    if (ROOT/'Tools/Disasm/Reports/ActionProjectedBoundsClassification.json').exists():
+        proof=read('ActionProjectedBoundsVerification');assert proof['passed'] and read('ActionProjectedBoundsClassification')['passed']
+        checkpoint['action_projected_bounds']=dict(cases=proof['total_cases'],paths=proof['paths'],
+            proved_local_code_bytes=118,confirmed_instructions=55,children_executed_without_stubs=True,
+            independent_complete_child_oracle=False,exact_registers_flags_refresh_sp=True,
+            every_ram_byte_and_write_multiplicity_checked=True,partial_writes_preserved=True,
+            maximum_additional_stack_bytes=2,whole_projection_scan_proved=False,assembly_executed=False)
+        for stem in ('ActionProjectedBoundsVerification','ActionProjectedBoundsClassification'):
+            path='Tools/Disasm/Reports/'+stem+'.json'
+            if path not in checkpoint['passed_reports']:checkpoint['passed_reports'].append(path)
+    if (ROOT/'Tools/Disasm/Reports/ActionProjectionClipClassification.json').exists():
+        proof=read('ActionProjectionClipVerification');assert proof['passed'] and read('ActionProjectionClipClassification')['passed']
+        checkpoint['action_projection_clip']=dict(cases=proof['total_cases'],paths=proof['paths'],
+            proved_local_code_bytes=134,confirmed_instructions=79,physical_table_bytes=256,
+            physical_table_records=256,exact_registers_flags_refresh_sp=True,every_ram_byte_checked=True,
+            no_memory_writes=True,maximum_additional_stack_bytes=0,whole_projection_scan_proved=False,assembly_executed=False)
+        for stem in ('ActionProjectionClipVerification','ActionProjectionClipClassification'):
+            path='Tools/Disasm/Reports/'+stem+'.json'
+            if path not in checkpoint['passed_reports']:checkpoint['passed_reports'].append(path)
+    if (ROOT/'Tools/Disasm/Reports/ActionVectorReverseClassification.json').exists():
+        proof=read('ActionVectorReverseVerification');assert proof['passed'] and read('ActionVectorReverseClassification')['passed']
+        checkpoint['action_vector_reverse']=dict(cases=proof['total_cases'],confirmed_code_bytes=63,
+            confirmed_instructions=42,self_modifying_writers_registered=4,exact_registers_flags_refresh_sp=True,
+            every_ram_byte_and_write_multiplicity_checked=True,components_negated_without_halving=True,
+            original_8000_wrap_preserved=True,maximum_additional_stack_bytes=0,game_units_proved=False,assembly_executed=False)
+        for stem in ('ActionVectorReverseVerification','ActionVectorReverseClassification'):
+            path='Tools/Disasm/Reports/'+stem+'.json'
+            if path not in checkpoint['passed_reports']:checkpoint['passed_reports'].append(path)
+    if (ROOT/'Tools/Disasm/Reports/ActionStationTransferClassification.json').exists():
+        proof=read('ActionStationTransferVerification');assert proof['passed'] and read('ActionStationTransferClassification')['passed']
+        checkpoint['action_station_transfer']=dict(cases=proof['total_cases'],confirmed_code_bytes=11,
+            confirmed_instructions=4,exact_registers_flags_refresh_sp=True,
+            every_physical_ram_byte_and_write_multiplicity_checked=True,all_64_initial_paging_values=True,
+            maximum_additional_stack_bytes=4,external_return_not_consumed=True,station_disk_load_executed=False,assembly_executed=False)
+        for stem in ('ActionStationTransferVerification','ActionStationTransferClassification'):
+            path='Tools/Disasm/Reports/'+stem+'.json'
+            if path not in checkpoint['passed_reports']:checkpoint['passed_reports'].append(path)
+    if (ROOT/'Tools/Disasm/Reports/ActionCloseRecordClassification.json').exists():
+        proof=read('ActionCloseRecordVerification');assert proof['passed'] and read('ActionCloseRecordClassification')['passed']
+        checkpoint['action_close_record']=dict(cases=proof['total_cases'],paths=proof['paths'],described_functions=3,
+            confirmed_code_bytes=86,confirmed_instructions=44,exact_registers_flags_refresh_sp=True,
+            every_physical_ram_byte_and_write_multiplicity_checked=True,maximum_additional_stack_bytes=4,
+            auxiliary_entry_native_caller_proved=False,station_disk_load_executed=False,assembly_executed=False)
+        for stem in ('ActionCloseRecordVerification','ActionCloseRecordClassification'):
+            path='Tools/Disasm/Reports/'+stem+'.json'
+            if path not in checkpoint['passed_reports']:checkpoint['passed_reports'].append(path)
+    if (ROOT/'Tools/Disasm/Reports/ActionCloseBoundsClassification.json').exists():
+        proof=read('ActionCloseBoundsVerification');assert proof['passed'] and read('ActionCloseBoundsClassification')['passed']
+        checkpoint['action_close_bounds']=dict(cases=proof['total_cases'],paths=proof['paths'],proved_local_code_bytes=66,
+            exact_registers_flags_refresh_sp=True,every_physical_ram_byte_and_write_multiplicity_checked=True,
+            carry_propagated_between_axes=True,maximum_additional_stack_bytes=10,
+            station_transfer_retains_six_parent_stack_bytes=True,whole_projection_scan_proved=False,assembly_executed=False)
+        for stem in ('ActionCloseBoundsVerification','ActionCloseBoundsClassification'):
+            path='Tools/Disasm/Reports/'+stem+'.json'
+            if path not in checkpoint['passed_reports']:checkpoint['passed_reports'].append(path)
+    if (ROOT/'Tools/Disasm/Reports/ActionAimDataClassification.json').exists():
+        proof=read('ActionAimDataClassification')
+        assert proof['passed']
+        checkpoint['action_aim_data']=dict(proof)
+        path='Tools/Disasm/Reports/ActionAimDataClassification.json'
+        if path not in checkpoint['passed_reports']:checkpoint['passed_reports'].append(path)
+    for tag, key in (('ActionAimFollow', 'action_aim_follow'), ('ActionRenderQueueInsert', 'action_render_queue_insert'),
+                     ('ActionRenderQueueControl', 'action_render_queue_control')):
+        if (ROOT/('Tools/Disasm/Reports/'+tag+'Classification.json')).exists():
+            proof = read(tag+'Verification')
+            assert proof['passed'] and read(tag+'Classification')['passed']
+            checkpoint[key] = dict(proof)
+            for stem in (tag+'Verification', tag+'Classification'):
+                path = 'Tools/Disasm/Reports/'+stem+'.json'
+                if path not in checkpoint['passed_reports']:
+                    checkpoint['passed_reports'].append(path)
+    if (ROOT/'Tools/Disasm/Reports/ActionRenderQueueLoadVerification.json').exists():
+        proof=read('ActionRenderQueueLoadVerification')
+        assert proof['passed']
+        checkpoint['action_render_queue_load']=dict(proof)
+        path='Tools/Disasm/Reports/ActionRenderQueueLoadVerification.json'
+        if path not in checkpoint['passed_reports']:checkpoint['passed_reports'].append(path)
+    if (ROOT/'Tools/Disasm/Reports/ActionQueuedObjectClassification.json').exists():
+        checkpoint.pop('action_render_continuation',None)
+    elif (ROOT/'Tools/Disasm/Reports/ActionRenderContinuationClassification.json').exists():
+        proof=read('ActionRenderContinuationClassification')
+        assert proof['passed'] and proof['semantic_status']=='unknown'
+        checkpoint['action_render_continuation']=dict(proof)
+        for stem in ('ActionRenderContinuationVerification','ActionRenderContinuationClassification'):
+            path='Tools/Disasm/Reports/'+stem+'.json'
+            if path not in checkpoint['passed_reports']:checkpoint['passed_reports'].append(path)
+    for tag,key in (('ActionBank4Writes','action_bank4_writes'),('ActionRenderCoefficients','action_render_coefficients'),('ActionRenderMatrix','action_render_matrix'),('ActionObjectCopy','action_object_copy'),('ActionPerspective','action_perspective'),('ActionVertexGroup','action_vertex_group'),('ActionVertexProducts','action_vertex_products'),('ActionObjectVertices','action_object_vertices'),('ActionVertexAbort','action_vertex_abort'),('ActionVertexCodes','action_vertex_codes'),('ActionListedCodes','action_listed_codes'),('ActionSignedMultiply','action_signed_multiply'),('ActionFaceOrientation','action_face_orientation'),('ActionSignedDivision','action_signed_division'),('ActionClipProducts','action_clip_products'),('ActionClipIntersections','action_clip_intersections'),('ActionClipComparisons','action_clip_comparisons'),('ActionClipPointWriters','action_clip_point_writers'),('ActionClipCases','action_clip_cases')):
+        if (ROOT/('Tools/Disasm/Reports/'+tag+'Classification.json')).exists():
+            proof=read(tag+'Verification')
+            assert proof['passed'] and read(tag+'Classification')['passed']
+            checkpoint[key]=dict(proof)
+            for stem in (tag+'Verification',tag+'Classification'):
+                path='Tools/Disasm/Reports/'+stem+'.json'
+                if path not in checkpoint['passed_reports']:checkpoint['passed_reports'].append(path)
+    for tag,key in (('ActionPolygon','action_polygon'),('ActionSingleEdge','action_single_edge'),('ActionLineRaster','action_line_raster'),
+                    ('ActionPolygonPreparation','action_polygon_preparation'),('ActionPolygonRowSelection','action_polygon_row_selection'),
+                    ('ActionPolygonLeftEdge','action_polygon_left_edge'),('ActionPolygonRightEdge','action_polygon_right_edge'),
+                    ('ActionPolygonRightShortStep','action_polygon_right_short_step'),('ActionPolygonFillRows','action_polygon_fill_rows'),
+                    ('ActionPolygonSelectRight','action_polygon_select_right'),('ActionPolygonWrapLeft','action_polygon_wrap_left'),
+                    ('ActionPolygonWrapRight','action_polygon_wrap_right'),('ActionPolygonWrapLeftTop','action_polygon_wrap_left_top'),
+                    ('ActionPolygonWrapRightTop','action_polygon_wrap_right_top'),('ActionPolygonReturn','action_polygon_return'),
+                    ('ActionPacketRenderer','action_packet_renderer'),('ActionClippedPacketRenderer','action_clipped_packet_renderer'),
+                    ('ActionQueuedObject','action_queued_object'),('ActionWorkBuffer','action_work_buffer')):
+        if (ROOT/('Tools/Disasm/Reports/'+tag+'Classification.json')).exists():
+            proof=read(tag+'Verification')
+            assert proof['passed'] and read(tag+'Classification')['passed']
+            checkpoint[key]=dict(proof)
+            for suffix in ('Verification','Classification'):
+                path='Tools/Disasm/Reports/'+tag+suffix+'.json'
+                if path not in checkpoint['passed_reports']:checkpoint['passed_reports'].append(path)
+    for stem,key in (('ActionLineMasksDataClassification','action_line_masks_data'),
+                     ('ActionClipPointsDataClassification','action_clip_points_data'),
+                     ('ActionLineModesVerification','action_line_modes'),
+                     ('ActionLineModesRegistration','action_line_modes_registration'),
+                     ('ActionClipTableAliasVerification','action_clip_table_alias'),
+                     ('ActionPolygonFillBitmapVerification','action_polygon_fill_profile'),
+                     ('ActionPolygonFlowNamesVerification','action_polygon_flow_names'),
+                     ('ActionModelPacketsVerification','action_model_packets'),
+                     ('ThreeDOverlayMirrorVerification','three_d_overlay_mirror'),
+                     ('ActionClipInternalLabelsVerification','action_clip_internal_labels')):
+        if (ROOT/('Tools/Disasm/Reports/'+stem+'.json')).exists():
+            proof=read(stem);assert proof['passed']
+            checkpoint[key]=dict(proof)
+            path='Tools/Disasm/Reports/'+stem+'.json'
+            if path not in checkpoint['passed_reports']:checkpoint['passed_reports'].append(path)
+    if (ROOT/'Tools/Disasm/Reports/ThreeDOverlayMirrorClassification.json').exists():
+        assert read('ThreeDOverlayMirrorClassification')['passed']
+        checkpoint['three_d_overlay_mirror_publication']=read('ThreeDOverlayMirrorClassification')
+        path='Tools/Disasm/Reports/ThreeDOverlayMirrorClassification.json'
+        if path not in checkpoint['passed_reports']:checkpoint['passed_reports'].append(path)
+    if (ROOT/'Tools/Disasm/Reports/ActionPolygonFillBitmapVerification.json').exists():
+        checkpoint.pop('action_polygon_fill_partial',None)
+    if (ROOT/'Tools/Disasm/Reports/ActionRenderPhasesClassification.json').exists():
+        proof=read('ActionRenderPhasesClassification')
+        assert proof['passed']
+        checkpoint['action_render_phases']=dict(proof)
+        path='Tools/Disasm/Reports/ActionRenderPhasesClassification.json'
+        if path not in checkpoint['passed_reports']:checkpoint['passed_reports'].append(path)
+    if (ROOT/'Tools/Disasm/Reports/ActionObjectPointersClassification.json').exists():
+        proof=read('ActionObjectPointersClassification')
+        assert proof['passed']
+        checkpoint['action_object_pointers']=dict(proof)
+        path='Tools/Disasm/Reports/ActionObjectPointersClassification.json'
+        if path not in checkpoint['passed_reports']:checkpoint['passed_reports'].append(path)
     partial_path = ROOT/'Tools/Disasm/Reports/ControlsRatioInsideVerification.json'
     if partial_path.exists():
         proof = read('ControlsRatioInsideVerification')
         assert proof['passed'] and proof['unknown_status_preserved']
         checkpoint['controls_ratio_inside_partial'] = dict(cases=proof['total_cases'],
             domain=proof['domain'], whole_procedure_proved=False, refresh_and_stack_values_proved=False,
-            unknown_status_preserved=True, assembly_executed=False)
+            source_status_when_partial_check_was_published="unknown",
+            later_whole_ratio_classification=(ROOT/"Tools/Disasm/Reports/ControlsProjectionAlgorithmClassification.json").exists(),
+            assembly_executed=False)
         path = 'Tools/Disasm/Reports/ControlsRatioInsideVerification.json'
         if path not in checkpoint['passed_reports']:
             checkpoint['passed_reports'].append(path)
+    for tag,key in (('IntroAttributeWriter','intro_attribute_writer'),
+                    ('IntroTextureScale','intro_texture_scale'),('IntroScatter','intro_scatter'),
+                    ('IntroPointerSampler','intro_pointer_sampler'),('IntroScrolledSampler','intro_scrolled_sampler'),
+                    ('FinalHalt','final_halt'),('BootstrapRelocation','bootstrap_relocation'),
+                    ('IntroLookupTransfer','intro_lookup_transfer')):
+        if not (ROOT/('Tools/Disasm/Reports/'+tag+'Classification.json')).exists():
+            continue
+        proof=read(tag+'Verification')
+        assert proof['passed'] and read(tag+'Classification')['passed']
+        checkpoint[key]=dict(cases=proof['total_cases'],exact_registers_except_R=True,
+            all_physical_ram_bytes_proved=True,write_multiplicity_proved=True,
+            proof_report='Tools/Disasm/Reports/'+tag+'Verification.json',
+            assembly_executed=False,irq_executed=False,native_execution=False)
+        for suffix in ('Verification','Classification'):
+            path='Tools/Disasm/Reports/'+tag+suffix+'.json'
+            if path not in checkpoint['passed_reports']:checkpoint['passed_reports'].append(path)
+    for tag,key in (('IntroScreen','intro_screen'),('ActionUnpack','action_unpack')):
+        if not (ROOT/('Tools/Disasm/Reports/'+tag+'Classification.json')).exists():continue
+        proof=read(tag+'Verification')
+        assert proof['passed'] and read(tag+'Classification')['passed']
+        checkpoint[key]=dict(cases=proof['total_cases'],exact_registers_except_R=True,
+            full_logical_RAM_including_stack=proof.get('full_logical_RAM_including_stack',False),
+            full_logical_RAM_except_stack_residue=proof.get('full_logical_RAM_except_stack_residue',False),
+            write_multiplicity_proved=proof.get('write_multiplicity_proved',False),
+            physical_banks_separately_proved=False,proof_report='Tools/Disasm/Reports/'+tag+'Verification.json',
+            assembly_executed=False,irq_executed=False,native_execution=False)
+        for suffix in ('Verification','Classification'):
+            path='Tools/Disasm/Reports/'+tag+suffix+'.json'
+            if path not in checkpoint['passed_reports']:checkpoint['passed_reports'].append(path)
+    for tag,key in (('IntroWaitInterrupt','intro_wait_interrupt'),
+                    ('IntroPresentAttributes','intro_present_attributes'),('IntroInterlacedFrame','intro_interlaced_frame'),
+                    ('IntroLookupContinuation','intro_lookup_continuation')):
+        if not (ROOT/('Tools/Disasm/Reports/'+tag+'Classification.json')).exists():continue
+        proof=read(tag+'Verification')
+        assert proof['passed'] and proof['irq_executed'] and read(tag+'Classification')['passed']
+        checkpoint[key]=dict(cases=proof['total_cases'],exact_registers_except_R=True,
+            write_multiplicity_proved=True,irq_model_execution=True,actual_ROM_instructions_executed=True,
+            physical_banks_separately_proved=proof.get('all_physical_ram_bytes_proved',False),
+            rom_profile_sha256=proof['rom_sha256'],proof_report='Tools/Disasm/Reports/'+tag+'Verification.json',
+            assembly_executed=False,native_execution=False)
+        for suffix in ('Verification','Classification'):
+            path='Tools/Disasm/Reports/'+tag+suffix+'.json'
+            if path not in checkpoint['passed_reports']:checkpoint['passed_reports'].append(path)
+    if (ROOT/'Tools/Disasm/Reports/ActionRandomClusterClassification.json').exists():
+        proof=read('ActionFoldedRandomVerification');cluster=read('ActionRandomClusterClassification')
+        assert proof['passed'] and cluster['passed'] and proof['original_stream_entries']==15
+        checkpoint['action_folded_random']=dict(cases=proof['total_cases'],stream_entries=15,
+            physical_state_records=15,typed_state_bytes=45,exact_registers_including_R=True,
+            all_physical_ram_bytes_proved=True,write_multiplicity_proved=True,
+            core_refresh_m1=63,wrapper_refresh_m1=66,full_24_bit_domain_proved=False,
+            period_and_uniformity_proved=False,assembly_executed=False,irq_executed=False,native_execution=False)
+        for stem in ('ActionFoldedRandomVerification','ActionFoldedRandomClassification',
+                     'ActionFoldedRandomDataClassification','ActionRandomClusterClassification'):
+            assert read(stem)['passed']
+            path='Tools/Disasm/Reports/'+stem+'.json'
+            if path not in checkpoint['passed_reports']:checkpoint['passed_reports'].append(path)
+    for tag,key in (('ActionRecordReuse','action_record_reuse'),
+                    ('ActionOffsetRestore','action_offset_restore'),('ActionRecordSelection','action_record_selection'),
+                    ('ActionRecordScale','action_record_scale'),('ActionIYRecordReuse','action_iy_record_reuse'),
+                    ('ActionClassReuse','action_class_reuse'),('ActionRejectRecord','action_reject_record'),
+                    ('ActionRecordWarningReturn','action_record_warning_return'),
+                    ('ActionRecordBaseReset','action_record_base_reset'),('ActionClass14Reuse','action_class14_reuse'),
+                    ('ActionBankedBufferInit','action_banked_buffer_init'),
+                    ('ActionThirdGlyphPublish','action_third_glyph_publish'),('ActionThirdGlyphStack','action_third_glyph_stack'),
+                    ('ActionThirdGlyphVector','action_third_glyph_vector'),
+                    ('ActionComponentEncoding','action_component_encoding'),('ActionComponentStack','action_component_stack'),
+                    ('ActionComponentTransform','action_component_transform')):
+        if not (ROOT/('Tools/Disasm/Reports/'+tag+'Classification.json')).exists():continue
+        proof=read(tag+'Verification')
+        assert proof['passed'] and read(tag+'Classification')['passed']
+        checkpoint[key]=dict(cases=proof['total_cases'],exact_registers_including_R=True,
+            all_physical_ram_bytes_proved=proof['all_physical_ram_bytes_proved'],
+            write_multiplicity_proved=True,hardware_bus_stack_write_order_proved=False,
+            proof_report='Tools/Disasm/Reports/'+tag+'Verification.json',
+            assembly_executed=False,irq_executed=False,native_execution=False)
+        for suffix in ('Verification','Classification'):
+            path='Tools/Disasm/Reports/'+tag+suffix+'.json'
+            if path not in checkpoint['passed_reports']:checkpoint['passed_reports'].append(path)
+    if (ROOT/'Tools/Disasm/Reports/ActionRecordUpdateClassification.json').exists():
+        proof=read('ActionRecordUpdateVerification')
+        assert proof['passed'] and read('ActionRecordUpdateClassification')['passed']
+        checkpoint['action_record_update']=dict(cases=proof['total_cases'],exact_registers_except_R=True,
+            refresh_R_proved=False,all_physical_ram_bytes_proved=True,write_multiplicity_proved=True,
+            actual_children_and_banked_queue_executed=True,partial_component_updates_preserved_on_rejection=True,
+            queue_results=proof['queue_results'],full_component_product_exhausted=False,
+            assembly_executed=False,irq_executed=False,native_execution=False)
+        for suffix in ('Verification','Classification'):
+            path='Tools/Disasm/Reports/ActionRecordUpdate'+suffix+'.json'
+            if path not in checkpoint['passed_reports']:checkpoint['passed_reports'].append(path)
+    if (ROOT/'Tools/Disasm/Reports/ActionCachedRootClassification.json').exists():
+        proof=read('ActionCachedRootVerification')
+        assert proof['passed'] and read('ActionCachedRootClassification')['passed']
+        checkpoint['action_cached_root']=dict(cases=proof['total_cases'],cases_by_entry=proof['cases_by_entry'],
+            exact_registers_including_R=True,all_physical_ram_bytes_proved=True,write_multiplicity_proved=True,
+            ordinary_root_domain=proof['ordinary_root_domain'],different_upper_domain=proof['different_upper_domain'],
+            original_upper_table_behavior_preserved=True,domain_validity_in_game_callers_proved=False,
+            assembly_executed=False,irq_executed=False,native_execution=False)
+        for suffix in ('Verification','Classification'):
+            path='Tools/Disasm/Reports/ActionCachedRoot'+suffix+'.json'
+            if path not in checkpoint['passed_reports']:checkpoint['passed_reports'].append(path)
+    if (ROOT/'Tools/Disasm/Reports/ControlsRootCacheDataClassification.json').exists():
+        proof=read('ControlsRootCacheDataClassification');assert proof['passed']
+        checkpoint['controls_root_cache_data']=dict(typed_bytes=768,physical_records=768,
+            original_upper_rows_preserved=23,original_lower_exceptions_preserved=3,
+            formula_used_to_generate_build_data=False,assembly_executed=False)
+        path='Tools/Disasm/Reports/ControlsRootCacheDataClassification.json'
+        if path not in checkpoint['passed_reports']:checkpoint['passed_reports'].append(path)
+    if (ROOT/'Tools/Disasm/Reports/ActionComponentWorkClassification.json').exists():
+        proof=read('ActionComponentWorkClassification');assert proof['passed']
+        checkpoint['action_component_work']=dict(typed_bytes=9,physical_records=3,existing_structure_reused='FComponent24',
+            neighbor_bytes_preserved=90,assembly_executed=False)
+        path='Tools/Disasm/Reports/ActionComponentWorkClassification.json'
+        if path not in checkpoint['passed_reports']:checkpoint['passed_reports'].append(path)
+    if (ROOT/'Tools/Disasm/Reports/ControlsProjectionAlgorithmClassification.json').exists():
+        proof=read('ControlsBodyProjectionVerification');ratio=read('ControlsProjectionRatioVerification')
+        assert proof['passed'] and ratio['passed'] and read('ControlsProjectionAlgorithmClassification')['passed']
+        checkpoint['controls_projection_algorithm']=dict(cases=proof['total_cases'],ratio_cases=ratio['total_cases'],
+            exact_registers_except_R=True,all_nonstack_physical_ram_proved=True,
+            parent_nonstack_write_multiplicity_proved=True,maximum_additional_stack_bytes=6,
+            stack_residue_values_and_R_proved=False,partial_projection_writes_preserved=True,
+            full_component_product_exhausted=False,assembly_executed=False,irq_executed=False,native_execution=False)
+        for stem in ('ControlsBodyProjectionVerification','ControlsProjectionRatioVerification','ControlsProjectionAlgorithmClassification'):
+            path='Tools/Disasm/Reports/'+stem+'.json'
+            if path not in checkpoint['passed_reports']:checkpoint['passed_reports'].append(path)
+    if (ROOT/'Tools/Disasm/Reports/ControlsProjectionGateClassification.json').exists():
+        proof=read('ControlsProjectionGateVerification');assert proof['passed'] and read('ControlsProjectionGateClassification')['passed']
+        checkpoint['controls_projection_gate']=dict(cases=proof['total_cases'],exact_registers_except_R=True,
+            all_nonstack_physical_ram_and_write_multiplicity_proved=True,maximum_additional_stack_bytes=8,
+            fixed_reference_component=2,stack_residue_values_and_R_proved=False,
+            full_component_product_exhausted=False,assembly_executed=False,irq_executed=False,native_execution=False)
+        for suffix in ('Verification','Classification'):
+            path='Tools/Disasm/Reports/ControlsProjectionGate'+suffix+'.json'
+            if path not in checkpoint['passed_reports']:checkpoint['passed_reports'].append(path)
+    if (ROOT/'Tools/Disasm/Reports/ActionClassDispatchClassification.json').exists():
+        proof=read('ActionClassDispatchVerification');assert proof['passed'] and read('ActionClassDispatchClassification')['passed']
+        checkpoint['action_class_dispatch']=dict(cases=proof['total_cases'],exact_registers_including_R=True,
+            all_physical_ram_bytes_proved=True,cpu_stack_written=False,execution_stopped_after_indirect_jump=True,
+            target_handler_semantics_proved=False,class_domain_in_all_game_writers_proved=False,assembly_executed=False)
+        for suffix in ('Verification','Classification'):
+            path='Tools/Disasm/Reports/ActionClassDispatch'+suffix+'.json'
+            if path not in checkpoint['passed_reports']:checkpoint['passed_reports'].append(path)
+    if (ROOT/'Tools/Disasm/Reports/ActionClassHandlersClassification.json').exists():
+        proof=read('ActionClassHandlersClassification');assert proof['passed']
+        checkpoint['action_class_handlers']=dict(typed_bytes=52,physical_records=26,structure='FClassHandler',
+            neighboring_code_not_part_of_table=True,assembly_executed=False)
+        path='Tools/Disasm/Reports/ActionClassHandlersClassification.json'
+        if path not in checkpoint['passed_reports']:checkpoint['passed_reports'].append(path)
+    for tag,key in (('ActionLinkOverride','action_link_override'),('ActionClass9Link','action_class9_link'),('ActionIgnoredClasses','action_ignored_classes'),('ActionRecordsExcept6And7','action_records_except_6_and_7'),
+                    ('ActionRecords6Or7','action_records_6_or_7'),('ActionRecords5Or14','action_records_5_or_14'),
+                    ('ActionRandomFilteredRecord','action_random_filtered_record')):
+        if not (ROOT/('Tools/Disasm/Reports/'+tag+'Classification.json')).exists():continue
+        proof=read(tag+'Verification');assert proof['passed'] and read(tag+'Classification')['passed']
+        checkpoint[key]=dict(cases=proof['total_cases'],exact_registers_including_R=True,
+            all_physical_ram_bytes_proved=True,write_multiplicity_proved=True,
+            maximum_additional_stack_bytes=0 if tag in ('ActionLinkOverride','ActionClass9Link','ActionIgnoredClasses') else 6,
+            full_game_field_meanings_proved=False,assembly_executed=False,irq_executed=False,native_execution=False)
+        if tag=='ActionRandomFilteredRecord':
+            checkpoint[key].update(actual_stream_10_executed=True,random_gate_threshold=160,gate_result=26,
+                random_distribution_and_period_proved=False,complete_24_bit_state_domain_exhausted=False)
+        for suffix in ('Verification','Classification'):
+            path='Tools/Disasm/Reports/'+tag+suffix+'.json'
+            if path not in checkpoint['passed_reports']:checkpoint['passed_reports'].append(path)
+    if (ROOT/'Tools/Disasm/Reports/ActionClass0LinkClassification.json').exists():
+        proof=read('ActionClass0LinkVerification');assert proof['passed'] and read('ActionClass0LinkClassification')['passed']
+        checkpoint['action_class0_link']=dict(cases=proof['total_cases'],cases_by_entry=proof['cases_by_entry'],
+            exact_registers_including_R=True,all_physical_ram_bytes_proved=True,write_multiplicity_proved=True,
+            maximum_additional_stack_bytes=8,zero_override_still_continues=True,random_distribution_and_period_proved=False,
+            complete_state_and_list_product_exhausted=False,assembly_executed=False,irq_executed=False,native_execution=False)
+        for suffix in ('Verification','Classification'):
+            path='Tools/Disasm/Reports/ActionClass0Link'+suffix+'.json'
+            if path not in checkpoint['passed_reports']:checkpoint['passed_reports'].append(path)
+    if (ROOT/'Tools/Disasm/Reports/ActionPreferredDispatchClassification.json').exists():
+        proof=read('ActionPreferredRecordVerification');assert proof['passed'] and read('ActionPreferredDispatchClassification')['passed']
+        checkpoint['action_preferred_record']=dict(cases=proof['total_cases'],cases_by_entry=proof['cases_by_entry'],
+            exact_registers_including_R=True,all_physical_ram_bytes_proved=True,write_multiplicity_proved=True,
+            maximum_additional_stack_bytes=6,priority_0_then_7_then_5_preserved=True,
+            class3_prevents_class18_update=True,only_first_class18_updated=True,bases_reset_on_all_returns=True,
+            complete_state_and_list_product_exhausted=False,random_distribution_and_period_proved=False,
+            assembly_executed=False,irq_executed=False,native_execution=False)
+        stems=['ActionPreferredRecordVerification']
+        for tag in ('ActionPreferredApply','ActionPreferredChance','ActionPreferredZeroBridge','ActionPreferredSevenBridge','ActionPreferredDispatch'):
+            stems.extend([tag+'Verification',tag+'Classification'])
+        for stem in stems:
+            assert read(stem)['passed']
+            path='Tools/Disasm/Reports/'+stem+'.json'
+            if path not in checkpoint['passed_reports']:checkpoint['passed_reports'].append(path)
+    for tag,key in (('ActionAbsSigned32','action_abs_signed32'),('ActionContextWordPairs','action_context_word_pairs'),
+                    ('ActionVectorHighMaximum','action_vector_high_maximum'),('ActionSignedRatioCode','action_signed_ratio_code')):
+        if not (ROOT/('Tools/Disasm/Reports/'+tag+'Classification.json')).exists():continue
+        proof=read(tag+'Verification');assert proof['passed'] and read(tag+'Classification')['passed']
+        checkpoint[key]=dict(cases=proof['total_cases'],exact_registers_including_R=True,
+            all_physical_ram_bytes_proved=True,maximum_additional_stack_bytes=6 if tag=='ActionSignedRatioCode' else 0,
+            full_game_meaning_proved=False,assembly_executed=False,irq_executed=False,native_execution=False)
+        if tag=='ActionVectorHighMaximum':checkpoint[key].update(complete_three_byte_product_exhausted=True)
+        if tag=='ActionSignedRatioCode':checkpoint[key].update(original_zero_pair_code=21,
+            ordinary_atan2_equivalence_proved=False,table_indices_observed=len(proof['table_indices_observed']))
+        for suffix in ('Verification','Classification'):
+            path='Tools/Disasm/Reports/'+tag+suffix+'.json'
+            if path not in checkpoint['passed_reports']:checkpoint['passed_reports'].append(path)
+    if (ROOT/'Tools/Disasm/Reports/ActionSignedRatioCodesClassification.json').exists():
+        proof=read('ActionSignedRatioCodesClassification');assert proof['passed']
+        checkpoint['action_signed_ratio_codes']=dict(typed_bytes=256,physical_records=256,structure='FSignedRatioCode',
+            original_bytes_preserved=True,formula_used_to_generate_build_data=False,observed_table_indices=proof['observed_table_indices'],assembly_executed=False)
+        path='Tools/Disasm/Reports/ActionSignedRatioCodesClassification.json'
+        if path not in checkpoint['passed_reports']:checkpoint['passed_reports'].append(path)
+    if (ROOT/'Tools/Disasm/Reports/ActionHalfDeltaCodesClassification.json').exists():
+        proof=read('ActionHalfDeltaCodesVerification');assert proof['passed'] and read('ActionHalfDeltaCodesClassification')['passed']
+        checkpoint['action_half_delta_codes']=dict(cases=proof['total_cases'],exact_registers_except_R=True,
+            all_physical_ram_bytes_proved=True,write_multiplicity_proved=True,maximum_additional_stack_bytes=14,
+            real_ports_and_eight_banks=True,initial_7ffd_values=proof['initial_7ffd_values'],final_7ffd=16,
+            proven_delta_range=[-32767,32767],root_input_upper_bound=0x7FFE,
+            multiplication_second_operand_8000_unreachable=True,bad_upper_root_table_domain_unreachable_for_this_caller=True,
+            refresh_R_proved=False,complete_six_word_product_exhausted=False,
+            assembly_executed=False,irq_executed=False,native_execution=False)
+        if 'action_cached_root' in checkpoint:
+            checkpoint['action_cached_root'].update(caller_AD5A_domain_proved=True,caller_AD5A_upper_bound=0x7FFE)
+        for suffix in ('Verification','Classification'):
+            path='Tools/Disasm/Reports/ActionHalfDeltaCodes'+suffix+'.json'
+            if path not in checkpoint['passed_reports']:checkpoint['passed_reports'].append(path)
+    for tag,key in (('ActionRecordCodeStep','action_record_code_step'),('ActionClass3LinkCount','action_class3_link_count')):
+        if not (ROOT/('Tools/Disasm/Reports/'+tag+'Classification.json')).exists():continue
+        proof=read(tag+'Verification');assert proof['passed'] and read(tag+'Classification')['passed']
+        checkpoint[key]=dict(cases=proof['total_cases'],all_physical_ram_bytes_proved=True,
+            exact_registers_including_R=tag=='ActionClass3LinkCount',
+            assembly_executed=False,irq_executed=False,native_execution=False)
+        if tag=='ActionRecordCodeStep':
+            checkpoint[key].update(exact_direct_registers_including_R=True,exact_root_registers_except_R=True,
+                maximum_additional_stack_bytes=16,asymmetric_step_rules_preserved=True,
+                root_refresh_R_proved=False,complete_five_byte_product_exhausted=False)
+        else:
+            checkpoint[key].update(cpu_stack_written=False,maximum_additional_stack_bytes=0,
+                count_saturates_at_two=True,complete_list_product_exhausted=False)
+        for suffix in ('Verification','Classification'):
+            path='Tools/Disasm/Reports/'+tag+suffix+'.json'
+            if path not in checkpoint['passed_reports']:checkpoint['passed_reports'].append(path)
+    for tag,key in (('ActionFoldedNearWords','action_folded_near_words'),('ActionClampVectorWords','action_clamp_vector_words')):
+        if not (ROOT/('Tools/Disasm/Reports/'+tag+'Classification.json')).exists():continue
+        proof=read(tag+'Verification');assert proof['passed'] and read(tag+'Classification')['passed']
+        checkpoint[key]=dict(cases=proof['total_cases'],exact_registers_including_R=True,
+            all_physical_ram_bytes_proved=True,maximum_additional_stack_bytes=6 if tag=='ActionClampVectorWords' else 0,
+            assembly_executed=False,irq_executed=False,native_execution=False)
+        if tag=='ActionFoldedNearWords':checkpoint[key].update(signed_interval=[-60,59],complete_three_word_product_exhausted=False)
+        else:checkpoint[key].update(signs_read_from_original_bit23=True,complete_three_dword_product_exhausted=False)
+        for suffix in ('Verification','Classification'):
+            path='Tools/Disasm/Reports/'+tag+suffix+'.json'
+            if path not in checkpoint['passed_reports']:checkpoint['passed_reports'].append(path)
+    for tag,key,depth,with_r in (('ActionWideTargetStep','action_wide_target_step',16,False),
+            ('ActionNearVectorSearch','action_near_vector_search',4,True),('ActionSelectWideTarget','action_select_wide_target',16,False)):
+        if not (ROOT/('Tools/Disasm/Reports/'+tag+'Classification.json')).exists():continue
+        proof=read(tag+'Verification');assert proof['passed'] and read(tag+'Classification')['passed']
+        checkpoint[key]=dict(cases=proof['total_cases'],exact_registers_including_R=with_r,
+            exact_registers_except_R=not with_r,all_physical_ram_bytes_proved=True,
+            maximum_additional_stack_bytes=depth,write_multiplicity_and_stack_residue_proved=True,
+            complete_input_product_exhausted=False,assembly_executed=False,irq_executed=False,native_execution=False)
+        for suffix in ('Verification','Classification'):
+            path='Tools/Disasm/Reports/'+tag+suffix+'.json'
+            if path not in checkpoint['passed_reports']:checkpoint['passed_reports'].append(path)
+    if (ROOT/'Tools/Disasm/Reports/ActionWideVectorsClassification.json').exists():
+        proof=read('ActionWideVectorsClassification');assert proof['passed']
+        checkpoint['action_wide_vectors']=dict(typed_bytes=72,physical_records=6,nested_structures=True,
+            original_bytes_preserved=True,neighbor_bytes_preserved=18,game_count_bound_proved=False,assembly_executed=False)
+        path='Tools/Disasm/Reports/ActionWideVectorsClassification.json'
+        if path not in checkpoint['passed_reports']:checkpoint['passed_reports'].append(path)
+    if (ROOT/'Tools/Disasm/Reports/ActionControlDecayClassification.json').exists():
+        proof=read('ActionControlDecayVerification');assert proof['passed'] and read('ActionControlDecayClassification')['passed']
+        checkpoint['action_control_decay']=dict(cases=proof['total_cases'],exact_registers_including_R=True,
+            all_physical_ram_bytes_proved=True,write_multiplicity_and_stack_residue_proved=True,maximum_additional_stack_bytes=6,
+            delayed_channel_gate_reads_old_value_before_latch=True,phase_is_circular_rotation_not_boolean_toggle=True,
+            complete_input_product_exhausted=False,assembly_executed=False,irq_executed=False,native_execution=False)
+        for suffix in ('Verification','Classification'):
+            path='Tools/Disasm/Reports/ActionControlDecay'+suffix+'.json'
+            if path not in checkpoint['passed_reports']:checkpoint['passed_reports'].append(path)
+    for proof_tag,key,entry_tags,size in (
+        ('ActionControlKeys','action_control_keys',('ActionKeyTurnNegative','ActionKeyTurnPositive','ActionKeyXNegative','ActionKeyXPositive','ActionKeyYNegative','ActionKeyYPositive'),210),
+        ('ActionGaugeWordKeys','action_gauge_word_keys',('ActionKeyGaugeIncrease','ActionKeyGaugeDecrease'),71)):
+        if not all((ROOT/('Tools/Disasm/Reports/'+tag+'Classification.json')).exists() for tag in entry_tags):continue
+        proof=read(proof_tag+'Verification');assert proof['passed']
+        for tag in entry_tags:assert read(tag+'Verification')['passed'] and read(tag+'Classification')['passed']
+        checkpoint[key]=dict(cases=proof['total_cases'],entries=len(entry_tags),confirmed_code_bytes=size,
+            exact_registers_including_R=True,all_physical_ram_bytes_proved=True,write_multiplicity_proved=True,
+            cpu_stack_written=False,assembly_executed=False,irq_executed=False,native_execution=False)
+        if proof_tag=='ActionControlKeys':checkpoint[key].update(complete_counter_value_products_all_six_entries=True)
+        else:checkpoint[key].update(complete_word_limit_product_exhausted=False,original_sign_and_bit4_checks_preserved=True)
+        stems=[proof_tag+'Verification']+[tag+suffix for tag in entry_tags for suffix in ('Verification','Classification')]
+        for stem in stems:
+            path='Tools/Disasm/Reports/'+stem+'.json'
+            if path not in checkpoint['passed_reports']:checkpoint['passed_reports'].append(path)
+    if all((ROOT/('Tools/Disasm/Reports/'+tag+'Classification.json')).exists() for tag in ('ActionBankedCallback','ActionBankedCallbackReturn')):
+        proof=read('ActionBankedCallbackCombinedVerification');assert proof['passed'] and proof['total_cases']==786432
+        checkpoint['action_banked_callback']=dict(cases=proof['total_cases'],dispatch_cases=393216,return_cases=393216,
+            exact_registers_including_R=True,all_physical_ram_bytes_proved=True,write_multiplicity_and_stack_residue_proved=True,
+            maximum_additional_stack_bytes=4,real_ports_and_lock_behaviour=True,dispatch_stopped_after_indirect_jump=True,
+            callback_semantics_proved=False,assembly_executed=False,irq_executed=False,native_execution=False)
+        stems=['ActionBankedCallbackCombinedVerification']+[tag+suffix for tag in ('ActionBankedCallback','ActionBankedCallbackReturn') for suffix in ('Verification','Classification')]
+        for stem in stems:
+            assert read(stem)['passed'];path='Tools/Disasm/Reports/'+stem+'.json'
+            if path not in checkpoint['passed_reports']:checkpoint['passed_reports'].append(path)
+    if (ROOT/'Tools/Disasm/Reports/ControlsCircleInteriorFullClassification.json').exists():
+        proof=read('ControlsCircleInteriorFullVerification');assert proof['passed'] and read('ControlsCircleInteriorFullClassification')['passed']
+        checkpoint['controls_circle_interior_full']=dict(cases=proof['total_cases'],modeled_rows=proof['modeled_rows'],
+            exact_registers_except_R=True,refresh_R_proved=False,all_physical_ram_bytes_proved=True,
+            all_nonpixel_values_and_write_multiplicity_proved=True,pixel_write_multiplicity_proved=False,
+            maximum_additional_stack_bytes=8,stack_positions=proof['stack_positions'],horizontal_unclipped_domain=True,
+            vertical_clipping_proved=True,whole_large_renderer_proved=False,
+            assembly_executed=False,irq_executed=False,native_execution=False)
+        for suffix in ('Verification','Classification'):
+            path='Tools/Disasm/Reports/ControlsCircleInteriorFull'+suffix+'.json'
+            if path not in checkpoint['passed_reports']:checkpoint['passed_reports'].append(path)
+    if (ROOT/'Tools/Disasm/Reports/ControlsCircleHalfClassification.json').exists():
+        proof=read('ControlsCircleHalfVerification');assert proof['passed'] and read('ControlsCircleHalfClassification')['passed']
+        checkpoint['controls_circle_half']=dict(cases=proof['total_cases'],modeled_rows=proof['modeled_rows'],
+            exact_registers_except_R=True,refresh_R_proved=False,all_physical_ram_bytes_proved=True,
+            all_nonpixel_values_and_write_multiplicity_proved=True,pixel_write_multiplicity_proved=False,
+            all_valid_x_y_pairs_both_directions=True,initial_norm_upper_bound=65025,all_input_AF_both_directions=True,
+            initial_same_byte_exit_preserved=True,maximum_additional_stack_bytes=6,horizontal_clipping_kernels_proved=False,
+            assembly_executed=False,irq_executed=False,native_execution=False)
+        for suffix in ('Verification','Classification'):
+            path='Tools/Disasm/Reports/ControlsCircleHalf'+suffix+'.json'
+            if path not in checkpoint['passed_reports']:checkpoint['passed_reports'].append(path)
+    if (ROOT/'Tools/Disasm/Reports/ControlsClippedCircleHalfClassification.json').exists():
+        proof=read('ControlsClippedCircleHalfVerification');assert proof['passed'] and read('ControlsClippedCircleHalfClassification')['passed']
+        checkpoint['controls_clipped_circle_half']=dict(cases=proof['total_cases'],modeled_rows=proof['modeled_rows'],
+            transitions_to_unclipped_kernel=proof['transitions_to_unclipped_kernel'],exact_registers_except_R=True,
+            all_physical_ram_bytes_proved=True,all_nonpixel_values_and_write_multiplicity_proved=True,
+            original_EXX_active_exit_preserved=True,pixel_write_multiplicity_proved=False,
+            all_256_AFprime_thresholds_on_selected_geometry=True,complete_input_product_exhausted=False,
+            maximum_additional_stack_bytes=6,whole_large_renderer_proved=False,
+            assembly_executed=False,irq_executed=False,native_execution=False)
+        for suffix in ('Verification','Classification'):
+            path='Tools/Disasm/Reports/ControlsClippedCircleHalf'+suffix+'.json'
+            if path not in checkpoint['passed_reports']:checkpoint['passed_reports'].append(path)
+    if (ROOT/'Tools/Disasm/Reports/ControlsCircleKernelsClassification.json').exists():
+        proof=read('ControlsCircleKernelsVerification');assert proof['passed'] and read('ControlsCircleKernelsClassification')['passed']
+        checkpoint['controls_circle_kernels']=dict(aggregate_model_cases=proof['total_cases'],
+            proof_is_report_aggregation=True,entry_states_restricted_to_documented_initializers=True,
+            arbitrary_internal_entry_states_exhausted=False,normal_and_both_clipped_kernels_named=True,
+            separate_push_resume_fragment=True,whole_large_renderer_proved=False,
+            assembly_executed=False,irq_executed=False,native_execution=False)
+        for stem in ('ControlsCircleKernelsVerification','ControlsCircleKernelsClassification','ControlsLeftCoreSplitClassification'):
+            assert read(stem)['passed'];path='Tools/Disasm/Reports/'+stem+'.json'
+            if path not in checkpoint['passed_reports']:checkpoint['passed_reports'].append(path)
+    if (ROOT/'Tools/Disasm/Reports/ControlsStationRelocationClassification.json').exists():
+        proof=read('ControlsStationRelocationVerification');assert proof['passed'] and read('ControlsStationRelocationClassification')['passed']
+        checkpoint['controls_station_relocation']=dict(cases=proof['total_cases'],copied_bytes=256,
+            exact_registers_including_R=True,all_physical_ram_bytes_proved=True,copy_write_order_in_emulator_proved=True,
+            cpu_stack_written=False,stopped_after_JP_4000=True,relocated_payload_not_executed=True,
+            assembly_executed=False,irq_executed=False,native_execution=False)
+        for suffix in ('Verification','Classification'):
+            path='Tools/Disasm/Reports/ControlsStationRelocation'+suffix+'.json'
+            if path not in checkpoint['passed_reports']:checkpoint['passed_reports'].append(path)
+    if (ROOT/'Tools/Disasm/Reports/ControlsStationPrepareClassification.json').exists():
+        proof=read('ControlsStationPrepareVerification');assert proof['passed'] and read('ControlsStationPrepareClassification')['passed']
+        checkpoint['controls_station_prepare']=dict(cases=proof['total_cases'],exact_registers_including_R=True,
+            all_physical_ram_bytes_proved=True,write_multiplicity_proved=True,saved_bytes=512,relocated_bytes=256,
+            attribute_bytes_cleared=768,original_SP_discarded=True,final_SP=0x5FFF,final_IM=1,final_I=63,final_IFF=0,
+            stopped_before_payload_4200=True,TRDOS_and_station_file_not_executed=True,
+            assembly_executed=False,irq_executed=False,native_execution=False)
+        for stem in ('ControlsStationPrepareVerification','ControlsStationPrepareCodeClassification','ControlsStationPrepareClassification'):
+            assert read(stem)['passed'];path='Tools/Disasm/Reports/'+stem+'.json'
+            if path not in checkpoint['passed_reports']:checkpoint['passed_reports'].append(path)
+    if (ROOT/'Tools/Disasm/Reports/ActionSubtractWorkVectorClassification.json').exists():
+        proof=read('ActionSubtractWorkVectorVerification');assert proof['passed'] and read('ActionSubtractWorkVectorClassification')['passed']
+        assert read('ActionWorkVectorDataClassification')['passed']
+        checkpoint['action_subtract_work_vector']=dict(cases=proof['total_cases'],exact_registers_including_R=True,
+            all_physical_ram_bytes_proved=True,write_multiplicity_proved=True,typed_bytes=9,nested_signed_components=3,
+            low_word_written_before_overflow_return=True,overflow_high_byte_and_later_components_unchanged=True,
+            cpu_stack_written=False,observed_m1_min=proof['observed_m1_min'],observed_m1_max=proof['observed_m1_max'],
+            complete_input_product_exhausted=False,assembly_executed=False,irq_executed=False,native_execution=False)
+        for stem in ('ActionSubtractWorkVectorVerification','ActionSubtractWorkVectorClassification','ActionWorkVectorEntrySplitClassification','ActionWorkVectorDataClassification'):
+            assert read(stem)['passed'];path='Tools/Disasm/Reports/'+stem+'.json'
+            if path not in checkpoint['passed_reports']:checkpoint['passed_reports'].append(path)
+    if (ROOT/'Tools/Disasm/Reports/ActionRefreshPanelClassification.json').exists():
+        proof=read('ActionRefreshPanelVerification');assert proof['passed'] and read('ActionRefreshPanelClassification')['passed']
+        digits=read('ControlsBcdExactVerification');assert digits['passed']
+        checkpoint['action_refresh_panel']=dict(cases=proof['total_cases'],bcd_exact_child_cases=digits['total_cases'],
+            exact_registers_including_R=True,all_physical_ram_bytes_proved=True,write_multiplicity_proved=True,
+            port_writes=14,final_7ffd=17,maximum_additional_stack_bytes=8,tail_jump_keeps_external_return_frame=True,
+            locked_configuration_outside_contract=True,assembly_executed=False,irq_executed=False,native_execution=False)
+        for stem in ('ControlsBcdExactVerification','ActionRefreshPanelVerification','ActionRefreshPanelClassification'):
+            path='Tools/Disasm/Reports/'+stem+'.json'
+            if path not in checkpoint['passed_reports']:checkpoint['passed_reports'].append(path)
+    if (ROOT/'Tools/Disasm/Reports/ControlsCircleDispatchVerification.json').exists():
+        proof=read('ControlsCircleDispatchVerification');assert proof['passed'] and proof['stopped_before_raster_children']
+        checkpoint['controls_circle_dispatch_partial']=dict(cases=proof['total_cases'],destinations=proof['targets'],
+            exact_registers_except_R=True,all_physical_ram_bytes_proved=True,write_multiplicity_proved=True,
+            stopped_before_raster_children=True,whole_renderer_proved=False,unknown_status_preserved=True,
+            assembly_executed=False,irq_executed=False,native_execution=False)
+        path='Tools/Disasm/Reports/ControlsCircleDispatchVerification.json'
+        if path not in checkpoint['passed_reports']:checkpoint['passed_reports'].append(path)
+    if (ROOT/'Tools/Disasm/Reports/ControlsVerticalCircleSliceClassification.json').exists():
+        proof=read('ControlsVerticalCircleSliceVerification')
+        assert proof['passed'] and read('ControlsVerticalCircleSliceClassification')['passed']
+        checkpoint['controls_vertical_circle_slice']=dict(cases=proof['total_cases'],
+            tangent_root_FF_cases=proof['tangent_root_FF_cases'],modeled_rows=proof['modeled_rows'],
+            exact_registers_except_R=True,tangent_draws_no_pixels=True,tangent_saved_SP_unchanged=True,
+            maximum_additional_stack_bytes=14,full_D340_proved=False,assembly_executed=False)
+        for stem in ('ControlsVerticalCircleSliceVerification','ControlsVerticalCircleSliceClassification','ControlsVerticalSliceSplitClassification'):
+            assert read(stem)['passed']
+            path='Tools/Disasm/Reports/'+stem+'.json'
+            if path not in checkpoint['passed_reports']:checkpoint['passed_reports'].append(path)
+    circle_chain = (
+        ('controls_horizontal_circle', 'ControlsHorizontalCircle', ('ControlsHorizontalCircleClassification', 'ControlsHorizontalCircleStartSplitClassification', 'ControlsHorizontalCircleEndSplitClassification')),
+        ('controls_corner_circle_slice', 'ControlsCornerCircleSlice', ('ControlsCornerCircleSliceClassification',)),
+        ('controls_full_width_circle', 'ControlsFullWidthCircle', ('ControlsFullWidthCircleClassification', 'ControlsFullWidthCircleSplitClassification')),
+        ('controls_large_circle', 'ControlsLargeCircle', ('ControlsLargeCircleClassification',)),
+        ('controls_body_draw', 'ControlsBodyDraw', ('ControlsBodyDrawClassification',)),
+        ('projected_body_entry', 'ProjectedBodyEntry', ('ControlsProjectDrawBodyClassification', 'ActionDrawBankedBodyClassification')),
+    )
+    for key, tag, classifications in circle_chain:
+        if not all((ROOT/'Tools/Disasm/Reports'/(stem+'.json')).exists() for stem in classifications):
+            continue
+        proof = read(tag+'Verification')
+        assert proof['passed'] and all(read(stem)['passed'] for stem in classifications)
+        checkpoint[key] = dict(cases=proof['total_cases'], exact_registers_except_R=True,
+            projection_scratch_values_not_proved=proof.get('projection_scratch_values_not_proved', False),
+            assembly_executed=False, native_execution=False)
+        for stem in (tag+'Verification', *classifications):
+            path = 'Tools/Disasm/Reports/'+stem+'.json'
+            if path not in checkpoint['passed_reports']:
+                checkpoint['passed_reports'].append(path)
+    follow_on_reports = (
+        ('action_body_transform', 'ActionBodyTransform', ('ActionBodyTransformClassification', 'ActionTransformWorkVectorClassification', 'ActionRestoreBodyStackClassification')),
+        ('action_object_state_dispatch_partial', 'ActionObjectStateDispatch', ('ActionObjectStateHandlersClassification', 'ActionClass18StateClassification')),
+        ('action_object_phase_handlers', 'ActionObjectPhaseHandlers', ('ActionObjectOffsetRiseClassification', 'ActionObjectOffsetFallClassification', 'ActionObjectPhaseWaitClassification')),
+        ('action_object_offset_transfer', 'ActionObjectOffsetTransfer', ('ActionObjectOffsetTransferClassification',)),
+        ('action_object_offset_vector', 'ActionObjectOffsetVector', ('ActionObjectOffsetVectorClassification', 'ActionObjectOffsetCoefficientsClassification')),
+    )
+    for key, tag, classifications in follow_on_reports:
+        if not all((ROOT/'Tools/Disasm/Reports'/(stem+'.json')).exists() for stem in classifications):
+            continue
+        proof = read(tag+'Verification')
+        assert proof['passed'] and all(read(stem)['passed'] for stem in classifications)
+        checkpoint[key] = dict(cases=proof['total_cases'],
+            stopped_after_indirect_JP=proof.get('stopped_after_indirect_JP', False),
+            aggregate_boundary_and_continuation_checks=proof.get('aggregate_boundary_and_continuation_checks', False),
+            assembly_executed=False, native_execution=False)
+        for stem in (tag+'Verification', *classifications):
+            path = 'Tools/Disasm/Reports/'+stem+'.json'
+            if path not in checkpoint['passed_reports']:
+                checkpoint['passed_reports'].append(path)
+    effect_reports = ('ActionVisualEffectWalkVerification', 'ActionVisualEffectTransferVerification',
+                      'VoxelEffectProjectionVerification', 'VoxelEffectDrawEntryVerification',
+                      'VoxelSpriteClipBoundsVerification', 'VoxelSpriteSolidRasterVerification',
+                      'VoxelSpriteSampleRasterVerification')
+    if all((ROOT / 'Tools/Disasm/Reports' / (stem + '.json')).is_file() for stem in effect_reports):
+        proofs = {stem: read(stem) for stem in effect_reports}
+        assert all(proof['passed'] and not proof['assembly_executed'] for proof in proofs.values())
+        checkpoint['visual_effect_boundaries'] = dict(
+            cases_by_report={stem: proof['total_cases'] for stem, proof in proofs.items()},
+            whole_draw_proved=False, composed_raster_verified=True, assembly_executed=False, native_execution=False)
+        for stem in effect_reports:
+            path = 'Tools/Disasm/Reports/' + stem + '.json'
+            if path not in checkpoint['passed_reports']:
+                checkpoint['passed_reports'].append(path)
+        for stem in ('ActionVisualEffectResumeClassification', 'ActionVisualEffectDataClassification',
+                     'ActionMotionVectorTailVerification'):
+            path = 'Tools/Disasm/Reports/' + stem + '.json'
+            if (ROOT / path).is_file():
+                assert read(stem)['passed']
+                if path not in checkpoint['passed_reports']:
+                    checkpoint['passed_reports'].append(path)
+    motion_reports = ('ActionBodyModeTransitionVerification', 'ActionBodyVectorScheduleVerification',
+                      'ActionSubtractTransformVectorVerification', 'ActionBodyVectorPanelVerification',
+                      'ActionWideMotionPrefixVerification', 'ActionWideProjectionInputVerification',
+                      'ActionWideProjectionLoopVerification', 'ActionRenderFrameSetupVerification',
+                      'ActionBankedBasisRotationVerification', 'ActionObjectProjectionScanVerification',
+                      'ActionObjectProjectionResumeVerification', 'ActionEmptyRenderFrameVerification',
+                      'ActionNonemptyRenderFrameVerification', 'ActionLargeEffectEntryVerification',
+                      'ActionLargeEffectChildrenVerification', 'ActionRecordEffectThresholdVerification',
+                      'ActionObjectStateReturnVerification', 'ActionNoiseExitVerification',
+                      'ActionBodyMotionVerification', 'ControlsTargetOverlayVerification',
+                      'ActionMotionWithoutKeysVerification', 'ControlsRadarLoopVerification',
+                      'ActionVisualEffectListVerification', 'ActionSpawnRecordFinishVerification',
+                      'ActionSpawnScheduleVerification', 'ActionSpawnClassSelectionVerification',
+                      'ActionSpawnModelSelectionVerification', 'ActionSpawnSmallEffectVerification',
+                      'ActionSpawnNearClass12Verification', 'ActionSpawnFallbackVerification',
+                      'ActionSpawnAlternateGateVerification', 'ActionSpawnTemplateEntryVerification',
+                      'ActionSpawnTemplateLoopVerification', 'ActionSpawnAlternateRecordVerification',
+                      'ActionFrameGatesVerification')
+    if all((ROOT / 'Tools/Disasm/Reports' / (stem + '.json')).is_file() for stem in motion_reports):
+        proofs = {stem: read(stem) for stem in motion_reports}
+        assert all(proof['passed'] and not proof['assembly_executed'] for proof in proofs.values())
+        checkpoint['body_motion_boundaries'] = dict(
+            cases_by_report={stem: proof['total_cases'] for stem, proof in proofs.items()},
+            empty_and_nonempty_frame_profiles_verified=True, assembly_executed=False, native_execution=False)
+        for stem in motion_reports:
+            path = 'Tools/Disasm/Reports/' + stem + '.json'
+            if path not in checkpoint['passed_reports']:
+                checkpoint['passed_reports'].append(path)
     if args.sources_changed:
         checkpoint['manual_build_check'].update(status='passed_before_latest_source_changes',
             source_changes_after_build=True, current_source_assembly_verified=False)

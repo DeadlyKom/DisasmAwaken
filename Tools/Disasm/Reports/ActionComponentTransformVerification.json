@@ -1,0 +1,47 @@
+{
+  "passed": true,
+  "total_cases": 14432,
+  "cases_by_kind": {
+    "6C19_initial_flags": 256,
+    "6BFF_initial_flags": 256,
+    "6C19_vector_edges": 512,
+    "6BFF_vector_edges": 512,
+    "6C19_coefficient_positions": 2304,
+    "6BFF_coefficient_positions": 2304,
+    "6C19_overflow_sites": 12,
+    "6BFF_overflow_sites": 12,
+    "6C19_mixed_vectors_and_matrices": 4096,
+    "6BFF_mixed_vectors_and_matrices": 4096,
+    "6BFF_source_aliases": 72
+  },
+  "paths": {
+    "encoded": 12468,
+    "overflow": 1964
+  },
+  "overflow_sites": {
+    "(0, 1)": 300,
+    "(0, 2)": 490,
+    "(1, 1)": 208,
+    "(1, 2)": 404,
+    "(2, 1)": 192,
+    "(2, 2)": 370
+  },
+  "actual_compute_stack_restore_and_encoder_executed": true,
+  "all_six_overflow_sites": true,
+  "copy_has_three_byte_components_and_four_byte_stride": true,
+  "sequential_source_aliases_checked": true,
+  "prefix_BC_decrements_by_nine": true,
+  "lower_component_bytes_cleared_even_on_overflow": true,
+  "exact_registers_including_R": true,
+  "all_physical_ram_bytes_proved": true,
+  "write_multiplicity_proved": true,
+  "direct_entry_CPU_stack_written": false,
+  "copy_entry_CPU_stack_bytes": 2,
+  "compositional_numeric_oracle": true,
+  "independent_new_vector_oracle": false,
+  "full_vector_matrix_product_exhausted": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false,
+  "timing_proved": false
+}
