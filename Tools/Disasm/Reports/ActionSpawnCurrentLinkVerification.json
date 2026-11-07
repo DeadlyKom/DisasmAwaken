@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "total_cases": 131072,
+  "profiles": {
+    "allocated": 65536,
+    "no_free": 65536
+  },
+  "paths": {
+    "parameter_0A": 65536,
+    "free_record": 65792,
+    "class17_created": 65792,
+    "no_free_record": 65280,
+    "class17_no_slot": 65280,
+    "parameter_32": 65536
+  },
+  "all_256_link_codes_by_256_ReuseByte_values_by_allocation": true,
+  "all_25_parent_slots": true,
+  "actual_ix_index_and_class17_creator_executed": true,
+  "exact_registers_flags_r_sp": true,
+  "full_eight_bank_ram_and_write_multiplicity_compared": true,
+  "maximum_additional_stack_bytes": 6,
+  "AF_prime_cleared_before_child": true,
+  "complete_input_product_exhausted": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

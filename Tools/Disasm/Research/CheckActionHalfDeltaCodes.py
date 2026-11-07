@@ -56,7 +56,7 @@ def main():
             writes.append((bank,offset,value));touched.add((bank,offset))
         simulator.registers[:]=initial;trace=PortTrace(simulator);simulator.set_tracer(trace)
         memory.writes=[];memory.recording=True;simulator.run(start=0xAD5A,stop=0x3FFF);memory.recording=False
-        compared=(*range(15),*range(16,25),26,27)
+        compared=(*range(25),26,27)
         assert all(wanted[i]==simulator.registers[i] for i in compared),(serial,values,model,
             [(i,wanted[i],simulator.registers[i]) for i in compared if wanted[i]!=simulator.registers[i]])
         assert Counter(writes)==Counter(memory.writes),(serial,values,'write_multiplicity',writes,memory.writes)
@@ -74,10 +74,10 @@ def main():
         observed_root_input_max=max(root_inputs),ordinary_root_verified_against_isqrt=True,
         bad_upper_root_table_domain_unreachable_for_this_caller=True,root_values_observed=sorted(roots),
         true_products_banked_root_and_both_ratio_coders_executed=True,independent_integer_parent_oracle=True,
-        exact_registers_except_R=True,all_physical_ram_bytes_proved=True,write_multiplicity_proved=True,
+        exact_registers_flags_r_sp=True,all_physical_ram_bytes_proved=True,write_multiplicity_proved=True,
         maximum_additional_stack_bytes=14,real_ports_and_eight_banks=True,initial_7ffd_values=[0,8,16,24],final_7ffd=16,
         IX_and_IY_preserved=True,alternate_delta_frame_proved=True,root_times_256_signed_word_interpretation_preserved=True,
-        hardware_bus_stack_write_order_proved=False,refresh_R_proved=False,complete_six_word_product_exhausted=False,
+        hardware_bus_stack_write_order_proved=False,refresh_R_proved=True,square_refresh_subdomain_proved=True,complete_six_word_product_exhausted=False,
         assembly_executed=False,irq_executed=False,native_execution=False,timing_proved=False)
     assert counts.total()==613638 and max(root_inputs)==0x7FFE
     (ROOT/'Tools/Disasm/Reports/ActionHalfDeltaCodesVerification.json').write_text(json.dumps(report,indent=2)+'\n','utf-8')

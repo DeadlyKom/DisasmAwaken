@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "total_cases": 16384,
+  "paths": {
+    "other_class": 16320,
+    "class8": 64,
+    "stream_11": 32,
+    "requested_2": 8,
+    "free_record": 24,
+    "child_written": 24,
+    "random_reject": 16,
+    "requested_1": 8,
+    "already_requested": 32
+  },
+  "all_full_class_bytes": true,
+  "real_child_spawn_tail_executed": true,
+  "child_state_argument": 2,
+  "exact_registers_flags_r_sp": true,
+  "full_eight_bank_ram_and_write_multiplicity_compared": true,
+  "maximum_additional_stack_bytes": 4,
+  "complete_external_return": true,
+  "all_input_products_exhausted": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

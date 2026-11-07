@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "total_cases": 8192,
+  "outcomes": {
+    "accepted": 6999,
+    "vertical_rejected": 872,
+    "horizontal_rejected": 321
+  },
+  "exact_registers_flags_r_sp": true,
+  "entire_64K_and_write_order_compared": true,
+  "external_stack_addresses": [
+    49150,
+    49120,
+    32776
+  ],
+  "complete_input_product_exhausted": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

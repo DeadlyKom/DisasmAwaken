@@ -5,7 +5,7 @@
 ветви. Не перечисляют все косвенные записи и генерируемые области.
 
 [Проверка путей реестра](../Tools/Disasm/Research/CheckModifiedCodePaths.py)
-сверяет 1320 записей, существование указанных исходников и 305 целей с
+сверяет 1359 записей, существование указанных исходников и 345 целей с
 явными физическими смещениями. У 41 из этих целей недостающие смещения
 дополнены по существующему целевому файлу, реальным инструкциям и SourceMap.
 Выбранный во время исполнения банк из этого соответствия не выводится,
@@ -1594,3 +1594,123 @@ target_path не содержат. Такая проверка не устана
 - B0E5→6D2A, 1 байт, инструкция по 6D29.
 
 [Алгоритм и ограничения](./ActionObjectOffsetCoefficients.md) описаны отдельно.
+
+## FindNearestListedRecord
+
+[FindNearestListedRecord](../Source/Action/FindNearestListedRecord.asm) обновляет следующие существующие операнды в контексте своего договора.
+
+- E9C4→E9E7, 1 байт, инструкция по E9E6.
+- E9EA→E9E7, 1 байт, инструкция по E9E6.
+- E9F0→E9FE, 1 байт, инструкция по E9FD.
+
+[Алгоритм и ограничения](./ActionNearestCandidate.md) описаны отдельно.
+
+## UpdateNearVectorPhase
+
+[UpdateNearVectorPhase](../Source/Action/UpdateNearVectorPhase.asm) обновляет следующие существующие операнды в контексте своего договора.
+
+- F093→F09D, 1 байт, инструкция по F09C.
+
+[Алгоритм и ограничения](./ActionNearPhase.md) описаны отдельно.
+
+## ResetIdleRecordBases
+
+[ResetIdleRecordBases](../Source/Action/ResetIdleRecordBases.asm) обновляет следующие существующие операнды в контексте своего договора.
+
+- F694→E5B0, 2 байт, инструкция по E5AF.
+- F697→E5CF, 2 байт, инструкция по E5CE.
+- F69A→E5EA, 2 байт, инструкция по E5E9.
+
+[Алгоритм и ограничения](./ActionIdleBaseReset.md) описаны отдельно.
+
+## ApplyRecordLocalOffsets
+
+[ApplyRecordLocalOffsets](../Source/Action/ApplyRecordLocalOffsets.asm) обновляет следующие существующие операнды в контексте своего договора.
+
+- F6D3→B045, 1 байт, инструкция по B044.
+- F6DB→B04F, 1 байт, инструкция по B04E.
+- F6E1→B05C, 1 байт, инструкция по B05B.
+
+[Алгоритм и ограничения](./ActionLocalOffsets.md) описаны отдельно.
+
+## PrepareLinkedRecordContext
+
+[PrepareLinkedRecordContext](../Source/Action/PrepareLinkedRecordContext.asm) обновляет следующие существующие операнды в контексте своего договора.
+
+- E770→E796, 2 байт, инструкция по E794.
+- E77E→F1ED, 2 байт, инструкция по F1EC.
+- E787→F1F0, 2 байт, инструкция по F1EF.
+- E790→F1FE, 2 байт, инструкция по F1FD.
+
+[Алгоритм и ограничения](./ActionLinkedContext.md) описаны отдельно.
+
+## LoadLinkedRecordVectors
+
+[LoadLinkedRecordVectors](../Source/Action/LoadLinkedRecordVectors.asm) обновляет следующие существующие операнды в контексте своего договора.
+
+- E7A6→AF48, 2 байт, инструкция по AF47.
+- E7AA→AF56, 2 байт, инструкция по AF55.
+- E7AE→AF69, 2 байт, инструкция по AF68.
+- E7D3→AF48, 2 байт, инструкция по AF47.
+- E7DC→AF56, 2 байт, инструкция по AF55.
+- E7E5→AF69, 2 байт, инструкция по AF68.
+
+[Алгоритм и ограничения](./ActionLinkedVectors.md) описаны отдельно.
+
+## SpawnLinkedClass9Records
+
+[SpawnLinkedClass9Records](../Source/Action/SpawnLinkedClass9Records.asm) обновляет следующие существующие операнды в контексте своего договора.
+
+- E870→E8F1, 1 байт, инструкция по E8EE.
+
+[Алгоритм и ограничения](./ActionChildSpawn.md) описаны отдельно.
+
+## SpawnPeriodicClass3Record
+
+[SpawnPeriodicClass3Record](../Source/Action/SpawnPeriodicClass3Record.asm) обновляет следующие существующие операнды в контексте своего договора.
+
+- F3F5→F3F1, 1 байт, инструкция по F3F0.
+
+[Алгоритм и ограничения](./ActionPeriodicClass3State.md) описаны отдельно.
+
+## StartSmallRecordEffect
+
+[StartSmallRecordEffect](../Source/Action/StartSmallRecordEffect.asm) обновляет следующие существующие операнды в контексте своего договора.
+
+- F711→6D39, 1 байт, инструкция по 6D38.
+- F71D→6D3D, 1 байт, инструкция по 6D3C.
+
+[Алгоритм и ограничения](./ActionSmallEffectState.md) описаны отдельно.
+
+## SweepClass17AndPrepareSpawn
+
+[SweepClass17AndPrepareSpawn](../Source/Action/SweepClass17AndPrepareSpawn.asm) обновляет следующие существующие операнды в контексте своего договора.
+
+- F49F→F49D, 1 байт, инструкция по F49C.
+
+[Алгоритм и ограничения](./ActionClass17Sweep.md) описаны отдельно.
+
+Писатель 60E8 и операнд 612E теперь находятся в [CreateClass17LinkedRecord](../Source/Action/CreateClass17LinkedRecord.asm), физические адреса перенесённого банка 5 сохранены.
+
+## ApproachTargetRecordAndResolve
+
+[ApproachTargetRecordAndResolve](../Source/Action/ApproachTargetRecordAndResolve.asm) обновляет следующие существующие операнды в контексте своего договора.
+
+- F611→E5B0, 2 байт, инструкция по E5AF.
+- F614→E5CF, 2 байт, инструкция по E5CE.
+- F617→E5EA, 2 байт, инструкция по E5E9.
+
+[Алгоритм и ограничения](./ActionArrivalState.md) описаны отдельно.
+
+## RequestPairedAimLines
+
+[RequestPairedAimLines](../Source/Action/RequestPairedAimLines.asm) обновляет следующие существующие операнды в контексте своего договора.
+
+- 63BA→63B7, 1 байт, инструкция по 63B6.
+- 63C6→A8BC, 1 байт, инструкция по A8BB.
+- 63CB→666B, 1 байт, инструкция по 666A.
+- 63CF→E310, 1 байт, инструкция по E30F.
+- 63D5→ECA9, 2 байт, инструкция по ECA8.
+- 63E0→DE0F, 1 байт, инструкция по DE0E.
+
+[Алгоритм и ограничения](./ActionPairedAimLines.md) описаны отдельно.

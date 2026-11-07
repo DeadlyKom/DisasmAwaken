@@ -7,7 +7,8 @@ from CheckActionParameterActivation import flat_action,RecordedBanks
 from CheckControlsTextQueue import base_memory
 from CheckMusic import Simulator,get_registers,PC,SP
 from CheckScreenUpdate import PortTrace
-from ReferenceControlsPointRespawn import cp_flags
+from ReferenceControlsPointRespawn import cp_flags,refresh
+from CheckActionNearestCandidate import NearestMachine
 from ReferenceActionLogRatio import LOG,EXP
 from ReferenceActionHalfDeltaCodes import evaluate as geometry
 from ReferenceActionRecordCodeStep import apply_codes
@@ -69,6 +70,10 @@ def main():
         wanted[10:12]=[cursor>>8,cursor&255]
         wanted[PC],wanted[SP]=0xF0F8,stack
         ports=[]
+        # Расчёт R подготовки и настоящего поиска по ранее проверенным числовым договорам.
+        timing=NearestMachine(memory.banks,initial);timing.r[4]=18;timing.m1(1)
+        timing.call(0xE98D,0xF35B,timing.find_code);timing.m1(1)
+        wanted[15]=timing.r[15]
         if not found:
             wanted[0:2]=[128,0x42];kind='no_class18'
         else:
@@ -81,17 +86,24 @@ def main():
             put_word(stack-2,0xF361);put_word(stack-4,magnitudes[0]);put_word(stack-6,magnitudes[1])
             wanted[4:8]=[magnitudes[0]>>8,magnitudes[0]&255,magnitudes[2]>>8,magnitudes[2]&255]
             wanted[0:2]=[distance,cp_flags(distance,2)]
+            # Расчёт R вызова расстояния, сравнения и исходной условной передачи.
+            timing.call(0xEAE9,0xF361,timing.distance);timing.m1(2)
+            wanted[15]=timing.r[15]
             if distance<2:
                 operations.extend(((ix+1,128),(ix,0),(ix+24,255)))
                 wanted[PC],wanted[SP]=0x3FFF,stack+2;kind='near_reuse'
+                wanted[15]=refresh(wanted[15],7)
             else:
                 put_word(stack-2,0xF368)
                 child=arguments(wanted,current,target);child[SP]-=4;child[PC]=0xAD5A
+                # Два M1 принадлежат CALL обёртки и CALL геометрии внутри StepRecordTargetCodes.
+                child[15]=refresh(child[15],2)
                 put_word(stack-4,0x6268)
                 calculated=geometry(child,ratio_table,root_table,return_address=0x6268)
                 local=apply_codes(calculated['registers'],*columns,rate,return_address=0xF368)
                 operations.extend(calculated['writes']);operations.extend(local['writes'])
                 wanted=local['registers'];wanted[PC]=0xF0F8;ports=calculated['ports'];kind='far_step'
+                wanted[15]=refresh(wanted[15],1)
         writes=[]
         for address,value in operations:
             bank=5 if address<0x8000 else 2 if address<0xC000 else 0
@@ -103,7 +115,7 @@ def main():
             simulator.run()
         else:raise AssertionError(('не достигнут выход',position,differences))
         memory.recording=False
-        assert all(wanted[index]==simulator.registers[index] for index in (*range(15),*range(16,25),26,27)),(cases,kind,[(i,wanted[i],simulator.registers[i]) for i in (*range(15),*range(16,25),26,27) if wanted[i]!=simulator.registers[i]])
+        assert all(wanted[index]==simulator.registers[index] for index in (*range(25),26,27)),(cases,kind,[(i,wanted[i],simulator.registers[i]) for i in (*range(25),26,27) if wanted[i]!=simulator.registers[i]])
         assert memory.banks==expected and Counter(memory.writes)==Counter(writes),(cases,kind,'RAM')
         assert trace.writes==ports and memory.o7ffd==(16 if ports else old)
         max_stack=max(max_stack,max((stack-address for address,_ in operations if stack-64<=address<stack),default=0))
@@ -111,7 +123,7 @@ def main():
     assert cases==958 and set(counts)=={'no_class18','near_reuse','far_step'}
     result=dict(passed=True,total_cases=cases,outcomes=dict(counts),found_record_positions=sorted(found_positions),
         actual_class_search_distance_geometry_and_reuse_executed=True,independent_existing_child_models_composed=True,
-        exact_registers_except_r=True,full_eight_bank_ram_and_write_multiplicity_compared=True,
+        exact_registers_including_r=True,full_eight_bank_ram_and_write_multiplicity_compared=True,
         real_ports_verified=True,maximum_extra_stack_bytes=max_stack,common_offset_tail_executed=False,
         common_tail_boundary=0xF0F8,near_path_external_ret_executed=True,
         all_input_records_product_exhausted=False,assembly_executed=False,irq_executed=False,native_execution=False)

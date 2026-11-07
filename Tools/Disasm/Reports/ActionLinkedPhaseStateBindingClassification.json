@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "state_index": 5,
+  "address": 62089,
+  "name": "HandleLinkedPhaseState",
+  "physical_pointer_preserved": true,
+  "assembly_executed": false,
+  "native_execution": false
+}

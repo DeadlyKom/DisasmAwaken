@@ -9,7 +9,7 @@
   "parameter_m1": 27,
   "actual_geometry_root_ratio_and_step_executed": true,
   "independent_existing_child_models_composed": true,
-  "composed_registers_except_r_exact": true,
+  "composed_registers_including_r_exact": true,
   "full_eight_bank_ram_and_write_multiplicity_compared": true,
   "paths": {
     "first_written": 505,
@@ -17,7 +17,7 @@
     "second_skipped": 226,
     "first_skipped": 7
   },
-  "full_composed_r_proved": false,
+  "full_composed_r_proved": true,
   "complete_six_word_product_exhausted": false,
   "assembly_executed": false,
   "irq_executed": false,

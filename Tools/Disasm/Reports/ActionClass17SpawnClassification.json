@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "additional_physical_fragments": 1,
+  "confirmed_code_bytes": 93,
+  "instruction_sequence_preserved": true,
+  "physical_bytes_preserved": true,
+  "model_cases": 66560,
+  "assembly_executed": false
+}

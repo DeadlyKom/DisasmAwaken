@@ -53,7 +53,7 @@ def main():
             bank=page(address);offset=address&0x3FFF;expected[bank][offset]=value;writes.append((bank,offset,value));touched.add((bank,offset))
         simulator.registers[:]=initial;trace=PortTrace(simulator);simulator.set_tracer(trace);memory.writes=[];memory.recording=True
         simulator.run(start=0x7EB7,stop=0x3FFF);memory.recording=False
-        compared=(*range(15),*range(16,25),26,27)
+        compared=(*range(25),26,27)
         assert all(wanted[i]==simulator.registers[i] for i in compared),(serial,values,words,rate,
             [(i,wanted[i],simulator.registers[i]) for i in compared if wanted[i]!=simulator.registers[i]])
         assert Counter(writes)==Counter(memory.writes),(serial,'write_multiplicity')
@@ -65,7 +65,7 @@ def main():
     assert all(a==b for a,b in zip(expected,memory.banks))
     report=dict(passed=True,total_cases=counts.total(),cases_by_kind=dict(counts),
         all_record_words_each_position=True,all_first_low_words=True,all_third_high_words=True,
-        exact_registers_except_R=True,refresh_R_proved=False,actual_all_children_executed=True,
+        exact_registers_flags_r_sp=True,refresh_R_proved=True,actual_all_children_executed=True,
         all_physical_ram_bytes_proved=True,write_multiplicity_and_stack_residue_proved=True,
         maximum_additional_stack_bytes=16,real_ports_and_eight_banks=True,final_7ffd=16,
         original_bit23_sign_and_asymmetric_byte_step_preserved=True,observed_target_counts=[len(s) for s in targets_seen],

@@ -35,7 +35,7 @@
   ],
   "actual_class_search_distance_geometry_and_reuse_executed": true,
   "independent_existing_child_models_composed": true,
-  "exact_registers_except_r": true,
+  "exact_registers_including_r": true,
   "full_eight_bank_ram_and_write_multiplicity_compared": true,
   "real_ports_verified": true,
   "maximum_extra_stack_bytes": 18,

@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "parameter_index": 4,
+  "writer": 44146,
+  "target": 25529,
+  "target_bank": 5,
+  "source_instructions_and_bytes_unchanged": true,
+  "new_registered_writer": 1,
+  "all_15_targets_classified": true,
+  "assembly_executed": false
+}

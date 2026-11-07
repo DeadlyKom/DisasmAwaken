@@ -148,6 +148,49 @@ def name_operands(region, function_address, operation):
     operation = control_panel_group_name_operands(region, function_address, operation)
     operation = ship_periodic_code_name_operands(region, function_address, operation)
     operation = ship_preview_callback_name_operands(region, function_address, operation)
+    operation = action_random_class_gate_name_operands(region,function_address,operation)
+    operation = action_class20_spawn_name_operands(region,function_address,operation)
+    operation = action_paired_aim_lines_name_operands(region,function_address,operation)
+    operation = action_arrival_state_name_operands(region,function_address,operation)
+    operation = action_linked_phase_state_name_operands(region,function_address,operation)
+    operation = action_linked_target_state_name_operands(region,function_address,operation)
+    operation = action_spawn_continue_name_operands(region,function_address,operation)
+    operation = action_random_phase_step_name_operands(region,function_address,operation)
+    operation = action_linked_motion_gate_name_operands(region,function_address,operation)
+    operation = action_enter_timed_state_name_operands(region,function_address,operation)
+    operation = action_timed_linked_state_name_operands(region,function_address,operation)
+    operation = action_spawn_window_name_operands(region,function_address,operation)
+    operation = action_spawn_current_link_name_operands(region,function_address,operation)
+    operation = class17_spawn_name_operands(region,function_address,operation)
+    operation = action_linked_overlay_name_operands(region,function_address,operation)
+    operation = action_overlay_pair_name_operands(region,function_address,operation)
+    operation = action_projected_pair_codes_name_operands(region,function_address,operation)
+    operation = action_wide_vector_state_name_operands(region,function_address,operation)
+    operation = action_class19_spawn_name_operands(region,function_address,operation)
+    operation = action_class17_sweep_name_operands(region,function_address,operation)
+    operation = action_small_effect_state_name_operands(region,function_address,operation)
+    operation = action_linked_proximity_name_operands(region,function_address,operation)
+    operation = action_class_refresh_name_operands(region,function_address,operation)
+    operation = action_class8_spawn_gate_name_operands(region,function_address,operation)
+    operation = action_periodic_class3_state_name_operands(region,function_address,operation)
+    operation = action_acquire_local_state_name_operands(region,function_address,operation)
+    operation = action_child_spawn_name_operands(region,function_address,operation)
+    operation = action_linked_vectors_name_operands(region,function_address,operation)
+    operation = action_linked_context_name_operands(region,function_address,operation)
+    operation = action_timed_phase_state_name_operands(region,function_address,operation)
+    operation = action_fast_phase_state_name_operands(region,function_address,operation)
+    operation = action_local_offsets_name_operands(region,function_address,operation)
+    operation = action_idle_state_name_operands(region,function_address,operation)
+    operation = action_idle_base_reset_name_operands(region,function_address,operation)
+    operation = action_timed_decay_state_name_operands(region,function_address,operation)
+    operation = action_linked_near_state_name_operands(region,function_address,operation)
+    operation = action_phase_near_state_name_operands(region,function_address,operation)
+    operation = action_near_phase_name_operands(region,function_address,operation)
+    operation = action_target_transition_name_operands(region,function_address,operation)
+    operation = action_nearest_candidate_name_operands(region,function_address,operation)
+    operation = action_candidate_gate_name_operands(region,function_address,operation)
+    operation = action_candidate_class_name_operands(region,function_address,operation)
+    operation = action_phase_transition_name_operands(region,function_address,operation)
     operation = action_class3_link_name_operands(region,function_address,operation)
     operation = action_class4_link_name_operands(region,function_address,operation)
     operation = action_class1_link_name_operands(region,function_address,operation)
@@ -2656,3 +2699,179 @@ LABELS.update({})
 from ActionClass3LinkFacts import name_operands as action_class3_link_name_operands
 DOCUMENTS['Action',26078]=('ActionClass3Link','алгоритм и проверка')
 LABELS.update({('Action', 26104): 'TryCode26'})
+
+from ActionPhaseTransitionFacts import name_operands as action_phase_transition_name_operands
+DOCUMENTS['Action',59701]=('ActionPhaseTransition','алгоритм и проверка')
+LABELS.update({('Action', 59724): 'CheckFirst', ('Action', 59732): 'FoldFirst', ('Action', 59743): 'FoldSecond', ('Action', 59754): 'FoldThird'})
+
+from ActionCandidateClassFacts import name_operands as action_candidate_class_name_operands
+DOCUMENTS['Action',59904]=('ActionCandidateClass','алгоритм и проверка')
+LABELS.update({})
+
+from ActionCandidateGateFacts import name_operands as action_candidate_gate_name_operands
+DOCUMENTS['Action',59925]=('ActionCandidateGate','алгоритм и проверка')
+LABELS.update({('Action', 59932): 'StartList', ('Action', 59935): 'NextItem'})
+
+from ActionNearestCandidateFacts import name_operands as action_nearest_candidate_name_operands
+DOCUMENTS['Action',59842]=('ActionNearestCandidate','алгоритм и проверка')
+LABELS.update({('Action', 59850): 'NextItem', ('Action', 59891): 'NextLoop', ('Action', 59895): 'DropStale', ('Action', 59901): 'ReadResult'})
+
+from ActionTargetTransitionFacts import name_operands as action_target_transition_name_operands
+DOCUMENTS['Action',59678]=('ActionTargetTransition','алгоритм и проверка')
+LABELS.update({})
+
+from ActionNearPhaseFacts import name_operands as action_near_phase_name_operands
+DOCUMENTS['Action',61575]=('ActionNearPhase','алгоритм и проверка')
+LABELS.update({('Action', 61612): 'CheckGlobal'})
+
+from ActionPhaseNearStateFacts import name_operands as action_phase_near_state_name_operands
+DOCUMENTS['Action',61564]=('ActionPhaseNearState','алгоритм и проверка')
+LABELS.update({})
+
+from ActionLinkedNearStateFacts import name_operands as action_linked_near_state_name_operands
+DOCUMENTS['Action',61569]=('ActionLinkedNearState','алгоритм и проверка')
+LABELS.update({})
+
+from ActionTimedDecayStateFacts import name_operands as action_timed_decay_state_name_operands
+DOCUMENTS['Action',63082]=('ActionTimedDecayState','алгоритм и проверка')
+LABELS.update({})
+
+from ActionIdleBaseResetFacts import name_operands as action_idle_base_reset_name_operands
+DOCUMENTS['Action',63121]=('ActionIdleBaseReset','алгоритм и проверка')
+LABELS.update({})
+
+from ActionIdleStateFacts import name_operands as action_idle_state_name_operands
+DOCUMENTS['Action',63103]=('ActionIdleState','алгоритм и проверка')
+LABELS.update({})
+
+from ActionLocalOffsetsFacts import name_operands as action_local_offsets_name_operands
+DOCUMENTS['Action',63181]=('ActionLocalOffsets','алгоритм и проверка')
+LABELS.update({})
+
+from ActionFastPhaseStateFacts import name_operands as action_fast_phase_state_name_operands
+DOCUMENTS['Action',63147]=('ActionFastPhaseState','алгоритм и проверка')
+LABELS.update({})
+
+from ActionTimedPhaseStateFacts import name_operands as action_timed_phase_state_name_operands
+DOCUMENTS['Action',62369]=('ActionTimedPhaseState','алгоритм и проверка')
+LABELS.update({})
+
+from ActionLinkedContextFacts import name_operands as action_linked_context_name_operands
+DOCUMENTS['Action',59233]=('ActionLinkedContext','алгоритм и проверка')
+LABELS.update({('Action', 59244): 'UseIndex', ('Action', 59248): 'StorePointer'})
+
+from ActionLinkedVectorsFacts import name_operands as action_linked_vectors_name_operands
+DOCUMENTS['Action',59284]=('ActionLinkedVectors','алгоритм и проверка')
+LABELS.update({('Action', 59333): 'ReadRecord'})
+
+from ActionChildSpawnFacts import name_operands as action_child_spawn_name_operands
+DOCUMENTS['Action',59499]=('ActionChildSpawn','алгоритм и проверка')
+LABELS.update({('Action', 59524): 'NextChild', ('Action', 59601): 'StoreModel'})
+
+from ActionAcquireLocalStateFacts import name_operands as action_acquire_local_state_name_operands
+DOCUMENTS['Action',63165]=('ActionAcquireLocalState','алгоритм и проверка')
+LABELS.update({})
+
+from ActionPeriodicClass3StateFacts import name_operands as action_periodic_class3_state_name_operands
+DOCUMENTS['Action',62448]=('ActionPeriodicClass3State','алгоритм и проверка')
+LABELS.update({('Action', 62484): 'CreateChild', ('Action', 62617): 'ResetBases'})
+
+from ActionClass8SpawnGateFacts import name_operands as action_class8_spawn_gate_name_operands
+DOCUMENTS['Action',59491]=('ActionClass8SpawnGate','алгоритм и проверка')
+LABELS.update({})
+
+from ActionClassRefreshFacts import name_operands as action_class_refresh_name_operands
+DOCUMENTS['Action',61443]=('ActionClassRefresh','алгоритм и проверка')
+LABELS.update({})
+
+from ActionLinkedProximityFacts import name_operands as action_linked_proximity_name_operands
+DOCUMENTS['Action',61449]=('ActionLinkedProximity','алгоритм и проверка')
+LABELS.update({})
+
+LABELS['Action',0xF365]='StepFar'
+
+from ActionSmallEffectStateFacts import name_operands as action_small_effect_state_name_operands
+DOCUMENTS['Action',63212]=('ActionSmallEffectState','алгоритм и проверка')
+LABELS.update({('Action', 63264): 'SetDecay'})
+
+from ActionClass17SweepFacts import name_operands as action_class17_sweep_name_operands
+DOCUMENTS['Action',62620]=('ActionClass17Sweep','алгоритм и проверка')
+LABELS.update({('Action', 62642): 'CheckMarker', ('Action', 62649): 'NextRecord', ('Action', 62719): 'CheckClass3'})
+
+from ActionClass19SpawnFacts import name_operands as action_class19_spawn_name_operands
+DOCUMENTS['Action',25623]=('ActionClass19Spawn','алгоритм и проверка')
+LABELS.update({('Action', 25650): 'StoreKind', ('Action', 25657): 'BuildControl', ('Action', 25756): 'ClampHigh', ('Action', 25762): 'StoreScale', ('Action', 25785): 'StoreTag', ('Action', 25800): 'NextItem', ('Action', 25809): 'CheckOld'})
+
+from ActionWideVectorStateFacts import name_operands as action_wide_vector_state_name_operands
+DOCUMENTS['Action',61630]=('ActionWideVectorState','алгоритм и проверка')
+LABELS.update({('Action', 61641): 'SelectVector'})
+
+from ActionProjectedPairCodesFacts import name_operands as action_projected_pair_codes_name_operands
+DOCUMENTS['Action',60500]=('ActionProjectedPairCodes','алгоритм и проверка')
+LABELS.update({('Action', 60507): 'NextPoint', ('Action', 60525): 'SecondNegative', ('Action', 60530): 'SecondHigh', ('Action', 60532): 'CheckFirst', ('Action', 60550): 'FirstNegative', ('Action', 60555): 'FirstHigh', ('Action', 60557): 'StoreCode', ('Action', 60570): 'CheckEnd', ('Action', 60579): 'StoreRejected'})
+
+from ActionOverlayPairFacts import name_operands as action_overlay_pair_name_operands
+DOCUMENTS['Action',60225]=('ActionOverlayPair','алгоритм и проверка')
+LABELS.update({})
+
+from ActionLinkedOverlayFacts import name_operands as action_linked_overlay_name_operands
+DOCUMENTS['Action',59396]=('ActionLinkedOverlay','алгоритм и проверка')
+LABELS.update({('Action', 59445): 'CheckDepthSigns'})
+
+from ActionClass17SpawnFacts import name_operands as class17_spawn_name_operands
+DOCUMENTS['Action',0x60E8]=('ActionClass17Spawn','алгоритм и проверка')
+LABELS['Action',0x60F1]='InitializeSlot'
+
+from ActionSpawnCurrentLinkFacts import name_operands as action_spawn_current_link_name_operands
+DOCUMENTS['Action',62037]=('ActionSpawnCurrentLink','алгоритм и проверка')
+LABELS.update({('Action', 62077): 'CreateLinked'})
+
+from ActionSpawnWindowFacts import name_operands as action_spawn_window_name_operands
+DOCUMENTS['Action',61986]=('ActionSpawnWindow','алгоритм и проверка')
+LABELS.update({})
+
+from ActionTimedLinkedStateFacts import name_operands as action_timed_linked_state_name_operands
+DOCUMENTS['Action',62408]=('ActionTimedLinkedState','алгоритм и проверка')
+LABELS.update({('Action', 62426): 'CheckLinked'})
+
+from ActionEnterTimedStateFacts import name_operands as action_enter_timed_state_name_operands
+DOCUMENTS['Action',25269]=('ActionEnterTimedState','алгоритм и проверка')
+LABELS.update({})
+
+from ActionLinkedMotionGateFacts import name_operands as action_linked_motion_gate_name_operands
+DOCUMENTS['Action',25163]=('ActionLinkedMotionGate','алгоритм и проверка')
+LABELS.update({('Action', 25186): 'RestoreArgs'})
+
+from ActionRandomPhaseStepFacts import name_operands as action_random_phase_step_name_operands
+DOCUMENTS['Action',25089]=('ActionRandomPhaseStep','алгоритм и проверка')
+LABELS.update({('Action', 25116): 'CheckCount', ('Action', 25139): 'IncreasePhase', ('Action', 25142): 'CheckAmplitude', ('Action', 25151): 'CheckLimit'})
+
+from ActionSpawnContinueFacts import name_operands as action_spawn_continue_name_operands
+DOCUMENTS['Action',62031]=('ActionSpawnContinue','алгоритм и проверка')
+LABELS.update({})
+
+from ActionLinkedTargetStateFacts import name_operands as action_linked_target_state_name_operands
+DOCUMENTS['Action',61752]=('ActionLinkedTargetState','алгоритм и проверка')
+LABELS.update({('Action', 61762): 'CheckListGate', ('Action', 61782): 'RefreshClass', ('Action', 61800): 'SelectSaved', ('Action', 61814): 'CheckLinked', ('Action', 61857): 'CheckSpawn', ('Action', 61883): 'SpawnClass19', ('Action', 61901): 'PrepareLinked', ('Action', 61913): 'LoadLinked', ('Action', 61932): 'LoadMotion', ('Action', 61953): 'CheckMotion', ('Action', 61961): 'CheckDelta', ('Action', 61980): 'DispatchClass', ('Action', 61983): 'Finish'})
+
+from ActionLinkedPhaseStateFacts import name_operands as action_linked_phase_state_name_operands
+DOCUMENTS['Action',62089]=('ActionLinkedPhaseState','алгоритм и проверка')
+LABELS.update({('Action', 62099): 'CheckList', ('Action', 62119): 'RefreshClass', ('Action', 62137): 'SelectSaved', ('Action', 62151): 'CheckLinked', ('Action', 62184): 'CheckSpawn', ('Action', 62210): 'SpawnClass19', ('Action', 62228): 'PrepareLinked', ('Action', 62240): 'CheckCounter', ('Action', 62253): 'SpawnClass9', ('Action', 62267): 'LoadMotion'})
+
+from ActionArrivalStateFacts import name_operands as action_arrival_state_name_operands
+DOCUMENTS['Action',62847]=('ActionArrivalState','алгоритм и проверка')
+LABELS.update({('Action', 62893): 'EffectCurrent', ('Action', 62900): 'Approach', ('Action', 63003): 'Reached', ('Action', 63020): 'MarkArrival', ('Action', 63061): 'CountArrival', ('Action', 63070): 'EffectTarget'})
+
+LABELS['Action',0xDDFC]='DrawPacked'
+
+from ActionPairedAimLinesFacts import name_operands as action_paired_aim_lines_name_operands
+DOCUMENTS['Action',25526]=('ActionPairedAimLines','алгоритм и проверка')
+LABELS.update({('Action', 25582): 'SetX', ('Action', 25601): 'SetY'})
+
+from ActionClass20SpawnFacts import name_operands as action_class20_spawn_name_operands
+DOCUMENTS['Action',24957]=('ActionClass20Spawn','алгоритм и проверка')
+LABELS.update({('Action', 24993): 'PositiveX', ('Action', 24995): 'SelectYSign', ('Action', 25003): 'PositiveY', ('Action', 25005): 'SelectDepth', ('Action', 25017): 'Transform'})
+
+from ActionRandomClassGateFacts import name_operands as action_random_class_gate_name_operands
+DOCUMENTS['Action',63134]=('ActionRandomClassGate','алгоритм и проверка')
+LABELS.update({})

@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "total_cases": 8,
+  "profiles": {
+    "linear_buffer": 4,
+    "generated_tables": 4
+  },
+  "initial_fill_patterns": [
+    "original",
+    0,
+    255,
+    165
+  ],
+  "actual_original_clear_and_three_generators_executed": true,
+  "read_of_initial_byte_before_first_write": false,
+  "all_3072_buffer_and_1792_table_bytes_rewritten": true,
+  "generated_values_match_independent_formulas": true,
+  "original_file_bytes_not_replaced_by_generated_values": true,
+  "clear_called_at_regular_frame_begin": true,
+  "arbitrary_other_game_phase_first_read_proved": false,
+  "complete_input_product_exhausted": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "total_cases": 462848,
+  "profiles": {
+    "all_R_and_thresholds": 65536,
+    "all_six_word_slices": 393216,
+    "mixed_and_link_modes": 4096
+  },
+  "paths": {
+    "link_written": 313709,
+    "both_depths_negative": 66783,
+    "link_skipped": 147590,
+    "accepted": 787003,
+    "inside_line": 131280,
+    "overlay_returned": 393507,
+    "clipped_line": 261323,
+    "current_marker": 265,
+    "overflow_1": 697,
+    "linked_marker": 1284,
+    "overflow_2": 114,
+    "overflow_0": 198,
+    "common_outside_side": 898,
+    "vertical_rejected": 4,
+    "second_projection_rejected": 1,
+    "horizontal_rejected": 2,
+    "first_projection_rejected": 5
+  },
+  "all_256_R_by_256_thresholds": true,
+  "all_six_word_domains_on_slices": true,
+  "actual_linked_vector_projection_clipping_and_raster_children_executed": true,
+  "exact_registers_except_R_on_renderer": true,
+  "exact_R_on_nonrenderer_cases": 70245,
+  "full_eight_bank_ram_and_write_multiplicity_compared": true,
+  "maximum_observed_additional_stack_bytes": 26,
+  "original_unbalanced_EXX_on_linked_marker_preserved": true,
+  "renderer_R_proved": false,
+  "complete_input_product_exhausted": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

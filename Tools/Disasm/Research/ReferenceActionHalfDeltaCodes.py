@@ -4,6 +4,8 @@ from ReferenceActionCachedRoot import evaluate as cached_root
 from ReferenceActionSignedRatioCode import evaluate as ratio_code
 from CheckActionRecordIndex import add_flags
 from CheckControlsComponentCompare import logical_flags
+from ReferenceActionSquareRefresh import refresh_cost as square_refresh
+from ReferenceControlsPointRespawn import refresh
 
 
 def signed(word):return word if word<32768 else word-65536
@@ -52,6 +54,7 @@ def evaluate(registers,ratio_table,root_table,return_address=0x3FFF):
     r[0:2]=second['af'];r[2:4]=[first_saved,second['af'][0]]
     r[4:8]=[second['de']>>8,second['de']&255,second['hl']>>8,second['hl']&255]
     r[16:18]=second['alternate_af'];r[18:24]=[(half(right2)&65535)>>8,half(right2)&255,left1>>8,left1&255,rawz>>8,rawz&255]
-    r[12],r[24]=stack+2,return_address
+    m1=77+2*int(first_signed<0)+square_refresh(rawx)+square_refresh(rawy)+22+root_result['refresh_m1']+first['refresh_m1']+second['refresh_m1']
+    r[12],r[15],r[24]=stack+2,refresh(registers[15],m1),return_address
     return dict(registers=r,writes=writes,ports=[(0x7FFD,17),(0x7FFD,16)],
-        deltas=(dx,dy,dz),root_input=root_input,root=root,first=first,second=second)
+        deltas=(dx,dy,dz),root_input=root_input,root=root,first=first,second=second,refresh_m1=m1)

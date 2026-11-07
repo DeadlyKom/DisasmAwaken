@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "total_cases": 268705,
+  "profiles": {
+    "all_four_word_slices": 262144,
+    "four_word_corners": 6561
+  },
+  "paths": {
+    "ordinary/ordinary": 266816,
+    "marker/ordinary": 904,
+    "ordinary/marker": 904,
+    "marker/marker": 81
+  },
+  "all_four_word_domains_on_slices": true,
+  "exact_registers_flags_r_sp": true,
+  "entire_64K_and_write_order_compared": true,
+  "both_codes_always_written": true,
+  "marker_does_not_abort_second_point": true,
+  "stack_writes": false,
+  "complete_four_word_product_exhausted": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

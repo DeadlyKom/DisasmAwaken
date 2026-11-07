@@ -1,0 +1,38 @@
+{
+  "passed": true,
+  "total_cases": 69632,
+  "profiles": {
+    "all_R_and_classes": 65536,
+    "all_indices_modes_random_branches": 4096
+  },
+  "paths": {
+    "low_R_phase": 27197,
+    "stream_5": 69632,
+    "reject_27": 68608,
+    "zero_class": 256,
+    "stream_2": 3328,
+    "random_high_reject": 1792,
+    "class_ge_5": 64256,
+    "gate_Z_phase": 42435,
+    "zero_mode": 768,
+    "offset_rise": 1024,
+    "transition_carry": 1024,
+    "random_low_reject": 768,
+    "state_0C": 768
+  },
+  "all_initial_R_by_all_classes": true,
+  "all_256_vector_indices": true,
+  "index_FF_runs_256_additions": true,
+  "exact_registers_flags_r_sp": true,
+  "full_eight_bank_ram_and_write_multiplicity_compared": true,
+  "actual_wide_geometry_root_ratio_step_and_random_children_executed": true,
+  "real_ports": true,
+  "maximum_additional_stack_bytes": 18,
+  "final_7ffd": 16,
+  "common_F0F8_executed": false,
+  "all_candidate_lists_exhausted": false,
+  "complete_input_product_exhausted": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

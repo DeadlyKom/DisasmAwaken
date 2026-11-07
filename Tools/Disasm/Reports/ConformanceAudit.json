@@ -1,147 +1,22 @@
 {
   "method": "static_source_audit_without_assembly",
   "modified_code_path_errors": [],
-  "modified_code_physical_target_ranges": 305,
-  "unregistered_object_state_callbacks": [
-    {
-      "state": 0,
-      "target": 63103,
-      "registered": false,
-      "function": null,
-      "physical_path": "Source/Resources/17_ACTION/Unclassified051.bin",
-      "physical_kind": "unclassified"
-    },
-    {
-      "state": 1,
-      "target": 61630,
-      "registered": false,
-      "function": null,
-      "physical_path": "Source/Resources/17_ACTION/Unclassified045_BeforeActionObjectOffsetTransfer.bin",
-      "physical_kind": "unclassified"
-    },
-    {
-      "state": 2,
-      "target": 61752,
-      "registered": false,
-      "function": null,
-      "physical_path": "Source/Resources/17_ACTION/Unclassified045_AfterActionObjectOffsetTransfer_BeforeActionSelectedRecordStep_BeforeActionClass18Proximity.bin",
-      "physical_kind": "unclassified"
-    },
-    {
-      "state": 3,
-      "target": 61569,
-      "registered": false,
-      "function": null,
-      "physical_path": "Source/Resources/17_ACTION/Unclassified045_BeforeActionObjectOffsetTransfer.bin",
-      "physical_kind": "unclassified"
-    },
-    {
-      "state": 4,
-      "target": 63147,
-      "registered": false,
-      "function": null,
-      "physical_path": "Source/Resources/17_ACTION/Unclassified051.bin",
-      "physical_kind": "unclassified"
-    },
-    {
-      "state": 5,
-      "target": 62089,
-      "registered": false,
-      "function": null,
-      "physical_path": "Source/Resources/17_ACTION/Unclassified045_AfterActionObjectOffsetTransfer_BeforeActionSelectedRecordStep_BeforeActionClass18Proximity.bin",
-      "physical_kind": "unclassified"
-    },
-    {
-      "state": 6,
-      "target": 63212,
-      "registered": false,
-      "function": null,
-      "physical_path": "Source/Resources/17_ACTION/Unclassified051.bin",
-      "physical_kind": "unclassified"
-    },
-    {
-      "state": 7,
-      "target": 63082,
-      "registered": false,
-      "function": null,
-      "physical_path": "Source/Resources/17_ACTION/Unclassified051.bin",
-      "physical_kind": "unclassified"
-    },
-    {
-      "state": 8,
-      "target": 62847,
-      "registered": false,
-      "function": null,
-      "physical_path": "Source/Resources/17_ACTION/Unclassified051.bin",
-      "physical_kind": "unclassified"
-    },
-    {
-      "state": 10,
-      "target": 62620,
-      "registered": false,
-      "function": null,
-      "physical_path": "Source/Resources/17_ACTION/Unclassified046.bin",
-      "physical_kind": "unclassified"
-    },
-    {
-      "state": 11,
-      "target": 62448,
-      "registered": false,
-      "function": null,
-      "physical_path": "Source/Resources/17_ACTION/Unclassified046.bin",
-      "physical_kind": "unclassified"
-    },
-    {
-      "state": 14,
-      "target": 61449,
-      "registered": false,
-      "function": null,
-      "physical_path": "Source/Resources/17_ACTION/AfterObjectStateHandlers_AfterActionObjectOffsetRise_AfterActionObjectOffsetFall_AfterActionObjectPhaseWait.bin",
-      "physical_kind": "unclassified"
-    },
-    {
-      "state": 15,
-      "target": 61564,
-      "registered": false,
-      "function": null,
-      "physical_path": "Source/Resources/17_ACTION/Unclassified045_BeforeActionObjectOffsetTransfer.bin",
-      "physical_kind": "unclassified"
-    },
-    {
-      "state": 16,
-      "target": 62408,
-      "registered": false,
-      "function": null,
-      "physical_path": "Source/Resources/17_ACTION/Unclassified046.bin",
-      "physical_kind": "unclassified"
-    },
-    {
-      "state": 17,
-      "target": 62369,
-      "registered": false,
-      "function": null,
-      "physical_path": "Source/Resources/17_ACTION/Unclassified046.bin",
-      "physical_kind": "unclassified"
-    },
-    {
-      "state": 18,
-      "target": 63165,
-      "registered": false,
-      "function": null,
-      "physical_path": "Source/Resources/17_ACTION/Unclassified051.bin",
-      "physical_kind": "unclassified"
-    }
-  ],
-  "unregistered_object_state_callback_count": 16,
-  "registered_object_state_callbacks": 6,
-  "included_text_files": 1886,
-  "included_binary_files": 277,
-  "registered_functions": 1345,
+  "modified_code_physical_target_ranges": 345,
+  "unregistered_object_state_callbacks": [],
+  "unregistered_object_state_callback_count": 0,
+  "registered_object_state_callbacks": 22,
+  "unregistered_class_callbacks": [],
+  "unregistered_class_callback_count": 0,
+  "registered_class_callbacks": 26,
+  "unique_class_handler_targets": 11,
+  "included_text_files": 1940,
+  "included_binary_files": 271,
+  "registered_functions": 1396,
   "unlinked_functions": [],
   "missing_includes_or_resources": [],
   "missing_include_order": [],
-  "global_definitions": 59331,
-  "global_references": 14896,
+  "global_definitions": 59682,
+  "global_references": 15816,
   "unresolved_global_references": [],
   "duplicate_global_definitions": [],
   "global_reference_case_mismatches": [],
@@ -158,9 +33,9 @@
     "Action": 1,
     "ThreeD": 1
   },
-  "potential_continuations": 153,
-  "ordered_fragments": 274,
-  "python_scripts_parsed": 2854,
+  "potential_continuations": 159,
+  "ordered_fragments": 286,
+  "python_scripts_parsed": 3285,
   "python_duplicate_literal_keys": [],
   "totals": {
     "numeric_control_target": 20,

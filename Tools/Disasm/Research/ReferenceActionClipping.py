@@ -98,7 +98,11 @@ class Clipping:
 
     def single_edge(self,stop=0x3FFF):
         self.byte(0xCF03,1)
-        if self.byte(0xCF0F)==0xF0:
+        # Обычный индекс за массивом может направить запись связи прямо в код.
+        # Поддерживаются исходный JR NZ и наблюдавшийся JR с тем же смещением.
+        branch,offset=self.byte(0xC94B),self.byte(0xC94C)
+        assert branch in (0x20,0x18) and offset==0x27,('неподдержанный изменённый вход ClipSingleEdge',branch,offset)
+        if branch==0x20 and self.byte(0xCF0F)==0xF0:
             first,second=self.byte(0xCF0F),self.byte(0xCF1F)
             self.byte(0xCF0F,second);self.byte(0xCF1F,first)
             for offset in (0,2):

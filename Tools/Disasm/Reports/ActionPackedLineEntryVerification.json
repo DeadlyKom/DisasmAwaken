@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "entry": 56828,
+  "instruction_bytes_unchanged": true,
+  "caller_cases": 77824,
+  "equal_endpoint_256_iterations_cases": 512,
+  "assembly_executed": false
+}

@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "total_cases": 65535,
+  "all_square_arguments_except_8000": true,
+  "independent_bit_length_and_popcount_formula": true,
+  "exact_R_with_bit7_preserved": true,
+  "external_return_verified": true,
+  "minimum_m1": 46,
+  "maximum_m1": 172,
+  "arbitrary_signed_multiply_R_proved": false,
+  "argument_8000_covered": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

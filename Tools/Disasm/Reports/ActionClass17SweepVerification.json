@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "total_cases": 38144,
+  "profiles": {
+    "all_phase_and_list_styles": 34560,
+    "all_delta_state_bytes": 1024,
+    "all_mode_bytes": 2560
+  },
+  "paths": {
+    "phase_skips_sweep": 17280,
+    "parent_state_0B": 15104,
+    "immediate_delta_32": 7424,
+    "large_effect_allocated": 8777,
+    "large_current_record_released": 23059,
+    "class17_effect": 23059,
+    "large_effect_list_full": 14282,
+    "two_class3_skip_spawn_state": 5760
+  },
+  "maximum_additional_stack_bytes": 18,
+  "maximum_effect_calls_per_sweep": 3,
+  "all_phase_bytes": true,
+  "all_old_delta_state_and_mode_bytes": true,
+  "real_large_effect_bank3_count_delta_and_reset_children_executed": true,
+  "exact_registers_flags_r_sp": true,
+  "full_eight_bank_ram_and_write_multiplicity_compared": true,
+  "real_ports_compared": true,
+  "complete_external_return": true,
+  "all_input_products_exhausted": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

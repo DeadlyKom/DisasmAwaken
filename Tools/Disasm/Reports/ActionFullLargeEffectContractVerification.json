@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "source_instruction_text_unchanged": true,
+  "large_classes_cases": 51840,
+  "small_classes_cases": 16384,
+  "assembly_executed": false
+}

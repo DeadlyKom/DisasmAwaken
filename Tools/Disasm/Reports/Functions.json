@@ -8403,8 +8403,19 @@
     "offset": 747,
     "description": "Проверка существования записи цели, поиск свободного слота, инициализация ракеты и создание обратной связи у цели",
     "semantic_status": "described",
-    "end_offset": 898,
+    "end_offset": 805,
     "path": "Source/Action/CreateMissileForTarget.asm"
+  },
+  {
+    "region": "Action",
+    "name": "CreateClass17LinkedRecord",
+    "address": 24808,
+    "slot": 17,
+    "offset": 805,
+    "description": "Создание записи класса 17 из альтернативных компонент и обновление связи целевой записи",
+    "semantic_status": "described",
+    "end_offset": 898,
+    "path": "Source/Action/CreateClass17LinkedRecord.asm"
   },
   {
     "region": "Action",
@@ -8430,6 +8441,39 @@
   },
   {
     "region": "Action",
+    "name": "CreateRandomClass20Record",
+    "address": 24957,
+    "slot": 17,
+    "offset": 954,
+    "end_offset": 1086,
+    "path": "Source/Action/CreateRandomClass20Record.asm",
+    "description": "Создание записи класса 20 из двух случайных компонент и транспонированного преобразования",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "StepRandomizedThirdPhase",
+    "address": 25089,
+    "slot": 17,
+    "offset": 1086,
+    "end_offset": 1160,
+    "path": "Source/Action/StepRandomizedThirdPhase.asm",
+    "description": "Случайное обновление счётчика направления и знаковый шаг третьей фазы записи",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "CheckLinkedDistanceAndStepCodes",
+    "address": 25163,
+    "slot": 17,
+    "offset": 1160,
+    "end_offset": 1186,
+    "path": "Source/Action/CheckLinkedDistanceAndStepCodes.asm",
+    "description": "Проверка расстояния связанной записи перед шагом кодов либо переходом во временное состояние",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
     "name": "StepRecordTargetCodes",
     "address": 25189,
     "slot": 17,
@@ -8438,6 +8482,17 @@
     "semantic_status": "described",
     "end_offset": 1266,
     "path": "Source/Action/StepRecordTargetCodes.asm"
+  },
+  {
+    "region": "Action",
+    "name": "EnterTimedPhaseFromMotion",
+    "address": 25269,
+    "slot": 17,
+    "offset": 1266,
+    "end_offset": 1292,
+    "path": "Source/Action/EnterTimedPhaseFromMotion.asm",
+    "description": "Восстановление рамки движения и установка временного состояния 11 со случайным таймером",
+    "semantic_status": "described"
   },
   {
     "region": "Action",
@@ -8482,6 +8537,28 @@
     "semantic_status": "described",
     "end_offset": 1523,
     "path": "Source/Action/ApplyIndexedDelta.asm"
+  },
+  {
+    "region": "Action",
+    "name": "RequestPairedAimLines",
+    "address": 25526,
+    "slot": 17,
+    "offset": 1523,
+    "end_offset": 1620,
+    "path": "Source/Action/RequestPairedAimLines.asm",
+    "description": "Фазовый допуск двух XOR-линий к прицелу с расходом третьей шкалы и включением захвата цели",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "SpawnClass19AndUpdateList",
+    "address": 25623,
+    "slot": 17,
+    "offset": 1620,
+    "end_offset": 1820,
+    "path": "Source/Action/SpawnClass19AndUpdateList.asm",
+    "description": "Создание записи класса 19 по двухбитовому счётчику и обновление списка кодом из сохранённого HL",
+    "semantic_status": "described"
   },
   {
     "region": "Action",
@@ -11213,6 +11290,83 @@
   },
   {
     "region": "Action",
+    "name": "PrepareLinkedRecordContext",
+    "address": 59233,
+    "slot": 17,
+    "offset": 34657,
+    "end_offset": 34708,
+    "path": "Source/Action/PrepareLinkedRecordContext.asm",
+    "description": "Подготовка адреса связанной записи и трёх компонент текущей записи в операндах последующего расчёта",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "LoadLinkedRecordVectors",
+    "address": 59284,
+    "slot": 17,
+    "offset": 34708,
+    "end_offset": 34820,
+    "path": "Source/Action/LoadLinkedRecordVectors.asm",
+    "description": "Подготовка двух трёхсловных наборов из связанной записи либо фиксированных значений связи 1A",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "CheckAndToggleLinkedOverlay",
+    "address": 59396,
+    "slot": 17,
+    "offset": 34820,
+    "end_offset": 34915,
+    "path": "Source/Action/CheckAndToggleLinkedOverlay.asm",
+    "description": "Проверка связанных векторов, обновление обратной связи и XOR-вывод сегмента",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "SpawnClass9ForClass8",
+    "address": 59491,
+    "slot": 17,
+    "offset": 34915,
+    "end_offset": 34923,
+    "path": "Source/Action/SpawnClass9ForClass8.asm",
+    "description": "Допуск полного класса 8 к созданию дочерних записей класса 9 с начальным состоянием 2",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "SpawnLinkedClass9Records",
+    "address": 59499,
+    "slot": 17,
+    "offset": 34923,
+    "end_offset": 35102,
+    "path": "Source/Action/SpawnLinkedClass9Records.asm",
+    "description": "Условное создание одной либо двух записей класса 9 с индексом родителя и копией его связи",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "CheckLinkedTargetTransition",
+    "address": 59678,
+    "slot": 17,
+    "offset": 35102,
+    "end_offset": 35125,
+    "path": "Source/Action/CheckLinkedTargetTransition.asm",
+    "description": "Проверка допуска к выбору связанной записи либо перехода к фазовому ожиданию",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "CheckObjectPhaseTransition",
+    "address": 59701,
+    "slot": 17,
+    "offset": 35125,
+    "end_offset": 35196,
+    "path": "Source/Action/CheckObjectPhaseTransition.asm",
+    "description": "Проверка случайного ожидания и перехода к фазовому смещению записи",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
     "name": "SelectClass8ForRecord",
     "address": 59772,
     "slot": 17,
@@ -11246,6 +11400,39 @@
   },
   {
     "region": "Action",
+    "name": "FindNearestListedRecord",
+    "address": 59842,
+    "slot": 17,
+    "offset": 35266,
+    "end_offset": 35328,
+    "path": "Source/Action/FindNearestListedRecord.asm",
+    "description": "Выбор ближайшей доступной записи из списка индексов с сохранением первого равенства",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "CheckCandidateListClass",
+    "address": 59904,
+    "slot": 17,
+    "offset": 35328,
+    "end_offset": 35349,
+    "path": "Source/Action/CheckCandidateListClass.asm",
+    "description": "Проверка принадлежности полного класса списку допуска выбора цели",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "CheckCandidateListReady",
+    "address": 59925,
+    "slot": 17,
+    "offset": 35349,
+    "end_offset": 35369,
+    "path": "Source/Action/CheckCandidateListReady.asm",
+    "description": "Проверка допуска класса и наличия непропущенного кандидата в списке",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
     "name": "PrepareLargeEffect",
     "address": 59945,
     "slot": 17,
@@ -11275,6 +11462,17 @@
     "end_offset": 35649,
     "path": "Source/Action/MaxRecordDeltaHigh.asm",
     "description": "Максимальный старший байт модулей трёх обёрнутых разностей записей",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "ToggleTargetOverlay",
+    "address": 60225,
+    "slot": 17,
+    "offset": 35649,
+    "end_offset": 35694,
+    "path": "Source/Action/ToggleTargetOverlay.asm",
+    "description": "Проекция пары векторов, проверка общего окна и XOR-вывод соединяющего сегмента",
     "semantic_status": "described"
   },
   {
@@ -11455,6 +11653,17 @@
   },
   {
     "region": "Action",
+    "name": "ClassifyProjectedPair",
+    "address": 60500,
+    "slot": 17,
+    "offset": 35924,
+    "end_offset": 36008,
+    "path": "Source/Action/ClassifyProjectedPair.asm",
+    "description": "Заполнение кодов двух проецированных точек и накопление их парных признаков границ",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
     "name": "UpdateAyEffects",
     "address": 60584,
     "slot": 17,
@@ -11499,6 +11708,28 @@
   },
   {
     "region": "Action",
+    "name": "RefreshRecordClassAndOffsets",
+    "address": 61443,
+    "slot": 17,
+    "offset": 36867,
+    "end_offset": 36873,
+    "path": "Source/Action/RefreshRecordClassAndOffsets.asm",
+    "description": "Повторный выбор поведения записи по классу и передача общему подготовителю смещений",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "HandleLinkedRecordProximity",
+    "address": 61449,
+    "slot": 17,
+    "offset": 36873,
+    "end_offset": 36925,
+    "path": "Source/Action/HandleLinkedRecordProximity.asm",
+    "description": "Проверка связи с записью полного класса 13, обработка близости и запуск эффекта по исходному биту 4",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
     "name": "MarkIYRecordForReuse",
     "address": 61501,
     "slot": 17,
@@ -11532,6 +11763,50 @@
   },
   {
     "region": "Action",
+    "name": "UpdatePhaseAndNearVector",
+    "address": 61564,
+    "slot": 17,
+    "offset": 36988,
+    "end_offset": 36993,
+    "path": "Source/Action/UpdatePhaseAndNearVector.asm",
+    "description": "Обновление фазового перехода и обязательная обработка близкого широкого вектора",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "UpdateLinkedOrNearPhase",
+    "address": 61569,
+    "slot": 17,
+    "offset": 36993,
+    "end_offset": 36999,
+    "path": "Source/Action/UpdateLinkedOrNearPhase.asm",
+    "description": "Проверка перехода к связи и условное продолжение в обработке близкого вектора",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "UpdateNearVectorPhase",
+    "address": 61575,
+    "slot": 17,
+    "offset": 36999,
+    "end_offset": 37054,
+    "path": "Source/Action/UpdateNearVectorPhase.asm",
+    "description": "Проверка близких широких векторов, случайного состояния 6 и шага фазы записи",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "StepSelectedWideVector",
+    "address": 61630,
+    "slot": 17,
+    "offset": 37054,
+    "end_offset": 37112,
+    "path": "Source/Action/StepSelectedWideVector.asm",
+    "description": "Шаг кодов движения к выбранному широкому вектору и проверка следующих состояний",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
     "name": "PrepareObjectOffsetTransform",
     "address": 61688,
     "slot": 17,
@@ -11539,6 +11814,61 @@
     "end_offset": 37176,
     "path": "Source/Action/PrepareObjectOffsetTransform.asm",
     "description": "Проверка маркера записи и подготовка смещений для вычислителя 6D06",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "HandleLinkedTargetState",
+    "address": 61752,
+    "slot": 17,
+    "offset": 37176,
+    "end_offset": 37410,
+    "path": "Source/Action/HandleLinkedTargetState.asm",
+    "description": "Обновление связи, выбор дочерних действий и геометрическое сопровождение записи в состоянии 02",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "CheckClass17SpawnWindow",
+    "address": 61986,
+    "slot": 17,
+    "offset": 37410,
+    "end_offset": 37455,
+    "path": "Source/Action/CheckClass17SpawnWindow.asm",
+    "description": "Проверка случайного окна создания класса 17 и загрузка байта допуска по полному классу",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "SpawnLinkedClass17AndContinue",
+    "address": 62031,
+    "slot": 17,
+    "offset": 37455,
+    "end_offset": 37461,
+    "path": "Source/Action/SpawnLinkedClass17AndContinue.asm",
+    "description": "Создание класса 17 по текущей связи и продолжение общего расчёта смещений",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "SpawnClass17FromCurrentLink",
+    "address": 62037,
+    "slot": 17,
+    "offset": 37461,
+    "end_offset": 37504,
+    "path": "Source/Action/SpawnClass17FromCurrentLink.asm",
+    "description": "Подготовка компонент и индексов текущей записи для общего создателя класса 17",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "HandleLinkedPhaseState",
+    "address": 62089,
+    "slot": 17,
+    "offset": 37513,
+    "end_offset": 37718,
+    "path": "Source/Action/HandleLinkedPhaseState.asm",
+    "description": "Обновление связанной записи с отдельным случайным окном и шагом третьей фазы",
     "semantic_status": "described"
   },
   {
@@ -11573,6 +11903,50 @@
     "semantic_status": "described",
     "end_offset": 37793,
     "path": "Source/Action/MarkRecordForReuse.asm"
+  },
+  {
+    "region": "Action",
+    "name": "StepTimedPhasePattern",
+    "address": 62369,
+    "slot": 17,
+    "offset": 37793,
+    "end_offset": 37832,
+    "path": "Source/Action/StepTimedPhasePattern.asm",
+    "description": "Обновление таймера и двух фаз с переходом к состоянию 10 при истечении",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "StepTimedLinkedOverlay",
+    "address": 62408,
+    "slot": 17,
+    "offset": 37832,
+    "end_offset": 37872,
+    "path": "Source/Action/StepTimedLinkedOverlay.asm",
+    "description": "Уменьшение таймера, восстановление состояния и обновление связанного сегмента либо создание класса 17",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "SpawnPeriodicClass3Record",
+    "address": 62448,
+    "slot": 17,
+    "offset": 37872,
+    "end_offset": 38044,
+    "path": "Source/Action/SpawnPeriodicClass3Record.asm",
+    "description": "Периодическое создание одной записи класса 3 с уменьшением родительского счётчика и обязательным сбросом баз",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "SweepClass17AndPrepareSpawn",
+    "address": 62620,
+    "slot": 17,
+    "offset": 38044,
+    "end_offset": 38174,
+    "path": "Source/Action/SweepClass17AndPrepareSpawn.asm",
+    "description": "Обработка до трёх записей класса 17 и подготовка периодического создания при недостатке связей класса 3",
+    "semantic_status": "described"
   },
   {
     "region": "Action",
@@ -11672,6 +12046,105 @@
     "semantic_status": "described",
     "end_offset": 38271,
     "path": "Source/Action/ResetRecordUpdateBases.asm"
+  },
+  {
+    "region": "Action",
+    "name": "ApproachTargetRecordAndResolve",
+    "address": 62847,
+    "slot": 17,
+    "offset": 38271,
+    "end_offset": 38506,
+    "path": "Source/Action/ApproachTargetRecordAndResolve.asm",
+    "description": "Сближение с выбранной записью, обновление связи и завершение через большой эффект",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "StepTimedRecordDecay",
+    "address": 63082,
+    "slot": 17,
+    "offset": 38506,
+    "end_offset": 38527,
+    "path": "Source/Action/StepTimedRecordDecay.asm",
+    "description": "Декремент времени состояния, освобождение при истечении и деление управляющего байта на два",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "StepIdleObjectOffset",
+    "address": 63103,
+    "slot": 17,
+    "offset": 38527,
+    "end_offset": 38542,
+    "path": "Source/Action/StepIdleObjectOffset.asm",
+    "description": "Проверка управляющего байта State00, сброс баз либо полный расчёт смещений после двойного декремента",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "ResetIdleRecordBases",
+    "address": 63121,
+    "slot": 17,
+    "offset": 38545,
+    "end_offset": 38558,
+    "path": "Source/Action/ResetIdleRecordBases.asm",
+    "description": "Обнуление трёх общих базовых слов при нулевом управляющем байте State00",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "DispatchClassOnHighRandomWord",
+    "address": 63134,
+    "slot": 17,
+    "offset": 38558,
+    "end_offset": 38571,
+    "path": "Source/Action/DispatchClassOnHighRandomWord.asm",
+    "description": "Вызов обработчика класса только при новом слове потока 0 не меньше F000",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "StepFastRecordPhases",
+    "address": 63147,
+    "slot": 17,
+    "offset": 38571,
+    "end_offset": 38589,
+    "path": "Source/Action/StepFastRecordPhases.asm",
+    "description": "Увеличение второй и третьей фаз на два и три перед общим расчётом локальных смещений",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "AcquireLinkAndApplyOffsets",
+    "address": 63165,
+    "slot": 17,
+    "offset": 38589,
+    "end_offset": 38605,
+    "path": "Source/Action/AcquireLinkAndApplyOffsets.asm",
+    "description": "Выбор связи и попытка создания дочерних записей перед обязательным расчётом локальных смещений",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "ApplyRecordLocalOffsets",
+    "address": 63181,
+    "slot": 17,
+    "offset": 38605,
+    "end_offset": 38636,
+    "path": "Source/Action/ApplyRecordLocalOffsets.asm",
+    "description": "Увеличение фазового индекса и расчёт баз по отдельным фазам из байтов 0D..0F записи",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "StartSmallRecordEffect",
+    "address": 63212,
+    "slot": 17,
+    "offset": 38636,
+    "end_offset": 38697,
+    "path": "Source/Action/StartSmallRecordEffect.asm",
+    "description": "Создание малого эффекта по заголовку модели и переход текущей записи к состоянию затухания 7",
+    "semantic_status": "described"
   },
   {
     "region": "Action",

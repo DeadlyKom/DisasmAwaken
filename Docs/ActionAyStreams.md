@@ -1,6 +1,6 @@
-# Физические строки семи потоков AY
+# Физические строки восьми потоков AY
 
-Три файла [AyStreamsFirst.asm](../Source/Action/Data/AyStreamsFirst.asm), [AyCaptureStreams.asm](../Source/Action/Data/AyCaptureStreams.asm) и [AyStreamsLater.asm](../Source/Action/Data/AyStreamsLater.asm) содержат 88 физических экземпляров FActionAyFrame и семь отдельных нулевых маркеров. Всего выделено 359 исходных байтов ACTION банка 0. Их читатель [UpdateAyEffects](../Source/Action/UpdateAyEffects.asm) описан [отдельно](ActionAyEffects.md).
+Четыре файла [AyStreamsFirst.asm](../Source/Action/Data/AyStreamsFirst.asm), [AyCaptureStreams.asm](../Source/Action/Data/AyCaptureStreams.asm), [AyPairedAimStream.asm](../Source/Action/Data/AyPairedAimStream.asm) и [AyStreamsLater.asm](../Source/Action/Data/AyStreamsLater.asm) содержат 94 физических экземпляра FActionAyFrame и восемь отдельных нулевых маркеров, всего 384 исходных байта ACTION банка 0. Читатель [UpdateAyEffects](../Source/Action/UpdateAyEffects.asm) описан [отдельно](ActionAyEffects.md).
 
 | Имя начала | Адрес | Строк | Адрес терминатора | Доказанный контекст указателя |
 | --- | --- | --- | --- | --- |
@@ -8,7 +8,8 @@
 | MissileRow00 | EDA8 | 6 | EDC0 | CreateMissileForTarget и CompleteMissileLaunch задают поток A |
 | CaptureRow00 | EE02 | 6 | EE1A | FollowProjectedTarget задаёт поток A при снятии запроса цели |
 | FullSlotsRow00 | EE1B | 6 | EE33 | FollowProjectedTarget заменяет поток A при трёх занятых целях |
-| WaitLoopRow00 | EE4D | 53 | EF21 | ещё не разобранная цепочка 6054 задаёт поток B перед циклом ожидания |
+| PairedAimRow00 | EE34 | 6 | EE4C | RequestPairedAimLines задаёт поток A после фазового допуска и расхода ThirdValue |
+| WaitLoopRow00 | EE4D | 53 | EF21 | ShowNoiseBeforeReload задаёт поток B перед ожиданием, общий хвост большого эффекта использует тот же поток |
 | EventBit0Row00 | EF22 | 6 | EF3A | UpdateFrame задаёт поток A при обработке бита 0 состояния A78C |
 | RecordRow00 | EF3B | 5 | EF4F | ещё не разобранная цепочка 635B задаёт поток A |
 
@@ -33,6 +34,6 @@
 
 ## Размещение и проверка
 
-Первый файл занимает ED8F..EDC0, потоки назначения цели EE02..EE33, последний файл EE4D..EF4F. Промежутки EDC1..EE01, EE34..EE4C и хвост EF50..F074 сохранены бинарными фрагментами с явным Unknown. Назначение этих 383 соседних байтов в данном разборе не установлено, внешнее сходство не является основанием считать их продолжением потоков. Порядок и все физические смещения сохранены.
+Физические интервалы потоков занимают ED8F..EDC0, EE02..EE33, EE34..EE4C и EE4D..EF4F. Промежуток EDC1..EE01 сохранён как Unknown, его внешнее сходство с потоком не доказывает потребителя. С EF50 начинается отдельная типизированная таблица состояний и последующий код, они не относятся к звуковым строкам.
 
-[ActionAyStreams.py](../Tools/Disasm/Research/ActionAyStreams.py) строго разбирает физические экземпляры и поля, а VerifySources сравнивает их с оригинальным ACTION и реестром адресов. [CheckActionAyStreamPlayback.py](../Tools/Disasm/Research/CheckActionAyStreamPlayback.py) исполняет каждый поток по исходному адресу в A и B, с тремя исходными смесителями. [Отчёт](../Tools/Disasm/Reports/ActionAyStreamPlaybackVerification.json) подтверждает 42 последовательности и 570 вызовов, включая один дополнительный вызов после выключения. Все записи памяти и портовые события сравниваются с ожидаемой последовательностью. Это модель исполнения с регистром смесителя, реальный AY, акустика, прерывания и нативный запуск не проверены.
+[ActionAyStreams.py](../Tools/Disasm/Research/ActionAyStreams.py) строго разбирает физические экземпляры и поля, а VerifySources сравнивает их с оригинальным ACTION и реестром адресов. [CheckActionAyStreamPlayback.py](../Tools/Disasm/Research/CheckActionAyStreamPlayback.py) исполняет каждый поток по исходному адресу в A и B, с тремя исходными смесителями. [Отчёт](../Tools/Disasm/Reports/ActionAyStreamPlaybackVerification.json) подтверждает 48 последовательностей и 612 вызовов, включая один дополнительный вызов после выключения. Все записи памяти и портовые события сравниваются с ожидаемой последовательностью. Это модель исполнения с регистром смесителя, реальный AY, акустика, прерывания и нативный запуск не проверены.

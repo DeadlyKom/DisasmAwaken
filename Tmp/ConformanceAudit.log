@@ -1,0 +1,42 @@
+{
+  "method": "static_source_audit_without_assembly",
+  "modified_code_path_errors": [],
+  "modified_code_physical_target_ranges": 345,
+  "unregistered_object_state_callback_count": 0,
+  "registered_object_state_callbacks": 22,
+  "unregistered_class_callbacks": [],
+  "unregistered_class_callback_count": 0,
+  "registered_class_callbacks": 26,
+  "unique_class_handler_targets": 11,
+  "included_text_files": 1940,
+  "included_binary_files": 271,
+  "registered_functions": 1396,
+  "unlinked_functions": [],
+  "missing_includes_or_resources": [],
+  "missing_include_order": [],
+  "global_definitions": 59682,
+  "global_references": 15816,
+  "unresolved_global_references": [],
+  "duplicate_global_definitions": [],
+  "global_reference_case_mismatches": [],
+  "source_files_outside_graph": [],
+  "unknown_fragments": 2,
+  "unknown_contract_fragments": 1,
+  "named_fragments_without_proved_contract": 1,
+  "original_profile_only_contracts": 0,
+  "runtime_profile_limits": "See RuntimeProfileQualification.json and Docs/MapRuntimeProfiles.md, whole game remains unproved",
+  "pending_by_region": {
+    "Action": 1,
+    "ThreeD": 1
+  },
+  "potential_continuations": 159,
+  "ordered_fragments": 286,
+  "python_scripts_parsed": 3285,
+  "python_duplicate_literal_keys": [],
+  "totals": {
+    "numeric_control_target": 20,
+    "numeric_index_operand": 45
+  },
+  "full_semantic_analysis_complete": false,
+  "assembly_executed": false
+}

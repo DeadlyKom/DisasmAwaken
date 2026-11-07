@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "state_index": 0,
+  "address": 63103,
+  "name": "StepIdleObjectOffset",
+  "physical_pointer_preserved": true,
+  "assembly_executed": false,
+  "native_execution": false
+}

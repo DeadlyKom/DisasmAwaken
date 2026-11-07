@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "changed_note_counts": {
+    "Tools/Disasm/Research/ActionObjectRecords.py": 1,
+    "Includes/Structs/Include.inc": 1,
+    "Source/Action/Data/ObjectRecords.asm": 26
+  },
+  "known_bit_masks": [
+    1,
+    2,
+    4
+  ],
+  "unknown_bits": [
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "physical_record_bytes_unchanged": 1664,
+  "assembly_executed": false
+}

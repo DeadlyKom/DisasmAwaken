@@ -1,6 +1,6 @@
 """Линейный растеризатор ACTION с заменяемыми операциями и временным SP строки."""
 FUNCTIONS={0xDDF0:('DrawLinearLine','Растеризация отрезка в линейный буфер страницы 80 с режимами AND, OR и XOR без конечной точки')}
-LOCAL={0xDE0A:'OrderedY',0xDE3F:'ApplyLeft',0xDE42:'LeftBoundary',0xDE44:'LeftError',0xDE4F:'LeftByte',0xDE55:'LeftRow',
+LOCAL={0xDDFC:'DrawPacked',0xDE0A:'OrderedY',0xDE3F:'ApplyLeft',0xDE42:'LeftBoundary',0xDE44:'LeftError',0xDE4F:'LeftByte',0xDE55:'LeftRow',
     0xDE5F:'SteepLeft',0xDE71:'LeftDownPixel',0xDE72:'ApplyDownLeft',0xDE7C:'LeftDownBound',0xDE7E:'LeftDownNext',0xDE84:'LeftDownByte',
     0xDE8B:'Rightward',0xDEA3:'ApplyRight',0xDEA6:'RightBoundary',0xDEA8:'RightError',0xDEB3:'RightByte',0xDEB9:'RightRow',
     0xDEC3:'SteepRight',0xDED5:'RightDownPixel',0xDED6:'ApplyDownRight',0xDEE0:'RightDownBound',0xDEE2:'RightDownNext',0xDEE8:'RightDownByte',0xDEEC:'RestoreStack'}
@@ -107,3 +107,6 @@ def qualify_mutations(mutations,regions,functions,pieces):
             writer_source_classified=True,target_source_classified=True,target_path='Source/Action/DrawLinearLine.asm',
             target_opcode_executable_byte=True,target_runtime_opcodes=[0xA1,0xA9,0xB1] if pixel else [0x30,0x38]))
     mutations.sort(key=lambda m:(m['region'],m['writer'],m['target']))
+
+# Дополнительный прямой вход без повторного чтения рабочих точек.
+COMMENTS[0xDDFC]=(['-----------------------------------------', 'Дополнительный вход DrawPacked', 'In, HL и DE содержат упакованные концы, Second в младшем байте, First в старшем, BC и AF числовых аргументов не задают.', 'In, режим и маски согласованы как у основного входа, весь путь пиксельных записей доступен и не пересекается с исполняемым кодом или внешним CPU-стеком.', 'Out, для разных концов действует основной договор, исходные FirstPoint и SecondPoint не читаются.', 'Out, при равных концах проверка равенства пропущена, нулевой B даёт 256 итераций по убыванию Second вместо пустого вывода.', 'Corrupt, регистры, пиксели, временный SP и операнды из основного договора, R растеризатора независимо не доказан.', 'Note, 77824 сценария прямого вызывающего включили 512 реальных равных отрезков с First=95, общий профиль равных точек у верхней границы буфера не доказан.', '-----------------------------------------', 'Сохранение CPU-стека и установка исходного SP=32 для шага линейной строки.'],None)

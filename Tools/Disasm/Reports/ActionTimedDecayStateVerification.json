@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "total_cases": 131072,
+  "outcomes": {
+    "zero_unchanged": 510,
+    "halve": 130050,
+    "expired_reuse": 512
+  },
+  "all_timer_value_and_input_carry_products": true,
+  "exact_registers_flags_r_sp": true,
+  "full_eight_bank_ram_and_write_multiplicity_compared": true,
+  "actual_mark_record_child_executed": true,
+  "additional_stack_bytes": 0,
+  "common_tail_executed": false,
+  "boundaries": [
+    16383,
+    61688
+  ],
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

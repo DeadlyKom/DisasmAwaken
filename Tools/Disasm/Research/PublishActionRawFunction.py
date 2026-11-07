@@ -52,14 +52,16 @@ def main(facts,tag,start,end,expected_cases,allow_subrange=False,proof_tag=None)
     functions.insert(index,dict(region='Action',name=name,address=start,slot=17,offset=offset,end_offset=end_offset,path=code_path,description=description,semantic_status=semantic_status))
     pieces=[]
     if old['offset']<offset:
-        prefix_path=getattr(facts,'UNCLASSIFIED_PREFIX_PATH','Source/Resources/17_ACTION/'+old_path.stem+'_Before'+tag+'.bin')
+        prefix_path=getattr(facts,'UNCLASSIFIED_PREFIX_PATH',f'Source/Resources/17_ACTION/Unclassified{old["offset"]:04X}_{offset:04X}.bin')
+        assert not (ROOT/prefix_path).exists(),('новый остаток не должен заменять существующий файл',prefix_path)
         pending[ROOT/prefix_path]=source[old['offset']:offset]
         pieces.append(dict(old,length=offset-old['offset'],path=prefix_path,origin=None,
             sha256=hashlib.sha256(source[old['offset']:offset]).hexdigest()))
     pieces.append(dict(old,offset=offset,length=end-start,kind='code',path=code_path,origin=start,
         sha256=hashlib.sha256(source[offset:end_offset]).hexdigest()))
     if end_offset<old_end:
-        suffix_path=getattr(facts,'UNCLASSIFIED_SUFFIX_PATH','Source/Resources/17_ACTION/'+old_path.stem+'_After'+tag+'.bin')
+        suffix_path=getattr(facts,'UNCLASSIFIED_SUFFIX_PATH',f'Source/Resources/17_ACTION/Unclassified{end_offset:04X}_{old_end:04X}.bin')
+        assert not (ROOT/suffix_path).exists(),('новый остаток не должен заменять существующий файл',suffix_path)
         pending[ROOT/suffix_path]=source[end_offset:old_end]
         pieces.append(dict(old,offset=end_offset,length=old_end-end_offset,path=suffix_path,origin=None,
             sha256=hashlib.sha256(source[end_offset:old_end]).hexdigest()))
@@ -75,6 +77,10 @@ def main(facts,tag,start,end,expected_cases,allow_subrange=False,proof_tag=None)
             owner=next(p for p in pieces if p['offset']<=writer_offset<p['offset']+p['length'])
             item.update(path=owner['path'],writer_source_classified=owner['kind']=='code')
         target_bank = 5 if start < 0x8000 else 2 if start < 0xC000 else 0
+        if item.get('target_path')==old['path']:
+            assert item.get('target_slot')==17 and 'target_offset' in item
+            owner=next(p for p in pieces if p['offset']<=item['target_offset']<p['offset']+p['length'])
+            item.update(target_path=owner['path'],target_source_classified=owner['kind']=='code')
         if item.get('target_region',item['region'])=='Action' and item.get('target_bank',target_bank)==target_bank and start<=item['target']<end:
             owner=next(i for i in records if i['address']<=item['target']<i['address']+len(bytes.fromhex(i['hex'])))
             assert item['target_instruction']==owner['address']
@@ -128,6 +134,15 @@ def main(facts,tag,start,end,expected_cases,allow_subrange=False,proof_tag=None)
             include_lines+=['                ; Unknown, соседние байты вне доказанного входа '+name,
                             '                incbin "../Resources/17_ACTION/'+piece['path'].rsplit('/',1)[-1]+'"']
     pending[path]=text.replace(needle,'\n'.join(include_lines)).encode('utf-8')
+    if hasattr(facts,'INCLUDE_ORDER'):
+        first,second=facts.INCLUDE_ORDER
+        owners=[next(f for f in functions if f['region']=='Action' and f['name']==value) for value in (first,second)]
+        assert owners[0]['slot']==owners[1]['slot'] and owners[0]['end_offset']==owners[1]['offset']
+        ordered=pending[path].decode('utf-8')
+        for number,value in enumerate((first,second)):
+            line='                include "../Action/'+value+'.asm"';assert ordered.count(line)==1
+            ordered=ordered.replace(line,line.ljust(80)+'; ('+str(number)+') жёсткий порядок, последовательное исполнение')
+        pending[path]=ordered.encode('utf-8')
     prefix=re.sub(r'(?<!^)(?=[A-Z][a-z])','_',tag).upper();handler=prefix.lower()+'_name_operands'
     for filename,extra in (
         ('Knowledge.py',f"\nfrom {tag}Facts import FUNCTIONS as {prefix}_FUNCTIONS\nFUNCTIONS['Action'].update({prefix}_FUNCTIONS)\n"),

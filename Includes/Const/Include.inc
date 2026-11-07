@@ -1582,4 +1582,234 @@ GateMinimum     equ #40                                                         
 HighLimit       equ #03                                                         ; исключённая граница старшего байта нового слова Stream8
                 endmodule
 
+
+                ; Исходные пороги и коды переходов E935, исходные байты сохраняются
+                module ActionPhaseTransitionConst
+RandomHighMin   equ #FA                                                         ; минимальный старший байт случайного слова для ожидания
+RandomLowMin    equ #EF                                                         ; минимальный младший байт того же случайного слова
+PairFoldLimit   equ #02                                                         ; исключающий верхний порог первых двух свёрнутых байтов
+ThirdFoldLimit  equ #06                                                         ; исключающий верхний порог третьего свёрнутого байта
+WaitState       equ #13                                                         ; индекс AdvanceObjectPhaseWait в исходной таблице состояний
+RiseState       equ #14                                                         ; индекс AdvanceObjectOffsetRise в исходной таблице состояний
+RiseTimer       equ #1E                                                         ; исходное значение таймера, 30 обновлений обработчика
+                endmodule
+
+
+                ; Полные коды допуска и маркеры исходного списка целей
+                module ActionCandidateListConst
+AllowedClass0   equ #00                                                         ; первый допускаемый код, его игровое название не установлено
+AllowedClass4   equ #04                                                         ; второй допускаемый код
+AllowedClass5   equ #05                                                         ; третий допускаемый код
+AllowedClass8   equ #08                                                         ; четвёртый допускаемый код
+AllowedClass1   equ #01                                                         ; пятый допускаемый код
+AllowedClass9   equ #09                                                         ; последний допускаемый код
+SkippedIndex    equ #FF                                                         ; пропускаемая ячейка списка кандидатов
+ListEnd         equ #FE                                                         ; маркер завершения списка кандидатов
+                endmodule
+
+
+                ; Исходный допуск R и индекс обработчика связанной записи
+                module ActionTargetTransitionConst
+RefreshMin      equ #64                                                         ; минимальное прочитанное R для допуска к просмотру списка
+LinkedState     equ #0E                                                         ; исходный индекс обработчика связанной записи
+                endmodule
+
+
+                ; Исходные пороги широких векторов и выбора состояния 6
+                module ActionNearPhaseConst
+SmallLimit      equ #04                                                         ; исключающий верхний порог близости, результаты 0..3 допускаются
+RandomBase      equ #28                                                         ; базовая часть изменяемого порога половины H
+RandomLowCode   equ #7F                                                         ; точный младший байт нового слова для состояния 6
+SelectedState   equ #06                                                         ; исходный индекс состояния, выбранного случайной ветвью
+                endmodule
+
+
+                ; Исходные шаги фаз и переход State11 в State10
+                module ActionTimedPhaseConst
+Phase1Step      equ #04                                                         ; шаг циклического OffsetPhase1
+Phase2Step      equ #02                                                         ; шаг циклического OffsetPhase2
+ReloadTimer     equ #46                                                         ; длительность следующего состояния, 70 обновлений
+NextState       equ #10                                                         ; исходный индекс следующего состояния
+                endmodule
+
+
+                ; Исходное специальное значение связи, новая память не выделяется
+                module ActionLinkedContextConst
+SpecialRecord   equ #A780                                                       ; адрес для LinkedIndex=FF, отдельный от обычного индекса 255
+                endmodule
+
+
+                ; Фиксированный контекст особой связи 1A
+                module ActionLinkedVectorsConst
+SpecialLink     equ #1A                                                         ; числовой код особой связи, подготовленный адрес игнорируется
+FixedMiddle     equ #FFB0                                                       ; исходное второе выходное слово особого контекста
+FixedLast       equ #FFFF                                                       ; исходное третье выходное слово особого контекста
+                endmodule
+
+
+                ; Исходные параметры создаваемой записи класса 9
+                module ActionChildSpawnConst
+LowLimit        equ #0A                                                         ; исключающий верхний порог нового младшего байта потока 11
+RequiredClass   equ #08                                                         ; полный класс родителя, записываемый в Unknown21 ребёнка
+ModelWithBit7   equ #88                                                         ; ModelOffset при установленном бите 7 R
+ModelNoBit7     equ #8C                                                         ; ModelOffset при сброшенном бите 7 R
+TargetLife      equ #5A                                                         ; исходный байт 0F ребёнка, полная игровая роль зависит от состояния
+Phase1Mask      equ #0F                                                         ; четыре младших разряда R для OffsetPhase1
+Phase2Mask      equ #07                                                         ; три младших разряда R для OffsetPhase2
+TimerByte11     equ #28                                                         ; исходный счётчик байта 11, 40
+SavedState      equ #0D                                                         ; состояние проверки выбранной записи после восстановления
+ChildClass      equ #09                                                         ; полный класс создаваемых записей
+ControlByte13   equ #32                                                         ; исходное управляющее значение байта 13, 50
+InitialByte10   equ #01                                                         ; исходное управляющее значение байта 10
+TargetStep      equ #02                                                         ; шаг двух фазовых кодов относительно выбранной цели
+                endmodule
+
+
+                ; Исходные параметры периодического создания класса 3
+                module ActionPeriodicClass3Const
+PhaseMask       equ #0F                                                         ; общая фаза по модулю 16 вызовов
+ParentState     equ #09                                                         ; состояние родителя при недоступной связи либо окончании счётчика
+ModelBase       equ #10                                                         ; байтовая база четырёх моделей, код области умножается на четыре
+TargetLife      equ #96                                                         ; исходный управляющий байт 0F ребёнка, 150
+InitialPhase0   equ #40                                                         ; начальный циклический индекс первой фазы
+TimerByte11     equ #46                                                         ; управляющий счётчик байта 11, 70
+InitialState    equ #02                                                         ; начальное состояние ребёнка
+SavedState      equ #0C                                                         ; сохранённое состояние ребёнка
+ChildClass      equ #03                                                         ; полный класс создаваемой записи
+ControlByte13   equ #64                                                         ; исходный байт 13, 100
+InitialByte10   equ #1E                                                         ; исходный байт 10, 30
+                endmodule
+
+
+                ; Начальное состояние детей специализированного входа класса 8
+                module ActionClass8SpawnConst
+ChildState      equ #02                                                         ; входной A создателя детей, состояние родителя не изменяется
+                endmodule
+
+
+                ; Исходные признаки выбранной записи State0E
+                module ActionLinkedProximityConst
+RequiredClass   equ #13                                                         ; полный класс выбранной записи, 19 десятично
+NearLimit       equ #01                                                         ; исключающий порог старшего байта, ближние модули меньше 256
+EffectBit       equ #04                                                         ; номер бита с маской 10, проверяется до перезаписи ReuseByte
+                endmodule
+
+
+                ; Исходные параметры малого эффекта и последующего затухания родителя
+                module ActionSmallEffectConst
+EffectState     equ #1A                                                         ; State записи FVisualEffect, передаётся через альтернативный A
+MinimumFrames   equ #1A                                                         ; минимальное число оставшихся обновлений обхода, 26
+DecayState      equ #07                                                         ; исходный индекс StepTimedRecordDecay
+DecayCount      equ #12                                                         ; 18 вызовов декремента State07 без вмешательства иных писателей
+                endmodule
+
+
+                ; Полные фильтры и исходные параметры State0A
+                module ActionClass17SweepConst
+EffectLimit     equ #03                                                         ; максимум вызовов большого эффекта за один допущенный проход
+CandidateClass  equ #11                                                         ; полный класс кандидата, 17 десятично
+TargetClass     equ #12                                                         ; полный класс связанной цели, 18 десятично
+SpawnState      equ #0B                                                         ; состояние периодического создания класса 3
+SpawnBaseCount  equ #02                                                         ; младший бит R прибавляется к этому исходному числу созданий
+SpecialLink     equ #1A                                                         ; связь, допускающая непосредственную поправку C
+DirectDelta     equ #20                                                         ; положительная исходная поправка, 32, при режиме увеличивается на 10
+                endmodule
+
+
+                ; Физические поля и исходные числовые параметры создания класса 19
+                module ActionClass19SpawnConst
+CountMask       equ #03                                                         ; младшие два бита, число оставшихся попыток 0..3
+KeepUpper       equ #FC                                                         ; сохранение остальных шести битов ReuseByte родителя
+KindMask        equ #1F                                                         ; исходные пять младших битов R
+KindLimit       equ #1B                                                         ; 27, исходные коды от этого порога уменьшаются на пять
+KindSubtract    equ #05                                                         ; свёртка кодов 27..31 и порог временной метки для кодов 0..4
+TemporaryBit    equ #07                                                         ; временный бит 7 L/B, не разряд ReuseByte
+ControlMask     equ #70                                                         ; биты 4..6 R, управляющий код после сдвига 1..8
+ComponentDelta  equ #00C8                                                       ; положительное смещение 200 каждой компоненты ребёнка
+ModelOffset     equ #98                                                         ; исходное байтовое смещение таблицы моделей
+InitialState    equ #04                                                         ; StepFastRecordPhases, фазы вычисления копируются в 0D..0F
+RateSubtract    equ #1E                                                         ; 30, вычитаемая часть родительского Unknown10
+RateLimit       equ #46                                                         ; исключающий верхний порог 70
+RateMaximum     equ #45                                                         ; максимальное записываемое значение 69
+ChildClass      equ #13                                                         ; полный класс 19 десятично
+ControlByte13   equ #14                                                         ; исходное значение байта 13 ребёнка, 20
+ChildEffectMask equ #10                                                         ; бит 4 ReuseByte для нормализованных кодов 0..4
+                endmodule
+
+
+                ; Исходные параметры выбора широкого вектора и перехода State01
+                module ActionWideStateConst
+BeforeFirst     equ #9B1B                                                       ; адрес перед первой строкой, первое ADD даёт 9B27
+VectorStride    equ #000C                                                       ; три dword по четыре байта
+ModeByte        equ #9B83                                                       ; глобальный ненулевой допуск, остальные роли отдельно не установлены
+FirstExcluded   equ #05                                                         ; верхняя исключённая граница полного ClassCode
+RandomHigh      equ #41                                                         ; точное значение H нового слова потока 2
+RandomLowMin    equ #5A                                                         ; включённая нижняя граница L
+NextState       equ #0C                                                         ; исходный индекс следующего обработчика
+                endmodule
+
+
+                ; Исходные пороги и состояния обработчика State05
+                module ActionLinkedPhaseConst
+OwnState        equ #05                                                         ; собственный индекс, исключённый из повторного косвенного вызова
+ListRMin        equ #7E                                                         ; нижняя граница R для нового поиска связи
+ParameterLimit  equ #23                                                         ; верхняя исключённая граница Unknown13 случайных действий
+EffectRMin      equ #64                                                         ; нижняя граница R для State06
+SpawnRMin       equ #28                                                         ; нижняя включённая граница R попытки класса 19
+Class2          equ #02                                                         ; полный числовой класс 2, игровой вид не переименовывается
+Class3          equ #03                                                         ; полный числовой класс 3
+Class8          equ #08                                                         ; полный числовой класс 8 с отдельным запросом детей
+Class9          equ #09                                                         ; полный числовой класс 9
+LinkedState     equ #0E                                                         ; состояние с принятой связью
+EffectState     equ #06                                                         ; состояние запуска малого эффекта
+PhaseState      equ #0F                                                         ; состояние фазового перехода после попытки класса 19
+NoLink          equ #FF                                                         ; отсутствие связи в этом обработчике
+                endmodule
+
+
+                ; Исходные индексы битов и сообщения State08
+                module ActionArrivalConst
+LinkedBit       equ #01                                                         ; бит 1 LinkFlags, обратная связь установлена до проверки активности
+ReachedBit      equ #02                                                         ; бит 2 LinkFlags, пройдена ближняя область
+MissingText     equ #F248                                                       ; адрес текста Controls банка 1, не адрес кода ACTION
+ReachedText     equ #F293                                                       ; адрес текста Controls банка 1
+StateOffset     equ #0A                                                         ; смещение StateCode внутри обычной записи, младший байт базы кратен 40
+                endmodule
+
+
+                ; Исходные параметры двух линий прицела
+                module ActionPairedAimConst
+DefaultPhase    equ #00                                                         ; исходный аккумулятор фазового допуска
+DefaultStep     equ #32                                                         ; исходный шаг, изменяется полем 04 набора параметров
+Cost            equ #02                                                         ; расход двух делений ThirdValue
+XorMode         equ #38A9                                                       ; младший байт XOR C, старший JR C
+FirstPoint      equ #5F40                                                       ; Second=64, First=95
+SecondPoint     equ #5FC0                                                       ; Second=192, First=95
+XOffset         equ #08                                                         ; перенос точки прицела по горизонтали перед поправкой
+YOffset         equ #06                                                         ; перенос точки прицела по вертикали перед поправкой
+                endmodule
+
+
+                ; Исходные значения записи класса 20
+                module ActionClass20SpawnConst
+PositiveDepth   equ #7530                                                       ; положительная третья компонента, 30000
+NegativeDepth   equ #8AD0                                                       ; отрицательная третья компонента, -30000
+Model           equ #C0                                                         ; смещение модели в таблице заголовков
+Phase0          equ #0C                                                         ; исходный код первой фазы
+Phase1          equ #1D                                                         ; исходный код второй фазы
+Phase2          equ #37                                                         ; исходный код третьей фазы
+State           equ #04                                                         ; исходный обработчик движения
+Class           equ #14                                                         ; полный класс, 20 десятично
+Parameter       equ #FA                                                         ; исходное Unknown13, единицы не установлены
+InitialStep     equ #02                                                         ; исходный TargetCodeStep
+Unknown10Value  equ #02                                                         ; исходное значение поля Unknown10
+TargetValue     equ #02                                                         ; исходное значение TargetIndex без создания связи
+                endmodule
+
+
+                ; Исходный порог повторной обработки класса
+                module ActionRandomClassGateConst
+WordThreshold   equ #F000                                                       ; допуск последних 4096 возможных слов потока
+                endmodule
+
                 endif

@@ -1,0 +1,36 @@
+{
+  "passed": true,
+  "total_cases": 73472,
+  "profiles": {
+    "all_stream11_words": 65536,
+    "all_R_styles_and_states": 6144,
+    "all_reuse_bytes_and_carry": 512,
+    "all_fold_bytes": 1280
+  },
+  "paths": {
+    "stream_11": 73216,
+    "random_reject": 64000,
+    "requested_1": 4608,
+    "free_record": 11776,
+    "child_written": 11776,
+    "requested_2": 4608,
+    "no_free_record": 1536,
+    "allocation_return_with_EXX": 1536,
+    "skip_once": 1024,
+    "already_requested": 256
+  },
+  "maximum_additional_stack_bytes": 4,
+  "all_stream11_words_at_fold_zero": true,
+  "all_256_R_values_and_four_state_arguments": true,
+  "all_reuse_bytes_and_input_carry": true,
+  "all_fold_bytes": true,
+  "real_reuse_index_and_stream_children_executed": true,
+  "exact_registers_flags_r_sp": true,
+  "full_eight_bank_ram_and_write_multiplicity_compared": true,
+  "early_allocation_return_preserves_unbalanced_EXX": true,
+  "allocation_failure_does_not_clear_parent_bit2": true,
+  "all_input_products_exhausted": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

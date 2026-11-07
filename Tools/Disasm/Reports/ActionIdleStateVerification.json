@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "total_cases": 196608,
+  "cases_by_entry": {
+    "0xf691": 65536,
+    "0xf67f": 131072
+  },
+  "paths": {
+    "reset_bases": 66048,
+    "complete_offset_vector_return": 65280,
+    "marker_return": 65280
+  },
+  "all_input_AF_for_reset": true,
+  "all_counter_limit_and_marker_products": true,
+  "exact_registers_flags_r_sp": true,
+  "full_eight_bank_ram_and_write_multiplicity_compared": true,
+  "actual_offset_prepare_child_executed": true,
+  "offset_calculator_and_multiply_children_executed": true,
+  "preserved_child_return_word": 63117,
+  "maximum_additional_stack_bytes": 8,
+  "original_zero_immediate_required": true,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

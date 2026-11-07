@@ -17,8 +17,8 @@
                 ;   HL, AF в части A, пятнадцать целевых байтов, R
                 ; Note:
                 ;   исходный набор читается в фиксированном порядке, указатель HL продвигается только четырнадцать раз
-                ;   две цели Unknown04 и Unknown09 пока не отнесены к доказанным инструкциям или полям данных
-                ;   тринадцать остальных целей являются доказанными непосредственными операндами исходных инструкций ACTION
+                ;   поля 04 и 09 задают PairedLineStep фазового допуска и LinkedRLimit обратной связи, их потребители установлены
+                ;   все пятнадцать целей являются доказанными непосредственными операндами исходных инструкций ACTION
                 ;   игровые имена полей и поведение всех изменяемых процедур ещё не установлены, гарантируется точная маршрутизация байтов
                 ; -----------------------------------------
                 ; выбор пятнадцатибайтового набора, подготовленного BuildParameterTables
@@ -38,9 +38,9 @@ Entry:          LD HL, @ControlsParameterTablesState.Parameters
                 LD A, (HL)
                 LD (@ActionApplyParametersState.AddImmediate03), A
                 INC HL
-                ; обновление Unknown04, игровой потребитель этого байта ещё не установлен
+                ; обновление PairedLineStep фазового допуска двух линий прицела
                 LD A, (HL)
-                LD (@ActionApplyParametersState.Unknown04), A
+                LD (@ActionApplyParametersState.PairedLineStep), A
                 INC HL
                 ; применение поля 05 ко второму аддитивному операнду общего кода
                 LD A, (HL)
@@ -59,9 +59,9 @@ Entry:          LD HL, @ControlsParameterTablesState.Parameters
                 LD A, (HL)
                 LD (@ActionApplyParametersState.RandomLowLimit), A
                 INC HL
-                ; обновление Unknown09 в выбранном верхнем банке 0
+                ; обновление порога R обратной связи CheckAndToggleLinkedOverlay в банке 0
                 LD A, (HL)
-                LD (@ActionApplyParametersState.Unknown09), A
+                LD (@ActionApplyParametersState.LinkedRLimit), A
                 INC HL
                 ; обновление операнда Class3RLimit, порога аппаратного R для класса 3
                 LD A, (HL)

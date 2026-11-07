@@ -1,0 +1,45 @@
+{
+  "passed": true,
+  "total_cases": 75008,
+  "profiles": {
+    "all_stream0_words": 65536,
+    "all_global_bytes_and_rows": 6144,
+    "parent_states": 3328
+  },
+  "cases_by_entry": {
+    "0xf087": 71680,
+    "0xf07c": 1664,
+    "0xf081": 1664
+  },
+  "paths": {
+    "stream_0": 69826,
+    "random_no_state_06": 69656,
+    "increment_phase1": 66391,
+    "state_06": 170,
+    "wide_not_small": 4290,
+    "global_not_small": 7555,
+    "stream_5": 3148,
+    "reject_27": 1604,
+    "offset_rise": 1544,
+    "low_R_phase": 624,
+    "carry_skip_near": 892,
+    "gate_Z_phase": 860,
+    "improve": 120,
+    "end": 180,
+    "linked_state_0E": 180,
+    "skip": 60,
+    "invalidate": 60
+  },
+  "maximum_additional_stack_bytes": 10,
+  "real_search_random_target_and_phase_children_executed": true,
+  "exact_registers_flags_r_sp": true,
+  "full_eight_bank_ram_and_write_multiplicity_compared": true,
+  "all_stream0_words_at_fold_zero": true,
+  "all_global_component_bytes": true,
+  "common_tail_executed": false,
+  "boundary": 61688,
+  "all_input_products_exhausted": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

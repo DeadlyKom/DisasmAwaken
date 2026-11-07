@@ -16,7 +16,7 @@
   "self_selection_alias_preserved": true,
   "out_of_initial_array_target_bytes_preserved": true,
   "actual_selector_search_distance_geometry_and_reuse_executed": true,
-  "exact_registers_except_r": true,
+  "exact_registers_including_r": true,
   "full_eight_bank_ram_and_write_multiplicity_compared": true,
   "maximum_extra_stack_bytes": 18,
   "real_ports_verified": true,

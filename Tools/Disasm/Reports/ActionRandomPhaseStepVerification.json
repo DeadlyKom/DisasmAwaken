@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "total_cases": 131072,
+  "profiles": {
+    "all_stream_words": 65536,
+    "all_timer_phase_pairs": 65536
+  },
+  "paths": {
+    "stream_0": 131072,
+    "phase_idle": 1021,
+    "phase_inside": 64522,
+    "random_timer_reset": 226,
+    "phase_direction_flipped": 65529
+  },
+  "all_stream0_words": true,
+  "all_256_timers_by_256_phases": true,
+  "actual_stream0_executed": true,
+  "exact_registers_flags_r_sp": true,
+  "full_eight_bank_ram_and_write_multiplicity_compared": true,
+  "maximum_additional_stack_bytes": 4,
+  "low_7bit_zero_keeps_phase": true,
+  "phase_80_original_magnitude_preserved": true,
+  "complete_input_product_exhausted": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

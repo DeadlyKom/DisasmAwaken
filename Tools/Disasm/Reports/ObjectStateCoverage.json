@@ -1,139 +1,10 @@
 {
   "passed": true,
   "table_entries": 22,
-  "registered_entries": 6,
-  "unregistered_entries": 16,
-  "unregistered_targets": [
-    {
-      "state": 0,
-      "target": 63103,
-      "registered": false,
-      "function": null,
-      "physical_path": "Source/Resources/17_ACTION/Unclassified051.bin",
-      "physical_kind": "unclassified"
-    },
-    {
-      "state": 1,
-      "target": 61630,
-      "registered": false,
-      "function": null,
-      "physical_path": "Source/Resources/17_ACTION/Unclassified045_BeforeActionObjectOffsetTransfer.bin",
-      "physical_kind": "unclassified"
-    },
-    {
-      "state": 2,
-      "target": 61752,
-      "registered": false,
-      "function": null,
-      "physical_path": "Source/Resources/17_ACTION/Unclassified045_AfterActionObjectOffsetTransfer_BeforeActionSelectedRecordStep_BeforeActionClass18Proximity.bin",
-      "physical_kind": "unclassified"
-    },
-    {
-      "state": 3,
-      "target": 61569,
-      "registered": false,
-      "function": null,
-      "physical_path": "Source/Resources/17_ACTION/Unclassified045_BeforeActionObjectOffsetTransfer.bin",
-      "physical_kind": "unclassified"
-    },
-    {
-      "state": 4,
-      "target": 63147,
-      "registered": false,
-      "function": null,
-      "physical_path": "Source/Resources/17_ACTION/Unclassified051.bin",
-      "physical_kind": "unclassified"
-    },
-    {
-      "state": 5,
-      "target": 62089,
-      "registered": false,
-      "function": null,
-      "physical_path": "Source/Resources/17_ACTION/Unclassified045_AfterActionObjectOffsetTransfer_BeforeActionSelectedRecordStep_BeforeActionClass18Proximity.bin",
-      "physical_kind": "unclassified"
-    },
-    {
-      "state": 6,
-      "target": 63212,
-      "registered": false,
-      "function": null,
-      "physical_path": "Source/Resources/17_ACTION/Unclassified051.bin",
-      "physical_kind": "unclassified"
-    },
-    {
-      "state": 7,
-      "target": 63082,
-      "registered": false,
-      "function": null,
-      "physical_path": "Source/Resources/17_ACTION/Unclassified051.bin",
-      "physical_kind": "unclassified"
-    },
-    {
-      "state": 8,
-      "target": 62847,
-      "registered": false,
-      "function": null,
-      "physical_path": "Source/Resources/17_ACTION/Unclassified051.bin",
-      "physical_kind": "unclassified"
-    },
-    {
-      "state": 10,
-      "target": 62620,
-      "registered": false,
-      "function": null,
-      "physical_path": "Source/Resources/17_ACTION/Unclassified046.bin",
-      "physical_kind": "unclassified"
-    },
-    {
-      "state": 11,
-      "target": 62448,
-      "registered": false,
-      "function": null,
-      "physical_path": "Source/Resources/17_ACTION/Unclassified046.bin",
-      "physical_kind": "unclassified"
-    },
-    {
-      "state": 14,
-      "target": 61449,
-      "registered": false,
-      "function": null,
-      "physical_path": "Source/Resources/17_ACTION/AfterObjectStateHandlers_AfterActionObjectOffsetRise_AfterActionObjectOffsetFall_AfterActionObjectPhaseWait.bin",
-      "physical_kind": "unclassified"
-    },
-    {
-      "state": 15,
-      "target": 61564,
-      "registered": false,
-      "function": null,
-      "physical_path": "Source/Resources/17_ACTION/Unclassified045_BeforeActionObjectOffsetTransfer.bin",
-      "physical_kind": "unclassified"
-    },
-    {
-      "state": 16,
-      "target": 62408,
-      "registered": false,
-      "function": null,
-      "physical_path": "Source/Resources/17_ACTION/Unclassified046.bin",
-      "physical_kind": "unclassified"
-    },
-    {
-      "state": 17,
-      "target": 62369,
-      "registered": false,
-      "function": null,
-      "physical_path": "Source/Resources/17_ACTION/Unclassified046.bin",
-      "physical_kind": "unclassified"
-    },
-    {
-      "state": 18,
-      "target": 63165,
-      "registered": false,
-      "function": null,
-      "physical_path": "Source/Resources/17_ACTION/Unclassified051.bin",
-      "physical_kind": "unclassified"
-    }
-  ],
-  "all_state_handlers_registered": false,
+  "registered_entries": 22,
+  "unregistered_entries": 0,
+  "unregistered_targets": [],
+  "all_state_handlers_registered": true,
   "all_state_algorithms_proved": false,
   "original_table_targets_proved": true,
   "native_calls_to_all_states_proved": false,
@@ -141,74 +12,74 @@
     {
       "state": 0,
       "target": 63103,
-      "registered": false,
-      "function": null,
-      "physical_path": "Source/Resources/17_ACTION/Unclassified051.bin",
-      "physical_kind": "unclassified"
+      "registered": true,
+      "function": "StepIdleObjectOffset",
+      "physical_path": "Source/Action/StepIdleObjectOffset.asm",
+      "physical_kind": "code"
     },
     {
       "state": 1,
       "target": 61630,
-      "registered": false,
-      "function": null,
-      "physical_path": "Source/Resources/17_ACTION/Unclassified045_BeforeActionObjectOffsetTransfer.bin",
-      "physical_kind": "unclassified"
+      "registered": true,
+      "function": "StepSelectedWideVector",
+      "physical_path": "Source/Action/StepSelectedWideVector.asm",
+      "physical_kind": "code"
     },
     {
       "state": 2,
       "target": 61752,
-      "registered": false,
-      "function": null,
-      "physical_path": "Source/Resources/17_ACTION/Unclassified045_AfterActionObjectOffsetTransfer_BeforeActionSelectedRecordStep_BeforeActionClass18Proximity.bin",
-      "physical_kind": "unclassified"
+      "registered": true,
+      "function": "HandleLinkedTargetState",
+      "physical_path": "Source/Action/HandleLinkedTargetState.asm",
+      "physical_kind": "code"
     },
     {
       "state": 3,
       "target": 61569,
-      "registered": false,
-      "function": null,
-      "physical_path": "Source/Resources/17_ACTION/Unclassified045_BeforeActionObjectOffsetTransfer.bin",
-      "physical_kind": "unclassified"
+      "registered": true,
+      "function": "UpdateLinkedOrNearPhase",
+      "physical_path": "Source/Action/UpdateLinkedOrNearPhase.asm",
+      "physical_kind": "code"
     },
     {
       "state": 4,
       "target": 63147,
-      "registered": false,
-      "function": null,
-      "physical_path": "Source/Resources/17_ACTION/Unclassified051.bin",
-      "physical_kind": "unclassified"
+      "registered": true,
+      "function": "StepFastRecordPhases",
+      "physical_path": "Source/Action/StepFastRecordPhases.asm",
+      "physical_kind": "code"
     },
     {
       "state": 5,
       "target": 62089,
-      "registered": false,
-      "function": null,
-      "physical_path": "Source/Resources/17_ACTION/Unclassified045_AfterActionObjectOffsetTransfer_BeforeActionSelectedRecordStep_BeforeActionClass18Proximity.bin",
-      "physical_kind": "unclassified"
+      "registered": true,
+      "function": "HandleLinkedPhaseState",
+      "physical_path": "Source/Action/HandleLinkedPhaseState.asm",
+      "physical_kind": "code"
     },
     {
       "state": 6,
       "target": 63212,
-      "registered": false,
-      "function": null,
-      "physical_path": "Source/Resources/17_ACTION/Unclassified051.bin",
-      "physical_kind": "unclassified"
+      "registered": true,
+      "function": "StartSmallRecordEffect",
+      "physical_path": "Source/Action/StartSmallRecordEffect.asm",
+      "physical_kind": "code"
     },
     {
       "state": 7,
       "target": 63082,
-      "registered": false,
-      "function": null,
-      "physical_path": "Source/Resources/17_ACTION/Unclassified051.bin",
-      "physical_kind": "unclassified"
+      "registered": true,
+      "function": "StepTimedRecordDecay",
+      "physical_path": "Source/Action/StepTimedRecordDecay.asm",
+      "physical_kind": "code"
     },
     {
       "state": 8,
       "target": 62847,
-      "registered": false,
-      "function": null,
-      "physical_path": "Source/Resources/17_ACTION/Unclassified051.bin",
-      "physical_kind": "unclassified"
+      "registered": true,
+      "function": "ApproachTargetRecordAndResolve",
+      "physical_path": "Source/Action/ApproachTargetRecordAndResolve.asm",
+      "physical_kind": "code"
     },
     {
       "state": 9,
@@ -221,18 +92,18 @@
     {
       "state": 10,
       "target": 62620,
-      "registered": false,
-      "function": null,
-      "physical_path": "Source/Resources/17_ACTION/Unclassified046.bin",
-      "physical_kind": "unclassified"
+      "registered": true,
+      "function": "SweepClass17AndPrepareSpawn",
+      "physical_path": "Source/Action/SweepClass17AndPrepareSpawn.asm",
+      "physical_kind": "code"
     },
     {
       "state": 11,
       "target": 62448,
-      "registered": false,
-      "function": null,
-      "physical_path": "Source/Resources/17_ACTION/Unclassified046.bin",
-      "physical_kind": "unclassified"
+      "registered": true,
+      "function": "SpawnPeriodicClass3Record",
+      "physical_path": "Source/Action/SpawnPeriodicClass3Record.asm",
+      "physical_kind": "code"
     },
     {
       "state": 12,
@@ -253,42 +124,42 @@
     {
       "state": 14,
       "target": 61449,
-      "registered": false,
-      "function": null,
-      "physical_path": "Source/Resources/17_ACTION/AfterObjectStateHandlers_AfterActionObjectOffsetRise_AfterActionObjectOffsetFall_AfterActionObjectPhaseWait.bin",
-      "physical_kind": "unclassified"
+      "registered": true,
+      "function": "HandleLinkedRecordProximity",
+      "physical_path": "Source/Action/HandleLinkedRecordProximity.asm",
+      "physical_kind": "code"
     },
     {
       "state": 15,
       "target": 61564,
-      "registered": false,
-      "function": null,
-      "physical_path": "Source/Resources/17_ACTION/Unclassified045_BeforeActionObjectOffsetTransfer.bin",
-      "physical_kind": "unclassified"
+      "registered": true,
+      "function": "UpdatePhaseAndNearVector",
+      "physical_path": "Source/Action/UpdatePhaseAndNearVector.asm",
+      "physical_kind": "code"
     },
     {
       "state": 16,
       "target": 62408,
-      "registered": false,
-      "function": null,
-      "physical_path": "Source/Resources/17_ACTION/Unclassified046.bin",
-      "physical_kind": "unclassified"
+      "registered": true,
+      "function": "StepTimedLinkedOverlay",
+      "physical_path": "Source/Action/StepTimedLinkedOverlay.asm",
+      "physical_kind": "code"
     },
     {
       "state": 17,
       "target": 62369,
-      "registered": false,
-      "function": null,
-      "physical_path": "Source/Resources/17_ACTION/Unclassified046.bin",
-      "physical_kind": "unclassified"
+      "registered": true,
+      "function": "StepTimedPhasePattern",
+      "physical_path": "Source/Action/StepTimedPhasePattern.asm",
+      "physical_kind": "code"
     },
     {
       "state": 18,
       "target": 63165,
-      "registered": false,
-      "function": null,
-      "physical_path": "Source/Resources/17_ACTION/Unclassified051.bin",
-      "physical_kind": "unclassified"
+      "registered": true,
+      "function": "AcquireLinkAndApplyOffsets",
+      "physical_path": "Source/Action/AcquireLinkAndApplyOffsets.asm",
+      "physical_kind": "code"
     },
     {
       "state": 19,

@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "typed_bytes": 25,
+  "physical_frames": 6,
+  "streams": 8,
+  "new_physical_symbols": 31,
+  "original_bytes_preserved": true,
+  "writer": 25557,
+  "playback_sequences": 48,
+  "playback_ticks": 612,
+  "assembly_executed": false
+}

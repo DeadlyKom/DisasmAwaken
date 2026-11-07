@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "typed_bytes": 13,
+  "physical_records": 10,
+  "new_physical_symbols": 23,
+  "original_bytes_preserved": true,
+  "address_alias_modules_removed": 2,
+  "assembly_executed": false
+}

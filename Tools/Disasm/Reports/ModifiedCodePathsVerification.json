@@ -1,7 +1,7 @@
 {
   "passed": true,
-  "records_checked": 1323,
-  "physical_target_ranges_checked": 308,
+  "records_checked": 1359,
+  "physical_target_ranges_checked": 345,
   "target_paths_without_physical_context": 0,
   "all_records_have_physical_target_context": false,
   "errors": [],

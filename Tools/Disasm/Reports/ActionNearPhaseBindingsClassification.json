@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "new_state_bindings": 2,
+  "physical_pointer_words_preserved": true,
+  "include_order_explicit": true,
+  "assembly_executed": false,
+  "native_execution": false
+}

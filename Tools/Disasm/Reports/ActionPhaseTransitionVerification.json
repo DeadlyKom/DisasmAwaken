@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "total_cases": 78848,
+  "profiles": {
+    "all_words": 65536,
+    "joint_boundaries": 6912,
+    "all_field_bytes": 3072,
+    "all_states": 2048,
+    "all_fold_bytes": 1280
+  },
+  "paths": {
+    "stream_5": 78848,
+    "offset_rise": 45312,
+    "reject_27": 29745,
+    "random_wait": 3104,
+    "reject_31": 1247,
+    "reject_29": 2544
+  },
+  "double_transition_cases": 467,
+  "real_stream5_executed": true,
+  "exact_registers_flags_r_sp": true,
+  "full_eight_bank_ram_and_write_multiplicity_compared": true,
+  "stack_bytes": 4,
+  "original_return_word_preserved": true,
+  "all_words_at_fold_zero": true,
+  "all_input_state_bytes": true,
+  "all_field_bytes_and_joint_boundaries": true,
+  "all_input_products_exhausted": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

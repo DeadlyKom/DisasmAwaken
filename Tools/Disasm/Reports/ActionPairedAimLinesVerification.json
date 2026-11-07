@@ -1,0 +1,37 @@
+{
+  "passed": true,
+  "total_cases": 77824,
+  "profiles": {
+    "all_phase_step_pairs": 65536,
+    "aim_X_and_R_modes": 8192,
+    "charge_and_equal_endpoint_modes": 4096
+  },
+  "paths": {
+    "phase_no_carry": 32896,
+    "packed_line": 89280,
+    "two_aim_lines": 44640,
+    "charge_below_two": 288,
+    "packed_equal_runs_256": 512
+  },
+  "all_256_phase_by_256_increment_values": true,
+  "all_256_ThirdValue_values": true,
+  "all_256_aim_X_values": true,
+  "aim_Y_profile": [
+    0,
+    43,
+    87,
+    88
+  ],
+  "actual_two_packed_entry_rasters_executed": true,
+  "packed_equal_endpoint_runs_256_preserved": true,
+  "exact_registers_except_R_on_raster": true,
+  "exact_R_on_nondrawing_cases": 33184,
+  "full_eight_bank_ram_and_write_multiplicity_compared": true,
+  "maximum_additional_stack_bytes": 4,
+  "raster_R_proved": false,
+  "aim_Y_above_88_proved": false,
+  "complete_input_product_exhausted": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

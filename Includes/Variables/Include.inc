@@ -1314,13 +1314,13 @@ CoordRows       equ #7B97                                                       
 CImmediate00    equ #F79C                                                       ; поле 00, операнд LD C, n в верхнем банке 0
 CImmediate02    equ #F798                                                       ; поле 02, соседний операнд LD C, n в верхнем банке 0
 AddImmediate03  equ #A968                                                       ; поле 03, операнд ADD A, n в фиксированном банке 2
-Unknown04       equ #63B9                                                       ; поле 04, целевой потребитель ещё не установлен
+PairedLineStep  equ #63B9                                                       ; поле 04, шаг фазового допуска RequestPairedAimLines
 AddImmediate05  equ #A8B5                                                       ; поле 05, операнд ADD A, n в фиксированном банке 2
 Compare06A      equ #7B6B                                                       ; поле 06, операнд CP n в фиксированном банке 5
 AddImmediate06B equ #6874                                                       ; поле 06, вторая цель, операнд ADD A, n в фиксированном банке 5
 Class0RLimit    equ #6615                                                       ; поле 07, изменяемый операнд CP аппаратного R в ConfigureClass0Link
 RandomLowLimit  equ #E6E7                                                       ; поле 08, изменяемый операнд CP младшего байта Stream10 в FindFilteredRecordOr26
-Unknown09       equ #E823                                                       ; поле 09, целевой потребитель верхнего банка 0 ещё не установлен
+LinkedRLimit    equ #E823                                                       ; поле 09, порог R обратной связи в CheckAndToggleLinkedOverlay
 Class3RLimit    equ #65E5                                                       ; поле 0A, изменяемый операнд CP аппаратного R в ConfigureClass3Link
 Compare0B       equ #79A4                                                       ; поле 0B, операнд CP n в фиксированном банке 5
 OrImmediate0C   equ #7E07                                                       ; поле 0C, операнд OR n в фиксированном банке 5
@@ -1953,6 +1953,95 @@ HorizontalSkip  equ #FA1D                                                       
 Horizontal      equ #FA67                                                       ; горизонтальная компонента для второй проекции
 Depth           equ #FA6A                                                       ; глубина для второй проекции после перестановки компонент
 Vertical        equ #FA6D                                                       ; вертикальная компонента для второй проекции после перестановки
+                endmodule
+
+
+                ; Существующие операнды и состояние, память не выделяется
+                module ActionCandidateListState
+BeforeFirst     equ #A01B                                                       ; адрес перед первым байтом списка A01C, память не выделяется
+                endmodule
+
+
+                ; Существующие операнды и состояние, память не выделяется
+                module ActionNearestCandidateState
+ClosestHigh     equ #E9E7                                                       ; изменяемый байт CP n, текущий минимум старших байтов модулей
+ChosenIndex     equ #E9FE                                                       ; изменяемый байт LD A,n, индекс последнего выбранного кандидата
+                endmodule
+
+
+                ; Существующие операнды и состояние, память не выделяется
+                module ActionNearPhaseState
+RandomHighMin   equ #F09D                                                       ; изменяемый байт CP n, порог половины старшего байта потока 0
+                endmodule
+
+
+                ; Существующие операнды и состояние, память не выделяется
+                module ActionLinkedContextState
+RecordPointer   equ #E796                                                       ; существующий операнд LD IY,nn следующего обработчика по E794
+Component0      equ #F1ED                                                       ; существующий операнд LD DE,nn по F1EC для компоненты 0 текущей записи
+Component1      equ #F1F0                                                       ; существующий операнд LD BC,nn по F1EF для компоненты 1 текущей записи
+Component2      equ #F1FE                                                       ; существующий операнд LD BC,nn по F1FD для альтернативного BC компоненты 2
+                endmodule
+
+
+                ; Существующие операнды и состояние, память не выделяется
+                module ActionChildSpawnState
+InitialState    equ #E8F1                                                       ; существующий операнд LD (IY+StateCode),n, начальное состояние дочерних записей
+                endmodule
+
+
+                ; Существующие операнды и состояние, память не выделяется
+                module ActionPeriodicClass3State
+SpawnPhase      equ #F3F1                                                       ; существующий операнд LD A,n, общая четырёхбитная фаза допуска создания
+                endmodule
+
+
+                ; Исходное слово для выбора модели, память не выделяется
+                module ActionPeriodicRegionState
+Coordinate      equ #9BC1                                                       ; слово H,L для ClassifyCoordinateRegion в этом контексте
+                endmodule
+
+
+                ; Существующие операнды и состояние, память не выделяется
+                module ActionClass17SweepState
+SweepPhase      equ #F49D                                                       ; существующий операнд LD A,n, общая вращаемая фаза допуска обхода
+                endmodule
+
+
+                ; Существующие операнды и состояние, память не выделяется
+
+
+                ; Существующие операнды и состояние, память не выделяется
+                module ActionLinkedOverlayState
+LinkRLimit      equ #E823                                                       ; операнд CP n, обратная связь обновляется при прочитанном R не меньше порога
+                endmodule
+
+
+                ; Существующий операнд общего создателя, память не выделяется
+                module ActionClass17SpawnState
+InitialParam    equ #612E                                                       ; начальный Unknown13, записывается до поиска слота
+                endmodule
+
+
+                ; Существующие операнды и состояние, память не выделяется
+
+
+                ; Существующие операнды и состояние, память не выделяется
+                module ActionArrivalState
+ArrivalCount    equ #9BCE                                                       ; существующее слово, увеличивается при ближней цели класса 0, 5, 6 или 7 и ненулевом Unknown11
+                endmodule
+
+
+                ; Существующие операнды и состояние, память не выделяется
+                module ActionPairedAimState
+Phase           equ #63B7                                                       ; изменяемый операнд LD A,n, на каждом вызове получает сумму по модулю 256
+PhaseStep       equ #63B9                                                       ; изменяемый операнд ADD A,n, поле 04 набора параметров задаёт шаг фазового допуска
+                endmodule
+
+
+                ; Существующие операнды и состояние, память не выделяется
+                module ActionClass20SpawnState
+DepthSignMode   equ #6E75                                                       ; нулевое значение выбирает +30000, ненулевое -30000, общий игровой смысл неизвестен
                 endmodule
 
                 endif

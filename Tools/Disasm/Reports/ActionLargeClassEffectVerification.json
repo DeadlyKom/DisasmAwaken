@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "total_cases": 51840,
+  "paths": {
+    "large_effect_allocated": 46080,
+    "large_current_record_released": 51840,
+    "large_effect_list_full": 5760
+  },
+  "all_full_classes_16_through_255": true,
+  "exact_registers_flags_r_sp": true,
+  "full_eight_bank_ram_and_write_multiplicity_compared": true,
+  "real_OBJECT3D_large_effect_bank3_and_return_children_executed": true,
+  "real_four_port_writes_compared": true,
+  "maximum_additional_stack_bytes": 8,
+  "complete_external_return": true,
+  "classes_below_16_covered": false,
+  "all_input_products_exhausted": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

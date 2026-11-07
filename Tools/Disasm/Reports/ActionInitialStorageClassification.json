@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "classified_initial_storage_bytes": 4404,
+  "resource_files": 8,
+  "framebuffer_tail_bytes": 2612,
+  "generated_table_initial_bytes": 1792,
+  "remaining_unclassified_gap_bytes": 1280,
+  "original_bytes_preserved": true,
+  "generated_values_not_serialized": true,
+  "assembly_executed": false
+}

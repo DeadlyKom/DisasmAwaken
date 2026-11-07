@@ -1,11 +1,12 @@
-"""Семь потоков с доказанными указателями и достижимыми нулевыми маркерами, остальные байты не классифицируются."""
+"""Восемь потоков с доказанными указателями и достижимыми нулевыми маркерами, остальные байты не классифицируются."""
 import re
 FIELDS=(('ToneLow','младший байт периода'),('ToneHigh','старший байт периода, полный исходный байт'),
         ('MixerBits','байт для OR со смесителем, B предварительно выполняет RLCA'),('Volume','байт записи уровня, полный исходный байт'))
 STREAMS=(('EventBit1',0xED8F,6),('Missile',0xEDA8,6),('WaitLoop',0xEE4D,53),('EventBit0',0xEF22,6),('Record',0xEF3B,5),
-         ('Capture',0xEE02,6),('FullSlots',0xEE1B,6))
+         ('Capture',0xEE02,6),('FullSlots',0xEE1B,6),('PairedAim',0xEE34,6))
 GROUPS=(('Source/Action/Data/AyStreamsFirst.asm',STREAMS[:2]),('Source/Action/Data/AyStreamsLater.asm',STREAMS[2:5]),
-        ('Source/Action/Data/AyCaptureStreams.asm',STREAMS[5:]))
+        ('Source/Action/Data/AyCaptureStreams.asm',STREAMS[5:7]),
+        ('Source/Action/Data/AyPairedAimStream.asm',STREAMS[7:]))
 
 
 def bounds(streams):return streams[0][1]-0x6000,streams[-1][1]+4*streams[-1][2]+1-0x6000

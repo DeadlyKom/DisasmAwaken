@@ -68,7 +68,11 @@
                 assert $ == #02EB
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
                 disp #60AE
-                include "../Action/CreateMissileForTarget.asm"
+                include "../Action/CreateMissileForTarget.asm"                  ; (0) жёсткий порядок, последовательное исполнение
+                ent
+                assert $ == #0325
+                disp #60E8
+                include "../Action/CreateClass17LinkedRecord.asm"               ; (1) жёсткий порядок, общий вход создания
                 ent
                 assert $ == #0382
                 disp #6145
@@ -80,14 +84,30 @@
                 ent
                 assert $ == #03BA
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/17_ACTION/Unclassified003.bin"
+                assert $ == #03BA
+                assert $ == #03BA
+                assert $ == #03BA
+                disp #617D
+                include "../Action/CreateRandomClass20Record.asm"
+                ent
+                assert $ == #043E
+                disp #6201
+                include "../Action/StepRandomizedThirdPhase.asm"
+                ent
+                assert $ == #0488
+                disp #624B
+                include "../Action/CheckLinkedDistanceAndStepCodes.asm"         ; (0) жёсткий порядок, последовательное исполнение
+                ent
                 assert $ == #04A2
                 disp #6265
-                include "../Action/StepRecordTargetCodes.asm"
+                include "../Action/StepRecordTargetCodes.asm"                   ; (1) жёсткий порядок, последовательное исполнение
                 ent
                 assert $ == #04F2
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/17_ACTION/Unclassified004.bin"
+                assert $ == #04F2
+                disp #62B5
+                include "../Action/EnterTimedPhaseFromMotion.asm"
+                ent
                 assert $ == #050C
                 disp #62CF
                 include "../Action/CountClass3LinksUpToTwo.asm"
@@ -110,7 +130,15 @@
                 ent
                 assert $ == #05F3
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/17_ACTION/Unclassified006.bin"
+                assert $ == #05F3
+                assert $ == #05F3
+                disp #63B6
+                include "../Action/RequestPairedAimLines.asm"
+                ent
+                assert $ == #0654
+                disp #6417
+                include "../Action/SpawnClass19AndUpdateList.asm"
+                ent
                 assert $ == #071C
                 disp #64DF
                 include "../Action/DispatchRecordClass.asm"
@@ -457,7 +485,33 @@
                 ent
                 assert $ == #21CC
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/17_ACTION/Unclassified020_Prefix.bin"
+                assert $ == #21CC
+                ; начальное содержимое 81CC..8BFF, хвост строки 14 с байта 12 и строки 15..95 линейного буфера
+                incbin "../Action/Resources/InitialLinearBufferTail.bin"
+                assert $ == #2C00
+                ; Unknown, промежуток 8C00..90FF не классифицирован этим разбором
+                incbin "../Resources/17_ACTION/Unclassified2C00_3100.bin"
+                assert $ == #3100
+                ; исходные байты страницы 9100, BuildLogarithmTable заменяет их младшими байтами результатов
+                incbin "../Action/Resources/InitialLogarithmLow.bin"
+                assert $ == #3200
+                ; исходные байты страницы 9200, BuildLogarithmTable заменяет их старшими байтами результатов
+                incbin "../Action/Resources/InitialLogarithmHigh.bin"
+                assert $ == #3300
+                ; исходные байты страницы 9300, BuildExponentialTable создаёт значения во время загрузки
+                incbin "../Action/Resources/InitialExponential.bin"
+                assert $ == #3400
+                ; исходные байты страницы 9400, затем HIGH(8000+32*Y) для Y от 0 до 255
+                incbin "../Action/Resources/InitialRowHigh.bin"
+                assert $ == #3500
+                ; исходные байты страницы 9500, затем LOW(32*Y) для Y от 0 до 255
+                incbin "../Action/Resources/InitialRowLow.bin"
+                assert $ == #3600
+                ; исходные байты страницы 9600, затем X DIV 8 для X от 0 до 255
+                incbin "../Action/Resources/InitialColumnByte.bin"
+                assert $ == #3700
+                ; исходные байты страницы 9700, затем 80 >> (X AND 7) для X от 0 до 255
+                incbin "../Action/Resources/InitialColumnMask.bin"
                 assert $ == #3800
                 disp #9800
                 include "../Action/Data/ProjectionSquares.asm"
@@ -659,6 +713,7 @@
                 include "../Action/SqrtWordCached.asm"
                 ent
                 assert $ == #516F
+                ; Документация [фрагмент заметок о данных](../../Docs/ActionEmbeddedNotes.md)
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
                 incbin "../Resources/17_ACTION/Unclassified025.bin"
                 assert $ == #6000
@@ -1354,8 +1409,40 @@
                 ent
                 assert $ == #8761
                 assert $ == #8761
-                ; Unknown, соседние байты вне доказанного входа SelectClass8ForRecord
-                incbin "../Resources/17_ACTION/Unclassified037_AfterActionRecordsExcept6And7_AfterActionRecords6Or7_AfterActionRecords5Or14_BeforeActionSelectClass8.bin"
+                assert $ == #8761
+                assert $ == #8761
+                assert $ == #8761
+                disp #E761
+                include "../Action/PrepareLinkedRecordContext.asm"
+                ent
+                assert $ == #8794
+                assert $ == #8794
+                disp #E794
+                include "../Action/LoadLinkedRecordVectors.asm"
+                ent
+                assert $ == #8804
+                assert $ == #8804
+                assert $ == #8804
+                assert $ == #8804
+                disp #E804
+                include "../Action/CheckAndToggleLinkedOverlay.asm"
+                ent
+                assert $ == #8863
+                disp #E863
+                include "../Action/SpawnClass9ForClass8.asm"                    ; (0) жёсткий порядок, последовательное исполнение
+                ent
+                assert $ == #886B
+                disp #E86B
+                include "../Action/SpawnLinkedClass9Records.asm"                ; (1) жёсткий порядок, последовательное исполнение
+                ent
+                assert $ == #891E
+                disp #E91E
+                include "../Action/CheckLinkedTargetTransition.asm"
+                ent
+                assert $ == #8935
+                disp #E935
+                include "../Action/CheckObjectPhaseTransition.asm"
+                ent
                 assert $ == #897C
                 disp #E97C
                 include "../Action/SelectClass8ForRecord.asm"
@@ -1370,7 +1457,20 @@
                 ent
                 assert $ == #89C2
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/17_ACTION/Unclassified038.bin"
+                assert $ == #89C2
+                assert $ == #89C2
+                disp #E9C2
+                include "../Action/FindNearestListedRecord.asm"
+                ent
+                assert $ == #8A00
+                disp #EA00
+                include "../Action/CheckCandidateListClass.asm"
+                ent
+                assert $ == #8A15
+                assert $ == #8A15
+                disp #EA15
+                include "../Action/CheckCandidateListReady.asm"
+                ent
                 assert $ == #8A29
                 disp #EA29
                 include "../Action/PrepareLargeEffect.asm"                      ; (0) жёсткий порядок продолжения EA29
@@ -1385,8 +1485,15 @@
                 include "../Action/MaxRecordDeltaHigh.asm"
                 ent
                 assert $ == #8B41
-                ; Unknown, соседние байты вне доказанного входа MaxRecordDeltaHigh
-                incbin "../Resources/17_ACTION/Unclassified039_AfterActionLargeEffectContinuation_AfterActionRecordDistance.bin"
+                assert $ == #8B41
+                disp #EB41
+                include "../Action/ToggleTargetOverlay.asm"
+                ent
+                assert $ == #8B6E
+                ; Unknown, соседние байты вне доказанного входа ToggleTargetOverlay
+                disp #EB6E
+                include "../Action/Data/OverlayLine.asm"
+                ent
                 assert $ == #8B72
                 disp #EB72
                 include "../Action/NextRandomWord0.asm"
@@ -1527,7 +1634,10 @@
                 ent
                 assert $ == #8C54
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/17_ACTION/Unclassified043.bin"
+                assert $ == #8C54
+                disp #EC54
+                include "../Action/ClassifyProjectedPair.asm"
+                ent
                 assert $ == #8CA8
                 disp #ECA8
                 include "../Action/UpdateAyEffects.asm"
@@ -1549,7 +1659,9 @@
                 ent
                 assert $ == #8E34
                 ; Unknown, соседние байты вне доказанных потоков назначения цели
-                incbin "../Resources/17_ACTION/Unclassified044_AfterCaptureStreams.bin"
+                disp #EE34
+                include "../Action/Data/AyPairedAimStream.asm"
+                ent
                 assert $ == #8E4D
                 disp #EE4D
                 include "../Action/Data/AyStreamsLater.asm"
@@ -1580,8 +1692,15 @@
                 include "../Action/AdvanceObjectPhaseWait.asm"
                 ent
                 assert $ == #9003
-                ; Unknown, соседние байты вне доказанного входа AdvanceObjectPhaseWait
-                incbin "../Resources/17_ACTION/AfterObjectStateHandlers_AfterActionObjectOffsetRise_AfterActionObjectOffsetFall_AfterActionObjectPhaseWait.bin"
+                assert $ == #9003
+                disp #F003
+                include "../Action/RefreshRecordClassAndOffsets.asm"
+                ent
+                assert $ == #9009
+                assert $ == #9009
+                disp #F009
+                include "../Action/HandleLinkedRecordProximity.asm"
+                ent
                 assert $ == #903D
                 disp #F03D
                 include "../Action/MarkIYRecordForReuse.asm"
@@ -1598,17 +1717,61 @@
                 assert $ == #907C
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
                 assert $ == #907C
-                ; Unknown, соседние байты вне доказанного входа PrepareObjectOffsetTransform
-                incbin "../Resources/17_ACTION/Unclassified045_BeforeActionObjectOffsetTransfer.bin"
+                assert $ == #907C
+                assert $ == #907C
+                disp #F07C
+                include "../Action/UpdatePhaseAndNearVector.asm"
+                ent
+                assert $ == #9081
+                assert $ == #9081
+                disp #F081
+                include "../Action/UpdateLinkedOrNearPhase.asm"                 ; (0) жёсткий порядок, продолжение после невыполненного JP C
+                ent
+                assert $ == #9087
+                disp #F087
+                include "../Action/UpdateNearVectorPhase.asm"                   ; (1) жёсткий порядок, продолжение после невыполненного JP C
+                ent
+                assert $ == #90BE
+                assert $ == #90BE
+                disp #F0BE
+                include "../Action/StepSelectedWideVector.asm"                  ; (0) жёсткий порядок, последовательное исполнение после CALL
+                ent
                 assert $ == #90F8
                 disp #F0F8
-                include "../Action/PrepareObjectOffsetTransform.asm"
+                include "../Action/PrepareObjectOffsetTransform.asm"            ; (1) жёсткий порядок, последовательное исполнение после CALL
                 ent
                 assert $ == #9138
                 assert $ == #9138
                 assert $ == #9138
-                ; Unknown, соседние байты вне доказанного входа HandleClass18Proximity
-                incbin "../Resources/17_ACTION/Unclassified045_AfterActionObjectOffsetTransfer_BeforeActionSelectedRecordStep_BeforeActionClass18Proximity.bin"
+                assert $ == #9138
+                assert $ == #9138
+                assert $ == #9138
+                disp #F138
+                include "../Action/HandleLinkedTargetState.asm"
+                ent
+                assert $ == #9222
+                disp #F222
+                include "../Action/CheckClass17SpawnWindow.asm"
+                ent
+                assert $ == #924F
+                assert $ == #924F
+                disp #F24F
+                include "../Action/SpawnLinkedClass17AndContinue.asm"
+                ent
+                assert $ == #9255
+                disp #F255
+                include "../Action/SpawnClass17FromCurrentLink.asm"
+                ent
+                assert $ == #9280
+                assert $ == #9280
+                ; Unknown, соседние байты вне доказанного входа HandleLinkedPhaseState
+                disp #F280
+                include "../Action/Data/ClassSpawnValues.asm"
+                ent
+                assert $ == #9289
+                disp #F289
+                include "../Action/HandleLinkedPhaseState.asm"
+                ent
                 assert $ == #9356
                 disp #F356
                 include "../Action/HandleClass18Proximity.asm"
@@ -1623,7 +1786,25 @@
                 ent
                 assert $ == #93A1
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/17_ACTION/Unclassified046.bin"
+                assert $ == #93A1
+                disp #F3A1
+                include "../Action/StepTimedPhasePattern.asm"
+                ent
+                assert $ == #93C8
+                assert $ == #93C8
+                assert $ == #93C8
+                disp #F3C8
+                include "../Action/StepTimedLinkedOverlay.asm"
+                ent
+                assert $ == #93F0
+                disp #F3F0
+                include "../Action/SpawnPeriodicClass3Record.asm"
+                ent
+                assert $ == #949C
+                assert $ == #949C
+                disp #F49C
+                include "../Action/SweepClass17AndPrepareSpawn.asm"
+                ent
                 assert $ == #951E
                 disp #F51E
                 include "../Action/UpdatePreferredClass18.asm"                  ; (0) жёсткий порядок, последовательное исполнение
@@ -1670,7 +1851,53 @@
                 ent
                 assert $ == #957F
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/17_ACTION/Unclassified051.bin"
+                assert $ == #957F
+                assert $ == #957F
+                disp #F57F
+                include "../Action/ApproachTargetRecordAndResolve.asm"
+                ent
+                assert $ == #966A
+                disp #F66A
+                include "../Action/StepTimedRecordDecay.asm"
+                ent
+                assert $ == #967F
+                assert $ == #967F
+                assert $ == #967F
+                disp #F67F
+                include "../Action/StepIdleObjectOffset.asm"
+                ent
+                assert $ == #968E
+                ; Unknown, соседние байты вне доказанного входа StepIdleObjectOffset
+                incbin "../Resources/17_ACTION/Unclassified051_AfterActionTimedDecayState_BeforeActionIdleBaseReset_AfterActionIdleState.bin"
+                assert $ == #9691
+                disp #F691
+                include "../Action/ResetIdleRecordBases.asm"
+                ent
+                assert $ == #969E
+                assert $ == #969E
+                assert $ == #969E
+                assert $ == #969E
+                disp #F69E
+                include "../Action/DispatchClassOnHighRandomWord.asm"
+                ent
+                assert $ == #96AB
+                disp #F6AB
+                include "../Action/StepFastRecordPhases.asm"
+                ent
+                assert $ == #96BD
+                assert $ == #96BD
+                disp #F6BD
+                include "../Action/AcquireLinkAndApplyOffsets.asm"              ; (0) жёсткий порядок, последовательное исполнение после CALL
+                ent
+                assert $ == #96CD
+                disp #F6CD
+                include "../Action/ApplyRecordLocalOffsets.asm"                 ; (1) жёсткий порядок, последовательное исполнение после CALL
+                ent
+                assert $ == #96EC
+                assert $ == #96EC
+                disp #F6EC
+                include "../Action/StartSmallRecordEffect.asm"
+                ent
                 assert $ == #9729
                 disp #F729
                 include "../Action/UpdateObjects.asm"

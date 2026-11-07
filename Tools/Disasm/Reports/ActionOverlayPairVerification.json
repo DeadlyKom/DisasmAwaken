@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "total_cases": 4825,
+  "outcomes": {
+    "inside_line": 363,
+    "clipped_line": 1489,
+    "common_outside_side": 869,
+    "both_codes_zero": 36,
+    "first_projection_rejected": 1251,
+    "second_projection_rejected": 817
+  },
+  "actual_projection_pair_codes_clipping_and_XOR_raster_executed": true,
+  "exact_registers_except_R_on_renderer": true,
+  "exact_R_on_nonrenderer_cases": 2973,
+  "full_eight_bank_ram_and_write_multiplicity_compared": true,
+  "maximum_observed_additional_stack_bytes": 22,
+  "second_projection_reject_leaves_EXX_exchanged": true,
+  "all_input_products_exhausted": false,
+  "renderer_R_proved": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

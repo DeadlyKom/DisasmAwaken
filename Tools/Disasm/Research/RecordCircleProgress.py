@@ -398,8 +398,10 @@ def main():
             if path not in checkpoint['passed_reports']:checkpoint['passed_reports'].append(path)
     if (ROOT/'Tools/Disasm/Reports/ActionAyStreamsClassification.json').exists():
         proof=read('ActionAyStreamPlaybackVerification');assert proof['passed'] and read('ActionAyStreamsClassification')['passed']
+        remaining_ay_neighbors=sum(max(0,min(p['offset']+p['length'],0x9075)-max(p['offset'],0x8D8F))
+            for p in read('SourceMap') if p['slot']==17 and p['kind']=='unclassified')
         checkpoint['action_ay_streams']=dict(physical_frames=proof['physical_frames'],terminators=proof['streams'],physical_bytes=proof['physical_stream_bytes'],
-            unclassified_neighbor_bytes=742-proof['physical_stream_bytes'],sequences=proof['sequences'],ticks=proof['ticks'],
+            unclassified_neighbor_bytes=remaining_ay_neighbors,sequences=proof['sequences'],ticks=proof['ticks'],
             original_stream_addresses_used=True,actual_ay_hardware_executed=False,assembly_executed=False)
         for stem in ('ActionAyStreamPlaybackVerification','ActionAyStreamsClassification'):
             path='Tools/Disasm/Reports/'+stem+'.json'
@@ -837,12 +839,12 @@ def main():
         if path not in checkpoint['passed_reports']:checkpoint['passed_reports'].append(path)
     if (ROOT/'Tools/Disasm/Reports/ActionHalfDeltaCodesClassification.json').exists():
         proof=read('ActionHalfDeltaCodesVerification');assert proof['passed'] and read('ActionHalfDeltaCodesClassification')['passed']
-        checkpoint['action_half_delta_codes']=dict(cases=proof['total_cases'],exact_registers_except_R=True,
+        checkpoint['action_half_delta_codes']=dict(cases=proof['total_cases'],exact_registers_including_R=proof['refresh_R_proved'],
             all_physical_ram_bytes_proved=True,write_multiplicity_proved=True,maximum_additional_stack_bytes=14,
             real_ports_and_eight_banks=True,initial_7ffd_values=proof['initial_7ffd_values'],final_7ffd=16,
             proven_delta_range=[-32767,32767],root_input_upper_bound=0x7FFE,
             multiplication_second_operand_8000_unreachable=True,bad_upper_root_table_domain_unreachable_for_this_caller=True,
-            refresh_R_proved=False,complete_six_word_product_exhausted=False,
+            refresh_R_proved=proof['refresh_R_proved'],complete_six_word_product_exhausted=False,
             assembly_executed=False,irq_executed=False,native_execution=False)
         if 'action_cached_root' in checkpoint:
             checkpoint['action_cached_root'].update(caller_AD5A_domain_proved=True,caller_AD5A_upper_bound=0x7FFE)
@@ -1120,7 +1122,29 @@ def main():
                       'ActionDirectDecimalVerification', 'ActionApproachWordVerification',
                       'ActionRecordDistanceVerification', 'ActionSelectedRecordStepVerification',
                       'ActionClass18ProximityVerification', 'ActionSelectClass8Verification',
-                      'ActionSelectedRecordProximityVerification', 'ActionClassHandlersVerification')
+                      'ActionSelectedRecordProximityVerification', 'ActionClassHandlersVerification',
+                      'ActionParameterThresholdsVerification', 'ActionPhaseTransitionVerification',
+                      'ActionCandidateEligibilityVerification', 'ActionNearestCandidateVerification',
+                      'ActionTargetTransitionVerification', 'ActionNearPhaseVerification',
+                      'ActionTimedDecayStateVerification', 'ActionIdleStateVerification',
+                      'ActionLocalOffsetStateVerification', 'ActionTimedPhaseStateVerification',
+                      'ActionLinkedContextVerification', 'ActionLinkedVectorsVerification',
+                      'ActionChildSpawnVerification', 'ActionAcquireLocalStateVerification',
+                      'ActionPeriodicClass3StateVerification', 'ActionClass8SpawnGateVerification',
+                      'ActionClassRefreshVerification', 'ActionLinkedProximityVerification',
+                      'ActionSmallEffectStateVerification', 'ActionLargeClassEffectVerification',
+                      'ActionClass17SweepVerification', 'ActionClass19SpawnVerification',
+                      'ActionSquareRefreshVerification', 'ActionWideVectorStateVerification',
+                      'ActionProjectedPairCodesVerification', 'ActionOverlayProjectionRefreshVerification',
+                      'ActionOverlayPairVerification', 'ActionLinkedOverlayVerification',
+                      'ActionClass17SpawnVerification', 'ActionSpawnCurrentLinkVerification',
+                      'ActionSpawnWindowVerification', 'ActionTimedLinkedStateVerification',
+                      'ActionEnterTimedStateVerification', 'ActionLinkedMotionGateVerification',
+                      'ActionRandomPhaseStepVerification', 'ActionLinkedTargetStateVerification',
+                      'ActionLinkedPhaseStateVerification', 'ActionFullLargeEffectVerification',
+                      'ActionArrivalStateVerification', 'ActionPairedAimLinesVerification',
+                      'ActionClass20SpawnVerification','ActionRandomClassGateVerification',
+                      'ActionLinkedTargetStateUnrestrictedVerification','ActionLinkedPhaseStateUnrestrictedVerification')
     if all((ROOT / 'Tools/Disasm/Reports' / (stem + '.json')).is_file() for stem in motion_reports):
         proofs = {stem: read(stem) for stem in motion_reports}
         assert all(proof['passed'] and not proof['assembly_executed'] for proof in proofs.values())
@@ -1131,6 +1155,18 @@ def main():
             path = 'Tools/Disasm/Reports/' + stem + '.json'
             if path not in checkpoint['passed_reports']:
                 checkpoint['passed_reports'].append(path)
+    # Регистрация дополнительных проверок данных и точечных имён отдельно от моделей исполнения.
+    for stem in ('ActionLinkedStateDataClassification','ActionPairedAimStreamClassification',
+                 'ActionInitialStorageVerification','ActionInitialStorageClassification','ActionClass20SpawnClassification',
+                 'ActionRandomClassGateClassification',
+                 'ActionEmbeddedNotesInspection',
+                 'ActionLinkFlagsRolesVerification','ActionLinkedRLimitVerification','ActionPairedLineStepVerification',
+                 'ActionFullLargeEffectContractVerification','ActionPackedLineEntryVerification'):
+        if (ROOT/('Tools/Disasm/Reports/'+stem+'.json')).is_file():
+            assert read(stem)['passed']
+            report_path='Tools/Disasm/Reports/'+stem+'.json'
+            if report_path not in checkpoint['passed_reports']:checkpoint['passed_reports'].append(report_path)
+    checkpoint['linked_target_out_of_array_overlay_limitation']=read('ActionLinkedTargetOutOfArrayLimitation')
     if args.sources_changed:
         checkpoint['manual_build_check'].update(status='passed_before_latest_source_changes',
             source_changes_after_build=True, current_source_assembly_verified=False)

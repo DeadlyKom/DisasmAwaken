@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "total_cases": 8704,
+  "profiles": {
+    "all_indices_modes_R_edges": 4608,
+    "mixed_arguments": 4096
+  },
+  "paths": {
+    "ordinary_geometry": 8170,
+    "enter_timed_state": 534
+  },
+  "all_256_link_indices": true,
+  "actual_selected_distance_and_banked_geometry_children_executed": true,
+  "exact_registers_flags_r_sp": true,
+  "full_eight_bank_ram_and_write_multiplicity_compared": true,
+  "real_ports": true,
+  "maximum_additional_stack_bytes": 16,
+  "FF_is_ordinary_index": true,
+  "complete_input_product_exhausted": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

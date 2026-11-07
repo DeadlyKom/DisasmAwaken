@@ -1,0 +1,31 @@
+{
+  "passed": true,
+  "total_cases": 67541,
+  "profiles": {
+    "all_first_differences": 65536,
+    "all_indices": 254,
+    "all_indices_unavailable": 254,
+    "ties_and_boundaries": 729,
+    "empty_stale": 256,
+    "skipped_stale": 256,
+    "duplicate_unavailable": 256
+  },
+  "paths": {
+    "improve": 66571,
+    "end": 67541,
+    "invalidate": 1065,
+    "skip": 1241,
+    "tie_or_farther": 1107
+  },
+  "stack_bytes": 6,
+  "exact_registers_flags_r_sp": true,
+  "full_eight_bank_ram_and_write_multiplicity_compared": true,
+  "real_index_and_distance_children_executed": true,
+  "all_254_ordinary_index_bytes": true,
+  "no_valid_candidate_preserves_old_result_operand": true,
+  "first_equal_distance_wins": true,
+  "all_possible_lists_exhausted": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

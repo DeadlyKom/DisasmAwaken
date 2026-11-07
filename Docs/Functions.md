@@ -21,7 +21,7 @@
 | Help | 4 | 4 | [Факты](FunctionDetails/Help.md) |
 | Music | 49 | 49 | [Факты](FunctionDetails/Music.md) |
 | ActionBoot | 9 | 9 | [Факты](FunctionDetails/ActionBoot.md) |
-| Action | 307 | 306 | [Факты](FunctionDetails/Action.md) |
+| Action | 350 | 349 | [Факты](FunctionDetails/Action.md) |
 | ThreeD | 122 | 121 | [Факты](FunctionDetails/ThreeD.md) |
 | Voxel | 12 | 12 | [Факты](FunctionDetails/Voxel.md) |
 | Controls | 78 | 78 | [Факты](FunctionDetails/Controls.md) |
@@ -668,13 +668,20 @@
 | #438F | [ActionBoot.BuildLogarithmTable](../Source/ActionBoot/BuildLogarithmTable.asm) | Построение двух раздельных страниц приближённого логарифма через сумму 255 точных частных |
 | #43CF | [ActionBoot.BuildBitmapTables](../Source/ActionBoot/BuildBitmapTables.asm) | Создание таблиц строк и битовых масок для рисования |
 | #60AE | [Action.CreateMissileForTarget](../Source/Action/CreateMissileForTarget.asm) | Проверка существования записи цели, поиск свободного слота, инициализация ракеты и создание обратной связи у цели |
+| #60E8 | [Action.CreateClass17LinkedRecord](../Source/Action/CreateClass17LinkedRecord.asm) | Создание записи класса 17 из альтернативных компонент и обновление связи целевой записи |
 | #6145 | [Action.RefreshFlightPanel](../Source/Action/RefreshFlightPanel.asm) | Принудительное обновление шести шкал и четырёх пар счётчика панели полёта |
 | #6172 | [Action.ReleaseClass14Records](../Source/Action/ReleaseClass14Records.asm) | Пометка всех активных записей класса 14 через повторный поиск от начала массива |
+| #617D | [Action.CreateRandomClass20Record](../Source/Action/CreateRandomClass20Record.asm) | Создание записи класса 20 из двух случайных компонент и транспонированного преобразования |
+| #6201 | [Action.StepRandomizedThirdPhase](../Source/Action/StepRandomizedThirdPhase.asm) | Случайное обновление счётчика направления и знаковый шаг третьей фазы записи |
+| #624B | [Action.CheckLinkedDistanceAndStepCodes](../Source/Action/CheckLinkedDistanceAndStepCodes.asm) | Проверка расстояния связанной записи перед шагом кодов либо переходом во временное состояние |
 | #6265 | [Action.StepRecordTargetCodes](../Source/Action/StepRecordTargetCodes.asm) | Подвод двух байтов записи к рассчитанным кодам с различными правилами ограничения шага |
+| #62B5 | [Action.EnterTimedPhaseFromMotion](../Source/Action/EnterTimedPhaseFromMotion.asm) | Восстановление рамки движения и установка временного состояния 11 со случайным таймером |
 | #62CF | [Action.CountClass3LinksUpToTwo](../Source/Action/CountClass3LinksUpToTwo.asm) | Подсчёт до двух активных записей класса 3 с кодом 02 и совпадающей ссылкой |
 | #6311 | [Action.ApproachWordAndAccumulate](../Source/Action/ApproachWordAndAccumulate.asm) | Приближение HL к BC по обёрнутой разности с накоплением старшего байта остатка в C' |
 | #635B | [Action.ApplyPendingRecordLink](../Source/Action/ApplyPendingRecordLink.asm) | Установка бита 0 LinkFlags, замена LinkedIndex на 1A и условная поправка по ClassCode записи |
 | #6380 | [Action.ApplyIndexedDelta](../Source/Action/ApplyIndexedDelta.asm) | Применение знаковой табличной поправки к байту 9BCD с ограничением и установкой бита 5 по прежнему значению |
+| #63B6 | [Action.RequestPairedAimLines](../Source/Action/RequestPairedAimLines.asm) | Фазовый допуск двух XOR-линий к прицелу с расходом третьей шкалы и включением захвата цели |
+| #6417 | [Action.SpawnClass19AndUpdateList](../Source/Action/SpawnClass19AndUpdateList.asm) | Создание записи класса 19 по двухбитовому счётчику и обновление списка кодом из сохранённого HL |
 | #64DF | [Action.DispatchRecordClass](../Source/Action/DispatchRecordClass.asm) | Косвенный переход по оборачиваемому байтовому индексу класса записи |
 | #6524 | [Action.ReturnIgnoredRecordClass](../Source/Action/ReturnIgnoredRecordClass.asm) | Немедленный общий возврат исходных классов 10..25 без изменения записи |
 | #6525 | [Action.ConfigureClass5Link](../Source/Action/ConfigureClass5Link.asm) | Подстановка и общий выбор связи только при новом нулевом слове потока 0 |
@@ -923,12 +930,23 @@
 | #E70D | [Action.FindRecordExcept6And7](../Source/Action/FindRecordExcept6And7.asm) | Поиск первой активной записи с классом вне пары 6 и 7 |
 | #E729 | [Action.FindRecordClass6Or7](../Source/Action/FindRecordClass6Or7.asm) | Поиск первой активной записи с классом 6 либо 7 |
 | #E745 | [Action.FindRecordClass5Or14](../Source/Action/FindRecordClass5Or14.asm) | Поиск первой активной записи с классом 5 либо 14 |
+| #E761 | [Action.PrepareLinkedRecordContext](../Source/Action/PrepareLinkedRecordContext.asm) | Подготовка адреса связанной записи и трёх компонент текущей записи в операндах последующего расчёта |
+| #E794 | [Action.LoadLinkedRecordVectors](../Source/Action/LoadLinkedRecordVectors.asm) | Подготовка двух трёхсловных наборов из связанной записи либо фиксированных значений связи 1A |
+| #E804 | [Action.CheckAndToggleLinkedOverlay](../Source/Action/CheckAndToggleLinkedOverlay.asm) | Проверка связанных векторов, обновление обратной связи и XOR-вывод сегмента |
+| #E863 | [Action.SpawnClass9ForClass8](../Source/Action/SpawnClass9ForClass8.asm) | Допуск полного класса 8 к созданию дочерних записей класса 9 с начальным состоянием 2 |
+| #E86B | [Action.SpawnLinkedClass9Records](../Source/Action/SpawnLinkedClass9Records.asm) | Условное создание одной либо двух записей класса 9 с индексом родителя и копией его связи |
+| #E91E | [Action.CheckLinkedTargetTransition](../Source/Action/CheckLinkedTargetTransition.asm) | Проверка допуска к выбору связанной записи либо перехода к фазовому ожиданию |
+| #E935 | [Action.CheckObjectPhaseTransition](../Source/Action/CheckObjectPhaseTransition.asm) | Проверка случайного ожидания и перехода к фазовому смещению записи |
 | #E97C | [Action.SelectClass8ForRecord](../Source/Action/SelectClass8ForRecord.asm) | Поиск первой записи класса 8 и сохранение её индекса в текущей записи |
 | #E98D | [Action.FindRecordByCode](../Source/Action/FindRecordByCode.asm) | Поиск от A100 первой активной записи с байтом 12 равным входному D |
 | #E9A1 | [Action.FindReusableRecord](../Source/Action/FindReusableRecord.asm) | Поиск первой записи с байтом 1 равным 80, обработка маркера конца и однократного пропуска по байту 18 |
+| #E9C2 | [Action.FindNearestListedRecord](../Source/Action/FindNearestListedRecord.asm) | Выбор ближайшей доступной записи из списка индексов с сохранением первого равенства |
+| #EA00 | [Action.CheckCandidateListClass](../Source/Action/CheckCandidateListClass.asm) | Проверка принадлежности полного класса списку допуска выбора цели |
+| #EA15 | [Action.CheckCandidateListReady](../Source/Action/CheckCandidateListReady.asm) | Проверка допуска класса и наличия непропущенного кандидата в списке |
 | #EA29 | [Action.PrepareLargeEffect](../Source/Action/PrepareLargeEffect.asm) | Настройка дочернего кода и чтение заголовка большого эффекта |
 | #EA3D | [Action.AllocateLargeEffect](../Source/Action/AllocateLargeEffect.asm) | Выделение большого эффекта и создание дочерних записей перед освобождением объекта |
 | #EAE9 | [Action.MaxRecordDeltaHigh](../Source/Action/MaxRecordDeltaHigh.asm) | Максимальный старший байт модулей трёх обёрнутых разностей записей |
+| #EB41 | [Action.ToggleTargetOverlay](../Source/Action/ToggleTargetOverlay.asm) | Проекция пары векторов, проверка общего окна и XOR-вывод соединяющего сегмента |
 | #EB72 | [Action.NextRandomWord0](../Source/Action/NextRandomWord0.asm) | Следующее слово независимого потока 0 с физическим состоянием Stream0 |
 | #EB79 | [Action.NextRandomWord3](../Source/Action/NextRandomWord3.asm) | Следующее слово независимого потока 3 с физическим состоянием Stream3 |
 | #EB80 | [Action.NextRandomWord4](../Source/Action/NextRandomWord4.asm) | Следующее слово независимого потока 4 с физическим состоянием Stream4 |
@@ -945,17 +963,33 @@
 | #EBCD | [Action.NextRandomWord13](../Source/Action/NextRandomWord13.asm) | Следующее слово независимого потока 13 с физическим состоянием Stream13 |
 | #EBD4 | [Action.NextRandomWord14](../Source/Action/NextRandomWord14.asm) | Следующее слово независимого потока 14 с физическим состоянием Stream14 |
 | #EC08 | [Action.StepFoldedRandom](../Source/Action/StepFoldedRandom.asm) | Обновление трёхбайтового состояния свёрткой переносов и возврат нового 16-битного слова через обратный EXX |
+| #EC54 | [Action.ClassifyProjectedPair](../Source/Action/ClassifyProjectedPair.asm) | Заполнение кодов двух проецированных точек и накопление их парных признаков границ |
 | #ECA8 | [Action.UpdateAyEffects](../Source/Action/UpdateAyEffects.asm) | Вывод очередных строк потоков AY-каналов A и B и формирование канала C по R и изменяемому уровню |
 | #EF7D | [Action.AdvanceObjectOffsetRise](../Source/Action/AdvanceObjectOffsetRise.asm) | Увеличение байта смещения и переход к обратному ходу по таймеру |
 | #EF9A | [Action.AdvanceObjectOffsetFall](../Source/Action/AdvanceObjectOffsetFall.asm) | Уменьшение байта смещения и возврат сохранённого состояния по таймеру |
 | #EFB5 | [Action.AdvanceObjectPhaseWait](../Source/Action/AdvanceObjectPhaseWait.asm) | Обновление фазового счётчика и завершение ожидания по классу и компонентам |
+| #F003 | [Action.RefreshRecordClassAndOffsets](../Source/Action/RefreshRecordClassAndOffsets.asm) | Повторный выбор поведения записи по классу и передача общему подготовителю смещений |
+| #F009 | [Action.HandleLinkedRecordProximity](../Source/Action/HandleLinkedRecordProximity.asm) | Проверка связи с записью полного класса 13, обработка близости и запуск эффекта по исходному биту 4 |
 | #F03D | [Action.MarkIYRecordForReuse](../Source/Action/MarkIYRecordForReuse.asm) | Пометка записи по IY кодом Component0=8000 и однократным пропуском ReuseByte=FF |
 | #F04A | [Action.HandleSelectedRecordProximity](../Source/Action/HandleSelectedRecordProximity.asm) | Проверка выбранной записи, резервный поиск класса 8 и обработка близости |
 | #F075 | [Action.SetClass18ObjectState](../Source/Action/SetClass18ObjectState.asm) | Установка состояния 0A у записи класса 12h перед диспетчеризацией |
+| #F07C | [Action.UpdatePhaseAndNearVector](../Source/Action/UpdatePhaseAndNearVector.asm) | Обновление фазового перехода и обязательная обработка близкого широкого вектора |
+| #F081 | [Action.UpdateLinkedOrNearPhase](../Source/Action/UpdateLinkedOrNearPhase.asm) | Проверка перехода к связи и условное продолжение в обработке близкого вектора |
+| #F087 | [Action.UpdateNearVectorPhase](../Source/Action/UpdateNearVectorPhase.asm) | Проверка близких широких векторов, случайного состояния 6 и шага фазы записи |
+| #F0BE | [Action.StepSelectedWideVector](../Source/Action/StepSelectedWideVector.asm) | Шаг кодов движения к выбранному широкому вектору и проверка следующих состояний |
 | #F0F8 | [Action.PrepareObjectOffsetTransform](../Source/Action/PrepareObjectOffsetTransform.asm) | Проверка маркера записи и подготовка смещений для вычислителя 6D06 |
+| #F138 | [Action.HandleLinkedTargetState](../Source/Action/HandleLinkedTargetState.asm) | Обновление связи, выбор дочерних действий и геометрическое сопровождение записи в состоянии 02 |
+| #F222 | [Action.CheckClass17SpawnWindow](../Source/Action/CheckClass17SpawnWindow.asm) | Проверка случайного окна создания класса 17 и загрузка байта допуска по полному классу |
+| #F24F | [Action.SpawnLinkedClass17AndContinue](../Source/Action/SpawnLinkedClass17AndContinue.asm) | Создание класса 17 по текущей связи и продолжение общего расчёта смещений |
+| #F255 | [Action.SpawnClass17FromCurrentLink](../Source/Action/SpawnClass17FromCurrentLink.asm) | Подготовка компонент и индексов текущей записи для общего создателя класса 17 |
+| #F289 | [Action.HandleLinkedPhaseState](../Source/Action/HandleLinkedPhaseState.asm) | Обновление связанной записи с отдельным случайным окном и шагом третьей фазы |
 | #F356 | [Action.HandleClass18Proximity](../Source/Action/HandleClass18Proximity.asm) | Поиск записи класса 18, освобождение текущей при близости либо подвод фазовых кодов |
 | #F36B | [Action.StepCodesTowardRecord](../Source/Action/StepCodesTowardRecord.asm) | Подвод фазовых кодов текущей записи по трём компонентам выбранной записи |
 | #F394 | [Action.MarkRecordForReuse](../Source/Action/MarkRecordForReuse.asm) | Пометка записи кодом Component0=8000 и однократным пропуском ReuseByte=FF при поиске доступной записи |
+| #F3A1 | [Action.StepTimedPhasePattern](../Source/Action/StepTimedPhasePattern.asm) | Обновление таймера и двух фаз с переходом к состоянию 10 при истечении |
+| #F3C8 | [Action.StepTimedLinkedOverlay](../Source/Action/StepTimedLinkedOverlay.asm) | Уменьшение таймера, восстановление состояния и обновление связанного сегмента либо создание класса 17 |
+| #F3F0 | [Action.SpawnPeriodicClass3Record](../Source/Action/SpawnPeriodicClass3Record.asm) | Периодическое создание одной записи класса 3 с уменьшением родительского счётчика и обязательным сбросом баз |
+| #F49C | [Action.SweepClass17AndPrepareSpawn](../Source/Action/SweepClass17AndPrepareSpawn.asm) | Обработка до трёх записей класса 17 и подготовка периодического создания при недостатке связей класса 3 |
 | #F51E | [Action.UpdatePreferredClass18](../Source/Action/UpdatePreferredClass18.asm) | Выбор опоры по R и потоку 2 либо по приоритету классов с обновлением класса 18 |
 | #F527 | [Action.CheckPreferredRandomWord](../Source/Action/CheckPreferredRandomWord.asm) | Проверка младшего слова потока 2 и внешнего байта для выбора отдельного кода 26 |
 | #F535 | [Action.FindPreferredClass0](../Source/Action/FindPreferredClass0.asm) | Поиск опорного класса 0 с продолжением к классам 7 и 5 при отсутствии |
@@ -965,6 +999,15 @@
 | #F54D | [Action.FindPreferredClass5](../Source/Action/FindPreferredClass5.asm) | Поиск последнего опорного класса 5 либо переход к сбросу баз |
 | #F557 | [Action.ApplyPreferredToClass18](../Source/Action/ApplyPreferredToClass18.asm) | Запись выбранной опоры в первый класс 18 только при отсутствии класса 3 |
 | #F572 | [Action.ResetRecordUpdateBases](../Source/Action/ResetRecordUpdateBases.asm) | Обнуление трёх базовых слов в изменяемых операндах обновления компонент |
+| #F57F | [Action.ApproachTargetRecordAndResolve](../Source/Action/ApproachTargetRecordAndResolve.asm) | Сближение с выбранной записью, обновление связи и завершение через большой эффект |
+| #F66A | [Action.StepTimedRecordDecay](../Source/Action/StepTimedRecordDecay.asm) | Декремент времени состояния, освобождение при истечении и деление управляющего байта на два |
+| #F67F | [Action.StepIdleObjectOffset](../Source/Action/StepIdleObjectOffset.asm) | Проверка управляющего байта State00, сброс баз либо полный расчёт смещений после двойного декремента |
+| #F691 | [Action.ResetIdleRecordBases](../Source/Action/ResetIdleRecordBases.asm) | Обнуление трёх общих базовых слов при нулевом управляющем байте State00 |
+| #F69E | [Action.DispatchClassOnHighRandomWord](../Source/Action/DispatchClassOnHighRandomWord.asm) | Вызов обработчика класса только при новом слове потока 0 не меньше F000 |
+| #F6AB | [Action.StepFastRecordPhases](../Source/Action/StepFastRecordPhases.asm) | Увеличение второй и третьей фаз на два и три перед общим расчётом локальных смещений |
+| #F6BD | [Action.AcquireLinkAndApplyOffsets](../Source/Action/AcquireLinkAndApplyOffsets.asm) | Выбор связи и попытка создания дочерних записей перед обязательным расчётом локальных смещений |
+| #F6CD | [Action.ApplyRecordLocalOffsets](../Source/Action/ApplyRecordLocalOffsets.asm) | Увеличение фазового индекса и расчёт баз по отдельным фазам из байтов 0D..0F записи |
+| #F6EC | [Action.StartSmallRecordEffect](../Source/Action/StartSmallRecordEffect.asm) | Создание малого эффекта по заголовку модели и переход текущей записи к состоянию затухания 7 |
 | #F729 | [Action.UpdateObjects](../Source/Action/UpdateObjects.asm) | Обход записей по #40 байт от #A100 с ограничителем #80 и обновление состояний |
 | #F792 | [Action.CheckRecordEffectThreshold](../Source/Action/CheckRecordEffectThreshold.asm) | Выбор порога запуска большого эффекта для текущей записи |
 | #F7BF | [Action.ResumeAfterRecordEffect](../Source/Action/ResumeAfterRecordEffect.asm) | Сброс флагов связи и продолжение обхода объектов |

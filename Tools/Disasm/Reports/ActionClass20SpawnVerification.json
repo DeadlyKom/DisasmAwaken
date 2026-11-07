@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "total_cases": 66560,
+  "paths": {
+    "free_record": 64000,
+    "stream_8": 64000,
+    "transform_complete": 63999,
+    "class20_created": 64000,
+    "no_free_record": 2560,
+    "transform_overflow": 1
+  },
+  "all_seed_words": true,
+  "actual_search_random_and_transposed_transform_executed": true,
+  "exact_registers_flags_r_sp": true,
+  "all_eight_banks_and_write_multiplicity_checked": true,
+  "maximum_additional_stack_bytes": 8,
+  "partial_outputs_on_overflow_preserved": true,
+  "all_input_products_exhausted": false,
+  "game_caller_proved": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

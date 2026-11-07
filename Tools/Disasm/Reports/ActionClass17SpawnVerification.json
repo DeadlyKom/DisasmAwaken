@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "total_cases": 66560,
+  "profiles": {
+    "all_BC_pairs": 65536,
+    "parameter_and_allocation_modes": 1024
+  },
+  "paths": {
+    "free_record": 66304,
+    "class17_created": 66304,
+    "skip_once": 2878,
+    "no_free_record": 256,
+    "class17_no_slot": 256
+  },
+  "all_B_C_index_pairs": true,
+  "all_256_initial_parameters": true,
+  "exact_registers_flags_r_sp": true,
+  "full_eight_bank_ram_and_write_multiplicity_compared": true,
+  "maximum_additional_stack_bytes": 6,
+  "actual_reusable_index_address_and_index_children_executed": true,
+  "uninitialized_child_fields_preserved": true,
+  "complete_input_product_exhausted": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

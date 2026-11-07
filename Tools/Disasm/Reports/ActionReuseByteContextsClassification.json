@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "physical_instances_annotated": 26,
+  "structure_bytes_unchanged": 64,
+  "raw_initial_record_bytes_preserved": 1664,
+  "shared_rules_duplicated_in_project": false,
+  "comment_replacements": {
+    "Tools/Disasm/Research/ActionObjectRecords.py": 1,
+    "Includes/Structs/Include.inc": 1,
+    "Source/Action/Data/ObjectRecords.asm": 26
+  },
+  "assembly_executed": false,
+  "native_execution": false
+}

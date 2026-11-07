@@ -1,0 +1,57 @@
+{
+  "resolved": true,
+  "method": "numeric_composition_against_Z80_simulator_without_assembly",
+  "research_script": "Tools/Disasm/Research/CheckActionLinkedTargetState.py",
+  "reproduce_option": "--unrestricted-out-of-array-overlay",
+  "first_observed_case": 25175,
+  "linked_index": 161,
+  "selected_address": 51520,
+  "class_code": 19,
+  "mode": 2,
+  "saved_state": 180,
+  "path": [
+    "ordinary_geometry",
+    "stream_0",
+    "link_written",
+    "accepted",
+    "accepted",
+    "clipped_line",
+    "overlay_returned"
+  ],
+  "register_mismatches": {
+    "DE": {
+      "numeric_model": 12064,
+      "Z80_simulator": 51603
+    },
+    "AF_prime": {
+      "numeric_model": 6016,
+      "Z80_simulator": 57410
+    }
+  },
+  "current_passing_profile_uses_current_overlay_marker_for_out_of_array_indices": false,
+  "unrestricted_out_of_array_overlay_profile_proved": true,
+  "original_game_bug_proved": false,
+  "assembly_executed": false,
+  "native_execution": false,
+  "resolution": "Числовая модель предполагала неизменный JR NZ по C94B, но E804 при IY=C940 записывает туда индекс текущей записи 18, получается безусловный JR с прежним смещением 27",
+  "actual_code_write": {
+    "writer": 59442,
+    "target": 51531,
+    "old_byte": 32,
+    "new_byte": 24
+  },
+  "supported_modified_dispatch": {
+    "branch_opcodes": [
+      32,
+      24
+    ],
+    "relative_offset": 39
+  },
+  "arbitrary_out_of_array_code_mutations_proved": false,
+  "historical_mismatches_preserved_above": true,
+  "original_game_bytes_modified": false,
+  "verification_reports": [
+    "Tools/Disasm/Reports/ActionLinkedTargetStateUnrestrictedVerification.json",
+    "Tools/Disasm/Reports/ActionLinkedPhaseStateUnrestrictedVerification.json"
+  ]
+}

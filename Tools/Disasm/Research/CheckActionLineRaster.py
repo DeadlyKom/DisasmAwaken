@@ -12,9 +12,9 @@ from CheckMarketAccess import add16_flags
 MODES=((0xA1,0x30,0x18,'and'),(0xB1,0x38,0x10,'or'),(0xA9,0x38,0x10,'xor'))
 
 
-def raster(first,second,opcode,branch,table,memory):
+def raster(first,second,opcode,branch,table,memory,packed_entry=False):
     writes=[]
-    if first==second:return dict(writes=writes,degenerate=True)
+    if first==second and not packed_entry:return dict(writes=writes,degenerate=True)
     x,y=first;end_x,end_y=second
     if end_y<y:x,y,end_x,end_y=end_x,end_y,x,y
     dx=abs(end_x-x);dy=end_y-y;direction=1 if end_x>x else -1
@@ -44,7 +44,8 @@ def raster(first,second,opcode,branch,table,memory):
                 if cross:error_flags=move_byte_flags(address,error_flags);address+=direction
     else:
         accumulator=value(address)
-        for i in range(major):
+        iterations=major if major else 256
+        for i in range(iterations):
             accumulator=apply(accumulator);mask,cross,pixel_flags=advance(mask)
             if cross:
                 write(address,accumulator);pixel_flags=move_byte_flags(address,pixel_flags);address+=direction;accumulator=value(address)
@@ -52,7 +53,7 @@ def raster(first,second,opcode,branch,table,memory):
             if error<0:
                 _,error_flags=arithmetic(error&255,major);error+=major;write(address,accumulator)
                 pixel_flags=add16_flags(address,32,pixel_flags);address+=32;accumulator=value(address)
-            elif i==major-1:write(address,accumulator)
+            elif i==iterations-1:write(address,accumulator)
     patch=(0xDE72,0xDE7C) if steep and direction<0 else (0xDED6,0xDEE0) if steep else (0xDE3F,0xDE42) if direction<0 else (0xDEA3,0xDEA6)
     return dict(writes=writes,degenerate=False,hl=address,bc=mask,de=major*256+minor,patch=patch,steep=steep,direction=direction,
         af=(accumulator,pixel_flags),alt_af=(error,error_flags))

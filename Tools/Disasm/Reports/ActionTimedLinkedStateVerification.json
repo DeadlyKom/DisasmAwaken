@@ -1,0 +1,43 @@
+{
+  "passed": true,
+  "total_cases": 65536,
+  "profiles": {
+    "all_timers_thresholds": 65536
+  },
+  "paths": {
+    "stream_0": 48960,
+    "window_low_reject": 8244,
+    "window_high_reject": 15384,
+    "parameter_0A": 7538,
+    "free_record": 10285,
+    "class17_created": 10285,
+    "window_spawn_attempted": 14993,
+    "prepare_unavailable": 16320,
+    "no_free_record": 4708,
+    "class17_no_slot": 4708,
+    "parameter_32": 7455,
+    "window_class9_reject": 392,
+    "link_written": 7063,
+    "accepted": 19894,
+    "inside_line": 6547,
+    "overlay_returned": 9947,
+    "timed_overlay_return": 9947,
+    "clipped_line": 3400,
+    "link_skipped": 2884,
+    "timer_expired": 256
+  },
+  "all_256_timers_by_256_thresholds": true,
+  "zero_timer_wrap_preserved": true,
+  "expired_StateCode_from_Unknown19": true,
+  "actual_context_random_creation_projection_clipping_and_raster_children_executed": true,
+  "exact_registers_except_R_on_renderer": true,
+  "exact_R_on_nonrenderer_cases": 55589,
+  "full_eight_bank_ram_and_write_multiplicity_compared": true,
+  "maximum_observed_additional_stack_bytes": 28,
+  "common_F0F8_executed": false,
+  "renderer_R_proved": false,
+  "complete_input_product_exhausted": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

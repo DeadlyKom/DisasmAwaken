@@ -46,6 +46,30 @@
 
 [Алгоритм, контракты и проверка](../ActionClass14Reuse.md).
 
+## CreateRandomClass20Record
+
+[Action.CreateRandomClass20Record](../../Source/Action/CreateRandomClass20Record.asm)
+
+Создание записи класса 20 из двух случайных компонент и транспонированного преобразования.
+
+[Алгоритм, точные регистры и модель](../ActionClass20Spawn.md).
+
+## StepRandomizedThirdPhase
+
+[Action.StepRandomizedThirdPhase](../../Source/Action/StepRandomizedThirdPhase.asm)
+
+Случайное обновление счётчика направления и знаковый шаг третьей фазы записи.
+
+[Алгоритм, точные регистры и модель](../ActionRandomPhaseStep.md).
+
+## CheckLinkedDistanceAndStepCodes
+
+[Action.CheckLinkedDistanceAndStepCodes](../../Source/Action/CheckLinkedDistanceAndStepCodes.asm)
+
+Проверка расстояния связанной записи перед шагом кодов либо переходом во временное состояние.
+
+[Алгоритм, точные регистры и модель](../ActionLinkedMotionGate.md).
+
 ## StepRecordTargetCodes
 
 [Action.StepRecordTargetCodes](../../Source/Action/StepRecordTargetCodes.asm)
@@ -61,6 +85,14 @@
 - Косвенное завершение: нет в этом фрагменте.
 
 [Алгоритм, контракты и проверка](../ActionRecordCodeStep.md).
+
+## EnterTimedPhaseFromMotion
+
+[Action.EnterTimedPhaseFromMotion](../../Source/Action/EnterTimedPhaseFromMotion.asm)
+
+Восстановление рамки движения и установка временного состояния 11 со случайным таймером.
+
+[Алгоритм, точные регистры и модель](../ActionEnterTimedState.md).
 
 ## CountClass3LinksUpToTwo
 
@@ -109,6 +141,22 @@
 Применение знаковой табличной поправки к байту 9BCD с ограничением и установкой бита 5 по прежнему значению.
 
 [Договор и независимая модель](../ActionTypeDelta.md).
+
+## RequestPairedAimLines
+
+[Action.RequestPairedAimLines](../../Source/Action/RequestPairedAimLines.asm)
+
+Фазовый допуск двух XOR-линий к прицелу с расходом третьей шкалы и включением захвата цели.
+
+[Алгоритм, точные регистры и модель](../ActionPairedAimLines.md).
+
+## SpawnClass19AndUpdateList
+
+[Action.SpawnClass19AndUpdateList](../../Source/Action/SpawnClass19AndUpdateList.asm)
+
+Создание записи класса 19 по двухбитовому счётчику и обновление списка кодом из сохранённого HL.
+
+[Алгоритм, точные регистры и модель](../ActionClass19Spawn.md).
 
 ## DispatchRecordClass
 
@@ -3290,6 +3338,62 @@ Unknown, назначение этого фрагмента ещё не уста
 
 [Алгоритм, точные регистры и модель](../ActionRecords5Or14.md).
 
+## PrepareLinkedRecordContext
+
+[Action.PrepareLinkedRecordContext](../../Source/Action/PrepareLinkedRecordContext.asm)
+
+Подготовка адреса связанной записи и трёх компонент текущей записи в операндах последующего расчёта.
+
+[Алгоритм, точные регистры и модель](../ActionLinkedContext.md).
+
+## LoadLinkedRecordVectors
+
+[Action.LoadLinkedRecordVectors](../../Source/Action/LoadLinkedRecordVectors.asm)
+
+Подготовка двух трёхсловных наборов из связанной записи либо фиксированных значений связи 1A.
+
+[Алгоритм, точные регистры и модель](../ActionLinkedVectors.md).
+
+## CheckAndToggleLinkedOverlay
+
+[Action.CheckAndToggleLinkedOverlay](../../Source/Action/CheckAndToggleLinkedOverlay.asm)
+
+Проверка связанных векторов, обновление обратной связи и XOR-вывод сегмента.
+
+[Алгоритм, точные регистры и модель](../ActionLinkedOverlay.md).
+
+## SpawnClass9ForClass8
+
+[Action.SpawnClass9ForClass8](../../Source/Action/SpawnClass9ForClass8.asm)
+
+Допуск полного класса 8 к созданию дочерних записей класса 9 с начальным состоянием 2.
+
+[Алгоритм, точные регистры и модель](../ActionClass8SpawnGate.md).
+
+## SpawnLinkedClass9Records
+
+[Action.SpawnLinkedClass9Records](../../Source/Action/SpawnLinkedClass9Records.asm)
+
+Условное создание одной либо двух записей класса 9 с индексом родителя и копией его связи.
+
+[Алгоритм, точные регистры и модель](../ActionChildSpawn.md).
+
+## CheckLinkedTargetTransition
+
+[Action.CheckLinkedTargetTransition](../../Source/Action/CheckLinkedTargetTransition.asm)
+
+Проверка допуска к выбору связанной записи либо перехода к фазовому ожиданию.
+
+[Алгоритм, точные регистры и модель](../ActionTargetTransition.md).
+
+## CheckObjectPhaseTransition
+
+[Action.CheckObjectPhaseTransition](../../Source/Action/CheckObjectPhaseTransition.asm)
+
+Проверка случайного ожидания и перехода к фазовому смещению записи.
+
+[Алгоритм, точные регистры и модель](../ActionPhaseTransition.md).
+
 ## SelectClass8ForRecord
 
 [Action.SelectClass8ForRecord](../../Source/Action/SelectClass8ForRecord.asm)
@@ -3330,6 +3434,30 @@ Unknown, назначение этого фрагмента ещё не уста
 
 [Алгоритм, контракты и независимая модель](../ActionRecordSearch.md).
 
+## FindNearestListedRecord
+
+[Action.FindNearestListedRecord](../../Source/Action/FindNearestListedRecord.asm)
+
+Выбор ближайшей доступной записи из списка индексов с сохранением первого равенства.
+
+[Алгоритм, точные регистры и модель](../ActionNearestCandidate.md).
+
+## CheckCandidateListClass
+
+[Action.CheckCandidateListClass](../../Source/Action/CheckCandidateListClass.asm)
+
+Проверка принадлежности полного класса списку допуска выбора цели.
+
+[Алгоритм, точные регистры и модель](../ActionCandidateClass.md).
+
+## CheckCandidateListReady
+
+[Action.CheckCandidateListReady](../../Source/Action/CheckCandidateListReady.asm)
+
+Проверка допуска класса и наличия непропущенного кандидата в списке.
+
+[Алгоритм, точные регистры и модель](../ActionCandidateGate.md).
+
 ## PrepareLargeEffect
 
 [Action.PrepareLargeEffect](../../Source/Action/PrepareLargeEffect.asm)
@@ -3361,6 +3489,14 @@ Unknown, назначение этого фрагмента ещё не уста
 Максимальный старший байт модулей трёх обёрнутых разностей записей.
 
 [Алгоритм, точные регистры и модель](../ActionRecordDistance.md).
+
+## ToggleTargetOverlay
+
+[Action.ToggleTargetOverlay](../../Source/Action/ToggleTargetOverlay.asm)
+
+Проекция пары векторов, проверка общего окна и XOR-вывод соединяющего сегмента.
+
+[Алгоритм, точные регистры и модель](../ActionOverlayPair.md).
 
 ## NextRandomWord0
 
@@ -3522,6 +3658,14 @@ Unknown, назначение этого фрагмента ещё не уста
 
 [Алгоритм, контракты и проверка](../ActionFoldedRandom.md).
 
+## ClassifyProjectedPair
+
+[Action.ClassifyProjectedPair](../../Source/Action/ClassifyProjectedPair.asm)
+
+Заполнение кодов двух проецированных точек и накопление их парных признаков границ.
+
+[Алгоритм, точные регистры и модель](../ActionProjectedPairCodes.md).
+
 ## UpdateAyEffects
 
 [Action.UpdateAyEffects](../../Source/Action/UpdateAyEffects.asm)
@@ -3562,6 +3706,22 @@ Unknown, назначение этого фрагмента ещё не уста
 
 [Алгоритм, точные регистры и модель](../ActionObjectPhaseWait.md).
 
+## RefreshRecordClassAndOffsets
+
+[Action.RefreshRecordClassAndOffsets](../../Source/Action/RefreshRecordClassAndOffsets.asm)
+
+Повторный выбор поведения записи по классу и передача общему подготовителю смещений.
+
+[Алгоритм, точные регистры и модель](../ActionClassRefresh.md).
+
+## HandleLinkedRecordProximity
+
+[Action.HandleLinkedRecordProximity](../../Source/Action/HandleLinkedRecordProximity.asm)
+
+Проверка связи с записью полного класса 13, обработка близости и запуск эффекта по исходному биту 4.
+
+[Алгоритм, точные регистры и модель](../ActionLinkedProximity.md).
+
 ## MarkIYRecordForReuse
 
 [Action.MarkIYRecordForReuse](../../Source/Action/MarkIYRecordForReuse.asm)
@@ -3594,6 +3754,38 @@ Unknown, назначение этого фрагмента ещё не уста
 
 [Алгоритм, контракты и проверка](../ActionObjectStateDispatch.md).
 
+## UpdatePhaseAndNearVector
+
+[Action.UpdatePhaseAndNearVector](../../Source/Action/UpdatePhaseAndNearVector.asm)
+
+Обновление фазового перехода и обязательная обработка близкого широкого вектора.
+
+[Алгоритм, точные регистры и модель](../ActionPhaseNearState.md).
+
+## UpdateLinkedOrNearPhase
+
+[Action.UpdateLinkedOrNearPhase](../../Source/Action/UpdateLinkedOrNearPhase.asm)
+
+Проверка перехода к связи и условное продолжение в обработке близкого вектора.
+
+[Алгоритм, точные регистры и модель](../ActionLinkedNearState.md).
+
+## UpdateNearVectorPhase
+
+[Action.UpdateNearVectorPhase](../../Source/Action/UpdateNearVectorPhase.asm)
+
+Проверка близких широких векторов, случайного состояния 6 и шага фазы записи.
+
+[Алгоритм, точные регистры и модель](../ActionNearPhase.md).
+
+## StepSelectedWideVector
+
+[Action.StepSelectedWideVector](../../Source/Action/StepSelectedWideVector.asm)
+
+Шаг кодов движения к выбранному широкому вектору и проверка следующих состояний.
+
+[Алгоритм, точные регистры и модель](../ActionWideVectorState.md).
+
 ## PrepareObjectOffsetTransform
 
 [Action.PrepareObjectOffsetTransform](../../Source/Action/PrepareObjectOffsetTransform.asm)
@@ -3601,6 +3793,46 @@ Unknown, назначение этого фрагмента ещё не уста
 Проверка маркера записи и подготовка смещений для вычислителя 6D06.
 
 [Алгоритм, точные регистры и модель](../ActionObjectOffsetTransfer.md).
+
+## HandleLinkedTargetState
+
+[Action.HandleLinkedTargetState](../../Source/Action/HandleLinkedTargetState.asm)
+
+Обновление связи, выбор дочерних действий и геометрическое сопровождение записи в состоянии 02.
+
+[Алгоритм, точные регистры и модель](../ActionLinkedTargetState.md).
+
+## CheckClass17SpawnWindow
+
+[Action.CheckClass17SpawnWindow](../../Source/Action/CheckClass17SpawnWindow.asm)
+
+Проверка случайного окна создания класса 17 и загрузка байта допуска по полному классу.
+
+[Алгоритм, точные регистры и модель](../ActionSpawnWindow.md).
+
+## SpawnLinkedClass17AndContinue
+
+[Action.SpawnLinkedClass17AndContinue](../../Source/Action/SpawnLinkedClass17AndContinue.asm)
+
+Создание класса 17 по текущей связи и продолжение общего расчёта смещений.
+
+[Алгоритм, точные регистры и модель](../ActionSpawnContinue.md).
+
+## SpawnClass17FromCurrentLink
+
+[Action.SpawnClass17FromCurrentLink](../../Source/Action/SpawnClass17FromCurrentLink.asm)
+
+Подготовка компонент и индексов текущей записи для общего создателя класса 17.
+
+[Алгоритм, точные регистры и модель](../ActionSpawnCurrentLink.md).
+
+## HandleLinkedPhaseState
+
+[Action.HandleLinkedPhaseState](../../Source/Action/HandleLinkedPhaseState.asm)
+
+Обновление связанной записи с отдельным случайным окном и шагом третьей фазы.
+
+[Алгоритм, точные регистры и модель](../ActionLinkedPhaseState.md).
 
 ## HandleClass18Proximity
 
@@ -3633,6 +3865,38 @@ Unknown, назначение этого фрагмента ещё не уста
 - Косвенное завершение: нет в этом фрагменте.
 
 [Алгоритм, контракты и проверка](../ActionRecordReuse.md).
+
+## StepTimedPhasePattern
+
+[Action.StepTimedPhasePattern](../../Source/Action/StepTimedPhasePattern.asm)
+
+Обновление таймера и двух фаз с переходом к состоянию 10 при истечении.
+
+[Алгоритм, точные регистры и модель](../ActionTimedPhaseState.md).
+
+## StepTimedLinkedOverlay
+
+[Action.StepTimedLinkedOverlay](../../Source/Action/StepTimedLinkedOverlay.asm)
+
+Уменьшение таймера, восстановление состояния и обновление связанного сегмента либо создание класса 17.
+
+[Алгоритм, точные регистры и модель](../ActionTimedLinkedState.md).
+
+## SpawnPeriodicClass3Record
+
+[Action.SpawnPeriodicClass3Record](../../Source/Action/SpawnPeriodicClass3Record.asm)
+
+Периодическое создание одной записи класса 3 с уменьшением родительского счётчика и обязательным сбросом баз.
+
+[Алгоритм, точные регистры и модель](../ActionPeriodicClass3State.md).
+
+## SweepClass17AndPrepareSpawn
+
+[Action.SweepClass17AndPrepareSpawn](../../Source/Action/SweepClass17AndPrepareSpawn.asm)
+
+Обработка до трёх записей класса 17 и подготовка периодического создания при недостатке связей класса 3.
+
+[Алгоритм, точные регистры и модель](../ActionClass17Sweep.md).
 
 ## UpdatePreferredClass18
 
@@ -3746,6 +4010,78 @@ Unknown, назначение этого фрагмента ещё не уста
 
 [Алгоритм, контракты и проверка](../ActionRecordBaseReset.md).
 
+## ApproachTargetRecordAndResolve
+
+[Action.ApproachTargetRecordAndResolve](../../Source/Action/ApproachTargetRecordAndResolve.asm)
+
+Сближение с выбранной записью, обновление связи и завершение через большой эффект.
+
+[Алгоритм, точные регистры и модель](../ActionArrivalState.md).
+
+## StepTimedRecordDecay
+
+[Action.StepTimedRecordDecay](../../Source/Action/StepTimedRecordDecay.asm)
+
+Декремент времени состояния, освобождение при истечении и деление управляющего байта на два.
+
+[Алгоритм, точные регистры и модель](../ActionTimedDecayState.md).
+
+## StepIdleObjectOffset
+
+[Action.StepIdleObjectOffset](../../Source/Action/StepIdleObjectOffset.asm)
+
+Проверка управляющего байта State00, сброс баз либо полный расчёт смещений после двойного декремента.
+
+[Алгоритм, точные регистры и модель](../ActionIdleState.md).
+
+## ResetIdleRecordBases
+
+[Action.ResetIdleRecordBases](../../Source/Action/ResetIdleRecordBases.asm)
+
+Обнуление трёх общих базовых слов при нулевом управляющем байте State00.
+
+[Алгоритм, точные регистры и модель](../ActionIdleBaseReset.md).
+
+## DispatchClassOnHighRandomWord
+
+[Action.DispatchClassOnHighRandomWord](../../Source/Action/DispatchClassOnHighRandomWord.asm)
+
+Вызов обработчика класса только при новом слове потока 0 не меньше F000.
+
+[Алгоритм, точные регистры и модель](../ActionRandomClassGate.md).
+
+## StepFastRecordPhases
+
+[Action.StepFastRecordPhases](../../Source/Action/StepFastRecordPhases.asm)
+
+Увеличение второй и третьей фаз на два и три перед общим расчётом локальных смещений.
+
+[Алгоритм, точные регистры и модель](../ActionFastPhaseState.md).
+
+## AcquireLinkAndApplyOffsets
+
+[Action.AcquireLinkAndApplyOffsets](../../Source/Action/AcquireLinkAndApplyOffsets.asm)
+
+Выбор связи и попытка создания дочерних записей перед обязательным расчётом локальных смещений.
+
+[Алгоритм, точные регистры и модель](../ActionAcquireLocalState.md).
+
+## ApplyRecordLocalOffsets
+
+[Action.ApplyRecordLocalOffsets](../../Source/Action/ApplyRecordLocalOffsets.asm)
+
+Увеличение фазового индекса и расчёт баз по отдельным фазам из байтов 0D..0F записи.
+
+[Алгоритм, точные регистры и модель](../ActionLocalOffsets.md).
+
+## StartSmallRecordEffect
+
+[Action.StartSmallRecordEffect](../../Source/Action/StartSmallRecordEffect.asm)
+
+Создание малого эффекта по заголовку модели и переход текущей записи к состоянию затухания 7.
+
+[Алгоритм, точные регистры и модель](../ActionSmallEffectState.md).
+
 ## UpdateObjects
 
 [Action.UpdateObjects](../../Source/Action/UpdateObjects.asm)
@@ -3837,3 +4173,7 @@ Unknown, назначение этого фрагмента ещё не уста
 Начало #6054, смещения #0291..#02EA. [Проверка и границы](../ActionTextQueueCalls.md).
 
 [Алгоритм, контракты и проверка](../ActionNoiseExit.md).
+
+## CreateClass17LinkedRecord
+
+[Общий создатель](../../Source/Action/CreateClass17LinkedRecord.asm). [Алгоритм и точный договор](../ActionClass17Spawn.md).

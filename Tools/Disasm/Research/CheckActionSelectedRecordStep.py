@@ -74,6 +74,8 @@ def main():
             '^AF':(serial*109)&65535,'^HL':0x1234,'^DE':0x5678,'^BC':0x9ABC,'IX':0xA100,'IY':0xA140},None,False)
         initial[14],initial[15],initial[26],initial[27]=serial&255,(serial*17)&255,serial&1,serial%3
         child=arguments(initial,current,target);child[SP]-=2;child[PC]=0xAD5A
+        # Учёт M1 настоящего CALL из StepRecordTargetCodes перед входом геометрии.
+        child[15]=refresh(child[15],1)
         calculated=geometry(child,ratio_table,root_table,return_address=0x6268)
         local=apply_codes(calculated['registers'],*columns,rate)
         operations=[(stack-2,0x68),(stack-1,0x62)]+calculated['writes']+local['writes']
@@ -86,7 +88,7 @@ def main():
         simulator.run(start=0xF36B,stop=0x3FFF)
         memory.recording=False
         wanted=local['registers']
-        assert all(wanted[index]==simulator.registers[index] for index in (*range(15),*range(16,25),26,27))
+        assert all(wanted[index]==simulator.registers[index] for index in (*range(25),26,27)),(serial,[(i,wanted[i],simulator.registers[i]) for i in (*range(25),26,27) if wanted[i]!=simulator.registers[i]])
         assert memory.banks==expected and Counter(memory.writes)==Counter(writes)
         assert trace.writes==calculated['ports'] and memory.o7ffd==16
         paths['first_written' if local['first_written'] else 'first_skipped']+=1
@@ -95,9 +97,9 @@ def main():
     result=dict(passed=True,total_cases=stage_cases+composed,parameter_cases=stage_cases,composed_cases=composed,
         all_65536_values_each_of_six_input_words_at_boundary=True,parameter_registers_flags_r_exact=True,
         parameter_ram_writes_rejected=True,parameter_m1=27,actual_geometry_root_ratio_and_step_executed=True,
-        independent_existing_child_models_composed=True,composed_registers_except_r_exact=True,
+        independent_existing_child_models_composed=True,composed_registers_including_r_exact=True,
         full_eight_bank_ram_and_write_multiplicity_compared=True,paths=dict(paths),
-        full_composed_r_proved=False,complete_six_word_product_exhausted=False,
+        full_composed_r_proved=True,complete_six_word_product_exhausted=False,
         assembly_executed=False,irq_executed=False,native_execution=False)
     (ROOT/'Tools/Disasm/Reports/ActionSelectedRecordStepVerification.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8')
     print(json.dumps(result,indent=2))

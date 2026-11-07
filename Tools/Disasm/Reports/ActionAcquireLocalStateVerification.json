@@ -1,0 +1,38 @@
+{
+  "passed": true,
+  "total_cases": 73984,
+  "profiles": {
+    "all_stream11_words": 65536,
+    "all_classes_with_R_edges": 8192,
+    "all_parent_reuse_bytes": 256
+  },
+  "paths": {
+    "skip": 65840,
+    "improve": 65888,
+    "end": 65936,
+    "stream_11": 65808,
+    "random_reject": 63239,
+    "local_offset_return": 73984,
+    "requested_1": 1280,
+    "free_record": 3855,
+    "child_written": 3855,
+    "requested_2": 1289,
+    "gate_skips_link_and_spawn": 8048,
+    "invalidate": 48,
+    "no_free_record": 3,
+    "allocation_return_with_EXX": 3,
+    "already_requested": 128
+  },
+  "maximum_additional_stack_bytes": 8,
+  "all_stream11_words_at_fold_zero": true,
+  "all_classes_with_eight_R_edges_and_four_lists": true,
+  "all_parent_reuse_bytes": true,
+  "real_gate_nearest_spawn_coefficients_and_multiply_children_executed": true,
+  "exact_registers_flags_r_sp": true,
+  "full_eight_bank_ram_and_write_multiplicity_compared": true,
+  "complete_external_return": true,
+  "all_input_products_exhausted": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

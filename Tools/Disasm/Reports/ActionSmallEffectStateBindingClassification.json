@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "state_index": 6,
+  "address": 63212,
+  "name": "StartSmallRecordEffect",
+  "physical_pointer_preserved": true,
+  "assembly_executed": false,
+  "native_execution": false
+}

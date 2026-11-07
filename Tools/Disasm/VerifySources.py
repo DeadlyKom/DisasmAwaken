@@ -716,6 +716,17 @@ def main():
     line_mask_items=[x for x in source_map if x['path']==LINE_MASKS_PATH]
     assert len(line_mask_items)==1 and (line_mask_items[0]['offset'],line_mask_items[0]['length'],line_mask_items[0]['origin'])==(0x8010,16,0xE010)
 
+    # Проверка физических STRUCT двух малых ресурсов связанных состояний.
+    from ActionLinkedStateData import TABLES as LINKED_STATE_TABLES, parse as parse_linked_state_data
+    for table in LINKED_STATE_TABLES:
+        _,path,start,end,_,_,_=table
+        raw,labels=parse_linked_state_data((ROOT/path).read_text('utf-8'),table)
+        assert raw==sources[17][start:end]
+        assert all(symbols.get(k.upper())==v for k,v in labels.items())
+        rows=[p for p in source_map if p['path']==path]
+        assert len(rows)==1 and (rows[0]['offset'],rows[0]['length'],rows[0]['origin'])==(start,end-start,start+0x6000)
+    assert symbols['FOVERLAYLINE']==4 and symbols['FCLASSSPAWNBYTE']==1
+
     # Проверка двух физических точек, их вложенных координат и кода, а не только адресных EQU.
     from ActionClipPointsData import POINTS as CLIP_POINTS, parse as parse_clip_point
     for name,offset,path in CLIP_POINTS:

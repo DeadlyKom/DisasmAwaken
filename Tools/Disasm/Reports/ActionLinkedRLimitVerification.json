@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "parameter_index": 9,
+  "writer": 44174,
+  "target": 59427,
+  "target_bank": 0,
+  "source_instructions_and_bytes_unchanged": true,
+  "new_registered_writer": 1,
+  "assembly_executed": false
+}

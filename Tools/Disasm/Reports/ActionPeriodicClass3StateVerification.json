@@ -1,0 +1,31 @@
+{
+  "passed": true,
+  "total_cases": 135168,
+  "profiles": {
+    "all_phase_and_parent_counter_bytes": 65536,
+    "all_region_coordinates": 65536,
+    "all_R_and_index_edges": 4096
+  },
+  "paths": {
+    "phase_skip": 61440,
+    "skip_once": 2048,
+    "free_record": 71680,
+    "class3_child_written": 70912,
+    "no_free_record": 2048,
+    "no_child_slot": 2048,
+    "linked_unavailable": 768,
+    "parent_state_09": 9
+  },
+  "all_phase_parent_counter_products": true,
+  "all_65536_region_coordinates": true,
+  "all_256_R_values_with_four_list_styles_and_index_edges": true,
+  "exact_registers_flags_r_sp": true,
+  "full_eight_bank_ram_and_write_multiplicity_compared": true,
+  "real_allocator_index_region_and_reset_children_executed": true,
+  "maximum_additional_stack_bytes": 2,
+  "complete_external_return": true,
+  "all_input_products_exhausted": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

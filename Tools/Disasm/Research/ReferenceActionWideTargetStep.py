@@ -2,6 +2,7 @@
 from ReferenceActionClampVectorWords import evaluate as clamp
 from ReferenceActionHalfDeltaCodes import evaluate as geometry
 from ReferenceActionRecordCodeStep import apply_codes
+from ReferenceControlsPointRespawn import refresh
 
 
 def evaluate(registers,values,record_words,currents,rate,ratio_table,root_table):
@@ -20,5 +21,7 @@ def evaluate(registers,values,record_words,currents,rate,ratio_table,root_table)
     put(stack-2,0x6268);r[12]=stack-2;r[24]=0xAD5A
     delta=geometry(r,ratio_table,root_table,return_address=0x6268);writes.extend(delta['writes'])
     local=apply_codes(delta['registers'],*currents,rate);writes.extend(local['writes'])
+    m1=53+bounded['refresh_m1']+1+delta['refresh_m1']+local['refresh_m1']
+    local['registers'][15]=refresh(registers[15],m1)
     return dict(registers=local['registers'],writes=writes,ports=delta['ports'],clamped=(first,second,third),
-        targets=tuple(delta['registers'][2:4]),deltas=delta['deltas'],root_input=delta['root_input'])
+        targets=tuple(delta['registers'][2:4]),deltas=delta['deltas'],root_input=delta['root_input'],refresh_m1=m1)

@@ -638,6 +638,13 @@ def main():
     write(SIGNED_RATIO_CODES_TABLE[1], text)
     symbols.update(bindings)
     special[17, 0x3A00] = (0x3B00, SIGNED_RATIO_CODES_TABLE[1], 0x9A00)
+    # Физические поток XOR-линии и классовые байты, ручные экземпляры сохраняются.
+    from ActionLinkedStateData import TABLES as LINKED_STATE_TABLES, render as render_linked_state_data
+    for table in LINKED_STATE_TABLES:
+        text,labels=render_linked_state_data(data_by_slot[17],table)
+        write(table[1],text);symbols.update(labels)
+        special[17,table[2]]=(table[3],table[1],table[2]+0x6000)
+
     token_text, token_records = render_token_tables(language, names)
     write(TOKEN_TABLE_PATH, token_text)
     special[5, 0x935] = (0xA67, TOKEN_TABLE_PATH, 0xC935)
@@ -885,6 +892,11 @@ def main():
         offset = 0x2A9 + frame * 0x1800
         binary_resources[(29, offset)] = (offset + 0x1800, f"Source/Final/Resources/Frame{frame}.bitmap", "ZX_BITMAP")
 
+    # Начальные байты рабочих областей, вычисленные значения таблиц в образ не подставляются.
+    from ActionInitialStorageResources import RESOURCES as ACTION_INITIAL_STORAGE
+    for start,end,path,kind,_ in ACTION_INITIAL_STORAGE:
+        binary_resources[17,start]=(end,path,kind)
+
     # Сохранение каждого исходного байта ровно один раз, без подстановки целых программ из оригинала.
     source_map = []
     units = []
@@ -964,6 +976,9 @@ def main():
                 path = ROOT / binary_path
                 path.parent.mkdir(parents=True, exist_ok=True)
                 path.write_bytes(data[begin:offset])
+                # Сохранение ссылки на исследование без подмены неизвестного игрового назначения текста.
+                if slot==17 and begin==0x516F and offset==0x6000:
+                    lines.append(asm('; Документация [фрагмент заметок о данных](../../Docs/ActionEmbeddedNotes.md)'))
                 lines.extend([asm(f"assert $ == #{begin:04X}"),
                               asm("; Unknown, исходные байты вне подтверждённого прямого потока управления"),
                               asm('incbin "../' + binary_path[7:] + '"')])
@@ -1858,6 +1873,135 @@ REGION_COMMENTS.setdefault('Action',{}).update(ACTION_CLASS4_LINK_COMMENTS)
 
 from ActionClass3LinkFacts import COMMENTS as ACTION_CLASS3_LINK_COMMENTS
 REGION_COMMENTS.setdefault('Action',{}).update(ACTION_CLASS3_LINK_COMMENTS)
+
+from ActionPhaseTransitionFacts import COMMENTS as ACTION_PHASE_TRANSITION_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_PHASE_TRANSITION_COMMENTS)
+
+from ActionCandidateClassFacts import COMMENTS as ACTION_CANDIDATE_CLASS_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_CANDIDATE_CLASS_COMMENTS)
+
+from ActionCandidateGateFacts import COMMENTS as ACTION_CANDIDATE_GATE_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_CANDIDATE_GATE_COMMENTS)
+
+from ActionNearestCandidateFacts import COMMENTS as ACTION_NEAREST_CANDIDATE_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_NEAREST_CANDIDATE_COMMENTS)
+
+from ActionTargetTransitionFacts import COMMENTS as ACTION_TARGET_TRANSITION_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_TARGET_TRANSITION_COMMENTS)
+
+from ActionNearPhaseFacts import COMMENTS as ACTION_NEAR_PHASE_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_NEAR_PHASE_COMMENTS)
+
+from ActionPhaseNearStateFacts import COMMENTS as ACTION_PHASE_NEAR_STATE_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_PHASE_NEAR_STATE_COMMENTS)
+
+from ActionLinkedNearStateFacts import COMMENTS as ACTION_LINKED_NEAR_STATE_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_LINKED_NEAR_STATE_COMMENTS)
+
+from ActionTimedDecayStateFacts import COMMENTS as ACTION_TIMED_DECAY_STATE_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_TIMED_DECAY_STATE_COMMENTS)
+
+from ActionIdleBaseResetFacts import COMMENTS as ACTION_IDLE_BASE_RESET_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_IDLE_BASE_RESET_COMMENTS)
+
+from ActionIdleStateFacts import COMMENTS as ACTION_IDLE_STATE_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_IDLE_STATE_COMMENTS)
+
+from ActionLocalOffsetsFacts import COMMENTS as ACTION_LOCAL_OFFSETS_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_LOCAL_OFFSETS_COMMENTS)
+
+from ActionFastPhaseStateFacts import COMMENTS as ACTION_FAST_PHASE_STATE_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_FAST_PHASE_STATE_COMMENTS)
+
+from ActionTimedPhaseStateFacts import COMMENTS as ACTION_TIMED_PHASE_STATE_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_TIMED_PHASE_STATE_COMMENTS)
+
+from ActionLinkedContextFacts import COMMENTS as ACTION_LINKED_CONTEXT_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_LINKED_CONTEXT_COMMENTS)
+
+from ActionLinkedVectorsFacts import COMMENTS as ACTION_LINKED_VECTORS_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_LINKED_VECTORS_COMMENTS)
+
+from ActionChildSpawnFacts import COMMENTS as ACTION_CHILD_SPAWN_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_CHILD_SPAWN_COMMENTS)
+
+from ActionAcquireLocalStateFacts import COMMENTS as ACTION_ACQUIRE_LOCAL_STATE_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_ACQUIRE_LOCAL_STATE_COMMENTS)
+
+from ActionPeriodicClass3StateFacts import COMMENTS as ACTION_PERIODIC_CLASS3_STATE_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_PERIODIC_CLASS3_STATE_COMMENTS)
+
+from ActionClass8SpawnGateFacts import COMMENTS as ACTION_CLASS8_SPAWN_GATE_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_CLASS8_SPAWN_GATE_COMMENTS)
+
+from ActionClassRefreshFacts import COMMENTS as ACTION_CLASS_REFRESH_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_CLASS_REFRESH_COMMENTS)
+
+from ActionLinkedProximityFacts import COMMENTS as ACTION_LINKED_PROXIMITY_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_LINKED_PROXIMITY_COMMENTS)
+
+from ActionSmallEffectStateFacts import COMMENTS as ACTION_SMALL_EFFECT_STATE_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_SMALL_EFFECT_STATE_COMMENTS)
+
+from ActionClass17SweepFacts import COMMENTS as ACTION_CLASS17_SWEEP_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_CLASS17_SWEEP_COMMENTS)
+
+from ActionClass19SpawnFacts import COMMENTS as ACTION_CLASS19_SPAWN_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_CLASS19_SPAWN_COMMENTS)
+
+from ActionWideVectorStateFacts import COMMENTS as ACTION_WIDE_VECTOR_STATE_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_WIDE_VECTOR_STATE_COMMENTS)
+
+from ActionProjectedPairCodesFacts import COMMENTS as ACTION_PROJECTED_PAIR_CODES_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_PROJECTED_PAIR_CODES_COMMENTS)
+
+from ActionOverlayPairFacts import COMMENTS as ACTION_OVERLAY_PAIR_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_OVERLAY_PAIR_COMMENTS)
+
+from ActionLinkedOverlayFacts import COMMENTS as ACTION_LINKED_OVERLAY_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_LINKED_OVERLAY_COMMENTS)
+
+from ActionClass17SpawnFacts import COMMENTS as CLASS17_SPAWN_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(CLASS17_SPAWN_COMMENTS)
+
+from ActionSpawnCurrentLinkFacts import COMMENTS as ACTION_SPAWN_CURRENT_LINK_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_SPAWN_CURRENT_LINK_COMMENTS)
+
+from ActionSpawnWindowFacts import COMMENTS as ACTION_SPAWN_WINDOW_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_SPAWN_WINDOW_COMMENTS)
+
+from ActionTimedLinkedStateFacts import COMMENTS as ACTION_TIMED_LINKED_STATE_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_TIMED_LINKED_STATE_COMMENTS)
+
+from ActionEnterTimedStateFacts import COMMENTS as ACTION_ENTER_TIMED_STATE_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_ENTER_TIMED_STATE_COMMENTS)
+
+from ActionLinkedMotionGateFacts import COMMENTS as ACTION_LINKED_MOTION_GATE_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_LINKED_MOTION_GATE_COMMENTS)
+
+from ActionRandomPhaseStepFacts import COMMENTS as ACTION_RANDOM_PHASE_STEP_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_RANDOM_PHASE_STEP_COMMENTS)
+
+from ActionSpawnContinueFacts import COMMENTS as ACTION_SPAWN_CONTINUE_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_SPAWN_CONTINUE_COMMENTS)
+
+from ActionLinkedTargetStateFacts import COMMENTS as ACTION_LINKED_TARGET_STATE_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_LINKED_TARGET_STATE_COMMENTS)
+
+from ActionLinkedPhaseStateFacts import COMMENTS as ACTION_LINKED_PHASE_STATE_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_LINKED_PHASE_STATE_COMMENTS)
+
+from ActionArrivalStateFacts import COMMENTS as ACTION_ARRIVAL_STATE_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_ARRIVAL_STATE_COMMENTS)
+
+from ActionPairedAimLinesFacts import COMMENTS as ACTION_PAIRED_AIM_LINES_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_PAIRED_AIM_LINES_COMMENTS)
+
+from ActionClass20SpawnFacts import COMMENTS as ACTION_CLASS20_SPAWN_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_CLASS20_SPAWN_COMMENTS)
+
+from ActionRandomClassGateFacts import COMMENTS as ACTION_RANDOM_CLASS_GATE_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_RANDOM_CLASS_GATE_COMMENTS)
 
 
 if __name__ == "__main__":

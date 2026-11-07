@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "changed": [
+    {
+      "writer": 59262,
+      "target": 61933,
+      "before": "Source/Resources/17_ACTION/Unclassified045_AfterActionObjectOffsetTransfer_BeforeActionSelectedRecordStep_BeforeActionClass18Proximity.bin",
+      "after": "Source/Resources/17_ACTION/Unclassified9138_9222.bin"
+    },
+    {
+      "writer": 59271,
+      "target": 61936,
+      "before": "Source/Resources/17_ACTION/Unclassified045_AfterActionObjectOffsetTransfer_BeforeActionSelectedRecordStep_BeforeActionClass18Proximity.bin",
+      "after": "Source/Resources/17_ACTION/Unclassified9138_9222.bin"
+    },
+    {
+      "writer": 59280,
+      "target": 61950,
+      "before": "Source/Resources/17_ACTION/Unclassified045_AfterActionObjectOffsetTransfer_BeforeActionSelectedRecordStep_BeforeActionClass18Proximity.bin",
+      "after": "Source/Resources/17_ACTION/Unclassified9138_9222.bin"
+    }
+  ],
+  "source_instructions_changed": false,
+  "assembly_executed": false
+}

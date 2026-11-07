@@ -11068,11 +11068,20 @@
   {
     "slot": 17,
     "offset": 747,
-    "length": 151,
+    "length": 58,
     "kind": "code",
     "path": "Source/Action/CreateMissileForTarget.asm",
     "origin": 24750,
-    "sha256": "b7e6e361d73289ce628cd0871e89918209622813c6003288e96e07c36653fdb2"
+    "sha256": "d7310291faee347c4e110be0858b525c5d9a9a135674183a457155ca8dbcb3ad"
+  },
+  {
+    "slot": 17,
+    "offset": 805,
+    "length": 93,
+    "kind": "code",
+    "path": "Source/Action/CreateClass17LinkedRecord.asm",
+    "origin": 24808,
+    "sha256": "ef6b19705947dc830de5e7379c4c5b4b906abd97c472a9063eb2711e71833266"
   },
   {
     "slot": 17,
@@ -11095,11 +11104,29 @@
   {
     "slot": 17,
     "offset": 954,
-    "length": 232,
-    "kind": "unclassified",
-    "path": "Source/Resources/17_ACTION/Unclassified003.bin",
-    "origin": null,
-    "sha256": "6e7e7f0721caa371fb39d26bc1228a549440ed616e8de4fd8a624267f7212989"
+    "length": 132,
+    "kind": "code",
+    "path": "Source/Action/CreateRandomClass20Record.asm",
+    "origin": 24957,
+    "sha256": "80972caa15b7b90800a8542a9ffd64c11b1a42c98712d45b474f6759a88b1d17"
+  },
+  {
+    "slot": 17,
+    "offset": 1086,
+    "length": 74,
+    "kind": "code",
+    "path": "Source/Action/StepRandomizedThirdPhase.asm",
+    "origin": 25089,
+    "sha256": "4bb6626bfd75948dd6f901098a27b69aaef744e03ef2416c7ffdcea0a2893aac"
+  },
+  {
+    "slot": 17,
+    "offset": 1160,
+    "length": 26,
+    "kind": "code",
+    "path": "Source/Action/CheckLinkedDistanceAndStepCodes.asm",
+    "origin": 25163,
+    "sha256": "91d6aecc80d8fdb5ee51cedfb5d2b2b590373f0c0677b03c36d41cb5f106a3c3"
   },
   {
     "slot": 17,
@@ -11114,9 +11141,9 @@
     "slot": 17,
     "offset": 1266,
     "length": 26,
-    "kind": "unclassified",
-    "path": "Source/Resources/17_ACTION/Unclassified004.bin",
-    "origin": null,
+    "kind": "code",
+    "path": "Source/Action/EnterTimedPhaseFromMotion.asm",
+    "origin": 25269,
     "sha256": "dc1ee7188776555ae75fa9140c471b4bb0fe5931b715a074b6419085f8d3fbef"
   },
   {
@@ -11167,11 +11194,20 @@
   {
     "slot": 17,
     "offset": 1523,
-    "length": 297,
-    "kind": "unclassified",
-    "path": "Source/Resources/17_ACTION/Unclassified006.bin",
-    "origin": null,
-    "sha256": "915f469aac5fbb72cbc82e131c9decdc365ce8800efd3376422bea7b088f88dc"
+    "length": 97,
+    "kind": "code",
+    "path": "Source/Action/RequestPairedAimLines.asm",
+    "origin": 25526,
+    "sha256": "1d963c14dc6403c8c6de1c0c500fd3ea4962c19d4b43dc5250b184fc871b4a15"
+  },
+  {
+    "slot": 17,
+    "offset": 1620,
+    "length": 200,
+    "kind": "code",
+    "path": "Source/Action/SpawnClass19AndUpdateList.asm",
+    "origin": 25623,
+    "sha256": "3f3e9e3068f129dbc4b57ff21cc91b332e59d7176aada3ebd518fa20332592a0"
   },
   {
     "slot": 17,
@@ -11905,11 +11941,91 @@
   {
     "slot": 17,
     "offset": 8652,
-    "length": 5684,
+    "length": 2612,
+    "kind": "binary_resource",
+    "path": "Source/Action/Resources/InitialLinearBufferTail.bin",
+    "origin": 33228,
+    "format": "INITIAL_LINEAR_BUFFER_TAIL",
+    "sha256": "13802649ff90ae9c1bfbb8cec3e055a25b10976a60787e05f82c2b1522885bca"
+  },
+  {
+    "slot": 17,
+    "offset": 11264,
+    "length": 1280,
     "kind": "unclassified",
-    "path": "Source/Resources/17_ACTION/Unclassified020_Prefix.bin",
+    "path": "Source/Resources/17_ACTION/Unclassified2C00_3100.bin",
     "origin": null,
-    "sha256": "a57c279fe62db6560471544842c8e8cc3cc4bd7789cfbe2df7e1a3fdec93ec72"
+    "sha256": "184f43759274e433a5b33a50420641ba09db27cf4ba9b0c0baee76f37519eae6"
+  },
+  {
+    "slot": 17,
+    "offset": 12544,
+    "length": 256,
+    "kind": "binary_resource",
+    "path": "Source/Action/Resources/InitialLogarithmLow.bin",
+    "origin": 37120,
+    "format": "INITIAL_LOGARITHM_LOW_STORAGE",
+    "sha256": "5341e6b2646979a70e57653007a1f310169421ec9bdd9f1a5648f75ade005af1"
+  },
+  {
+    "slot": 17,
+    "offset": 12800,
+    "length": 256,
+    "kind": "binary_resource",
+    "path": "Source/Action/Resources/InitialLogarithmHigh.bin",
+    "origin": 37376,
+    "format": "INITIAL_LOGARITHM_HIGH_STORAGE",
+    "sha256": "5341e6b2646979a70e57653007a1f310169421ec9bdd9f1a5648f75ade005af1"
+  },
+  {
+    "slot": 17,
+    "offset": 13056,
+    "length": 256,
+    "kind": "binary_resource",
+    "path": "Source/Action/Resources/InitialExponential.bin",
+    "origin": 37632,
+    "format": "INITIAL_EXPONENTIAL_STORAGE",
+    "sha256": "5341e6b2646979a70e57653007a1f310169421ec9bdd9f1a5648f75ade005af1"
+  },
+  {
+    "slot": 17,
+    "offset": 13312,
+    "length": 256,
+    "kind": "binary_resource",
+    "path": "Source/Action/Resources/InitialRowHigh.bin",
+    "origin": 37888,
+    "format": "INITIAL_ROW_HIGH_STORAGE",
+    "sha256": "5341e6b2646979a70e57653007a1f310169421ec9bdd9f1a5648f75ade005af1"
+  },
+  {
+    "slot": 17,
+    "offset": 13568,
+    "length": 256,
+    "kind": "binary_resource",
+    "path": "Source/Action/Resources/InitialRowLow.bin",
+    "origin": 38144,
+    "format": "INITIAL_ROW_LOW_STORAGE",
+    "sha256": "5341e6b2646979a70e57653007a1f310169421ec9bdd9f1a5648f75ade005af1"
+  },
+  {
+    "slot": 17,
+    "offset": 13824,
+    "length": 256,
+    "kind": "binary_resource",
+    "path": "Source/Action/Resources/InitialColumnByte.bin",
+    "origin": 38400,
+    "format": "INITIAL_COLUMN_BYTE_STORAGE",
+    "sha256": "5341e6b2646979a70e57653007a1f310169421ec9bdd9f1a5648f75ade005af1"
+  },
+  {
+    "slot": 17,
+    "offset": 14080,
+    "length": 256,
+    "kind": "binary_resource",
+    "path": "Source/Action/Resources/InitialColumnMask.bin",
+    "origin": 38656,
+    "format": "INITIAL_COLUMN_MASK_STORAGE",
+    "sha256": "5341e6b2646979a70e57653007a1f310169421ec9bdd9f1a5648f75ade005af1"
   },
   {
     "slot": 17,
@@ -13831,11 +13947,65 @@
   {
     "slot": 17,
     "offset": 34657,
-    "length": 539,
-    "kind": "unclassified",
-    "path": "Source/Resources/17_ACTION/Unclassified037_AfterActionRecordsExcept6And7_AfterActionRecords6Or7_AfterActionRecords5Or14_BeforeActionSelectClass8.bin",
-    "origin": null,
-    "sha256": "50b287e5d34bf370b9ba9f08af6364d84b5335bde5ab4d81fc53bdc4338db606"
+    "length": 51,
+    "kind": "code",
+    "path": "Source/Action/PrepareLinkedRecordContext.asm",
+    "origin": 59233,
+    "sha256": "4f285bc8374fb022c2c9503f656b0a45e4a6e38000dc3bf76116546e96f11761"
+  },
+  {
+    "slot": 17,
+    "offset": 34708,
+    "length": 112,
+    "kind": "code",
+    "path": "Source/Action/LoadLinkedRecordVectors.asm",
+    "origin": 59284,
+    "sha256": "fc02158fafae7dbb1ee659d3f686327d1bb17d21f4fbf95cd66aa5ee3f4b6d4c"
+  },
+  {
+    "slot": 17,
+    "offset": 34820,
+    "length": 95,
+    "kind": "code",
+    "path": "Source/Action/CheckAndToggleLinkedOverlay.asm",
+    "origin": 59396,
+    "sha256": "e7b50521c8f2d2bbd3a15157b848fc38916c081ebaaf5c2da2c07d16eb8047af"
+  },
+  {
+    "slot": 17,
+    "offset": 34915,
+    "length": 8,
+    "kind": "code",
+    "path": "Source/Action/SpawnClass9ForClass8.asm",
+    "origin": 59491,
+    "sha256": "3fab35744a2d8dccf880cadd2f12d034507b134a27bf1e7992dc613816091308"
+  },
+  {
+    "slot": 17,
+    "offset": 34923,
+    "length": 179,
+    "kind": "code",
+    "path": "Source/Action/SpawnLinkedClass9Records.asm",
+    "origin": 59499,
+    "sha256": "83161044a0880d2ead6657c90aa7af6c402e023d0aa3232eac1ff251d91f6ac3"
+  },
+  {
+    "slot": 17,
+    "offset": 35102,
+    "length": 23,
+    "kind": "code",
+    "path": "Source/Action/CheckLinkedTargetTransition.asm",
+    "origin": 59678,
+    "sha256": "c4012f1b70d8dcf0f652cb9d6f0610ab09a774a1d0387b02e35840ad975ed244"
+  },
+  {
+    "slot": 17,
+    "offset": 35125,
+    "length": 71,
+    "kind": "code",
+    "path": "Source/Action/CheckObjectPhaseTransition.asm",
+    "origin": 59701,
+    "sha256": "c7d1d816b0734d9aaeb866b8e58edee41f9be9c3953c49223dd8e5e1325c93fc"
   },
   {
     "slot": 17,
@@ -13867,11 +14037,29 @@
   {
     "slot": 17,
     "offset": 35266,
-    "length": 103,
-    "kind": "unclassified",
-    "path": "Source/Resources/17_ACTION/Unclassified038.bin",
-    "origin": null,
-    "sha256": "0782db158023973d3381ea0f8e58a94e6c29f2256a89eae1abf2e03370fc1321"
+    "length": 62,
+    "kind": "code",
+    "path": "Source/Action/FindNearestListedRecord.asm",
+    "origin": 59842,
+    "sha256": "161daa926e34b4a13ed3450cf62ad085a3d7e9a4c92c8936d6830dcd4a2ca402"
+  },
+  {
+    "slot": 17,
+    "offset": 35328,
+    "length": 21,
+    "kind": "code",
+    "path": "Source/Action/CheckCandidateListClass.asm",
+    "origin": 59904,
+    "sha256": "561addd016344c54a4c8476f89d4f68cb874a096e315d973dc6a6b01a02c5a79"
+  },
+  {
+    "slot": 17,
+    "offset": 35349,
+    "length": 20,
+    "kind": "code",
+    "path": "Source/Action/CheckCandidateListReady.asm",
+    "origin": 59925,
+    "sha256": "53f0727757fc507a816261784ca4a8dd28366ccf63ca827126e3bf2f3cbe3eb6"
   },
   {
     "slot": 17,
@@ -13903,11 +14091,20 @@
   {
     "slot": 17,
     "offset": 35649,
-    "length": 49,
-    "kind": "unclassified",
-    "path": "Source/Resources/17_ACTION/Unclassified039_AfterActionLargeEffectContinuation_AfterActionRecordDistance.bin",
-    "origin": null,
-    "sha256": "7442c4ee35de97825447477ef406880e8b0651eff817e49ecb3ac551ffedb695"
+    "length": 45,
+    "kind": "code",
+    "path": "Source/Action/ToggleTargetOverlay.asm",
+    "origin": 60225,
+    "sha256": "d5c6d988a87070d046da6894797a7171649147b68014ccbc9050c19011f62615"
+  },
+  {
+    "slot": 17,
+    "offset": 35694,
+    "length": 4,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/OverlayLine.asm",
+    "origin": 60270,
+    "sha256": "4fc7e1f3ac290c0967d6d4fe1d5dc5b7eac1924f8f99439575853558acbe2c36"
   },
   {
     "slot": 17,
@@ -14192,9 +14389,9 @@
     "slot": 17,
     "offset": 35924,
     "length": 84,
-    "kind": "unclassified",
-    "path": "Source/Resources/17_ACTION/Unclassified043.bin",
-    "origin": null,
+    "kind": "code",
+    "path": "Source/Action/ClassifyProjectedPair.asm",
+    "origin": 60500,
     "sha256": "4001dabd8634b34c7f3c9cb5ba910fce12318aa3baf2e8c6ee2b9d52c9d8eac1"
   },
   {
@@ -14237,9 +14434,9 @@
     "slot": 17,
     "offset": 36404,
     "length": 25,
-    "kind": "unclassified",
-    "path": "Source/Resources/17_ACTION/Unclassified044_AfterCaptureStreams.bin",
-    "origin": null,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/AyPairedAimStream.asm",
+    "origin": 60980,
     "sha256": "c17577571c07215fe62ff7312f65fbc39ef4b6f51674ee15a5da43cc886fd896"
   },
   {
@@ -14299,11 +14496,20 @@
   {
     "slot": 17,
     "offset": 36867,
-    "length": 58,
-    "kind": "unclassified",
-    "path": "Source/Resources/17_ACTION/AfterObjectStateHandlers_AfterActionObjectOffsetRise_AfterActionObjectOffsetFall_AfterActionObjectPhaseWait.bin",
-    "origin": null,
-    "sha256": "8aa3f37e6379052b0d19ec656ec3a6ce9d734114e2235b871945de044c8d9e2f"
+    "length": 6,
+    "kind": "code",
+    "path": "Source/Action/RefreshRecordClassAndOffsets.asm",
+    "origin": 61443,
+    "sha256": "aee1c599e2058087738c955a1eabf14a18b6f0808616383d45427acd3dbad1c0"
+  },
+  {
+    "slot": 17,
+    "offset": 36873,
+    "length": 52,
+    "kind": "code",
+    "path": "Source/Action/HandleLinkedRecordProximity.asm",
+    "origin": 61449,
+    "sha256": "9f8485119a435e856dafa5d87a18d81cf6783b97d0603cbf9951e2a131a1d616"
   },
   {
     "slot": 17,
@@ -14335,11 +14541,38 @@
   {
     "slot": 17,
     "offset": 36988,
-    "length": 124,
-    "kind": "unclassified",
-    "path": "Source/Resources/17_ACTION/Unclassified045_BeforeActionObjectOffsetTransfer.bin",
-    "origin": null,
-    "sha256": "f6a50e304f4578184e000611b3e4fc4799aa5186f70878a03a4ba00b21a76f7c"
+    "length": 5,
+    "kind": "code",
+    "path": "Source/Action/UpdatePhaseAndNearVector.asm",
+    "origin": 61564,
+    "sha256": "c7e924f7b4690d7de02ae56071c2fc76a35e1c2001cb35fe12839b2fb86073c5"
+  },
+  {
+    "slot": 17,
+    "offset": 36993,
+    "length": 6,
+    "kind": "code",
+    "path": "Source/Action/UpdateLinkedOrNearPhase.asm",
+    "origin": 61569,
+    "sha256": "b6c177e31adfff804abcd59c2eb84ff59e7683db200e8341a0c733456f2e3569"
+  },
+  {
+    "slot": 17,
+    "offset": 36999,
+    "length": 55,
+    "kind": "code",
+    "path": "Source/Action/UpdateNearVectorPhase.asm",
+    "origin": 61575,
+    "sha256": "4cbe29787f84d4e118480de1ffe26a609f2c72edec3a7655c216bd99b912b80b"
+  },
+  {
+    "slot": 17,
+    "offset": 37054,
+    "length": 58,
+    "kind": "code",
+    "path": "Source/Action/StepSelectedWideVector.asm",
+    "origin": 61630,
+    "sha256": "c81004e30913c84f643b90a5983ab0314e869c1e4e12887274966b71a2ef847f"
   },
   {
     "slot": 17,
@@ -14353,11 +14586,56 @@
   {
     "slot": 17,
     "offset": 37176,
-    "length": 542,
-    "kind": "unclassified",
-    "path": "Source/Resources/17_ACTION/Unclassified045_AfterActionObjectOffsetTransfer_BeforeActionSelectedRecordStep_BeforeActionClass18Proximity.bin",
-    "origin": null,
-    "sha256": "903743ca1f667feca47d185a5cfc84d211f849fb5f349094a8e39362a27df1f7"
+    "length": 234,
+    "kind": "code",
+    "path": "Source/Action/HandleLinkedTargetState.asm",
+    "origin": 61752,
+    "sha256": "60f9bea80a98336672b0f1efbbeea09544eb17fe4d125c32c0b7ab2d0c2dc7a8"
+  },
+  {
+    "slot": 17,
+    "offset": 37410,
+    "length": 45,
+    "kind": "code",
+    "path": "Source/Action/CheckClass17SpawnWindow.asm",
+    "origin": 61986,
+    "sha256": "a39a0c92931491d1ace33bfece1d6f9d8c5bf16f4ef8a2fe33d0bbdfb97fc82a"
+  },
+  {
+    "slot": 17,
+    "offset": 37455,
+    "length": 6,
+    "kind": "code",
+    "path": "Source/Action/SpawnLinkedClass17AndContinue.asm",
+    "origin": 62031,
+    "sha256": "f2c85546eb985370706ecfc0879037ced6ad8ac339c95f19ee5dc20ba880b7c5"
+  },
+  {
+    "slot": 17,
+    "offset": 37461,
+    "length": 43,
+    "kind": "code",
+    "path": "Source/Action/SpawnClass17FromCurrentLink.asm",
+    "origin": 62037,
+    "sha256": "3ceca7314379aac6692a5a384a16a753fc3b66a98b4039df6db9dbc6f468da79"
+  },
+  {
+    "slot": 17,
+    "offset": 37504,
+    "length": 9,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/ClassSpawnValues.asm",
+    "origin": 62080,
+    "sha256": "de5ed1126eed43777fc8b3777ab070faa9e58fe49c6757a3d3518df67e014af9"
+  },
+  {
+    "slot": 17,
+    "offset": 37513,
+    "length": 205,
+    "kind": "code",
+    "path": "Source/Action/HandleLinkedPhaseState.asm",
+    "origin": 62089,
+    "sha256": "165297ba3a895462b774139fecafea47814e1146a4d2ac7485ac31cbdf1a8d10"
   },
   {
     "slot": 17,
@@ -14389,11 +14667,38 @@
   {
     "slot": 17,
     "offset": 37793,
-    "length": 381,
-    "kind": "unclassified",
-    "path": "Source/Resources/17_ACTION/Unclassified046.bin",
-    "origin": null,
-    "sha256": "bceb46e184019140955f329e91f5c83816ec0e3893677397648645715790fb49"
+    "length": 39,
+    "kind": "code",
+    "path": "Source/Action/StepTimedPhasePattern.asm",
+    "origin": 62369,
+    "sha256": "bae169bc616f54f5a19f301bbc58c95548c4d8d20d4798ba05d10462c51992cf"
+  },
+  {
+    "slot": 17,
+    "offset": 37832,
+    "length": 40,
+    "kind": "code",
+    "path": "Source/Action/StepTimedLinkedOverlay.asm",
+    "origin": 62408,
+    "sha256": "f53822f3c70165ae520c72af6c000ad0387d2c02d83fcbdbc27f46424a496f14"
+  },
+  {
+    "slot": 17,
+    "offset": 37872,
+    "length": 172,
+    "kind": "code",
+    "path": "Source/Action/SpawnPeriodicClass3Record.asm",
+    "origin": 62448,
+    "sha256": "e19ebb90409b7045c8bacde32a95d37b8b6cd76b5337305273941561cfd2948b"
+  },
+  {
+    "slot": 17,
+    "offset": 38044,
+    "length": 130,
+    "kind": "code",
+    "path": "Source/Action/SweepClass17AndPrepareSpawn.asm",
+    "origin": 62620,
+    "sha256": "997a2d5c1a6233690a4f629df81bb1471602acb84473c53c8cb39e8d983acf90"
   },
   {
     "slot": 17,
@@ -14479,11 +14784,92 @@
   {
     "slot": 17,
     "offset": 38271,
-    "length": 426,
+    "length": 235,
+    "kind": "code",
+    "path": "Source/Action/ApproachTargetRecordAndResolve.asm",
+    "origin": 62847,
+    "sha256": "00298067f0b74e4b3545421437ad50adfda8f1d23743f202a36bbd754aee6b54"
+  },
+  {
+    "slot": 17,
+    "offset": 38506,
+    "length": 21,
+    "kind": "code",
+    "path": "Source/Action/StepTimedRecordDecay.asm",
+    "origin": 63082,
+    "sha256": "6a7cb8e0b3c68e9b7b3727f4223e75179f069377a78a149666c2a4094211564a"
+  },
+  {
+    "slot": 17,
+    "offset": 38527,
+    "length": 15,
+    "kind": "code",
+    "path": "Source/Action/StepIdleObjectOffset.asm",
+    "origin": 63103,
+    "sha256": "e97a37af213e3d777fa7b48c2b3483299fc15fb74aea1e53c96f6afab488e28d"
+  },
+  {
+    "slot": 17,
+    "offset": 38542,
+    "length": 3,
     "kind": "unclassified",
-    "path": "Source/Resources/17_ACTION/Unclassified051.bin",
+    "path": "Source/Resources/17_ACTION/Unclassified051_AfterActionTimedDecayState_BeforeActionIdleBaseReset_AfterActionIdleState.bin",
     "origin": null,
-    "sha256": "eb816df8126742214e9af21279d77bef6c5ff52fd5632d00e881c01bd1740b05"
+    "sha256": "ee12f200df3de54ffac43531977b719ef57c27365b8afdcb2836cb8eef636bb0"
+  },
+  {
+    "slot": 17,
+    "offset": 38545,
+    "length": 13,
+    "kind": "code",
+    "path": "Source/Action/ResetIdleRecordBases.asm",
+    "origin": 63121,
+    "sha256": "ca80c7fde12f9554631c74615f983805ff14ef7e2a5b45b0565730f105737dd2"
+  },
+  {
+    "slot": 17,
+    "offset": 38558,
+    "length": 13,
+    "kind": "code",
+    "path": "Source/Action/DispatchClassOnHighRandomWord.asm",
+    "origin": 63134,
+    "sha256": "4897ccc0ad3ef291cde48fa7cac5bf05424c6b75ff3dcfa04a8f169184b9b360"
+  },
+  {
+    "slot": 17,
+    "offset": 38571,
+    "length": 18,
+    "kind": "code",
+    "path": "Source/Action/StepFastRecordPhases.asm",
+    "origin": 63147,
+    "sha256": "ea9c34000062199d3ee4d18a01f2419d9af9523001a78ee248b49566396dfc49"
+  },
+  {
+    "slot": 17,
+    "offset": 38589,
+    "length": 16,
+    "kind": "code",
+    "path": "Source/Action/AcquireLinkAndApplyOffsets.asm",
+    "origin": 63165,
+    "sha256": "8ba3e20d350b014cc30390a6151a712d7e99e85b2cb5ba8cb36a4f0ad745c367"
+  },
+  {
+    "slot": 17,
+    "offset": 38605,
+    "length": 31,
+    "kind": "code",
+    "path": "Source/Action/ApplyRecordLocalOffsets.asm",
+    "origin": 63181,
+    "sha256": "17c125777f4ceb5e29c441744378ad3af5682843287c72b3f4cdb1bd530e0d67"
+  },
+  {
+    "slot": 17,
+    "offset": 38636,
+    "length": 61,
+    "kind": "code",
+    "path": "Source/Action/StartSmallRecordEffect.asm",
+    "origin": 63212,
+    "sha256": "9ac1f09930309b57f761f1d486e796c1999d5f15beca1d8a67a4ac86a8f28c4c"
   },
   {
     "slot": 17,

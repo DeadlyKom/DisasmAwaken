@@ -7,7 +7,8 @@ from CheckControlsTextQueue import base_memory
 from CheckMusic import Simulator,get_registers,PC,SP
 from CheckScreenUpdate import PortTrace
 from CheckActionRecordIndex import decode
-from ReferenceControlsPointRespawn import cp_flags
+from ReferenceControlsPointRespawn import cp_flags,refresh
+from CheckActionNearestCandidate import NearestMachine
 from ReferenceActionLogRatio import LOG,EXP
 from ReferenceActionHalfDeltaCodes import evaluate as geometry
 from ReferenceActionRecordCodeStep import apply_codes
@@ -60,6 +61,9 @@ def main():
             ports=[]
             unavailable=memory[selected+1]==128
             wrong_class=memory[selected+18]!=memory[ix+33]
+            # Расчёт R селектора и достигнутых проверок доступности и полного класса.
+            timing=NearestMachine(memory.banks,initial);timing.r[10:12]=[selected>>8,selected&255]
+            timing.m1(26+(0 if unavailable else 5));wanted[15]=timing.r[15]
             if unavailable or wrong_class:
                 kind='unavailable_fallback' if unavailable else 'class_mismatch_fallback'
                 wanted[4],wanted[2],wanted[3]=8,0,64
@@ -79,6 +83,11 @@ def main():
                     operations.append((ix+32,selected_index))
                 else:wanted[0:2]=[128,0x42]
                 wanted[PC],wanted[SP]=0xF0F8,stack
+                # Расчёт R резервного поиска и условного преобразования найденного адреса.
+                timing.r[4]=8;timing.m1(1);timing.call(0xE98D,0xE981,timing.find_code);timing.m1(1)
+                if found:
+                    timing.call(0xE6BE,0xE987,timing.iy_index);timing.m1(3)
+                wanted[15]=timing.r[15]
                 counts['fallback_found' if found else 'fallback_absent']+=1
             else:
                 current=tuple(memory[ix+2*axis]+256*memory[ix+2*axis+1] for axis in range(3))
@@ -89,17 +98,23 @@ def main():
                 put_word(stack-2,0xF064);put_word(stack-4,magnitudes[0]);put_word(stack-6,magnitudes[1])
                 wanted[4:8]=[magnitudes[0]>>8,magnitudes[0]&255,magnitudes[2]>>8,magnitudes[2]&255]
                 wanted[0:2]=[distance,cp_flags(distance,2)]
+                # Расчёт R вызова расстояния и сравнения с порогом близости.
+                timing.call(0xEAE9,0xF064,timing.distance);timing.m1(2);wanted[15]=timing.r[15]
                 if distance<2:
                     operations.extend(((selected+24,memory[selected+24]&~4),(ix+1,128),(ix,0),(ix+24,255)))
                     wanted[PC],wanted[SP]=0x3FFF,stack+2;kind='near_reuse'
+                    wanted[15]=refresh(wanted[15],10)
                 else:
                     put_word(stack-2,0xF072)
                     child=arguments(wanted,current,target);child[SP]=stack-4;child[PC]=0xAD5A
+                    # Учёт двух настоящих CALL между родителем и входом числовой геометрии.
+                    child[15]=refresh(child[15],2)
                     put_word(stack-4,0x6268)
                     calculated=geometry(child,ratio_table,root_table,return_address=0x6268)
                     local=apply_codes(calculated['registers'],*columns,rate,return_address=0xF072)
                     operations.extend(calculated['writes']);operations.extend(local['writes'])
                     wanted=local['registers'];wanted[PC]=0xF0F8;ports=calculated['ports'];kind='far_step'
+                    wanted[15]=refresh(wanted[15],1)
             writes=[]
             for address,value in operations:
                 bank=5 if address<0x8000 else 2 if address<0xC000 else 0
@@ -111,7 +126,7 @@ def main():
                 simulator.run()
             else:raise AssertionError(('не достигнут выход',index,mode))
             memory.recording=False
-            compared=(*range(15),*range(16,25),26,27)
+            compared=(*range(25),26,27)
             assert all(wanted[i]==simulator.registers[i] for i in compared),(index,mode,kind,[(i,wanted[i],simulator.registers[i]) for i in compared if wanted[i]!=simulator.registers[i]])
             assert memory.banks==expected and Counter(memory.writes)==Counter(writes),(index,mode,kind,'RAM')
             assert trace.writes==ports and memory.o7ffd==(16 if ports else old)
@@ -125,7 +140,7 @@ def main():
         no_25_slot_index_clamp_introduced=True,self_selection_alias_preserved=True,
         out_of_initial_array_target_bytes_preserved=True,
         actual_selector_search_distance_geometry_and_reuse_executed=True,
-        exact_registers_except_r=True,full_eight_bank_ram_and_write_multiplicity_compared=True,
+        exact_registers_including_r=True,full_eight_bank_ram_and_write_multiplicity_compared=True,
         maximum_extra_stack_bytes=max_stack,real_ports_verified=True,common_offset_tail_executed=False,
         near_path_external_ret_executed=True,all_record_contents_product_exhausted=False,
         assembly_executed=False,irq_executed=False,native_execution=False)

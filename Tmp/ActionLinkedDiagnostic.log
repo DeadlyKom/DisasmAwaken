@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "D:\Work\Repositories\DisasmAwaken\Tools\Disasm\Research\CheckActionLinkedTargetState.py", line 135, in <module>
+    args=parser.parse_args();main(unrestricted=args.unrestricted_out_of_array_overlay,diagnostic_case=args.diagnostic_case)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Work\Repositories\DisasmAwaken\Tools\Disasm\Research\CheckActionLinkedTargetState.py", line 104, in main
+    assert all(model.r[i]==simulator.registers[i] for i in compared),(serial,linked,code,mode,saved,model.path,[(i,model.r[i],simulator.registers[i]) for i in compared if model.r[i]!=simulator.registers[i]])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (25175, 161, 19, 2, 180, ['ordinary_geometry', 'stream_0', 'link_written', 'accepted', 'accepted', 'clipped_line', 'overlay_returned'], [(4, 47, 201), (5, 32, 147), (16, 23, 224), (17, 128, 66)])
