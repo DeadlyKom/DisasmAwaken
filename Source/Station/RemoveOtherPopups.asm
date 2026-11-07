@@ -76,7 +76,7 @@ CheckGroup:     CP @PopupConst.GroupCode
                 JP NZ, @Station.RemoveOtherPopups.NextEntry                     ; переход, если группа не равна #20, продолжить просмотр без удаления
 
                 ; удаление найденного индекса фиксированным сдвигом с обнулением EventEnabled
-                CALL #C873
+                CALL @Station.DropItemDraw.Entry
                 ; перезапуск поиска от головы, прежние адреса указателей после сдвига уже не используются
                 JP @Station.RemoveOtherPopups.Entry
 

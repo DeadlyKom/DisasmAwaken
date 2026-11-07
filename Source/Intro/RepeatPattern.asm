@@ -1,6 +1,7 @@
                 module Intro
                 module RepeatPattern
 ; Документация [Intro](../../Docs/FunctionDetails/Intro.md)
+                ; Имена внутренних входов [алгоритмы вступления](../../Docs/IntroInternalLabels.md)
 ; -----------------------------------------
 ; Повторение образца длиной C байт B раз в область DE
 ; исходная запись 3, файловые смещения #071E..#072B
@@ -15,13 +16,13 @@
 ; -----------------------------------------
 Entry:          LD A, B
                 LD B, #00
-Point6A21:      PUSH HL
+CopyPattern:    PUSH HL
                 PUSH BC
                 LDIR
                 POP BC
                 POP HL
                 DEC A
-                JR NZ, @Intro.RepeatPattern.Point6A21                           ; переход, если остались повторения образца
+                JR NZ, @Intro.RepeatPattern.CopyPattern                         ; переход, если остались повторения образца
 
 
                 EX DE, HL

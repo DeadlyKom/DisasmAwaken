@@ -1,0 +1,295 @@
+{
+  "passed": true,
+  "physical_context_added": [
+    {
+      "region": "Action",
+      "writer": 28102,
+      "target_path": "Source/Action/ResumeVisualEffect.asm",
+      "target_slot": 17,
+      "target_offset": 4111
+    },
+    {
+      "region": "Action",
+      "writer": 45173,
+      "target_path": "Source/Action/ApplyObjectOffsetVector.asm",
+      "target_slot": 17,
+      "target_offset": 3915
+    },
+    {
+      "region": "Action",
+      "writer": 45229,
+      "target_path": "Source/Action/ApplyObjectOffsetVector.asm",
+      "target_slot": 17,
+      "target_offset": 3929
+    },
+    {
+      "region": "Action",
+      "writer": 45285,
+      "target_path": "Source/Action/ApplyObjectOffsetVector.asm",
+      "target_slot": 17,
+      "target_offset": 3943
+    },
+    {
+      "region": "Action",
+      "writer": 53896,
+      "target_path": "Source/Action/PolygonFillRows.asm",
+      "target_slot": 17,
+      "target_offset": 29207
+    },
+    {
+      "region": "Action",
+      "writer": 53983,
+      "target_path": "Source/Action/PolygonFillRows.asm",
+      "target_slot": 17,
+      "target_offset": 29203
+    },
+    {
+      "region": "Action",
+      "writer": 54012,
+      "target_path": "Source/Action/PolygonFillRows.asm",
+      "target_slot": 17,
+      "target_offset": 29203
+    },
+    {
+      "region": "Action",
+      "writer": 54044,
+      "target_path": "Source/Action/PolygonFillRows.asm",
+      "target_slot": 17,
+      "target_offset": 29203
+    },
+    {
+      "region": "Action",
+      "writer": 54123,
+      "target_path": "Source/Action/PolygonFillRows.asm",
+      "target_slot": 17,
+      "target_offset": 29203
+    },
+    {
+      "region": "Action",
+      "writer": 54157,
+      "target_path": "Source/Action/PolygonFillRows.asm",
+      "target_slot": 17,
+      "target_offset": 29226
+    },
+    {
+      "region": "Action",
+      "writer": 54162,
+      "target_path": "Source/Action/PolygonFillRows.asm",
+      "target_slot": 17,
+      "target_offset": 29228
+    },
+    {
+      "region": "Action",
+      "writer": 54169,
+      "target_path": "Source/Action/PolygonFillRows.asm",
+      "target_slot": 17,
+      "target_offset": 29203
+    },
+    {
+      "region": "Action",
+      "writer": 54214,
+      "target_path": "Source/Action/PolygonFillRows.asm",
+      "target_slot": 17,
+      "target_offset": 29219
+    },
+    {
+      "region": "Action",
+      "writer": 54302,
+      "target_path": "Source/Action/PolygonFillRows.asm",
+      "target_slot": 17,
+      "target_offset": 29215
+    },
+    {
+      "region": "Action",
+      "writer": 54330,
+      "target_path": "Source/Action/PolygonFillRows.asm",
+      "target_slot": 17,
+      "target_offset": 29215
+    },
+    {
+      "region": "Action",
+      "writer": 54361,
+      "target_path": "Source/Action/PolygonFillRows.asm",
+      "target_slot": 17,
+      "target_offset": 29215
+    },
+    {
+      "region": "Action",
+      "writer": 54438,
+      "target_path": "Source/Action/PolygonFillRows.asm",
+      "target_slot": 17,
+      "target_offset": 29215
+    },
+    {
+      "region": "Action",
+      "writer": 54480,
+      "target_path": "Source/Action/PolygonFillRows.asm",
+      "target_slot": 17,
+      "target_offset": 29226
+    },
+    {
+      "region": "Action",
+      "writer": 54485,
+      "target_path": "Source/Action/PolygonFillRows.asm",
+      "target_slot": 17,
+      "target_offset": 29228
+    },
+    {
+      "region": "Action",
+      "writer": 54495,
+      "target_path": "Source/Action/PolygonFillRows.asm",
+      "target_slot": 17,
+      "target_offset": 29226
+    },
+    {
+      "region": "Action",
+      "writer": 54500,
+      "target_path": "Source/Action/PolygonFillRows.asm",
+      "target_slot": 17,
+      "target_offset": 29228
+    },
+    {
+      "region": "Action",
+      "writer": 54506,
+      "target_path": "Source/Action/PolygonFillRows.asm",
+      "target_slot": 17,
+      "target_offset": 29226
+    },
+    {
+      "region": "Action",
+      "writer": 54511,
+      "target_path": "Source/Action/PolygonFillRows.asm",
+      "target_slot": 17,
+      "target_offset": 29228
+    },
+    {
+      "region": "Action",
+      "writer": 54517,
+      "target_path": "Source/Action/PolygonFillRows.asm",
+      "target_slot": 17,
+      "target_offset": 29215
+    },
+    {
+      "region": "Action",
+      "writer": 54551,
+      "target_path": "Source/Action/UpdatePolygonRightEdge.asm",
+      "target_slot": 17,
+      "target_offset": 29623
+    },
+    {
+      "region": "Action",
+      "writer": 54583,
+      "target_path": "Source/Action/SelectPolygonRowLimit.asm",
+      "target_slot": 17,
+      "target_offset": 29890
+    },
+    {
+      "region": "Action",
+      "writer": 54587,
+      "target_path": "Source/Action/SelectPolygonRowLimit.asm",
+      "target_slot": 17,
+      "target_offset": 29892
+    },
+    {
+      "region": "Action",
+      "writer": 54590,
+      "target_path": "Source/Action/UpdatePolygonLeftEdge.asm",
+      "target_slot": 17,
+      "target_offset": 29575
+    },
+    {
+      "region": "Action",
+      "writer": 54604,
+      "target_path": "Source/Action/UpdatePolygonLeftEdge.asm",
+      "target_slot": 17,
+      "target_offset": 29301
+    },
+    {
+      "region": "Action",
+      "writer": 54620,
+      "target_path": "Source/Action/UpdatePolygonRightEdge.asm",
+      "target_slot": 17,
+      "target_offset": 29616
+    },
+    {
+      "region": "Action",
+      "writer": 54634,
+      "target_path": "Source/Action/PolygonFillRows.asm",
+      "target_slot": 17,
+      "target_offset": 29183
+    },
+    {
+      "region": "Action",
+      "writer": 54637,
+      "target_path": "Source/Action/PolygonFillRows.asm",
+      "target_slot": 17,
+      "target_offset": 29272
+    },
+    {
+      "region": "Action",
+      "writer": 54698,
+      "target_path": "Source/Action/PolygonFillRows.asm",
+      "target_slot": 17,
+      "target_offset": 29284
+    },
+    {
+      "region": "Action",
+      "writer": 54714,
+      "target_path": "Source/Action/PolygonFillRows.asm",
+      "target_slot": 17,
+      "target_offset": 29226
+    },
+    {
+      "region": "Action",
+      "writer": 54719,
+      "target_path": "Source/Action/PolygonFillRows.asm",
+      "target_slot": 17,
+      "target_offset": 29228
+    },
+    {
+      "region": "Action",
+      "writer": 59956,
+      "target_path": "Source/Action/AllocateLargeEffect.asm",
+      "target_slot": 17,
+      "target_offset": 35524
+    },
+    {
+      "region": "Voxel",
+      "writer": 64062,
+      "target_path": "Source/Voxel/ProjectEffectPoint.asm",
+      "target_slot": 21,
+      "target_offset": 3578
+    },
+    {
+      "region": "Voxel",
+      "writer": 64065,
+      "target_path": "Source/Voxel/ProjectEffectPoint.asm",
+      "target_slot": 21,
+      "target_offset": 3613
+    },
+    {
+      "region": "Voxel",
+      "writer": 64074,
+      "target_path": "Source/Voxel/DrawProjectedEffect.asm",
+      "target_slot": 21,
+      "target_offset": 3687
+    },
+    {
+      "region": "Voxel",
+      "writer": 64077,
+      "target_path": "Source/Voxel/DrawProjectedEffect.asm",
+      "target_slot": 21,
+      "target_offset": 3693
+    },
+    {
+      "region": "Voxel",
+      "writer": 64081,
+      "target_path": "Source/Voxel/DrawProjectedEffect.asm",
+      "target_slot": 21,
+      "target_offset": 3690
+    }
+  ],
+  "bank_context_inferred": false,
+  "original_record_fields_preserved": true,
+  "assembly_executed": false
+}

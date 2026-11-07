@@ -8,6 +8,8 @@
     "second_rejected": 3
   },
   "stopped_before_clip_sprite": true,
+  "exact_code_writes": true,
+  "deepest_stack_write": 49138,
   "assembly_executed": false,
   "native_execution": false
 }

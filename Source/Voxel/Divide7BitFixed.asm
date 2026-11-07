@@ -1,5 +1,6 @@
                 module Voxel
                 module Divide7BitFixed
+                ; Внутренние входы [алгоритм](../../Docs/ArithmeticFinalInternalLabels.md)
 ; Документация [Voxel](../../Docs/FunctionDetails/Voxel.md)
 ; -----------------------------------------
 ; Деление младших семи битов A на E с восемью дробными битами, подтверждённый делитель 1..128
@@ -26,139 +27,139 @@ Entry:          LD L, A
                 XOR A
                 SLL L
                 SLL L
-                JR C, @Voxel.Divide7BitFixed.PointF978                          ; переход, если флаг Carry установлен
+                JR C, @Voxel.Divide7BitFixed.IntegerBit6                        ; переход, если бит 6 числителя установлен, начать деление с этого разряда
 
 
                 SLL L
-                JR C, @Voxel.Divide7BitFixed.PointF97F                          ; переход, если флаг Carry установлен
+                JR C, @Voxel.Divide7BitFixed.IntegerBit5                        ; переход, если бит 5 числителя установлен, начать деление с этого разряда
 
 
                 SLL L
-                JR C, @Voxel.Divide7BitFixed.PointF986                          ; переход, если флаг Carry установлен
+                JR C, @Voxel.Divide7BitFixed.IntegerBit4                        ; переход, если бит 4 числителя установлен, начать деление с этого разряда
 
 
                 SLL L
-                JR C, @Voxel.Divide7BitFixed.PointF98D                          ; переход, если флаг Carry установлен
+                JR C, @Voxel.Divide7BitFixed.IntegerBit3                        ; переход, если бит 3 числителя установлен, начать деление с этого разряда
 
 
                 SLL L
-                JR C, @Voxel.Divide7BitFixed.PointF994                          ; переход, если флаг Carry установлен
+                JR C, @Voxel.Divide7BitFixed.IntegerBit2                        ; переход, если бит 2 числителя установлен, начать деление с этого разряда
 
 
                 SLL L
-                JR C, @Voxel.Divide7BitFixed.PointF99B                          ; переход, если флаг Carry установлен
+                JR C, @Voxel.Divide7BitFixed.IntegerBit1                        ; переход, если бит 1 числителя установлен, начать деление с этого разряда
 
 
                 SLL L
-                JP @Voxel.Divide7BitFixed.PointF9A2
+                JP @Voxel.Divide7BitFixed.IntegerBit0
 
 
-PointF978:      RLA
+IntegerBit6:    RLA
                 SBC A, E
-                JR NC, @Voxel.Divide7BitFixed.PointF97D                         ; переход, если флаг Carry сброшен
+                JR NC, @Voxel.Divide7BitFixed.StoreInt6                         ; переход, если пробное вычитание E не дало заёма, сохранить новый остаток
 
 
                 ADD A, E
-PointF97D:      RL L
-PointF97F:      RLA
+StoreInt6:      RL L
+IntegerBit5:    RLA
                 SBC A, E
-                JR NC, @Voxel.Divide7BitFixed.PointF984                         ; переход, если флаг Carry сброшен
+                JR NC, @Voxel.Divide7BitFixed.StoreInt5                         ; переход, если пробное вычитание E не дало заёма, сохранить новый остаток
 
 
                 ADD A, E
-PointF984:      RL L
-PointF986:      RLA
+StoreInt5:      RL L
+IntegerBit4:    RLA
                 SBC A, E
-                JR NC, @Voxel.Divide7BitFixed.PointF98B                         ; переход, если флаг Carry сброшен
+                JR NC, @Voxel.Divide7BitFixed.StoreInt4                         ; переход, если пробное вычитание E не дало заёма, сохранить новый остаток
 
 
                 ADD A, E
-PointF98B:      RL L
-PointF98D:      RLA
+StoreInt4:      RL L
+IntegerBit3:    RLA
                 SBC A, E
-                JR NC, @Voxel.Divide7BitFixed.PointF992                         ; переход, если флаг Carry сброшен
+                JR NC, @Voxel.Divide7BitFixed.StoreInt3                         ; переход, если пробное вычитание E не дало заёма, сохранить новый остаток
 
 
                 ADD A, E
-PointF992:      RL L
-PointF994:      RLA
+StoreInt3:      RL L
+IntegerBit2:    RLA
                 SBC A, E
-                JR NC, @Voxel.Divide7BitFixed.PointF999                         ; переход, если флаг Carry сброшен
+                JR NC, @Voxel.Divide7BitFixed.StoreInt2                         ; переход, если пробное вычитание E не дало заёма, сохранить новый остаток
 
 
                 ADD A, E
-PointF999:      RL L
-PointF99B:      RLA
+StoreInt2:      RL L
+IntegerBit1:    RLA
                 SBC A, E
-                JR NC, @Voxel.Divide7BitFixed.PointF9A0                         ; переход, если флаг Carry сброшен
+                JR NC, @Voxel.Divide7BitFixed.StoreInt1                         ; переход, если пробное вычитание E не дало заёма, сохранить новый остаток
 
 
                 ADD A, E
-PointF9A0:      RL L
-PointF9A2:      RLA
+StoreInt1:      RL L
+IntegerBit0:    RLA
                 SBC A, E
-                JR NC, @Voxel.Divide7BitFixed.PointF9A7                         ; переход, если флаг Carry сброшен
+                JR NC, @Voxel.Divide7BitFixed.StoreInt0                         ; переход, если пробное вычитание E не дало заёма, сохранить новый остаток
 
 
                 ADD A, E
-PointF9A7:      RL L
+StoreInt0:      RL L
                 LD C, L
                 ADD A, A
                 SBC A, E
-                JR NC, @Voxel.Divide7BitFixed.PointF9AF                         ; переход, если флаг Carry сброшен
+                JR NC, @Voxel.Divide7BitFixed.StoreFrac7                        ; переход, если пробное вычитание E не дало заёма, сохранить новый остаток
 
 
                 ADD A, E
-PointF9AF:      RL L
+StoreFrac7:     RL L
                 ADD A, A
                 SBC A, E
-                JR NC, @Voxel.Divide7BitFixed.PointF9B6                         ; переход, если флаг Carry сброшен
+                JR NC, @Voxel.Divide7BitFixed.StoreFrac6                        ; переход, если пробное вычитание E не дало заёма, сохранить новый остаток
 
 
                 ADD A, E
-PointF9B6:      RL L
+StoreFrac6:     RL L
                 ADD A, A
                 SBC A, E
-                JR NC, @Voxel.Divide7BitFixed.PointF9BD                         ; переход, если флаг Carry сброшен
+                JR NC, @Voxel.Divide7BitFixed.StoreFrac5                        ; переход, если пробное вычитание E не дало заёма, сохранить новый остаток
 
 
                 ADD A, E
-PointF9BD:      RL L
+StoreFrac5:     RL L
                 ADD A, A
                 SBC A, E
-                JR NC, @Voxel.Divide7BitFixed.PointF9C4                         ; переход, если флаг Carry сброшен
+                JR NC, @Voxel.Divide7BitFixed.StoreFrac4                        ; переход, если пробное вычитание E не дало заёма, сохранить новый остаток
 
 
                 ADD A, E
-PointF9C4:      RL L
+StoreFrac4:     RL L
                 ADD A, A
                 SBC A, E
-                JR NC, @Voxel.Divide7BitFixed.PointF9CB                         ; переход, если флаг Carry сброшен
+                JR NC, @Voxel.Divide7BitFixed.StoreFrac3                        ; переход, если пробное вычитание E не дало заёма, сохранить новый остаток
 
 
                 ADD A, E
-PointF9CB:      RL L
+StoreFrac3:     RL L
                 ADD A, A
                 SBC A, E
-                JR NC, @Voxel.Divide7BitFixed.PointF9D2                         ; переход, если флаг Carry сброшен
+                JR NC, @Voxel.Divide7BitFixed.StoreFrac2                        ; переход, если пробное вычитание E не дало заёма, сохранить новый остаток
 
 
                 ADD A, E
-PointF9D2:      RL L
+StoreFrac2:     RL L
                 ADD A, A
                 SBC A, E
-                JR NC, @Voxel.Divide7BitFixed.PointF9D9                         ; переход, если флаг Carry сброшен
+                JR NC, @Voxel.Divide7BitFixed.StoreFrac1                        ; переход, если пробное вычитание E не дало заёма, сохранить новый остаток
 
 
                 ADD A, E
-PointF9D9:      RL L
+StoreFrac1:     RL L
                 ADD A, A
                 SBC A, E
-                JR NC, @Voxel.Divide7BitFixed.PointF9E0                         ; переход, если флаг Carry сброшен
+                JR NC, @Voxel.Divide7BitFixed.StoreFrac0                        ; переход, если пробное вычитание E не дало заёма, сохранить новый остаток
 
 
                 ADD A, E
-PointF9E0:      RL L
+StoreFrac0:     RL L
                 ; преобразование инвертированных разрядов частного в возвращаемое слово DE
                 LD A, L
                 CPL

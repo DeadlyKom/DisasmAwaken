@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "total_cases": 3,
+  "physical_seed_bytes": 256,
+  "stored_half_samples": 128,
+  "initially_zero_second_half_preserved": true,
+  "sample_description": "round(127.5*(1+cos(pi*i/128))), i=0..127",
+  "author_generation_method_proved": false,
+  "actual_mirror_builder_executed": true,
+  "full_memory_after_mirroring_and_screen_tables_compared": true,
+  "untouched_centre_index": 128,
+  "mirrored_indices": [
+    129,
+    255
+  ],
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

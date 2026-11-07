@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "total_cases": 197337,
+  "all_65536_differences_for_each_axis": true,
+  "combined_boundary_cases": 729,
+  "branch_profiles": 32,
+  "exact_registers_flags_r_sp": true,
+  "all_memory_writes_compared": true,
+  "stack_bytes": 4,
+  "stack_values_proved": true,
+  "native_memory_bus_order_proved": false,
+  "all_six_input_words_product_exhausted": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

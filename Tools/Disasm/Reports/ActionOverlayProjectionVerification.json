@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "total_cases": 8192,
+  "outcomes": {
+    "accepted": 6999,
+    "vertical_rejected": 872,
+    "horizontal_rejected": 321
+  },
+  "exact_registers_except_R_and_T": true,
+  "exact_order_of_all_memory_writes": true,
+  "stack_frame_bytes": 6,
+  "actual_divider_executed": true,
+  "all_joint_inputs_exhausted": false,
+  "assembly_executed": false,
+  "native_execution": false,
+  "irq_executed": false
+}

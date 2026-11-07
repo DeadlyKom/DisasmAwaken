@@ -6,6 +6,7 @@
     "clipped": 10900
   },
   "stopped_before_resource_steps": true,
+  "exact_rejected_registers_except_r": true,
   "assembly_executed": false,
   "native_execution": false
 }

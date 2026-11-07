@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "total_cases": 72,
+  "actual_generated_chain_and_rom_executed": true,
+  "exact_source_buffer_compared": true,
+  "irq_count_before_present": 2,
+  "final_wrapper_cases": 12,
+  "final_screen_transfer_executed": true,
+  "all_physical_banks_compared": true,
+  "assembly_executed": false
+}

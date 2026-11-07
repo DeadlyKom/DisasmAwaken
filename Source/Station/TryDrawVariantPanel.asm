@@ -19,7 +19,7 @@
 ; -----------------------------------------
                 ; поиск точного адреса обработчика панели в текущем списке рисования
 Entry:          LD DE, @Station.DrawVariantPanel.Entry
-                CALL #CB64
+                CALL @Station.TestDrawPointer.Entry
                 RET NZ                                                          ; выход, если обработчик панели отсутствует, рамку и ресурсы не менять
 
                 ; JP @Station.DrawVariantPanel.Entry, продолжение в DrawVariantPanel.asm

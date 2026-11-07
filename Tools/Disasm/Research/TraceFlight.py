@@ -32,11 +32,114 @@ class Ports:
         return 0 if port & 255 in (0x1F, 0xDF) else 255
 
 
+class FlightCycleChecks:
+    """Контроль стека и реальных банков на входе и выходе полётного кадра."""
+    STARTUP_PAGES = {0xA833: 0x1E, 0xA83E: 0x1E, 0xA843: 0x10, 0xA84B: 0x11,
+                     0xA84E: 0x10, 0xA851: 0x10, 0xA858: 0x10}
+
+    FRAME_CALLS = (
+        (0xA867, 0x10), (0xA86A, 0x10), (0xA86F, 0x10), (0xA872, 0x11),
+        (0xA875, 0x11), (0xA87A, 0x11), (0xA87D, 0x10), (0xA880, 0x10),
+        (0xA8C8, 0x10), (0xA8CF, 0x10), (0xA8D2, 0x10), (0xA8D5, 0x10),
+        (0xA8D8, 0x10), (0xA8DD, 0x10), (0xA8E0, 0x11), (0xA8E5, 0x11),
+        (0xA8E8, 0x10), (0xA97E, 0x10), (0xA983, 0x10), (0xAA87, 0x14),
+        (0xAA8A, 0x10), (0xAA9F, 0x10), (0xAAA3, 0x11), (0xAAA6, 0x11),
+        (0xAAA9, 0x11), (0xAAAC, 0x11), (0xAAAF, 0x11), (0xAAB2, 0x11),
+        (0xAAB5, 0x11), (0xAAB8, 0x11), (0xAABB, 0x11), (0xAAC0, 0x11),
+    )
+    FRAME_CALL_SITES = dict(FRAME_CALLS)
+
+    def __init__(self):
+        self.calls = []
+        self.startup = []
+        self.loop_sp = None
+        self.start_sp = None
+        self.de = None
+        self.frame_returns = 0
+        self.loop_entries = 0
+
+    def observe(self, pc, registers, memory):
+        sp = registers[SP]
+        page = memory.o7ffd
+        if pc == 0xA82D:
+            from PackedResourceCodec import decode
+            from ReferenceActionLogRatio import EXP, LOG
+
+            self.start_sp = sp
+            assert page == 0x19 and sp == 0xBFFE and not registers[IFF]
+            assert (memory[sp], memory[sp + 1]) == (0x3D, 0x62)
+            assert (memory[0xAA9A], memory[0xA8BC]) == (1, 0x2E)
+            for start, data in (
+                (0x9100, bytes(word & 255 for word in LOG)), (0x9200, bytes(word >> 8 for word in LOG)),
+                (0x9300, bytes(EXP)), (0x9400, bytes((0x8000 + 32 * i) >> 8 for i in range(256))),
+                (0x9500, bytes((32 * i) & 255 for i in range(256))),
+                (0x9600, bytes(i // 8 for i in range(256))), (0x9700, bytes(128 >> (i % 8) for i in range(256))),
+            ):
+                assert bytes(memory[start + i] for i in range(256)) == data, hex(start)
+            files = ROOT / 'Tools/Disasm/Extracted/Active'
+            panel = decode((files / '25_PANEL.C.bin').read_bytes())['data']
+            objects = (files / '24_OBJECT3D.C.bin').read_bytes()
+            assert bytes(memory.banks[6][:len(panel)]) == panel
+            assert bytes(memory.banks[4][:len(objects)]) == objects
+            for address, value in ((0xECA3, 0), (0xECAA, 0xEC7E), (0xEC5D, 0xEC80)):
+                assert memory[address] + 256 * memory[address + 1] == value
+        if pc in self.STARTUP_PAGES:
+            assert self.start_sp is not None and page == self.STARTUP_PAGES[pc], (pc, page)
+            assert sp == self.start_sp - (2 if pc == 0xA858 else 0), (pc, sp, self.start_sp)
+            assert not registers[IFF], pc
+            self.startup.append(pc)
+            if pc == 0xA83E:
+                assert bytes(memory.banks[5][:0x1B00]) == bytes(memory.banks[6][:0x1B00])
+            elif pc == 0xA851:
+                self.de = registers[D], registers[E]
+            elif pc == 0xA858:
+                assert (registers[D], registers[E]) == (0xF1, 0xAB)
+        if pc in self.FRAME_CALL_SITES:
+            self.calls.append((pc, page))
+            assert sp == self.loop_sp - 2, (pc, sp)
+        if pc == 0xA859:
+            if self.loop_sp is None:
+                self.loop_sp = sp
+                assert sp == self.start_sp and not registers[IFF]
+                assert (registers[D], registers[E]) == self.de
+                assert (registers[H], registers[L], registers[A], registers[F]) == (0xC5, 0x46, 0x10, 0x42)
+            self.loop_entries += 1
+            assert sp == self.loop_sp and page == 0x10, (pc, sp, page)
+        elif pc == 0xA85E:
+            assert self.loop_sp is not None and sp == self.loop_sp - 2 and page == 0x10
+            assert (memory[sp], memory[sp + 1]) == (0x5C, 0xA8)
+        elif pc == 0xA85C:
+            assert sp == self.loop_sp and page == 0x10, (pc, sp, page)
+            assert tuple(self.calls) == self.FRAME_CALLS, self.calls
+            assert registers[A] == 16 and registers[F] == 0x42 and registers[D:E + 1] == [0, 64]
+            marker = registers[8] * 256 + registers[9]
+            assert (memory[marker], memory[marker + 1]) == (128, 128)
+            self.calls.clear()
+            self.frame_returns += 1
+
+    def report(self, entries, loads):
+        assert self.startup == list(self.STARTUP_PAGES)
+        assert self.loop_entries == entries and self.frame_returns == entries - 1
+        expected_loads = ((25, 0xC000, 6), (20, 0xC000, 3), (21, 0xEC00, 3),
+                          (22, 0xC000, 1), (23, 0xDADE, 1), (24, 0xC000, 4))
+        assert tuple((item["slot"], item["address"], item["bank"]) for item in loads) == expected_loads
+        return dict(passed=True, total_cases=1, method="bounded_skoolkit_with_trdos_stub",
+                    startup_page_checkpoints=[dict(pc=pc, page=self.STARTUP_PAGES[pc]) for pc in self.startup],
+                    complete_frame_returns=self.frame_returns, frame_entries=entries,
+                    frame_call_sites=[dict(pc=pc, page=page) for pc, page in self.FRAME_CALLS],
+                    loop_entry_sp=self.loop_sp, child_frame_return_address=0xA85C,
+                    panel_bytes_compared=0x1B00, boot_table_bytes_compared=1792, loads=loads, real_boot_verified=False, assembly_executed=False)
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--region", choices=("flight", "station"), default="flight")
     parser.add_argument("--frames", type=int, default=3)
+    parser.add_argument("--verify-flight-cycle", action="store_true")
     args = parser.parse_args()
+    if args.verify_flight_cycle and (args.region != "flight" or args.frames < 2):
+        parser.error("--verify-flight-cycle requires flight and at least two frame entries")
+    cycle = FlightCycleChecks() if args.verify_flight_cycle else None
     manifest = json.loads((ROOT / "Tools/Disasm/Disk/Manifest.json").read_text(encoding="utf-8"))
     disk = (ROOT / "Tools/Disasm/Disk/original.trd").read_bytes()
     memory = Memory(out7ffd=0x10)
@@ -67,6 +170,8 @@ def main():
         visited.setdefault(key, bytes(memory[(pc+i)&65535] for i in range(4)).hex())
         if memory[pc] in (0xCD, 0xC4, 0xCC, 0xD4, 0xDC, 0xE4, 0xEC, 0xF4, 0xFC):
             calls.add((memory.o7ffd & 7, pc, memory[(pc+1)&65535] + 256*memory[(pc+2)&65535]))
+        if cycle:
+            cycle.observe(pc, registers, memory)
         if pc == (0xA85E if args.region == "flight" else 0x9A81):
             main_count += 1
             if main_count >= args.frames:
@@ -135,6 +240,13 @@ def main():
     report = dict(method="bounded_skoolkit_with_trdos_stub", real_boot_verified=False,
                   reason=reason, steps=step, frame_entries=main_count, loads=loads,
                   paging=ports.events, calls=[list(c) for c in sorted(calls)], visited=visited)
+    if cycle:
+        assert reason == "requested_frame_entries", (reason, main_count)
+        result = cycle.report(main_count, loads)
+        (ROOT / "Tools/Disasm/Reports/ActionFlightCycleVerification.json").write_text(
+            json.dumps(result, indent=2) + "\n", encoding="utf-8")
+        print(json.dumps(result, indent=2))
+        return
     snapshots = ROOT / "Tools/Disasm/Research/ModelScreens"
     snapshots.mkdir(parents=True, exist_ok=True)
     for page in (5, 7):

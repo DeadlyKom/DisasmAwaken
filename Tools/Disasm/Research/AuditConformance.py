@@ -203,8 +203,27 @@ def audit():
                     seen.add(value)
                 except (ValueError, TypeError, SyntaxError):
                     pass
+    # Проверка целевых путей изменяемого кода по текущей физической разметке, прежние имена файлов недопустимы.
+    from CheckModifiedCodePaths import audit as audit_modified_paths
+    reports = ROOT / "Tools/Disasm/Reports"
+    modified_paths = audit_modified_paths(
+        json.loads((reports / "ModifiedCode.json").read_text(encoding="utf-8")),
+        json.loads((reports / "SourceMap.json").read_text(encoding="utf-8")))
+    from CheckObjectStateCoverage import audit as audit_object_state_coverage
+    object_states = audit_object_state_coverage()
+    from CheckClassHandlerCoverage import audit as audit_class_handler_coverage
+    class_handlers = audit_class_handler_coverage()
     return {
         "method": "static_source_audit_without_assembly",
+        "modified_code_path_errors": modified_paths["errors"],
+        "modified_code_physical_target_ranges": modified_paths["physical_target_ranges_checked"],
+        "unregistered_object_state_callbacks": object_states["unregistered_targets"],
+        "unregistered_object_state_callback_count": object_states["unregistered_entries"],
+        "registered_object_state_callbacks": object_states["registered_entries"],
+        "unregistered_class_callbacks": class_handlers["unregistered_targets"],
+        "unregistered_class_callback_count": class_handlers["unregistered_entries"],
+        "registered_class_callbacks": class_handlers["registered_entries"],
+        "unique_class_handler_targets": class_handlers["unique_targets"],
         "included_text_files": len(files), "included_binary_files": len(incbins),
         "registered_functions": len(functions), "unlinked_functions": unlinked,
         "missing_includes_or_resources": missing, "missing_include_order": missing_order,
@@ -235,7 +254,7 @@ def main():
         if args.output.is_absolute() or not (ROOT / args.output).resolve().is_relative_to(ROOT):
             raise ValueError("Отчёт должен сохраняться по относительному пути внутри проекта")
         (ROOT / args.output).write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(json.dumps({k: v for k, v in report.items() if k not in ("findings", "unknown_contract_files")}, ensure_ascii=False, indent=2))
+    print(json.dumps({k: v for k, v in report.items() if k not in ("findings", "unknown_contract_files", "unregistered_object_state_callbacks")}, ensure_ascii=False, indent=2))
 
 
 if __name__ == "__main__":

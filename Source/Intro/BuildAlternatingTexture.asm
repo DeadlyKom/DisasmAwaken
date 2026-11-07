@@ -1,6 +1,8 @@
                 module Intro
                 module BuildAlternatingTexture
+                ; Физические параметры [источники и потребители](../../Docs/IntroPhysicalParameters.md)
 ; Документация [Intro](../../Docs/FunctionDetails/Intro.md)
+                ; Имена внутренних входов [алгоритмы вступления](../../Docs/IntroInternalLabels.md)
 ; -----------------------------------------
 ; Построение текстуры с чередованием исходного байта и байта, уменьшенного в четыре раза, копия в банк 6
 ; исходная запись 3, файловые смещения #0338..#0362
@@ -18,13 +20,13 @@
 ;   результат #8000..#BFFF переносится в банк 6 после записи #16 в #7FFD
 ; -----------------------------------------
 Entry:          LD A, #6F
-                LD HL, #6663
+                LD HL, @IntroAlternatingLookup.P00
                 CALL @Intro.BuildTextureLookup.Entry
                 LD DE, #8000
                 LD H, #A0
-Point6645:      LD L, #00
+BeginRow:       LD L, #00
                 ; преобразование чётного байта исходной строки, нечётный байт сохраняется
-Point6647:      LD A, (HL)
+ConvertPair:    LD A, (HL)
                 SRL A
                 SRL A
                 LD (DE), A
@@ -34,13 +36,13 @@ Point6647:      LD A, (HL)
                 LD (DE), A
                 INC L
                 INC E
-                JR NZ, @Intro.BuildAlternatingTexture.Point6647                 ; переход, если строка приёмника ещё не содержит 256 байтов
+                JR NZ, @Intro.BuildAlternatingTexture.ConvertPair               ; переход, если строка приёмника ещё не содержит 256 байтов
 
 
                 INC H
                 INC D
                 BIT 6, D
-                JR Z, @Intro.BuildAlternatingTexture.Point6645                  ; переход, если приёмник ещё не достиг #C000
+                JR Z, @Intro.BuildAlternatingTexture.BeginRow                   ; переход, если приёмник ещё не достиг #C000
 
 
                 LD A, #16

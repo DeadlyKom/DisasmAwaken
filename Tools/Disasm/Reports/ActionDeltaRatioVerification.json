@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "total_cases": 8192,
+  "outcomes": {
+    "quadrant_0": 1692,
+    "divider_overflow": 1100,
+    "shifted_range_reject": 496,
+    "quadrant_1": 1670,
+    "quadrant_2": 1621,
+    "quadrant_3": 1613
+  },
+  "actual_fallthrough_encoder_and_divider_executed": true,
+  "exact_registers_including_R": true,
+  "every_memory_write_checked": true,
+  "complete_four_word_input_product_exhausted": false,
+  "runtime_caller_found": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

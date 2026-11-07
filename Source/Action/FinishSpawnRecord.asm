@@ -18,7 +18,7 @@
                 ;   последовательные проверки класса #06 и #07 используют тот же A, специальные записи между ними и StoreState недостижимы
                 ; -----------------------------------------
                 ; Сброс первого байта смещения перед инициализацией.
-Entry:          LD (IX + @FActionRecord.Unknown07), #00
+Entry:          LD (IX + @FActionRecord.OffsetPhase0), #00
                 ; Продвижение потока 12, непересекающиеся маски оставляют постоянный #20.
 InitParameters: CALL @Action.NextRandomWord12.Entry
                 LD A, L
@@ -61,11 +61,11 @@ StoreLimit:     LD (IX + @FActionRecord.Unknown13), A
 
                 LD (IX + @FActionRecord.Unknown13), #F0
                 LD (IX + @FActionRecord.Unknown22), #FA
-                LD A, (IX + @FActionRecord.Unknown07)
+                LD A, (IX + @FActionRecord.OffsetPhase0)
                 LD (IX + @FActionRecord.Unknown0D), A
-                LD A, (IX + @FActionRecord.Unknown08)
+                LD A, (IX + @FActionRecord.OffsetPhase1)
                 LD (IX + @FActionRecord.Unknown0E), A
-                LD A, (IX + @FActionRecord.Unknown09)
+                LD A, (IX + @FActionRecord.OffsetPhase2)
                 LD (IX + @FActionRecord.TargetIndex), A
 CheckClassSix:  LD A, (IX + @FActionRecord.ClassCode)
                 CP #06
@@ -79,8 +79,8 @@ CheckClassSix:  LD A, (IX + @FActionRecord.ClassCode)
                 LD (IX + @FActionRecord.Unknown11), #6E
                 LD (IX + @FActionRecord.Unknown24), #00
                 ; Сохранение начального состояния и выбор байта повторного использования по R.
-StoreState:     LD A, (IX + @FActionRecord.Unknown0A)
-                LD (IX + @FActionRecord.Unknown16), A
+StoreState:     LD A, (IX + @FActionRecord.StateCode)
+                LD (IX + @FActionRecord.SavedStateCode), A
                 LD A, R
                 AND #0F
                 INC A
@@ -96,11 +96,11 @@ StoreState:     LD A, (IX + @FActionRecord.Unknown0A)
 
                 SET 2, C
 StoreReuse:     LD (IX + @FActionRecord.ReuseByte), C
-                LD (IX + @FActionRecord.Unknown17), #00
+                LD (IX + @FActionRecord.PhaseMoveTimer), #00
                 LD (IX + @FActionRecord.Unknown20), #FF
                 LD (IX + @FActionRecord.Unknown21), #FF
                 ; Чтение заголовка модели для выбора записываемого масштаба.
-ReadHeader:     LD A, (IX + @FActionRecord.Unknown06)
+ReadHeader:     LD A, (IX + @FActionRecord.ModelOffset)
                 CALL @Action.ReadObjectHeaderWord.Entry
                 LD A, H
                 CP #04
@@ -108,7 +108,7 @@ ReadHeader:     LD A, (IX + @FActionRecord.Unknown06)
                 JR NZ, @Action.FinishSpawnRecord.StoreScale                     ; переход, если показатель отличается от 4, записать 2
 
                 DEC A
-StoreScale:     LD (IX + @FActionRecord.Unknown25), A
+StoreScale:     LD (IX + @FActionRecord.TargetCodeStep), A
                 JP @Action.DispatchRecordClass.Entry
 
                 endmodule

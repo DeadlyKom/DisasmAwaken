@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "field": "FActionRecord.StateCode",
+  "offset": 10,
+  "structure_size": 64,
+  "physical_instances": 26,
+  "changed_files": 40,
+  "all_original_bytes_preserved": true,
+  "unrelated_parameter_Unknown0A_preserved": true,
+  "assembly_executed": false
+}

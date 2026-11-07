@@ -16,7 +16,7 @@ CONTRACTS={('Action',0x62CF):(
      "HL', DE', BC', AF', IX, IY сохраняются, SP=входной SP+2, I, IM, IFF и страница сохраняются",
      'RAM и CPU-стек не записываются, точная формула R приведена в документации, бит 7 R сохраняется'],
     ['HL, DE, BC, AF, R'],
-    ['совпадение требует полного ClassCode=3, полного Unknown0A=02 и LinkedIndex=Unknown0D указанной IX записи',
+    ['совпадение требует полного ClassCode=3, полного StateCode=02 и LinkedIndex=Unknown0D указанной IX записи',
      'неактивна строка с первым High=80, полный Low=80 при таком High является маркером и прекращает поиск',
      'байт FF в LinkedIndex не является особым отказом, он считается совпадением при Unknown0D=FF',
      'предел массива числом записей не зашит, насыщение прекращает просмотр сразу после второго совпадения',
@@ -32,9 +32,9 @@ COMMENTS={
 0x62E7:(['Сохранение младшего адреса активного High и переход к полному ClassCode в той же странице.'],None),
 0x62ED:(['Проверка класса 3, нулевой и другие классы не учитываются.'],None),
 0x62F0:([], 'переход, если ClassCode отличается от 3, продолжить просмотр'),
-0x62F2:(['Поиск Unknown0A от адреса High с последующим восстановлением исходного L.'],None),
-0x62F7:(['Проверка полного числового кода 02 в Unknown0A.'],None),
-0x62FA:([], 'переход, если Unknown0A отличается от 02, продолжить просмотр'),
+0x62F2:(['Поиск StateCode от адреса High с последующим восстановлением исходного L.'],None),
+0x62F7:(['Проверка полного числового кода 02 в StateCode.'],None),
+0x62FA:([], 'переход, если StateCode отличается от 02, продолжить просмотр'),
 0x62FC:(['Поиск LinkedIndex для точного сравнения с Unknown0D указанной IX записи.'],None),
 0x6301:(['Проверка совпадения полных байтов, FF допускается так же, как любой другой код.'],None),
 0x6305:([], 'переход, если LinkedIndex не равен Unknown0D владельца, продолжить просмотр'),
@@ -52,7 +52,7 @@ def name_operands(region,address,operation):
     if (region,address)!=('Action',0x62CF):return operation
     operation=operation.replace('#A0C1','@ActionClass3CountConst.BeforeHigh').replace('#0040','@FActionRecord')
     operation=operation.replace('(IX+#0D)','(IX + @FActionRecord.Unknown0D)')
-    for literal,field in (('#11','ClassCode'),('#09','Unknown0A'),('#0A','LinkedIndex')):
+    for literal,field in (('#11','ClassCode'),('#09','StateCode'),('#0A','LinkedIndex')):
         operation=operation.replace('ADD A, '+literal,'ADD A, @FActionRecord.'+field+'-@FActionWord.High')
     return operation.replace('CP #03','CP @ActionPreferredRecordConst.Class3').replace('CP #80','CP @ActionReuseConst.ReusableHigh').replace('CP #02','CP @ActionClass3CountConst.MaxCount')
 

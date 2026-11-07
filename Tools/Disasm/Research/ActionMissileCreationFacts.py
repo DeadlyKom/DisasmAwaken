@@ -69,8 +69,8 @@ def name_operands(region,function_address,operation):
         operation=operation.replace('ADD A, #0C','ADD A, FActionRecord.LinkFlags')
         fields={0:'Components.Component0.Low',1:'Components.Component0.High',2:'Components.Component1.Low',
           3:'Components.Component1.High',4:'Components.Component2.Low',5:'Components.Component2.High',
-          6:'Unknown06',7:'Unknown07',8:'Unknown08',9:'Unknown09',10:'Unknown0A',11:'LinkedIndex',12:'LinkFlags',
-          13:'Unknown0D',15:'TargetIndex',17:'Unknown11',18:'ClassCode',19:'Unknown13',37:'Unknown25'}
+          6:'ModelOffset',7:'OffsetPhase0',8:'OffsetPhase1',9:'OffsetPhase2',10:'StateCode',11:'LinkedIndex',12:'LinkFlags',
+          13:'Unknown0D',15:'TargetIndex',17:'Unknown11',18:'ClassCode',19:'Unknown13',37:'TargetCodeStep'}
         for offset,field in fields.items():operation=operation.replace('(IY + #'+format(offset,'02X')+')','(IY + FActionRecord.'+field+')')
         operation=operation.replace('(IY + FActionRecord.ClassCode), #11','(IY + FActionRecord.ClassCode), @ActionMissileCreateConst.MissileClass')
     return operation

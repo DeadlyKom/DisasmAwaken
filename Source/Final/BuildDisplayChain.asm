@@ -1,5 +1,6 @@
                 module Final
                 module BuildDisplayChain
+                ; Внутренние входы [алгоритм](../../Docs/ArithmeticFinalInternalLabels.md)
 ; Документация [Final](../../Docs/FunctionDetails/Final.md)
 ; -----------------------------------------
 ; Создание 24 групп по восемь bitmap-строк и полосе атрибутов с двумя местами вставки синхронизации
@@ -17,18 +18,18 @@
                 ; создание 24 знакоместных рядов, по восемь строк bitmap в каждом
 Entry:          LD B, #18
                 EX DE, HL
-Point61E2:      PUSH BC
+CharacterRow:   PUSH BC
                 LD B, #08
-Point61E5:      PUSH BC
+BitmapLine:     PUSH BC
                 CALL @Final.EmitBitmapLine.Entry
                 POP BC
-                DJNZ @Final.BuildDisplayChain.Point61E5
+                DJNZ @Final.BuildDisplayChain.BitmapLine
 
                 CALL @Final.EmitAttributeRow.Entry
                 POP BC
                 LD A, B
                 CP #07
-                JP NZ, @Final.BuildDisplayChain.Point61FE                       ; переход, если флаг Z сброшен
+                JP NZ, @Final.BuildDisplayChain.CheckFirstSync                  ; переход, если осталось не семь рядов, пропустить место синхронизации после восемнадцатого
 
 
                 LD (#62A5), DE
@@ -36,8 +37,8 @@ Point61E5:      PUSH BC
                 INC DE
                 INC DE
                 INC DE
-Point61FE:      CP #0F
-                JP NZ, @Final.BuildDisplayChain.Point620B                       ; переход, если флаг Z сброшен
+CheckFirstSync: CP #0F
+                JP NZ, @Final.BuildDisplayChain.CountRows                       ; переход, если осталось не пятнадцать рядов, пропустить место синхронизации после десятого
 
 
                 LD (#62A7), DE
@@ -45,7 +46,7 @@ Point61FE:      CP #0F
                 INC DE
                 INC DE
                 INC DE
-Point620B:      DJNZ @Final.BuildDisplayChain.Point61E2
+CountRows:      DJNZ @Final.BuildDisplayChain.CharacterRow
 
                 RET
 

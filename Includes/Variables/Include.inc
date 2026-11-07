@@ -1318,10 +1318,10 @@ Unknown04       equ #63B9                                                       
 AddImmediate05  equ #A8B5                                                       ; поле 05, операнд ADD A, n в фиксированном банке 2
 Compare06A      equ #7B6B                                                       ; поле 06, операнд CP n в фиксированном банке 5
 AddImmediate06B equ #6874                                                       ; поле 06, вторая цель, операнд ADD A, n в фиксированном банке 5
-Unknown07       equ #6615                                                       ; поле 07, целевой потребитель ещё не установлен
-Unknown08       equ #E6E7                                                       ; поле 08, целевой потребитель верхнего банка 0 ещё не установлен
+Class0RLimit    equ #6615                                                       ; поле 07, изменяемый операнд CP аппаратного R в ConfigureClass0Link
+RandomLowLimit  equ #E6E7                                                       ; поле 08, изменяемый операнд CP младшего байта Stream10 в FindFilteredRecordOr26
 Unknown09       equ #E823                                                       ; поле 09, целевой потребитель верхнего банка 0 ещё не установлен
-Unknown0A       equ #65E5                                                       ; поле 0A, целевой потребитель ещё не установлен
+Class3RLimit    equ #65E5                                                       ; поле 0A, изменяемый операнд CP аппаратного R в ConfigureClass3Link
 Compare0B       equ #79A4                                                       ; поле 0B, операнд CP n в фиксированном банке 5
 OrImmediate0C   equ #7E07                                                       ; поле 0C, операнд OR n в фиксированном банке 5
 HImmediate0D    equ #7E09                                                       ; поле 0D, операнд LD H, n в фиксированном банке 5
@@ -1932,6 +1932,27 @@ WideStepDepth   equ #6925                                                       
 Enabled         equ #6D39                                                       ; операнд допуска кадрового обхода
 Frames          equ #6D3D                                                       ; операнд числа оставшихся кадров
 SavedSP         equ #6DD2                                                       ; операнд восстановления настоящего SP
+                endmodule
+
+                ; Изменяемые операнды кода банка 3, память не выделяется
+                module VoxelSpriteState
+RightMaskFull   equ #F8B5                                                       ; маска правого кода после ненулевой левой половины
+RightMaskOnly   equ #F8DB                                                       ; маска правого кода при прозрачной левой половине
+RowHalfOp       equ #F905                                                       ; второй байт команды SET или RES для бита 5 адреса
+PalettePage     equ #F907                                                       ; страница таблицы в начале очередной строки
+SourceStride    equ #F910                                                       ; длина строки ресурса в байтах
+RowStepHigh     equ #F918                                                       ; старший байт целой части шага строки ресурса
+FirstPair       equ #F921                                                       ; адрес первой группы для восстановления маски
+SavedSP         equ #F92A                                                       ; входной SP до временной подмены шагом X
+                endmodule
+
+                ; Существующие операнды проекции эффекта в банке 3
+                module VoxelProjectionState
+VerticalSkip    equ #F9FA                                                       ; смещение перехода к удвоениям вертикальной поправки
+HorizontalSkip  equ #FA1D                                                       ; смещение перехода к удвоениям горизонтальной поправки
+Horizontal      equ #FA67                                                       ; горизонтальная компонента для второй проекции
+Depth           equ #FA6A                                                       ; глубина для второй проекции после перестановки компонент
+Vertical        equ #FA6D                                                       ; вертикальная компонента для второй проекции после перестановки
                 endmodule
 
                 endif

@@ -1077,7 +1077,25 @@
                 ent
                 assert $ == #3844
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/04_STATIONF/Unclassified044TailAfterIrqGraphics.bin"
+                assert $ == #3844
+                disp #9844
+                include "../Station/Data/SelectedMapKey.asm"
+                ent
+                assert $ == #3849
+                disp #9849
+                include "../Station/Data/PlayerSaveHeader.asm"
+                ent
+                assert $ == #3852
+                disp #9852
+                include "../Station/Data/OwnedCargoRows.asm"
+                ent
+                assert $ == #388E
+                disp #988E
+                include "../Station/Data/EquipmentQuantityCodes.asm"
+                ent
+                assert $ == #38AC
+                ; Четыре соседних байта сохраняют неизвестный смысл.
+                incbin "../Resources/04_STATIONF/Unknown98AC.bin"
                 assert $ == #38B0
                 disp #98B0
                 include "../Station/Data/MissionOffer.asm"

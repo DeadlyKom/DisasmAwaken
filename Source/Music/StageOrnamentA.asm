@@ -28,7 +28,7 @@ Entry:          JR @Music.StageChannelBRow.Entry
                 ; выключение однократной команды позиции орнамента кодом JR из E
                 LD A, E
                 LD (@MusicChannelAState.OrnamentCommand), A
-                ; JP @Music.StageChannelBRow.Entry, продолжение в UnknownDEB9.asm
+                ; JP @Music.StageChannelBRow.Entry, продолжение в StageChannelBRow.asm
 
                 endmodule
                 endmodule

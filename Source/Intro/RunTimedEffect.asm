@@ -1,6 +1,7 @@
                 module Intro
                 module RunTimedEffect
 ; Документация [Intro](../../Docs/FunctionDetails/Intro.md)
+                ; Имена внутренних входов [алгоритмы вступления](../../Docs/IntroInternalLabels.md)
 ; -----------------------------------------
 ; Повторение обработчика HL в течение BC шагов с проверкой клавиши Space
 ; исходная запись 3, файловые смещения #074B..#0766
@@ -17,12 +18,12 @@
 ;   конец файлового фрагмента переходит в FillBitmap без CALL, это общий хвост процедуры
 ; -----------------------------------------
 Entry:          LD (#6A5E), HL
-Point6A4E:      PUSH BC
+CheckSpace:     PUSH BC
                 PUSH AF
                 LD BC, #7FFE
                 IN A, (C)
                 CP #BE
-                JP Z, @Intro.InitializeIntro.Point65B0                          ; переход, если строка клавиатуры равна #BE и вступление нужно завершить
+                JP Z, @Intro.InitializeIntro.EnterStation                       ; переход, если строка клавиатуры равна #BE и вступление нужно завершить
 
 
                 POP AF
@@ -33,7 +34,7 @@ Point6A4E:      PUSH BC
                 DEC BC
                 LD A, B
                 OR C
-                JR NZ, @Intro.RunTimedEffect.Point6A4E                          ; переход, если счётчик шагов эффекта BC ещё не обнулился
+                JR NZ, @Intro.RunTimedEffect.CheckSpace                         ; переход, если счётчик шагов эффекта BC ещё не обнулился
 
 
                 EI

@@ -6,7 +6,7 @@ DOCUMENTS = {
     **{("Station", address): "StationSpans.md" for address in
        (0xBF4E, 0xC093, 0xC0C9, 0xC436, 0xC626, 0xC165, 0xC16F, 0xC17B, 0xC1C0, 0xC1CF, 0xC1DE, 0xC1ED, 0xC1F2, 0xC21F, 0xC224)},
     ("Intro", 0x6BF6): "Intro.md", ("Intro", 0x6A2C): "Intro.md",
-    ("Basic", 0x5CD1): "Loader.md",
+    ("Basic", 0x5D41): "Loader.md",
     **{("Map", address): "MapRaster.md" for address in (0xE57E, 0xE5AC, 0xE666, 0xE674)},
     ("Map", 0xE65D): "MapMath.md", ("Map", 0xE554): "MapMath.md",
     ("Music", 0xE6AE): "Music.md", ("Station", 0x9C77): "Interface.md",
@@ -98,6 +98,9 @@ VISUAL_EFFECT_FIELDS = {
 
 
 def name_operands(region, function_address, operation):
+    operation = action_boot_file_key_name_operands(region, function_address, operation)
+    operation = intro_physical_parameter_name_operands(region, function_address, operation)
+    operation = confirmed_call_target_name_operands(region, function_address, operation)
     operation = action_random_cluster_name_operands(region, function_address, operation)
     operation = intro_lookup_continuation_name_operands(region, function_address, operation)
     operation = intro_interlaced_frame_name_operands(region, function_address, operation)
@@ -145,6 +148,25 @@ def name_operands(region, function_address, operation):
     operation = control_panel_group_name_operands(region, function_address, operation)
     operation = ship_periodic_code_name_operands(region, function_address, operation)
     operation = ship_preview_callback_name_operands(region, function_address, operation)
+    operation = action_class3_link_name_operands(region,function_address,operation)
+    operation = action_class4_link_name_operands(region,function_address,operation)
+    operation = action_class1_link_name_operands(region,function_address,operation)
+    operation = action_class6_link_name_operands(region,function_address,operation)
+    operation = action_class7_link_name_operands(region,function_address,operation)
+    operation = action_class8_link_name_operands(region,function_address,operation)
+    operation = action_class5_link_name_operands(region,function_address,operation)
+    operation = action_class2_link_name_operands(region,function_address,operation)
+    operation = action_selected_record_proximity_name_operands(region,function_address,operation)
+    operation = action_select_class8_name_operands(region,function_address,operation)
+    operation = action_class18_proximity_name_operands(region,function_address,operation)
+    operation = action_selected_record_step_name_operands(region,function_address,operation)
+    operation = action_record_distance_name_operands(region,function_address,operation)
+    operation = action_approach_word_name_operands(region,function_address,operation)
+    operation = action_direct_decimal_plain_name_operands(region,function_address,operation)
+    operation = action_direct_decimal_scroll_name_operands(region,function_address,operation)
+    operation = action_delta_ratio_name_operands(region,function_address,operation)
+    operation = action_diagnostic_queue_name_operands(region,function_address,operation)
+    operation = action_overlay_projection_name_operands(region,function_address,operation)
     operation = action_spawn_schedule_name_operands(region, function_address, operation)
     operation = action_spawn_record_finish_name_operands(region, function_address, operation)
     operation = action_visual_effect_list_name_operands(region, function_address, operation)
@@ -608,7 +630,7 @@ def name_operands(region, function_address, operation):
                               (0x6BA9, "IntroState.LookupHLAlt"), (0x6BAC, "IntroState.LookupDEAlt"),
                               (0x6C12, "IntroState.SampleCursor")):
             operation = operation.replace(f"#{address:04X}", "@" + name)
-    if (region, function_address) == ("Basic", 0x5CD1):
+    if (region, function_address) == ("Basic", 0x5D41):
         for literal, name in (("#5FFF", "@LoaderConst.StackTop"), ("#5C3A", "@LoaderConst.SystemIY"),
                               ("#6500", "@Intro.InitializeIntro.Entry"), ("#5CF4", "@LoaderState.NextIntroBlock")):
             operation = operation.replace(literal, name)
@@ -1679,6 +1701,7 @@ DOCUMENTS.update({("Controls", a): ("ControlsPointRespawn", "алгоритм и
 def name_instruction(region, function_address, address, operation):
     """Уточнение одинаковых литералов с разным смыслом в конкретных инструкциях."""
     from ControlsPointMotionFacts import name_instruction as point_motion_instruction
+    operation = confirmed_indexed_field_name_instruction(region, function_address, address, operation)
     operation = action_class3_link_count_name_operands_instruction(region, function_address, address, operation)
     return point_motion_instruction(region, function_address, address, operation)
 
@@ -2547,3 +2570,89 @@ DOCUMENTS.update({("Action", a): ("ActionSpawnRecordFinish", "алгоритм �
 from ActionSpawnScheduleFacts import LABELS as ACTION_SPAWN_SCHEDULE_LABELS, name_operands as action_spawn_schedule_name_operands
 LABELS.update(ACTION_SPAWN_SCHEDULE_LABELS)
 DOCUMENTS.update({("Action", a): ("ActionSpawnSchedule", "алгоритм и проверка") for a in (30809, 31576)})
+
+from ActionOverlayProjectionFacts import name_operands as action_overlay_projection_name_operands
+DOCUMENTS['Action',44485]=('ActionOverlayProjection','алгоритм и проверка')
+LABELS.update({('Action', 44498): 'DivideVertical', ('Action', 44516): 'CenterVertical', ('Action', 44536): 'DivideHoriz', ('Action', 44554): 'CenterHoriz', ('Action', 44561): 'Reject'})
+
+from ConfirmedCallTargets import name_operands as confirmed_call_target_name_operands
+from InternalLabelNames import LABELS as VERIFIED_INTERNAL_LABELS
+LABELS.update(VERIFIED_INTERNAL_LABELS)
+
+from ConfirmedIndexedFields import name_instruction as confirmed_indexed_field_name_instruction
+
+from ActionDiagnosticQueueFacts import name_operands as action_diagnostic_queue_name_operands
+DOCUMENTS['Action',44203]=('ActionDiagnosticQueue','алгоритм и проверка')
+LABELS.update({})
+
+from ActionDeltaRatioFacts import name_operands as action_delta_ratio_name_operands
+DOCUMENTS['Action',44565]=('ActionDeltaRatio','алгоритм и проверка')
+LABELS.update({})
+
+from IntroPhysicalParameters import name_operands as intro_physical_parameter_name_operands
+
+from ActionBootFileKeys import name_operands as action_boot_file_key_name_operands
+
+from ActionDirectDecimalScrollFacts import name_operands as action_direct_decimal_scroll_name_operands
+DOCUMENTS['Action',24592]=('ActionDirectDecimalScroll','алгоритм и проверка')
+LABELS.update({})
+
+from ActionDirectDecimalPlainFacts import name_operands as action_direct_decimal_plain_name_operands
+DOCUMENTS['Action',24617]=('ActionDirectDecimalPlain','алгоритм и проверка')
+LABELS.update({})
+
+from ActionApproachWordFacts import name_operands as action_approach_word_name_operands
+DOCUMENTS['Action',25361]=('ActionApproachWord','алгоритм и проверка')
+LABELS.update({('Action', 25376): 'SelectStep', ('Action', 25392): 'SetDirection', ('Action', 25406): 'ApplyStep', ('Action', 25414): 'Accumulate'})
+
+from ActionRecordDistanceFacts import name_operands as action_record_distance_name_operands
+DOCUMENTS['Action',60137]=('ActionRecordDistance','алгоритм и проверка')
+LABELS.update({('Action', 60162): 'SaveFirst', ('Action', 60188): 'SaveSecond', ('Action', 60214): 'CompareThird', ('Action', 60220): 'ReadFirst'})
+
+from ActionSelectedRecordStepFacts import name_operands as action_selected_record_step_name_operands
+DOCUMENTS['Action',62315]=('ActionSelectedRecordStep','алгоритм и проверка')
+LABELS.update({})
+
+from ActionClass18ProximityFacts import name_operands as action_class18_proximity_name_operands
+DOCUMENTS['Action',62294]=('ActionClass18Proximity','алгоритм и проверка')
+LABELS.update({})
+
+from ActionSelectClass8Facts import name_operands as action_select_class8_name_operands
+DOCUMENTS['Action',59772]=('ActionSelectClass8','алгоритм и проверка')
+LABELS.update({})
+
+from ActionSelectedRecordProximityFacts import name_operands as action_selected_record_proximity_name_operands
+DOCUMENTS['Action',61514]=('ActionSelectedRecordProximity','алгоритм и проверка')
+LABELS.update({('Action', 61551): 'StepFar'})
+
+from ActionClass2LinkFacts import name_operands as action_class2_link_name_operands
+DOCUMENTS['Action',25929]=('ActionClass2Link','алгоритм и проверка')
+LABELS.update({('Action', 25946): 'SelectSixSeven'})
+
+from ActionClass5LinkFacts import name_operands as action_class5_link_name_operands
+DOCUMENTS['Action',25893]=('ActionClass5Link','алгоритм и проверка')
+LABELS.update({})
+
+from ActionClass8LinkFacts import name_operands as action_class8_link_name_operands
+DOCUMENTS['Action',25910]=('ActionClass8Link','алгоритм и проверка')
+LABELS.update({})
+
+from ActionClass7LinkFacts import name_operands as action_class7_link_name_operands
+DOCUMENTS['Action',25958]=('ActionClass7Link','алгоритм и проверка')
+LABELS.update({})
+
+from ActionClass6LinkFacts import name_operands as action_class6_link_name_operands
+DOCUMENTS['Action',25983]=('ActionClass6Link','алгоритм и проверка')
+LABELS.update({})
+
+from ActionClass1LinkFacts import name_operands as action_class1_link_name_operands
+DOCUMENTS['Action',26004]=('ActionClass1Link','алгоритм и проверка')
+LABELS.update({})
+
+from ActionClass4LinkFacts import name_operands as action_class4_link_name_operands
+DOCUMENTS['Action',26029]=('ActionClass4Link','алгоритм и проверка')
+LABELS.update({})
+
+from ActionClass3LinkFacts import name_operands as action_class3_link_name_operands
+DOCUMENTS['Action',26078]=('ActionClass3Link','алгоритм и проверка')
+LABELS.update({('Action', 26104): 'TryCode26'})

@@ -1,5 +1,6 @@
                 module Action
                 module ConfigureClass0Link
+                ; Изменяемый порог [параметры и проверка](../../Docs/ActionParameterThresholds.md)
                 ; Документация [алгоритм и проверка](../../Docs/ActionClass0Link.md)
                 ; -----------------------------------------
                 ; Применение подстановки либо выбор новой связи после порога R с общим входом SelectLink
@@ -9,24 +10,24 @@
                 ;   действуют договоры CopyRecordLinkOverride и FindFilteredRecordOr26, выбран банк 0
                 ;   Stream10 и поля записи доступны для записи, достижим подходящий элемент списка либо маркер
                 ;   CPU-стек не пересекает запись, код и состояние генератора, восемь байтов ниже внешнего возврата доступны вызовам
-                ;   дополнительный вход SelectLink принимает Carry как запрет поиска и сохраняет входной Unknown0A до успешной находки
+                ;   дополнительный вход SelectLink принимает Carry как запрет поиска и сохраняет входной StateCode до успешной находки
                 ; Out:
-                ;   при Unknown15=1..FE возвращается результат подстановки, LinkedIndex=Unknown15, Unknown0A=02
-                ;   при Unknown15=0 либо FF читается R после 14 либо 8 M1 соответственно, Unknown0A=02, LinkedIndex=FF
-                ;   если прочитанный R меньше 70, возвращаются A=этот R и F от CP 70, поиск не выполняется
+                ;   при Unknown15=1..FE возвращается результат подстановки, LinkedIndex=Unknown15, StateCode=02
+                ;   при Unknown15=0 либо FF читается R после 14 либо 8 M1 соответственно, StateCode=02, LinkedIndex=FF
+                ;   если прочитанный R меньше текущего Class0RLimit, возвращаются A=этот R и F от CP с Class0RLimit, поиск не выполняется
                 ;   иначе Stream10 обновлён, HL, E, BC, AF и IY возвращаются от FindFilteredRecordOr26
-                ;   при NZ результата LinkedIndex=A и Unknown0A=02, при Z очищенный LinkedIndex=FF сохраняется
+                ;   при NZ результата LinkedIndex=A и StateCode=02, при Z очищенный LinkedIndex=FF сохраняется
                 ;   D, AF', IX сохраняются, прочие альтернативные регистры сохраняются до вызова генератора, затем содержат его результат
                 ;   SP=входной SP+2, I, IM, IFF и страница сохраняются, точные регистры и R перечислены по ветвям в документации
                 ; Corrupt:
-                ;   HL, E, BC, AF, HL', DE', BC', IY, R, LinkedIndex, Unknown0A, Stream10 и до восьми байтов CPU-стека
+                ;   HL, E, BC, AF, HL', DE', BC', IY, R, LinkedIndex, StateCode, Stream10 и до восьми байтов CPU-стека
                 ; Note:
-                ;   SelectLink является общим внутренним входом 661A, начинает с LinkedIndex=FF и при Carry возвращает неизменные AF и Unknown0A
+                ;   SelectLink является общим внутренним входом 661A, начинает с LinkedIndex=FF и при Carry возвращает неизменные AF и StateCode
                 ;   разрешённая подстановка нуля выполняет запись, но возвращает Z и потому не прекращает эту цепочку
                 ;   код 26 является отдельным результатом дочернего выбора, не объявляется найденным индексом
                 ;   214528 сценариев исполнили настоящие подстановку, генератор, фильтр, итератор и преобразование индекса без подмены
                 ;   проверены регистры включая R, все восемь банков RAM, значения стека и кратность записей
-                ;   полное игровое значение Unknown0A и Unknown15, полный домен состояний и списков, распределение, период, IRQ, точные T, сборка и нативный запуск не доказаны
+                ;   полное игровое значение StateCode и Unknown15, полный домен состояний и списков, распределение, период, IRQ, точные T, сборка и нативный запуск не доказаны
                 ; -----------------------------------------
                 ; Применение исходной подстановки, только её ненулевой результат с NZ завершает вызов.
 Entry:          CALL @Action.CopyRecordLinkOverride.Entry
@@ -34,10 +35,10 @@ Entry:          CALL @Action.CopyRecordLinkOverride.Entry
 
                 ; Чтение R после 8 M1 для запрета FF либо 14 M1 для разрешённого нуля.
                 LD A, R
-                ; Проверка порога аппаратного R, распределение значений здесь не предполагается.
+                ; Проверка текущего Class0RLimit, исходный порог 70 может быть изменён ApplyParameterSet.
                 CP @ActionClass9Const.FlagThreshold
-                ; Обновление исходного кода Unknown0A перед общим выбором связи.
-                LD (IX + @FActionRecord.Unknown0A), @ActionClass0Const.RecordCode
+                ; Обновление исходного кода StateCode перед общим выбором связи.
+                LD (IX + @FActionRecord.StateCode), @ActionClass0Const.RecordCode
                 ; Сброс LinkedIndex до проверки Carry, дополнительный вход других обработчиков классов.
 SelectLink:     LD (IX + @FActionRecord.LinkedIndex), @ActionClass9Const.DefaultIndex
                 RET C                                                           ; выход, если входной Carry установлен, оставить LinkedIndex=FF без поиска
@@ -48,8 +49,8 @@ SelectLink:     LD (IX + @FActionRecord.LinkedIndex), @ActionClass9Const.Default
 
                 ; Обновление LinkedIndex возвращённым A, индекс 0 допускается по NZ так же, как отдельный код 26.
                 LD (IX + @FActionRecord.LinkedIndex), A
-                ; Запись исходного кода Unknown0A после принятого результата выбора.
-                LD (IX + @FActionRecord.Unknown0A), @ActionClass0Const.RecordCode
+                ; Запись исходного кода StateCode после принятого результата выбора.
+                LD (IX + @FActionRecord.StateCode), @ActionClass0Const.RecordCode
                 RET
 
                 endmodule

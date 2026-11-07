@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "record_size": 64,
+  "field_offsets": {
+    "OffsetPhase0": 7,
+    "OffsetPhase1": 8,
+    "OffsetPhase2": 9
+  },
+  "physical_record_field_symbols_renamed": 78,
+  "files_changed": 25,
+  "spatial_axis_names_proved": false,
+  "source_instructions_and_physical_bytes_preserved": true,
+  "export_field_bindings_checked": 10,
+  "assembly_executed": false,
+  "native_execution": false
+}

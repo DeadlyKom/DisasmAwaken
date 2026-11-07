@@ -1,6 +1,8 @@
                 module Intro
                 module BuildAttributeWriter
+                ; Физические параметры [источники и потребители](../../Docs/IntroPhysicalParameters.md)
 ; Документация [Intro](../../Docs/FunctionDetails/Intro.md)
+                ; Имена внутренних входов [алгоритмы вступления](../../Docs/IntroInternalLabels.md)
                 ; Документация [писатель атрибутов](../../Docs/IntroAttributeWriter.md)
 ; -----------------------------------------
 ; Создание развёрнутого писателя, таблицы выборок и двух таблиц экранных атрибутов
@@ -36,10 +38,10 @@ Entry:          EXX
                 LD HL, #68A9
                 LD D, IXL
                 LD C, #08
-Point6935:      LD E, IXL
+WriterRow:      LD E, IXL
                 LD B, #04
                 ; создание четырёх байтов команды, #E1 означает POP HL, #22 означает LD (nn),HL
-Point6939:      LD (HL), #E1
+WriterWord:     LD (HL), #E1
                 INC HL
                 LD (HL), #22
                 INC HL
@@ -49,11 +51,11 @@ Point6939:      LD (HL), #E1
                 INC HL
                 INC E
                 INC E
-                DJNZ @Intro.BuildAttributeWriter.Point6939
+                DJNZ @Intro.BuildAttributeWriter.WriterWord
 
                 INC D
                 DEC C
-                JR NZ, @Intro.BuildAttributeWriter.Point6935                    ; переход, если ещё не созданы писатели всех восьми страниц
+                JR NZ, @Intro.BuildAttributeWriter.WriterRow                    ; переход, если ещё не созданы писатели всех восьми страниц
 
 
                 EXX
@@ -61,7 +63,7 @@ Point6939:      LD (HL), #E1
                 LD A, #26
                 CALL @Intro.BuildPairedPointers.Entry
                 LD DE, #60C0
-                LD HL, #6993
+                LD HL, @IntroAttributeNibbleSeeds.A0
                 LD B, H
                 LD C, L
                 CALL @Intro.CombineAttributeNibbles.Entry

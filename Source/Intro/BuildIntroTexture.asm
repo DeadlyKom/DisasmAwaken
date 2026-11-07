@@ -1,6 +1,7 @@
                 module Intro
                 module BuildIntroTexture
 ; Документация [Intro](../../Docs/FunctionDetails/Intro.md)
+                ; Имена внутренних входов [алгоритмы вступления](../../Docs/IntroInternalLabels.md)
 ; -----------------------------------------
 ; Преобразование текстуры и копирование #1300 байт в страницу 4
 ; исходная запись 3, файловые смещения #0A8D..#0AB5
@@ -20,12 +21,12 @@ Entry:          LD A, #2C
                 CALL @Intro.BuildTextureLookup.Entry
                 LD DE, #8000
                 LD H, #AD
-Point6D9A:      LD L, #40
+CopySampleRow:  LD L, #40
                 LD BC, #0080
                 LDIR
                 INC H
                 DEC A
-                JR NZ, @Intro.BuildIntroTexture.Point6D9A                       ; переход, если счётчик A после построителя текстуры ещё не обнулился
+                JR NZ, @Intro.BuildIntroTexture.CopySampleRow                   ; переход, если счётчик A после построителя текстуры ещё не обнулился
 
 
                 LD A, #14

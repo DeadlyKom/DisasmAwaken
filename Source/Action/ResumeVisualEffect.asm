@@ -67,7 +67,7 @@ Entry:          LD SP, #0000
                 CALL @Action.SelectMemoryPage.Entry
                 EX AF, AF'
                 PUSH IX
-                CALL #FA3A
+                CALL @Voxel.DrawProjectedEffect.Entry
                 POP IX
                 ; Восстановление страницы 0 и передача управления к следующей записи.
                 LD A, #10

@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "record_size": 64,
+  "field_offsets": {
+    "SavedStateCode": 22,
+    "PhaseMoveTimer": 23,
+    "TargetCodeStep": 37
+  },
+  "physical_record_symbols_renamed": 78,
+  "files_changed": 35,
+  "prior_original_instruction_models": [
+    "ActionClass9LinkVerification",
+    "ActionObjectOffsetRiseVerification",
+    "ActionObjectOffsetFallVerification",
+    "ActionObjectPhaseWaitVerification",
+    "ActionRecordCodeStepVerification"
+  ],
+  "source_bytes_and_instruction_sequence_preserved": true,
+  "timer_zero_wrap_preserved": true,
+  "zero_step_write_preserved": true,
+  "assembly_executed": false,
+  "native_execution": false
+}

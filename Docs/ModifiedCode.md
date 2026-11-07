@@ -4,6 +4,22 @@
 отдельно доказанные межмодульные цели. Они включают сохранение SP, операнды и переключаемые
 ветви. Не перечисляют все косвенные записи и генерируемые области.
 
+[Проверка путей реестра](../Tools/Disasm/Research/CheckModifiedCodePaths.py)
+сверяет 1320 записей, существование указанных исходников и 305 целей с
+явными физическими смещениями. У 41 из этих целей недостающие смещения
+дополнены по существующему целевому файлу, реальным инструкциям и SourceMap.
+Выбранный во время исполнения банк из этого соответствия не выводится,
+исходные банковые поля сохранены. Остальные 1015 записей отдельного
+target_path не содержат. Такая проверка не устанавливает
+все косвенные записи. При согласовании имён исправлены 16 устаревших
+путей, адреса записей и исходные инструкции сохранены. Контрольная
+подстановка существующего, но неверного целевого файла отвергается без
+изменения файлов проекта. Сборка и нативное исполнение не выполняются.
+
+[Дополнение физических целей](../Tools/Disasm/Research/CompleteExplicitMutationTargets.py)
+сохраняет отдельный кандидат и исходную версию реестра, затем проверяет,
+что все прежние поля каждой записи остались буквально неизменными.
+
 | Регион | Запись из | Адрес записи | Исходная инструкция | Исходник |
 | --- | --- | --- | --- | --- |
 | Intro | #66B0 | #66EC | `LD BC,#8000` | [DrawScrolledTexture.asm](../Source/Intro/DrawScrolledTexture.asm) |
@@ -686,6 +702,19 @@
 | Voxel | #ED23 | #EE17 | `LD A,#00` | [ClipSprite.asm](../Source/Voxel/ClipSprite.asm) |
 | Voxel | #ED30 | #EE4A | `JR NC,#EE53` | [ClipSprite.asm](../Source/Voxel/ClipSprite.asm) |
 | Voxel | #EE53 | #EE78 | `JP #0000` | [ClipSprite.asm](../Source/Voxel/ClipSprite.asm) |
+| Voxel | #EDD3 | #F92A | `LD SP,#0000` | [ClipSprite.asm](../Source/Voxel/ClipSprite.asm) |
+| Voxel | #EDD7 | #F910 | `ADD A,#00` | [ClipSprite.asm](../Source/Voxel/ClipSprite.asm) |
+| Voxel | #EE13 | #F918 | `ADC A,#00` | [ClipSprite.asm](../Source/Voxel/ClipSprite.asm) |
+| Voxel | #EE27 | #F8B5 | `AND #0F` | [ClipSprite.asm](../Source/Voxel/ClipSprite.asm) |
+| Voxel | #EE2A | #F8DB | `AND #0F` | [ClipSprite.asm](../Source/Voxel/ClipSprite.asm) |
+| Voxel | #EE47 | #F921 | `LD HL,#0000` | [ClipSprite.asm](../Source/Voxel/ClipSprite.asm) |
+| Voxel | #EE67 | #F905 | `SET 5,C` | [ClipSprite.asm](../Source/Voxel/ClipSprite.asm) |
+| Voxel | #EE6B | #F907 | `LD H,#00` | [ClipSprite.asm](../Source/Voxel/ClipSprite.asm) |
+| Voxel | #FA3E | #F9FA | `JR #F9F9` | [DrawProjectedEffect.asm](../Source/Voxel/DrawProjectedEffect.asm) |
+| Voxel | #FA41 | #FA1D | `JR #FA1C` | [DrawProjectedEffect.asm](../Source/Voxel/DrawProjectedEffect.asm) |
+| Voxel | #FA4A | #FA67 | `LD HL,#0000` | [DrawProjectedEffect.asm](../Source/Voxel/DrawProjectedEffect.asm) |
+| Voxel | #FA4D | #FA6D | `LD BC,#0000` | [DrawProjectedEffect.asm](../Source/Voxel/DrawProjectedEffect.asm) |
+| Voxel | #FA51 | #FA6A | `LD DE,#0000` | [DrawProjectedEffect.asm](../Source/Voxel/DrawProjectedEffect.asm) |
 | ThreeD | #C9AC | #CB38 | `LD B,#00` | [BuildRenderCoefficients.asm](../Source/ThreeD/BuildRenderCoefficients.asm) |
 | ThreeD | #C9AF | #CC29 | `LD D,#00` | [BuildRenderCoefficients.asm](../Source/ThreeD/BuildRenderCoefficients.asm) |
 | ThreeD | #C9B4 | #CC25 | `LD B,#00` | [BuildRenderCoefficients.asm](../Source/ThreeD/BuildRenderCoefficients.asm) |

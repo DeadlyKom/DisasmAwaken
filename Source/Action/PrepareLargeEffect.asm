@@ -26,7 +26,7 @@ Entry:          LD A, (IX + @FActionRecord.ClassCode)
                 LD A, #40
 StoreChildMask: LD (@ActionLargeEffectContinuationState.ChildMask), A
                 ; Чтение заголовка из страницы OBJECT3D.
-                LD A, (IX + @FActionRecord.Unknown06)
+                LD A, (IX + @FActionRecord.ModelOffset)
                 CALL @Action.ReadObjectHeaderWord.Entry
                 ; JP @Action.AllocateLargeEffect.Entry, продолжение в AllocateLargeEffect.asm
 

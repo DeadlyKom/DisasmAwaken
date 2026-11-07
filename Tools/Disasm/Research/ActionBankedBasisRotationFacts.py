@@ -2,6 +2,7 @@
 FUNCTIONS = {0xADB7: ('RotateBankedBasis', 'Поворот базисных векторов через VOXAL в странице 3')}
 RENAMES = {'Action.UnknownADB7.Entry': 'Action.RotateBankedBasis.Entry'}
 LOCAL = {}
+LABELS = {('Action', address): name for address, name in LOCAL.items()}
 CONTRACTS = {('Action', 0xADB7): (
     ['HL, DE, BC и AF передаются в поворот с A = #13, F сохраняется до дочернего входа',
      'IY задаёт начальное состояние SignedSeededProduct, доступны векторы #9B00..#9B11 и углы #9B12..#9B14',

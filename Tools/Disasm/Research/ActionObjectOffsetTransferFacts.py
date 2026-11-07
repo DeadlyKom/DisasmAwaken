@@ -38,8 +38,8 @@ def name_operands(region, address, operation):
     if region != 'Action' or address != 0xF0F8:
         return operation
     operation = operation.replace('IX+#', 'IX + #')
-    for literal, field in (('01', 'Components.Component0.High'), ('07', 'Unknown07'), ('08', 'Unknown08'), ('09', 'Unknown09'),
-                           ('0A', 'Unknown0A'), ('0F', 'TargetIndex'), ('10', 'Unknown10'), ('12', 'ClassCode'), ('24', 'Unknown24')):
+    for literal, field in (('01', 'Components.Component0.High'), ('07', 'OffsetPhase0'), ('08', 'OffsetPhase1'), ('09', 'OffsetPhase2'),
+                           ('0A', 'StateCode'), ('0F', 'TargetIndex'), ('10', 'Unknown10'), ('12', 'ClassCode'), ('24', 'Unknown24')):
         operation = operation.replace('IX + #'+literal, 'IX + @FActionRecord.'+field)
     for index, literal in enumerate(('B045', 'B04F', 'B05C')):
         operation = operation.replace('(#'+literal+')', '(@ActionObjectOffsetTransferState.Offset'+str(index)+')')

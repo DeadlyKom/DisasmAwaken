@@ -104,7 +104,7 @@ CheckX:         LD HL, (@ActionProjectedCaptureState.Limit)
                 EXX
                 LD (@ActionRecordLinkEventState.PendingRecord), HL
                 EXX
-                ; JP @Action.FollowProjectedTarget.Entry, продолжение в UnknownE36A.asm
+                ; JP @Action.FollowProjectedTarget.Entry, продолжение в FollowProjectedTarget.asm
 
                 ; -----------------------------------------
                 endmodule

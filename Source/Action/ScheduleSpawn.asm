@@ -115,7 +115,7 @@ CheckClassEight:LD A, C
 SelectModel:    LD (IX + @FActionRecord.ClassCode), C
                 SLA C
                 LD B, #00
-                LD HL, #7AC6
+                LD HL, @ActionSpawnModels.Class00
                 ADD HL, BC
                 LD A, (HL)
                 INC HL
@@ -130,10 +130,10 @@ SelectModel:    LD (IX + @FActionRecord.ClassCode), C
                 ADC A, #00
                 LD H, A
                 LD A, (HL)
-                LD (IX+#06), A
+                LD (IX + @FActionRecord.ModelOffset), A
                 INC HL
                 LD L, (HL)
-                LD (IX+#0F), L
+                LD (IX + @FActionRecord.TargetIndex), L
                 LD H, D
                 POP DE
                 LD L, A
@@ -166,20 +166,20 @@ CreateEffect:   LD A, L
                 CALL @Action.NextRandomWord4.Entry
                 SRA H
                 RR L
-                LD (IX+#04), L
-                LD (IX+#05), H
+                LD (IX + @FActionRecord.Components.Component2.Low), L
+                LD (IX + @FActionRecord.Components.Component2.High), H
                 PUSH HL
                 CALL @Action.NextRandomWord1.Entry
                 SRA H
                 RR L
-                LD (IX+#02), L
-                LD (IX+#03), H
+                LD (IX + @FActionRecord.Components.Component1.Low), L
+                LD (IX + @FActionRecord.Components.Component1.High), H
                 PUSH HL
                 CALL @Action.NextRandomWord5.Entry
                 SRA H
                 RR L
-                LD (IX+#00), L
-                LD (IX+#01), H
+                LD (IX + @FActionRecord.Components.Component0.Low), L
+                LD (IX + @FActionRecord.Components.Component0.High), H
                 POP DE
                 POP BC
                 POP AF
@@ -196,7 +196,7 @@ CreateEffect:   LD A, L
 
                 LD A, #1A
                 LD (#6D3D), A
-AimWithEffect:  LD (IX + @FActionRecord.Unknown0A), #01
+AimWithEffect:  LD (IX + @FActionRecord.StateCode), #01
                 CALL @Action.SelectWideTargetAndStep.Entry
                 JP @Action.FinishSpawnRecord.Entry
 
@@ -221,28 +221,28 @@ TryNearby:      LD A, R
                 CALL @Action.FindRecordByCode.Entry
                 JR Z, @Action.ScheduleSpawn.BuildPosition                       ; переход, если поиск записи класса #12 завершился без совпадения
 
-                LD L, (IY+#00)
-                LD H, (IY+#01)
-                LD (IX+#00), L
-                LD (IX+#01), H
-                LD L, (IY+#02)
-                LD H, (IY+#03)
+                LD L, (IY + @FActionRecord.Components.Component0.Low)
+                LD H, (IY + @FActionRecord.Components.Component0.High)
+                LD (IX + @FActionRecord.Components.Component0.Low), L
+                LD (IX + @FActionRecord.Components.Component0.High), H
+                LD L, (IY + @FActionRecord.Components.Component1.Low)
+                LD H, (IY + @FActionRecord.Components.Component1.High)
                 LD A, R
                 AND #01
                 INC A
                 LD D, A
                 LD E, #80
                 ADD HL, DE
-                LD (IX+#02), L
-                LD (IX+#03), H
-                LD L, (IY+#04)
-                LD H, (IY+#05)
-                LD (IX+#04), L
-                LD (IX+#05), H
-                LD (IX + @FActionRecord.Unknown0A), #01
-                LD (IX+#07), #40
-                LD (IX+#08), #00
-                LD (IX+#09), #00
+                LD (IX + @FActionRecord.Components.Component1.Low), L
+                LD (IX + @FActionRecord.Components.Component1.High), H
+                LD L, (IY + @FActionRecord.Components.Component2.Low)
+                LD H, (IY + @FActionRecord.Components.Component2.High)
+                LD (IX + @FActionRecord.Components.Component2.Low), L
+                LD (IX + @FActionRecord.Components.Component2.High), H
+                LD (IX + @FActionRecord.StateCode), #01
+                LD (IX + @FActionRecord.OffsetPhase0), #40
+                LD (IX + @FActionRecord.OffsetPhase1), #00
+                LD (IX + @FActionRecord.OffsetPhase2), #00
                 JP @Action.FinishSpawnRecord.InitParameters
 
                 ; Чтение трёх знаковых компонент исходного вектора и выделение модулей.
@@ -354,8 +354,8 @@ SignJitter0:    BIT 7, H
 StorePosition0: LD H, A
                 POP DE
                 ADD HL, DE
-                LD (IX+#00), L
-                LD (IX+#01), H
+                LD (IX + @FActionRecord.Components.Component0.Low), L
+                LD (IX + @FActionRecord.Components.Component0.High), H
                 CALL @Action.NextRandomWord1.Entry
                 LD A, H
                 AND #0F
@@ -369,8 +369,8 @@ SignJitter1:    BIT 7, H
 StorePosition1: LD H, A
                 POP DE
                 ADD HL, DE
-                LD (IX+#02), L
-                LD (IX+#03), H
+                LD (IX + @FActionRecord.Components.Component1.Low), L
+                LD (IX + @FActionRecord.Components.Component1.High), H
                 CALL @Action.NextRandomWord5.Entry
                 LD A, H
                 AND #03
@@ -384,9 +384,9 @@ SignJitter2:    BIT 7, H
 StorePosition2: LD H, A
                 POP DE
                 ADD HL, DE
-                LD (IX+#04), L
-                LD (IX+#05), H
-                LD (IX + @FActionRecord.Unknown0A), #01
+                LD (IX + @FActionRecord.Components.Component2.Low), L
+                LD (IX + @FActionRecord.Components.Component2.High), H
+                LD (IX + @FActionRecord.StateCode), #01
                 CALL @Action.NextRandomWord5.Entry
                 LD A, L
                 AND #07
@@ -405,7 +405,7 @@ ReduceIndex:    CP H
                 JR @Action.ScheduleSpawn.ReduceIndex
 
                 ; Сохранение индекса и вычисление адреса широкой цели с шагом 12 байтов.
-SelectTarget:   LD (IX+#26), A
+SelectTarget:   LD (IX + @FActionRecord.Unknown26), A
                 LD IY, #9B1B
                 LD DE, #000C
                 LD B, A

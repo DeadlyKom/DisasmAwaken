@@ -102,11 +102,11 @@ InitializeSlot: EXX
                 EXX
                 ; Инициализация известных по фактическим записям полей, неизвестный игровой смысл сохранён в именах Unknown.
                 XOR A
-                LD (IY + FActionRecord.Unknown06), #90
-                LD (IY + FActionRecord.Unknown07), A
-                LD (IY + FActionRecord.Unknown08), A
-                LD (IY + FActionRecord.Unknown09), A
-                LD (IY + FActionRecord.Unknown0A), #08
+                LD (IY + FActionRecord.ModelOffset), #90
+                LD (IY + FActionRecord.OffsetPhase0), A
+                LD (IY + FActionRecord.OffsetPhase1), A
+                LD (IY + FActionRecord.OffsetPhase2), A
+                LD (IY + FActionRecord.StateCode), #08
                 LD (IY + FActionRecord.LinkedIndex), A
                 LD (IY + FActionRecord.LinkFlags), A
                 LD (IY + FActionRecord.Unknown0D), B
@@ -117,7 +117,7 @@ InitializeSlot: EXX
                 LD (IY + FActionRecord.ClassCode), @ActionMissileCreateConst.MissileClass
                 ; Инициализация Unknown13, непосредственный байт заранее изменён выбором поля запаса.
                 LD (IY + FActionRecord.Unknown13), #00
-                LD (IY + FActionRecord.Unknown25), #02
+                LD (IY + FActionRecord.TargetCodeStep), #02
                 ; -----------------------------------------
                 ; Создание обратной связи у цели
                 ; Повторный поиск исходной цели по сохранённому C.

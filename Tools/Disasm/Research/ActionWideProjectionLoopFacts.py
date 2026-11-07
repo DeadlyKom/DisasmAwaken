@@ -4,6 +4,7 @@ LOCAL = {
     0x6B31: 'SetCountdown', 0x6B3C: 'CheckVector', 0x6B4B: 'RestoreFrame',
     0x6B64: 'AdvanceVector', 0x6B6B: 'ScaleFarVector',
 }
+LABELS = {('Action', address): name for address, name in LOCAL.items()}
 RENAMES = {'Action.Unknown6B16.Entry': 'Action.ProjectWideVectors.Entry'}
 RENAMES.update({f'Action.Unknown6B16.Point{address:04X}': 'Action.ProjectWideVectors.' + name
                 for address, name in LOCAL.items()})

@@ -78,6 +78,14 @@
 
 [Алгоритм, контракты и проверка](../ActionClass3LinkCount.md).
 
+## ApproachWordAndAccumulate
+
+[Action.ApproachWordAndAccumulate](../../Source/Action/ApproachWordAndAccumulate.asm)
+
+Приближение HL к BC по обёрнутой разности с накоплением старшего байта остатка в C'.
+
+[Алгоритм, точные регистры и модель](../ActionApproachWord.md).
+
 ## ApplyPendingRecordLink
 
 [Action.ApplyPendingRecordLink](../../Source/Action/ApplyPendingRecordLink.asm)
@@ -126,6 +134,62 @@
 
 [Алгоритм, точные регистры и модель](../ActionIgnoredClasses.md).
 
+## ConfigureClass5Link
+
+[Action.ConfigureClass5Link](../../Source/Action/ConfigureClass5Link.asm)
+
+Подстановка и общий выбор связи только при новом нулевом слове потока 0.
+
+[Алгоритм, точные регистры и модель](../ActionClass5Link.md).
+
+## ConfigureClass8Link
+
+[Action.ConfigureClass8Link](../../Source/Action/ConfigureClass8Link.asm)
+
+Подстановка, состояние 12 и общий выбор связи при нулевом аппаратном предикате.
+
+[Алгоритм, точные регистры и модель](../ActionClass8Link.md).
+
+## ConfigureClass2Link
+
+[Action.ConfigureClass2Link](../../Source/Action/ConfigureClass2Link.asm)
+
+Подстановка и выбор связи среди классов 6 и 7 после аппаратного порога.
+
+[Алгоритм, точные регистры и модель](../ActionClass2Link.md).
+
+## ConfigureClass7Link
+
+[Action.ConfigureClass7Link](../../Source/Action/ConfigureClass7Link.asm)
+
+Подстановка и выбор связи с исключением классов 6 и 7 после аппаратного порога.
+
+[Алгоритм, точные регистры и модель](../ActionClass7Link.md).
+
+## ConfigureClass6Link
+
+[Action.ConfigureClass6Link](../../Source/Action/ConfigureClass6Link.asm)
+
+Подстановка с противоположными путями общего выбора и фильтра классов 6 и 7.
+
+[Алгоритм, точные регистры и модель](../ActionClass6Link.md).
+
+## ConfigureClass1Link
+
+[Action.ConfigureClass1Link](../../Source/Action/ConfigureClass1Link.asm)
+
+Подстановка и условный общий выбор связи со сменой класса на 0 после успеха.
+
+[Алгоритм, точные регистры и модель](../ActionClass1Link.md).
+
+## ConfigureClass4Link
+
+[Action.ConfigureClass4Link](../../Source/Action/ConfigureClass4Link.asm)
+
+Подстановка и выбор связи среди классов 5 и 14 после аппаратного порога.
+
+[Алгоритм, точные регистры и модель](../ActionClass4Link.md).
+
 ## ConfigureClass9Link
 
 [Action.ConfigureClass9Link](../../Source/Action/ConfigureClass9Link.asm)
@@ -133,6 +197,14 @@
 Запись кода 0D с сохранением LinkedIndex либо кода 01 со сбросом LinkedIndex в FF.
 
 [Алгоритм, точные регистры и модель](../ActionClass9Link.md).
+
+## ConfigureClass3Link
+
+[Action.ConfigureClass3Link](../../Source/Action/ConfigureClass3Link.asm)
+
+Подстановка, фильтр классов 5 и 14 либо специальный код 26 по потоку 8.
+
+[Алгоритм, точные регистры и модель](../ActionClass3Link.md).
 
 ## ConfigureClass0Link
 
@@ -1024,6 +1096,14 @@
 
 [Алгоритм, контракты и независимая модель](../ActionApplyParameters.md).
 
+## QueueDiagnosticCounters
+
+[Action.QueueDiagnosticCounters](../../Source/Action/QueueDiagnosticCounters.asm)
+
+Постановка диагностических строк Status и Deads и трёх чисел в текстовую очередь.
+
+[Алгоритм, точные регистры и модель](../ActionDiagnosticQueue.md).
+
 ## TransformVectorTransposed
 
 [Action.TransformVectorTransposed](../../Source/Action/TransformVectorTransposed.asm)
@@ -1087,6 +1167,22 @@
 - Косвенное завершение: нет в этом фрагменте.
 
 [Алгоритм, контракты и проверка](../ActionRenderFrameSetup.md).
+
+## ProjectOverlayCoordinates
+
+[Action.ProjectOverlayCoordinates](../../Source/Action/ProjectOverlayCoordinates.asm)
+
+Проекция двух координат относительно общей глубины с центром 128, 48.
+
+[Алгоритм, точные регистры и модель](../ActionOverlayProjection.md).
+
+## EncodeComponentDeltas
+
+[Action.EncodeComponentDeltas](../../Source/Action/EncodeComponentDeltas.asm)
+
+Кодирование отношения двух разностей слов с последовательным продолжением в EncodeSignedRatio.
+
+[Алгоритм, точные регистры и модель](../ActionDeltaRatio.md).
 
 ## EncodeSignedRatio
 
@@ -3194,6 +3290,14 @@ Unknown, назначение этого фрагмента ещё не уста
 
 [Алгоритм, точные регистры и модель](../ActionRecords5Or14.md).
 
+## SelectClass8ForRecord
+
+[Action.SelectClass8ForRecord](../../Source/Action/SelectClass8ForRecord.asm)
+
+Поиск первой записи класса 8 и сохранение её индекса в текущей записи.
+
+[Алгоритм, точные регистры и модель](../ActionSelectClass8.md).
+
 ## FindRecordByCode
 
 [Action.FindRecordByCode](../../Source/Action/FindRecordByCode.asm)
@@ -3249,6 +3353,14 @@ Unknown, назначение этого фрагмента ещё не уста
 Выделение большого эффекта и создание дочерних записей перед освобождением объекта.
 
 [Алгоритм, точные регистры и модель](../ActionLargeEffectContinuation.md).
+
+## MaxRecordDeltaHigh
+
+[Action.MaxRecordDeltaHigh](../../Source/Action/MaxRecordDeltaHigh.asm)
+
+Максимальный старший байт модулей трёх обёрнутых разностей записей.
+
+[Алгоритм, точные регистры и модель](../ActionRecordDistance.md).
 
 ## NextRandomWord0
 
@@ -3458,6 +3570,14 @@ Unknown, назначение этого фрагмента ещё не уста
 
 [Алгоритм, точные регистры и модель](../ActionIYRecordReuse.md).
 
+## HandleSelectedRecordProximity
+
+[Action.HandleSelectedRecordProximity](../../Source/Action/HandleSelectedRecordProximity.asm)
+
+Проверка выбранной записи, резервный поиск класса 8 и обработка близости.
+
+[Алгоритм, точные регистры и модель](../ActionSelectedRecordProximity.md).
+
 ## SetClass18ObjectState
 
 [Action.SetClass18ObjectState](../../Source/Action/SetClass18ObjectState.asm)
@@ -3481,6 +3601,22 @@ Unknown, назначение этого фрагмента ещё не уста
 Проверка маркера записи и подготовка смещений для вычислителя 6D06.
 
 [Алгоритм, точные регистры и модель](../ActionObjectOffsetTransfer.md).
+
+## HandleClass18Proximity
+
+[Action.HandleClass18Proximity](../../Source/Action/HandleClass18Proximity.asm)
+
+Поиск записи класса 18, освобождение текущей при близости либо подвод фазовых кодов.
+
+[Алгоритм, точные регистры и модель](../ActionClass18Proximity.md).
+
+## StepCodesTowardRecord
+
+[Action.StepCodesTowardRecord](../../Source/Action/StepCodesTowardRecord.asm)
+
+Подвод фазовых кодов текущей записи по трём компонентам выбранной записи.
+
+[Алгоритм, точные регистры и модель](../ActionSelectedRecordStep.md).
 
 ## MarkRecordForReuse
 
@@ -3616,7 +3752,9 @@ Unknown, назначение этого фрагмента ещё не уста
 
 Обход записей по #40 байт от #A100 с ограничителем #80 и обновление состояний.
 
-Вход `#F729`, запись 17, смещения `#9729..#9774`.
+Вход `#F729`, запись 17, смещения `#9729..#9791`.
+
+[Обход записей и продолжение F775](../ActionObjectWalk.md).
 
 - Прямые вызовы: `#62CF`.
 - Непосредственные чтения: нет непосредственных обращений.
@@ -3669,6 +3807,22 @@ Unknown, назначение этого фрагмента ещё не уста
 [Action.QueueNumberBank1](../../Source/Action/QueueNumberBank1.asm) — Передача байтового числа A в очередь Controls банка 1 с фиксированным возвратом страницы 10.
 
 Начало #6000, смещения #023D..#024C. [Проверка и границы](../ActionTextQueueCalls.md).
+
+## PrintByteAndScrollBank1
+
+[Action.PrintByteAndScrollBank1](../../Source/Action/PrintByteAndScrollBank1.asm)
+
+Прямой десятичный вывод байта с обязательной прокруткой окна банка 1.
+
+[Алгоритм, точные регистры и модель](../ActionDirectDecimalScroll.md).
+
+## PrintByteBank1
+
+[Action.PrintByteBank1](../../Source/Action/PrintByteBank1.asm)
+
+Прямой десятичный вывод байта в окне банка 1 с исходной попыткой записи в ПЗУ.
+
+[Алгоритм, точные регистры и модель](../ActionDirectDecimalPlain.md).
 
 ## QueueTextItemBank1
 

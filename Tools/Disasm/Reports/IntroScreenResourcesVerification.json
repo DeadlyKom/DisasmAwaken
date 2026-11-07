@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "total_cases": 3,
+  "initial_screen_bytes": 6912,
+  "packed_stream_bytes": 1440,
+  "stream_unused_last_bits": 3,
+  "original_allocation_tail_bytes": 149,
+  "initial_screen_sha256": "b52aa545ab365ec59832d681d593cdf861087bbcb7613162452f8ec323f45312",
+  "decoded_screen_sha256": "3bb10a9f778e0da7f2529d5572ec5c0146f275746a6ac001670eb377ad01d58b",
+  "both_actual_loader_copies_executed": true,
+  "full_flat_ram_compared": true,
+  "physical_bank_mapping_separately_proved": false,
+  "whole_intro_executed": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

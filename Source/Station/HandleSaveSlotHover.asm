@@ -27,7 +27,7 @@
                 ;   JP передаёт исходный внешний CPU-возврат в UpdateToPositionHover, нового CALL и сохранённых слов нет
                 ; -----------------------------------------
                 ; передача наведения позиций записи состояния в UpdateToPositionHover с исходным адресом возврата
-Entry:          JP #7482
+Entry:          JP @Station.UpdateToPositionHover.Entry
 
                 endmodule
                 endmodule

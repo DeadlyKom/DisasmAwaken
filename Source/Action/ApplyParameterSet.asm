@@ -1,5 +1,6 @@
                 module Action
                 module ApplyParameterSet
+                ; Изменяемые пороги [писатели и влияние](../../Docs/ActionParameterThresholds.md)
                 ; Документация [алгоритм и проверка](../../Docs/ActionApplyParameters.md)
                 ; -----------------------------------------
                 ; Применение пятнадцати полей набора к исходным адресам ACTION, поле 1 читается без записи, поле 6 используется дважды
@@ -16,8 +17,8 @@
                 ;   HL, AF в части A, пятнадцать целевых байтов, R
                 ; Note:
                 ;   исходный набор читается в фиксированном порядке, указатель HL продвигается только четырнадцать раз
-                ;   пять целей Unknown04, Unknown07, Unknown08, Unknown09 и Unknown0A пока не отнесены к доказанным инструкциям или полям данных
-                ;   десять остальных целей являются доказанными непосредственными операндами исходных инструкций ACTION
+                ;   две цели Unknown04 и Unknown09 пока не отнесены к доказанным инструкциям или полям данных
+                ;   тринадцать остальных целей являются доказанными непосредственными операндами исходных инструкций ACTION
                 ;   игровые имена полей и поведение всех изменяемых процедур ещё не установлены, гарантируется точная маршрутизация байтов
                 ; -----------------------------------------
                 ; выбор пятнадцатибайтового набора, подготовленного BuildParameterTables
@@ -50,21 +51,21 @@ Entry:          LD HL, @ControlsParameterTablesState.Parameters
                 LD (@ActionApplyParametersState.Compare06A), A
                 LD (@ActionApplyParametersState.AddImmediate06B), A
                 INC HL
-                ; обновление Unknown07, назначение целевого потребителя не объявляется доказанным
+                ; обновление операнда Class0RLimit, порога аппаратного R для класса 0
                 LD A, (HL)
-                LD (@ActionApplyParametersState.Unknown07), A
+                LD (@ActionApplyParametersState.Class0RLimit), A
                 INC HL
-                ; обновление Unknown08 в выбранном верхнем банке 0
+                ; обновление операнда RandomLowLimit, порога младшего байта Stream10 в банке 0
                 LD A, (HL)
-                LD (@ActionApplyParametersState.Unknown08), A
+                LD (@ActionApplyParametersState.RandomLowLimit), A
                 INC HL
                 ; обновление Unknown09 в выбранном верхнем банке 0
                 LD A, (HL)
                 LD (@ActionApplyParametersState.Unknown09), A
                 INC HL
-                ; обновление Unknown0A, назначение целевого потребителя не объявляется доказанным
+                ; обновление операнда Class3RLimit, порога аппаратного R для класса 3
                 LD A, (HL)
-                LD (@ActionApplyParametersState.Unknown0A), A
+                LD (@ActionApplyParametersState.Class3RLimit), A
                 INC HL
                 ; применение поля 0B к порогу Compare0B
                 LD A, (HL)

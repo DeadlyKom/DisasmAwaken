@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "total_cases": 9,
+  "three_source_bitmaps_compared": true,
+  "both_generated_draws_compared": true,
+  "frame_duration": 70908,
+  "actual_im2_executed": true,
+  "im2_switches_per_case": 3,
+  "native_final_scene_verified": false,
+  "assembly_executed": false
+}

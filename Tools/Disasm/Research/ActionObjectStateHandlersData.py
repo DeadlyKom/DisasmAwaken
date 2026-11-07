@@ -4,7 +4,9 @@ from PreviewSceneTables import render as render_records, parse as parse_records
 FIELDS = (('Handler', 2, 'исходный адрес обработчика состояния, проверка цели выполняется отдельно'),)
 TABLE = ('ActionObjectStateHandlers', 'Source/Action/Data/ObjectStateHandlers.asm', 0x8F50, 0x8F7C,
          'FObjectStateHandler', FIELDS, tuple(f'State{index:02X}' for index in range(22)))
-KNOWN_HANDLERS = {0xF51E: 'Action.UpdatePreferredClass18.Entry',
+KNOWN_HANDLERS = {0xF04A: 'Action.HandleSelectedRecordProximity.Entry',
+                  0xF356: 'Action.HandleClass18Proximity.Entry',
+                  0xF51E: 'Action.UpdatePreferredClass18.Entry',
                   0xEFB5: 'Action.AdvanceObjectPhaseWait.Entry',
                   0xEF7D: 'Action.AdvanceObjectOffsetRise.Entry',
                   0xEF9A: 'Action.AdvanceObjectOffsetFall.Entry'}

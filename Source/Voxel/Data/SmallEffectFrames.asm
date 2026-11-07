@@ -1,0 +1,2826 @@
+                module SmallEffectFrames
+                ; Документация [таблицы и кадры](../../../Docs/VoxelPhysicalResources.md)
+                assert $ == #D800
+                ; Кадр 0, 12 строк по 16 байтов.
+Frame00:        FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #00,                                                        ; Pair01
+                    #00,                                                        ; Pair02
+                    #00,                                                        ; Pair03
+                    #11,                                                        ; Pair04
+                    #11,                                                        ; Pair05
+                    #11,                                                        ; Pair06
+                    #11,                                                        ; Pair07
+                    #00,                                                        ; Pair08
+                    #00,                                                        ; Pair09
+                    #00,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F00R01:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #00,                                                        ; Pair01
+                    #11,                                                        ; Pair02
+                    #11,                                                        ; Pair03
+                    #22,                                                        ; Pair04
+                    #22,                                                        ; Pair05
+                    #22,                                                        ; Pair06
+                    #22,                                                        ; Pair07
+                    #11,                                                        ; Pair08
+                    #11,                                                        ; Pair09
+                    #00,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F00R02:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #11,                                                        ; Pair01
+                    #22,                                                        ; Pair02
+                    #22,                                                        ; Pair03
+                    #44,                                                        ; Pair04
+                    #55,                                                        ; Pair05
+                    #55,                                                        ; Pair06
+                    #55,                                                        ; Pair07
+                    #22,                                                        ; Pair08
+                    #22,                                                        ; Pair09
+                    #11,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F00R03:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #11,                                                        ; Pair01
+                    #22,                                                        ; Pair02
+                    #55,                                                        ; Pair03
+                    #77,                                                        ; Pair04
+                    #77,                                                        ; Pair05
+                    #77,                                                        ; Pair06
+                    #77,                                                        ; Pair07
+                    #55,                                                        ; Pair08
+                    #22,                                                        ; Pair09
+                    #11,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F00R04:         FEffectByteRow16 {
+                    #11,                                                        ; Pair00
+                    #22,                                                        ; Pair01
+                    #55,                                                        ; Pair02
+                    #77,                                                        ; Pair03
+                    #99,                                                        ; Pair04
+                    #99,                                                        ; Pair05
+                    #99,                                                        ; Pair06
+                    #99,                                                        ; Pair07
+                    #77,                                                        ; Pair08
+                    #55,                                                        ; Pair09
+                    #22,                                                        ; Pair10
+                    #11,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F00R05:         FEffectByteRow16 {
+                    #11,                                                        ; Pair00
+                    #22,                                                        ; Pair01
+                    #55,                                                        ; Pair02
+                    #77,                                                        ; Pair03
+                    #99,                                                        ; Pair04
+                    #DD,                                                        ; Pair05
+                    #DD,                                                        ; Pair06
+                    #99,                                                        ; Pair07
+                    #77,                                                        ; Pair08
+                    #55,                                                        ; Pair09
+                    #22,                                                        ; Pair10
+                    #11,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F00R06:         FEffectByteRow16 {
+                    #11,                                                        ; Pair00
+                    #22,                                                        ; Pair01
+                    #55,                                                        ; Pair02
+                    #77,                                                        ; Pair03
+                    #99,                                                        ; Pair04
+                    #DD,                                                        ; Pair05
+                    #DD,                                                        ; Pair06
+                    #99,                                                        ; Pair07
+                    #77,                                                        ; Pair08
+                    #55,                                                        ; Pair09
+                    #22,                                                        ; Pair10
+                    #11,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F00R07:         FEffectByteRow16 {
+                    #11,                                                        ; Pair00
+                    #22,                                                        ; Pair01
+                    #55,                                                        ; Pair02
+                    #77,                                                        ; Pair03
+                    #99,                                                        ; Pair04
+                    #99,                                                        ; Pair05
+                    #99,                                                        ; Pair06
+                    #99,                                                        ; Pair07
+                    #77,                                                        ; Pair08
+                    #55,                                                        ; Pair09
+                    #22,                                                        ; Pair10
+                    #11,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F00R08:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #11,                                                        ; Pair01
+                    #22,                                                        ; Pair02
+                    #55,                                                        ; Pair03
+                    #77,                                                        ; Pair04
+                    #77,                                                        ; Pair05
+                    #77,                                                        ; Pair06
+                    #77,                                                        ; Pair07
+                    #55,                                                        ; Pair08
+                    #22,                                                        ; Pair09
+                    #11,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F00R09:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #11,                                                        ; Pair01
+                    #22,                                                        ; Pair02
+                    #22,                                                        ; Pair03
+                    #55,                                                        ; Pair04
+                    #55,                                                        ; Pair05
+                    #55,                                                        ; Pair06
+                    #55,                                                        ; Pair07
+                    #22,                                                        ; Pair08
+                    #22,                                                        ; Pair09
+                    #11,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F00R10:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #00,                                                        ; Pair01
+                    #11,                                                        ; Pair02
+                    #11,                                                        ; Pair03
+                    #22,                                                        ; Pair04
+                    #22,                                                        ; Pair05
+                    #22,                                                        ; Pair06
+                    #22,                                                        ; Pair07
+                    #11,                                                        ; Pair08
+                    #11,                                                        ; Pair09
+                    #00,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F00R11:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #00,                                                        ; Pair01
+                    #00,                                                        ; Pair02
+                    #00,                                                        ; Pair03
+                    #11,                                                        ; Pair04
+                    #11,                                                        ; Pair05
+                    #11,                                                        ; Pair06
+                    #11,                                                        ; Pair07
+                    #00,                                                        ; Pair08
+                    #00,                                                        ; Pair09
+                    #00,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+                ; Кадр 1, 12 строк по 16 байтов.
+Frame01:        FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #00,                                                        ; Pair01
+                    #00,                                                        ; Pair02
+                    #00,                                                        ; Pair03
+                    #DD,                                                        ; Pair04
+                    #DD,                                                        ; Pair05
+                    #DD,                                                        ; Pair06
+                    #DD,                                                        ; Pair07
+                    #00,                                                        ; Pair08
+                    #00,                                                        ; Pair09
+                    #00,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F01R01:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #00,                                                        ; Pair01
+                    #DD,                                                        ; Pair02
+                    #DD,                                                        ; Pair03
+                    #11,                                                        ; Pair04
+                    #11,                                                        ; Pair05
+                    #11,                                                        ; Pair06
+                    #11,                                                        ; Pair07
+                    #DD,                                                        ; Pair08
+                    #DD,                                                        ; Pair09
+                    #00,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F01R02:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #DD,                                                        ; Pair01
+                    #11,                                                        ; Pair02
+                    #11,                                                        ; Pair03
+                    #33,                                                        ; Pair04
+                    #44,                                                        ; Pair05
+                    #44,                                                        ; Pair06
+                    #44,                                                        ; Pair07
+                    #11,                                                        ; Pair08
+                    #11,                                                        ; Pair09
+                    #DD,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F01R03:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #DD,                                                        ; Pair01
+                    #11,                                                        ; Pair02
+                    #44,                                                        ; Pair03
+                    #66,                                                        ; Pair04
+                    #66,                                                        ; Pair05
+                    #66,                                                        ; Pair06
+                    #66,                                                        ; Pair07
+                    #44,                                                        ; Pair08
+                    #11,                                                        ; Pair09
+                    #DD,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F01R04:         FEffectByteRow16 {
+                    #DD,                                                        ; Pair00
+                    #11,                                                        ; Pair01
+                    #44,                                                        ; Pair02
+                    #66,                                                        ; Pair03
+                    #88,                                                        ; Pair04
+                    #88,                                                        ; Pair05
+                    #88,                                                        ; Pair06
+                    #88,                                                        ; Pair07
+                    #66,                                                        ; Pair08
+                    #44,                                                        ; Pair09
+                    #11,                                                        ; Pair10
+                    #DD,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F01R05:         FEffectByteRow16 {
+                    #DD,                                                        ; Pair00
+                    #11,                                                        ; Pair01
+                    #44,                                                        ; Pair02
+                    #66,                                                        ; Pair03
+                    #88,                                                        ; Pair04
+                    #CC,                                                        ; Pair05
+                    #CC,                                                        ; Pair06
+                    #88,                                                        ; Pair07
+                    #66,                                                        ; Pair08
+                    #44,                                                        ; Pair09
+                    #11,                                                        ; Pair10
+                    #DD,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F01R06:         FEffectByteRow16 {
+                    #DD,                                                        ; Pair00
+                    #11,                                                        ; Pair01
+                    #44,                                                        ; Pair02
+                    #66,                                                        ; Pair03
+                    #88,                                                        ; Pair04
+                    #CC,                                                        ; Pair05
+                    #CC,                                                        ; Pair06
+                    #88,                                                        ; Pair07
+                    #66,                                                        ; Pair08
+                    #44,                                                        ; Pair09
+                    #11,                                                        ; Pair10
+                    #DD,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F01R07:         FEffectByteRow16 {
+                    #DD,                                                        ; Pair00
+                    #11,                                                        ; Pair01
+                    #44,                                                        ; Pair02
+                    #66,                                                        ; Pair03
+                    #88,                                                        ; Pair04
+                    #88,                                                        ; Pair05
+                    #88,                                                        ; Pair06
+                    #88,                                                        ; Pair07
+                    #66,                                                        ; Pair08
+                    #44,                                                        ; Pair09
+                    #11,                                                        ; Pair10
+                    #DD,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F01R08:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #DD,                                                        ; Pair01
+                    #11,                                                        ; Pair02
+                    #44,                                                        ; Pair03
+                    #66,                                                        ; Pair04
+                    #66,                                                        ; Pair05
+                    #66,                                                        ; Pair06
+                    #66,                                                        ; Pair07
+                    #44,                                                        ; Pair08
+                    #11,                                                        ; Pair09
+                    #DD,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F01R09:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #DD,                                                        ; Pair01
+                    #11,                                                        ; Pair02
+                    #11,                                                        ; Pair03
+                    #44,                                                        ; Pair04
+                    #44,                                                        ; Pair05
+                    #44,                                                        ; Pair06
+                    #44,                                                        ; Pair07
+                    #11,                                                        ; Pair08
+                    #11,                                                        ; Pair09
+                    #DD,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F01R10:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #00,                                                        ; Pair01
+                    #DD,                                                        ; Pair02
+                    #DD,                                                        ; Pair03
+                    #11,                                                        ; Pair04
+                    #11,                                                        ; Pair05
+                    #11,                                                        ; Pair06
+                    #11,                                                        ; Pair07
+                    #DD,                                                        ; Pair08
+                    #DD,                                                        ; Pair09
+                    #00,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F01R11:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #00,                                                        ; Pair01
+                    #00,                                                        ; Pair02
+                    #00,                                                        ; Pair03
+                    #DD,                                                        ; Pair04
+                    #DD,                                                        ; Pair05
+                    #DD,                                                        ; Pair06
+                    #DD,                                                        ; Pair07
+                    #00,                                                        ; Pair08
+                    #00,                                                        ; Pair09
+                    #00,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+                ; Кадр 2, 12 строк по 16 байтов.
+Frame02:        FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #00,                                                        ; Pair01
+                    #00,                                                        ; Pair02
+                    #00,                                                        ; Pair03
+                    #CC,                                                        ; Pair04
+                    #CC,                                                        ; Pair05
+                    #CC,                                                        ; Pair06
+                    #CC,                                                        ; Pair07
+                    #00,                                                        ; Pair08
+                    #00,                                                        ; Pair09
+                    #00,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F02R01:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #00,                                                        ; Pair01
+                    #CC,                                                        ; Pair02
+                    #CC,                                                        ; Pair03
+                    #DD,                                                        ; Pair04
+                    #DD,                                                        ; Pair05
+                    #DD,                                                        ; Pair06
+                    #DD,                                                        ; Pair07
+                    #CC,                                                        ; Pair08
+                    #CC,                                                        ; Pair09
+                    #00,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F02R02:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #CC,                                                        ; Pair01
+                    #DD,                                                        ; Pair02
+                    #DD,                                                        ; Pair03
+                    #22,                                                        ; Pair04
+                    #33,                                                        ; Pair05
+                    #33,                                                        ; Pair06
+                    #33,                                                        ; Pair07
+                    #DD,                                                        ; Pair08
+                    #DD,                                                        ; Pair09
+                    #CC,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F02R03:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #CC,                                                        ; Pair01
+                    #DD,                                                        ; Pair02
+                    #33,                                                        ; Pair03
+                    #55,                                                        ; Pair04
+                    #55,                                                        ; Pair05
+                    #55,                                                        ; Pair06
+                    #55,                                                        ; Pair07
+                    #33,                                                        ; Pair08
+                    #DD,                                                        ; Pair09
+                    #CC,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F02R04:         FEffectByteRow16 {
+                    #CC,                                                        ; Pair00
+                    #DD,                                                        ; Pair01
+                    #33,                                                        ; Pair02
+                    #55,                                                        ; Pair03
+                    #77,                                                        ; Pair04
+                    #77,                                                        ; Pair05
+                    #77,                                                        ; Pair06
+                    #77,                                                        ; Pair07
+                    #55,                                                        ; Pair08
+                    #33,                                                        ; Pair09
+                    #DD,                                                        ; Pair10
+                    #CC,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F02R05:         FEffectByteRow16 {
+                    #CC,                                                        ; Pair00
+                    #DD,                                                        ; Pair01
+                    #33,                                                        ; Pair02
+                    #55,                                                        ; Pair03
+                    #77,                                                        ; Pair04
+                    #BB,                                                        ; Pair05
+                    #BB,                                                        ; Pair06
+                    #77,                                                        ; Pair07
+                    #55,                                                        ; Pair08
+                    #33,                                                        ; Pair09
+                    #DD,                                                        ; Pair10
+                    #CC,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F02R06:         FEffectByteRow16 {
+                    #CC,                                                        ; Pair00
+                    #DD,                                                        ; Pair01
+                    #33,                                                        ; Pair02
+                    #55,                                                        ; Pair03
+                    #77,                                                        ; Pair04
+                    #BB,                                                        ; Pair05
+                    #BB,                                                        ; Pair06
+                    #77,                                                        ; Pair07
+                    #55,                                                        ; Pair08
+                    #33,                                                        ; Pair09
+                    #DD,                                                        ; Pair10
+                    #CC,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F02R07:         FEffectByteRow16 {
+                    #CC,                                                        ; Pair00
+                    #DD,                                                        ; Pair01
+                    #33,                                                        ; Pair02
+                    #55,                                                        ; Pair03
+                    #77,                                                        ; Pair04
+                    #77,                                                        ; Pair05
+                    #77,                                                        ; Pair06
+                    #77,                                                        ; Pair07
+                    #55,                                                        ; Pair08
+                    #33,                                                        ; Pair09
+                    #DD,                                                        ; Pair10
+                    #CC,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F02R08:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #CC,                                                        ; Pair01
+                    #DD,                                                        ; Pair02
+                    #33,                                                        ; Pair03
+                    #55,                                                        ; Pair04
+                    #55,                                                        ; Pair05
+                    #55,                                                        ; Pair06
+                    #55,                                                        ; Pair07
+                    #33,                                                        ; Pair08
+                    #DD,                                                        ; Pair09
+                    #CC,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F02R09:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #CC,                                                        ; Pair01
+                    #DD,                                                        ; Pair02
+                    #DD,                                                        ; Pair03
+                    #33,                                                        ; Pair04
+                    #33,                                                        ; Pair05
+                    #33,                                                        ; Pair06
+                    #33,                                                        ; Pair07
+                    #DD,                                                        ; Pair08
+                    #DD,                                                        ; Pair09
+                    #CC,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F02R10:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #00,                                                        ; Pair01
+                    #CC,                                                        ; Pair02
+                    #CC,                                                        ; Pair03
+                    #DD,                                                        ; Pair04
+                    #DD,                                                        ; Pair05
+                    #DD,                                                        ; Pair06
+                    #DD,                                                        ; Pair07
+                    #CC,                                                        ; Pair08
+                    #CC,                                                        ; Pair09
+                    #00,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F02R11:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #00,                                                        ; Pair01
+                    #00,                                                        ; Pair02
+                    #00,                                                        ; Pair03
+                    #CC,                                                        ; Pair04
+                    #CC,                                                        ; Pair05
+                    #CC,                                                        ; Pair06
+                    #CC,                                                        ; Pair07
+                    #00,                                                        ; Pair08
+                    #00,                                                        ; Pair09
+                    #00,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+                ; Кадр 3, 12 строк по 16 байтов.
+Frame03:        FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #00,                                                        ; Pair01
+                    #00,                                                        ; Pair02
+                    #00,                                                        ; Pair03
+                    #BB,                                                        ; Pair04
+                    #BB,                                                        ; Pair05
+                    #BB,                                                        ; Pair06
+                    #BB,                                                        ; Pair07
+                    #00,                                                        ; Pair08
+                    #00,                                                        ; Pair09
+                    #00,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F03R01:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #00,                                                        ; Pair01
+                    #BB,                                                        ; Pair02
+                    #BB,                                                        ; Pair03
+                    #CC,                                                        ; Pair04
+                    #CC,                                                        ; Pair05
+                    #CC,                                                        ; Pair06
+                    #CC,                                                        ; Pair07
+                    #BB,                                                        ; Pair08
+                    #BB,                                                        ; Pair09
+                    #00,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F03R02:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #BB,                                                        ; Pair01
+                    #CC,                                                        ; Pair02
+                    #CC,                                                        ; Pair03
+                    #11,                                                        ; Pair04
+                    #22,                                                        ; Pair05
+                    #22,                                                        ; Pair06
+                    #22,                                                        ; Pair07
+                    #CC,                                                        ; Pair08
+                    #CC,                                                        ; Pair09
+                    #BB,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F03R03:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #BB,                                                        ; Pair01
+                    #CC,                                                        ; Pair02
+                    #22,                                                        ; Pair03
+                    #44,                                                        ; Pair04
+                    #44,                                                        ; Pair05
+                    #44,                                                        ; Pair06
+                    #44,                                                        ; Pair07
+                    #22,                                                        ; Pair08
+                    #CC,                                                        ; Pair09
+                    #BB,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F03R04:         FEffectByteRow16 {
+                    #BB,                                                        ; Pair00
+                    #CC,                                                        ; Pair01
+                    #22,                                                        ; Pair02
+                    #44,                                                        ; Pair03
+                    #66,                                                        ; Pair04
+                    #66,                                                        ; Pair05
+                    #66,                                                        ; Pair06
+                    #66,                                                        ; Pair07
+                    #44,                                                        ; Pair08
+                    #22,                                                        ; Pair09
+                    #CC,                                                        ; Pair10
+                    #BB,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F03R05:         FEffectByteRow16 {
+                    #BB,                                                        ; Pair00
+                    #CC,                                                        ; Pair01
+                    #22,                                                        ; Pair02
+                    #44,                                                        ; Pair03
+                    #66,                                                        ; Pair04
+                    #AA,                                                        ; Pair05
+                    #AA,                                                        ; Pair06
+                    #66,                                                        ; Pair07
+                    #44,                                                        ; Pair08
+                    #22,                                                        ; Pair09
+                    #CC,                                                        ; Pair10
+                    #BB,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F03R06:         FEffectByteRow16 {
+                    #BB,                                                        ; Pair00
+                    #CC,                                                        ; Pair01
+                    #22,                                                        ; Pair02
+                    #44,                                                        ; Pair03
+                    #66,                                                        ; Pair04
+                    #AA,                                                        ; Pair05
+                    #AA,                                                        ; Pair06
+                    #66,                                                        ; Pair07
+                    #44,                                                        ; Pair08
+                    #22,                                                        ; Pair09
+                    #CC,                                                        ; Pair10
+                    #BB,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F03R07:         FEffectByteRow16 {
+                    #BB,                                                        ; Pair00
+                    #CC,                                                        ; Pair01
+                    #22,                                                        ; Pair02
+                    #44,                                                        ; Pair03
+                    #66,                                                        ; Pair04
+                    #66,                                                        ; Pair05
+                    #66,                                                        ; Pair06
+                    #66,                                                        ; Pair07
+                    #44,                                                        ; Pair08
+                    #22,                                                        ; Pair09
+                    #CC,                                                        ; Pair10
+                    #BB,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F03R08:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #BB,                                                        ; Pair01
+                    #CC,                                                        ; Pair02
+                    #22,                                                        ; Pair03
+                    #44,                                                        ; Pair04
+                    #44,                                                        ; Pair05
+                    #44,                                                        ; Pair06
+                    #44,                                                        ; Pair07
+                    #22,                                                        ; Pair08
+                    #CC,                                                        ; Pair09
+                    #BB,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F03R09:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #BB,                                                        ; Pair01
+                    #CC,                                                        ; Pair02
+                    #CC,                                                        ; Pair03
+                    #22,                                                        ; Pair04
+                    #22,                                                        ; Pair05
+                    #22,                                                        ; Pair06
+                    #22,                                                        ; Pair07
+                    #CC,                                                        ; Pair08
+                    #CC,                                                        ; Pair09
+                    #BB,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F03R10:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #00,                                                        ; Pair01
+                    #BB,                                                        ; Pair02
+                    #BB,                                                        ; Pair03
+                    #CC,                                                        ; Pair04
+                    #CC,                                                        ; Pair05
+                    #CC,                                                        ; Pair06
+                    #CC,                                                        ; Pair07
+                    #BB,                                                        ; Pair08
+                    #BB,                                                        ; Pair09
+                    #00,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F03R11:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #00,                                                        ; Pair01
+                    #00,                                                        ; Pair02
+                    #00,                                                        ; Pair03
+                    #BB,                                                        ; Pair04
+                    #BB,                                                        ; Pair05
+                    #BB,                                                        ; Pair06
+                    #BB,                                                        ; Pair07
+                    #00,                                                        ; Pair08
+                    #00,                                                        ; Pair09
+                    #00,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+                ; Кадр 4, 12 строк по 16 байтов.
+Frame04:        FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #00,                                                        ; Pair01
+                    #00,                                                        ; Pair02
+                    #00,                                                        ; Pair03
+                    #AA,                                                        ; Pair04
+                    #AA,                                                        ; Pair05
+                    #AA,                                                        ; Pair06
+                    #AA,                                                        ; Pair07
+                    #00,                                                        ; Pair08
+                    #00,                                                        ; Pair09
+                    #00,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F04R01:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #00,                                                        ; Pair01
+                    #AA,                                                        ; Pair02
+                    #AA,                                                        ; Pair03
+                    #BB,                                                        ; Pair04
+                    #BB,                                                        ; Pair05
+                    #BB,                                                        ; Pair06
+                    #BB,                                                        ; Pair07
+                    #AA,                                                        ; Pair08
+                    #AA,                                                        ; Pair09
+                    #00,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F04R02:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #AA,                                                        ; Pair01
+                    #BB,                                                        ; Pair02
+                    #BB,                                                        ; Pair03
+                    #DD,                                                        ; Pair04
+                    #11,                                                        ; Pair05
+                    #11,                                                        ; Pair06
+                    #11,                                                        ; Pair07
+                    #BB,                                                        ; Pair08
+                    #BB,                                                        ; Pair09
+                    #AA,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F04R03:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #AA,                                                        ; Pair01
+                    #BB,                                                        ; Pair02
+                    #11,                                                        ; Pair03
+                    #33,                                                        ; Pair04
+                    #33,                                                        ; Pair05
+                    #33,                                                        ; Pair06
+                    #33,                                                        ; Pair07
+                    #11,                                                        ; Pair08
+                    #BB,                                                        ; Pair09
+                    #AA,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F04R04:         FEffectByteRow16 {
+                    #AA,                                                        ; Pair00
+                    #BB,                                                        ; Pair01
+                    #11,                                                        ; Pair02
+                    #33,                                                        ; Pair03
+                    #55,                                                        ; Pair04
+                    #55,                                                        ; Pair05
+                    #55,                                                        ; Pair06
+                    #55,                                                        ; Pair07
+                    #33,                                                        ; Pair08
+                    #11,                                                        ; Pair09
+                    #BB,                                                        ; Pair10
+                    #AA,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F04R05:         FEffectByteRow16 {
+                    #AA,                                                        ; Pair00
+                    #BB,                                                        ; Pair01
+                    #11,                                                        ; Pair02
+                    #33,                                                        ; Pair03
+                    #55,                                                        ; Pair04
+                    #99,                                                        ; Pair05
+                    #99,                                                        ; Pair06
+                    #55,                                                        ; Pair07
+                    #33,                                                        ; Pair08
+                    #11,                                                        ; Pair09
+                    #BB,                                                        ; Pair10
+                    #AA,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F04R06:         FEffectByteRow16 {
+                    #AA,                                                        ; Pair00
+                    #BB,                                                        ; Pair01
+                    #11,                                                        ; Pair02
+                    #33,                                                        ; Pair03
+                    #55,                                                        ; Pair04
+                    #99,                                                        ; Pair05
+                    #99,                                                        ; Pair06
+                    #55,                                                        ; Pair07
+                    #33,                                                        ; Pair08
+                    #11,                                                        ; Pair09
+                    #BB,                                                        ; Pair10
+                    #AA,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F04R07:         FEffectByteRow16 {
+                    #AA,                                                        ; Pair00
+                    #BB,                                                        ; Pair01
+                    #11,                                                        ; Pair02
+                    #33,                                                        ; Pair03
+                    #55,                                                        ; Pair04
+                    #55,                                                        ; Pair05
+                    #55,                                                        ; Pair06
+                    #55,                                                        ; Pair07
+                    #33,                                                        ; Pair08
+                    #11,                                                        ; Pair09
+                    #BB,                                                        ; Pair10
+                    #AA,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F04R08:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #AA,                                                        ; Pair01
+                    #BB,                                                        ; Pair02
+                    #11,                                                        ; Pair03
+                    #33,                                                        ; Pair04
+                    #33,                                                        ; Pair05
+                    #33,                                                        ; Pair06
+                    #33,                                                        ; Pair07
+                    #11,                                                        ; Pair08
+                    #BB,                                                        ; Pair09
+                    #AA,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F04R09:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #AA,                                                        ; Pair01
+                    #BB,                                                        ; Pair02
+                    #BB,                                                        ; Pair03
+                    #11,                                                        ; Pair04
+                    #11,                                                        ; Pair05
+                    #11,                                                        ; Pair06
+                    #11,                                                        ; Pair07
+                    #BB,                                                        ; Pair08
+                    #BB,                                                        ; Pair09
+                    #AA,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F04R10:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #00,                                                        ; Pair01
+                    #AA,                                                        ; Pair02
+                    #AA,                                                        ; Pair03
+                    #BB,                                                        ; Pair04
+                    #BB,                                                        ; Pair05
+                    #BB,                                                        ; Pair06
+                    #BB,                                                        ; Pair07
+                    #AA,                                                        ; Pair08
+                    #AA,                                                        ; Pair09
+                    #00,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F04R11:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #00,                                                        ; Pair01
+                    #00,                                                        ; Pair02
+                    #00,                                                        ; Pair03
+                    #AA,                                                        ; Pair04
+                    #AA,                                                        ; Pair05
+                    #AA,                                                        ; Pair06
+                    #AA,                                                        ; Pair07
+                    #00,                                                        ; Pair08
+                    #00,                                                        ; Pair09
+                    #00,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+                ; Кадр 5, 12 строк по 16 байтов.
+Frame05:        FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #00,                                                        ; Pair01
+                    #00,                                                        ; Pair02
+                    #00,                                                        ; Pair03
+                    #99,                                                        ; Pair04
+                    #99,                                                        ; Pair05
+                    #99,                                                        ; Pair06
+                    #99,                                                        ; Pair07
+                    #00,                                                        ; Pair08
+                    #00,                                                        ; Pair09
+                    #00,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F05R01:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #00,                                                        ; Pair01
+                    #99,                                                        ; Pair02
+                    #99,                                                        ; Pair03
+                    #AA,                                                        ; Pair04
+                    #AA,                                                        ; Pair05
+                    #AA,                                                        ; Pair06
+                    #AA,                                                        ; Pair07
+                    #99,                                                        ; Pair08
+                    #99,                                                        ; Pair09
+                    #00,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F05R02:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #99,                                                        ; Pair01
+                    #AA,                                                        ; Pair02
+                    #AA,                                                        ; Pair03
+                    #CC,                                                        ; Pair04
+                    #DD,                                                        ; Pair05
+                    #DD,                                                        ; Pair06
+                    #DD,                                                        ; Pair07
+                    #AA,                                                        ; Pair08
+                    #AA,                                                        ; Pair09
+                    #99,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F05R03:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #99,                                                        ; Pair01
+                    #AA,                                                        ; Pair02
+                    #DD,                                                        ; Pair03
+                    #22,                                                        ; Pair04
+                    #22,                                                        ; Pair05
+                    #22,                                                        ; Pair06
+                    #22,                                                        ; Pair07
+                    #DD,                                                        ; Pair08
+                    #AA,                                                        ; Pair09
+                    #99,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F05R04:         FEffectByteRow16 {
+                    #99,                                                        ; Pair00
+                    #AA,                                                        ; Pair01
+                    #DD,                                                        ; Pair02
+                    #22,                                                        ; Pair03
+                    #44,                                                        ; Pair04
+                    #44,                                                        ; Pair05
+                    #44,                                                        ; Pair06
+                    #44,                                                        ; Pair07
+                    #22,                                                        ; Pair08
+                    #DD,                                                        ; Pair09
+                    #AA,                                                        ; Pair10
+                    #99,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F05R05:         FEffectByteRow16 {
+                    #99,                                                        ; Pair00
+                    #AA,                                                        ; Pair01
+                    #DD,                                                        ; Pair02
+                    #22,                                                        ; Pair03
+                    #44,                                                        ; Pair04
+                    #88,                                                        ; Pair05
+                    #88,                                                        ; Pair06
+                    #44,                                                        ; Pair07
+                    #22,                                                        ; Pair08
+                    #DD,                                                        ; Pair09
+                    #AA,                                                        ; Pair10
+                    #99,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F05R06:         FEffectByteRow16 {
+                    #99,                                                        ; Pair00
+                    #AA,                                                        ; Pair01
+                    #DD,                                                        ; Pair02
+                    #22,                                                        ; Pair03
+                    #44,                                                        ; Pair04
+                    #88,                                                        ; Pair05
+                    #88,                                                        ; Pair06
+                    #44,                                                        ; Pair07
+                    #22,                                                        ; Pair08
+                    #DD,                                                        ; Pair09
+                    #AA,                                                        ; Pair10
+                    #99,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F05R07:         FEffectByteRow16 {
+                    #99,                                                        ; Pair00
+                    #AA,                                                        ; Pair01
+                    #DD,                                                        ; Pair02
+                    #22,                                                        ; Pair03
+                    #44,                                                        ; Pair04
+                    #44,                                                        ; Pair05
+                    #44,                                                        ; Pair06
+                    #44,                                                        ; Pair07
+                    #22,                                                        ; Pair08
+                    #DD,                                                        ; Pair09
+                    #AA,                                                        ; Pair10
+                    #99,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F05R08:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #99,                                                        ; Pair01
+                    #AA,                                                        ; Pair02
+                    #DD,                                                        ; Pair03
+                    #22,                                                        ; Pair04
+                    #22,                                                        ; Pair05
+                    #22,                                                        ; Pair06
+                    #22,                                                        ; Pair07
+                    #DD,                                                        ; Pair08
+                    #AA,                                                        ; Pair09
+                    #99,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F05R09:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #99,                                                        ; Pair01
+                    #AA,                                                        ; Pair02
+                    #AA,                                                        ; Pair03
+                    #DD,                                                        ; Pair04
+                    #DD,                                                        ; Pair05
+                    #DD,                                                        ; Pair06
+                    #DD,                                                        ; Pair07
+                    #AA,                                                        ; Pair08
+                    #AA,                                                        ; Pair09
+                    #99,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F05R10:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #00,                                                        ; Pair01
+                    #99,                                                        ; Pair02
+                    #99,                                                        ; Pair03
+                    #AA,                                                        ; Pair04
+                    #AA,                                                        ; Pair05
+                    #AA,                                                        ; Pair06
+                    #AA,                                                        ; Pair07
+                    #99,                                                        ; Pair08
+                    #99,                                                        ; Pair09
+                    #00,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F05R11:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #00,                                                        ; Pair01
+                    #00,                                                        ; Pair02
+                    #00,                                                        ; Pair03
+                    #99,                                                        ; Pair04
+                    #99,                                                        ; Pair05
+                    #99,                                                        ; Pair06
+                    #99,                                                        ; Pair07
+                    #00,                                                        ; Pair08
+                    #00,                                                        ; Pair09
+                    #00,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+                ; Кадр 6, 12 строк по 16 байтов.
+Frame06:        FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #00,                                                        ; Pair01
+                    #00,                                                        ; Pair02
+                    #00,                                                        ; Pair03
+                    #88,                                                        ; Pair04
+                    #88,                                                        ; Pair05
+                    #88,                                                        ; Pair06
+                    #88,                                                        ; Pair07
+                    #00,                                                        ; Pair08
+                    #00,                                                        ; Pair09
+                    #00,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F06R01:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #00,                                                        ; Pair01
+                    #88,                                                        ; Pair02
+                    #88,                                                        ; Pair03
+                    #99,                                                        ; Pair04
+                    #99,                                                        ; Pair05
+                    #99,                                                        ; Pair06
+                    #99,                                                        ; Pair07
+                    #88,                                                        ; Pair08
+                    #88,                                                        ; Pair09
+                    #00,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F06R02:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #88,                                                        ; Pair01
+                    #99,                                                        ; Pair02
+                    #99,                                                        ; Pair03
+                    #BB,                                                        ; Pair04
+                    #CC,                                                        ; Pair05
+                    #CC,                                                        ; Pair06
+                    #CC,                                                        ; Pair07
+                    #99,                                                        ; Pair08
+                    #99,                                                        ; Pair09
+                    #88,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F06R03:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #88,                                                        ; Pair01
+                    #99,                                                        ; Pair02
+                    #CC,                                                        ; Pair03
+                    #11,                                                        ; Pair04
+                    #11,                                                        ; Pair05
+                    #11,                                                        ; Pair06
+                    #11,                                                        ; Pair07
+                    #CC,                                                        ; Pair08
+                    #99,                                                        ; Pair09
+                    #88,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F06R04:         FEffectByteRow16 {
+                    #88,                                                        ; Pair00
+                    #99,                                                        ; Pair01
+                    #CC,                                                        ; Pair02
+                    #11,                                                        ; Pair03
+                    #33,                                                        ; Pair04
+                    #33,                                                        ; Pair05
+                    #33,                                                        ; Pair06
+                    #33,                                                        ; Pair07
+                    #11,                                                        ; Pair08
+                    #CC,                                                        ; Pair09
+                    #99,                                                        ; Pair10
+                    #88,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F06R05:         FEffectByteRow16 {
+                    #88,                                                        ; Pair00
+                    #99,                                                        ; Pair01
+                    #CC,                                                        ; Pair02
+                    #11,                                                        ; Pair03
+                    #33,                                                        ; Pair04
+                    #77,                                                        ; Pair05
+                    #77,                                                        ; Pair06
+                    #33,                                                        ; Pair07
+                    #11,                                                        ; Pair08
+                    #CC,                                                        ; Pair09
+                    #99,                                                        ; Pair10
+                    #88,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F06R06:         FEffectByteRow16 {
+                    #88,                                                        ; Pair00
+                    #99,                                                        ; Pair01
+                    #CC,                                                        ; Pair02
+                    #11,                                                        ; Pair03
+                    #33,                                                        ; Pair04
+                    #77,                                                        ; Pair05
+                    #77,                                                        ; Pair06
+                    #33,                                                        ; Pair07
+                    #11,                                                        ; Pair08
+                    #CC,                                                        ; Pair09
+                    #99,                                                        ; Pair10
+                    #88,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F06R07:         FEffectByteRow16 {
+                    #88,                                                        ; Pair00
+                    #99,                                                        ; Pair01
+                    #CC,                                                        ; Pair02
+                    #11,                                                        ; Pair03
+                    #33,                                                        ; Pair04
+                    #33,                                                        ; Pair05
+                    #33,                                                        ; Pair06
+                    #33,                                                        ; Pair07
+                    #11,                                                        ; Pair08
+                    #CC,                                                        ; Pair09
+                    #99,                                                        ; Pair10
+                    #88,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F06R08:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #88,                                                        ; Pair01
+                    #99,                                                        ; Pair02
+                    #CC,                                                        ; Pair03
+                    #11,                                                        ; Pair04
+                    #11,                                                        ; Pair05
+                    #11,                                                        ; Pair06
+                    #11,                                                        ; Pair07
+                    #CC,                                                        ; Pair08
+                    #99,                                                        ; Pair09
+                    #88,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F06R09:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #88,                                                        ; Pair01
+                    #99,                                                        ; Pair02
+                    #99,                                                        ; Pair03
+                    #CC,                                                        ; Pair04
+                    #CC,                                                        ; Pair05
+                    #CC,                                                        ; Pair06
+                    #CC,                                                        ; Pair07
+                    #99,                                                        ; Pair08
+                    #99,                                                        ; Pair09
+                    #88,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F06R10:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #00,                                                        ; Pair01
+                    #88,                                                        ; Pair02
+                    #88,                                                        ; Pair03
+                    #99,                                                        ; Pair04
+                    #99,                                                        ; Pair05
+                    #99,                                                        ; Pair06
+                    #99,                                                        ; Pair07
+                    #88,                                                        ; Pair08
+                    #88,                                                        ; Pair09
+                    #00,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F06R11:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #00,                                                        ; Pair01
+                    #00,                                                        ; Pair02
+                    #00,                                                        ; Pair03
+                    #88,                                                        ; Pair04
+                    #88,                                                        ; Pair05
+                    #88,                                                        ; Pair06
+                    #88,                                                        ; Pair07
+                    #00,                                                        ; Pair08
+                    #00,                                                        ; Pair09
+                    #00,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+                ; Кадр 7, 12 строк по 16 байтов.
+Frame07:        FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #00,                                                        ; Pair01
+                    #00,                                                        ; Pair02
+                    #00,                                                        ; Pair03
+                    #77,                                                        ; Pair04
+                    #77,                                                        ; Pair05
+                    #77,                                                        ; Pair06
+                    #77,                                                        ; Pair07
+                    #00,                                                        ; Pair08
+                    #00,                                                        ; Pair09
+                    #00,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F07R01:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #00,                                                        ; Pair01
+                    #77,                                                        ; Pair02
+                    #77,                                                        ; Pair03
+                    #88,                                                        ; Pair04
+                    #88,                                                        ; Pair05
+                    #88,                                                        ; Pair06
+                    #88,                                                        ; Pair07
+                    #77,                                                        ; Pair08
+                    #77,                                                        ; Pair09
+                    #00,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F07R02:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #77,                                                        ; Pair01
+                    #88,                                                        ; Pair02
+                    #88,                                                        ; Pair03
+                    #AA,                                                        ; Pair04
+                    #BB,                                                        ; Pair05
+                    #BB,                                                        ; Pair06
+                    #BB,                                                        ; Pair07
+                    #88,                                                        ; Pair08
+                    #88,                                                        ; Pair09
+                    #77,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F07R03:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #77,                                                        ; Pair01
+                    #88,                                                        ; Pair02
+                    #BB,                                                        ; Pair03
+                    #DD,                                                        ; Pair04
+                    #DD,                                                        ; Pair05
+                    #DD,                                                        ; Pair06
+                    #DD,                                                        ; Pair07
+                    #BB,                                                        ; Pair08
+                    #88,                                                        ; Pair09
+                    #77,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F07R04:         FEffectByteRow16 {
+                    #77,                                                        ; Pair00
+                    #88,                                                        ; Pair01
+                    #BB,                                                        ; Pair02
+                    #DD,                                                        ; Pair03
+                    #22,                                                        ; Pair04
+                    #22,                                                        ; Pair05
+                    #22,                                                        ; Pair06
+                    #22,                                                        ; Pair07
+                    #DD,                                                        ; Pair08
+                    #BB,                                                        ; Pair09
+                    #88,                                                        ; Pair10
+                    #77,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F07R05:         FEffectByteRow16 {
+                    #77,                                                        ; Pair00
+                    #88,                                                        ; Pair01
+                    #BB,                                                        ; Pair02
+                    #DD,                                                        ; Pair03
+                    #22,                                                        ; Pair04
+                    #66,                                                        ; Pair05
+                    #66,                                                        ; Pair06
+                    #22,                                                        ; Pair07
+                    #DD,                                                        ; Pair08
+                    #BB,                                                        ; Pair09
+                    #88,                                                        ; Pair10
+                    #77,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F07R06:         FEffectByteRow16 {
+                    #77,                                                        ; Pair00
+                    #88,                                                        ; Pair01
+                    #BB,                                                        ; Pair02
+                    #DD,                                                        ; Pair03
+                    #22,                                                        ; Pair04
+                    #66,                                                        ; Pair05
+                    #66,                                                        ; Pair06
+                    #22,                                                        ; Pair07
+                    #DD,                                                        ; Pair08
+                    #BB,                                                        ; Pair09
+                    #88,                                                        ; Pair10
+                    #77,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F07R07:         FEffectByteRow16 {
+                    #77,                                                        ; Pair00
+                    #88,                                                        ; Pair01
+                    #BB,                                                        ; Pair02
+                    #DD,                                                        ; Pair03
+                    #22,                                                        ; Pair04
+                    #22,                                                        ; Pair05
+                    #22,                                                        ; Pair06
+                    #22,                                                        ; Pair07
+                    #DD,                                                        ; Pair08
+                    #BB,                                                        ; Pair09
+                    #88,                                                        ; Pair10
+                    #77,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F07R08:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #77,                                                        ; Pair01
+                    #88,                                                        ; Pair02
+                    #BB,                                                        ; Pair03
+                    #DD,                                                        ; Pair04
+                    #DD,                                                        ; Pair05
+                    #DD,                                                        ; Pair06
+                    #DD,                                                        ; Pair07
+                    #BB,                                                        ; Pair08
+                    #88,                                                        ; Pair09
+                    #77,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F07R09:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #77,                                                        ; Pair01
+                    #88,                                                        ; Pair02
+                    #88,                                                        ; Pair03
+                    #BB,                                                        ; Pair04
+                    #BB,                                                        ; Pair05
+                    #BB,                                                        ; Pair06
+                    #BB,                                                        ; Pair07
+                    #88,                                                        ; Pair08
+                    #88,                                                        ; Pair09
+                    #77,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F07R10:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #00,                                                        ; Pair01
+                    #77,                                                        ; Pair02
+                    #77,                                                        ; Pair03
+                    #88,                                                        ; Pair04
+                    #88,                                                        ; Pair05
+                    #88,                                                        ; Pair06
+                    #88,                                                        ; Pair07
+                    #77,                                                        ; Pair08
+                    #77,                                                        ; Pair09
+                    #00,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F07R11:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #00,                                                        ; Pair01
+                    #00,                                                        ; Pair02
+                    #00,                                                        ; Pair03
+                    #77,                                                        ; Pair04
+                    #77,                                                        ; Pair05
+                    #77,                                                        ; Pair06
+                    #77,                                                        ; Pair07
+                    #00,                                                        ; Pair08
+                    #00,                                                        ; Pair09
+                    #00,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+                ; Кадр 8, 12 строк по 16 байтов.
+Frame08:        FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #00,                                                        ; Pair01
+                    #00,                                                        ; Pair02
+                    #00,                                                        ; Pair03
+                    #66,                                                        ; Pair04
+                    #66,                                                        ; Pair05
+                    #66,                                                        ; Pair06
+                    #66,                                                        ; Pair07
+                    #00,                                                        ; Pair08
+                    #00,                                                        ; Pair09
+                    #00,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F08R01:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #00,                                                        ; Pair01
+                    #66,                                                        ; Pair02
+                    #66,                                                        ; Pair03
+                    #77,                                                        ; Pair04
+                    #77,                                                        ; Pair05
+                    #77,                                                        ; Pair06
+                    #77,                                                        ; Pair07
+                    #66,                                                        ; Pair08
+                    #66,                                                        ; Pair09
+                    #00,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F08R02:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #66,                                                        ; Pair01
+                    #77,                                                        ; Pair02
+                    #77,                                                        ; Pair03
+                    #99,                                                        ; Pair04
+                    #AA,                                                        ; Pair05
+                    #AA,                                                        ; Pair06
+                    #AA,                                                        ; Pair07
+                    #77,                                                        ; Pair08
+                    #77,                                                        ; Pair09
+                    #66,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F08R03:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #66,                                                        ; Pair01
+                    #77,                                                        ; Pair02
+                    #AA,                                                        ; Pair03
+                    #CC,                                                        ; Pair04
+                    #CC,                                                        ; Pair05
+                    #CC,                                                        ; Pair06
+                    #CC,                                                        ; Pair07
+                    #AA,                                                        ; Pair08
+                    #77,                                                        ; Pair09
+                    #66,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F08R04:         FEffectByteRow16 {
+                    #66,                                                        ; Pair00
+                    #77,                                                        ; Pair01
+                    #AA,                                                        ; Pair02
+                    #CC,                                                        ; Pair03
+                    #11,                                                        ; Pair04
+                    #11,                                                        ; Pair05
+                    #11,                                                        ; Pair06
+                    #11,                                                        ; Pair07
+                    #CC,                                                        ; Pair08
+                    #AA,                                                        ; Pair09
+                    #77,                                                        ; Pair10
+                    #66,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F08R05:         FEffectByteRow16 {
+                    #66,                                                        ; Pair00
+                    #77,                                                        ; Pair01
+                    #AA,                                                        ; Pair02
+                    #CC,                                                        ; Pair03
+                    #11,                                                        ; Pair04
+                    #55,                                                        ; Pair05
+                    #55,                                                        ; Pair06
+                    #11,                                                        ; Pair07
+                    #CC,                                                        ; Pair08
+                    #AA,                                                        ; Pair09
+                    #77,                                                        ; Pair10
+                    #66,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F08R06:         FEffectByteRow16 {
+                    #66,                                                        ; Pair00
+                    #77,                                                        ; Pair01
+                    #AA,                                                        ; Pair02
+                    #CC,                                                        ; Pair03
+                    #11,                                                        ; Pair04
+                    #55,                                                        ; Pair05
+                    #55,                                                        ; Pair06
+                    #11,                                                        ; Pair07
+                    #CC,                                                        ; Pair08
+                    #AA,                                                        ; Pair09
+                    #77,                                                        ; Pair10
+                    #66,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F08R07:         FEffectByteRow16 {
+                    #66,                                                        ; Pair00
+                    #77,                                                        ; Pair01
+                    #AA,                                                        ; Pair02
+                    #CC,                                                        ; Pair03
+                    #11,                                                        ; Pair04
+                    #11,                                                        ; Pair05
+                    #11,                                                        ; Pair06
+                    #11,                                                        ; Pair07
+                    #CC,                                                        ; Pair08
+                    #AA,                                                        ; Pair09
+                    #77,                                                        ; Pair10
+                    #66,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F08R08:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #66,                                                        ; Pair01
+                    #77,                                                        ; Pair02
+                    #AA,                                                        ; Pair03
+                    #CC,                                                        ; Pair04
+                    #CC,                                                        ; Pair05
+                    #CC,                                                        ; Pair06
+                    #CC,                                                        ; Pair07
+                    #AA,                                                        ; Pair08
+                    #77,                                                        ; Pair09
+                    #66,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F08R09:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #66,                                                        ; Pair01
+                    #77,                                                        ; Pair02
+                    #77,                                                        ; Pair03
+                    #AA,                                                        ; Pair04
+                    #AA,                                                        ; Pair05
+                    #AA,                                                        ; Pair06
+                    #AA,                                                        ; Pair07
+                    #77,                                                        ; Pair08
+                    #77,                                                        ; Pair09
+                    #66,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F08R10:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #00,                                                        ; Pair01
+                    #66,                                                        ; Pair02
+                    #66,                                                        ; Pair03
+                    #77,                                                        ; Pair04
+                    #77,                                                        ; Pair05
+                    #77,                                                        ; Pair06
+                    #77,                                                        ; Pair07
+                    #66,                                                        ; Pair08
+                    #66,                                                        ; Pair09
+                    #00,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F08R11:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #00,                                                        ; Pair01
+                    #00,                                                        ; Pair02
+                    #00,                                                        ; Pair03
+                    #66,                                                        ; Pair04
+                    #66,                                                        ; Pair05
+                    #66,                                                        ; Pair06
+                    #66,                                                        ; Pair07
+                    #00,                                                        ; Pair08
+                    #00,                                                        ; Pair09
+                    #00,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+                ; Кадр 9, 12 строк по 16 байтов.
+Frame09:        FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #00,                                                        ; Pair01
+                    #00,                                                        ; Pair02
+                    #00,                                                        ; Pair03
+                    #55,                                                        ; Pair04
+                    #55,                                                        ; Pair05
+                    #55,                                                        ; Pair06
+                    #55,                                                        ; Pair07
+                    #00,                                                        ; Pair08
+                    #00,                                                        ; Pair09
+                    #00,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F09R01:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #00,                                                        ; Pair01
+                    #55,                                                        ; Pair02
+                    #55,                                                        ; Pair03
+                    #66,                                                        ; Pair04
+                    #66,                                                        ; Pair05
+                    #66,                                                        ; Pair06
+                    #66,                                                        ; Pair07
+                    #55,                                                        ; Pair08
+                    #55,                                                        ; Pair09
+                    #00,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F09R02:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #55,                                                        ; Pair01
+                    #66,                                                        ; Pair02
+                    #66,                                                        ; Pair03
+                    #88,                                                        ; Pair04
+                    #99,                                                        ; Pair05
+                    #99,                                                        ; Pair06
+                    #99,                                                        ; Pair07
+                    #66,                                                        ; Pair08
+                    #66,                                                        ; Pair09
+                    #55,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F09R03:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #55,                                                        ; Pair01
+                    #66,                                                        ; Pair02
+                    #99,                                                        ; Pair03
+                    #BB,                                                        ; Pair04
+                    #BB,                                                        ; Pair05
+                    #BB,                                                        ; Pair06
+                    #BB,                                                        ; Pair07
+                    #99,                                                        ; Pair08
+                    #66,                                                        ; Pair09
+                    #55,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F09R04:         FEffectByteRow16 {
+                    #55,                                                        ; Pair00
+                    #66,                                                        ; Pair01
+                    #99,                                                        ; Pair02
+                    #BB,                                                        ; Pair03
+                    #DD,                                                        ; Pair04
+                    #DD,                                                        ; Pair05
+                    #DD,                                                        ; Pair06
+                    #DD,                                                        ; Pair07
+                    #BB,                                                        ; Pair08
+                    #99,                                                        ; Pair09
+                    #66,                                                        ; Pair10
+                    #55,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F09R05:         FEffectByteRow16 {
+                    #55,                                                        ; Pair00
+                    #66,                                                        ; Pair01
+                    #99,                                                        ; Pair02
+                    #BB,                                                        ; Pair03
+                    #DD,                                                        ; Pair04
+                    #44,                                                        ; Pair05
+                    #44,                                                        ; Pair06
+                    #DD,                                                        ; Pair07
+                    #BB,                                                        ; Pair08
+                    #99,                                                        ; Pair09
+                    #66,                                                        ; Pair10
+                    #55,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F09R06:         FEffectByteRow16 {
+                    #55,                                                        ; Pair00
+                    #66,                                                        ; Pair01
+                    #99,                                                        ; Pair02
+                    #BB,                                                        ; Pair03
+                    #DD,                                                        ; Pair04
+                    #44,                                                        ; Pair05
+                    #44,                                                        ; Pair06
+                    #DD,                                                        ; Pair07
+                    #BB,                                                        ; Pair08
+                    #99,                                                        ; Pair09
+                    #66,                                                        ; Pair10
+                    #55,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F09R07:         FEffectByteRow16 {
+                    #55,                                                        ; Pair00
+                    #66,                                                        ; Pair01
+                    #99,                                                        ; Pair02
+                    #BB,                                                        ; Pair03
+                    #DD,                                                        ; Pair04
+                    #DD,                                                        ; Pair05
+                    #DD,                                                        ; Pair06
+                    #DD,                                                        ; Pair07
+                    #BB,                                                        ; Pair08
+                    #99,                                                        ; Pair09
+                    #66,                                                        ; Pair10
+                    #55,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F09R08:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #55,                                                        ; Pair01
+                    #66,                                                        ; Pair02
+                    #99,                                                        ; Pair03
+                    #BB,                                                        ; Pair04
+                    #BB,                                                        ; Pair05
+                    #BB,                                                        ; Pair06
+                    #BB,                                                        ; Pair07
+                    #99,                                                        ; Pair08
+                    #66,                                                        ; Pair09
+                    #55,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F09R09:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #55,                                                        ; Pair01
+                    #66,                                                        ; Pair02
+                    #66,                                                        ; Pair03
+                    #99,                                                        ; Pair04
+                    #99,                                                        ; Pair05
+                    #99,                                                        ; Pair06
+                    #99,                                                        ; Pair07
+                    #66,                                                        ; Pair08
+                    #66,                                                        ; Pair09
+                    #55,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F09R10:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #00,                                                        ; Pair01
+                    #55,                                                        ; Pair02
+                    #55,                                                        ; Pair03
+                    #66,                                                        ; Pair04
+                    #66,                                                        ; Pair05
+                    #66,                                                        ; Pair06
+                    #66,                                                        ; Pair07
+                    #55,                                                        ; Pair08
+                    #55,                                                        ; Pair09
+                    #00,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F09R11:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #00,                                                        ; Pair01
+                    #00,                                                        ; Pair02
+                    #00,                                                        ; Pair03
+                    #55,                                                        ; Pair04
+                    #55,                                                        ; Pair05
+                    #55,                                                        ; Pair06
+                    #55,                                                        ; Pair07
+                    #00,                                                        ; Pair08
+                    #00,                                                        ; Pair09
+                    #00,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+                ; Кадр 10, 12 строк по 16 байтов.
+Frame10:        FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #00,                                                        ; Pair01
+                    #00,                                                        ; Pair02
+                    #00,                                                        ; Pair03
+                    #44,                                                        ; Pair04
+                    #44,                                                        ; Pair05
+                    #44,                                                        ; Pair06
+                    #44,                                                        ; Pair07
+                    #00,                                                        ; Pair08
+                    #00,                                                        ; Pair09
+                    #00,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F10R01:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #00,                                                        ; Pair01
+                    #44,                                                        ; Pair02
+                    #44,                                                        ; Pair03
+                    #55,                                                        ; Pair04
+                    #55,                                                        ; Pair05
+                    #55,                                                        ; Pair06
+                    #55,                                                        ; Pair07
+                    #44,                                                        ; Pair08
+                    #44,                                                        ; Pair09
+                    #00,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F10R02:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #44,                                                        ; Pair01
+                    #55,                                                        ; Pair02
+                    #55,                                                        ; Pair03
+                    #77,                                                        ; Pair04
+                    #88,                                                        ; Pair05
+                    #88,                                                        ; Pair06
+                    #88,                                                        ; Pair07
+                    #55,                                                        ; Pair08
+                    #55,                                                        ; Pair09
+                    #44,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F10R03:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #44,                                                        ; Pair01
+                    #55,                                                        ; Pair02
+                    #88,                                                        ; Pair03
+                    #AA,                                                        ; Pair04
+                    #AA,                                                        ; Pair05
+                    #AA,                                                        ; Pair06
+                    #AA,                                                        ; Pair07
+                    #88,                                                        ; Pair08
+                    #55,                                                        ; Pair09
+                    #44,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F10R04:         FEffectByteRow16 {
+                    #44,                                                        ; Pair00
+                    #55,                                                        ; Pair01
+                    #88,                                                        ; Pair02
+                    #AA,                                                        ; Pair03
+                    #CC,                                                        ; Pair04
+                    #CC,                                                        ; Pair05
+                    #CC,                                                        ; Pair06
+                    #CC,                                                        ; Pair07
+                    #AA,                                                        ; Pair08
+                    #88,                                                        ; Pair09
+                    #55,                                                        ; Pair10
+                    #44,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F10R05:         FEffectByteRow16 {
+                    #44,                                                        ; Pair00
+                    #55,                                                        ; Pair01
+                    #88,                                                        ; Pair02
+                    #AA,                                                        ; Pair03
+                    #CC,                                                        ; Pair04
+                    #33,                                                        ; Pair05
+                    #33,                                                        ; Pair06
+                    #CC,                                                        ; Pair07
+                    #AA,                                                        ; Pair08
+                    #88,                                                        ; Pair09
+                    #55,                                                        ; Pair10
+                    #44,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F10R06:         FEffectByteRow16 {
+                    #44,                                                        ; Pair00
+                    #55,                                                        ; Pair01
+                    #88,                                                        ; Pair02
+                    #AA,                                                        ; Pair03
+                    #CC,                                                        ; Pair04
+                    #33,                                                        ; Pair05
+                    #33,                                                        ; Pair06
+                    #CC,                                                        ; Pair07
+                    #AA,                                                        ; Pair08
+                    #88,                                                        ; Pair09
+                    #55,                                                        ; Pair10
+                    #44,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F10R07:         FEffectByteRow16 {
+                    #44,                                                        ; Pair00
+                    #55,                                                        ; Pair01
+                    #88,                                                        ; Pair02
+                    #AA,                                                        ; Pair03
+                    #CC,                                                        ; Pair04
+                    #CC,                                                        ; Pair05
+                    #CC,                                                        ; Pair06
+                    #CC,                                                        ; Pair07
+                    #AA,                                                        ; Pair08
+                    #88,                                                        ; Pair09
+                    #55,                                                        ; Pair10
+                    #44,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F10R08:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #44,                                                        ; Pair01
+                    #55,                                                        ; Pair02
+                    #88,                                                        ; Pair03
+                    #AA,                                                        ; Pair04
+                    #AA,                                                        ; Pair05
+                    #AA,                                                        ; Pair06
+                    #AA,                                                        ; Pair07
+                    #88,                                                        ; Pair08
+                    #55,                                                        ; Pair09
+                    #44,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F10R09:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #44,                                                        ; Pair01
+                    #55,                                                        ; Pair02
+                    #55,                                                        ; Pair03
+                    #88,                                                        ; Pair04
+                    #88,                                                        ; Pair05
+                    #88,                                                        ; Pair06
+                    #88,                                                        ; Pair07
+                    #55,                                                        ; Pair08
+                    #55,                                                        ; Pair09
+                    #44,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F10R10:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #00,                                                        ; Pair01
+                    #44,                                                        ; Pair02
+                    #44,                                                        ; Pair03
+                    #55,                                                        ; Pair04
+                    #55,                                                        ; Pair05
+                    #55,                                                        ; Pair06
+                    #55,                                                        ; Pair07
+                    #44,                                                        ; Pair08
+                    #44,                                                        ; Pair09
+                    #00,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F10R11:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #00,                                                        ; Pair01
+                    #00,                                                        ; Pair02
+                    #00,                                                        ; Pair03
+                    #44,                                                        ; Pair04
+                    #44,                                                        ; Pair05
+                    #44,                                                        ; Pair06
+                    #44,                                                        ; Pair07
+                    #00,                                                        ; Pair08
+                    #00,                                                        ; Pair09
+                    #00,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+                ; Кадр 11, 12 строк по 16 байтов.
+Frame11:        FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #00,                                                        ; Pair01
+                    #00,                                                        ; Pair02
+                    #00,                                                        ; Pair03
+                    #33,                                                        ; Pair04
+                    #33,                                                        ; Pair05
+                    #33,                                                        ; Pair06
+                    #33,                                                        ; Pair07
+                    #00,                                                        ; Pair08
+                    #00,                                                        ; Pair09
+                    #00,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F11R01:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #00,                                                        ; Pair01
+                    #33,                                                        ; Pair02
+                    #33,                                                        ; Pair03
+                    #44,                                                        ; Pair04
+                    #44,                                                        ; Pair05
+                    #44,                                                        ; Pair06
+                    #44,                                                        ; Pair07
+                    #33,                                                        ; Pair08
+                    #33,                                                        ; Pair09
+                    #00,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F11R02:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #33,                                                        ; Pair01
+                    #44,                                                        ; Pair02
+                    #44,                                                        ; Pair03
+                    #66,                                                        ; Pair04
+                    #77,                                                        ; Pair05
+                    #77,                                                        ; Pair06
+                    #77,                                                        ; Pair07
+                    #44,                                                        ; Pair08
+                    #44,                                                        ; Pair09
+                    #33,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F11R03:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #33,                                                        ; Pair01
+                    #44,                                                        ; Pair02
+                    #77,                                                        ; Pair03
+                    #99,                                                        ; Pair04
+                    #99,                                                        ; Pair05
+                    #99,                                                        ; Pair06
+                    #99,                                                        ; Pair07
+                    #77,                                                        ; Pair08
+                    #44,                                                        ; Pair09
+                    #33,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F11R04:         FEffectByteRow16 {
+                    #33,                                                        ; Pair00
+                    #44,                                                        ; Pair01
+                    #77,                                                        ; Pair02
+                    #99,                                                        ; Pair03
+                    #BB,                                                        ; Pair04
+                    #BB,                                                        ; Pair05
+                    #BB,                                                        ; Pair06
+                    #BB,                                                        ; Pair07
+                    #99,                                                        ; Pair08
+                    #77,                                                        ; Pair09
+                    #44,                                                        ; Pair10
+                    #33,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F11R05:         FEffectByteRow16 {
+                    #33,                                                        ; Pair00
+                    #44,                                                        ; Pair01
+                    #77,                                                        ; Pair02
+                    #99,                                                        ; Pair03
+                    #BB,                                                        ; Pair04
+                    #22,                                                        ; Pair05
+                    #22,                                                        ; Pair06
+                    #BB,                                                        ; Pair07
+                    #99,                                                        ; Pair08
+                    #77,                                                        ; Pair09
+                    #44,                                                        ; Pair10
+                    #33,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F11R06:         FEffectByteRow16 {
+                    #33,                                                        ; Pair00
+                    #44,                                                        ; Pair01
+                    #77,                                                        ; Pair02
+                    #99,                                                        ; Pair03
+                    #BB,                                                        ; Pair04
+                    #22,                                                        ; Pair05
+                    #22,                                                        ; Pair06
+                    #BB,                                                        ; Pair07
+                    #99,                                                        ; Pair08
+                    #77,                                                        ; Pair09
+                    #44,                                                        ; Pair10
+                    #33,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F11R07:         FEffectByteRow16 {
+                    #33,                                                        ; Pair00
+                    #44,                                                        ; Pair01
+                    #77,                                                        ; Pair02
+                    #99,                                                        ; Pair03
+                    #BB,                                                        ; Pair04
+                    #BB,                                                        ; Pair05
+                    #BB,                                                        ; Pair06
+                    #BB,                                                        ; Pair07
+                    #99,                                                        ; Pair08
+                    #77,                                                        ; Pair09
+                    #44,                                                        ; Pair10
+                    #33,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F11R08:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #33,                                                        ; Pair01
+                    #44,                                                        ; Pair02
+                    #77,                                                        ; Pair03
+                    #99,                                                        ; Pair04
+                    #99,                                                        ; Pair05
+                    #99,                                                        ; Pair06
+                    #99,                                                        ; Pair07
+                    #77,                                                        ; Pair08
+                    #44,                                                        ; Pair09
+                    #33,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F11R09:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #33,                                                        ; Pair01
+                    #44,                                                        ; Pair02
+                    #44,                                                        ; Pair03
+                    #77,                                                        ; Pair04
+                    #77,                                                        ; Pair05
+                    #77,                                                        ; Pair06
+                    #77,                                                        ; Pair07
+                    #44,                                                        ; Pair08
+                    #44,                                                        ; Pair09
+                    #33,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F11R10:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #00,                                                        ; Pair01
+                    #33,                                                        ; Pair02
+                    #33,                                                        ; Pair03
+                    #44,                                                        ; Pair04
+                    #44,                                                        ; Pair05
+                    #44,                                                        ; Pair06
+                    #44,                                                        ; Pair07
+                    #33,                                                        ; Pair08
+                    #33,                                                        ; Pair09
+                    #00,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F11R11:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #00,                                                        ; Pair01
+                    #00,                                                        ; Pair02
+                    #00,                                                        ; Pair03
+                    #33,                                                        ; Pair04
+                    #33,                                                        ; Pair05
+                    #33,                                                        ; Pair06
+                    #33,                                                        ; Pair07
+                    #00,                                                        ; Pair08
+                    #00,                                                        ; Pair09
+                    #00,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+                ; Кадр 12, 12 строк по 16 байтов.
+Frame12:        FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #00,                                                        ; Pair01
+                    #00,                                                        ; Pair02
+                    #00,                                                        ; Pair03
+                    #22,                                                        ; Pair04
+                    #22,                                                        ; Pair05
+                    #22,                                                        ; Pair06
+                    #22,                                                        ; Pair07
+                    #00,                                                        ; Pair08
+                    #00,                                                        ; Pair09
+                    #00,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F12R01:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #00,                                                        ; Pair01
+                    #22,                                                        ; Pair02
+                    #22,                                                        ; Pair03
+                    #33,                                                        ; Pair04
+                    #33,                                                        ; Pair05
+                    #33,                                                        ; Pair06
+                    #33,                                                        ; Pair07
+                    #22,                                                        ; Pair08
+                    #22,                                                        ; Pair09
+                    #00,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F12R02:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #22,                                                        ; Pair01
+                    #33,                                                        ; Pair02
+                    #33,                                                        ; Pair03
+                    #55,                                                        ; Pair04
+                    #66,                                                        ; Pair05
+                    #66,                                                        ; Pair06
+                    #66,                                                        ; Pair07
+                    #33,                                                        ; Pair08
+                    #33,                                                        ; Pair09
+                    #22,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F12R03:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #22,                                                        ; Pair01
+                    #33,                                                        ; Pair02
+                    #66,                                                        ; Pair03
+                    #88,                                                        ; Pair04
+                    #88,                                                        ; Pair05
+                    #88,                                                        ; Pair06
+                    #88,                                                        ; Pair07
+                    #66,                                                        ; Pair08
+                    #33,                                                        ; Pair09
+                    #22,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F12R04:         FEffectByteRow16 {
+                    #22,                                                        ; Pair00
+                    #33,                                                        ; Pair01
+                    #66,                                                        ; Pair02
+                    #88,                                                        ; Pair03
+                    #AA,                                                        ; Pair04
+                    #AA,                                                        ; Pair05
+                    #AA,                                                        ; Pair06
+                    #AA,                                                        ; Pair07
+                    #88,                                                        ; Pair08
+                    #66,                                                        ; Pair09
+                    #33,                                                        ; Pair10
+                    #22,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F12R05:         FEffectByteRow16 {
+                    #22,                                                        ; Pair00
+                    #33,                                                        ; Pair01
+                    #66,                                                        ; Pair02
+                    #88,                                                        ; Pair03
+                    #AA,                                                        ; Pair04
+                    #11,                                                        ; Pair05
+                    #11,                                                        ; Pair06
+                    #AA,                                                        ; Pair07
+                    #88,                                                        ; Pair08
+                    #66,                                                        ; Pair09
+                    #33,                                                        ; Pair10
+                    #22,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F12R06:         FEffectByteRow16 {
+                    #22,                                                        ; Pair00
+                    #33,                                                        ; Pair01
+                    #66,                                                        ; Pair02
+                    #88,                                                        ; Pair03
+                    #AA,                                                        ; Pair04
+                    #11,                                                        ; Pair05
+                    #11,                                                        ; Pair06
+                    #AA,                                                        ; Pair07
+                    #88,                                                        ; Pair08
+                    #66,                                                        ; Pair09
+                    #33,                                                        ; Pair10
+                    #22,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F12R07:         FEffectByteRow16 {
+                    #22,                                                        ; Pair00
+                    #33,                                                        ; Pair01
+                    #66,                                                        ; Pair02
+                    #88,                                                        ; Pair03
+                    #AA,                                                        ; Pair04
+                    #AA,                                                        ; Pair05
+                    #AA,                                                        ; Pair06
+                    #AA,                                                        ; Pair07
+                    #88,                                                        ; Pair08
+                    #66,                                                        ; Pair09
+                    #33,                                                        ; Pair10
+                    #22,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F12R08:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #22,                                                        ; Pair01
+                    #33,                                                        ; Pair02
+                    #66,                                                        ; Pair03
+                    #88,                                                        ; Pair04
+                    #88,                                                        ; Pair05
+                    #88,                                                        ; Pair06
+                    #88,                                                        ; Pair07
+                    #66,                                                        ; Pair08
+                    #33,                                                        ; Pair09
+                    #22,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F12R09:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #22,                                                        ; Pair01
+                    #33,                                                        ; Pair02
+                    #33,                                                        ; Pair03
+                    #66,                                                        ; Pair04
+                    #66,                                                        ; Pair05
+                    #66,                                                        ; Pair06
+                    #66,                                                        ; Pair07
+                    #33,                                                        ; Pair08
+                    #33,                                                        ; Pair09
+                    #22,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F12R10:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #00,                                                        ; Pair01
+                    #22,                                                        ; Pair02
+                    #22,                                                        ; Pair03
+                    #33,                                                        ; Pair04
+                    #33,                                                        ; Pair05
+                    #33,                                                        ; Pair06
+                    #33,                                                        ; Pair07
+                    #22,                                                        ; Pair08
+                    #22,                                                        ; Pair09
+                    #00,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+F12R11:         FEffectByteRow16 {
+                    #00,                                                        ; Pair00
+                    #00,                                                        ; Pair01
+                    #00,                                                        ; Pair02
+                    #00,                                                        ; Pair03
+                    #22,                                                        ; Pair04
+                    #22,                                                        ; Pair05
+                    #22,                                                        ; Pair06
+                    #22,                                                        ; Pair07
+                    #00,                                                        ; Pair08
+                    #00,                                                        ; Pair09
+                    #00,                                                        ; Pair10
+                    #00,                                                        ; Pair11
+                    #00,                                                        ; Pair12
+                    #00,                                                        ; Pair13
+                    #00,                                                        ; Pair14
+                    #00                                                         ; Pair15
+                }
+                assert $ == #E1C0
+                endmodule

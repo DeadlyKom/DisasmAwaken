@@ -3,15 +3,32 @@
 ; логическая длина 119, полный секторный размер 11520
 ; -----------------------------------------
                 assert $ == #0000
-                ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/03_AWAKEN/Unclassified000.bin"
+                disp #5D3B
+                include "../Basic/Data/Prefix.asm"
+                ent
                 assert $ == #0006
-                disp #5CD1
+                disp #5D41
                 include "../Basic/ReadIntroSectors.asm"
                 ent
                 assert $ == #001E
-                ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/03_AWAKEN/Unclassified001.bin"
+                disp #5D59
+                include "../Basic/Data/Line10Tail.asm"
+                ent
+                assert $ == #0065
+                disp #5DA0
+                include "../Basic/Data/EntryLine.asm"
+                ent
+                assert $ == #0077
+                ; Секторные байты после логического BASIC не относятся к загружаемой программе.
+                include "../Basic/Data/Autostart.asm"
+                assert $ == #007B
+                ; Следующие 133 байта имеют неизвестное назначение и сохраняются без изменений.
+                incbin "../Resources/03_AWAKEN/UnknownAfterBasicAutostart.bin"
+                assert $ == #0100
+                ; Эта страница читается вместе со вступлением по адресу 6400 отдельным дисковым вызовом.
+                disp #6400
+                include "../Intro/Data/CoordinateSeed.asm"
+                ent
                 assert $ == #0200
                 disp #6500
                 include "../Intro/InitializeIntro.asm"
@@ -24,22 +41,27 @@
                 include "../Intro/LoadStation.asm"
                 ent
                 assert $ == #0315
-                ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/03_AWAKEN/Unclassified003.bin"
+                disp #6615
+                include "../Intro/Data/StationFileKey.asm"
+                ent
                 assert $ == #031E
                 disp #661E
                 include "../Intro/DrawFinalTextureFrame.asm"
                 ent
                 assert $ == #032C
-                ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/03_AWAKEN/Unclassified004.bin"
+                disp #662C
+                include "../Intro/Data/FinalTexturePhases.asm"
+                ent
                 assert $ == #0338
                 disp #6638
                 include "../Intro/BuildAlternatingTexture.asm"
                 ent
                 assert $ == #0363
-                ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/03_AWAKEN/Unclassified005.bin"
+                disp #6663
+                include "../Intro/Data/AlternatingLookup.asm"
+                ent
+                ; Назначение соседнего байта 66A2 ещё не установлено.
+                incbin "../Resources/03_AWAKEN/UnknownAfterLookupParameters.bin"
                 assert $ == #03A3
                 disp #66A3
                 include "../Intro/DrawScrolledTexture.asm"
@@ -97,8 +119,9 @@
                 include "../Intro/PresentAttributes.asm"
                 ent
                 assert $ == #0693
-                ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/03_AWAKEN/Unclassified006.bin"
+                disp #6993
+                include "../Intro/Data/AttributeNibbleSeeds.asm"
+                ent
                 assert $ == #06A3
                 disp #69A3
                 include "../Intro/BuildPairedPointers.asm"
@@ -156,8 +179,9 @@
                 include "../IntroTemplates/ColumnSample.asm"
                 ent
                 assert $ == #0873
-                ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/03_AWAKEN/Unclassified007.bin"
+                disp #6B73
+                include "../Intro/Data/ColumnTailSamples.asm"
+                ent
                 assert $ == #0893
                 disp #6B93
                 include "../Intro/DrawLookupTextureFrame.asm"                   ; (0) жёсткий порядок, последовательное исполнение
@@ -191,8 +215,9 @@
                 include "../Intro/SelectTexturePointerRow.asm"                  ; (1) жёсткий порядок, последовательное исполнение
                 ent
                 assert $ == #0962
-                ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/03_AWAKEN/Unclassified008.bin"
+                disp #6C62
+                include "../Intro/Data/ScaleCycle.asm"
+                ent
                 assert $ == #098A
                 disp #6C8A
                 include "../Intro/Data/TexturePhases.asm"
@@ -222,13 +247,20 @@
                 include "../Intro/BuildMirroredTexture.asm"
                 ent
                 assert $ == #0B31
-                ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/03_AWAKEN/Unclassified009.bin"
+                ; Начальный экран до переноса распаковщика, 6144 bitmap и 768 атрибутов.
+                incbin "../Intro/Data/InitialScreenBitmap.bin"
+                assert $ == #2331
+                disp #8631
+                include "../Intro/Data/InitialScreenAttributes.asm"
+                ent
                 assert $ == #2631
                 disp #6E31
                 include "../IntroUnpack/UnpackScreen.asm"
                 ent
                 assert $ == #26CB
-                ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/03_AWAKEN/Unclassified010.bin"
+                ; Поток после кода распаковщика, он переносится по адресу 6ECB.
+                incbin "../Intro/Data/StationScreenPacked.bin"
+                assert $ == #2C6B
+                ; Следующие 149 байтов не читаются установленным экранным потоком.
+                incbin "../Resources/03_AWAKEN/UnknownAfterStationScreen.bin"
                 assert $ == #2D00

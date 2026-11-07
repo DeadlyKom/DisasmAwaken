@@ -26,6 +26,6 @@ def name_operands(region, address, operation):
     if region != 'Action' or address not in (0xEF7D, 0xEF9A):
         return operation
     operation = operation.replace('IX+#', 'IX + #')
-    for literal, field in (('07', 'Unknown07'), ('0A', 'Unknown0A'), ('16', 'Unknown16'), ('17', 'Unknown17')):
+    for literal, field in (('07', 'OffsetPhase0'), ('0A', 'StateCode'), ('16', 'SavedStateCode'), ('17', 'PhaseMoveTimer')):
         operation = operation.replace('IX + #'+literal, 'IX + @FActionRecord.'+field)
     return operation.replace('#F0F8', '@Action.PrepareObjectOffsetTransform.Entry')

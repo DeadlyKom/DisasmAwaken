@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "total_cases": 8,
+  "entire_texture_compared": true,
+  "generated_code_compared": true,
+  "all_column_tables_compared": true,
+  "output_registers_compared": true,
+  "actual_rom_and_attribute_writer_executed": true,
+  "assembly_executed": false
+}

@@ -112,7 +112,12 @@
                 include "../D3D/Data/FoldedSquare127.asm"
                 ent
                 assert $ == #0400
-                incbin "../Resources/06_D3D/BeforeProjectedVertices.bin"
+                disp #C400
+                include "../D3D/Data/SineTable.asm"
+                ent
+                assert $ == #0500
+                ; Следующая страница сохраняет неизвестное назначение.
+                incbin "../Resources/06_D3D/UnknownAfterSine.bin"
                 assert $ == #0600
                 disp #C600
                 include "../D3D/Data/PreviewProjectedVertices.asm"

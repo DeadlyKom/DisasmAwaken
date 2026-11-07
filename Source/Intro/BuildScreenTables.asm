@@ -1,6 +1,8 @@
                 module Intro
                 module BuildScreenTables
 ; Документация [Intro](../../Docs/FunctionDetails/Intro.md)
+                ; Исходные отсчёты [координатная таблица](../../Docs/IntroCoordinateSeed.md)
+                ; Имена внутренних входов [алгоритмы вступления](../../Docs/IntroInternalLabels.md)
 ; -----------------------------------------
 ; Построение таблиц адресов экранных строк и зеркальной половины таблицы
 ; исходная запись 3, файловые смещения #06B6..#06FD
@@ -16,17 +18,17 @@
 ; -----------------------------------------
 Entry:          LD HL, #647F
                 LD DE, #6481
-Point69BC:      LD A, (HL)
+MirrorIndex:    LD A, (HL)
                 LD (DE), A
                 DEC L
                 INC E
-                JR NZ, @Intro.BuildScreenTables.Point69BC                       ; переход, если зеркальная половина таблицы ещё не заполнена
+                JR NZ, @Intro.BuildScreenTables.MirrorIndex                     ; переход, если зеркальная половина таблицы ещё не заполнена
 
 
                 LD HL, #6000
                 LD DE, #4000
                 LD B, #10
-Point69CA:      INC L
+FirstTableRow:  INC L
                 INC L
                 LD (HL), E
                 INC L
@@ -43,18 +45,18 @@ Point69CA:      INC L
                 LD A, E
                 ADD A, #20
                 LD E, A
-                JR NC, @Intro.BuildScreenTables.Point69E3                       ; переход, если переход к следующему знакоместу не переполнил E
+                JR NC, @Intro.BuildScreenTables.CountFirstRow                   ; переход, если переход к следующему знакоместу не переполнил E
 
 
                 LD A, D
                 ADD A, #08
                 LD D, A
-Point69E3:      DJNZ @Intro.BuildScreenTables.Point69CA
+CountFirstRow:  DJNZ @Intro.BuildScreenTables.FirstTableRow
 
                 LD HL, #6000
                 LD DE, #6100
                 LD B, #20
-Point69ED:      INC L
+SecondTableRow: INC L
                 INC L
                 INC E
                 INC E
@@ -67,7 +69,7 @@ Point69ED:      INC L
                 LD (DE), A
                 INC L
                 INC E
-                DJNZ @Intro.BuildScreenTables.Point69ED
+                DJNZ @Intro.BuildScreenTables.SecondTableRow
 
                 RET
 

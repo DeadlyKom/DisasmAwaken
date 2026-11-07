@@ -32,14 +32,14 @@ Entry:          LD HL, @Station.EmptyCallback.Entry
                 ; поиск закрываемых элементов в физическом списке рисования
                 LD IX, @StationState.DrawList
                 ; проверка старшего байта очередной обёртки на ограничитель списка
-NextDraw:       LD H, (IX + #01)
+NextDraw:       LD H, (IX + @FDrawListEntry.Handler + 1)
                 DEC H
                 RET Z                                                           ; выход, если старший байт указателя равен 1, список завершён
 
                 ; восстановление старшего байта обёртки после проверки ограничителя
                 INC H
                 ; чтение указателя обёртки и индекса из её непосредственного операнда
-                LD L, (IX + #00)
+                LD L, (IX + @FDrawListEntry.Handler)
                 INC HL
                 LD A, (HL)
                 INC HL
@@ -65,7 +65,7 @@ NextDraw:       LD H, (IX + #01)
                 JR NZ, @Station.CloseAllItems.NextDraw                          ; переход, если хотя бы один из битов 6 и 5 сброшен, сохранить этот элемент
 
                 ; удаление элемента со сдвигом оставшейся части списка
-RemoveDraw:     CALL #C873
+RemoveDraw:     CALL @Station.DropItemDraw.Entry
                 ; возврат к сдвинувшейся на прежнее место паре для повторной проверки
                 DEC IX
                 DEC IX

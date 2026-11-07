@@ -102,6 +102,14 @@
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
+## RasterizeSprite
+
+[Voxel.RasterizeSprite](../../Source/Voxel/RasterizeSprite.asm)
+
+Развёрнутый проход по парам кодов спрайта с маскированием прозрачных половин и шагом по строкам.
+
+[Схема групп и проверки](../VoxelSpriteClipBounds.md).
+
 ## Multiply7BitWord
 
 [Voxel.Multiply7BitWord](../../Source/Voxel/Multiply7BitWord.asm)
@@ -129,3 +137,15 @@
 - Непосредственные записи: нет непосредственных обращений.
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
+
+## ProjectEffectPoint
+
+[Voxel.ProjectEffectPoint](../../Source/Voxel/ProjectEffectPoint.asm)
+
+Проекция точки эффекта с двумя знаковыми поправками.
+
+## DrawProjectedEffect
+
+[Voxel.DrawProjectedEffect](../../Source/Voxel/DrawProjectedEffect.asm)
+
+Проекция двух углов эффекта и передача прямоугольника на отсечение.

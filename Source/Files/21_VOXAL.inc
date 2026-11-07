@@ -23,8 +23,9 @@
                 include "../Voxel/ClipSprite.asm"
                 ent
                 assert $ == #027A
-                ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/21_VOXAL/Unclassified000.bin"
+                disp #EE7A
+                include "../Voxel/RasterizeSprite.asm"
+                ent
                 assert $ == #0D31
                 disp #F931
                 include "../Voxel/Multiply7BitWord.asm"
@@ -34,6 +35,14 @@
                 include "../Voxel/Divide7BitFixed.asm"
                 ent
                 assert $ == #0DE9
-                ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/21_VOXAL/Unclassified001.bin"
+                disp #F9E9
+                include "../Voxel/ProjectEffectPoint.asm"
+                ent
+                assert $ == #0E3A
+                disp #FA3A
+                include "../Voxel/DrawProjectedEffect.asm"
+                ent
+                assert $ == #0EC8
+                ; Хвост последнего физического сектора после логического конца файла.
+                incbin "../Resources/21_VOXAL/SectorTail.bin"
                 assert $ == #0F00

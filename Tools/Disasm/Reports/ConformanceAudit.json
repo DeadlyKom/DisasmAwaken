@@ -1,564 +1,195 @@
 {
   "method": "static_source_audit_without_assembly",
-  "included_text_files": 1659,
-  "included_binary_files": 221,
-  "registered_functions": 1331,
+  "modified_code_path_errors": [],
+  "modified_code_physical_target_ranges": 305,
+  "unregistered_object_state_callbacks": [
+    {
+      "state": 0,
+      "target": 63103,
+      "registered": false,
+      "function": null,
+      "physical_path": "Source/Resources/17_ACTION/Unclassified051.bin",
+      "physical_kind": "unclassified"
+    },
+    {
+      "state": 1,
+      "target": 61630,
+      "registered": false,
+      "function": null,
+      "physical_path": "Source/Resources/17_ACTION/Unclassified045_BeforeActionObjectOffsetTransfer.bin",
+      "physical_kind": "unclassified"
+    },
+    {
+      "state": 2,
+      "target": 61752,
+      "registered": false,
+      "function": null,
+      "physical_path": "Source/Resources/17_ACTION/Unclassified045_AfterActionObjectOffsetTransfer_BeforeActionSelectedRecordStep_BeforeActionClass18Proximity.bin",
+      "physical_kind": "unclassified"
+    },
+    {
+      "state": 3,
+      "target": 61569,
+      "registered": false,
+      "function": null,
+      "physical_path": "Source/Resources/17_ACTION/Unclassified045_BeforeActionObjectOffsetTransfer.bin",
+      "physical_kind": "unclassified"
+    },
+    {
+      "state": 4,
+      "target": 63147,
+      "registered": false,
+      "function": null,
+      "physical_path": "Source/Resources/17_ACTION/Unclassified051.bin",
+      "physical_kind": "unclassified"
+    },
+    {
+      "state": 5,
+      "target": 62089,
+      "registered": false,
+      "function": null,
+      "physical_path": "Source/Resources/17_ACTION/Unclassified045_AfterActionObjectOffsetTransfer_BeforeActionSelectedRecordStep_BeforeActionClass18Proximity.bin",
+      "physical_kind": "unclassified"
+    },
+    {
+      "state": 6,
+      "target": 63212,
+      "registered": false,
+      "function": null,
+      "physical_path": "Source/Resources/17_ACTION/Unclassified051.bin",
+      "physical_kind": "unclassified"
+    },
+    {
+      "state": 7,
+      "target": 63082,
+      "registered": false,
+      "function": null,
+      "physical_path": "Source/Resources/17_ACTION/Unclassified051.bin",
+      "physical_kind": "unclassified"
+    },
+    {
+      "state": 8,
+      "target": 62847,
+      "registered": false,
+      "function": null,
+      "physical_path": "Source/Resources/17_ACTION/Unclassified051.bin",
+      "physical_kind": "unclassified"
+    },
+    {
+      "state": 10,
+      "target": 62620,
+      "registered": false,
+      "function": null,
+      "physical_path": "Source/Resources/17_ACTION/Unclassified046.bin",
+      "physical_kind": "unclassified"
+    },
+    {
+      "state": 11,
+      "target": 62448,
+      "registered": false,
+      "function": null,
+      "physical_path": "Source/Resources/17_ACTION/Unclassified046.bin",
+      "physical_kind": "unclassified"
+    },
+    {
+      "state": 14,
+      "target": 61449,
+      "registered": false,
+      "function": null,
+      "physical_path": "Source/Resources/17_ACTION/AfterObjectStateHandlers_AfterActionObjectOffsetRise_AfterActionObjectOffsetFall_AfterActionObjectPhaseWait.bin",
+      "physical_kind": "unclassified"
+    },
+    {
+      "state": 15,
+      "target": 61564,
+      "registered": false,
+      "function": null,
+      "physical_path": "Source/Resources/17_ACTION/Unclassified045_BeforeActionObjectOffsetTransfer.bin",
+      "physical_kind": "unclassified"
+    },
+    {
+      "state": 16,
+      "target": 62408,
+      "registered": false,
+      "function": null,
+      "physical_path": "Source/Resources/17_ACTION/Unclassified046.bin",
+      "physical_kind": "unclassified"
+    },
+    {
+      "state": 17,
+      "target": 62369,
+      "registered": false,
+      "function": null,
+      "physical_path": "Source/Resources/17_ACTION/Unclassified046.bin",
+      "physical_kind": "unclassified"
+    },
+    {
+      "state": 18,
+      "target": 63165,
+      "registered": false,
+      "function": null,
+      "physical_path": "Source/Resources/17_ACTION/Unclassified051.bin",
+      "physical_kind": "unclassified"
+    }
+  ],
+  "unregistered_object_state_callback_count": 16,
+  "registered_object_state_callbacks": 6,
+  "included_text_files": 1886,
+  "included_binary_files": 277,
+  "registered_functions": 1345,
   "unlinked_functions": [],
   "missing_includes_or_resources": [],
   "missing_include_order": [],
-  "global_definitions": 27939,
-  "global_references": 14397,
+  "global_definitions": 59331,
+  "global_references": 14896,
   "unresolved_global_references": [],
   "duplicate_global_definitions": [],
   "global_reference_case_mismatches": [],
   "source_files_outside_graph": [],
   "unknown_fragments": 2,
-  "unknown_contract_fragments": 20,
+  "unknown_contract_fragments": 1,
   "unknown_contract_files": [
-    "Source/Intro/InitializeIntro.asm",
-    "Source/Intro/LoadStation.asm",
-    "Source/Intro/DrawFinalTextureFrame.asm",
-    "Source/Intro/DrawScrolledTexture.asm",
-    "Source/Intro/InitializeScrolledTexture.asm",
-    "Source/Intro/InitializeColumnEffect.asm",
-    "Source/Intro/DrawLookupTextureFrame.asm",
-    "Source/Intro/InitializeLookupEffect.asm",
-    "Source/Intro/BuildMirroredTexture.asm",
-    "Source/StationBoot/InitializeStation.asm",
-    "Source/ActionBoot/InitializeFlight.asm",
-    "Source/Action/StartFlight.asm",
-    "Source/Action/MainLoop.asm",
-    "Source/Action/UpdateFrame.asm",
-    "Source/Action/UnknownCF08.asm",
-    "Source/Action/UpdateObjects.asm",
-    "Source/ThreeD/UnknownCF08.asm",
-    "Source/Voxel/ClipSprite.asm",
-    "Source/Controls/RunTemporaryModule.asm",
-    "Source/Final/InitializeFinal.asm"
+    "Source/Controls/RunTemporaryModule.asm"
   ],
-  "named_fragments_without_proved_contract": 18,
+  "named_fragments_without_proved_contract": 1,
   "original_profile_only_contracts": 0,
   "runtime_profile_limits": "See RuntimeProfileQualification.json and Docs/MapRuntimeProfiles.md, whole game remains unproved",
   "pending_by_region": {
     "Action": 1,
     "ThreeD": 1
   },
-  "potential_continuations": 152,
-  "ordered_fragments": 272,
-  "python_scripts_parsed": 2624,
+  "potential_continuations": 153,
+  "ordered_fragments": 274,
+  "python_scripts_parsed": 2854,
   "python_duplicate_literal_keys": [],
   "totals": {
-    "address_label": 183,
-    "numeric_control_target": 75,
-    "numeric_index_operand": 149,
-    "condition_without_data_semantics": 152,
-    "right_comment_column": 1,
-    "conditional_without_right_comment": 8
+    "numeric_control_target": 20,
+    "numeric_index_operand": 45
   },
   "findings": [
     {
       "path": "Source/Intro/InitializeIntro.asm",
-      "line": 85,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Intro/InitializeIntro.asm",
-      "line": 85,
+      "line": 91,
       "issue": "numeric_control_target"
     },
     {
-      "path": "Source/Intro/LoadStation.asm",
-      "line": 17,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/Intro/BuildAlternatingTexture.asm",
-      "line": 25,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Intro/BuildAlternatingTexture.asm",
-      "line": 27,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Intro/ExpandTextureRows.asm",
-      "line": 23,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Intro/ExpandTextureRows.asm",
-      "line": 26,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Intro/ExpandTextureRows.asm",
-      "line": 40,
-      "issue": "address_label"
-    },
-    {
       "path": "Source/Intro/BuildTextureLookup.asm",
-      "line": 41,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Intro/BuildTextureLookup.asm",
-      "line": 59,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Intro/BuildTextureLookup.asm",
-      "line": 70,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Intro/BuildTextureLookup.asm",
-      "line": 75,
+      "line": 76,
       "issue": "numeric_index_operand"
     },
     {
-      "path": "Source/Intro/BuildTextureLookup.asm",
-      "line": 95,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Intro/BuildTextureLookup.asm",
-      "line": 96,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Intro/BuildTextureLookup.asm",
-      "line": 111,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Intro/BuildAttributeWriter.asm",
-      "line": 39,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Intro/BuildAttributeWriter.asm",
-      "line": 42,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Intro/CombineAttributeNibbles.asm",
-      "line": 18,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Intro/CombineAttributeNibbles.asm",
-      "line": 25,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Intro/BuildScreenTables.asm",
-      "line": 19,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Intro/BuildScreenTables.asm",
-      "line": 29,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Intro/BuildScreenTables.asm",
-      "line": 52,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Intro/BuildScreenTables.asm",
-      "line": 57,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Intro/RepeatPattern.asm",
-      "line": 18,
-      "issue": "address_label"
-    },
-    {
       "path": "Source/Intro/RunTimedEffect.asm",
-      "line": 20,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Intro/RunTimedEffect.asm",
-      "line": 31,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/Intro/FillBitmap.asm",
-      "line": 19,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Intro/FillBitmap.asm",
-      "line": 99,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Intro/InitializeColumnEffect.asm",
-      "line": 33,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Intro/InitializeColumnEffect.asm",
-      "line": 37,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Intro/InitializeColumnEffect.asm",
-      "line": 43,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Intro/InitializeColumnEffect.asm",
-      "line": 48,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Intro/InitializeColumnEffect.asm",
-      "line": 48,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Intro/InitializeColumnEffect.asm",
-      "line": 64,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Intro/InitializeColumnEffect.asm",
-      "line": 81,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Intro/InitializeColumnEffect.asm",
-      "line": 83,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Intro/InitializeLookupEffect.asm",
-      "line": 47,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Intro/InitializeLookupEffect.asm",
-      "line": 48,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Intro/InitializeLookupEffect.asm",
-      "line": 70,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Intro/InitializeLookupEffect.asm",
-      "line": 95,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Intro/InitializeLookupEffect.asm",
-      "line": 97,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Intro/InitializeLookupEffect.asm",
-      "line": 103,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Intro/InitializeLookupEffect.asm",
-      "line": 109,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Intro/InitializeLookupEffect.asm",
-      "line": 125,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Intro/InitializeLookupEffect.asm",
-      "line": 130,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Intro/BuildIntroTexture.asm",
-      "line": 23,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Intro/BuildMirroredTexture.asm",
-      "line": 40,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Intro/BuildMirroredTexture.asm",
-      "line": 50,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Intro/BuildMirroredTexture.asm",
-      "line": 66,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/StationBoot/InitializeStation.asm",
-      "line": 26,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/StationBoot/InitializeStation.asm",
-      "line": 33,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/StationBoot/StartStation.asm",
-      "line": 22,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/StationBoot/StartStation.asm",
       "line": 32,
       "issue": "numeric_control_target"
     },
     {
-      "path": "Source/StationBoot/StartStation.asm",
-      "line": 41,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/StationBoot/StartStation.asm",
-      "line": 43,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/StationBoot/StartStation.asm",
-      "line": 53,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/StationBoot/StartStation.asm",
-      "line": 78,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/StationBoot/StartStation.asm",
-      "line": 88,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/StationBoot/StartStation.asm",
-      "line": 109,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/StationBoot/StartStation.asm",
-      "line": 110,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/StationBoot/StartStation.asm",
-      "line": 118,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/StationBoot/StartStation.asm",
-      "line": 148,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/StationBoot/StartStation.asm",
-      "line": 154,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/StationBoot/StartStation.asm",
-      "line": 173,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/StationBoot/StartStation.asm",
-      "line": 180,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/StationBoot/StartStation.asm",
-      "line": 186,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/StationBoot/StartStation.asm",
-      "line": 192,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/StationBoot/StartStation.asm",
-      "line": 193,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/StationBoot/StartStation.asm",
-      "line": 199,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/StationBoot/StartStation.asm",
-      "line": 200,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/StationBoot/StartStation.asm",
-      "line": 206,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/StationBoot/StartStation.asm",
-      "line": 226,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/StationBoot/StartStation.asm",
-      "line": 230,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/StationBoot/StartStation.asm",
-      "line": 240,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/StationBoot/StartStation.asm",
-      "line": 244,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/StationBoot/StartStation.asm",
-      "line": 248,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/StationBoot/StartStation.asm",
-      "line": 252,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/StationBoot/StartStation.asm",
-      "line": 267,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/StationBoot/StartStation.asm",
-      "line": 271,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/StationBoot/StartStation.asm",
-      "line": 271,
+      "path": "Source/Intro/InitializeColumnEffect.asm",
+      "line": 51,
       "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/StationBoot/StartStation.asm",
-      "line": 273,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/StationBoot/StartStation.asm",
-      "line": 276,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/StationBoot/StartStation.asm",
-      "line": 277,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/StationBoot/StartStation.asm",
-      "line": 287,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/StationBoot/StartStation.asm",
-      "line": 289,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/StationBoot/StartStation.asm",
-      "line": 304,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/StationBoot/StartStation.asm",
-      "line": 307,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/StationBoot/StartStation.asm",
-      "line": 309,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/StationBoot/StartStation.asm",
-      "line": 316,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/Station/HandleShipListHover.asm",
-      "line": 31,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/Station/HandleHelpIndexHover.asm",
-      "line": 31,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/Station/HandleEquipmentListHover.asm",
-      "line": 31,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/Station/HandleSaveSlotHover.asm",
-      "line": 30,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/Station/HandleLoadSlotHover.asm",
-      "line": 30,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/Station/ActivateContextMenu.asm",
-      "line": 36,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/Station/ActivateContextMenu.asm",
-      "line": 42,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/Station/ActivateContextMenu.asm",
-      "line": 80,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/Station/TryDrawVariantPanel.asm",
-      "line": 22,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/Station/HandleItem08.asm",
-      "line": 98,
-      "issue": "numeric_control_target"
     },
     {
       "path": "Source/Station/Interrupt.asm",
       "line": 237,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/Station/RemoveOtherPopups.asm",
-      "line": 79,
       "issue": "numeric_control_target"
     },
     {
@@ -602,41 +233,6 @@
       "issue": "numeric_control_target"
     },
     {
-      "path": "Source/Station/CloseAllItems.asm",
-      "line": 35,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Station/CloseAllItems.asm",
-      "line": 42,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Station/CloseAllItems.asm",
-      "line": 68,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/Station/ArrangeAllItems.asm",
-      "line": 19,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/Station/OpenEnvOptions.asm",
-      "line": 21,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/Station/OpenGameOptions.asm",
-      "line": 21,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/Station/OpenRestoreDialog.asm",
-      "line": 21,
-      "issue": "numeric_control_target"
-    },
-    {
       "path": "Source/Station/GenerateMarket.asm",
       "line": 212,
       "issue": "numeric_index_operand"
@@ -648,28 +244,8 @@
     },
     {
       "path": "Source/Station/DrawGlyph.asm",
-      "line": 112,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Station/DrawGlyph.asm",
-      "line": 115,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Station/DrawGlyph.asm",
-      "line": 137,
+      "line": 138,
       "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/Station/RemoveItemDraw.asm",
-      "line": 36,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Station/RemoveItemDraw.asm",
-      "line": 37,
-      "issue": "numeric_index_operand"
     },
     {
       "path": "Source/Text/ParseFieldSuffix.asm",
@@ -687,109 +263,9 @@
       "issue": "numeric_index_operand"
     },
     {
-      "path": "Source/ActionBoot/InitializeFlight.asm",
-      "line": 23,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/ActionBoot/InitializeFlight.asm",
-      "line": 38,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/ActionBoot/InitializeFlight.asm",
-      "line": 40,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/ActionBoot/InitializeFlight.asm",
-      "line": 57,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/ActionBoot/InitializeFlight.asm",
-      "line": 68,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/ActionBoot/InitializeFlight.asm",
-      "line": 75,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/ActionBoot/InitializeFlight.asm",
-      "line": 81,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/ActionBoot/InitializeFlight.asm",
-      "line": 82,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/ActionBoot/InitializeFlight.asm",
-      "line": 83,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/ActionBoot/InitializeRandomStates.asm",
-      "line": 27,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/ActionBoot/InitializeRandomStates.asm",
-      "line": 28,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/ActionBoot/InitializeRandomStates.asm",
-      "line": 33,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/ActionBoot/InitializeRandomStates.asm",
-      "line": 35,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/ActionBoot/InitializeRandomStates.asm",
-      "line": 37,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/ActionBoot/InitializeRandomStates.asm",
-      "line": 39,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/ActionBoot/InitializeRandomStates.asm",
-      "line": 41,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/ActionBoot/InitializeRandomStates.asm",
-      "line": 43,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/ActionBoot/InitializeRandomStates.asm",
-      "line": 45,
-      "issue": "numeric_control_target"
-    },
-    {
       "path": "Source/ActionBoot/BuildExponentialTable.asm",
       "line": 39,
       "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/ShowNoiseBeforeReload.asm",
-      "line": 47,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/Action/ResumeVisualEffect.asm",
-      "line": 70,
-      "issue": "numeric_control_target"
     },
     {
       "path": "Source/Action/ScanActionKeys.asm",
@@ -800,446 +276,6 @@
       "path": "Source/Action/ScanActionKeys.asm",
       "line": 37,
       "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/SpawnAlternate.asm",
-      "line": 43,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/Action/SpawnAlternate.asm",
-      "line": 65,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/SpawnAlternate.asm",
-      "line": 66,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/SpawnAlternate.asm",
-      "line": 73,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/SpawnAlternate.asm",
-      "line": 74,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/SpawnAlternate.asm",
-      "line": 76,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/SpawnAlternate.asm",
-      "line": 77,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/SpawnAlternate.asm",
-      "line": 83,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/SpawnAlternate.asm",
-      "line": 84,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/SpawnAlternate.asm",
-      "line": 86,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/SpawnAlternate.asm",
-      "line": 87,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/SpawnAlternate.asm",
-      "line": 96,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/SpawnAlternate.asm",
-      "line": 97,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/SpawnAlternate.asm",
-      "line": 98,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/SpawnAlternate.asm",
-      "line": 100,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/SpawnAlternate.asm",
-      "line": 124,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/SpawnAlternate.asm",
-      "line": 247,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/SpawnAlternate.asm",
-      "line": 249,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/SpawnAlternate.asm",
-      "line": 257,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/SpawnAlternate.asm",
-      "line": 258,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/SpawnAlternate.asm",
-      "line": 263,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/SpawnAlternate.asm",
-      "line": 264,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/SpawnAlternate.asm",
-      "line": 269,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/SpawnAlternate.asm",
-      "line": 270,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/SpawnAlternate.asm",
-      "line": 288,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/SpawnAlternate.asm",
-      "line": 297,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/SpawnAlternate.asm",
-      "line": 301,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/SpawnAlternate.asm",
-      "line": 312,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/SpawnAlternate.asm",
-      "line": 314,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/SpawnAlternate.asm",
-      "line": 315,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/SpawnAlternate.asm",
-      "line": 316,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/SpawnAlternate.asm",
-      "line": 317,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/SpawnAlternate.asm",
-      "line": 318,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/SpawnAlternate.asm",
-      "line": 320,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/SpawnAlternate.asm",
-      "line": 321,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/SpawnAlternate.asm",
-      "line": 334,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/SpawnAlternate.asm",
-      "line": 335,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/SpawnAlternate.asm",
-      "line": 337,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/SpawnAlternate.asm",
-      "line": 338,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/SpawnAlternate.asm",
-      "line": 339,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/SpawnAlternate.asm",
-      "line": 340,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/SpawnAlternate.asm",
-      "line": 343,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/SpawnAlternate.asm",
-      "line": 344,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/SpawnAlternate.asm",
-      "line": 350,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/ScheduleSpawn.asm",
-      "line": 133,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/ScheduleSpawn.asm",
-      "line": 136,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/ScheduleSpawn.asm",
-      "line": 169,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/ScheduleSpawn.asm",
-      "line": 170,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/ScheduleSpawn.asm",
-      "line": 175,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/ScheduleSpawn.asm",
-      "line": 176,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/ScheduleSpawn.asm",
-      "line": 181,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/ScheduleSpawn.asm",
-      "line": 182,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/ScheduleSpawn.asm",
-      "line": 224,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/ScheduleSpawn.asm",
-      "line": 225,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/ScheduleSpawn.asm",
-      "line": 226,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/ScheduleSpawn.asm",
-      "line": 227,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/ScheduleSpawn.asm",
-      "line": 228,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/ScheduleSpawn.asm",
-      "line": 229,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/ScheduleSpawn.asm",
-      "line": 236,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/ScheduleSpawn.asm",
-      "line": 237,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/ScheduleSpawn.asm",
-      "line": 238,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/ScheduleSpawn.asm",
-      "line": 239,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/ScheduleSpawn.asm",
-      "line": 240,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/ScheduleSpawn.asm",
-      "line": 241,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/ScheduleSpawn.asm",
-      "line": 243,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/ScheduleSpawn.asm",
-      "line": 244,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/ScheduleSpawn.asm",
-      "line": 245,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/ScheduleSpawn.asm",
-      "line": 357,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/ScheduleSpawn.asm",
-      "line": 358,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/ScheduleSpawn.asm",
-      "line": 372,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/ScheduleSpawn.asm",
-      "line": 373,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/ScheduleSpawn.asm",
-      "line": 387,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/ScheduleSpawn.asm",
-      "line": 388,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/ScheduleSpawn.asm",
-      "line": 408,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/StartFlight.asm",
-      "line": 29,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/Action/UpdateFrame.asm",
-      "line": 25,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Action/UpdateFrame.asm",
-      "line": 64,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Action/UpdateFrame.asm",
-      "line": 78,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Action/UpdateFrame.asm",
-      "line": 123,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Action/UpdateFrame.asm",
-      "line": 131,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Action/UpdateFrame.asm",
-      "line": 146,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Action/UpdateFrame.asm",
-      "line": 152,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Action/UpdateFrame.asm",
-      "line": 154,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Action/UpdateFrame.asm",
-      "line": 170,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Action/UpdateFrame.asm",
-      "line": 185,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Action/UpdateFrame.asm",
-      "line": 285,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Action/UpdateFrame.asm",
-      "line": 292,
-      "issue": "right_comment_column"
-    },
-    {
-      "path": "Source/Action/UpdateFrame.asm",
-      "line": 306,
-      "issue": "address_label"
     },
     {
       "path": "Source/Action/UnpackResource.asm",
@@ -1322,111 +358,6 @@
       "issue": "numeric_control_target"
     },
     {
-      "path": "Source/Action/SetClass18ObjectState.asm",
-      "line": 17,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/UpdateObjects.asm",
-      "line": 21,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Action/UpdateObjects.asm",
-      "line": 21,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/UpdateObjects.asm",
-      "line": 23,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Action/UpdateObjects.asm",
-      "line": 25,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Action/UpdateObjects.asm",
-      "line": 27,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/UpdateObjects.asm",
-      "line": 29,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Action/UpdateObjects.asm",
-      "line": 32,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/UpdateObjects.asm",
-      "line": 34,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Action/UpdateObjects.asm",
-      "line": 37,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/UpdateObjects.asm",
-      "line": 40,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/UpdateObjects.asm",
-      "line": 42,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Action/UpdateObjects.asm",
-      "line": 46,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/UpdateObjects.asm",
-      "line": 47,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Action/UpdateObjects.asm",
-      "line": 47,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/UpdateObjects.asm",
-      "line": 49,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Action/UpdateObjects.asm",
-      "line": 53,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Action/UpdateObjects.asm",
-      "line": 56,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/UpdateObjects.asm",
-      "line": 58,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Action/UpdateObjects.asm",
-      "line": 61,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/UpdateObjects.asm",
-      "line": 62,
-      "issue": "numeric_index_operand"
-    },
-    {
       "path": "Source/ThreeD/ComposeRenderMatrix.asm",
       "line": 43,
       "issue": "numeric_index_operand"
@@ -1472,1144 +403,9 @@
       "issue": "numeric_control_target"
     },
     {
-      "path": "Source/Voxel/RotateBasisVectors.asm",
-      "line": 27,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/RotateBasisVectors.asm",
-      "line": 45,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/RotateBasisVectors.asm",
-      "line": 76,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/RotateBasisVectors.asm",
-      "line": 83,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/RotateBasisVectors.asm",
-      "line": 87,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/RotateBasisVectors.asm",
-      "line": 103,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/RotateBasisVectors.asm",
-      "line": 110,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/RotateBasisVectors.asm",
-      "line": 114,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/RotateBasisVectors.asm",
-      "line": 130,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/RotateBasisVectors.asm",
-      "line": 137,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/RotateBasisVectors.asm",
-      "line": 141,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/RotateBasisVectors.asm",
-      "line": 157,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/RotateBasisVectors.asm",
-      "line": 164,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/RotateBasisVectors.asm",
-      "line": 168,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/RotateBasisVectors.asm",
-      "line": 184,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/RotateBasisVectors.asm",
-      "line": 191,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/RotateBasisVectors.asm",
-      "line": 195,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/RotateBasisVectors.asm",
-      "line": 211,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/RotateBasisVectors.asm",
-      "line": 218,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/RotateBasisVectors.asm",
-      "line": 222,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/RotateBasisVectors.asm",
-      "line": 223,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/RotateBasisVectors.asm",
-      "line": 225,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/RotateBasisVectors.asm",
-      "line": 243,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/RotateBasisVectors.asm",
-      "line": 274,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/RotateBasisVectors.asm",
-      "line": 281,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/RotateBasisVectors.asm",
-      "line": 285,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/RotateBasisVectors.asm",
-      "line": 301,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/RotateBasisVectors.asm",
-      "line": 308,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/RotateBasisVectors.asm",
-      "line": 312,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/RotateBasisVectors.asm",
-      "line": 328,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/RotateBasisVectors.asm",
-      "line": 335,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/RotateBasisVectors.asm",
-      "line": 339,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/RotateBasisVectors.asm",
-      "line": 355,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/RotateBasisVectors.asm",
-      "line": 362,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/RotateBasisVectors.asm",
-      "line": 366,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/RotateBasisVectors.asm",
-      "line": 382,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/RotateBasisVectors.asm",
-      "line": 389,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/RotateBasisVectors.asm",
-      "line": 393,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/RotateBasisVectors.asm",
-      "line": 409,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/RotateBasisVectors.asm",
-      "line": 416,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/RotateBasisVectors.asm",
-      "line": 420,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/RotateBasisVectors.asm",
-      "line": 421,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/RotateBasisVectors.asm",
-      "line": 423,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/RotateBasisVectors.asm",
-      "line": 441,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/RotateBasisVectors.asm",
-      "line": 472,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/RotateBasisVectors.asm",
-      "line": 479,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/RotateBasisVectors.asm",
-      "line": 483,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/RotateBasisVectors.asm",
-      "line": 499,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/RotateBasisVectors.asm",
-      "line": 506,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/RotateBasisVectors.asm",
-      "line": 510,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/RotateBasisVectors.asm",
-      "line": 526,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/RotateBasisVectors.asm",
-      "line": 533,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/RotateBasisVectors.asm",
-      "line": 537,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/RotateBasisVectors.asm",
-      "line": 553,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/RotateBasisVectors.asm",
-      "line": 560,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/RotateBasisVectors.asm",
-      "line": 564,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/RotateBasisVectors.asm",
-      "line": 580,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/RotateBasisVectors.asm",
-      "line": 587,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/RotateBasisVectors.asm",
-      "line": 591,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/RotateBasisVectors.asm",
-      "line": 607,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/RotateBasisVectors.asm",
-      "line": 614,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/RotateBasisVectors.asm",
-      "line": 618,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/SignedSeededProduct.asm",
-      "line": 25,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/SignedSeededProduct.asm",
-      "line": 35,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/SignedSeededProduct.asm",
-      "line": 36,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/SignedSeededProduct.asm",
-      "line": 46,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/SignedSeededProduct.asm",
-      "line": 58,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/SignedSeededProduct.asm",
-      "line": 63,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/SignedSeededProduct.asm",
-      "line": 66,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/SignedSeededProduct.asm",
-      "line": 71,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/SignedSeededProduct.asm",
-      "line": 74,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/SignedSeededProduct.asm",
-      "line": 79,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/SignedSeededProduct.asm",
-      "line": 82,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/SignedSeededProduct.asm",
-      "line": 87,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/SignedSeededProduct.asm",
-      "line": 90,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/SignedSeededProduct.asm",
-      "line": 95,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/SignedSeededProduct.asm",
-      "line": 98,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/SignedSeededProduct.asm",
-      "line": 103,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/SignedSeededProduct.asm",
-      "line": 106,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/SignedSeededProduct.asm",
-      "line": 111,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/SignedSeededProduct.asm",
-      "line": 114,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/SignedSeededProduct.asm",
-      "line": 119,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/SignedSeededProduct.asm",
-      "line": 130,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/SignedSeededProduct.asm",
-      "line": 135,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/SignedSeededProduct.asm",
-      "line": 138,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/SignedSeededProduct.asm",
-      "line": 143,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/SignedSeededProduct.asm",
-      "line": 146,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/SignedSeededProduct.asm",
-      "line": 151,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/SignedSeededProduct.asm",
-      "line": 154,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/SignedSeededProduct.asm",
-      "line": 159,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/SignedSeededProduct.asm",
-      "line": 162,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/SignedSeededProduct.asm",
-      "line": 167,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/SignedSeededProduct.asm",
-      "line": 170,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/SignedSeededProduct.asm",
-      "line": 175,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/SignedSeededProduct.asm",
-      "line": 181,
-      "issue": "condition_without_data_semantics"
-    },
-    {
       "path": "Source/Voxel/ClipSprite.asm",
-      "line": 45,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 49,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 51,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 67,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 67,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 71,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 73,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 77,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 81,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 84,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 88,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 93,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 97,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 99,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 115,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 115,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 119,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 121,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 125,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 129,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 132,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 137,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 140,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 144,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 148,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 152,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 162,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 168,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 195,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 202,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 203,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 207,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 214,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 229,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 232,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 241,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 246,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 249,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 254,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 257,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 262,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 265,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 270,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 273,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 278,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 281,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 286,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 289,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 294,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 304,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 314,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 325,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 329,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 331,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 335,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 337,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 341,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 343,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 347,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 349,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 353,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 355,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 359,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 361,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 365,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 370,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 375,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 380,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 384,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 385,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 390,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 394,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 410,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 419,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 426,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 432,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/ClipSprite.asm",
-      "line": 442,
+      "line": 446,
       "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/Voxel/Multiply7BitWord.asm",
-      "line": 23,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/Multiply7BitWord.asm",
-      "line": 27,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/Multiply7BitWord.asm",
-      "line": 29,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/Multiply7BitWord.asm",
-      "line": 33,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/Multiply7BitWord.asm",
-      "line": 35,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/Multiply7BitWord.asm",
-      "line": 39,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/Multiply7BitWord.asm",
-      "line": 41,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/Multiply7BitWord.asm",
-      "line": 45,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/Multiply7BitWord.asm",
-      "line": 47,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/Multiply7BitWord.asm",
-      "line": 51,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/Multiply7BitWord.asm",
-      "line": 53,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/Multiply7BitWord.asm",
-      "line": 57,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/Multiply7BitWord.asm",
-      "line": 59,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/Divide7BitFixed.asm",
-      "line": 29,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/Divide7BitFixed.asm",
-      "line": 33,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/Divide7BitFixed.asm",
-      "line": 37,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/Divide7BitFixed.asm",
-      "line": 41,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/Divide7BitFixed.asm",
-      "line": 45,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/Divide7BitFixed.asm",
-      "line": 49,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/Divide7BitFixed.asm",
-      "line": 56,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/Divide7BitFixed.asm",
-      "line": 58,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/Divide7BitFixed.asm",
-      "line": 62,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/Divide7BitFixed.asm",
-      "line": 63,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/Divide7BitFixed.asm",
-      "line": 65,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/Divide7BitFixed.asm",
-      "line": 69,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/Divide7BitFixed.asm",
-      "line": 70,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/Divide7BitFixed.asm",
-      "line": 72,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/Divide7BitFixed.asm",
-      "line": 76,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/Divide7BitFixed.asm",
-      "line": 77,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/Divide7BitFixed.asm",
-      "line": 79,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/Divide7BitFixed.asm",
-      "line": 83,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/Divide7BitFixed.asm",
-      "line": 84,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/Divide7BitFixed.asm",
-      "line": 86,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/Divide7BitFixed.asm",
-      "line": 90,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/Divide7BitFixed.asm",
-      "line": 91,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/Divide7BitFixed.asm",
-      "line": 93,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/Divide7BitFixed.asm",
-      "line": 97,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/Divide7BitFixed.asm",
-      "line": 98,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/Divide7BitFixed.asm",
-      "line": 100,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/Divide7BitFixed.asm",
-      "line": 104,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/Divide7BitFixed.asm",
-      "line": 108,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/Divide7BitFixed.asm",
-      "line": 112,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/Divide7BitFixed.asm",
-      "line": 115,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/Divide7BitFixed.asm",
-      "line": 119,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/Divide7BitFixed.asm",
-      "line": 122,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/Divide7BitFixed.asm",
-      "line": 126,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/Divide7BitFixed.asm",
-      "line": 129,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/Divide7BitFixed.asm",
-      "line": 133,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/Divide7BitFixed.asm",
-      "line": 136,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/Divide7BitFixed.asm",
-      "line": 140,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/Divide7BitFixed.asm",
-      "line": 143,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/Divide7BitFixed.asm",
-      "line": 147,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/Divide7BitFixed.asm",
-      "line": 150,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/Divide7BitFixed.asm",
-      "line": 154,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Voxel/Divide7BitFixed.asm",
-      "line": 157,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Voxel/Divide7BitFixed.asm",
-      "line": 161,
-      "issue": "address_label"
     },
     {
       "path": "Source/Controls/DrawSmallBody.asm",
@@ -2617,134 +413,19 @@
       "issue": "numeric_index_operand"
     },
     {
-      "path": "Source/Controls/CompareComponents.asm",
-      "line": 33,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Controls/CompareComponents.asm",
-      "line": 37,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Controls/CompareComponents.asm",
-      "line": 50,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Controls/CompareComponents.asm",
-      "line": 51,
-      "issue": "numeric_index_operand"
-    },
-    {
       "path": "Source/Controls/RunTemporaryModule.asm",
-      "line": 49,
+      "line": 55,
       "issue": "numeric_control_target"
     },
     {
       "path": "Source/Controls/RunTemporaryModule.asm",
-      "line": 51,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/Controls/RunTemporaryModule.asm",
-      "line": 75,
+      "line": 80,
       "issue": "numeric_control_target"
     },
     {
       "path": "Source/Controls/BuildParameterTables.asm",
       "line": 118,
       "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Controls/DrawRadar.asm",
-      "line": 476,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Controls/DrawRadar.asm",
-      "line": 489,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Controls/DrawRadar.asm",
-      "line": 499,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Controls/DrawRadar.asm",
-      "line": 623,
-      "issue": "conditional_without_right_comment"
-    },
-    {
-      "path": "Source/Controls/DrawRadar.asm",
-      "line": 628,
-      "issue": "conditional_without_right_comment"
-    },
-    {
-      "path": "Source/Controls/DrawRadar.asm",
-      "line": 639,
-      "issue": "conditional_without_right_comment"
-    },
-    {
-      "path": "Source/Controls/DrawRadar.asm",
-      "line": 644,
-      "issue": "conditional_without_right_comment"
-    },
-    {
-      "path": "Source/Controls/DrawRadar.asm",
-      "line": 652,
-      "issue": "conditional_without_right_comment"
-    },
-    {
-      "path": "Source/Controls/DrawRadar.asm",
-      "line": 657,
-      "issue": "conditional_without_right_comment"
-    },
-    {
-      "path": "Source/Controls/DrawRadar.asm",
-      "line": 693,
-      "issue": "conditional_without_right_comment"
-    },
-    {
-      "path": "Source/Controls/DrawRadar.asm",
-      "line": 698,
-      "issue": "conditional_without_right_comment"
-    },
-    {
-      "path": "Source/Controls/ToggleTargetOverlay.asm",
-      "line": 130,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Controls/ToggleTargetOverlay.asm",
-      "line": 135,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Controls/ToggleTargetOverlay.asm",
-      "line": 136,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Controls/ToggleTargetOverlay.asm",
-      "line": 144,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Controls/ToggleTargetOverlay.asm",
-      "line": 145,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Controls/ToggleTargetOverlay.asm",
-      "line": 147,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Controls/ToggleTargetOverlay.asm",
-      "line": 149,
-      "issue": "numeric_control_target"
     },
     {
       "path": "Source/Controls/InitializeTextWindow.asm",
@@ -2768,108 +449,13 @@
     },
     {
       "path": "Source/Final/InitializeFinal.asm",
-      "line": 81,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Final/InitializeFinal.asm",
-      "line": 108,
+      "line": 109,
       "issue": "numeric_control_target"
     },
     {
       "path": "Source/Final/InitializeFinal.asm",
-      "line": 131,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Final/InitializeFinal.asm",
-      "line": 182,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Final/InitializeFinal.asm",
-      "line": 187,
+      "line": 188,
       "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/Final/InitializeFinal.asm",
-      "line": 194,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Final/ReadSpeedKeys.asm",
-      "line": 21,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Final/ReadSpeedKeys.asm",
-      "line": 27,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Final/ReadSpeedKeys.asm",
-      "line": 33,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Final/ReadSpeedKeys.asm",
-      "line": 35,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Final/ReadSpeedKeys.asm",
-      "line": 41,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Final/ReadSpeedKeys.asm",
-      "line": 43,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Final/ReadSpeedKeys.asm",
-      "line": 46,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Final/BuildDisplayChain.asm",
-      "line": 20,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Final/BuildDisplayChain.asm",
-      "line": 22,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Final/BuildDisplayChain.asm",
-      "line": 31,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Final/BuildDisplayChain.asm",
-      "line": 39,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Final/BuildDisplayChain.asm",
-      "line": 40,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Final/BuildDisplayChain.asm",
-      "line": 48,
-      "issue": "address_label"
-    },
-    {
-      "path": "Source/Final/NextBitmapLine.asm",
-      "line": 20,
-      "issue": "condition_without_data_semantics"
-    },
-    {
-      "path": "Source/Final/NextBitmapLine.asm",
-      "line": 25,
-      "issue": "condition_without_data_semantics"
     },
     {
       "path": "Source/D3D/MultiplyPreviewCoordinate.asm",
@@ -2894,6 +480,16 @@
     {
       "path": "Source/D3D/BuildPreviewQueue.asm",
       "line": 146,
+      "issue": "numeric_control_target"
+    },
+    {
+      "path": "Source/Voxel/ProjectEffectPoint.asm",
+      "line": 35,
+      "issue": "numeric_control_target"
+    },
+    {
+      "path": "Source/Voxel/ProjectEffectPoint.asm",
+      "line": 66,
       "issue": "numeric_control_target"
     }
   ],

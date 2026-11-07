@@ -1,5 +1,7 @@
                 module Action
                 module UpdateFrame
+                ; Внутренние входы [алгоритм](../../Docs/GraphicsStateInternalLabels.md)
+                ; Документация [порядок вызовов кадра](../../Docs/ActionFlightCycle.md)
                 ; Документация [пороговые и событийные ветки кадра](../../Docs/ActionFrameGates.md)
                 ; Документация [банковые записи кадра](../../Docs/ActionBank4Writes.md)
 ; Документация [Action](../../Docs/FunctionDetails/Action.md)
@@ -7,22 +9,29 @@
 ; Обработка таймеров, управления, визуальных модулей и игровых объектов
 ; исходная запись 17, файловые смещения #485E..#4ACB
 ; In:
-;   Unknown, регистровый контракт ещё не доказан
+;   состояние задаётся StartFlight и предыдущими кадрами, при обычном входе выбрана страница #10
+;   стек содержит возврат в MainLoop по #A85C, рабочие банки доступны
+;   записи, состояния и ресурсы удовлетворяют договорам ScheduleSpawn, UpdateObjects и рисователей
+;   IRQ не используют временные стеки рендереров, NMI не рассматривается
 ; Out:
-;   исходный поток управления, включая переходы в соседние фрагменты
+;   обычный кадр возвращается со страницей #10, AF=#1042, DE=#0040, IX указывает маркер списка #8080
+;   HL, BC, альтернативные регистры содержат результат DrawRadar, остальные значения определяются дочерними договорами
+;   SP после RET равен входному SP+2, внешний возврат передаёт управление MainLoop
+;   при переходе через шум к загрузке станции выбирается #11, SP кадра не снимается
 ; Corrupt:
-;   HL, DE, BC, AF, HL', DE', BC', AF', IX, IY, консервативная верхняя граница
+;   HL, DE, BC, AF, HL', DE', BC', AF', IX, IY, R, IFF по дочерним вызовам
+;   объекты, эффекты, рабочие векторы, экран, очередь, звук, таблицы OBJECT3D банка 4, операнды, стек и 7FFD
 ; Note:
-;   граница файла не доказывает границу логической процедуры
-;   состояние самомодификации и активной страницы учитывается отдельно
+;   64 полных кадра сверены с исходными вызовами, отдельный выход проверен до входа #4000
+;   модели не исчерпывают все совместные состояния объектов, ввод, IRQ и нативный игровой процесс
 ; -----------------------------------------
 Entry:          LD A, #00
                 DEC A
-                JP M, @Action.UpdateFrame.PointA867                             ; переход, если уменьшенный байт задержки отрицателен, оставить прежний операнд
+                JP M, @Action.UpdateFrame.BeginScene                            ; переход, если уменьшенный байт задержки отрицателен, оставить прежний операнд
 
 
                 LD (#A85F), A
-PointA867:      CALL @Action.ScheduleSpawn.Entry
+BeginScene:     CALL @Action.ScheduleSpawn.Entry
                 CALL @Action.ClearWorkBuffer.Entry
                 LD A, #11
                 CALL @Action.SelectMemoryPage.Entry
@@ -47,7 +56,7 @@ PointA867:      CALL @Action.ScheduleSpawn.Entry
 
                 LD A, (@ActionCloseRecordState.InhibitCode)
                 AND A
-                JR Z, @Action.UpdateFrame.PointA8B2                             ; переход, если признак близкой записи сброшен
+                JR Z, @Action.UpdateFrame.StepGaugePhase                        ; переход, если признак близкой записи сброшен
 
 
                 XOR A
@@ -61,21 +70,21 @@ PointA867:      CALL @Action.ScheduleSpawn.Entry
                 LD A, #02
                 LD (#664A), A
                 ; Обновление третьей шкалы по переполнению накопителя фазы.
-PointA8B2:      LD A, #00
+StepGaugePhase: LD A, #00
                 ADD A, #14
                 LD (#A8B3), A
-                JR NC, @Action.UpdateFrame.PointA8C8                            ; переход, если прибавление 20 к фазе не переполнило байт
+                JR NC, @Action.UpdateFrame.UpdateRecords                        ; переход, если прибавление 20 к фазе не переполнило байт
 
 
                 LD A, #00
                 CP #2E
-                JR NC, @Action.UpdateFrame.PointA8C8                            ; переход, если третья шкала уже достигла #2E
+                JR NC, @Action.UpdateFrame.UpdateRecords                        ; переход, если третья шкала уже достигла #2E
 
 
                 INC A
                 LD (#A8BC), A
                 LD (#666B), A
-PointA8C8:      CALL @Action.UpdateObjects.Entry
+UpdateRecords:  CALL @Action.UpdateObjects.Entry
                 XOR A
                 LD (#A781), A
                 CALL @Action.SubtractScaledWorkVector.Entry
@@ -92,7 +101,7 @@ PointA8C8:      CALL @Action.UpdateObjects.Entry
                 LD A, (#A78C)
                 LD C, A
                 BIT 0, C
-                JR Z, @Action.UpdateFrame.PointA928                             ; переход, если бит 0 сохранённой маски событий сброшен
+                JR Z, @Action.UpdateFrame.CheckBlink                            ; переход, если бит 0 сохранённой маски событий сброшен
 
 
                 ; Запрос потока AY и выбор стоимости события по трём байтам.
@@ -104,23 +113,23 @@ PointA8C8:      CALL @Action.UpdateObjects.Entry
                 LD A, (#9C1C)
                 DEC B
                 INC A
-                JP NZ, @Action.UpdateFrame.PointA919                            ; переход, если первый байт отличается от #FF, стоимость равна 3
+                JP NZ, @Action.UpdateFrame.ApplyEventCost                       ; переход, если первый байт отличается от #FF, стоимость равна 3
 
 
                 LD A, (#9C1D)
                 DEC B
                 INC A
-                JP NZ, @Action.UpdateFrame.PointA919                            ; переход, если второй байт отличается от #FF, стоимость равна 2
+                JP NZ, @Action.UpdateFrame.ApplyEventCost                       ; переход, если второй байт отличается от #FF, стоимость равна 2
 
 
                 LD A, (#9C1E)
                 DEC B
                 INC A
-                JP NZ, @Action.UpdateFrame.PointA919                            ; переход, если третий байт отличается от #FF, стоимость равна 1
+                JP NZ, @Action.UpdateFrame.ApplyEventCost                       ; переход, если третий байт отличается от #FF, стоимость равна 1
 
 
                 LD B, #04
-PointA919:      LD A, (#A794)
+ApplyEventCost: LD A, (#A794)
                 SUB B
                 JP C, @Action.ShowNoiseBeforeReload.Entry                       ; переход, если первая шкала меньше выбранной стоимости
 
@@ -128,8 +137,8 @@ PointA919:      LD A, (#A794)
                 LD (#A794), A
                 LD A, #01
                 LD (#664A), A
-PointA928:      BIT 1, C
-                JR Z, @Action.UpdateFrame.PointA948                             ; переход, если бит 1 сохранённой маски событий сброшен
+CheckBlink:     BIT 1, C
+                JR Z, @Action.UpdateFrame.ClearBlink                            ; переход, если бит 1 сохранённой маски событий сброшен
 
 
                 ; Обновление фазы мигания, цвета и запроса второго потока AY.
@@ -137,22 +146,22 @@ PointA928:      BIT 1, C
                 RRCA
                 LD (#A92D), A
                 LD A, #05
-                JR NC, @Action.UpdateFrame.PointA93E                            ; переход, если прежний младший бит фазы мигания сброшен
+                JR NC, @Action.UpdateFrame.StoreBlink                           ; переход, если прежний младший бит фазы мигания сброшен
 
 
                 LD HL, #ED8F
                 LD (#ECF6), HL
                 LD A, #35
-PointA93E:      LD (#5A1C), A
+StoreBlink:     LD (#5A1C), A
                 XOR A
                 LD (#A78C), A
-                JP @Action.UpdateFrame.PointA94D
+                JP @Action.UpdateFrame.CheckDrain
 
 
-PointA948:      LD A, #05
+ClearBlink:     LD A, #05
                 LD (#5A1C), A
-PointA94D:      BIT 2, C
-                JR Z, @Action.UpdateFrame.PointA965                             ; переход, если бит 2 сохранённой маски событий сброшен
+CheckDrain:     BIT 2, C
+                JR Z, @Action.UpdateFrame.StepRegenPhase                        ; переход, если бит 2 сохранённой маски событий сброшен
 
 
                 ; Списание 40 из первой шкалы при установленном бите 2.
@@ -167,22 +176,22 @@ PointA94D:      BIT 2, C
                 LD A, #01
                 LD (#664A), A
                 ; Восстановление первой шкалы по переполнению отдельного накопителя фазы.
-PointA965:      LD A, #00
+StepRegenPhase: LD A, #00
                 ADD A, #50
                 LD (#A966), A
-                JR NC, @Action.UpdateFrame.PointA97E                            ; переход, если прибавление 80 к фазе не переполнило байт
+                JR NC, @Action.UpdateFrame.BeginEffects                         ; переход, если прибавление 80 к фазе не переполнило байт
 
 
                 LD A, (#A794)
                 CP #2E
-                JR NC, @Action.UpdateFrame.PointA97E                            ; переход, если первая шкала уже достигла #2E
+                JR NC, @Action.UpdateFrame.BeginEffects                         ; переход, если первая шкала уже достигла #2E
 
 
                 INC A
                 LD (#A794), A
                 LD A, #01
                 LD (#664A), A
-PointA97E:      CALL @Action.UpdateAyEffects.Entry
+BeginEffects:   CALL @Action.UpdateAyEffects.Entry
                 ; Выбор банка 4 для трёх групп XOR 60 в OBJECT3D, совпадающие адреса ACTION банка 0 не меняются.
                 LD A, #14
                 CALL @Action.SelectMemoryPage.Entry
@@ -278,18 +287,18 @@ PointA97E:      CALL @Action.UpdateAyEffects.Entry
                 LD A, #00
                 AND A
                 LD A, #15
-                JR NZ, @Action.UpdateFrame.PointAA96                            ; переход, если байт режима цвета ненулевой, записать #15
+                JR NZ, @Action.UpdateFrame.StorePanelAttr                       ; переход, если байт режима цвета ненулевой, записать #15
 
 
                 LD A, #05
-PointAA96:      LD (#5A1A), A
+StorePanelAttr: LD (#5A1A), A
                 LD A, #00
                 DEC A
                 EX AF, AF'
                 LD A, #11
                 CALL @Action.SelectMemoryPage.Entry
                 EX AF, AF'
-                CALL NZ, @Controls.ToggleTargetOverlay.Entry                   ; вызов, если байт режима до DEC отличался от 1
+                CALL NZ, @Controls.ToggleTargetOverlay.Entry                    ; вызов, если байт режима до DEC отличался от 1
                 CALL @Controls.ConsumeTextQueue.Entry
                 CALL @Controls.XorBufferMarker.Entry
                 CALL @Controls.CopyViewportToScreen.Entry
@@ -303,7 +312,7 @@ PointAA96:      LD (#5A1A), A
                 RET
 
 
-PointAAC4:      LD A, #11
+ReloadStation:  LD A, #11
                 CALL @Action.SelectMemoryPage.Entry
                 JP @Controls.RelocateStationReload.Entry
 

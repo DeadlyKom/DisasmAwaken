@@ -1,0 +1,38 @@
+{
+  "passed": true,
+  "total_cases": 196608,
+  "cases_by_entry": {
+    "0x660e": 65536,
+    "0x65de": 65536,
+    "0xe6e2": 65536
+  },
+  "paths": {
+    "no_override": 65536,
+    "stream_10": 98432,
+    "random_gate_26": 65792,
+    "link_written": 32896,
+    "override_zero": 65536,
+    "marker": 41024,
+    "parent_filter_Z": 24704,
+    "found": 24512,
+    "parent_filter_link": 8192,
+    "carry_skip": 32640,
+    "class3_gate_below64": 8160,
+    "stream_8": 24480,
+    "class3_high_at_least3": 15202,
+    "class3_code26": 200,
+    "class3_gate_below_low": 9078
+  },
+  "class0_all_256_r_by_256_thresholds": true,
+  "class3_all_256_r_by_256_thresholds": true,
+  "filter_all_256_new_low_bytes_by_256_thresholds": true,
+  "actual_compared_input_observed": true,
+  "thresholds_patched_in_model_ram": true,
+  "apply_parameter_set_executed": false,
+  "exact_registers_flags_r_sp": true,
+  "full_eight_bank_ram_and_write_multiplicity_compared": true,
+  "all_three_threshold_and_state_products_exhausted": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

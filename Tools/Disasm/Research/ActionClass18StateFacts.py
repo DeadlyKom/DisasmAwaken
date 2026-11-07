@@ -13,5 +13,5 @@ COMMENTS = {0xF075: (['Назначение состояния 0A перед о�
 
 def name_operands(region, address, operation):
     if region == 'Action' and address == 0xF075:
-        return operation.replace('IX + #0A', 'IX + @FActionRecord.Unknown0A')
+        return operation.replace('IX + #0A', 'IX + @FActionRecord.StateCode')
     return operation

@@ -18,7 +18,7 @@
                 ; Corrupt:
                 ;   HL, DE, BC, AF, R
                 ; Note:
-                ;   совпадение требует полного ClassCode=3, полного Unknown0A=02 и LinkedIndex=Unknown0D указанной IX записи
+                ;   совпадение требует полного ClassCode=3, полного StateCode=02 и LinkedIndex=Unknown0D указанной IX записи
                 ;   неактивна строка с первым High=80, полный Low=80 при таком High является маркером и прекращает поиск
                 ;   байт FF в LinkedIndex не является особым отказом, он считается совпадением при Unknown0D=FF
                 ;   предел массива числом записей не зашит, насыщение прекращает просмотр сразу после второго совпадения
@@ -56,15 +56,15 @@ ScanNext:       ADD HL, DE
                 LD L, C
                 JR NZ, @Action.CountClass3LinksUpToTwo.ScanNext                 ; переход, если ClassCode отличается от 3, продолжить просмотр
 
-                ; Поиск Unknown0A от адреса High с последующим восстановлением исходного L.
+                ; Поиск StateCode от адреса High с последующим восстановлением исходного L.
                 LD A, L
-                ADD A, @FActionRecord.Unknown0A-@FActionWord.High
+                ADD A, @FActionRecord.StateCode-@FActionWord.High
                 LD L, A
                 LD A, (HL)
-                ; Проверка полного числового кода 02 в Unknown0A.
+                ; Проверка полного числового кода 02 в StateCode.
                 CP @ActionClass0Const.RecordCode
                 LD L, C
-                JR NZ, @Action.CountClass3LinksUpToTwo.ScanNext                 ; переход, если Unknown0A отличается от 02, продолжить просмотр
+                JR NZ, @Action.CountClass3LinksUpToTwo.ScanNext                 ; переход, если StateCode отличается от 02, продолжить просмотр
 
                 ; Поиск LinkedIndex для точного сравнения с Unknown0D указанной IX записи.
                 LD A, L

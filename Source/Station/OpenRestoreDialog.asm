@@ -18,7 +18,7 @@
 ; -----------------------------------------
                 ; выбор окна восстановления по обёртке Item44
 Entry:          LD HL, @Station.DrawLoadSlotPanel.Entry
-                JP #CBA9
+                JP @Station.RestoreItemBounds.Entry
 
                 endmodule
                 endmodule

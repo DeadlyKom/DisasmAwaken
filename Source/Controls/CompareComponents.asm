@@ -30,11 +30,11 @@
 Entry:          LD DE, @FComponent24
                 ADD IY, DE
                 ; чтение старшей части текущего компонента без исключённого разряда 7
-                LD A, (IY+#02)
+                LD A, (IY + @FComponent24.High)
                 AND @ComponentCompareConst.HighMask
                 LD D, A
                 ; чтение старшей части опорного компонента с той же числовой маской
-                LD A, (IX+#02)
+                LD A, (IX + @FComponent24.High)
                 AND @ComponentCompareConst.HighMask
                 ; проверка прямого допуска по малой старшей части опорного компонента
                 CP @ComponentCompareConst.DirectLimit
@@ -47,8 +47,8 @@ Entry:          LD DE, @FComponent24
                 RET NZ                                                          ; выход, если опорная старшая часть больше текущей, вернуть NZ и F от CP D
 
                 ; проверка средних байтов только при равных старших частях, младшие байты не читаются
-                LD A, (IX+#01)
-                CP (IY+#01)
+                LD A, (IX + @FComponent24.Middle)
+                CP (IY + @FComponent24.Middle)
                 JR C, @Controls.CompareComponents.RejectComponent               ; переход, если опорный Middle меньше текущего Middle, отклонить компонент через RejectComponent
 
                 ; формирование NZ с нечётным ненулевым A без унификации исходных путей возвращаемых F

@@ -3,6 +3,8 @@
 ; логическая длина 6912, полный секторный размер 6912
 ; -----------------------------------------
                 assert $ == #0000
-                ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/31_choose1/Unclassified000.bin"
+                ; Экран выбора, bitmap и атрибуты, исходные файловые смещения.
+                incbin "../Resources/31_choose1/Bitmap.bin"
+                assert $ == #1800
+                include "../Resources/31_choose1/Attributes.asm"
                 assert $ == #1B00

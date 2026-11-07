@@ -1802,6 +1802,63 @@ REGION_COMMENTS.setdefault("Action", {}).update(ACTION_SPAWN_RECORD_FINISH_COMME
 from ActionSpawnScheduleFacts import COMMENTS as ACTION_SPAWN_SCHEDULE_COMMENTS
 REGION_COMMENTS.setdefault("Action", {}).update(ACTION_SPAWN_SCHEDULE_COMMENTS)
 
+from ActionOverlayProjectionFacts import COMMENTS as ACTION_OVERLAY_PROJECTION_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_OVERLAY_PROJECTION_COMMENTS)
+
+from ActionDiagnosticQueueFacts import COMMENTS as ACTION_DIAGNOSTIC_QUEUE_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_DIAGNOSTIC_QUEUE_COMMENTS)
+
+from ActionDeltaRatioFacts import COMMENTS as ACTION_DELTA_RATIO_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_DELTA_RATIO_COMMENTS)
+
+from ActionDirectDecimalScrollFacts import COMMENTS as ACTION_DIRECT_DECIMAL_SCROLL_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_DIRECT_DECIMAL_SCROLL_COMMENTS)
+
+from ActionDirectDecimalPlainFacts import COMMENTS as ACTION_DIRECT_DECIMAL_PLAIN_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_DIRECT_DECIMAL_PLAIN_COMMENTS)
+
+from ActionApproachWordFacts import COMMENTS as ACTION_APPROACH_WORD_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_APPROACH_WORD_COMMENTS)
+
+from ActionRecordDistanceFacts import COMMENTS as ACTION_RECORD_DISTANCE_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_RECORD_DISTANCE_COMMENTS)
+
+from ActionSelectedRecordStepFacts import COMMENTS as ACTION_SELECTED_RECORD_STEP_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_SELECTED_RECORD_STEP_COMMENTS)
+
+from ActionClass18ProximityFacts import COMMENTS as ACTION_CLASS18_PROXIMITY_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_CLASS18_PROXIMITY_COMMENTS)
+
+from ActionSelectClass8Facts import COMMENTS as ACTION_SELECT_CLASS8_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_SELECT_CLASS8_COMMENTS)
+
+from ActionSelectedRecordProximityFacts import COMMENTS as ACTION_SELECTED_RECORD_PROXIMITY_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_SELECTED_RECORD_PROXIMITY_COMMENTS)
+
+from ActionClass2LinkFacts import COMMENTS as ACTION_CLASS2_LINK_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_CLASS2_LINK_COMMENTS)
+
+from ActionClass5LinkFacts import COMMENTS as ACTION_CLASS5_LINK_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_CLASS5_LINK_COMMENTS)
+
+from ActionClass8LinkFacts import COMMENTS as ACTION_CLASS8_LINK_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_CLASS8_LINK_COMMENTS)
+
+from ActionClass7LinkFacts import COMMENTS as ACTION_CLASS7_LINK_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_CLASS7_LINK_COMMENTS)
+
+from ActionClass6LinkFacts import COMMENTS as ACTION_CLASS6_LINK_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_CLASS6_LINK_COMMENTS)
+
+from ActionClass1LinkFacts import COMMENTS as ACTION_CLASS1_LINK_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_CLASS1_LINK_COMMENTS)
+
+from ActionClass4LinkFacts import COMMENTS as ACTION_CLASS4_LINK_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_CLASS4_LINK_COMMENTS)
+
+from ActionClass3LinkFacts import COMMENTS as ACTION_CLASS3_LINK_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_CLASS3_LINK_COMMENTS)
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)

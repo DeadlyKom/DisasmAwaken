@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "total_cases": 4,
+  "actual_final_effect_frames": [
+    0,
+    1,
+    2,
+    300
+  ],
+  "actual_intro_initialization_and_screen_unpack": true,
+  "real_rom_executed": true,
+  "trdos_search_and_info_stubbed": true,
+  "stops_at_sector_read_entry": true,
+  "assembly_executed": false
+}

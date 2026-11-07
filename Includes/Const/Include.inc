@@ -1353,8 +1353,8 @@ ClassLimit      equ #10                                                         
 
                 ; Числовые коды исходной цели Class09
                 module ActionClass9Const
-SpecialCode     equ #0D                                                         ; значение Unknown16, сохраняющее LinkedIndex
-DefaultCode     equ #01                                                         ; запись в Unknown0A в остальных случаях
+SpecialCode     equ #0D                                                         ; значение SavedStateCode, сохраняющее LinkedIndex
+DefaultCode     equ #01                                                         ; запись в StateCode в остальных случаях
 DefaultIndex    equ #FF                                                         ; исходная запись в LinkedIndex для обычной ветви
 FlagThreshold   equ #70                                                         ; порог сравнения R, влияющий только на выходные флаги
                 endmodule
@@ -1363,7 +1363,7 @@ FlagThreshold   equ #70                                                         
 
                 ; Исходный код записи при выборе связи класса 0
                 module ActionClass0Const
-RecordCode      equ #02                                                         ; запись в Unknown0A перед выбором либо после принятого результата
+RecordCode      equ #02                                                         ; запись в StateCode перед выбором либо после принятого результата
                 endmodule
 
 
@@ -1374,7 +1374,7 @@ RLimit          equ #E6                                                         
 WordLimit       equ #28                                                         ; верхняя исключённая граница нового L
 GateLimit       equ #50                                                         ; нижняя включённая граница UnknownGate
 Class3          equ #03                                                         ; класс, запрещающий обновление
-RecordCode      equ #0B                                                         ; код Unknown0A целевой записи класса 18
+RecordCode      equ #0B                                                         ; код StateCode целевой записи класса 18
                 endmodule
 
 
@@ -1553,5 +1553,33 @@ SquarePage      equ #98                                                         
 PhaseStep       equ #40                                                         ; смещение второго элемента пары
                 endmodule
 
+
+
+                ; Полные числовые коды и порог исходного состояния 0C
+                module ActionClass18ProximityConst
+ClassCode       equ #12                                                         ; искомый полный код класса, десятичное значение 18
+NearLimit       equ #02                                                         ; исключённая граница старшего байта модуля, близость требует модуля меньше 512
+                endmodule
+
+
+                ; Полный числовой код резервного выбора записи
+                module ActionSelectClass8Const
+ClassCode       equ #08                                                         ; искомый полный код класса, сравнение не использует битовую маску
+                endmodule
+
+
+                ; Номер точно сбрасываемого разряда, другие значения ReuseByte сохраняются
+                module ActionSelectedRecordProximityConst
+ClearedReuseBit equ #02                                                         ; бит с маской 04, полный игровой смысл разряда ещё не установлен
+                endmodule
+
+
+                ; Пороги и исходный код состояния дополнительных обработчиков классов
+                module ActionClassSetupConst
+Class8State     equ #12                                                         ; исходный код состояния класса 8 до принятого общего выбора
+EarlyRLimit     equ #06                                                         ; исключённая граница аппаратного R для специальной ветви класса 3
+GateMinimum     equ #40                                                         ; минимальное значение существующего Gate перед обновлением Stream8
+HighLimit       equ #03                                                         ; исключённая граница старшего байта нового слова Stream8
+                endmodule
 
                 endif

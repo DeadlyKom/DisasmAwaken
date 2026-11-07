@@ -232,3 +232,9 @@ XOR-масками, а не флагами состояния. Потребит�
 ## Знаковый рабочий вектор ACTION
 
 [WorkVector24](../Source/Action/Data/WorkVector24.asm) содержит физический FActionWorkVector24 с тремя FActionWorkComponent24. Каждая компонента состоит из LowWord и High в дополнительном коде, всего сохранены девять байтов 9B78..9B80. Это другой числовой формат, чем знак и модуль FComponent24. См. [вычитание и ранние выходы](ActionSubtractWorkVector.md).
+
+[FFighterPosePointer, FFighterPoseHeader и FFighterPoseStep](FighterAssets.md) описывают физический BAR, изображения BD сохранены отдельно.
+
+[FPlayerSaveHeader, FOwnedCargoRow и FEquipmentQuantityCode](PlayerSavedFields.md) оформляют сохраняемые поля станции и шесть исходных дисковых копий.
+
+FOverlayProjectionFrame описывает шестибайтовую динамическую рамку [двухосевой проекции](ActionOverlayProjection.md), статической памяти не выделяет.

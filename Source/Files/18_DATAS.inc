@@ -3,6 +3,10 @@
 ; логическая длина 7213, полный секторный размер 7424
 ; -----------------------------------------
                 assert $ == #0000
-                ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/18_DATAS/Unclassified000.bin"
+                ; Документация [точная копия блока ACTION](../../Docs/DatasMirror.md)
+                ; Исходная копия 8C00..A82C, путь загрузки DATAS пока не установлен.
+                incbin "../Resources/18_DATAS/ActionInitialBlock.bin"
+                assert $ == #1C2D
+                ; 211 байтов после логического конца, сохранены без классификации.
+                incbin "../Resources/18_DATAS/SectorTail.bin"
                 assert $ == #1D00

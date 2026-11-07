@@ -1,5 +1,6 @@
                 module Controls
                 module RunTemporaryModule
+                ; Документация [банки и ограничения входа](../../Docs/ControlsTemporaryModule.md)
 ; Документация [Controls](../../Docs/FunctionDetails/Controls.md)
 ; -----------------------------------------
 ; Сохранение памяти по банкам, распаковка временного модуля и восстановление полётного кода
@@ -12,8 +13,10 @@
 ;   HL, DE, BC, AF, HL', DE', BC', AF', IX, IY, консервативная верхняя граница
 ; Note:
 ;   граница файла не доказывает границу логической процедуры
-;   состояние самомодификации и активной страницы учитывается отдельно
+;   прямой вход из банка 1 после первого OUT начинает читать PANEL из банка 6
+;   для штатного исполнения нужен подтверждённый перенос кода и источник ненулевой длины
 ; -----------------------------------------
+                ; Сохранение IX и адреса его слова на входном стеке.
 Entry:          PUSH IX
                 LD (#5E33), SP
                 LD A, #16
@@ -28,8 +31,9 @@ Entry:          PUSH IX
                 LD A, #11
                 OUT (C), A
                 EXX
+                ; Подготовка переноса исходного блока из страницы 1.
                 LD HL, #C600
-                LD BC, #0000
+                LD BC, #0000                                                    ; исходная длина, нуль в LDIR означает 65536 итераций
                 LD DE, #8000
                 PUSH BC
                 PUSH DE
@@ -46,7 +50,7 @@ Entry:          PUSH IX
                 POP HL
                 LD D, H
                 LD E, L
-                CALL #AB23
+                CALL @Action.UnpackResource.Entry
                 LD SP, #6000
                 CALL #6500
                 DI
@@ -62,12 +66,13 @@ Entry:          PUSH IX
                 LD A, #10
                 OUT (C), A
                 EXX
-                CALL @Controls.ContinueProjectionRatio.Entry
+                CALL @Action.ClearWorkBuffer.Entry
                 EXX
                 LD A, #11
                 OUT (C), A
                 PUSH BC
                 CALL @Controls.CopyViewportToScreen.Entry
+                ; Восстановление ядра из сохранённого блока банка 1.
                 LD HL, #E000
                 LD DE, #6000
                 LD BC, #2000

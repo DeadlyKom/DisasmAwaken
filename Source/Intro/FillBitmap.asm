@@ -1,6 +1,7 @@
                 module Intro
                 module FillBitmap
 ; Документация [Intro](../../Docs/FunctionDetails/Intro.md)
+                ; Имена внутренних входов [алгоритмы вступления](../../Docs/IntroInternalLabels.md)
 ; -----------------------------------------
 ; Заполнение 128 экранных строк байтом C с учётом адресации Spectrum
 ; исходная запись 3, файловые смещения #0767..#07C0
@@ -16,7 +17,7 @@
 ; -----------------------------------------
 Entry:          LD HL, #4000
                 LD B, #80
-Point6A6C:      LD E, L
+FillScanline:   LD E, L
                 LD (HL), C
                 INC L
                 LD (HL), C
@@ -84,19 +85,19 @@ Point6A6C:      LD E, L
                 INC H
                 LD A, H
                 AND #07
-                JP NZ, @Intro.FillBitmap.Point6ABE                              ; переход, если следующая строка остаётся внутри восьмистрочного знакоместа
+                JP NZ, @Intro.FillBitmap.CountScanline                          ; переход, если следующая строка остаётся внутри восьмистрочного знакоместа
 
 
                 LD A, L
                 ADD A, #20
                 LD L, A
-                JR C, @Intro.FillBitmap.Point6ABE                               ; переход, если переход к следующему знакоместу переполнил L
+                JR C, @Intro.FillBitmap.CountScanline                           ; переход, если переход к следующему знакоместу переполнил L
 
 
                 LD A, H
                 SUB #08
                 LD H, A
-Point6ABE:      DJNZ @Intro.FillBitmap.Point6A6C
+CountScanline:  DJNZ @Intro.FillBitmap.FillScanline
 
                 RET
 

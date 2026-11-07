@@ -1,5 +1,6 @@
                 module Voxel
                 module Multiply7BitWord
+                ; Внутренние входы [алгоритм](../../Docs/ArithmeticFinalInternalLabels.md)
 ; Документация [Voxel](../../Docs/FunctionDetails/Voxel.md)
 ; -----------------------------------------
 ; Умножение младших семи битов A на BC с результатом HL modulo #10000
@@ -20,43 +21,43 @@
 Entry:          LD HL, #0000
                 RLA
                 RLA
-                JR NC, @Voxel.Multiply7BitWord.PointF939                        ; переход, если флаг Carry сброшен
+                JR NC, @Voxel.Multiply7BitWord.NextBit5                         ; переход, если бит 6 исходного A нулевой, слагаемое BC пропускается
 
 
                 ADD HL, BC
-PointF939:      ADD HL, HL
+NextBit5:       ADD HL, HL
                 RLA
-                JR NC, @Voxel.Multiply7BitWord.PointF93E                        ; переход, если флаг Carry сброшен
+                JR NC, @Voxel.Multiply7BitWord.NextBit4                         ; переход, если бит 5 исходного A нулевой, слагаемое BC пропускается
 
 
                 ADD HL, BC
-PointF93E:      ADD HL, HL
+NextBit4:       ADD HL, HL
                 RLA
-                JR NC, @Voxel.Multiply7BitWord.PointF943                        ; переход, если флаг Carry сброшен
+                JR NC, @Voxel.Multiply7BitWord.NextBit3                         ; переход, если бит 4 исходного A нулевой, слагаемое BC пропускается
 
 
                 ADD HL, BC
-PointF943:      ADD HL, HL
+NextBit3:       ADD HL, HL
                 RLA
-                JR NC, @Voxel.Multiply7BitWord.PointF948                        ; переход, если флаг Carry сброшен
+                JR NC, @Voxel.Multiply7BitWord.NextBit2                         ; переход, если бит 3 исходного A нулевой, слагаемое BC пропускается
 
 
                 ADD HL, BC
-PointF948:      ADD HL, HL
+NextBit2:       ADD HL, HL
                 RLA
-                JR NC, @Voxel.Multiply7BitWord.PointF94D                        ; переход, если флаг Carry сброшен
+                JR NC, @Voxel.Multiply7BitWord.NextBit1                         ; переход, если бит 2 исходного A нулевой, слагаемое BC пропускается
 
 
                 ADD HL, BC
-PointF94D:      ADD HL, HL
+NextBit1:       ADD HL, HL
                 RLA
-                JR NC, @Voxel.Multiply7BitWord.PointF952                        ; переход, если флаг Carry сброшен
+                JR NC, @Voxel.Multiply7BitWord.NextBit0                         ; переход, если бит 1 исходного A нулевой, слагаемое BC пропускается
 
 
                 ADD HL, BC
-PointF952:      ADD HL, HL
+NextBit0:       ADD HL, HL
                 RLA
-                RET NC                                                          ; выход, если флаг Carry сброшен
+                RET NC                                                          ; выход, если бит 0 исходного A нулевой, произведение уже готово
 
                 ADD HL, BC
                 RET

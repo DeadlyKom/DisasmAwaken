@@ -22,9 +22,25 @@ def main():
     inventory, audit, checkpoint = read('Inventory'), read('ConformanceAudit'), read('InteractionCheckpoint')
     for name in ('SourceVerification', 'DocumentationVerification', 'SourceLabelsVerification', 'FilePlacementVerification'):
         assert read(name)['passed']
+    if (ROOT/'Tools/Disasm/Reports/ModifiedCodePathsVerification.json').is_file():
+        paths_proof=read('ModifiedCodePathsVerification')
+        assert paths_proof['passed'] and paths_proof['existing_but_wrong_target_path_probe_rejected']
+        checkpoint['modified_code_path_boundaries']=dict(
+            records=paths_proof['records_checked'],
+            physical_target_ranges=paths_proof['physical_target_ranges_checked'],
+            target_paths_without_physical_context=paths_proof['target_paths_without_physical_context'],
+            all_records_have_physical_target_context=False,assembly_executed=False)
+        report_path='Tools/Disasm/Reports/ModifiedCodePathsVerification.json'
+        if report_path not in checkpoint['passed_reports']:
+            checkpoint['passed_reports'].append(report_path)
     assert audit['registered_functions'] == inventory['fragments']
+    checkpoint['unregistered_object_state_callbacks']=audit['unregistered_object_state_callbacks']
+    checkpoint['registered_object_state_callbacks']=audit['registered_object_state_callbacks']
+    checkpoint['unregistered_class_callbacks']=audit['unregistered_class_callbacks']
+    checkpoint['registered_class_callbacks']=audit['registered_class_callbacks']
+    checkpoint['unique_class_handler_targets']=audit['unique_class_handler_targets']
     # Проверка обязательных условий целостности до записи новой контрольной точки.
-    for key in ('unlinked_functions','missing_includes_or_resources','missing_include_order',
+    for key in ('unlinked_functions','missing_includes_or_resources','missing_include_order','modified_code_path_errors',
                 'unresolved_global_references','duplicate_global_definitions',
                 'global_reference_case_mismatches','source_files_outside_graph','python_duplicate_literal_keys'):
         assert not audit[key],(key,audit[key])
@@ -320,12 +336,29 @@ def main():
         checkpoint['action_object_records']=dict(typed_bytes=1664,physical_records=26,initial_slots=25,
             nested_structure_sizes=[2,6,64],physical_symbol_bindings=1794,
             all_field_game_meanings_proved=False,runtime_array_limit_proved=False)
+        from ActionObjectRecords import KNOWN as record_known_fields, layout as record_layout
+        record_size, record_fields=record_layout('FActionRecord')
+        assert record_size==64
+        checkpoint['action_object_records'].update(
+            named_byte_fields_with_at_least_one_proved_use={format(offset,'02X'):value[0]
+                for offset,value in sorted(record_known_fields.items())},
+            unknown_byte_offsets=[format(offset,'02X') for name,offset in record_fields.items() if name.startswith('Unknown')],
+            component_world_units_proved=False)
+        for stem in ('ActionStateCodeNameVerification','ActionRecordPhaseNaming','ActionRecordTimingFieldNaming',
+                     'NamedSourceReferenceReconciliation','ExplicitMutationTargetCompletion'):
+            if not (ROOT/'Tools/Disasm/Reports'/(stem+'.json')).is_file():continue
+            assert read(stem)['passed']
+            report_path='Tools/Disasm/Reports/'+stem+'.json'
+            if report_path not in checkpoint['passed_reports']:checkpoint['passed_reports'].append(report_path)
         for path in ('Tools/Disasm/Reports/ActionObjectRecordsResearchVerification.json','Tools/Disasm/Reports/ActionObjectRecordsClassification.json'):
             if path not in checkpoint['passed_reports']:
                 checkpoint['passed_reports'].append(path)
         if (ROOT/'Tools/Disasm/Reports/ActionObjectRecordsAssemblyObservation.json').exists():
             observed=read('ActionObjectRecordsAssemblyObservation');assert observed['passed']
             checkpoint['action_object_records']['user_assembled_nested_symbols_checked']=1794
+            if (ROOT/'Tools/Disasm/Reports/ActionRecordPhaseNaming.json').is_file():
+                checkpoint['action_object_records'].update(source_renames_after_assembly_observation=True,
+                    current_field_names_assembly_verified=False)
             path='Tools/Disasm/Reports/ActionObjectRecordsAssemblyObservation.json'
             if path not in checkpoint['passed_reports']:
                 checkpoint['passed_reports'].append(path)
@@ -1075,7 +1108,19 @@ def main():
                       'ActionSpawnNearClass12Verification', 'ActionSpawnFallbackVerification',
                       'ActionSpawnAlternateGateVerification', 'ActionSpawnTemplateEntryVerification',
                       'ActionSpawnTemplateLoopVerification', 'ActionSpawnAlternateRecordVerification',
-                      'ActionFrameGatesVerification')
+                      'ActionFrameGatesVerification', 'ActionObjectWalkVerification',
+                      'ControlsTemporaryModuleVerification', 'ActionFlightCycleVerification',
+                      'IntroMirroredTextureVerification', 'IntroScrolledInitializationVerification',
+                      'IntroScrolledFrameVerification', 'IntroColumnInitializationVerification',
+                      'IntroLookupInitializationVerification', 'IntroLookupFrameEntryVerification',
+                      'IntroMirroredCompositionVerification', 'IntroStationTransitionVerification',
+                      'FinalCycleVerification', 'StationBootstrapVerification', 'ActionObjectWalkCompositionVerification',
+                      'DatasMirrorVerification', 'SavedStateLayoutVerification', 'ActionOverlayProjectionVerification', 'FighterAssetsVerification', 'ActionDiagnosticQueueVerification', 'ClipAliasExecutionVerification', 'ActionDeltaRatioVerification', 'BasicProgramVerification', 'IntroCoordinateSeedVerification',
+                      'IntroPhysicalParametersVerification', 'IntroScreenResourcesVerification',
+                      'ActionDirectDecimalVerification', 'ActionApproachWordVerification',
+                      'ActionRecordDistanceVerification', 'ActionSelectedRecordStepVerification',
+                      'ActionClass18ProximityVerification', 'ActionSelectClass8Verification',
+                      'ActionSelectedRecordProximityVerification', 'ActionClassHandlersVerification')
     if all((ROOT / 'Tools/Disasm/Reports' / (stem + '.json')).is_file() for stem in motion_reports):
         proofs = {stem: read(stem) for stem in motion_reports}
         assert all(proof['passed'] and not proof['assembly_executed'] for proof in proofs.values())

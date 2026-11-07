@@ -108,8 +108,9 @@
                 include "../Controls/ToggleTargetOverlay.asm"
                 ent
                 assert $ == #1030
-                ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/23_CONTROL/Unclassified007.bin"
+                disp #EB0E
+                include "../Controls/Data/OverlayGlyphs.asm"
+                ent
                 assert $ == #1130
                 disp #EC0E
                 include "../Controls/InitializeTextWindow.asm"

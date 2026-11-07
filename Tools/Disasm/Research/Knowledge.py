@@ -11,7 +11,7 @@ FUNCTIONS = {
         0xE554: ("SqrtSquareDiff", "Поразрядный целочисленный корень из 16-битной разности D в квадрате, A в квадрате и входного Carry"),
     },
     "Basic": {
-        0x5CD1: ("ReadIntroSectors", "Чтение 44 физических секторов через TR-DOS с возвратом на #6500"),
+        0x5D41: ("ReadIntroSectors", "Чтение 44 физических секторов через TR-DOS с возвратом на #6500"),
     },
     "Intro": {
         0x661E: ("DrawFinalTextureFrame", "Настройка смещения и параметров последнего текстурного эффекта вступления"),
@@ -69,7 +69,7 @@ FUNCTIONS = {
     "StationBoot": {
         0x4070: ("StartStation", "Загрузка банков карты, музыки, справки, 3D и языка, выбор фона, настройка устройств и запуск цикла станции"),
         0x6300: ("RelocateBootstrap", "Очистка атрибутов и перенос #02B5 байт загрузчика в #4000"),
-        0x4000: ("InitializeStation", "Перенос ядра из #65CE в #6322, загрузка банков и создание таблиц"),
+        0x4000: ("InitializeStation", "Перенос ядра из #65CE в #6322 и очистка экрана банка 7"),
     },
     "Station": {
         0xBDA6: ("MeasureTextRun", "Измерение пиксельной ширины текста до CR, LF или разделителя B с продвижением HL"),
@@ -215,6 +215,8 @@ FUNCTIONS = {
         0xEC0E: ("ConfigureSmallEffect", "Общий хвост малого эффекта, настройка параметров #0C и #0D перед поиском свободной записи"),
         0xF931: ("Multiply7BitWord", "Умножение младших семи битов A на BC с результатом HL modulo #10000"),
         0xF957: ("Divide7BitFixed", "Деление младших семи битов A на E с восемью дробными битами, подтверждённый делитель 1..128"),
+        0xF9E9: ("ProjectEffectPoint", "Проекция точки эффекта с двумя знаковыми поправками"),
+        0xFA3A: ("DrawProjectedEffect", "Проекция двух углов эффекта и передача прямоугольника на отсечение"),
         0xEC00: ("CreateSmallEffect", "Инициализация эффекта с ресурсом #D800 и параметрами #0C, #0C, #0D"),
         0xEC1B: ("CreateLargeEffect", "Инициализация эффекта с ресурсом #C400 и параметрами #14, #14, #08"),
         0xEC33: ("AllocateEffect", "Поиск свободной записи #12 байт по знаку и нулевому признаку в поле +7"),
@@ -1646,3 +1648,60 @@ FUNCTIONS['Action'].update(ACTION_SPAWN_RECORD_FINISH_FUNCTIONS)
 
 from ActionSpawnScheduleFacts import FUNCTIONS as ACTION_SPAWN_SCHEDULE_FUNCTIONS
 FUNCTIONS['Action'].update(ACTION_SPAWN_SCHEDULE_FUNCTIONS)
+
+from ActionOverlayProjectionFacts import FUNCTIONS as ACTION_OVERLAY_PROJECTION_FUNCTIONS
+FUNCTIONS['Action'].update(ACTION_OVERLAY_PROJECTION_FUNCTIONS)
+
+from ActionDiagnosticQueueFacts import FUNCTIONS as ACTION_DIAGNOSTIC_QUEUE_FUNCTIONS
+FUNCTIONS['Action'].update(ACTION_DIAGNOSTIC_QUEUE_FUNCTIONS)
+
+from ActionDeltaRatioFacts import FUNCTIONS as ACTION_DELTA_RATIO_FUNCTIONS
+FUNCTIONS['Action'].update(ACTION_DELTA_RATIO_FUNCTIONS)
+
+from ActionDirectDecimalScrollFacts import FUNCTIONS as ACTION_DIRECT_DECIMAL_SCROLL_FUNCTIONS
+FUNCTIONS['Action'].update(ACTION_DIRECT_DECIMAL_SCROLL_FUNCTIONS)
+
+from ActionDirectDecimalPlainFacts import FUNCTIONS as ACTION_DIRECT_DECIMAL_PLAIN_FUNCTIONS
+FUNCTIONS['Action'].update(ACTION_DIRECT_DECIMAL_PLAIN_FUNCTIONS)
+
+from ActionApproachWordFacts import FUNCTIONS as ACTION_APPROACH_WORD_FUNCTIONS
+FUNCTIONS['Action'].update(ACTION_APPROACH_WORD_FUNCTIONS)
+
+from ActionRecordDistanceFacts import FUNCTIONS as ACTION_RECORD_DISTANCE_FUNCTIONS
+FUNCTIONS['Action'].update(ACTION_RECORD_DISTANCE_FUNCTIONS)
+
+from ActionSelectedRecordStepFacts import FUNCTIONS as ACTION_SELECTED_RECORD_STEP_FUNCTIONS
+FUNCTIONS['Action'].update(ACTION_SELECTED_RECORD_STEP_FUNCTIONS)
+
+from ActionClass18ProximityFacts import FUNCTIONS as ACTION_CLASS18_PROXIMITY_FUNCTIONS
+FUNCTIONS['Action'].update(ACTION_CLASS18_PROXIMITY_FUNCTIONS)
+
+from ActionSelectClass8Facts import FUNCTIONS as ACTION_SELECT_CLASS8_FUNCTIONS
+FUNCTIONS['Action'].update(ACTION_SELECT_CLASS8_FUNCTIONS)
+
+from ActionSelectedRecordProximityFacts import FUNCTIONS as ACTION_SELECTED_RECORD_PROXIMITY_FUNCTIONS
+FUNCTIONS['Action'].update(ACTION_SELECTED_RECORD_PROXIMITY_FUNCTIONS)
+
+from ActionClass2LinkFacts import FUNCTIONS as ACTION_CLASS2_LINK_FUNCTIONS
+FUNCTIONS['Action'].update(ACTION_CLASS2_LINK_FUNCTIONS)
+
+from ActionClass5LinkFacts import FUNCTIONS as ACTION_CLASS5_LINK_FUNCTIONS
+FUNCTIONS['Action'].update(ACTION_CLASS5_LINK_FUNCTIONS)
+
+from ActionClass8LinkFacts import FUNCTIONS as ACTION_CLASS8_LINK_FUNCTIONS
+FUNCTIONS['Action'].update(ACTION_CLASS8_LINK_FUNCTIONS)
+
+from ActionClass7LinkFacts import FUNCTIONS as ACTION_CLASS7_LINK_FUNCTIONS
+FUNCTIONS['Action'].update(ACTION_CLASS7_LINK_FUNCTIONS)
+
+from ActionClass6LinkFacts import FUNCTIONS as ACTION_CLASS6_LINK_FUNCTIONS
+FUNCTIONS['Action'].update(ACTION_CLASS6_LINK_FUNCTIONS)
+
+from ActionClass1LinkFacts import FUNCTIONS as ACTION_CLASS1_LINK_FUNCTIONS
+FUNCTIONS['Action'].update(ACTION_CLASS1_LINK_FUNCTIONS)
+
+from ActionClass4LinkFacts import FUNCTIONS as ACTION_CLASS4_LINK_FUNCTIONS
+FUNCTIONS['Action'].update(ACTION_CLASS4_LINK_FUNCTIONS)
+
+from ActionClass3LinkFacts import FUNCTIONS as ACTION_CLASS3_LINK_FUNCTIONS
+FUNCTIONS['Action'].update(ACTION_CLASS3_LINK_FUNCTIONS)

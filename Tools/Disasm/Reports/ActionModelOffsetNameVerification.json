@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "field": "FActionRecord.ModelOffset",
+  "offset": 6,
+  "structure_size": 64,
+  "physical_instances": 26,
+  "changed_files": 22,
+  "source_bytes_preserved": true,
+  "parameter_fields_named": true,
+  "assembly_executed": false
+}

@@ -33,13 +33,13 @@ Entry:          CALL @Station.RepaintAndFlag.Entry
                 JP Z, @Station.ActivateContextMenu.DispatchRow                  ; переход, если селектор равен 1, удалить меню и выполнить выбранную строку
 
                 ; проверка строки указателя для закрытия меню при другом селекторе
-                CALL #C85E
+                CALL @Station.CloseMenuOnRow.Entry
                 RET Z                                                           ; выход, если совпала строка закрытия, удаление уже выполнено
 
                 RET
 
                 ; удаление самого меню из списка перед действием выбранной строки
-DispatchRow:    CALL #C873
+DispatchRow:    CALL @Station.DropItemDraw.Entry
                 ; чтение сохранённого номера, он может содержать высоту после позднего отказа наведения
                 LD A, (@PopupState.PreviousRow)
                 ; проверка маркера отсутствующего выделения через увеличение #FF
@@ -77,7 +77,7 @@ DispatchRow:    CALL #C873
                 ; выбор окна сохранения для номера 7 и всех остальных немаркерных байтов
                 LD HL, @Station.DrawSaveSlotPanel.Entry
                 ; перенос окна сохранения в конец списка и восстановление его границ
-                JP #CBA9
+                JP @Station.RestoreItemBounds.Entry
 
                 endmodule
                 endmodule

@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "code_operands_named": 3,
+  "new_registered_writers": 3,
+  "qualified_apply_targets": 13,
+  "remaining_unknown_apply_targets": [
+    "Unknown04",
+    "Unknown09"
+  ],
+  "threshold_model_cases": 196608,
+  "source_instructions_and_disk_bytes_preserved": true,
+  "assembly_executed": false,
+  "native_execution": false
+}

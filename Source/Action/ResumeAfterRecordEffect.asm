@@ -15,7 +15,7 @@
                 ; -----------------------------------------
                 ; Сброс флагов связи освобождённой записи перед продолжением обхода.
 Entry:          LD (IX + @FActionRecord.LinkFlags), #00
-                JP @Action.UpdateObjects.PointF735
+                JP @Action.UpdateObjects.NextRecord
 
                 endmodule
                 endmodule

@@ -139,7 +139,7 @@ FlushAy:        LD SP, #0000
                 LD B, E
                 OUT (C), A
                 LD (HL), #00
-                ; JP @Music.AdvancePatternBC.Entry, продолжение в UnknownE37C.asm
+                ; JP @Music.AdvancePatternBC.Entry, продолжение в AdvancePatternBC.asm
 
                 endmodule
                 endmodule

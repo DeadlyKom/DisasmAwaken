@@ -48,8 +48,9 @@ class Machine:
         stack=self.r[12]
         if entry==0xE6E2:
             self.call(0xEBB1,0xE6E5,lambda:self.stream(10));low=self.r[7]
-            self.r[0:2]=[26,0x0A|int(low<160)];self.m1(6)
-            if low>=160:self.path.append('random_gate_26');return self.finish()
+            limit=self.read(0xE6E7)
+            self.r[0:2]=[26,0x0A|int(low<limit)];self.m1(6)
+            if low>=limit:self.path.append('random_gate_26');return self.finish()
         self.m1(3);self.pair(2,64);pointer=0xA100
         for _ in range(1024):
             # Поиск по фактическим записям до активной строки либо маркера, лимит здесь защищает только модель.
@@ -90,7 +91,7 @@ class Machine:
     def class0(self):
         self.call(0x662B,0x6611,self.override);self.m1(1)
         if not self.r[1]&64:self.path.append('override_return');return self.finish()
-        self.m1(2);a=self.r[15];self.r[0:2]=[a,cp_flags(a,112)];self.m1(1)
+        self.m1(2);a=self.r[15];self.r[0:2]=[a,cp_flags(a,self.read(0x6615))];self.m1(1)
         pointer=self.r[8]*256+self.r[9];self.put(pointer+10,2);self.m1(2)
         return self.common_class_link()
 

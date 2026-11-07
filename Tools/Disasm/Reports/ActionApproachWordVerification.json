@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "total_cases": 196608,
+  "cases_by_path": {
+    "small_positive": 768,
+    "small_negative": 765,
+    "large_positive": 97536,
+    "large_negative": 97539
+  },
+  "all_65536_differences_for_each_base": true,
+  "bases": [
+    0,
+    32767,
+    65535
+  ],
+  "exact_registers_flags_r_sp_and_all_ram": true,
+  "any_memory_write_rejected": true,
+  "all_input_words_product_exhausted": false,
+  "runtime_caller_found": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

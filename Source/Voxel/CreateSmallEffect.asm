@@ -17,7 +17,7 @@
 ;   после этого фрагмента исполняется ConfigureSmallEffect без CALL
 ;   поля +#10 и +#11 получают #0C, это не нулевые счётчики в созданной записи
 ; -----------------------------------------
-Entry:          LD HL, #D800
+Entry:          LD HL, @SmallEffectFrames.Frame00
                 LD DE, #00C0
                 LD (#EC5A), A
                 LD A, #0C

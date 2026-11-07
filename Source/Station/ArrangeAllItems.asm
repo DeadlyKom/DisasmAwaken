@@ -16,7 +16,7 @@
 ;   хвостовой JP RestoreAllBounds не выполняет рисование и не меняет EventEnabled
 ; -----------------------------------------
                 ; восстановление всей геометрии исходным RestoreAllBounds
-Entry:          JP #CB7F
+Entry:          JP @Station.RestoreAllBounds.Entry
 
                 endmodule
                 endmodule

@@ -1,6 +1,7 @@
                 module Intro
                 module ExpandTextureRows
 ; Документация [Intro](../../Docs/FunctionDetails/Intro.md)
+                ; Имена внутренних входов [алгоритмы вступления](../../Docs/IntroInternalLabels.md)
 ; -----------------------------------------
 ; Добавление IXL к 4096 байтам банка 4 и четырёхкратное повторение каждой 64-байтовой строки
 ; исходная запись 3, файловые смещения #0429..#0456
@@ -20,31 +21,31 @@ Entry:          LD A, #14
                 CALL @Intro.SelectMemoryPage.Entry
                 LD D, #80
                 LD HL, #C000
-Point6733:      LD E, #00
+BeginRow:       LD E, #00
                 LD B, #40
                 ; преобразование очередного байта текстуры с добавлением смещения IXL
-Point6737:      LD A, (HL)
+AddTextureBias: LD A, (HL)
                 ADD A, IXL
                 LD (DE), A
                 INC HL
                 INC E
-                DJNZ @Intro.ExpandTextureRows.Point6737
+                DJNZ @Intro.ExpandTextureRows.AddTextureBias
 
                 INC D
                 BIT 6, D
-                JR Z, @Intro.ExpandTextureRows.Point6733                        ; переход, если ещё не созданы все 64 строки текстуры
+                JR Z, @Intro.ExpandTextureRows.BeginRow                         ; переход, если ещё не созданы все 64 строки текстуры
 
 
                 LD H, #80
                 LD D, H
-Point6747:      LD BC, #00C0
+RepeatRow:      LD BC, #00C0
                 LD L, B
                 LD E, #40
                 ; повторение 64-байтового образца ещё три раза перекрывающимся копированием
                 LDIR
                 INC H
                 BIT 6, H
-                JR Z, @Intro.ExpandTextureRows.Point6747                        ; переход, если ещё не повторены строки всех 64 страниц
+                JR Z, @Intro.ExpandTextureRows.RepeatRow                        ; переход, если ещё не повторены строки всех 64 страниц
 
 
                 JP @Intro.SelectIntroPage.Entry

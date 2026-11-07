@@ -63,10 +63,15 @@ def main():
         paging = [value for port, value in trace.writes if port == 0x7FFD]
         assert paging == [17, 16] * (frames + 1)
         assert memory.o7ffd == 16
+        expected = bytes(memory.banks[1][0x1CA9:0x1DA9])
+        sim.run(0xAAC4, 0x4000)
+        assert sim.registers[PC] == 0x4000 and sim.registers[SP] == 0xBFFE
+        assert memory.o7ffd == 17 and trace.writes[-1] == (0x7FFD, 17)
+        assert bytes(memory.banks[5][:256]) == expected
         total_frames += frames
     report = dict(passed=True, total_cases=4, frames=total_frames,
                   actual_rom_copy_and_output_executed=True, halt_wakeup_injected=True,
-                  hardware_irq_executed=False, assembly_executed=False, native_execution=False)
+                  station_loader_relocated_without_call=True, hardware_irq_executed=False, assembly_executed=False, native_execution=False)
     payload = json.dumps(report, indent=2) + '\n'
     (ROOT / 'Tools/Disasm/Reports/ActionNoiseExitVerification.json').write_text(payload, encoding='utf-8')
     print(payload)

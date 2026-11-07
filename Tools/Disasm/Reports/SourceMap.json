@@ -3,9 +3,9 @@
     "slot": 3,
     "offset": 0,
     "length": 6,
-    "kind": "unclassified",
-    "path": "Source/Resources/03_AWAKEN/Unclassified000.bin",
-    "origin": null,
+    "path": "Source/Basic/Data/Prefix.asm",
+    "kind": "typed_data",
+    "origin": 23867,
     "sha256": "fa95a985a92bf8158b543184c80b1f62a22acdf2905cf207653488f626628f34"
   },
   {
@@ -14,17 +14,53 @@
     "length": 24,
     "kind": "code",
     "path": "Source/Basic/ReadIntroSectors.asm",
-    "origin": 23761,
+    "origin": 23873,
     "sha256": "e85bd748afcd053ed4fa02057d9f8490e2950130c7c3917446d23d5d62ad4fbd"
   },
   {
     "slot": 3,
     "offset": 30,
-    "length": 482,
-    "kind": "unclassified",
-    "path": "Source/Resources/03_AWAKEN/Unclassified001.bin",
+    "length": 71,
+    "path": "Source/Basic/Data/Line10Tail.asm",
+    "kind": "typed_data",
+    "origin": 23897,
+    "sha256": "169819068976bdab130480ebc1d46cba822b4c0f40807e3925d28f05854c325b"
+  },
+  {
+    "slot": 3,
+    "offset": 101,
+    "length": 18,
+    "path": "Source/Basic/Data/EntryLine.asm",
+    "kind": "typed_data",
+    "origin": 23968,
+    "sha256": "5722ce350595fe9f36d363f80e0f5ad51b17d79e88363377c8332b02551c26fa"
+  },
+  {
+    "slot": 3,
+    "offset": 119,
+    "length": 4,
+    "path": "Source/Basic/Data/Autostart.asm",
+    "kind": "typed_data",
     "origin": null,
-    "sha256": "645d62b84dbe073ba80f259a491310ce806d71056ef437d43915cd8b620591ea"
+    "sha256": "8ba22616e3765af638b931ee55201eb9f85194c378e852b2f3122b0ed3f9e209"
+  },
+  {
+    "slot": 3,
+    "offset": 123,
+    "length": 133,
+    "path": "Source/Resources/03_AWAKEN/UnknownAfterBasicAutostart.bin",
+    "kind": "unclassified",
+    "origin": null,
+    "sha256": "c922c6ef80955ef76e47198199b58cc378361455e00014d0c39aee5ae599d7e6"
+  },
+  {
+    "slot": 3,
+    "offset": 256,
+    "length": 256,
+    "path": "Source/Intro/Data/CoordinateSeed.asm",
+    "kind": "typed_data",
+    "origin": 25600,
+    "sha256": "2d33890e20f6b6285a14e3d7d07bba79b891078df623fc7ec2ece69bf3ba73ff"
   },
   {
     "slot": 3,
@@ -57,9 +93,9 @@
     "slot": 3,
     "offset": 789,
     "length": 9,
-    "kind": "unclassified",
-    "path": "Source/Resources/03_AWAKEN/Unclassified003.bin",
-    "origin": null,
+    "kind": "typed_data",
+    "path": "Source/Intro/Data/StationFileKey.asm",
+    "origin": 26133,
     "sha256": "633c8cff4f79c94949f07a79ef7a1efad8d36767a105666f964ae0e9377bbd29"
   },
   {
@@ -75,9 +111,9 @@
     "slot": 3,
     "offset": 812,
     "length": 12,
-    "kind": "unclassified",
-    "path": "Source/Resources/03_AWAKEN/Unclassified004.bin",
-    "origin": null,
+    "kind": "typed_data",
+    "path": "Source/Intro/Data/FinalTexturePhases.asm",
+    "origin": 26156,
     "sha256": "ac60d0d4d1379f429c351633f33053693bf50967dce60c7e2203a23cb8b0998d"
   },
   {
@@ -92,11 +128,20 @@
   {
     "slot": 3,
     "offset": 867,
-    "length": 64,
+    "length": 63,
+    "kind": "typed_data",
+    "path": "Source/Intro/Data/AlternatingLookup.asm",
+    "origin": 26211,
+    "sha256": "decb5026a48a3fc7b75bf54c9ed24ee2cb095199565b0f85dad5f9536e58a7c1"
+  },
+  {
+    "slot": 3,
+    "offset": 930,
+    "length": 1,
     "kind": "unclassified",
-    "path": "Source/Resources/03_AWAKEN/Unclassified005.bin",
+    "path": "Source/Resources/03_AWAKEN/UnknownAfterLookupParameters.bin",
     "origin": null,
-    "sha256": "d158941d7f509082e445bcb41ecaea5bf197b618346a1ac390b28838c5f76e64"
+    "sha256": "ba5ec51d07a4ac0e951608704431d59a02b21a4e951acc10505a8dc407c501ee"
   },
   {
     "slot": 3,
@@ -228,9 +273,9 @@
     "slot": 3,
     "offset": 1683,
     "length": 16,
-    "kind": "unclassified",
-    "path": "Source/Resources/03_AWAKEN/Unclassified006.bin",
-    "origin": null,
+    "kind": "typed_data",
+    "path": "Source/Intro/Data/AttributeNibbleSeeds.asm",
+    "origin": 27027,
     "sha256": "04ce55fdfcce308b337d966d15c1dab3705155f7dad5ab90432b4e6591edf707"
   },
   {
@@ -363,9 +408,9 @@
     "slot": 3,
     "offset": 2163,
     "length": 32,
-    "kind": "unclassified",
-    "path": "Source/Resources/03_AWAKEN/Unclassified007.bin",
-    "origin": null,
+    "kind": "typed_data",
+    "path": "Source/Intro/Data/ColumnTailSamples.asm",
+    "origin": 27507,
     "sha256": "851f9538deab8c29982beeb6b2a8faf6053bdf2815a17e25c3a3924499bc135e"
   },
   {
@@ -444,9 +489,9 @@
     "slot": 3,
     "offset": 2402,
     "length": 40,
-    "kind": "unclassified",
-    "path": "Source/Resources/03_AWAKEN/Unclassified008.bin",
-    "origin": null,
+    "kind": "typed_data",
+    "path": "Source/Intro/Data/ScaleCycle.asm",
+    "origin": 27746,
     "sha256": "c104fb13bb010996cd6808bd66b7f16f109b3814c17b0e90f65c535d7020c367"
   },
   {
@@ -515,11 +560,20 @@
   {
     "slot": 3,
     "offset": 2865,
-    "length": 6912,
-    "kind": "unclassified",
-    "path": "Source/Resources/03_AWAKEN/Unclassified009.bin",
-    "origin": null,
-    "sha256": "b52aa545ab365ec59832d681d593cdf861087bbcb7613162452f8ec323f45312"
+    "length": 6144,
+    "kind": "resource",
+    "path": "Source/Intro/Data/InitialScreenBitmap.bin",
+    "origin": 28209,
+    "sha256": "68d95290e76e150f85d3fba25ac872a68a9bb8b0ddcc805b3f1f3b6dfa9df297"
+  },
+  {
+    "slot": 3,
+    "offset": 9009,
+    "length": 768,
+    "kind": "typed_data",
+    "path": "Source/Intro/Data/InitialScreenAttributes.asm",
+    "origin": 34353,
+    "sha256": "298877b25e836a3e0cb08ff2e3c667c800a852fb427056f49516a364af4f7ec7"
   },
   {
     "slot": 3,
@@ -533,11 +587,20 @@
   {
     "slot": 3,
     "offset": 9931,
-    "length": 1589,
+    "length": 1440,
+    "kind": "binary_resource",
+    "path": "Source/Intro/Data/StationScreenPacked.bin",
+    "origin": 28363,
+    "sha256": "490dba3bd565af539cc2618e08fcd465fb162634a9068786b9cb1facfbad7085"
+  },
+  {
+    "slot": 3,
+    "offset": 11371,
+    "length": 149,
     "kind": "unclassified",
-    "path": "Source/Resources/03_AWAKEN/Unclassified010.bin",
+    "path": "Source/Resources/03_AWAKEN/UnknownAfterStationScreen.bin",
     "origin": null,
-    "sha256": "13d82104d86287c9b5e61895a583917c33ae37b32acfe4aea05a19a63a9a273b"
+    "sha256": "7490900d04ad84982bb9dbb35c55e571680475fa0ed66a379045871ae7435c4b"
   },
   {
     "slot": 4,
@@ -2848,11 +2911,47 @@
   {
     "slot": 4,
     "offset": 14404,
-    "length": 108,
+    "length": 5,
+    "kind": "typed_data",
+    "path": "Source/Station/Data/SelectedMapKey.asm",
+    "origin": 38980,
+    "sha256": "e349acf437e8362ce7bf34e32d64e8604ce155e39dca5c56f684b11a295d1d9b"
+  },
+  {
+    "slot": 4,
+    "offset": 14409,
+    "length": 9,
+    "kind": "typed_data",
+    "path": "Source/Station/Data/PlayerSaveHeader.asm",
+    "origin": 38985,
+    "sha256": "45aa8f3570ef50f515d249296dee40252e6f44bc4010bde1cb85dac3347f2fbd"
+  },
+  {
+    "slot": 4,
+    "offset": 14418,
+    "length": 60,
+    "kind": "typed_data",
+    "path": "Source/Station/Data/OwnedCargoRows.asm",
+    "origin": 38994,
+    "sha256": "5dcc1b5872dd9ff1c234501f1fefda01f664164e1583c3e1bb3dbea47588ab31"
+  },
+  {
+    "slot": 4,
+    "offset": 14478,
+    "length": 30,
+    "kind": "typed_data",
+    "path": "Source/Station/Data/EquipmentQuantityCodes.asm",
+    "origin": 39054,
+    "sha256": "b8288e018552e97af153987598602b847ece609298f4020fb2b2a737b208fc2f"
+  },
+  {
+    "slot": 4,
+    "offset": 14508,
+    "length": 4,
     "kind": "unclassified",
-    "path": "Source/Resources/04_STATIONF/Unclassified044TailAfterIrqGraphics.bin",
+    "path": "Source/Resources/04_STATIONF/Unknown98AC.bin",
     "origin": null,
-    "sha256": "3eca71ef27608d8b7391d29d74803c7eaa02935aa8dcfc52f940c146bc8edec8"
+    "sha256": "416eed8f6b25cf2b26d1396b9a0c5b6b79ba5bc36cb63572362d09e97d54fc5d"
   },
   {
     "slot": 4,
@@ -6376,11 +6475,20 @@
   {
     "slot": 6,
     "offset": 1024,
-    "length": 512,
+    "length": 256,
+    "kind": "typed_data",
+    "path": "Source/D3D/Data/SineTable.asm",
+    "origin": 50176,
+    "sha256": "8799a0059849a16e5a942e1de4ac206cded0133f897fd7eb7cda2b6551f7d1c5"
+  },
+  {
+    "slot": 6,
+    "offset": 1280,
+    "length": 256,
     "kind": "unclassified",
-    "path": "Source/Resources/06_D3D/BeforeProjectedVertices.bin",
+    "path": "Source/Resources/06_D3D/UnknownAfterSine.bin",
     "origin": null,
-    "sha256": "9b7ef1c85a2d752c2e46ec66e89305673eb5dddeeeb8dbddc4d7416f25f8500f"
+    "sha256": "d2f63815e4d2a0380973b75fe4a60acdc812d46bf199533410c676ef841aeb43"
   },
   {
     "slot": 6,
@@ -9853,56 +9961,974 @@
   {
     "slot": 11,
     "offset": 0,
-    "length": 512,
-    "kind": "unclassified",
-    "path": "Source/Resources/11_SAVE1/Unclassified000.bin",
+    "length": 4,
+    "kind": "typed_data",
+    "path": "Source/Resources/11_SAVE1/StationTimer.asm",
     "origin": null,
-    "sha256": "6f91999c3cf574ca099d1cd805120cd3048320a5d3992b7f5c7e850101aaa189"
+    "sha256": "e041f9b8adc2c27c1df6171b8862e8c6cb2eca9d5a8563fca9a7f2f4cdddc40a"
+  },
+  {
+    "slot": 11,
+    "offset": 4,
+    "length": 5,
+    "kind": "typed_data",
+    "path": "Source/Resources/11_SAVE1/CurrentSignature.asm",
+    "origin": null,
+    "sha256": "e349acf437e8362ce7bf34e32d64e8604ce155e39dca5c56f684b11a295d1d9b"
+  },
+  {
+    "slot": 11,
+    "offset": 9,
+    "length": 5,
+    "kind": "typed_data",
+    "path": "Source/Resources/11_SAVE1/SelectedMapKey.asm",
+    "origin": null,
+    "sha256": "e349acf437e8362ce7bf34e32d64e8604ce155e39dca5c56f684b11a295d1d9b"
+  },
+  {
+    "slot": 11,
+    "offset": 14,
+    "length": 9,
+    "kind": "typed_data",
+    "path": "Source/Resources/11_SAVE1/PlayerSaveHeader.asm",
+    "origin": null,
+    "sha256": "45aa8f3570ef50f515d249296dee40252e6f44bc4010bde1cb85dac3347f2fbd"
+  },
+  {
+    "slot": 11,
+    "offset": 23,
+    "length": 60,
+    "kind": "typed_data",
+    "path": "Source/Resources/11_SAVE1/OwnedCargoRows.asm",
+    "origin": null,
+    "sha256": "5dcc1b5872dd9ff1c234501f1fefda01f664164e1583c3e1bb3dbea47588ab31"
+  },
+  {
+    "slot": 11,
+    "offset": 83,
+    "length": 30,
+    "kind": "typed_data",
+    "path": "Source/Resources/11_SAVE1/EquipmentQuantityCodes.asm",
+    "origin": null,
+    "sha256": "b8288e018552e97af153987598602b847ece609298f4020fb2b2a737b208fc2f"
+  },
+  {
+    "slot": 11,
+    "offset": 113,
+    "length": 4,
+    "kind": "unclassified",
+    "path": "Source/Resources/11_SAVE1/Unknown98AC.bin",
+    "origin": null,
+    "sha256": "416eed8f6b25cf2b26d1396b9a0c5b6b79ba5bc36cb63572362d09e97d54fc5d"
+  },
+  {
+    "slot": 11,
+    "offset": 117,
+    "length": 16,
+    "kind": "typed_data",
+    "path": "Source/Resources/11_SAVE1/MissionOffer.asm",
+    "origin": null,
+    "sha256": "ba1968c1a3be944e33ab613b54a69c34fc3da55e980aa626f49f82b01ed8300a"
+  },
+  {
+    "slot": 11,
+    "offset": 133,
+    "length": 74,
+    "kind": "unclassified",
+    "path": "Source/Resources/11_SAVE1/Unknown085.bin",
+    "origin": null,
+    "sha256": "dcf3d3f57ba962a9e17c2c703f6c34c68bb1e58bc65b0c164436dd430a9b501b"
+  },
+  {
+    "slot": 11,
+    "offset": 207,
+    "length": 102,
+    "kind": "typed_data",
+    "path": "Source/Resources/11_SAVE1/StoredMapPoints.asm",
+    "origin": null,
+    "sha256": "7fb70c9c3ec3047b58743f8fbb3532e0f23cb18ea263715b22de704f513aeff5"
+  },
+  {
+    "slot": 11,
+    "offset": 309,
+    "length": 11,
+    "kind": "typed_data",
+    "path": "Source/Resources/11_SAVE1/StoredMapOrder.asm",
+    "origin": null,
+    "sha256": "951cfacc28f753b3c3a9fd8346457f545199349a91b9df33e9ccca876f4d244b"
+  },
+  {
+    "slot": 11,
+    "offset": 320,
+    "length": 40,
+    "kind": "typed_data",
+    "path": "Source/Resources/11_SAVE1/MapAuxiliaryPoints.asm",
+    "origin": null,
+    "sha256": "3ea3738e1b49592accbd3d8f9e37e6d35dada820c619de035653c64c765d0f8b"
+  },
+  {
+    "slot": 11,
+    "offset": 360,
+    "length": 11,
+    "kind": "typed_data",
+    "path": "Source/Resources/11_SAVE1/MapAuxiliaryCodes.asm",
+    "origin": null,
+    "sha256": "88978a0fe1d200e290209d2b097d615c70b59b8e262deb404222505b48de270d"
+  },
+  {
+    "slot": 11,
+    "offset": 371,
+    "length": 8,
+    "kind": "typed_data",
+    "path": "Source/Resources/11_SAVE1/InterfaceChoices.asm",
+    "origin": null,
+    "sha256": "007afeed6b3dcfae32e1d453a74fa454b81ede181dfdf8791841f5bee59f7add"
+  },
+  {
+    "slot": 11,
+    "offset": 379,
+    "length": 12,
+    "kind": "typed_data",
+    "path": "Source/Resources/11_SAVE1/PointerKeys.asm",
+    "origin": null,
+    "sha256": "f87ea71ab8ef6be1958575d30b8d485c4cae53c4795d3489d2c5f84715c560c1"
+  },
+  {
+    "slot": 11,
+    "offset": 391,
+    "length": 6,
+    "kind": "typed_data",
+    "path": "Source/Resources/11_SAVE1/InterfaceColors.asm",
+    "origin": null,
+    "sha256": "ee898cdf83de38c395836f48d08fafacbb7a6e5ee2e6be0e99a649f8c1a9f6b2"
+  },
+  {
+    "slot": 11,
+    "offset": 397,
+    "length": 86,
+    "kind": "typed_data",
+    "path": "Source/Resources/11_SAVE1/ControlOptions.asm",
+    "origin": null,
+    "sha256": "0aec9f7eee9b3d9b1bb7db6b94a817ac58dabcc7742605bf9dc9cf09a37f8d89"
+  },
+  {
+    "slot": 11,
+    "offset": 483,
+    "length": 29,
+    "kind": "unclassified",
+    "path": "Source/Resources/11_SAVE1/Unknown1E3.bin",
+    "origin": null,
+    "sha256": "11e431c215c5bd334cecbd43148274edf3ffdbd6cd6479fe279577fbe5f52ce6"
   },
   {
     "slot": 12,
     "offset": 0,
-    "length": 512,
-    "kind": "unclassified",
-    "path": "Source/Resources/12_SAVE2/Unclassified000.bin",
+    "length": 4,
+    "kind": "typed_data",
+    "path": "Source/Resources/12_SAVE2/StationTimer.asm",
     "origin": null,
-    "sha256": "39615841139ad50f01b0618453066ba27d8a287746718dea6139cfe0fca53d27"
+    "sha256": "b607f974b0b408212c1a175a0c8ef09e6f8244c7b9f7b282405e8f651730b835"
+  },
+  {
+    "slot": 12,
+    "offset": 4,
+    "length": 5,
+    "kind": "typed_data",
+    "path": "Source/Resources/12_SAVE2/CurrentSignature.asm",
+    "origin": null,
+    "sha256": "e349acf437e8362ce7bf34e32d64e8604ce155e39dca5c56f684b11a295d1d9b"
+  },
+  {
+    "slot": 12,
+    "offset": 9,
+    "length": 5,
+    "kind": "typed_data",
+    "path": "Source/Resources/12_SAVE2/SelectedMapKey.asm",
+    "origin": null,
+    "sha256": "e349acf437e8362ce7bf34e32d64e8604ce155e39dca5c56f684b11a295d1d9b"
+  },
+  {
+    "slot": 12,
+    "offset": 14,
+    "length": 9,
+    "kind": "typed_data",
+    "path": "Source/Resources/12_SAVE2/PlayerSaveHeader.asm",
+    "origin": null,
+    "sha256": "45aa8f3570ef50f515d249296dee40252e6f44bc4010bde1cb85dac3347f2fbd"
+  },
+  {
+    "slot": 12,
+    "offset": 23,
+    "length": 60,
+    "kind": "typed_data",
+    "path": "Source/Resources/12_SAVE2/OwnedCargoRows.asm",
+    "origin": null,
+    "sha256": "5dcc1b5872dd9ff1c234501f1fefda01f664164e1583c3e1bb3dbea47588ab31"
+  },
+  {
+    "slot": 12,
+    "offset": 83,
+    "length": 30,
+    "kind": "typed_data",
+    "path": "Source/Resources/12_SAVE2/EquipmentQuantityCodes.asm",
+    "origin": null,
+    "sha256": "b8288e018552e97af153987598602b847ece609298f4020fb2b2a737b208fc2f"
+  },
+  {
+    "slot": 12,
+    "offset": 113,
+    "length": 4,
+    "kind": "unclassified",
+    "path": "Source/Resources/12_SAVE2/Unknown98AC.bin",
+    "origin": null,
+    "sha256": "416eed8f6b25cf2b26d1396b9a0c5b6b79ba5bc36cb63572362d09e97d54fc5d"
+  },
+  {
+    "slot": 12,
+    "offset": 117,
+    "length": 16,
+    "kind": "typed_data",
+    "path": "Source/Resources/12_SAVE2/MissionOffer.asm",
+    "origin": null,
+    "sha256": "ba1968c1a3be944e33ab613b54a69c34fc3da55e980aa626f49f82b01ed8300a"
+  },
+  {
+    "slot": 12,
+    "offset": 133,
+    "length": 74,
+    "kind": "unclassified",
+    "path": "Source/Resources/12_SAVE2/Unknown085.bin",
+    "origin": null,
+    "sha256": "dcf3d3f57ba962a9e17c2c703f6c34c68bb1e58bc65b0c164436dd430a9b501b"
+  },
+  {
+    "slot": 12,
+    "offset": 207,
+    "length": 102,
+    "kind": "typed_data",
+    "path": "Source/Resources/12_SAVE2/StoredMapPoints.asm",
+    "origin": null,
+    "sha256": "7fb70c9c3ec3047b58743f8fbb3532e0f23cb18ea263715b22de704f513aeff5"
+  },
+  {
+    "slot": 12,
+    "offset": 309,
+    "length": 11,
+    "kind": "typed_data",
+    "path": "Source/Resources/12_SAVE2/StoredMapOrder.asm",
+    "origin": null,
+    "sha256": "951cfacc28f753b3c3a9fd8346457f545199349a91b9df33e9ccca876f4d244b"
+  },
+  {
+    "slot": 12,
+    "offset": 320,
+    "length": 40,
+    "kind": "typed_data",
+    "path": "Source/Resources/12_SAVE2/MapAuxiliaryPoints.asm",
+    "origin": null,
+    "sha256": "3ea3738e1b49592accbd3d8f9e37e6d35dada820c619de035653c64c765d0f8b"
+  },
+  {
+    "slot": 12,
+    "offset": 360,
+    "length": 11,
+    "kind": "typed_data",
+    "path": "Source/Resources/12_SAVE2/MapAuxiliaryCodes.asm",
+    "origin": null,
+    "sha256": "88978a0fe1d200e290209d2b097d615c70b59b8e262deb404222505b48de270d"
+  },
+  {
+    "slot": 12,
+    "offset": 371,
+    "length": 8,
+    "kind": "typed_data",
+    "path": "Source/Resources/12_SAVE2/InterfaceChoices.asm",
+    "origin": null,
+    "sha256": "007afeed6b3dcfae32e1d453a74fa454b81ede181dfdf8791841f5bee59f7add"
+  },
+  {
+    "slot": 12,
+    "offset": 379,
+    "length": 12,
+    "kind": "typed_data",
+    "path": "Source/Resources/12_SAVE2/PointerKeys.asm",
+    "origin": null,
+    "sha256": "f87ea71ab8ef6be1958575d30b8d485c4cae53c4795d3489d2c5f84715c560c1"
+  },
+  {
+    "slot": 12,
+    "offset": 391,
+    "length": 6,
+    "kind": "typed_data",
+    "path": "Source/Resources/12_SAVE2/InterfaceColors.asm",
+    "origin": null,
+    "sha256": "ee898cdf83de38c395836f48d08fafacbb7a6e5ee2e6be0e99a649f8c1a9f6b2"
+  },
+  {
+    "slot": 12,
+    "offset": 397,
+    "length": 86,
+    "kind": "typed_data",
+    "path": "Source/Resources/12_SAVE2/ControlOptions.asm",
+    "origin": null,
+    "sha256": "0aec9f7eee9b3d9b1bb7db6b94a817ac58dabcc7742605bf9dc9cf09a37f8d89"
+  },
+  {
+    "slot": 12,
+    "offset": 483,
+    "length": 29,
+    "kind": "unclassified",
+    "path": "Source/Resources/12_SAVE2/Unknown1E3.bin",
+    "origin": null,
+    "sha256": "11e431c215c5bd334cecbd43148274edf3ffdbd6cd6479fe279577fbe5f52ce6"
   },
   {
     "slot": 13,
     "offset": 0,
-    "length": 512,
-    "kind": "unclassified",
-    "path": "Source/Resources/13_SAVE3/Unclassified000.bin",
+    "length": 4,
+    "kind": "typed_data",
+    "path": "Source/Resources/13_SAVE3/StationTimer.asm",
     "origin": null,
-    "sha256": "b5b9675c7d00b6a5d453bb4a09927f0bc8b20f58a324b9a5f75a56279460bf08"
+    "sha256": "e501a4b5072a580cc5c7f434e6a1e9b9d72ce60e7fbb5d5251961e2841051ebf"
+  },
+  {
+    "slot": 13,
+    "offset": 4,
+    "length": 5,
+    "kind": "typed_data",
+    "path": "Source/Resources/13_SAVE3/CurrentSignature.asm",
+    "origin": null,
+    "sha256": "e349acf437e8362ce7bf34e32d64e8604ce155e39dca5c56f684b11a295d1d9b"
+  },
+  {
+    "slot": 13,
+    "offset": 9,
+    "length": 5,
+    "kind": "typed_data",
+    "path": "Source/Resources/13_SAVE3/SelectedMapKey.asm",
+    "origin": null,
+    "sha256": "e349acf437e8362ce7bf34e32d64e8604ce155e39dca5c56f684b11a295d1d9b"
+  },
+  {
+    "slot": 13,
+    "offset": 14,
+    "length": 9,
+    "kind": "typed_data",
+    "path": "Source/Resources/13_SAVE3/PlayerSaveHeader.asm",
+    "origin": null,
+    "sha256": "45aa8f3570ef50f515d249296dee40252e6f44bc4010bde1cb85dac3347f2fbd"
+  },
+  {
+    "slot": 13,
+    "offset": 23,
+    "length": 60,
+    "kind": "typed_data",
+    "path": "Source/Resources/13_SAVE3/OwnedCargoRows.asm",
+    "origin": null,
+    "sha256": "5dcc1b5872dd9ff1c234501f1fefda01f664164e1583c3e1bb3dbea47588ab31"
+  },
+  {
+    "slot": 13,
+    "offset": 83,
+    "length": 30,
+    "kind": "typed_data",
+    "path": "Source/Resources/13_SAVE3/EquipmentQuantityCodes.asm",
+    "origin": null,
+    "sha256": "b8288e018552e97af153987598602b847ece609298f4020fb2b2a737b208fc2f"
+  },
+  {
+    "slot": 13,
+    "offset": 113,
+    "length": 4,
+    "kind": "unclassified",
+    "path": "Source/Resources/13_SAVE3/Unknown98AC.bin",
+    "origin": null,
+    "sha256": "416eed8f6b25cf2b26d1396b9a0c5b6b79ba5bc36cb63572362d09e97d54fc5d"
+  },
+  {
+    "slot": 13,
+    "offset": 117,
+    "length": 16,
+    "kind": "typed_data",
+    "path": "Source/Resources/13_SAVE3/MissionOffer.asm",
+    "origin": null,
+    "sha256": "ba1968c1a3be944e33ab613b54a69c34fc3da55e980aa626f49f82b01ed8300a"
+  },
+  {
+    "slot": 13,
+    "offset": 133,
+    "length": 74,
+    "kind": "unclassified",
+    "path": "Source/Resources/13_SAVE3/Unknown085.bin",
+    "origin": null,
+    "sha256": "dcf3d3f57ba962a9e17c2c703f6c34c68bb1e58bc65b0c164436dd430a9b501b"
+  },
+  {
+    "slot": 13,
+    "offset": 207,
+    "length": 102,
+    "kind": "typed_data",
+    "path": "Source/Resources/13_SAVE3/StoredMapPoints.asm",
+    "origin": null,
+    "sha256": "7fb70c9c3ec3047b58743f8fbb3532e0f23cb18ea263715b22de704f513aeff5"
+  },
+  {
+    "slot": 13,
+    "offset": 309,
+    "length": 11,
+    "kind": "typed_data",
+    "path": "Source/Resources/13_SAVE3/StoredMapOrder.asm",
+    "origin": null,
+    "sha256": "951cfacc28f753b3c3a9fd8346457f545199349a91b9df33e9ccca876f4d244b"
+  },
+  {
+    "slot": 13,
+    "offset": 320,
+    "length": 40,
+    "kind": "typed_data",
+    "path": "Source/Resources/13_SAVE3/MapAuxiliaryPoints.asm",
+    "origin": null,
+    "sha256": "3ea3738e1b49592accbd3d8f9e37e6d35dada820c619de035653c64c765d0f8b"
+  },
+  {
+    "slot": 13,
+    "offset": 360,
+    "length": 11,
+    "kind": "typed_data",
+    "path": "Source/Resources/13_SAVE3/MapAuxiliaryCodes.asm",
+    "origin": null,
+    "sha256": "88978a0fe1d200e290209d2b097d615c70b59b8e262deb404222505b48de270d"
+  },
+  {
+    "slot": 13,
+    "offset": 371,
+    "length": 8,
+    "kind": "typed_data",
+    "path": "Source/Resources/13_SAVE3/InterfaceChoices.asm",
+    "origin": null,
+    "sha256": "007afeed6b3dcfae32e1d453a74fa454b81ede181dfdf8791841f5bee59f7add"
+  },
+  {
+    "slot": 13,
+    "offset": 379,
+    "length": 12,
+    "kind": "typed_data",
+    "path": "Source/Resources/13_SAVE3/PointerKeys.asm",
+    "origin": null,
+    "sha256": "f87ea71ab8ef6be1958575d30b8d485c4cae53c4795d3489d2c5f84715c560c1"
+  },
+  {
+    "slot": 13,
+    "offset": 391,
+    "length": 6,
+    "kind": "typed_data",
+    "path": "Source/Resources/13_SAVE3/InterfaceColors.asm",
+    "origin": null,
+    "sha256": "ee898cdf83de38c395836f48d08fafacbb7a6e5ee2e6be0e99a649f8c1a9f6b2"
+  },
+  {
+    "slot": 13,
+    "offset": 397,
+    "length": 86,
+    "kind": "typed_data",
+    "path": "Source/Resources/13_SAVE3/ControlOptions.asm",
+    "origin": null,
+    "sha256": "0aec9f7eee9b3d9b1bb7db6b94a817ac58dabcc7742605bf9dc9cf09a37f8d89"
+  },
+  {
+    "slot": 13,
+    "offset": 483,
+    "length": 29,
+    "kind": "unclassified",
+    "path": "Source/Resources/13_SAVE3/Unknown1E3.bin",
+    "origin": null,
+    "sha256": "11e431c215c5bd334cecbd43148274edf3ffdbd6cd6479fe279577fbe5f52ce6"
   },
   {
     "slot": 14,
     "offset": 0,
-    "length": 512,
-    "kind": "unclassified",
-    "path": "Source/Resources/14_SAVE4/Unclassified000.bin",
+    "length": 4,
+    "kind": "typed_data",
+    "path": "Source/Resources/14_SAVE4/StationTimer.asm",
     "origin": null,
-    "sha256": "36bad78201c11dcd1340e881376f9c3f956ea7dde767532b4ed4f60c8de9ad12"
+    "sha256": "fa20a96c19ccf94a0defedbc00e33592614e1a06565a22725afa23e884087504"
+  },
+  {
+    "slot": 14,
+    "offset": 4,
+    "length": 5,
+    "kind": "typed_data",
+    "path": "Source/Resources/14_SAVE4/CurrentSignature.asm",
+    "origin": null,
+    "sha256": "e349acf437e8362ce7bf34e32d64e8604ce155e39dca5c56f684b11a295d1d9b"
+  },
+  {
+    "slot": 14,
+    "offset": 9,
+    "length": 5,
+    "kind": "typed_data",
+    "path": "Source/Resources/14_SAVE4/SelectedMapKey.asm",
+    "origin": null,
+    "sha256": "e349acf437e8362ce7bf34e32d64e8604ce155e39dca5c56f684b11a295d1d9b"
+  },
+  {
+    "slot": 14,
+    "offset": 14,
+    "length": 9,
+    "kind": "typed_data",
+    "path": "Source/Resources/14_SAVE4/PlayerSaveHeader.asm",
+    "origin": null,
+    "sha256": "45aa8f3570ef50f515d249296dee40252e6f44bc4010bde1cb85dac3347f2fbd"
+  },
+  {
+    "slot": 14,
+    "offset": 23,
+    "length": 60,
+    "kind": "typed_data",
+    "path": "Source/Resources/14_SAVE4/OwnedCargoRows.asm",
+    "origin": null,
+    "sha256": "5dcc1b5872dd9ff1c234501f1fefda01f664164e1583c3e1bb3dbea47588ab31"
+  },
+  {
+    "slot": 14,
+    "offset": 83,
+    "length": 30,
+    "kind": "typed_data",
+    "path": "Source/Resources/14_SAVE4/EquipmentQuantityCodes.asm",
+    "origin": null,
+    "sha256": "b8288e018552e97af153987598602b847ece609298f4020fb2b2a737b208fc2f"
+  },
+  {
+    "slot": 14,
+    "offset": 113,
+    "length": 4,
+    "kind": "unclassified",
+    "path": "Source/Resources/14_SAVE4/Unknown98AC.bin",
+    "origin": null,
+    "sha256": "416eed8f6b25cf2b26d1396b9a0c5b6b79ba5bc36cb63572362d09e97d54fc5d"
+  },
+  {
+    "slot": 14,
+    "offset": 117,
+    "length": 16,
+    "kind": "typed_data",
+    "path": "Source/Resources/14_SAVE4/MissionOffer.asm",
+    "origin": null,
+    "sha256": "ba1968c1a3be944e33ab613b54a69c34fc3da55e980aa626f49f82b01ed8300a"
+  },
+  {
+    "slot": 14,
+    "offset": 133,
+    "length": 74,
+    "kind": "unclassified",
+    "path": "Source/Resources/14_SAVE4/Unknown085.bin",
+    "origin": null,
+    "sha256": "dcf3d3f57ba962a9e17c2c703f6c34c68bb1e58bc65b0c164436dd430a9b501b"
+  },
+  {
+    "slot": 14,
+    "offset": 207,
+    "length": 102,
+    "kind": "typed_data",
+    "path": "Source/Resources/14_SAVE4/StoredMapPoints.asm",
+    "origin": null,
+    "sha256": "7fb70c9c3ec3047b58743f8fbb3532e0f23cb18ea263715b22de704f513aeff5"
+  },
+  {
+    "slot": 14,
+    "offset": 309,
+    "length": 11,
+    "kind": "typed_data",
+    "path": "Source/Resources/14_SAVE4/StoredMapOrder.asm",
+    "origin": null,
+    "sha256": "951cfacc28f753b3c3a9fd8346457f545199349a91b9df33e9ccca876f4d244b"
+  },
+  {
+    "slot": 14,
+    "offset": 320,
+    "length": 40,
+    "kind": "typed_data",
+    "path": "Source/Resources/14_SAVE4/MapAuxiliaryPoints.asm",
+    "origin": null,
+    "sha256": "3ea3738e1b49592accbd3d8f9e37e6d35dada820c619de035653c64c765d0f8b"
+  },
+  {
+    "slot": 14,
+    "offset": 360,
+    "length": 11,
+    "kind": "typed_data",
+    "path": "Source/Resources/14_SAVE4/MapAuxiliaryCodes.asm",
+    "origin": null,
+    "sha256": "88978a0fe1d200e290209d2b097d615c70b59b8e262deb404222505b48de270d"
+  },
+  {
+    "slot": 14,
+    "offset": 371,
+    "length": 8,
+    "kind": "typed_data",
+    "path": "Source/Resources/14_SAVE4/InterfaceChoices.asm",
+    "origin": null,
+    "sha256": "007afeed6b3dcfae32e1d453a74fa454b81ede181dfdf8791841f5bee59f7add"
+  },
+  {
+    "slot": 14,
+    "offset": 379,
+    "length": 12,
+    "kind": "typed_data",
+    "path": "Source/Resources/14_SAVE4/PointerKeys.asm",
+    "origin": null,
+    "sha256": "f87ea71ab8ef6be1958575d30b8d485c4cae53c4795d3489d2c5f84715c560c1"
+  },
+  {
+    "slot": 14,
+    "offset": 391,
+    "length": 6,
+    "kind": "typed_data",
+    "path": "Source/Resources/14_SAVE4/InterfaceColors.asm",
+    "origin": null,
+    "sha256": "ee898cdf83de38c395836f48d08fafacbb7a6e5ee2e6be0e99a649f8c1a9f6b2"
+  },
+  {
+    "slot": 14,
+    "offset": 397,
+    "length": 86,
+    "kind": "typed_data",
+    "path": "Source/Resources/14_SAVE4/ControlOptions.asm",
+    "origin": null,
+    "sha256": "0aec9f7eee9b3d9b1bb7db6b94a817ac58dabcc7742605bf9dc9cf09a37f8d89"
+  },
+  {
+    "slot": 14,
+    "offset": 483,
+    "length": 29,
+    "kind": "unclassified",
+    "path": "Source/Resources/14_SAVE4/Unknown1E3.bin",
+    "origin": null,
+    "sha256": "11e431c215c5bd334cecbd43148274edf3ffdbd6cd6479fe279577fbe5f52ce6"
   },
   {
     "slot": 15,
     "offset": 0,
-    "length": 512,
-    "kind": "unclassified",
-    "path": "Source/Resources/15_SAVE5/Unclassified000.bin",
+    "length": 4,
+    "kind": "typed_data",
+    "path": "Source/Resources/15_SAVE5/StationTimer.asm",
     "origin": null,
-    "sha256": "076a27c79e5ace2a3d47f9dd2e83e4ff6ea8872b3c2218f66c92b89b55f36560"
+    "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+  },
+  {
+    "slot": 15,
+    "offset": 4,
+    "length": 5,
+    "kind": "typed_data",
+    "path": "Source/Resources/15_SAVE5/CurrentSignature.asm",
+    "origin": null,
+    "sha256": "8855508aade16ec573d21e6a485dfd0a7624085c1a14b5ecdd6485de0c6839a4"
+  },
+  {
+    "slot": 15,
+    "offset": 9,
+    "length": 5,
+    "kind": "typed_data",
+    "path": "Source/Resources/15_SAVE5/SelectedMapKey.asm",
+    "origin": null,
+    "sha256": "8855508aade16ec573d21e6a485dfd0a7624085c1a14b5ecdd6485de0c6839a4"
+  },
+  {
+    "slot": 15,
+    "offset": 14,
+    "length": 9,
+    "kind": "typed_data",
+    "path": "Source/Resources/15_SAVE5/PlayerSaveHeader.asm",
+    "origin": null,
+    "sha256": "3e7077fd2f66d689e0cee6a7cf5b37bf2dca7c979af356d0a31cbc5c85605c7d"
+  },
+  {
+    "slot": 15,
+    "offset": 23,
+    "length": 60,
+    "kind": "typed_data",
+    "path": "Source/Resources/15_SAVE5/OwnedCargoRows.asm",
+    "origin": null,
+    "sha256": "5dcc1b5872dd9ff1c234501f1fefda01f664164e1583c3e1bb3dbea47588ab31"
+  },
+  {
+    "slot": 15,
+    "offset": 83,
+    "length": 30,
+    "kind": "typed_data",
+    "path": "Source/Resources/15_SAVE5/EquipmentQuantityCodes.asm",
+    "origin": null,
+    "sha256": "0679246d6c4216de0daa08e5523fb2674db2b6599c3b72ff946b488a15290b62"
+  },
+  {
+    "slot": 15,
+    "offset": 113,
+    "length": 4,
+    "kind": "unclassified",
+    "path": "Source/Resources/15_SAVE5/Unknown98AC.bin",
+    "origin": null,
+    "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+  },
+  {
+    "slot": 15,
+    "offset": 117,
+    "length": 16,
+    "kind": "typed_data",
+    "path": "Source/Resources/15_SAVE5/MissionOffer.asm",
+    "origin": null,
+    "sha256": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb"
+  },
+  {
+    "slot": 15,
+    "offset": 133,
+    "length": 74,
+    "kind": "unclassified",
+    "path": "Source/Resources/15_SAVE5/Unknown085.bin",
+    "origin": null,
+    "sha256": "d0800cd15f8b849823220f7a12fbaa665fe426ed1ddb13b60ecb89a5d412c1de"
+  },
+  {
+    "slot": 15,
+    "offset": 207,
+    "length": 102,
+    "kind": "typed_data",
+    "path": "Source/Resources/15_SAVE5/StoredMapPoints.asm",
+    "origin": null,
+    "sha256": "c419a92c7dce5225606f604f79d0d07009ebd882b5d5d41d234b71617b691774"
+  },
+  {
+    "slot": 15,
+    "offset": 309,
+    "length": 11,
+    "kind": "typed_data",
+    "path": "Source/Resources/15_SAVE5/StoredMapOrder.asm",
+    "origin": null,
+    "sha256": "71b6c1d53832f789a7f2435a7c629245fa3761ad8487775ebf4957330213a706"
+  },
+  {
+    "slot": 15,
+    "offset": 320,
+    "length": 40,
+    "kind": "typed_data",
+    "path": "Source/Resources/15_SAVE5/MapAuxiliaryPoints.asm",
+    "origin": null,
+    "sha256": "2c34ce1df23b838c5abf2a7f6437cca3d3067ed509ff25f11df6b11b582b51eb"
+  },
+  {
+    "slot": 15,
+    "offset": 360,
+    "length": 11,
+    "kind": "typed_data",
+    "path": "Source/Resources/15_SAVE5/MapAuxiliaryCodes.asm",
+    "origin": null,
+    "sha256": "71b6c1d53832f789a7f2435a7c629245fa3761ad8487775ebf4957330213a706"
+  },
+  {
+    "slot": 15,
+    "offset": 371,
+    "length": 8,
+    "kind": "typed_data",
+    "path": "Source/Resources/15_SAVE5/InterfaceChoices.asm",
+    "origin": null,
+    "sha256": "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc"
+  },
+  {
+    "slot": 15,
+    "offset": 379,
+    "length": 12,
+    "kind": "typed_data",
+    "path": "Source/Resources/15_SAVE5/PointerKeys.asm",
+    "origin": null,
+    "sha256": "15ec7bf0b50732b49f8228e07d24365338f9e3ab994b00af08e5a3bffe55fd8b"
+  },
+  {
+    "slot": 15,
+    "offset": 391,
+    "length": 6,
+    "kind": "typed_data",
+    "path": "Source/Resources/15_SAVE5/InterfaceColors.asm",
+    "origin": null,
+    "sha256": "b0f66adc83641586656866813fd9dd0b8ebb63796075661ba45d1aa8089e1d44"
+  },
+  {
+    "slot": 15,
+    "offset": 397,
+    "length": 86,
+    "kind": "typed_data",
+    "path": "Source/Resources/15_SAVE5/ControlOptions.asm",
+    "origin": null,
+    "sha256": "36e85b8ca5cc07b01ad98462a7f8afd1794a65455dc33ea47adcb9f50dfe5207"
+  },
+  {
+    "slot": 15,
+    "offset": 483,
+    "length": 29,
+    "kind": "unclassified",
+    "path": "Source/Resources/15_SAVE5/Unknown1E3.bin",
+    "origin": null,
+    "sha256": "11e431c215c5bd334cecbd43148274edf3ffdbd6cd6479fe279577fbe5f52ce6"
   },
   {
     "slot": 16,
     "offset": 0,
-    "length": 512,
-    "kind": "unclassified",
-    "path": "Source/Resources/16_SAVE0/Unclassified000.bin",
+    "length": 4,
+    "kind": "typed_data",
+    "path": "Source/Resources/16_SAVE0/StationTimer.asm",
     "origin": null,
-    "sha256": "cf3886691e1c91fc6e52a89366bc07965e71eca19a4c4deaf3acbc3c1837e610"
+    "sha256": "620d8a15a4e731fe4d27a973cb317c5d3ab635f82e5bbd7089c5f2aa682dee74"
+  },
+  {
+    "slot": 16,
+    "offset": 4,
+    "length": 5,
+    "kind": "typed_data",
+    "path": "Source/Resources/16_SAVE0/CurrentSignature.asm",
+    "origin": null,
+    "sha256": "e349acf437e8362ce7bf34e32d64e8604ce155e39dca5c56f684b11a295d1d9b"
+  },
+  {
+    "slot": 16,
+    "offset": 9,
+    "length": 5,
+    "kind": "typed_data",
+    "path": "Source/Resources/16_SAVE0/SelectedMapKey.asm",
+    "origin": null,
+    "sha256": "e349acf437e8362ce7bf34e32d64e8604ce155e39dca5c56f684b11a295d1d9b"
+  },
+  {
+    "slot": 16,
+    "offset": 14,
+    "length": 9,
+    "kind": "typed_data",
+    "path": "Source/Resources/16_SAVE0/PlayerSaveHeader.asm",
+    "origin": null,
+    "sha256": "45aa8f3570ef50f515d249296dee40252e6f44bc4010bde1cb85dac3347f2fbd"
+  },
+  {
+    "slot": 16,
+    "offset": 23,
+    "length": 60,
+    "kind": "typed_data",
+    "path": "Source/Resources/16_SAVE0/OwnedCargoRows.asm",
+    "origin": null,
+    "sha256": "5dcc1b5872dd9ff1c234501f1fefda01f664164e1583c3e1bb3dbea47588ab31"
+  },
+  {
+    "slot": 16,
+    "offset": 83,
+    "length": 30,
+    "kind": "typed_data",
+    "path": "Source/Resources/16_SAVE0/EquipmentQuantityCodes.asm",
+    "origin": null,
+    "sha256": "b8288e018552e97af153987598602b847ece609298f4020fb2b2a737b208fc2f"
+  },
+  {
+    "slot": 16,
+    "offset": 113,
+    "length": 4,
+    "kind": "unclassified",
+    "path": "Source/Resources/16_SAVE0/Unknown98AC.bin",
+    "origin": null,
+    "sha256": "416eed8f6b25cf2b26d1396b9a0c5b6b79ba5bc36cb63572362d09e97d54fc5d"
+  },
+  {
+    "slot": 16,
+    "offset": 117,
+    "length": 16,
+    "kind": "typed_data",
+    "path": "Source/Resources/16_SAVE0/MissionOffer.asm",
+    "origin": null,
+    "sha256": "ba1968c1a3be944e33ab613b54a69c34fc3da55e980aa626f49f82b01ed8300a"
+  },
+  {
+    "slot": 16,
+    "offset": 133,
+    "length": 74,
+    "kind": "unclassified",
+    "path": "Source/Resources/16_SAVE0/Unknown085.bin",
+    "origin": null,
+    "sha256": "dcf3d3f57ba962a9e17c2c703f6c34c68bb1e58bc65b0c164436dd430a9b501b"
+  },
+  {
+    "slot": 16,
+    "offset": 207,
+    "length": 102,
+    "kind": "typed_data",
+    "path": "Source/Resources/16_SAVE0/StoredMapPoints.asm",
+    "origin": null,
+    "sha256": "7fb70c9c3ec3047b58743f8fbb3532e0f23cb18ea263715b22de704f513aeff5"
+  },
+  {
+    "slot": 16,
+    "offset": 309,
+    "length": 11,
+    "kind": "typed_data",
+    "path": "Source/Resources/16_SAVE0/StoredMapOrder.asm",
+    "origin": null,
+    "sha256": "951cfacc28f753b3c3a9fd8346457f545199349a91b9df33e9ccca876f4d244b"
+  },
+  {
+    "slot": 16,
+    "offset": 320,
+    "length": 40,
+    "kind": "typed_data",
+    "path": "Source/Resources/16_SAVE0/MapAuxiliaryPoints.asm",
+    "origin": null,
+    "sha256": "3ea3738e1b49592accbd3d8f9e37e6d35dada820c619de035653c64c765d0f8b"
+  },
+  {
+    "slot": 16,
+    "offset": 360,
+    "length": 11,
+    "kind": "typed_data",
+    "path": "Source/Resources/16_SAVE0/MapAuxiliaryCodes.asm",
+    "origin": null,
+    "sha256": "88978a0fe1d200e290209d2b097d615c70b59b8e262deb404222505b48de270d"
+  },
+  {
+    "slot": 16,
+    "offset": 371,
+    "length": 8,
+    "kind": "typed_data",
+    "path": "Source/Resources/16_SAVE0/InterfaceChoices.asm",
+    "origin": null,
+    "sha256": "007afeed6b3dcfae32e1d453a74fa454b81ede181dfdf8791841f5bee59f7add"
+  },
+  {
+    "slot": 16,
+    "offset": 379,
+    "length": 12,
+    "kind": "typed_data",
+    "path": "Source/Resources/16_SAVE0/PointerKeys.asm",
+    "origin": null,
+    "sha256": "f87ea71ab8ef6be1958575d30b8d485c4cae53c4795d3489d2c5f84715c560c1"
+  },
+  {
+    "slot": 16,
+    "offset": 391,
+    "length": 6,
+    "kind": "typed_data",
+    "path": "Source/Resources/16_SAVE0/InterfaceColors.asm",
+    "origin": null,
+    "sha256": "ee898cdf83de38c395836f48d08fafacbb7a6e5ee2e6be0e99a649f8c1a9f6b2"
+  },
+  {
+    "slot": 16,
+    "offset": 397,
+    "length": 86,
+    "kind": "typed_data",
+    "path": "Source/Resources/16_SAVE0/ControlOptions.asm",
+    "origin": null,
+    "sha256": "0aec9f7eee9b3d9b1bb7db6b94a817ac58dabcc7742605bf9dc9cf09a37f8d89"
+  },
+  {
+    "slot": 16,
+    "offset": 483,
+    "length": 29,
+    "kind": "unclassified",
+    "path": "Source/Resources/16_SAVE0/Unknown1E3.bin",
+    "origin": null,
+    "sha256": "11e431c215c5bd334cecbd43148274edf3ffdbd6cd6479fe279577fbe5f52ce6"
   },
   {
     "slot": 17,
@@ -9953,9 +10979,9 @@
     "slot": 17,
     "offset": 275,
     "length": 54,
-    "kind": "unclassified",
-    "path": "Source/Resources/17_ACTION/Unclassified000.bin",
-    "origin": null,
+    "kind": "typed_data",
+    "path": "Source/ActionBoot/Data/FileKeys.asm",
+    "origin": 17104,
     "sha256": "c983d74dc71d44bd6f476a92acae7c3ad48002e0a2278e8d89ecff769b4e2138"
   },
   {
@@ -10006,11 +11032,20 @@
   {
     "slot": 17,
     "offset": 589,
-    "length": 48,
-    "kind": "unclassified",
-    "path": "Source/Resources/17_ACTION/Unclassified001.bin",
-    "origin": null,
-    "sha256": "c4bfdf9810db9035b3815122a07a8d760cc79b6308fed371ba9ca6403a31eb20"
+    "length": 25,
+    "kind": "code",
+    "path": "Source/Action/PrintByteAndScrollBank1.asm",
+    "origin": 24592,
+    "sha256": "5bdd7457fab63e0f47710e0c899706ec01441c417df186047144274074602cb7"
+  },
+  {
+    "slot": 17,
+    "offset": 614,
+    "length": 23,
+    "kind": "code",
+    "path": "Source/Action/PrintByteBank1.asm",
+    "origin": 24617,
+    "sha256": "53dc1ee79e14168dc29bb1d08d7cd8883c83a5bc6a10353a9a0f85ee92e8ffd4"
   },
   {
     "slot": 17,
@@ -10097,9 +11132,9 @@
     "slot": 17,
     "offset": 1358,
     "length": 58,
-    "kind": "unclassified",
-    "path": "Source/Resources/17_ACTION/Unclassified005_BeforeTypeDeltas.bin",
-    "origin": null,
+    "kind": "code",
+    "path": "Source/Action/ApproachWordAndAccumulate.asm",
+    "origin": 25361,
     "sha256": "43a70a0cb884cd20a13d4143a5e6062a29143d9d5efda15041191afde3761c10"
   },
   {
@@ -10168,11 +11203,65 @@
   {
     "slot": 17,
     "offset": 1890,
-    "length": 161,
-    "kind": "unclassified",
-    "path": "Source/Resources/17_ACTION/Unclassified007_AfterClassHandlers_BeforeActionLinkOverride_BeforeActionClass9Link_AfterActionIgnoredClasses.bin",
-    "origin": null,
-    "sha256": "e15a5f9de2a33a47804060ab5109e0545c64037ddbd0316b3312bfa2efb7cd1d"
+    "length": 17,
+    "kind": "code",
+    "path": "Source/Action/ConfigureClass5Link.asm",
+    "origin": 25893,
+    "sha256": "ac5fd885beffa23ba4a7309d3af23e03dd2f2d4f0e2d62f96f2f31e45de22fbd"
+  },
+  {
+    "slot": 17,
+    "offset": 1907,
+    "length": 19,
+    "kind": "code",
+    "path": "Source/Action/ConfigureClass8Link.asm",
+    "origin": 25910,
+    "sha256": "c8b2ab799c369aaa263cf9375c2276d91522095ac2cf005deb6e892634235729"
+  },
+  {
+    "slot": 17,
+    "offset": 1926,
+    "length": 29,
+    "kind": "code",
+    "path": "Source/Action/ConfigureClass2Link.asm",
+    "origin": 25929,
+    "sha256": "671f1726db4feef5eeef7ce1688809720ec341cb8876015416c7957da1ea39f5"
+  },
+  {
+    "slot": 17,
+    "offset": 1955,
+    "length": 25,
+    "kind": "code",
+    "path": "Source/Action/ConfigureClass7Link.asm",
+    "origin": 25958,
+    "sha256": "5713c042f269e4b9e161a58e39aab9b1932e1167f73834deeee0272472a0cb3a"
+  },
+  {
+    "slot": 17,
+    "offset": 1980,
+    "length": 21,
+    "kind": "code",
+    "path": "Source/Action/ConfigureClass6Link.asm",
+    "origin": 25983,
+    "sha256": "7a5158e274a880865fc9bdebcffec1d17f0473874403d94ace8e7dc3a0257035"
+  },
+  {
+    "slot": 17,
+    "offset": 2001,
+    "length": 25,
+    "kind": "code",
+    "path": "Source/Action/ConfigureClass1Link.asm",
+    "origin": 26004,
+    "sha256": "134a3f927adcf1438d60d86595539af1f3badc66fa44fa19a11250f7ee692c29"
+  },
+  {
+    "slot": 17,
+    "offset": 2026,
+    "length": 25,
+    "kind": "code",
+    "path": "Source/Action/ConfigureClass4Link.asm",
+    "origin": 26029,
+    "sha256": "a6b9d62ba132ee5bb0035da5e8f864ac002d791ec0ac45e8530194f595a2c016"
   },
   {
     "slot": 17,
@@ -10187,9 +11276,9 @@
     "slot": 17,
     "offset": 2075,
     "length": 48,
-    "kind": "unclassified",
-    "path": "Source/Resources/17_ACTION/Unclassified007_AfterClassHandlers_BeforeActionLinkOverride_AfterActionClass9Link_BeforeActionClass0Link.bin",
-    "origin": null,
+    "kind": "code",
+    "path": "Source/Action/ConfigureClass3Link.asm",
+    "origin": 26078,
     "sha256": "01d8df55e9940001387a9d2ec5e180d9feba126d4cde23a45c9f73baf9872a0c"
   },
   {
@@ -10727,9 +11816,9 @@
     "slot": 17,
     "offset": 6614,
     "length": 192,
-    "kind": "unclassified",
-    "path": "Source/Resources/17_ACTION/Unclassified018_AfterRequestYPositive.bin",
-    "origin": null,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/SpawnTemplates.asm",
+    "origin": 30617,
     "sha256": "2f9b80d49c34398293797378c57a4b61c550c4afe519d0c1ab27703e8d3e1abc"
   },
   {
@@ -10744,11 +11833,20 @@
   {
     "slot": 17,
     "offset": 7427,
-    "length": 146,
+    "length": 130,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/SpawnModelChoices.asm",
+    "origin": 31430,
+    "sha256": "543853f27fb5cba65140b1ea6f1d0e0335f8abaa231e857af6ff02abc79ea30d"
+  },
+  {
+    "slot": 17,
+    "offset": 7557,
+    "length": 16,
     "kind": "unclassified",
-    "path": "Source/Resources/17_ACTION/Unclassified019.bin",
+    "path": "Source/Resources/17_ACTION/UnknownAfterSpawnModelChoices.bin",
     "origin": null,
-    "sha256": "180e11813526a91a2552d9ad081c2b80102d0f4429b17cd687119c2c7426d7e2"
+    "sha256": "cfb41024dee9b7ad380afb5eae4b9ae9c77c4ea09285523a7170881608644bfc"
   },
   {
     "slot": 17,
@@ -11122,11 +12220,20 @@
   {
     "slot": 17,
     "offset": 19627,
-    "length": 63,
-    "kind": "unclassified",
-    "path": "Source/Resources/17_ACTION/Unclassified022_BeforeVectorWrapper.bin",
-    "origin": null,
-    "sha256": "490334d7fc7916a8eccb9e0b37aa0e73291f77de061498fbbc6582849727e597"
+    "length": 43,
+    "kind": "code",
+    "path": "Source/Action/QueueDiagnosticCounters.asm",
+    "origin": 44203,
+    "sha256": "e8adb2ac6666fc40fb95473deafad731c5bad9c5ae07c198c56cc5697cd1901b"
+  },
+  {
+    "slot": 17,
+    "offset": 19670,
+    "length": 20,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/DiagnosticMessages.asm",
+    "origin": 44246,
+    "sha256": "b97c6454b959c1264fd3e3d0bdd8d23b526668954a627c9147dedbcf2ae32da7"
   },
   {
     "slot": 17,
@@ -11176,11 +12283,20 @@
   {
     "slot": 17,
     "offset": 19909,
-    "length": 95,
-    "kind": "unclassified",
-    "path": "Source/Resources/17_ACTION/Unclassified023.bin",
-    "origin": null,
-    "sha256": "cbbc3a890a87ead6d09eda28b86d2341f99142b48f47f53383f79d31e81a6faa"
+    "length": 80,
+    "kind": "code",
+    "path": "Source/Action/ProjectOverlayCoordinates.asm",
+    "origin": 44485,
+    "sha256": "c7a4de0483bedb0f78d548ac1a066602ec01fcad214f6d9c10af85d138d313b8"
+  },
+  {
+    "slot": 17,
+    "offset": 19989,
+    "length": 15,
+    "kind": "code",
+    "path": "Source/Action/EncodeComponentDeltas.asm",
+    "origin": 44565,
+    "sha256": "69017d63a7baf9cc5c84fd1984d8c6a224c1d2144e05dc210cf55a63d923cb40"
   },
   {
     "slot": 17,
@@ -12715,11 +13831,20 @@
   {
     "slot": 17,
     "offset": 34657,
-    "length": 556,
+    "length": 539,
     "kind": "unclassified",
-    "path": "Source/Resources/17_ACTION/Unclassified037_AfterActionRecordsExcept6And7_AfterActionRecords6Or7_AfterActionRecords5Or14.bin",
+    "path": "Source/Resources/17_ACTION/Unclassified037_AfterActionRecordsExcept6And7_AfterActionRecords6Or7_AfterActionRecords5Or14_BeforeActionSelectClass8.bin",
     "origin": null,
-    "sha256": "78a6d7682e90b63aa34cb1e9bf91b413cdf7c52c383ea1a9bd1d97310783ce20"
+    "sha256": "50b287e5d34bf370b9ba9f08af6364d84b5335bde5ab4d81fc53bdc4338db606"
+  },
+  {
+    "slot": 17,
+    "offset": 35196,
+    "length": 17,
+    "kind": "code",
+    "path": "Source/Action/SelectClass8ForRecord.asm",
+    "origin": 59772,
+    "sha256": "82d28bd219f19f8e1c474c42229a8fc214e405ba07f2ffbbe23c4941370c5620"
   },
   {
     "slot": 17,
@@ -12769,11 +13894,20 @@
   {
     "slot": 17,
     "offset": 35561,
-    "length": 137,
+    "length": 88,
+    "kind": "code",
+    "path": "Source/Action/MaxRecordDeltaHigh.asm",
+    "origin": 60137,
+    "sha256": "54fdcb8c6f8be27c5d319bf49415081c64dd7ee45b9fe18f7df3483fd6cff5b3"
+  },
+  {
+    "slot": 17,
+    "offset": 35649,
+    "length": 49,
     "kind": "unclassified",
-    "path": "Source/Resources/17_ACTION/Unclassified039_AfterActionLargeEffectContinuation.bin",
+    "path": "Source/Resources/17_ACTION/Unclassified039_AfterActionLargeEffectContinuation_AfterActionRecordDistance.bin",
     "origin": null,
-    "sha256": "b64c87f9d3060e3d00aafd83b24889bde76d950c8a99915b088ac1846b789367"
+    "sha256": "7442c4ee35de97825447477ef406880e8b0651eff817e49ecb3ac551ffedb695"
   },
   {
     "slot": 17,
@@ -13184,9 +14318,9 @@
     "slot": 17,
     "offset": 36938,
     "length": 43,
-    "kind": "unclassified",
-    "path": "Source/Resources/17_ACTION/Unclassified044_AfterAyStreams_AfterActionIYRecordReuse.bin",
-    "origin": null,
+    "kind": "code",
+    "path": "Source/Action/HandleSelectedRecordProximity.asm",
+    "origin": 61514,
     "sha256": "23f56a2c42832ea42b4781be4e603a1cf4d97e3c86332303175a35a1d303c197"
   },
   {
@@ -13219,11 +14353,29 @@
   {
     "slot": 17,
     "offset": 37176,
-    "length": 604,
+    "length": 542,
     "kind": "unclassified",
-    "path": "Source/Resources/17_ACTION/Unclassified045_AfterActionObjectOffsetTransfer.bin",
+    "path": "Source/Resources/17_ACTION/Unclassified045_AfterActionObjectOffsetTransfer_BeforeActionSelectedRecordStep_BeforeActionClass18Proximity.bin",
     "origin": null,
-    "sha256": "58c7a77dc8b41ecf8696378e9ab90b785c405c3502a57b779c1aaae0b143ecac"
+    "sha256": "903743ca1f667feca47d185a5cfc84d211f849fb5f349094a8e39362a27df1f7"
+  },
+  {
+    "slot": 17,
+    "offset": 37718,
+    "length": 21,
+    "kind": "code",
+    "path": "Source/Action/HandleClass18Proximity.asm",
+    "origin": 62294,
+    "sha256": "cbd4ed701beb94e8085ce9184f570f39da9855fe7a07033cc395b49e161bdf8c"
+  },
+  {
+    "slot": 17,
+    "offset": 37739,
+    "length": 41,
+    "kind": "code",
+    "path": "Source/Action/StepCodesTowardRecord.asm",
+    "origin": 62315,
+    "sha256": "67b0cbb33283ac0f5239a6aaa1dca13bcdd35126f64cf074ccdd0beef3943d8e"
   },
   {
     "slot": 17,
@@ -13336,20 +14488,11 @@
   {
     "slot": 17,
     "offset": 38697,
-    "length": 76,
+    "length": 105,
     "kind": "code",
     "path": "Source/Action/UpdateObjects.asm",
     "origin": 63273,
-    "sha256": "6a76eb8068b459c6b977e026ff51ce6931ba41184b848bae1e56fef8ca7d144e"
-  },
-  {
-    "slot": 17,
-    "offset": 38773,
-    "length": 29,
-    "kind": "unclassified",
-    "path": "Source/Resources/17_ACTION/Unclassified052.bin",
-    "origin": null,
-    "sha256": "54e4e466edc71dd4980800dd5ac3e5e8ebd168fa648d83418124b1801c4762cb"
+    "sha256": "7a7c5e1fb0f9173cff7790f81aae5666ada00f99b082a795033167d2165f4cf4"
   },
   {
     "slot": 17,
@@ -13390,11 +14533,20 @@
   {
     "slot": 18,
     "offset": 0,
-    "length": 7424,
-    "kind": "unclassified",
-    "path": "Source/Resources/18_DATAS/Unclassified000.bin",
+    "length": 7213,
+    "kind": "binary_resource",
+    "path": "Source/Resources/18_DATAS/ActionInitialBlock.bin",
     "origin": null,
-    "sha256": "8b39584c06dc84d7d98aa51793e45b56f72150c64c62bfed98b9334ea61ad4c0"
+    "sha256": "d7c970768efdeb1bc606776afdae5a3cc892ea071e01e77c108b98cc1678b06e"
+  },
+  {
+    "slot": 18,
+    "offset": 7213,
+    "length": 211,
+    "kind": "unclassified",
+    "path": "Source/Resources/18_DATAS/SectorTail.bin",
+    "origin": null,
+    "sha256": "91bc0d52acf5ac03b071a77172674851515317dc3bba50f946d422ab359157b7"
   },
   {
     "slot": 19,
@@ -14596,11 +15748,38 @@
   {
     "slot": 20,
     "offset": 0,
-    "length": 9472,
+    "length": 1024,
+    "kind": "typed_data",
+    "path": "Source/Voxel/Data/Palette.asm",
+    "origin": 49152,
+    "sha256": "e4ad2f3ff188eb688183d83ca5a563d6ebf73ae5a9d41bcb01aa470ef539dfa1"
+  },
+  {
+    "slot": 20,
+    "offset": 1024,
+    "length": 5120,
+    "kind": "typed_data",
+    "path": "Source/Voxel/Data/LargeEffectFrames.asm",
+    "origin": 50176,
+    "sha256": "764f962b70074837f2b20a736061ad18e9fe7d21df5607a4affd365a75fb7939"
+  },
+  {
+    "slot": 20,
+    "offset": 6144,
+    "length": 2496,
+    "kind": "typed_data",
+    "path": "Source/Voxel/Data/SmallEffectFrames.asm",
+    "origin": 55296,
+    "sha256": "6a44236bab29486fcd5c46a123a783da152655327806619462add4e1c3502a31"
+  },
+  {
+    "slot": 20,
+    "offset": 8640,
+    "length": 832,
     "kind": "unclassified",
-    "path": "Source/Resources/20_VOXAL0/Unclassified000.bin",
+    "path": "Source/Resources/20_VOXAL0/AfterSmallFrames.bin",
     "origin": null,
-    "sha256": "efe3d4e52db84d8893e8dfdf1106b060636ea2ab1780866bf09beea9397f61e3"
+    "sha256": "e0084b66cb4a03e2aba6cc7342eead6a91610ad915d66f9ae2c734f99b772ac7"
   },
   {
     "slot": 20,
@@ -14678,9 +15857,9 @@
     "slot": 21,
     "offset": 634,
     "length": 2743,
-    "kind": "unclassified",
-    "path": "Source/Resources/21_VOXAL/Unclassified000.bin",
-    "origin": null,
+    "kind": "code",
+    "path": "Source/Voxel/RasterizeSprite.asm",
+    "origin": 61050,
     "sha256": "007a8236ec4b1b2c1fa59b58699b3be4b9d24d20850fe636fd18b0fa8f5c813a"
   },
   {
@@ -14704,11 +15883,29 @@
   {
     "slot": 21,
     "offset": 3561,
-    "length": 279,
+    "length": 81,
+    "path": "Source/Voxel/ProjectEffectPoint.asm",
+    "kind": "code",
+    "origin": 63977,
+    "sha256": "0785efb42316001cf6efdceacddb8f092ae27206362367ad00c5a5ff896075bd"
+  },
+  {
+    "slot": 21,
+    "offset": 3642,
+    "length": 142,
+    "path": "Source/Voxel/DrawProjectedEffect.asm",
+    "kind": "code",
+    "origin": 64058,
+    "sha256": "35f3062934fdd4e0434eb13524dcc53593a5a9e1db23fc13ad1c5dec2b7af44b"
+  },
+  {
+    "slot": 21,
+    "offset": 3784,
+    "length": 56,
+    "path": "Source/Resources/21_VOXAL/SectorTail.bin",
     "kind": "unclassified",
-    "path": "Source/Resources/21_VOXAL/Unclassified001.bin",
     "origin": null,
-    "sha256": "cfa835e8ec6bbdcc7a29754a74cc7a4a85faefa7b2292b4b631127222d8c0fbe"
+    "sha256": "292309302be3b06c4d29a7132a21eb31e47351f1968188de986853b3fdfa6368"
   },
   {
     "slot": 22,
@@ -15569,9 +16766,9 @@
     "slot": 23,
     "offset": 4144,
     "length": 256,
-    "kind": "unclassified",
-    "path": "Source/Resources/23_CONTROL/Unclassified007.bin",
-    "origin": null,
+    "kind": "typed_data",
+    "path": "Source/Controls/Data/OverlayGlyphs.asm",
+    "origin": 60174,
     "sha256": "a8cb4342b9d7ab0bb884cc8e1d3510238c199229eb50f25cdacd168f08eb6084"
   },
   {
@@ -15712,11 +16909,875 @@
   {
     "slot": 24,
     "offset": 0,
-    "length": 10752,
+    "length": 64,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model0000.asm",
+    "origin": 49152,
+    "sha256": "e99105cc6fe6f1d38753a3b7e540d2eae2fe56eb6f489988f3dad1d37768709f"
+  },
+  {
+    "slot": 24,
+    "offset": 64,
+    "length": 101,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model0040.asm",
+    "origin": 49216,
+    "sha256": "c673e23d53cce5b2eea2e463076556e3f7f8ac09d768524dbf30c496bc5acaa7"
+  },
+  {
+    "slot": 24,
+    "offset": 165,
+    "length": 39,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model00A5.asm",
+    "origin": 49317,
+    "sha256": "504d77bc552a676738cd4f4af905a5d848b4ed24e94ce414affb2c678f95a8a2"
+  },
+  {
+    "slot": 24,
+    "offset": 204,
+    "length": 116,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model00CC.asm",
+    "origin": 49356,
+    "sha256": "0c0faded1d08a29e944b61f082b437e4bc7b2779111930c3438c872ed499919d"
+  },
+  {
+    "slot": 24,
+    "offset": 320,
+    "length": 39,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model0140.asm",
+    "origin": 49472,
+    "sha256": "2d3b1e8c2f87a2bb7af361daaeaf5eb02129e85bca67c9cbc41daa754b12b65a"
+  },
+  {
+    "slot": 24,
+    "offset": 359,
+    "length": 123,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model0167.asm",
+    "origin": 49511,
+    "sha256": "980980070b3c1f278d15b9092a7b4a2eb55100e9c8e2bb5cb0078486eac6a056"
+  },
+  {
+    "slot": 24,
+    "offset": 482,
+    "length": 32,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model01E2.asm",
+    "origin": 49634,
+    "sha256": "85d2f5f1b63545143df048cdf367b3c38413196a02274a3fc1d2ea254c358cd0"
+  },
+  {
+    "slot": 24,
+    "offset": 514,
+    "length": 79,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model0202.asm",
+    "origin": 49666,
+    "sha256": "7855f0e219e5ca5718bc13809da9a84b587e4d6b947e278a7b04de690ca0bbb2"
+  },
+  {
+    "slot": 24,
+    "offset": 593,
+    "length": 32,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model0251.asm",
+    "origin": 49745,
+    "sha256": "624f558701e14adf6e56eb2eed8af45ebebe16a58b86f32ca5e2c451351ac516"
+  },
+  {
+    "slot": 24,
+    "offset": 625,
+    "length": 77,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model0271.asm",
+    "origin": 49777,
+    "sha256": "abf9875a895770a5444f645bf3efcb0f0b82fb8f0b62cabc37597c721213a3a8"
+  },
+  {
+    "slot": 24,
+    "offset": 702,
+    "length": 107,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model02BE.asm",
+    "origin": 49854,
+    "sha256": "d9a9a73bd441768757b8febbdece6a3037da7fb6c4f04db5625d79a326fa1611"
+  },
+  {
+    "slot": 24,
+    "offset": 809,
+    "length": 133,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model0329.asm",
+    "origin": 49961,
+    "sha256": "b65714b50983eb42fb808944ec9429ef4da615a6687cb5bd969e693f9c9f3e8d"
+  },
+  {
+    "slot": 24,
+    "offset": 942,
+    "length": 67,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model03AE.asm",
+    "origin": 50094,
+    "sha256": "bcbf8632296d1f8c1dc7d7336aa286561950cb2bd92e7ab224428834a091bf82"
+  },
+  {
+    "slot": 24,
+    "offset": 1009,
+    "length": 99,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model03F1.asm",
+    "origin": 50161,
+    "sha256": "3c3103f73906884e00974b2c5712145189bb0b90762ee6349ba7405e44e4e602"
+  },
+  {
+    "slot": 24,
+    "offset": 1108,
+    "length": 94,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model0454.asm",
+    "origin": 50260,
+    "sha256": "944da853f5933e8569901c7e1fddb22f5df1e70d3a54af5d03c9c79258a968a7"
+  },
+  {
+    "slot": 24,
+    "offset": 1202,
+    "length": 157,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model04B2.asm",
+    "origin": 50354,
+    "sha256": "825839084a787d9bb1d0ba6665766a120b649460b20b41fbd7193c8db5aeef6d"
+  },
+  {
+    "slot": 24,
+    "offset": 1359,
+    "length": 32,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model054F.asm",
+    "origin": 50511,
+    "sha256": "e0eaf2b435924b4e88ce71fd07306c85410da0edfc692e524d8ecf6a8f5cfc09"
+  },
+  {
+    "slot": 24,
+    "offset": 1391,
+    "length": 147,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model056F.asm",
+    "origin": 50543,
+    "sha256": "d195019c812447f5123471a9caef0bf9ee8c1fdc63dd9d84d77f6e38b9045d19"
+  },
+  {
+    "slot": 24,
+    "offset": 1538,
+    "length": 77,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model0602.asm",
+    "origin": 50690,
+    "sha256": "fae1c61e56338caef38fca617abba254f3ceebc422b4007277b84514a2ed37e8"
+  },
+  {
+    "slot": 24,
+    "offset": 1615,
+    "length": 155,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model064F.asm",
+    "origin": 50767,
+    "sha256": "855ee2284b16d0734773e73df9f3a3491616f6d0cea8bba89c86c54f34a9f9f8"
+  },
+  {
+    "slot": 24,
+    "offset": 1770,
+    "length": 163,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model06EA.asm",
+    "origin": 50922,
+    "sha256": "2344c5a40495356e21f867519094c475c61d3f9a5b1dd0591377bc72dc3095f2"
+  },
+  {
+    "slot": 24,
+    "offset": 1933,
+    "length": 57,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model078D.asm",
+    "origin": 51085,
+    "sha256": "5bfd6c63a9dd12a736431acab27fab1ab2da15e46123363a6c66553f3708a262"
+  },
+  {
+    "slot": 24,
+    "offset": 1990,
+    "length": 127,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model07C6.asm",
+    "origin": 51142,
+    "sha256": "fcb6342a4e173a8a10e6675f557cb20f4939ce9d29c7f0a72ac24101c1cca41c"
+  },
+  {
+    "slot": 24,
+    "offset": 2117,
+    "length": 91,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model0845.asm",
+    "origin": 51269,
+    "sha256": "70d46ba48cf4b0f1121786ef978f1912f1902102c7b771c0ea83bd9ab609905f"
+  },
+  {
+    "slot": 24,
+    "offset": 2208,
+    "length": 149,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model08A0.asm",
+    "origin": 51360,
+    "sha256": "e19983f5066488d9224d3a5a731625de6c66d4254176ca5ac7bb30a1f3c38442"
+  },
+  {
+    "slot": 24,
+    "offset": 2357,
+    "length": 162,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model0935.asm",
+    "origin": 51509,
+    "sha256": "a42011c5c7822e708262b73864276fe5a0e1496e4b38c0cb7349911cd1d0e4ed"
+  },
+  {
+    "slot": 24,
+    "offset": 2519,
+    "length": 32,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model09D7.asm",
+    "origin": 51671,
+    "sha256": "b629ddf96c0b1083c522a5358a126044cef2409b940ad790fb1dec47a88d9c60"
+  },
+  {
+    "slot": 24,
+    "offset": 2551,
+    "length": 73,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model09F7.asm",
+    "origin": 51703,
+    "sha256": "22cefc3c8e411b71f99863a6b4671aaa741a53894f61600994a7151b753dd43f"
+  },
+  {
+    "slot": 24,
+    "offset": 2624,
+    "length": 174,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model0A40.asm",
+    "origin": 51776,
+    "sha256": "f4ac30a3b22dcae38d1020fb5f196c1886446473d13561c0f9bccec2c7071393"
+  },
+  {
+    "slot": 24,
+    "offset": 2798,
+    "length": 37,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model0AEE.asm",
+    "origin": 51950,
+    "sha256": "975164c223e2964427fcc2f7b9ad1bd2d457f743018079a8c32313a245153dcf"
+  },
+  {
+    "slot": 24,
+    "offset": 2835,
+    "length": 63,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model0B13.asm",
+    "origin": 51987,
+    "sha256": "c2729cb878e96f476d9808ad673e933cf3f06bf127cbef44f6e59193d75989b1"
+  },
+  {
+    "slot": 24,
+    "offset": 2898,
+    "length": 40,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model0B52.asm",
+    "origin": 52050,
+    "sha256": "e1869d4b1f0cc81b80bd2aca1749a1b9f499e14fee49807a8176c4051e65d85a"
+  },
+  {
+    "slot": 24,
+    "offset": 2938,
+    "length": 114,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model0B7A.asm",
+    "origin": 52090,
+    "sha256": "7c0b198fab84684481683edce437e69ec4876903617a3868a0500720ecda1b19"
+  },
+  {
+    "slot": 24,
+    "offset": 3052,
+    "length": 37,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model0BEC.asm",
+    "origin": 52204,
+    "sha256": "d44587d4ffa60bed8566445d6b6cd91fcc6428bd5f197b4ac0e25dcab41c0755"
+  },
+  {
+    "slot": 24,
+    "offset": 3089,
+    "length": 108,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model0C11.asm",
+    "origin": 52241,
+    "sha256": "9636b0749a4c6baf66a8306db801ca06a89a46a26b053219706e4471722ab3a8"
+  },
+  {
+    "slot": 24,
+    "offset": 3197,
+    "length": 40,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model0C7D.asm",
+    "origin": 52349,
+    "sha256": "b96dac1c8bc03462cfb91201259528ef9b0ff4b00e0b69a30af4113477cc00da"
+  },
+  {
+    "slot": 24,
+    "offset": 3237,
+    "length": 70,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model0CA5.asm",
+    "origin": 52389,
+    "sha256": "0b005b44c109fdc9ccc7894cdea641ed4e9350637787a1fbc3778bfd214e592d"
+  },
+  {
+    "slot": 24,
+    "offset": 3307,
+    "length": 37,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model0CEB.asm",
+    "origin": 52459,
+    "sha256": "a85ef044076c4a4c9d526b44faa8059f8585581c8820b9f5375355dd8369a950"
+  },
+  {
+    "slot": 24,
+    "offset": 3344,
+    "length": 123,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model0D10.asm",
+    "origin": 52496,
+    "sha256": "3ef1a32d88081badc04ea874c2cb87fc082f57a50c8c94e61f8a9b567bf44494"
+  },
+  {
+    "slot": 24,
+    "offset": 3467,
+    "length": 62,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model0D8B.asm",
+    "origin": 52619,
+    "sha256": "75ec8d34fc55d81472d4167896128b6832a17dc98d55d5b588e50ed44bd761f8"
+  },
+  {
+    "slot": 24,
+    "offset": 3529,
+    "length": 109,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model0DC9.asm",
+    "origin": 52681,
+    "sha256": "cbd7353f24b28a912db4bd60ebf8647d7447ac635a420181318982314964e368"
+  },
+  {
+    "slot": 24,
+    "offset": 3638,
+    "length": 76,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model0E36.asm",
+    "origin": 52790,
+    "sha256": "809b57c282159dff2beb130c28ac44b64dc8f55ae28a516e0f02c58d5dfd2bb8"
+  },
+  {
+    "slot": 24,
+    "offset": 3714,
+    "length": 115,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model0E82.asm",
+    "origin": 52866,
+    "sha256": "a5416a8c52575f6d361f391fbd143b26278bcd8be235f020a324fd2562188843"
+  },
+  {
+    "slot": 24,
+    "offset": 3829,
+    "length": 28,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model0EF5.asm",
+    "origin": 52981,
+    "sha256": "dca5ad49d6d2eafeee6d0cc34d656fa155375db4c8306bf736cd24a54d8fc03e"
+  },
+  {
+    "slot": 24,
+    "offset": 3857,
+    "length": 80,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model0F11.asm",
+    "origin": 53009,
+    "sha256": "88ff05bd59e54dcfc545cf6de40d9b559bf2c1696f3641e23bd05ac93a3465c5"
+  },
+  {
+    "slot": 24,
+    "offset": 3937,
+    "length": 65,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model0F61.asm",
+    "origin": 53089,
+    "sha256": "2ec10a94c6ece2a77362a4493c5392080fead2dde91843b387a1bbd07741f14f"
+  },
+  {
+    "slot": 24,
+    "offset": 4002,
+    "length": 83,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model0FA2.asm",
+    "origin": 53154,
+    "sha256": "c0ea08a5cf3b03ba22d7d5e2d6a6239a1ec18b0db542f7dd8f3cea8d6dcf67af"
+  },
+  {
+    "slot": 24,
+    "offset": 4085,
+    "length": 82,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model0FF5.asm",
+    "origin": 53237,
+    "sha256": "1b2514d797627ec5bbe45720ff19b69ca720669b2faa0a47fdc2471c48a0036b"
+  },
+  {
+    "slot": 24,
+    "offset": 4167,
+    "length": 66,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model1047.asm",
+    "origin": 53319,
+    "sha256": "0207eb3e718fba4032e22836f76b491751212d1f71086b9fc2ffc4e6530a2a73"
+  },
+  {
+    "slot": 24,
+    "offset": 4233,
+    "length": 82,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model1089.asm",
+    "origin": 53385,
+    "sha256": "cfc99de9fc4657dc6b0c820e34fc78598e5f4329b3cd972c137bef88f8cbc769"
+  },
+  {
+    "slot": 24,
+    "offset": 4315,
+    "length": 40,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model10DB.asm",
+    "origin": 53467,
+    "sha256": "52d53b00885da51ed1e1de3ce28eff706e984019e0666d88ad9251c1363ccc63"
+  },
+  {
+    "slot": 24,
+    "offset": 4355,
+    "length": 77,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model1103.asm",
+    "origin": 53507,
+    "sha256": "d4c90f60463eaf4c7acb5b38c19c69f4ad5ac7293ae00c3bc60e43b73ef141d1"
+  },
+  {
+    "slot": 24,
+    "offset": 4432,
+    "length": 112,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model1150.asm",
+    "origin": 53584,
+    "sha256": "2ffd5197d09bb81b428d467df34f961edbaff318ad5e550ffdec4cd3c5efded5"
+  },
+  {
+    "slot": 24,
+    "offset": 4544,
+    "length": 57,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model11C0.asm",
+    "origin": 53696,
+    "sha256": "8a436e97e857bc9b23ee327a4e9a579a0d3708cbab843e90328d55d8dc036ce9"
+  },
+  {
+    "slot": 24,
+    "offset": 4601,
+    "length": 91,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model11F9.asm",
+    "origin": 53753,
+    "sha256": "469c61d64c17e7757127fc50c659364efe53b939b4eeaee66c067b3d74bef2de"
+  },
+  {
+    "slot": 24,
+    "offset": 4692,
+    "length": 54,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model1254.asm",
+    "origin": 53844,
+    "sha256": "f524474b42228bcbaec5ce8d098a4efac0f5d8170efb2210032f2ad13cd830aa"
+  },
+  {
+    "slot": 24,
+    "offset": 4746,
+    "length": 126,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model128A.asm",
+    "origin": 53898,
+    "sha256": "5ad0e82f88ec440d23cf53b009a25e1c7542c678c0a273eb2446c49340314335"
+  },
+  {
+    "slot": 24,
+    "offset": 4872,
+    "length": 144,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model1308.asm",
+    "origin": 54024,
+    "sha256": "cc49a9007543cf930b0d1e8d501856be765be85488edbc1fc83744b67cd1ff84"
+  },
+  {
+    "slot": 24,
+    "offset": 5016,
+    "length": 61,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model1398.asm",
+    "origin": 54168,
+    "sha256": "f3fa1e7dcd286c6a29fc7d0d2382de6d99b4e102473321a9446234a1a054822e"
+  },
+  {
+    "slot": 24,
+    "offset": 5077,
+    "length": 164,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model13D5.asm",
+    "origin": 54229,
+    "sha256": "ecfbf240bef9bf21fafb6f6945fec6fa9f354627229173e91037ed6fc34c2cdb"
+  },
+  {
+    "slot": 24,
+    "offset": 5241,
+    "length": 69,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model1479.asm",
+    "origin": 54393,
+    "sha256": "a3c7e7c113eb508a68e771854d4ebc43558912bb674f8a9a231a366319539c6a"
+  },
+  {
+    "slot": 24,
+    "offset": 5310,
+    "length": 140,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model14BE.asm",
+    "origin": 54462,
+    "sha256": "7353f8c04855d69199b12f7071002c856b5da5c98675c24303eecc85c9f6da4a"
+  },
+  {
+    "slot": 24,
+    "offset": 5450,
+    "length": 52,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model154A.asm",
+    "origin": 54602,
+    "sha256": "4b50d21f2ddc70fecfa3cee0135b2c4505e4865ac44356919c833bf7922e3932"
+  },
+  {
+    "slot": 24,
+    "offset": 5502,
+    "length": 100,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model157E.asm",
+    "origin": 54654,
+    "sha256": "6cb3fb0efa27633a93680b6bee8c2f8853e46f56b379ccd040e1b793a840a0d4"
+  },
+  {
+    "slot": 24,
+    "offset": 5602,
+    "length": 64,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model15E2.asm",
+    "origin": 54754,
+    "sha256": "558c7df686fa233fb8c537f85eebc36bb0c9b10fead37cccf6338a710e8314bb"
+  },
+  {
+    "slot": 24,
+    "offset": 5666,
+    "length": 97,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model1622.asm",
+    "origin": 54818,
+    "sha256": "379c9421c4ede55fe5811b23a4e54f1b24e33eed1f60d70fc45e977945b09617"
+  },
+  {
+    "slot": 24,
+    "offset": 5763,
+    "length": 93,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model1683.asm",
+    "origin": 54915,
+    "sha256": "197e056abd1d7619c8a672ddc0e2e1d18aca545ce02edbe49d44937d2238fb2a"
+  },
+  {
+    "slot": 24,
+    "offset": 5856,
+    "length": 160,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model16E0.asm",
+    "origin": 55008,
+    "sha256": "bee5321fdd8a4e6f85f922832e281981aae46c1a05756e8aa45cfb60fb4e8f42"
+  },
+  {
+    "slot": 24,
+    "offset": 6016,
+    "length": 95,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model1780.asm",
+    "origin": 55168,
+    "sha256": "84d71b4727ecefb786f74a884776f4e57552ee92976ef592746e4a05d85d7c05"
+  },
+  {
+    "slot": 24,
+    "offset": 6111,
+    "length": 109,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model17DF.asm",
+    "origin": 55263,
+    "sha256": "2a1f49d733463c188df177eacad104d1b6e8db4fe1a7c43d01f4a48a7d0eaf13"
+  },
+  {
+    "slot": 24,
+    "offset": 6220,
+    "length": 24,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model184C.asm",
+    "origin": 55372,
+    "sha256": "f21bfb64101d30b8ea7b41201b3baac3ef4229511fb74ab6a67afa0cd0f8da1e"
+  },
+  {
+    "slot": 24,
+    "offset": 6244,
+    "length": 78,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model1864.asm",
+    "origin": 55396,
+    "sha256": "2cbcc080eb86cafa7f65d47a100b94d42394eb13c176fec8afe0e02a5794d04c"
+  },
+  {
+    "slot": 24,
+    "offset": 6322,
+    "length": 4,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model18B2.asm",
+    "origin": 55474,
+    "sha256": "a0454a24dd4bc418448ca19320519ea3fe544fa1a910868b62ca210614f119f8"
+  },
+  {
+    "slot": 24,
+    "offset": 6326,
+    "length": 4,
     "kind": "unclassified",
-    "path": "Source/Resources/24_OBJECT3D/Unclassified000.bin",
+    "path": "Source/Resources/24_OBJECT3D/Gap18B6.bin",
     "origin": null,
-    "sha256": "b9491868fcb680b6d6733f528bd70564d053697e32ca28b2f2e0c9c28402b827"
+    "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+  },
+  {
+    "slot": 24,
+    "offset": 6330,
+    "length": 24,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model18BA.asm",
+    "origin": 55482,
+    "sha256": "e04a146185e2d3a69f6dea7a6f524659faac173919f9cce34bf6d021ad6349bd"
+  },
+  {
+    "slot": 24,
+    "offset": 6354,
+    "length": 94,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model18D2.asm",
+    "origin": 55506,
+    "sha256": "587b054a30b1a4c7549eb869c76dd238b0dc5d80b1c360a0b3a3b0c790d3b1d7"
+  },
+  {
+    "slot": 24,
+    "offset": 6448,
+    "length": 120,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model1930.asm",
+    "origin": 55600,
+    "sha256": "75115a71af12c89efc037adb1cc4f4ec4b8461a07a26f97a6fc6ef602ed4529c"
+  },
+  {
+    "slot": 24,
+    "offset": 6568,
+    "length": 64,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model19A8.asm",
+    "origin": 55720,
+    "sha256": "abb04b7e5ef98e9697a471d455c8ec2176a3705cb7d6ae849c434e4425180884"
+  },
+  {
+    "slot": 24,
+    "offset": 6632,
+    "length": 54,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model19E8.asm",
+    "origin": 55784,
+    "sha256": "5dcae2ef435363fa4e27eb589d095d5eedd9a7aafbcffb3d424a2e3ebea4330f"
+  },
+  {
+    "slot": 24,
+    "offset": 6686,
+    "length": 77,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model1A1E.asm",
+    "origin": 55838,
+    "sha256": "74dd41286388a8f3f7d7aa94b7046b931332bd6c962a588316e7a06cd4b51c6d"
+  },
+  {
+    "slot": 24,
+    "offset": 6763,
+    "length": 63,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model1A6B.asm",
+    "origin": 55915,
+    "sha256": "d5410deb7c2f8e43abbca6b266c0e1ff99d679f55dea2d9742edd462c5f87540"
+  },
+  {
+    "slot": 24,
+    "offset": 6826,
+    "length": 214,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model1AAA.asm",
+    "origin": 55978,
+    "sha256": "ee030be74ef65dfd5e2f65e60e89e19bce9c7983e3feaa1689faab3ea3b6c5f7"
+  },
+  {
+    "slot": 24,
+    "offset": 7040,
+    "length": 186,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model1B80.asm",
+    "origin": 56192,
+    "sha256": "6374c2ed2606c6e1bc5428fba2b94a240d34a5dd9580ad363133169dc00cf35d"
+  },
+  {
+    "slot": 24,
+    "offset": 7226,
+    "length": 178,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model1C3A.asm",
+    "origin": 56378,
+    "sha256": "73c37d810c784e934758f7cdba5279963546cdfd8b72aee078c2fba6916b8c94"
+  },
+  {
+    "slot": 24,
+    "offset": 7404,
+    "length": 150,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model1CEC.asm",
+    "origin": 56556,
+    "sha256": "7996ec1923d807c07172dc2fcf43df8a01b7122c5220c4bc2dae2b13892dd6f1"
+  },
+  {
+    "slot": 24,
+    "offset": 7554,
+    "length": 144,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model1D82.asm",
+    "origin": 56706,
+    "sha256": "7d62f275c1ad52420336bad8d4b412a9171c3e01d7fd64b047a2a93617d05128"
+  },
+  {
+    "slot": 24,
+    "offset": 7698,
+    "length": 154,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model1E12.asm",
+    "origin": 56850,
+    "sha256": "bbe41a9b1200b01a4d5c069d10c4c700ef777ac983200cab3309589766258ed8"
+  },
+  {
+    "slot": 24,
+    "offset": 7852,
+    "length": 202,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model1EAC.asm",
+    "origin": 57004,
+    "sha256": "ba54de53e30e589df96bc6430d854184740d5c14d45c2a5d404c61d56712e3af"
+  },
+  {
+    "slot": 24,
+    "offset": 8054,
+    "length": 206,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model1F76.asm",
+    "origin": 57206,
+    "sha256": "214a609d07fe086e86ed6835d3389165edaa3d7d91d907f67b58915c6fe3717f"
+  },
+  {
+    "slot": 24,
+    "offset": 8260,
+    "length": 108,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model2044.asm",
+    "origin": 57412,
+    "sha256": "bf3a2f3dd3b4478ff83b70b8e5da666f586b9f8a65d9cd5072ea04e0a4c8b332"
+  },
+  {
+    "slot": 24,
+    "offset": 8368,
+    "length": 162,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model20B0.asm",
+    "origin": 57520,
+    "sha256": "172c0ed06776ccc9b7cb6e8c5c46bb86ba856f970952fadd7f88eb719ceb6e62"
+  },
+  {
+    "slot": 24,
+    "offset": 8530,
+    "length": 121,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model2152.asm",
+    "origin": 57682,
+    "sha256": "d13a9795001a7d323312ce3e79943bd28a36c398d150826b8e6bbd8e14a114ba"
+  },
+  {
+    "slot": 24,
+    "offset": 8651,
+    "length": 238,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model21CB.asm",
+    "origin": 57803,
+    "sha256": "7c50fc5c5fe32bef51f39d328cb1f85032f16541ddef70f37c6a71ab4accf6f2"
+  },
+  {
+    "slot": 24,
+    "offset": 8889,
+    "length": 116,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model22B9.asm",
+    "origin": 58041,
+    "sha256": "7be46c85adb7a3218c7344f1457ddbc7a36948274ac4ab77e6f156de1dfd4be2"
+  },
+  {
+    "slot": 24,
+    "offset": 9005,
+    "length": 166,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model232D.asm",
+    "origin": 58157,
+    "sha256": "c5eccf6af7060b3e62fd37379d3e5b88558c465de7c67d0f53588fa73f2af8a4"
+  },
+  {
+    "slot": 24,
+    "offset": 9171,
+    "length": 150,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/Model23D3.asm",
+    "origin": 58323,
+    "sha256": "c5396a1c1b5a4e08cc0303d460bc819ef18113a573d3965039969314d5b4007d"
+  },
+  {
+    "slot": 24,
+    "offset": 9321,
+    "length": 1431,
+    "kind": "unclassified",
+    "path": "Source/Resources/24_OBJECT3D/Gap2469.bin",
+    "origin": null,
+    "sha256": "3e83454018682da46b2c7f60cf711712559696f3d1b13f7d90f35657f1d90fa5"
   },
   {
     "slot": 25,
@@ -15940,20 +18001,38 @@
   {
     "slot": 31,
     "offset": 0,
-    "length": 6912,
-    "kind": "unclassified",
-    "path": "Source/Resources/31_choose1/Unclassified000.bin",
+    "length": 6144,
+    "path": "Source/Resources/31_choose1/Bitmap.bin",
+    "kind": "binary_resource",
     "origin": null,
-    "sha256": "b0f3b04d5873d0d8495675c515659b873945fbe0b2aa657efc288b4b5cf6c13a"
+    "sha256": "e870a924f4b66bc506ee6567fc49f5461ad6f4abca5365827adab7e95698ed72"
+  },
+  {
+    "slot": 31,
+    "offset": 6144,
+    "length": 768,
+    "path": "Source/Resources/31_choose1/Attributes.asm",
+    "kind": "typed_data",
+    "origin": null,
+    "sha256": "f99a6f242ce3ab55081cbe28632bd062f470ad843d3dfa100908d35697d9dd6b"
   },
   {
     "slot": 32,
     "offset": 0,
-    "length": 6912,
-    "kind": "unclassified",
-    "path": "Source/Resources/32_choose2/Unclassified000.bin",
+    "length": 6144,
+    "path": "Source/Resources/32_choose2/Bitmap.bin",
+    "kind": "binary_resource",
     "origin": null,
-    "sha256": "12da2ad69f2e8027c01cf9e455b42c7642d548aa3bf9c86f1113fcf4a0c7a375"
+    "sha256": "af0305f366f74c8b280f32fa868852f9f3184804351efe046b976f6f92265fd2"
+  },
+  {
+    "slot": 32,
+    "offset": 6144,
+    "length": 768,
+    "path": "Source/Resources/32_choose2/Attributes.asm",
+    "kind": "typed_data",
+    "origin": null,
+    "sha256": "f99a6f242ce3ab55081cbe28632bd062f470ad843d3dfa100908d35697d9dd6b"
   },
   {
     "slot": 33,
@@ -16012,46 +18091,568 @@
   {
     "slot": 39,
     "offset": 0,
-    "length": 3328,
-    "kind": "unclassified",
-    "path": "Source/Resources/39_BAR/Unclassified000.bin",
+    "length": 3076,
+    "path": "Source/Resources/39_BAR/PoseSequences.asm",
+    "kind": "typed_data",
     "origin": null,
-    "sha256": "08bd40978ed4800e6faff00508b79290e571d232a358bd8478d094e94aa7627f"
+    "sha256": "5dc5677db4e6bfc55a554ae0d7ae8944a336a5ce5207190d35e1fe778b3df388"
+  },
+  {
+    "slot": 39,
+    "offset": 3076,
+    "length": 252,
+    "path": "Source/Resources/39_BAR/SectorTail.bin",
+    "kind": "unclassified",
+    "origin": null,
+    "sha256": "7cb03d7318dc2d73f4b0a266714a4dc881e69a8a3473b61854909acca33e8d6a"
   },
   {
     "slot": 40,
     "offset": 0,
-    "length": 16384,
-    "kind": "unclassified",
-    "path": "Source/Resources/40_BD0/Unclassified000.bin",
+    "length": 1008,
+    "path": "Source/Resources/40_BD0/Sprite0000.bin",
+    "kind": "binary_resource",
     "origin": null,
-    "sha256": "a4d47c9ca6b7fc974748b84aed91ef16a419949ccc2c0fe91a31399afbb8c0a5"
+    "sha256": "3eb72e4c0b627c393a5021d4e2f50fc2f1f65892a0aa4905e36dfd5a67403e62"
+  },
+  {
+    "slot": 40,
+    "offset": 1008,
+    "length": 1020,
+    "path": "Source/Resources/40_BD0/Sprite03F0.bin",
+    "kind": "binary_resource",
+    "origin": null,
+    "sha256": "76cc23a9e864bb3d1e0e07589be7340b74d2b91bdf33d8c25eacca15bbf628cc"
+  },
+  {
+    "slot": 40,
+    "offset": 2028,
+    "length": 1032,
+    "path": "Source/Resources/40_BD0/Sprite07EC.bin",
+    "kind": "binary_resource",
+    "origin": null,
+    "sha256": "e5186ddd94ab42016401c10848fb8fcda2e58ae36ffc8a79f0219ecdba7dae05"
+  },
+  {
+    "slot": 40,
+    "offset": 3060,
+    "length": 1032,
+    "path": "Source/Resources/40_BD0/Sprite0BF4.bin",
+    "kind": "binary_resource",
+    "origin": null,
+    "sha256": "e6114c0fae348800b746cdd2df015e60b5252fb523298b0a8944d49f38f4b31d"
+  },
+  {
+    "slot": 40,
+    "offset": 4092,
+    "length": 1056,
+    "path": "Source/Resources/40_BD0/Sprite0FFC.bin",
+    "kind": "binary_resource",
+    "origin": null,
+    "sha256": "cf4d70bffbcfd9bee9dc07570b94473431caffd317c940beda87e3b0489b22cc"
+  },
+  {
+    "slot": 40,
+    "offset": 5148,
+    "length": 1056,
+    "path": "Source/Resources/40_BD0/Sprite141C.bin",
+    "kind": "binary_resource",
+    "origin": null,
+    "sha256": "9f2b5d2d517d9ce19bdb1de0ec23305224d5c30862639cef5655c7954ea02a57"
+  },
+  {
+    "slot": 40,
+    "offset": 6204,
+    "length": 1316,
+    "path": "Source/Resources/40_BD0/Sprite183C.bin",
+    "kind": "binary_resource",
+    "origin": null,
+    "sha256": "ab95fd8525cc8d231ee02967d5e0094c04479f8ba6ee9488f231ee743943a860"
+  },
+  {
+    "slot": 40,
+    "offset": 7520,
+    "length": 1040,
+    "path": "Source/Resources/40_BD0/Sprite1D60.bin",
+    "kind": "binary_resource",
+    "origin": null,
+    "sha256": "b706e6738d88263232b4589d4c0041f2bdf9e2bb703d0fbb6cdd291a8eed614e"
+  },
+  {
+    "slot": 40,
+    "offset": 8560,
+    "length": 864,
+    "path": "Source/Resources/40_BD0/Sprite2170.bin",
+    "kind": "binary_resource",
+    "origin": null,
+    "sha256": "69e89318d8995fd8b8dddd60b43a5301b9d701b7a3f43a19662449e8df5a1997"
+  },
+  {
+    "slot": 40,
+    "offset": 9424,
+    "length": 1116,
+    "path": "Source/Resources/40_BD0/Sprite24D0.bin",
+    "kind": "binary_resource",
+    "origin": null,
+    "sha256": "addf57e4fbc10b21058156294ef51fcbab354c3fc03da116a690c11cdfd13608"
+  },
+  {
+    "slot": 40,
+    "offset": 10540,
+    "length": 930,
+    "path": "Source/Resources/40_BD0/Sprite292C.bin",
+    "kind": "binary_resource",
+    "origin": null,
+    "sha256": "00ea9002017953b1a1016fbf1c9b303a2e3568334f342956ddae4fc8ae264993"
+  },
+  {
+    "slot": 40,
+    "offset": 11470,
+    "length": 684,
+    "path": "Source/Resources/40_BD0/Sprite2CCE.bin",
+    "kind": "binary_resource",
+    "origin": null,
+    "sha256": "6df6c54805f41d66f8bacbfa2ea6fad2bf320ac0e41df75d842f06345f18f4ca"
+  },
+  {
+    "slot": 40,
+    "offset": 12154,
+    "length": 720,
+    "path": "Source/Resources/40_BD0/Sprite2F7A.bin",
+    "kind": "binary_resource",
+    "origin": null,
+    "sha256": "e614b48af019844a44d2636c72aa00d8021105b7d272b7e81376700e582064d1"
+  },
+  {
+    "slot": 40,
+    "offset": 12874,
+    "length": 576,
+    "path": "Source/Resources/40_BD0/Sprite324A.bin",
+    "kind": "binary_resource",
+    "origin": null,
+    "sha256": "f6e4593ce9ee92c6aa8fff3f591b69d3b33a69f7fc97b77b406b39190fb65ae9"
+  },
+  {
+    "slot": 40,
+    "offset": 13450,
+    "length": 1008,
+    "path": "Source/Resources/40_BD0/Sprite348A.bin",
+    "kind": "binary_resource",
+    "origin": null,
+    "sha256": "b0c3ca11c1d9b19f6a4021f0e4a9d4bdf2c887b96a852ddfdbb0d0c0227192d5"
+  },
+  {
+    "slot": 40,
+    "offset": 14458,
+    "length": 900,
+    "path": "Source/Resources/40_BD0/Sprite387A.bin",
+    "kind": "binary_resource",
+    "origin": null,
+    "sha256": "3d1c915bda5e82deafe19c0dcfb469274d6d1bc8c2914fdf559e16137ae0e2fa"
+  },
+  {
+    "slot": 40,
+    "offset": 15358,
+    "length": 910,
+    "path": "Source/Resources/40_BD0/Sprite3BFE.bin",
+    "kind": "binary_resource",
+    "origin": null,
+    "sha256": "2af344013ceac7a4437aab0949368f3e1c0c08e91799546ba53245d516f970fd"
+  },
+  {
+    "slot": 40,
+    "offset": 16268,
+    "length": 116,
+    "path": "Source/Resources/40_BD0/SectorTail.bin",
+    "kind": "unclassified",
+    "origin": null,
+    "sha256": "2dfbec2357b3826d392cdce75f14f388521a9a29f3c40aaa94ccc56943416c4b"
   },
   {
     "slot": 41,
     "offset": 0,
-    "length": 16384,
-    "kind": "unclassified",
-    "path": "Source/Resources/41_BD1/Unclassified000.bin",
+    "length": 1274,
+    "path": "Source/Resources/41_BD1/Sprite0000.bin",
+    "kind": "binary_resource",
     "origin": null,
-    "sha256": "b74e0669392cf962e331319a352619c8589695793c7d57625b296b4654e3a847"
+    "sha256": "502ccf53937ec1e690e2c0e6ee5dfb26498b608b1427a1e66a913a3f9a462847"
+  },
+  {
+    "slot": 41,
+    "offset": 1274,
+    "length": 1260,
+    "path": "Source/Resources/41_BD1/Sprite04FA.bin",
+    "kind": "binary_resource",
+    "origin": null,
+    "sha256": "2d6885f3dcfab5e26529c65c5ed760c6bcbd9279c3779760a5cfc64a40f0f403"
+  },
+  {
+    "slot": 41,
+    "offset": 2534,
+    "length": 1274,
+    "path": "Source/Resources/41_BD1/Sprite09E6.bin",
+    "kind": "binary_resource",
+    "origin": null,
+    "sha256": "f83cef0ba8a87b12262c2388142356313f6944e602333cd73402103b097a6de4"
+  },
+  {
+    "slot": 41,
+    "offset": 3808,
+    "length": 1232,
+    "path": "Source/Resources/41_BD1/Sprite0EE0.bin",
+    "kind": "binary_resource",
+    "origin": null,
+    "sha256": "e5da222421d3b3c40b14d6b1333bce3fa70a2f24f7d73e0d1f18da6dbd2f220f"
+  },
+  {
+    "slot": 41,
+    "offset": 5040,
+    "length": 1232,
+    "path": "Source/Resources/41_BD1/Sprite13B0.bin",
+    "kind": "binary_resource",
+    "origin": null,
+    "sha256": "df57731b80ac89356c04e789cf4a486902ae2550f258c0077f9e24608882c051"
+  },
+  {
+    "slot": 41,
+    "offset": 6272,
+    "length": 1246,
+    "path": "Source/Resources/41_BD1/Sprite1880.bin",
+    "kind": "binary_resource",
+    "origin": null,
+    "sha256": "83304bca87ffeaf4b939381ef376f4a922cadf02d176c124fd68dee4bc953b9f"
+  },
+  {
+    "slot": 41,
+    "offset": 7518,
+    "length": 1246,
+    "path": "Source/Resources/41_BD1/Sprite1D5E.bin",
+    "kind": "binary_resource",
+    "origin": null,
+    "sha256": "f12debf5a2e5f71a13fd3397981366c143f67eac4186b09762907d330d490bf2"
+  },
+  {
+    "slot": 41,
+    "offset": 8764,
+    "length": 1232,
+    "path": "Source/Resources/41_BD1/Sprite223C.bin",
+    "kind": "binary_resource",
+    "origin": null,
+    "sha256": "f20c00cc12375b61934baf0cd35c6c86fde70d08bacdb48d2c1ec60d38de31f8"
+  },
+  {
+    "slot": 41,
+    "offset": 9996,
+    "length": 1232,
+    "path": "Source/Resources/41_BD1/Sprite270C.bin",
+    "kind": "binary_resource",
+    "origin": null,
+    "sha256": "de54d8e894b047db92fde39ba4af72113e289300cbe44a97f8ef6f55ae74c937"
+  },
+  {
+    "slot": 41,
+    "offset": 11228,
+    "length": 684,
+    "path": "Source/Resources/41_BD1/Sprite2BDC.bin",
+    "kind": "binary_resource",
+    "origin": null,
+    "sha256": "6e8b59b09ac914a4f402875a1e34ff7ac123533df62a34a32de50e3a63c50ed1"
+  },
+  {
+    "slot": 41,
+    "offset": 11912,
+    "length": 600,
+    "path": "Source/Resources/41_BD1/Sprite2E88.bin",
+    "kind": "binary_resource",
+    "origin": null,
+    "sha256": "e14ec68ccc7e0d95f5c8c9af7daf23eef4d6df62e24e1d99bb978ea08e73a4b4"
+  },
+  {
+    "slot": 41,
+    "offset": 12512,
+    "length": 420,
+    "path": "Source/Resources/41_BD1/Sprite30E0.bin",
+    "kind": "binary_resource",
+    "origin": null,
+    "sha256": "c6464b863ac59637443a7c0f8c54ccb07acefe59661a4c27ebf6469258e98ac1"
+  },
+  {
+    "slot": 41,
+    "offset": 12932,
+    "length": 396,
+    "path": "Source/Resources/41_BD1/Sprite3284.bin",
+    "kind": "binary_resource",
+    "origin": null,
+    "sha256": "a6dfe537718ee5afb7f6c0cd77d8d737495ade9aee8dc60d0799d4068ceb4bd6"
+  },
+  {
+    "slot": 41,
+    "offset": 13328,
+    "length": 420,
+    "path": "Source/Resources/41_BD1/Sprite3410.bin",
+    "kind": "binary_resource",
+    "origin": null,
+    "sha256": "14ec31e6e0e56ee3e6ee3fdf4fb86ec740cfc03b2177908154ef1c1d17ae8245"
+  },
+  {
+    "slot": 41,
+    "offset": 13748,
+    "length": 384,
+    "path": "Source/Resources/41_BD1/Sprite35B4.bin",
+    "kind": "binary_resource",
+    "origin": null,
+    "sha256": "fb335339e62edc3eadf3dcb586f499ecefd769d11e87fab1792bcf27e51d86ae"
+  },
+  {
+    "slot": 41,
+    "offset": 14132,
+    "length": 1120,
+    "path": "Source/Resources/41_BD1/Sprite3734.bin",
+    "kind": "binary_resource",
+    "origin": null,
+    "sha256": "ed906aa664b100e9080b0b891d6145503846dc4003b0cacf3851f9204053c402"
+  },
+  {
+    "slot": 41,
+    "offset": 15252,
+    "length": 900,
+    "path": "Source/Resources/41_BD1/Sprite3B94.bin",
+    "kind": "binary_resource",
+    "origin": null,
+    "sha256": "ab6da25ccb7c4c69a4310e5beb1f611884fb1e372118d61ae8fe77b73ee05544"
+  },
+  {
+    "slot": 41,
+    "offset": 16152,
+    "length": 232,
+    "path": "Source/Resources/41_BD1/SectorTail.bin",
+    "kind": "unclassified",
+    "origin": null,
+    "sha256": "646644c57bf27fa228519d9dda60bcb67e41b268702ae77094e7bc4a2f0cfa2c"
   },
   {
     "slot": 42,
     "offset": 0,
-    "length": 16384,
-    "kind": "unclassified",
-    "path": "Source/Resources/42_BD2/Unclassified000.bin",
+    "length": 1392,
+    "path": "Source/Resources/42_BD2/Sprite0000.bin",
+    "kind": "binary_resource",
     "origin": null,
-    "sha256": "994e5c1afa7eda5d6b1f825c6204040bb3ed019bb75883e28eec892a07a47bdd"
+    "sha256": "129a0ac83299633ab1ab4631355f6cb664d893177f545364f40de0cfbfc64d4b"
+  },
+  {
+    "slot": 42,
+    "offset": 1392,
+    "length": 1640,
+    "path": "Source/Resources/42_BD2/Sprite0570.bin",
+    "kind": "binary_resource",
+    "origin": null,
+    "sha256": "bff8da89d8c39d41663f522f37b83aa2c18518c2426a15ec1ee4e24ccf4fae5c"
+  },
+  {
+    "slot": 42,
+    "offset": 3032,
+    "length": 1720,
+    "path": "Source/Resources/42_BD2/Sprite0BD8.bin",
+    "kind": "binary_resource",
+    "origin": null,
+    "sha256": "c2b335643014b4e79738dc902d966e0ef540e8a8b1f73916675ab582280fcf9c"
+  },
+  {
+    "slot": 42,
+    "offset": 4752,
+    "length": 712,
+    "path": "Source/Resources/42_BD2/Sprite1290.bin",
+    "kind": "binary_resource",
+    "origin": null,
+    "sha256": "4c7660a06ca6732d3c0bac4793a8083441d09961d200ff90b39e995260a2810c"
+  },
+  {
+    "slot": 42,
+    "offset": 5464,
+    "length": 1440,
+    "path": "Source/Resources/42_BD2/Sprite1558.bin",
+    "kind": "binary_resource",
+    "origin": null,
+    "sha256": "4424c8c88c5f2ace07646af9cee78edab0d2e6cf79fb1da40c123fa25f6bf838"
+  },
+  {
+    "slot": 42,
+    "offset": 6904,
+    "length": 1380,
+    "path": "Source/Resources/42_BD2/Sprite1AF8.bin",
+    "kind": "binary_resource",
+    "origin": null,
+    "sha256": "ae644e2c4686acfa91d51cc87e18adf154a31843b40f5d8a091ba970ca8101ee"
+  },
+  {
+    "slot": 42,
+    "offset": 8284,
+    "length": 1530,
+    "path": "Source/Resources/42_BD2/Sprite205C.bin",
+    "kind": "binary_resource",
+    "origin": null,
+    "sha256": "f78fdf8a0e8ecc7bde1df767d2bd904048a0255eba33f86896b74fb489ac7df9"
+  },
+  {
+    "slot": 42,
+    "offset": 9814,
+    "length": 1078,
+    "path": "Source/Resources/42_BD2/Sprite2656.bin",
+    "kind": "binary_resource",
+    "origin": null,
+    "sha256": "9d75e97a7d6c10fffcf5efd8b0e5016db6abdc4fa0ef76d06cdce77ce73297f7"
+  },
+  {
+    "slot": 42,
+    "offset": 10892,
+    "length": 1296,
+    "path": "Source/Resources/42_BD2/Sprite2A8C.bin",
+    "kind": "binary_resource",
+    "origin": null,
+    "sha256": "045e89b0a46102b882ae8f86bf212c7c8c3c2423487e3a80a92214206fbafa08"
+  },
+  {
+    "slot": 42,
+    "offset": 12188,
+    "length": 924,
+    "path": "Source/Resources/42_BD2/Sprite2F9C.bin",
+    "kind": "binary_resource",
+    "origin": null,
+    "sha256": "2d0e4f8cae4ad5ae0b86a1379521d3e37fce22e1ff2f78bec33a8b34d8882a6a"
+  },
+  {
+    "slot": 42,
+    "offset": 13112,
+    "length": 1360,
+    "path": "Source/Resources/42_BD2/Sprite3338.bin",
+    "kind": "binary_resource",
+    "origin": null,
+    "sha256": "85548b69028a691cfca892d11bb76488ce063ffecb1ebb27fadd9e8448d7fa79"
+  },
+  {
+    "slot": 42,
+    "offset": 14472,
+    "length": 1056,
+    "path": "Source/Resources/42_BD2/Sprite3888.bin",
+    "kind": "binary_resource",
+    "origin": null,
+    "sha256": "fef0a4260df24003dcfed0f8aab20cc68c6bce0d751e796c21479f1385f9f302"
+  },
+  {
+    "slot": 42,
+    "offset": 15528,
+    "length": 720,
+    "path": "Source/Resources/42_BD2/UnknownLogicalTail.bin",
+    "kind": "unclassified",
+    "origin": null,
+    "sha256": "4d841eda99631435719dc4f6e0d6af3e719c6f906c0a4d0a97e428cc2df16889"
+  },
+  {
+    "slot": 42,
+    "offset": 16248,
+    "length": 136,
+    "path": "Source/Resources/42_BD2/SectorTail.bin",
+    "kind": "unclassified",
+    "origin": null,
+    "sha256": "61e5ceeff2a673dd1d5c90e7ab42b056b8f3c8b8bbe1f759e4aeba0b6d612d44"
   },
   {
     "slot": 43,
     "offset": 0,
-    "length": 12288,
-    "kind": "unclassified",
-    "path": "Source/Resources/43_BD3/Unclassified000.bin",
+    "length": 1260,
+    "path": "Source/Resources/43_BD3/Sprite0000.bin",
+    "kind": "binary_resource",
     "origin": null,
-    "sha256": "6e5a9a6b502ef74d855523ad69307ae0eef284d301ae52e5522005a7ed30b77b"
+    "sha256": "4867987e0b78c1c4dd791c4767fe4bad18439c92db8e029f89bd988a920d0dd3"
+  },
+  {
+    "slot": 43,
+    "offset": 1260,
+    "length": 1260,
+    "path": "Source/Resources/43_BD3/Sprite04EC.bin",
+    "kind": "binary_resource",
+    "origin": null,
+    "sha256": "a625a5a188c7f1a29930d6c0c99cfd082ee906ed375dd75a10b12913e5382e1f"
+  },
+  {
+    "slot": 43,
+    "offset": 2520,
+    "length": 504,
+    "path": "Source/Resources/43_BD3/Sprite09D8.bin",
+    "kind": "binary_resource",
+    "origin": null,
+    "sha256": "cd5cc7642b0c3db289b0f87f42de7cc12c1d51c11e49939ea2e36a8b742de398"
+  },
+  {
+    "slot": 43,
+    "offset": 3024,
+    "length": 960,
+    "path": "Source/Resources/43_BD3/Sprite0BD0.bin",
+    "kind": "binary_resource",
+    "origin": null,
+    "sha256": "887d9a158ec479cadb71a989647b53fabeea1aea09055eefee8c57fd8fb14520"
+  },
+  {
+    "slot": 43,
+    "offset": 3984,
+    "length": 756,
+    "path": "Source/Resources/43_BD3/Sprite0F90.bin",
+    "kind": "binary_resource",
+    "origin": null,
+    "sha256": "66d7b5760d98beb8062ad06c09cc570f9f651cccd290fd62befaeebddfab6e94"
+  },
+  {
+    "slot": 43,
+    "offset": 4740,
+    "length": 1036,
+    "path": "Source/Resources/43_BD3/Sprite1284.bin",
+    "kind": "binary_resource",
+    "origin": null,
+    "sha256": "d441f486e5da0f80fb5522df63cc1a19c5badb9b28c15dfce237d7cd2f46d6c4"
+  },
+  {
+    "slot": 43,
+    "offset": 5776,
+    "length": 1376,
+    "path": "Source/Resources/43_BD3/Sprite1690.bin",
+    "kind": "binary_resource",
+    "origin": null,
+    "sha256": "81382874ea05e3770c45837335dd8f427196033d4dde903c08dd0fd15cde9d36"
+  },
+  {
+    "slot": 43,
+    "offset": 7152,
+    "length": 1548,
+    "path": "Source/Resources/43_BD3/Sprite1BF0.bin",
+    "kind": "binary_resource",
+    "origin": null,
+    "sha256": "7e43e8255eccb499abfd0092a00d1deb2ec0a72ed63cdd4ae80cb7386b21fded"
+  },
+  {
+    "slot": 43,
+    "offset": 8700,
+    "length": 1782,
+    "path": "Source/Resources/43_BD3/Sprite21FC.bin",
+    "kind": "binary_resource",
+    "origin": null,
+    "sha256": "bcce286053cf77f6eeee1e716d10b3b2abc1ed6434be7a0e2f9e1b8de76319c2"
+  },
+  {
+    "slot": 43,
+    "offset": 10482,
+    "length": 1566,
+    "path": "Source/Resources/43_BD3/Sprite28F2.bin",
+    "kind": "binary_resource",
+    "origin": null,
+    "sha256": "6be2932a81da3b29aa7e476a9dfe9b804d721579d0e59b3063bb9829083847f8"
+  },
+  {
+    "slot": 43,
+    "offset": 12048,
+    "length": 240,
+    "path": "Source/Resources/43_BD3/SectorTail.bin",
+    "kind": "unclassified",
+    "origin": null,
+    "sha256": "984dc8b052a6777d2a4e29dfabc055d54ed8d2d3281e279838180be8a3f2c29a"
   }
 ]

@@ -95,7 +95,7 @@ ClearAttributes:LD HL, #5800
                 LD BC, #0100
                 LDIR
                 ; передача управления скопированной версии кода, продолжение в банк LANG не предусматривается
-                JP #4200
+                JP @StationExit.LoadAction.Entry
 
                 endmodule
                 endmodule

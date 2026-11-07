@@ -282,7 +282,7 @@ CONTRACTS = {
         ["все три состояния обновляются через AdvanceParameters, старшие байты Phase меняют LookupHL, LookupBCAlt и LookupHLAlt",
          "младший байт SampleCursor увеличивается на три по модулю 256 без переноса в H, результат выборки меняет LookupDEAlt",
          "SP восстанавливается, альтернативные и индексные регистры сохраняются, IFF устанавливается в единицу вызовами AdvanceParameters"]),
-    ("Basic", 0x5CD1): (
+    ("Basic", 0x5D41): (
         ["LoaderState.NextIntroBlock - слово начальной дорожки и сектора, TR-DOS доступен через #3D13"],
         ["перед входом TR-DOS HL=#6400, DE=NextIntroBlock, BC=#2C05, AF содержит прежний A и F=#22 плюс входной Carry, IY=#5C3A"],
         ["HL, DE, BC, AF, IY, дальнейшие эффекты определяются TR-DOS"],
@@ -2245,3 +2245,63 @@ CONTRACTS.update(ACTION_SPAWN_RECORD_FINISH_CONTRACTS)
 
 from ActionSpawnScheduleFacts import CONTRACTS as ACTION_SPAWN_SCHEDULE_CONTRACTS
 CONTRACTS.update(ACTION_SPAWN_SCHEDULE_CONTRACTS)
+
+from ActionOverlayProjectionFacts import CONTRACTS as ACTION_OVERLAY_PROJECTION_CONTRACTS
+CONTRACTS.update(ACTION_OVERLAY_PROJECTION_CONTRACTS)
+
+from ActionDiagnosticQueueFacts import CONTRACTS as ACTION_DIAGNOSTIC_QUEUE_CONTRACTS
+CONTRACTS.update(ACTION_DIAGNOSTIC_QUEUE_CONTRACTS)
+
+from ClipAliasExecutionFacts import CONTRACTS as CLIP_ALIAS_EXECUTION_CONTRACTS
+CONTRACTS.update(CLIP_ALIAS_EXECUTION_CONTRACTS)
+
+from ActionDeltaRatioFacts import CONTRACTS as ACTION_DELTA_RATIO_CONTRACTS
+CONTRACTS.update(ACTION_DELTA_RATIO_CONTRACTS)
+
+from ActionDirectDecimalScrollFacts import CONTRACTS as ACTION_DIRECT_DECIMAL_SCROLL_CONTRACTS
+CONTRACTS.update(ACTION_DIRECT_DECIMAL_SCROLL_CONTRACTS)
+
+from ActionDirectDecimalPlainFacts import CONTRACTS as ACTION_DIRECT_DECIMAL_PLAIN_CONTRACTS
+CONTRACTS.update(ACTION_DIRECT_DECIMAL_PLAIN_CONTRACTS)
+
+from ActionApproachWordFacts import CONTRACTS as ACTION_APPROACH_WORD_CONTRACTS
+CONTRACTS.update(ACTION_APPROACH_WORD_CONTRACTS)
+
+from ActionRecordDistanceFacts import CONTRACTS as ACTION_RECORD_DISTANCE_CONTRACTS
+CONTRACTS.update(ACTION_RECORD_DISTANCE_CONTRACTS)
+
+from ActionSelectedRecordStepFacts import CONTRACTS as ACTION_SELECTED_RECORD_STEP_CONTRACTS
+CONTRACTS.update(ACTION_SELECTED_RECORD_STEP_CONTRACTS)
+
+from ActionClass18ProximityFacts import CONTRACTS as ACTION_CLASS18_PROXIMITY_CONTRACTS
+CONTRACTS.update(ACTION_CLASS18_PROXIMITY_CONTRACTS)
+
+from ActionSelectClass8Facts import CONTRACTS as ACTION_SELECT_CLASS8_CONTRACTS
+CONTRACTS.update(ACTION_SELECT_CLASS8_CONTRACTS)
+
+from ActionSelectedRecordProximityFacts import CONTRACTS as ACTION_SELECTED_RECORD_PROXIMITY_CONTRACTS
+CONTRACTS.update(ACTION_SELECTED_RECORD_PROXIMITY_CONTRACTS)
+
+from ActionClass2LinkFacts import CONTRACTS as ACTION_CLASS2_LINK_CONTRACTS
+CONTRACTS.update(ACTION_CLASS2_LINK_CONTRACTS)
+
+from ActionClass5LinkFacts import CONTRACTS as ACTION_CLASS5_LINK_CONTRACTS
+CONTRACTS.update(ACTION_CLASS5_LINK_CONTRACTS)
+
+from ActionClass8LinkFacts import CONTRACTS as ACTION_CLASS8_LINK_CONTRACTS
+CONTRACTS.update(ACTION_CLASS8_LINK_CONTRACTS)
+
+from ActionClass7LinkFacts import CONTRACTS as ACTION_CLASS7_LINK_CONTRACTS
+CONTRACTS.update(ACTION_CLASS7_LINK_CONTRACTS)
+
+from ActionClass6LinkFacts import CONTRACTS as ACTION_CLASS6_LINK_CONTRACTS
+CONTRACTS.update(ACTION_CLASS6_LINK_CONTRACTS)
+
+from ActionClass1LinkFacts import CONTRACTS as ACTION_CLASS1_LINK_CONTRACTS
+CONTRACTS.update(ACTION_CLASS1_LINK_CONTRACTS)
+
+from ActionClass4LinkFacts import CONTRACTS as ACTION_CLASS4_LINK_CONTRACTS
+CONTRACTS.update(ACTION_CLASS4_LINK_CONTRACTS)
+
+from ActionClass3LinkFacts import CONTRACTS as ACTION_CLASS3_LINK_CONTRACTS
+CONTRACTS.update(ACTION_CLASS3_LINK_CONTRACTS)

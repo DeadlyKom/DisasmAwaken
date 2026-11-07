@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "total_cases": 12,
+  "real_renderer_executed": true,
+  "rom_interrupts_enabled": true,
+  "sampled_bytes": 2432,
+  "mirrored_bytes": 4096,
+  "assembly_executed": false
+}

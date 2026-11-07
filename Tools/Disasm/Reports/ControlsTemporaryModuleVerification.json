@@ -1,0 +1,43 @@
+{
+  "passed": true,
+  "total_cases": 6,
+  "cases": [
+    {
+      "length": 0,
+      "ldir_iterations": 16385,
+      "stop_address": 20522
+    },
+    {
+      "length": 1,
+      "ldir_iterations": 1,
+      "stop_address": 20546
+    },
+    {
+      "length": 12,
+      "ldir_iterations": 12,
+      "stop_address": 20546
+    },
+    {
+      "length": 1536,
+      "ldir_iterations": 1536,
+      "stop_address": 20546
+    },
+    {
+      "length": 7168,
+      "ldir_iterations": 7168,
+      "stop_address": 20546
+    },
+    {
+      "length": 8192,
+      "ldir_iterations": 8192,
+      "stop_address": 20546
+    }
+  ],
+  "direct_switch_changes_next_opcode": true,
+  "stored_opcode": 217,
+  "bank6_panel_opcode": 4,
+  "zero_count_reaches_destination_bank1": true,
+  "relocated_cases_are_hypothetical": true,
+  "unpack_and_temporary_code_executed": false,
+  "assembly_executed": false
+}

@@ -730,6 +730,170 @@ def main():
     from ThreeDOverlayData import verify_data as verify_three_d_overlay_data
     verify_three_d_overlay_data(ROOT,sources,source_map,symbols)
 
+    # Проверка физических заголовков, групп и примитивов всех потоков OBJECT3D.
+    from ActionModelPhysicalData import parse as parse_action_model
+    models=[item for item in source_map if item['slot']==24 and item['kind']=='typed_data']
+    assert len(models)==95 and sum(item['length'] for item in models)==9317
+    for item in models:
+        raw,labels=parse_action_model((ROOT/item['path']).read_text('utf-8'))
+        assert raw==sources[24][item['offset']:item['offset']+item['length']]
+        assert all(symbols.get(name.upper())==address for name,address in labels.items())
+    assert symbols['FACTIONMODELHEADER']==2 and symbols['FACTIONMODELGROUP']==4
+    assert symbols['FACTIONMODELGROUP.MASK']==0 and symbols['FACTIONMODELGROUP.COMPONENT2']==3
+
+    # Проверка физических строк палитры и двух анимаций VOXAL.
+    from VoxelPhysicalData import TABLES as VOXEL_ROWS, parse as parse_voxel_rows
+    for module,path,start,end,width,count in VOXEL_ROWS:
+        rows=[item for item in source_map if item['path']==path]
+        assert len(rows)==1 and rows[0]['slot']==20 and rows[0]['offset']==start
+        raw,labels=parse_voxel_rows((ROOT/path).read_text('utf-8'))
+        assert len(raw)==width*count and raw==sources[20][start:end]
+        assert all(symbols.get(name.upper())==address for name,address in labels.items())
+    assert symbols['FEFFECTBYTEROW16']==16 and symbols['FEFFECTBYTEROW32']==32
+    assert symbols['FEFFECTBYTEROW16.PAIR15']==15 and symbols['FEFFECTBYTEROW32.PAIR31']==31
+
+    # Проверка всех шести ключей ресурсов перенесённого загрузчика полёта.
+    from ActionBootFileKeys import PATH as action_boot_file_keys_path, parse as parse_action_boot_keys, render as render_action_boot_keys
+    action_boot_keys_raw=sources[17][0x113:0x149]
+    assert parse_action_boot_keys((ROOT/action_boot_file_keys_path).read_text('utf-8'))==action_boot_keys_raw
+    _, action_boot_keys_labels=render_action_boot_keys(action_boot_keys_raw)
+    assert all(symbols[key.upper()]==value for key,value in action_boot_keys_labels.items())
+
+    # Проверка исходного bitmap вступления, физических строк атрибутов и всего прочитанного упакованного потока.
+    from IntroScreenResources import BITMAP as intro_bitmap, ATTRIBUTES as intro_attributes
+    from IntroScreenResources import PACKED as intro_packed, TAIL as intro_screen_tail
+    from IntroScreenResources import parse_attributes as parse_intro_attributes, render_attributes as render_intro_attributes
+    assert (ROOT/intro_bitmap).read_bytes()==sources[3][0xB31:0x2331]
+    assert parse_intro_attributes((ROOT/intro_attributes).read_text('utf-8'))==sources[3][0x2331:0x2631]
+    _, intro_screen_labels=render_intro_attributes(sources[3][0x2331:0x2631])
+    assert all(symbols[key.upper()]==value for key,value in intro_screen_labels.items())
+    assert (ROOT/intro_packed).read_bytes()==sources[3][0x26CB:0x2C6B]
+    assert (ROOT/intro_screen_tail).read_bytes()==sources[3][0x2C6B:0x2D00]
+
+    # Проверка двух физических экранов выбора, без предположения об их загрузке.
+    from PublishChooseScreens import parse_attributes as parse_choose_attributes
+    for slot,name in ((31,'choose1'),(32,'choose2')):
+        prefix=f'Source/Resources/{slot}_{name}/'
+        assert (ROOT/(prefix+'Bitmap.bin')).read_bytes()==sources[slot][:6144]
+        assert parse_choose_attributes((ROOT/(prefix+'Attributes.asm')).read_text('utf-8'))==sources[slot][6144:6912]
+    assert symbols['FCHOOSESCREENATTRIBUTES']==32
+
+    # Проверка отдельной дисковой копии начального блока полётного состояния.
+    mirror=(ROOT/'Source/Resources/18_DATAS/ActionInitialBlock.bin').read_bytes()
+    assert mirror==sources[18][:0x1C2D]==sources[17][0x2C00:0x482D]
+    assert (ROOT/'Source/Resources/18_DATAS/SectorTail.bin').read_bytes()==sources[18][0x1C2D:]
+
+    # Проверка каждого физического поля SAVE по общим структурам станции.
+    from SavedStateLayout import SLOTS as SAVE_SLOTS, structures as save_structures, parse as parse_save
+    save_types = save_structures()
+    for slot, name in SAVE_SLOTS:
+        for item in source_map:
+            if item['slot'] != slot or item['kind'] != 'typed_data':
+                continue
+            text = (ROOT / item['path']).read_text('utf-8')
+            raw, labels = parse_save(text, save_types)
+            assert raw == sources[slot][item['offset']:item['offset'] + item['length']]
+            module = re.search(r'module\s+(\w+)', text)[1]
+            for label, relative in labels.items():
+                assert symbols[(module + '.' + label).upper()] == item['offset'] + relative
+
+    # Проверка связанного набора BAR и BD, геометрии каждого кадра и сохранения неизвестных хвостов.
+    from FighterAssetData import parse as parse_fighter, decode as decode_fighter
+    bar = sources[39][:3076]
+    banks = [sources[40 + bank][:length] for bank, length in enumerate((16268,16152,16248,12048))]
+    _, _, sprites, _ = decode_fighter(bar, banks)
+    text = (ROOT/'Source/Resources/39_BAR/PoseSequences.asm').read_text('utf-8')
+    actual, labels = parse_fighter(text)
+    assert actual == bar
+    for label, offset in labels.items():
+        assert symbols[('FighterPoseData.' + label).upper()] == offset
+    assert symbols['FFIGHTERPOSEPOINTER'] == 2 and symbols['FFIGHTERPOSEHEADER'] == 4
+    assert symbols['FFIGHTERPOSESTEP'] == 14
+    for field, offset in (('BANKINDEX',9),('SPRITEADDRESS',10),('WIDTHBYTES',12),('HEIGHT',13)):
+        assert symbols['FFIGHTERPOSESTEP.' + field] == offset
+    for bank, offset, width, height in sprites:
+        path = f'Source/Resources/{40+bank}_BD{bank}/Sprite{offset:04X}.bin'
+        assert (ROOT/path).read_bytes() == banks[bank][offset:offset + 2*width*height]
+
+    # Проверка трёх исходных диагностических строк и управляющих CR/LF.
+    from DiagnosticMessages import PATH as diagnostic_path, DATA as diagnostic_data, LABELS as diagnostic_labels, parse as parse_diagnostic
+    raw, labels = parse_diagnostic((ROOT/diagnostic_path).read_text('utf-8'))
+    assert raw == diagnostic_data == sources[17][0x4CD6:0x4CEA]
+    assert labels == diagnostic_labels
+    assert all(symbols[('ActionDiagnosticMessages.'+label).upper()]==address for label,address in labels.items())
+
+    # Проверка 728 байтов физического состояния игрока и его дисковых копий.
+    from PlayerSavedFields import verify_all as verify_player_saved_fields, TABLES as PLAYER_SAVED_TABLES
+    assert verify_player_saved_fields() == 728
+    for slot,name in ((4,'STATIONF'),*SAVE_SLOTS):
+        for _,module,_,_ in PLAYER_SAVED_TABLES:
+            path=('Source/Station/Data/' if slot==4 else f'Source/Resources/{slot}_{name}/')+module+'.asm'
+            item=next(item for item in source_map if item['path']==path)
+            raw,labels=parse_save((ROOT/path).read_text('utf-8'),save_types)
+            prefix=module if slot==4 else name.title()+module
+            base=item['origin'] if item['origin'] is not None else item['offset']
+            assert all(symbols[(prefix+'.'+label).upper()]==base+offset for label,offset in labels.items())
+
+    # Проверка всех физических шаблонов, ограничителей и пар параметров создания.
+    from SpawnPhysicalRows import TABLES as SPAWN_TABLES, TYPES as SPAWN_TYPES, parse as parse_spawn
+    for start,end,module,path in SPAWN_TABLES:
+        raw,labels=parse_spawn((ROOT/path).read_text('utf-8'))
+        offset=start-0x6000+0x23D
+        assert raw==sources[17][offset:offset+end-start]
+        assert all(symbols[(module+'.'+label).upper()]==start+relative for label,relative in labels.items())
+    for kind,fields in SPAWN_TYPES.items():
+        offset=0
+        for field,size in fields:
+            assert symbols[(kind+'.'+field).upper()]==offset
+            offset+=size
+        assert symbols[kind.upper()]==offset
+
+    # Проверка синусоиды D3D и двух восьмифазных форм прицельного значка.
+    from OverlayPreviewTables import TABLES as OVERLAY_PREVIEW_TABLES, parse as parse_overlay_preview, verify_originals as verify_overlay_preview
+    verify_overlay_preview()
+    for slot,offset,origin,size,module,path,kind in OVERLAY_PREVIEW_TABLES:
+        raw,labels=parse_overlay_preview((ROOT/path).read_text('utf-8'))
+        assert raw==sources[slot][offset:offset+size]
+        assert all(symbols[(module+'.'+label).upper()]==origin+position for label,position in labels.items())
+    assert symbols['FOVERLAYGLYPHPHASE']==16
+
+    # Проверка исходного BASIC и адреса, указанного обеими формами числа USR.
+    from BasicProgramData import PARTS as BASIC_PROGRAM_PARTS, parse as parse_basic_program, original_program
+    original_program()
+    for start,end,origin,name,_ in BASIC_PROGRAM_PARTS:
+        text=(ROOT/f'Source/Basic/Data/{name}.asm').read_text('utf-8')
+        raw,labels=parse_basic_program(text,origin)
+        assert raw==sources[3][start:end]
+        module=re.search(r'module (\w+)',text)[1]
+        assert all(symbols[(module+'.'+label).upper()]==address for label,address in labels.items())
+    assert symbols['FBASICLINEHEADER']==4 and symbols['FBASICSMALLINTEGER']==5
+
+    # Проверка физических параметров вступления и каждой исходной записи, включая два состояния фаз.
+    from IntroPhysicalParameters import BLOCKS as intro_parameter_blocks, TYPES as intro_parameter_types
+    from IntroPhysicalParameters import parse as parse_intro_parameters, render as render_intro_parameters, source_path
+    for block in intro_parameter_blocks:
+        offset, length, _, filename = block
+        raw = sources[3][offset:offset+length]
+        assert parse_intro_parameters(block, (ROOT/source_path(filename)).read_text('utf-8')) == raw
+        _, labels = render_intro_parameters(block, raw)
+        assert all(symbols[key.upper()] == value for key, value in labels.items())
+    for name, field, _ in intro_parameter_types:
+        assert symbols[name.upper()] == 1 and symbols[(name+'.'+field).upper()] == 0
+
+    # Проверка исходных отсчётов, нулевая вторая половина не заменяется результатом исполнения.
+    from IntroCoordinateSeed import PATH as intro_coordinate_path, parse as parse_intro_coordinate_seed
+    assert parse_intro_coordinate_seed((ROOT/intro_coordinate_path).read_text('utf-8'))==sources[3][256:512]
+    assert symbols['FINTROCOORDINATESAMPLE']==1
+    assert all(symbols[f'INTROCOORDINATESEED.INDEX{index:02X}']==0x6400+index for index in range(256))
+
+    # Проверка реального служебного маркера автозапуска сразу после логического BASIC.
+    autostart=(ROOT/'Source/Basic/Data/Autostart.asm').read_text('utf-8')
+    values=re.search(r'Entry:\s+FTrDosBasicAutostart\s*\{([^}]+)\}', '\n'.join(line.partition(';')[0] for line in autostart.splitlines()))[1]
+    fields=[int(value.strip()[1:],16) for value in values.split(',')]
+    assert fields==[0x80,0xAA,20] and sources[3][119:123]==bytes((fields[0],fields[1],fields[2]&255,fields[2]>>8))
+    assert symbols['FTRDOSBASICAUTOSTART']==4 and symbols['FTRDOSBASICAUTOSTART.LINENUMBER']==2
+    assert symbols['BASICPROGRAMAUTOSTART.ENTRY']==119
+
     # Проверка трёх физических фаз и вложенных полей создаваемого узла очереди.
     from ActionRenderPhasesData import PATH as RENDER_PHASES_PATH, parse as parse_render_phases
     phase_records=[i for i in source_map if i['path']==RENDER_PHASES_PATH]

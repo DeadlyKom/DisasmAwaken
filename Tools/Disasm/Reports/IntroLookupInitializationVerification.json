@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "total_cases": 8,
+  "generated_chains": 3,
+  "exact_pointer_bytes": 4096,
+  "phase_updates_per_case": 40,
+  "actual_rom_executed": true,
+  "assembly_executed": false
+}

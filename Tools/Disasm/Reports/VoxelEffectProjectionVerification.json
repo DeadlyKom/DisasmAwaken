@@ -16,6 +16,8 @@
     5,
     6
   ],
+  "registers_except_r_compared": true,
+  "exact_code_and_stack_writes": true,
   "whole_draw_proved": false,
   "assembly_executed": false
 }

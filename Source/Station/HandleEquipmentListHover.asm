@@ -28,7 +28,7 @@
                 ;   JP передаёт тот же внешний CPU-возврат в UpdateEquipmentHover, нового кадра CALL нет
                 ; -----------------------------------------
                 ; передача наведения оснащения в UpdateEquipmentHover без дополнительного CPU-кадра
-Entry:          JP #7210
+Entry:          JP @Station.UpdateEquipmentHover.Entry
 
                 endmodule
                 endmodule

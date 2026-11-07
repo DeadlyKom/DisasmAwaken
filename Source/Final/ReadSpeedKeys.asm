@@ -1,5 +1,6 @@
                 module Final
                 module ReadSpeedKeys
+                ; Внутренние входы [алгоритм](../../Docs/ArithmeticFinalInternalLabels.md)
 ; Документация [Final](../../Docs/FunctionDetails/Final.md)
 ; -----------------------------------------
 ; Изменение счётчика задержки клавишами Q и A с границами 0..100
@@ -18,32 +19,32 @@
 Entry:          LD A, #FB
                 IN A, (#FE)
                 RRA
-                JP NC, @Final.ReadSpeedKeys.Point6134                           ; переход, если флаг Carry сброшен
+                JP NC, @Final.ReadSpeedKeys.DecreaseDelay                       ; переход, если нажата Q, уменьшить задержку
 
 
                 LD A, #FD
                 IN A, (#FE)
                 RRA
-                JP NC, @Final.ReadSpeedKeys.Point613D                           ; переход, если флаг Carry сброшен
+                JP NC, @Final.ReadSpeedKeys.IncreaseDelay                       ; переход, если нажата A, увеличить задержку
 
 
                 RET
 
 
-Point6134:      LD A, (#60D4)
+DecreaseDelay:  LD A, (#60D4)
                 OR A
-                RET Z                                                           ; выход, если флаг Z установлен
+                RET Z                                                           ; выход, если задержка уже равна нулю, Q не уменьшает её дальше
 
                 DEC A
-                JP @Final.ReadSpeedKeys.Point6144
+                JP @Final.ReadSpeedKeys.StoreDelay
 
 
-Point613D:      LD A, (#60D4)
+IncreaseDelay:  LD A, (#60D4)
                 CP #64
-                RET Z                                                           ; выход, если флаг Z установлен
+                RET Z                                                           ; выход, если задержка уже равна ста, A не увеличивает её дальше
 
                 INC A
-Point6144:      LD (#60D4), A
+StoreDelay:     LD (#60D4), A
                 RET
 
 

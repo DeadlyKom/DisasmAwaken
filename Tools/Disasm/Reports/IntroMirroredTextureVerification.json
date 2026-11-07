@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "total_cases": 32,
+  "bytes_per_texture": 4096,
+  "first_entry": 28134,
+  "source_renderer_executed": false,
+  "write_counts_per_case": {
+    "fixed_bank_2": 5250,
+    "texture_bank_4": 4096
+  },
+  "irq_executed": false,
+  "assembly_executed": false
+}

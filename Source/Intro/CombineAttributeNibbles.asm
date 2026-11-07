@@ -1,6 +1,7 @@
                 module Intro
                 module CombineAttributeNibbles
 ; Документация [Intro](../../Docs/FunctionDetails/Intro.md)
+                ; Имена внутренних входов [алгоритмы вступления](../../Docs/IntroInternalLabels.md)
 ; -----------------------------------------
 ; Объединение восьми младших полубайтов HL с восемью старшими полубайтами BC в 64 атрибута DE
 ; исходная запись 3, файловые смещения #0664..#0682
@@ -15,26 +16,26 @@
 ;   при увеличении E перенос в D не выполняется, IXH и IXL равны нулю, изменяется только IYL
 ; -----------------------------------------
 Entry:          LD IXH, #08
-Point6967:      LD IXL, #08
+AttributeRow:   LD IXL, #08
                 LD A, (HL)
                 INC HL
                 AND #0F
                 LD IYL, A
                 PUSH BC
                 ; объединение старшего полубайта очередного столбца и младшего полубайта текущей строки
-Point6971:      LD A, (BC)
+AttributeCell:  LD A, (BC)
                 INC BC
                 AND #F0
                 OR IYL
                 LD (DE), A
                 INC E
                 DEC IXL
-                JR NZ, @Intro.CombineAttributeNibbles.Point6971                 ; переход, если ещё не сформированы восемь атрибутов строки
+                JR NZ, @Intro.CombineAttributeNibbles.AttributeCell             ; переход, если ещё не сформированы восемь атрибутов строки
 
 
                 POP BC
                 DEC IXH
-                JR NZ, @Intro.CombineAttributeNibbles.Point6967                 ; переход, если ещё не сформированы восемь строк атрибутов
+                JR NZ, @Intro.CombineAttributeNibbles.AttributeRow              ; переход, если ещё не сформированы восемь строк атрибутов
 
 
                 RET

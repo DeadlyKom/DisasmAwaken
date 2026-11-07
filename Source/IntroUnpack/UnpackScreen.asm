@@ -1,5 +1,6 @@
                 module IntroUnpack
                 module UnpackScreen
+                ; Исходный поток [экранные ресурсы](../../Docs/IntroScreenResources.md)
 ; Документация [IntroUnpack](../../Docs/FunctionDetails/IntroUnpack.md)
                 ; Документация [алгоритм и проверка](../../Docs/IntroScreen.md)
 ; -----------------------------------------

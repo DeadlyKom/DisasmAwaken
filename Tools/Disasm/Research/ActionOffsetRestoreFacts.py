@@ -61,4 +61,4 @@ def qualify_mutations(records,regions,functions):
             assert item['target'] in (0xE5B3,0xE5D2,0xE5ED)
             item.update(writer_bank=0,writer_offset=item['writer']-0x6000,writer_source_classified=True,
                 target_region='Action',target_bank=0,target_slot=17,target_offset=item['target']-0x6000,
-                target_source_classified=True,target_path='Source/Action/UnknownE5A0.asm')
+                target_source_classified=True,target_path='Source/Action/UpdateRecordComponents.asm')

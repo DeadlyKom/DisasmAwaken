@@ -473,7 +473,7 @@ NextRecord:     ADD IX, DE
                 CP #15
                 JR Z, @Controls.DrawRadar.NextRecord                            ; переход, если код типа равен 15, запись не отображается
 
-                LD A, (IX + #1B)
+                LD A, (IX + @FActionRecord.Unknown1B)
                 ; Проверка недопустимого знакового байта 80 в первой координате.
                 CP #80
                 JR Z, @Controls.DrawRadar.NextRecord                            ; переход, если первая координата равна 80, запись пропускается
@@ -486,7 +486,7 @@ NextRecord:     ADD IX, DE
 CheckX:         CP #80
                 JR NC, @Controls.DrawRadar.NextRecord                           ; переход, если модуль первой координаты не меньше 80, запись пропускается
 
-                LD A, (IX + #1D)
+                LD A, (IX + @FActionRecord.Unknown1D)
                 LD B, A
                 ; Проверка знака высоты перед проверкой её допустимого модуля.
                 AND A
@@ -496,7 +496,7 @@ CheckX:         CP #80
 CheckHeight:    CP #80
                 JR NC, @Controls.DrawRadar.NextRecord                           ; переход, если высота равна знаковому байту 80, запись пропускается
 
-                LD A, (IX + #1F)
+                LD A, (IX + @FActionRecord.Unknown1F)
                 LD E, A
                 ; Проверка знака второй координаты, исходный байт уже сохранён в E.
                 AND A
@@ -620,12 +620,12 @@ DrawUp:         LD A, (DE)
                 LD A, D
                 DEC D
                 AND #07
-                JP NZ, @Controls.DrawRadar.RepeatUp
+                JP NZ, @Controls.DrawRadar.RepeatUp                             ; переход, если исходная строка не первая в знакоместе, адрес предыдущей строки готов
 
                 LD A, E
                 SUB #20
                 LD E, A
-                JP C, @Controls.DrawRadar.RepeatUp
+                JP C, @Controls.DrawRadar.RepeatUp                              ; переход, если исходный E меньше #20, переход в предыдущую треть уже учтён
 
                 LD A, D
                 ADD A, #08
@@ -636,12 +636,12 @@ RepeatUp:       DJNZ @Controls.DrawRadar.DrawUp
                 LD A, D
                 DEC D
                 AND #07
-                JP NZ, @Controls.DrawRadar.CheckIconTop
+                JP NZ, @Controls.DrawRadar.CheckIconTop                         ; переход, если исходная строка не первая в знакоместе, первая строка отступа найдена
 
                 LD A, E
                 SUB #20
                 LD E, A
-                JP C, @Controls.DrawRadar.CheckIconTop
+                JP C, @Controls.DrawRadar.CheckIconTop                          ; переход, если исходный E меньше #20, первая строка отступа лежит в предыдущей трети
 
                 LD A, D
                 ADD A, #08
@@ -649,12 +649,12 @@ RepeatUp:       DJNZ @Controls.DrawRadar.DrawUp
 CheckIconTop:   LD A, D
                 DEC D
                 AND #07
-                JP NZ, @Controls.DrawRadar.CheckIconBase
+                JP NZ, @Controls.DrawRadar.CheckIconBase                        ; переход, если исходная строка не первая в знакоместе, вторая строка отступа найдена
 
                 LD A, E
                 SUB #20
                 LD E, A
-                JR C, @Controls.DrawRadar.CheckIconBase
+                JR C, @Controls.DrawRadar.CheckIconBase                         ; переход, если исходный E меньше #20, вторая строка отступа лежит в предыдущей трети
 
                 LD A, D
                 ADD A, #08
@@ -690,12 +690,12 @@ DrawDown:       LD A, (DE)
                 INC D
                 LD A, D
                 AND #07
-                JP NZ, @Controls.DrawRadar.RepeatDown
+                JP NZ, @Controls.DrawRadar.RepeatDown                           ; переход, если новая строка не первая в знакоместе, адрес следующей строки готов
 
                 LD A, E
                 ADD A, #20
                 LD E, A
-                JR C, @Controls.DrawRadar.RepeatDown
+                JR C, @Controls.DrawRadar.RepeatDown                            ; переход, если сложение E с #20 дало перенос, следующая треть уже выбрана
 
                 LD A, D
                 SUB #08

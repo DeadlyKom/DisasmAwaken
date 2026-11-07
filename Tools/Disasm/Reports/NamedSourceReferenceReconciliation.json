@@ -1,0 +1,104 @@
+{
+  "passed": true,
+  "modified_code_paths_fixed": [
+    {
+      "region": "Action",
+      "writer": 44129,
+      "before": "Source/Action/UnknownF792.asm",
+      "after": "Source/Action/CheckRecordEffectThreshold.asm"
+    },
+    {
+      "region": "Action",
+      "writer": 44136,
+      "before": "Source/Action/UnknownF792.asm",
+      "after": "Source/Action/CheckRecordEffectThreshold.asm"
+    },
+    {
+      "region": "Action",
+      "writer": 44156,
+      "before": "Source/Action/Unknown7B58.asm",
+      "after": "Source/Action/ScheduleSpawn.asm"
+    },
+    {
+      "region": "Action",
+      "writer": 44159,
+      "before": "Source/Action/Unknown6780.asm",
+      "after": "Source/Action/UpdateBodyMotion.asm"
+    },
+    {
+      "region": "Action",
+      "writer": 44184,
+      "before": "Source/Action/Unknown7859.asm",
+      "after": "Source/Action/SpawnAlternate.asm"
+    },
+    {
+      "region": "Action",
+      "writer": 44189,
+      "before": "Source/Action/Unknown7B58.asm",
+      "after": "Source/Action/FinishSpawnRecord.asm"
+    },
+    {
+      "region": "Action",
+      "writer": 44194,
+      "before": "Source/Action/Unknown7B58.asm",
+      "after": "Source/Action/FinishSpawnRecord.asm"
+    },
+    {
+      "region": "Action",
+      "writer": 44199,
+      "before": "Source/Action/Unknown7B58.asm",
+      "after": "Source/Action/FinishSpawnRecord.asm"
+    },
+    {
+      "region": "Action",
+      "writer": 58716,
+      "before": "Source/Action/UnknownE5A0.asm",
+      "after": "Source/Action/UpdateRecordComponents.asm"
+    },
+    {
+      "region": "Action",
+      "writer": 58737,
+      "before": "Source/Action/UnknownE5A0.asm",
+      "after": "Source/Action/UpdateRecordComponents.asm"
+    },
+    {
+      "region": "Action",
+      "writer": 58750,
+      "before": "Source/Action/UnknownE5A0.asm",
+      "after": "Source/Action/UpdateRecordComponents.asm"
+    },
+    {
+      "region": "Action",
+      "writer": 58763,
+      "before": "Source/Action/UnknownE5A0.asm",
+      "after": "Source/Action/UpdateRecordComponents.asm"
+    },
+    {
+      "region": "Action",
+      "writer": 59022,
+      "before": "Source/Action/UnknownE5A0.asm",
+      "after": "Source/Action/UpdateRecordComponents.asm"
+    },
+    {
+      "region": "Action",
+      "writer": 59028,
+      "before": "Source/Action/UnknownE5A0.asm",
+      "after": "Source/Action/UpdateRecordComponents.asm"
+    },
+    {
+      "region": "Action",
+      "writer": 59034,
+      "before": "Source/Action/UnknownE5A0.asm",
+      "after": "Source/Action/UpdateRecordComponents.asm"
+    },
+    {
+      "region": "Controls",
+      "writer": 56861,
+      "before": "Source/Action/Unknown6780.asm",
+      "after": "Source/Action/UpdateBodyMotion.asm"
+    }
+  ],
+  "comment_and_fact_files_updated": 13,
+  "no_instructions_or_physical_data_changed": true,
+  "assembly_executed": false
+}

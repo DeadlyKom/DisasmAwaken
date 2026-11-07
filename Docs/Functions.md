@@ -21,9 +21,9 @@
 | Help | 4 | 4 | [Факты](FunctionDetails/Help.md) |
 | Music | 49 | 49 | [Факты](FunctionDetails/Music.md) |
 | ActionBoot | 9 | 9 | [Факты](FunctionDetails/ActionBoot.md) |
-| Action | 288 | 287 | [Факты](FunctionDetails/Action.md) |
+| Action | 307 | 306 | [Факты](FunctionDetails/Action.md) |
 | ThreeD | 122 | 121 | [Факты](FunctionDetails/ThreeD.md) |
-| Voxel | 9 | 9 | [Факты](FunctionDetails/Voxel.md) |
+| Voxel | 12 | 12 | [Факты](FunctionDetails/Voxel.md) |
 | Controls | 78 | 78 | [Факты](FunctionDetails/Controls.md) |
 | Final | 9 | 9 | [Факты](FunctionDetails/Final.md) |
 | FinalTemplates | 2 | 2 | [Факты](FunctionDetails/FinalTemplates.md) |
@@ -34,7 +34,7 @@
 | --- | --- | --- |
 | #AC74 | [Station.PrintPlayerRank](../Source/Station/PrintPlayerRank.asm) | Печать ранга по счётчику и шести порогам |
 | #4200 | [StationExit.LoadAction](../Source/StationExit/LoadAction.asm) | Перенесённый выход станции, запрос ACTION и передача контекста |
-| #5CD1 | [Basic.ReadIntroSectors](../Source/Basic/ReadIntroSectors.asm) | Чтение 44 физических секторов через TR-DOS с возвратом на #6500 |
+| #5D41 | [Basic.ReadIntroSectors](../Source/Basic/ReadIntroSectors.asm) | Чтение 44 физических секторов через TR-DOS с возвратом на #6500 |
 | #6500 | [Intro.InitializeIntro](../Source/Intro/InitializeIntro.asm) | Перенос завершающего загрузчика, вывод экрана и создание таблиц вступления |
 | #65B7 | [Intro.LoadStation](../Source/Intro/LoadStation.asm) | Переносимая завершающая стадия, поиск STATIONF.C и чтение #C0 секторов |
 | #661E | [Intro.DrawFinalTextureFrame](../Source/Intro/DrawFinalTextureFrame.asm) | Настройка смещения и параметров последнего текстурного эффекта вступления |
@@ -83,7 +83,7 @@
 | #6D7E | [IntroTemplates.PhaseSum](../Source/IntroTemplates/PhaseSum.asm) | 15-байтовый образец суммы четырёх таблиц, 256 копий по адресу #9900 |
 | #6E31 | [IntroUnpack.UnpackScreen](../Source/IntroUnpack/UnpackScreen.asm) | Распаковка экранного потока после переноса из #8931 в #6E31 |
 | #6300 | [StationBoot.RelocateBootstrap](../Source/StationBoot/RelocateBootstrap.asm) | Очистка атрибутов и перенос #02B5 байт загрузчика в #4000 |
-| #4000 | [StationBoot.InitializeStation](../Source/StationBoot/InitializeStation.asm) | Перенос ядра из #65CE в #6322, загрузка банков и создание таблиц |
+| #4000 | [StationBoot.InitializeStation](../Source/StationBoot/InitializeStation.asm) | Перенос ядра из #65CE в #6322 и очистка экрана банка 7 |
 | #4070 | [StationBoot.StartStation](../Source/StationBoot/StartStation.asm) | Загрузка банков карты, музыки, справки, 3D и языка, выбор фона, настройка устройств и запуск цикла станции |
 | #6322 | [Station.BuildSpriteLineTable](../Source/Station/BuildSpriteLineTable.asm) | Построение 256 адресов строк и 256 байтовых колонок просмотра без экранного отсечения |
 | #6364 | [Station.TogglePreviewFaceFill](../Source/Station/TogglePreviewFaceFill.asm) | Переключение шаблона заполнения семи четырёхугольных и шести треугольных граней по двум опорным заголовкам |
@@ -672,11 +672,20 @@
 | #6172 | [Action.ReleaseClass14Records](../Source/Action/ReleaseClass14Records.asm) | Пометка всех активных записей класса 14 через повторный поиск от начала массива |
 | #6265 | [Action.StepRecordTargetCodes](../Source/Action/StepRecordTargetCodes.asm) | Подвод двух байтов записи к рассчитанным кодам с различными правилами ограничения шага |
 | #62CF | [Action.CountClass3LinksUpToTwo](../Source/Action/CountClass3LinksUpToTwo.asm) | Подсчёт до двух активных записей класса 3 с кодом 02 и совпадающей ссылкой |
+| #6311 | [Action.ApproachWordAndAccumulate](../Source/Action/ApproachWordAndAccumulate.asm) | Приближение HL к BC по обёрнутой разности с накоплением старшего байта остатка в C' |
 | #635B | [Action.ApplyPendingRecordLink](../Source/Action/ApplyPendingRecordLink.asm) | Установка бита 0 LinkFlags, замена LinkedIndex на 1A и условная поправка по ClassCode записи |
 | #6380 | [Action.ApplyIndexedDelta](../Source/Action/ApplyIndexedDelta.asm) | Применение знаковой табличной поправки к байту 9BCD с ограничением и установкой бита 5 по прежнему значению |
 | #64DF | [Action.DispatchRecordClass](../Source/Action/DispatchRecordClass.asm) | Косвенный переход по оборачиваемому байтовому индексу класса записи |
 | #6524 | [Action.ReturnIgnoredRecordClass](../Source/Action/ReturnIgnoredRecordClass.asm) | Немедленный общий возврат исходных классов 10..25 без изменения записи |
+| #6525 | [Action.ConfigureClass5Link](../Source/Action/ConfigureClass5Link.asm) | Подстановка и общий выбор связи только при новом нулевом слове потока 0 |
+| #6536 | [Action.ConfigureClass8Link](../Source/Action/ConfigureClass8Link.asm) | Подстановка, состояние 12 и общий выбор связи при нулевом аппаратном предикате |
+| #6549 | [Action.ConfigureClass2Link](../Source/Action/ConfigureClass2Link.asm) | Подстановка и выбор связи среди классов 6 и 7 после аппаратного порога |
+| #6566 | [Action.ConfigureClass7Link](../Source/Action/ConfigureClass7Link.asm) | Подстановка и выбор связи с исключением классов 6 и 7 после аппаратного порога |
+| #657F | [Action.ConfigureClass6Link](../Source/Action/ConfigureClass6Link.asm) | Подстановка с противоположными путями общего выбора и фильтра классов 6 и 7 |
+| #6594 | [Action.ConfigureClass1Link](../Source/Action/ConfigureClass1Link.asm) | Подстановка и условный общий выбор связи со сменой класса на 0 после успеха |
+| #65AD | [Action.ConfigureClass4Link](../Source/Action/ConfigureClass4Link.asm) | Подстановка и выбор связи среди классов 5 и 14 после аппаратного порога |
 | #65C6 | [Action.ConfigureClass9Link](../Source/Action/ConfigureClass9Link.asm) | Запись кода 0D с сохранением LinkedIndex либо кода 01 со сбросом LinkedIndex в FF |
+| #65DE | [Action.ConfigureClass3Link](../Source/Action/ConfigureClass3Link.asm) | Подстановка, фильтр классов 5 и 14 либо специальный код 26 по потоку 8 |
 | #660E | [Action.ConfigureClass0Link](../Source/Action/ConfigureClass0Link.asm) | Применение подстановки либо выбор новой связи после порога R с общим входом SelectLink |
 | #662B | [Action.CopyRecordLinkOverride](../Source/Action/CopyRecordLinkOverride.asm) | Копирование разрешённого байта подстановки в LinkedIndex и запись кода 02 |
 | #6639 | [Action.DrawBankedGauge](../Source/Action/DrawBankedGauge.asm) | Выбор банка 1, вывод шестистрочной шкалы и обязательный выбор банка 0 |
@@ -749,11 +758,14 @@
 | #AC38 | [Action.ReadWordFromIX](../Source/Action/ReadWordFromIX.asm) | Чтение слова младшим байтом вперёд через IX, продвижение IX на два и копирование C в B |
 | #AC44 | [Action.ActivateParameterSet](../Source/Action/ActivateParameterSet.asm) | Выбор банка 0, применение набора параметров и обнуление двух слов и двух байтов состояния |
 | #AC5D | [Action.ApplyParameterSet](../Source/Action/ApplyParameterSet.asm) | Применение пятнадцати полей набора к исходным адресам ACTION, поле 1 читается без записи, поле 6 используется дважды |
+| #ACAB | [Action.QueueDiagnosticCounters](../Source/Action/QueueDiagnosticCounters.asm) | Постановка диагностических строк Status и Deads и трёх чисел в текстовую очередь |
 | #ACEA | [Action.TransformVectorTransposed](../Source/Action/TransformVectorTransposed.asm) | Вычисление трёх выходных слов с временно транспонированной матрицей, сохранением IX/IY и восстановлением CPU-стека |
 | #AD1D | [Action.SwapCodePatchWords](../Source/Action/SwapCodePatchWords.asm) | Обмен трёх пар полных слов изменяемого кода, включая байты операндов и следующие префиксы |
 | #AD48 | [Action.SqrtWordBank1](../Source/Action/SqrtWordBank1.asm) | Вызов табличного корня с выбором Controls банка 1 и сохранением BC |
 | #AD5A | [Action.EncodeHalfCoordinateDeltas](../Source/Action/EncodeHalfCoordinateDeltas.asm) | Два кода по трём разностям половинных координат и корню усечённых квадратов |
 | #ADB7 | [Action.RotateBankedBasis](../Source/Action/RotateBankedBasis.asm) | Поворот базисных векторов через VOXAL в странице 3 |
+| #ADC5 | [Action.ProjectOverlayCoordinates](../Source/Action/ProjectOverlayCoordinates.asm) | Проекция двух координат относительно общей глубины с центром 128, 48 |
+| #AE15 | [Action.EncodeComponentDeltas](../Source/Action/EncodeComponentDeltas.asm) | Кодирование отношения двух разностей слов с последовательным продолжением в EncodeSignedRatio |
 | #AE24 | [Action.EncodeSignedRatio](../Source/Action/EncodeSignedRatio.asm) | Табличное кодирование знакового отношения с четырьмя смещениями и исходными ограничениями |
 | #AE73 | [Action.DivideScaledLogarithmic](../Source/Action/DivideScaledLogarithmic.asm) | Приближённое отношение с масштабом 256 через нормализацию, разность логарифмов и обратную таблицу |
 | #AF43 | [Action.ComputePatchedVector](../Source/Action/ComputePatchedVector.asm) | Расчёт трёх компонентов по девяти коэффициентам с исходным переносом отрицательных произведений и досрочным выходом по переполнению |
@@ -911,10 +923,12 @@
 | #E70D | [Action.FindRecordExcept6And7](../Source/Action/FindRecordExcept6And7.asm) | Поиск первой активной записи с классом вне пары 6 и 7 |
 | #E729 | [Action.FindRecordClass6Or7](../Source/Action/FindRecordClass6Or7.asm) | Поиск первой активной записи с классом 6 либо 7 |
 | #E745 | [Action.FindRecordClass5Or14](../Source/Action/FindRecordClass5Or14.asm) | Поиск первой активной записи с классом 5 либо 14 |
+| #E97C | [Action.SelectClass8ForRecord](../Source/Action/SelectClass8ForRecord.asm) | Поиск первой записи класса 8 и сохранение её индекса в текущей записи |
 | #E98D | [Action.FindRecordByCode](../Source/Action/FindRecordByCode.asm) | Поиск от A100 первой активной записи с байтом 12 равным входному D |
 | #E9A1 | [Action.FindReusableRecord](../Source/Action/FindReusableRecord.asm) | Поиск первой записи с байтом 1 равным 80, обработка маркера конца и однократного пропуска по байту 18 |
 | #EA29 | [Action.PrepareLargeEffect](../Source/Action/PrepareLargeEffect.asm) | Настройка дочернего кода и чтение заголовка большого эффекта |
 | #EA3D | [Action.AllocateLargeEffect](../Source/Action/AllocateLargeEffect.asm) | Выделение большого эффекта и создание дочерних записей перед освобождением объекта |
+| #EAE9 | [Action.MaxRecordDeltaHigh](../Source/Action/MaxRecordDeltaHigh.asm) | Максимальный старший байт модулей трёх обёрнутых разностей записей |
 | #EB72 | [Action.NextRandomWord0](../Source/Action/NextRandomWord0.asm) | Следующее слово независимого потока 0 с физическим состоянием Stream0 |
 | #EB79 | [Action.NextRandomWord3](../Source/Action/NextRandomWord3.asm) | Следующее слово независимого потока 3 с физическим состоянием Stream3 |
 | #EB80 | [Action.NextRandomWord4](../Source/Action/NextRandomWord4.asm) | Следующее слово независимого потока 4 с физическим состоянием Stream4 |
@@ -936,8 +950,11 @@
 | #EF9A | [Action.AdvanceObjectOffsetFall](../Source/Action/AdvanceObjectOffsetFall.asm) | Уменьшение байта смещения и возврат сохранённого состояния по таймеру |
 | #EFB5 | [Action.AdvanceObjectPhaseWait](../Source/Action/AdvanceObjectPhaseWait.asm) | Обновление фазового счётчика и завершение ожидания по классу и компонентам |
 | #F03D | [Action.MarkIYRecordForReuse](../Source/Action/MarkIYRecordForReuse.asm) | Пометка записи по IY кодом Component0=8000 и однократным пропуском ReuseByte=FF |
+| #F04A | [Action.HandleSelectedRecordProximity](../Source/Action/HandleSelectedRecordProximity.asm) | Проверка выбранной записи, резервный поиск класса 8 и обработка близости |
 | #F075 | [Action.SetClass18ObjectState](../Source/Action/SetClass18ObjectState.asm) | Установка состояния 0A у записи класса 12h перед диспетчеризацией |
 | #F0F8 | [Action.PrepareObjectOffsetTransform](../Source/Action/PrepareObjectOffsetTransform.asm) | Проверка маркера записи и подготовка смещений для вычислителя 6D06 |
+| #F356 | [Action.HandleClass18Proximity](../Source/Action/HandleClass18Proximity.asm) | Поиск записи класса 18, освобождение текущей при близости либо подвод фазовых кодов |
+| #F36B | [Action.StepCodesTowardRecord](../Source/Action/StepCodesTowardRecord.asm) | Подвод фазовых кодов текущей записи по трём компонентам выбранной записи |
 | #F394 | [Action.MarkRecordForReuse](../Source/Action/MarkRecordForReuse.asm) | Пометка записи кодом Component0=8000 и однократным пропуском ReuseByte=FF при поиске доступной записи |
 | #F51E | [Action.UpdatePreferredClass18](../Source/Action/UpdatePreferredClass18.asm) | Выбор опоры по R и потоку 2 либо по приоритету классов с обновлением класса 18 |
 | #F527 | [Action.CheckPreferredRandomWord](../Source/Action/CheckPreferredRandomWord.asm) | Проверка младшего слова потока 2 и внешнего байта для выбора отдельного кода 26 |
@@ -1081,8 +1098,11 @@
 | #EC1B | [Voxel.CreateLargeEffect](../Source/Voxel/CreateLargeEffect.asm) | Инициализация эффекта с ресурсом #C400 и параметрами #14, #14, #08 |
 | #EC33 | [Voxel.AllocateEffect](../Source/Voxel/AllocateEffect.asm) | Поиск свободной записи #12 байт по знаку и нулевому признаку в поле +7 |
 | #EC7F | [Voxel.ClipSprite](../Source/Voxel/ClipSprite.asm) | Отсечение прямоугольника по горизонтали 64 и вертикали 24 с расчётом краевых смещений |
+| #EE7A | [Voxel.RasterizeSprite](../Source/Voxel/RasterizeSprite.asm) | Развёрнутый проход по парам кодов спрайта с маскированием прозрачных половин и шагом по строкам |
 | #F931 | [Voxel.Multiply7BitWord](../Source/Voxel/Multiply7BitWord.asm) | Умножение младших семи битов A на BC с результатом HL modulo #10000 |
 | #F957 | [Voxel.Divide7BitFixed](../Source/Voxel/Divide7BitFixed.asm) | Деление младших семи битов A на E с восемью дробными битами, подтверждённый делитель 1..128 |
+| #F9E9 | [Voxel.ProjectEffectPoint](../Source/Voxel/ProjectEffectPoint.asm) | Проекция точки эффекта с двумя знаковыми поправками |
+| #FA3A | [Voxel.DrawProjectedEffect](../Source/Voxel/DrawProjectedEffect.asm) | Проекция двух углов эффекта и передача прямоугольника на отсечение |
 | #C870 | [Controls.CopyViewportToScreen](../Source/Controls/CopyViewportToScreen.asm) | Перенос линейного растра 256 на 96 пикселей в верхнюю половину экрана |
 | #C882 | [Controls.CopyScreenRows](../Source/Controls/CopyScreenRows.asm) | Стековый перенос страниц линейного растра в символьные строки экрана |
 | #CA8D | [Controls.NextBufferRandom](../Source/Controls/NextBufferRandom.asm) | Получение байта из изменяемого 16-битового состояния генератора |
@@ -1558,5 +1578,7 @@
 | #E53D | [Music.PatternCommandsC](../Source/Music/PatternCommandsC.asm) | Внутренние входы громкости, выключения, огибающей и указателей канала C |
 | #E583 | [Music.DecodePatternC](../Source/Music/DecodePatternC.asm) | Декодирование строки C с непосредственным сбросом новой ноты и отложенными эффектами |
 | #6000 | [Action.QueueNumberBank1](../Source/Action/QueueNumberBank1.asm) | Передача байтового числа A в очередь Controls банка 1 с фиксированным возвратом страницы 10 |
+| #6010 | [Action.PrintByteAndScrollBank1](../Source/Action/PrintByteAndScrollBank1.asm) | Прямой десятичный вывод байта с обязательной прокруткой окна банка 1 |
+| #6029 | [Action.PrintByteBank1](../Source/Action/PrintByteBank1.asm) | Прямой десятичный вывод байта в окне банка 1 с исходной попыткой записи в ПЗУ |
 | #6040 | [Action.QueueTextItemBank1](../Source/Action/QueueTextItemBank1.asm) | Передача записи DE в очередь Controls банка 1 с сохранением регистров и возвратом страницы 10 |
 | #6054 | [Action.ShowNoiseBeforeReload](../Source/Action/ShowNoiseBeforeReload.asm) | Вывод шумовых кадров и ожидание клавиши перед загрузкой станции |

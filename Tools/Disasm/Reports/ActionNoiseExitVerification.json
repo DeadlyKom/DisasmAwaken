@@ -4,6 +4,7 @@
   "frames": 404,
   "actual_rom_copy_and_output_executed": true,
   "halt_wakeup_injected": true,
+  "station_loader_relocated_without_call": true,
   "hardware_irq_executed": false,
   "assembly_executed": false,
   "native_execution": false

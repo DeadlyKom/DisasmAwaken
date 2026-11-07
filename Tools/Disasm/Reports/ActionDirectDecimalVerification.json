@@ -1,0 +1,38 @@
+{
+  "passed": true,
+  "total_cases": 3584,
+  "cases_by_entry": {
+    "0x6010": 1792,
+    "0x6029": 1792
+  },
+  "input_bytes_exhausted": true,
+  "column_fixtures": [
+    0,
+    1,
+    21,
+    22,
+    23,
+    24,
+    255
+  ],
+  "actual_decimal_glyphs_and_scrolling_executed": true,
+  "independent_screen_and_glyph_event_model": true,
+  "actual_registers_compared_with_post_child_boundary": true,
+  "independent_full_child_register_oracle": false,
+  "all_ram_outside_stack_and_saved_sp_operand_compared": true,
+  "ignored_rom_targets": [
+    271,
+    527,
+    783,
+    1039,
+    5903,
+    6159
+  ],
+  "both_roms_unchanged": true,
+  "maximum_stack_bytes": 10,
+  "temporary_stack_values_independently_proved": false,
+  "runtime_caller_found": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

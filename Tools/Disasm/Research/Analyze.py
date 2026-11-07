@@ -14,7 +14,8 @@ from Knowledge import FUNCTIONS
 from ThreeDOverlayMirrorFacts import CODE_RANGES as THREED_OVERLAY_CODE_RANGES
 
 # Продолжение подтверждено исполнением исходной рамки и сохранением физического байта.
-CONFIRMED_CONTINUATIONS = {"Station": {0xC0C8: "af"}}
+CONFIRMED_CONTINUATIONS = {"Station": {0xC0C8: "af"},
+                           "Action": {0xF775: "d243f8dd360a0bed5fe601c602dd7716dd7e0dfe1a0e08cc8c63c343f8"}}
 
 
 def block(slot, offset, length, origin, name, roots=()):
@@ -24,7 +25,7 @@ def block(slot, offset, length, origin, name, roots=()):
 
 # Адреса переноса получены из LDIR исходных загрузчиков, не являются новой раскладкой.
 BLOCKS = [
-    block(3, 0, 0x100, 0x5CCB, "Basic", (0x5CD1,)),
+    block(3, 0, 119, 0x5D3B, "Basic", (0x5D41,)),
     block(3, 0x100, 0xA31, 0x6400, "Intro", (0x6500, 0x65B7)),
     # Образцы исполняются только после копирования, границы взяты из длины RepeatPattern.
     block(3, 0x422, 7, 0x6722, "IntroTemplates", (0x6722,)),
@@ -220,6 +221,7 @@ def analyze(name, extra_roots=(), observed=(), initial_bank=None):
     # Дополнение проверенных непрерывных кодовых областей между входами обработчиков.
     ranges = {"Text": ((0xC000, 0xC935),),
               "ThreeD": THREED_OVERLAY_CODE_RANGES,
+              "Voxel": ((0xEE7A, 0xF931), (0xF9E9, 0xFAC8)),
               "Action": ((0xC000, 0xCEE3), (0xCF08, 0xCF0B), (0xD10A, 0xD194))}
     linear = set()
     for start, end in ranges.get(name, ()):

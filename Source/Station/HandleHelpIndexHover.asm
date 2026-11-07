@@ -28,7 +28,7 @@
                 ;   JP передаёт исходный внешний CPU-возврат в UpdateIndexListHover, нового CALL и сохранённых слов нет
                 ; -----------------------------------------
                 ; передача наведения разделов справки в UpdateIndexListHover с исходным адресом возврата
-Entry:          JP #6A4B
+Entry:          JP @Station.UpdateIndexListHover.Entry
 
                 endmodule
                 endmodule

@@ -1,5 +1,6 @@
                 module Intro
                 module AdvanceTextureScale
+                ; Физические параметры [источники и потребители](../../Docs/IntroPhysicalParameters.md)
 ; Документация [Intro](../../Docs/FunctionDetails/Intro.md)
                 ; Документация [масштаб текстуры](../../Docs/IntroTextureScale.md)
 ; -----------------------------------------
@@ -61,7 +62,7 @@ CycleScale:     LD A, #00
 StoreCycle:     LD (@IntroScaleState.CycleIndex), A
                 LD E, A
                 LD D, #00
-                LD HL, #6C62
+                LD HL, @IntroScaleCycle.P00
                 ADD HL, DE
                 LD A, (HL)
                 ADD A, #38

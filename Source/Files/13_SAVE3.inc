@@ -2,7 +2,46 @@
 ; запись 13, SAVE3.s
 ; логическая длина 512, полный секторный размер 512
 ; -----------------------------------------
+                ; Документация [состояние слота](../../Docs/SavedStateLayout.md)
                 assert $ == #0000
-                ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/13_SAVE3/Unclassified000.bin"
+                include "../Resources/13_SAVE3/StationTimer.asm"
+                assert $ == #0004
+                include "../Resources/13_SAVE3/CurrentSignature.asm"
+                ; Неизвестные поля сохранены, нули не считаются свободным местом.
+                assert $ == #0009
+                assert $ == #0009
+                include "../Resources/13_SAVE3/SelectedMapKey.asm"
+                assert $ == #000E
+                include "../Resources/13_SAVE3/PlayerSaveHeader.asm"
+                assert $ == #0017
+                include "../Resources/13_SAVE3/OwnedCargoRows.asm"
+                assert $ == #0053
+                include "../Resources/13_SAVE3/EquipmentQuantityCodes.asm"
+                assert $ == #0071
+                ; Четыре соседних байта сохраняют неизвестный смысл.
+                incbin "../Resources/13_SAVE3/Unknown98AC.bin"
+                assert $ == #0075
+                include "../Resources/13_SAVE3/MissionOffer.asm"
+                ; Неизвестные поля сохранены, нули не считаются свободным местом.
+                assert $ == #0085
+                incbin "../Resources/13_SAVE3/Unknown085.bin"
+                assert $ == #00CF
+                include "../Resources/13_SAVE3/StoredMapPoints.asm"
+                assert $ == #0135
+                include "../Resources/13_SAVE3/StoredMapOrder.asm"
+                assert $ == #0140
+                include "../Resources/13_SAVE3/MapAuxiliaryPoints.asm"
+                assert $ == #0168
+                include "../Resources/13_SAVE3/MapAuxiliaryCodes.asm"
+                assert $ == #0173
+                include "../Resources/13_SAVE3/InterfaceChoices.asm"
+                assert $ == #017B
+                include "../Resources/13_SAVE3/PointerKeys.asm"
+                assert $ == #0187
+                include "../Resources/13_SAVE3/InterfaceColors.asm"
+                assert $ == #018D
+                include "../Resources/13_SAVE3/ControlOptions.asm"
+                ; Неизвестные поля сохранены, нули не считаются свободным местом.
+                assert $ == #01E3
+                incbin "../Resources/13_SAVE3/Unknown1E3.bin"
                 assert $ == #0200

@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "total_cases": 6,
+  "physical_typed_bytes": 172,
+  "original_blocks": 6,
+  "final_phases_unchanged": true,
+  "attribute_matrices_independently_compared": true,
+  "last_lookup_neighbour_byte_classified": false,
+  "whole_initialization_executed": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

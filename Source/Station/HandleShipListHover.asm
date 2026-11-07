@@ -28,7 +28,7 @@
                 ;   JP передаёт исходный внешний CPU-возврат в UpdateShipListHover, нового CALL и сохранённых слов нет
                 ; -----------------------------------------
                 ; передача наведения списка моделей кораблей в UpdateShipListHover с исходным адресом возврата
-Entry:          JP #67D0
+Entry:          JP @Station.UpdateShipListHover.Entry
 
                 endmodule
                 endmodule

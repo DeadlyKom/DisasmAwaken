@@ -33,7 +33,7 @@
   ],
   "table_role_proved": true,
   "decoded_regions": 20,
-  "decoded_instructions": 45944,
+  "decoded_instructions": 48247,
   "explicit_references_to_cf08_cf0a": [],
   "possible_instructions": [
     "DI",

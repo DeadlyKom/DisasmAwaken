@@ -14,7 +14,7 @@
                 ; Out:
                 ;   HL=0, E сохраняется, BC=FActionRecord, D задаёт последний искавшийся класс, IY последнюю найденную запись либо маркер
                 ;   Base0, Base1 и Base2 равны нулю при каждом возврате, записи выполняются в исходном порядке
-                ;   если опора выбрана, класс 3 отсутствует и класс 18 найден, его Unknown0A=0B, Unknown0D=выбранный A, Unknown16=02
+                ;   если опора выбрана, класс 3 отсутствует и класс 18 найден, его StateCode=0B, Unknown0D=выбранный A, SavedStateCode=02
                 ;   остальные записи списка не изменяются, при запрете либо отсутствии цели эти три записи не выполняются
                 ;   AF и альтернативный AF зависят от пути обмена и последнего поиска, точные случаи приведены в документации
                 ;   HL', DE', BC' сохраняются без вызова генератора, иначе содержат результат Stream2, IX сохраняется
@@ -27,7 +27,7 @@
                 ;   отдельный код 26 допускается только после R>=E6, нового L<28 и UnknownGate>=50
                 ;   после выбора наличие первого активного класса 3 блокирует обновление, изменяется только первый активный класс 18
                 ;   383744 сценария исполнили все восемь входов и настоящих детей, сопоставлены регистры включая R, восемь банков RAM и кратность записей
-                ;   полные игровые роли UnknownGate, Unknown0A, Unknown0D и Unknown16, полный домен состояний и списков, распределение, период, IRQ, точные T, сборка и нативный запуск не доказаны
+                ;   полные игровые роли UnknownGate, StateCode, Unknown0D и SavedStateCode, полный домен состояний и списков, распределение, период, IRQ, точные T, сборка и нативный запуск не доказаны
                 ; -----------------------------------------
                 ; Сохранение выбранных A и F в альтернативном AF на время поиска классов 3 и 18.
 Entry:          EX AF, AF'
@@ -41,13 +41,13 @@ Entry:          EX AF, AF'
                 CALL @Action.FindRecordByCode.Entry
                 JR Z, @Action.ResetRecordUpdateBases.Entry                      ; переход, если класс 18 не найден, только обнулить базовые операнды
 
-                ; Обновление Unknown0A целевой записи исходным кодом 0B.
-                LD (IY + @FActionRecord.Unknown0A), @ActionPreferredRecordConst.RecordCode
+                ; Обновление StateCode целевой записи исходным кодом 0B.
+                LD (IY + @FActionRecord.StateCode), @ActionPreferredRecordConst.RecordCode
                 ; Восстановление выбранных A и F, в альтернативном AF остаётся результат поиска класса 18.
                 EX AF, AF'
-                ; Запись выбранного байта опоры в Unknown0D и исходного кода 02 в Unknown16 целевой записи.
+                ; Запись выбранного байта опоры в Unknown0D и исходного кода 02 в SavedStateCode целевой записи.
                 LD (IY + @FActionRecord.Unknown0D), A
-                LD (IY + @FActionRecord.Unknown16), @ActionClass0Const.RecordCode
+                LD (IY + @FActionRecord.SavedStateCode), @ActionClass0Const.RecordCode
                 ; JP @Action.ResetRecordUpdateBases.Entry, продолжение в ResetRecordUpdateBases.asm
 
                 endmodule

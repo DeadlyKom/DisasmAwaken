@@ -2,7 +2,7 @@
   {
     "region": "Basic",
     "name": "ReadIntroSectors",
-    "address": 23761,
+    "address": 23873,
     "slot": 3,
     "offset": 6,
     "description": "Чтение 44 физических секторов через TR-DOS с возвратом на #6500",
@@ -544,7 +544,7 @@
     "address": 16384,
     "slot": 4,
     "offset": 793,
-    "description": "Перенос ядра из #65CE в #6322, загрузка банков и создание таблиц",
+    "description": "Перенос ядра из #65CE в #6322 и очистка экрана банка 7",
     "semantic_status": "described",
     "end_offset": 835,
     "path": "Source/StationBoot/InitializeStation.asm"
@@ -8351,6 +8351,28 @@
   },
   {
     "region": "Action",
+    "name": "PrintByteAndScrollBank1",
+    "address": 24592,
+    "slot": 17,
+    "offset": 589,
+    "end_offset": 614,
+    "path": "Source/Action/PrintByteAndScrollBank1.asm",
+    "description": "Прямой десятичный вывод байта с обязательной прокруткой окна банка 1",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "PrintByteBank1",
+    "address": 24617,
+    "slot": 17,
+    "offset": 614,
+    "end_offset": 637,
+    "path": "Source/Action/PrintByteBank1.asm",
+    "description": "Прямой десятичный вывод байта в окне банка 1 с исходной попыткой записи в ПЗУ",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
     "name": "QueueTextItemBank1",
     "description": "Передача записи DE в очередь Controls банка 1 с сохранением регистров и возвратом страницы 10",
     "address": 24640,
@@ -8430,6 +8452,17 @@
   },
   {
     "region": "Action",
+    "name": "ApproachWordAndAccumulate",
+    "address": 25361,
+    "slot": 17,
+    "offset": 1358,
+    "end_offset": 1416,
+    "path": "Source/Action/ApproachWordAndAccumulate.asm",
+    "description": "Приближение HL к BC по обёрнутой разности с накоплением старшего байта остатка в C'",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
     "name": "ApplyPendingRecordLink",
     "address": 25435,
     "slot": 17,
@@ -8474,6 +8507,83 @@
   },
   {
     "region": "Action",
+    "name": "ConfigureClass5Link",
+    "address": 25893,
+    "slot": 17,
+    "offset": 1890,
+    "end_offset": 1907,
+    "path": "Source/Action/ConfigureClass5Link.asm",
+    "description": "Подстановка и общий выбор связи только при новом нулевом слове потока 0",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "ConfigureClass8Link",
+    "address": 25910,
+    "slot": 17,
+    "offset": 1907,
+    "end_offset": 1926,
+    "path": "Source/Action/ConfigureClass8Link.asm",
+    "description": "Подстановка, состояние 12 и общий выбор связи при нулевом аппаратном предикате",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "ConfigureClass2Link",
+    "address": 25929,
+    "slot": 17,
+    "offset": 1926,
+    "end_offset": 1955,
+    "path": "Source/Action/ConfigureClass2Link.asm",
+    "description": "Подстановка и выбор связи среди классов 6 и 7 после аппаратного порога",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "ConfigureClass7Link",
+    "address": 25958,
+    "slot": 17,
+    "offset": 1955,
+    "end_offset": 1980,
+    "path": "Source/Action/ConfigureClass7Link.asm",
+    "description": "Подстановка и выбор связи с исключением классов 6 и 7 после аппаратного порога",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "ConfigureClass6Link",
+    "address": 25983,
+    "slot": 17,
+    "offset": 1980,
+    "end_offset": 2001,
+    "path": "Source/Action/ConfigureClass6Link.asm",
+    "description": "Подстановка с противоположными путями общего выбора и фильтра классов 6 и 7",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "ConfigureClass1Link",
+    "address": 26004,
+    "slot": 17,
+    "offset": 2001,
+    "end_offset": 2026,
+    "path": "Source/Action/ConfigureClass1Link.asm",
+    "description": "Подстановка и условный общий выбор связи со сменой класса на 0 после успеха",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "ConfigureClass4Link",
+    "address": 26029,
+    "slot": 17,
+    "offset": 2026,
+    "end_offset": 2051,
+    "path": "Source/Action/ConfigureClass4Link.asm",
+    "description": "Подстановка и выбор связи среди классов 5 и 14 после аппаратного порога",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
     "name": "ConfigureClass9Link",
     "address": 26054,
     "slot": 17,
@@ -8481,6 +8591,17 @@
     "end_offset": 2075,
     "path": "Source/Action/ConfigureClass9Link.asm",
     "description": "Запись кода 0D с сохранением LinkedIndex либо кода 01 со сбросом LinkedIndex в FF",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "ConfigureClass3Link",
+    "address": 26078,
+    "slot": 17,
+    "offset": 2075,
+    "end_offset": 2123,
+    "path": "Source/Action/ConfigureClass3Link.asm",
+    "description": "Подстановка, фильтр классов 5 и 14 либо специальный код 26 по потоку 8",
     "semantic_status": "described"
   },
   {
@@ -9277,6 +9398,17 @@
   },
   {
     "region": "Action",
+    "name": "QueueDiagnosticCounters",
+    "address": 44203,
+    "slot": 17,
+    "offset": 19627,
+    "end_offset": 19670,
+    "path": "Source/Action/QueueDiagnosticCounters.asm",
+    "description": "Постановка диагностических строк Status и Deads и трёх чисел в текстовую очередь",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
     "name": "TransformVectorTransposed",
     "address": 44266,
     "slot": 17,
@@ -9329,6 +9461,28 @@
     "semantic_status": "described",
     "end_offset": 19909,
     "path": "Source/Action/RotateBankedBasis.asm"
+  },
+  {
+    "region": "Action",
+    "name": "ProjectOverlayCoordinates",
+    "address": 44485,
+    "slot": 17,
+    "offset": 19909,
+    "end_offset": 19989,
+    "path": "Source/Action/ProjectOverlayCoordinates.asm",
+    "description": "Проекция двух координат относительно общей глубины с центром 128, 48",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "EncodeComponentDeltas",
+    "address": 44565,
+    "slot": 17,
+    "offset": 19989,
+    "end_offset": 20004,
+    "path": "Source/Action/EncodeComponentDeltas.asm",
+    "description": "Кодирование отношения двух разностей слов с последовательным продолжением в EncodeSignedRatio",
+    "semantic_status": "described"
   },
   {
     "region": "Action",
@@ -11059,6 +11213,17 @@
   },
   {
     "region": "Action",
+    "name": "SelectClass8ForRecord",
+    "address": 59772,
+    "slot": 17,
+    "offset": 35196,
+    "end_offset": 35213,
+    "path": "Source/Action/SelectClass8ForRecord.asm",
+    "description": "Поиск первой записи класса 8 и сохранение её индекса в текущей записи",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
     "name": "FindRecordByCode",
     "address": 59789,
     "slot": 17,
@@ -11099,6 +11264,17 @@
     "end_offset": 35561,
     "path": "Source/Action/AllocateLargeEffect.asm",
     "description": "Выделение большого эффекта и создание дочерних записей перед освобождением объекта",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "MaxRecordDeltaHigh",
+    "address": 60137,
+    "slot": 17,
+    "offset": 35561,
+    "end_offset": 35649,
+    "path": "Source/Action/MaxRecordDeltaHigh.asm",
+    "description": "Максимальный старший байт модулей трёх обёрнутых разностей записей",
     "semantic_status": "described"
   },
   {
@@ -11334,6 +11510,17 @@
   },
   {
     "region": "Action",
+    "name": "HandleSelectedRecordProximity",
+    "address": 61514,
+    "slot": 17,
+    "offset": 36938,
+    "end_offset": 36981,
+    "path": "Source/Action/HandleSelectedRecordProximity.asm",
+    "description": "Проверка выбранной записи, резервный поиск класса 8 и обработка близости",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
     "name": "SetClass18ObjectState",
     "address": 61557,
     "slot": 17,
@@ -11352,6 +11539,28 @@
     "end_offset": 37176,
     "path": "Source/Action/PrepareObjectOffsetTransform.asm",
     "description": "Проверка маркера записи и подготовка смещений для вычислителя 6D06",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "HandleClass18Proximity",
+    "address": 62294,
+    "slot": 17,
+    "offset": 37718,
+    "end_offset": 37739,
+    "path": "Source/Action/HandleClass18Proximity.asm",
+    "description": "Поиск записи класса 18, освобождение текущей при близости либо подвод фазовых кодов",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
+    "name": "StepCodesTowardRecord",
+    "address": 62315,
+    "slot": 17,
+    "offset": 37739,
+    "end_offset": 37780,
+    "path": "Source/Action/StepCodesTowardRecord.asm",
+    "description": "Подвод фазовых кодов текущей записи по трём компонентам выбранной записи",
     "semantic_status": "described"
   },
   {
@@ -11472,7 +11681,7 @@
     "offset": 38697,
     "description": "Обход записей по #40 байт от #A100 с ограничителем #80 и обновление состояний",
     "semantic_status": "described",
-    "end_offset": 38773,
+    "end_offset": 38802,
     "path": "Source/Action/UpdateObjects.asm"
   },
   {
@@ -12926,6 +13135,17 @@
     "semantic_status": "described",
     "end_offset": 634,
     "path": "Source/Voxel/ClipSprite.asm"
+  },
+  {
+    "region": "Voxel",
+    "name": "RasterizeSprite",
+    "address": 61050,
+    "slot": 21,
+    "offset": 634,
+    "end_offset": 3377,
+    "path": "Source/Voxel/RasterizeSprite.asm",
+    "description": "Развёрнутый проход по парам кодов спрайта с маскированием прозрачных половин и шагом по строкам",
+    "semantic_status": "described"
   },
   {
     "region": "Voxel",
@@ -14708,6 +14928,28 @@
     "end_offset": 8373,
     "path": "Source/D3D/RenderPreviewFrame.asm",
     "description": "Изменение ориентации первой записи, полный графический проход, EI и переключение заполнения граней",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Voxel",
+    "name": "ProjectEffectPoint",
+    "address": 63977,
+    "slot": 21,
+    "offset": 3561,
+    "end_offset": 3642,
+    "path": "Source/Voxel/ProjectEffectPoint.asm",
+    "description": "Проекция точки эффекта с двумя знаковыми поправками",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Voxel",
+    "name": "DrawProjectedEffect",
+    "address": 64058,
+    "slot": 21,
+    "offset": 3642,
+    "end_offset": 3784,
+    "path": "Source/Voxel/DrawProjectedEffect.asm",
+    "description": "Проекция двух углов эффекта и передача прямоугольника на отсечение",
     "semantic_status": "described"
   }
 ]

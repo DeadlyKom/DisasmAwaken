@@ -1,5 +1,6 @@
                 module Station
                 module DrawGlyph
+                ; Внутренние входы [алгоритм](../../Docs/GraphicsStateInternalLabels.md)
 ; Документация [Station](../../Docs/FunctionDetails/Station.md)
 ; Подробный разбор [GlyphRendering.md](../../Docs/GlyphRendering.md)
 ; -----------------------------------------
@@ -109,10 +110,10 @@ KernelPrefix:   LD L, B
                 LD A, L
                 INC A
                 AND @ScreenConst.ColumnMask
-                JP NZ, @Station.DrawGlyph.PointAEF0                             ; переход, если флаг Z сброшен
+                JP NZ, @Station.DrawGlyph.BuildRouteIdx                         ; переход, если следующая байтовая колонка не нулевая, не увеличивать вертикальную часть индекса
 
                 INC B
-PointAEF0:      LD A, B
+BuildRouteIdx:  LD A, B
                 ADD A, A
                 ADD A, A
                 ADD A, A

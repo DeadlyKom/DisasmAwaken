@@ -1,0 +1,187 @@
+{
+  "passed": true,
+  "total_cases": 1,
+  "exact_bytes": 7213,
+  "action_runtime_start": 35840,
+  "action_runtime_end_exclusive": 43053,
+  "sha256": "d7c970768efdeb1bc606776afdae5a3cc892ea071e01e77c108b98cc1678b06e",
+  "disk_copy_load_path_proved": false,
+  "source_spans": [
+    {
+      "datas_offset": 0,
+      "length": 3072,
+      "action_offset": 11264,
+      "action_kind": "unclassified",
+      "action_path": "Source/Resources/17_ACTION/Unclassified020_Prefix.bin"
+    },
+    {
+      "datas_offset": 3072,
+      "length": 256,
+      "action_offset": 14336,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/ProjectionSquares.asm"
+    },
+    {
+      "datas_offset": 3328,
+      "length": 256,
+      "action_offset": 14592,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/SineTable.asm"
+    },
+    {
+      "datas_offset": 3584,
+      "length": 256,
+      "action_offset": 14848,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/SignedRatioCodes.asm"
+    },
+    {
+      "datas_offset": 3840,
+      "length": 18,
+      "action_offset": 15104,
+      "action_kind": "unclassified",
+      "action_path": "Source/Resources/17_ACTION/Unclassified020_AfterRatioCodes.bin"
+    },
+    {
+      "datas_offset": 3858,
+      "length": 3,
+      "action_offset": 15122,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/RenderPhases.asm"
+    },
+    {
+      "datas_offset": 3861,
+      "length": 4,
+      "action_offset": 15125,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/WordRandomState.asm"
+    },
+    {
+      "datas_offset": 3865,
+      "length": 2,
+      "action_offset": 15129,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/AimPoint.asm"
+    },
+    {
+      "datas_offset": 3867,
+      "length": 3,
+      "action_offset": 15131,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/MissileTargets.asm"
+    },
+    {
+      "datas_offset": 3870,
+      "length": 9,
+      "action_offset": 15134,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/ComponentWork.asm"
+    },
+    {
+      "datas_offset": 3879,
+      "length": 72,
+      "action_offset": 15143,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/WideVectors.asm"
+    },
+    {
+      "datas_offset": 3951,
+      "length": 9,
+      "action_offset": 15215,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/TransformWorkVector24.asm"
+    },
+    {
+      "datas_offset": 3960,
+      "length": 9,
+      "action_offset": 15224,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/WorkVector24.asm"
+    },
+    {
+      "datas_offset": 3969,
+      "length": 12,
+      "action_offset": 15233,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/GlyphIndicatorState.asm"
+    },
+    {
+      "datas_offset": 3981,
+      "length": 131,
+      "action_offset": 15245,
+      "action_kind": "unclassified",
+      "action_path": "Source/Resources/17_ACTION/Unclassified020_BeforePreferredByte.bin"
+    },
+    {
+      "datas_offset": 4112,
+      "length": 2,
+      "action_offset": 15376,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/PreferredByteState.asm"
+    },
+    {
+      "datas_offset": 4114,
+      "length": 2,
+      "action_offset": 15378,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/MissileStock.asm"
+    },
+    {
+      "datas_offset": 4116,
+      "length": 312,
+      "action_offset": 15380,
+      "action_kind": "unclassified",
+      "action_path": "Source/Resources/17_ACTION/Unclassified020_AfterMissileStock.bin"
+    },
+    {
+      "datas_offset": 4428,
+      "length": 54,
+      "action_offset": 15692,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/KeyScanInputs.asm"
+    },
+    {
+      "datas_offset": 4482,
+      "length": 126,
+      "action_offset": 15746,
+      "action_kind": "unclassified",
+      "action_path": "Source/Resources/17_ACTION/Unclassified020_BeforeObjectPointers.bin"
+    },
+    {
+      "datas_offset": 4608,
+      "length": 256,
+      "action_offset": 15872,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/ObjectPointers.asm"
+    },
+    {
+      "datas_offset": 4864,
+      "length": 512,
+      "action_offset": 16128,
+      "action_kind": "unclassified",
+      "action_path": "Source/Resources/17_ACTION/Unclassified020_AfterObjectPointers.bin"
+    },
+    {
+      "datas_offset": 5376,
+      "length": 1664,
+      "action_offset": 16640,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/ObjectRecords.asm"
+    },
+    {
+      "datas_offset": 7040,
+      "length": 21,
+      "action_offset": 18304,
+      "action_kind": "unclassified",
+      "action_path": "Source/Resources/17_ACTION/Unclassified020_BeforeVisualEffects.bin"
+    },
+    {
+      "datas_offset": 7061,
+      "length": 152,
+      "action_offset": 18325,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/VisualEffects.asm"
+    }
+  ],
+  "assembly_executed": false
+}

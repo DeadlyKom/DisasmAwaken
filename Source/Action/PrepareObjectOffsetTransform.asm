@@ -23,12 +23,12 @@ Entry:          LD A, (IX + @FActionRecord.Components.Component0.High)
                 RET Z                                                           ; выход, если старший байт первой компоненты равен 80
 
                 ; Подготовка трёх байтов смещений вычислителя, второй сдвинут на 128 по модулю байта.
-                LD A, (IX + @FActionRecord.Unknown07)
+                LD A, (IX + @FActionRecord.OffsetPhase0)
                 LD (@ActionObjectOffsetTransferState.Offset0), A
-                LD A, (IX + @FActionRecord.Unknown08)
+                LD A, (IX + @FActionRecord.OffsetPhase1)
                 ADD A, #80
                 LD (@ActionObjectOffsetTransferState.Offset1), A
-                LD A, (IX + @FActionRecord.Unknown09)
+                LD A, (IX + @FActionRecord.OffsetPhase2)
                 LD (@ActionObjectOffsetTransferState.Offset2), A
                 ; Расчёт кандидата следующего счётчика с сохранением старого значения в E.
                 LD A, (IX + @FActionRecord.Unknown10)
@@ -44,7 +44,7 @@ StoreCounter:   LD (IX + @FActionRecord.Unknown10), A
                 CP #10
                 JR NC, @Action.PrepareObjectOffsetTransform.LoadPhase           ; переход, если класс не меньше 16, сохранить фазовый счётчик
 
-                LD A, (IX + @FActionRecord.Unknown0A)
+                LD A, (IX + @FActionRecord.StateCode)
                 CP #13
                 JR Z, @Action.PrepareObjectOffsetTransform.LoadPhase            ; переход, если состояние равно 13, сохранить фазовый счётчик
 

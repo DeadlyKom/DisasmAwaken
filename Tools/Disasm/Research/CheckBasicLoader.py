@@ -16,7 +16,8 @@ def main():
     entry = next(e for e in manifest["entries"] if e["slot"] == 3)
     source = (ROOT / (entry["path"] + ".sectors.bin")).read_bytes()
     memory = [0] * 65536
-    memory[0x5CD1:0x5CE9] = source[6:30]
+    memory[0x5D3B:0x5DB2] = source[:119]
+    assert int(source[107:112]) == int.from_bytes(source[115:117], "little") == 0x5D41
     simulator = Simulator(memory)
     cases = 0
     for flags in range(256):
@@ -25,7 +26,7 @@ def main():
                 # Проверка точного состояния интерфейса для всех входных флагов и нескольких слов положения.
                 memory[0x5CF4:0x5CF6] = [location & 255, location >> 8]
                 simulator.registers[:] = get_registers(
-                    {"PC": 0x5CD1, "SP": 0xBFFE, "A": accumulator, "F": flags,
+                    {"PC": 0x5D41, "SP": 0xBFFE, "A": accumulator, "F": flags,
                      "IX": 0x1357, "IY": 0x2468, "I": 0x3F,
                      "^HL": 0x369C, "^DE": 0x47AD, "^BC": 0x58BE, "^AF": 0x69CF},
                     {"iff": 1, "im": 2}, False)

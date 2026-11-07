@@ -29,7 +29,7 @@ def name_operands(region, address, operation):
     if region != 'Action' or address != 0xEA29:
         return operation
     return (operation.replace('IX+#12', 'IX + @FActionRecord.ClassCode')
-            .replace('IX+#06', 'IX + @FActionRecord.Unknown06')
+            .replace('IX+#06', 'IX + @FActionRecord.ModelOffset')
             .replace('(#EAC4)', '(@ActionLargeEffectContinuationState.ChildMask)'))
 
 

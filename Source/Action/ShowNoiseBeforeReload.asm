@@ -44,7 +44,7 @@ DrawFrame:      PUSH BC
                 ; Вывод буфера и шага текста в CONTROL, затем обновление AY в ACTION.
                 LD A, #11
                 CALL @Action.SelectMemoryPage.Entry
-                CALL #C870
+                CALL @Controls.CopyViewportToScreen.Entry
                 CALL @Controls.ConsumeTextQueue.Entry
                 LD A, #10
                 CALL @Action.SelectMemoryPage.Entry
@@ -62,7 +62,7 @@ DrawFrame:      PUSH BC
                 CP #1F
                 JR Z, @Action.ShowNoiseBeforeReload.DrawFrame                   ; переход, если младшие пять битов равны единице, ждать ещё кадр
 
-                JP @Action.UpdateFrame.PointAAC4
+                JP @Action.UpdateFrame.ReloadStation
 
                 ; Опрос клавиатуры во время задержки, результат не выбирает следующий путь.
 PollDuringDelay:LD A, #01

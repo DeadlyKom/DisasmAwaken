@@ -6,7 +6,7 @@ FIELDS=(('Handler',2,'исходный адрес обработчика пол�
 TABLE=('ActionClassHandlers','Source/Action/Data/ClassHandlers.asm',0x72D,0x761,
        'FClassHandler',FIELDS,tuple('Class'+format(i,'02X') for i in range(26)))
 ORIGIN=0x5DC3
-KNOWN_HANDLERS={0x6524:"Action.ReturnIgnoredRecordClass.Entry",0x65C6:"Action.ConfigureClass9Link.Entry",0x660E:"Action.ConfigureClass0Link.Entry"}
+KNOWN_HANDLERS={26004:"Action.ConfigureClass1Link.Entry",25929:"Action.ConfigureClass2Link.Entry",26078:"Action.ConfigureClass3Link.Entry",26029:"Action.ConfigureClass4Link.Entry",25893:"Action.ConfigureClass5Link.Entry",25983:"Action.ConfigureClass6Link.Entry",25958:"Action.ConfigureClass7Link.Entry",25910:"Action.ConfigureClass8Link.Entry",0x6524:"Action.ReturnIgnoredRecordClass.Entry",0x65C6:"Action.ConfigureClass9Link.Entry",0x660E:"Action.ConfigureClass0Link.Entry"}
 
 
 def render(source):

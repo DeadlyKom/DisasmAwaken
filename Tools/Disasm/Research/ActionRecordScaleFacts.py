@@ -10,7 +10,7 @@ LOCATION={0xE55C:'окно ACTION банка 0'}
 CONTINUATIONS={}
 CONTRACTS={('Action',0xE55C):(
     ['HL, DE, BC и AF не задают числовых аргументов, DE и BC сохраняются',
-     'IX - адрес FActionRecord, ClassCode доступен для чтения, Unknown06 содержит чётное смещение исходной таблицы моделей 9E00',
+     'IX - адрес FActionRecord, ClassCode доступен для чтения, ModelOffset содержит чётное смещение исходной таблицы моделей 9E00',
      'таблица 128 указателей и OBJECT3D в банке 4 соответствуют оригиналу, старший байт первого слова модели e лежит в диапазоне 1..5',
      'Active0..2 доступны для чтения и записи, Original0..2 и SavedCpuSP доступны для записи, при ClassCode=14 нужны все три исходных слова',
      '7FFD не заблокирован, в окне C000 выбран банк 0, IRQ не вмешивается, CPU-стек допускает шесть дополнительных байтов и не пересекается с записью и операндами'],
@@ -43,19 +43,19 @@ COMMENTS={
     0xE581:(['Чтение Active2 и сохранение исходного значения в Original2.'],None),
     0xE587:(['Расчёт знаковой половины Active2 с округлением отрицательных нечётных слов вниз.'],None),
     0xE58B:(['Обновление Active2 для следующего вычитания из Component2.'],None),
-    0xE58E:(['-----------------------------------------','Выбор числа удвоений','Чтение Unknown06 как байтового смещения таблицы моделей, поле намеренно не переименовано для всех остальных потребителей.'],None),
+    0xE58E:(['-----------------------------------------','Выбор числа удвоений','Чтение ModelOffset как байтового смещения таблицы моделей, байтовое смещение используется всеми установленными читателями заголовка.'],None),
     0xE591:(['Чтение первого слова исходной модели с настоящим переключением банка 4 и возвратом к банку 0.'],None),
     0xE594:(['Расчёт числа пропускаемых удвоений, старший байт e исходного заголовка лежит в диапазоне 1..5.'],None),
     0xE597:(['Подготовка начального значения 200, фактические удвоения выполняются после изменяемого JR.'],None),
     0xE59A:(['Обновление смещения ShiftSkip в JR, цель равна адресу следующего байта E59F плюс 6-e.'],None),
-    0xE59D:(['-----------------------------------------','Передача в цепь удвоений','Исходный FE заменён на 6-e, исполнение продолжается по E5A0..E5A4 внутри UnknownE5A0.asm.'],
+    0xE59D:(['-----------------------------------------','Передача в цепь удвоений','Исходный FE заменён на 6-e, исполнение продолжается по E5A0..E5A4 внутри UpdateRecordComponents.asm.'],
         'после изменения ShiftSkip продолжение в выбранной точке цепи удвоений')}
 
 
 def name_operands(region,address,operation):
     operation=offset_names(region,address,operation)
     if (region,address)!=('Action',0xE55C):return operation
-    return operation.replace('(IX+#06)','(IX+FActionRecord.Unknown06)').replace('(#E59E)',
+    return operation.replace('(IX+#06)','(IX+FActionRecord.ModelOffset)').replace('(#E59E)',
         '(@ActionRecordScaleState.ShiftSkip)').replace('LD A, #06','LD A, @ActionRecordScaleConst.SkipBase').replace(
         '#00C8','@ActionRecordScaleConst.InitialValue')
 
@@ -69,4 +69,4 @@ def qualify_mutations(records,regions,functions):
         elif target in (0xE68C,0xE692,0xE698):item['target_path']='Source/Action/RestoreHalvedOffsets.asm'
         else:
             assert target in (0xE605,0xE5B3,0xE5D2,0xE5ED)
-            item['target_path']='Source/Action/UnknownE5A0.asm'
+            item['target_path']='Source/Action/UpdateRecordComponents.asm'

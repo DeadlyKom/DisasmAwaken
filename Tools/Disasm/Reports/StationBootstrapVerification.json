@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "total_cases": 12,
+  "actual_banked_bootstrap": true,
+  "bootstrap_bytes": 693,
+  "core_bytes": 7274,
+  "stops_before_station_file_loads": true,
+  "assembly_executed": false
+}

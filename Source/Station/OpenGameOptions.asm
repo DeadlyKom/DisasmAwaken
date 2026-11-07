@@ -18,7 +18,7 @@
 ; -----------------------------------------
                 ; выбор окна установок игры по обёртке Item42
 Entry:          LD HL, @Station.DrawGameSettings.Entry
-                JP #CBA9
+                JP @Station.RestoreItemBounds.Entry
 
                 endmodule
                 endmodule

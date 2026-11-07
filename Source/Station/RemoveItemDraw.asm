@@ -33,8 +33,8 @@ Entry:          PUSH IX
                 ; чтение базы списка из изменяемого операнда RebuildInterface
                 LD IX, (@DrawListState.HeadOperand)
                 ; чтение указателя очередного обработчика, его старший байт определяет конец списка
-NextHandler:    LD L, (IX + #00)
-                LD A, (IX + #01)
+NextHandler:    LD L, (IX + @FDrawListEntry.Handler)
+                LD A, (IX + @FDrawListEntry.Handler + 1)
                 ; проверка старшего байта указателя на ограничитель 1, Carry предыдущего сравнения сохраняется
                 DEC A
                 JR Z, @Station.RemoveItemDraw.Finish                            ; переход, если достигнут ограничитель, вернуть отсутствие совпадения

@@ -18,7 +18,7 @@
 ; -----------------------------------------
                 ; выбор окна установок среды по обёртке Item41
 Entry:          LD HL, @Station.DrawEnvironmentPanel.Entry
-                JP #CBA9
+                JP @Station.RestoreItemBounds.Entry
 
                 endmodule
                 endmodule

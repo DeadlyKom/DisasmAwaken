@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "total_cases": 2,
+  "logical_program_size": 119,
+  "declared_line_lengths": [
+    97,
+    14
+  ],
+  "ascii_usr": 23873,
+  "hidden_integer_usr": 23873,
+  "intended_machine_entry": 23873,
+  "inferred_program_base": 23867,
+  "trdos_autostart_line": 20,
+  "autostart_marker_offset": 119,
+  "program_sha256": "2282fd42d78a779ca578ced76744c911110d7f5a6ac5ad9bd3d65037ba3344c6",
+  "independent_token_decoder": "SkoolKit BasicLister and numeric decoder",
+  "basic_rom_interpreter_executed": false,
+  "trdos_rom_executed": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

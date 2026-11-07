@@ -38,7 +38,7 @@ def name_operands(region, address, operation):
         return operation
     operation = operation.replace('IX+#', 'IX + #')
     for literal, field in (('01', 'Components.Component0.High'), ('03', 'Components.Component1.High'), ('05', 'Components.Component2.High'),
-                           ('0A', 'Unknown0A'), ('12', 'ClassCode'), ('16', 'Unknown16'), ('24', 'Unknown24')):
+                           ('0A', 'StateCode'), ('12', 'ClassCode'), ('16', 'SavedStateCode'), ('24', 'Unknown24')):
         operation = operation.replace('IX + #'+literal, 'IX + @FActionRecord.'+field)
     return (operation.replace('(#EFBD)', '(@ActionObjectPhaseWaitState.PhaseGate)')
             .replace('#F0F8', '@Action.PrepareObjectOffsetTransform.Entry'))

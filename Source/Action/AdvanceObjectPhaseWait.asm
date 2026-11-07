@@ -66,8 +66,8 @@ CheckLimit:     CP #14
                 JP NC, @Action.PrepareObjectOffsetTransform.Entry               ; переход, если максимум не меньше 20, сохранить состояние ожидания
 
                 ; Восстановление сохранённого состояния и сброс фазового счётчика записи.
-ResumeState:    LD A, (IX + @FActionRecord.Unknown16)
-                LD (IX + @FActionRecord.Unknown0A), A
+ResumeState:    LD A, (IX + @FActionRecord.SavedStateCode)
+                LD (IX + @FActionRecord.StateCode), A
                 LD (IX + @FActionRecord.Unknown24), #00
                 JP @Action.PrepareObjectOffsetTransform.Entry
 

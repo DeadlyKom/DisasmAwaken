@@ -14,7 +14,7 @@
                 ;   три M1 до диспетчера, исполнение целевого обработчика проверяется отдельно
                 ; -----------------------------------------
                 ; Назначение состояния 0A перед общей косвенной передачей.
-Entry:          LD (IX+#0A), #0A
+Entry:          LD (IX + @FActionRecord.StateCode), #0A
                 JP @Action.DispatchObjectState.CallHandler
 
                 endmodule

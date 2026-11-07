@@ -1,5 +1,6 @@
                 module Voxel
                 module SignedSeededProduct
+                ; Внутренние входы [алгоритм](../../Docs/ArithmeticFinalInternalLabels.md)
 ; Документация [Voxel](../../Docs/FunctionDetails/Voxel.md)
 ; -----------------------------------------
 ; Знаковое табличное произведение с использованием входного IY как младшей части накопителя
@@ -22,7 +23,7 @@ Entry:          LD A, B
                 XOR H
                 EX AF, AF'
                 BIT 7, H
-                JR Z, @Voxel.SignedSeededProduct.PointE8AF                      ; переход, если флаг Z установлен
+                JR Z, @Voxel.SignedSeededProduct.CheckBCSign                    ; переход, если первый множитель неотрицателен, его модуль уже готов
 
 
                 LD A, L
@@ -32,8 +33,8 @@ Entry:          LD A, B
                 CPL
                 LD H, A
                 INC HL
-PointE8AF:      BIT 7, B
-                JR Z, @Voxel.SignedSeededProduct.PointE8BA                      ; переход, если флаг Z установлен
+CheckBCSign:    BIT 7, B
+                JR Z, @Voxel.SignedSeededProduct.SplitMagnitude                 ; переход, если второй множитель неотрицателен, его модуль уже готов
 
 
                 LD A, C
@@ -43,7 +44,7 @@ PointE8AF:      BIT 7, B
                 CPL
                 LD B, A
                 INC BC
-PointE8BA:      LD A, C
+SplitMagnitude: LD A, C
                 RLA
                 RL B
                 RLA
@@ -55,68 +56,68 @@ PointE8BA:      LD A, C
                 LD H, C
                 LD L, C
                 RL B
-                JR NC, @Voxel.SignedSeededProduct.PointE8CF                     ; переход, если флаг Carry сброшен
+                JR NC, @Voxel.SignedSeededProduct.UpperShift1                   ; переход, если разряд 13 модуля BC нулевой, слагаемое DE пропускается
 
 
                 ADD HL, DE
                 ADC A, C
-PointE8CF:      ADD HL, HL
+UpperShift1:    ADD HL, HL
                 ADC A, A
                 RL B
-                JR NC, @Voxel.SignedSeededProduct.PointE8D7                     ; переход, если флаг Carry сброшен
+                JR NC, @Voxel.SignedSeededProduct.UpperShift2                   ; переход, если разряд 12 модуля BC нулевой, слагаемое DE пропускается
 
 
                 ADD HL, DE
                 ADC A, C
-PointE8D7:      ADD HL, HL
+UpperShift2:    ADD HL, HL
                 ADC A, A
                 RL B
-                JR NC, @Voxel.SignedSeededProduct.PointE8DF                     ; переход, если флаг Carry сброшен
+                JR NC, @Voxel.SignedSeededProduct.UpperShift3                   ; переход, если разряд 11 модуля BC нулевой, слагаемое DE пропускается
 
 
                 ADD HL, DE
                 ADC A, C
-PointE8DF:      ADD HL, HL
+UpperShift3:    ADD HL, HL
                 ADC A, A
                 RL B
-                JR NC, @Voxel.SignedSeededProduct.PointE8E7                     ; переход, если флаг Carry сброшен
+                JR NC, @Voxel.SignedSeededProduct.UpperShift4                   ; переход, если разряд 10 модуля BC нулевой, слагаемое DE пропускается
 
 
                 ADD HL, DE
                 ADC A, C
-PointE8E7:      ADD HL, HL
+UpperShift4:    ADD HL, HL
                 ADC A, A
                 RL B
-                JR NC, @Voxel.SignedSeededProduct.PointE8EF                     ; переход, если флаг Carry сброшен
+                JR NC, @Voxel.SignedSeededProduct.UpperShift5                   ; переход, если разряд 9 модуля BC нулевой, слагаемое DE пропускается
 
 
                 ADD HL, DE
                 ADC A, C
-PointE8EF:      ADD HL, HL
+UpperShift5:    ADD HL, HL
                 ADC A, A
                 RL B
-                JR NC, @Voxel.SignedSeededProduct.PointE8F7                     ; переход, если флаг Carry сброшен
+                JR NC, @Voxel.SignedSeededProduct.UpperShift6                   ; переход, если разряд 8 модуля BC нулевой, слагаемое DE пропускается
 
 
                 ADD HL, DE
                 ADC A, C
-PointE8F7:      ADD HL, HL
+UpperShift6:    ADD HL, HL
                 ADC A, A
                 RL B
-                JR NC, @Voxel.SignedSeededProduct.PointE8FF                     ; переход, если флаг Carry сброшен
+                JR NC, @Voxel.SignedSeededProduct.UpperShift7                   ; переход, если разряд 7 модуля BC нулевой, слагаемое DE пропускается
 
 
                 ADD HL, DE
                 ADC A, C
-PointE8FF:      ADD HL, HL
+UpperShift7:    ADD HL, HL
                 ADC A, A
                 RL B
-                JR NC, @Voxel.SignedSeededProduct.PointE907                     ; переход, если флаг Carry сброшен
+                JR NC, @Voxel.SignedSeededProduct.UpperShift8                   ; переход, если разряд 6 модуля BC нулевой, слагаемое DE пропускается
 
 
                 ADD HL, DE
                 ADC A, C
-PointE907:      ADD HL, HL
+UpperShift8:    ADD HL, HL
                 EX DE, HL
                 ; чтение входного IY вместо младшего результата первой стадии, зависимость накопителя от вызывающего кода
                 LD E, IYL
@@ -127,58 +128,58 @@ PointE907:      ADD HL, HL
                 ADC HL, HL
                 LD A, #00
                 RLA
-                JR NC, @Voxel.SignedSeededProduct.PointE91B                     ; переход, если флаг Carry сброшен
+                JR NC, @Voxel.SignedSeededProduct.LowerShift1                   ; переход, если разряд 5 модуля BC нулевой, слагаемое DE пропускается
 
 
                 ADD IY, DE
                 ADC HL, BC
-PointE91B:      ADD IY, IY
+LowerShift1:    ADD IY, IY
                 ADC HL, HL
                 RLA
-                JR NC, @Voxel.SignedSeededProduct.PointE926                     ; переход, если флаг Carry сброшен
+                JR NC, @Voxel.SignedSeededProduct.LowerShift2                   ; переход, если разряд 4 модуля BC нулевой, слагаемое DE пропускается
 
 
                 ADD IY, DE
                 ADC HL, BC
-PointE926:      ADD IY, IY
+LowerShift2:    ADD IY, IY
                 ADC HL, HL
                 RLA
-                JR NC, @Voxel.SignedSeededProduct.PointE931                     ; переход, если флаг Carry сброшен
+                JR NC, @Voxel.SignedSeededProduct.LowerShift3                   ; переход, если разряд 3 модуля BC нулевой, слагаемое DE пропускается
 
 
                 ADD IY, DE
                 ADC HL, BC
-PointE931:      ADD IY, IY
+LowerShift3:    ADD IY, IY
                 ADC HL, HL
                 RLA
-                JR NC, @Voxel.SignedSeededProduct.PointE93C                     ; переход, если флаг Carry сброшен
+                JR NC, @Voxel.SignedSeededProduct.LowerShift4                   ; переход, если разряд 2 модуля BC нулевой, слагаемое DE пропускается
 
 
                 ADD IY, DE
                 ADC HL, BC
-PointE93C:      ADD IY, IY
+LowerShift4:    ADD IY, IY
                 ADC HL, HL
                 RLA
-                JR NC, @Voxel.SignedSeededProduct.PointE947                     ; переход, если флаг Carry сброшен
+                JR NC, @Voxel.SignedSeededProduct.LowerShift5                   ; переход, если разряд 1 модуля BC нулевой, слагаемое DE пропускается
 
 
                 ADD IY, DE
                 ADC HL, BC
-PointE947:      ADD IY, IY
+LowerShift5:    ADD IY, IY
                 ADC HL, HL
                 RLA
-                JR NC, @Voxel.SignedSeededProduct.PointE952                     ; переход, если флаг Carry сброшен
+                JR NC, @Voxel.SignedSeededProduct.LowerShift6                   ; переход, если разряд 0 модуля BC нулевой, слагаемое DE пропускается
 
 
                 ADD IY, DE
                 ADC HL, BC
-PointE952:      ADD IY, IY
+LowerShift6:    ADD IY, IY
                 ADC HL, HL
                 LD A, IYH
                 ADD A, A
                 ADC HL, HL
                 EX AF, AF'
-                RET P                                                           ; выход, если флаг Sign сброшен
+                RET P                                                           ; выход, если знаки исходных множителей совпадают, отрицание результата не требуется
 
                 LD A, L
                 CPL

@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "total_cases": 1088,
+  "outcomes": {
+    "accepted_items": 3264,
+    "cases": 1088,
+    "dropped_items": 3264
+  },
+  "actual_queue_and_banked_wrappers_executed": true,
+  "all_ram_outside_stack_checked": true,
+  "exact_registers_except_R_and_T": true,
+  "maximum_stack_bytes": 18,
+  "temporary_stack_values_independently_checked": false,
+  "runtime_caller_found": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

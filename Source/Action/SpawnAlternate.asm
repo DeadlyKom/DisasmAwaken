@@ -40,13 +40,13 @@ Entry:          LD A, (#9B83)
                 LD A, #11
                 CALL @Action.SelectMemoryPage.Entry
                 EX AF, AF'
-                CALL #DE9A
+                CALL @Controls.BuildSeededIndices.Entry
                 LD A, #10
                 CALL @Action.SelectMemoryPage.Entry
                 DEC L
                 LD H, #00
                 ADD HL, HL
-                LD DE, #7799
+                LD DE, @ActionSpawnTemplates.Seed00
                 ADD HL, DE
                 LD A, (HL)
                 INC HL
@@ -62,29 +62,29 @@ NextTemplate:   CALL @Action.FindReusableRecord.Entry
                 PUSH DE
                 PUSH BC
                 PUSH BC
-                LD C, (IX+#00)
-                LD B, (IX+#01)
+                LD C, (IX + @FSpawnTemplateRow.Delta0)
+                LD B, (IX + @FSpawnTemplateRow.Delta0 + 1)
                 XOR A
                 INC A
                 ADC HL, BC
                 JP PO, @Action.SpawnAlternate.StoreFirst                        ; переход, если первая знаковая сумма не переполнилась
 
                 XOR A
-StoreFirst:     LD (IY+#00), L
-                LD (IY+#01), H
+StoreFirst:     LD (IY + @FActionRecord.Components.Component0.Low), L
+                LD (IY + @FActionRecord.Components.Component0.High), H
                 EX DE, HL
-                LD C, (IX+#02)
-                LD B, (IX+#03)
+                LD C, (IX + @FSpawnTemplateRow.Delta1)
+                LD B, (IX + @FSpawnTemplateRow.Delta1 + 1)
                 OR A
                 ADC HL, BC
                 JP PO, @Action.SpawnAlternate.StoreSecond                       ; переход, если вторая знаковая сумма не переполнилась
 
                 XOR A
-StoreSecond:    LD (IY+#02), L
-                LD (IY+#03), H
+StoreSecond:    LD (IY + @FActionRecord.Components.Component1.Low), L
+                LD (IY + @FActionRecord.Components.Component1.High), H
                 POP HL
-                LD C, (IX+#04)
-                LD B, (IX+#05)
+                LD C, (IX + @FSpawnTemplateRow.Delta2)
+                LD B, (IX + @FSpawnTemplateRow.Delta2 + 1)
                 OR A
                 ADC HL, BC
                 JP PO, @Action.SpawnAlternate.CheckOverflow                     ; переход, если третья знаковая сумма не переполнилась
@@ -93,16 +93,16 @@ StoreSecond:    LD (IY+#02), L
 CheckOverflow:  OR A
                 JR Z, @Action.SpawnAlternate.ReleaseRecord                      ; переход, если хотя бы одна знаковая сумма переполнилась
 
-                LD (IY+#04), L
-                LD (IY+#05), H
-                LD A, (IX+#06)
-                LD (IY + @FActionRecord.Unknown06), A
-                LD A, (IX+#07)
-                LD (IY + @FActionRecord.Unknown08), A
+                LD (IY + @FActionRecord.Components.Component2.Low), L
+                LD (IY + @FActionRecord.Components.Component2.High), H
+                LD A, (IX + @FSpawnTemplateRow.ModelOffset)
+                LD (IY + @FActionRecord.ModelOffset), A
+                LD A, (IX + @FSpawnTemplateRow.OffsetPhase1)
+                LD (IY + @FActionRecord.OffsetPhase1), A
                 XOR A
-                LD (IY + @FActionRecord.Unknown07), A
-                LD (IY + @FActionRecord.Unknown09), A
-                LD (IY + @FActionRecord.Unknown0A), #09
+                LD (IY + @FActionRecord.OffsetPhase0), A
+                LD (IY + @FActionRecord.OffsetPhase2), A
+                LD (IY + @FActionRecord.StateCode), #09
                 LD (IY + @FActionRecord.LinkedIndex), A
                 LD (IY + @FActionRecord.LinkFlags), A
                 LD (IY + @FActionRecord.Unknown0D), A
@@ -114,14 +114,14 @@ CheckOverflow:  OR A
                 LD (IY + @FActionRecord.Unknown13), #FF
                 LD (IY + @FActionRecord.Unknown14), #FF
                 LD (IY + @FActionRecord.Unknown15), #FF
-                LD (IY + @FActionRecord.Unknown16), A
-                LD (IY + @FActionRecord.Unknown17), A
+                LD (IY + @FActionRecord.SavedStateCode), A
+                LD (IY + @FActionRecord.PhaseMoveTimer), A
                 LD (IY + @FActionRecord.ReuseByte), #10
                 LD (#792E), A
                 LD (IY + @FActionRecord.Unknown24), A
-                LD BC, #0008
+                LD BC, FSpawnTemplateRow
                 ADD IX, BC
-                LD A, (IX+#01)
+                LD A, (IX + @FSpawnTemplateEnd.EndCode)
                 CP #80
 RestorePairs:   POP BC
                 POP DE
@@ -244,9 +244,9 @@ BuildRandom:    CALL @Action.FindReusableRecord.Entry
                 AND #1C
                 OR #40
                 ADD A, #00
-                LD (IX+#06), A
+                LD (IX + @FActionRecord.ModelOffset), A
                 LD L, A
-                LD (IX+#0F), #64
+                LD (IX + @FActionRecord.TargetIndex), #64
                 LD A, L
                 CALL @Action.ReadObjectHeaderWord.Entry
                 LD A, H
@@ -254,20 +254,20 @@ BuildRandom:    CALL @Action.FindReusableRecord.Entry
                 CALL @Action.NextRandomWord4.Entry
                 SRA H
                 RR L
-                LD (IX+#04), L
-                LD (IX+#05), H
+                LD (IX + @FActionRecord.Components.Component2.Low), L
+                LD (IX + @FActionRecord.Components.Component2.High), H
                 PUSH HL
                 CALL @Action.NextRandomWord4.Entry
                 SRA H
                 RR L
-                LD (IX+#02), L
-                LD (IX+#03), H
+                LD (IX + @FActionRecord.Components.Component1.Low), L
+                LD (IX + @FActionRecord.Components.Component1.High), H
                 PUSH HL
                 CALL @Action.NextRandomWord4.Entry
                 SRA H
                 RR L
-                LD (IX+#00), L
-                LD (IX+#01), H
+                LD (IX + @FActionRecord.Components.Component0.Low), L
+                LD (IX + @FActionRecord.Components.Component0.High), H
                 POP DE
                 POP BC
                 POP AF
@@ -285,7 +285,7 @@ BuildRandom:    CALL @Action.FindReusableRecord.Entry
                 LD A, #1A
                 LD (#6D3D), A
                 ; Расчёт начальных смещений по потокам 9 и 10.
-SetOffsets:     LD (IX+#07), #00
+SetOffsets:     LD (IX + @FActionRecord.OffsetPhase0), #00
                 CALL @Action.NextRandomWord9.Entry
                 LD A, L
                 AND #03
@@ -294,11 +294,11 @@ SetOffsets:     LD (IX+#07), #00
 
                 NEG
 StoreOffset:    ADD A, H
-                LD (IX+#08), A
+                LD (IX + @FActionRecord.OffsetPhase1), A
                 CALL @Action.NextRandomWord10.Entry
                 LD A, L
                 AND #1F
-                LD (IX+#09), A
+                LD (IX + @FActionRecord.OffsetPhase2), A
                 CALL @Action.NextRandomWord12.Entry
                 LD A, L
                 AND #55
@@ -309,16 +309,16 @@ StoreOffset:    ADD A, H
                 LD L, A
                 LD A, (#7DE4)
                 OR L
-                LD (IX+#11), A
+                LD (IX + @FActionRecord.Unknown11), A
                 CALL @Action.NextRandomWord2.Entry
-                LD (IX+#12), #00
-                LD (IX+#0C), #00
-                LD (IX+#14), #00
-                LD (IX+#15), #FF
-                LD (IX+#0B), #FF
+                LD (IX + @FActionRecord.ClassCode), #00
+                LD (IX + @FActionRecord.LinkFlags), #00
+                LD (IX + @FActionRecord.Unknown14), #00
+                LD (IX + @FActionRecord.Unknown15), #FF
+                LD (IX + @FActionRecord.LinkedIndex), #FF
                 LD HL, (#EBDB)
-                LD (IX+#0D), L
-                LD (IX+#0E), H
+                LD (IX + @FActionRecord.Unknown0D), L
+                LD (IX + @FActionRecord.Unknown0E), H
                 CALL @Action.NextRandomWord13.Entry
                 LD A, (#7E07)
                 OR L
@@ -331,23 +331,23 @@ StoreOffset:    ADD A, H
 
                 LD A, H
                 DEC A
-StoreLimit:     LD (IX+#13), A
-                LD (IX+#10), #20
+StoreLimit:     LD (IX + @FActionRecord.Unknown13), A
+                LD (IX + @FActionRecord.Unknown10), #20
                 XOR A
-                LD (IX+#24), A
-                LD (IX+#17), A
-                LD (IX+#20), #FF
-                LD (IX+#21), #FF
+                LD (IX + @FActionRecord.Unknown24), A
+                LD (IX + @FActionRecord.PhaseMoveTimer), A
+                LD (IX + @FActionRecord.Unknown20), #FF
+                LD (IX + @FActionRecord.Unknown21), #FF
                 LD (#EBDD), A
                 CALL @Action.NextRandomWord3.Entry
-                LD A, (IX+#0A)
-                LD (IX+#16), A
+                LD A, (IX + @FActionRecord.StateCode)
+                LD (IX + @FActionRecord.SavedStateCode), A
                 LD A, R
                 AND #0F
                 INC A
                 AND #0F
                 LD B, A
-                LD (IX+#18), B
+                LD (IX + @FActionRecord.ReuseByte), B
                 JP @Action.FinishSpawnRecord.ReadHeader
 
                 endmodule

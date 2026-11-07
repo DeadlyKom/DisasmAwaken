@@ -6,23 +6,23 @@
                 ; исходная запись 17, перенесённое ядро в фиксированной RAM, физический банк 5, смещения #04A2..#04F1
                 ; In:
                 ;   HL, DE, BC, AF и альтернативные регистры соответствуют договору EncodeHalfCoordinateDeltas
-                ;   IX указывает FActionRecord, Unknown08, Unknown09 и Unknown25 читаются, два первых поля доступны для записи
-                ;   Unknown25 является стабильным числовым шагом 0..FF, вмешательство IRQ и пересечение записи со стеком либо кодом исключены
+                ;   IX указывает FActionRecord, OffsetPhase1, OffsetPhase2 и TargetCodeStep читаются, два первых поля доступны для записи
+                ;   TargetCodeStep является стабильным числовым шагом 0..FF, вмешательство IRQ и пересечение записи со стеком либо кодом исключены
                 ;   основной вход требует 16 дополнительных байтов CPU-стека и исходных таблиц дочерней геометрии
                 ;   дополнительный ApplyCodes принимает B и C как готовые целевые байты, HL, DE и AF в этом входе не задают аргументов
                 ; Out:
-                ;   H=модуль обёрнутой разности Unknown09-C, L=модуль обёрнутой разности Unknown08-B, каждый модуль 0..80
-                ;   D=исходный Unknown09, E=(исходный Unknown09-C) AND FF, BC содержит целевые коды
-                ;   если второй модуль меньше Unknown25, A=этот модуль, F от сравнения его с Unknown25, второе поле не записывается
-                ;   иначе A=новый Unknown09, F от его исходного ADD, запись выполняется даже при нулевом шаге
+                ;   H=модуль обёрнутой разности OffsetPhase2-C, L=модуль обёрнутой разности OffsetPhase1-B, каждый модуль 0..80
+                ;   D=исходный OffsetPhase2, E=(исходный OffsetPhase2-C) AND FF, BC содержит целевые коды
+                ;   если второй модуль меньше TargetCodeStep, A=этот модуль, F от сравнения его с TargetCodeStep, второе поле не записывается
+                ;   иначе A=новый OffsetPhase2, F от его исходного ADD, запись выполняется даже при нулевом шаге
                 ;   HL', DE', BC', AF', IX и IY сохраняют результат дочерней геометрии, на прямом ApplyCodes они сохраняются от входа
                 ;   SP=входной SP+2, I, IM, IFF сохраняются, основной вход заканчивается конфигурацией 7FFD=10 после OUT 11 и 10
                 ;   ApplyCodes не переключает банки и не пишет CPU-стек, его R проверен точно, R полного основного входа не доказан
                 ; Corrupt:
-                ;   HL, DE, AF, R, Unknown08 и Unknown09 по условиям, основной вход также BC, HL', DE', BC', AF', 16 байтов стека и эффекты EncodeHalfCoordinateDeltas
+                ;   HL, DE, AF, R, OffsetPhase1 и OffsetPhase2 по условиям, основной вход также BC, HL', DE', BC', AF', 16 байтов стека и эффекты EncodeHalfCoordinateDeltas
                 ; Note:
-                ;   для первого поля модули 0 и 1 не обновляются, при большем модуле Unknown25 делится на степени двойки до шага не больше расстояния
-                ;   для второго поля слишком большой Unknown25 сразу запрещает обновление, петля его уменьшения при стабильном Unknown25 недостижима
+                ;   для первого поля модули 0 и 1 не обновляются, при большем модуле TargetCodeStep делится на степени двойки до шага не больше расстояния
+                ;   для второго поля слишком большой TargetCodeStep сразу запрещает обновление, петля его уменьшения при стабильном TargetCodeStep недостижима
                 ;   разность вычисляется по модулю байта и трактуется как signed8, код 80 после NEG остаётся 80
                 ;   нулевой шаг может записывать прежнее значение обратно, отсутствие движения не означает отсутствия записи RAM
                 ;   1089536 сценариев проверили оба входа, полный домен 256 разностей на 256 шагов для обоих полей, реальные дочерние процедуры, RAM и кратность записей
@@ -31,7 +31,7 @@
                 ; Расчёт целевых B и C настоящей геометрической цепочкой, её 14 байтов стека дополняются этим CALL.
 Entry:          CALL @Action.EncodeHalfCoordinateDeltas.Entry
                 ; Чтение первого текущего кода, дополнительный вход с уже подготовленными целевыми B и C.
-ApplyCodes:     LD A, (IX + @FActionRecord.Unknown08)
+ApplyCodes:     LD A, (IX + @FActionRecord.OffsetPhase1)
                 LD D, A
                 ; Расчёт обёрнутой байтовой разности первого текущего кода и B.
                 SUB B
@@ -43,10 +43,10 @@ ApplyCodes:     LD A, (IX + @FActionRecord.Unknown08)
 StoreFirstDist: LD L, A
                 ; Проверка исходной мёртвой зоны первой компоненты, расстояния ноль и один не записываются.
                 CP @ActionCodeStepConst.FirstMinDiff
-                JR C, @Action.StepRecordTargetCodes.ReadSecondCode              ; переход, если первый модуль меньше двух, пропустить запись Unknown08
+                JR C, @Action.StepRecordTargetCodes.ReadSecondCode              ; переход, если первый модуль меньше двух, пропустить запись OffsetPhase1
 
                 ; Чтение числового предельного шага, он не является набором независимых флагов.
-                LD A, (IX + @FActionRecord.Unknown25)
+                LD A, (IX + @FActionRecord.TargetCodeStep)
                 ; Проверка текущего шага относительно первого расстояния.
 LimitFirstStep: CP L
                 JR C, @Action.StepRecordTargetCodes.FirstStepSign               ; переход, если шаг меньше первого расстояния, выбрать знак движения
@@ -65,9 +65,9 @@ FirstStepSign:  BIT 7, E
                 NEG
                 ; Обновление первого кода по модулю байта, при нулевом шаге прежний байт также записывается.
 StoreFirstCode: ADD A, D
-                LD (IX + @FActionRecord.Unknown08), A
+                LD (IX + @FActionRecord.OffsetPhase1), A
                 ; Чтение второго текущего кода для независимого правила обновления.
-ReadSecondCode: LD A, (IX + @FActionRecord.Unknown09)
+ReadSecondCode: LD A, (IX + @FActionRecord.OffsetPhase2)
                 LD D, A
                 ; Расчёт обёрнутой разности второго кода и C.
                 SUB C
@@ -78,18 +78,18 @@ ReadSecondCode: LD A, (IX + @FActionRecord.Unknown09)
                 ; Сохранение второго модуля расстояния в H.
 StoreSecondDist:LD H, A
                 ; Проверка запрета второй записи при шаге больше расстояния, первый байт уже мог измениться.
-                CP (IX + @FActionRecord.Unknown25)
-                RET C                                                           ; выход, если второй модуль меньше Unknown25, сохранить Unknown09 без записи
+                CP (IX + @FActionRecord.TargetCodeStep)
+                RET C                                                           ; выход, если второй модуль меньше TargetCodeStep, сохранить OffsetPhase2 без записи
 
-                ; Повторное чтение стабильного Unknown25, после предыдущей проверки он уже не больше второго расстояния.
-                LD A, (IX + @FActionRecord.Unknown25)
+                ; Повторное чтение стабильного TargetCodeStep, после предыдущей проверки он уже не больше второго расстояния.
+                LD A, (IX + @FActionRecord.TargetCodeStep)
                 ; Проверка повторно прочитанного шага, при стабильном поле следующая петля RRA не выполняется.
 LimitSecondStep:CP H
                 JR Z, @Action.StepRecordTargetCodes.SecondStepSign              ; переход, если шаг равен второму расстоянию, выбрать знак движения
 
                 JR C, @Action.StepRecordTargetCodes.SecondStepSign              ; переход, если шаг меньше второго расстояния, выбрать знак движения
 
-                ; Исходное уменьшение шага сохранено, при стабильном Unknown25 эта ветвь недостижима.
+                ; Исходное уменьшение шага сохранено, при стабильном TargetCodeStep эта ветвь недостижима.
                 RRA
                 JP @Action.StepRecordTargetCodes.LimitSecondStep
 
@@ -101,7 +101,7 @@ SecondStepSign: BIT 7, E
                 NEG
                 ; Обновление второго кода, последний ADD задаёт возвращаемые A и F.
 StoreSecondCode:ADD A, D
-                LD (IX + @FActionRecord.Unknown09), A
+                LD (IX + @FActionRecord.OffsetPhase2), A
                 RET
 
                 endmodule

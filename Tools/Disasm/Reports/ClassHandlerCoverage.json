@@ -1,0 +1,223 @@
+{
+  "passed": true,
+  "table_entries": 26,
+  "unique_targets": 11,
+  "registered_entries": 26,
+  "unregistered_entries": 0,
+  "unregistered_targets": [],
+  "all_class_targets_registered": true,
+  "game_roles_of_all_class_codes_proved": false,
+  "full_state_dispatch_chains_proved": false,
+  "rows": [
+    {
+      "class_code": 0,
+      "target": 26126,
+      "registered": true,
+      "function": "ConfigureClass0Link",
+      "physical_path": "Source/Action/ConfigureClass0Link.asm",
+      "physical_kind": "code"
+    },
+    {
+      "class_code": 1,
+      "target": 26004,
+      "registered": true,
+      "function": "ConfigureClass1Link",
+      "physical_path": "Source/Action/ConfigureClass1Link.asm",
+      "physical_kind": "code"
+    },
+    {
+      "class_code": 2,
+      "target": 25929,
+      "registered": true,
+      "function": "ConfigureClass2Link",
+      "physical_path": "Source/Action/ConfigureClass2Link.asm",
+      "physical_kind": "code"
+    },
+    {
+      "class_code": 3,
+      "target": 26078,
+      "registered": true,
+      "function": "ConfigureClass3Link",
+      "physical_path": "Source/Action/ConfigureClass3Link.asm",
+      "physical_kind": "code"
+    },
+    {
+      "class_code": 4,
+      "target": 26029,
+      "registered": true,
+      "function": "ConfigureClass4Link",
+      "physical_path": "Source/Action/ConfigureClass4Link.asm",
+      "physical_kind": "code"
+    },
+    {
+      "class_code": 5,
+      "target": 25893,
+      "registered": true,
+      "function": "ConfigureClass5Link",
+      "physical_path": "Source/Action/ConfigureClass5Link.asm",
+      "physical_kind": "code"
+    },
+    {
+      "class_code": 6,
+      "target": 25983,
+      "registered": true,
+      "function": "ConfigureClass6Link",
+      "physical_path": "Source/Action/ConfigureClass6Link.asm",
+      "physical_kind": "code"
+    },
+    {
+      "class_code": 7,
+      "target": 25958,
+      "registered": true,
+      "function": "ConfigureClass7Link",
+      "physical_path": "Source/Action/ConfigureClass7Link.asm",
+      "physical_kind": "code"
+    },
+    {
+      "class_code": 8,
+      "target": 25910,
+      "registered": true,
+      "function": "ConfigureClass8Link",
+      "physical_path": "Source/Action/ConfigureClass8Link.asm",
+      "physical_kind": "code"
+    },
+    {
+      "class_code": 9,
+      "target": 26054,
+      "registered": true,
+      "function": "ConfigureClass9Link",
+      "physical_path": "Source/Action/ConfigureClass9Link.asm",
+      "physical_kind": "code"
+    },
+    {
+      "class_code": 10,
+      "target": 25892,
+      "registered": true,
+      "function": "ReturnIgnoredRecordClass",
+      "physical_path": "Source/Action/ReturnIgnoredRecordClass.asm",
+      "physical_kind": "code"
+    },
+    {
+      "class_code": 11,
+      "target": 25892,
+      "registered": true,
+      "function": "ReturnIgnoredRecordClass",
+      "physical_path": "Source/Action/ReturnIgnoredRecordClass.asm",
+      "physical_kind": "code"
+    },
+    {
+      "class_code": 12,
+      "target": 25892,
+      "registered": true,
+      "function": "ReturnIgnoredRecordClass",
+      "physical_path": "Source/Action/ReturnIgnoredRecordClass.asm",
+      "physical_kind": "code"
+    },
+    {
+      "class_code": 13,
+      "target": 25892,
+      "registered": true,
+      "function": "ReturnIgnoredRecordClass",
+      "physical_path": "Source/Action/ReturnIgnoredRecordClass.asm",
+      "physical_kind": "code"
+    },
+    {
+      "class_code": 14,
+      "target": 25892,
+      "registered": true,
+      "function": "ReturnIgnoredRecordClass",
+      "physical_path": "Source/Action/ReturnIgnoredRecordClass.asm",
+      "physical_kind": "code"
+    },
+    {
+      "class_code": 15,
+      "target": 25892,
+      "registered": true,
+      "function": "ReturnIgnoredRecordClass",
+      "physical_path": "Source/Action/ReturnIgnoredRecordClass.asm",
+      "physical_kind": "code"
+    },
+    {
+      "class_code": 16,
+      "target": 25892,
+      "registered": true,
+      "function": "ReturnIgnoredRecordClass",
+      "physical_path": "Source/Action/ReturnIgnoredRecordClass.asm",
+      "physical_kind": "code"
+    },
+    {
+      "class_code": 17,
+      "target": 25892,
+      "registered": true,
+      "function": "ReturnIgnoredRecordClass",
+      "physical_path": "Source/Action/ReturnIgnoredRecordClass.asm",
+      "physical_kind": "code"
+    },
+    {
+      "class_code": 18,
+      "target": 25892,
+      "registered": true,
+      "function": "ReturnIgnoredRecordClass",
+      "physical_path": "Source/Action/ReturnIgnoredRecordClass.asm",
+      "physical_kind": "code"
+    },
+    {
+      "class_code": 19,
+      "target": 25892,
+      "registered": true,
+      "function": "ReturnIgnoredRecordClass",
+      "physical_path": "Source/Action/ReturnIgnoredRecordClass.asm",
+      "physical_kind": "code"
+    },
+    {
+      "class_code": 20,
+      "target": 25892,
+      "registered": true,
+      "function": "ReturnIgnoredRecordClass",
+      "physical_path": "Source/Action/ReturnIgnoredRecordClass.asm",
+      "physical_kind": "code"
+    },
+    {
+      "class_code": 21,
+      "target": 25892,
+      "registered": true,
+      "function": "ReturnIgnoredRecordClass",
+      "physical_path": "Source/Action/ReturnIgnoredRecordClass.asm",
+      "physical_kind": "code"
+    },
+    {
+      "class_code": 22,
+      "target": 25892,
+      "registered": true,
+      "function": "ReturnIgnoredRecordClass",
+      "physical_path": "Source/Action/ReturnIgnoredRecordClass.asm",
+      "physical_kind": "code"
+    },
+    {
+      "class_code": 23,
+      "target": 25892,
+      "registered": true,
+      "function": "ReturnIgnoredRecordClass",
+      "physical_path": "Source/Action/ReturnIgnoredRecordClass.asm",
+      "physical_kind": "code"
+    },
+    {
+      "class_code": 24,
+      "target": 25892,
+      "registered": true,
+      "function": "ReturnIgnoredRecordClass",
+      "physical_path": "Source/Action/ReturnIgnoredRecordClass.asm",
+      "physical_kind": "code"
+    },
+    {
+      "class_code": 25,
+      "target": 25892,
+      "registered": true,
+      "function": "ReturnIgnoredRecordClass",
+      "physical_path": "Source/Action/ReturnIgnoredRecordClass.asm",
+      "physical_kind": "code"
+    }
+  ],
+  "assembly_executed": false,
+  "native_execution": false
+}

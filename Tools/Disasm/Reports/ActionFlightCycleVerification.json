@@ -1,0 +1,211 @@
+{
+  "passed": true,
+  "total_cases": 1,
+  "method": "bounded_skoolkit_with_trdos_stub",
+  "startup_page_checkpoints": [
+    {
+      "pc": 43059,
+      "page": 30
+    },
+    {
+      "pc": 43070,
+      "page": 30
+    },
+    {
+      "pc": 43075,
+      "page": 16
+    },
+    {
+      "pc": 43083,
+      "page": 17
+    },
+    {
+      "pc": 43086,
+      "page": 16
+    },
+    {
+      "pc": 43089,
+      "page": 16
+    },
+    {
+      "pc": 43096,
+      "page": 16
+    }
+  ],
+  "complete_frame_returns": 64,
+  "frame_entries": 65,
+  "frame_call_sites": [
+    {
+      "pc": 43111,
+      "page": 16
+    },
+    {
+      "pc": 43114,
+      "page": 16
+    },
+    {
+      "pc": 43119,
+      "page": 16
+    },
+    {
+      "pc": 43122,
+      "page": 17
+    },
+    {
+      "pc": 43125,
+      "page": 17
+    },
+    {
+      "pc": 43130,
+      "page": 17
+    },
+    {
+      "pc": 43133,
+      "page": 16
+    },
+    {
+      "pc": 43136,
+      "page": 16
+    },
+    {
+      "pc": 43208,
+      "page": 16
+    },
+    {
+      "pc": 43215,
+      "page": 16
+    },
+    {
+      "pc": 43218,
+      "page": 16
+    },
+    {
+      "pc": 43221,
+      "page": 16
+    },
+    {
+      "pc": 43224,
+      "page": 16
+    },
+    {
+      "pc": 43229,
+      "page": 16
+    },
+    {
+      "pc": 43232,
+      "page": 17
+    },
+    {
+      "pc": 43237,
+      "page": 17
+    },
+    {
+      "pc": 43240,
+      "page": 16
+    },
+    {
+      "pc": 43390,
+      "page": 16
+    },
+    {
+      "pc": 43395,
+      "page": 16
+    },
+    {
+      "pc": 43655,
+      "page": 20
+    },
+    {
+      "pc": 43658,
+      "page": 16
+    },
+    {
+      "pc": 43679,
+      "page": 16
+    },
+    {
+      "pc": 43683,
+      "page": 17
+    },
+    {
+      "pc": 43686,
+      "page": 17
+    },
+    {
+      "pc": 43689,
+      "page": 17
+    },
+    {
+      "pc": 43692,
+      "page": 17
+    },
+    {
+      "pc": 43695,
+      "page": 17
+    },
+    {
+      "pc": 43698,
+      "page": 17
+    },
+    {
+      "pc": 43701,
+      "page": 17
+    },
+    {
+      "pc": 43704,
+      "page": 17
+    },
+    {
+      "pc": 43707,
+      "page": 17
+    },
+    {
+      "pc": 43712,
+      "page": 17
+    }
+  ],
+  "loop_entry_sp": 49150,
+  "child_frame_return_address": 43100,
+  "panel_bytes_compared": 6912,
+  "boot_table_bytes_compared": 1792,
+  "loads": [
+    {
+      "slot": 25,
+      "address": 49152,
+      "length": 1463,
+      "bank": 6
+    },
+    {
+      "slot": 20,
+      "address": 49152,
+      "length": 11264,
+      "bank": 3
+    },
+    {
+      "slot": 21,
+      "address": 60416,
+      "length": 3784,
+      "bank": 3
+    },
+    {
+      "slot": 22,
+      "address": 49152,
+      "length": 6878,
+      "bank": 1
+    },
+    {
+      "slot": 23,
+      "address": 56030,
+      "length": 6474,
+      "bank": 1
+    },
+    {
+      "slot": 24,
+      "address": 49152,
+      "length": 10580,
+      "bank": 4
+    }
+  ],
+  "real_boot_verified": false,
+  "assembly_executed": false
+}

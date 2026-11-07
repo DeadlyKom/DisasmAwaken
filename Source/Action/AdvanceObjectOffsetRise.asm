@@ -17,18 +17,18 @@
                 ;   11 M1 на обычном пути и 16 при переходе состояния, регистры и записи сверены во всех 65536 парах смещения и таймера
                 ; -----------------------------------------
                 ; Изменение байта смещения на два с сохранением байтового оборачивания.
-Entry:          LD A, (IX + @FActionRecord.Unknown07)
+Entry:          LD A, (IX + @FActionRecord.OffsetPhase0)
                 ADD A, #02
-                LD (IX + @FActionRecord.Unknown07), A
+                LD (IX + @FActionRecord.OffsetPhase0), A
                 ; Уменьшение таймера хода, нулевой результат завершает фазу.
-                LD A, (IX + @FActionRecord.Unknown17)
+                LD A, (IX + @FActionRecord.PhaseMoveTimer)
                 DEC A
-                LD (IX + @FActionRecord.Unknown17), A
+                LD (IX + @FActionRecord.PhaseMoveTimer), A
                 JP NZ, @Action.PrepareObjectOffsetTransform.Entry               ; переход, если таймер после уменьшения ненулевой, продолжить общий обработчик
 
                 ; Смена состояния после истечения таймера.
-                LD (IX + @FActionRecord.Unknown0A), #15
-                LD (IX + @FActionRecord.Unknown17), #1E
+                LD (IX + @FActionRecord.StateCode), #15
+                LD (IX + @FActionRecord.PhaseMoveTimer), #1E
                 JP @Action.PrepareObjectOffsetTransform.Entry
 
                 endmodule

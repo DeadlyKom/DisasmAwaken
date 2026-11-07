@@ -27,14 +27,14 @@ Entry:          LD A, (IX + @FActionRecord.ClassCode)
                 CP #10
                 JR NC, @Action.DispatchObjectState.CallHandler                  ; переход, если класс не меньше #10, сохранить состояние
 
-                LD A, (IX + @FActionRecord.Unknown0A)
+                LD A, (IX + @FActionRecord.StateCode)
                 CP #07
                 JP Z, @Action.DispatchObjectState.CallHandler                   ; переход, если состояние #07 нужно сохранить
 
                 CP #06
                 JP Z, @Action.DispatchObjectState.CallHandler                   ; переход, если состояние #06 нужно сохранить
 
-                LD (IX + @FActionRecord.Unknown0A), #05
+                LD (IX + @FActionRecord.StateCode), #05
                 JP @Action.DispatchObjectState.CallHandler
 
                 ; Запись остатка после вычитания порога и проверка класса.
@@ -43,7 +43,7 @@ StoreRemainder: LD (IX + @FActionRecord.Unknown13), A
                 CP #10
                 JP NC, @Action.DispatchObjectState.CallHandler                  ; переход, если класс не меньше #10, сохранить состояние
 
-                LD A, (IX + @FActionRecord.Unknown0A)
+                LD A, (IX + @FActionRecord.StateCode)
                 CP #02
                 JP NZ, @Action.DispatchObjectState.CheckState                   ; переход, если состояние отличается от #02
 
@@ -79,7 +79,7 @@ ChooseThreshold:LD A, (IX + @FActionRecord.ClassCode)
                 LD C, #50
                 JP Z, @Action.DispatchObjectState.CheckTransition               ; переход, если класс #01 использует порог #50
 
-CheckTransition:LD A, (IX + @FActionRecord.Unknown0A)
+CheckTransition:LD A, (IX + @FActionRecord.StateCode)
                 CP #07
                 JR Z, @Action.DispatchObjectState.CallHandler                   ; переход, если текущее состояние #07 сохраняется
 
@@ -92,10 +92,10 @@ CheckTransition:LD A, (IX + @FActionRecord.Unknown0A)
                 JR C, @Action.DispatchObjectState.StoreState                    ; переход, если R ниже порога, записать состояние #02
 
                 LD A, #05
-StoreState:     LD (IX + @FActionRecord.Unknown0A), A
+StoreState:     LD (IX + @FActionRecord.StateCode), A
                 ; Сброс LinkFlags и чтение слова таблицы по удвоенному коду состояния.
 CallHandler:    LD (IX + @FActionRecord.LinkFlags), #00
-                LD A, (IX + @FActionRecord.Unknown0A)
+                LD A, (IX + @FActionRecord.StateCode)
                 SLA A
                 LD L, A
                 LD H, #00
@@ -114,7 +114,7 @@ CallHandler:    LD (IX + @FActionRecord.LinkFlags), #00
                 ; Восстановление IX после обработчика и вызов обновления компонент.
 ResumeUpdate:   POP IX
                 CALL @Action.PrepareRecordScale.Entry
-                JP @Action.UpdateObjects.PointF735
+                JP @Action.UpdateObjects.NextRecord
 
                 endmodule
                 endmodule

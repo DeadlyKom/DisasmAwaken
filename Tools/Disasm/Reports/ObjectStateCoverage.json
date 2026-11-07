@@ -1,0 +1,320 @@
+{
+  "passed": true,
+  "table_entries": 22,
+  "registered_entries": 6,
+  "unregistered_entries": 16,
+  "unregistered_targets": [
+    {
+      "state": 0,
+      "target": 63103,
+      "registered": false,
+      "function": null,
+      "physical_path": "Source/Resources/17_ACTION/Unclassified051.bin",
+      "physical_kind": "unclassified"
+    },
+    {
+      "state": 1,
+      "target": 61630,
+      "registered": false,
+      "function": null,
+      "physical_path": "Source/Resources/17_ACTION/Unclassified045_BeforeActionObjectOffsetTransfer.bin",
+      "physical_kind": "unclassified"
+    },
+    {
+      "state": 2,
+      "target": 61752,
+      "registered": false,
+      "function": null,
+      "physical_path": "Source/Resources/17_ACTION/Unclassified045_AfterActionObjectOffsetTransfer_BeforeActionSelectedRecordStep_BeforeActionClass18Proximity.bin",
+      "physical_kind": "unclassified"
+    },
+    {
+      "state": 3,
+      "target": 61569,
+      "registered": false,
+      "function": null,
+      "physical_path": "Source/Resources/17_ACTION/Unclassified045_BeforeActionObjectOffsetTransfer.bin",
+      "physical_kind": "unclassified"
+    },
+    {
+      "state": 4,
+      "target": 63147,
+      "registered": false,
+      "function": null,
+      "physical_path": "Source/Resources/17_ACTION/Unclassified051.bin",
+      "physical_kind": "unclassified"
+    },
+    {
+      "state": 5,
+      "target": 62089,
+      "registered": false,
+      "function": null,
+      "physical_path": "Source/Resources/17_ACTION/Unclassified045_AfterActionObjectOffsetTransfer_BeforeActionSelectedRecordStep_BeforeActionClass18Proximity.bin",
+      "physical_kind": "unclassified"
+    },
+    {
+      "state": 6,
+      "target": 63212,
+      "registered": false,
+      "function": null,
+      "physical_path": "Source/Resources/17_ACTION/Unclassified051.bin",
+      "physical_kind": "unclassified"
+    },
+    {
+      "state": 7,
+      "target": 63082,
+      "registered": false,
+      "function": null,
+      "physical_path": "Source/Resources/17_ACTION/Unclassified051.bin",
+      "physical_kind": "unclassified"
+    },
+    {
+      "state": 8,
+      "target": 62847,
+      "registered": false,
+      "function": null,
+      "physical_path": "Source/Resources/17_ACTION/Unclassified051.bin",
+      "physical_kind": "unclassified"
+    },
+    {
+      "state": 10,
+      "target": 62620,
+      "registered": false,
+      "function": null,
+      "physical_path": "Source/Resources/17_ACTION/Unclassified046.bin",
+      "physical_kind": "unclassified"
+    },
+    {
+      "state": 11,
+      "target": 62448,
+      "registered": false,
+      "function": null,
+      "physical_path": "Source/Resources/17_ACTION/Unclassified046.bin",
+      "physical_kind": "unclassified"
+    },
+    {
+      "state": 14,
+      "target": 61449,
+      "registered": false,
+      "function": null,
+      "physical_path": "Source/Resources/17_ACTION/AfterObjectStateHandlers_AfterActionObjectOffsetRise_AfterActionObjectOffsetFall_AfterActionObjectPhaseWait.bin",
+      "physical_kind": "unclassified"
+    },
+    {
+      "state": 15,
+      "target": 61564,
+      "registered": false,
+      "function": null,
+      "physical_path": "Source/Resources/17_ACTION/Unclassified045_BeforeActionObjectOffsetTransfer.bin",
+      "physical_kind": "unclassified"
+    },
+    {
+      "state": 16,
+      "target": 62408,
+      "registered": false,
+      "function": null,
+      "physical_path": "Source/Resources/17_ACTION/Unclassified046.bin",
+      "physical_kind": "unclassified"
+    },
+    {
+      "state": 17,
+      "target": 62369,
+      "registered": false,
+      "function": null,
+      "physical_path": "Source/Resources/17_ACTION/Unclassified046.bin",
+      "physical_kind": "unclassified"
+    },
+    {
+      "state": 18,
+      "target": 63165,
+      "registered": false,
+      "function": null,
+      "physical_path": "Source/Resources/17_ACTION/Unclassified051.bin",
+      "physical_kind": "unclassified"
+    }
+  ],
+  "all_state_handlers_registered": false,
+  "all_state_algorithms_proved": false,
+  "original_table_targets_proved": true,
+  "native_calls_to_all_states_proved": false,
+  "rows": [
+    {
+      "state": 0,
+      "target": 63103,
+      "registered": false,
+      "function": null,
+      "physical_path": "Source/Resources/17_ACTION/Unclassified051.bin",
+      "physical_kind": "unclassified"
+    },
+    {
+      "state": 1,
+      "target": 61630,
+      "registered": false,
+      "function": null,
+      "physical_path": "Source/Resources/17_ACTION/Unclassified045_BeforeActionObjectOffsetTransfer.bin",
+      "physical_kind": "unclassified"
+    },
+    {
+      "state": 2,
+      "target": 61752,
+      "registered": false,
+      "function": null,
+      "physical_path": "Source/Resources/17_ACTION/Unclassified045_AfterActionObjectOffsetTransfer_BeforeActionSelectedRecordStep_BeforeActionClass18Proximity.bin",
+      "physical_kind": "unclassified"
+    },
+    {
+      "state": 3,
+      "target": 61569,
+      "registered": false,
+      "function": null,
+      "physical_path": "Source/Resources/17_ACTION/Unclassified045_BeforeActionObjectOffsetTransfer.bin",
+      "physical_kind": "unclassified"
+    },
+    {
+      "state": 4,
+      "target": 63147,
+      "registered": false,
+      "function": null,
+      "physical_path": "Source/Resources/17_ACTION/Unclassified051.bin",
+      "physical_kind": "unclassified"
+    },
+    {
+      "state": 5,
+      "target": 62089,
+      "registered": false,
+      "function": null,
+      "physical_path": "Source/Resources/17_ACTION/Unclassified045_AfterActionObjectOffsetTransfer_BeforeActionSelectedRecordStep_BeforeActionClass18Proximity.bin",
+      "physical_kind": "unclassified"
+    },
+    {
+      "state": 6,
+      "target": 63212,
+      "registered": false,
+      "function": null,
+      "physical_path": "Source/Resources/17_ACTION/Unclassified051.bin",
+      "physical_kind": "unclassified"
+    },
+    {
+      "state": 7,
+      "target": 63082,
+      "registered": false,
+      "function": null,
+      "physical_path": "Source/Resources/17_ACTION/Unclassified051.bin",
+      "physical_kind": "unclassified"
+    },
+    {
+      "state": 8,
+      "target": 62847,
+      "registered": false,
+      "function": null,
+      "physical_path": "Source/Resources/17_ACTION/Unclassified051.bin",
+      "physical_kind": "unclassified"
+    },
+    {
+      "state": 9,
+      "target": 62750,
+      "registered": true,
+      "function": "UpdatePreferredClass18",
+      "physical_path": "Source/Action/UpdatePreferredClass18.asm",
+      "physical_kind": "code"
+    },
+    {
+      "state": 10,
+      "target": 62620,
+      "registered": false,
+      "function": null,
+      "physical_path": "Source/Resources/17_ACTION/Unclassified046.bin",
+      "physical_kind": "unclassified"
+    },
+    {
+      "state": 11,
+      "target": 62448,
+      "registered": false,
+      "function": null,
+      "physical_path": "Source/Resources/17_ACTION/Unclassified046.bin",
+      "physical_kind": "unclassified"
+    },
+    {
+      "state": 12,
+      "target": 62294,
+      "registered": true,
+      "function": "HandleClass18Proximity",
+      "physical_path": "Source/Action/HandleClass18Proximity.asm",
+      "physical_kind": "code"
+    },
+    {
+      "state": 13,
+      "target": 61514,
+      "registered": true,
+      "function": "HandleSelectedRecordProximity",
+      "physical_path": "Source/Action/HandleSelectedRecordProximity.asm",
+      "physical_kind": "code"
+    },
+    {
+      "state": 14,
+      "target": 61449,
+      "registered": false,
+      "function": null,
+      "physical_path": "Source/Resources/17_ACTION/AfterObjectStateHandlers_AfterActionObjectOffsetRise_AfterActionObjectOffsetFall_AfterActionObjectPhaseWait.bin",
+      "physical_kind": "unclassified"
+    },
+    {
+      "state": 15,
+      "target": 61564,
+      "registered": false,
+      "function": null,
+      "physical_path": "Source/Resources/17_ACTION/Unclassified045_BeforeActionObjectOffsetTransfer.bin",
+      "physical_kind": "unclassified"
+    },
+    {
+      "state": 16,
+      "target": 62408,
+      "registered": false,
+      "function": null,
+      "physical_path": "Source/Resources/17_ACTION/Unclassified046.bin",
+      "physical_kind": "unclassified"
+    },
+    {
+      "state": 17,
+      "target": 62369,
+      "registered": false,
+      "function": null,
+      "physical_path": "Source/Resources/17_ACTION/Unclassified046.bin",
+      "physical_kind": "unclassified"
+    },
+    {
+      "state": 18,
+      "target": 63165,
+      "registered": false,
+      "function": null,
+      "physical_path": "Source/Resources/17_ACTION/Unclassified051.bin",
+      "physical_kind": "unclassified"
+    },
+    {
+      "state": 19,
+      "target": 61365,
+      "registered": true,
+      "function": "AdvanceObjectPhaseWait",
+      "physical_path": "Source/Action/AdvanceObjectPhaseWait.asm",
+      "physical_kind": "code"
+    },
+    {
+      "state": 20,
+      "target": 61309,
+      "registered": true,
+      "function": "AdvanceObjectOffsetRise",
+      "physical_path": "Source/Action/AdvanceObjectOffsetRise.asm",
+      "physical_kind": "code"
+    },
+    {
+      "state": 21,
+      "target": 61338,
+      "registered": true,
+      "function": "AdvanceObjectOffsetFall",
+      "physical_path": "Source/Action/AdvanceObjectOffsetFall.asm",
+      "physical_kind": "code"
+    }
+  ],
+  "assembly_executed": false,
+  "native_execution": false
+}

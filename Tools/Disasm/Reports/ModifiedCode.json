@@ -499,7 +499,8 @@
     "target_slot": 17,
     "target_path": "Source/Action/ResumeVisualEffect.asm",
     "writer_source_classified": true,
-    "target_source_classified": true
+    "target_source_classified": true,
+    "target_offset": 4111
   },
   {
     "region": "Action",
@@ -1611,7 +1612,7 @@
     "target_region": "Action",
     "target_slot": 17,
     "target_offset": 38812,
-    "target_path": "Source/Action/UnknownF792.asm"
+    "target_path": "Source/Action/CheckRecordEffectThreshold.asm"
   },
   {
     "region": "Action",
@@ -1626,7 +1627,7 @@
     "target_region": "Action",
     "target_slot": 17,
     "target_offset": 38808,
-    "target_path": "Source/Action/UnknownF792.asm"
+    "target_path": "Source/Action/CheckRecordEffectThreshold.asm"
   },
   {
     "region": "Action",
@@ -1671,7 +1672,7 @@
     "target_region": "Action",
     "target_slot": 17,
     "target_offset": 7592,
-    "target_path": "Source/Action/Unknown7B58.asm"
+    "target_path": "Source/Action/ScheduleSpawn.asm"
   },
   {
     "region": "Action",
@@ -1686,7 +1687,61 @@
     "target_region": "Action",
     "target_slot": 17,
     "target_offset": 2737,
-    "target_path": "Source/Action/Unknown6780.asm"
+    "target_path": "Source/Action/UpdateBodyMotion.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 44164,
+    "target": 26133,
+    "target_instruction": 26132,
+    "size": 1,
+    "target_operation": "CP #70",
+    "path": "Source/Action/ApplyParameterSet.asm",
+    "writer_bank": 2,
+    "writer_offset": 19588,
+    "writer_source_classified": true,
+    "target_bank": 5,
+    "target_region": "Action",
+    "target_slot": 17,
+    "target_offset": 2130,
+    "target_source_classified": true,
+    "target_path": "Source/Action/ConfigureClass0Link.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 44169,
+    "target": 59111,
+    "target_instruction": 59110,
+    "size": 1,
+    "target_operation": "CP #A0",
+    "path": "Source/Action/ApplyParameterSet.asm",
+    "writer_bank": 2,
+    "writer_offset": 19593,
+    "writer_source_classified": true,
+    "target_bank": 0,
+    "target_region": "Action",
+    "target_slot": 17,
+    "target_offset": 34535,
+    "target_source_classified": true,
+    "target_path": "Source/Action/FindFilteredRecordOr26.asm"
+  },
+  {
+    "region": "Action",
+    "writer": 44179,
+    "target": 26085,
+    "target_instruction": 26084,
+    "size": 1,
+    "target_operation": "CP #06",
+    "path": "Source/Action/ApplyParameterSet.asm",
+    "writer_bank": 2,
+    "writer_offset": 19603,
+    "writer_source_classified": true,
+    "target_bank": 5,
+    "target_region": "Action",
+    "target_slot": 17,
+    "target_offset": 2082,
+    "target_source_classified": true,
+    "target_path": "Source/Action/ConfigureClass3Link.asm"
   },
   {
     "region": "Action",
@@ -1701,7 +1756,7 @@
     "target_region": "Action",
     "target_slot": 17,
     "target_offset": 7137,
-    "target_path": "Source/Action/Unknown7859.asm"
+    "target_path": "Source/Action/SpawnAlternate.asm"
   },
   {
     "region": "Action",
@@ -1716,7 +1771,7 @@
     "target_region": "Action",
     "target_slot": 17,
     "target_offset": 8260,
-    "target_path": "Source/Action/Unknown7B58.asm"
+    "target_path": "Source/Action/FinishSpawnRecord.asm"
   },
   {
     "region": "Action",
@@ -1731,7 +1786,7 @@
     "target_region": "Action",
     "target_slot": 17,
     "target_offset": 8262,
-    "target_path": "Source/Action/Unknown7B58.asm"
+    "target_path": "Source/Action/FinishSpawnRecord.asm"
   },
   {
     "region": "Action",
@@ -1746,7 +1801,7 @@
     "target_region": "Action",
     "target_slot": 17,
     "target_offset": 8225,
-    "target_path": "Source/Action/Unknown7B58.asm"
+    "target_path": "Source/Action/FinishSpawnRecord.asm"
   },
   {
     "region": "Action",
@@ -1875,7 +1930,10 @@
     "path": "Source/Action/BuildObjectOffsetCoefficients.asm",
     "target_bank": 5,
     "target_source_classified": true,
-    "target_path": "Source/Action/ApplyObjectOffsetVector.asm"
+    "target_path": "Source/Action/ApplyObjectOffsetVector.asm",
+    "target_region": "Action",
+    "target_slot": 17,
+    "target_offset": 3915
   },
   {
     "region": "Action",
@@ -1887,7 +1945,10 @@
     "path": "Source/Action/BuildObjectOffsetCoefficients.asm",
     "target_bank": 5,
     "target_source_classified": true,
-    "target_path": "Source/Action/ApplyObjectOffsetVector.asm"
+    "target_path": "Source/Action/ApplyObjectOffsetVector.asm",
+    "target_region": "Action",
+    "target_slot": 17,
+    "target_offset": 3929
   },
   {
     "region": "Action",
@@ -1899,7 +1960,10 @@
     "path": "Source/Action/BuildObjectOffsetCoefficients.asm",
     "target_bank": 5,
     "target_source_classified": true,
-    "target_path": "Source/Action/ApplyObjectOffsetVector.asm"
+    "target_path": "Source/Action/ApplyObjectOffsetVector.asm",
+    "target_region": "Action",
+    "target_slot": 17,
+    "target_offset": 3943
   },
   {
     "region": "Action",
@@ -2881,7 +2945,10 @@
     "target_operation": "ADD A,#00",
     "path": "Source/Action/UpdatePolygonLeftEdge.asm",
     "target_source_classified": true,
-    "target_path": "Source/Action/PolygonFillRows.asm"
+    "target_path": "Source/Action/PolygonFillRows.asm",
+    "target_region": "Action",
+    "target_slot": 17,
+    "target_offset": 29207
   },
   {
     "region": "Action",
@@ -2901,7 +2968,10 @@
     "target_operation": "SUB #00",
     "path": "Source/Action/UpdatePolygonLeftEdge.asm",
     "target_source_classified": true,
-    "target_path": "Source/Action/PolygonFillRows.asm"
+    "target_path": "Source/Action/PolygonFillRows.asm",
+    "target_region": "Action",
+    "target_slot": 17,
+    "target_offset": 29203
   },
   {
     "region": "Action",
@@ -2912,7 +2982,10 @@
     "target_operation": "SUB #00",
     "path": "Source/Action/UpdatePolygonLeftEdge.asm",
     "target_source_classified": true,
-    "target_path": "Source/Action/PolygonFillRows.asm"
+    "target_path": "Source/Action/PolygonFillRows.asm",
+    "target_region": "Action",
+    "target_slot": 17,
+    "target_offset": 29203
   },
   {
     "region": "Action",
@@ -2923,7 +2996,10 @@
     "target_operation": "SUB #00",
     "path": "Source/Action/UpdatePolygonLeftEdge.asm",
     "target_source_classified": true,
-    "target_path": "Source/Action/PolygonFillRows.asm"
+    "target_path": "Source/Action/PolygonFillRows.asm",
+    "target_region": "Action",
+    "target_slot": 17,
+    "target_offset": 29203
   },
   {
     "region": "Action",
@@ -2934,7 +3010,10 @@
     "target_operation": "SUB #00",
     "path": "Source/Action/UpdatePolygonLeftEdge.asm",
     "target_source_classified": true,
-    "target_path": "Source/Action/PolygonFillRows.asm"
+    "target_path": "Source/Action/PolygonFillRows.asm",
+    "target_region": "Action",
+    "target_slot": 17,
+    "target_offset": 29203
   },
   {
     "region": "Action",
@@ -2945,7 +3024,10 @@
     "target_operation": "CP #00",
     "path": "Source/Action/UpdatePolygonLeftEdge.asm",
     "target_source_classified": true,
-    "target_path": "Source/Action/PolygonFillRows.asm"
+    "target_path": "Source/Action/PolygonFillRows.asm",
+    "target_region": "Action",
+    "target_slot": 17,
+    "target_offset": 29226
   },
   {
     "region": "Action",
@@ -2956,7 +3038,10 @@
     "target_operation": "JR NC,#D263",
     "path": "Source/Action/UpdatePolygonLeftEdge.asm",
     "target_source_classified": true,
-    "target_path": "Source/Action/PolygonFillRows.asm"
+    "target_path": "Source/Action/PolygonFillRows.asm",
+    "target_region": "Action",
+    "target_slot": 17,
+    "target_offset": 29228
   },
   {
     "region": "Action",
@@ -2967,7 +3052,10 @@
     "target_operation": "SUB #00",
     "path": "Source/Action/UpdatePolygonLeftEdge.asm",
     "target_source_classified": true,
-    "target_path": "Source/Action/PolygonFillRows.asm"
+    "target_path": "Source/Action/PolygonFillRows.asm",
+    "target_region": "Action",
+    "target_slot": 17,
+    "target_offset": 29203
   },
   {
     "region": "Action",
@@ -2987,7 +3075,10 @@
     "target_operation": "ADD A,#00",
     "path": "Source/Action/UpdatePolygonRightEdge.asm",
     "target_source_classified": true,
-    "target_path": "Source/Action/PolygonFillRows.asm"
+    "target_path": "Source/Action/PolygonFillRows.asm",
+    "target_region": "Action",
+    "target_slot": 17,
+    "target_offset": 29219
   },
   {
     "region": "Action",
@@ -3007,7 +3098,10 @@
     "target_operation": "SUB #00",
     "path": "Source/Action/UpdatePolygonRightEdge.asm",
     "target_source_classified": true,
-    "target_path": "Source/Action/PolygonFillRows.asm"
+    "target_path": "Source/Action/PolygonFillRows.asm",
+    "target_region": "Action",
+    "target_slot": 17,
+    "target_offset": 29215
   },
   {
     "region": "Action",
@@ -3018,7 +3112,10 @@
     "target_operation": "SUB #00",
     "path": "Source/Action/UpdatePolygonRightEdge.asm",
     "target_source_classified": true,
-    "target_path": "Source/Action/PolygonFillRows.asm"
+    "target_path": "Source/Action/PolygonFillRows.asm",
+    "target_region": "Action",
+    "target_slot": 17,
+    "target_offset": 29215
   },
   {
     "region": "Action",
@@ -3029,7 +3126,10 @@
     "target_operation": "SUB #00",
     "path": "Source/Action/UpdatePolygonRightEdge.asm",
     "target_source_classified": true,
-    "target_path": "Source/Action/PolygonFillRows.asm"
+    "target_path": "Source/Action/PolygonFillRows.asm",
+    "target_region": "Action",
+    "target_slot": 17,
+    "target_offset": 29215
   },
   {
     "region": "Action",
@@ -3040,7 +3140,10 @@
     "target_operation": "SUB #00",
     "path": "Source/Action/UpdatePolygonRightEdge.asm",
     "target_source_classified": true,
-    "target_path": "Source/Action/PolygonFillRows.asm"
+    "target_path": "Source/Action/PolygonFillRows.asm",
+    "target_region": "Action",
+    "target_slot": 17,
+    "target_offset": 29215
   },
   {
     "region": "Action",
@@ -3051,7 +3154,10 @@
     "target_operation": "CP #00",
     "path": "Source/Action/SelectPolygonRowLimit.asm",
     "target_source_classified": true,
-    "target_path": "Source/Action/PolygonFillRows.asm"
+    "target_path": "Source/Action/PolygonFillRows.asm",
+    "target_region": "Action",
+    "target_slot": 17,
+    "target_offset": 29226
   },
   {
     "region": "Action",
@@ -3062,7 +3168,10 @@
     "target_operation": "JR NC,#D263",
     "path": "Source/Action/SelectPolygonRowLimit.asm",
     "target_source_classified": true,
-    "target_path": "Source/Action/PolygonFillRows.asm"
+    "target_path": "Source/Action/PolygonFillRows.asm",
+    "target_region": "Action",
+    "target_slot": 17,
+    "target_offset": 29228
   },
   {
     "region": "Action",
@@ -3073,7 +3182,10 @@
     "target_operation": "CP #00",
     "path": "Source/Action/SelectPolygonRowLimit.asm",
     "target_source_classified": true,
-    "target_path": "Source/Action/PolygonFillRows.asm"
+    "target_path": "Source/Action/PolygonFillRows.asm",
+    "target_region": "Action",
+    "target_slot": 17,
+    "target_offset": 29226
   },
   {
     "region": "Action",
@@ -3084,7 +3196,10 @@
     "target_operation": "JR NC,#D263",
     "path": "Source/Action/SelectPolygonRowLimit.asm",
     "target_source_classified": true,
-    "target_path": "Source/Action/PolygonFillRows.asm"
+    "target_path": "Source/Action/PolygonFillRows.asm",
+    "target_region": "Action",
+    "target_slot": 17,
+    "target_offset": 29228
   },
   {
     "region": "Action",
@@ -3095,7 +3210,10 @@
     "target_operation": "CP #00",
     "path": "Source/Action/SelectPolygonRowLimit.asm",
     "target_source_classified": true,
-    "target_path": "Source/Action/PolygonFillRows.asm"
+    "target_path": "Source/Action/PolygonFillRows.asm",
+    "target_region": "Action",
+    "target_slot": 17,
+    "target_offset": 29226
   },
   {
     "region": "Action",
@@ -3106,7 +3224,10 @@
     "target_operation": "JR NC,#D263",
     "path": "Source/Action/SelectPolygonRowLimit.asm",
     "target_source_classified": true,
-    "target_path": "Source/Action/PolygonFillRows.asm"
+    "target_path": "Source/Action/PolygonFillRows.asm",
+    "target_region": "Action",
+    "target_slot": 17,
+    "target_offset": 29228
   },
   {
     "region": "Action",
@@ -3117,7 +3238,10 @@
     "target_operation": "SUB #00",
     "path": "Source/Action/SetShortNegativeRightStep.asm",
     "target_source_classified": true,
-    "target_path": "Source/Action/PolygonFillRows.asm"
+    "target_path": "Source/Action/PolygonFillRows.asm",
+    "target_region": "Action",
+    "target_slot": 17,
+    "target_offset": 29215
   },
   {
     "region": "Action",
@@ -3128,7 +3252,10 @@
     "target_operation": "CP #00",
     "path": "Source/Action/PreparePolygonFill.asm",
     "target_source_classified": true,
-    "target_path": "Source/Action/UpdatePolygonRightEdge.asm"
+    "target_path": "Source/Action/UpdatePolygonRightEdge.asm",
+    "target_region": "Action",
+    "target_slot": 17,
+    "target_offset": 29623
   },
   {
     "region": "Action",
@@ -3139,7 +3266,10 @@
     "target_operation": "LD L,#00",
     "path": "Source/Action/PreparePolygonFill.asm",
     "target_source_classified": true,
-    "target_path": "Source/Action/SelectPolygonRowLimit.asm"
+    "target_path": "Source/Action/SelectPolygonRowLimit.asm",
+    "target_region": "Action",
+    "target_slot": 17,
+    "target_offset": 29890
   },
   {
     "region": "Action",
@@ -3150,7 +3280,10 @@
     "target_operation": "LD E,#00",
     "path": "Source/Action/PreparePolygonFill.asm",
     "target_source_classified": true,
-    "target_path": "Source/Action/SelectPolygonRowLimit.asm"
+    "target_path": "Source/Action/SelectPolygonRowLimit.asm",
+    "target_region": "Action",
+    "target_slot": 17,
+    "target_offset": 29892
   },
   {
     "region": "Action",
@@ -3161,7 +3294,10 @@
     "target_operation": "LD L,#00",
     "path": "Source/Action/PreparePolygonFill.asm",
     "target_source_classified": true,
-    "target_path": "Source/Action/UpdatePolygonLeftEdge.asm"
+    "target_path": "Source/Action/UpdatePolygonLeftEdge.asm",
+    "target_region": "Action",
+    "target_slot": 17,
+    "target_offset": 29575
   },
   {
     "region": "Action",
@@ -3172,7 +3308,10 @@
     "target_operation": "LD HL,#0000",
     "path": "Source/Action/PreparePolygonFill.asm",
     "target_source_classified": true,
-    "target_path": "Source/Action/UpdatePolygonLeftEdge.asm"
+    "target_path": "Source/Action/UpdatePolygonLeftEdge.asm",
+    "target_region": "Action",
+    "target_slot": 17,
+    "target_offset": 29301
   },
   {
     "region": "Action",
@@ -3183,7 +3322,10 @@
     "target_operation": "LD HL,#0000",
     "path": "Source/Action/PreparePolygonFill.asm",
     "target_source_classified": true,
-    "target_path": "Source/Action/UpdatePolygonRightEdge.asm"
+    "target_path": "Source/Action/UpdatePolygonRightEdge.asm",
+    "target_region": "Action",
+    "target_slot": 17,
+    "target_offset": 29616
   },
   {
     "region": "Action",
@@ -3194,7 +3336,10 @@
     "target_operation": "XOR #00",
     "path": "Source/Action/PreparePolygonFill.asm",
     "target_source_classified": true,
-    "target_path": "Source/Action/PolygonFillRows.asm"
+    "target_path": "Source/Action/PolygonFillRows.asm",
+    "target_region": "Action",
+    "target_slot": 17,
+    "target_offset": 29183
   },
   {
     "region": "Action",
@@ -3205,7 +3350,10 @@
     "target_operation": "XOR #00",
     "path": "Source/Action/PreparePolygonFill.asm",
     "target_source_classified": true,
-    "target_path": "Source/Action/PolygonFillRows.asm"
+    "target_path": "Source/Action/PolygonFillRows.asm",
+    "target_region": "Action",
+    "target_slot": 17,
+    "target_offset": 29272
   },
   {
     "region": "Action",
@@ -3216,7 +3364,10 @@
     "target_operation": "LD SP,#0000",
     "path": "Source/Action/PreparePolygonFill.asm",
     "target_source_classified": true,
-    "target_path": "Source/Action/PolygonFillRows.asm"
+    "target_path": "Source/Action/PolygonFillRows.asm",
+    "target_region": "Action",
+    "target_slot": 17,
+    "target_offset": 29284
   },
   {
     "region": "Action",
@@ -3227,7 +3378,10 @@
     "target_operation": "CP #00",
     "path": "Source/Action/PreparePolygonFill.asm",
     "target_source_classified": true,
-    "target_path": "Source/Action/PolygonFillRows.asm"
+    "target_path": "Source/Action/PolygonFillRows.asm",
+    "target_region": "Action",
+    "target_slot": 17,
+    "target_offset": 29226
   },
   {
     "region": "Action",
@@ -3238,7 +3392,10 @@
     "target_operation": "JR NC,#D263",
     "path": "Source/Action/PreparePolygonFill.asm",
     "target_source_classified": true,
-    "target_path": "Source/Action/PolygonFillRows.asm"
+    "target_path": "Source/Action/PolygonFillRows.asm",
+    "target_region": "Action",
+    "target_slot": 17,
+    "target_offset": 29228
   },
   {
     "region": "Action",
@@ -4138,7 +4295,7 @@
     "target_slot": 17,
     "target_offset": 34309,
     "target_source_classified": true,
-    "target_path": "Source/Action/UnknownE5A0.asm"
+    "target_path": "Source/Action/UpdateRecordComponents.asm"
   },
   {
     "region": "Action",
@@ -4174,7 +4331,7 @@
     "target_slot": 17,
     "target_offset": 34227,
     "target_source_classified": true,
-    "target_path": "Source/Action/UnknownE5A0.asm"
+    "target_path": "Source/Action/UpdateRecordComponents.asm"
   },
   {
     "region": "Action",
@@ -4210,7 +4367,7 @@
     "target_slot": 17,
     "target_offset": 34258,
     "target_source_classified": true,
-    "target_path": "Source/Action/UnknownE5A0.asm"
+    "target_path": "Source/Action/UpdateRecordComponents.asm"
   },
   {
     "region": "Action",
@@ -4246,7 +4403,7 @@
     "target_slot": 17,
     "target_offset": 34285,
     "target_source_classified": true,
-    "target_path": "Source/Action/UnknownE5A0.asm"
+    "target_path": "Source/Action/UpdateRecordComponents.asm"
   },
   {
     "region": "Action",
@@ -4318,7 +4475,7 @@
     "target_slot": 17,
     "target_offset": 34227,
     "target_source_classified": true,
-    "target_path": "Source/Action/UnknownE5A0.asm"
+    "target_path": "Source/Action/UpdateRecordComponents.asm"
   },
   {
     "region": "Action",
@@ -4336,7 +4493,7 @@
     "target_slot": 17,
     "target_offset": 34258,
     "target_source_classified": true,
-    "target_path": "Source/Action/UnknownE5A0.asm"
+    "target_path": "Source/Action/UpdateRecordComponents.asm"
   },
   {
     "region": "Action",
@@ -4354,7 +4511,7 @@
     "target_slot": 17,
     "target_offset": 34285,
     "target_source_classified": true,
-    "target_path": "Source/Action/UnknownE5A0.asm"
+    "target_path": "Source/Action/UpdateRecordComponents.asm"
   },
   {
     "region": "Action",
@@ -4370,7 +4527,8 @@
     "target_slot": 17,
     "target_path": "Source/Action/AllocateLargeEffect.asm",
     "writer_source_classified": true,
-    "target_source_classified": true
+    "target_source_classified": true,
+    "target_offset": 35524
   },
   {
     "region": "Action",
@@ -4830,7 +4988,7 @@
     "target_region": "Action",
     "target_slot": 17,
     "target_offset": 2760,
-    "target_path": "Source/Action/Unknown6780.asm"
+    "target_path": "Source/Action/UpdateBodyMotion.asm"
   },
   {
     "region": "Controls",
@@ -15166,6 +15324,96 @@
   },
   {
     "region": "Voxel",
+    "writer": 60883,
+    "target": 63786,
+    "target_instruction": 63785,
+    "size": 2,
+    "target_operation": "LD SP,#0000",
+    "path": "Source/Voxel/ClipSprite.asm",
+    "target_region": "Voxel",
+    "target_bank": 3,
+    "target_slot": 21,
+    "writer_bank": 3,
+    "target_source_classified": true,
+    "target_original_hex": "310000"
+  },
+  {
+    "region": "Voxel",
+    "writer": 60887,
+    "target": 63760,
+    "target_instruction": 63759,
+    "size": 1,
+    "target_operation": "ADD A,#00",
+    "path": "Source/Voxel/ClipSprite.asm",
+    "target_region": "Voxel",
+    "target_bank": 3,
+    "target_slot": 21,
+    "writer_bank": 3,
+    "target_source_classified": true,
+    "target_original_hex": "c600"
+  },
+  {
+    "region": "Voxel",
+    "writer": 60947,
+    "target": 63768,
+    "target_instruction": 63767,
+    "size": 1,
+    "target_operation": "ADC A,#00",
+    "path": "Source/Voxel/ClipSprite.asm",
+    "target_region": "Voxel",
+    "target_bank": 3,
+    "target_slot": 21,
+    "writer_bank": 3,
+    "target_source_classified": true,
+    "target_original_hex": "ce00"
+  },
+  {
+    "region": "Voxel",
+    "writer": 60967,
+    "target": 63669,
+    "target_instruction": 63668,
+    "size": 1,
+    "target_operation": "AND #0F",
+    "path": "Source/Voxel/ClipSprite.asm",
+    "target_region": "Voxel",
+    "target_bank": 3,
+    "target_slot": 21,
+    "writer_bank": 3,
+    "target_source_classified": true,
+    "target_original_hex": "e60f"
+  },
+  {
+    "region": "Voxel",
+    "writer": 60970,
+    "target": 63707,
+    "target_instruction": 63706,
+    "size": 1,
+    "target_operation": "AND #0F",
+    "path": "Source/Voxel/ClipSprite.asm",
+    "target_region": "Voxel",
+    "target_bank": 3,
+    "target_slot": 21,
+    "writer_bank": 3,
+    "target_source_classified": true,
+    "target_original_hex": "e60f"
+  },
+  {
+    "region": "Voxel",
+    "writer": 60999,
+    "target": 63777,
+    "target_instruction": 63776,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Voxel/ClipSprite.asm",
+    "target_region": "Voxel",
+    "target_bank": 3,
+    "target_slot": 21,
+    "writer_bank": 3,
+    "target_source_classified": true,
+    "target_original_hex": "210000"
+  },
+  {
+    "region": "Voxel",
     "writer": 61011,
     "target": 61048,
     "target_instruction": 61047,
@@ -15175,19 +15423,51 @@
   },
   {
     "region": "Voxel",
+    "writer": 61031,
+    "target": 63749,
+    "target_instruction": 63748,
+    "size": 1,
+    "target_operation": "SET 5,C",
+    "path": "Source/Voxel/ClipSprite.asm",
+    "target_region": "Voxel",
+    "target_bank": 3,
+    "target_slot": 21,
+    "writer_bank": 3,
+    "target_source_classified": true,
+    "target_original_hex": "cbe9"
+  },
+  {
+    "region": "Voxel",
+    "writer": 61035,
+    "target": 63751,
+    "target_instruction": 63750,
+    "size": 1,
+    "target_operation": "LD H,#00",
+    "path": "Source/Voxel/ClipSprite.asm",
+    "target_region": "Voxel",
+    "target_bank": 3,
+    "target_slot": 21,
+    "writer_bank": 3,
+    "target_source_classified": true,
+    "target_original_hex": "2600"
+  },
+  {
+    "region": "Voxel",
     "writer": 64062,
     "target": 63994,
     "target_instruction": 63993,
     "size": 1,
     "target_operation": "JR #F9F9",
-    "path": "Source/Resources/21_VOXAL/Unclassified001.bin",
-    "writer_bank": 3,
+    "path": "Source/Voxel/DrawProjectedEffect.asm",
+    "target_path": "Source/Voxel/ProjectEffectPoint.asm",
     "target_region": "Voxel",
     "target_bank": 3,
     "target_slot": 21,
-    "target_path": "Source/Resources/21_VOXAL/Unclassified001.bin",
-    "writer_source_classified": false,
-    "target_source_classified": false
+    "writer_bank": 3,
+    "writer_source_classified": true,
+    "target_source_classified": true,
+    "target_original_hex": "18fe",
+    "target_offset": 3578
   },
   {
     "region": "Voxel",
@@ -15196,13 +15476,69 @@
     "target_instruction": 64028,
     "size": 1,
     "target_operation": "JR #FA1C",
-    "path": "Source/Resources/21_VOXAL/Unclassified001.bin",
-    "writer_bank": 3,
+    "path": "Source/Voxel/DrawProjectedEffect.asm",
+    "target_path": "Source/Voxel/ProjectEffectPoint.asm",
     "target_region": "Voxel",
     "target_bank": 3,
     "target_slot": 21,
-    "target_path": "Source/Resources/21_VOXAL/Unclassified001.bin",
-    "writer_source_classified": false,
-    "target_source_classified": false
+    "writer_bank": 3,
+    "writer_source_classified": true,
+    "target_source_classified": true,
+    "target_original_hex": "18fe",
+    "target_offset": 3613
+  },
+  {
+    "region": "Voxel",
+    "writer": 64074,
+    "target": 64103,
+    "target_instruction": 64102,
+    "size": 2,
+    "target_operation": "LD HL,#0000",
+    "path": "Source/Voxel/DrawProjectedEffect.asm",
+    "target_path": "Source/Voxel/DrawProjectedEffect.asm",
+    "target_region": "Voxel",
+    "target_bank": 3,
+    "target_slot": 21,
+    "writer_bank": 3,
+    "writer_source_classified": true,
+    "target_source_classified": true,
+    "target_original_hex": "210000",
+    "target_offset": 3687
+  },
+  {
+    "region": "Voxel",
+    "writer": 64077,
+    "target": 64109,
+    "target_instruction": 64108,
+    "size": 2,
+    "target_operation": "LD BC,#0000",
+    "path": "Source/Voxel/DrawProjectedEffect.asm",
+    "target_path": "Source/Voxel/DrawProjectedEffect.asm",
+    "target_region": "Voxel",
+    "target_bank": 3,
+    "target_slot": 21,
+    "writer_bank": 3,
+    "writer_source_classified": true,
+    "target_source_classified": true,
+    "target_original_hex": "010000",
+    "target_offset": 3693
+  },
+  {
+    "region": "Voxel",
+    "writer": 64081,
+    "target": 64106,
+    "target_instruction": 64105,
+    "size": 2,
+    "target_operation": "LD DE,#0000",
+    "path": "Source/Voxel/DrawProjectedEffect.asm",
+    "target_path": "Source/Voxel/DrawProjectedEffect.asm",
+    "target_region": "Voxel",
+    "target_bank": 3,
+    "target_slot": 21,
+    "writer_bank": 3,
+    "writer_source_classified": true,
+    "target_source_classified": true,
+    "target_original_hex": "110000",
+    "target_offset": 3690
   }
 ]

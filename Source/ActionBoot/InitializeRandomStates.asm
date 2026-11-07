@@ -1,5 +1,6 @@
                 module ActionBoot
                 module InitializeRandomStates
+                ; Внутренние входы [алгоритм](../../Docs/ArithmeticFinalInternalLabels.md)
 ; Документация [ActionBoot](../../Docs/FunctionDetails/ActionBoot.md)
 ; -----------------------------------------
 ; Начальное заполнение слов состояний от регистра R и повторных вызовов обработчика #EB72
@@ -14,7 +15,7 @@
 ;   в #5CC2 записываются байты #F1 и #C9, младший байт семени #EBDE берётся из R
 ;   первоначально выполняются от одного до четырёх вызовов в зависимости от R AND 3
 ;   затем восемь результатов #EB72 записываются в слова состояний, #AA9A получает 1, #A8BC получает #2E
-;   формула общего обработчика генератора требует отдельного анализа
+;   используется доказанный поток NextRandomWord0 и общий StepFoldedRandom, игровое назначение потока не установлено
 ; -----------------------------------------
 Entry:          LD HL, #C9F1
                 LD (#5CC2), HL
@@ -24,25 +25,25 @@ Entry:          LD HL, #C9F1
                 AND #03
                 INC A
                 LD B, A
-Point4316:      PUSH BC
-                CALL #EB72
+WarmRandom:     PUSH BC
+                CALL @Action.NextRandomWord0.Entry
                 POP BC
-                DJNZ @ActionBoot.InitializeRandomStates.Point4316
+                DJNZ @ActionBoot.InitializeRandomStates.WarmRandom
 
                 LD (#EBDB), HL
-                CALL #EB72
+                CALL @Action.NextRandomWord0.Entry
                 LD (#EBFF), HL
-                CALL #EB72
+                CALL @Action.NextRandomWord0.Entry
                 LD (#EC02), HL
-                CALL #EB72
+                CALL @Action.NextRandomWord0.Entry
                 LD (#EC05), HL
-                CALL #EB72
+                CALL @Action.NextRandomWord0.Entry
                 LD (#EBE1), HL
-                CALL #EB72
+                CALL @Action.NextRandomWord0.Entry
                 LD (#EBE4), HL
-                CALL #EB72
+                CALL @Action.NextRandomWord0.Entry
                 LD (#EBE7), HL
-                CALL #EB72
+                CALL @Action.NextRandomWord0.Entry
                 LD (#EBEA), HL
                 LD A, #01
                 LD (#AA9A), A

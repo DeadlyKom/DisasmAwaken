@@ -1,0 +1,54 @@
+{
+  "passed": true,
+  "total_cases": 204,
+  "pointer_count": 36,
+  "group_count": 37,
+  "sprite_count": 56,
+  "bar_logical_bytes": 3076,
+  "sprite_bytes": 59996,
+  "unreferenced_groups": [
+    1244
+  ],
+  "mask_pixel_intersections": 0,
+  "banks": [
+    {
+      "bank": 0,
+      "covered": 16268,
+      "logical_length": 16268,
+      "unclassified_suffix": 0
+    },
+    {
+      "bank": 1,
+      "covered": 16152,
+      "logical_length": 16152,
+      "unclassified_suffix": 0
+    },
+    {
+      "bank": 2,
+      "covered": 15528,
+      "logical_length": 16248,
+      "unclassified_suffix": 720
+    },
+    {
+      "bank": 3,
+      "covered": 12048,
+      "logical_length": 12048,
+      "unclassified_suffix": 0
+    }
+  ],
+  "runtime_consumer_proved": false,
+  "unknown_step_bytes": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "header_bit14_meaning_proved": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

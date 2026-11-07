@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "total_cases": 1024,
+  "outcomes": {
+    "unavailable_fallback": 37,
+    "class_mismatch_fallback": 481,
+    "near_reuse": 31,
+    "far_step": 475
+  },
+  "fallback_outcomes": {
+    "fallback_found": 258,
+    "fallback_absent": 260
+  },
+  "all_256_selected_indices": true,
+  "no_25_slot_index_clamp_introduced": true,
+  "self_selection_alias_preserved": true,
+  "out_of_initial_array_target_bytes_preserved": true,
+  "actual_selector_search_distance_geometry_and_reuse_executed": true,
+  "exact_registers_except_r": true,
+  "full_eight_bank_ram_and_write_multiplicity_compared": true,
+  "maximum_extra_stack_bytes": 18,
+  "real_ports_verified": true,
+  "common_offset_tail_executed": false,
+  "near_path_external_ret_executed": true,
+  "all_record_contents_product_exhausted": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

@@ -150,10 +150,15 @@ COMMENTS = {address: ([BEFORE[address]] if address in BEFORE else [], RIGHT.get(
 def name_operands(region, address, operation):
     if region != 'Action' or address not in FUNCTIONS:
         return operation
-    fields = {'0B': 'LinkedIndex', '0C': 'LinkFlags', '0F': 'TargetIndex',
+    if address == 0x7859:
+        operation = operation.replace('LD DE, #7799', 'LD DE, @ActionSpawnTemplates.Seed00')
+        operation = operation.replace('LD BC, #0008', 'LD BC, FSpawnTemplateRow')
+    else:
+        operation = operation.replace('LD HL, #7AC6', 'LD HL, @ActionSpawnModels.Class00')
+    fields = {'06': 'ModelOffset', '0A': 'StateCode', '0B': 'LinkedIndex', '0C': 'LinkFlags', '0F': 'TargetIndex',
               '12': 'ClassCode', '18': 'ReuseByte'}
-    fields.update({offset: 'Unknown' + offset for offset in
-                   ('06', '07', '08', '09', '0A', '0D', '0E', '10', '11', '13',
+    fields.update({offset: KNOWN.get(int(offset, 16), ('Unknown' + offset,))[0] for offset in
+                   ('07', '08', '09', '0D', '0E', '10', '11', '13',
                     '14', '15', '16', '17', '20', '21', '24')})
     register = 'IY' if address == 0x7859 else 'IX'
     offsets = fields if register == 'IY' else ('0A', '12')
@@ -161,3 +166,5 @@ def name_operands(region, address, operation):
         operation = operation.replace(register + '+#' + offset,
                                       register + ' + @FActionRecord.' + fields[offset])
     return operation
+
+from ActionObjectRecords import KNOWN

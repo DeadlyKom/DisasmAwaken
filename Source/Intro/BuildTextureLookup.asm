@@ -1,6 +1,7 @@
                 module Intro
                 module BuildTextureLookup
 ; Документация [Intro](../../Docs/FunctionDetails/Intro.md)
+                ; Имена внутренних входов [алгоритмы вступления](../../Docs/IntroInternalLabels.md)
 ; -----------------------------------------
 ; Построение двухбайтовой таблицы выборок по координатам из #6400 и заполнение её пропусков
 ; исходная запись 3, файловые смещения #0463..#04F0
@@ -38,7 +39,7 @@ Entry:          LD (#6786), HL
                 LD A, C
                 CALL @Intro.FillForward.Entry
                 LD B, #3F
-Point6784:      PUSH BC
+NextParameter:  PUSH BC
                 LD HL, #2121
                 LD A, (HL)
                 INC HL
@@ -56,18 +57,18 @@ Point6784:      PUSH BC
                 DEC H
                 LD (#679E), HL
                 ; создание 128 старших байтов последовательности HL с шагом DE
-Point67A4:      LD A, H
+Accumulate:     LD A, H
                 LD (BC), A
                 ADD HL, DE
                 INC C
                 BIT 7, C
-                JP Z, @Intro.BuildTextureLookup.Point67A4                       ; переход, если ещё не записаны 128 координат
+                JP Z, @Intro.BuildTextureLookup.Accumulate                      ; переход, если ещё не записаны 128 координат
 
 
                 LD BC, #6400
                 LD IX, #6440
                 ; поиск двух координат в одной таблице со сдвигом индексов на 64
-Point67B4:      LD H, #80
+StoreLookup:    LD H, #80
                 LD A, (BC)
                 LD L, A
                 SRL L
@@ -85,18 +86,18 @@ Point67B4:      LD H, #80
                 LD (DE), A
                 INC IXL
                 INC C
-                JR NZ, @Intro.BuildTextureLookup.Point67B4                      ; переход, если ещё не обработаны все 256 индексов исходной таблицы
+                JR NZ, @Intro.BuildTextureLookup.StoreLookup                    ; переход, если ещё не обработаны все 256 индексов исходной таблицы
 
 
                 POP BC
-                DJNZ @Intro.BuildTextureLookup.Point6784
+                DJNZ @Intro.BuildTextureLookup.NextParameter
 
                 LD IXL, #02
-Point67D6:      LD HL, #8100
-Point67D9:      INC L
+BeginGapPass:   LD HL, #8100
+CheckGap:       INC L
                 LD A, (HL)
                 CP #FF
-                JR NZ, @Intro.BuildTextureLookup.Point67E7                      ; переход, если второй байт записи уже отличается от #FF
+                JR NZ, @Intro.BuildTextureLookup.NextPair                       ; переход, если второй байт записи уже отличается от #FF
 
 
                 ; восстановление пропуска парой байтов из следующей страницы таблицы
@@ -108,13 +109,13 @@ Point67D9:      INC L
                 LD (HL), E
                 INC L
                 LD (HL), D
-Point67E7:      INC HL
+NextPair:       INC HL
                 BIT 7, H
-                JR NZ, @Intro.BuildTextureLookup.Point67D9                      ; переход, если адрес таблицы ещё не переполнил #FFFF
+                JR NZ, @Intro.BuildTextureLookup.CheckGap                       ; переход, если адрес таблицы ещё не переполнил #FFFF
 
 
                 DEC IXL
-                JR NZ, @Intro.BuildTextureLookup.Point67D6                      ; переход, если остался второй проход заполнения пропусков
+                JR NZ, @Intro.BuildTextureLookup.BeginGapPass                   ; переход, если остался второй проход заполнения пропусков
 
 
                 RET
