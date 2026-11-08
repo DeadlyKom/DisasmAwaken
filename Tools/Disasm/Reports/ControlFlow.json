@@ -150744,6 +150744,7 @@
       26322,
       26407,
       26496,
+      27006,
       27014,
       27036,
       27070,
@@ -160253,6 +160254,27 @@
         "hex": "c9",
         "slot": 17,
         "offset": 3001
+      },
+      {
+        "address": 27006,
+        "operation": "LD A,#11",
+        "hex": "3e11",
+        "slot": 17,
+        "offset": 3003
+      },
+      {
+        "address": 27008,
+        "operation": "CALL #AB1B",
+        "hex": "cd1bab",
+        "slot": 17,
+        "offset": 3005
+      },
+      {
+        "address": 27011,
+        "operation": "JP #DE0A",
+        "hex": "c30ade",
+        "slot": 17,
+        "offset": 3008
       },
       {
         "address": 27014,
@@ -231912,10 +231934,10 @@
       }
     ],
     "overlaps": [],
-    "instruction_count": 11323,
-    "code_bytes": 21741,
+    "instruction_count": 11326,
+    "code_bytes": 21749,
     "total_bytes": 40387,
-    "classified_fraction": 0.5383167851041176
+    "classified_fraction": 0.5385148686458514
   },
   {
     "name": "ThreeD",

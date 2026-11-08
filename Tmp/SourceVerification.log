@@ -1,7 +1,7 @@
 {
   "method": "text_and_resource_comparison_without_assembly",
   "passed": true,
-  "instruction_count": 49881,
+  "instruction_count": 49884,
   "active_allocations": 41,
   "covered_bytes": 479744,
   "interface_records": 46,
@@ -163,5 +163,8 @@
   "object_data_pointer_records": 128,
   "action_object_records": 26,
   "glyph_input_records": 4,
-  "parameter_rule_records": 15
+  "parameter_rule_records": 15,
+  "candidate_list_records": 11,
+  "render_basis_word_records": 9,
+  "equipment_code_records": 45
 }

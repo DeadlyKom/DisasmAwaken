@@ -1144,7 +1144,8 @@ def main():
                       'ActionLinkedPhaseStateVerification', 'ActionFullLargeEffectVerification',
                       'ActionArrivalStateVerification', 'ActionPairedAimLinesVerification',
                       'ActionClass20SpawnVerification','ActionRandomClassGateVerification',
-                      'ActionLinkedTargetStateUnrestrictedVerification','ActionLinkedPhaseStateUnrestrictedVerification')
+                      'ActionLinkedTargetStateUnrestrictedVerification','ActionLinkedPhaseStateUnrestrictedVerification',
+                      'ActionBankedParameterBuildVerification','ActionObjectStreamStorageVerification')
     if all((ROOT / 'Tools/Disasm/Reports' / (stem + '.json')).is_file() for stem in motion_reports):
         proofs = {stem: read(stem) for stem in motion_reports}
         assert all(proof['passed'] and not proof['assembly_executed'] for proof in proofs.values())
@@ -1160,6 +1161,11 @@ def main():
                  'ActionInitialStorageVerification','ActionInitialStorageClassification','ActionClass20SpawnClassification',
                  'ActionRandomClassGateClassification',
                  'ActionEmbeddedNotesInspection',
+                 'ActionBankedParameterBuildClassification','ActionCandidateListDataClassification',
+                 'ActionObjectStreamStorageClassification','ActionLinkOverrideFieldNaming','AuxiliaryBankPayloadInspection',
+                 'ActionRenderBasisDataClassification','ActionEquipmentNotesMapping','ActionEquipmentDataClassification',
+                 'StationPanelTextLayout','StationInterfaceTextLayout','StationPhysicalTextSelectorsVerification',
+                 'UnclassifiedRangeReferences',
                  'ActionLinkFlagsRolesVerification','ActionLinkedRLimitVerification','ActionPairedLineStepVerification',
                  'ActionFullLargeEffectContractVerification','ActionPackedLineEntryVerification'):
         if (ROOT/('Tools/Disasm/Reports/'+stem+'.json')).is_file():

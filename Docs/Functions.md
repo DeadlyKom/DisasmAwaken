@@ -21,7 +21,7 @@
 | Help | 4 | 4 | [Факты](FunctionDetails/Help.md) |
 | Music | 49 | 49 | [Факты](FunctionDetails/Music.md) |
 | ActionBoot | 9 | 9 | [Факты](FunctionDetails/ActionBoot.md) |
-| Action | 350 | 349 | [Факты](FunctionDetails/Action.md) |
+| Action | 351 | 350 | [Факты](FunctionDetails/Action.md) |
 | ThreeD | 122 | 121 | [Факты](FunctionDetails/ThreeD.md) |
 | Voxel | 12 | 12 | [Факты](FunctionDetails/Voxel.md) |
 | Controls | 78 | 78 | [Факты](FunctionDetails/Controls.md) |
@@ -700,6 +700,7 @@
 | #66D2 | [Action.SubtractScaledWorkVector](../Source/Action/SubtractScaledWorkVector.asm) | Вычитание трёх знаковых масштабированных слов из рабочего 24-битного вектора до первого переполнения |
 | #6727 | [Action.TransitionBodyMode](../Source/Action/TransitionBodyMode.asm) | Переключение режима тела и изменение старших слов рабочего вектора |
 | #6780 | [Action.UpdateBodyMotion](../Source/Action/UpdateBodyMotion.asm) | Фазовое обновление рабочего вектора, запросов панели и широких целей |
+| #697E | [Action.BuildBankedParameterSet](../Source/Action/BuildBankedParameterSet.asm) | Выбор банка Controls и хвостовая подготовка с активацией набора параметров |
 | #6986 | [Action.CompareContextWordPairs](../Source/Action/CompareContextWordPairs.asm) | Сравнение двух пар слов контекста с ранним выходом по первой разности |
 | #699C | [Action.MaxFoldedVectorHigh](../Source/Action/MaxFoldedVectorHigh.asm) | Максимум трёх старших байтов с дополнением отрицательных кодов через CPL |
 | #69BE | [Action.FindFirstNearWideVector](../Source/Action/FindFirstNearWideVector.asm) | Поиск первого близкого широкого вектора и выбор его наибольшего старшего байта |

@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "typed_bytes": 45,
+  "physical_records": 45,
+  "matched_author_layout_bytes": 49,
+  "existing_four_fuel_missile_bytes_not_duplicated": true,
+  "new_physical_symbols": 90,
+  "named_operand_sites": 6,
+  "original_bytes_and_instructions_preserved": true,
+  "all_item_game_consumers_proved": false,
+  "skimmer_gameplay_proved": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

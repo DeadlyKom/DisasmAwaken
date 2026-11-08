@@ -8760,6 +8760,17 @@
   },
   {
     "region": "Action",
+    "name": "BuildBankedParameterSet",
+    "address": 27006,
+    "slot": 17,
+    "offset": 3003,
+    "end_offset": 3011,
+    "path": "Source/Action/BuildBankedParameterSet.asm",
+    "description": "Выбор банка Controls и хвостовая подготовка с активацией набора параметров",
+    "semantic_status": "described"
+  },
+  {
+    "region": "Action",
     "name": "CompareContextWordPairs",
     "address": 27014,
     "slot": 17,

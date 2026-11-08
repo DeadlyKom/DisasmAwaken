@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "classified_initial_storage_bytes": 238,
+  "original_bytes_preserved": true,
+  "copied_model_bytes_not_serialized": true,
+  "unknown_neighbor_bytes_preserved": 46,
+  "arbitrary_stream_capacity_proved": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

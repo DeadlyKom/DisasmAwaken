@@ -338,6 +338,14 @@
 
 [Алгоритм, контракты и проверка](../ActionWideMotionPrefix.md).
 
+## BuildBankedParameterSet
+
+[Action.BuildBankedParameterSet](../../Source/Action/BuildBankedParameterSet.asm)
+
+Выбор банка Controls и хвостовая подготовка с активацией набора параметров.
+
+[Алгоритм, точные регистры и модель](../ActionBankedParameterBuild.md).
+
 ## CompareContextWordPairs
 
 [Action.CompareContextWordPairs](../../Source/Action/CompareContextWordPairs.asm)

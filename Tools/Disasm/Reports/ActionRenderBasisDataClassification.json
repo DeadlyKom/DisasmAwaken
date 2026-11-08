@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "typed_bytes": 18,
+  "physical_word_records": 9,
+  "new_physical_symbols": 27,
+  "named_operand_sites": 63,
+  "original_bytes_and_instructions_preserved": true,
+  "orthonormality_or_pure_rotation_proved": false,
+  "input_IY_dependency_preserved": true,
+  "assembly_executed": false,
+  "native_execution": false
+}

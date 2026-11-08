@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "total_cases": 512,
+  "profiles": {
+    "None": 128,
+    "0": 128,
+    "255": 128,
+    "165": 128
+  },
+  "all_128_original_even_pointer_entries": true,
+  "actual_original_copy_and_bank_switching_executed": true,
+  "buffer_start": 40732,
+  "maximum_original_copy_bytes": 238,
+  "maximum_original_end_exclusive": 40970,
+  "read_of_initial_byte_before_first_write": false,
+  "generated_or_copied_values_not_serialized": true,
+  "original_buffer_bytes_preserved": true,
+  "storage_capacity_for_arbitrary_streams_proved": false,
+  "first_reads_in_arbitrary_other_phases_proved": false,
+  "subsequent_render_consumers_executed_in_this_test": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

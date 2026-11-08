@@ -1,0 +1,419 @@
+{
+  "passed": true,
+  "method": "numeric_literals_from_embedded_original_notes_match_entire_initial_byte_sequence",
+  "matched_bytes": 49,
+  "ship_bytes": 34,
+  "skimmer_bytes": 15,
+  "start_address": 39952,
+  "end_exclusive": 40001,
+  "notes_file_offset": 20847,
+  "notes_sha256": "73ac101f38f741bfcd5e94af5fd8c0a900c7adcd555254381fdc08e5b590dedd",
+  "initial_codes_sha256": "2dfcdac9bc35f61ce3ee143033898e837004dce0500000885272b56eb911408c",
+  "rows": [
+    {
+      "author_group": "FUEL",
+      "group_index": 0,
+      "value": 0,
+      "author_comment": "Топл 'Космонефть'",
+      "address": 39952,
+      "file_offset": 15376
+    },
+    {
+      "author_group": "FUEL",
+      "group_index": 1,
+      "value": 20,
+      "author_comment": "Топл 'Рубин'",
+      "address": 39953,
+      "file_offset": 15377
+    },
+    {
+      "author_group": "ROKS",
+      "group_index": 0,
+      "value": 100,
+      "author_comment": "Ракет РЛН-1",
+      "address": 39954,
+      "file_offset": 15378
+    },
+    {
+      "author_group": "ROKS",
+      "group_index": 1,
+      "value": 0,
+      "author_comment": "Ракет РЛН-2",
+      "address": 39955,
+      "file_offset": 15379
+    },
+    {
+      "author_group": "MINA",
+      "group_index": 0,
+      "value": 10,
+      "author_comment": "Мина МХ-1",
+      "address": 39956,
+      "file_offset": 15380
+    },
+    {
+      "author_group": "LAZER",
+      "group_index": 0,
+      "value": 255,
+      "author_comment": "Лаз 'Град'",
+      "address": 39957,
+      "file_offset": 15381
+    },
+    {
+      "author_group": "LAZER",
+      "group_index": 1,
+      "value": 255,
+      "author_comment": "Лаз 'Шторм-1'",
+      "address": 39958,
+      "file_offset": 15382
+    },
+    {
+      "author_group": "LAZER",
+      "group_index": 2,
+      "value": 255,
+      "author_comment": "Лаз 'Шторм-2'",
+      "address": 39959,
+      "file_offset": 15383
+    },
+    {
+      "author_group": "LAZER",
+      "group_index": 3,
+      "value": 255,
+      "author_comment": "Лаз 'Смерть-1'",
+      "address": 39960,
+      "file_offset": 15384
+    },
+    {
+      "author_group": "LAZER",
+      "group_index": 4,
+      "value": 254,
+      "author_comment": "Лаз 'Смерть-2'",
+      "address": 39961,
+      "file_offset": 15385
+    },
+    {
+      "author_group": "PROTR1",
+      "group_index": 0,
+      "value": 255,
+      "author_comment": "Протракет.Сис ПС-1",
+      "address": 39962,
+      "file_offset": 15386
+    },
+    {
+      "author_group": "PROTR2",
+      "group_index": 0,
+      "value": 254,
+      "author_comment": "Протракет.Сис ПС-2",
+      "address": 39963,
+      "file_offset": 15387
+    },
+    {
+      "author_group": "DEF",
+      "group_index": 0,
+      "value": 255,
+      "author_comment": "С.Защ 'Крепость'",
+      "address": 39964,
+      "file_offset": 15388
+    },
+    {
+      "author_group": "DEF",
+      "group_index": 1,
+      "value": 255,
+      "author_comment": "С.Защ 'Оборона-1'",
+      "address": 39965,
+      "file_offset": 15389
+    },
+    {
+      "author_group": "DEF",
+      "group_index": 2,
+      "value": 254,
+      "author_comment": "С.Защ 'Оборона-2'",
+      "address": 39966,
+      "file_offset": 15390
+    },
+    {
+      "author_group": "FORSG",
+      "group_index": 0,
+      "value": 255,
+      "author_comment": "Форсаж Движок 'Фотон'",
+      "address": 39967,
+      "file_offset": 15391
+    },
+    {
+      "author_group": "FORSG",
+      "group_index": 1,
+      "value": 254,
+      "author_comment": "Форсаж Движок 'Протон'",
+      "address": 39968,
+      "file_offset": 15392
+    },
+    {
+      "author_group": "REMDR1",
+      "group_index": 0,
+      "value": 255,
+      "author_comment": "Ремонт Дроид РД-1",
+      "address": 39969,
+      "file_offset": 15393
+    },
+    {
+      "author_group": "REMDR2",
+      "group_index": 0,
+      "value": 255,
+      "author_comment": "Ремонт Дроид РД-2",
+      "address": 39970,
+      "file_offset": 15394
+    },
+    {
+      "author_group": "REMDR3",
+      "group_index": 0,
+      "value": 254,
+      "author_comment": "Ремонт Дроид РД-3",
+      "address": 39971,
+      "file_offset": 15395
+    },
+    {
+      "author_group": "SSILUC",
+      "group_index": 0,
+      "value": 254,
+      "author_comment": "Сист 'Силовой луч'",
+      "address": 39972,
+      "file_offset": 15396
+    },
+    {
+      "author_group": "SNAWEDEN",
+      "group_index": 0,
+      "value": 254,
+      "author_comment": "Сист НАВЕДЕНИЯ",
+      "address": 39973,
+      "file_offset": 15397
+    },
+    {
+      "author_group": "SGIPSL",
+      "group_index": 0,
+      "value": 255,
+      "author_comment": "Сист 'Гиперслед'",
+      "address": 39974,
+      "file_offset": 15398
+    },
+    {
+      "author_group": "SWOZWR",
+      "group_index": 0,
+      "value": 255,
+      "author_comment": "Сист Возврата",
+      "address": 39975,
+      "file_offset": 15399
+    },
+    {
+      "author_group": "SSWPOL",
+      "group_index": 0,
+      "value": 254,
+      "author_comment": "Сист.Свободного Полета",
+      "address": 39976,
+      "file_offset": 15400
+    },
+    {
+      "author_group": "SZAPRAW",
+      "group_index": 0,
+      "value": 254,
+      "author_comment": "С заправки",
+      "address": 39977,
+      "file_offset": 15401
+    },
+    {
+      "author_group": "SRASPOZN",
+      "group_index": 0,
+      "value": 254,
+      "author_comment": "С распознавания",
+      "address": 39978,
+      "file_offset": 15402
+    },
+    {
+      "author_group": "IDENTC",
+      "group_index": 0,
+      "value": 254,
+      "author_comment": "Идентификатор Целей",
+      "address": 39979,
+      "file_offset": 15403
+    },
+    {
+      "author_group": "MARSHRUT",
+      "group_index": 0,
+      "value": 254,
+      "author_comment": "МАРШРУТИЗАТОР",
+      "address": 39980,
+      "file_offset": 15404
+    },
+    {
+      "author_group": "KRIOGEN",
+      "group_index": 0,
+      "value": 255,
+      "author_comment": "Криогенная Установка",
+      "address": 39981,
+      "file_offset": 15405
+    },
+    {
+      "author_group": "POSADMOD",
+      "group_index": 0,
+      "value": 254,
+      "author_comment": "Посадочный Модуль",
+      "address": 39982,
+      "file_offset": 15406
+    },
+    {
+      "author_group": "KIBERKIL",
+      "group_index": 0,
+      "value": 254,
+      "author_comment": "Кибер Киллер ККР-0562",
+      "address": 39983,
+      "file_offset": 15407
+    },
+    {
+      "author_group": "GDIABLO",
+      "group_index": 0,
+      "value": 254,
+      "author_comment": "Гипер Сист 'Дьявол'",
+      "address": 39984,
+      "file_offset": 15408
+    },
+    {
+      "author_group": "GDIABLO",
+      "group_index": 1,
+      "value": 128,
+      "author_comment": "",
+      "address": 39985,
+      "file_offset": 15409
+    },
+    {
+      "author_group": "WSKMI",
+      "group_index": 0,
+      "value": 200,
+      "author_comment": "Топл 'Бензол'",
+      "address": 39986,
+      "file_offset": 15410
+    },
+    {
+      "author_group": "WSKMI",
+      "group_index": 1,
+      "value": 0,
+      "author_comment": "Ракет СРК-1",
+      "address": 39987,
+      "file_offset": 15411
+    },
+    {
+      "author_group": "WSKMI",
+      "group_index": 2,
+      "value": 10,
+      "author_comment": "Ракет СРК-2",
+      "address": 39988,
+      "file_offset": 15412
+    },
+    {
+      "author_group": "WSKMI",
+      "group_index": 3,
+      "value": 255,
+      "author_comment": "Лаз 'Силовой'",
+      "address": 39989,
+      "file_offset": 15413
+    },
+    {
+      "author_group": "WSKMI",
+      "group_index": 4,
+      "value": 255,
+      "author_comment": "Лаз 'Ураган-1'",
+      "address": 39990,
+      "file_offset": 15414
+    },
+    {
+      "author_group": "WSKMI",
+      "group_index": 5,
+      "value": 254,
+      "author_comment": "Лаз 'Ураган-2'",
+      "address": 39991,
+      "file_offset": 15415
+    },
+    {
+      "author_group": "WSKMI",
+      "group_index": 6,
+      "value": 255,
+      "author_comment": "С Защ 'Броня-1'",
+      "address": 39992,
+      "file_offset": 15416
+    },
+    {
+      "author_group": "WSKMI",
+      "group_index": 7,
+      "value": 254,
+      "author_comment": "С Защ 'Броня-2'",
+      "address": 39993,
+      "file_offset": 15417
+    },
+    {
+      "author_group": "WSKMI",
+      "group_index": 8,
+      "value": 255,
+      "author_comment": "Прыжк. Движок 'Даль-1'",
+      "address": 39994,
+      "file_offset": 15418
+    },
+    {
+      "author_group": "WSKMI",
+      "group_index": 9,
+      "value": 254,
+      "author_comment": "Прыжк. Движок 'Даль-2'",
+      "address": 39995,
+      "file_offset": 15419
+    },
+    {
+      "author_group": "WSKMI",
+      "group_index": 10,
+      "value": 254,
+      "author_comment": "Протракет Сист",
+      "address": 39996,
+      "file_offset": 15420
+    },
+    {
+      "author_group": "WSKMI",
+      "group_index": 11,
+      "value": 254,
+      "author_comment": "Стыковочный Узел",
+      "address": 39997,
+      "file_offset": 15421
+    },
+    {
+      "author_group": "WSKMI",
+      "group_index": 12,
+      "value": 254,
+      "author_comment": "Ходовой Модуль",
+      "address": 39998,
+      "file_offset": 15422
+    },
+    {
+      "author_group": "WSKMI",
+      "group_index": 13,
+      "value": 254,
+      "author_comment": "Бомба БР-0910",
+      "address": 39999,
+      "file_offset": 15423
+    },
+    {
+      "author_group": "WSKMI",
+      "group_index": 14,
+      "value": 128,
+      "author_comment": "",
+      "address": 40000,
+      "file_offset": 15424
+    }
+  ],
+  "direct_consumers_already_established": {
+    "9C10..9C11": "SelectPreferredByte, пополнение разрешается кодом по 9C29",
+    "9C12..9C13": "SelectMissileStock и ConsumeMissileStock, вывод остатка ракет",
+    "9C1A..9C1B": "CheckRecordEffectThreshold, допуски 1E и 3C при LinkIndex=1A и бите 3",
+    "9C1C..9C1E": "UpdateFrame, стоимость события 3, 2 или 1 по первому байту не FF",
+    "9C29": "UpdateBodyMotion, FF запрещает путь пополнения счётчика"
+  },
+  "all_game_consumers_of_each_named_item_proved": false,
+  "skimmer_gameplay_proved": false,
+  "original_bytes_modified": false,
+  "source_map_changed": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

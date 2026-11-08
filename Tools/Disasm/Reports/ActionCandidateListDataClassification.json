@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "typed_bytes": 11,
+  "physical_records": 11,
+  "initial_skipped_slots": 10,
+  "end_marker": 254,
+  "original_bytes_preserved": true,
+  "consumer_instructions_preserved": true,
+  "new_physical_symbols": 22,
+  "arbitrary_runtime_list_capacity_proved": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

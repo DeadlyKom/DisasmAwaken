@@ -1,5 +1,6 @@
                 module Station
                 module DrawCenteredItem
+                ; Исходные тексты [границы ресурсов и общие LF](../../Docs/StationInterfaceTextResources.md)
 ; Документация [Station](../../Docs/FunctionDetails/Station.md)
 ; Подробный разбор [рамка и центрирование текста элемента](../../Docs/CenteredItem.md)
 ; -----------------------------------------

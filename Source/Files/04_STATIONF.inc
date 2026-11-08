@@ -1997,15 +1997,79 @@
                 ; четыре части шаблона, первые три заканчиваются кодом вставки 01, адрес CD82
                 incbin "../Resources/04_STATIONF/WelcomeTemplate.bin"
                 assert $ == #6E19
-                ; Unknown, остальные сообщения и данные ещё требуют отдельного разбора
-                incbin "../Resources/04_STATIONF/Unclassified085AfterWelcome.bin"
+                ; Документация [исходные потоки панелей](../../Docs/StationPanelTextResources.md)
+                assert $ == #6E19
+                ; исходный поток CP866, переводы и управляющие коды не исправляются
+                incbin "../Station/Resources/QueuedMessages.bin"
+                assert $ == #71BA
+                ; исходный поток CP866, переводы и управляющие коды не исправляются
+                incbin "../Station/Resources/EquipmentDescriptions.bin"
+                assert $ == #7E53
+                ; исходный поток CP866, переводы и управляющие коды не исправляются
+                incbin "../Station/Resources/SaveSlotLabels.bin"
+                assert $ == #7E8F
+                ; исходный поток CP866, переводы и управляющие коды не исправляются
+                incbin "../Station/Resources/LoadSlotLabels.bin"
+                assert $ == #7ECB
+                ; исходный поток CP866, переводы и управляющие коды не исправляются
+                incbin "../Station/Resources/EnvironmentLabels.bin"
+                assert $ == #7F3C
+                ; исходный поток CP866, переводы и управляющие коды не исправляются
+                incbin "../Station/Resources/GameSettingsLabels.bin"
+                assert $ == #80E4
+                ; Unknown, потребитель списка абонентов не установлен
+                incbin "../Resources/04_STATIONF/Unclassified80E4_8262.bin"
+                assert $ == #8262
+                ; исходный поток CP866, переводы и управляющие коды не исправляются
+                incbin "../Station/Resources/DecodedMessages.bin"
                 assert $ == #832E
                 disp #E32E
                 include "../Station/Data/ContextMenuText.asm"
                 ent
                 assert $ == #839A
-                ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/04_STATIONF/Unclassified085AfterPopupText.bin"
+                ; Документация [подписи и общие LF](../../Docs/StationInterfaceTextResources.md)
+                assert $ == #839A
+                ; исходные подписи CP866, общий LF соседних потоков не дублируется
+                incbin "../Station/Resources/CaptionLabels.bin"
+                assert $ == #84AA
+                ; исходные подписи CP866, общий LF соседних потоков не дублируется
+                incbin "../Station/Resources/CenteredItemTexts.bin"
+                assert $ == #8A3B
+                ; исходные подписи CP866, общий LF соседних потоков не дублируется
+                incbin "../Station/Resources/LegalStatusLabels.bin"
+                assert $ == #8A89
+                ; исходные подписи CP866, общий LF соседних потоков не дублируется
+                incbin "../Station/Resources/StatusFieldLabels.bin"
+                assert $ == #8A9B
+                ; исходные подписи CP866, общий LF соседних потоков не дублируется
+                incbin "../Station/Resources/SystemInfoTemplate.bin"
+                assert $ == #8B82
+                ; исходные подписи CP866, общий LF соседних потоков не дублируется
+                incbin "../Station/Resources/NoPlanetsText.bin"
+                assert $ == #8B8D
+                ; исходные подписи CP866, общий LF соседних потоков не дублируется
+                incbin "../Station/Resources/GovernmentLabels.bin"
+                assert $ == #8BC2
+                ; исходные подписи CP866, общий LF соседних потоков не дублируется
+                incbin "../Station/Resources/EconomyLabels.bin"
+                assert $ == #8BF3
+                ; исходные подписи CP866, общий LF соседних потоков не дублируется
+                incbin "../Station/Resources/TradeHeadings.bin"
+                assert $ == #8C4C
+                ; исходные подписи CP866, общий LF соседних потоков не дублируется
+                incbin "../Station/Resources/TradeGoodsLabels.bin"
+                assert $ == #8E19
+                ; исходные подписи CP866, общий LF соседних потоков не дублируется
+                incbin "../Station/Resources/EquipmentHeadings.bin"
+                assert $ == #8E57
+                ; исходные подписи CP866, общий LF соседних потоков не дублируется
+                incbin "../Station/Resources/EquipmentNames.bin"
+                assert $ == #9066
+                ; Unknown, потребитель соседнего шаблона не установлен
+                incbin "../Resources/04_STATIONF/Unclassified9066_90B2.bin"
+                assert $ == #90B2
+                ; исходные подписи CP866, общий LF соседних потоков не дублируется
+                incbin "../Station/Resources/PoliticalAreaLabels.bin"
                 assert $ == #90FD
                 disp #F0FD
                 include "../Station/Data/InterfaceItems.asm"

@@ -4,7 +4,8 @@ MODULE='ActionObjectRecords'
 PATH='Source/Action/Data/ObjectRecords.asm'
 START,END=0x4100,0x4780
 NAMES=tuple('Record'+format(i,'02X') for i in range(25))+('EndMarker',)
-KNOWN={22:('SavedStateCode','код состояния для восстановления в обработчиках хода и ожидания'),
+KNOWN={21:('LinkOverride','числовой индекс подстановки LinkedIndex, FF запрещает подстановку, ноль разрешён и возвращает Z'),
+       22:('SavedStateCode','код состояния для восстановления в обработчиках хода и ожидания'),
        23:('PhaseMoveTimer','байтовый таймер вызовов обработчиков хода первой фазы'),
        37:('TargetCodeStep','числовой предельный шаг подвода второго и третьего фазовых кодов'),
        6:('ModelOffset','байтовое смещение таблицы указателей 9E00, ReadObjectHeaderWord читает заголовок выбранной модели'),

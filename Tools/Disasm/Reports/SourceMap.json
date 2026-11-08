@@ -4963,11 +4963,81 @@
   {
     "slot": 4,
     "offset": 28185,
-    "length": 5397,
+    "length": 929,
+    "kind": "binary_resource",
+    "path": "Source/Station/Resources/QueuedMessages.bin",
+    "origin": 52761,
+    "format": "CP866_PANEL_TEXT_LF",
+    "sha256": "95c52d5baed3b60cc4bac16f734101364ce3ffeb276dc3b50b1f2ad4863ab215"
+  },
+  {
+    "slot": 4,
+    "offset": 29114,
+    "length": 3225,
+    "kind": "binary_resource",
+    "path": "Source/Station/Resources/EquipmentDescriptions.bin",
+    "origin": 53690,
+    "format": "CP866_PANEL_TEXT_LF",
+    "sha256": "e8a06e3132375592e4feb6a8d53e949c2ce2e8da42064b7161ad68d1ae48caae"
+  },
+  {
+    "slot": 4,
+    "offset": 32339,
+    "length": 60,
+    "kind": "binary_resource",
+    "path": "Source/Station/Resources/SaveSlotLabels.bin",
+    "origin": 56915,
+    "format": "CP866_PANEL_TEXT_CR",
+    "sha256": "fdb09b290a11f49112bb120d557910f2bd3e22147e61b4fd9b8dc786a8fdf4a3"
+  },
+  {
+    "slot": 4,
+    "offset": 32399,
+    "length": 60,
+    "kind": "binary_resource",
+    "path": "Source/Station/Resources/LoadSlotLabels.bin",
+    "origin": 56975,
+    "format": "CP866_PANEL_TEXT_CR",
+    "sha256": "38c03bd1e32cee633f71d5dfe52d627136da5e8061a50e1568971b74620c1642"
+  },
+  {
+    "slot": 4,
+    "offset": 32459,
+    "length": 113,
+    "kind": "binary_resource",
+    "path": "Source/Station/Resources/EnvironmentLabels.bin",
+    "origin": 57035,
+    "format": "CP866_PANEL_TEXT_CR",
+    "sha256": "a1a1a220f0afe8ccc4a5bdb0e680e1562459fbb9f1a80c7ad0b06325f0968ece"
+  },
+  {
+    "slot": 4,
+    "offset": 32572,
+    "length": 424,
+    "kind": "binary_resource",
+    "path": "Source/Station/Resources/GameSettingsLabels.bin",
+    "origin": 57148,
+    "format": "CP866_PANEL_TEXT_CR",
+    "sha256": "8141fd9caa5cf0d3571fe289430d5800b645c85b8ee68a902eaa758fefe73938"
+  },
+  {
+    "slot": 4,
+    "offset": 32996,
+    "length": 382,
     "kind": "unclassified",
-    "path": "Source/Resources/04_STATIONF/Unclassified085AfterWelcome.bin",
+    "path": "Source/Resources/04_STATIONF/Unclassified80E4_8262.bin",
     "origin": null,
-    "sha256": "8f1e251857419a8ac57c3cbbbd5fbf913ff5550aed01234366e688af9a9c32f1"
+    "sha256": "a17db901454ae1994b8da6620f336fe75b01c65123a6e3556be96977c3223243"
+  },
+  {
+    "slot": 4,
+    "offset": 33378,
+    "length": 204,
+    "kind": "binary_resource",
+    "path": "Source/Station/Resources/DecodedMessages.bin",
+    "origin": 57954,
+    "format": "CP866_PANEL_TEXT_LF",
+    "sha256": "20f7aaa6882027116c748676456dbb01caebfa0b157160acf83a633c113240c7"
   },
   {
     "slot": 4,
@@ -4981,11 +5051,141 @@
   {
     "slot": 4,
     "offset": 33690,
-    "length": 3427,
+    "length": 272,
+    "kind": "binary_resource",
+    "path": "Source/Station/Resources/CaptionLabels.bin",
+    "origin": 58266,
+    "format": "CP866_INTERFACE_TEXT",
+    "sha256": "625f638ed07fc06c8c21c52f223742b6bd9c860da6cd0fd2cd80311cf82d5e1c"
+  },
+  {
+    "slot": 4,
+    "offset": 33962,
+    "length": 1425,
+    "kind": "binary_resource",
+    "path": "Source/Station/Resources/CenteredItemTexts.bin",
+    "origin": 58538,
+    "format": "CP866_INTERFACE_TEXT",
+    "sha256": "eff2d07abc4e617e57e7f5f1797162bbc6a0e6bd69dafcc8ee696c5a25b82e79"
+  },
+  {
+    "slot": 4,
+    "offset": 35387,
+    "length": 78,
+    "kind": "binary_resource",
+    "path": "Source/Station/Resources/LegalStatusLabels.bin",
+    "origin": 59963,
+    "format": "CP866_INTERFACE_TEXT",
+    "sha256": "1aa1a86a9ea1fad2705f3cf6817158fd85bb1e138126b813eeddffb6c73d0a5d"
+  },
+  {
+    "slot": 4,
+    "offset": 35465,
+    "length": 18,
+    "kind": "binary_resource",
+    "path": "Source/Station/Resources/StatusFieldLabels.bin",
+    "origin": 60041,
+    "format": "CP866_INTERFACE_TEXT",
+    "sha256": "bd41ae6000a3c28b2d5fd1f1a81db75d7dbc71a22cb2f75c0538ebbf31a90fae"
+  },
+  {
+    "slot": 4,
+    "offset": 35483,
+    "length": 231,
+    "kind": "binary_resource",
+    "path": "Source/Station/Resources/SystemInfoTemplate.bin",
+    "origin": 60059,
+    "format": "CP866_INTERFACE_TEXT",
+    "sha256": "f6f75cf525f766522c3f63ff1f4c574099b585ab9c3b5b0f4c703154146f9cdc"
+  },
+  {
+    "slot": 4,
+    "offset": 35714,
+    "length": 11,
+    "kind": "binary_resource",
+    "path": "Source/Station/Resources/NoPlanetsText.bin",
+    "origin": 60290,
+    "format": "CP866_INTERFACE_TEXT",
+    "sha256": "5643ef7547b5a634a1d6905ad62bfebd7fb2b7e7d85150aef496ac49c2b8801e"
+  },
+  {
+    "slot": 4,
+    "offset": 35725,
+    "length": 53,
+    "kind": "binary_resource",
+    "path": "Source/Station/Resources/GovernmentLabels.bin",
+    "origin": 60301,
+    "format": "CP866_INTERFACE_TEXT",
+    "sha256": "84f5ca7dc054901a32581f0d5227247299c3595e4c4666db9daa103363308a36"
+  },
+  {
+    "slot": 4,
+    "offset": 35778,
+    "length": 49,
+    "kind": "binary_resource",
+    "path": "Source/Station/Resources/EconomyLabels.bin",
+    "origin": 60354,
+    "format": "CP866_INTERFACE_TEXT",
+    "sha256": "029bf067c803c4fcb877a9788096d471288aa731e5f6e07d1963801631cb1304"
+  },
+  {
+    "slot": 4,
+    "offset": 35827,
+    "length": 89,
+    "kind": "binary_resource",
+    "path": "Source/Station/Resources/TradeHeadings.bin",
+    "origin": 60403,
+    "format": "CP866_INTERFACE_TEXT",
+    "sha256": "6a6746a5a4c10edd25d019a73363fcfcaa551c5f9acc4d40cd24e276d9f615a1"
+  },
+  {
+    "slot": 4,
+    "offset": 35916,
+    "length": 461,
+    "kind": "binary_resource",
+    "path": "Source/Station/Resources/TradeGoodsLabels.bin",
+    "origin": 60492,
+    "format": "CP866_INTERFACE_TEXT",
+    "sha256": "261f0bf59a44e0562fab7ebc74f5652d1f03750b21b9c0c078299f962569d23a"
+  },
+  {
+    "slot": 4,
+    "offset": 36377,
+    "length": 62,
+    "kind": "binary_resource",
+    "path": "Source/Station/Resources/EquipmentHeadings.bin",
+    "origin": 60953,
+    "format": "CP866_INTERFACE_TEXT",
+    "sha256": "01d301c9a94db43bdf8261dbf4ba1db63f246e260b321e1aec1b5ff14bf975ec"
+  },
+  {
+    "slot": 4,
+    "offset": 36439,
+    "length": 527,
+    "kind": "binary_resource",
+    "path": "Source/Station/Resources/EquipmentNames.bin",
+    "origin": 61015,
+    "format": "CP866_INTERFACE_TEXT",
+    "sha256": "06d8fd3f1c0b2ca93bc27209f0062d7f50a31dc6ac2b22e0d615446a614c1e0f"
+  },
+  {
+    "slot": 4,
+    "offset": 36966,
+    "length": 76,
     "kind": "unclassified",
-    "path": "Source/Resources/04_STATIONF/Unclassified085AfterPopupText.bin",
+    "path": "Source/Resources/04_STATIONF/Unclassified9066_90B2.bin",
     "origin": null,
-    "sha256": "fb2f2a66c6d35d78d842ef05b4d26a9d616445c0d67cf8db6050457c099d9495"
+    "sha256": "5d3066809f72f33708a00c498256dc210205038973d849e2c29ef5bf74b6a65d"
+  },
+  {
+    "slot": 4,
+    "offset": 37042,
+    "length": 75,
+    "kind": "binary_resource",
+    "path": "Source/Station/Resources/PoliticalAreaLabels.bin",
+    "origin": 61618,
+    "format": "CP866_INTERFACE_TEXT",
+    "sha256": "e0001057d171245ea67cc1ff7c737cd675ee4769b9fcebf9a4941d4c87c5846b"
   },
   {
     "slot": 4,
@@ -11383,11 +11583,20 @@
   {
     "slot": 17,
     "offset": 3002,
-    "length": 9,
+    "length": 1,
     "kind": "unclassified",
-    "path": "Source/Resources/17_ACTION/Unclassified008.bin",
+    "path": "Source/Resources/17_ACTION/Unclassified0BBA_0BBB.bin",
     "origin": null,
-    "sha256": "bb02c160982b52ed997081b6007ff5d7305b47fc74d8325e383282895e3afde9"
+    "sha256": "021fb596db81e6d02bf3d2586ee3981fe519f275c0ac9ca76bbcf2ebb4097d96"
+  },
+  {
+    "slot": 17,
+    "offset": 3003,
+    "length": 8,
+    "kind": "code",
+    "path": "Source/Action/BuildBankedParameterSet.asm",
+    "origin": 27006,
+    "sha256": "8aecf494cdafdbea00f267a2a15d03c3666226dc2e6b0f84cef58ed065c51c16"
   },
   {
     "slot": 17,
@@ -12058,9 +12267,9 @@
     "slot": 17,
     "offset": 15104,
     "length": 18,
-    "kind": "unclassified",
-    "path": "Source/Resources/17_ACTION/Unclassified020_AfterRatioCodes.bin",
-    "origin": null,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/RenderBasis.asm",
+    "origin": 39680,
     "sha256": "c389b26a9c0678d0c481ca9dfe76665b3d06bcd486ef50dded3ea1cd99ad77ec"
   },
   {
@@ -12174,11 +12383,29 @@
   {
     "slot": 17,
     "offset": 15380,
-    "length": 312,
+    "length": 30,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/ShipEquipment.asm",
+    "origin": 39956,
+    "sha256": "2d8d449e8fee324b9a42bf32b0acf22ea2d0033d6212ef7ccba7eab065a02b59"
+  },
+  {
+    "slot": 17,
+    "offset": 15410,
+    "length": 15,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/SkimmerEquipment.asm",
+    "origin": 39986,
+    "sha256": "deeb2cade03211a2ed878c9b4a4e6c89c89d92cd962aa216893875a16bed9d52"
+  },
+  {
+    "slot": 17,
+    "offset": 15425,
+    "length": 267,
     "kind": "unclassified",
-    "path": "Source/Resources/17_ACTION/Unclassified020_AfterMissileStock.bin",
+    "path": "Source/Resources/17_ACTION/Unclassified3C41_3D4C.bin",
     "origin": null,
-    "sha256": "9a186c5a92d0fd65ec23f812070105ada4a268459d11d7171361b9276a785a8b"
+    "sha256": "852f26e0274eacca8d74b78c8f8eec6f71d6f640e611d7711349bc02481b11c8"
   },
   {
     "slot": 17,
@@ -12210,11 +12437,48 @@
   {
     "slot": 17,
     "offset": 16128,
-    "length": 512,
+    "length": 28,
     "kind": "unclassified",
-    "path": "Source/Resources/17_ACTION/Unclassified020_AfterObjectPointers.bin",
+    "path": "Source/Resources/17_ACTION/Unclassified3F00_3F1C.bin",
     "origin": null,
-    "sha256": "7d171083aa9e173fdce63acf9fb81135559c3e315344a03e2e095f7b8bf51ae1"
+    "sha256": "788616530bbe9bcb975c1ce5a6a05d572a7bfd5ca936d38ec4e80d228d34d433"
+  },
+  {
+    "slot": 17,
+    "offset": 16156,
+    "length": 238,
+    "kind": "binary_resource",
+    "path": "Source/Action/Resources/InitialObjectStreamBuffer.bin",
+    "origin": 40732,
+    "sha256": "4be9668951428368983f9e78c4f352be61634b5aae887a12d0907b31c6d6babf",
+    "format": "INITIAL_OBJECT_STREAM_STORAGE"
+  },
+  {
+    "slot": 17,
+    "offset": 16394,
+    "length": 18,
+    "kind": "unclassified",
+    "path": "Source/Resources/17_ACTION/Unclassified400A_401C.bin",
+    "origin": null,
+    "sha256": "60daa3a5f7dbfa200f8c82840ecf5b42640b70f3b7218a4c6bbd67db542e75a4"
+  },
+  {
+    "slot": 17,
+    "offset": 16412,
+    "length": 11,
+    "kind": "typed_data",
+    "path": "Source/Action/Data/CandidateList.asm",
+    "origin": 40988,
+    "sha256": "65a12a9332e21b92da3f563d2c334551a05f893e03fe2252ab48020bc96814d3"
+  },
+  {
+    "slot": 17,
+    "offset": 16423,
+    "length": 217,
+    "kind": "unclassified",
+    "path": "Source/Resources/17_ACTION/Unclassified4027_4100.bin",
+    "origin": null,
+    "sha256": "087fe55d46b5fac5e233bc72e9f0392365dac5ff09cee4278caca86691771625"
   },
   {
     "slot": 17,

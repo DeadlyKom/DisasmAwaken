@@ -1,13 +1,13 @@
 {
   "status": "in_progress",
   "all_plan_stages_completed": false,
-  "fragments": 1396,
-  "described": 1394,
+  "fragments": 1397,
+  "described": 1395,
   "unknown": 2,
   "unproved_contracts": 1,
   "named_without_contract": 1,
-  "instruction_count": 49881,
-  "unclassified_bytes": 156701,
+  "instruction_count": 49884,
+  "unclassified_bytes": 148015,
   "passed_reports": [
     "Tools/Disasm/Reports/PointerVerification.json",
     "Tools/Disasm/Reports/PointerTablesVerification.json",
@@ -1028,7 +1028,21 @@
     "Tools/Disasm/Reports/ActionPairedLineStepVerification.json",
     "Tools/Disasm/Reports/ActionFullLargeEffectContractVerification.json",
     "Tools/Disasm/Reports/ActionPackedLineEntryVerification.json",
-    "Tools/Disasm/Reports/ActionEmbeddedNotesInspection.json"
+    "Tools/Disasm/Reports/ActionEmbeddedNotesInspection.json",
+    "Tools/Disasm/Reports/ActionBankedParameterBuildVerification.json",
+    "Tools/Disasm/Reports/ActionObjectStreamStorageVerification.json",
+    "Tools/Disasm/Reports/ActionBankedParameterBuildClassification.json",
+    "Tools/Disasm/Reports/ActionCandidateListDataClassification.json",
+    "Tools/Disasm/Reports/ActionObjectStreamStorageClassification.json",
+    "Tools/Disasm/Reports/ActionLinkOverrideFieldNaming.json",
+    "Tools/Disasm/Reports/AuxiliaryBankPayloadInspection.json",
+    "Tools/Disasm/Reports/ActionRenderBasisDataClassification.json",
+    "Tools/Disasm/Reports/ActionEquipmentNotesMapping.json",
+    "Tools/Disasm/Reports/ActionEquipmentDataClassification.json",
+    "Tools/Disasm/Reports/UnclassifiedRangeReferences.json",
+    "Tools/Disasm/Reports/StationPanelTextLayout.json",
+    "Tools/Disasm/Reports/StationInterfaceTextLayout.json",
+    "Tools/Disasm/Reports/StationPhysicalTextSelectorsVerification.json"
   ],
   "next_station_work": [
     {
@@ -2574,6 +2588,7 @@
       "0C": "LinkFlags",
       "0F": "TargetIndex",
       "12": "ClassCode",
+      "15": "LinkOverride",
       "16": "SavedStateCode",
       "17": "PhaseMoveTimer",
       "18": "ReuseByte",
@@ -2586,7 +2601,6 @@
       "11",
       "13",
       "14",
-      "15",
       "19",
       "1A",
       "1B",
@@ -32631,7 +32645,9 @@
       "ActionClass20SpawnVerification": 66560,
       "ActionRandomClassGateVerification": 65536,
       "ActionLinkedTargetStateUnrestrictedVerification": 44656,
-      "ActionLinkedPhaseStateUnrestrictedVerification": 44032
+      "ActionLinkedPhaseStateUnrestrictedVerification": 44032,
+      "ActionBankedParameterBuildVerification": 1120,
+      "ActionObjectStreamStorageVerification": 512
     },
     "empty_and_nonempty_frame_profiles_verified": true,
     "assembly_executed": false,

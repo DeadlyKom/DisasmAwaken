@@ -645,6 +645,25 @@ def main():
         write(table[1],text);symbols.update(labels)
         special[17,table[2]]=(table[3],table[1],table[2]+0x6000)
 
+    # Физические коды начального списка кандидатов, соседние байты остаются неизвестными.
+    from ActionCandidateListData import TABLE as CANDIDATE_LIST_TABLE, render as render_candidate_list
+    candidate_text,candidate_labels=render_candidate_list(data_by_slot[17])
+    write(CANDIDATE_LIST_TABLE[1],candidate_text);symbols.update(candidate_labels)
+    special[17,0x401C]=(0x4027,CANDIDATE_LIST_TABLE[1],0xA01C)
+
+    # Физические слова базиса, исходные значения не заменяются расчётной матрицей.
+    from ActionRenderBasisData import TABLE as RENDER_BASIS_TABLE, render as render_basis
+    basis_text,basis_labels=render_basis(data_by_slot[17])
+    write(RENDER_BASIS_TABLE[1],basis_text);symbols.update(basis_labels)
+    special[17,0x3B00]=(0x3B12,RENDER_BASIS_TABLE[1],0x9B00)
+
+    # Раскладка кодов оборудования из того же исходного образа, имена не означают полный игровой разбор.
+    from ActionEquipmentData import TABLES as EQUIPMENT_TABLES, render as render_equipment
+    for table in EQUIPMENT_TABLES:
+        equipment_text,equipment_labels=render_equipment(data_by_slot[17],table)
+        write(table[1],equipment_text);symbols.update(equipment_labels)
+        special[17,table[2]]=(table[3],table[1],table[2]+0x6000)
+
     token_text, token_records = render_token_tables(language, names)
     write(TOKEN_TABLE_PATH, token_text)
     special[5, 0x935] = (0xA67, TOKEN_TABLE_PATH, 0xC935)
@@ -896,6 +915,21 @@ def main():
     from ActionInitialStorageResources import RESOURCES as ACTION_INITIAL_STORAGE
     for start,end,path,kind,_ in ACTION_INITIAL_STORAGE:
         binary_resources[17,start]=(end,path,kind)
+
+    # Исходные байты подтверждённого назначения копирования, модели OBJECT3D в TRD не подставляются.
+    from ActionObjectStreamStorageResources import RESOURCES as OBJECT_STREAM_STORAGE
+    for start,end,path,kind,_ in OBJECT_STREAM_STORAGE:
+        binary_resources[17,start]=(end,path,kind)
+
+    # Тексты панелей банка станции, исходные управляющие коды и написание сохраняются.
+    from StationPanelTextResources import RESOURCES as PANEL_TEXTS, path as panel_text_path
+    for start,end,name,count,separator,consumer in PANEL_TEXTS:
+        binary_resources[4,start]=(end,panel_text_path(name),'CP866_PANEL_TEXT_'+separator)
+
+    # Подписи интерфейса станции, включая строки с общим LF следующего потока.
+    from StationInterfaceTextResources import RESOURCES as INTERFACE_TEXTS, path as interface_text_path
+    for start,end,name,consumer,lf,cr in INTERFACE_TEXTS:
+        binary_resources[4,start]=(end,interface_text_path(name),'CP866_INTERFACE_TEXT')
 
     # Сохранение каждого исходного байта ровно один раз, без подстановки целых программ из оригинала.
     source_map = []
@@ -2002,6 +2036,9 @@ REGION_COMMENTS.setdefault('Action',{}).update(ACTION_CLASS20_SPAWN_COMMENTS)
 
 from ActionRandomClassGateFacts import COMMENTS as ACTION_RANDOM_CLASS_GATE_COMMENTS
 REGION_COMMENTS.setdefault('Action',{}).update(ACTION_RANDOM_CLASS_GATE_COMMENTS)
+
+from ActionBankedParameterBuildFacts import COMMENTS as ACTION_BANKED_PARAMETER_BUILD_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_BANKED_PARAMETER_BUILD_COMMENTS)
 
 
 if __name__ == "__main__":

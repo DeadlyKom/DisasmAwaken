@@ -1,5 +1,6 @@
                 module Station
                 module DrawItem00
+                ; Исходные тексты [границы ресурсов и общие LF](../../Docs/StationInterfaceTextResources.md)
 ; Документация [Station](../../Docs/FunctionDetails/Station.md)
 ; Подробный разбор [порядок текстовых записей, статусное поле 7..5 и числовые вызовы](../../Docs/StatusDraw.md)
 ; -----------------------------------------

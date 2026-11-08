@@ -57,59 +57,59 @@ ResetFrame:     XOR A
                 LD (@ActionProjectedBoundsState.CompanionMask), A
                 LD (@ActionAyEffectsState.ChannelCLevel), A
                 LD HL, (#9B95)
-                LD (#9B12), HL
+                LD (@ActionRenderPhases.Value.Phase0), HL
                 LD A, (#9B97)
-                LD (#9B14), A
+                LD (@ActionRenderPhases.Value.Phase2), A
                 CALL @Action.RotateBankedBasis.Entry
-                LD A, (#9B01)
+                LD A, (@ActionRenderBasis.C00.High)
                 CP #80
                 JR NZ, @Action.RenderSceneFrame.StoreC00                        ; переход, если коэффициент отличается от #80, сохранить его
 
                 INC A
 StoreC00:       LD (@ActionPatchedVectorCoeffs.C00), A
-                LD A, (#9B03)
+                LD A, (@ActionRenderBasis.C10.High)
                 CP #80
                 JR NZ, @Action.RenderSceneFrame.StoreC10                        ; переход, если коэффициент отличается от #80, сохранить его
 
                 INC A
 StoreC10:       LD (@ActionPatchedVectorCoeffs.C10), A
-                LD A, (#9B05)
+                LD A, (@ActionRenderBasis.C20.High)
                 CP #80
                 JR NZ, @Action.RenderSceneFrame.StoreC20                        ; переход, если коэффициент отличается от #80, сохранить его
 
                 INC A
 StoreC20:       LD (@ActionPatchedVectorCoeffs.C20), A
-                LD A, (#9B07)
+                LD A, (@ActionRenderBasis.C01.High)
                 CP #80
                 JR NZ, @Action.RenderSceneFrame.StoreC01                        ; переход, если коэффициент отличается от #80, сохранить его
 
                 INC A
 StoreC01:       LD (@ActionPatchedVectorCoeffs.C01), A
-                LD A, (#9B09)
+                LD A, (@ActionRenderBasis.C11.High)
                 CP #80
                 JR NZ, @Action.RenderSceneFrame.StoreC11                        ; переход, если коэффициент отличается от #80, сохранить его
 
                 INC A
 StoreC11:       LD (@ActionPatchedVectorCoeffs.C11), A
-                LD A, (#9B0B)
+                LD A, (@ActionRenderBasis.C21.High)
                 CP #80
                 JR NZ, @Action.RenderSceneFrame.StoreC21                        ; переход, если коэффициент отличается от #80, сохранить его
 
                 INC A
 StoreC21:       LD (@ActionPatchedVectorCoeffs.C21), A
-                LD A, (#9B0D)
+                LD A, (@ActionRenderBasis.C02.High)
                 CP #80
                 JR NZ, @Action.RenderSceneFrame.StoreC02                        ; переход, если коэффициент отличается от #80, сохранить его
 
                 INC A
 StoreC02:       LD (@ActionPatchedVectorCoeffs.C02), A
-                LD A, (#9B0F)
+                LD A, (@ActionRenderBasis.C12.High)
                 CP #80
                 JR NZ, @Action.RenderSceneFrame.StoreC12                        ; переход, если коэффициент отличается от #80, сохранить его
 
                 INC A
 StoreC12:       LD (@ActionPatchedVectorCoeffs.C12), A
-                LD A, (#9B11)
+                LD A, (@ActionRenderBasis.C22.High)
                 CP #80
                 JR NZ, @Action.RenderSceneFrame.StoreC22                        ; переход, если коэффициент отличается от #80, сохранить его
 
@@ -184,12 +184,12 @@ CheckDepth:     CP #70
                 LD A, L
                 LD (@ActionObjectVerticesState.ModelByteOffset), A
                 LD A, H
-                LD (#9B12), A
+                LD (@ActionRenderPhases.Value.Phase0), A
                 POP HL
-                LD (#9B13), HL
-                LD A, (#9B14)
+                LD (@ActionRenderPhases.Value.Phase1), HL
+                LD A, (@ActionRenderPhases.Value.Phase2)
                 LD B, A
-                LD A, (#9B12)
+                LD A, (@ActionRenderPhases.Value.Phase0)
                 OR B
                 LD A, #01
                 JR Z, @Action.RenderSceneFrame.StorePhaseFlag                   ; переход, если первый и третий углы равны нулю

@@ -71,6 +71,16 @@ def main():
             text+='\n[Случайный допуск класса]('+prefix+'ActionRandomClassGate.md) проверен в 65536 сценариях с настоящими обработчиками. '
             text+='Точный R дополнительно закрыт для подвода выбранной записи и State0C/0D/0E в пределах описанных профилей. '
             text+='[Встроенные заметки о данных]('+prefix+'ActionEmbeddedNotes.md) расшифрованы отдельно, их имена не перенесены автоматически на поля текущей версии.\n'
+        if '[Банковая подготовка параметров](' not in text:
+            text+='\n[Банковая подготовка параметров]('+prefix+'ActionBankedParameterBuild.md) прошла 1120 сценариев с реальным полным дочерним путём. '
+            text+='Поле LinkOverride названо по установленной подстановке связи, его FF и разрешённый ноль проверены на 72192 сценариях. '
+            text+='[Начальный список кандидатов]('+prefix+'ActionCandidateList.md) оформлен физическими записями, '
+            text+='[дисковые байты буфера OBJECT3D]('+prefix+'ActionObjectStreamStorage.md) отделены от загружаемых потоков по 512 моделям копирования. '
+            text+='[BANK0–BANK5]('+prefix+'AuxiliaryBankPayloads.md) сохранены неизвестными, их формат и штатные потребители ещё не установлены.\n'
+        if '[Слова базиса](' not in text:
+            text+='\n[Слова базиса]('+prefix+'ActionRenderBasis.md) оформлены девятью физическими FBasisWord, 63 обращения связаны с именами компонентов и фаз. '
+            text+='[Раскладка оборудования]('+prefix+'ActionEquipmentCodes.md) подтверждена всеми 49 байтами встроенного описания, 45 новых байтов оформлены FEquipmentCode. '
+            text+='Игровые потребители всех устройств и полноценный режим скиммера не объявляются доказанными.\n'
         pending[path]=text.encode('utf-8')
     path=ROOT/'Docs/ModifiedCode.md';text=path.read_text('utf-8')
     text,count=re.subn(r'сверяет \d+ записей','сверяет '+str(mutation['records_checked'])+' записей',text);assert count==1

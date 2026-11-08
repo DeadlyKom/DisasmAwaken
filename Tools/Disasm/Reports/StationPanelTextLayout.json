@@ -1,0 +1,923 @@
+{
+  "passed": true,
+  "classified_resource_bytes": 5015,
+  "resources": [
+    {
+      "name": "QueuedMessages",
+      "path": "Source/Station/Resources/QueuedMessages.bin",
+      "start_address": 52761,
+      "end_exclusive": 53690,
+      "bytes": 929,
+      "separator": "LF",
+      "records": [
+        {
+          "index": 0,
+          "address": 52762,
+          "offset_in_resource": 1,
+          "length": 22,
+          "text_escaped": "Недостаточно кредитов!"
+        },
+        {
+          "index": 1,
+          "address": 52785,
+          "offset_in_resource": 24,
+          "length": 22,
+          "text_escaped": "В наличии уже имеется!"
+        },
+        {
+          "index": 2,
+          "address": 52808,
+          "offset_in_resource": 47,
+          "length": 19,
+          "text_escaped": "Превышение тоннажа!"
+        },
+        {
+          "index": 3,
+          "address": 52828,
+          "offset_in_resource": 67,
+          "length": 32,
+          "text_escaped": "Ваш корабль находится в розыске!"
+        },
+        {
+          "index": 4,
+          "address": 52861,
+          "offset_in_resource": 100,
+          "length": 32,
+          "text_escaped": "Отсутствует объект модернизации!"
+        },
+        {
+          "index": 5,
+          "address": 52894,
+          "offset_in_resource": 133,
+          "length": 33,
+          "text_escaped": "Превышено разрешённое количество!"
+        },
+        {
+          "index": 6,
+          "address": 52928,
+          "offset_in_resource": 167,
+          "length": 36,
+          "text_escaped": "Оснащение не может быть установлено!"
+        },
+        {
+          "index": 7,
+          "address": 52965,
+          "offset_in_resource": 204,
+          "length": 45,
+          "text_escaped": "В системе такой вид оснащения не реализуется!"
+        },
+        {
+          "index": 8,
+          "address": 53011,
+          "offset_in_resource": 250,
+          "length": 14,
+          "text_escaped": "Нет в наличии!"
+        },
+        {
+          "index": 9,
+          "address": 53026,
+          "offset_in_resource": 265,
+          "length": 57,
+          "text_escaped": "Сделка незаконна!\\x0DВы облагаетесь штрафом в 1000 кредитов!"
+        },
+        {
+          "index": 10,
+          "address": 53084,
+          "offset_in_resource": 323,
+          "length": 42,
+          "text_escaped": "Превышение максимальной разрешенной суммы!"
+        },
+        {
+          "index": 11,
+          "address": 53127,
+          "offset_in_resource": 366,
+          "length": 22,
+          "text_escaped": "Сделка прошла успешно!"
+        },
+        {
+          "index": 12,
+          "address": 53150,
+          "offset_in_resource": 389,
+          "length": 35,
+          "text_escaped": "Подобный тип оснащения уже имеется!"
+        },
+        {
+          "index": 13,
+          "address": 53186,
+          "offset_in_resource": 425,
+          "length": 55,
+          "text_escaped": "За неоплату стоянки, Вы выдворяетесь в открытый космос!"
+        },
+        {
+          "index": 14,
+          "address": 53242,
+          "offset_in_resource": 481,
+          "length": 160,
+          "text_escaped": "Вы находитесь в розыске!\\x0DВсе тяжёлое вооружение с вашего корабля будет демонтировано в пользу государства.\\x0DПомимо всего, Вы будете оштрафованы на 1000 кредитов."
+        },
+        {
+          "index": 15,
+          "address": 53403,
+          "offset_in_resource": 642,
+          "length": 159,
+          "text_escaped": "Галактическая полиция предупреждает Вас о том, что Вы уже числитесь как неблагоприятный гражданин.\\x0DВ целях предупреждения Вы будете оштрафованы на 50 кредитов."
+        },
+        {
+          "index": 16,
+          "address": 53563,
+          "offset_in_resource": 802,
+          "length": 126,
+          "text_escaped": "За неисполнение контракта вы оштафовуетесть на 1000 кредитов. \\x0DОштрафование произедено по типу 5-ти кратная оплата за стоянку!"
+        }
+      ],
+      "consumer": "Source/Station/DrawQueuedMessagePanel.asm"
+    },
+    {
+      "name": "EquipmentDescriptions",
+      "path": "Source/Station/Resources/EquipmentDescriptions.bin",
+      "start_address": 53690,
+      "end_exclusive": 56915,
+      "bytes": 3225,
+      "separator": "LF",
+      "records": [
+        {
+          "index": 0,
+          "address": 53691,
+          "offset_in_resource": 1,
+          "length": 177,
+          "text_escaped": "Было создано в 24 году новейшей эры. Основано на аннигиляционной системе атомов Водорода, с магнитно-резонансным направленным полем.Две тонны эквивалентны одному световому году."
+        },
+        {
+          "index": 1,
+          "address": 53869,
+          "offset_in_resource": 179,
+          "length": 195,
+          "text_escaped": "Было создано в 103 году новейшей эры. Основано топливо на совершенной аннигиляционной системе атомов Кремния, с лазерно-нейтринным управляющим полем.Одна тонна эквивалентна одному световому году."
+        },
+        {
+          "index": 2,
+          "address": 54065,
+          "offset_in_resource": 375,
+          "length": 120,
+          "text_escaped": "Была создана в 11 году новейшей эры. Практически не имеет никакой защиты от лазера. Цель уничтожает с первого попадания."
+        },
+        {
+          "index": 3,
+          "address": 54186,
+          "offset_in_resource": 496,
+          "length": 120,
+          "text_escaped": "Была создана в 76 году новейшей эры. Имеет стабильную резистивную защиту от лазера. Цель уничтожает с первого попадания."
+        },
+        {
+          "index": 4,
+          "address": 54307,
+          "offset_in_resource": 617,
+          "length": 98,
+          "text_escaped": "Была создана в 25 году новейшей эры. Детонирует в трюме подобравшего её объекта. Уничтожает сразу."
+        },
+        {
+          "index": 5,
+          "address": 54406,
+          "offset_in_resource": 716,
+          "length": 121,
+          "text_escaped": "Был создан в 8 году новейшей эры. Используется технология накачки мощности путём миниатюрной управляемой ядерной реакции."
+        },
+        {
+          "index": 6,
+          "address": 54528,
+          "offset_in_resource": 838,
+          "length": 150,
+          "text_escaped": "Был создан в 19 году новейшей эры. Используется технология накачки мощности путём миниатюрной управляемой ядерной реакции в магнитно-резонансном поле."
+        },
+        {
+          "index": 7,
+          "address": 54679,
+          "offset_in_resource": 989,
+          "length": 155,
+          "text_escaped": "Был создан в 37 году новейшей эры. Используется технология накачки мощности путём миниатюрной управляемой термоядерной реакции в магнитно-резонансном поле."
+        },
+        {
+          "index": 8,
+          "address": 54835,
+          "offset_in_resource": 1145,
+          "length": 143,
+          "text_escaped": "Был создан в 72 году новейшей эры. Используется технология накачки мощности путём миниатюрной управляемой термоядерной реакции в лазерном поле."
+        },
+        {
+          "index": 9,
+          "address": 54979,
+          "offset_in_resource": 1289,
+          "length": 99,
+          "text_escaped": "Был создан в 117 году новейшей эры. Используется технология накачки мощности аннигиляционным путём."
+        },
+        {
+          "index": 10,
+          "address": 55079,
+          "offset_in_resource": 1389,
+          "length": 85,
+          "text_escaped": "Была создана в 79 году новейшей эры. Поворотная башня с одним лазером малой мощности."
+        },
+        {
+          "index": 11,
+          "address": 55165,
+          "offset_in_resource": 1475,
+          "length": 63,
+          "text_escaped": "Была создана в 95 году новейшей эры. Поворотная башня мощности."
+        },
+        {
+          "index": 12,
+          "address": 55229,
+          "offset_in_resource": 1539,
+          "length": 84,
+          "text_escaped": "Была создана в 28 году новейшей эры. Используется технология сильного ядерного поля."
+        },
+        {
+          "index": 13,
+          "address": 55314,
+          "offset_in_resource": 1624,
+          "length": 81,
+          "text_escaped": "Была создана в 66 году новейшей эры. Используется технология лазерного отражения."
+        },
+        {
+          "index": 14,
+          "address": 55396,
+          "offset_in_resource": 1706,
+          "length": 105,
+          "text_escaped": "Была создана в 83 году новейшей эры. Используется технология нейтринного поля и энергетического усиле\\x15ия."
+        },
+        {
+          "index": 15,
+          "address": 55502,
+          "offset_in_resource": 1812,
+          "length": 102,
+          "text_escaped": "Был создан в 51 году новейшей эры. Используется технология ядерного разгона. Потребляет много топлива."
+        },
+        {
+          "index": 16,
+          "address": 55605,
+          "offset_in_resource": 1915,
+          "length": 84,
+          "text_escaped": "Был создан в 69 году новейшей эры. Используется технология аннигиляционного разгона."
+        },
+        {
+          "index": 17,
+          "address": 55690,
+          "offset_in_resource": 2000,
+          "length": 20,
+          "text_escaped": "Неоновая подсветка. "
+        },
+        {
+          "index": 18,
+          "address": 55711,
+          "offset_in_resource": 2021,
+          "length": 78,
+          "text_escaped": "Неизвестный артефакт,добытый во время длительной войны 40-х годов с космитами."
+        },
+        {
+          "index": 19,
+          "address": 55790,
+          "offset_in_resource": 2100,
+          "length": 30,
+          "text_escaped": "Тюнинг коробля. Sparco,momo..."
+        },
+        {
+          "index": 20,
+          "address": 55821,
+          "offset_in_resource": 2131,
+          "length": 95,
+          "text_escaped": "Был создан в 45 году новейшей эры. Исползуется технология гравитронного однонаправленного луча."
+        },
+        {
+          "index": 21,
+          "address": 55917,
+          "offset_in_resource": 2227,
+          "length": 75,
+          "text_escaped": "Была создана в 3 году новейшей эры. Компьютерные системы и следящие лазеры."
+        },
+        {
+          "index": 22,
+          "address": 55993,
+          "offset_in_resource": 2303,
+          "length": 62,
+          "text_escaped": "Была создана в 2 году новейшей эры. Обеспечивает гиперпереход."
+        },
+        {
+          "index": 23,
+          "address": 56056,
+          "offset_in_resource": 2366,
+          "length": 155,
+          "text_escaped": "Была создана в 56 году новейшей эры. Компьютерная система, позволяющая расчитать точку перелета к системе в момет нахождения за ней. Однократного действия."
+        },
+        {
+          "index": 24,
+          "address": 56212,
+          "offset_in_resource": 2522,
+          "length": 140,
+          "text_escaped": "Была создана в 39 году новейшей эры. Боковые компинсационные двигатели, позволяющие двигаться в одном направлении вращая корабль как угодно."
+        },
+        {
+          "index": 25,
+          "address": 56353,
+          "offset_in_resource": 2663,
+          "length": 125,
+          "text_escaped": "Была создана в 9932 году прошлой эры. Использует технологию накопления топлива путём захвата античастиц с поверхности звезды."
+        },
+        {
+          "index": 26,
+          "address": 56479,
+          "offset_in_resource": 2789,
+          "length": 48,
+          "text_escaped": "Присадка к топливу,которая укоряет гиперпереход."
+        },
+        {
+          "index": 27,
+          "address": 56528,
+          "offset_in_resource": 2838,
+          "length": 112,
+          "text_escaped": "Был создан в 10 году новейшей эры. Компьютерные системы использующие всемирную систему идентификаторов объектов."
+        },
+        {
+          "index": 28,
+          "address": 56641,
+          "offset_in_resource": 2951,
+          "length": 37,
+          "text_escaped": "Система,ускоряющая двигатели коробля."
+        },
+        {
+          "index": 29,
+          "address": 56679,
+          "offset_in_resource": 2989,
+          "length": 95,
+          "text_escaped": "Был создан в 9872 году прошлой эры. Система холодильников для хранения скоропортящихся товаров."
+        },
+        {
+          "index": 30,
+          "address": 56775,
+          "offset_in_resource": 3085,
+          "length": 1,
+          "text_escaped": " "
+        },
+        {
+          "index": 31,
+          "address": 56777,
+          "offset_in_resource": 3087,
+          "length": 1,
+          "text_escaped": " "
+        },
+        {
+          "index": 32,
+          "address": 56779,
+          "offset_in_resource": 3089,
+          "length": 2,
+          "text_escaped": "  "
+        },
+        {
+          "index": 33,
+          "address": 56782,
+          "offset_in_resource": 3092,
+          "length": 132,
+          "text_escaped": "Было создано в 24 году новейшей эры. Основано на аннигиляционной системе атомов Водорода, с магнитно-резонансным направленным полем."
+        }
+      ],
+      "consumer": "Source/Station/UpdateEquipmentInfo.asm"
+    },
+    {
+      "name": "SaveSlotLabels",
+      "path": "Source/Station/Resources/SaveSlotLabels.bin",
+      "start_address": 56915,
+      "end_exclusive": 56975,
+      "bytes": 60,
+      "separator": "CR",
+      "records": [
+        {
+          "index": 0,
+          "address": 56915,
+          "offset_in_resource": 0,
+          "length": 11,
+          "text_escaped": "В позицию 1"
+        },
+        {
+          "index": 1,
+          "address": 56927,
+          "offset_in_resource": 12,
+          "length": 11,
+          "text_escaped": "В позицию 2"
+        },
+        {
+          "index": 2,
+          "address": 56939,
+          "offset_in_resource": 24,
+          "length": 11,
+          "text_escaped": "В позицию 3"
+        },
+        {
+          "index": 3,
+          "address": 56951,
+          "offset_in_resource": 36,
+          "length": 11,
+          "text_escaped": "В позицию 4"
+        },
+        {
+          "index": 4,
+          "address": 56963,
+          "offset_in_resource": 48,
+          "length": 11,
+          "text_escaped": "В позицию 5"
+        }
+      ],
+      "consumer": "Source/Station/DrawSaveSlotPanel.asm"
+    },
+    {
+      "name": "LoadSlotLabels",
+      "path": "Source/Station/Resources/LoadSlotLabels.bin",
+      "start_address": 56975,
+      "end_exclusive": 57035,
+      "bytes": 60,
+      "separator": "CR",
+      "records": [
+        {
+          "index": 0,
+          "address": 56975,
+          "offset_in_resource": 0,
+          "length": 11,
+          "text_escaped": "С позиции 1"
+        },
+        {
+          "index": 1,
+          "address": 56987,
+          "offset_in_resource": 12,
+          "length": 11,
+          "text_escaped": "С позиции 2"
+        },
+        {
+          "index": 2,
+          "address": 56999,
+          "offset_in_resource": 24,
+          "length": 11,
+          "text_escaped": "С позиции 3"
+        },
+        {
+          "index": 3,
+          "address": 57011,
+          "offset_in_resource": 36,
+          "length": 11,
+          "text_escaped": "С позиции 4"
+        },
+        {
+          "index": 4,
+          "address": 57023,
+          "offset_in_resource": 48,
+          "length": 11,
+          "text_escaped": "С позиции 5"
+        }
+      ],
+      "consumer": "Source/Station/DrawLoadSlotPanel.asm"
+    },
+    {
+      "name": "EnvironmentLabels",
+      "path": "Source/Station/Resources/EnvironmentLabels.bin",
+      "start_address": 57035,
+      "end_exclusive": 57148,
+      "bytes": 113,
+      "separator": "CR",
+      "records": [
+        {
+          "index": 0,
+          "address": 57036,
+          "offset_in_resource": 1,
+          "length": 5,
+          "text_escaped": "Мышка"
+        },
+        {
+          "index": 1,
+          "address": 57042,
+          "offset_in_resource": 7,
+          "length": 8,
+          "text_escaped": "Джойстик"
+        },
+        {
+          "index": 2,
+          "address": 57051,
+          "offset_in_resource": 16,
+          "length": 6,
+          "text_escaped": "Музыка"
+        },
+        {
+          "index": 3,
+          "address": 57058,
+          "offset_in_resource": 23,
+          "length": 8,
+          "text_escaped": "Инверсия"
+        },
+        {
+          "index": 4,
+          "address": 57067,
+          "offset_in_resource": 32,
+          "length": 5,
+          "text_escaped": "Вверх"
+        },
+        {
+          "index": 5,
+          "address": 57073,
+          "offset_in_resource": 38,
+          "length": 4,
+          "text_escaped": "Вниз"
+        },
+        {
+          "index": 6,
+          "address": 57078,
+          "offset_in_resource": 43,
+          "length": 5,
+          "text_escaped": "Влево"
+        },
+        {
+          "index": 7,
+          "address": 57084,
+          "offset_in_resource": 49,
+          "length": 6,
+          "text_escaped": "Вправо"
+        },
+        {
+          "index": 8,
+          "address": 57091,
+          "offset_in_resource": 56,
+          "length": 5,
+          "text_escaped": "Выбор"
+        },
+        {
+          "index": 9,
+          "address": 57097,
+          "offset_in_resource": 62,
+          "length": 6,
+          "text_escaped": "Отмена"
+        },
+        {
+          "index": 10,
+          "address": 57104,
+          "offset_in_resource": 69,
+          "length": 12,
+          "text_escaped": "Ink объектов"
+        },
+        {
+          "index": 11,
+          "address": 57117,
+          "offset_in_resource": 82,
+          "length": 14,
+          "text_escaped": "Paper объектов"
+        },
+        {
+          "index": 12,
+          "address": 57132,
+          "offset_in_resource": 97,
+          "length": 15,
+          "text_escaped": "Bright объектов"
+        }
+      ],
+      "consumer": "Source/Station/PrintEnvironmentRows.asm"
+    },
+    {
+      "name": "GameSettingsLabels",
+      "path": "Source/Station/Resources/GameSettingsLabels.bin",
+      "start_address": 57148,
+      "end_exclusive": 57572,
+      "bytes": 424,
+      "separator": "CR",
+      "records": [
+        {
+          "index": 0,
+          "address": 57149,
+          "offset_in_resource": 1,
+          "length": 5,
+          "text_escaped": "Мышка"
+        },
+        {
+          "index": 1,
+          "address": 57155,
+          "offset_in_resource": 7,
+          "length": 5,
+          "text_escaped": "Вверх"
+        },
+        {
+          "index": 2,
+          "address": 57161,
+          "offset_in_resource": 13,
+          "length": 4,
+          "text_escaped": "Вниз"
+        },
+        {
+          "index": 3,
+          "address": 57166,
+          "offset_in_resource": 18,
+          "length": 5,
+          "text_escaped": "Влево"
+        },
+        {
+          "index": 4,
+          "address": 57172,
+          "offset_in_resource": 24,
+          "length": 6,
+          "text_escaped": "Вправо"
+        },
+        {
+          "index": 5,
+          "address": 57179,
+          "offset_in_resource": 31,
+          "length": 10,
+          "text_escaped": "Влево крен"
+        },
+        {
+          "index": 6,
+          "address": 57190,
+          "offset_in_resource": 42,
+          "length": 11,
+          "text_escaped": "Вправо крен"
+        },
+        {
+          "index": 7,
+          "address": 57202,
+          "offset_in_resource": 54,
+          "length": 5,
+          "text_escaped": "Лазер"
+        },
+        {
+          "index": 8,
+          "address": 57208,
+          "offset_in_resource": 60,
+          "length": 14,
+          "text_escaped": "Набор скорости"
+        },
+        {
+          "index": 9,
+          "address": 57223,
+          "offset_in_resource": 75,
+          "length": 14,
+          "text_escaped": "Сброс скорости"
+        },
+        {
+          "index": 10,
+          "address": 57238,
+          "offset_in_resource": 90,
+          "length": 18,
+          "text_escaped": "Бортовой компьютер"
+        },
+        {
+          "index": 11,
+          "address": 57257,
+          "offset_in_resource": 109,
+          "length": 16,
+          "text_escaped": "Наведение ракеты"
+        },
+        {
+          "index": 12,
+          "address": 57274,
+          "offset_in_resource": 126,
+          "length": 16,
+          "text_escaped": "Забыть наведения"
+        },
+        {
+          "index": 13,
+          "address": 57291,
+          "offset_in_resource": 143,
+          "length": 13,
+          "text_escaped": "Пуск ракеты 1"
+        },
+        {
+          "index": 14,
+          "address": 57305,
+          "offset_in_resource": 157,
+          "length": 13,
+          "text_escaped": "Пуск ракеты 2"
+        },
+        {
+          "index": 15,
+          "address": 57319,
+          "offset_in_resource": 171,
+          "length": 13,
+          "text_escaped": "Пуск ракеты 3"
+        },
+        {
+          "index": 16,
+          "address": 57333,
+          "offset_in_resource": 185,
+          "length": 6,
+          "text_escaped": "Форсаж"
+        },
+        {
+          "index": 17,
+          "address": 57340,
+          "offset_in_resource": 192,
+          "length": 25,
+          "text_escaped": "Система свободного полета"
+        },
+        {
+          "index": 18,
+          "address": 57366,
+          "offset_in_resource": 218,
+          "length": 17,
+          "text_escaped": "Система наведения"
+        },
+        {
+          "index": 19,
+          "address": 57384,
+          "offset_in_resource": 236,
+          "length": 16,
+          "text_escaped": "Система возврата"
+        },
+        {
+          "index": 20,
+          "address": 57401,
+          "offset_in_resource": 253,
+          "length": 12,
+          "text_escaped": "Силовой лучь"
+        },
+        {
+          "index": 21,
+          "address": 57414,
+          "offset_in_resource": 266,
+          "length": 23,
+          "text_escaped": "Противоракетная система"
+        },
+        {
+          "index": 22,
+          "address": 57438,
+          "offset_in_resource": 290,
+          "length": 16,
+          "text_escaped": "Сброс контейнера"
+        },
+        {
+          "index": 23,
+          "address": 57455,
+          "offset_in_resource": 307,
+          "length": 10,
+          "text_escaped": "Сброс мины"
+        },
+        {
+          "index": 24,
+          "address": 57466,
+          "offset_in_resource": 318,
+          "length": 12,
+          "text_escaped": "Гиперпереход"
+        },
+        {
+          "index": 25,
+          "address": 57479,
+          "offset_in_resource": 331,
+          "length": 15,
+          "text_escaped": "Включение неона"
+        },
+        {
+          "index": 26,
+          "address": 57495,
+          "offset_in_resource": 347,
+          "length": 21,
+          "text_escaped": "Передний и задний вид"
+        },
+        {
+          "index": 27,
+          "address": 57517,
+          "offset_in_resource": 369,
+          "length": 24,
+          "text_escaped": "Защита от косм.излучений"
+        },
+        {
+          "index": 28,
+          "address": 57542,
+          "offset_in_resource": 394,
+          "length": 1,
+          "text_escaped": " "
+        },
+        {
+          "index": 29,
+          "address": 57544,
+          "offset_in_resource": 396,
+          "length": 1,
+          "text_escaped": " "
+        },
+        {
+          "index": 30,
+          "address": 57546,
+          "offset_in_resource": 398,
+          "length": 1,
+          "text_escaped": " "
+        },
+        {
+          "index": 31,
+          "address": 57548,
+          "offset_in_resource": 400,
+          "length": 1,
+          "text_escaped": " "
+        },
+        {
+          "index": 32,
+          "address": 57550,
+          "offset_in_resource": 402,
+          "length": 1,
+          "text_escaped": " "
+        },
+        {
+          "index": 33,
+          "address": 57552,
+          "offset_in_resource": 404,
+          "length": 1,
+          "text_escaped": " "
+        },
+        {
+          "index": 34,
+          "address": 57554,
+          "offset_in_resource": 406,
+          "length": 1,
+          "text_escaped": " "
+        },
+        {
+          "index": 35,
+          "address": 57556,
+          "offset_in_resource": 408,
+          "length": 1,
+          "text_escaped": " "
+        },
+        {
+          "index": 36,
+          "address": 57558,
+          "offset_in_resource": 410,
+          "length": 1,
+          "text_escaped": " "
+        },
+        {
+          "index": 37,
+          "address": 57560,
+          "offset_in_resource": 412,
+          "length": 1,
+          "text_escaped": " "
+        },
+        {
+          "index": 38,
+          "address": 57562,
+          "offset_in_resource": 414,
+          "length": 1,
+          "text_escaped": " "
+        },
+        {
+          "index": 39,
+          "address": 57564,
+          "offset_in_resource": 416,
+          "length": 1,
+          "text_escaped": " "
+        },
+        {
+          "index": 40,
+          "address": 57566,
+          "offset_in_resource": 418,
+          "length": 1,
+          "text_escaped": " "
+        },
+        {
+          "index": 41,
+          "address": 57568,
+          "offset_in_resource": 420,
+          "length": 1,
+          "text_escaped": " "
+        },
+        {
+          "index": 42,
+          "address": 57570,
+          "offset_in_resource": 422,
+          "length": 1,
+          "text_escaped": " "
+        }
+      ],
+      "consumer": "Source/Station/PrintGameSettingsRows.asm"
+    },
+    {
+      "name": "DecodedMessages",
+      "path": "Source/Station/Resources/DecodedMessages.bin",
+      "start_address": 57954,
+      "end_exclusive": 58158,
+      "bytes": 204,
+      "separator": "LF",
+      "records": [
+        {
+          "index": 0,
+          "address": 57955,
+          "offset_in_resource": 1,
+          "length": 34,
+          "text_escaped": "Расшифрована система:Дзета-43/78-Д"
+        },
+        {
+          "index": 1,
+          "address": 57990,
+          "offset_in_resource": 36,
+          "length": 167,
+          "text_escaped": "Внимание! Расшифрован иносигнал прошлых поколений: Каждые 69 космолет зарождается жизнь нового типа.И если это не произойдет все предыдущие поколения будут уничтожены!"
+        }
+      ],
+      "consumer": "Source/Station/PrintDecodedMessage.asm"
+    }
+  ],
+  "remaining_unknown_bytes": 382,
+  "original_bytes_preserved": true,
+  "decoded_document_is_not_executed": true,
+  "all_equipment_records_gameplay_verified": false,
+  "contact_list_consumer_proved": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

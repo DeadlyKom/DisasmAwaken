@@ -1,5 +1,6 @@
                 module Station
                 module DrawSystemInfoPanel
+                ; Исходные тексты [границы ресурсов и общие LF](../../Docs/StationInterfaceTextResources.md)
 ; Документация [Station](../../Docs/FunctionDetails/Station.md)
 ; Подробный разбор [порядок полей, два ключа, список до шести вариантов и банковые договоры](../../Docs/SystemInfoPanel.md)
 ; -----------------------------------------

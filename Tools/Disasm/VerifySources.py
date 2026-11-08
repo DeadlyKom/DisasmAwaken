@@ -109,6 +109,24 @@ def main():
                            lambda m: "#" + format(int(m[0]), "X"), operation)
         return re.sub(r"\s+", "", operation)
 
+    # Проверка физических текстовых потоков станции без подстановки перевода в образ.
+    from StationPanelTextResources import RESOURCES as PANEL_TEXTS, path as panel_path, records as panel_records
+    for start,end,name,count,separator,consumer in PANEL_TEXTS:
+        raw=(ROOT/panel_path(name)).read_bytes()
+        assert raw==sources[4][start:end] and len(panel_records(raw,separator))==count
+        rows=[p for p in source_map if p['path']==panel_path(name)]
+        assert len(rows)==1 and rows[0]['kind']=='binary_resource'
+        assert (rows[0]['offset'],rows[0]['length'],rows[0]['origin'])==(start,end-start,start+0x6000)
+
+    # Проверка подписей интерфейса и общих физических ограничителей LF.
+    from StationInterfaceTextResources import RESOURCES as INTERFACE_TEXTS, path as interface_text_path, verify as verify_interface_texts
+    verify_interface_texts(sources[4])
+    for start,end,name,consumer,lf,cr in INTERFACE_TEXTS:
+        assert (ROOT/interface_text_path(name)).read_bytes()==sources[4][start:end]
+        rows=[p for p in source_map if p['path']==interface_text_path(name)]
+        assert len(rows)==1 and rows[0]['kind']=='binary_resource'
+        assert (rows[0]['offset'],rows[0]['length'],rows[0]['origin'])==(start,end-start,start+0x6000)
+
     code_count = 0
     coverage = {e["slot"]:bytearray(e["allocated_length"]) for e in manifest["entries"] if not e["deleted"]}
     for item in source_map:
@@ -715,6 +733,34 @@ def main():
     assert symbols['FLINEPIXELMASK']==1 and symbols['FLINEPIXELMASK.MASK']==0
     line_mask_items=[x for x in source_map if x['path']==LINE_MASKS_PATH]
     assert len(line_mask_items)==1 and (line_mask_items[0]['offset'],line_mask_items[0]['length'],line_mask_items[0]['origin'])==(0x8010,16,0xE010)
+
+    # Проверка кодов корабля и скиммера по всей физической раскладке исходного документа.
+    from ActionEquipmentData import TABLES as EQUIPMENT_TABLES, parse as parse_equipment
+    for table in EQUIPMENT_TABLES:
+        raw,labels=parse_equipment((ROOT/table[1]).read_text('utf-8'),table)
+        assert raw==sources[17][table[2]:table[3]]
+        assert all(symbols.get(k.upper())==v for k,v in labels.items())
+        rows=[p for p in source_map if p['path']==table[1]]
+        assert len(rows)==1 and (rows[0]['offset'],rows[0]['length'],rows[0]['origin'])==(table[2],table[3]-table[2],table[2]+0x6000)
+    assert symbols['FEQUIPMENTCODE']==1 and symbols['FEQUIPMENTCODE.VALUE']==0
+
+    # Проверка девяти физических слов базиса и их двух байтовых полей.
+    from ActionRenderBasisData import TABLE as RENDER_BASIS_TABLE, parse as parse_render_basis
+    raw,labels=parse_render_basis((ROOT/RENDER_BASIS_TABLE[1]).read_text('utf-8'))
+    assert raw==sources[17][0x3B00:0x3B12]
+    assert all(symbols.get(k.upper())==v for k,v in labels.items())
+    assert symbols['FBASISWORD']==2 and symbols['FBASISWORD.LOW']==0 and symbols['FBASISWORD.HIGH']==1
+    rows=[p for p in source_map if p['path']==RENDER_BASIS_TABLE[1]]
+    assert len(rows)==1 and (rows[0]['offset'],rows[0]['length'],rows[0]['origin'])==(0x3B00,18,0x9B00)
+
+    # Проверка физических десяти исходных пропусков и завершающего кода списка.
+    from ActionCandidateListData import TABLE as CANDIDATE_LIST_TABLE, parse as parse_candidate_list
+    raw,labels=parse_candidate_list((ROOT/CANDIDATE_LIST_TABLE[1]).read_text('utf-8'))
+    assert raw==sources[17][0x401C:0x4027]==bytes([255])*10+bytes([254])
+    assert all(symbols.get(k.upper())==v for k,v in labels.items())
+    assert symbols['FCANDIDATECODE']==1 and symbols['FCANDIDATECODE.CODE']==0
+    rows=[p for p in source_map if p['path']==CANDIDATE_LIST_TABLE[1]]
+    assert len(rows)==1 and (rows[0]['offset'],rows[0]['length'],rows[0]['origin'])==(0x401C,11,0xA01C)
 
     # Проверка физических STRUCT двух малых ресурсов связанных состояний.
     from ActionLinkedStateData import TABLES as LINKED_STATE_TABLES, parse as parse_linked_state_data
@@ -1918,6 +1964,9 @@ def main():
     report['action_object_records'] = object_records
     report['glyph_input_records'] = glyph_input_records
     report['parameter_rule_records'] = parameter_rule_records
+    report['candidate_list_records'] = len(CANDIDATE_LIST_TABLE[-1])
+    report['render_basis_word_records'] = len(RENDER_BASIS_TABLE[-1])
+    report['equipment_code_records'] = sum(len(table[-1]) for table in EQUIPMENT_TABLES)
     (ROOT/"Tools/Disasm/Reports/SourceVerification.json").write_text(
         json.dumps(report,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     print(json.dumps(report,ensure_ascii=False,indent=2))

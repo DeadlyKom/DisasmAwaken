@@ -1,6 +1,6 @@
 {
   "passed": true,
-  "cases": 84,
+  "cases": 102,
   "source_rows_checked": [
     "Недостаточно кредитов!",
     "В наличии уже имеется!",
@@ -15,7 +15,10 @@
     "Превышение максимальной разрешенной суммы!",
     "Сделка прошла успешно!",
     "Подобный тип оснащения уже имеется!",
-    "За неоплату стоянки, Вы выдворяетесь в открытый космос!"
+    "За неоплату стоянки, Вы выдворяетесь в открытый космос!",
+    "Вы находитесь в розыске!\rВсе тяжёлое вооружение с вашего корабля будет демонтировано в пользу государства.\rПомимо всего, Вы будете оштрафованы на 1000 кредитов.",
+    "Галактическая полиция предупреждает Вас о том, что Вы уже числитесь как неблагоприятный гражданин.\rВ целях предупреждения Вы будете оштрафованы на 50 кредитов.",
+    "За неисполнение контракта вы оштафовуетесть на 1000 кредитов. \rОштрафование произедено по типу 5-ти кратная оплата за стоянку!"
   ],
   "row_indices_checked": [
     0,
@@ -31,14 +34,19 @@
     10,
     11,
     12,
-    13
+    13,
+    14,
+    15,
+    16
   ],
-  "independently_composed_glyphs": 1672,
+  "independently_composed_glyphs": 3212,
   "whole_content_bitmap_and_attributes_compared": true,
   "frame_uses_separate_caption_contract": true,
   "real_caption_justify_and_glyph_code": true,
-  "explicit_halt_wakeups": 84,
-  "full_table_size_not_inferred": true,
+  "explicit_halt_wakeups": 102,
+  "physical_table_records": 17,
+  "table_end_exclusive": 53690,
+  "arbitrary_row_indices_valid": false,
   "irq_executed": false,
   "native_execution": false,
   "assembly_executed": false

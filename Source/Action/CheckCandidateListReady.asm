@@ -33,7 +33,7 @@ Entry:          CALL @Action.CheckCandidateListClass.Entry
                 RET
 
                 ; Подготовка курсора перед первым байтом списка, первый INC HL переходит к A01C.
-StartList:      LD HL, @ActionCandidateListState.BeforeFirst
+StartList:      LD HL, @ActionCandidateListData.Slot00.Code - 1
                 ; Поиск первого непропущенного байта, FF означает пропуск, FE завершает список.
 NextItem:       INC HL
                 LD A, (HL)

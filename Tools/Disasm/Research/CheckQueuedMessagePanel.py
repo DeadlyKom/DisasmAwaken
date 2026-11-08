@@ -15,10 +15,11 @@ def main():
     base[0x4000:0x8000]=bytes(banks[5]);base[0x8000:0xC000]=bytes(banks[2]);base[0xC000:]=bytes(banks[0])
     initial=get_registers({'SP':0x7FFE,'HL':0x1357,'DE':0x247A,'BC':0x36C9,'AF':0x5A5D,'IX':0x2468,'IY':0x5C3A,'^HL':0x369C,'^DE':0x47AD,'^BC':0x58BE,'^AF':0x69CF},None,False)
     starts=[];cursor=0xCE19;rows=[]
-    # Чтение исходных четырнадцати проверяемых сообщений без вывода о конце всей таблицы.
-    for _ in range(14):
+    # Проверка всех семнадцати записей до отдельного начального LF описаний оснащения.
+    for _ in range(17):
         assert base[cursor]==10;start=cursor+1;end=base.index(10,start)
         starts.append(start);rows.append(bytes(base[start:end]).decode('cp866'));cursor=end
+    assert cursor==0xD1B9 and base[cursor+1]==10
     cases=glyphs=0
     for row,start in enumerate(starts):
         for x,y,w,h in ((7,5,18,8),(2,1,28,20),(4,3,12,3)):
@@ -53,10 +54,11 @@ def main():
                 assert expected is not None and m[0x4000:0x5B00]==expected
                 assert wakes==1 and r[SP]==0x8000 and r[8:12]==initial[8:12] and r[18:24]==initial[18:24] and r[16:18]==caption_af
                 assert m[0x6E91]==row and m[0xBD26]==0;cases+=1
-    report=dict(passed=True,cases=cases,source_rows_checked=rows,row_indices_checked=list(range(14)),
+    report=dict(passed=True,cases=cases,source_rows_checked=rows,row_indices_checked=list(range(17)),
                 independently_composed_glyphs=glyphs,whole_content_bitmap_and_attributes_compared=True,
                 frame_uses_separate_caption_contract=True,real_caption_justify_and_glyph_code=True,
-                explicit_halt_wakeups=cases,full_table_size_not_inferred=True,
+                explicit_halt_wakeups=cases,physical_table_records=17,table_end_exclusive=0xD1BA,
+                arbitrary_row_indices_valid=False,
                 irq_executed=False,native_execution=False,assembly_executed=False)
     (ROOT/'Tools/Disasm/Reports/QueuedMessagePanelVerification.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n','utf-8')
     print(json.dumps({k:v for k,v in report.items() if k!='source_rows_checked'},ensure_ascii=False,indent=2))

@@ -129,7 +129,7 @@ SaveGauge:      LD (#6682), A
                 LD A, #01
                 LD (#667D), A
                 ; Проверка блокировки пополнения счётчика.
-                LD A, (#9C29)
+                LD A, (@ActionShipEquipment.RefuelSystem.Value)
                 INC A
                 RET Z                                                           ; выход, если байт блокировки равен #FF
 

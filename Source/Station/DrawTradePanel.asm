@@ -1,5 +1,6 @@
                 module Station
                 module DrawTradePanel
+                ; Исходные тексты [границы ресурсов и общие LF](../../Docs/StationInterfaceTextResources.md)
                 ; Документация [Station](../../Docs/FunctionDetails/Station.md)
                 ; Подробный разбор [зависимость подсветки от рисунка, событие колонки, банковый запуск и дополнительные входы рисователя](../../Docs/TradePanel.md)
                 ; -----------------------------------------

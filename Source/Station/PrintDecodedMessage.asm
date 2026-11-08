@@ -1,5 +1,6 @@
                 module Station
                 module PrintDecodedMessage
+                ; Физические тексты [адреса, записи и управляющие коды](../../Docs/StationPanelTextResources.md)
                 ; Документация [Station](../../Docs/FunctionDetails/Station.md)
                 ; Подробный разбор [два числовых селектора, точные строки, переносы и ранние выходы текста](../../Docs/DecodedMessage.md)
                 ; -----------------------------------------

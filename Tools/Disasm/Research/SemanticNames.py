@@ -148,6 +148,9 @@ def name_operands(region, function_address, operation):
     operation = control_panel_group_name_operands(region, function_address, operation)
     operation = ship_periodic_code_name_operands(region, function_address, operation)
     operation = ship_preview_callback_name_operands(region, function_address, operation)
+    operation = action_equipment_name_operands(region,function_address,operation)
+    operation = action_render_basis_name_operands(region,function_address,operation)
+    operation = action_banked_parameter_build_name_operands(region,function_address,operation)
     operation = action_random_class_gate_name_operands(region,function_address,operation)
     operation = action_class20_spawn_name_operands(region,function_address,operation)
     operation = action_paired_aim_lines_name_operands(region,function_address,operation)
@@ -2875,3 +2878,11 @@ LABELS.update({('Action', 24993): 'PositiveX', ('Action', 24995): 'SelectYSign',
 from ActionRandomClassGateFacts import name_operands as action_random_class_gate_name_operands
 DOCUMENTS['Action',63134]=('ActionRandomClassGate','алгоритм и проверка')
 LABELS.update({})
+
+from ActionBankedParameterBuildFacts import name_operands as action_banked_parameter_build_name_operands
+DOCUMENTS['Action',27006]=('ActionBankedParameterBuild','алгоритм и проверка')
+LABELS.update({('Action', 27011): 'Build'})
+
+from ActionRenderBasisData import name_operands as action_render_basis_name_operands
+
+from ActionEquipmentData import name_operands as action_equipment_name_operands

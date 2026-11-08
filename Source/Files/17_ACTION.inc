@@ -230,7 +230,13 @@
                 ent
                 assert $ == #0BBA
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/17_ACTION/Unclassified008.bin"
+                assert $ == #0BBA
+                ; Unknown, соседние байты вне доказанного входа BuildBankedParameterSet
+                incbin "../Resources/17_ACTION/Unclassified0BBA_0BBB.bin"
+                assert $ == #0BBB
+                disp #697E
+                include "../Action/BuildBankedParameterSet.asm"
+                ent
                 assert $ == #0BC3
                 disp #6986
                 include "../Action/CompareContextWordPairs.asm"
@@ -527,7 +533,9 @@
                 ent
                 assert $ == #3B00
                 ; Unknown, следующие 18 байтов вне таблицы кодов отношения
-                incbin "../Resources/17_ACTION/Unclassified020_AfterRatioCodes.bin"
+                disp #9B00
+                include "../Action/Data/RenderBasis.asm"
+                ent
                 assert $ == #3B12
                 disp #9B12
                 include "../Action/Data/RenderPhases.asm"
@@ -580,7 +588,17 @@
                 ent
                 assert $ == #3C14
                 ; Unknown, соседние данные ещё не разобраны
-                incbin "../Resources/17_ACTION/Unclassified020_AfterMissileStock.bin"
+                assert $ == #3C14
+                disp #9C14
+                include "../Action/Data/ShipEquipment.asm"
+                ent
+                assert $ == #3C32
+                disp #9C32
+                include "../Action/Data/SkimmerEquipment.asm"
+                ent
+                assert $ == #3C41
+                ; Unknown, соседние байты вне подтверждённой раскладки оборудования
+                incbin "../Resources/17_ACTION/Unclassified3C41_3D4C.bin"
                 assert $ == #3D4C
                 disp #9D4C
                 include "../Action/Data/KeyScanInputs.asm"
@@ -596,7 +614,25 @@
                 ent
                 assert $ == #3F00
                 ; Unknown, соседние байты вне доказанной таблицы OBJECT3D
-                incbin "../Resources/17_ACTION/Unclassified020_AfterObjectPointers.bin"
+                assert $ == #3F00
+                ; Unknown, соседние байты не классифицированы типизацией списка кандидатов
+                assert $ == #3F00
+                ; Unknown, соседние байты вне доказанного назначения CopyObjectData
+                incbin "../Resources/17_ACTION/Unclassified3F00_3F1C.bin"
+                assert $ == #3F1C
+                ; Документация [исходное содержимое буфера объекта](../../Docs/ActionObjectStreamStorage.md)
+                ; исходные 238 байтов назначения CopyObjectData, подтверждённых всеми исходными чётными указателями
+                incbin "../Action/Resources/InitialObjectStreamBuffer.bin"
+                assert $ == #400A
+                ; Unknown, соседние байты вне доказанного назначения CopyObjectData
+                incbin "../Resources/17_ACTION/Unclassified400A_401C.bin"
+                assert $ == #401C
+                disp #A01C
+                include "../Action/Data/CandidateList.asm"
+                ent
+                assert $ == #4027
+                ; Unknown, соседние байты не классифицированы типизацией списка кандидатов
+                incbin "../Resources/17_ACTION/Unclassified4027_4100.bin"
                 assert $ == #4100
                 disp #A100
                 include "../Action/Data/ObjectRecords.asm"

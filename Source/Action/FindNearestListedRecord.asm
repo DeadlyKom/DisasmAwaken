@@ -32,7 +32,7 @@
 Entry:          LD A, #FF
                 LD (@ActionNearestCandidateState.ClosestHigh), A
                 ; Подготовка курсора перед первым байтом исходного списка кандидатов.
-                LD HL, @ActionCandidateListState.BeforeFirst
+                LD HL, @ActionCandidateListData.Slot00.Code - 1
                 ; Поиск следующей ячейки списка и проверка маркера завершения FE.
 NextItem:       INC HL
                 LD A, (HL)

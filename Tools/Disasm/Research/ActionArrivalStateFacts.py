@@ -10,7 +10,7 @@ CONTRACTS={('Action',0xF57F):(
      'действуют договоры SelectRecordByIndex, RecordIXToIndex, ApproachWordAndAccumulate, QueueTextItemBank1 и большого эффекта',
      'OBJECT3D банка 4, эффект банка 3, Controls банка 1 и исходные списки игровых и эффектных записей доступны',
      'ROM выбрана по фактическому paging, код в общей RAM и ACTION доступны, до 18 дополнительных байтов CPU-стека доступны, IRQ исключены'],
-    ['до проверки активности цели у неё устанавливается бит 1 LinkFlags, Unknown15 получает текущий Unknown0D, LinkedIndex индекс текущего IX',
+    ['до проверки активности цели у неё устанавливается бит 1 LinkFlags, LinkOverride получает текущий Unknown0D, LinkedIndex индекс текущего IX',
      'при Component0.High цели=80 ненулевой Unknown11 пытается поставить текст F248 в очередь Controls, затем большой эффект выполняется на текущем IX',
      'при доступной цели три Components приближаются настоящим ApproachWordAndAccumulate с общим OR-накопителем в C\'',
      'первая и вторая рассчитанные Components записываются сразу, третья только при ненулевом накопителе остаточных старших байтов',
@@ -32,7 +32,7 @@ CONTRACTS={('Action',0xF57F):(
      'индексы вне физических записей, полное произведение входов, аппаратные IRQ, точные T, сборка и нативная игра не проверялись'])}
 COMMENTS={
     0xF57F:(['Поиск обычной целевой записи по TargetIndex, специальной обработки FF здесь нет.'],None),
-    0xF585:(['Обновление бита обратной связи, Unknown15 и LinkedIndex цели до проверки её активности.'],None),
+    0xF585:(['Обновление бита обратной связи, LinkOverride и LinkedIndex цели до проверки её активности.'],None),
     0xF595:(['Проверка полного старшего байта первой компоненты цели, C уже содержит младший байт.'],None),
     0xF59D:([],'переход, если Component0.High цели не равен 80, начать три шага сближения'),
     0xF59F:(['Проверка ненулевого Unknown11 для уведомления о потерянной цели.'],None),
@@ -77,7 +77,7 @@ StateOffset     equ #0A                                                         
 
 def name_operands(region,function_address,operation):
     if (region,function_address)!=('Action',0xF57F):return operation
-    names={7:'OffsetPhase0',8:'OffsetPhase1',9:'OffsetPhase2',11:'LinkedIndex',12:'LinkFlags',13:'Unknown0D',15:'TargetIndex',17:'Unknown11',18:'ClassCode',21:'Unknown15'}
+    names={7:'OffsetPhase0',8:'OffsetPhase1',9:'OffsetPhase2',11:'LinkedIndex',12:'LinkFlags',13:'Unknown0D',15:'TargetIndex',17:'Unknown11',18:'ClassCode',21:'LinkOverride'}
     for prefix in ('IX','IY'):
         for offset in (*range(6),*names):
             name='Components.Component'+str(offset//2)+('.High' if offset&1 else '.Low') if offset<6 else names[offset]

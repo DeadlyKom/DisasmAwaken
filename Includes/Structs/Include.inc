@@ -1540,7 +1540,7 @@ Unknown11       db #00                                                          
 ClassCode       db #00                                                          ; полный код класса, используется FindRecordByCode, создаваемая ракета получает 11
 Unknown13       db #00                                                          ; игровой смысл ещё неизвестен, 60AE записывает 0A либо 32 по выбранному запасу
 Unknown14       db #00                                                          ; игровой смысл ещё неизвестен
-Unknown15       db #00                                                          ; игровой смысл ещё неизвестен
+LinkOverride    db #00                                                          ; числовой индекс подстановки LinkedIndex, FF запрещает подстановку, ноль разрешён и возвращает Z
 SavedStateCode  db #00                                                          ; код состояния для восстановления в обработчиках хода и ожидания
 PhaseMoveTimer  db #00                                                          ; байтовый таймер вызовов обработчиков хода первой фазы
 ReuseByte       db #00                                                          ; FF задаёт однократный пропуск поиска, в отдельных состояниях биты 1..0 задают счётчик, бит 2 запрос детей, бит 4 допуск эффекта
@@ -2363,5 +2363,31 @@ Value           db #00                                                          
                 ends
                 assert FClassSpawnByte == #01
                 assert FClassSpawnByte.Value == #00
+
+
+                ; Полный числовой код элемента списка, отдельные битовые флаги не задаются
+                struct FCandidateCode
+Code            db #00                                                          ; 00..FD индекс записи, FF пропуск, FE конец списка
+                ends
+                assert FCandidateCode == 1
+                assert FCandidateCode.Code == 0
+
+
+                ; Двухбайтовое слово базиса, не код доступности FActionRecord
+                struct FBasisWord
+Low             db #00                                                          ; младший байт слова базиса
+High            db #00                                                          ; старший байт, RenderSceneFrame передаёт его с заменой 80 на 81
+                ends
+                assert FBasisWord == 2
+                assert FBasisWord.Low == 0
+                assert FBasisWord.High == 1
+
+
+                ; Байтовый код либо счётчик оборудования по физической раскладке авторского описания
+                struct FEquipmentCode
+Value           db #00                                                          ; полный байт, трактовка счётчика, наличия и маркера зависит от записи
+                ends
+                assert FEquipmentCode == 1
+                assert FEquipmentCode.Value == 0
 
                 endif

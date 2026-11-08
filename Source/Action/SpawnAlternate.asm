@@ -113,7 +113,7 @@ CheckOverflow:  OR A
                 LD (IY + @FActionRecord.ClassCode), #12
                 LD (IY + @FActionRecord.Unknown13), #FF
                 LD (IY + @FActionRecord.Unknown14), #FF
-                LD (IY + @FActionRecord.Unknown15), #FF
+                LD (IY + @FActionRecord.LinkOverride), #FF
                 LD (IY + @FActionRecord.SavedStateCode), A
                 LD (IY + @FActionRecord.PhaseMoveTimer), A
                 LD (IY + @FActionRecord.ReuseByte), #10
@@ -314,7 +314,7 @@ StoreOffset:    ADD A, H
                 LD (IX + @FActionRecord.ClassCode), #00
                 LD (IX + @FActionRecord.LinkFlags), #00
                 LD (IX + @FActionRecord.Unknown14), #00
-                LD (IX + @FActionRecord.Unknown15), #FF
+                LD (IX + @FActionRecord.LinkOverride), #FF
                 LD (IX + @FActionRecord.LinkedIndex), #FF
                 LD HL, (#EBDB)
                 LD (IX + @FActionRecord.Unknown0D), L

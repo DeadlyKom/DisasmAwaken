@@ -28,7 +28,7 @@ RIGHT={
     0x6532:'выход, если новое слово Stream0 ненулевое, сохранить исходный для этой ветви StateCode=01',
     0x6545:'выход, если выражение прочитанный R AND H OR L ненулевое, сохранить StateCode=12',
     0x6559:'выход, если прочитанный R меньше 70, оставить StateCode=02 и LinkedIndex=FF',
-    0x655D:'выход, если повторная подстановка Unknown15 находится в 1..FE, сохранить её результат',
+    0x655D:'выход, если повторная подстановка LinkOverride находится в 1..FE, сохранить её результат',
     0x6561:'выход, если фильтр классов 6 и 7 вернул Z, сохранить текущий LinkedIndex',
     0x6576:'выход, если прочитанный R меньше 70, оставить StateCode=02 и LinkedIndex=FF',
     0x657A:'выход, если фильтр исключённых классов 6 и 7 вернул Z, оставить LinkedIndex=FF',
@@ -106,12 +106,12 @@ def build(kind):
              7:'Подстановка и выбор связи с исключением классов 6 и 7 после аппаратного порога',
              8:'Подстановка, состояние 12 и общий выбор связи при нулевом аппаратном предикате'}[kind]
     inputs=['HL, DE, BC и AF числовых аргументов не задают, IX указывает доступную FActionRecord',
-            'Unknown15, StateCode и LinkedIndex доступны по договору CopyRecordLinkOverride, он вызывается до иных проверок',
+            'LinkOverride, StateCode и LinkedIndex доступны по договору CopyRecordLinkOverride, он вызывается до иных проверок',
             'действуют договоры вызываемых потоков и фильтров, достижима подходящая активная запись либо маркер',
             f'выбран ACTION банка 0, CPU-стек не пересекает запись, код и потоки, доступны {10 if kind==1 else 8} дополнительных байтов, IRQ не вмешиваются']
     if kind==2:inputs.append('дополнительный SelectSixSeven по 655A не задаёт StateCode и не проверяет R, он начинает с повторной подстановки')
-    outputs=['при Unknown15=1..FE возвращается результат подстановки, LinkedIndex=Unknown15 и StateCode=02',
-             'при Unknown15=0 либо FF обработка продолжается, разрешённый ноль сначала записывает LinkedIndex=0 и StateCode=02']+RULES[kind]+[
+    outputs=['при LinkOverride=1..FE возвращается результат подстановки, LinkedIndex=LinkOverride и StateCode=02',
+             'при LinkOverride=0 либо FF обработка продолжается, разрешённый ноль сначала записывает LinkedIndex=0 и StateCode=02']+RULES[kind]+[
              'D, AF\', IX, I/IM/IFF и paging сохраняются, SP после внешнего RET равен входному SP+2',
              'при фильтре HL, E, BC, AF и IY соответствуют его договору, без фильтра E, BC и IY сохраняются',
              'после генератора HL содержит новое слово последнего потока, HL\', DE\', BC\' содержат его выход, до генератора они сохраняются',
@@ -128,10 +128,10 @@ def build(kind):
            'распределение аппаратного R, период генераторов, аппаратные IRQ, точные T, сборка и нативная игра не доказаны']
     if kind in (2,3,4,7):notes.append('после подстановки FF чтение R перед непосредственным CP происходит через 8 M1, после нуля через 14 M1')
     if kind in (1,6,8):notes.append('чтение R после обновления Stream0 происходит через 77 M1 для подстановки FF либо 83 M1 для нуля')
-    if kind==2:notes.append('при стабильном Unknown15 второй RET NZ недостижим из обычного Entry, но сохранён для самостоятельного SelectSixSeven')
+    if kind==2:notes.append('при стабильном LinkOverride второй RET NZ недостижим из обычного Entry, но сохранён для самостоятельного SelectSixSeven')
     comments={a:([BEFORE[a]] if a in BEFORE else [],RIGHT.get(a)) for a in BEFORE.keys()|RIGHT.keys() if start<=a<end}
     comments[start]=(['Применение исходной подстановки до выбора состояния, ноль разрешён и продолжает обработку.'],None)
-    comments[start+3]=([], 'выход, если Unknown15 находится в 1..FE, сохранить результат подстановки')
+    comments[start+3]=([], 'выход, если LinkOverride находится в 1..FE, сохранить результат подстановки')
     local={0x655A:'SelectSixSeven'} if kind==2 else {0x65F8:'TryCode26'} if kind==3 else {}
     return {start:(name,purpose)},{('Action',start):(inputs,outputs,corrupt,notes)},comments,local
 

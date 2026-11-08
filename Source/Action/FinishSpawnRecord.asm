@@ -31,7 +31,7 @@ InitParameters: CALL @Action.NextRandomWord12.Entry
                 LD (IX + @FActionRecord.Unknown11), A
                 LD (IX + @FActionRecord.LinkFlags), #00
                 LD (IX + @FActionRecord.Unknown14), #00
-                LD (IX + @FActionRecord.Unknown15), #FF
+                LD (IX + @FActionRecord.LinkOverride), #FF
                 LD (IX + @FActionRecord.LinkedIndex), #FF
                 LD HL, (@ActionRandomStreams.Stream3.LowWord)
                 LD (IX + @FActionRecord.Unknown0D), L

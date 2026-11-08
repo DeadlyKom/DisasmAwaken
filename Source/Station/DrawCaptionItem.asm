@@ -1,5 +1,6 @@
                 module Station
                 module DrawCaptionItem
+                ; Исходные тексты [границы ресурсов и общие LF](../../Docs/StationInterfaceTextResources.md)
 ; Документация [Station](../../Docs/FunctionDetails/Station.md)
 ; Подробный разбор [элемент с верхней полосой и ожиданием HALT](../../Docs/CaptionItem.md)
 ; -----------------------------------------

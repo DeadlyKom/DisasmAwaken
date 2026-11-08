@@ -27,12 +27,12 @@ Entry:          LD A, (IX + @FActionRecord.LinkedIndex)
                 JR Z, @Action.CheckRecordEffectThreshold.CompareValue           ; переход, если бит 3 LinkFlags сброшен, использовать #0A
 
                 ; Проверка первого и второго байтов выбора порога.
-                LD A, (#9C1A)
+                LD A, (@ActionShipEquipment.AntiMissilePs1.Value)
                 INC A
                 LD C, #1E
                 JR NZ, @Action.CheckRecordEffectThreshold.CompareValue          ; переход, если первый байт отличается от #FF, использовать #1E
 
-                LD A, (#9C1B)
+                LD A, (@ActionShipEquipment.AntiMissilePs2.Value)
                 INC A
                 LD C, #3C
                 JR NZ, @Action.CheckRecordEffectThreshold.CompareValue          ; переход, если второй байт отличается от #FF, использовать #3C

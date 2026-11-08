@@ -113,7 +113,7 @@ StoreModel:     LD (IY + @FActionRecord.ModelOffset), C
                 LD A, (IX + @FActionRecord.LinkedIndex)
                 LD (IY + @FActionRecord.LinkedIndex), A
                 ; Завершение исходных полей ребёнка, подстановка FF, управляющий код 50, байт 10 равен 1 и шаг цели 2.
-                LD (IY + @FActionRecord.Unknown15), #FF
+                LD (IY + @FActionRecord.LinkOverride), #FF
                 LD (IY + @FActionRecord.Unknown13), @ActionChildSpawnConst.ControlByte13
                 LD (IY + @FActionRecord.Unknown10), @ActionChildSpawnConst.InitialByte10
                 LD (IY + @FActionRecord.TargetCodeStep), @ActionChildSpawnConst.TargetStep

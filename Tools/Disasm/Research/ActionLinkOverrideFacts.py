@@ -3,29 +3,29 @@ FUNCTIONS={0x662B:('CopyRecordLinkOverride','Копирование разреш
 LOCAL={};LABELS={};CONTINUATIONS={}
 CONTRACTS={('Action',0x662B):(
     ['HL, DE, BC числовых аргументов не задают, AF задаёт сохраняемый Carry',
-     'IX указывает FActionRecord, Unknown15 читается, LinkedIndex и StateCode доступны для записи',
+     'IX указывает FActionRecord, LinkOverride читается, LinkedIndex и StateCode доступны для записи',
      'CPU-стек содержит внешний возврат, вмешательство IRQ исключено'],
-    ['при Unknown15=FF A=0, F=50 OR входной Carry, запись не изменена',
-     'иначе A=Unknown15, LinkedIndex=A, StateCode=02, F соответствует DEC от (A+1) с исходным Carry',
+    ['при LinkOverride=FF A=0, F=50 OR входной Carry, запись не изменена',
+     'иначе A=LinkOverride, LinkedIndex=A, StateCode=02, F соответствует DEC от (A+1) с исходным Carry',
      "HL, DE, BC, HL', DE', BC', AF', IX, IY сохраняются",
      'SP=входной SP+2, I, IM, IFF и страница сохраняются, CPU-стек не записывается',
      'R получает 4 M1 для FF либо 10 для копирования, его бит 7 сохраняется'],
     ['AF, R, LinkedIndex и StateCode только при разрешённой подстановке'],
     ['пара INC/DEC сохраняет исходный байт, но не входные флаги кроме Carry',
      'разрешённый ноль записывается и возвращает Z, поэтому Z сам по себе не доказывает запрет подстановки',
-     'Unknown15 и StateCode сохраняют неизвестные имена, глобальное игровое назначение этих полей ещё не доказано',
+     'LinkOverride задаёт индекс подстановки связи, конкретная игровая роль связи и состояния зависит от класса',
      'LinkedIndex является существующим именем поля, его значение для каждого класса требует разбора потребителя',
      '72192 сценария покрыли все пары байта и входного F, все 26 физических позиций, регистры включая R и восемь банков RAM',
      'точные T, IRQ, сборка и нативный запуск не доказаны'])}
 COMMENTS={
     0x662B:(['Чтение исходного байта подстановки, значение FF запрещает изменение записи.'],None),
     0x662E:(['Проверка запрета через оборачивание FF+1, Carry остаётся входным.'],None),
-    0x662F:([], 'выход, если исходный Unknown15 равен FF, оставить запись неизменной'),
+    0x662F:([], 'выход, если исходный LinkOverride равен FF, оставить запись неизменной'),
     0x6630:(['Восстановление исходного разрешённого значения и запись его в существующий LinkedIndex.'],None),
     0x6634:(['Обновление StateCode кодом 02, его полный игровой смысл ещё не установлен.'],None)}
 
 def name_operands(region,address,operation):
     if (region,address)!=('Action',0x662B):return operation
-    for value,field in ((0x15,'Unknown15'),(0x0B,'LinkedIndex'),(0x0A,'StateCode')):
+    for value,field in ((0x15,'LinkOverride'),(0x0B,'LinkedIndex'),(0x0A,'StateCode')):
         operation=operation.replace('(IX+#'+format(value,'02X')+')','(IX + @FActionRecord.'+field+')')
     return operation

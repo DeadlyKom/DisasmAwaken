@@ -33,7 +33,7 @@
 | LinkFlags | 0 |
 | ClassCode | 3 |
 | Unknown14 | 0 |
-| Unknown15 | FF |
+| LinkOverride | FF |
 | LinkedIndex | Unknown0D родителя |
 | Unknown13 | 64, десятичное 100 |
 | Unknown10 | 1E, десятичное 30 |

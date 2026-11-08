@@ -1,5 +1,6 @@
                 module Station
                 module PrintSystemTraits
+                ; Исходные тексты [границы ресурсов и общие LF](../../Docs/StationInterfaceTextResources.md)
 ; Документация [Station](../../Docs/FunctionDetails/Station.md)
 ; Подробный разбор [коды DescribeKey, исходные русские строки, относительные позиции и сохранность регистров](../../Docs/SystemTraits.md)
 ; -----------------------------------------

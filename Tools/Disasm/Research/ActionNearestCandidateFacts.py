@@ -52,7 +52,7 @@ def name_operands(region,function_address,operation):
     if (region,function_address)!=('Action',0xE9C2):return operation
     return (operation.replace('(#E9E7)','(@ActionNearestCandidateState.ClosestHigh)')
             .replace('(#E9FE)','(@ActionNearestCandidateState.ChosenIndex)')
-            .replace('LD HL, #A01B','LD HL, @ActionCandidateListState.BeforeFirst')
+            .replace('LD HL, #A01B','LD HL, @ActionCandidateListData.Slot00.Code - 1')
             .replace('CP #FE','CP @ActionCandidateListConst.ListEnd')
             .replace('LD (HL), #FF','LD (HL), @ActionCandidateListConst.SkippedIndex')
             .replace('CALL #E6A7','CALL @Action.RecordIndexToAddress.Entry')

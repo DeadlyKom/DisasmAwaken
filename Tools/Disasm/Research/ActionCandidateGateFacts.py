@@ -32,5 +32,5 @@ COMMENTS={0xEA15:(['Проверка допуска полного класса 
 def name_operands(region,function_address,operation):
     if (region,function_address)!=('Action',0xEA15):return operation
     return (operation.replace('CALL #EA00','CALL @Action.CheckCandidateListClass.Entry')
-            .replace('LD HL, #A01B','LD HL, @ActionCandidateListState.BeforeFirst')
+            .replace('LD HL, #A01B','LD HL, @ActionCandidateListData.Slot00.Code - 1')
             .replace('CP #FE','CP @ActionCandidateListConst.ListEnd'))

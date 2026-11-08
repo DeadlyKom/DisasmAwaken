@@ -110,19 +110,19 @@ UpdateRecords:  CALL @Action.UpdateObjects.Entry
                 LD HL, #EF22
                 LD (#ECA9), HL
                 LD B, #04
-                LD A, (#9C1C)
+                LD A, (@ActionShipEquipment.ShieldFortress.Value)
                 DEC B
                 INC A
                 JP NZ, @Action.UpdateFrame.ApplyEventCost                       ; переход, если первый байт отличается от #FF, стоимость равна 3
 
 
-                LD A, (#9C1D)
+                LD A, (@ActionShipEquipment.ShieldDefense1.Value)
                 DEC B
                 INC A
                 JP NZ, @Action.UpdateFrame.ApplyEventCost                       ; переход, если второй байт отличается от #FF, стоимость равна 2
 
 
-                LD A, (#9C1E)
+                LD A, (@ActionShipEquipment.ShieldDefense2.Value)
                 DEC B
                 INC A
                 JP NZ, @Action.UpdateFrame.ApplyEventCost                       ; переход, если третий байт отличается от #FF, стоимость равна 1

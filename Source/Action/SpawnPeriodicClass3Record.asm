@@ -97,7 +97,7 @@ CreateChild:    LD L, (IX + @FActionRecord.Components.Component0.Low)
                 LD (IY + @FActionRecord.Unknown14), #00
                 ; Копирование индекса связи Unknown0D родителя в LinkedIndex ребёнка и завершение его управляющих полей.
                 LD A, (IX + @FActionRecord.Unknown0D)
-                LD (IY + @FActionRecord.Unknown15), #FF
+                LD (IY + @FActionRecord.LinkOverride), #FF
                 LD (IY + @FActionRecord.LinkedIndex), A
                 LD (IY + @FActionRecord.Unknown13), @ActionPeriodicClass3Const.ControlByte13
                 LD (IY + @FActionRecord.Unknown10), @ActionPeriodicClass3Const.InitialByte10

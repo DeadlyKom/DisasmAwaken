@@ -6,12 +6,12 @@
                 ; исходная запись 17, адреса 6594..65AC
                 ; In:
                 ;   HL, DE, BC и AF числовых аргументов не задают, IX указывает доступную FActionRecord
-                ;   Unknown15, StateCode и LinkedIndex доступны по договору CopyRecordLinkOverride, он вызывается до иных проверок
+                ;   LinkOverride, StateCode и LinkedIndex доступны по договору CopyRecordLinkOverride, он вызывается до иных проверок
                 ;   действуют договоры вызываемых потоков и фильтров, достижима подходящая активная запись либо маркер
                 ;   выбран ACTION банка 0, CPU-стек не пересекает запись, код и потоки, доступны 10 дополнительных байтов, IRQ не вмешиваются
                 ; Out:
-                ;   при Unknown15=1..FE возвращается результат подстановки, LinkedIndex=Unknown15 и StateCode=02
-                ;   при Unknown15=0 либо FF обработка продолжается, разрешённый ноль сначала записывает LinkedIndex=0 и StateCode=02
+                ;   при LinkOverride=1..FE возвращается результат подстановки, LinkedIndex=LinkOverride и StateCode=02
+                ;   при LinkOverride=0 либо FF обработка продолжается, разрешённый ноль сначала записывает LinkedIndex=0 и StateCode=02
                 ;   после незавершившей подстановки StateCode=01, обновляется Stream0 и вычисляется p=(прочитанный R AND H) OR L
                 ;   при p!=0 возврат сохраняет StateCode=01, при p=0 вызывается общий SelectLink
                 ;   после NZ общего выбора ClassCode становится 00, после Z прежний ClassCode сохраняется
@@ -32,7 +32,7 @@
                 ; -----------------------------------------
                 ; Применение исходной подстановки до выбора состояния, ноль разрешён и продолжает обработку.
 Entry:          CALL @Action.CopyRecordLinkOverride.Entry
-                RET NZ                                                          ; выход, если Unknown15 находится в 1..FE, сохранить результат подстановки
+                RET NZ                                                          ; выход, если LinkOverride находится в 1..FE, сохранить результат подстановки
 
                 ; Подготовка StateCode=01 перед условным выбором и возможной сменой самого класса.
                 LD (IX + @FActionRecord.StateCode), @ActionClass9Const.DefaultCode

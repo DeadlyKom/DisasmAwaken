@@ -73,7 +73,7 @@ Coordinate      equ #9BC1                                                       
 
 def name_operands(region,function_address,operation):
     if (region,function_address)!=('Action',0xF3F0):return operation
-    for register,fields in (('IX',{13:'Unknown0D',22:'SavedStateCode',10:'StateCode'}),('IY',{6:'ModelOffset',15:'TargetIndex',7:'OffsetPhase0',8:'OffsetPhase1',9:'OffsetPhase2',17:'Unknown11',10:'StateCode',22:'SavedStateCode',12:'LinkFlags',18:'ClassCode',20:'Unknown14',21:'Unknown15',11:'LinkedIndex',19:'Unknown13',16:'Unknown10',37:'TargetCodeStep'})):
+    for register,fields in (('IX',{13:'Unknown0D',22:'SavedStateCode',10:'StateCode'}),('IY',{6:'ModelOffset',15:'TargetIndex',7:'OffsetPhase0',8:'OffsetPhase1',9:'OffsetPhase2',17:'Unknown11',10:'StateCode',22:'SavedStateCode',12:'LinkFlags',18:'ClassCode',20:'Unknown14',21:'LinkOverride',11:'LinkedIndex',19:'Unknown13',16:'Unknown10',37:'TargetCodeStep'})):
         for offset,name in fields.items():operation=operation.replace('('+register+'+#'+format(offset,'02X')+')','('+register+' + @FActionRecord.'+name+')')
     for offset in range(6):
         name='Components.Component'+str(offset//2)+('.High' if offset&1 else '.Low')

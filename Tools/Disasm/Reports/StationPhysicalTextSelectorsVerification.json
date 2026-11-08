@@ -1,0 +1,1400 @@
+{
+  "passed": true,
+  "cases": 2056,
+  "tables": [
+    {
+      "name": "CaptionLabels",
+      "base": 58265,
+      "delimiter": 10,
+      "physical_indices_checked": [
+        {
+          "index": 0,
+          "address": 58266,
+          "text_escaped": ""
+        },
+        {
+          "index": 1,
+          "address": 58267,
+          "text_escaped": "Вызов абонента"
+        },
+        {
+          "index": 2,
+          "address": 58282,
+          "text_escaped": "Новости галактики"
+        },
+        {
+          "index": 3,
+          "address": 58300,
+          "text_escaped": "Карта галактики"
+        },
+        {
+          "index": 4,
+          "address": 58316,
+          "text_escaped": "Контракт"
+        },
+        {
+          "index": 5,
+          "address": 58325,
+          "text_escaped": "Товар"
+        },
+        {
+          "index": 6,
+          "address": 58331,
+          "text_escaped": "Оснащение корабля"
+        },
+        {
+          "index": 7,
+          "address": 58349,
+          "text_escaped": "Оснащение скиммера"
+        },
+        {
+          "index": 8,
+          "address": 58368,
+          "text_escaped": "Корабль"
+        },
+        {
+          "index": 9,
+          "address": 58376,
+          "text_escaped": "Скиммер"
+        },
+        {
+          "index": 10,
+          "address": 58384,
+          "text_escaped": "Установки среды"
+        },
+        {
+          "index": 11,
+          "address": 58400,
+          "text_escaped": "Установки игры"
+        },
+        {
+          "index": 12,
+          "address": 58415,
+          "text_escaped": "Документация оснащения"
+        },
+        {
+          "index": 13,
+          "address": 58438,
+          "text_escaped": "Инфо о системе"
+        },
+        {
+          "index": 14,
+          "address": 58453,
+          "text_escaped": "Карта системы"
+        },
+        {
+          "index": 15,
+          "address": 58467,
+          "text_escaped": "Индекс"
+        },
+        {
+          "index": 16,
+          "address": 58474,
+          "text_escaped": "Описание"
+        },
+        {
+          "index": 17,
+          "address": 58483,
+          "text_escaped": "Корабли"
+        },
+        {
+          "index": 18,
+          "address": 58491,
+          "text_escaped": "Информация"
+        },
+        {
+          "index": 19,
+          "address": 58502,
+          "text_escaped": "3D обзор"
+        },
+        {
+          "index": 20,
+          "address": 58511,
+          "text_escaped": "Внимание!"
+        },
+        {
+          "index": 21,
+          "address": 58521,
+          "text_escaped": "Добро пожаловать!"
+        }
+      ]
+    },
+    {
+      "name": "CenteredItemTexts",
+      "base": 58538,
+      "delimiter": 10,
+      "physical_indices_checked": [
+        {
+          "index": 0,
+          "address": 58539,
+          "text_escaped": "Абонент"
+        },
+        {
+          "index": 1,
+          "address": 58598,
+          "text_escaped": "Новости"
+        },
+        {
+          "index": 2,
+          "address": 58639,
+          "text_escaped": "Карта"
+        },
+        {
+          "index": 3,
+          "address": 58675,
+          "text_escaped": "Контракт"
+        },
+        {
+          "index": 4,
+          "address": 58757,
+          "text_escaped": "Товар"
+        },
+        {
+          "index": 5,
+          "address": 58803,
+          "text_escaped": "Оснащение"
+        },
+        {
+          "index": 6,
+          "address": 58875,
+          "text_escaped": "Новая"
+        },
+        {
+          "index": 7,
+          "address": 58915,
+          "text_escaped": "Корабль"
+        },
+        {
+          "index": 8,
+          "address": 58963,
+          "text_escaped": "Скиммер"
+        },
+        {
+          "index": 9,
+          "address": 59012,
+          "text_escaped": "Вылет"
+        },
+        {
+          "index": 10,
+          "address": 59066,
+          "text_escaped": "Продажа"
+        },
+        {
+          "index": 11,
+          "address": 59097,
+          "text_escaped": "Покупка"
+        },
+        {
+          "index": 12,
+          "address": 59128,
+          "text_escaped": "Продать"
+        },
+        {
+          "index": 13,
+          "address": 59159,
+          "text_escaped": "Продать"
+        },
+        {
+          "index": 14,
+          "address": 59208,
+          "text_escaped": "Память"
+        },
+        {
+          "index": 15,
+          "address": 59287,
+          "text_escaped": "Маршрут"
+        },
+        {
+          "index": 16,
+          "address": 59468,
+          "text_escaped": "Стереть"
+        },
+        {
+          "index": 17,
+          "address": 59518,
+          "text_escaped": "Листать"
+        },
+        {
+          "index": 18,
+          "address": 59573,
+          "text_escaped": "Позиция"
+        },
+        {
+          "index": 19,
+          "address": 59672,
+          "text_escaped": "Центр"
+        },
+        {
+          "index": 20,
+          "address": 59736,
+          "text_escaped": "Контракт"
+        },
+        {
+          "index": 21,
+          "address": 59824,
+          "text_escaped": "?"
+        },
+        {
+          "index": 22,
+          "address": 59887,
+          "text_escaped": "Сделка"
+        },
+        {
+          "index": 23,
+          "address": 59936,
+          "text_escaped": ""
+        },
+        {
+          "index": 24,
+          "address": 59937,
+          "text_escaped": ""
+        },
+        {
+          "index": 25,
+          "address": 59938,
+          "text_escaped": ""
+        },
+        {
+          "index": 26,
+          "address": 59939,
+          "text_escaped": ""
+        },
+        {
+          "index": 27,
+          "address": 59940,
+          "text_escaped": ""
+        },
+        {
+          "index": 28,
+          "address": 59941,
+          "text_escaped": ""
+        },
+        {
+          "index": 29,
+          "address": 59942,
+          "text_escaped": ""
+        },
+        {
+          "index": 30,
+          "address": 59943,
+          "text_escaped": ""
+        },
+        {
+          "index": 31,
+          "address": 59944,
+          "text_escaped": ""
+        },
+        {
+          "index": 32,
+          "address": 59945,
+          "text_escaped": ""
+        },
+        {
+          "index": 33,
+          "address": 59946,
+          "text_escaped": ""
+        },
+        {
+          "index": 34,
+          "address": 59947,
+          "text_escaped": ""
+        },
+        {
+          "index": 35,
+          "address": 59948,
+          "text_escaped": ""
+        },
+        {
+          "index": 36,
+          "address": 59949,
+          "text_escaped": ""
+        },
+        {
+          "index": 37,
+          "address": 59950,
+          "text_escaped": ""
+        },
+        {
+          "index": 38,
+          "address": 59951,
+          "text_escaped": ""
+        },
+        {
+          "index": 39,
+          "address": 59952,
+          "text_escaped": ""
+        },
+        {
+          "index": 40,
+          "address": 59953,
+          "text_escaped": "Перелет"
+        },
+        {
+          "index": 41,
+          "address": 59962,
+          "text_escaped": ""
+        }
+      ]
+    },
+    {
+      "name": "LegalStatusLabels",
+      "base": 59963,
+      "delimiter": 10,
+      "physical_indices_checked": [
+        {
+          "index": 0,
+          "address": 59964,
+          "text_escaped": "Чистый"
+        },
+        {
+          "index": 1,
+          "address": 59971,
+          "text_escaped": "Подозреваемый"
+        },
+        {
+          "index": 2,
+          "address": 59985,
+          "text_escaped": "Розыскиваемый"
+        },
+        {
+          "index": 3,
+          "address": 59999,
+          "text_escaped": "Приговоренный"
+        },
+        {
+          "index": 4,
+          "address": 60013,
+          "text_escaped": "Это есть прототип интерфейса"
+        }
+      ]
+    },
+    {
+      "name": "StatusFieldLabels",
+      "base": 60041,
+      "delimiter": 10,
+      "physical_indices_checked": [
+        {
+          "index": 0,
+          "address": 60042,
+          "text_escaped": "ST: "
+        },
+        {
+          "index": 1,
+          "address": 60047,
+          "text_escaped": " KR: "
+        },
+        {
+          "index": 2,
+          "address": 60053,
+          "text_escaped": " TN: "
+        }
+      ]
+    },
+    {
+      "name": "GovernmentLabels",
+      "base": 60301,
+      "delimiter": 10,
+      "physical_indices_checked": [
+        {
+          "index": 0,
+          "address": 60302,
+          "text_escaped": "Демократия"
+        },
+        {
+          "index": 1,
+          "address": 60313,
+          "text_escaped": "Диктатура"
+        },
+        {
+          "index": 2,
+          "address": 60323,
+          "text_escaped": "Анархия"
+        },
+        {
+          "index": 3,
+          "address": 60331,
+          "text_escaped": "Необитаемая"
+        },
+        {
+          "index": 4,
+          "address": 60343,
+          "text_escaped": "Неизвестный"
+        }
+      ]
+    },
+    {
+      "name": "EconomyLabels",
+      "base": 60354,
+      "delimiter": 10,
+      "physical_indices_checked": [
+        {
+          "index": 0,
+          "address": 60355,
+          "text_escaped": "агрокультурная"
+        },
+        {
+          "index": 1,
+          "address": 60370,
+          "text_escaped": "культурная"
+        },
+        {
+          "index": 2,
+          "address": 60381,
+          "text_escaped": "технологическая"
+        },
+        {
+          "index": 3,
+          "address": 60397,
+          "text_escaped": "общая"
+        }
+      ]
+    },
+    {
+      "name": "PoliticalAreaLabels",
+      "base": 61618,
+      "delimiter": 10,
+      "physical_indices_checked": [
+        {
+          "index": 0,
+          "address": 61619,
+          "text_escaped": "Федерация Галактики"
+        },
+        {
+          "index": 1,
+          "address": 61639,
+          "text_escaped": "Конфедерация Первых"
+        },
+        {
+          "index": 2,
+          "address": 61659,
+          "text_escaped": "Содружество Миров"
+        },
+        {
+          "index": 3,
+          "address": 61677,
+          "text_escaped": "Свободные Земли"
+        }
+      ]
+    },
+    {
+      "name": "QueuedMessages",
+      "base": 52761,
+      "delimiter": 10,
+      "physical_indices_checked": [
+        {
+          "index": 0,
+          "address": 52762,
+          "text_escaped": "Недостаточно кредитов!"
+        },
+        {
+          "index": 1,
+          "address": 52785,
+          "text_escaped": "В наличии уже имеется!"
+        },
+        {
+          "index": 2,
+          "address": 52808,
+          "text_escaped": "Превышение тоннажа!"
+        },
+        {
+          "index": 3,
+          "address": 52828,
+          "text_escaped": "Ваш корабль находится в розыске!"
+        },
+        {
+          "index": 4,
+          "address": 52861,
+          "text_escaped": "Отсутствует объект модернизации!"
+        },
+        {
+          "index": 5,
+          "address": 52894,
+          "text_escaped": "Превышено разрешённое количество!"
+        },
+        {
+          "index": 6,
+          "address": 52928,
+          "text_escaped": "Оснащение не может быть установлено!"
+        },
+        {
+          "index": 7,
+          "address": 52965,
+          "text_escaped": "В системе такой вид оснащения не реализуется!"
+        },
+        {
+          "index": 8,
+          "address": 53011,
+          "text_escaped": "Нет в наличии!"
+        },
+        {
+          "index": 9,
+          "address": 53026,
+          "text_escaped": "Сделка незаконна!"
+        },
+        {
+          "index": 10,
+          "address": 53084,
+          "text_escaped": "Превышение максимальной разрешенной суммы!"
+        },
+        {
+          "index": 11,
+          "address": 53127,
+          "text_escaped": "Сделка прошла успешно!"
+        },
+        {
+          "index": 12,
+          "address": 53150,
+          "text_escaped": "Подобный тип оснащения уже имеется!"
+        },
+        {
+          "index": 13,
+          "address": 53186,
+          "text_escaped": "За неоплату стоянки, Вы выдворяетесь в открытый космос!"
+        },
+        {
+          "index": 14,
+          "address": 53242,
+          "text_escaped": "Вы находитесь в розыске!"
+        },
+        {
+          "index": 15,
+          "address": 53403,
+          "text_escaped": "Галактическая полиция предупреждает Вас о том, что Вы уже числитесь как неблагоприятный гражданин."
+        },
+        {
+          "index": 16,
+          "address": 53563,
+          "text_escaped": "За неисполнение контракта вы оштафовуетесть на 1000 кредитов. "
+        }
+      ]
+    },
+    {
+      "name": "EquipmentDescriptions",
+      "base": 53690,
+      "delimiter": 10,
+      "physical_indices_checked": [
+        {
+          "index": 0,
+          "address": 53691,
+          "text_escaped": "Было создано в 24 году новейшей эры. Основано на аннигиляционной системе атомов Водорода, с магнитно-резонансным направленным полем.Две тонны эквивалентны одному световому году."
+        },
+        {
+          "index": 1,
+          "address": 53869,
+          "text_escaped": "Было создано в 103 году новейшей эры. Основано топливо на совершенной аннигиляционной системе атомов Кремния, с лазерно-нейтринным управляющим полем.Одна тонна эквивалентна одному световому году."
+        },
+        {
+          "index": 2,
+          "address": 54065,
+          "text_escaped": "Была создана в 11 году новейшей эры. Практически не имеет никакой защиты от лазера. Цель уничтожает с первого попадания."
+        },
+        {
+          "index": 3,
+          "address": 54186,
+          "text_escaped": "Была создана в 76 году новейшей эры. Имеет стабильную резистивную защиту от лазера. Цель уничтожает с первого попадания."
+        },
+        {
+          "index": 4,
+          "address": 54307,
+          "text_escaped": "Была создана в 25 году новейшей эры. Детонирует в трюме подобравшего её объекта. Уничтожает сразу."
+        },
+        {
+          "index": 5,
+          "address": 54406,
+          "text_escaped": "Был создан в 8 году новейшей эры. Используется технология накачки мощности путём миниатюрной управляемой ядерной реакции."
+        },
+        {
+          "index": 6,
+          "address": 54528,
+          "text_escaped": "Был создан в 19 году новейшей эры. Используется технология накачки мощности путём миниатюрной управляемой ядерной реакции в магнитно-резонансном поле."
+        },
+        {
+          "index": 7,
+          "address": 54679,
+          "text_escaped": "Был создан в 37 году новейшей эры. Используется технология накачки мощности путём миниатюрной управляемой термоядерной реакции в магнитно-резонансном поле."
+        },
+        {
+          "index": 8,
+          "address": 54835,
+          "text_escaped": "Был создан в 72 году новейшей эры. Используется технология накачки мощности путём миниатюрной управляемой термоядерной реакции в лазерном поле."
+        },
+        {
+          "index": 9,
+          "address": 54979,
+          "text_escaped": "Был создан в 117 году новейшей эры. Используется технология накачки мощности аннигиляционным путём."
+        },
+        {
+          "index": 10,
+          "address": 55079,
+          "text_escaped": "Была создана в 79 году новейшей эры. Поворотная башня с одним лазером малой мощности."
+        },
+        {
+          "index": 11,
+          "address": 55165,
+          "text_escaped": "Была создана в 95 году новейшей эры. Поворотная башня мощности."
+        },
+        {
+          "index": 12,
+          "address": 55229,
+          "text_escaped": "Была создана в 28 году новейшей эры. Используется технология сильного ядерного поля."
+        },
+        {
+          "index": 13,
+          "address": 55314,
+          "text_escaped": "Была создана в 66 году новейшей эры. Используется технология лазерного отражения."
+        },
+        {
+          "index": 14,
+          "address": 55396,
+          "text_escaped": "Была создана в 83 году новейшей эры. Используется технология нейтринного поля и энергетического усиле\\x15ия."
+        },
+        {
+          "index": 15,
+          "address": 55502,
+          "text_escaped": "Был создан в 51 году новейшей эры. Используется технология ядерного разгона. Потребляет много топлива."
+        },
+        {
+          "index": 16,
+          "address": 55605,
+          "text_escaped": "Был создан в 69 году новейшей эры. Используется технология аннигиляционного разгона."
+        },
+        {
+          "index": 17,
+          "address": 55690,
+          "text_escaped": "Неоновая подсветка. "
+        },
+        {
+          "index": 18,
+          "address": 55711,
+          "text_escaped": "Неизвестный артефакт,добытый во время длительной войны 40-х годов с космитами."
+        },
+        {
+          "index": 19,
+          "address": 55790,
+          "text_escaped": "Тюнинг коробля. Sparco,momo..."
+        },
+        {
+          "index": 20,
+          "address": 55821,
+          "text_escaped": "Был создан в 45 году новейшей эры. Исползуется технология гравитронного однонаправленного луча."
+        },
+        {
+          "index": 21,
+          "address": 55917,
+          "text_escaped": "Была создана в 3 году новейшей эры. Компьютерные системы и следящие лазеры."
+        },
+        {
+          "index": 22,
+          "address": 55993,
+          "text_escaped": "Была создана в 2 году новейшей эры. Обеспечивает гиперпереход."
+        },
+        {
+          "index": 23,
+          "address": 56056,
+          "text_escaped": "Была создана в 56 году новейшей эры. Компьютерная система, позволяющая расчитать точку перелета к системе в момет нахождения за ней. Однократного действия."
+        },
+        {
+          "index": 24,
+          "address": 56212,
+          "text_escaped": "Была создана в 39 году новейшей эры. Боковые компинсационные двигатели, позволяющие двигаться в одном направлении вращая корабль как угодно."
+        },
+        {
+          "index": 25,
+          "address": 56353,
+          "text_escaped": "Была создана в 9932 году прошлой эры. Использует технологию накопления топлива путём захвата античастиц с поверхности звезды."
+        },
+        {
+          "index": 26,
+          "address": 56479,
+          "text_escaped": "Присадка к топливу,которая укоряет гиперпереход."
+        },
+        {
+          "index": 27,
+          "address": 56528,
+          "text_escaped": "Был создан в 10 году новейшей эры. Компьютерные системы использующие всемирную систему идентификаторов объектов."
+        },
+        {
+          "index": 28,
+          "address": 56641,
+          "text_escaped": "Система,ускоряющая двигатели коробля."
+        },
+        {
+          "index": 29,
+          "address": 56679,
+          "text_escaped": "Был создан в 9872 году прошлой эры. Система холодильников для хранения скоропортящихся товаров."
+        },
+        {
+          "index": 30,
+          "address": 56775,
+          "text_escaped": " "
+        },
+        {
+          "index": 31,
+          "address": 56777,
+          "text_escaped": " "
+        },
+        {
+          "index": 32,
+          "address": 56779,
+          "text_escaped": "  "
+        },
+        {
+          "index": 33,
+          "address": 56782,
+          "text_escaped": "Было создано в 24 году новейшей эры. Основано на аннигиляционной системе атомов Водорода, с магнитно-резонансным направленным полем."
+        }
+      ]
+    },
+    {
+      "name": "DecodedMessages",
+      "base": 57954,
+      "delimiter": 10,
+      "physical_indices_checked": [
+        {
+          "index": 0,
+          "address": 57955,
+          "text_escaped": "Расшифрована система:Дзета-43/78-Д"
+        },
+        {
+          "index": 1,
+          "address": 57990,
+          "text_escaped": "Внимание! Расшифрован иносигнал прошлых поколений: Каждые 69 космолет зарождается жизнь нового типа.И если это не произойдет все предыдущие поколения будут уничтожены!"
+        }
+      ]
+    },
+    {
+      "name": "EnvironmentLabels",
+      "base": 57035,
+      "delimiter": 13,
+      "physical_indices_checked": [
+        {
+          "index": 0,
+          "address": 57036,
+          "text_escaped": "Мышка"
+        },
+        {
+          "index": 1,
+          "address": 57042,
+          "text_escaped": "Джойстик"
+        },
+        {
+          "index": 2,
+          "address": 57051,
+          "text_escaped": "Музыка"
+        },
+        {
+          "index": 3,
+          "address": 57058,
+          "text_escaped": "Инверсия"
+        },
+        {
+          "index": 4,
+          "address": 57067,
+          "text_escaped": "Вверх"
+        },
+        {
+          "index": 5,
+          "address": 57073,
+          "text_escaped": "Вниз"
+        },
+        {
+          "index": 6,
+          "address": 57078,
+          "text_escaped": "Влево"
+        },
+        {
+          "index": 7,
+          "address": 57084,
+          "text_escaped": "Вправо"
+        },
+        {
+          "index": 8,
+          "address": 57091,
+          "text_escaped": "Выбор"
+        },
+        {
+          "index": 9,
+          "address": 57097,
+          "text_escaped": "Отмена"
+        },
+        {
+          "index": 10,
+          "address": 57104,
+          "text_escaped": "Ink объектов"
+        },
+        {
+          "index": 11,
+          "address": 57117,
+          "text_escaped": "Paper объектов"
+        },
+        {
+          "index": 12,
+          "address": 57132,
+          "text_escaped": "Bright объектов"
+        }
+      ]
+    },
+    {
+      "name": "GameSettingsLabels",
+      "base": 57148,
+      "delimiter": 13,
+      "physical_indices_checked": [
+        {
+          "index": 0,
+          "address": 57149,
+          "text_escaped": "Мышка"
+        },
+        {
+          "index": 1,
+          "address": 57155,
+          "text_escaped": "Вверх"
+        },
+        {
+          "index": 2,
+          "address": 57161,
+          "text_escaped": "Вниз"
+        },
+        {
+          "index": 3,
+          "address": 57166,
+          "text_escaped": "Влево"
+        },
+        {
+          "index": 4,
+          "address": 57172,
+          "text_escaped": "Вправо"
+        },
+        {
+          "index": 5,
+          "address": 57179,
+          "text_escaped": "Влево крен"
+        },
+        {
+          "index": 6,
+          "address": 57190,
+          "text_escaped": "Вправо крен"
+        },
+        {
+          "index": 7,
+          "address": 57202,
+          "text_escaped": "Лазер"
+        },
+        {
+          "index": 8,
+          "address": 57208,
+          "text_escaped": "Набор скорости"
+        },
+        {
+          "index": 9,
+          "address": 57223,
+          "text_escaped": "Сброс скорости"
+        },
+        {
+          "index": 10,
+          "address": 57238,
+          "text_escaped": "Бортовой компьютер"
+        },
+        {
+          "index": 11,
+          "address": 57257,
+          "text_escaped": "Наведение ракеты"
+        },
+        {
+          "index": 12,
+          "address": 57274,
+          "text_escaped": "Забыть наведения"
+        },
+        {
+          "index": 13,
+          "address": 57291,
+          "text_escaped": "Пуск ракеты 1"
+        },
+        {
+          "index": 14,
+          "address": 57305,
+          "text_escaped": "Пуск ракеты 2"
+        },
+        {
+          "index": 15,
+          "address": 57319,
+          "text_escaped": "Пуск ракеты 3"
+        },
+        {
+          "index": 16,
+          "address": 57333,
+          "text_escaped": "Форсаж"
+        },
+        {
+          "index": 17,
+          "address": 57340,
+          "text_escaped": "Система свободного полета"
+        },
+        {
+          "index": 18,
+          "address": 57366,
+          "text_escaped": "Система наведения"
+        },
+        {
+          "index": 19,
+          "address": 57384,
+          "text_escaped": "Система возврата"
+        },
+        {
+          "index": 20,
+          "address": 57401,
+          "text_escaped": "Силовой лучь"
+        },
+        {
+          "index": 21,
+          "address": 57414,
+          "text_escaped": "Противоракетная система"
+        },
+        {
+          "index": 22,
+          "address": 57438,
+          "text_escaped": "Сброс контейнера"
+        },
+        {
+          "index": 23,
+          "address": 57455,
+          "text_escaped": "Сброс мины"
+        },
+        {
+          "index": 24,
+          "address": 57466,
+          "text_escaped": "Гиперпереход"
+        },
+        {
+          "index": 25,
+          "address": 57479,
+          "text_escaped": "Включение неона"
+        },
+        {
+          "index": 26,
+          "address": 57495,
+          "text_escaped": "Передний и задний вид"
+        },
+        {
+          "index": 27,
+          "address": 57517,
+          "text_escaped": "Защита от косм.излучений"
+        },
+        {
+          "index": 28,
+          "address": 57542,
+          "text_escaped": " "
+        },
+        {
+          "index": 29,
+          "address": 57544,
+          "text_escaped": " "
+        },
+        {
+          "index": 30,
+          "address": 57546,
+          "text_escaped": " "
+        },
+        {
+          "index": 31,
+          "address": 57548,
+          "text_escaped": " "
+        },
+        {
+          "index": 32,
+          "address": 57550,
+          "text_escaped": " "
+        },
+        {
+          "index": 33,
+          "address": 57552,
+          "text_escaped": " "
+        },
+        {
+          "index": 34,
+          "address": 57554,
+          "text_escaped": " "
+        },
+        {
+          "index": 35,
+          "address": 57556,
+          "text_escaped": " "
+        },
+        {
+          "index": 36,
+          "address": 57558,
+          "text_escaped": " "
+        },
+        {
+          "index": 37,
+          "address": 57560,
+          "text_escaped": " "
+        },
+        {
+          "index": 38,
+          "address": 57562,
+          "text_escaped": " "
+        },
+        {
+          "index": 39,
+          "address": 57564,
+          "text_escaped": " "
+        },
+        {
+          "index": 40,
+          "address": 57566,
+          "text_escaped": " "
+        },
+        {
+          "index": 41,
+          "address": 57568,
+          "text_escaped": " "
+        },
+        {
+          "index": 42,
+          "address": 57570,
+          "text_escaped": " "
+        }
+      ]
+    },
+    {
+      "name": "TradeGoodsLabels",
+      "base": 60492,
+      "delimiter": 13,
+      "physical_indices_checked": [
+        {
+          "index": 0,
+          "address": 60493,
+          "text_escaped": "Текстиль\\x06тн"
+        },
+        {
+          "index": 1,
+          "address": 60505,
+          "text_escaped": "С/Х Продукты\\x06тн"
+        },
+        {
+          "index": 2,
+          "address": 60521,
+          "text_escaped": "С/Х Техника\\x06тн"
+        },
+        {
+          "index": 3,
+          "address": 60536,
+          "text_escaped": "Стройматериалы\\x06тн"
+        },
+        {
+          "index": 4,
+          "address": 60554,
+          "text_escaped": "Стройтехника\\x06тн"
+        },
+        {
+          "index": 5,
+          "address": 60570,
+          "text_escaped": "Вода\\x06тн"
+        },
+        {
+          "index": 6,
+          "address": 60578,
+          "text_escaped": "Спиртное\\x06тн"
+        },
+        {
+          "index": 7,
+          "address": 60590,
+          "text_escaped": "Пиво\\x06тн"
+        },
+        {
+          "index": 8,
+          "address": 60598,
+          "text_escaped": "Табак\\x06тн"
+        },
+        {
+          "index": 9,
+          "address": 60607,
+          "text_escaped": "Медикаменты\\x06тн"
+        },
+        {
+          "index": 10,
+          "address": 60622,
+          "text_escaped": "Оборудование\\x06тн"
+        },
+        {
+          "index": 11,
+          "address": 60638,
+          "text_escaped": "Электроника\\x06тн"
+        },
+        {
+          "index": 12,
+          "address": 60653,
+          "text_escaped": "Компьютеры\\x06тн"
+        },
+        {
+          "index": 13,
+          "address": 60667,
+          "text_escaped": "Энергоносители\\x06тн"
+        },
+        {
+          "index": 14,
+          "address": 60685,
+          "text_escaped": "Минералы\\x06тн"
+        },
+        {
+          "index": 15,
+          "address": 60697,
+          "text_escaped": "Радиактивные Руды\\x06тн"
+        },
+        {
+          "index": 16,
+          "address": 60718,
+          "text_escaped": "Черные Металлы\\x06тн"
+        },
+        {
+          "index": 17,
+          "address": 60736,
+          "text_escaped": "Цветные Металлы\\x06тн"
+        },
+        {
+          "index": 18,
+          "address": 60755,
+          "text_escaped": "Драгоценные Металлы\\x06кг"
+        },
+        {
+          "index": 19,
+          "address": 60778,
+          "text_escaped": "Драгоценные Камни\\x06г"
+        },
+        {
+          "index": 20,
+          "address": 60798,
+          "text_escaped": "Предметы Роскоши\\x06кг"
+        },
+        {
+          "index": 21,
+          "address": 60818,
+          "text_escaped": "Легкое Вооружение\\x06тн"
+        },
+        {
+          "index": 22,
+          "address": 60839,
+          "text_escaped": "Тяжелое Вооружение\\x06тн"
+        },
+        {
+          "index": 23,
+          "address": 60861,
+          "text_escaped": "Наркотики\\x06кг"
+        },
+        {
+          "index": 24,
+          "address": 60874,
+          "text_escaped": "Рабы\\x06чл"
+        },
+        {
+          "index": 25,
+          "address": 60882,
+          "text_escaped": "Проститутки\\x06чл"
+        },
+        {
+          "index": 26,
+          "address": 60897,
+          "text_escaped": "Трансплантанты\\x06кг"
+        },
+        {
+          "index": 27,
+          "address": 60915,
+          "text_escaped": "Уникумы\\x06чл"
+        },
+        {
+          "index": 28,
+          "address": 60926,
+          "text_escaped": "Технологии\\x06эк"
+        },
+        {
+          "index": 29,
+          "address": 60940,
+          "text_escaped": "Артефакты\\x06тн"
+        }
+      ]
+    },
+    {
+      "name": "EquipmentNames",
+      "base": 61015,
+      "delimiter": 13,
+      "physical_indices_checked": [
+        {
+          "index": 0,
+          "address": 61016,
+          "text_escaped": "Топливо МРП"
+        },
+        {
+          "index": 1,
+          "address": 61028,
+          "text_escaped": "Топливо ЛНП"
+        },
+        {
+          "index": 2,
+          "address": 61040,
+          "text_escaped": "Ракета рп1"
+        },
+        {
+          "index": 3,
+          "address": 61051,
+          "text_escaped": "Ракета рп2"
+        },
+        {
+          "index": 4,
+          "address": 61062,
+          "text_escaped": "Мина"
+        },
+        {
+          "index": 5,
+          "address": 61067,
+          "text_escaped": "Лазер 'Ксоникс'"
+        },
+        {
+          "index": 6,
+          "address": 61083,
+          "text_escaped": "Лазер 'Корпс'"
+        },
+        {
+          "index": 7,
+          "address": 61097,
+          "text_escaped": "Лазер 'Динейел'"
+        },
+        {
+          "index": 8,
+          "address": 61113,
+          "text_escaped": "Лазер 'Милениал'"
+        },
+        {
+          "index": 9,
+          "address": 61130,
+          "text_escaped": "Лазер 'Эпик'"
+        },
+        {
+          "index": 10,
+          "address": 61143,
+          "text_escaped": "Противоракетная Система"
+        },
+        {
+          "index": 11,
+          "address": 61167,
+          "text_escaped": "Противоракетная Система п2"
+        },
+        {
+          "index": 12,
+          "address": 61194,
+          "text_escaped": "Система Защиты 'Дифёрт'"
+        },
+        {
+          "index": 13,
+          "address": 61218,
+          "text_escaped": "Система Защиты 'Сёрфейс'"
+        },
+        {
+          "index": 14,
+          "address": 61243,
+          "text_escaped": "Система Защиты 'Сейсмис'"
+        },
+        {
+          "index": 15,
+          "address": 61268,
+          "text_escaped": "Форсаж Движок 'Риал'"
+        },
+        {
+          "index": 16,
+          "address": 61289,
+          "text_escaped": "Форсаж Движок 'Вист'"
+        },
+        {
+          "index": 17,
+          "address": 61310,
+          "text_escaped": "Неон"
+        },
+        {
+          "index": 18,
+          "address": 61315,
+          "text_escaped": "X артефакт"
+        },
+        {
+          "index": 19,
+          "address": 61326,
+          "text_escaped": "К-тюнинг"
+        },
+        {
+          "index": 20,
+          "address": 61335,
+          "text_escaped": "Силовой Луч"
+        },
+        {
+          "index": 21,
+          "address": 61347,
+          "text_escaped": "Система Наведения"
+        },
+        {
+          "index": 22,
+          "address": 61365,
+          "text_escaped": "Система Гиперслед"
+        },
+        {
+          "index": 23,
+          "address": 61383,
+          "text_escaped": "Система Возврата"
+        },
+        {
+          "index": 24,
+          "address": 61400,
+          "text_escaped": "Система Свободного Полета"
+        },
+        {
+          "index": 25,
+          "address": 61426,
+          "text_escaped": "Система Забора Топлива"
+        },
+        {
+          "index": 26,
+          "address": 61449,
+          "text_escaped": "Присадка к топливу"
+        },
+        {
+          "index": 27,
+          "address": 61468,
+          "text_escaped": "Идентификатор Целей"
+        },
+        {
+          "index": 28,
+          "address": 61488,
+          "text_escaped": "Система Ус-01"
+        },
+        {
+          "index": 29,
+          "address": 61502,
+          "text_escaped": "Криогенный Модуль"
+        },
+        {
+          "index": 30,
+          "address": 61520,
+          "text_escaped": "Совет"
+        },
+        {
+          "index": 31,
+          "address": 61526,
+          "text_escaped": "Анекдот"
+        },
+        {
+          "index": 32,
+          "address": 61534,
+          "text_escaped": "Анекдот"
+        }
+      ]
+    }
+  ],
+  "real_original_skip_code": true,
+  "independent_delimiter_scan": true,
+  "shared_delimiters_and_empty_caption_zero_checked": true,
+  "memory_outside_stack_unchanged": true,
+  "registers_and_carry_checked": true,
+  "arbitrary_indices_beyond_physical_tables_verified": false,
+  "graphics_verified": false,
+  "r_and_timing_verified": false,
+  "irq_executed": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

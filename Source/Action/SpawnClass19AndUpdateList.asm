@@ -143,7 +143,7 @@ StoreTag:       LD (IY + @FActionRecord.ReuseByte), A
                 CALL @Action.RecordAddressToIndex.Entry
                 LD E, A
                 ; Подготовка просмотра фиксированного списка с A01C, код для записи сохранён в E.
-                LD HL, @ActionCandidateListState.BeforeFirst
+                LD HL, @ActionCandidateListData.Slot00.Code - 1
                 ; Поиск ячейки FF либо недоступной записи до маркера FE, нулевой индекс является обычным элементом.
 NextItem:       INC HL
                 LD A, (HL)

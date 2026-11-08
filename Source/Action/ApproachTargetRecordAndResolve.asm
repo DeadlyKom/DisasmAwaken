@@ -11,7 +11,7 @@
                 ;   OBJECT3D банка 4, эффект банка 3, Controls банка 1 и исходные списки игровых и эффектных записей доступны
                 ;   ROM выбрана по фактическому paging, код в общей RAM и ACTION доступны, до 18 дополнительных байтов CPU-стека доступны, IRQ исключены
                 ; Out:
-                ;   до проверки активности цели у неё устанавливается бит 1 LinkFlags, Unknown15 получает текущий Unknown0D, LinkedIndex индекс текущего IX
+                ;   до проверки активности цели у неё устанавливается бит 1 LinkFlags, LinkOverride получает текущий Unknown0D, LinkedIndex индекс текущего IX
                 ;   при Component0.High цели=80 ненулевой Unknown11 пытается поставить текст F248 в очередь Controls, затем большой эффект выполняется на текущем IX
                 ;   при доступной цели три Components приближаются настоящим ApproachWordAndAccumulate с общим OR-накопителем в C'
                 ;   первая и вторая рассчитанные Components записываются сразу, третья только при ненулевом накопителе остаточных старших байтов
@@ -37,10 +37,10 @@
                 ; Поиск обычной целевой записи по TargetIndex, специальной обработки FF здесь нет.
 Entry:          LD A, (IX + @FActionRecord.TargetIndex)
                 CALL @Action.SelectRecordByIndex.Entry
-                ; Обновление бита обратной связи, Unknown15 и LinkedIndex цели до проверки её активности.
+                ; Обновление бита обратной связи, LinkOverride и LinkedIndex цели до проверки её активности.
                 SET @ActionArrivalConst.LinkedBit, (IY + @FActionRecord.LinkFlags)
                 LD A, (IX + @FActionRecord.Unknown0D)
-                LD (IY + @FActionRecord.Unknown15), A
+                LD (IY + @FActionRecord.LinkOverride), A
                 CALL @Action.RecordIXToIndex.Entry
                 LD (IY + @FActionRecord.LinkedIndex), A
                 ; Проверка полного старшего байта первой компоненты цели, C уже содержит младший байт.

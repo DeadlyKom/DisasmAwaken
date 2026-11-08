@@ -1,5 +1,6 @@
                 module Station
                 module DrawTradeNumericColumns
+                ; Исходные тексты [границы ресурсов и общие LF](../../Docs/StationInterfaceTextResources.md)
                 ; Документация [Station](../../Docs/FunctionDetails/Station.md)
                 ; Подробный разбор [две физические пары полей, маркеры, частичные выходы и счётчик попыток строк](../../Docs/TradeNumericColumns.md)
                 ; -----------------------------------------

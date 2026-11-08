@@ -22,23 +22,24 @@
 ;   промежуточные компоненты сохраняются в непосредственных операндах, сумма проверяется флагом переполнения
 ;   все произведения используют SignedSeededProduct, его зависимость от входного IY сохранена буквально
 ; -----------------------------------------
+                ; Физические слова [базис](../../Docs/ActionRenderBasis.md)
                 ; проверка первого угла перед изменением первой и второй компонент трёх векторов
-Entry:          LD A, (#9B14)
+Entry:          LD A, (@ActionRenderPhases.Value.Phase2)
                 AND A
                 JP NZ, @Voxel.RotateBasisVectors.RotateFirst                    ; переход, если первый угол ненулевой, выполнить соответствующее преобразование
 
 
-                LD HL, (#9B00)
+                LD HL, (@ActionRenderBasis.C00)
                 LD (#E7AF), HL
-                LD HL, (#9B06)
+                LD HL, (@ActionRenderBasis.C01)
                 LD (#E801), HL
-                LD HL, (#9B0C)
+                LD HL, (@ActionRenderBasis.C02)
                 LD (#E853), HL
-                LD HL, (#9B02)
+                LD HL, (@ActionRenderBasis.C10)
                 LD (#E67B), HL
-                LD HL, (#9B08)
+                LD HL, (@ActionRenderBasis.C11)
                 LD (#E6CD), HL
-                LD HL, (#9B0E)
+                LD HL, (@ActionRenderBasis.C12)
                 LD (#E71F), HL
                 JP @Voxel.RotateBasisVectors.CheckSecond
 
@@ -63,14 +64,14 @@ RotateFirst:    LD L, A
                 PUSH DE
                 EXX
                 POP BC
-                LD HL, (#9B00)
+                LD HL, (@ActionRenderBasis.C00)
                 CALL @Voxel.SignedSeededProduct.Entry
                 PUSH HL
                 EXX
                 PUSH BC
                 EXX
                 POP BC
-                LD HL, (#9B02)
+                LD HL, (@ActionRenderBasis.C10)
                 CALL @Voxel.SignedSeededProduct.Entry
                 POP DE
                 ADC HL, DE
@@ -90,14 +91,14 @@ Stage1V0C0:     LD (#E7AF), HL
                 PUSH HL
                 EXX
                 POP BC
-                LD HL, (#9B00)
+                LD HL, (@ActionRenderBasis.C00)
                 CALL @Voxel.SignedSeededProduct.Entry
                 PUSH HL
                 EXX
                 PUSH DE
                 EXX
                 POP BC
-                LD HL, (#9B02)
+                LD HL, (@ActionRenderBasis.C10)
                 CALL @Voxel.SignedSeededProduct.Entry
                 POP DE
                 ADC HL, DE
@@ -117,14 +118,14 @@ Stage1V0C1:     LD (#E67B), HL
                 PUSH DE
                 EXX
                 POP BC
-                LD HL, (#9B06)
+                LD HL, (@ActionRenderBasis.C01)
                 CALL @Voxel.SignedSeededProduct.Entry
                 PUSH HL
                 EXX
                 PUSH BC
                 EXX
                 POP BC
-                LD HL, (#9B08)
+                LD HL, (@ActionRenderBasis.C11)
                 CALL @Voxel.SignedSeededProduct.Entry
                 POP DE
                 ADC HL, DE
@@ -144,14 +145,14 @@ Stage1V1C0:     LD (#E801), HL
                 PUSH HL
                 EXX
                 POP BC
-                LD HL, (#9B06)
+                LD HL, (@ActionRenderBasis.C01)
                 CALL @Voxel.SignedSeededProduct.Entry
                 PUSH HL
                 EXX
                 PUSH DE
                 EXX
                 POP BC
-                LD HL, (#9B08)
+                LD HL, (@ActionRenderBasis.C11)
                 CALL @Voxel.SignedSeededProduct.Entry
                 POP DE
                 ADC HL, DE
@@ -171,14 +172,14 @@ Stage1V1C1:     LD (#E6CD), HL
                 PUSH DE
                 EXX
                 POP BC
-                LD HL, (#9B0C)
+                LD HL, (@ActionRenderBasis.C02)
                 CALL @Voxel.SignedSeededProduct.Entry
                 PUSH HL
                 EXX
                 PUSH BC
                 EXX
                 POP BC
-                LD HL, (#9B0E)
+                LD HL, (@ActionRenderBasis.C12)
                 CALL @Voxel.SignedSeededProduct.Entry
                 POP DE
                 ADC HL, DE
@@ -198,14 +199,14 @@ Stage1V2C0:     LD (#E853), HL
                 PUSH HL
                 EXX
                 POP BC
-                LD HL, (#9B0C)
+                LD HL, (@ActionRenderBasis.C02)
                 CALL @Voxel.SignedSeededProduct.Entry
                 PUSH HL
                 EXX
                 PUSH DE
                 EXX
                 POP BC
-                LD HL, (#9B0E)
+                LD HL, (@ActionRenderBasis.C12)
                 CALL @Voxel.SignedSeededProduct.Entry
                 POP DE
                 ADC HL, DE
@@ -221,23 +222,23 @@ Stage1V2C0:     LD (#E853), HL
 
                 DEC HL
 Stage1V2C1:     LD (#E71F), HL
-CheckSecond:    LD A, (#9B12)
+CheckSecond:    LD A, (@ActionRenderPhases.Value.Phase0)
                 AND A
                 JP NZ, @Voxel.RotateBasisVectors.RotateSecond                   ; переход, если второй угол ненулевой, выполнить соответствующее преобразование
 
 
-                LD HL, (#9B04)
+                LD HL, (@ActionRenderBasis.C20)
                 LD (#E7BA), HL
-                LD HL, (#9B0A)
+                LD HL, (@ActionRenderBasis.C21)
                 LD (#E80C), HL
-                LD HL, (#9B10)
+                LD HL, (@ActionRenderBasis.C22)
                 LD (#E85E), HL
                 LD HL, (#E67B)
-                LD (#9B02), HL
+                LD (@ActionRenderBasis.C10), HL
                 LD HL, (#E6CD)
-                LD (#9B08), HL
+                LD (@ActionRenderBasis.C11), HL
                 LD HL, (#E71F)
-                LD (#9B0E), HL
+                LD (@ActionRenderBasis.C12), HL
                 JP @Voxel.RotateBasisVectors.CheckThird
 
 
@@ -268,7 +269,7 @@ RotateSecond:   LD L, A
                 PUSH BC
                 EXX
                 POP BC
-                LD HL, (#9B04)
+                LD HL, (@ActionRenderBasis.C20)
                 CALL @Voxel.SignedSeededProduct.Entry
                 POP DE
                 ADC HL, DE
@@ -283,7 +284,7 @@ RotateSecond:   LD L, A
 
 
                 DEC HL
-Stage2V0C1:     LD (#9B02), HL
+Stage2V0C1:     LD (@ActionRenderBasis.C10), HL
                 EXX
                 PUSH HL
                 EXX
@@ -295,7 +296,7 @@ Stage2V0C1:     LD (#9B02), HL
                 PUSH DE
                 EXX
                 POP BC
-                LD HL, (#9B04)
+                LD HL, (@ActionRenderBasis.C20)
                 CALL @Voxel.SignedSeededProduct.Entry
                 POP DE
                 ADC HL, DE
@@ -322,7 +323,7 @@ Stage2V0C2:     LD (#E7BA), HL
                 PUSH BC
                 EXX
                 POP BC
-                LD HL, (#9B0A)
+                LD HL, (@ActionRenderBasis.C21)
                 CALL @Voxel.SignedSeededProduct.Entry
                 POP DE
                 ADC HL, DE
@@ -337,7 +338,7 @@ Stage2V0C2:     LD (#E7BA), HL
 
 
                 DEC HL
-Stage2V1C1:     LD (#9B08), HL
+Stage2V1C1:     LD (@ActionRenderBasis.C11), HL
                 EXX
                 PUSH HL
                 EXX
@@ -349,7 +350,7 @@ Stage2V1C1:     LD (#9B08), HL
                 PUSH DE
                 EXX
                 POP BC
-                LD HL, (#9B0A)
+                LD HL, (@ActionRenderBasis.C21)
                 CALL @Voxel.SignedSeededProduct.Entry
                 POP DE
                 ADC HL, DE
@@ -376,7 +377,7 @@ Stage2V1C2:     LD (#E80C), HL
                 PUSH BC
                 EXX
                 POP BC
-                LD HL, (#9B10)
+                LD HL, (@ActionRenderBasis.C22)
                 CALL @Voxel.SignedSeededProduct.Entry
                 POP DE
                 ADC HL, DE
@@ -391,7 +392,7 @@ Stage2V1C2:     LD (#E80C), HL
 
 
                 DEC HL
-Stage2V2C1:     LD (#9B0E), HL
+Stage2V2C1:     LD (@ActionRenderBasis.C12), HL
                 EXX
                 PUSH HL
                 EXX
@@ -403,7 +404,7 @@ Stage2V2C1:     LD (#9B0E), HL
                 PUSH DE
                 EXX
                 POP BC
-                LD HL, (#9B10)
+                LD HL, (@ActionRenderBasis.C22)
                 CALL @Voxel.SignedSeededProduct.Entry
                 POP DE
                 ADC HL, DE
@@ -419,23 +420,23 @@ Stage2V2C1:     LD (#9B0E), HL
 
                 DEC HL
 Stage2V2C2:     LD (#E85E), HL
-CheckThird:     LD A, (#9B13)
+CheckThird:     LD A, (@ActionRenderPhases.Value.Phase1)
                 AND A
                 JP NZ, @Voxel.RotateBasisVectors.RotateThird                    ; переход, если третий угол ненулевой, выполнить соответствующее преобразование
 
 
                 LD HL, (#E7AF)
-                LD (#9B00), HL
+                LD (@ActionRenderBasis.C00), HL
                 LD HL, (#E801)
-                LD (#9B06), HL
+                LD (@ActionRenderBasis.C01), HL
                 LD HL, (#E853)
-                LD (#9B0C), HL
+                LD (@ActionRenderBasis.C02), HL
                 LD HL, (#E7BA)
-                LD (#9B04), HL
+                LD (@ActionRenderBasis.C20), HL
                 LD HL, (#E80C)
-                LD (#9B0A), HL
+                LD (@ActionRenderBasis.C21), HL
                 LD HL, (#E85E)
-                LD (#9B10), HL
+                LD (@ActionRenderBasis.C22), HL
                 RET
 
 
@@ -481,7 +482,7 @@ RotateThird:    LD L, A
 
 
                 DEC HL
-Stage3V0C0:     LD (#9B00), HL
+Stage3V0C0:     LD (@ActionRenderBasis.C00), HL
                 EXX
                 PUSH BC
                 EXX
@@ -508,7 +509,7 @@ Stage3V0C0:     LD (#9B00), HL
 
 
                 DEC HL
-Stage3V0C2:     LD (#9B04), HL
+Stage3V0C2:     LD (@ActionRenderBasis.C20), HL
                 EXX
                 PUSH DE
                 EXX
@@ -535,7 +536,7 @@ Stage3V0C2:     LD (#9B04), HL
 
 
                 DEC HL
-Stage3V1C0:     LD (#9B06), HL
+Stage3V1C0:     LD (@ActionRenderBasis.C01), HL
                 EXX
                 PUSH BC
                 EXX
@@ -562,7 +563,7 @@ Stage3V1C0:     LD (#9B06), HL
 
 
                 DEC HL
-Stage3V1C2:     LD (#9B0A), HL
+Stage3V1C2:     LD (@ActionRenderBasis.C21), HL
                 EXX
                 PUSH DE
                 EXX
@@ -589,7 +590,7 @@ Stage3V1C2:     LD (#9B0A), HL
 
 
                 DEC HL
-Stage3V2C0:     LD (#9B0C), HL
+Stage3V2C0:     LD (@ActionRenderBasis.C02), HL
                 EXX
                 PUSH BC
                 EXX
@@ -616,7 +617,7 @@ Stage3V2C0:     LD (#9B0C), HL
 
 
                 DEC HL
-Stage3V2C2:     LD (#9B10), HL
+Stage3V2C2:     LD (@ActionRenderBasis.C22), HL
                 RET
 
 

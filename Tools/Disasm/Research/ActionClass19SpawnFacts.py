@@ -106,5 +106,5 @@ def name_operands(region,function_address,operation):
         operation=operation.replace('LD (IY + @FActionRecord.'+field+'), #'+literal,'LD (IY + @FActionRecord.'+field+'), @ActionClass19SpawnConst.'+name)
     for address,name in ((0xE9A1,'FindReusableRecord'),(0xE6C7,'RecordAddressToIndex'),(0xE6A7,'RecordIndexToAddress')):
         operation=operation.replace('CALL #'+format(address,'04X'),'CALL @Action.'+name+'.Entry')
-    return (operation.replace('LD HL, #A01B','LD HL, @ActionCandidateListState.BeforeFirst')
+    return (operation.replace('LD HL, #A01B','LD HL, @ActionCandidateListData.Slot00.Code - 1')
             .replace('CP #FE','CP @ActionCandidateListConst.ListEnd').replace('CP #80','CP @ActionReuseConst.ReusableHigh'))

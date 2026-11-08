@@ -1,0 +1,333 @@
+{
+  "passed": true,
+  "method": "original_disk_catalog_payload_and_source_resource_comparison",
+  "physical_bytes_checked": 98304,
+  "records": [
+    {
+      "slot": 33,
+      "name": "BANK0",
+      "image_offset": 390656,
+      "first_lba": 1526,
+      "sectors": 64,
+      "catalog_parameter": 49152,
+      "catalog_parameter_is_not_runtime_load_proof": true,
+      "bytes": 16384,
+      "sha256": "7f1ee7d1f6280d1c646d0066c9c42e56d4c7d2f8eec17f8bcba1e825e2d8ff07",
+      "source_resource": "Source/Resources/33_BANK0/Unclassified000.bin",
+      "literal_name_payload_occurrences": [],
+      "byte_entropy": 6.135426,
+      "most_common_bytes": [
+        [
+          0,
+          3594
+        ],
+        [
+          1,
+          537
+        ],
+        [
+          8,
+          517
+        ],
+        [
+          128,
+          511
+        ],
+        [
+          255,
+          473
+        ],
+        [
+          2,
+          445
+        ],
+        [
+          32,
+          402
+        ],
+        [
+          16,
+          389
+        ]
+      ],
+      "hr_prefix_matches": false,
+      "first_twelve_bytes": "804d56b0df803fff7e987c00",
+      "hr_header_candidate_unpacked_size": 45142,
+      "hr_header_candidate_packed_size": 32991
+    },
+    {
+      "slot": 34,
+      "name": "BANK1",
+      "image_offset": 407040,
+      "first_lba": 1590,
+      "sectors": 64,
+      "catalog_parameter": 49152,
+      "catalog_parameter_is_not_runtime_load_proof": true,
+      "bytes": 16384,
+      "sha256": "9d8c5cd116db7ba399cd1d07eb6123d16eefc6cef1cd29320ffb803e0b39fbf6",
+      "source_resource": "Source/Resources/34_BANK1/Unclassified000.bin",
+      "literal_name_payload_occurrences": [],
+      "byte_entropy": 5.976976,
+      "most_common_bytes": [
+        [
+          0,
+          4675
+        ],
+        [
+          1,
+          513
+        ],
+        [
+          2,
+          413
+        ],
+        [
+          128,
+          386
+        ],
+        [
+          8,
+          369
+        ],
+        [
+          32,
+          350
+        ],
+        [
+          64,
+          310
+        ],
+        [
+          16,
+          260
+        ]
+      ],
+      "hr_prefix_matches": false,
+      "first_twelve_bytes": "804a5910e0108018d002c004",
+      "hr_header_candidate_unpacked_size": 4185,
+      "hr_header_candidate_packed_size": 4320
+    },
+    {
+      "slot": 35,
+      "name": "BANK2",
+      "image_offset": 423424,
+      "first_lba": 1654,
+      "sectors": 64,
+      "catalog_parameter": 49152,
+      "catalog_parameter_is_not_runtime_load_proof": true,
+      "bytes": 16384,
+      "sha256": "e5596e1080d8886e5084a43317fd6632cdf5ea4e78fb9f69a50631a37c189a3b",
+      "source_resource": "Source/Resources/35_BANK2/Unclassified000.bin",
+      "literal_name_payload_occurrences": [],
+      "byte_entropy": 6.0653,
+      "most_common_bytes": [
+        [
+          0,
+          4348
+        ],
+        [
+          255,
+          420
+        ],
+        [
+          1,
+          419
+        ],
+        [
+          128,
+          408
+        ],
+        [
+          8,
+          357
+        ],
+        [
+          32,
+          297
+        ],
+        [
+          2,
+          286
+        ],
+        [
+          16,
+          284
+        ]
+      ],
+      "hr_prefix_matches": false,
+      "first_twelve_bytes": "804d56b0dff01fff7e987cc0",
+      "hr_header_candidate_unpacked_size": 45142,
+      "hr_header_candidate_packed_size": 61663
+    },
+    {
+      "slot": 36,
+      "name": "BANK3",
+      "image_offset": 439808,
+      "first_lba": 1718,
+      "sectors": 64,
+      "catalog_parameter": 49152,
+      "catalog_parameter_is_not_runtime_load_proof": true,
+      "bytes": 16384,
+      "sha256": "2b64332cdb6e4c41454195fb2f2040f09d2f7a23ecdbc0fa0d2a42bd5b4054f5",
+      "source_resource": "Source/Resources/36_BANK3/Unclassified000.bin",
+      "literal_name_payload_occurrences": [],
+      "byte_entropy": 6.05683,
+      "most_common_bytes": [
+        [
+          0,
+          4185
+        ],
+        [
+          1,
+          555
+        ],
+        [
+          2,
+          449
+        ],
+        [
+          8,
+          407
+        ],
+        [
+          128,
+          403
+        ],
+        [
+          4,
+          364
+        ],
+        [
+          32,
+          338
+        ],
+        [
+          16,
+          330
+        ]
+      ],
+      "hr_prefix_matches": false,
+      "first_twelve_bytes": "a04a513777058022271de802",
+      "hr_header_candidate_unpacked_size": 14161,
+      "hr_header_candidate_packed_size": 1399
+    },
+    {
+      "slot": 37,
+      "name": "BANK4",
+      "image_offset": 456192,
+      "first_lba": 1782,
+      "sectors": 64,
+      "catalog_parameter": 49152,
+      "catalog_parameter_is_not_runtime_load_proof": true,
+      "bytes": 16384,
+      "sha256": "4fbfd86e50c378a09522557902b9a52364246b0623d5beb4e32a21bf1d2cd9b3",
+      "source_resource": "Source/Resources/37_BANK4/Unclassified000.bin",
+      "literal_name_payload_occurrences": [],
+      "byte_entropy": 6.204858,
+      "most_common_bytes": [
+        [
+          0,
+          3873
+        ],
+        [
+          1,
+          462
+        ],
+        [
+          32,
+          419
+        ],
+        [
+          8,
+          411
+        ],
+        [
+          128,
+          383
+        ],
+        [
+          2,
+          368
+        ],
+        [
+          64,
+          359
+        ],
+        [
+          16,
+          339
+        ]
+      ],
+      "hr_prefix_matches": false,
+      "first_twelve_bytes": "a04a513776020022271de80d",
+      "hr_header_candidate_unpacked_size": 14161,
+      "hr_header_candidate_packed_size": 630
+    },
+    {
+      "slot": 38,
+      "name": "BANK5",
+      "image_offset": 472576,
+      "first_lba": 1846,
+      "sectors": 64,
+      "catalog_parameter": 49152,
+      "catalog_parameter_is_not_runtime_load_proof": true,
+      "bytes": 16384,
+      "sha256": "475a6e428c648fd4f4bd0bc4c1d8082171763f927cdc78a5d825a2fef62d9445",
+      "source_resource": "Source/Resources/38_BANK5/Unclassified000.bin",
+      "literal_name_payload_occurrences": [],
+      "byte_entropy": 6.74436,
+      "most_common_bytes": [
+        [
+          0,
+          2541
+        ],
+        [
+          1,
+          468
+        ],
+        [
+          128,
+          366
+        ],
+        [
+          7,
+          358
+        ],
+        [
+          8,
+          351
+        ],
+        [
+          32,
+          326
+        ],
+        [
+          255,
+          325
+        ],
+        [
+          248,
+          306
+        ]
+      ],
+      "hr_prefix_matches": false,
+      "first_twelve_bytes": "804b5802c0000016e0d0e2e0",
+      "hr_header_candidate_unpacked_size": 600,
+      "hr_header_candidate_packed_size": 192
+    }
+  ],
+  "preview_hypotheses": [
+    "raw_bit_rows_256x512",
+    "first_6912_bytes_as_ULA",
+    "raw_gray_bytes_128x128"
+  ],
+  "previews_establish_format": false,
+  "compression_excluded": false,
+  "unreferenced_status_proved": false,
+  "runtime_bank_numbers_proved": false,
+  "game_loader_proved": false,
+  "source_map_changed": false,
+  "original_bytes_modified": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

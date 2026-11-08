@@ -71,7 +71,7 @@ TargetStep      equ #02                                                         
 
 def name_operands(region,function_address,operation):
     if (region,function_address)!=('Action',0xE86B):return operation
-    for register,fields in (('IX',{0x18:'ReuseByte',0x0B:'LinkedIndex'}),('IY',{6:'ModelOffset',7:'OffsetPhase0',8:'OffsetPhase1',9:'OffsetPhase2',10:'StateCode',11:'LinkedIndex',12:'LinkFlags',15:'TargetIndex',16:'Unknown10',17:'Unknown11',18:'ClassCode',19:'Unknown13',20:'Unknown14',21:'Unknown15',22:'SavedStateCode',32:'Unknown20',33:'Unknown21',37:'TargetCodeStep'})):
+    for register,fields in (('IX',{0x18:'ReuseByte',0x0B:'LinkedIndex'}),('IY',{6:'ModelOffset',7:'OffsetPhase0',8:'OffsetPhase1',9:'OffsetPhase2',10:'StateCode',11:'LinkedIndex',12:'LinkFlags',15:'TargetIndex',16:'Unknown10',17:'Unknown11',18:'ClassCode',19:'Unknown13',20:'Unknown14',21:'LinkOverride',22:'SavedStateCode',32:'Unknown20',33:'Unknown21',37:'TargetCodeStep'})):
         for offset,name in fields.items():operation=operation.replace('('+register+'+#'+format(offset,'02X')+')','('+register+' + @FActionRecord.'+name+')')
     for offset in range(6):
         name='Components.Component'+str(offset//2)+('.High' if offset&1 else '.Low')

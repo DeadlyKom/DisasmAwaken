@@ -30,8 +30,9 @@ def main():
   assert tuple(r[:8])==(a,flags,bc>>8,bc&255,d,e,ptr>>8,ptr&255) and m[0x6AE0]+256*m[0x6AE1]==0xD1BA+offset
   assert m[0x6A9C]+256*m[0x6A9D]==d*256+e and m[0xBD26]==1 and (m[0x6320],m[0x6321])==(x,y) and bytes(m[0x4000:0x5B00])==screen;context(f)
   counts['synthetic_all_selector_update' if synthetic else 'original_text_update']+=1
- # Проверка первых 24 исходных LF-записей и раннего выхода по высоте, число записей всего блока не предполагается.
- for selector in range(24):
+ # Проверка всех 34 физических LF-записей и раннего выхода по высоте.
+ assert bytes(base[0][0x11BA:0x1E53]).count(10)==35
+ for selector in range(34):
   for width in (64,92,188):
    for height in (8,13,24,192):update(data,selector,width,height)
  # Проверка всего байтового селектора на подготовленном запасе LF, без выдумывания отсутствующих исходных записей.
@@ -102,7 +103,7 @@ def main():
    s.registers[:]=f.initial;r=s.registers;r[1]=flags;s.run(start=entry,stop=0x3FFF)
    assert r[:12]==[f.initial[0],flags,*f.initial[2:12]] and r[16:24]==f.initial[16:24] and r[SP]==0x8000 and [bytes(b) for b in m.banks]==before
    counts['noop_and_disabled_returns']+=1
- report=dict(passed=True,cases_by_path=dict(counts),original_records_checked=list(range(24)),all_256_selectors_on_synthetic_valid_text=True,
+ report=dict(passed=True,cases_by_path=dict(counts),original_records_checked=list(range(34)),all_256_selectors_on_synthetic_valid_text=True,
   physical_source_pointer_and_count_word_checked=True,full_skip_word_low_byte_semantics=True,independent_print_and_scroll_bitmap=True,
   real_im2_only_at_halts=True,music_disabled=True,native_execution=False,assembly_executed=False)
  (ROOT/'Tools/Disasm/Reports/EquipmentInfoVerification.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n','utf-8');print(json.dumps(report,ensure_ascii=False,indent=2))
