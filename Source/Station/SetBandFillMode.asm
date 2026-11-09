@@ -25,11 +25,11 @@
                 ; выбор обычного установщика для строки 11 перед чтением режима заливки
 Entry:          LD DE, @Station.SetOutlinePattern.Entry
                 ; проверка бита 0 FillMode с сохранением остальных разрядов в результате RRA
-                LD A, (@StationRaster.FillMode)
+ReadFillMode:   LD A, (@StationRaster.FillMode)
                 RRA
                 JR C, @Station.ResetBandMode.Entry                              ; переход, если бит 0 FillMode установлен, восстановить обычный режим рамки
 
-                ; сохранение обычной боковой линии 11 и выбор заполненного узора для остальных изменяемых участков
+                ; сохранение выбранного узора строки 11 и выбор заполненного узора для остальных изменяемых участков
                 LD (@StationRaster.BandLine11), DE
                 LD DE, @Station.SetCutoutPattern.Entry
                 LD (@StationRaster.BandBottom0), DE

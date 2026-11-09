@@ -48,3 +48,5 @@ FBankCallbackFrame описывает две живые записи после 
 нативный игровой запуск не выполнялись.
 
 [Отчёт диспетчерского входа](../Tools/Disasm/Reports/ActionBankedCallbackVerification.json).
+
+В известных вызывающих цепочках `AllocateLargeEffect` выбирает `CreateLargeEffect`, а `StartSmallRecordEffect`, `ScheduleSpawn` и `SpawnAlternate` передают `CreateSmallEffect`. Обе цели начинают поиск с прибавления размера записи, поэтому адрес `A783` служит позицией до первого эффекта `A795`. [Физическое размещение](InterfaceEventAndSpecialRecord.md).

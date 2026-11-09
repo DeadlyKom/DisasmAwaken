@@ -82,7 +82,9 @@ COMMENTS={
  0xA9D2:(['обновление указателя следующего двухбайтового правила'],None),
  0xA9D6:(['проверка числа оставшихся обычных строк'],None),
  0xA9D7:([], 'переход, если обработаны не все 27 рассчитываемых строк'),
- 0xA9DA:(['создание трёх последних строк, запас нулевой, цены только из BasePrice правил 27..29'],None)}
+ 0xA9DA:(['создание трёх последних строк, запас нулевой, цены только из BasePrice правил 27..29'],None),
+ 0xA9E6:(['Чтение BasePrice правила 28, IX остаётся на правиле 27.'],None),
+ 0xA9EE:(['Чтение BasePrice правила 29 без изменения исходного IX.'],None)}
 
 
 def name_operands(region,address,operation):
@@ -93,5 +95,7 @@ def name_operands(region,address,operation):
                   '#A8B1':'@RandomStates.Seed1.HighByte','#94DC':'@MarketCategories.Category00',
                   '#9518':'@MarketRules.Rule00','#9556':'@MarketRows.Row00.Price'}.items():operation=operation.replace(raw,name)
  operation=operation.replace('(IX + #00)','(IX + @FMarketRule.BasePrice)').replace('(IX + #01)','(IX + @FMarketRule.StockRule)')
+ operation=operation.replace('(IX + #02)','(IX + @FMarketRule + @FMarketRule.BasePrice)')
+ operation=operation.replace('(IX + #04)','(IX + 2 * @FMarketRule + @FMarketRule.BasePrice)')
  operation=operation.replace('XOR #80','XOR @MarketRowConst.SaleBanMask')
  return operation

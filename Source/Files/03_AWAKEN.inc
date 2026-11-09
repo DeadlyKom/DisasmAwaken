@@ -35,7 +35,17 @@
                 ent
                 assert $ == #02B3
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/03_AWAKEN/Unclassified002.bin"
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/IntroStationTransition.md)
+                assert $ == #02B3
+                ; Unknown, соседние байты не объявляются свободными
+                incbin "../Resources/03_AWAKEN/Unclassified02B3_02B4.bin"
+                assert $ == #02B4
+                disp #65B4
+                include "../Intro/Data/StackSnapshot.asm"
+                ent
+                assert $ == #02B6
+                ; Unknown, соседние байты не объявляются свободными
+                incbin "../Resources/03_AWAKEN/Unclassified02B6_02B7.bin"
                 assert $ == #02B7
                 disp #65B7
                 include "../Intro/LoadStation.asm"
@@ -262,5 +272,28 @@
                 incbin "../Intro/Data/StationScreenPacked.bin"
                 assert $ == #2C6B
                 ; Следующие 149 байтов не читаются установленным экранным потоком.
-                incbin "../Resources/03_AWAKEN/UnknownAfterStationScreen.bin"
+                assert $ == #2C6B
+                ; Unknown, соседний диапазон сохраняется без классификации
+                assert $ == #2C6B
+                ; Unknown, соседний диапазон сохраняется без классификации
+                incbin "../Resources/03_AWAKEN/Unclassified2C6B_2C97.bin"
+                assert $ == #2C97
+                disp #7497
+                include "../IntroUnpack/ScanAttributeCountTail.asm"
+                ent
+                assert $ == #2CCD
+                disp #74CD
+                include "../IntroUnpack/WaitNonzeroKeyByte.asm"
+                ent
+                assert $ == #2CD8
+                disp #74D8
+                include "../IntroUnpack/CopyScreenToBankWindow.asm"
+                ent
+                assert $ == #2CE4
+                disp #74E4
+                include "../IntroUnpack/CopyScreenFromBankWindow.asm"
+                ent
+                assert $ == #2CEC
+                ; Unknown, соседний диапазон сохраняется без классификации
+                incbin "../Resources/03_AWAKEN/Unclassified2CEC_2D00.bin"
                 assert $ == #2D00

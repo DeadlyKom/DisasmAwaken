@@ -1,0 +1,61 @@
+{
+  "passed": true,
+  "cases": [
+    {
+      "opener": "OpenMapPanelGroup",
+      "entries": 21,
+      "removed_index": 20,
+      "read_first": 62578,
+      "read_end": 62600,
+      "write_end": 62598
+    },
+    {
+      "opener": "OpenHelpPanels",
+      "entries": 12,
+      "removed_index": 22,
+      "read_first": 62578,
+      "read_end": 62582,
+      "write_end": 62580
+    },
+    {
+      "opener": "OpenEquipmentPanels",
+      "entries": 14,
+      "removed_index": 38,
+      "read_first": 62578,
+      "read_end": 62586,
+      "write_end": 62584
+    },
+    {
+      "opener": "OpenShipPanels",
+      "entries": 16,
+      "removed_index": 26,
+      "read_first": 62578,
+      "read_end": 62590,
+      "write_end": 62588
+    },
+    {
+      "opener": "OpenContractPanels",
+      "entries": 13,
+      "removed_index": 32,
+      "read_first": 62578,
+      "read_end": 62584,
+      "write_end": 62582
+    },
+    {
+      "opener": "OpenGameOptions",
+      "entries": 11,
+      "removed_index": 42,
+      "read_first": 62578,
+      "read_end": 62580,
+      "write_end": 62578
+    }
+  ],
+  "observed_original_tail_bytes": 22,
+  "maximum_observed_read_end": 62600,
+  "maximum_observed_write_end": 62598,
+  "actual_initial_station_and_original_openers": true,
+  "selected_removal_is_fixture": true,
+  "maximum_possible_extent_proved": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

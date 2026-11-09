@@ -560,6 +560,11 @@ def main():
         write(OBJECT_POINTER_TABLE[1],text)
         symbols.update(bindings)
         special[17,0x3E00]=(0x3F00,OBJECT_POINTER_TABLE[1],0x9E00)
+        from ActionObjectPointersData import TAIL_TABLE, render_tail
+        text, bindings = render_tail(data_by_slot[17])
+        write(TAIL_TABLE[1], text)
+        symbols.update(bindings)
+        special[17, 0x3F00] = (0x3F1C, TAIL_TABLE[1], 0x9F00)
     # Исходные прямые и инверсные маски восьми пиксельных фаз ACTION.
     from ActionClipProductsData import PATH as CLIP_PRODUCTS_PATH, render as render_clip_products
     text,bindings=render_clip_products(data_by_slot[17])
@@ -663,6 +668,285 @@ def main():
         equipment_text,equipment_labels=render_equipment(data_by_slot[17],table)
         write(table[1],equipment_text);symbols.update(equipment_labels)
         special[17,table[2]]=(table[3],table[1],table[2]+0x6000)
+
+    # Два физических входных состояния общего ядра ACTION.
+    from ActionInputContextData import TABLES as INPUT_CONTEXT_TABLES, render as render_input_context
+    for table in INPUT_CONTEXT_TABLES:
+        input_text,input_labels=render_input_context(data_by_slot[17],table)
+        write(table[1],input_text);symbols.update(input_labels)
+        special[17,table[2]]=(table[3],table[1],table[2]+0x6000)
+
+    # Физические ячейки результата проекции, предел исходных моделей не является ограничителем кода.
+    from ActionProjectedPointsData import TABLE as PROJECTED_POINTS_TABLE, render as render_projected_points
+    projected_text,projected_labels=render_projected_points(data_by_slot[17])
+    write(PROJECTED_POINTS_TABLE[1],projected_text);symbols.update(projected_labels)
+    special[17,0x2E00]=(0x2EC8,PROJECTED_POINTS_TABLE[1],0x8E00)
+
+    # Физические упакованные точки и выбор команд линейного растеризатора.
+    from ActionRasterWorkData import TABLES as INPUT_CONTEXT_TABLES, render as render_input_context
+    for table in INPUT_CONTEXT_TABLES:
+        input_text,input_labels=render_input_context(data_by_slot[17],table)
+        write(table[1],input_text);symbols.update(input_labels)
+        special[17,table[2]]=(table[3],table[1],table[2]+0x6000)
+
+    # Раздельные физические копии префикса таблицы отсечения, без переклассификации CF08.
+    from ClipDispatchPrefixData import TABLES as CLIP_PREFIX_TABLES, render as render_clip_prefix
+    for slot,origin,table in CLIP_PREFIX_TABLES:
+        prefix_text,prefix_labels=render_clip_prefix(data_by_slot[slot],origin,table)
+        write(table[1],prefix_text);symbols.update(prefix_labels)
+        special[slot,table[2]]=(table[3],table[1],0xCF00)
+
+    # Сохранение физической разреженной разметки масок и страниц адресного диспетчера.
+    from PolygonFillPhysicalData import TABLES as POLYGON_PHYSICAL_TABLES, render as render_polygon_physical
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        physical_text,physical_labels=render_polygon_physical(data_by_slot[slot],origin,table)
+        write(table[1],physical_text);symbols.update(physical_labels)
+        special[slot,table[2]]=(table[3],table[1],origin+table[2])
+
+    # Сохранение младших байтов адресов отдельно от встроенных рабочих полей.
+    from ClipTargetLowPhysicalData import TABLES as POLYGON_PHYSICAL_TABLES, render as render_polygon_physical
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        physical_text,physical_labels=render_polygon_physical(data_by_slot[slot],origin,table)
+        write(table[1],physical_text);symbols.update(physical_labels)
+        special[slot,table[2]]=(table[3],table[1],origin+table[2])
+
+    # Сохранение физических записей и их исходного расположения.
+    from ActionQueueParameterPhysicalData import TABLES as POLYGON_PHYSICAL_TABLES, render as render_polygon_physical
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        physical_text,physical_labels=render_polygon_physical(data_by_slot[slot],origin,table)
+        write(table[1],physical_text);symbols.update(physical_labels)
+        special[slot,table[2]]=(table[3],table[1],origin+table[2])
+
+    # Сохранение физических записей и их исходного расположения.
+    from ActionPanelPhysicalData import TABLES as POLYGON_PHYSICAL_TABLES, render as render_polygon_physical
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        physical_text,physical_labels=render_polygon_physical(data_by_slot[slot],origin,table)
+        write(table[1],physical_text);symbols.update(physical_labels)
+        special[slot,table[2]]=(table[3],table[1],origin+table[2])
+
+    # Сохранение физических записей и их исходного расположения.
+    from ActionLocalContextPhysicalData import TABLES as POLYGON_PHYSICAL_TABLES, render as render_polygon_physical
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        physical_text,physical_labels=render_polygon_physical(data_by_slot[slot],origin,table)
+        write(table[1],physical_text);symbols.update(physical_labels)
+        special[slot,table[2]]=(table[3],table[1],origin+table[2])
+
+    # Сохранение физических записей и их исходного расположения.
+    from ActionRenderHeaderPhysicalData import TABLES as POLYGON_PHYSICAL_TABLES, render as render_polygon_physical
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        physical_text,physical_labels=render_polygon_physical(data_by_slot[slot],origin,table)
+        write(table[1],physical_text);symbols.update(physical_labels)
+        special[slot,table[2]]=(table[3],table[1],origin+table[2])
+
+    # Сохранение физических записей и их исходного расположения.
+    from ActionOwnedCargoPhysicalData import TABLES as POLYGON_PHYSICAL_TABLES, render as render_polygon_physical
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        physical_text,physical_labels=render_polygon_physical(data_by_slot[slot],origin,table)
+        write(table[1],physical_text);symbols.update(physical_labels)
+        special[slot,table[2]]=(table[3],table[1],origin+table[2])
+
+    # Сохранение физических записей и их исходного расположения.
+    from ActionTractorCargoRules import TABLES as POLYGON_PHYSICAL_TABLES, render as render_polygon_physical
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        physical_text,physical_labels=render_polygon_physical(data_by_slot[slot],origin,table)
+        write(table[1],physical_text);symbols.update(physical_labels)
+        special[slot,table[2]]=(table[3],table[1],origin+table[2])
+
+    # Сохранение физических записей и их исходного расположения.
+    from ActionHyperReloadFileKey import TABLES as POLYGON_PHYSICAL_TABLES, render as render_polygon_physical
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        physical_text,physical_labels=render_polygon_physical(data_by_slot[slot],origin,table)
+        write(table[1],physical_text);symbols.update(physical_labels)
+        special[slot,table[2]]=(table[3],table[1],origin+table[2])
+
+    # Сохранение физических записей и их исходного расположения.
+    from ActionClippedLineWorkData import TABLES as POLYGON_PHYSICAL_TABLES, render as render_polygon_physical
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        physical_text,physical_labels=render_polygon_physical(data_by_slot[slot],origin,table)
+        write(table[1],physical_text);symbols.update(physical_labels)
+        special[slot,table[2]]=(table[3],table[1],origin+table[2])
+
+    # Сохранение физических записей и их исходного расположения.
+    from ControlsStationRelayFileKeys import TABLES as POLYGON_PHYSICAL_TABLES, render as render_polygon_physical
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        physical_text,physical_labels=render_polygon_physical(data_by_slot[slot],origin,table)
+        write(table[1],physical_text);symbols.update(physical_labels)
+        special[slot,table[2]]=(table[3],table[1],origin+table[2])
+
+    # Сохранение физических записей и их исходного расположения.
+    from ActionNewsOrdersAndJumpCost import TABLES as POLYGON_PHYSICAL_TABLES, render as render_polygon_physical
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        physical_text,physical_labels=render_polygon_physical(data_by_slot[slot],origin,table)
+        write(table[1],physical_text);symbols.update(physical_labels)
+        special[slot,table[2]]=(table[3],table[1],origin+table[2])
+
+    # Сохранение физических записей и их исходного расположения.
+    from FinalSyncAndPreviewRecord import TABLES as POLYGON_PHYSICAL_TABLES, render as render_polygon_physical
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        physical_text,physical_labels=render_polygon_physical(data_by_slot[slot],origin,table)
+        write(table[1],physical_text);symbols.update(physical_labels)
+        special[slot,table[2]]=(table[3],table[1],origin+table[2])
+
+    # Сохранение физических записей и их исходного расположения.
+    from InterfaceEventAndSpecialRecord import TABLES as POLYGON_PHYSICAL_TABLES, render as render_polygon_physical
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        physical_text,physical_labels=render_polygon_physical(data_by_slot[slot],origin,table)
+        write(table[1],physical_text);symbols.update(physical_labels)
+        special[slot,table[2]]=(table[3],table[1],origin+table[2])
+
+    # Сохранение физических записей и их исходного расположения.
+    from MapDistanceAndRenderState import TABLES as POLYGON_PHYSICAL_TABLES, render as render_polygon_physical
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        physical_text,physical_labels=render_polygon_physical(data_by_slot[slot],origin,table)
+        write(table[1],physical_text);symbols.update(physical_labels)
+        special[slot,table[2]]=(table[3],table[1],origin+table[2])
+
+    # Сохранение физических записей и их исходного расположения.
+    from ControlsResetVectorTemplates import TABLES as POLYGON_PHYSICAL_TABLES, render as render_polygon_physical
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        physical_text,physical_labels=render_polygon_physical(data_by_slot[slot],origin,table)
+        write(table[1],physical_text);symbols.update(physical_labels)
+        special[slot,table[2]]=(table[3],table[1],origin+table[2])
+
+    # Сохранение физических записей и их исходного расположения.
+    from StationBootResourceTables import TABLES as POLYGON_PHYSICAL_TABLES, render as render_polygon_physical
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        physical_text,physical_labels=render_polygon_physical(data_by_slot[slot],origin,table)
+        write(table[1],physical_text);symbols.update(physical_labels)
+        special[slot,table[2]]=(table[3],table[1],origin+table[2])
+
+    # Сохранение физических записей и их исходного расположения.
+    from StationInitialIndexPairs import TABLES as POLYGON_PHYSICAL_TABLES, render as render_polygon_physical
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        physical_text,physical_labels=render_polygon_physical(data_by_slot[slot],origin,table)
+        write(table[1],physical_text);symbols.update(physical_labels)
+        special[slot,table[2]]=(table[3],table[1],origin+table[2])
+
+    # Сохранение физических записей и их исходного расположения.
+    from EquipmentPhysicalTables import TABLES as POLYGON_PHYSICAL_TABLES, render as render_polygon_physical
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        physical_text,physical_labels=render_polygon_physical(data_by_slot[slot],origin,table)
+        write(table[1],physical_text);symbols.update(physical_labels)
+        special[slot,table[2]]=(table[3],table[1],origin+table[2])
+
+    # Сохранение физических записей и их исходного расположения.
+    from ControlsParameterTemplates import TABLES as POLYGON_PHYSICAL_TABLES, render as render_polygon_physical
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        physical_text,physical_labels=render_polygon_physical(data_by_slot[slot],origin,table)
+        write(table[1],physical_text);symbols.update(physical_labels)
+        special[slot,table[2]]=(table[3],table[1],origin+table[2])
+
+    # Сохранение физических записей и их исходного расположения.
+    from PreviewEdgeMaskPages import TABLES as POLYGON_PHYSICAL_TABLES, render as render_polygon_physical
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        physical_text,physical_labels=render_polygon_physical(data_by_slot[slot],origin,table)
+        write(table[1],physical_text);symbols.update(physical_labels)
+        special[slot,table[2]]=(table[3],table[1],origin+table[2])
+
+    # Сохранение физических записей и их исходного расположения.
+    from PreviewClipTablePages import TABLES as POLYGON_PHYSICAL_TABLES, render as render_polygon_physical
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        physical_text,physical_labels=render_polygon_physical(data_by_slot[slot],origin,table)
+        write(table[1],physical_text);symbols.update(physical_labels)
+        special[slot,table[2]]=(table[3],table[1],origin+table[2])
+
+    # Сохранение физических записей и их исходного расположения.
+    from EquipmentTypeSets import TABLES as POLYGON_PHYSICAL_TABLES, render as render_polygon_physical
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        physical_text,physical_labels=render_polygon_physical(data_by_slot[slot],origin,table)
+        write(table[1],physical_text);symbols.update(physical_labels)
+        special[slot,table[2]]=(table[3],table[1],origin+table[2])
+
+    # Сохранение физических записей и их исходного расположения.
+    from PreviewRootSamples import TABLES as POLYGON_PHYSICAL_TABLES, render as render_polygon_physical
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        physical_text,physical_labels=render_polygon_physical(data_by_slot[slot],origin,table)
+        write(table[1],physical_text);symbols.update(physical_labels)
+        special[slot,table[2]]=(table[3],table[1],origin+table[2])
+
+    # Сохранение физических записей и их исходного расположения.
+    from ActionContextControlPairs import TABLES as POLYGON_PHYSICAL_TABLES, render as render_polygon_physical
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        physical_text,physical_labels=render_polygon_physical(data_by_slot[slot],origin,table)
+        write(table[1],physical_text);symbols.update(physical_labels)
+        special[slot,table[2]]=(table[3],table[1],origin+table[2])
+
+    # Сохранение физических записей и их исходного расположения.
+    from StationTransportTradeTables import TABLES as POLYGON_PHYSICAL_TABLES, render as render_polygon_physical
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        physical_text,physical_labels=render_polygon_physical(data_by_slot[slot],origin,table)
+        write(table[1],physical_text);symbols.update(physical_labels)
+        special[slot,table[2]]=(table[3],table[1],origin+table[2])
+
+    # Сохранение физических записей и их исходного расположения.
+    from ActionPolygonScratch import TABLES as POLYGON_PHYSICAL_TABLES, render as render_polygon_physical
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        physical_text,physical_labels=render_polygon_physical(data_by_slot[slot],origin,table)
+        write(table[1],physical_text);symbols.update(physical_labels)
+        special[slot,table[2]]=(table[3],table[1],origin+table[2])
+
+    # Сохранение физических записей и их исходного расположения.
+    from StationOrderCompatibleSlots import TABLES as POLYGON_PHYSICAL_TABLES, render as render_polygon_physical
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        physical_text,physical_labels=render_polygon_physical(data_by_slot[slot],origin,table)
+        write(table[1],physical_text);symbols.update(physical_labels)
+        special[slot,table[2]]=(table[3],table[1],origin+table[2])
+
+    # Сохранение физических записей и их исходного расположения.
+    from StationPrimaryQuantityTail import TABLES as POLYGON_PHYSICAL_TABLES, render as render_polygon_physical
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        physical_text,physical_labels=render_polygon_physical(data_by_slot[slot],origin,table)
+        write(table[1],physical_text);symbols.update(physical_labels)
+        special[slot,table[2]]=(table[3],table[1],origin+table[2])
+
+    # Сохранение физических записей и их исходного расположения.
+    from IntroStackSnapshot import TABLES as POLYGON_PHYSICAL_TABLES, render as render_polygon_physical
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        physical_text,physical_labels=render_polygon_physical(data_by_slot[slot],origin,table)
+        write(table[1],physical_text);symbols.update(physical_labels)
+        special[slot,table[2]]=(table[3],table[1],origin+table[2])
+
+    # Сохранение физических записей и их исходного расположения.
+    from VoxelRotationTables import TABLES as POLYGON_PHYSICAL_TABLES, render as render_polygon_physical
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        physical_text,physical_labels=render_polygon_physical(data_by_slot[slot],origin,table)
+        write(table[1],physical_text);symbols.update(physical_labels)
+        special[slot,table[2]]=(table[3],table[1],origin+table[2])
+
+    # Сохранение физических записей и их исходного расположения.
+    from CargoLoadScale import TABLES as POLYGON_PHYSICAL_TABLES, render as render_polygon_physical
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        physical_text,physical_labels=render_polygon_physical(data_by_slot[slot],origin,table)
+        write(table[1],physical_text);symbols.update(physical_labels)
+        special[slot,table[2]]=(table[3],table[1],origin+table[2])
+
+    # Сохранение физических записей и их исходного расположения.
+    from PreviewObjectEnd import TABLES as POLYGON_PHYSICAL_TABLES, render as render_polygon_physical
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        physical_text,physical_labels=render_polygon_physical(data_by_slot[slot],origin,table)
+        write(table[1],physical_text);symbols.update(physical_labels)
+        special[slot,table[2]]=(table[3],table[1],origin+table[2])
+
+    # Сохранение физических записей и их исходного расположения.
+    from MapClipTablePages import TABLES as POLYGON_PHYSICAL_TABLES, render as render_polygon_physical
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        physical_text,physical_labels=render_polygon_physical(data_by_slot[slot],origin,table)
+        write(table[1],physical_text);symbols.update(physical_labels)
+        special[slot,table[2]]=(table[3],table[1],origin+table[2])
+
+    # Сохранение физических записей и их исходного расположения.
+    from BankArchiveRouteCopies import TABLES as POLYGON_PHYSICAL_TABLES, render as render_polygon_physical
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        physical_text,physical_labels=render_polygon_physical(data_by_slot[slot],origin,table)
+        write(table[1],physical_text);symbols.update(physical_labels)
+        special[slot,table[2]]=(table[3],table[1],origin+table[2])
+
+    # Сохранение физических записей и их исходного расположения.
+    from ActionPolygonExtraMaskPairs import TABLES as POLYGON_PHYSICAL_TABLES, render as render_polygon_physical
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        physical_text,physical_labels=render_polygon_physical(data_by_slot[slot],origin,table)
+        write(table[1],physical_text);symbols.update(physical_labels)
+        special[slot,table[2]]=(table[3],table[1],origin+table[2])
 
     token_text, token_records = render_token_tables(language, names)
     write(TOKEN_TABLE_PATH, token_text)
@@ -862,6 +1146,13 @@ def main():
         write(model['path'], text)
         symbols.update(labels)
         special[6, model['start']] = (model['end'], model['path'], model['pointer'])
+    from PreviewModelPrimitiveStreams import tables as preview_streams, render as render_preview_stream
+    for stream in preview_streams(data_by_slot[6]):
+        start,end=stream['start'],stream['end']
+        stream_text,stream_labels=render_preview_stream(data_by_slot[6],stream)
+        write(stream['path'],stream_text);symbols.update(stream_labels)
+        special[6,start]=(end,stream['path'],0xC000+start)
+
     # Исходный рабочий буфер проекции, экспорт на этапе исследования не запускается.
     from PreviewProjectedVertexTable import PATH as PROJECTED_PATH, render as render_projected
     text, labels = render_projected(data_by_slot[6])
@@ -893,6 +1184,10 @@ def main():
     # Выделение подтверждённого PT3 от исходного адреса #E700 до логического конца MUZ1.C.
     music_end = next(item["length"] for item in disk["entries"] if item["slot"] == 10)
     binary_resources = {(10, 0xC00): (music_end, "Source/Music/Resources/Antichrist.pt3", "PT3")}
+    from BankStagingTails import FORMAT as BANK_STAGING_FORMAT, RANGES as BANK_STAGING_RANGES
+    from BankStagingTails import path_for as bank_staging_path, remaining_path as bank_staging_rest
+    for slot, (begin, end) in BANK_STAGING_RANGES.items():
+        binary_resources[slot, begin] = (end, bank_staging_path(slot), BANK_STAGING_FORMAT)
     if re.search(r"\bstruct\s+FMusicModuleHeader\b", (ROOT/"Includes/Structs/Include.inc").read_text('utf-8'), re.I):
         from MusicCompositionSource import descriptions as composition_descriptions, render as render_composition
         composition = data_by_slot[10][0xC00:music_end]
@@ -903,6 +1198,33 @@ def main():
             start, length = description['offset'], description['length']
             special[10, 0xC00+start] = (0xC00+start+length, description['path'], 0xE700+start)
         del binary_resources[10, 0xC00]
+    # Графический scene1po сохраняется без пересчёта пикселей, геометрия остаётся исследовательской.
+    from Scene1PixelPairs import SLOT as SCENE1_SLOT, LOGICAL_BYTES as SCENE1_BYTES, PATH as SCENE1_PATH, TAIL_PATH as SCENE1_TAIL_PATH, FORMAT as SCENE1_FORMAT
+    binary_resources[SCENE1_SLOT,0]=(SCENE1_BYTES,SCENE1_PATH,SCENE1_FORMAT)
+    # Файловые смещения графических контейнеров BANK не являются адресами загрузки.
+    from BankScreenStrips import all_tables as bank_strip_tables, render as render_bank_strips
+    bank_strip_resources={}
+    bank_strip_definitions=bank_strip_tables(data_by_slot)
+    bank_strip_additional_slots={t['slot'] for t in bank_strip_definitions if t['module'].endswith('Additional')}
+    for table in bank_strip_definitions:
+        header_text,header_labels,bitmaps=render_bank_strips(data_by_slot[table['slot']],table)
+        write(table['path'],header_text);symbols.update(header_labels)
+        for bitmap_path,bitmap_data in bitmaps.items():
+            target=ROOT/bitmap_path;target.parent.mkdir(parents=True,exist_ok=True);target.write_bytes(bitmap_data)
+        bank_strip_resources[table['slot'],table['start']]=(table['end'],table['path'])
+    # Формат исходного фрагмента заметок доказан, игровой потребитель остаётся неизвестным.
+    binary_resources[17,0x516F]=(0x6000,"Source/Resources/17_ACTION/EmbeddedAuthorNotes.bin","CP866_AUTHOR_NOTES_FRAGMENT")
+    # Строки текстовой очереди ограничены логическим концом CONTROL.
+    from ControlsFlightMessages import START as FLIGHT_TEXT_START,END as FLIGHT_TEXT_END,PATH as FLIGHT_TEXT_PATH,FORMAT as FLIGHT_TEXT_FORMAT,TAIL_PATH as FLIGHT_TEXT_TAIL_PATH,records as flight_text_records
+    binary_resources[23,FLIGHT_TEXT_START]=(FLIGHT_TEXT_END,FLIGHT_TEXT_PATH,FLIGHT_TEXT_FORMAT)
+    for row in flight_text_records(data_by_slot[23]):symbols["ControlsFlightText."+row["name"]]=row["address"]
+    # Растр пар знаков текстового окна CONTROL0, чтения за границей не исправляются.
+    from ControlsTextFont import START as TEXT_FONT_START,END as TEXT_FONT_END,PATH as TEXT_FONT_PATH,FORMAT as TEXT_FONT_FORMAT,PREFIX_PATH as TEXT_FONT_PREFIX_PATH
+    binary_resources[22,TEXT_FONT_START]=(TEXT_FONT_END,TEXT_FONT_PATH,TEXT_FONT_FORMAT)
+    symbols["ControlsTextFont.Pixels"]=0xC600
+    # Все байты выделенных суффиксов сохраняются, BASIC с машинными модулями исключён.
+    from AllocatedSectorSuffixResources import RANGES as ALLOCATED_SUFFIX_RANGES
+    for slot,start,end,path,declared in ALLOCATED_SUFFIX_RANGES:binary_resources[slot,start]=(end,path,"ORIGINAL_ALLOCATED_SECTOR_SUFFIX")
     binary_resources[7, 0x2900] = (0x2B00, "Source/Map/Resources/Squares.bin", "Z80_SPLIT_WORD_SQUARES")
     binary_resources[7, 0x2B00] = (0x2E00, "Source/Map/Resources/RootSeeds.bin", "ROOT_SEED_AND_SPLIT_OFFSET_PAGES")
     binary_resources[4, 0x2900] = (0x2A00, "Source/Station/Resources/FontWidths.bin", "FONT_WIDTHS_256")
@@ -916,10 +1238,61 @@ def main():
     for start,end,path,kind,_ in ACTION_INITIAL_STORAGE:
         binary_resources[17,start]=(end,path,kind)
 
+    from ActionModelPhysicalData import render as render_object_model
+    from CheckActionModelTail import read_packets as object_tail_packets
+    model_report = json.loads((ROOT/'Tools/Disasm/Reports/ActionModelPacketsVerification.json').read_bytes())
+    object_data = data_by_slot[24]
+    for packet in model_report['packets'] + object_tail_packets(object_data,0x2469,0x2954):
+        start,end=packet['offset'],packet['end']
+        path=f'Source/Action/Data/Model{start:04X}.asm'
+        model_text,model_labels=render_object_model(object_data,packet)
+        write(path,model_text);symbols.update(model_labels)
+        special[24,start]=(end,path,0xC000+start)
+
     # Исходные байты подтверждённого назначения копирования, модели OBJECT3D в TRD не подставляются.
     from ActionObjectStreamStorageResources import RESOURCES as OBJECT_STREAM_STORAGE
     for start,end,path,kind,_ in OBJECT_STREAM_STORAGE:
         binary_resources[17,start]=(end,path,kind)
+
+    from ClassifyStationWorkspaceResources import RESOURCES as STATION_INITIAL_STORAGE
+    for start,end,path,kind,_ in STATION_INITIAL_STORAGE:
+        binary_resources[4,start]=(end,path,kind)
+
+    from ClassifyActionRenderWorkspace import RESOURCES as ACTION_RENDER_INITIAL_STORAGE
+    for start,end,path,kind,_ in ACTION_RENDER_INITIAL_STORAGE:
+        if kind is not None:binary_resources[17,start]=(end,path,kind)
+
+    from ClassifyStationDetachedText import RESOURCES as STATION_DETACHED_TEXT
+    for start,end,path,kind,_ in STATION_DETACHED_TEXT:
+        if kind is not None:binary_resources[4,start]=(end,path,kind)
+
+    from ClassifyPreviewRenderWorkspace import RESOURCES as PREVIEW_RENDER_INITIAL_STORAGE
+    for start,end,path,kind,_ in PREVIEW_RENDER_INITIAL_STORAGE:
+        if kind is not None:binary_resources[6,start]=(end,path,kind)
+
+    from ClassifyFighterMaskTail import RESOURCES as FIGHTER_MASK_TAIL
+    for start,end,path,kind,_ in FIGHTER_MASK_TAIL:
+        if kind is not None:binary_resources[42,start]=(end,path,kind)
+
+    from ClassifyActionContextStorage import RESOURCES as ACTION_CONTEXT_INITIAL_STORAGE
+    for start,end,path,kind,_ in ACTION_CONTEXT_INITIAL_STORAGE:
+        if kind is not None:binary_resources[17,start]=(end,path,kind)
+
+    from ClassifyStationDrawListTail import RESOURCES as STATION_DRAW_LIST_SHIFT_TAIL
+    for start,end,path,kind,_ in STATION_DRAW_LIST_SHIFT_TAIL:
+        if kind is not None:binary_resources[4,start]=(end,path,kind)
+
+    from ClassifyStationExpandedDrawTail import RESOURCES as STATION_EXPANDED_DRAW_TAIL
+    for start,end,path,kind,_ in STATION_EXPANDED_DRAW_TAIL:
+        if kind is not None:binary_resources[4,start]=(end,path,kind)
+
+    from ClassifyStationSaveTransferTrailer import RESOURCES as SAVE_TRAILER_RESOURCES, FORMAT as SAVE_TRAILER_FORMAT
+    for slot,start,end,path in SAVE_TRAILER_RESOURCES:
+        binary_resources[slot,start]=(end,path,SAVE_TRAILER_FORMAT)
+
+    from ClassifyActionPolygonOrOperand import RESOURCES as ACTION_POLYGON_OR_OPERAND
+    for start,end,path,kind,_ in ACTION_POLYGON_OR_OPERAND:
+        if kind is not None:binary_resources[17,start]=(end,path,kind)
 
     # Тексты панелей банка станции, исходные управляющие коды и написание сохраняются.
     from StationPanelTextResources import RESOURCES as PANEL_TEXTS, path as panel_text_path
@@ -953,6 +1326,13 @@ def main():
         part = 0
         chunks = [b for b in BLOCKS if b["slot"] == slot]
         while offset < len(data):
+            if (slot,offset) in bank_strip_resources:
+                end,path=bank_strip_resources[slot,offset]
+                lines.extend([asm(f"assert $ == #{offset:04X}"),asm('include "../'+path[7:]+'"')])
+                source_map.append(dict(slot=slot,offset=offset,length=end-offset,kind='typed_data',path=path,
+                    origin=None,format='BANK48_SCREEN_STRIPS',sha256=hashlib.sha256(data[offset:end]).hexdigest()))
+                offset=end
+                continue
             if (slot, offset) in binary_resources:
                 end, resource_path, resource_format = binary_resources[(slot, offset)]
                 target = ROOT / resource_path
@@ -1003,10 +1383,18 @@ def main():
             else:
                 begin = offset
                 while (offset < len(data) and (slot, offset) not in instructions
-                       and (slot, offset) not in special and (slot, offset) not in binary_resources):
+                       and (slot, offset) not in special and (slot, offset) not in binary_resources and (slot, offset) not in bank_strip_resources):
                     offset += 1
                 size = offset - begin
                 binary_path = f"Source/Resources/{slot:02d}_{stem}/Unclassified{part:03d}.bin"
+                if slot==SCENE1_SLOT and begin==SCENE1_BYTES:binary_path=SCENE1_TAIL_PATH
+                if slot in range(33,39):
+                    gap_name=f'UnknownGap{begin:04X}_{offset:04X}.bin' if slot in bank_strip_additional_slots else 'UnknownGap.bin'
+                    binary_path=f'Source/Resources/{slot}_BANK{slot-33}/'+gap_name
+                if slot in BANK_STAGING_RANGES and begin == BANK_STAGING_RANGES[slot][1]:
+                    binary_path = bank_staging_rest(slot, begin, offset)
+                if slot==23 and begin==FLIGHT_TEXT_END:binary_path=FLIGHT_TEXT_TAIL_PATH
+                if slot==22 and begin==0x546:binary_path=TEXT_FONT_PREFIX_PATH
                 path = ROOT / binary_path
                 path.parent.mkdir(parents=True, exist_ok=True)
                 path.write_bytes(data[begin:offset])
@@ -2039,6 +2427,90 @@ REGION_COMMENTS.setdefault('Action',{}).update(ACTION_RANDOM_CLASS_GATE_COMMENTS
 
 from ActionBankedParameterBuildFacts import COMMENTS as ACTION_BANKED_PARAMETER_BUILD_COMMENTS
 REGION_COMMENTS.setdefault('Action',{}).update(ACTION_BANKED_PARAMETER_BUILD_COMMENTS)
+
+
+from ActionMutableGaugePhasesFacts import COMMENTS as ACTION_MUTABLE_GAUGE_PHASE_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_MUTABLE_GAUGE_PHASE_COMMENTS)
+from ActionTargetCommandsFacts import COMMENTS as ACTION_TARGET_COMMANDS_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTION_TARGET_COMMANDS_COMMENTS)
+
+from ActionOverlayModeCommandFacts import COMMENTS as ACTIONOVERLAYMODECOMMAND_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTIONOVERLAYMODECOMMAND_COMMENTS)
+
+from ActionTractorModeCommandFacts import COMMENTS as ACTIONTRACTORMODECOMMAND_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTIONTRACTORMODECOMMAND_COMMENTS)
+
+from ActionFreeFlightCommandFacts import COMMENTS as ACTIONFREEFLIGHTCOMMAND_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTIONFREEFLIGHTCOMMAND_COMMENTS)
+
+from ActionStationReturnCommandFacts import COMMENTS as ACTIONSTATIONRETURNCOMMAND_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTIONSTATIONRETURNCOMMAND_COMMENTS)
+
+from ActionEjectCommandsFacts import COMMENTS as ACTIONEJECTCOMMANDS_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTIONEJECTCOMMANDS_COMMENTS)
+
+from ActionReverseViewBasisFacts import COMMENTS as ACTIONREVERSEVIEWBASIS_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTIONREVERSEVIEWBASIS_COMMENTS)
+
+from ActionViewDirectionCommandFacts import COMMENTS as ACTIONVIEWDIRECTIONCOMMAND_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTIONVIEWDIRECTIONCOMMAND_COMMENTS)
+
+from ActionTractorCollectFacts import COMMENTS as ACTIONTRACTORCOLLECT_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTIONTRACTORCOLLECT_COMMENTS)
+
+from ActionAntimissileCommandFacts import COMMENTS as ACTIONANTIMISSILECOMMAND_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTIONANTIMISSILECOMMAND_COMMENTS)
+
+from ActionBoostCommandFacts import COMMENTS as ACTIONBOOSTCOMMAND_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTIONBOOSTCOMMAND_COMMENTS)
+
+from ActionBoostAdvanceFacts import COMMENTS as ACTIONBOOSTADVANCE_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTIONBOOSTADVANCE_COMMENTS)
+
+from ActionHyperJumpFacts import COMMENTS as ACTIONHYPERJUMP_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTIONHYPERJUMP_COMMENTS)
+
+from ActionHyperJumpPreparationFacts import COMMENTS as ACTIONHYPERJUMPPREPARATION_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTIONHYPERJUMPPREPARATION_COMMENTS)
+
+from ActionHyperReloadFacts import COMMENTS as ACTIONHYPERRELOAD_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTIONHYPERRELOAD_COMMENTS)
+
+from ControlsDirectStationRelayFacts import COMMENTS as CONTROLSDIRECTSTATIONRELAY_COMMENTS
+REGION_COMMENTS.setdefault('Controls',{}).update(CONTROLSDIRECTSTATIONRELAY_COMMENTS)
+
+from ControlsStateStationRelayFacts import COMMENTS as CONTROLSSTATESTATIONRELAY_COMMENTS
+REGION_COMMENTS.setdefault('Controls',{}).update(CONTROLSSTATESTATIONRELAY_COMMENTS)
+
+from ControlsResetFlightContextFacts import COMMENTS as CONTROLSRESETFLIGHTCONTEXT_COMMENTS
+REGION_COMMENTS.setdefault('Controls',{}).update(CONTROLSRESETFLIGHTCONTEXT_COMMENTS)
+
+from ControlsLegacyLoadChainFacts import COMMENTS as CONTROLSLEGACYLOADCHAIN_COMMENTS
+REGION_COMMENTS.setdefault('Controls',{}).update(CONTROLSLEGACYLOADCHAIN_COMMENTS)
+
+from SecondaryEquipmentRowsFacts import COMMENTS as SECONDARYEQUIPMENTROWS_COMMENTS
+REGION_COMMENTS.setdefault('Station',{}).update(SECONDARYEQUIPMENTROWS_COMMENTS)
+
+from ControlsBodyPrimaryMaskFacts import COMMENTS as CONTROLSBODYPRIMARYMASK_COMMENTS
+REGION_COMMENTS.setdefault('Controls',{}).update(CONTROLSBODYPRIMARYMASK_COMMENTS)
+
+from DrawCenteredWithoutOwnerFacts import COMMENTS as DRAWCENTEREDWITHOUTOWNER_COMMENTS
+REGION_COMMENTS.setdefault('Station',{}).update(DRAWCENTEREDWITHOUTOWNER_COMMENTS)
+
+from ArcHalfLimitInputsFacts import COMMENTS as ARCHALFLIMITINPUTS_COMMENTS
+REGION_COMMENTS.setdefault('Map',{}).update(ARCHALFLIMITINPUTS_COMMENTS)
+
+from IntroDetachedTailFacts import COMMENTS as INTRODETACHEDTAIL_COMMENTS
+REGION_COMMENTS.setdefault('IntroUnpack',{}).update(INTRODETACHEDTAIL_COMMENTS)
+
+from StationAllFilledBandFacts import COMMENTS as STATIONALLFILLEDBAND_COMMENTS
+REGION_COMMENTS.setdefault('Station',{}).update(STATIONALLFILLEDBAND_COMMENTS)
+
+from ActionRandomClassGateEntryFacts import COMMENTS as ACTIONRANDOMCLASSGATEENTRY_COMMENTS
+REGION_COMMENTS.setdefault('Action',{}).update(ACTIONRANDOMCLASSGATEENTRY_COMMENTS)
+
+from IntroAttributeCountTailFacts import COMMENTS as INTROATTRIBUTECOUNTTAIL_COMMENTS
+REGION_COMMENTS.setdefault('IntroUnpack',{}).update(INTROATTRIBUTECOUNTTAIL_COMMENTS)
 
 
 if __name__ == "__main__":

@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "typed_bytes": 6,
+  "physical_records": 3,
+  "physical_symbols": 9,
+  "aliases_bound_to_physical_fields": 4,
+  "original_addresses_and_bytes_preserved": true,
+  "consumer_instructions_preserved": true,
+  "new_gameplay_semantics_inferred": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "typed_bytes": 2,
+  "physical_records": 1,
+  "physical_symbols": 3,
+  "files": 1,
+  "original_marker": 32896,
+  "original_record_step": 64,
+  "original_bytes_addresses_and_instructions_preserved": true,
+  "gaps_preserved": true,
+  "invalid_pair_gameplay_proved": false,
+  "cf08_reclassified": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

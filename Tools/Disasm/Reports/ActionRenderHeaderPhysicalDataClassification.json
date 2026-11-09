@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "typed_bytes": 2,
+  "physical_records": 1,
+  "physical_symbols": 3,
+  "files": 1,
+  "header_bytes": 2,
+  "one_axis_bit": 0,
+  "one_axis_mask": 1,
+  "other_mode_bit_game_meanings_proved": false,
+  "initial_values_are_fixed_runtime_values": false,
+  "original_bytes_addresses_and_instructions_preserved": true,
+  "gaps_preserved": true,
+  "invalid_pair_gameplay_proved": false,
+  "cf08_reclassified": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

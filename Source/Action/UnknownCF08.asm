@@ -1,5 +1,6 @@
                 module Action
                 module UnknownCF08
+                ; Место в странице CF00 [адресные байты и наложенные рабочие записи](../../Docs/ClipTargetLowPhysicalData.md)
 ; Документация [Action](../../Docs/FunctionDetails/Action.md)
 ; -----------------------------------------
 ; Unknown, назначение этого фрагмента ещё не установлено

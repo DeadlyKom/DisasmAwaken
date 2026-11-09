@@ -42,9 +42,9 @@ COMMENTS={
  0xC25B:(['чтение байтового кода события без изменения флагов'],None),
  0xC261:(['чтение исходного байта #984B без предположения о его игровых единицах'],None)}
 
-WRAPPERS={49602: ('ReadFieldLowero', 'ReadEquipmentWeight'), 49638: ('ReadFieldLoweri', 'ReadSecondWeight'), 49665: ('ReadFieldLowerk', 'ReadSelectedPrimaryFields'), 49697: ('ReadFieldLowerr', 'ReadSelectedSecondaryFields'), 49767: ('ReadFieldUpperG', 'ReadMarketField'), 49801: ('ReadFieldUpperO', 'CheckEquipmentThreshold'), 49845: ('ReadFieldUpperI', 'CheckSecondEntryThreshold'), 49872: ('ReadFieldUpperK', 'ReadBank4PrimaryFields'), 49898: ('ReadFieldUpperR', 'ReadBank4SecondaryFields'), 49924: ('ReadFieldLowerg', 'ReadCargoField'), 50045: ('ReadFieldUpperL', 'ReadCurrentKeyParams'), 50067: ('ReadFieldLowerl', 'ReadOtherKeyParams'), 50089: ('ReadFieldUpperY', 'ReadCurrentKeyCodes'), 50111: ('ReadFieldLowery', 'ReadOtherKeyCodes')}
+WRAPPERS={49602: ('ReadFieldLowero', 'ReadEquipmentQuantity'), 49638: ('ReadFieldLoweri', 'ReadSecondQuantity'), 49665: ('ReadFieldLowerk', 'ReadSelectedPrimaryFields'), 49697: ('ReadFieldLowerr', 'ReadSelectedSecondaryFields'), 49767: ('ReadFieldUpperG', 'ReadMarketField'), 49801: ('ReadFieldUpperO', 'CheckEquipmentThreshold'), 49845: ('ReadFieldUpperI', 'CheckSecondEntryThreshold'), 49872: ('ReadFieldUpperK', 'ReadBank4PrimaryFields'), 49898: ('ReadFieldUpperR', 'ReadBank4SecondaryFields'), 49924: ('ReadFieldLowerg', 'ReadCargoField'), 50045: ('ReadFieldUpperL', 'ReadCurrentKeyParams'), 50067: ('ReadFieldLowerl', 'ReadOtherKeyParams'), 50089: ('ReadFieldUpperY', 'ReadCurrentKeyCodes'), 50111: ('ReadFieldLowery', 'ReadOtherKeyCodes')}
 
-ALT_AF_WRITERS={'ReadEquipmentWeight','ReadSecondWeight','ReadMarketField','CheckEquipmentThreshold','CheckSecondEntryThreshold',
+ALT_AF_WRITERS={'ReadEquipmentQuantity','ReadSecondQuantity','ReadMarketField','CheckEquipmentThreshold','CheckSecondEntryThreshold',
  'ReadCurrentKeyParams','ReadOtherKeyParams','ReadCurrentKeyCodes','ReadOtherKeyCodes'}
 for address,(name,callee) in WRAPPERS.items():
  FUNCTIONS[address]=(name,'Получение результата через '+callee+' и запись слова в стек выражений')

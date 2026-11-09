@@ -15,8 +15,15 @@
                 include "../StationBoot/InitializeStation.asm"
                 ent
                 assert $ == #0343
-                ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/04_STATIONF/Unclassified001.bin"
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/StationBootResourceTables.md)
+                assert $ == #0343
+                disp #402A
+                include "../StationBoot/Data/FileKeys.asm"
+                ent
+                assert $ == #0379
+                disp #4060
+                include "../StationBoot/Data/BackdropSizes.asm"
+                ent
                 assert $ == #0389
                 disp #4070
                 include "../StationBoot/StartStation.asm"
@@ -539,7 +546,26 @@
                 ent
                 assert $ == #160B
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/04_STATIONF/Unclassified030.bin"
+                assert $ == #160B
+                disp #735F
+                include "../Station/ScrollSecondaryRows.asm"
+                ent
+                assert $ == #1632
+                disp #7386
+                include "../Station/SelectSecondaryRow.asm"
+                ent
+                assert $ == #1683
+                disp #73D7
+                include "../Station/TryDrawSecondaryList.asm" ; (0) жёсткий порядок, последовательное исполнение
+                ent
+                assert $ == #168A
+                disp #73DE
+                include "../Station/DrawSecondaryList.asm" ; (1) жёсткий порядок, последовательное исполнение
+                ent
+                assert $ == #16AF
+                disp #7403
+                include "../Station/PrintSecondaryRows.asm"
+                ent
                 assert $ == #16CA
                 disp #741E
                 include "../Station/HandleSaveSlotHover.asm"
@@ -1015,7 +1041,25 @@
                 ent
                 assert $ == #2238
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/04_STATIONF/Unclassified044.bin"
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/StationInitialWorkspace.md)
+                assert $ == #2238
+                assert $ == #2238
+                ; исходный хвост страницы 82 до построения старших байтов экранных строк
+                incbin "../Station/Resources/InitialRowHighTail.bin"
+                assert $ == #2300
+                ; исходная страница 83 до построения младших байтов экранных строк
+                incbin "../Station/Resources/InitialRowLow.bin"
+                assert $ == #2400
+                ; исходная страница 84 до построения байтовых столбцов
+                incbin "../Station/Resources/InitialColumnByte.bin"
+                assert $ == #2500
+                disp #8500
+                include "../Station/Data/InitialItemIndex.asm"
+                ent
+                assert $ == #2600
+                assert $ == #2600
+                ; исходные 768 байтов карты владельцев до очистки в RebuildInterface
+                incbin "../Station/Resources/InitialCellOwners.bin"
                 assert $ == #2900
                 ; исходный ресурс FONT_WIDTHS_256
                 incbin "../Station/Resources/FontWidths.bin"
@@ -1029,7 +1073,15 @@
                 ent
                 assert $ == #3400
                 ; Unknown, исходные байты вне подтверждённых записей рынка
-                incbin "../Resources/04_STATIONF/BeforeModelAvailability.bin"
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/EquipmentPhysicalTables.md)
+                assert $ == #3400
+                disp #9400
+                include "../Station/Data/EquipmentShipTypeSets.asm"
+                ent
+                assert $ == #3484
+                disp #9484
+                include "../Station/Data/EquipmentSkimmerTypeSets.asm"
+                ent
                 assert $ == #34BC
                 disp #94BC
                 include "../Station/Data/ModelAvailability.asm"
@@ -1041,7 +1093,14 @@
                 ent
                 assert $ == #34F7
                 ; Unknown, исходные байты вне подтверждённых записей рынка
-                incbin "../Resources/04_STATIONF/BeforeMarketRules.bin"
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/WeightedLoad.md)
+                assert $ == #34F7
+                ; Unknown, соседние байты не объявляются свободными
+                incbin "../Resources/04_STATIONF/Unclassified34F7_34FA.bin"
+                assert $ == #34FA
+                disp #94FA
+                include "../Station/Data/CargoLoadScale.asm"
+                ent
                 assert $ == #3518
                 disp #9518
                 include "../Station/Data/MarketRules.asm"
@@ -1054,8 +1113,30 @@
                 include "../Station/Data/MarketRows.asm"
                 ent
                 assert $ == #3592
-                ; Unknown, исходные байты вне подтверждённых записей рынка
-                incbin "../Resources/04_STATIONF/AfterMarketRows.bin"
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/EquipmentPhysicalTables.md)
+                disp #9592
+                include "../Station/Data/EquipmentPrices.asm"
+                ent
+                assert $ == #35D4
+                disp #95D4
+                include "../Station/Data/SecondEquipmentPrices.asm"
+                ent
+                assert $ == #35F0
+                disp #95F0
+                include "../Station/Data/EquipmentWeights.asm"
+                ent
+                assert $ == #3632
+                disp #9632
+                include "../Station/Data/SecondWeightFactors.asm"
+                ent
+                assert $ == #364E
+                disp #964E
+                include "../Station/Data/EquipmentNeighborBounds.asm"
+                ent
+                assert $ == #3690
+                disp #9690
+                include "../Station/Data/SecondNeighborBounds.asm"
+                ent
                 assert $ == #36AA
                 disp #96AA
                 include "../Station/Data/KeyboardCodes.asm"
@@ -1066,7 +1147,25 @@
                 ent
                 assert $ == #3762
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/04_STATIONF/Unclassified044TailAfterKeyCodesAfterSettings.bin"
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/InterfaceEventAndSpecialRecord.md)
+                assert $ == #3762
+                ; Unknown, соседние байты не объявляются свободными
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/StationTransportTradeTables.md)
+                assert $ == #3762
+                ; Unknown, соседние байты не объявляются свободными
+                incbin "../Resources/04_STATIONF/Unclassified3762_3802.bin"
+                assert $ == #3802
+                disp #9802
+                include "../Station/Data/ShipTradeRows.asm"
+                ent
+                assert $ == #3825
+                disp #9825
+                include "../Station/Data/SkimmerTradeRows.asm"
+                ent
+                assert $ == #3839
+                disp #9839
+                include "../Station/Data/EventCodes.asm"
+                ent
                 assert $ == #383B
                 disp #983B
                 include "../Station/Data/StationTimer.asm"
@@ -1095,14 +1194,52 @@
                 ent
                 assert $ == #38AC
                 ; Четыре соседних байта сохраняют неизвестный смысл.
-                incbin "../Resources/04_STATIONF/Unknown98AC.bin"
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/EquipmentPhysicalTables.md)
+                assert $ == #38AC
+                disp #98AC
+                include "../Station/Data/PrimaryQuantityTail.asm"
+                ent
                 assert $ == #38B0
                 disp #98B0
                 include "../Station/Data/MissionOffer.asm"
                 ent
                 assert $ == #38C0
                 ; Unknown, исходные данные после состояния предложения
-                incbin "../Resources/04_STATIONF/BeforeStoredMapPoints.bin"
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/MapDistanceAndRenderState.md)
+                assert $ == #38C0
+                ; Unknown, соседние байты не объявляются свободными
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/StationTransportTradeTables.md)
+                assert $ == #38C0
+                ; Unknown, соседние байты не объявляются свободными
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/StationOrderCompatibleSlots.md)
+                assert $ == #38C0
+                ; Unknown, соседние байты не объявляются свободными
+                incbin "../Resources/04_STATIONF/Unclassified38C0_38C6.bin"
+                assert $ == #38C6
+                disp #98C6
+                include "../Station/Data/OrderCompatibleSlots.asm"
+                ent
+                assert $ == #38F6
+                disp #98F6
+                include "../Station/Data/SecondaryQuantities.asm"
+                ent
+                assert $ == #3904
+                ; Unknown, соседние байты не объявляются свободными
+                incbin "../Resources/04_STATIONF/Unclassified3904_3906.bin"
+                assert $ == #3906
+                disp #9906
+                include "../Station/Data/TransitionCounter.asm"
+                ent
+                assert $ == #3907
+                ; Unknown, соседние байты не объявляются свободными
+                incbin "../Resources/04_STATIONF/Unclassified3907_3908.bin"
+                assert $ == #3908
+                disp #9908
+                include "../Station/Data/MeasuredDistance.asm"
+                ent
+                assert $ == #3909
+                ; Unknown, соседние байты не объявляются свободными
+                incbin "../Resources/04_STATIONF/Unclassified3909_390A.bin"
                 assert $ == #390A
                 disp #990A
                 include "../Station/Data/StoredMapPoints.asm"
@@ -1139,8 +1276,11 @@
                 include "../Station/Data/ControlOptions.asm"
                 ent
                 assert $ == #3A1E
-                ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/04_STATIONF/Unclassified044TailAfterKeysAfterSettings.bin"
+                ; Хвост исходного состояния перед переносом в ACTION
+                incbin "../Station/Resources/InitialTransferTrailer.bin"
+                assert $ == #3A3B
+                ; Unknown, продолжение находится за границей переноса состояния
+                incbin "../Resources/04_STATIONF/Unclassified3A3B_3A58.bin"
                 assert $ == #3A58
                 disp #9A58
                 include "../Station/EmptyCallback.asm"
@@ -1851,7 +1991,10 @@
                 ent
                 assert $ == #62CB
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/04_STATIONF/Unclassified076.bin"
+                assert $ == #62CB
+                disp #C2CB
+                include "../Station/DrawCenteredWithoutOwner.asm"
+                ent
                 assert $ == #62DF
                 disp #C2DF
                 include "../Station/DrawCenteredItem.asm"                       ; (0) жёсткий порядок, последовательное исполнение
@@ -1980,7 +2123,10 @@
                 ent
                 assert $ == #6CAA
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/04_STATIONF/Unclassified084.bin"
+                assert $ == #6CAA
+                disp #CCAA
+                include "../Station/SetAllFilledBandMode.asm"
+                ent
                 assert $ == #6CAF
                 disp #CCAF
                 include "../Station/SetBandFillMode.asm"
@@ -2017,8 +2163,8 @@
                 ; исходный поток CP866, переводы и управляющие коды не исправляются
                 incbin "../Station/Resources/GameSettingsLabels.bin"
                 assert $ == #80E4
-                ; Unknown, потребитель списка абонентов не установлен
-                incbin "../Resources/04_STATIONF/Unclassified80E4_8262.bin"
+                ; заголовок и 16 строк абонентов с разделителем второй колонки 02
+                incbin "../Station/Resources/SubscriberSystemRows.bin"
                 assert $ == #8262
                 ; исходный поток CP866, переводы и управляющие коды не исправляются
                 incbin "../Station/Resources/DecodedMessages.bin"
@@ -2065,8 +2211,8 @@
                 ; исходные подписи CP866, общий LF соседних потоков не дублируется
                 incbin "../Station/Resources/EquipmentNames.bin"
                 assert $ == #9066
-                ; Unknown, потребитель соседнего шаблона не установлен
-                incbin "../Resources/04_STATIONF/Unclassified9066_90B2.bin"
+                ; подпись топлива и заголовок доставки с кодами колонок 02..05
+                incbin "../Station/Resources/FuelAndDeliveryLabels.bin"
                 assert $ == #90B2
                 ; исходные подписи CP866, общий LF соседних потоков не дублируется
                 incbin "../Station/Resources/PoliticalAreaLabels.bin"
@@ -2079,6 +2225,12 @@
                 include "../Station/Data/DrawList.asm"
                 ent
                 assert $ == #93F4
-                ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/04_STATIONF/Unclassified086.bin"
+                ; 126 исходных байтов хвоста, затронутых сдвигами списка рисователей
+                incbin "../Station/Resources/InitialDrawListShiftTail.bin"
+                assert $ == #9472
+                ; 22 исходных байта, читаемых удалением последней панели после открытия исходных окон
+                incbin "../Station/Resources/InitialDrawListExtendedTail.bin"
+                assert $ == #9488
+                ; Unknown, более дальние обращения этой трассой не установлены
+                incbin "../Resources/04_STATIONF/Unclassified9488_A000.bin"
                 assert $ == #A000

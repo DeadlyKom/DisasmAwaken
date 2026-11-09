@@ -35,7 +35,8 @@ Entry:          DI
                 LD (#6235), HL
                 LD HL, #0017
                 LD (#6238), HL
-                LD HL, #8000
+                ; Запись заголовка исполняемой цепочки по адресу будущего входа.
+                LD HL, @FinalDisplayChainConst.GeneratedEntry
                 LD (HL), #ED
                 INC HL
                 LD (HL), #73

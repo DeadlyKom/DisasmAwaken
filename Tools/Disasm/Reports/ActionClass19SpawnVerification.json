@@ -23,6 +23,8 @@
   "inserted_FE_writes": 171,
   "all_reuse_and_initial_R_products": true,
   "all_rate_and_list_head_bytes": true,
+  "prepared_entry_6441_executed": false,
+  "all_kind_quantity_pairs_H_zero": false,
   "generated_list_code_from_packed_HL_not_allocated_IY": true,
   "real_search_and_both_index_conversions_executed": true,
   "exact_registers_flags_r_sp": true,

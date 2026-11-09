@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "total_cases": 1024,
+  "physical_bytes": 624,
+  "physical_pixel_bits": 4992,
+  "glyphs": 208,
+  "pairs": 104,
+  "first_code": 32,
+  "last_code": 239,
+  "all_input_bytes_real_renderer_checked": true,
+  "out_of_font_input_codes": 48,
+  "out_of_font_reads_neighboring_original_code": true,
+  "no_range_guard_added": true,
+  "roundtrip_all_pixel_bits": true,
+  "original_disk_payload_sha256": "5b923159f4ad5cb9c4be60f3d4eab44793ac2caf2a0ca35ac34553be04885dc6",
+  "independent_text_renderer_memory_and_events_checked": true,
+  "ordinary_stack_and_scroll_saved_SP_excluded": true,
+  "exact_registers_R_T_and_write_multiplicity_checked": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

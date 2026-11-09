@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "cases": 65536,
+  "entry": 59495,
+  "continuation": 59497,
+  "special_8000_result": 8388608,
+  "direct_bank_4_caller_found": false,
+  "game_entry_proved": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

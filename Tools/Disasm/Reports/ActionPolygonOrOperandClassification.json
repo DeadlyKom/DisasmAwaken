@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "classified_resource_bytes": 1,
+  "resources": 1,
+  "read_address": 36187,
+  "paired_and_operand_overlaps_face_gate": true,
+  "original_bytes_preserved": true,
+  "generated_values_not_serialized": true,
+  "assembly_executed": false
+}

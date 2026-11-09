@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "typed_bytes": 60,
+  "physical_records": 30,
+  "physical_symbols": 90,
+  "files": 1,
+  "cargo_rows": 30,
+  "cargo_bytes": 60,
+  "author_literal_bytes_matched": 60,
+  "reused_existing_FOwnedCargoRow": true,
+  "eject_scan_bytes": 30,
+  "eject_scan_includes_price_bytes": true,
+  "runtime_native_load_proved": false,
+  "original_bytes_addresses_and_instructions_preserved": true,
+  "gaps_preserved": true,
+  "invalid_pair_gameplay_proved": false,
+  "cf08_reclassified": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

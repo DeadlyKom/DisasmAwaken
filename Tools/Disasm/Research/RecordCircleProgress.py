@@ -34,11 +34,22 @@ def main():
         if report_path not in checkpoint['passed_reports']:
             checkpoint['passed_reports'].append(report_path)
     assert audit['registered_functions'] == inventory['fragments']
+    if (ROOT/'Tools/Disasm/Reports/ResourceSemanticLimits.json').exists():
+        limits=read('ResourceSemanticLimits');assert limits['passed']
+        assert limits['source_map_sha256']==hashlib.sha256((ROOT/'Tools/Disasm/Reports/SourceMap.json').read_bytes()).hexdigest()
+        checkpoint['resource_semantic_limits']=dict(
+            classified_format_or_extent_bytes_with_unproved_game_use=limits['classified_format_or_extent_bytes_with_unproved_game_use'],
+            complete_unknown_resource_graph_proved=False,
+            report='Tools/Disasm/Reports/ResourceSemanticLimits.json')
     checkpoint['unregistered_object_state_callbacks']=audit['unregistered_object_state_callbacks']
     checkpoint['registered_object_state_callbacks']=audit['registered_object_state_callbacks']
     checkpoint['unregistered_class_callbacks']=audit['unregistered_class_callbacks']
     checkpoint['registered_class_callbacks']=audit['registered_class_callbacks']
     checkpoint['unique_class_handler_targets']=audit['unique_class_handler_targets']
+    if 'registered_keyboard_callbacks' in audit:
+        checkpoint['registered_keyboard_callbacks']=audit['registered_keyboard_callbacks']
+        checkpoint['unregistered_keyboard_callbacks']=audit['unregistered_keyboard_callbacks']
+        checkpoint['overlapping_keyboard_step']=audit['overlapping_keyboard_step']
     # Проверка обязательных условий целостности до записи новой контрольной точки.
     for key in ('unlinked_functions','missing_includes_or_resources','missing_include_order','modified_code_path_errors',
                 'unresolved_global_references','duplicate_global_definitions',
@@ -1162,8 +1173,55 @@ def main():
                  'ActionRandomClassGateClassification',
                  'ActionEmbeddedNotesInspection',
                  'ActionBankedParameterBuildClassification','ActionCandidateListDataClassification',
-                 'ActionObjectStreamStorageClassification','ActionLinkOverrideFieldNaming','AuxiliaryBankPayloadInspection',
+                 'ActionObjectStreamStorageClassification','ActionLinkOverrideFieldNaming','AuxiliaryBankPayloadInspection','AuxiliaryBankSharedBlockInspection','ActionPanelPhysicalDataClassification','ActionLocalContextPhysicalDataClassification',
                  'ActionRenderBasisDataClassification','ActionEquipmentNotesMapping','ActionEquipmentDataClassification',
+                 'MarketRuleOffsetsVerification','ActionRenderHeaderPhysicalDataClassification',
+                 'AuxiliarySourceFormatInspection','Scene1PixelPairsVerification','Scene1PixelPairsClassification',
+                 'BankScreenStripsVerification','BankScreenStripsClassification',
+                 'AdditionalBankStripsVerification','AdditionalBankStripsClassification',
+                 'ActionTargetCommandsVerification','ActionTargetCommandsClassification',
+                 'ActionOverlayModeCommandVerification','ActionOverlayModeCommandClassification',
+                 'ActionTractorModeCommandVerification','ActionTractorModeCommandClassification',
+                 'ActionFreeFlightCommandVerification','ActionFreeFlightCommandClassification',
+                 'ActionFreeFlightReturnTailVerification',
+                 'ActionStationReturnCommandVerification','ActionStationReturnCommandClassification',
+                 'ActionPreparedClass19SpawnVerification','ActionEjectCommandsVerification','ActionEjectCommandsClassification',
+                 'ActionCargoNotesMapping','ActionOwnedCargoPhysicalDataClassification',
+                 'ActionReverseViewBasisVerification','ActionReverseViewBasisClassification',
+                 'ActionViewDirectionCommandVerification','ActionViewDirectionCommandClassification','ActionMotionRearTailVerification',
+                 'ActionTractorCollectVerification','ActionTractorCollectClassification','ActionTractorCargoRulesClassification',
+                 'ActionAntimissileCommandVerification','ActionAntimissileCommandClassification',
+                 'ActionBoostCommandVerification','ActionBoostCommandClassification','ActionBoostAdvanceVerification','ActionBoostAdvanceClassification',
+                 'ActionHyperJumpVerification','ActionHyperJumpClassification','ActionHyperJumpPreparationVerification','ActionHyperJumpPreparationClassification',
+                 'ActionHyperReloadVerification','ActionHyperReloadClassification','ActionHyperReloadFileKeyClassification',
+                 'ActionEmbeddedNotesVerification','ActionEmbeddedNotesResourceClassification',
+                 'ControlsFlightMessagesVerification','ControlsFlightMessagesClassification','ActionFlightMessageNamesVerification',
+                 'ControlsTextFontVerification','ControlsTextFontClassification',
+                 'ActionClippedLineWorkDataClassification',
+                 'ControlsDirectStationRelayVerification','ControlsDirectStationRelayClassification',
+                 'ControlsStateStationRelayVerification','ControlsStateStationRelayClassification','ControlsStationRelayFileKeysClassification',
+                 'ControlsLegacyDiskFragmentInspection',
+                 'ControlsLegacySectorReadVerification','ControlsLegacyLoadChainVerification','ControlsLegacyLoadChainClassification',
+                 'ControlsResetVectorTemplatesClassification','ControlsResetFlightContextVerification','ControlsResetFlightContextClassification',
+                 'ActionPatchedScheduleGateVerification',
+                 'ActionLegacyBootOperandsVerification',
+                 'StationBootResourceTablesClassification','StationBackdropSelectionVerification',
+                 'StationInitialWorkspaceVerification','StationInitialWorkspaceClassification','StationInitialIndexPairsClassification',
+                 'ControlsTemporaryModuleResumeVerification',
+                 'ConfirmedControlTargetNamesVerification',
+                 'AllocatedSectorSuffixInspection','AllocatedSectorSuffixClassification','ResourceSemanticLimits',
+                 'ActionKeyboardCoverage','ActionOverlappingKeyDispatchVerification',
+                 'ActionOverlappingKeyClipReturnsVerification','ActionInitializedKeyClipVerification',
+                 'ActionNewsOrdersAndJumpCostClassification',
+                 'FinalSyncAndPreviewRecordClassification',
+                 'InterfaceEventAndSpecialRecordClassification',
+                 'MapDistanceAndRenderStateClassification','StationHyperJumpCostTransferVerification',
+                 'ActionMutableEffectLimitsVerification','ActionMutableSpawnParametersVerification','ActionMutableGaugePhasesVerification','ActionMutableSpawnGatesVerification','ActionQueueParameterPhysicalDataClassification',
+                 'ClipTargetLowPhysicalDataClassification',
+                 'PolygonFillPhysicalDataClassification',
+                 'ClipDispatchPrefixDataClassification',
+                 'ActionProjectedPointsDataClassification','ActionRasterWorkDataClassification',
+                 'ActionInputContextDataClassification','ControlsTemporaryModuleReferenceAudit','ControlsTemporaryModuleTailVerification',
                  'StationPanelTextLayout','StationInterfaceTextLayout','StationPhysicalTextSelectorsVerification',
                  'UnclassifiedRangeReferences',
                  'ActionLinkFlagsRolesVerification','ActionLinkedRLimitVerification','ActionPairedLineStepVerification',

@@ -36,7 +36,7 @@ Entry:          DI
                 CALL @Controls.BuildAndActivateParameters.Entry
                 CALL @Action.InitializeBankedBufferPoints.Entry
                 PUSH DE
-                LD DE, #F1AB
+                LD DE, @ControlsFlightText.SystemsReady
                 CALL @Action.QueueTextItemBank1.Entry
                 POP DE
                 ; JP @Action.MainLoop.Entry, продолжение в MainLoop.asm

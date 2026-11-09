@@ -42,7 +42,7 @@ Entry:          EXX
                 JP @Text.ParseFieldSuffix.Entry
 
                 ; выбор базы порогов первого набора
-ReadDirect:     LD DE, #95F0
+ReadDirect:     LD DE, @EquipmentListData.Weights
                 ; расчёт двухбайтового смещения по полному слову индекса
 CheckAtBase:    ADD HL, HL
                 ; расчёт адреса порога относительно базы DE

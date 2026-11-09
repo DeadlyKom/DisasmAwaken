@@ -42,7 +42,7 @@ Entry:          EXX
                 JP @Text.ParseFieldSuffix.Entry
 
                 ; выбор второй базы порогов перед общим сравнением
-ReadDirect:     LD DE, #9632
+ReadDirect:     LD DE, @SecondWeightFactors.Row00.Threshold
                 JR @Text.CheckEquipmentThreshold.CheckAtBase
 
                 endmodule

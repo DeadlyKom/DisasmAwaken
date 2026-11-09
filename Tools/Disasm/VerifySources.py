@@ -91,6 +91,9 @@ def main():
         # Преобразование именованных полей в смещения для сверки с исходными командами.
         operation = re.sub(r"\bF[A-Z][A-Z0-9_]*(?:\.[A-Z0-9_]+)*\b",
                            lambda m: "#" + format(symbols[m[0]], "X") if m[0] in symbols else m[0], operation)
+        # Вычисление числа соседних записей перед сложением с именованным полем.
+        operation = re.sub(r"(?<![#A-Z0-9_])([0-9]+)\s*\*\s*#([0-9A-F]+)",
+                           lambda m: "#" + format(int(m[1]) * int(m[2], 16), "X"), operation)
         operation = re.sub(r"#([0-9A-F]+)\s*\+\s*([0-9]+)",
                            lambda m: "#" + format(int(m[1], 16) + int(m[2]), "X"), operation)
         operation = re.sub(r"#([0-9A-F]+)\s*\+\s*#([0-9A-F]+)",
@@ -126,6 +129,638 @@ def main():
         rows=[p for p in source_map if p['path']==interface_text_path(name)]
         assert len(rows)==1 and rows[0]['kind']=='binary_resource'
         assert (rows[0]['offset'],rows[0]['length'],rows[0]['origin'])==(start,end-start,start+0x6000)
+
+    # Проверка двух физических входных записей коррекции точек и генератора.
+    from ActionInputContextData import TABLES as INPUT_CONTEXT_TABLES, parse as parse_input_context
+    for table in INPUT_CONTEXT_TABLES:
+        raw,labels=parse_input_context((ROOT/table[1]).read_text('utf-8'),table)
+        assert raw==sources[17][table[2]:table[3]]
+        assert all(symbols.get(k.upper())==v for k,v in labels.items())
+        rows=[p for p in source_map if p['path']==table[1]]
+        assert len(rows)==1 and rows[0]['kind']=='typed_data'
+        assert (rows[0]['offset'],rows[0]['length'],rows[0]['origin'])==(table[2],table[3]-table[2],table[2]+0x6000)
+    for table,alias in zip(INPUT_CONTEXT_TABLES,('ControlsPointMotionState','ControlsParameterTablesState')):
+        for field,width,meaning in table[5]:
+            assert symbols[(alias+'.'+field).upper()]==symbols[(table[0]+'.Value.'+field).upper()]
+    assert symbols['FFLIGHTCONTROLS']==3 and symbols['FPARAMETERSEEDS']==5
+    assert symbols['FFLIGHTCONTROLS.YCONTROL']==0 and symbols['FFLIGHTCONTROLS.XCONTROL']==1 and symbols['FFLIGHTCONTROLS.TURNCONTROL']==2
+    assert symbols['FPARAMETERSEEDS.SEEDFIRST']==0 and symbols['FPARAMETERSEEDS.SEEDSECOND']==2 and symbols['FPARAMETERSEEDS.STEPCONTROL']==4
+
+    # Проверка физических ячеек пятибайтового результата исходных моделей ACTION.
+    from ActionProjectedPointsData import TABLE as PROJECTED_POINTS_TABLE, parse as parse_projected_points
+    raw,labels=parse_projected_points((ROOT/PROJECTED_POINTS_TABLE[1]).read_text('utf-8'))
+    assert raw==sources[17][0x2E00:0x2EC8]
+    assert all(symbols.get(k.upper())==v for k,v in labels.items())
+    assert symbols['FRENDERPROJECTEDPOINT']==5 and symbols['FRENDERPROJECTEDPOINT.SECOND']==0
+    assert symbols['FRENDERPROJECTEDPOINT.FIRST']==2 and symbols['FRENDERPROJECTEDPOINT.CLIPCODE']==4
+    assert symbols['ACTIONVERTEXGROUPCONST.WORKPAGE']==labels['ActionProjectedPoints.Point00']
+    rows=[p for p in source_map if p['path']==PROJECTED_POINTS_TABLE[1]]
+    assert len(rows)==1 and (rows[0]['offset'],rows[0]['length'],rows[0]['origin'])==(0x2E00,200,0x8E00)
+
+    # Проверка физических упакованных концов линии и полных кодов режима.
+    from ActionRasterWorkData import TABLES as INPUT_CONTEXT_TABLES, parse as parse_input_context
+    for table in INPUT_CONTEXT_TABLES:
+        raw,labels=parse_input_context((ROOT/table[1]).read_text('utf-8'),table)
+        assert raw==sources[17][table[2]:table[3]]
+        assert all(symbols.get(k.upper())==v for k,v in labels.items())
+        rows=[p for p in source_map if p['path']==table[1]]
+        assert len(rows)==1 and rows[0]['kind']=='typed_data'
+        assert (rows[0]['offset'],rows[0]['length'],rows[0]['origin'])==(table[2],table[3]-table[2],table[2]+0x6000)
+    for alias,target in (('FirstPoint','ActionRasterPoints.FirstPoint'),('SecondPoint','ActionRasterPoints.SecondPoint'),
+                         ('PixelOpcode','ActionRasterMode.Value.PixelOpcode'),('BranchOpcode','ActionRasterMode.Value.BranchOpcode')):
+        assert symbols[('ActionLineRasterState.'+alias).upper()]==symbols[target.upper()]
+    assert symbols['FLINERASTERPOINT']==2 and symbols['FLINERASTERMODE']==2
+    assert symbols['FLINERASTERPOINT.SECOND']==0 and symbols['FLINERASTERPOINT.FIRST']==1
+    assert symbols['FLINERASTERMODE.PIXELOPCODE']==0 and symbols['FLINERASTERMODE.BRANCHOPCODE']==1
+
+    # Проверка двух физических префиксов CF00, CF08 остаётся отдельным спорным диапазоном.
+    from ClipDispatchPrefixData import TABLES as CLIP_PREFIX_TABLES, parse as parse_clip_prefix
+    for slot,origin,table in CLIP_PREFIX_TABLES:
+        raw,labels=parse_clip_prefix((ROOT/table[1]).read_text('utf-8'),origin,table)
+        assert raw==sources[slot][table[2]:table[3]]==bytes.fromhex('D3E488003D7B9500')
+        assert all(symbols.get(k.upper())==v for k,v in labels.items())
+        rows=[p for p in source_map if p['path']==table[1]]
+        assert len(rows)==1 and (rows[0]['slot'],rows[0]['offset'],rows[0]['length'],rows[0]['origin'])==(slot,table[2],8,0xCF00)
+        assert symbols['FCLIPDISPATCHPREFIX']==8
+        for i,(field,width,meaning) in enumerate(table[5]):assert symbols[('FClipDispatchPrefix.'+field).upper()]==i
+    assert symbols['ACTIONCLIPPOINTWRITERSSTATE.CORNERBLOCK']==symbols['ACTIONCLIPDISPATCHPREFIX.VALUE.CORNERBLOCK']
+    assert symbols['ACTIONCLIPCASESSTATE.SEENFLAGS']==symbols['ACTIONCLIPDISPATCHPREFIX.VALUE.SEENFLAGS']
+
+    # Проверка физических таблиц старших адресов, шаблонов и разреженных пар масок.
+    from PolygonFillPhysicalData import TABLES as POLYGON_PHYSICAL_TABLES, BINDINGS as POLYGON_PHYSICAL_BINDINGS, parse as parse_polygon_physical, validate_sources as validate_polygon_physical
+    validate_polygon_physical(sources)
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        raw,labels=parse_polygon_physical((ROOT/table[1]).read_text('utf-8'),origin,table)
+        assert raw==sources[slot][table[2]:table[3]] and all(symbols.get(k.upper())==v for k,v in labels.items())
+        offset=0
+        for field,width,meaning in table[5]:
+            assert symbols[(table[4]+'.'+field).upper()]==offset
+            offset+=width
+        assert symbols[table[4].upper()]==offset
+        rows=[p for p in source_map if p['path']==table[1]]
+        assert len(rows)==1 and (rows[0]['slot'],rows[0]['offset'],rows[0]['length'],rows[0]['origin'])==(slot,table[2],table[3]-table[2],origin+table[2])
+    for owner,name,address,target in POLYGON_PHYSICAL_BINDINGS:assert symbols[(owner+'.'+name).upper()]==symbols[target.upper()]==address
+
+    # Проверка физических младших байтов адресов с сохранением встроенных рабочих полей.
+    from ClipTargetLowPhysicalData import TABLES as POLYGON_PHYSICAL_TABLES, BINDINGS as POLYGON_PHYSICAL_BINDINGS, parse as parse_polygon_physical, validate_sources as validate_polygon_physical
+    validate_polygon_physical(sources)
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        raw,labels=parse_polygon_physical((ROOT/table[1]).read_text('utf-8'),origin,table)
+        assert raw==sources[slot][table[2]:table[3]] and all(symbols.get(k.upper())==v for k,v in labels.items())
+        offset=0
+        for field,width,meaning in table[5]:
+            assert symbols[(table[4]+'.'+field).upper()]==offset
+            offset+=width
+        assert symbols[table[4].upper()]==offset
+        rows=[p for p in source_map if p['path']==table[1]]
+        assert len(rows)==1 and (rows[0]['slot'],rows[0]['offset'],rows[0]['length'],rows[0]['origin'])==(slot,table[2],table[3]-table[2],origin+table[2])
+    for owner,name,address,target in POLYGON_PHYSICAL_BINDINGS:assert symbols[(owner+'.'+name).upper()]==symbols[target.upper()]==address
+
+    # Проверка физических записей, их полей и исходного расположения.
+    from ActionQueueParameterPhysicalData import TABLES as POLYGON_PHYSICAL_TABLES, BINDINGS as POLYGON_PHYSICAL_BINDINGS, parse as parse_polygon_physical, validate_sources as validate_polygon_physical
+    validate_polygon_physical(sources)
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        raw,labels=parse_polygon_physical((ROOT/table[1]).read_text('utf-8'),origin,table)
+        assert raw==sources[slot][table[2]:table[3]] and all(symbols.get(k.upper())==v for k,v in labels.items())
+        offset=0
+        for field,width,meaning in table[5]:
+            assert symbols[(table[4]+'.'+field).upper()]==offset
+            offset+=width
+        assert symbols[table[4].upper()]==offset
+        rows=[p for p in source_map if p['path']==table[1]]
+        assert len(rows)==1 and (rows[0]['slot'],rows[0]['offset'],rows[0]['length'],rows[0]['origin'])==(slot,table[2],table[3]-table[2],origin+table[2])
+    for owner,name,address,target in POLYGON_PHYSICAL_BINDINGS:assert symbols[(owner+'.'+name).upper()]==symbols[target.upper()]==address
+
+    # Проверка физических записей, их полей и исходного расположения.
+    from ActionPanelPhysicalData import TABLES as POLYGON_PHYSICAL_TABLES, BINDINGS as POLYGON_PHYSICAL_BINDINGS, parse as parse_polygon_physical, validate_sources as validate_polygon_physical
+    validate_polygon_physical(sources)
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        raw,labels=parse_polygon_physical((ROOT/table[1]).read_text('utf-8'),origin,table)
+        assert raw==sources[slot][table[2]:table[3]] and all(symbols.get(k.upper())==v for k,v in labels.items())
+        offset=0
+        for field,width,meaning in table[5]:
+            assert symbols[(table[4]+'.'+field).upper()]==offset
+            offset+=width
+        assert symbols[table[4].upper()]==offset
+        rows=[p for p in source_map if p['path']==table[1]]
+        assert len(rows)==1 and (rows[0]['slot'],rows[0]['offset'],rows[0]['length'],rows[0]['origin'])==(slot,table[2],table[3]-table[2],origin+table[2])
+    for owner,name,address,target in POLYGON_PHYSICAL_BINDINGS:assert symbols[(owner+'.'+name).upper()]==symbols[target.upper()]==address
+
+    # Проверка физических записей, их полей и исходного расположения.
+    from ActionLocalContextPhysicalData import TABLES as POLYGON_PHYSICAL_TABLES, BINDINGS as POLYGON_PHYSICAL_BINDINGS, parse as parse_polygon_physical, validate_sources as validate_polygon_physical
+    validate_polygon_physical(sources)
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        raw,labels=parse_polygon_physical((ROOT/table[1]).read_text('utf-8'),origin,table)
+        assert raw==sources[slot][table[2]:table[3]] and all(symbols.get(k.upper())==v for k,v in labels.items())
+        offset=0
+        for field,width,meaning in table[5]:
+            assert symbols[(table[4]+'.'+field).upper()]==offset
+            offset+=width
+        assert symbols[table[4].upper()]==offset
+        rows=[p for p in source_map if p['path']==table[1]]
+        assert len(rows)==1 and (rows[0]['slot'],rows[0]['offset'],rows[0]['length'],rows[0]['origin'])==(slot,table[2],table[3]-table[2],origin+table[2])
+    for owner,name,address,target in POLYGON_PHYSICAL_BINDINGS:assert symbols[(owner+'.'+name).upper()]==symbols[target.upper()]==address
+
+    # Проверка физических записей, их полей и исходного расположения.
+    from ActionRenderHeaderPhysicalData import TABLES as POLYGON_PHYSICAL_TABLES, BINDINGS as POLYGON_PHYSICAL_BINDINGS, parse as parse_polygon_physical, validate_sources as validate_polygon_physical
+    validate_polygon_physical(sources)
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        raw,labels=parse_polygon_physical((ROOT/table[1]).read_text('utf-8'),origin,table)
+        assert raw==sources[slot][table[2]:table[3]] and all(symbols.get(k.upper())==v for k,v in labels.items())
+        offset=0
+        for field,width,meaning in table[5]:
+            assert symbols[(table[4]+'.'+field).upper()]==offset
+            offset+=width
+        assert symbols[table[4].upper()]==offset
+        rows=[p for p in source_map if p['path']==table[1]]
+        assert len(rows)==1 and (rows[0]['slot'],rows[0]['offset'],rows[0]['length'],rows[0]['origin'])==(slot,table[2],table[3]-table[2],origin+table[2])
+    for owner,name,address,target in POLYGON_PHYSICAL_BINDINGS:assert symbols[(owner+'.'+name).upper()]==symbols[target.upper()]==address
+
+    # Проверка исходных графических байтов scene1po, загрузчик и палитра этим не доказываются.
+    import Scene1PixelPairs as scene1
+    scene1_rows=[r for r in source_map if r['slot']==scene1.SLOT]
+    assert [(r['offset'],r['length'],r['kind'],r['path']) for r in scene1_rows]==[
+        (0,scene1.LOGICAL_BYTES,'binary_resource',scene1.PATH),
+        (scene1.LOGICAL_BYTES,12,'binary_resource',scene1.TAIL_PATH)]
+    scene1_data=(ROOT/scene1.PATH).read_bytes()
+    assert scene1_data==sources[scene1.SLOT][:scene1.LOGICAL_BYTES]
+    assert scene1.pack(scene1.unpack(scene1_data))==scene1_data
+
+    # Проверка реальных заголовков, всех растров и сохранённых промежутков BANK.
+    from BankScreenStrips import verify_published as verify_bank_screen_strips
+    verify_bank_screen_strips(sources,source_map,symbols)
+
+    # Проверка физических записей, их полей и исходного расположения.
+    from ActionOwnedCargoPhysicalData import TABLES as POLYGON_PHYSICAL_TABLES, BINDINGS as POLYGON_PHYSICAL_BINDINGS, parse as parse_polygon_physical, validate_sources as validate_polygon_physical
+    validate_polygon_physical(sources)
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        raw,labels=parse_polygon_physical((ROOT/table[1]).read_text('utf-8'),origin,table)
+        assert raw==sources[slot][table[2]:table[3]] and all(symbols.get(k.upper())==v for k,v in labels.items())
+        offset=0
+        for field,width,meaning in table[5]:
+            assert symbols[(table[4]+'.'+field).upper()]==offset
+            offset+=width
+        assert symbols[table[4].upper()]==offset
+        rows=[p for p in source_map if p['path']==table[1]]
+        assert len(rows)==1 and (rows[0]['slot'],rows[0]['offset'],rows[0]['length'],rows[0]['origin'])==(slot,table[2],table[3]-table[2],origin+table[2])
+    for owner,name,address,target in POLYGON_PHYSICAL_BINDINGS:assert symbols[(owner+'.'+name).upper()]==symbols[target.upper()]==address
+
+    # Проверка физических записей, их полей и исходного расположения.
+    from ActionTractorCargoRules import TABLES as POLYGON_PHYSICAL_TABLES, BINDINGS as POLYGON_PHYSICAL_BINDINGS, parse as parse_polygon_physical, validate_sources as validate_polygon_physical
+    validate_polygon_physical(sources)
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        raw,labels=parse_polygon_physical((ROOT/table[1]).read_text('utf-8'),origin,table)
+        assert raw==sources[slot][table[2]:table[3]] and all(symbols.get(k.upper())==v for k,v in labels.items())
+        offset=0
+        for field,width,meaning in table[5]:
+            assert symbols[(table[4]+'.'+field).upper()]==offset
+            offset+=width
+        assert symbols[table[4].upper()]==offset
+        rows=[p for p in source_map if p['path']==table[1]]
+        assert len(rows)==1 and (rows[0]['slot'],rows[0]['offset'],rows[0]['length'],rows[0]['origin'])==(slot,table[2],table[3]-table[2],origin+table[2])
+    for owner,name,address,target in POLYGON_PHYSICAL_BINDINGS:assert symbols[(owner+'.'+name).upper()]==symbols[target.upper()]==address
+
+    # Проверка физических записей, их полей и исходного расположения.
+    from ActionHyperReloadFileKey import TABLES as POLYGON_PHYSICAL_TABLES, BINDINGS as POLYGON_PHYSICAL_BINDINGS, parse as parse_polygon_physical, validate_sources as validate_polygon_physical
+    validate_polygon_physical(sources)
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        raw,labels=parse_polygon_physical((ROOT/table[1]).read_text('utf-8'),origin,table)
+        assert raw==sources[slot][table[2]:table[3]] and all(symbols.get(k.upper())==v for k,v in labels.items())
+        offset=0
+        for field,width,meaning in table[5]:
+            assert symbols[(table[4]+'.'+field).upper()]==offset
+            offset+=width
+        assert symbols[table[4].upper()]==offset
+        rows=[p for p in source_map if p['path']==table[1]]
+        assert len(rows)==1 and (rows[0]['slot'],rows[0]['offset'],rows[0]['length'],rows[0]['origin'])==(slot,table[2],table[3]-table[2],origin+table[2])
+    for owner,name,address,target in POLYGON_PHYSICAL_BINDINGS:assert symbols[(owner+'.'+name).upper()]==symbols[target.upper()]==address
+
+    # Проверка всех 29 строк, исходного CP866, терминаторов и именованных адресов CONTROL.
+    import ControlsFlightMessages as flight_text
+    flight_rows=flight_text.records(sources[23])
+    assert (ROOT/flight_text.PATH).read_bytes()==sources[23][flight_text.START:flight_text.END]
+    for row in flight_rows:assert symbols[('ControlsFlightText.'+row['name']).upper()]==row['address']
+
+    # Проверка 4992 физических битов шестистрочных пар знаков CONTROL0.
+    import ControlsTextFont as text_font
+    text_font_raw=(ROOT/text_font.PATH).read_bytes()
+    assert text_font_raw==sources[22][text_font.START:text_font.END]
+    assert text_font.pack(text_font.unpack(text_font_raw))==text_font_raw
+    assert symbols['CONTROLSTEXTFONT.PIXELS']==0xC600
+
+    # Проверка физических записей, их полей и исходного расположения.
+    from ActionClippedLineWorkData import TABLES as POLYGON_PHYSICAL_TABLES, BINDINGS as POLYGON_PHYSICAL_BINDINGS, parse as parse_polygon_physical, validate_sources as validate_polygon_physical
+    validate_polygon_physical(sources)
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        raw,labels=parse_polygon_physical((ROOT/table[1]).read_text('utf-8'),origin,table)
+        assert raw==sources[slot][table[2]:table[3]] and all(symbols.get(k.upper())==v for k,v in labels.items())
+        offset=0
+        for field,width,meaning in table[5]:
+            assert symbols[(table[4]+'.'+field).upper()]==offset
+            offset+=width
+        assert symbols[table[4].upper()]==offset
+        rows=[p for p in source_map if p['path']==table[1]]
+        assert len(rows)==1 and (rows[0]['slot'],rows[0]['offset'],rows[0]['length'],rows[0]['origin'])==(slot,table[2],table[3]-table[2],origin+table[2])
+    for owner,name,address,target in POLYGON_PHYSICAL_BINDINGS:assert symbols[(owner+'.'+name).upper()]==symbols[target.upper()]==address
+
+    # Проверка физических записей, их полей и исходного расположения.
+    from ControlsStationRelayFileKeys import TABLES as POLYGON_PHYSICAL_TABLES, BINDINGS as POLYGON_PHYSICAL_BINDINGS, parse as parse_polygon_physical, validate_sources as validate_polygon_physical
+    validate_polygon_physical(sources)
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        raw,labels=parse_polygon_physical((ROOT/table[1]).read_text('utf-8'),origin,table)
+        assert raw==sources[slot][table[2]:table[3]] and all(symbols.get(k.upper())==v for k,v in labels.items())
+        offset=0
+        for field,width,meaning in table[5]:
+            assert symbols[(table[4]+'.'+field).upper()]==offset
+            offset+=width
+        assert symbols[table[4].upper()]==offset
+        rows=[p for p in source_map if p['path']==table[1]]
+        assert len(rows)==1 and (rows[0]['slot'],rows[0]['offset'],rows[0]['length'],rows[0]['origin'])==(slot,table[2],table[3]-table[2],origin+table[2])
+    for owner,name,address,target in POLYGON_PHYSICAL_BINDINGS:assert symbols[(owner+'.'+name).upper()]==symbols[target.upper()]==address
+
+    # Проверка физической роли выделенных суффиксов, чтение игрой не исключается.
+    from AllocatedSectorSuffixResources import RANGES as ALLOCATED_SUFFIX_RANGES
+    for slot,start,end,path,declared in ALLOCATED_SUFFIX_RANGES:
+        assert slot!=3 and start>=declared
+        assert (ROOT/path).read_bytes()==sources[slot][start:end]
+        rows=[r for r in source_map if r['path']==path]
+        assert len(rows)==1 and (rows[0]['slot'],rows[0]['offset'],rows[0]['length'],rows[0]['kind'])==(slot,start,end-start,'binary_resource')
+        assert rows[0]['format']=='ORIGINAL_ALLOCATED_SECTOR_SUFFIX'
+
+    # Проверка физических записей, их полей и исходного расположения.
+    from ActionNewsOrdersAndJumpCost import TABLES as POLYGON_PHYSICAL_TABLES, BINDINGS as POLYGON_PHYSICAL_BINDINGS, parse as parse_polygon_physical, validate_sources as validate_polygon_physical
+    validate_polygon_physical(sources)
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        raw,labels=parse_polygon_physical((ROOT/table[1]).read_text('utf-8'),origin,table)
+        assert raw==sources[slot][table[2]:table[3]] and all(symbols.get(k.upper())==v for k,v in labels.items())
+        offset=0
+        for field,width,meaning in table[5]:
+            assert symbols[(table[4]+'.'+field).upper()]==offset
+            offset+=width
+        assert symbols[table[4].upper()]==offset
+        rows=[p for p in source_map if p['path']==table[1]]
+        assert len(rows)==1 and (rows[0]['slot'],rows[0]['offset'],rows[0]['length'],rows[0]['origin'])==(slot,table[2],table[3]-table[2],origin+table[2])
+    for owner,name,address,target in POLYGON_PHYSICAL_BINDINGS:assert symbols[(owner+'.'+name).upper()]==symbols[target.upper()]==address
+
+    # Проверка физических записей, их полей и исходного расположения.
+    from FinalSyncAndPreviewRecord import TABLES as POLYGON_PHYSICAL_TABLES, BINDINGS as POLYGON_PHYSICAL_BINDINGS, parse as parse_polygon_physical, validate_sources as validate_polygon_physical
+    validate_polygon_physical(sources)
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        raw,labels=parse_polygon_physical((ROOT/table[1]).read_text('utf-8'),origin,table)
+        assert raw==sources[slot][table[2]:table[3]] and all(symbols.get(k.upper())==v for k,v in labels.items())
+        offset=0
+        for field,width,meaning in table[5]:
+            assert symbols[(table[4]+'.'+field).upper()]==offset
+            offset+=width
+        assert symbols[table[4].upper()]==offset
+        rows=[p for p in source_map if p['path']==table[1]]
+        assert len(rows)==1 and (rows[0]['slot'],rows[0]['offset'],rows[0]['length'],rows[0]['origin'])==(slot,table[2],table[3]-table[2],origin+table[2])
+    for owner,name,address,target in POLYGON_PHYSICAL_BINDINGS:assert symbols[(owner+'.'+name).upper()]==symbols[target.upper()]==address
+
+    # Проверка физических записей, их полей и исходного расположения.
+    from InterfaceEventAndSpecialRecord import TABLES as POLYGON_PHYSICAL_TABLES, BINDINGS as POLYGON_PHYSICAL_BINDINGS, parse as parse_polygon_physical, validate_sources as validate_polygon_physical
+    validate_polygon_physical(sources)
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        raw,labels=parse_polygon_physical((ROOT/table[1]).read_text('utf-8'),origin,table)
+        assert raw==sources[slot][table[2]:table[3]] and all(symbols.get(k.upper())==v for k,v in labels.items())
+        offset=0
+        for field,width,meaning in table[5]:
+            assert symbols[(table[4]+'.'+field).upper()]==offset
+            offset+=width
+        assert symbols[table[4].upper()]==offset
+        rows=[p for p in source_map if p['path']==table[1]]
+        assert len(rows)==1 and (rows[0]['slot'],rows[0]['offset'],rows[0]['length'],rows[0]['origin'])==(slot,table[2],table[3]-table[2],origin+table[2])
+    for owner,name,address,target in POLYGON_PHYSICAL_BINDINGS:assert symbols[(owner+'.'+name).upper()]==symbols[target.upper()]==address
+
+    # Проверка физических записей, их полей и исходного расположения.
+    from MapDistanceAndRenderState import TABLES as POLYGON_PHYSICAL_TABLES, BINDINGS as POLYGON_PHYSICAL_BINDINGS, parse as parse_polygon_physical, validate_sources as validate_polygon_physical
+    validate_polygon_physical(sources)
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        raw,labels=parse_polygon_physical((ROOT/table[1]).read_text('utf-8'),origin,table)
+        assert raw==sources[slot][table[2]:table[3]] and all(symbols.get(k.upper())==v for k,v in labels.items())
+        offset=0
+        for field,width,meaning in table[5]:
+            assert symbols[(table[4]+'.'+field).upper()]==offset
+            offset+=width
+        assert symbols[table[4].upper()]==offset
+        rows=[p for p in source_map if p['path']==table[1]]
+        assert len(rows)==1 and (rows[0]['slot'],rows[0]['offset'],rows[0]['length'],rows[0]['origin'])==(slot,table[2],table[3]-table[2],origin+table[2])
+    for owner,name,address,target in POLYGON_PHYSICAL_BINDINGS:assert symbols[(owner+'.'+name).upper()]==symbols[target.upper()]==address
+
+    # Проверка физических записей, их полей и исходного расположения.
+    from ControlsResetVectorTemplates import TABLES as POLYGON_PHYSICAL_TABLES, BINDINGS as POLYGON_PHYSICAL_BINDINGS, parse as parse_polygon_physical, validate_sources as validate_polygon_physical
+    validate_polygon_physical(sources)
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        raw,labels=parse_polygon_physical((ROOT/table[1]).read_text('utf-8'),origin,table)
+        assert raw==sources[slot][table[2]:table[3]] and all(symbols.get(k.upper())==v for k,v in labels.items())
+        offset=0
+        for field,width,meaning in table[5]:
+            assert symbols[(table[4]+'.'+field).upper()]==offset
+            offset+=width
+        assert symbols[table[4].upper()]==offset
+        rows=[p for p in source_map if p['path']==table[1]]
+        assert len(rows)==1 and (rows[0]['slot'],rows[0]['offset'],rows[0]['length'],rows[0]['origin'])==(slot,table[2],table[3]-table[2],origin+table[2])
+    for owner,name,address,target in POLYGON_PHYSICAL_BINDINGS:assert symbols[(owner+'.'+name).upper()]==symbols[target.upper()]==address
+
+    # Проверка физических записей, их полей и исходного расположения.
+    from StationBootResourceTables import TABLES as POLYGON_PHYSICAL_TABLES, BINDINGS as POLYGON_PHYSICAL_BINDINGS, parse as parse_polygon_physical, validate_sources as validate_polygon_physical
+    validate_polygon_physical(sources)
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        raw,labels=parse_polygon_physical((ROOT/table[1]).read_text('utf-8'),origin,table)
+        assert raw==sources[slot][table[2]:table[3]] and all(symbols.get(k.upper())==v for k,v in labels.items())
+        offset=0
+        for field,width,meaning in table[5]:
+            assert symbols[(table[4]+'.'+field).upper()]==offset
+            offset+=width
+        assert symbols[table[4].upper()]==offset
+        rows=[p for p in source_map if p['path']==table[1]]
+        assert len(rows)==1 and (rows[0]['slot'],rows[0]['offset'],rows[0]['length'],rows[0]['origin'])==(slot,table[2],table[3]-table[2],origin+table[2])
+    for owner,name,address,target in POLYGON_PHYSICAL_BINDINGS:assert symbols[(owner+'.'+name).upper()]==symbols[target.upper()]==address
+
+    # Проверка физических записей, их полей и исходного расположения.
+    from StationInitialIndexPairs import TABLES as POLYGON_PHYSICAL_TABLES, BINDINGS as POLYGON_PHYSICAL_BINDINGS, parse as parse_polygon_physical, validate_sources as validate_polygon_physical
+    validate_polygon_physical(sources)
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        raw,labels=parse_polygon_physical((ROOT/table[1]).read_text('utf-8'),origin,table)
+        assert raw==sources[slot][table[2]:table[3]] and all(symbols.get(k.upper())==v for k,v in labels.items())
+        offset=0
+        for field,width,meaning in table[5]:
+            assert symbols[(table[4]+'.'+field).upper()]==offset
+            offset+=width
+        assert symbols[table[4].upper()]==offset
+        rows=[p for p in source_map if p['path']==table[1]]
+        assert len(rows)==1 and (rows[0]['slot'],rows[0]['offset'],rows[0]['length'],rows[0]['origin'])==(slot,table[2],table[3]-table[2],origin+table[2])
+    for owner,name,address,target in POLYGON_PHYSICAL_BINDINGS:assert symbols[(owner+'.'+name).upper()]==symbols[target.upper()]==address
+
+    # Проверка физических записей, их полей и исходного расположения.
+    from EquipmentPhysicalTables import TABLES as POLYGON_PHYSICAL_TABLES, BINDINGS as POLYGON_PHYSICAL_BINDINGS, parse as parse_polygon_physical, validate_sources as validate_polygon_physical
+    validate_polygon_physical(sources)
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        raw,labels=parse_polygon_physical((ROOT/table[1]).read_text('utf-8'),origin,table)
+        assert raw==sources[slot][table[2]:table[3]] and all(symbols.get(k.upper())==v for k,v in labels.items())
+        offset=0
+        for field,width,meaning in table[5]:
+            assert symbols[(table[4]+'.'+field).upper()]==offset
+            offset+=width
+        assert symbols[table[4].upper()]==offset
+        rows=[p for p in source_map if p['path']==table[1]]
+        assert len(rows)==1 and (rows[0]['slot'],rows[0]['offset'],rows[0]['length'],rows[0]['origin'])==(slot,table[2],table[3]-table[2],origin+table[2])
+    for owner,name,address,target in POLYGON_PHYSICAL_BINDINGS:assert symbols[(owner+'.'+name).upper()]==symbols[target.upper()]==address
+
+    # Проверка физических записей, их полей и исходного расположения.
+    from ControlsParameterTemplates import TABLES as POLYGON_PHYSICAL_TABLES, BINDINGS as POLYGON_PHYSICAL_BINDINGS, parse as parse_polygon_physical, validate_sources as validate_polygon_physical
+    validate_polygon_physical(sources)
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        raw,labels=parse_polygon_physical((ROOT/table[1]).read_text('utf-8'),origin,table)
+        assert raw==sources[slot][table[2]:table[3]] and all(symbols.get(k.upper())==v for k,v in labels.items())
+        offset=0
+        for field,width,meaning in table[5]:
+            assert symbols[(table[4]+'.'+field).upper()]==offset
+            offset+=width
+        assert symbols[table[4].upper()]==offset
+        rows=[p for p in source_map if p['path']==table[1]]
+        assert len(rows)==1 and (rows[0]['slot'],rows[0]['offset'],rows[0]['length'],rows[0]['origin'])==(slot,table[2],table[3]-table[2],origin+table[2])
+    for owner,name,address,target in POLYGON_PHYSICAL_BINDINGS:assert symbols[(owner+'.'+name).upper()]==symbols[target.upper()]==address
+
+    # Проверка физических записей, их полей и исходного расположения.
+    from PreviewEdgeMaskPages import TABLES as POLYGON_PHYSICAL_TABLES, BINDINGS as POLYGON_PHYSICAL_BINDINGS, parse as parse_polygon_physical, validate_sources as validate_polygon_physical
+    validate_polygon_physical(sources)
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        raw,labels=parse_polygon_physical((ROOT/table[1]).read_text('utf-8'),origin,table)
+        assert raw==sources[slot][table[2]:table[3]] and all(symbols.get(k.upper())==v for k,v in labels.items())
+        offset=0
+        for field,width,meaning in table[5]:
+            assert symbols[(table[4]+'.'+field).upper()]==offset
+            offset+=width
+        assert symbols[table[4].upper()]==offset
+        rows=[p for p in source_map if p['path']==table[1]]
+        assert len(rows)==1 and (rows[0]['slot'],rows[0]['offset'],rows[0]['length'],rows[0]['origin'])==(slot,table[2],table[3]-table[2],origin+table[2])
+    for owner,name,address,target in POLYGON_PHYSICAL_BINDINGS:assert symbols[(owner+'.'+name).upper()]==symbols[target.upper()]==address
+
+    # Проверка физических записей, их полей и исходного расположения.
+    from PreviewClipTablePages import TABLES as POLYGON_PHYSICAL_TABLES, BINDINGS as POLYGON_PHYSICAL_BINDINGS, parse as parse_polygon_physical, validate_sources as validate_polygon_physical
+    validate_polygon_physical(sources)
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        raw,labels=parse_polygon_physical((ROOT/table[1]).read_text('utf-8'),origin,table)
+        assert raw==sources[slot][table[2]:table[3]] and all(symbols.get(k.upper())==v for k,v in labels.items())
+        offset=0
+        for field,width,meaning in table[5]:
+            assert symbols[(table[4]+'.'+field).upper()]==offset
+            offset+=width
+        assert symbols[table[4].upper()]==offset
+        rows=[p for p in source_map if p['path']==table[1]]
+        assert len(rows)==1 and (rows[0]['slot'],rows[0]['offset'],rows[0]['length'],rows[0]['origin'])==(slot,table[2],table[3]-table[2],origin+table[2])
+    for owner,name,address,target in POLYGON_PHYSICAL_BINDINGS:assert symbols[(owner+'.'+name).upper()]==symbols[target.upper()]==address
+
+    # Проверка физических записей, их полей и исходного расположения.
+    from EquipmentTypeSets import TABLES as POLYGON_PHYSICAL_TABLES, BINDINGS as POLYGON_PHYSICAL_BINDINGS, parse as parse_polygon_physical, validate_sources as validate_polygon_physical
+    validate_polygon_physical(sources)
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        raw,labels=parse_polygon_physical((ROOT/table[1]).read_text('utf-8'),origin,table)
+        assert raw==sources[slot][table[2]:table[3]] and all(symbols.get(k.upper())==v for k,v in labels.items())
+        offset=0
+        for field,width,meaning in table[5]:
+            assert symbols[(table[4]+'.'+field).upper()]==offset
+            offset+=width
+        assert symbols[table[4].upper()]==offset
+        rows=[p for p in source_map if p['path']==table[1]]
+        assert len(rows)==1 and (rows[0]['slot'],rows[0]['offset'],rows[0]['length'],rows[0]['origin'])==(slot,table[2],table[3]-table[2],origin+table[2])
+    for owner,name,address,target in POLYGON_PHYSICAL_BINDINGS:assert symbols[(owner+'.'+name).upper()]==symbols[target.upper()]==address
+
+    # Проверка физических записей, их полей и исходного расположения.
+    from PreviewRootSamples import TABLES as POLYGON_PHYSICAL_TABLES, BINDINGS as POLYGON_PHYSICAL_BINDINGS, parse as parse_polygon_physical, validate_sources as validate_polygon_physical
+    validate_polygon_physical(sources)
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        raw,labels=parse_polygon_physical((ROOT/table[1]).read_text('utf-8'),origin,table)
+        assert raw==sources[slot][table[2]:table[3]] and all(symbols.get(k.upper())==v for k,v in labels.items())
+        offset=0
+        for field,width,meaning in table[5]:
+            assert symbols[(table[4]+'.'+field).upper()]==offset
+            offset+=width
+        assert symbols[table[4].upper()]==offset
+        rows=[p for p in source_map if p['path']==table[1]]
+        assert len(rows)==1 and (rows[0]['slot'],rows[0]['offset'],rows[0]['length'],rows[0]['origin'])==(slot,table[2],table[3]-table[2],origin+table[2])
+    for owner,name,address,target in POLYGON_PHYSICAL_BINDINGS:assert symbols[(owner+'.'+name).upper()]==symbols[target.upper()]==address
+
+    # Проверка физических записей, их полей и исходного расположения.
+    from ActionContextControlPairs import TABLES as POLYGON_PHYSICAL_TABLES, BINDINGS as POLYGON_PHYSICAL_BINDINGS, parse as parse_polygon_physical, validate_sources as validate_polygon_physical
+    validate_polygon_physical(sources)
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        raw,labels=parse_polygon_physical((ROOT/table[1]).read_text('utf-8'),origin,table)
+        assert raw==sources[slot][table[2]:table[3]] and all(symbols.get(k.upper())==v for k,v in labels.items())
+        offset=0
+        for field,width,meaning in table[5]:
+            assert symbols[(table[4]+'.'+field).upper()]==offset
+            offset+=width
+        assert symbols[table[4].upper()]==offset
+        rows=[p for p in source_map if p['path']==table[1]]
+        assert len(rows)==1 and (rows[0]['slot'],rows[0]['offset'],rows[0]['length'],rows[0]['origin'])==(slot,table[2],table[3]-table[2],origin+table[2])
+    for owner,name,address,target in POLYGON_PHYSICAL_BINDINGS:assert symbols[(owner+'.'+name).upper()]==symbols[target.upper()]==address
+
+    # Проверка физических записей, их полей и исходного расположения.
+    from StationTransportTradeTables import TABLES as POLYGON_PHYSICAL_TABLES, BINDINGS as POLYGON_PHYSICAL_BINDINGS, parse as parse_polygon_physical, validate_sources as validate_polygon_physical
+    validate_polygon_physical(sources)
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        raw,labels=parse_polygon_physical((ROOT/table[1]).read_text('utf-8'),origin,table)
+        assert raw==sources[slot][table[2]:table[3]] and all(symbols.get(k.upper())==v for k,v in labels.items())
+        offset=0
+        for field,width,meaning in table[5]:
+            assert symbols[(table[4]+'.'+field).upper()]==offset
+            offset+=width
+        assert symbols[table[4].upper()]==offset
+        rows=[p for p in source_map if p['path']==table[1]]
+        assert len(rows)==1 and (rows[0]['slot'],rows[0]['offset'],rows[0]['length'],rows[0]['origin'])==(slot,table[2],table[3]-table[2],origin+table[2])
+    for owner,name,address,target in POLYGON_PHYSICAL_BINDINGS:assert symbols[(owner+'.'+name).upper()]==symbols[target.upper()]==address
+
+    # Проверка физических записей, их полей и исходного расположения.
+    from ActionPolygonScratch import TABLES as POLYGON_PHYSICAL_TABLES, BINDINGS as POLYGON_PHYSICAL_BINDINGS, parse as parse_polygon_physical, validate_sources as validate_polygon_physical
+    validate_polygon_physical(sources)
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        raw,labels=parse_polygon_physical((ROOT/table[1]).read_text('utf-8'),origin,table)
+        assert raw==sources[slot][table[2]:table[3]] and all(symbols.get(k.upper())==v for k,v in labels.items())
+        offset=0
+        for field,width,meaning in table[5]:
+            assert symbols[(table[4]+'.'+field).upper()]==offset
+            offset+=width
+        assert symbols[table[4].upper()]==offset
+        rows=[p for p in source_map if p['path']==table[1]]
+        assert len(rows)==1 and (rows[0]['slot'],rows[0]['offset'],rows[0]['length'],rows[0]['origin'])==(slot,table[2],table[3]-table[2],origin+table[2])
+    for owner,name,address,target in POLYGON_PHYSICAL_BINDINGS:assert symbols[(owner+'.'+name).upper()]==symbols[target.upper()]==address
+
+    # Проверка физических записей, их полей и исходного расположения.
+    from StationOrderCompatibleSlots import TABLES as POLYGON_PHYSICAL_TABLES, BINDINGS as POLYGON_PHYSICAL_BINDINGS, parse as parse_polygon_physical, validate_sources as validate_polygon_physical
+    validate_polygon_physical(sources)
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        raw,labels=parse_polygon_physical((ROOT/table[1]).read_text('utf-8'),origin,table)
+        assert raw==sources[slot][table[2]:table[3]] and all(symbols.get(k.upper())==v for k,v in labels.items())
+        offset=0
+        for field,width,meaning in table[5]:
+            assert symbols[(table[4]+'.'+field).upper()]==offset
+            offset+=width
+        assert symbols[table[4].upper()]==offset
+        rows=[p for p in source_map if p['path']==table[1]]
+        assert len(rows)==1 and (rows[0]['slot'],rows[0]['offset'],rows[0]['length'],rows[0]['origin'])==(slot,table[2],table[3]-table[2],origin+table[2])
+    for owner,name,address,target in POLYGON_PHYSICAL_BINDINGS:assert symbols[(owner+'.'+name).upper()]==symbols[target.upper()]==address
+
+    # Проверка физических записей, их полей и исходного расположения.
+    from StationPrimaryQuantityTail import TABLES as POLYGON_PHYSICAL_TABLES, BINDINGS as POLYGON_PHYSICAL_BINDINGS, parse as parse_polygon_physical, validate_sources as validate_polygon_physical
+    validate_polygon_physical(sources)
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        raw,labels=parse_polygon_physical((ROOT/table[1]).read_text('utf-8'),origin,table)
+        assert raw==sources[slot][table[2]:table[3]] and all(symbols.get(k.upper())==v for k,v in labels.items())
+        offset=0
+        for field,width,meaning in table[5]:
+            assert symbols[(table[4]+'.'+field).upper()]==offset
+            offset+=width
+        assert symbols[table[4].upper()]==offset
+        rows=[p for p in source_map if p['path']==table[1]]
+        assert len(rows)==1 and (rows[0]['slot'],rows[0]['offset'],rows[0]['length'],rows[0]['origin'])==(slot,table[2],table[3]-table[2],origin+table[2])
+    for owner,name,address,target in POLYGON_PHYSICAL_BINDINGS:assert symbols[(owner+'.'+name).upper()]==symbols[target.upper()]==address
+
+    # Проверка физических записей, их полей и исходного расположения.
+    from IntroStackSnapshot import TABLES as POLYGON_PHYSICAL_TABLES, BINDINGS as POLYGON_PHYSICAL_BINDINGS, parse as parse_polygon_physical, validate_sources as validate_polygon_physical
+    validate_polygon_physical(sources)
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        raw,labels=parse_polygon_physical((ROOT/table[1]).read_text('utf-8'),origin,table)
+        assert raw==sources[slot][table[2]:table[3]] and all(symbols.get(k.upper())==v for k,v in labels.items())
+        offset=0
+        for field,width,meaning in table[5]:
+            assert symbols[(table[4]+'.'+field).upper()]==offset
+            offset+=width
+        assert symbols[table[4].upper()]==offset
+        rows=[p for p in source_map if p['path']==table[1]]
+        assert len(rows)==1 and (rows[0]['slot'],rows[0]['offset'],rows[0]['length'],rows[0]['origin'])==(slot,table[2],table[3]-table[2],origin+table[2])
+    for owner,name,address,target in POLYGON_PHYSICAL_BINDINGS:assert symbols[(owner+'.'+name).upper()]==symbols[target.upper()]==address
+
+    # Проверка физических записей, их полей и исходного расположения.
+    from VoxelRotationTables import TABLES as POLYGON_PHYSICAL_TABLES, BINDINGS as POLYGON_PHYSICAL_BINDINGS, parse as parse_polygon_physical, validate_sources as validate_polygon_physical
+    validate_polygon_physical(sources)
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        raw,labels=parse_polygon_physical((ROOT/table[1]).read_text('utf-8'),origin,table)
+        assert raw==sources[slot][table[2]:table[3]] and all(symbols.get(k.upper())==v for k,v in labels.items())
+        offset=0
+        for field,width,meaning in table[5]:
+            assert symbols[(table[4]+'.'+field).upper()]==offset
+            offset+=width
+        assert symbols[table[4].upper()]==offset
+        rows=[p for p in source_map if p['path']==table[1]]
+        assert len(rows)==1 and (rows[0]['slot'],rows[0]['offset'],rows[0]['length'],rows[0]['origin'])==(slot,table[2],table[3]-table[2],origin+table[2])
+    for owner,name,address,target in POLYGON_PHYSICAL_BINDINGS:assert symbols[(owner+'.'+name).upper()]==symbols[target.upper()]==address
+
+    # Проверка физических записей, их полей и исходного расположения.
+    from CargoLoadScale import TABLES as POLYGON_PHYSICAL_TABLES, BINDINGS as POLYGON_PHYSICAL_BINDINGS, parse as parse_polygon_physical, validate_sources as validate_polygon_physical
+    validate_polygon_physical(sources)
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        raw,labels=parse_polygon_physical((ROOT/table[1]).read_text('utf-8'),origin,table)
+        assert raw==sources[slot][table[2]:table[3]] and all(symbols.get(k.upper())==v for k,v in labels.items())
+        offset=0
+        for field,width,meaning in table[5]:
+            assert symbols[(table[4]+'.'+field).upper()]==offset
+            offset+=width
+        assert symbols[table[4].upper()]==offset
+        rows=[p for p in source_map if p['path']==table[1]]
+        assert len(rows)==1 and (rows[0]['slot'],rows[0]['offset'],rows[0]['length'],rows[0]['origin'])==(slot,table[2],table[3]-table[2],origin+table[2])
+    for owner,name,address,target in POLYGON_PHYSICAL_BINDINGS:assert symbols[(owner+'.'+name).upper()]==symbols[target.upper()]==address
+
+    # Проверка физических записей, их полей и исходного расположения.
+    from PreviewObjectEnd import TABLES as POLYGON_PHYSICAL_TABLES, BINDINGS as POLYGON_PHYSICAL_BINDINGS, parse as parse_polygon_physical, validate_sources as validate_polygon_physical
+    validate_polygon_physical(sources)
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        raw,labels=parse_polygon_physical((ROOT/table[1]).read_text('utf-8'),origin,table)
+        assert raw==sources[slot][table[2]:table[3]] and all(symbols.get(k.upper())==v for k,v in labels.items())
+        offset=0
+        for field,width,meaning in table[5]:
+            assert symbols[(table[4]+'.'+field).upper()]==offset
+            offset+=width
+        assert symbols[table[4].upper()]==offset
+        rows=[p for p in source_map if p['path']==table[1]]
+        assert len(rows)==1 and (rows[0]['slot'],rows[0]['offset'],rows[0]['length'],rows[0]['origin'])==(slot,table[2],table[3]-table[2],origin+table[2])
+    for owner,name,address,target in POLYGON_PHYSICAL_BINDINGS:assert symbols[(owner+'.'+name).upper()]==symbols[target.upper()]==address
+
+    # Проверка физических записей, их полей и исходного расположения.
+    from MapClipTablePages import TABLES as POLYGON_PHYSICAL_TABLES, BINDINGS as POLYGON_PHYSICAL_BINDINGS, parse as parse_polygon_physical, validate_sources as validate_polygon_physical
+    validate_polygon_physical(sources)
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        raw,labels=parse_polygon_physical((ROOT/table[1]).read_text('utf-8'),origin,table)
+        assert raw==sources[slot][table[2]:table[3]] and all(symbols.get(k.upper())==v for k,v in labels.items())
+        offset=0
+        for field,width,meaning in table[5]:
+            assert symbols[(table[4]+'.'+field).upper()]==offset
+            offset+=width
+        assert symbols[table[4].upper()]==offset
+        rows=[p for p in source_map if p['path']==table[1]]
+        assert len(rows)==1 and (rows[0]['slot'],rows[0]['offset'],rows[0]['length'],rows[0]['origin'])==(slot,table[2],table[3]-table[2],origin+table[2])
+    for owner,name,address,target in POLYGON_PHYSICAL_BINDINGS:assert symbols[(owner+'.'+name).upper()]==symbols[target.upper()]==address
+
+    # Проверка физических записей, их полей и исходного расположения.
+    from BankArchiveRouteCopies import TABLES as POLYGON_PHYSICAL_TABLES, BINDINGS as POLYGON_PHYSICAL_BINDINGS, parse as parse_polygon_physical, validate_sources as validate_polygon_physical
+    validate_polygon_physical(sources)
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        raw,labels=parse_polygon_physical((ROOT/table[1]).read_text('utf-8'),origin,table)
+        assert raw==sources[slot][table[2]:table[3]] and all(symbols.get(k.upper())==v for k,v in labels.items())
+        offset=0
+        for field,width,meaning in table[5]:
+            assert symbols[(table[4]+'.'+field).upper()]==offset
+            offset+=width
+        assert symbols[table[4].upper()]==offset
+        rows=[p for p in source_map if p['path']==table[1]]
+        assert len(rows)==1 and (rows[0]['slot'],rows[0]['offset'],rows[0]['length'],rows[0]['origin'])==(slot,table[2],table[3]-table[2],origin+table[2])
+    for owner,name,address,target in POLYGON_PHYSICAL_BINDINGS:assert symbols[(owner+'.'+name).upper()]==symbols[target.upper()]==address
+
+    # Проверка физических записей, их полей и исходного расположения.
+    from ActionPolygonExtraMaskPairs import TABLES as POLYGON_PHYSICAL_TABLES, BINDINGS as POLYGON_PHYSICAL_BINDINGS, parse as parse_polygon_physical, validate_sources as validate_polygon_physical
+    validate_polygon_physical(sources)
+    for slot,origin,table in POLYGON_PHYSICAL_TABLES:
+        raw,labels=parse_polygon_physical((ROOT/table[1]).read_text('utf-8'),origin,table)
+        assert raw==sources[slot][table[2]:table[3]] and all(symbols.get(k.upper())==v for k,v in labels.items())
+        offset=0
+        for field,width,meaning in table[5]:
+            assert symbols[(table[4]+'.'+field).upper()]==offset
+            offset+=width
+        assert symbols[table[4].upper()]==offset
+        rows=[p for p in source_map if p['path']==table[1]]
+        assert len(rows)==1 and (rows[0]['slot'],rows[0]['offset'],rows[0]['length'],rows[0]['origin'])==(slot,table[2],table[3]-table[2],origin+table[2])
+    for owner,name,address,target in POLYGON_PHYSICAL_BINDINGS:assert symbols[(owner+'.'+name).upper()]==symbols[target.upper()]==address
 
     code_count = 0
     coverage = {e["slot"]:bytearray(e["allocated_length"]) for e in manifest["entries"] if not e["deleted"]}
@@ -716,6 +1351,17 @@ def main():
     assert all(symbols.get(k.upper())==v for k,v in pointer_labels.items())
     assert symbols['FOBJECTDATAPOINTER']==2 and symbols['FOBJECTDATAPOINTER.TARGET']==0
 
+    from ActionObjectPointersData import TAIL_TABLE, parse_tail
+    tail_path = TAIL_TABLE[1]
+    tail_items = [item for item in source_map if item['path'] == tail_path]
+    if tail_items:
+        assert len(tail_items) == 1
+        item = tail_items[0]
+        assert (item['slot'], item['offset'], item['length'], item['origin']) == (17, 0x3F00, 28, 0x9F00)
+        raw, labels = parse_tail((ROOT / tail_path).read_text('utf-8'), symbols)
+        assert raw == sources[17][0x3F00:0x3F1C]
+        assert all(symbols[key.upper()] == value for key, value in labels.items())
+
     # Проверка реальных четырёх FClipProduct, всех полей и физических исходных байтов.
     from ActionClipProductsData import PATH as CLIP_PRODUCTS_PATH, parse as parse_clip_products
     clip_raw,clip_labels=parse_clip_products((ROOT/CLIP_PRODUCTS_PATH).read_text('utf-8'))
@@ -790,7 +1436,7 @@ def main():
     # Проверка физических заголовков, групп и примитивов всех потоков OBJECT3D.
     from ActionModelPhysicalData import parse as parse_action_model
     models=[item for item in source_map if item['slot']==24 and item['kind']=='typed_data']
-    assert len(models)==95 and sum(item['length'] for item in models)==9317
+    assert len(models)==102 and sum(item['length'] for item in models)==10576
     for item in models:
         raw,labels=parse_action_model((ROOT/item['path']).read_text('utf-8'))
         assert raw==sources[24][item['offset']:item['offset']+item['length']]
@@ -825,7 +1471,15 @@ def main():
     _, intro_screen_labels=render_intro_attributes(sources[3][0x2331:0x2631])
     assert all(symbols[key.upper()]==value for key,value in intro_screen_labels.items())
     assert (ROOT/intro_packed).read_bytes()==sources[3][0x26CB:0x2C6B]
-    assert (ROOT/intro_screen_tail).read_bytes()==sources[3][0x2C6B:0x2D00]
+    if any(row['path'] == intro_screen_tail for row in source_map):
+        assert (ROOT/intro_screen_tail).read_bytes() == sources[3][0x2C6B:0x2D00]
+    else:
+        tail = [row for row in source_map if row['slot'] == 3 and 0x2C6B <= row['offset'] < 0x2D00]
+        assert [(row['offset'], row['length'], row['kind']) for row in tail] == [
+            (0x2C6B, 44, 'unclassified'), (0x2C97, 54, 'code'),
+            (0x2CCD, 11, 'code'), (0x2CD8, 12, 'code'),
+            (0x2CE4, 8, 'code'), (0x2CEC, 20, 'unclassified'),
+        ]
 
     # Проверка двух физических экранов выбора, без предположения об их загрузке.
     from PublishChooseScreens import parse_attributes as parse_choose_attributes
@@ -1210,6 +1864,14 @@ def main():
         if any(symbols.get(key.upper()) != value for key,value in labels.items()):
             raise ValueError('Изменились метки масок пикселя')
         preview_pixel_masks = 16
+
+    from PreviewModelPrimitiveStreams import tables as preview_streams, parse as parse_preview_stream
+    for stream in preview_streams(sources[6]):
+        start,end=stream['start'],stream['end']
+        rows=[row for row in source_map if row['path']==stream['path']]
+        assert len(rows)==1 and (rows[0]['slot'],rows[0]['offset'],rows[0]['length'],rows[0]['origin'])==(6,start,end-start,0xC000+start)
+        raw,labels=parse_preview_stream((ROOT/stream['path']).read_text('utf-8'),stream)
+        assert raw==sources[6][start:end] and all(symbols.get(name.upper())==address for name,address in labels.items())
 
     # Проверка исходных DB свёрнутых квадратов и точной целочисленной формулы всей страницы.
     from PreviewSquareTable import PATH as PREVIEW_SQUARE_PATH, START as PREVIEW_SQUARE_START, END as PREVIEW_SQUARE_END, parse as parse_preview_square

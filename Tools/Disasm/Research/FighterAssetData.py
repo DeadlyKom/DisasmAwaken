@@ -15,8 +15,8 @@ def decode(bar, banks):
     position = 72
     while position < len(bar):
         mode = int.from_bytes(bar[position:position + 2], 'little')
-        count = mode & 0x3FFF
-        assert not mode & 0x8000 and count > 0
+        count, flags = bar[position:position + 2]
+        assert flags in (0, 0x40) and count > 0
         end = position + 4 + count * 14
         assert end <= len(bar)
         records = []
@@ -47,11 +47,27 @@ def decode(bar, banks):
     return pointers, groups, sorted(sprites), ends
 
 
-TYPES = {
-    'FFighterPosePointer': (2,),
-    'FFighterPoseHeader': (2, 1, 1),
-    'FFighterPoseStep': (1,) * 10 + (2, 1, 1),
+FIELDS = {
+    'FFighterPosePointer': (('FileOffset', 2, 'смещение начала группы в BAR'),),
+    'FFighterPoseHeader': (
+        ('FrameCount', 1, 'число кадров группы'),
+        ('RepeatFlags', 1, 'флаг, бит 6 задаёт повтор с RepeatIndex, ноль выбирает NextAction'),
+        ('RepeatIndex', 1, 'индекс кадра после окончания группы при повторе'),
+        ('NextAction', 1, 'следующий код действия при отключённом повторе'),
+    ),
+    'FFighterPoseStep': (
+        ('Ticks', 1, 'задержка до продвижения кадра'),
+        ('MoveX', 2, 'приращение горизонтальной позиции с учётом стороны'),
+        ('MoveY', 2, 'приращение вертикальной позиции по модулю 256'),
+        ('DrawX', 2, 'смещение рисунка по горизонтали относительно новой позиции'),
+        ('DrawY', 2, 'смещение рисунка по вертикали относительно новой позиции'),
+        ('BankIndex', 1, 'индекс файла BD0..BD3'),
+        ('SpriteAddress', 2, 'адрес пары маски и пикселей в окне C000'),
+        ('WidthBytes', 1, 'число пар в строке'),
+        ('Height', 1, 'число строк'),
+    ),
 }
+TYPES = {kind: tuple(size for _, size, _ in fields) for kind, fields in FIELDS.items()}
 
 
 def parse(text):
@@ -71,24 +87,18 @@ def parse(text):
 
 
 def render(bar, pointers, groups):
-    fields = {
-        'FFighterPosePointer': ('FileOffset',),
-        'FFighterPoseHeader': ('CountMode', 'Unknown02', 'Unknown03'),
-        'FFighterPoseStep': tuple(f'Unknown{index:02X}' for index in range(9)) +
-                            ('BankIndex', 'SpriteAddress', 'WidthBytes', 'Height'),
-    }
     lines = ['                module FighterPoseData',
              '                ; Документация [таблицы и кадры бойцов](../../../Docs/FighterAssets.md)',
              '                ; Метки являются смещениями BAR, исполнительный адрес этому файлу не назначается.',
              '                assert $ == #0000']
     def row(label, kind, offset):
         lines.append((label + ':').ljust(16) + kind + ' {')
-        for index, (field, size) in enumerate(zip(fields[kind], TYPES[kind])):
+        for index, (field, size, meaning) in enumerate(FIELDS[kind]):
             value = int.from_bytes(bar[offset:offset + size], 'little')
             text = f'                    #{value:0{size * 2}X}'
             if index + 1 < len(TYPES[kind]):
                 text += ','
-            lines.append(text.ljust(80) + '; ' + kind + '.' + field + ', исходное значение')
+            lines.append(text.ljust(80) + '; ' + field + ', ' + meaning)
             offset += size
         lines.append('                }')
     for index, pointer in enumerate(pointers):

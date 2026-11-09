@@ -14,7 +14,7 @@ FActionWideVector состоит из Component0, Component1, Component2 со
 Потребители, подтверждающие формат и шаг, находятся в
 [проверке близости верхних слов](../Source/Action/CheckThreeUpperWordsNear.asm)
 и [подготовке направления](../Source/Action/StepRecordTowardWideVector.asm).
-Вычитания в ещё не классифицированном Unknown6780, начиная с 68CD,
+Вычитания в UpdateBodyMotion, начиная с 68CD,
 передают заём от слов Byte0/Byte1 к Byte2/Byte3 и переходят на следующую
 цель с шагом 12. Игровые единицы и полный смысл этих перемещений пока
 не установлены. Шесть физически оформленных записей не объявляются

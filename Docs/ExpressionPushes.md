@@ -18,8 +18,8 @@ CPU-стек хранит возвраты процедур. Отдельный 
 
 Следующие обёртки состоят строго из CALL установленного читателя и JP PushExpressionWord. Их основные регистры и флаги равны выходу читателя, DE дополнительно записывается в стек выражений. Альтернативный HL продвигается на два, альтернативный DE получает результат, остальные эффекты сохраняются по договору читателя. Если читатель переходит в SkipLine без возврата, запись не достигается.
 
-- [ReadFieldLowero](../Source/Text/ReadFieldLowero.asm) вызывает [ReadEquipmentWeight](../Source/Text/ReadEquipmentWeight.asm).
-- [ReadFieldLoweri](../Source/Text/ReadFieldLoweri.asm) вызывает [ReadSecondWeight](../Source/Text/ReadSecondWeight.asm).
+- [ReadFieldLowero](../Source/Text/ReadFieldLowero.asm) вызывает [ReadEquipmentQuantity](../Source/Text/ReadEquipmentQuantity.asm).
+- [ReadFieldLoweri](../Source/Text/ReadFieldLoweri.asm) вызывает [ReadSecondQuantity](../Source/Text/ReadSecondQuantity.asm).
 - [ReadFieldLowerk](../Source/Text/ReadFieldLowerk.asm) вызывает [ReadSelectedPrimaryFields](../Source/Text/ReadSelectedPrimaryFields.asm).
 - [ReadFieldLowerr](../Source/Text/ReadFieldLowerr.asm) вызывает [ReadSelectedSecondaryFields](../Source/Text/ReadSelectedSecondaryFields.asm).
 - [ReadFieldUpperG](../Source/Text/ReadFieldUpperG.asm) вызывает [ReadMarketField](../Source/Text/ReadMarketField.asm).

@@ -1,0 +1,319 @@
+{
+  "passed": true,
+  "total_cases": 9,
+  "cases": [
+    {
+      "initial_bitmap": 0,
+      "saved_SP": 16382,
+      "boundaries": [
+        {
+          "pc": 24576,
+          "sp": 24574,
+          "hl": 0,
+          "instruction_bytes": "083e11"
+        },
+        {
+          "pc": 60502,
+          "sp": 24572,
+          "hl": 0,
+          "instruction_bytes": "9b2ac4"
+        },
+        {
+          "pc": 32765,
+          "sp": 24576,
+          "hl": 6184,
+          "instruction_bytes": "f9dd77"
+        },
+        {
+          "pc": 32769,
+          "sp": 6184,
+          "hl": 6184,
+          "instruction_bytes": "ffffff"
+        }
+      ],
+      "indexed_write_address": 65534,
+      "indexed_write_value": 16,
+      "stopped_before_RST38": true
+    },
+    {
+      "initial_bitmap": 0,
+      "saved_SP": 20478,
+      "boundaries": [
+        {
+          "pc": 24576,
+          "sp": 24574,
+          "hl": 0,
+          "instruction_bytes": "083e11"
+        },
+        {
+          "pc": 60502,
+          "sp": 24572,
+          "hl": 0,
+          "instruction_bytes": "9b2ac4"
+        },
+        {
+          "pc": 32765,
+          "sp": 24576,
+          "hl": 6184,
+          "instruction_bytes": "f9dd77"
+        },
+        {
+          "pc": 32769,
+          "sp": 6184,
+          "hl": 6184,
+          "instruction_bytes": "ffffff"
+        }
+      ],
+      "indexed_write_address": 65534,
+      "indexed_write_value": 16,
+      "stopped_before_RST38": true
+    },
+    {
+      "initial_bitmap": 0,
+      "saved_SP": 24480,
+      "boundaries": [
+        {
+          "pc": 24576,
+          "sp": 24574,
+          "hl": 0,
+          "instruction_bytes": "083e11"
+        },
+        {
+          "pc": 60502,
+          "sp": 24572,
+          "hl": 0,
+          "instruction_bytes": "9b2ac4"
+        },
+        {
+          "pc": 32765,
+          "sp": 24576,
+          "hl": 6184,
+          "instruction_bytes": "f9dd77"
+        },
+        {
+          "pc": 32769,
+          "sp": 6184,
+          "hl": 6184,
+          "instruction_bytes": "ffffff"
+        }
+      ],
+      "indexed_write_address": 65534,
+      "indexed_write_value": 16,
+      "stopped_before_RST38": true
+    },
+    {
+      "initial_bitmap": 85,
+      "saved_SP": 16382,
+      "boundaries": [
+        {
+          "pc": 24576,
+          "sp": 24574,
+          "hl": 0,
+          "instruction_bytes": "083e11"
+        },
+        {
+          "pc": 60502,
+          "sp": 24572,
+          "hl": 0,
+          "instruction_bytes": "9b2ac4"
+        },
+        {
+          "pc": 32765,
+          "sp": 24576,
+          "hl": 6184,
+          "instruction_bytes": "f9dd77"
+        },
+        {
+          "pc": 32769,
+          "sp": 6184,
+          "hl": 6184,
+          "instruction_bytes": "ffffff"
+        }
+      ],
+      "indexed_write_address": 65534,
+      "indexed_write_value": 16,
+      "stopped_before_RST38": true
+    },
+    {
+      "initial_bitmap": 85,
+      "saved_SP": 20478,
+      "boundaries": [
+        {
+          "pc": 24576,
+          "sp": 24574,
+          "hl": 0,
+          "instruction_bytes": "083e11"
+        },
+        {
+          "pc": 60502,
+          "sp": 24572,
+          "hl": 0,
+          "instruction_bytes": "9b2ac4"
+        },
+        {
+          "pc": 32765,
+          "sp": 24576,
+          "hl": 6184,
+          "instruction_bytes": "f9dd77"
+        },
+        {
+          "pc": 32769,
+          "sp": 6184,
+          "hl": 6184,
+          "instruction_bytes": "ffffff"
+        }
+      ],
+      "indexed_write_address": 65534,
+      "indexed_write_value": 16,
+      "stopped_before_RST38": true
+    },
+    {
+      "initial_bitmap": 85,
+      "saved_SP": 24480,
+      "boundaries": [
+        {
+          "pc": 24576,
+          "sp": 24574,
+          "hl": 0,
+          "instruction_bytes": "083e11"
+        },
+        {
+          "pc": 60502,
+          "sp": 24572,
+          "hl": 0,
+          "instruction_bytes": "9b2ac4"
+        },
+        {
+          "pc": 32765,
+          "sp": 24576,
+          "hl": 6184,
+          "instruction_bytes": "f9dd77"
+        },
+        {
+          "pc": 32769,
+          "sp": 6184,
+          "hl": 6184,
+          "instruction_bytes": "ffffff"
+        }
+      ],
+      "indexed_write_address": 65534,
+      "indexed_write_value": 16,
+      "stopped_before_RST38": true
+    },
+    {
+      "initial_bitmap": 165,
+      "saved_SP": 16382,
+      "boundaries": [
+        {
+          "pc": 24576,
+          "sp": 24574,
+          "hl": 0,
+          "instruction_bytes": "083e11"
+        },
+        {
+          "pc": 60502,
+          "sp": 24572,
+          "hl": 0,
+          "instruction_bytes": "9b2ac4"
+        },
+        {
+          "pc": 32765,
+          "sp": 24576,
+          "hl": 6184,
+          "instruction_bytes": "f9dd77"
+        },
+        {
+          "pc": 32769,
+          "sp": 6184,
+          "hl": 6184,
+          "instruction_bytes": "ffffff"
+        }
+      ],
+      "indexed_write_address": 65534,
+      "indexed_write_value": 16,
+      "stopped_before_RST38": true
+    },
+    {
+      "initial_bitmap": 165,
+      "saved_SP": 20478,
+      "boundaries": [
+        {
+          "pc": 24576,
+          "sp": 24574,
+          "hl": 0,
+          "instruction_bytes": "083e11"
+        },
+        {
+          "pc": 60502,
+          "sp": 24572,
+          "hl": 0,
+          "instruction_bytes": "9b2ac4"
+        },
+        {
+          "pc": 32765,
+          "sp": 24576,
+          "hl": 6184,
+          "instruction_bytes": "f9dd77"
+        },
+        {
+          "pc": 32769,
+          "sp": 6184,
+          "hl": 6184,
+          "instruction_bytes": "ffffff"
+        }
+      ],
+      "indexed_write_address": 65534,
+      "indexed_write_value": 16,
+      "stopped_before_RST38": true
+    },
+    {
+      "initial_bitmap": 165,
+      "saved_SP": 24480,
+      "boundaries": [
+        {
+          "pc": 24576,
+          "sp": 24574,
+          "hl": 0,
+          "instruction_bytes": "083e11"
+        },
+        {
+          "pc": 60502,
+          "sp": 24572,
+          "hl": 0,
+          "instruction_bytes": "9b2ac4"
+        },
+        {
+          "pc": 32765,
+          "sp": 24576,
+          "hl": 6184,
+          "instruction_bytes": "f9dd77"
+        },
+        {
+          "pc": 32769,
+          "sp": 6184,
+          "hl": 6184,
+          "instruction_bytes": "ffffff"
+        }
+      ],
+      "indexed_write_address": 65534,
+      "indexed_write_value": 16,
+      "stopped_before_RST38": true
+    }
+  ],
+  "address_consistent_fixed_fixture": 23968,
+  "real_tail_clear_viewport_and_queue_wrapper_paging_executed": true,
+  "original_backup_core_6000_restored": true,
+  "bank1_E000_FFFF_backup_overwrites_actual_EC56_queue_consumer": true,
+  "EC56_executes_original_core_bytes_from_6C56_instead_of_queue": true,
+  "final_HL_reads_bank1_word_D7A2_not_original_Action_output": true,
+  "continuation_at_7FFD_sets_SP_to_final_HL": true,
+  "observed_new_SP": 6184,
+  "cleared_8000_byte_changes_indexed_displacement_from_26_to_FF": true,
+  "next_8001_byte_is_RST38": true,
+  "stopped_before_ROM_execution": true,
+  "legitimate_game_entry_relocation_and_temporary_payload_proved": false,
+  "changing_backup_core_by_temporary_payload_not_excluded": true,
+  "complete_register_RAM_write_multiplicity_R_T_proof": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

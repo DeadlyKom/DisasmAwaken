@@ -107,7 +107,7 @@ NextSecond:     LD L, (IY+@FPreviewQueueNode.SecondInput)
 InsertHead:     LD A, (@PreviewQueueState.NextFree)
                 ; проверка полного буфера из 18 узлов
                 CP @PreviewQueueConst.FullIndex
-                JP Z, #EEEE                                                     ; переход, если NextFree равен FC, прекратить обход объектов без записи
+                JP Z, @D3D.RestorePreviewStack.Entry                            ; переход, если NextFree равен FC, прекратить обход объектов без записи
 
                 LD L, A
                 LD H, @PreviewQueueConst.Page
@@ -123,7 +123,7 @@ InsertHead:     LD A, (@PreviewQueueState.NextFree)
 AppendTail:     LD A, (@PreviewQueueState.NextFree)
                 ; проверка полного буфера перед изменением ссылки хвоста
                 CP @PreviewQueueConst.FullIndex
-                JR Z, #EEEE                                                     ; переход, если NextFree равен FC, прекратить обход объектов без записи
+                JR Z, @D3D.RestorePreviewStack.Entry                            ; переход, если NextFree равен FC, прекратить обход объектов без записи
 
                 ; обновление Next прежнего хвоста новым индексом
                 LD (IX+@FPreviewQueueNode.Next), A
@@ -137,7 +137,7 @@ AppendTail:     LD A, (@PreviewQueueState.NextFree)
 InsertMiddle:   LD A, (@PreviewQueueState.NextFree)
                 ; проверка полного буфера перед разрывом прежней ссылки
                 CP @PreviewQueueConst.FullIndex
-                JR Z, #EEEE                                                     ; переход, если NextFree равен FC, прекратить обход объектов без записи
+                JR Z, @D3D.RestorePreviewStack.Entry                            ; переход, если NextFree равен FC, прекратить обход объектов без записи
 
                 LD L, A
                 LD H, @PreviewQueueConst.Page

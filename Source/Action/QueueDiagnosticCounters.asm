@@ -1,5 +1,6 @@
                 module Action
                 module QueueDiagnosticCounters
+                ; Физические поля [локальный контекст](../../Docs/ActionLocalContextPhysicalData.md)
                 ; Документация [алгоритм и проверка](../../Docs/ActionDiagnosticQueue.md)
                 ; -----------------------------------------
                 ; Постановка диагностических строк Status и Deads и трёх чисел в текстовую очередь

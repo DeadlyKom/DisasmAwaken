@@ -32,4 +32,6 @@ CenteredItemTexts содержит пустые LF-записи и многос�
 
 [CheckStationPhysicalTextSelectors.py](../Tools/Disasm/Research/CheckStationPhysicalTextSelectors.py) исполняет исходные SkipLfRecords и SkipCrRecords на настоящем содержимом банков. Независимый поиск разделителей задаёт ожидаемые адреса. [Отчёт](../Tools/Disasm/Reports/StationPhysicalTextSelectorsVerification.json) содержит каждый проверенный индекс и строку. Проверяются также Carry, сохраняемые регистры, возврат SP и отсутствие записей вне CPU-стека. Это проверка поиска, не аппаратных прерываний, рисования, времени либо полного игрового процесса.
 
-Соседние F066..F0B1, 76 байтов, оставлены как [Unclassified9066_90B2.bin](../Source/Resources/04_STATIONF/Unclassified9066_90B2.bin). Читаются подпись топлива и шаблон доставки, но их реальный потребитель не установлен. Аналогичный отдельно сохранённый список абонентов описан в [потоках панелей](StationPanelTextResources.md).
+Соседние F066..F0B1 содержат [подпись топлива и шаблон доставки](StationDetachedText.md).
+Их читает [печататель второго списка](SecondaryEquipmentRows.md).
+Путь штатного открытия второго списка пока неизвестен.

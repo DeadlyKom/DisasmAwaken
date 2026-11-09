@@ -1,0 +1,1367 @@
+{
+  "passed": true,
+  "covered_bytes": 1259,
+  "packets": [
+    {
+      "offset": 9321,
+      "end": 9503,
+      "fixed_groups": [
+        {
+          "offset": 9323,
+          "mask": 255
+        },
+        {
+          "offset": 9327,
+          "mask": 255
+        },
+        {
+          "offset": 9331,
+          "mask": 255
+        },
+        {
+          "offset": 9335,
+          "mask": 255
+        }
+      ],
+      "records": [
+        {
+          "offset": 9340,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9345,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9350,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9355,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9360,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9365,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9370,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9375,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9380,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9385,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9390,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9395,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9400,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9405,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9410,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9415,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9420,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9425,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9430,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9435,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9440,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9445,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9450,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9455,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9460,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9465,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9470,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9475,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9480,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9485,
+          "kind": "line",
+          "count": 5
+        },
+        {
+          "offset": 9491,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9496,
+          "kind": "line",
+          "count": 5
+        }
+      ],
+      "generated_vertices": 32
+    },
+    {
+      "offset": 9503,
+      "end": 9665,
+      "fixed_groups": [
+        {
+          "offset": 9505,
+          "mask": 255
+        },
+        {
+          "offset": 9509,
+          "mask": 255
+        },
+        {
+          "offset": 9513,
+          "mask": 255
+        }
+      ],
+      "records": [
+        {
+          "offset": 9518,
+          "kind": "line",
+          "count": 2
+        },
+        {
+          "offset": 9521,
+          "kind": "line",
+          "count": 2
+        },
+        {
+          "offset": 9524,
+          "kind": "line",
+          "count": 2
+        },
+        {
+          "offset": 9527,
+          "kind": "line",
+          "count": 2
+        },
+        {
+          "offset": 9530,
+          "kind": "line",
+          "count": 2
+        },
+        {
+          "offset": 9533,
+          "kind": "line",
+          "count": 2
+        },
+        {
+          "offset": 9536,
+          "kind": "line",
+          "count": 2
+        },
+        {
+          "offset": 9539,
+          "kind": "line",
+          "count": 2
+        },
+        {
+          "offset": 9542,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9547,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9552,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9557,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9562,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9567,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9572,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9577,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9582,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9587,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9592,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9597,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9602,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9607,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9612,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9617,
+          "kind": "face",
+          "count": 3
+        },
+        {
+          "offset": 9621,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9626,
+          "kind": "face",
+          "count": 3
+        },
+        {
+          "offset": 9630,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9635,
+          "kind": "face",
+          "count": 3
+        },
+        {
+          "offset": 9639,
+          "kind": "face",
+          "count": 3
+        },
+        {
+          "offset": 9643,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9648,
+          "kind": "face",
+          "count": 3
+        },
+        {
+          "offset": 9652,
+          "kind": "face",
+          "count": 3
+        },
+        {
+          "offset": 9656,
+          "kind": "face",
+          "count": 3
+        },
+        {
+          "offset": 9660,
+          "kind": "face",
+          "count": 3
+        }
+      ],
+      "generated_vertices": 24
+    },
+    {
+      "offset": 9665,
+      "end": 9835,
+      "fixed_groups": [
+        {
+          "offset": 9667,
+          "mask": 255
+        },
+        {
+          "offset": 9671,
+          "mask": 255
+        },
+        {
+          "offset": 9675,
+          "mask": 255
+        },
+        {
+          "offset": 9679,
+          "mask": 255
+        }
+      ],
+      "records": [
+        {
+          "offset": 9684,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9689,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9694,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9699,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9704,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9709,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9714,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9719,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9724,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9729,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9734,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9739,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9744,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9749,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9754,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9759,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9764,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9769,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9774,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9779,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9784,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9789,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9794,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9799,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9804,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9809,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9814,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9819,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9824,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9829,
+          "kind": "face",
+          "count": 4
+        }
+      ],
+      "generated_vertices": 32
+    },
+    {
+      "offset": 9835,
+      "end": 9991,
+      "fixed_groups": [
+        {
+          "offset": 9837,
+          "mask": 17
+        },
+        {
+          "offset": 9841,
+          "mask": 60
+        },
+        {
+          "offset": 9845,
+          "mask": 60
+        },
+        {
+          "offset": 9849,
+          "mask": 20
+        },
+        {
+          "offset": 9853,
+          "mask": 60
+        },
+        {
+          "offset": 9857,
+          "mask": 60
+        },
+        {
+          "offset": 9861,
+          "mask": 36
+        },
+        {
+          "offset": 9865,
+          "mask": 136
+        },
+        {
+          "offset": 9869,
+          "mask": 240
+        }
+      ],
+      "records": [
+        {
+          "offset": 9874,
+          "kind": "line",
+          "count": 3
+        },
+        {
+          "offset": 9878,
+          "kind": "line",
+          "count": 3
+        },
+        {
+          "offset": 9882,
+          "kind": "line",
+          "count": 4
+        },
+        {
+          "offset": 9887,
+          "kind": "line",
+          "count": 4
+        },
+        {
+          "offset": 9892,
+          "kind": "line",
+          "count": 5
+        },
+        {
+          "offset": 9898,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9903,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9908,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9913,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9918,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9923,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9928,
+          "kind": "face",
+          "count": 3
+        },
+        {
+          "offset": 9932,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9937,
+          "kind": "face",
+          "count": 3
+        },
+        {
+          "offset": 9941,
+          "kind": "face",
+          "count": 3
+        },
+        {
+          "offset": 9945,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9950,
+          "kind": "face",
+          "count": 3
+        },
+        {
+          "offset": 9954,
+          "kind": "face",
+          "count": 3
+        },
+        {
+          "offset": 9958,
+          "kind": "face",
+          "count": 3
+        },
+        {
+          "offset": 9962,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9967,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9972,
+          "kind": "face",
+          "count": 3
+        },
+        {
+          "offset": 9976,
+          "kind": "face",
+          "count": 3
+        },
+        {
+          "offset": 9980,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 9985,
+          "kind": "face",
+          "count": 4
+        }
+      ],
+      "generated_vertices": 28
+    },
+    {
+      "offset": 9991,
+      "end": 10155,
+      "fixed_groups": [
+        {
+          "offset": 9993,
+          "mask": 51
+        },
+        {
+          "offset": 9997,
+          "mask": 51
+        },
+        {
+          "offset": 10001,
+          "mask": 15
+        },
+        {
+          "offset": 10005,
+          "mask": 255
+        },
+        {
+          "offset": 10009,
+          "mask": 51
+        },
+        {
+          "offset": 10013,
+          "mask": 12
+        }
+      ],
+      "records": [
+        {
+          "offset": 10018,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 10023,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 10028,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 10033,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 10038,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 10043,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 10048,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 10053,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 10058,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 10063,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 10068,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 10073,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 10078,
+          "kind": "face",
+          "count": 3
+        },
+        {
+          "offset": 10082,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 10087,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 10092,
+          "kind": "face",
+          "count": 3
+        },
+        {
+          "offset": 10096,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 10101,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 10106,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 10111,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 10116,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 10121,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 10126,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 10131,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 10136,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 10141,
+          "kind": "face",
+          "count": 3
+        },
+        {
+          "offset": 10145,
+          "kind": "face",
+          "count": 3
+        },
+        {
+          "offset": 10149,
+          "kind": "face",
+          "count": 4
+        }
+      ],
+      "generated_vertices": 26
+    },
+    {
+      "offset": 10155,
+      "end": 10329,
+      "fixed_groups": [
+        {
+          "offset": 10157,
+          "mask": 255
+        },
+        {
+          "offset": 10161,
+          "mask": 255
+        },
+        {
+          "offset": 10165,
+          "mask": 15
+        },
+        {
+          "offset": 10169,
+          "mask": 255
+        }
+      ],
+      "records": [
+        {
+          "offset": 10174,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 10179,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 10184,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 10189,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 10194,
+          "kind": "line",
+          "count": 4
+        },
+        {
+          "offset": 10199,
+          "kind": "line",
+          "count": 4
+        },
+        {
+          "offset": 10204,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 10209,
+          "kind": "line",
+          "count": 4
+        },
+        {
+          "offset": 10214,
+          "kind": "line",
+          "count": 4
+        },
+        {
+          "offset": 10219,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 10224,
+          "kind": "face",
+          "count": 3
+        },
+        {
+          "offset": 10228,
+          "kind": "face",
+          "count": 3
+        },
+        {
+          "offset": 10232,
+          "kind": "face",
+          "count": 3
+        },
+        {
+          "offset": 10236,
+          "kind": "face",
+          "count": 3
+        },
+        {
+          "offset": 10240,
+          "kind": "face",
+          "count": 3
+        },
+        {
+          "offset": 10244,
+          "kind": "face",
+          "count": 3
+        },
+        {
+          "offset": 10248,
+          "kind": "face",
+          "count": 3
+        },
+        {
+          "offset": 10252,
+          "kind": "face",
+          "count": 3
+        },
+        {
+          "offset": 10256,
+          "kind": "face",
+          "count": 3
+        },
+        {
+          "offset": 10260,
+          "kind": "face",
+          "count": 3
+        },
+        {
+          "offset": 10264,
+          "kind": "face",
+          "count": 3
+        },
+        {
+          "offset": 10268,
+          "kind": "face",
+          "count": 3
+        },
+        {
+          "offset": 10272,
+          "kind": "face",
+          "count": 3
+        },
+        {
+          "offset": 10276,
+          "kind": "face",
+          "count": 3
+        },
+        {
+          "offset": 10280,
+          "kind": "face",
+          "count": 3
+        },
+        {
+          "offset": 10284,
+          "kind": "face",
+          "count": 3
+        },
+        {
+          "offset": 10288,
+          "kind": "face",
+          "count": 3
+        },
+        {
+          "offset": 10292,
+          "kind": "face",
+          "count": 3
+        },
+        {
+          "offset": 10296,
+          "kind": "face",
+          "count": 3
+        },
+        {
+          "offset": 10300,
+          "kind": "face",
+          "count": 3
+        },
+        {
+          "offset": 10304,
+          "kind": "face",
+          "count": 6
+        },
+        {
+          "offset": 10311,
+          "kind": "face",
+          "count": 6
+        },
+        {
+          "offset": 10318,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 10323,
+          "kind": "face",
+          "count": 4
+        }
+      ],
+      "generated_vertices": 28
+    },
+    {
+      "offset": 10329,
+      "end": 10580,
+      "fixed_groups": [
+        {
+          "offset": 10331,
+          "mask": 15
+        },
+        {
+          "offset": 10335,
+          "mask": 255
+        },
+        {
+          "offset": 10339,
+          "mask": 3
+        },
+        {
+          "offset": 10343,
+          "mask": 51
+        },
+        {
+          "offset": 10347,
+          "mask": 15
+        },
+        {
+          "offset": 10351,
+          "mask": 12
+        },
+        {
+          "offset": 10355,
+          "mask": 255
+        },
+        {
+          "offset": 10359,
+          "mask": 51
+        },
+        {
+          "offset": 10363,
+          "mask": 64
+        }
+      ],
+      "records": [
+        {
+          "offset": 10368,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 10373,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 10378,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 10383,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 10388,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 10393,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 10398,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 10403,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 10408,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 10413,
+          "kind": "face",
+          "count": 3
+        },
+        {
+          "offset": 10417,
+          "kind": "face",
+          "count": 3
+        },
+        {
+          "offset": 10421,
+          "kind": "face",
+          "count": 3
+        },
+        {
+          "offset": 10425,
+          "kind": "face",
+          "count": 3
+        },
+        {
+          "offset": 10429,
+          "kind": "face",
+          "count": 3
+        },
+        {
+          "offset": 10433,
+          "kind": "face",
+          "count": 3
+        },
+        {
+          "offset": 10437,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 10442,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 10447,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 10452,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 10457,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 10462,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 10467,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 10472,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 10477,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 10482,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 10487,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 10492,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 10497,
+          "kind": "face",
+          "count": 6
+        },
+        {
+          "offset": 10504,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 10509,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 10514,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 10519,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 10524,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 10529,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 10534,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 10539,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 10544,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 10549,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 10554,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 10559,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 10564,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 10569,
+          "kind": "face",
+          "count": 4
+        },
+        {
+          "offset": 10574,
+          "kind": "face",
+          "count": 4
+        }
+      ],
+      "generated_vertices": 37
+    }
+  ],
+  "primitives": {
+    "face": 207,
+    "line": 19
+  },
+  "packet_count": 7,
+  "each_vertex_index_within_generated_count": true,
+  "exact_known_model_format_round_trip": true,
+  "page_9e_has_no_tail_packet_pointer": true,
+  "page_9f_pointer_count": 14,
+  "actual_game_callers_proved": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

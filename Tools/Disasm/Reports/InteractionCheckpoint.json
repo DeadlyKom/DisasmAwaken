@@ -1,13 +1,13 @@
 {
   "status": "in_progress",
   "all_plan_stages_completed": false,
-  "fragments": 1397,
-  "described": 1395,
+  "fragments": 1436,
+  "described": 1434,
   "unknown": 2,
   "unproved_contracts": 1,
   "named_without_contract": 1,
-  "instruction_count": 49884,
-  "unclassified_bytes": 148015,
+  "instruction_count": 50947,
+  "unclassified_bytes": 15519,
   "passed_reports": [
     "Tools/Disasm/Reports/PointerVerification.json",
     "Tools/Disasm/Reports/PointerTablesVerification.json",
@@ -1042,7 +1042,110 @@
     "Tools/Disasm/Reports/UnclassifiedRangeReferences.json",
     "Tools/Disasm/Reports/StationPanelTextLayout.json",
     "Tools/Disasm/Reports/StationInterfaceTextLayout.json",
-    "Tools/Disasm/Reports/StationPhysicalTextSelectorsVerification.json"
+    "Tools/Disasm/Reports/StationPhysicalTextSelectorsVerification.json",
+    "Tools/Disasm/Reports/ActionInputContextDataClassification.json",
+    "Tools/Disasm/Reports/ControlsTemporaryModuleReferenceAudit.json",
+    "Tools/Disasm/Reports/ControlsTemporaryModuleTailVerification.json",
+    "Tools/Disasm/Reports/ClipDispatchPrefixDataClassification.json",
+    "Tools/Disasm/Reports/ActionProjectedPointsDataClassification.json",
+    "Tools/Disasm/Reports/ActionRasterWorkDataClassification.json",
+    "Tools/Disasm/Reports/ActionMutableEffectLimitsVerification.json",
+    "Tools/Disasm/Reports/ActionMutableSpawnParametersVerification.json",
+    "Tools/Disasm/Reports/ActionMutableGaugePhasesVerification.json",
+    "Tools/Disasm/Reports/ActionMutableSpawnGatesVerification.json",
+    "Tools/Disasm/Reports/ActionQueueParameterPhysicalDataClassification.json",
+    "Tools/Disasm/Reports/ClipTargetLowPhysicalDataClassification.json",
+    "Tools/Disasm/Reports/PolygonFillPhysicalDataClassification.json",
+    "Tools/Disasm/Reports/AuxiliaryBankSharedBlockInspection.json",
+    "Tools/Disasm/Reports/ActionPanelPhysicalDataClassification.json",
+    "Tools/Disasm/Reports/ActionLocalContextPhysicalDataClassification.json",
+    "Tools/Disasm/Reports/MarketRuleOffsetsVerification.json",
+    "Tools/Disasm/Reports/ActionRenderHeaderPhysicalDataClassification.json",
+    "Tools/Disasm/Reports/AuxiliarySourceFormatInspection.json",
+    "Tools/Disasm/Reports/Scene1PixelPairsVerification.json",
+    "Tools/Disasm/Reports/Scene1PixelPairsClassification.json",
+    "Tools/Disasm/Reports/BankScreenStripsVerification.json",
+    "Tools/Disasm/Reports/BankScreenStripsClassification.json",
+    "Tools/Disasm/Reports/AdditionalBankStripsVerification.json",
+    "Tools/Disasm/Reports/AdditionalBankStripsClassification.json",
+    "Tools/Disasm/Reports/ActionTargetCommandsVerification.json",
+    "Tools/Disasm/Reports/ActionTargetCommandsClassification.json",
+    "Tools/Disasm/Reports/ActionOverlayModeCommandVerification.json",
+    "Tools/Disasm/Reports/ActionOverlayModeCommandClassification.json",
+    "Tools/Disasm/Reports/ActionKeyboardCoverage.json",
+    "Tools/Disasm/Reports/ActionTractorModeCommandVerification.json",
+    "Tools/Disasm/Reports/ActionTractorModeCommandClassification.json",
+    "Tools/Disasm/Reports/ActionFreeFlightCommandVerification.json",
+    "Tools/Disasm/Reports/ActionFreeFlightCommandClassification.json",
+    "Tools/Disasm/Reports/ActionFreeFlightReturnTailVerification.json",
+    "Tools/Disasm/Reports/ActionStationReturnCommandVerification.json",
+    "Tools/Disasm/Reports/ActionStationReturnCommandClassification.json",
+    "Tools/Disasm/Reports/ActionPreparedClass19SpawnVerification.json",
+    "Tools/Disasm/Reports/ActionEjectCommandsVerification.json",
+    "Tools/Disasm/Reports/ActionEjectCommandsClassification.json",
+    "Tools/Disasm/Reports/ActionCargoNotesMapping.json",
+    "Tools/Disasm/Reports/ActionOwnedCargoPhysicalDataClassification.json",
+    "Tools/Disasm/Reports/ActionReverseViewBasisVerification.json",
+    "Tools/Disasm/Reports/ActionReverseViewBasisClassification.json",
+    "Tools/Disasm/Reports/ActionViewDirectionCommandVerification.json",
+    "Tools/Disasm/Reports/ActionViewDirectionCommandClassification.json",
+    "Tools/Disasm/Reports/ActionMotionRearTailVerification.json",
+    "Tools/Disasm/Reports/ActionTractorCollectVerification.json",
+    "Tools/Disasm/Reports/ActionTractorCollectClassification.json",
+    "Tools/Disasm/Reports/ActionTractorCargoRulesClassification.json",
+    "Tools/Disasm/Reports/ActionAntimissileCommandVerification.json",
+    "Tools/Disasm/Reports/ActionAntimissileCommandClassification.json",
+    "Tools/Disasm/Reports/ActionBoostCommandVerification.json",
+    "Tools/Disasm/Reports/ActionBoostCommandClassification.json",
+    "Tools/Disasm/Reports/ActionBoostAdvanceVerification.json",
+    "Tools/Disasm/Reports/ActionBoostAdvanceClassification.json",
+    "Tools/Disasm/Reports/ActionHyperJumpVerification.json",
+    "Tools/Disasm/Reports/ActionHyperJumpClassification.json",
+    "Tools/Disasm/Reports/ActionHyperJumpPreparationVerification.json",
+    "Tools/Disasm/Reports/ActionHyperJumpPreparationClassification.json",
+    "Tools/Disasm/Reports/ActionHyperReloadVerification.json",
+    "Tools/Disasm/Reports/ActionHyperReloadClassification.json",
+    "Tools/Disasm/Reports/ActionHyperReloadFileKeyClassification.json",
+    "Tools/Disasm/Reports/ActionEmbeddedNotesVerification.json",
+    "Tools/Disasm/Reports/ActionEmbeddedNotesResourceClassification.json",
+    "Tools/Disasm/Reports/ControlsFlightMessagesVerification.json",
+    "Tools/Disasm/Reports/ControlsFlightMessagesClassification.json",
+    "Tools/Disasm/Reports/ActionFlightMessageNamesVerification.json",
+    "Tools/Disasm/Reports/ControlsTextFontVerification.json",
+    "Tools/Disasm/Reports/ControlsTextFontClassification.json",
+    "Tools/Disasm/Reports/ActionClippedLineWorkDataClassification.json",
+    "Tools/Disasm/Reports/ControlsDirectStationRelayVerification.json",
+    "Tools/Disasm/Reports/ControlsDirectStationRelayClassification.json",
+    "Tools/Disasm/Reports/ControlsStateStationRelayVerification.json",
+    "Tools/Disasm/Reports/ControlsStateStationRelayClassification.json",
+    "Tools/Disasm/Reports/ControlsStationRelayFileKeysClassification.json",
+    "Tools/Disasm/Reports/ControlsLegacyDiskFragmentInspection.json",
+    "Tools/Disasm/Reports/ControlsTemporaryModuleResumeVerification.json",
+    "Tools/Disasm/Reports/ConfirmedControlTargetNamesVerification.json",
+    "Tools/Disasm/Reports/AllocatedSectorSuffixInspection.json",
+    "Tools/Disasm/Reports/AllocatedSectorSuffixClassification.json",
+    "Tools/Disasm/Reports/ResourceSemanticLimits.json",
+    "Tools/Disasm/Reports/ActionOverlappingKeyDispatchVerification.json",
+    "Tools/Disasm/Reports/ActionOverlappingKeyClipReturnsVerification.json",
+    "Tools/Disasm/Reports/ActionInitializedKeyClipVerification.json",
+    "Tools/Disasm/Reports/ActionNewsOrdersAndJumpCostClassification.json",
+    "Tools/Disasm/Reports/FinalSyncAndPreviewRecordClassification.json",
+    "Tools/Disasm/Reports/InterfaceEventAndSpecialRecordClassification.json",
+    "Tools/Disasm/Reports/MapDistanceAndRenderStateClassification.json",
+    "Tools/Disasm/Reports/StationHyperJumpCostTransferVerification.json",
+    "Tools/Disasm/Reports/ControlsLegacySectorReadVerification.json",
+    "Tools/Disasm/Reports/ControlsLegacyLoadChainVerification.json",
+    "Tools/Disasm/Reports/ControlsLegacyLoadChainClassification.json",
+    "Tools/Disasm/Reports/ControlsResetVectorTemplatesClassification.json",
+    "Tools/Disasm/Reports/ControlsResetFlightContextVerification.json",
+    "Tools/Disasm/Reports/ControlsResetFlightContextClassification.json",
+    "Tools/Disasm/Reports/ActionPatchedScheduleGateVerification.json",
+    "Tools/Disasm/Reports/ActionLegacyBootOperandsVerification.json",
+    "Tools/Disasm/Reports/StationBootResourceTablesClassification.json",
+    "Tools/Disasm/Reports/StationBackdropSelectionVerification.json",
+    "Tools/Disasm/Reports/StationInitialWorkspaceVerification.json",
+    "Tools/Disasm/Reports/StationInitialWorkspaceClassification.json",
+    "Tools/Disasm/Reports/StationInitialIndexPairsClassification.json"
   ],
   "next_station_work": [
     {
@@ -2587,11 +2690,13 @@
       "0B": "LinkedIndex",
       "0C": "LinkFlags",
       "0F": "TargetIndex",
+      "11": "Unknown11",
       "12": "ClassCode",
       "15": "LinkOverride",
       "16": "SavedStateCode",
       "17": "PhaseMoveTimer",
       "18": "ReuseByte",
+      "23": "Unknown23",
       "25": "TargetCodeStep"
     },
     "unknown_byte_offsets": [
@@ -2602,12 +2707,6 @@
       "13",
       "14",
       "19",
-      "1A",
-      "1B",
-      "1C",
-      "1D",
-      "1E",
-      "1F",
       "20",
       "21",
       "22",
@@ -2693,12 +2792,12 @@
     "assembly_executed": false
   },
   "action_ay_streams": {
-    "physical_frames": 94,
-    "terminators": 8,
-    "physical_bytes": 384,
-    "unclassified_neighbor_bytes": 66,
-    "sequences": 48,
-    "ticks": 612,
+    "physical_frames": 110,
+    "terminators": 9,
+    "physical_bytes": 449,
+    "unclassified_neighbor_bytes": 1,
+    "sequences": 54,
+    "ticks": 714,
     "original_stream_addresses_used": true,
     "actual_ay_hardware_executed": false,
     "assembly_executed": false
@@ -4920,8 +5019,353 @@
     ],
     "table_role_proved": true,
     "decoded_regions": 20,
-    "decoded_instructions": 48247,
+    "decoded_instructions": 50909,
     "explicit_references_to_cf08_cf0a": [],
+    "raw_words_disk_offsets": {
+      "CF08": [
+        16743,
+        39522
+      ],
+      "CF09": [
+        9627
+      ],
+      "CF0A": [
+        58203
+      ]
+    },
+    "all_raw_words_in_deleted_sector_tail": true,
+    "original_high_table_bytes": [
+      0,
+      192,
+      193,
+      194,
+      195,
+      196,
+      197,
+      198
+    ],
+    "target_exclusion_cases": 1024,
+    "complete_paths": [
+      {
+        "overlay": "Action",
+        "entry": 51521,
+        "outside_code": 8,
+        "indices": [
+          128
+        ],
+        "table_reads": [
+          [
+            51592,
+            53120,
+            14
+          ],
+          [
+            51594,
+            53376,
+            195
+          ]
+        ],
+        "complete_return": true
+      },
+      {
+        "overlay": "Action",
+        "entry": 49152,
+        "outside_code": 8,
+        "indices": [
+          128,
+          8
+        ],
+        "table_reads": [
+          [
+            49256,
+            53120,
+            14
+          ],
+          [
+            49258,
+            53376,
+            195
+          ],
+          [
+            49256,
+            53000,
+            243
+          ],
+          [
+            49258,
+            53256,
+            196
+          ]
+        ],
+        "complete_return": true
+      },
+      {
+        "overlay": "Action",
+        "entry": 51521,
+        "outside_code": 9,
+        "indices": [
+          144
+        ],
+        "table_reads": [
+          [
+            51592,
+            53136,
+            117
+          ],
+          [
+            51594,
+            53392,
+            195
+          ]
+        ],
+        "complete_return": true
+      },
+      {
+        "overlay": "Action",
+        "entry": 49152,
+        "outside_code": 9,
+        "indices": [
+          144,
+          9
+        ],
+        "table_reads": [
+          [
+            49256,
+            53136,
+            117
+          ],
+          [
+            49258,
+            53392,
+            195
+          ],
+          [
+            49256,
+            53001,
+            175
+          ],
+          [
+            49258,
+            53257,
+            192
+          ]
+        ],
+        "complete_return": true
+      },
+      {
+        "overlay": "Action",
+        "entry": 51521,
+        "outside_code": 10,
+        "indices": [
+          160
+        ],
+        "table_reads": [
+          [
+            51592,
+            53152,
+            246
+          ],
+          [
+            51594,
+            53408,
+            195
+          ]
+        ],
+        "complete_return": true
+      },
+      {
+        "overlay": "Action",
+        "entry": 49152,
+        "outside_code": 10,
+        "indices": [
+          160,
+          10
+        ],
+        "table_reads": [
+          [
+            49256,
+            53152,
+            246
+          ],
+          [
+            49258,
+            53408,
+            195
+          ],
+          [
+            49256,
+            53002,
+            201
+          ],
+          [
+            49258,
+            53258,
+            192
+          ]
+        ],
+        "complete_return": true
+      },
+      {
+        "overlay": "ThreeD",
+        "entry": 51521,
+        "outside_code": 8,
+        "indices": [
+          128
+        ],
+        "table_reads": [
+          [
+            51592,
+            53120,
+            14
+          ],
+          [
+            51594,
+            53376,
+            195
+          ]
+        ],
+        "complete_return": true
+      },
+      {
+        "overlay": "ThreeD",
+        "entry": 49152,
+        "outside_code": 8,
+        "indices": [
+          128,
+          8
+        ],
+        "table_reads": [
+          [
+            49256,
+            53120,
+            14
+          ],
+          [
+            49258,
+            53376,
+            195
+          ],
+          [
+            49256,
+            53000,
+            243
+          ],
+          [
+            49258,
+            53256,
+            196
+          ]
+        ],
+        "complete_return": true
+      },
+      {
+        "overlay": "ThreeD",
+        "entry": 51521,
+        "outside_code": 9,
+        "indices": [
+          144
+        ],
+        "table_reads": [
+          [
+            51592,
+            53136,
+            117
+          ],
+          [
+            51594,
+            53392,
+            195
+          ]
+        ],
+        "complete_return": true
+      },
+      {
+        "overlay": "ThreeD",
+        "entry": 49152,
+        "outside_code": 9,
+        "indices": [
+          144,
+          9
+        ],
+        "table_reads": [
+          [
+            49256,
+            53136,
+            117
+          ],
+          [
+            49258,
+            53392,
+            195
+          ],
+          [
+            49256,
+            53001,
+            175
+          ],
+          [
+            49258,
+            53257,
+            192
+          ]
+        ],
+        "complete_return": true
+      },
+      {
+        "overlay": "ThreeD",
+        "entry": 51521,
+        "outside_code": 10,
+        "indices": [
+          160
+        ],
+        "table_reads": [
+          [
+            51592,
+            53152,
+            246
+          ],
+          [
+            51594,
+            53408,
+            195
+          ]
+        ],
+        "complete_return": true
+      },
+      {
+        "overlay": "ThreeD",
+        "entry": 49152,
+        "outside_code": 10,
+        "indices": [
+          160,
+          10
+        ],
+        "table_reads": [
+          [
+            49256,
+            53152,
+            246
+          ],
+          [
+            49258,
+            53408,
+            195
+          ],
+          [
+            49256,
+            53002,
+            201
+          ],
+          [
+            49258,
+            53258,
+            192
+          ]
+        ],
+        "complete_return": true
+      }
+    ],
+    "page_cf_unreachable_via_both_clip_dispatchers_with_original_high_table": true,
     "possible_instructions": [
       "DI",
       "XOR A",
@@ -32469,7 +32913,7 @@
     "native_execution": false
   },
   "controls_body_draw": {
-    "cases": 46346,
+    "cases": 91711,
     "exact_registers_except_R": true,
     "projection_scratch_values_not_proved": false,
     "assembly_executed": false,
@@ -32654,8 +33098,8 @@
     "native_execution": false
   },
   "modified_code_path_boundaries": {
-    "records": 1359,
-    "physical_target_ranges": 345,
+    "records": 1418,
+    "physical_target_ranges": 404,
     "target_paths_without_physical_context": 0,
     "all_records_have_physical_target_context": false,
     "assembly_executed": false
@@ -32721,5 +33165,25 @@
       "Tools/Disasm/Reports/ActionLinkedTargetStateUnrestrictedVerification.json",
       "Tools/Disasm/Reports/ActionLinkedPhaseStateUnrestrictedVerification.json"
     ]
+  },
+  "registered_keyboard_callbacks": 26,
+  "unregistered_keyboard_callbacks": [],
+  "overlapping_keyboard_step": {
+    "index": 26,
+    "word": 49353,
+    "bytes": "c9c0",
+    "separate_physical_record": false,
+    "bank_context_and_intended_handler_proved": false,
+    "actual_bank_in_stationary_FD_02_profile": 0,
+    "actual_target_in_that_profile": "Action.ClipInsideToTopLeft.Entry",
+    "prepared_clip_returns_proved": true,
+    "author_intent_proved": false,
+    "initialized_frame_probes": 7,
+    "all_runtime_clip_states_proved": false
+  },
+  "resource_semantic_limits": {
+    "classified_format_or_extent_bytes_with_unproved_game_use": 119903,
+    "complete_unknown_resource_graph_proved": false,
+    "report": "Tools/Disasm/Reports/ResourceSemanticLimits.json"
   }
 }

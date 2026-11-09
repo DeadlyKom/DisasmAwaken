@@ -3,12 +3,13 @@
   "total_cases": 6,
   "transfer_start": 38971,
   "transfer_size": 512,
-  "typed_spans_per_slot": 15,
+  "typed_spans_per_slot": 20,
   "slots": [
     {
       "slot": 11,
       "name": "SAVE1",
-      "typed_bytes": 405,
+      "typed_bytes": 473,
+      "transfer_trailer_bytes": 29,
       "all_zero": false,
       "differences_from_station": [
         3
@@ -19,7 +20,8 @@
     {
       "slot": 12,
       "name": "SAVE2",
-      "typed_bytes": 405,
+      "typed_bytes": 473,
+      "transfer_trailer_bytes": 29,
       "all_zero": false,
       "differences_from_station": [
         3
@@ -30,7 +32,8 @@
     {
       "slot": 13,
       "name": "SAVE3",
-      "typed_bytes": 405,
+      "typed_bytes": 473,
+      "transfer_trailer_bytes": 29,
       "all_zero": false,
       "differences_from_station": [
         3
@@ -41,7 +44,8 @@
     {
       "slot": 14,
       "name": "SAVE4",
-      "typed_bytes": 405,
+      "typed_bytes": 473,
+      "transfer_trailer_bytes": 29,
       "all_zero": false,
       "differences_from_station": [
         3
@@ -52,7 +56,8 @@
     {
       "slot": 15,
       "name": "SAVE5",
-      "typed_bytes": 405,
+      "typed_bytes": 473,
+      "transfer_trailer_bytes": 29,
       "all_zero": true,
       "differences_from_station": [
         0,
@@ -352,7 +357,8 @@
     {
       "slot": 16,
       "name": "SAVE0",
-      "typed_bytes": 405,
+      "typed_bytes": 473,
+      "transfer_trailer_bytes": 29,
       "all_zero": false,
       "differences_from_station": [
         3
@@ -361,6 +367,6 @@
       "semantic_validity_proved": false
     }
   ],
-  "unknown_bytes_per_slot": 107,
+  "unknown_bytes_per_slot": 10,
   "assembly_executed": false
 }

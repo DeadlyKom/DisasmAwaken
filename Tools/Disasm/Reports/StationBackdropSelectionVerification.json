@@ -1,0 +1,92 @@
+{
+  "passed": true,
+  "total_cases": 256,
+  "all_refresh_register_bytes": true,
+  "screen_locations": {
+    "2": {
+      "start_sector": 11,
+      "start_track": 41,
+      "sectors": 11
+    },
+    "3": {
+      "start_sector": 6,
+      "start_track": 42,
+      "sectors": 12
+    },
+    "4": {
+      "start_sector": 2,
+      "start_track": 43,
+      "sectors": 8
+    },
+    "5": {
+      "start_sector": 10,
+      "start_track": 43,
+      "sectors": 14
+    },
+    "6": {
+      "start_sector": 8,
+      "start_track": 44,
+      "sectors": 19
+    },
+    "7": {
+      "start_sector": 11,
+      "start_track": 45,
+      "sectors": 15
+    },
+    "8": {
+      "start_sector": 10,
+      "start_track": 46,
+      "sectors": 15
+    },
+    "9": {
+      "start_sector": 9,
+      "start_track": 47,
+      "sectors": 13
+    },
+    "10": {
+      "start_sector": 6,
+      "start_track": 48,
+      "sectors": 19
+    },
+    "11": {
+      "start_sector": 9,
+      "start_track": 49,
+      "sectors": 12
+    },
+    "12": {
+      "start_sector": 5,
+      "start_track": 50,
+      "sectors": 16
+    },
+    "13": {
+      "start_sector": 5,
+      "start_track": 51,
+      "sectors": 20
+    },
+    "14": {
+      "start_sector": 9,
+      "start_track": 52,
+      "sectors": 21
+    },
+    "15": {
+      "start_sector": 14,
+      "start_track": 53,
+      "sectors": 20
+    },
+    "0": {
+      "start_sector": 3,
+      "start_track": 40,
+      "sectors": 13
+    },
+    "1": {
+      "start_sector": 0,
+      "start_track": 41,
+      "sectors": 11
+    }
+  },
+  "total_allocated_sectors": 239,
+  "original_code_and_decoder_executed": true,
+  "disk_read_substituted": true,
+  "native_execution": false,
+  "assembly_executed": false
+}

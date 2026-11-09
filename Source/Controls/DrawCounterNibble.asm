@@ -31,7 +31,7 @@ Entry:          EXX
                 LD E, L
                 ADD HL, HL
                 ADD HL, DE
-                LD DE, #C600
+                LD DE, @ControlsTextFont.Pixels
                 ADD HL, DE
                 EX DE, HL
                 ; сохранение чётности индекса знака в альтернативном A для DrawGlyphRows

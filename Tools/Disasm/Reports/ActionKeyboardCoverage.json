@@ -1,0 +1,261 @@
+{
+  "passed": true,
+  "table_entries": 26,
+  "registered_entries": 26,
+  "unregistered_entries": 0,
+  "entries": [
+    {
+      "index": 0,
+      "target": 30547,
+      "file_offset": 6544,
+      "registered": true,
+      "function": "RequestYNegative",
+      "physical_path": "Source/Action/RequestYNegative.asm",
+      "physical_kind": "code"
+    },
+    {
+      "index": 1,
+      "target": 30582,
+      "file_offset": 6579,
+      "registered": true,
+      "function": "RequestYPositive",
+      "physical_path": "Source/Action/RequestYPositive.asm",
+      "physical_kind": "code"
+    },
+    {
+      "index": 2,
+      "target": 30477,
+      "file_offset": 6474,
+      "registered": true,
+      "function": "RequestXNegative",
+      "physical_path": "Source/Action/RequestXNegative.asm",
+      "physical_kind": "code"
+    },
+    {
+      "index": 3,
+      "target": 30512,
+      "file_offset": 6509,
+      "registered": true,
+      "function": "RequestXPositive",
+      "physical_path": "Source/Action/RequestXPositive.asm",
+      "physical_kind": "code"
+    },
+    {
+      "index": 4,
+      "target": 30407,
+      "file_offset": 6404,
+      "registered": true,
+      "function": "RequestTurnNegative",
+      "physical_path": "Source/Action/RequestTurnNegative.asm",
+      "physical_kind": "code"
+    },
+    {
+      "index": 5,
+      "target": 30442,
+      "file_offset": 6439,
+      "registered": true,
+      "function": "RequestTurnPositive",
+      "physical_path": "Source/Action/RequestTurnPositive.asm",
+      "physical_kind": "code"
+    },
+    {
+      "index": 6,
+      "target": 29463,
+      "file_offset": 5460,
+      "registered": true,
+      "function": "RequestAimOrCollectTarget",
+      "physical_path": "Source/Action/RequestAimOrCollectTarget.asm",
+      "physical_kind": "code"
+    },
+    {
+      "index": 7,
+      "target": 30336,
+      "file_offset": 6333,
+      "registered": true,
+      "function": "IncreaseGaugeWord",
+      "physical_path": "Source/Action/IncreaseGaugeWord.asm",
+      "physical_kind": "code"
+    },
+    {
+      "index": 8,
+      "target": 30371,
+      "file_offset": 6368,
+      "registered": true,
+      "function": "DecreaseGaugeWord",
+      "physical_path": "Source/Action/DecreaseGaugeWord.asm",
+      "physical_kind": "code"
+    },
+    {
+      "index": 9,
+      "target": 44203,
+      "file_offset": 19627,
+      "registered": true,
+      "function": "QueueDiagnosticCounters",
+      "physical_path": "Source/Action/QueueDiagnosticCounters.asm",
+      "physical_kind": "code"
+    },
+    {
+      "index": 10,
+      "target": 29410,
+      "file_offset": 5407,
+      "registered": true,
+      "function": "ToggleTargetRequest",
+      "physical_path": "Source/Action/ToggleTargetRequest.asm",
+      "physical_kind": "code"
+    },
+    {
+      "index": 11,
+      "target": 29374,
+      "file_offset": 5371,
+      "registered": true,
+      "function": "ClearMissileTargets",
+      "physical_path": "Source/Action/ClearMissileTargets.asm",
+      "physical_kind": "code"
+    },
+    {
+      "index": 12,
+      "target": 28748,
+      "file_offset": 4745,
+      "registered": true,
+      "function": "RequestMissile0",
+      "physical_path": "Source/Action/RequestMissile0.asm",
+      "physical_kind": "code"
+    },
+    {
+      "index": 13,
+      "target": 28789,
+      "file_offset": 4786,
+      "registered": true,
+      "function": "RequestMissile1",
+      "physical_path": "Source/Action/RequestMissile1.asm",
+      "physical_kind": "code"
+    },
+    {
+      "index": 14,
+      "target": 28808,
+      "file_offset": 4805,
+      "registered": true,
+      "function": "RequestMissile2",
+      "physical_path": "Source/Action/RequestMissile2.asm",
+      "physical_kind": "code"
+    },
+    {
+      "index": 15,
+      "target": 29859,
+      "file_offset": 5856,
+      "registered": true,
+      "function": "RequestBoost",
+      "physical_path": "Source/Action/RequestBoost.asm",
+      "physical_kind": "code"
+    },
+    {
+      "index": 16,
+      "target": 30028,
+      "file_offset": 6025,
+      "registered": true,
+      "function": "ToggleFreeFlightMode",
+      "physical_path": "Source/Action/ToggleFreeFlightMode.asm",
+      "physical_kind": "code"
+    },
+    {
+      "index": 17,
+      "target": 29824,
+      "file_offset": 5821,
+      "registered": true,
+      "function": "CycleTargetOverlayMode",
+      "physical_path": "Source/Action/CycleTargetOverlayMode.asm",
+      "physical_kind": "code"
+    },
+    {
+      "index": 18,
+      "target": 30214,
+      "file_offset": 6211,
+      "registered": true,
+      "function": "RequestStationReturn",
+      "physical_path": "Source/Action/RequestStationReturn.asm",
+      "physical_kind": "code"
+    },
+    {
+      "index": 19,
+      "target": 29753,
+      "file_offset": 5750,
+      "registered": true,
+      "function": "ToggleTractorMode",
+      "physical_path": "Source/Action/ToggleTractorMode.asm",
+      "physical_kind": "code"
+    },
+    {
+      "index": 20,
+      "target": 29230,
+      "file_offset": 5227,
+      "registered": true,
+      "function": "ActivateAntimissileSystem",
+      "physical_path": "Source/Action/ActivateAntimissileSystem.asm",
+      "physical_kind": "code"
+    },
+    {
+      "index": 21,
+      "target": 30100,
+      "file_offset": 6097,
+      "registered": true,
+      "function": "EjectCargo",
+      "physical_path": "Source/Action/EjectCargo.asm",
+      "physical_kind": "code"
+    },
+    {
+      "index": 22,
+      "target": 30159,
+      "file_offset": 6156,
+      "registered": true,
+      "function": "EjectMine",
+      "physical_path": "Source/Action/EjectMine.asm",
+      "physical_kind": "code"
+    },
+    {
+      "index": 23,
+      "target": 28918,
+      "file_offset": 4915,
+      "registered": true,
+      "function": "RequestHyperJump",
+      "physical_path": "Source/Action/RequestHyperJump.asm",
+      "physical_kind": "code"
+    },
+    {
+      "index": 24,
+      "target": 28747,
+      "file_offset": 4744,
+      "registered": true,
+      "function": "IgnoreKey",
+      "physical_path": "Source/Action/IgnoreKey.asm",
+      "physical_kind": "code"
+    },
+    {
+      "index": 25,
+      "target": 30250,
+      "file_offset": 6247,
+      "registered": true,
+      "function": "ToggleViewDirection",
+      "physical_path": "Source/Action/ToggleViewDirection.asm",
+      "physical_kind": "code"
+    }
+  ],
+  "unregistered_targets": [],
+  "all_separate_handlers_registered": true,
+  "overlapping_step": {
+    "index": 26,
+    "word": 49353,
+    "bytes": "c9c0",
+    "separate_physical_record": false,
+    "bank_context_and_intended_handler_proved": false,
+    "actual_bank_in_stationary_FD_02_profile": 0,
+    "actual_target_in_that_profile": "Action.ClipInsideToTopLeft.Entry",
+    "prepared_clip_returns_proved": true,
+    "author_intent_proved": false,
+    "initialized_frame_probes": 7,
+    "all_runtime_clip_states_proved": false
+  },
+  "source_map_sha256": "ef4e367c5afef01959e7667e854774dacbe8e7f9daf83e669db2df6b05e0bd52",
+  "all_keyboard_algorithms_proved": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

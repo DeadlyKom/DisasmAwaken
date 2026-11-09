@@ -1,7 +1,8 @@
 """Приоритеты оставшихся физических диапазонов, числовое совпадение не является доказательством обращения."""
 from bisect import bisect_left
 from collections import defaultdict
-import argparse,hashlib,json,re
+import argparse,hashlib,json,os,re,tempfile
+from pathlib import Path
 from CheckIntro import ROOT
 
 
@@ -80,7 +81,15 @@ def main():
             q=history/p.relative_to(ROOT);q.parent.mkdir(parents=True,exist_ok=True);q.write_bytes(data)
     else:
         assert all(not p.exists() for p in after)
-    for p,data in after.items():p.write_bytes(data)
+    for path, data in after.items():
+        with tempfile.NamedTemporaryFile(dir=path.parent, prefix='range-references-', suffix='.tmp', delete=False) as out:
+            temporary = Path(out.name)
+            out.write(data)
+        try:
+            os.replace(temporary, path)
+        finally:
+            if temporary.exists():
+                temporary.unlink()
     print(json.dumps(dict(passed=True,ranges=len(ranges),bytes=result['unclassified_bytes'],
         top_candidates=[{k:r[k] for k in ('slot','offset','length','candidate_reference_count','path')} for r in ranked[:8]],
         semantic_classification_performed=False,assembly_executed=False),indent=2))

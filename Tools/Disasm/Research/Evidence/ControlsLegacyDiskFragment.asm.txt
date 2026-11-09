@@ -1,0 +1,97 @@
+; Исследовательский вид исходных байтов 007F..013A CONTROL. Не включается в сборку.
+; База 5DA0 получена из пяти внутренних адресных совпадений. Реальный перенос игрой не доказан.
+; 5E1F 11 00 00       LD DE,#0000
+; 5E22 06 00          LD B,#00
+; 5E24 21 00 c0       LD HL,#C000
+; 5E27 e5             PUSH HL
+; 5E28 cd 4d 5e       CALL #5E4D
+; 5E2B e1             POP HL
+; 5E2C 54             LD D,H
+; 5E2D 5d             LD E,L
+; 5E2E cd 23 ab       CALL #AB23
+; 5E31 c1             POP BC
+; 5E32 31 00 00       LD SP,#0000
+; 5E35 3e 11          LD A,#11
+; 5E37 ed 79          OUT (C),A
+; 5E39 cd 87 dd       CALL #DD87
+; 5E3C 01 fd ff       LD BC,#FFFD
+; 5E3F 3e 07          LD A,#07
+; 5E41 ed 79          OUT (C),A
+; 5E43 06 bf          LD B,#BF
+; 5E45 3e db          LD A,#DB
+; 5E47 ed 79          OUT (C),A
+; 5E49 dd e1          POP IX
+; 5E4B f3             DI
+; 5E4C c9             RET
+; 5E4D 7a             LD A,D
+; 5E4E cb 3f          SRL A
+; 5E50 0e 7f          LD C,#7F
+; 5E52 cd d2 5e       CALL #5ED2
+; 5E55 dd 21 55 2f    LD IX,#2F55
+; 5E59 cd d6 5e       CALL #5ED6
+; 5E5C d5             PUSH DE
+; 5E5D c5             PUSH BC
+; 5E5E d9             EXX
+; 5E5F c1             POP BC
+; 5E60 d1             POP DE
+; 5E61 3a 16 5d       LD A,(#5D16)
+; 5E64 e6 2f          AND #2F
+; 5E66 4f             LD C,A
+; 5E67 af             XOR A
+; 5E68 cb 42          BIT 0,D
+; 5E6A 20 02          JR NZ,#5E6E
+; 5E6C 3e 10          LD A,#10
+; 5E6E b1             OR C
+; 5E6F 0e ff          LD C,#FF
+; 5E71 cd d2 5e       CALL #5ED2
+; 5E74 7a             LD A,D
+; 5E75 cb 3f          SRL A
+; 5E77 0e 3f          LD C,#3F
+; 5E79 cd d2 5e       CALL #5ED2
+; 5E7C 7b             LD A,E
+; 5E7D 0e 5f          LD C,#5F
+; 5E7F cd d2 5e       CALL #5ED2
+; 5E82 d9             EXX
+; 5E83 e5             PUSH HL
+; 5E84 3e 80          LD A,#80
+; 5E86 0e 1f          LD C,#1F
+; 5E88 cd d2 5e       CALL #5ED2
+; 5E8B 0e 7f          LD C,#7F
+; 5E8D dd 21 e5 3f    LD IX,#3FE5
+; 5E91 cd d6 5e       CALL #5ED6
+; 5E94 d9             EXX
+; 5E95 7a             LD A,D
+; 5E96 d9             EXX
+; 5E97 cb 3f          SRL A
+; 5E99 57             LD D,A
+; 5E9A 3e 01          LD A,#01
+; 5E9C 32 d8 5c       LD (#5CD8),A
+; 5E9F dd 21 40 27    LD IX,#2740
+; 5EA3 cd d6 5e       CALL #5ED6
+; 5EA6 3a cd 5c       LD A,(#5CCD)
+; 5EA9 e6 7f          AND #7F
+; 5EAB e1             POP HL
+; 5EAC 20 d5          JR NZ,#5E83
+; 5EAE 24             INC H
+; 5EAF d9             EXX
+; 5EB0 1c             INC E
+; 5EB1 7b             LD A,E
+; 5EB2 fe 11          CP #11
+; 5EB4 38 17          JR C,#5ECD
+; 5EB6 14             INC D
+; 5EB7 1e 01          LD E,#01
+; 5EB9 cb 42          BIT 0,D
+; 5EBB 20 10          JR NZ,#5ECD
+; 5EBD d9             EXX
+; 5EBE 3e 58          LD A,#58
+; 5EC0 0e 1f          LD C,#1F
+; 5EC2 cd d2 5e       CALL #5ED2
+; 5EC5 dd 21 59 2f    LD IX,#2F59
+; 5EC9 cd d6 5e       CALL #5ED6
+; 5ECC d9             EXX
+; 5ECD 05             DEC B
+; 5ECE c2 61 5e       JP NZ,#5E61
+; 5ED1 c9             RET
+; 5ED2 dd 21 53 2a    LD IX,#2A53
+; 5ED6 dd e5          PUSH IX
+; 5ED8 c3 2f 3d       JP #3D2F

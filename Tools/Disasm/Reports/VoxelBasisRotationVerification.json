@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "total_cases": 1792,
+  "coefficients": 256,
+  "all_angles_per_axis": true,
+  "mixed_random_profiles": 1024,
+  "exact_product_arguments_and_seed": true,
+  "child_product_calls": 45816,
+  "exact_nine_final_and_nine_scratch_words": true,
+  "overflows": {
+    "positive": 807,
+    "negative": 820
+  },
+  "other_final_registers_independently_proved": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

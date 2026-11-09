@@ -16,7 +16,11 @@
                 ent
                 assert $ == #0546
                 ; Unknown, исходные байты после физических записей координат
-                incbin "../Resources/22_CONTROL0/Unclassified000_Suffix.bin"
+                ; Unknown, 186 исходных байтов между точками буфера и растром шрифта
+                incbin "../Resources/22_CONTROL0/Unclassified0546_0600.bin"
+                assert $ == #0600
+                ; Документация [шрифт и чтения за его границей](../../Docs/ControlsTextFont.md)
+                incbin "../Controls/Resources/TextFont4x6.bin"
                 assert $ == #0870
                 disp #C870
                 include "../Controls/CopyViewportToScreen.asm"                  ; (0) жёсткий порядок, последовательное исполнение
@@ -66,7 +70,11 @@
                 ent
                 assert $ == #0EF9
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/22_CONTROL0/Unclassified003.bin"
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/MapDistanceAndRenderState.md)
+                assert $ == #0EF9
+                disp #CEF9
+                include "../Controls/Data/BodyDrawMode.asm"
+                ent
                 assert $ == #0EFA
                 disp #CEFA
                 include "../Controls/ProjectAndDrawBody.asm"
@@ -138,10 +146,13 @@
                 ent
                 assert $ == #1227
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/22_CONTROL0/Unclassified005.bin"
+                assert $ == #1227
+                disp #D227
+                include "../Controls/DrawBodyPrimaryMask.asm" ; (0) жёсткий порядок, последовательное исполнение
+                ent
                 assert $ == #1232
                 disp #D232
-                include "../Controls/CallLargeCircle.asm"
+                include "../Controls/CallLargeCircle.asm" ; (1) жёсткий порядок, последовательное исполнение
                 ent
                 assert $ == #1236
                 disp #D236
@@ -271,5 +282,7 @@
                 ent
                 assert $ == #1ADE
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/22_CONTROL0/Unclassified012.bin"
+                ; Физический суффикс выделенных секторов, неиспользуемость не установлена
+                ; Документация [границы и сохранение суффиксов](../../Docs/AllocatedSectorSuffixes.md)
+                incbin "../Resources/22_CONTROL0/SectorTail.bin"
                 assert $ == #1B00

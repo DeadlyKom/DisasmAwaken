@@ -1,0 +1,7 @@
+"""Адреса строк только из доказанных непосредственных вызовов банковой очереди."""
+CALL_FIELDS={('Action', 24660): {62117: 'ShipDestroyed'}, ('Action', 24750): {62024: 'TargetLost'}, ('Action', 28827): {62149: 'TargetNotLocked'}, ('Action', 28836): {62080: 'NoMissiles'}, ('Action', 28870): {62185: 'MissileDeparted', 62061: 'MissilePrefix', 62071: 'MissileSuffix'}, ('Action', 29046): {62335: 'HyperWarmup'}, ('Action', 29230): {62253: 'AntimissileOn'}, ('Action', 29374): {62292: 'TargetsForgot'}, ('Action', 29410): {61936: 'ModeDisabled', 61921: 'ModeEnabled', 61972: 'Targeting'}, ('Action', 29463): {62317: 'ObjectCollected'}, ('Action', 29753): {61921: 'ModeEnabled', 61936: 'ModeDisabled', 62169: 'TractorBeam'}, ('Action', 30028): {61936: 'ModeDisabled', 61921: 'ModeEnabled', 61952: 'FreeFlight'}, ('Action', 30100): {62492: 'NoCargo', 62451: 'CargoEjected'}, ('Action', 30159): {62466: 'MineEjected', 62482: 'NoMines'}, ('Action', 30250): {61921: 'ModeEnabled', 61992: 'ForwardView', 62009: 'RearView'}, ('Action', 43053): {61867: 'SystemsReady'}, ('Action', 58218): {62040: 'TargetsLocked'}, ('Action', 58784): {62393: 'DockApproach'}, ('Action', 62847): {62024: 'TargetLost', 62099: 'TargetDestroyed'}}
+
+def name_operands(region,function_address,operation):
+    for address,name in CALL_FIELDS.get((region,function_address),{}).items():
+        operation=operation.replace("LD DE, #"+format(address,"04X"),"LD DE, @ControlsFlightText."+name)
+    return operation

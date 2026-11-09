@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "physical_suffix_ranges": 16,
+  "physical_suffix_bytes": 2558,
+  "basic_after_length_bytes_not_reclassified": true,
+  "logical_unknown_prefixes_preserved": 2,
+  "all_original_bytes_offsets_and_instructions_preserved": true,
+  "live_consumers_and_writers_not_proved": true,
+  "unused_not_assumed": true,
+  "assembly_executed": false,
+  "native_execution": false
+}

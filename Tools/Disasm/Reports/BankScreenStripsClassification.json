@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "record_count": 166,
+  "graphic_bytes_classified": 86874,
+  "header_bytes": 498,
+  "bitmap_bytes": 86376,
+  "unknown_gap_bytes_preserved": 11430,
+  "original_bytes_and_physical_layout_preserved": true,
+  "labels_are_file_offsets": true,
+  "hardware_bank_numbers_assigned": false,
+  "runtime_loader_proved": false,
+  "paired_records_temporal_relation_proved": false,
+  "python_needed_for_ordinary_build": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

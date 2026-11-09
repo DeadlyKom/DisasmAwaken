@@ -12,8 +12,9 @@ SAVE0..SAVE4 отличаются от исходного блока STATIONF т
 для игры не установлена. В том числе его границы списков равны нулю,
 а не исходному #80. Нормализация либо исправление не выполняются.
 
-В каждом файле 405 байтов оформлен существующими структурами, 107 байтов
-сохранены в явно неизвестных диапазонах. Поля Unknown внутри известных
+В каждом файле 473 байта оформлены существующими структурами, 29 байтов
+составляют физический хвост переноса, 10 байтов остаются в неизвестных
+диапазонах. Поля Unknown внутри известных
 структур сохраняют неизвестный смысл. Размер и порядок всех полей
 следуют из уже разобранных потребителей станции, новых адресов нет.
 
@@ -25,9 +26,16 @@ SAVE0..SAVE4 отличаются от исходного блока STATIONF т
 | #00E | 9 | [PlayerSaveHeader.asm](../Source/Station/Data/PlayerSaveHeader.asm) |
 | #017 | 60 | [OwnedCargoRows.asm](../Source/Station/Data/OwnedCargoRows.asm) |
 | #053 | 30 | [EquipmentQuantityCodes.asm](../Source/Station/Data/EquipmentQuantityCodes.asm) |
-| #071 | 4 | [Unknown98AC.bin](../Source/Resources/04_STATIONF/Unknown98AC.bin) |
+| #071 | 4 | [PrimaryQuantityTail.asm](../Source/Station/Data/PrimaryQuantityTail.asm) |
 | #075 | 16 | [MissionOffer.asm](../Source/Station/Data/MissionOffer.asm) |
-| #085 | 74 | [BeforeStoredMapPoints.bin](../Source/Resources/04_STATIONF/BeforeStoredMapPoints.bin) |
+| #085 | 6 | [Unclassified38C0_38C6.bin](../Source/Resources/04_STATIONF/Unclassified38C0_38C6.bin) |
+| #08B | 48 | [OrderCompatibleSlots.asm](../Source/Station/Data/OrderCompatibleSlots.asm) |
+| #0BB | 14 | [SecondaryQuantities.asm](../Source/Station/Data/SecondaryQuantities.asm) |
+| #0C9 | 2 | [Unclassified3904_3906.bin](../Source/Resources/04_STATIONF/Unclassified3904_3906.bin) |
+| #0CB | 1 | [TransitionCounter.asm](../Source/Station/Data/TransitionCounter.asm) |
+| #0CC | 1 | [Unclassified3907_3908.bin](../Source/Resources/04_STATIONF/Unclassified3907_3908.bin) |
+| #0CD | 1 | [MeasuredDistance.asm](../Source/Station/Data/MeasuredDistance.asm) |
+| #0CE | 1 | [Unclassified3909_390A.bin](../Source/Resources/04_STATIONF/Unclassified3909_390A.bin) |
 | #0CF | 102 | [StoredMapPoints.asm](../Source/Station/Data/StoredMapPoints.asm) |
 | #135 | 11 | [StoredMapOrder.asm](../Source/Station/Data/StoredMapOrder.asm) |
 | #140 | 40 | [MapAuxiliaryPoints.asm](../Source/Station/Data/MapAuxiliaryPoints.asm) |
@@ -36,7 +44,16 @@ SAVE0..SAVE4 отличаются от исходного блока STATIONF т
 | #17B | 12 | [PointerKeys.asm](../Source/Station/Data/PointerKeys.asm) |
 | #187 | 6 | [InterfaceColors.asm](../Source/Station/Data/InterfaceColors.asm) |
 | #18D | 86 | [ControlOptions.asm](../Source/Station/Data/ControlOptions.asm) |
-| #1E3 | 29 | [Unclassified044TailAfterKeysAfterSettings.bin](../Source/Resources/04_STATIONF/Unclassified044TailAfterKeysAfterSettings.bin) |
+| #1E3 | 29 | [InitialTransferTrailer.bin](../Source/Station/Resources/InitialTransferTrailer.bin) |
+
+Хвост +1E3..+1FF входит в двухсекторные операции SAVE. При переходе в
+ACTION он попадает в 9DA0..9DBC. При возврате к станции загрузчик
+восстанавливает только первые 481 байт состояния, поэтому свежий STATIONF
+сохраняет свой хвост. В модели в него предварительно записали
+отличимый набор из 29 байтов и сверили его после вылета, 64 полётных
+кадров и на границе обратного переноса. В образе все семь хвостов
+сохранены в исходном виде. Назначение отдельных байтов не установлено.
+[Проверка](../Tools/Disasm/Reports/StationSaveTransferTrailerVerification.json).
 
 Физические подключения:
 

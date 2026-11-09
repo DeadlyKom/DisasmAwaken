@@ -1,6 +1,6 @@
 """Три проекции слова A78F на коэффициенты третьей строки матрицы."""
 from collections import Counter
-import json
+import argparse,json
 
 from CheckActionObjectOffsetVector import multiply
 from CheckActionParameterActivation import flat_action
@@ -10,9 +10,12 @@ from ReferenceControlsPointRespawn import refresh
 
 
 def main():
+    parser=argparse.ArgumentParser();parser.add_argument('--rear',action='store_true');args=parser.parse_args()
     baseline = flat_action()
     memory = baseline.copy()
     memory[0xBFFE:0xC000] = [255, 63]
+    if args.rear:
+        for address in (0x6E75,0x6E88,0x6E9B):memory[address:address+2]=[0xED,0x44]
     sim = Simulator(memory)
     counts = Counter()
 
@@ -26,7 +29,7 @@ def main():
         cycles = 28
         products = []
         for coefficient in coefficients:
-            value, fetches = multiply(wanted, coefficient, word)
+            value, fetches = multiply(wanted, (-coefficient)&255 if args.rear else coefficient, word)
             products.append(value)
             cycles += fetches
         wanted[8:10] = [0x6E, 0xA8]
@@ -43,9 +46,11 @@ def main():
     for word in range(65536):
         check(word, (word & 255, word >> 8, (word * 73 + 17) & 255))
     report = dict(passed=True, total_cases=counts['cases'], every_input_word=True,
-                  start=0x6E72, preceding_key_dispatch_executed=False, assembly_executed=False)
+                  start=0x6E72, preceding_key_dispatch_executed=False, rear_NEG_pairs_executed=args.rear,
+                  original_NOP_pairs_executed=not args.rear, exact_registers_flags_R_and_SP=True,
+                  all_memory_side_effects_checked=False,assembly_executed=False,native_execution=False)
     payload = json.dumps(report, indent=2) + '\n'
-    (ROOT / 'Tools/Disasm/Reports/ActionMotionVectorTailVerification.json').write_text(payload, encoding='utf-8')
+    (ROOT / ('Tools/Disasm/Reports/'+('ActionMotionRearTail' if args.rear else 'ActionMotionVectorTail')+'Verification.json')).write_text(payload, encoding='utf-8')
     print(payload)
 
 

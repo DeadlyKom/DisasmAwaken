@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "typed_bytes": 11,
+  "physical_records": 3,
+  "physical_symbols": 10,
+  "files": 3,
+  "physical_state_bytes": 11,
+  "physical_state_fragments": 3,
+  "interleaved_polygon_mask_bytes_not_reclassified": true,
+  "face_gate_is_full_code_not_bit_mask": true,
+  "unknown_bytes_after_gate_preserved": 5,
+  "original_bytes_addresses_and_instructions_preserved": true,
+  "gaps_preserved": true,
+  "invalid_pair_gameplay_proved": false,
+  "cf08_reclassified": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

@@ -8,6 +8,7 @@
 CurrentPage     equ #6306                                                       ; теневая копия полного байта #7FFD
 PointerXY       equ #6307                                                       ; байты пиксельных координат указателя, сначала X, затем Y
 ItemIndex       equ #8500                                                       ; таблица индексов элементов интерфейса
+                assert ItemIndex == @StationInitialItemIndex.Pair00.Low
 DirtyCells      equ #8600                                                       ; карта 768 знакомест для восстановления фона
 Items           equ #F0FD                                                       ; исходные записи FInterfaceItem
 DrawList        equ #F3DE                                                       ; список обработчиков с ограничителем #0101
@@ -42,6 +43,7 @@ CargoBase       equ #7026                                                       
                 module MapState
 LeftMask        equ #DFB8                                                       ; временно сохранённая маска левого края в PrepareRightRasterPoint
 LastDistance    equ #9908                                                       ; байт результата MeasureCoordinateDistance, включая FF переполнения
+                assert LastDistance == @StationMeasuredDistance.State.Value
 RasterStack     equ #DFB4                                                       ; указатель на существующий стековый FArcReturnFrame внешнего вызова
 SqrtTarget      equ #DFB6                                                       ; временная разность квадратов для двоичного поиска корня
 RasterDown      equ #DFB9                                                       ; ноль выбирает движение вверх, ненулевой байт движение вниз
@@ -186,6 +188,7 @@ HeadOperand     equ #9CA6                                                       
 
                 module InterfaceState
 EventCode       equ #9839                                                       ; код DispatchInterfaceEvent после DEC A, Rotate в ActivateItem возвращает бит 7 в Carry
+                assert EventCode == @StationEventCodes.Value.InterfaceCode
 HoverItem       equ #9A8D                                                       ; операнд LD IX основного цикла, физическая запись наведённого элемента
 HoverCallback   equ #9A90                                                       ; слово CALL основного цикла, EventHandler наведённого элемента
 EventEnabled    equ #9A82                                                       ; операнд MainLoop, ноль запрашивает перестроение и запрещает события
@@ -589,6 +592,7 @@ HoverRows       equ #7063                                                       
 
                 module ScriptCallState
 EventCode       equ #983A                                                       ; код события, читаемый торговым ReadEventCode
+                assert EventCode == @StationEventCodes.Value.ScriptCode
                 endmodule
 
                 module EquipmentInfoState
@@ -631,9 +635,37 @@ ShipOperand     equ #7306                                                       
 
                 module EquipmentListData
 Prices          equ #9592                                                       ; слова цен, шаг два байта по полному индексу
+                assert Prices == @EquipmentPrices.Row00.Price
 ShipSets        equ #9400                                                       ; четыре байта типов корабля на каждую строку
+                assert ShipSets == @EquipmentShipTypeSets.Row00.Type0
 Weights         equ #95F0                                                       ; пары минимальной модели станции и байтового веса
+                assert Weights == @EquipmentWeights.Row00.Threshold
 Quantities      equ #988E                                                       ; количества с инверсным кодированием и отдельным маркером 80
+                endmodule
+
+                module SecondaryEquipmentState
+TopRow          equ #737D                                                       ; слово начального индекса в LD HL прокрутки
+Row             equ #73D8                                                       ; младший байт LD DE и номер подсвеченной строки
+RowCount        equ #73D9                                                       ; старший байт LD DE и число попыток печати
+                assert TopRow == @Station.ScrollSecondaryRows.ReadTop + 1
+                assert Row == @Station.TryDrawSecondaryList.Entry + 1
+                assert RowCount == Row + 1
+                endmodule
+
+                module SecondaryEquipmentData
+Quantities      equ #98F6                                                       ; байтовые количества второго набора
+                assert Quantities == @StationSecondaryQuantities.Item00.Code
+Names           equ #F066                                                       ; исходный CR-поток топлива и подписей доставки
+                endmodule
+
+                module CenteredItemDrawState
+RegisterTarget  equ #C2F9                                                       ; операнд вызова регистрации, временно указывает на пустой RET
+                assert RegisterTarget == @Station.DrawCenteredItem.RegisterCall + 1
+                endmodule
+
+                module IntroTailState
+PaperSample     equ #8157                                                       ; адрес записи PAPER, после переноса попадает в исходный bitmap
+KeyByte         equ #5C08                                                       ; исходный байт ожидания после очистки
                 endmodule
 
                 module EquipmentListText
@@ -692,7 +724,9 @@ MinY5           equ #E74E                                                       
 
                 module D3DPreviewState
 ThirdCoordinate equ #CDC4                                                       ; третье слово позиции записи, единицы ещё не установлены
+                assert ThirdCoordinate == @PreviewObjectHeader.Value.Third
 ModelOffset     equ #CDC6                                                       ; байтовое смещение модели в исходной записи просмотра
+                assert ModelOffset == @PreviewObjectHeader.Value.ModelOffset
 RowOperand      equ #E146                                                       ; изменяемый операнд LD A с компонентом строки
 BaseOperand     equ #E148                                                       ; изменяемый операнд ADD A со смещением списка
                 endmodule
@@ -717,6 +751,19 @@ Triangle2       equ #F548                                                       
 Triangle3       equ #F2BB                                                       ; существующий байт заголовка грани в банке D3D 4
 Triangle4       equ #F1BE                                                       ; существующий байт заголовка грани в банке D3D 4
 Triangle5       equ #F1DB                                                       ; существующий байт заголовка грани в банке D3D 4
+                assert Quad0 == @PreviewPrimitivesOrsan.Primitive1B
+                assert Quad1 == @PreviewPrimitivesKridon.Primitive0A
+                assert Quad2 == @PreviewPrimitivesAlgol.Primitive16
+                assert Quad3 == @PreviewPrimitivesProtos.Primitive10
+                assert Quad4 == @PreviewPrimitivesMemfis.Primitive0D
+                assert Quad5 == @PreviewPrimitivesBaros.Primitive13
+                assert Quad6 == @PreviewPrimitivesSofist.Primitive0D
+                assert Triangle0 == @PreviewPrimitivesFirs.Primitive09
+                assert Triangle1 == @PreviewPrimitivesFervest.Primitive14
+                assert Triangle2 == @PreviewPrimitivesFervest.Primitive15
+                assert Triangle3 == @PreviewPrimitivesFirs.Primitive0A
+                assert Triangle4 == @PreviewPrimitivesDominion.Primitive0A
+                assert Triangle5 == @PreviewPrimitivesDominion.Primitive10
                 endmodule
 
                 module ModelListState
@@ -1174,7 +1221,9 @@ SavedScrollSP   equ #EFC1                                                       
                 module ControlsBcdCounterState
 RotateGate      equ #F10E                                                       ; сохраняемый вращаемый байт в операнде LD A
 LowPairs        equ #9BBF                                                       ; две младшие BCD-пары в порядке L,H
+                assert LowPairs == @ActionFlightCounter.Value.Low
 HighPairs       equ #9BBD                                                       ; две старшие BCD-пары в порядке E,D
+                assert HighPairs == @ActionFlightCounter.Value.MidHigh
                 endmodule
 
 
@@ -1226,8 +1275,11 @@ NegativeYOffset equ #CE78                                                       
                 ; Существующее состояние, память не выделяется
                 module ControlsPointMotionState
 YControl        equ #9B95                                                       ; управление проходом Y
+                assert YControl == @ActionFlightControls.Value.YControl
 XControl        equ #9B96                                                       ; управление проходом X
+                assert XControl == @ActionFlightControls.Value.XControl
 TurnControl     equ #9B97                                                       ; отрицание задаёт индекс синусоиды
+                assert TurnControl == @ActionFlightControls.Value.TurnControl
 YWrapOffset     equ #CB2B                                                       ; исходное нулевое смещение нового Y
 XWrapOffset     equ #CBC4                                                       ; исходное нулевое смещение нового X
 YCosCoeff       equ #CC7E                                                       ; операнд косинуса для нового Y
@@ -1271,6 +1323,7 @@ SavedSP         equ #D186                                                       
                 ; Существующее состояние, память не выделяется
                 module ControlsSmallBodiesState
 Mode            equ #CEF9                                                       ; исходный режим, принимаются только 0..3
+                assert Mode == @ControlsBodyDrawMode.Value.Mode
 Pattern         equ #D240                                                       ; два байта рисунка и XOR-чередования, операнд LD IX, nn
 LeftMask        equ #DA83                                                       ; изменяемый операнд старшего байта выровненной маски
                 endmodule
@@ -1301,31 +1354,35 @@ Second          equ #9B17                                                       
                 ; Существующее состояние, память не выделяется
                 module ControlsParameterTablesState
 SeedFirst       equ #9BC1                                                       ; первое слово зерна из существующего контекста
+                assert SeedFirst == @ActionParameterSeeds.Value.SeedFirst
 SeedSecond      equ #9BC3                                                       ; второе слово зерна из существующего контекста
+                assert SeedSecond == @ActionParameterSeeds.Value.SeedSecond
 StepControl     equ #9BC5                                                       ; управляющий байт числа шагов генератора
+                assert StepControl == @ActionParameterSeeds.Value.StepControl
 SeedIndex       equ #688B                                                       ; изменяемый операнд LD A, n по 688A общего ядра ACTION
 Parameters      equ #9BA4                                                       ; пятнадцать последовательных вычисляемых байтов
+                assert Parameters == @ActionParameterSet.Value.Link1ABaseLimit
 CoordRows       equ #7B97                                                       ; первая из девяти записей с физическим шагом шесть
                 endmodule
 
 
                 ; Существующее состояние, память не выделяется
                 module ActionApplyParametersState
-CImmediate00    equ #F79C                                                       ; поле 00, операнд LD C, n в верхнем банке 0
-CImmediate02    equ #F798                                                       ; поле 02, соседний операнд LD C, n в верхнем банке 0
-AddImmediate03  equ #A968                                                       ; поле 03, операнд ADD A, n в фиксированном банке 2
+Link1ABaseLimit equ #F79C                                                       ; поле 00, базовый порог связи 1A, используется при сброшенном бите 3
+OtherLinkLimit  equ #F798                                                       ; поле 02, порог CheckRecordEffectThreshold при LinkedIndex, отличном от 1A
+RegenPhaseStep  equ #A968                                                       ; поле 03, шаг фазы восстановления первой шкалы, адрес изменяемого операнда A968
 PairedLineStep  equ #63B9                                                       ; поле 04, шаг фазового допуска RequestPairedAimLines
-AddImmediate05  equ #A8B5                                                       ; поле 05, операнд ADD A, n в фиксированном банке 2
-Compare06A      equ #7B6B                                                       ; поле 06, операнд CP n в фиксированном банке 5
-AddImmediate06B equ #6874                                                       ; поле 06, вторая цель, операнд ADD A, n в фиксированном банке 5
+ThirdGaugeStep  equ #A8B5                                                       ; поле 05, шаг фазы повышения третьей шкалы, адрес изменяемого операнда A8B5
+SpawnLowLimit   equ #7B6B                                                       ; поле 06, начальный порог младшего байта потока 0 в ScheduleSpawn
+SpawnBiasBase   equ #6874                                                       ; поле 06, база последующего пересчёта SpawnLowLimit в UpdateBodyMotion
 Class0RLimit    equ #6615                                                       ; поле 07, изменяемый операнд CP аппаратного R в ConfigureClass0Link
 RandomLowLimit  equ #E6E7                                                       ; поле 08, изменяемый операнд CP младшего байта Stream10 в FindFilteredRecordOr26
 LinkedRLimit    equ #E823                                                       ; поле 09, порог R обратной связи в CheckAndToggleLinkedOverlay
 Class3RLimit    equ #65E5                                                       ; поле 0A, изменяемый операнд CP аппаратного R в ConfigureClass3Link
-Compare0B       equ #79A4                                                       ; поле 0B, операнд CP n в фиксированном банке 5
-OrImmediate0C   equ #7E07                                                       ; поле 0C, операнд OR n в фиксированном банке 5
-HImmediate0D    equ #7E09                                                       ; поле 0D, операнд LD H, n в фиксированном банке 5
-OrImmediate0E   equ #7DE4                                                       ; поле 0E, операнд OR n в фиксированном банке 5
+SavedLowLimit   equ #79A4                                                       ; поле 0B, нижний предел младшего байта сохранённого слова с верхним байтом 23
+SpawnValueMask  equ #7E07                                                       ; поле 0C, маска OR кандидата Unknown13 в обоих создателях, адрес изменяемого операнда 7E07
+SpawnValueCap   equ #7E09                                                       ; поле 0D, исключённый верхний предел Unknown13, ноль даёт FF, адрес изменяемого операнда 7E09
+SpawnField11    equ #7DE4                                                       ; поле 0E, значение Unknown11 после непересекающихся случайных масок, адрес изменяемого операнда 7DE4
                 endmodule
 
 
@@ -1362,8 +1419,10 @@ SixthRequest    equ #669F                                                       
 FourthValue     equ #6682                                                       ; операнд LD A,n с готовым значением четвёртой шкалы
 FifthValue      equ #6693                                                       ; операнд LD A,n с готовым значением пятой шкалы
 FirstValue      equ #A794                                                       ; существующий байтовый источник первой шкалы, игровой смысл ещё не установлен
+                assert FirstValue == @ActionPanelFirstLevel.Value.Value
 ThirdValue      equ #A8BC                                                       ; операнд LD A,n по A8BB внутри UpdateFrame, источник третьей шкалы
 SignedWord      equ #A78F                                                       ; существующее знаковое слово для модуля шестой шкалы, игровой смысл ещё не установлен
+                assert SignedWord == @ActionPanelSignedWord.Value.Value
                 endmodule
 
 
@@ -1508,6 +1567,7 @@ Component2      equ #E5ED                                                       
                 module ActionCloseRecordState
 InhibitCode     equ #E507                                                       ; операнд LD A,n, 00 допускает корневой вход, ненулевой байт запрещает
 UnknownA794     equ #A794                                                       ; состояние, обнуляемое общим хвостом для класса 12, игровой смысл не доказан
+                assert UnknownA794 == @ActionPanelFirstLevel.Value.Value
                 endmodule
 
 
@@ -1521,8 +1581,11 @@ Request         equ #AA8E                                                       
                 ; Существующее состояние, память не выделяется
                 module ActionRenderQueueInsertState
 Head            equ #9BA1                                                       ; младший байт головы страницы 8F, 01 конец цепочки
+                assert Head == @ActionRenderQueueCursor.Value.Head
 FreeOffset      equ #9BA2                                                       ; свободное смещение с шагом 14, FC буфер исчерпан
+                assert FreeOffset == @ActionRenderQueueCursor.Value.FreeOffset
 HeaderWord0     equ #9B8D                                                       ; первое исходное слово снимка, полный игровой смысл неизвестен
+                assert HeaderWord0 == @ActionRenderHeader.Value.ModeBits
 PhasePair       equ #9B12                                                       ; слово Phase0/Phase1, low и high физической FRenderPhases
 Phase2          equ #9B14                                                       ; третий байт физической FRenderPhases
                 endmodule
@@ -1606,6 +1669,7 @@ SavedSP         equ #D79D                                                       
                 ; Существующие операнды и состояние, память не выделяется
                 module ActionObjectVerticesState
 ModelByteOffset equ #9B8E                                                       ; байтовое смещение указателя OBJECT3D в исходной таблице 9E00
+                assert ModelByteOffset == @ActionRenderHeader.Value.ModelByteOffset
                 endmodule
 
 
@@ -1621,27 +1685,34 @@ SavedSP         equ #DFE4                                                       
                 ; Существующее состояние, память не выделяется
                 module ActionClipIntersectionsState
 OutputSize      equ #9BA3                                                       ; байтовое смещение выхода в странице 90
+                assert OutputSize == @ActionClipOutputState.Value.OutputSize
                 endmodule
 
 
                 ; Существующее состояние, память не выделяется
                 module ActionClipPointWritersState
 CornerBlock     equ #CF03                                                       ; полный байт запрета вывода углов
+                assert CornerBlock == @ActionClipDispatchPrefix.Value.CornerBlock
                 endmodule
 
 
                 ; Существующее состояние, память не выделяется
                 module ActionClipCasesState
 SeenFlags       equ #CF07                                                       ; отметки TL, TR, BL, BR в битах 3..0, старшая тетрада сохраняется
+                assert SeenFlags == @ActionClipDispatchPrefix.Value.SeenFlags
                 endmodule
 
 
                 ; Существующие операнды и состояние, память не выделяется
                 module ActionLineRasterState
 FirstPoint      equ #8D2A                                                       ; упакованные пиксельные координаты, Second в младшем байте и First в старшем
+                assert FirstPoint == @ActionRasterPoints.FirstPoint
 SecondPoint     equ #8D2C                                                       ; второй упакованный конец отрезка
+                assert SecondPoint == @ActionRasterPoints.SecondPoint
 PixelOpcode     equ #8D4E                                                       ; числовая команда A1 для AND, B1 для OR либо A9 для XOR
+                assert PixelOpcode == @ActionRasterMode.Value.PixelOpcode
 BranchOpcode    equ #8D4F                                                       ; числовая команда 30 для JR NC режима AND либо 38 для JR C режимов OR/XOR
+                assert BranchOpcode == @ActionRasterMode.Value.BranchOpcode
 MaskOffset      equ #DE0F                                                       ; изменяемый операнд ADD A,nn, 18 для AND либо 10 для OR/XOR
 SavedSP         equ #DEED                                                       ; операнд восстановления CPU SP перед RET
                 endmodule
@@ -1651,6 +1722,7 @@ SavedSP         equ #DEED                                                       
                 module ActionPolygonPreparationState
 Vertices        equ #9000                                                       ; исходные пары Second, First, длина задаётся OutputSize
 Patterns        equ #D100                                                       ; пять исходных пар шаблон и XOR соседней строки
+                assert Patterns == @ActionPolygonPatterns.Mode0.Pattern
 Mode            equ #D560                                                       ; операнд LD A,nn, номер шаблона от 0 до 4 в проверенном профиле
 LastIndex       equ #D3B7                                                       ; операнд CP, последний нечётный индекс списка
 MaximumRow      equ #D4C2                                                       ; операнд LD L,nn, нижняя исключённая строка
@@ -1683,17 +1755,24 @@ Subtract        equ #D21F                                                       
                 ; Существующие операнды и состояние, память не выделяется
                 module ActionPacketRendererState
 FaceGate        equ #8D5A                                                       ; полный байт состояния ориентации, 0 отрицательный результат, 1 неотрицательный
+                assert FaceGate == @ActionFaceGate.Value.Code
                 endmodule
 
 
                 ; Существующие операнды и состояние, память не выделяется
                 module ActionClippedPacketRendererState
 CurrentSecond   equ #8D3A                                                       ; полное слово Second первой точки текущего сегмента
+                assert CurrentSecond == @ActionClipLineHead.Value.CurrentSecond
 CurrentFirst    equ #8D3C                                                       ; полное слово First первой точки текущего сегмента
+                assert CurrentFirst == @ActionClipLineHead.Value.CurrentFirst
 NextSecond      equ #8D3E                                                       ; полное слово Second следующей точки ломаной
+                assert NextSecond == @ActionClipLineHead.Value.NextSecond
 NextFirst       equ #8D4A                                                       ; полное слово First следующей точки ломаной
+                assert NextFirst == @ActionClipLineTail.Value.NextFirst
 CurrentCode     equ #8D4C                                                       ; ClipCode первой точки текущего сегмента
+                assert CurrentCode == @ActionClipLineTail.Value.CurrentCode
 NextCode        equ #8D4D                                                       ; ClipCode следующей точки ломаной
+                assert NextCode == @ActionClipLineTail.Value.NextCode
                 endmodule
 
 
@@ -1798,13 +1877,16 @@ ClassTable      equ #64F0                                                       
                 ; Существующие операнды и состояние, память не выделяется
                 module ActionPreferredChanceState
 UnknownGate     equ #9BCD                                                       ; исходный внешний байт порога, полный игровой смысл ещё не доказан
+                assert UnknownGate == @ActionIndexedGate.Value.Value
                 endmodule
 
 
                 ; Существующее состояние, память не выделяется
                 module ActionContextWordPairsState
 OtherFirst      equ #9BC6                                                       ; первое сравниваемое слово другого контекста, полный игровой смысл ещё не доказан
+                assert OtherFirst == @ActionOtherContext.Value.OtherFirst
 OtherSecond     equ #9BC8                                                       ; второе сравниваемое слово другого контекста
+                assert OtherSecond == @ActionOtherContext.Value.OtherSecond
                 endmodule
 
 
@@ -1857,7 +1939,9 @@ MotionOpcode    equ #6E72                                                       
 
                 ; Существующее состояние, память не выделяется
                 module ActionBankedCallbackState
-ContextBase     equ #A783                                                       ; исходное значение IY при косвенном вызове, полный формат цели ещё не установлен
+ContextBase     equ #A783                                                       ; позиция указателя перед первой записью обхода эффектов у известных целей
+                assert ContextBase == @ActionSpecialRecord.Value.Component1 + 1
+                assert ContextBase + FVisualEffect == @ActionVisualEffects.Effect0
                 endmodule
 
 
@@ -1909,6 +1993,7 @@ Published0      equ #9B87                                                       
 Published1      equ #9B88                                                       ; старший байт второго результата выбранной записи
 Published2      equ #9B89                                                       ; старший байт третьего результата выбранной записи
 SelectedIndex   equ #9BCA                                                       ; индекс для публикации при совпадении пар контекста
+                assert SelectedIndex == @ActionContextIndex.Value.SelectedIndex
                 endmodule
 
 
@@ -2029,6 +2114,7 @@ InitialParam    equ #612E                                                       
                 ; Существующие операнды и состояние, память не выделяется
                 module ActionArrivalState
 ArrivalCount    equ #9BCE                                                       ; существующее слово, увеличивается при ближней цели класса 0, 5, 6 или 7 и ненулевом Unknown11
+                assert ArrivalCount == @ActionArrivalCounter.Value.Value
                 endmodule
 
 
@@ -2041,7 +2127,44 @@ PhaseStep       equ #63B9                                                       
 
                 ; Существующие операнды и состояние, память не выделяется
                 module ActionClass20SpawnState
-DepthSignMode   equ #6E75                                                       ; нулевое значение выбирает +30000, ненулевое -30000, общий игровой смысл неизвестен
+DepthSignMode   equ #6E75                                                       ; 00 передний вид и +30000, ED задний вид и -30000, читается первый опкод пары
+                assert DepthSignMode == @Action.UpdateMotionFromControls.NegateFirst
+                endmodule
+
+                ; Вход существующей перенесённой копии, допустим после LDIR из InitializeIntro
+                ; Документация [переход к станции](../../Docs/IntroStationTransition.md)
+                module IntroStationRuntime
+Entry           equ #5D3B                                                       ; первые байты Intro.LoadStation после переноса из 65B7
+                endmodule
+
+                ; Существующий изменяемый операнд отображения, память не выделяется
+                module ActionOverlayModeState
+Mode            equ #AA9A                                                       ; режим, 1 без отображения, 2 короткие рамки, 3 полный проход
+                assert Mode == @Action.UpdateFrame.OverlayMode + 1
+                endmodule
+
+                ; Существующий операнд по 7318, новая память не выделяется
+                module ActionTractorModeState
+Mode            equ #7318                                                       ; ноль выбирает RequestPairedAimLines, ненулевой байт притягивание и сбор Target0
+                assert Mode == @Action.RequestAimOrCollectTarget.Entry + 1
+                endmodule
+
+                ; Существующий операнд восстановления обычного стека после чтения компонент через SP
+                module ActionTractorCollectState
+SavedSP         equ #73A4                                                       ; обычный SP после PUSH базы, подставляется в LD SP,nn по RestoreStack
+                assert SavedSP == @Action.RequestAimOrCollectTarget.RestoreStack + 1
+                endmodule
+
+                ; Существующие операнды фаз ускорения, новая память не выделяется
+                module ActionBoostState
+FastPhase       equ #750D                                                       ; байтовая фаза, переполнение допускает шаг SlowPhase
+                assert FastPhase == @Action.AdvanceBoost.StepFastPhase+1
+SlowPhase       equ #7515                                                       ; медленная фаза, очередное значение ограничивается маской 07
+                assert SlowPhase == @Action.AdvanceBoost.StepSlowPhase+1
+FirstRotation   equ #752C                                                       ; первое RRCA, старый бит 0 допускает второе вращение
+                assert FirstRotation == @Action.AdvanceBoost.RotateFirst+1
+SecondRotation  equ #7534                                                       ; второе RRCA, старый бит 0 допускает создание класса 20
+                assert SecondRotation == @Action.AdvanceBoost.RotateSecond+1
                 endmodule
 
                 endif

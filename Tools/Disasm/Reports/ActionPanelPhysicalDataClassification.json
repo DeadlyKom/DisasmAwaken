@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "typed_bytes": 8,
+  "physical_records": 4,
+  "physical_symbols": 11,
+  "files": 4,
+  "counter_bytes": 4,
+  "counter_initial_decimal": 1221010,
+  "panel_state_bytes": 4,
+  "counter_units_proved": false,
+  "full_game_meaning_proved": false,
+  "original_bytes_addresses_and_instructions_preserved": true,
+  "gaps_preserved": true,
+  "invalid_pair_gameplay_proved": false,
+  "cf08_reclassified": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

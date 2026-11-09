@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "resources": 6,
+  "bytes": 528,
+  "raw_bytes_preserved": true,
+  "runtime_read_proved": true,
+  "game_entry_proved": false,
+  "assembly_executed": false
+}

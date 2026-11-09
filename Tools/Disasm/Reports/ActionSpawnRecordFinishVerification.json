@@ -4,5 +4,6 @@
   "all_classes_and_even_model_indices": true,
   "whole_object_record_compared": true,
   "stops_before_class_dispatch": true,
+  "mutable_parameters_profile": "original_defaults_32_64_20",
   "assembly_executed": false
 }

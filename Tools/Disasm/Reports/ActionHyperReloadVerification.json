@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "total_cases": 512,
+  "phases": {
+    "before_TRDOS": 256,
+    "conditional_successful_return": 256
+  },
+  "actual_relocated_code_executed": true,
+  "saved_and_restored_bytes": 481,
+  "not_512": true,
+  "file_key": "ACTION  C",
+  "TRDOS_entry": 15635,
+  "TRDOS_C": 14,
+  "complete_RAM_and_write_multiplicity_compared": true,
+  "main_and_preserved_registers_I_IM_IFF_SP_checked": true,
+  "return_load_is_explicit_external_assumption": true,
+  "fresh_ACTION_6000_boundary_proved": true,
+  "full_R_T_checked": false,
+  "TRDOS_executed": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

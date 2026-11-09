@@ -1,0 +1,91 @@
+{
+  "passed": true,
+  "cases": [
+    {
+      "initial_linear_pattern": 0,
+      "saved_stack_word": 16382,
+      "pc": 24576,
+      "sp": 24574,
+      "stack_top_word": 32765,
+      "steps": 28135
+    },
+    {
+      "initial_linear_pattern": 0,
+      "saved_stack_word": 20478,
+      "pc": 24576,
+      "sp": 24574,
+      "stack_top_word": 32765,
+      "steps": 28135
+    },
+    {
+      "initial_linear_pattern": 0,
+      "saved_stack_word": 24480,
+      "pc": 24576,
+      "sp": 24574,
+      "stack_top_word": 32765,
+      "steps": 28135
+    },
+    {
+      "initial_linear_pattern": 85,
+      "saved_stack_word": 16382,
+      "pc": 24576,
+      "sp": 24574,
+      "stack_top_word": 32765,
+      "steps": 28135
+    },
+    {
+      "initial_linear_pattern": 85,
+      "saved_stack_word": 20478,
+      "pc": 24576,
+      "sp": 24574,
+      "stack_top_word": 32765,
+      "steps": 28135
+    },
+    {
+      "initial_linear_pattern": 85,
+      "saved_stack_word": 24480,
+      "pc": 24576,
+      "sp": 24574,
+      "stack_top_word": 32765,
+      "steps": 28135
+    },
+    {
+      "initial_linear_pattern": 165,
+      "saved_stack_word": 16382,
+      "pc": 24576,
+      "sp": 24574,
+      "stack_top_word": 32765,
+      "steps": 28135
+    },
+    {
+      "initial_linear_pattern": 165,
+      "saved_stack_word": 20478,
+      "pc": 24576,
+      "sp": 24574,
+      "stack_top_word": 32765,
+      "steps": 28135
+    },
+    {
+      "initial_linear_pattern": 165,
+      "saved_stack_word": 24480,
+      "pc": 24576,
+      "sp": 24574,
+      "stack_top_word": 32765,
+      "steps": 28135
+    }
+  ],
+  "hypothetical_fixed_copy_fixture": 20480,
+  "original_tail_and_real_clear_and_copy_executed": true,
+  "original_core_and_work_restored": true,
+  "linear_buffer_and_upper_screen_cleared_to_ff": true,
+  "restored_entry": "Source/Action/QueueNumberBank1.asm",
+  "restored_entry_not_executed": true,
+  "saved_stack_word_not_restored_to_sp": true,
+  "remaining_stack_top_word": 32765,
+  "starts_after_assumed_normal_temporary_call_return": true,
+  "legitimate_relocation_and_temporary_payload_proved": false,
+  "irq_executed": false,
+  "r_and_timing_proved": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

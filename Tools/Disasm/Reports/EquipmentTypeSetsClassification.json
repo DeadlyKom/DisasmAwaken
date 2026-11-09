@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "typed_bytes": 188,
+  "physical_records": 47,
+  "physical_symbols": 235,
+  "files": 2,
+  "ship_rows": 33,
+  "skimmer_rows": 14,
+  "type_codes_per_row": 4,
+  "original_bytes_addresses_and_instructions_preserved": true,
+  "gaps_preserved": true,
+  "invalid_pair_gameplay_proved": false,
+  "cf08_reclassified": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

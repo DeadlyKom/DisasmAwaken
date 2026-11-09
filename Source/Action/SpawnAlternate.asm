@@ -1,5 +1,6 @@
                 module Action
                 module SpawnAlternate
+                ; Изменяемые поля записи [общие параметры обоих создателей](../../Docs/ActionSpawnRecordFinish.md)
                 ; Документация [алгоритм и проверка](../../Docs/ActionSpawnSchedule.md)
                 ; -----------------------------------------
                 ; Создание записей по шаблону либо по альтернативной ветке планировщика
@@ -200,7 +201,7 @@ CheckStream:    CALL @Action.NextRandomWord1.Entry
                 XOR L
                 RET NZ                                                          ; выход, если байты слова потока 1 различаются
 
-                ; Проверка сохранённого слова на диапазон #23F2..#23FF.
+                ; Проверка старшего байта 23 и изменяемого нижнего предела SavedLowLimit.
 CheckSavedWord: LD DE, #0000
                 LD A, D
                 CP #23
@@ -208,7 +209,7 @@ CheckSavedWord: LD DE, #0000
 
                 LD A, E
                 CP #F2
-                RET C                                                           ; выход, если младший байт сохранённого слова меньше #F2
+                RET C                                                           ; выход, если младший байт сохранённого слова меньше текущего SavedLowLimit
 
                 LD A, #FF
                 ; Обновление счётчика и при отрицательном входе двух операндов модели и класса.
@@ -274,7 +275,7 @@ BuildRandom:    CALL @Action.FindReusableRecord.Entry
                 EX AF, AF'
                 LD A, #1A
                 EXX
-                LD HL, #EC00
+                LD HL, @Voxel.CreateSmallEffect.Entry
                 CALL @Action.DispatchBank3Callback.Entry
                 LD A, #01
                 LD (#6D39), A
@@ -307,7 +308,7 @@ StoreOffset:    ADD A, H
                 AND #2A
                 AND L
                 LD L, A
-                LD A, (#7DE4)
+                LD A, (@ActionApplyParametersState.SpawnField11)
                 OR L
                 LD (IX + @FActionRecord.Unknown11), A
                 CALL @Action.NextRandomWord2.Entry
@@ -320,10 +321,10 @@ StoreOffset:    ADD A, H
                 LD (IX + @FActionRecord.Unknown0D), L
                 LD (IX + @FActionRecord.Unknown0E), H
                 CALL @Action.NextRandomWord13.Entry
-                LD A, (#7E07)
+                LD A, (@ActionApplyParametersState.SpawnValueMask)
                 OR L
                 LD L, A
-                LD A, (#7E09)
+                LD A, (@ActionApplyParametersState.SpawnValueCap)
                 LD H, A
                 LD A, L
                 CP H

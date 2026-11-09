@@ -128,3 +128,5 @@ INCLUDE_BLOCKS=(('Includes/Const/Include.inc','module ActionClippedPacketRendere
     '\n                module ActionClippedPacketRendererConst\n'+
     'LowNibbleMask   equ #0F'.ljust(80)+'; младшая тетрада длины записи либо сторон отсечения, роль определяется блоком\n'+
     '                endmodule\n'),)
+
+COMMENTS[0xdbbd]=(['Физическое состояние [полные слова и код ориентации](../../Docs/ActionClippedLineWorkData.md)']+COMMENTS.get(0xdbbd,([],None))[0],COMMENTS.get(0xdbbd,([],None))[1])

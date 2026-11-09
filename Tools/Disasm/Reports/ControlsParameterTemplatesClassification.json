@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "typed_bytes": 136,
+  "physical_records": 9,
+  "physical_symbols": 145,
+  "files": 4,
+  "row_groups": 5,
+  "independent_value_groups": 4,
+  "preserved_intergroup_bytes": 31,
+  "fifth_value_group_inside_coefficients": true,
+  "original_bytes_addresses_and_instructions_preserved": true,
+  "gaps_preserved": true,
+  "invalid_pair_gameplay_proved": false,
+  "cf08_reclassified": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

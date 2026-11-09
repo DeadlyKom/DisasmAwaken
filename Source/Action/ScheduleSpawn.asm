@@ -25,7 +25,8 @@ Entry:          LD A, #80
                 RET NC                                                          ; выход, если прежний младший бит фазы равен нулю
 
                 NOP
-                LD A, #00
+                ; Загрузка исходного счётчика, ResetFlightContext может заменить опкод по этому адресу.
+OpcodeGate:     LD A, #00
                 DEC A
                 JP P, @Action.SpawnAlternate.SetCountdown                       ; переход, если уменьшенный счётчик неотрицателен
 
@@ -186,7 +187,7 @@ CreateEffect:   LD A, L
                 EX AF, AF'
                 LD A, #1A
                 EXX
-                LD HL, #EC00
+                LD HL, @Voxel.CreateSmallEffect.Entry
                 CALL @Action.DispatchBank3Callback.Entry
                 LD A, #01
                 LD (#6D39), A

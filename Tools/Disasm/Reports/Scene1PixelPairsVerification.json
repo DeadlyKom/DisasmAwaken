@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "logical_bytes": 18676,
+  "allocated_bytes": 18688,
+  "sector_tail_bytes": 12,
+  "interpreted_width": 368,
+  "interpreted_height": 203,
+  "byte_columns": 46,
+  "interpreted_planes": 2,
+  "pixel_bits_independently_checked": 149408,
+  "all_bytes_roundtrip": true,
+  "sha256": "5d89ca0706ba3ebe55ac062b4816fd9b08f40c7ce2b905190d1adec7a2655446",
+  "published_source_checked": true,
+  "geometry_inferred_from_coherent_raster_and_byte_periodicity": true,
+  "geometry_from_runtime_metadata": false,
+  "runtime_loader_proved": false,
+  "runtime_palette_proved": false,
+  "runtime_plane_combination_proved": false,
+  "mask_pixel_format_asserted": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

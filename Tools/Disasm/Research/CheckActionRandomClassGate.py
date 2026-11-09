@@ -1,4 +1,5 @@
-"""F69E, настоящий поток 0 и все цели диспетчера классов до внешнего возврата."""
+"""F69E и вход F68E, настоящий поток 0 и все цели классов до возврата."""
+import argparse
 from collections import Counter
 import json
 from CheckIntro import ROOT
@@ -20,7 +21,12 @@ class RandomClassMachine(RefreshMachine):
 
 
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--via-entry', action='store_true')
+    via_entry = parser.parse_args().via_entry
+    entry = 0xF68E if via_entry else 0xF69E
     flat=flat_action();banks=[bytearray([160+i]*16384) for i in range(8)]
+    assert bytes(flat[0xF68E:0xF691]) == bytes.fromhex('C3 9E F6')
     banks[5],banks[2],banks[0]=bytearray(flat[0x4000:0x8000]),bytearray(flat[0x8000:0xC000]),bytearray(flat[0xC000:])
     memory=RecordedBanks(banks=banks,out7ffd=16);baseline=[bytearray(b) for b in banks]
     simulator=Simulator(memory);paths=Counter();maximum_stack=0
@@ -36,12 +42,15 @@ def main():
         memory[0xEBDE],memory[0xEBDF],memory[0xEBE0]=serial&255,serial>>8,(serial*73)&255
         memory[0x9BCD]=serial&255
         stack=0xBFFE;memory[stack],memory[stack+1]=255,63
-        initial=get_registers({'PC':0xF69E,'SP':stack,'AF':serial,'HL':0x1357,'DE':0x2468,'BC':0x369C,
+        initial=get_registers({'PC':entry,'SP':stack,'AF':serial,'HL':0x1357,'DE':0x2468,'BC':0x369C,
             '^AF':0xDEF0,'^HL':0x1234,'^DE':0x5678,'^BC':0x9ABC,'IX':0xA100,'IY':0x5C3A},None,False)
         initial[14],initial[15],initial[26],initial[27]=serial&255,(serial*17)&255,serial&1,serial%3
-        model=RandomClassMachine(memory.banks,initial);model.gate()
+        model=RandomClassMachine(memory.banks,initial)
+        if via_entry:
+            model.m1(1)
+        model.gate()
         simulator.registers[:]=initial;trace=PortTrace(simulator);simulator.set_tracer(trace)
-        memory.writes=[];memory.recording=True;simulator.run(start=0xF69E,stop=0x3FFF);memory.recording=False
+        memory.writes=[];memory.recording=True;simulator.run(start=entry,stop=0x3FFF);memory.recording=False
         compared=(*range(25),26,27)
         assert all(model.r[i]==simulator.registers[i] for i in compared),(serial,model.path,[(i,model.r[i],simulator.registers[i]) for i in compared if model.r[i]!=simulator.registers[i]])
         assert memory.banks==model.banks and Counter(memory.writes)==Counter(model.writes),(serial,'RAM')
@@ -51,12 +60,13 @@ def main():
         paths.update(model.path)
         if (serial+1)%16384==0:print(str(serial+1)+' random class gate cases passed',flush=True)
     assert paths['random_gate_reject'] and paths['random_gate_dispatch'] and all(paths['class_'+str(i)] for i in range(26))
-    result=dict(passed=True,total_cases=65536,paths=dict(paths),all_seed_words=True,all_class_table_targets_executed=True,
+    result=dict(passed=True,total_cases=65536,entry=entry,paths=dict(paths),all_seed_words=True,all_class_table_targets_executed=True,
         actual_random_dispatch_and_handlers_executed=True,exact_registers_flags_r_sp=True,
         all_eight_banks_and_write_multiplicity_checked=True,maximum_additional_stack_bytes=maximum_stack,
         all_input_products_exhausted=False,game_caller_proved=False,
         assembly_executed=False,irq_executed=False,native_execution=False)
-    path=ROOT/'Tools/Disasm/Reports/ActionRandomClassGateVerification.json'
+    report = 'ActionRandomClassGateEntryVerification' if via_entry else 'ActionRandomClassGateVerification'
+    path = ROOT / f'Tools/Disasm/Reports/{report}.json'
     temporary=path.with_suffix('.json.tmp');temporary.write_text(json.dumps(result,indent=2)+'\n','utf-8');temporary.replace(path)
     print(json.dumps({k:v for k,v in result.items() if k!='paths'},indent=2))
 

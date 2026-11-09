@@ -2,6 +2,7 @@
                 module InitializeFlight
                 ; Имена ресурсов [физические ключи](../../Docs/ActionBootFileKeys.md)
                 ; Документация [загрузка банков и вход в полёт](../../Docs/ActionFlightCycle.md)
+                ; Документация [адреса старых операндов CONTROL](../../Docs/ControlsLegacyLoadChain.md)
 ; Документация [ActionBoot](../../Docs/FunctionDetails/ActionBoot.md)
 ; -----------------------------------------
 ; Перенос ядра в #6000, загрузка графических банков и запуск полётного режима
@@ -63,8 +64,9 @@ Entry:          LD SP, #C000
                 CALL @Action.SelectMemoryPage.Entry
                 LD HL, @ActionBootFileKeys.Control0
                 CALL @ActionBoot.GetFileLocation.Entry
-                LD (#5E20), HL
-                LD (#5E23), A
+                ; Запись координат и числа секторов CONTROL0 по адресам операндов старой копии.
+                LD (@Controls.LoadLegacyPackedBlock.Entry + 1), HL
+                LD (@Controls.LoadLegacyPackedBlock.SectorCount + 1), A
                 CALL @ActionBoot.LoadFileToBank.Entry
                 LD HL, @ActionBootFileKeys.Control
                 CALL @ActionBoot.GetFileLocation.Entry

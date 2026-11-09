@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "classified_resource_bytes": 222,
+  "resources": 2,
+  "transfer_bytes": 512,
+  "station_source": 38971,
+  "action_destination": 39869,
+  "unknown_neighbor_bytes": 67,
+  "individual_game_fields_proved": false,
+  "original_bytes_preserved": true,
+  "generated_values_not_serialized": true,
+  "assembly_executed": false
+}

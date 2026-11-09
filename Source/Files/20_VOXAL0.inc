@@ -28,5 +28,16 @@
                 ent
                 assert $ == #2965
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/20_VOXAL0/Unclassified001.bin"
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/VoxelBasisRotation.md)
+                assert $ == #2965
+                ; Unknown, соседние байты не объявляются свободными
+                incbin "../Resources/20_VOXAL0/Unclassified2965_2A00.bin"
+                assert $ == #2A00
+                disp #EA00
+                include "../Voxel/Data/CosineLow.asm"
+                ent
+                assert $ == #2B00
+                disp #EB00
+                include "../Voxel/Data/CosineHigh.asm"
+                ent
                 assert $ == #2C00

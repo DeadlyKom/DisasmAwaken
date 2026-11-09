@@ -57,7 +57,11 @@
                 ent
                 assert $ == #02A5
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/29_FINALF/Unclassified003.bin"
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/FinalSyncAndPreviewRecord.md)
+                assert $ == #02A5
+                disp #62A5
+                include "../Final/Data/SyncPointers.asm"
+                ent
                 assert $ == #02A9
                 ; исходный ресурс ZX_BITMAP
                 incbin "../Final/Resources/Frame0.bitmap"
@@ -70,4 +74,8 @@
                 assert $ == #4AA9
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
                 incbin "../Resources/29_FINALF/Unclassified004.bin"
+                assert $ == #4AAA
+                ; Физический суффикс выделенных секторов, неиспользуемость не установлена
+                ; Документация [границы и сохранение суффиксов](../../Docs/AllocatedSectorSuffixes.md)
+                incbin "../Resources/29_FINALF/SectorTail.bin"
                 assert $ == #4B00

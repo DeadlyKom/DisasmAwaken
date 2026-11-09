@@ -166,6 +166,14 @@
   ],
   "loop_entry_sp": 49150,
   "child_frame_return_address": 43100,
+  "legacy_control0_parameters": {
+    "track": 75,
+    "sector": 5,
+    "sector_count": 27,
+    "old_opcode": 0,
+    "old_count_opcode": 0
+  },
+  "legacy_runtime_execution_visits": 0,
   "panel_bytes_compared": 6912,
   "boot_table_bytes_compared": 1792,
   "loads": [

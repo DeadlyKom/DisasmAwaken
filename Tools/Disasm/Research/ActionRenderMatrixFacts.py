@@ -93,6 +93,7 @@ def name_operands(region, function_address, operation):
     operation = operation.replace('LD H, #98', 'LD H, @ActionProjectionClipConst.SquarePage')
     operation = operation.replace('AND #3F', 'AND @PreviewMatrixComposeConst.QuarterMask')
     operation = operation.replace('BIT 0,', 'BIT @ActionRenderCoefficientsConst.OneAxisBit,')
+    operation = operation.replace('(IY+#00)', '(IY + @FRenderHeaderState.ModeBits)')
     return operation
 
 

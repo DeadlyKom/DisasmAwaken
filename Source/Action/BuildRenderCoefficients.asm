@@ -1,5 +1,6 @@
                 module Action
                 module BuildRenderCoefficients
+                ; Физические поля [заголовок модели](../../Docs/ActionRenderHeaderPhysicalData.md)
                 ; Документация [точные формулы коэффициентов](../../Docs/ActionRenderCoefficients.md)
                 ; -----------------------------------------
                 ; Построение девяти байтовых коэффициентов по трём фазам либо по одной фазе

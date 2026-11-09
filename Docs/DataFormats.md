@@ -4,7 +4,7 @@
 
 | Тип | Размер | Подтверждённое назначение |
 | --- | --- | --- |
-| FActionAyFrame | #04 | 88 физических строк семи потоков и 7 терминаторов, см. [ActionAyStreams](ActionAyStreams.md) |
+| FActionAyFrame | #04 | 110 физических строк девяти потоков и 9 терминаторов, см. [ActionAyStreams](ActionAyStreams.md) |
 | FActionAimPoint | #02 | Физические байты X и Y, см. [сопровождение](ActionAimFollow.md) |
 | FActionRenderNode | #0E | Создаваемый runtime-узел с неизвестными байтами 01 и 02, см. [очередь](ActionRenderQueueInsert.md) |
 | FRenderPhases | #03 | Три физических фазы и вложенный снимок узла, см. [коэффициенты](ActionRenderCoefficients.md) |
@@ -238,3 +238,9 @@ XOR-масками, а не флагами состояния. Потребит�
 [FPlayerSaveHeader, FOwnedCargoRow и FEquipmentQuantityCode](PlayerSavedFields.md) оформляют сохраняемые поля станции и шесть исходных дисковых копий.
 
 FOverlayProjectionFrame описывает шестибайтовую динамическую рамку [двухосевой проекции](ActionOverlayProjection.md), статической памяти не выделяет.
+
+Дополнительно распознаны [scene1po как чередующиеся битовые плоскости](Scene1PixelPairs.md) и [цепочки растров BANK0..BANK5](BankScreenStrips.md). Все 108130 байтов этих графических диапазонов сохранены буквально, заголовки BANK оформлены физическими структурами. Игровые загрузчики и палитры ещё не установлены. Назначение 8850 байтов промежутков BANK и 12 байтов секторного хвоста scene1po остаётся неизвестным.
+
+[Сохраняемые пары груза ACTION](ActionOwnedCargoPhysicalData.md) оформлены тридцатью физическими экземплярами существующей FOwnedCargoRow, все 60 байтов совпадают с исходными литералами TWRI. [Выброс](ActionEjectCommands.md) сканирует первые 30 байтов, включая цены первых пятнадцати записей, исходное отличие от обхода полных записей сохранено.
+
+[Правила сбора](ActionTractorCollect.md) имеют 28 самостоятельных байтов FTractorCargoRule, следующие два нормальных кода читают 3A и 5F из первой инструкции ToggleTractorMode. Код и данные физически не дублируются.

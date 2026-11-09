@@ -1,7 +1,9 @@
 """Публикация реальных структур OBJECT3D с сохранением промежутков и хвоста."""
 from collections import Counter
+import argparse
 import contextlib
 import hashlib
+import importlib
 import io
 import json
 import sys
@@ -13,6 +15,9 @@ from ActionModelPhysicalData import render, parse, structures
 
 
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--tail', action='store_true')
+    args = parser.parse_args()
     with contextlib.redirect_stdout(io.StringIO()):
         verify()
     reports = ROOT / 'Tools/Disasm/Reports'
@@ -20,18 +25,25 @@ def main():
     def read(name):
         return json.loads((reports / (name + '.json')).read_text(encoding='utf-8'))
 
-    proof = read('ActionModelPacketsVerification')
-    assert proof['passed'] and proof['covered_packet_bytes'] == 9317
+    proof = read('ActionModelTailVerification' if args.tail else 'ActionModelPacketsVerification')
+    assert proof['passed']
+    if args.tail:
+        assert proof['covered_bytes'] == 1259 and proof['packet_count'] == 7
+    else:
+        assert proof['covered_packet_bytes'] == 9317
     data = (ROOT / 'Tools/Disasm/Extracted/Active/24_OBJECT3D.C.sectors.bin').read_bytes()
     source_map = read('SourceMap')
-    old = next(item for item in source_map if item['slot'] == 24)
+    first = 0x2469 if args.tail else 0
+    old = next(item for item in source_map if item['slot'] == 24 and item['offset'] == first)
+    last = first + old['length']
+    old_bytes = data[first:last]
     old_path = ROOT / old['path']
-    assert old['kind'] == 'unclassified' and old_path.read_bytes() == data
+    assert old['kind'] == 'unclassified' and old_path.read_bytes() == old_bytes
     pending = {}
     spans = []
     symbols = read('Symbols')
     includes = []
-    cursor = 0
+    cursor = first
 
     def gap(start, end):
         path = 'Source/Resources/24_OBJECT3D/Gap' + f'{start:04X}.bin'
@@ -59,9 +71,9 @@ def main():
         includes.extend((f'                assert $ == #{start:04X}', f'                disp #{0xC000 + start:04X}',
                          f'                include "../Action/Data/Model{start:04X}.asm"', '                ent'))
         cursor = end
-    if cursor < len(data):
-        gap(cursor, len(data))
-    includes.append(f'                assert $ == #{len(data):04X}')
+    if cursor < last:
+        gap(cursor, last)
+    includes.append(f'                assert $ == #{last:04X}')
     source_map[source_map.index(old):source_map.index(old) + 1] = spans
     inventory = read('Inventory')
     inventory['ranges_by_kind'] = dict(Counter(item['kind'] for item in source_map))
@@ -73,16 +85,17 @@ def main():
         pending[reports / (name + '.json')] = (json.dumps(value, ensure_ascii=False, indent=2) + '\n').encode('utf-8')
     path = ROOT / 'Source/Files/24_OBJECT3D.inc'
     original = path.read_text(encoding='utf-8')
-    needle = '                incbin "../Resources/24_OBJECT3D/Unclassified000.bin"'
+    if args.tail:
+        needle = ('                assert $ == #2469\n'
+                  '                ; Исходный промежуток, его назначение ещё не установлено.\n'
+                  '                incbin "../Resources/24_OBJECT3D/Gap2469.bin"\n'
+                  '                assert $ == #2954')
+    else:
+        needle = '                incbin "../Resources/24_OBJECT3D/Unclassified000.bin"'
     assert original.count(needle) == 1
     pending[path] = original.replace(needle, '\n'.join(includes)).replace(
         '                ; Unknown, исходные байты вне подтверждённого прямого потока управления\n', ''
     ).encode('utf-8')
-    path = ROOT / 'Includes/Structs/Include.inc'
-    original = path.read_text(encoding='utf-8')
-    assert original.count('                endif') == 1 and 'struct FActionModelHeader' not in original
-    pending[path] = original.replace('                endif',
-                                    structures() + '\n                endif').encode('utf-8')
     path = ROOT / 'Tools/Disasm/VerifySources.py'
     original = path.read_text(encoding='utf-8')
     needle = '    # Проверка трёх физических фаз и вложенных полей создаваемого узла очереди.'
@@ -99,11 +112,48 @@ def main():
     assert symbols['FACTIONMODELGROUP.MASK']==0 and symbols['FACTIONMODELGROUP.COMPONENT2']==3
 
 '''
-    pending[path] = original.replace(needle, hook + needle).encode('utf-8')
-    candidate = ROOT / 'Tools/Disasm/Research/Candidates/ActionModelPhysical'
-    history = ROOT / 'Tools/Disasm/Research/History/BeforeActionModelPhysical'
+    if args.tail:
+        baseline = "    assert len(models)==95 and sum(item['length'] for item in models)==9317"
+        assert original.count(baseline) == 1
+        pending[path] = original.replace(baseline,
+            "    assert len(models)==102 and sum(item['length'] for item in models)==10576").encode('utf-8')
+        path = ROOT / 'Tools/Disasm/Research/ExportSources.py'
+        original = path.read_text(encoding='utf-8')
+        needle = '    # Исходные байты подтверждённого назначения копирования, модели OBJECT3D в TRD не подставляются.'
+        assert original.count(needle) == 1
+        export_hook = '''    from ActionModelPhysicalData import render as render_object_model
+    from CheckActionModelTail import read_packets as object_tail_packets
+    model_report = json.loads((ROOT/'Tools/Disasm/Reports/ActionModelPacketsVerification.json').read_bytes())
+    object_data = data_by_slot[24]
+    for packet in model_report['packets'] + object_tail_packets(object_data,0x2469,0x2954):
+        start,end=packet['offset'],packet['end']
+        path=f'Source/Action/Data/Model{start:04X}.asm'
+        model_text,model_labels=render_object_model(object_data,packet)
+        write(path,model_text);symbols.update(model_labels)
+        special[24,start]=(end,path,0xC000+start)
+
+'''
+        pending[path] = original.replace(needle, export_hook + needle).encode('utf-8')
+    else:
+        pending[path] = original.replace(needle, hook + needle).encode('utf-8')
+        path = ROOT / 'Includes/Structs/Include.inc'
+        original = path.read_text(encoding='utf-8')
+        assert original.count('                endif') == 1 and 'struct FActionModelHeader' not in original
+        pending[path] = original.replace('                endif',
+                                        structures() + '\n                endif').encode('utf-8')
+    tag = 'ActionModelPhysicalTail' if args.tail else 'ActionModelPhysical'
+    publish_scoped(pending, {old_path: old_bytes}, tag)
+    print(f"OBJECT3D: {len(proof['packets'])} потоков, {sum(p['end']-p['offset'] for p in proof['packets'])} байтов физических структур")
+
+
+def publish_scoped(pending, removed, tag):
+    for path, raw in removed.items():
+        assert path.resolve().is_relative_to((ROOT / 'Source/Resources').resolve())
+        assert path.read_bytes() == raw
+    candidate = ROOT / 'Tools/Disasm/Research/Candidates' / tag
+    history = ROOT / 'Tools/Disasm/Research/History' / ('Before' + tag)
     assert not candidate.exists() and not history.exists()
-    originals = {path: path.read_bytes() if path.exists() else None for path in (*pending, old_path)}
+    originals = {path: path.read_bytes() if path.exists() else None for path in (*pending, *removed)}
     for path, raw in pending.items():
         target = candidate / path.relative_to(ROOT)
         target.parent.mkdir(parents=True, exist_ok=True)
@@ -118,11 +168,10 @@ def main():
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_bytes(raw)
     with contextlib.redirect_stdout(io.StringIO()):
-        verify()
-    assert old_path.resolve().is_relative_to((ROOT / 'Source/Resources').resolve())
-    assert old_path.read_bytes() == data
-    old_path.unlink()
-    print('OBJECT3D: 95 потоков, 9317 байтов физических структур, промежутки сохранены')
+        importlib.reload(sys.modules['VerifySources']).main()
+    for path, raw in removed.items():
+        assert path.read_bytes() == raw == (history / path.relative_to(ROOT)).read_bytes()
+        path.unlink()
 
 
 if __name__ == '__main__':

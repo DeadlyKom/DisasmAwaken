@@ -22,7 +22,7 @@
 ;   игровое назначение самих читаемых полей здесь ещё не доказано, доказаны адреса, ширина и алгоритм чтения
 ; -----------------------------------------
                 ; выбор собственной базы перед общим пятибайтовым чтением
-Entry:          LD DE, #9826
+Entry:          LD DE, @StationSkimmerTradeRows.Skimmer0.PriceField
                 JP @Text.ReadStrideFiveWord.ReadAtBase
 
                 endmodule

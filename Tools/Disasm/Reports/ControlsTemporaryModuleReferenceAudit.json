@@ -1,0 +1,394 @@
+{
+  "passed": true,
+  "method": "original_payload_exact_template_and_decoded_literal_reference_audit",
+  "template_bytes": 127,
+  "template_sha256": "6d8cc143ae413835506dfc5491943eef87583fd8508533bcf2f5169e3f0c443c",
+  "exact_original_payload_copies": [
+    {
+      "slot": 23,
+      "offset": 0
+    }
+  ],
+  "original_length_operand": 0,
+  "decoded_references": [
+    {
+      "region": "Basic",
+      "slot": 3,
+      "offset": 14,
+      "address": 23881,
+      "operation": "LD HL,#6500",
+      "path": "Source/Basic/ReadIntroSectors.asm",
+      "matching_literals": [
+        25856
+      ]
+    },
+    {
+      "region": "Help",
+      "slot": 8,
+      "offset": 87,
+      "address": 56151,
+      "operation": "LD (#DB01),A",
+      "path": "Source/Help/SelectText.asm",
+      "matching_literals": [
+        56065
+      ]
+    },
+    {
+      "region": "ActionBoot",
+      "slot": 17,
+      "offset": 185,
+      "address": 17014,
+      "operation": "LD HL,#DADE",
+      "path": "Source/ActionBoot/InitializeFlight.asm",
+      "matching_literals": [
+        56030
+      ]
+    },
+    {
+      "region": "Action",
+      "slot": 17,
+      "offset": 31349,
+      "address": 55925,
+      "operation": "JR NC,#DADE",
+      "path": "Source/Action/ProjectRenderVertex.asm",
+      "matching_literals": [
+        56030
+      ]
+    },
+    {
+      "region": "Action",
+      "slot": 17,
+      "offset": 31379,
+      "address": 55955,
+      "operation": "JR NC,#DB01",
+      "path": "Source/Action/ProjectRenderVertex.asm",
+      "matching_literals": [
+        56065
+      ]
+    },
+    {
+      "region": "ThreeD",
+      "slot": 19,
+      "offset": 6773,
+      "address": 55925,
+      "operation": "JR NC,#DADE",
+      "path": "Source/ThreeD/ProjectRenderVertex.asm",
+      "matching_literals": [
+        56030
+      ]
+    },
+    {
+      "region": "ThreeD",
+      "slot": 19,
+      "offset": 6803,
+      "address": 55955,
+      "operation": "JR NC,#DB01",
+      "path": "Source/ThreeD/ProjectRenderVertex.asm",
+      "matching_literals": [
+        56065
+      ]
+    },
+    {
+      "region": "Controls",
+      "slot": 23,
+      "offset": 2,
+      "address": 56032,
+      "operation": "LD (#5E33),SP",
+      "path": "Source/Controls/RunTemporaryModule.asm",
+      "matching_literals": [
+        24115
+      ]
+    },
+    {
+      "region": "Controls",
+      "slot": 23,
+      "offset": 31,
+      "address": 56061,
+      "operation": "LD HL,#C600",
+      "path": "Source/Controls/RunTemporaryModule.asm",
+      "matching_literals": [
+        50688
+      ]
+    },
+    {
+      "region": "Controls",
+      "slot": 23,
+      "offset": 72,
+      "address": 56102,
+      "operation": "CALL #6500",
+      "path": "Source/Controls/RunTemporaryModule.asm",
+      "matching_literals": [
+        25856
+      ]
+    },
+    {
+      "region": "Controls",
+      "slot": 23,
+      "offset": 5361,
+      "address": 61391,
+      "operation": "LD BC,#C600",
+      "path": "Source/Controls/PrintTextGlyph.asm",
+      "matching_literals": [
+        50688
+      ]
+    },
+    {
+      "region": "Controls",
+      "slot": 23,
+      "offset": 5816,
+      "address": 61846,
+      "operation": "LD DE,#C600",
+      "path": "Source/Controls/DrawCounterNibble.asm",
+      "matching_literals": [
+        50688
+      ]
+    },
+    {
+      "region": "D3D",
+      "slot": 6,
+      "offset": 6412,
+      "address": 55564,
+      "operation": "LD SP,#C600",
+      "path": "Source/D3D/ProjectPreviewVertexGroup.asm",
+      "matching_literals": [
+        50688
+      ]
+    }
+  ],
+  "raw_little_endian_pair_occurrences": [
+    {
+      "slot": 3,
+      "value": 25856,
+      "offsets": [
+        15
+      ],
+      "raw_pair_occurrence_is_not_pointer_or_instruction_proof": true
+    },
+    {
+      "slot": 4,
+      "value": 25856,
+      "offsets": [
+        18606
+      ],
+      "raw_pair_occurrence_is_not_pointer_or_instruction_proof": true
+    },
+    {
+      "slot": 6,
+      "value": 50688,
+      "offsets": [
+        6413,
+        8518
+      ],
+      "raw_pair_occurrence_is_not_pointer_or_instruction_proof": true
+    },
+    {
+      "slot": 7,
+      "value": 50688,
+      "offsets": [
+        3528,
+        4162,
+        4174
+      ],
+      "raw_pair_occurrence_is_not_pointer_or_instruction_proof": true
+    },
+    {
+      "slot": 8,
+      "value": 56065,
+      "offsets": [
+        88
+      ],
+      "raw_pair_occurrence_is_not_pointer_or_instruction_proof": true
+    },
+    {
+      "slot": 9,
+      "value": 56066,
+      "offsets": [
+        162
+      ],
+      "raw_pair_occurrence_is_not_pointer_or_instruction_proof": true
+    },
+    {
+      "slot": 17,
+      "value": 56030,
+      "offsets": [
+        186
+      ],
+      "raw_pair_occurrence_is_not_pointer_or_instruction_proof": true
+    },
+    {
+      "slot": 17,
+      "value": 50688,
+      "offsets": [
+        1524,
+        6410,
+        6445,
+        6480,
+        6515,
+        6550,
+        6585,
+        18611,
+        18790,
+        28671
+      ],
+      "raw_pair_occurrence_is_not_pointer_or_instruction_proof": true
+    },
+    {
+      "slot": 17,
+      "value": 25856,
+      "offsets": [
+        35805
+      ],
+      "raw_pair_occurrence_is_not_pointer_or_instruction_proof": true
+    },
+    {
+      "slot": 19,
+      "value": 50688,
+      "offsets": [
+        4095
+      ],
+      "raw_pair_occurrence_is_not_pointer_or_instruction_proof": true
+    },
+    {
+      "slot": 22,
+      "value": 50688,
+      "offsets": [
+        1776
+      ],
+      "raw_pair_occurrence_is_not_pointer_or_instruction_proof": true
+    },
+    {
+      "slot": 23,
+      "value": 24115,
+      "offsets": [
+        4
+      ],
+      "raw_pair_occurrence_is_not_pointer_or_instruction_proof": true
+    },
+    {
+      "slot": 23,
+      "value": 50688,
+      "offsets": [
+        32,
+        5362,
+        5817
+      ],
+      "raw_pair_occurrence_is_not_pointer_or_instruction_proof": true
+    },
+    {
+      "slot": 23,
+      "value": 25856,
+      "offsets": [
+        73
+      ],
+      "raw_pair_occurrence_is_not_pointer_or_instruction_proof": true
+    },
+    {
+      "slot": 24,
+      "value": 25856,
+      "offsets": [
+        808,
+        821,
+        9320
+      ],
+      "raw_pair_occurrence_is_not_pointer_or_instruction_proof": true
+    },
+    {
+      "slot": 29,
+      "value": 56030,
+      "offsets": [
+        3247
+      ],
+      "raw_pair_occurrence_is_not_pointer_or_instruction_proof": true
+    },
+    {
+      "slot": 29,
+      "value": 25856,
+      "offsets": [
+        16592
+      ],
+      "raw_pair_occurrence_is_not_pointer_or_instruction_proof": true
+    },
+    {
+      "slot": 33,
+      "value": 50688,
+      "offsets": [
+        15414
+      ],
+      "raw_pair_occurrence_is_not_pointer_or_instruction_proof": true
+    },
+    {
+      "slot": 34,
+      "value": 50688,
+      "offsets": [
+        14543
+      ],
+      "raw_pair_occurrence_is_not_pointer_or_instruction_proof": true
+    },
+    {
+      "slot": 34,
+      "value": 25856,
+      "offsets": [
+        676,
+        2824,
+        14700
+      ],
+      "raw_pair_occurrence_is_not_pointer_or_instruction_proof": true
+    },
+    {
+      "slot": 38,
+      "value": 25856,
+      "offsets": [
+        10272,
+        11340,
+        15974
+      ],
+      "raw_pair_occurrence_is_not_pointer_or_instruction_proof": true
+    },
+    {
+      "slot": 40,
+      "value": 50688,
+      "offsets": [
+        8178,
+        15072
+      ],
+      "raw_pair_occurrence_is_not_pointer_or_instruction_proof": true
+    },
+    {
+      "slot": 40,
+      "value": 25856,
+      "offsets": [
+        11212
+      ],
+      "raw_pair_occurrence_is_not_pointer_or_instruction_proof": true
+    },
+    {
+      "slot": 42,
+      "value": 50688,
+      "offsets": [
+        4342,
+        15278
+      ],
+      "raw_pair_occurrence_is_not_pointer_or_instruction_proof": true
+    },
+    {
+      "slot": 43,
+      "value": 50688,
+      "offsets": [
+        8314
+      ],
+      "raw_pair_occurrence_is_not_pointer_or_instruction_proof": true
+    }
+  ],
+  "same_numeric_help_write_is_not_control_length_writer": true,
+  "restored_unchanged_action_core_entry": "Source/Action/QueueNumberBank1.asm",
+  "restored_entry_address": 24576,
+  "direct_bank_switch_next_opcode": 4,
+  "template_next_opcode": 217,
+  "dynamic_reference_graph_complete": false,
+  "legitimate_relocation_proved": false,
+  "nonzero_length_writer_proved": false,
+  "temporary_module_payload_and_real_caller_proved": false,
+  "semantic_contract_complete": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

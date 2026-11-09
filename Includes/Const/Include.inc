@@ -230,6 +230,20 @@ BaseAttributes  equ #5800                                                       
 BankAttributes  equ #D800                                                       ; атрибуты банка 7 в переключаемом окне
                 endmodule
 
+                module ControlsScrollPatchConst
+CursorSeed      equ #ED19                                                       ; IX за один шаг до первого операнда источника
+Stride          equ #14                                                         ; байты кода одного развёрнутого копирования
+SourceLow       equ #00                                                         ; младший байт исходного SP относительно IX
+SourceHigh      equ #01                                                         ; старший байт исходного SP относительно IX
+TargetLow       equ #0A                                                         ; младший байт целевого SP относительно IX
+TargetHigh      equ #0B                                                         ; старший байт целевого SP относительно IX
+                assert CursorSeed + Stride == @Controls.ScrollTextWindow.FirstSource + 1
+                assert Stride == @Controls.ScrollTextWindow.SecondSource - @Controls.ScrollTextWindow.FirstSource
+                assert TargetLow == @Controls.ScrollTextWindow.FirstTarget - @Controls.ScrollTextWindow.FirstSource
+                assert SourceHigh == SourceLow + 1
+                assert TargetHigh == TargetLow + 1
+                endmodule
+
                 module RepaintConst
 AndA            equ #A7                                                         ; код AND A для очистки Carry в общем выходе
 SetCarry        equ #37                                                         ; код SCF для обязательного Carry после перерисовки
@@ -467,6 +481,10 @@ Destination     equ #4000                                                       
 Bytes           equ #0200                                                       ; исходная длина переноса, включая соседний хвост
                 endmodule
 
+                module FinalDisplayChainConst
+GeneratedEntry  equ #8000                                                       ; вход цепочки после записи команд поверх скопированного bitmap
+                endmodule
+
                 module MarketColumnConst
 SaleQuantity    equ #60                                                         ; начало количества в колонке Продажа, пиксели
 SalePrice       equ #72                                                         ; начало цены в колонке Продажа, пиксели
@@ -571,7 +589,9 @@ SecondSeed      equ #42                                                         
 
                 module PreviewQueueBuildConst
 Objects         equ #CDC0                                                       ; начало исходных записей объектов
+                assert Objects == @PreviewObjectHeader.Value
 RecordStep      equ #40                                                         ; шаг записи объекта, первые десять байтов читает проход
+                assert Objects + RecordStep == @PreviewObjectEnd.Value
 MarkerHigh      equ #80                                                         ; старший байт специальной записи конца либо отключения
 CoeffMinBad     equ #80                                                         ; неподдерживаемый модуль коэффициента минус 128
 RawHighLimit    equ #70                                                         ; исключённый модуль старшего байта исходной координаты
@@ -864,6 +884,9 @@ PixelsMask      equ #F8                                                         
 
                 ; Исходные пределы и фазы малого рисователя
                 module SmallBodyConst
+LargeModePri    equ #01                                                         ; большой растр после малого профиля с основной затравкой
+PrimaryEntry    equ #D9DF                                                       ; вход на AF, выполняется XOR A и выбирается основная затравка
+                assert PrimaryEntry == @Controls.DrawSmallBody.Entry + 1
 ModeLimit       equ #04                                                         ; первый режим, для которого рисование не выполняется
 RadiusLimit     equ #09                                                         ; исключённый верхний радиус
 RadiusMin       equ #02                                                         ; минимальный допустимый радиус
@@ -1184,6 +1207,7 @@ RightOffset     equ #3B                                                         
                 module ActionPacketRendererConst
 CountMask       equ #0F                                                         ; число вершин в младшей тетраде
 MaterialMask    equ #07                                                         ; числовое поле материала грани после четырёх сдвигов
+MaterialToggle  equ #60                                                         ; инверсия битов 6 и 5 в полном заголовке грани OBJECT3D
 LineModeMask    equ #30                                                         ; числовое поле операции линии в разрядах 5..4
 AttachBit       equ #06                                                         ; бит связи линии с предыдущей ориентацией
 PointPage       equ #8E                                                         ; страница исходных пятибайтовых проецированных точек
@@ -1408,6 +1432,7 @@ FirstMinDiff    equ #02                                                         
                 ; Граница и маркер исходного счётчика записей класса 3
                 module ActionClass3CountConst
 BeforeHigh      equ #A0C1                                                       ; исходная позиция High перед первым шагом списка, память не выделяется
+                assert BeforeHigh == @ActionObjectRecords.Record00.Components.Component0.High - FActionRecord
 EndLow          equ #80                                                         ; полный Low маркера при High=80
 MaxCount        equ #02                                                         ; насыщение счётчика и конечное сравнение
                 endmodule
@@ -1636,6 +1661,7 @@ NextState       equ #10                                                         
                 ; Исходное специальное значение связи, новая память не выделяется
                 module ActionLinkedContextConst
 SpecialRecord   equ #A780                                                       ; адрес для LinkedIndex=FF, отдельный от обычного индекса 255
+                assert SpecialRecord == @ActionSpecialRecord.Value
                 endmodule
 
 
@@ -1810,6 +1836,149 @@ TargetValue     equ #02                                                         
                 ; Исходный порог повторной обработки класса
                 module ActionRandomClassGateConst
 WordThreshold   equ #F000                                                       ; допуск последних 4096 возможных слов потока
+                endmodule
+
+                ; Исходные параметры команды свободного полёта
+                module ActionFreeFlightConst
+Delay           equ #14                                                         ; задержка повторной команды, двадцать шагов обработчика
+ReturnOpcode    equ #C9                                                         ; RET вместо первого чтения координатной цепочки
+                endmodule
+
+                ; Исходные параметры команды возврата к станции
+                module ActionStationReturnConst
+Sound           equ #EE1B                                                       ; исходный поток AY-канала A перед проверкой оборудования
+Delay           equ #14                                                         ; задержка повторной команды, двадцать шагов обработчика
+SpentEquipment  equ #FF                                                         ; полный код списанной системы возврата
+Page            equ #19                                                         ; банк 1, теневой экран, ROM 1, paging не блокируется
+                endmodule
+
+                ; Исходные параметры команд выброса, байтовый обход не заменяется обходом записей
+                module ActionEjectConst
+Sound           equ #EE1B                                                       ; исходный поток AY-канала A обеих команд
+Delay           equ #14                                                         ; задержка повторной команды, двадцать шагов обработчика
+ScanBytes       equ #1E                                                         ; ровно тридцать байтов, оба поля первых пятнадцати записей
+CargoIndexBias  equ #642C                                                       ; прибавление к адресу даёт байтовое смещение от 9BD4 по модулю 65536
+                assert CargoIndexBias == #10000 - @ActionOwnedCargoRows.Row00
+                endmodule
+
+                ; Исходные параметры переключателя направления вида
+                module ActionViewDirectionConst
+Sound           equ #EE1B                                                       ; исходный поток AY-канала A
+Delay           equ #14                                                         ; задержка повторной команды, двадцать шагов обработчика
+ForwardPair     equ #0000                                                       ; две NOP, загруженный коэффициент не меняется
+RearPair        equ #44ED                                                       ; NEG, в памяти ED,44, восьмибитное отрицание коэффициента
+                endmodule
+
+                ; Исходные параметры притягивания и байтового сбора, новые области не выделяются
+                module ActionTractorCollectConst
+PullStep        equ #32                                                         ; шаг компоненты 50, единицы не установлены
+NegativeStep    equ #FFCE                                                       ; отрицательный шаг для исходных ADD и SBC
+CloseAxes       equ #03                                                         ; все три старших байта должны быть 00 либо FF
+RequiredState   equ #04                                                         ; допускаемое StateCode захваченной записи
+PayloadClass    equ #13                                                         ; класс со своими байтами вида и количества
+AlternateClass  equ #10                                                         ; класс, выбирающий вид 0F
+InactiveHigh    equ #80                                                         ; полный код недоступности в старшем байте первой компоненты
+NoTarget        equ #FF                                                         ; полный код снятого захвата
+AlternateKind   equ #0F                                                         ; вид для класса 10
+DefaultKind     equ #1B                                                         ; вид для остальных непрофильных классов
+RandomMask      equ #07                                                         ; маска R перед прибавлением единицы
+AccountingMask  equ #C0                                                         ; маска двухбитового поля учёта Current
+ByteEndLimit    equ #C9                                                         ; первая запрещённая сумма байта, 201
+Sound           equ #EE1B                                                       ; исходный поток AY после принятого сбора
+HighToState     equ #09                                                         ; разность StateCode и High первой компоненты
+StateToValue    equ #06                                                         ; разность Unknown10 и StateCode
+ClassToKind     equ #11                                                         ; разность Unknown23 и ClassCode
+KindToAmount    equ #EE                                                         ; разность Unknown11 и Unknown23 по модулю 256
+HighToReuse     equ #17                                                         ; разность ReuseByte и High первой компоненты
+                assert NegativeStep == #10000 - PullStep
+                assert HighToState == FActionRecord.StateCode - FActionRecord.Components.Component0.High
+                assert StateToValue == FActionRecord.Unknown10 - FActionRecord.StateCode
+                assert ClassToKind == FActionRecord.Unknown23 - FActionRecord.ClassCode
+                assert KindToAmount == #100 + FActionRecord.Unknown11 - FActionRecord.Unknown23
+                assert HighToReuse == FActionRecord.ReuseByte - FActionRecord.Components.Component0.High
+                endmodule
+
+                ; Длины исходного копируемого загрузчика гиперперехода
+                module ActionHyperReloadConst
+StateLength     equ #01E1                                                       ; ровно 481 байт сохранения и восстановления
+CodeSource      equ #71CB                                                       ; исходный адрес в перенесённом ядре до копирования
+CopyLength      equ #0063                                                       ; 90 байтов кода и девять байтов ключа
+                endmodule
+
+                ; Документация [строки текстовой очереди полёта](../../Docs/ControlsFlightMessages.md)
+                module ControlsFlightText
+SystemsReady    equ #F1AB                                                       ; Все системы готовы. / 
+SystemsNormal   equ #F1C0                                                       ; Все системы работают / нормально. / 
+ModeEnabled     equ #F1E1                                                       ; Включен режим / 
+ModeDisabled    equ #F1F0                                                       ; Выключен режим / 
+FreeFlight      equ #F200                                                       ; свободного полета. / 
+Targeting       equ #F214                                                       ; наведения на цель. / 
+ForwardView     equ #F228                                                       ; переднего вида. / 
+RearView        equ #F239                                                       ; заднего вида. / 
+TargetLost      equ #F248                                                       ; Цель потеряна. / 
+TargetsLocked   equ #F258                                                       ; Все цели захвачены. / 
+MissilePrefix   equ #F26D                                                       ; Осталось 
+MissileSuffix   equ #F277                                                       ;  ракет. / 
+NoMissiles      equ #F280                                                       ; Ракеты исчерпаны. / 
+TargetDestroyed equ #F293                                                       ; Цель уничтожена. / 
+ShipDestroyed   equ #F2A5                                                       ; Корабль уничтожен. / Конец игры. / 
+TargetNotLocked equ #F2C5                                                       ; Цель не захвачена. / 
+TractorBeam     equ #F2D9                                                       ; силового луча. / 
+MissileDeparted equ #F2E9                                                       ; Ракета ушла. / 
+SystemDamaged   equ #F2F7                                                       ; Выведена из строя / система / 
+SystemsDamaged  equ #F312                                                       ; Выведены из строя / системы / 
+AntimissileOn   equ #F32D                                                       ; Противоракетная система / активирована. / 
+TargetsForgot   equ #F354                                                       ; Наведенные цели забыты. / 
+ObjectCollected equ #F36D                                                       ; Объект подобран. / 
+HyperWarmup     equ #F37F                                                       ; Разогрев реактора. / Подготовка к совершению / гипер прыжка. / 
+DockApproach    equ #F3B9                                                       ; Корабль в зоне стыковки / со станцией. / Уменьшить скорость. / 
+CargoEjected    equ #F3F3                                                       ; Груз сброшен. / 
+MineEjected     equ #F402                                                       ; Мина сброшена. / 
+NoMines         equ #F412                                                       ; Нет мин. / 
+NoCargo         equ #F41C                                                       ; Нет груза. / 
+                endmodule
+
+                ; Документация [пары знаков 4x6](../../Docs/ControlsTextFont.md)
+                module ControlsTextFont
+Pixels          equ #C600                                                       ; исходный растр 104 пар, старшая и младшая тетрады содержат соседние знаки
+                endmodule
+
+                ; Смещение к маске уже пройденной пары входа клавиатуры
+                module ActionKeyScanConst
+PrevMaskBack    equ #01                                                         ; расстояние от начала следующей пары до InputMask предыдущей
+                endmodule
+
+                module ControlsResetFlightConst
+NoDiabloWord    equ #0200                                                       ; старшее слово третьей компоненты при коде оборудования FF
+DiabloHigh      equ #0011                                                       ; старший байт третьей компоненты при остальных кодах оборудования
+VectorBytes     equ #0048                                                       ; размер шести копируемых широких векторов
+FoldMask        equ #0007                                                       ; маска трёхбитной свёртки четырёх байтов ключа
+ZeroFoldOpcode  equ #00C9                                                       ; опкод RET при нулевой свёртке
+                assert VectorBytes == 6 * FActionWideVector
+                endmodule
+
+                module TrDosLegacy
+RomReturn       equ #3D2F                                                       ; вход NOP и RET после выбора дисковой ROM
+PortOutput      equ #2A53                                                       ; внутренний OUT (C), A с обычным RET
+SeekInitial     equ #2F55                                                       ; выдача начальной команды позиционирования и ожидание
+WaitReady       equ #2F59                                                       ; ожидание готовности и программная задержка
+ReceiveSector   equ #3FE5                                                       ; внутренний приём данных через INI
+ReadStatus      equ #2740                                                       ; получение статуса и исходная подготовка после чтения
+DriveConfig     equ #5D16                                                       ; системный байт, из которого берутся разряды команды порта FF
+ReadContext     equ #5CD8                                                       ; ненулевой код для раннего выхода из проверки трека по 207D
+SavedStatus     equ #5CCD                                                       ; прочитанный статус, сохраняемый внутренним входом ROM
+DataPort        equ #007F                                                       ; младший байт порта данных
+DrivePort       equ #00FF                                                       ; младший байт порта выбора стороны и диска
+TrackPort       equ #003F                                                       ; младший байт порта физического трека
+SectorPort      equ #005F                                                       ; младший байт порта сектора
+CommandPort     equ #001F                                                       ; младший байт порта команды и статуса
+                endmodule
+
+                module VoxelBasisRotationConst
+CosineLowPage   equ #EA                                                         ; младшая плоскость знаковых коэффициентов банка 3
+QuarterTurn     equ #40                                                         ; сдвиг индекса от косинуса к синусу
+                assert CosineLowPage == HIGH(@VoxelCosineLow.Angle00.Value)
+                assert CosineLowPage + 1 == HIGH(@VoxelCosineHigh.Angle00.Value)
                 endmodule
 
                 endif

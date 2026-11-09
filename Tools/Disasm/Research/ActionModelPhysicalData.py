@@ -1,5 +1,6 @@
 """Физические структуры 95 потоков банка OBJECT3D."""
 import re
+from ActionBank4Writes import HEADER_ADDRESSES
 
 HEADER = 'FActionModelHeader'
 GROUP = 'FActionModelGroup'
@@ -34,6 +35,8 @@ def render(data, packet):
 
     def record(offset, name, kind, fields, values):
         labels['ActionModels.' + name] = 0xC000 + offset
+        if kind.startswith('FActionModelPrimitive') and 0xC000 + offset in HEADER_ADDRESSES:
+            labels['ActionModels.' + name + '.Header'] = 0xC000 + offset
         lines.append(name.ljust(0) + ':'.ljust(16 - len(name)) + kind + ' {')
         for index, (field, value) in enumerate(zip(fields, values)):
             line = f'                    #{value:02X}' + (',' if index < len(values) - 1 else '')
@@ -80,6 +83,8 @@ def parse(text):
             assert structure is None
             name, structure = match.groups()
             labels['ActionModels.' + name] = position
+            if structure.startswith('FActionModelPrimitive') and position in HEADER_ADDRESSES:
+                labels['ActionModels.' + name + '.Header'] = position
             fields = 0
             continue
         if line == '}':

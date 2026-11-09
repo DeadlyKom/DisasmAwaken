@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "total_cases": 1292,
+  "row_cases": 1020,
+  "original_text_cases": 120,
+  "frames_checked": 1020,
+  "original_common_code_executed": true,
+  "bitmap_and_both_register_banks_agree": true,
+  "physical_secondary_bases": [
+    39158,
+    38356,
+    38450,
+    38020,
+    61542
+  ],
+  "normal_game_caller_proved": false,
+  "panel_paths": {
+    "scroll": 3,
+    "absent": 1,
+    "changed": 3,
+    "repeated": 256,
+    "full_event": 3,
+    "draw": 2,
+    "gate": 4,
+    "render_rows": 2
+  },
+  "total_panel_cases": 272,
+  "assembly_executed": false,
+  "native_execution": false
+}

@@ -1,5 +1,6 @@
                 module Controls
                 module UpdateBufferPoints
+                ; Физические входы [управления и зерно](../../Docs/ActionInputContextData.md)
                 ; Документация [алгоритм и проверка](../../Docs/ControlsPointMotion.md)
                 ; -----------------------------------------
                 ; Последовательная коррекция 35 точек по Y, X и двум табличным коэффициентам

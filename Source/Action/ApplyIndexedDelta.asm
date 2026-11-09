@@ -1,5 +1,6 @@
                 module Action
                 module ApplyIndexedDelta
+                ; Физические поля [локальный контекст](../../Docs/ActionLocalContextPhysicalData.md)
                 ; (1) Жёсткий порядок, общий хвост после ApplyPendingRecordLink.asm
                 ; Документация [табличная поправка](../../Docs/ActionTypeDelta.md)
                 ; -----------------------------------------

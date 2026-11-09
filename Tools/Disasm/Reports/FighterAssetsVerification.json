@@ -36,19 +36,7 @@
       "unclassified_suffix": 0
     }
   ],
-  "runtime_consumer_proved": false,
-  "unknown_step_bytes": [
-    0,
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8
-  ],
-  "header_bit14_meaning_proved": false,
+  "runtime_consumer_exercised_in_this_check": false,
   "assembly_executed": false,
   "native_execution": false
 }

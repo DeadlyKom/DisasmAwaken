@@ -95,7 +95,7 @@ def structure_text():
         ('Next', 'db #00', 'младший байт следующего узла в странице 8F, 01 конец'),
         ('Unknown01', 'db #00', 'неизвестный байт, вставка не читает и не меняет'),
         ('Unknown02', 'db #00', 'неизвестный байт, вставка не читает и не меняет'),
-        ('HeaderWord0', 'dw #0000', 'снимок слова 9B8D, игровой смысл ещё неизвестен'),
+        ('HeaderWord0', 'dw #0000', 'снимок ModeBits и ModelByteOffset по 9B8D, порядок байтов сохранён'),
         ('Phases', 'FRenderPhases', 'Phase0, Phase1 и Phase2, снимок 9B12..9B14'),
         ('Components', 'FActionComponents', 'снимок Output0, Output1 и Output2, глубина по +0C')):
         lines.append((name.ljust(16) + declaration).ljust(80) + '; ' + note)

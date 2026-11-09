@@ -127,13 +127,13 @@ ReadNext:       ADD IX, DE
                 CP #14
                 JR Z, @Controls.ToggleTargetOverlay.CheckEnd                    ; переход, если класс равен #14, проверить маркер
 
-                LD A, (IX + @FActionRecord.Unknown1B)
+                LD A, (IX + @FActionRecord.ViewPosition.X.High)
                 CP #80
                 JR Z, @Controls.ToggleTargetOverlay.ReadNext                    ; переход, если выходная запись помечена байтом #80
 
                 LD B, A
-                LD C, (IX + @FActionRecord.Unknown1A)
-                LD D, (IX + @FActionRecord.Unknown1F)
+                LD C, (IX + @FActionRecord.ViewPosition.X.Low)
+                LD D, (IX + @FActionRecord.ViewPosition.Depth.High)
                 BIT 7, D
                 JR NZ, @Controls.ToggleTargetOverlay.ResetStride                ; переход, если глубина отрицательна
 
@@ -141,10 +141,10 @@ ReadNext:       ADD IX, DE
                 CP #06
                 JR C, @Controls.ToggleTargetOverlay.ResetStride                 ; переход, если старший байт глубины меньше #06
 
-                LD E, (IX + @FActionRecord.Unknown1E)
-                LD A, (IX + @FActionRecord.Unknown1D)
+                LD E, (IX + @FActionRecord.ViewPosition.Depth.Low)
+                LD A, (IX + @FActionRecord.ViewPosition.Y.High)
                 LD H, A
-                LD L, (IX + @FActionRecord.Unknown1C)
+                LD L, (IX + @FActionRecord.ViewPosition.Y.Low)
                 ; Вычисление экранных координат по двум отношениям к глубине.
                 CALL @Action.ProjectOverlayCoordinates.Entry
                 JR NZ, @Controls.ToggleTargetOverlay.ResetStride                ; переход, если проекция вернула отказ

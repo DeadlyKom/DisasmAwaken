@@ -4,7 +4,11 @@
 ; -----------------------------------------
                 assert $ == #0000
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/06_D3D/BeforeSceneSeed.bin"
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/PreviewEdgeMaskPages.md)
+                assert $ == #0000
+                disp #C000
+                include "../D3D/Data/PreviewEdgeMasks.asm"
+                ent
                 assert $ == #0200
                 disp #C200
                 include "../D3D/Data/PreviewSharedSeed.asm"
@@ -117,7 +121,11 @@
                 ent
                 assert $ == #0500
                 ; Следующая страница сохраняет неизвестное назначение.
-                incbin "../Resources/06_D3D/UnknownAfterSine.bin"
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/PreviewRootSamples.md)
+                assert $ == #0500
+                disp #C500
+                include "../D3D/Data/PreviewRootSamples.asm"
+                ent
                 assert $ == #0600
                 disp #C600
                 include "../D3D/Data/PreviewProjectedVertices.asm"
@@ -128,19 +136,57 @@
                 include "../D3D/Data/PreviewQueue.asm"
                 ent
                 assert $ == #07FC
-                incbin "../Resources/06_D3D/BeforePixelMasks.bin"
+                ; Unknown, четыре исходных байта между рабочей очередью и контуром
+                incbin "../Resources/06_D3D/Unclassified07FC_0800.bin"
+                assert $ == #0800
+                ; исходная страница C8 до копирования и отсечения контуров
+                incbin "../D3D/Resources/InitialPreviewContour.bin"
+                assert $ == #0900
+                ; исходная страница C9 до построения старших байтов адресов строк
+                incbin "../D3D/Resources/InitialPreviewRowHigh.bin"
+                assert $ == #0A00
+                ; исходная страница CA до построения младших байтов адресов строк
+                incbin "../D3D/Resources/InitialPreviewRowLow.bin"
+                assert $ == #0B00
+                ; исходная страница CB до построения байтовых столбцов
+                incbin "../D3D/Resources/InitialPreviewColumn.bin"
+                assert $ == #0C00
+                ; Unknown, диапазон до исходных масок пикселей сохранён буквально
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/PreviewClipTablePages.md)
+                assert $ == #0C00
+                disp #CC00
+                include "../D3D/Data/PreviewClipTargetLow.asm"
+                ent
+                assert $ == #0D00
+                disp #CD00
+                include "../D3D/Data/PreviewClipTargetHigh.asm"
+                ent
                 assert $ == #0DB0
                 disp #CDB0
                 include "../D3D/Data/PreviewPixelMasks.asm"
                 ent
                 assert $ == #0DC0
-                incbin "../Resources/06_D3D/BeforePrimaryAngles.bin"
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/FinalSyncAndPreviewRecord.md)
+                assert $ == #0DC0
+                disp #CDC0
+                include "../D3D/Data/PreviewObjectHeader.asm"
+                ent
                 assert $ == #0DC7
                 disp #CDC7
                 include "../D3D/Data/PreviewPrimaryAngles.asm"
                 ent
                 assert $ == #0DCA
-                incbin "../Resources/06_D3D/AfterPrimaryAngles.bin"
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/PreviewQueueBuild.md)
+                assert $ == #0DCA
+                ; Unknown, соседние байты не объявляются свободными
+                incbin "../Resources/06_D3D/Unclassified0DCA_0E00.bin"
+                assert $ == #0E00
+                disp #CE00
+                include "../D3D/Data/PreviewObjectEnd.asm"
+                ent
+                assert $ == #0E02
+                ; Unknown, соседние байты не объявляются свободными
+                incbin "../Resources/06_D3D/Unclassified0E02_0E40.bin"
                 assert $ == #0E40
                 assert $ == #0E40
                 assert $ == #0E40
@@ -433,11 +479,14 @@
                 include "../D3D/UnwindPreviewClipFrame.asm"
                 ent
                 assert $ == #2867
-                incbin "../Resources/06_D3D/BeforeFaceProduct.bin"
+                disp #E867
+                include "../D3D/SquarePreviewSignedWord.asm"                    ; (0) жёсткий порядок, последовательное исполнение
+                ent
+                assert $ == #2869
                 assert $ == #2869
                 assert $ == #2869
                 disp #E869
-                include "../D3D/MultiplyPreviewSignedWords.asm"
+                include "../D3D/MultiplyPreviewSignedWords.asm"                 ; (1) жёсткий порядок, последовательное исполнение
                 ent
                 assert $ == #2A01
                 disp #EA01
@@ -490,61 +539,81 @@
                 include "../D3D/Data/ModelGroups/Orsan.asm"
                 ent
                 assert $ == #306D
-                incbin "../Resources/06_D3D/AfterOrsanGroups.bin"
+                disp #F06D
+                include "../D3D/Data/ModelPrimitives/Orsan.asm"
+                ent
                 assert $ == #30F6
                 disp #F0F6
                 include "../D3D/Data/ModelGroups/Memfis.asm"
                 ent
                 assert $ == #3109
-                incbin "../Resources/06_D3D/AfterMemfisGroups.bin"
+                disp #F109
+                include "../D3D/Data/ModelPrimitives/Memfis.asm"
+                ent
                 assert $ == #3163
                 disp #F163
                 include "../D3D/Data/ModelGroups/Dominion.asm"
                 ent
                 assert $ == #3192
-                incbin "../Resources/06_D3D/AfterDominionGroups.bin"
+                disp #F192
+                include "../D3D/Data/ModelPrimitives/Dominion.asm"
+                ent
                 assert $ == #31F6
                 disp #F1F6
                 include "../D3D/Data/ModelGroups/Baros.asm"
                 ent
                 assert $ == #320D
-                incbin "../Resources/06_D3D/AfterBarosGroups.bin"
+                disp #F20D
+                include "../D3D/Data/ModelPrimitives/Baros.asm"
+                ent
                 assert $ == #3271
                 disp #F271
                 include "../D3D/Data/ModelGroups/Firs.asm"
                 ent
                 assert $ == #328C
-                incbin "../Resources/06_D3D/AfterFirsGroups.bin"
+                disp #F28C
+                include "../D3D/Data/ModelPrimitives/Firs.asm"
+                ent
                 assert $ == #32C0
                 disp #F2C0
                 include "../D3D/Data/ModelGroups/Sofist.asm"
                 ent
                 assert $ == #32E3
-                incbin "../Resources/06_D3D/AfterSofistGroups.bin"
+                disp #F2E3
+                include "../D3D/Data/ModelPrimitives/Sofist.asm"
+                ent
                 assert $ == #333F
                 disp #F33F
                 include "../D3D/Data/ModelGroups/Kridon.asm"
                 ent
                 assert $ == #3356
-                incbin "../Resources/06_D3D/AfterKridonGroups.bin"
+                disp #F356
+                include "../D3D/Data/ModelPrimitives/Kridon.asm"
+                ent
                 assert $ == #33AB
                 disp #F3AB
                 include "../D3D/Data/ModelGroups/Algol.asm"
                 ent
                 assert $ == #33CA
-                incbin "../Resources/06_D3D/AfterAlgolGroups.bin"
+                disp #F3CA
+                include "../D3D/Data/ModelPrimitives/Algol.asm"
+                ent
                 assert $ == #3467
                 disp #F467
                 include "../D3D/Data/ModelGroups/Protos.asm"
                 ent
                 assert $ == #347A
-                incbin "../Resources/06_D3D/AfterProtosGroups.bin"
+                disp #F47A
+                include "../D3D/Data/ModelPrimitives/Protos.asm"
+                ent
                 assert $ == #34D1
                 disp #F4D1
                 include "../D3D/Data/ModelGroups/Fervest.asm"
                 ent
                 assert $ == #34F0
-                incbin "../Resources/06_D3D/AfterFervestGroups.bin"
+                disp #F4F0
+                include "../D3D/Data/ModelPrimitives/Fervest.asm"
+                ent
                 assert $ == #3581
                 assert $ == #3581
                 assert $ == #3581
@@ -559,6 +628,8 @@
                 include "../D3D/Data/SkimmerDescriptions.asm"
                 ent
                 assert $ == #3E6A
+                ; Физический суффикс выделенных секторов, неиспользуемость не установлена
+                ; Документация [границы и сохранение суффиксов](../../Docs/AllocatedSectorSuffixes.md)
                 incbin "../Resources/06_D3D/AfterDescriptionText.bin"
                 assert $ == #3F00
                 assert $ == #3F00

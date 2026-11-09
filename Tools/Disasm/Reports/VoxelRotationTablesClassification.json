@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "typed_bytes": 512,
+  "physical_records": 512,
+  "physical_symbols": 1024,
+  "files": 2,
+  "split_pages": 2,
+  "verified_signed_coefficients": 256,
+  "compared_scale": 16384,
+  "original_bytes_addresses_and_instructions_preserved": true,
+  "gaps_preserved": true,
+  "invalid_pair_gameplay_proved": false,
+  "cf08_reclassified": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

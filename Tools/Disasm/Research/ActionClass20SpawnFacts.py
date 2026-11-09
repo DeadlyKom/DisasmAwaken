@@ -42,7 +42,7 @@ COMMENTS={
     0x61F4:(['Обновление числового шага и двух полей исходными значениями 02 без предположений об их общем смысле.'],None),
 }
 STATE_MODULE='ActionClass20SpawnState'
-STATE_FIELDS=(('DepthSignMode',0x6E75,'нулевое значение выбирает +30000, ненулевое -30000, общий игровой смысл неизвестен'),)
+STATE_FIELDS=(('DepthSignMode',0x6E75,'00 передний вид и +30000, ED задний вид и -30000, читается первый опкод пары'),)
 INCLUDE_BLOCKS=(('Includes/Const/Include.inc','module ActionClass20SpawnConst','''
                 ; Исходные значения записи класса 20
                 module ActionClass20SpawnConst

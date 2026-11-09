@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "total_cases": 136192,
+  "profiles": {
+    "other_link_all_limit_value_pairs": 65536,
+    "link_1a_clear_bit3_all_limit_value_pairs": 65536,
+    "equipment_override": 5120
+  },
+  "outcomes": {
+    "dispatch": 70212,
+    "call_effect": 65980
+  },
+  "all_limit_value_pairs_for_each_mutable_branch": true,
+  "all_link_and_flag_bytes_observed": true,
+  "actual_apply_parameter_set_executed": true,
+  "actual_consumer_gate_executed": true,
+  "field_00_operand": 63388,
+  "field_02_operand": 63384,
+  "ps1_ps2_and_fallback_unchanged": [
+    30,
+    60,
+    20
+  ],
+  "exact_sub_af_selected_c_registers_and_stack_checked": true,
+  "consumer_stack_write_addresses_and_values_checked": true,
+  "effect_body_executed": false,
+  "all_joint_inputs_exhausted": false,
+  "refresh_and_timing_proved": false,
+  "irq_executed": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

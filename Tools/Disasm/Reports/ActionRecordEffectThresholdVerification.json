@@ -7,5 +7,6 @@
   },
   "all_threshold_input_bytes": true,
   "real_effect_class": 16,
+  "mutable_limits_profile": "original_defaults_0a_0a",
   "assembly_executed": false
 }

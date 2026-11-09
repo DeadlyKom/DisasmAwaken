@@ -1,0 +1,328 @@
+{
+  "passed": true,
+  "total_cases": 1,
+  "original_station_entry_and_main_loop_executed": true,
+  "frame_entries": 3,
+  "first_write_groups": {
+    "row_high_tail": {
+      "bytes": 200,
+      "writers": {
+        "41BD": 200
+      }
+    },
+    "row_low": {
+      "bytes": 256,
+      "writers": {
+        "41BF": 256
+      }
+    },
+    "column": {
+      "bytes": 256,
+      "writers": {
+        "41DA": 256
+      }
+    },
+    "index_first_half": {
+      "bytes": 128,
+      "writers": {
+        "9EE3": 1,
+        "9EE5": 127
+      }
+    },
+    "cell_owners": {
+      "bytes": 768,
+      "writers": {
+        "9ED0": 1,
+        "9ED1": 767
+      }
+    }
+  },
+  "initial_index_tail_read_bytes": {
+    "8580": {
+      "reader": "BE95",
+      "original_value": 122
+    },
+    "8582": {
+      "reader": "BE95",
+      "original_value": 218
+    },
+    "8584": {
+      "reader": "BE95",
+      "original_value": 197
+    },
+    "8586": {
+      "reader": "BE95",
+      "original_value": 218
+    },
+    "8588": {
+      "reader": "BE95",
+      "original_value": 197
+    },
+    "858A": {
+      "reader": "BE95",
+      "original_value": 125
+    },
+    "858C": {
+      "reader": "BE95",
+      "original_value": 218
+    },
+    "858E": {
+      "reader": "BE95",
+      "original_value": 197
+    },
+    "8590": {
+      "reader": "BE95",
+      "original_value": 152
+    },
+    "8592": {
+      "reader": "BE95",
+      "original_value": 123
+    },
+    "8594": {
+      "reader": "BE95",
+      "original_value": 217
+    },
+    "8596": {
+      "reader": "BE95",
+      "original_value": 44
+    },
+    "8598": {
+      "reader": "BE95",
+      "original_value": 237
+    },
+    "859A": {
+      "reader": "BE95",
+      "original_value": 119
+    },
+    "859C": {
+      "reader": "BE95",
+      "original_value": 33
+    },
+    "859E": {
+      "reader": "BE95",
+      "original_value": 255
+    },
+    "85A0": {
+      "reader": "BE95",
+      "original_value": 235
+    },
+    "85A2": {
+      "reader": "BE95",
+      "original_value": 114
+    },
+    "85A4": {
+      "reader": "BE95",
+      "original_value": 115
+    },
+    "85A6": {
+      "reader": "BE95",
+      "original_value": 44
+    },
+    "85A8": {
+      "reader": "BE95",
+      "original_value": 217
+    },
+    "85AA": {
+      "reader": "BE95",
+      "original_value": 123
+    },
+    "85AC": {
+      "reader": "BE95",
+      "original_value": 6
+    },
+    "85AD": {
+      "reader": "BEA0",
+      "original_value": 129
+    },
+    "85AE": {
+      "reader": "BE95",
+      "original_value": 16
+    },
+    "85B0": {
+      "reader": "BE95",
+      "original_value": 217
+    },
+    "85B2": {
+      "reader": "BE95",
+      "original_value": 44
+    },
+    "85B4": {
+      "reader": "BE95",
+      "original_value": 0
+    },
+    "85B5": {
+      "reader": "BEA0",
+      "original_value": 49
+    },
+    "85B6": {
+      "reader": "BE95",
+      "original_value": 224
+    },
+    "85B8": {
+      "reader": "BE95",
+      "original_value": 201
+    },
+    "85BA": {
+      "reader": "BE95",
+      "original_value": 122
+    },
+    "85BC": {
+      "reader": "BE95",
+      "original_value": 218
+    },
+    "85BE": {
+      "reader": "BE95",
+      "original_value": 197
+    },
+    "85C0": {
+      "reader": "BE95",
+      "original_value": 218
+    },
+    "85C2": {
+      "reader": "BE95",
+      "original_value": 197
+    },
+    "85C4": {
+      "reader": "BE95",
+      "original_value": 123
+    },
+    "85C6": {
+      "reader": "BE95",
+      "original_value": 218
+    },
+    "85C8": {
+      "reader": "BE95",
+      "original_value": 197
+    },
+    "85CA": {
+      "reader": "BE95",
+      "original_value": 105
+    },
+    "85CC": {
+      "reader": "BE95",
+      "original_value": 174
+    },
+    "85CE": {
+      "reader": "BE95",
+      "original_value": 217
+    },
+    "85D0": {
+      "reader": "BE95",
+      "original_value": 68
+    },
+    "85D2": {
+      "reader": "BE95",
+      "original_value": 44
+    },
+    "85D4": {
+      "reader": "BE95",
+      "original_value": 237
+    },
+    "85D6": {
+      "reader": "BE95",
+      "original_value": 119
+    },
+    "85D8": {
+      "reader": "BE95",
+      "original_value": 33
+    },
+    "85DA": {
+      "reader": "BE95",
+      "original_value": 255
+    },
+    "85DC": {
+      "reader": "BE95",
+      "original_value": 235
+    },
+    "85DE": {
+      "reader": "BE95",
+      "original_value": 114
+    },
+    "85E0": {
+      "reader": "BE95",
+      "original_value": 115
+    },
+    "85E2": {
+      "reader": "BE95",
+      "original_value": 44
+    },
+    "85E4": {
+      "reader": "BE95",
+      "original_value": 217
+    },
+    "85E6": {
+      "reader": "BE95",
+      "original_value": 174
+    },
+    "85E8": {
+      "reader": "BE95",
+      "original_value": 237
+    },
+    "85EA": {
+      "reader": "BE95",
+      "original_value": 7
+    },
+    "85EB": {
+      "reader": "BEA0",
+      "original_value": 99
+    },
+    "85EC": {
+      "reader": "BE95",
+      "original_value": 1
+    },
+    "85EE": {
+      "reader": "BE95",
+      "original_value": 4
+    },
+    "85EF": {
+      "reader": "BEA0",
+      "original_value": 9
+    },
+    "85F0": {
+      "reader": "BE95",
+      "original_value": 41
+    },
+    "85F2": {
+      "reader": "BE95",
+      "original_value": 41
+    },
+    "85F4": {
+      "reader": "BE95",
+      "original_value": 3
+    },
+    "85F5": {
+      "reader": "BEA0",
+      "original_value": 6
+    },
+    "85F6": {
+      "reader": "BE95",
+      "original_value": 9
+    },
+    "85F7": {
+      "reader": "BEA0",
+      "original_value": 235
+    },
+    "85F8": {
+      "reader": "BE95",
+      "original_value": 183
+    },
+    "85FA": {
+      "reader": "BE95",
+      "original_value": 82
+    },
+    "85FC": {
+      "reader": "BE95",
+      "original_value": 33
+    },
+    "85FE": {
+      "reader": "BE95",
+      "original_value": 255
+    }
+  },
+  "original_index_tail_not_zeroed_by_reset": true,
+  "workspace_instructions_executed": false,
+  "TR_DOS_read_substituted": true,
+  "other_game_paths_first_access_proved": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

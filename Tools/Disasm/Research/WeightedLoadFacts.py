@@ -73,6 +73,7 @@ COMMENTS={
 
 def name_operands(region,address,operation):
  if region!='Text' or address!=0xC86F:return operation
+ operation=operation.replace('#94FA','@StationCargoScale.Row00.Code')
  for raw,name in (('#C884','SelectedRow'),('#C8BF','FirstWeight'),('#C8E1','SecondWeight')):
   operation=operation.replace(raw,'@WeightedLoadState.'+name)
  return operation

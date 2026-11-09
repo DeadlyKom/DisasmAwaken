@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "total_cases": 1024,
+  "entry": 29847,
+  "physical_offset": 11415,
+  "bytes": 54,
+  "input_attributes": 255,
+  "sample_destination": 33111,
+  "actual_index_displacement": 0,
+  "direct_game_entry_found": false,
+  "original_relocation_executed": true,
+  "assembly_executed": false,
+  "native_execution": false
+}

@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "cases": 2400,
+  "literal_pairs": 256,
+  "regular_pairs": 160,
+  "irregular_pairs": 96,
+  "all_mode_indices_and_edge_pixel_phases": true,
+  "both_mask_pages_per_contour": true,
+  "same_byte_and_separate_edges": true,
+  "changed_bits_outside_span": 5598,
+  "original_bitmap_and_literal_masks_agree": true,
+  "normal_game_use_of_modes_5_to_7_proved": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

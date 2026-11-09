@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "typed_bytes": 432,
+  "physical_records": 27,
+  "physical_symbols": 459,
+  "files": 2,
+  "normal_pairs": 81,
+  "normal_targets": 71,
+  "low_bytes": 256,
+  "high_prefix_bytes": 176,
+  "existing_pixel_masks_preserved": true,
+  "original_bytes_addresses_and_instructions_preserved": true,
+  "gaps_preserved": true,
+  "invalid_pair_gameplay_proved": false,
+  "cf08_reclassified": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

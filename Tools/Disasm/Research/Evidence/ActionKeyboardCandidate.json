@@ -1,0 +1,4782 @@
+{
+  "roots": [
+    30547,
+    30582,
+    30477,
+    30512,
+    30407,
+    30442,
+    29463,
+    30336,
+    30371,
+    44203,
+    29410,
+    29374,
+    28748,
+    28789,
+    28808,
+    29859,
+    30028,
+    29824,
+    30214,
+    29753,
+    29230,
+    30100,
+    30159,
+    28918,
+    28747,
+    30250,
+    49353
+  ],
+  "new_instructions": [
+    {
+      "address": 28918,
+      "operation": "LD A,(#A85F)",
+      "hex": "3a5fa8",
+      "slot": 17,
+      "offset": 4915
+    },
+    {
+      "address": 28921,
+      "operation": "AND A",
+      "hex": "a7",
+      "slot": 17,
+      "offset": 4918
+    },
+    {
+      "address": 28922,
+      "operation": "RET NZ",
+      "hex": "c0",
+      "slot": 17,
+      "offset": 4919
+    },
+    {
+      "address": 28923,
+      "operation": "LD A,(#9C26)",
+      "hex": "3a269c",
+      "slot": 17,
+      "offset": 4920
+    },
+    {
+      "address": 28926,
+      "operation": "INC A",
+      "hex": "3c",
+      "slot": 17,
+      "offset": 4923
+    },
+    {
+      "address": 28927,
+      "operation": "RET Z",
+      "hex": "c8",
+      "slot": 17,
+      "offset": 4924
+    },
+    {
+      "address": 28928,
+      "operation": "LD A,(#9C10)",
+      "hex": "3a109c",
+      "slot": 17,
+      "offset": 4925
+    },
+    {
+      "address": 28931,
+      "operation": "CP #00",
+      "hex": "fe00",
+      "slot": 17,
+      "offset": 4928
+    },
+    {
+      "address": 28933,
+      "operation": "JP Z,#7127",
+      "hex": "ca2771",
+      "slot": 17,
+      "offset": 4930
+    },
+    {
+      "address": 28936,
+      "operation": "LD A,(#9C8A)",
+      "hex": "3a8a9c",
+      "slot": 17,
+      "offset": 4933
+    },
+    {
+      "address": 28939,
+      "operation": "LD E,A",
+      "hex": "5f",
+      "slot": 17,
+      "offset": 4936
+    },
+    {
+      "address": 28940,
+      "operation": "LD D,#00",
+      "hex": "1600",
+      "slot": 17,
+      "offset": 4937
+    },
+    {
+      "address": 28942,
+      "operation": "LD A,(#9C10)",
+      "hex": "3a109c",
+      "slot": 17,
+      "offset": 4939
+    },
+    {
+      "address": 28945,
+      "operation": "LD L,A",
+      "hex": "6f",
+      "slot": 17,
+      "offset": 4942
+    },
+    {
+      "address": 28946,
+      "operation": "LD H,#00",
+      "hex": "2600",
+      "slot": 17,
+      "offset": 4943
+    },
+    {
+      "address": 28948,
+      "operation": "OR A",
+      "hex": "b7",
+      "slot": 17,
+      "offset": 4945
+    },
+    {
+      "address": 28949,
+      "operation": "RL E",
+      "hex": "cb13",
+      "slot": 17,
+      "offset": 4946
+    },
+    {
+      "address": 28951,
+      "operation": "RL D",
+      "hex": "cb12",
+      "slot": 17,
+      "offset": 4948
+    },
+    {
+      "address": 28953,
+      "operation": "XOR A",
+      "hex": "af",
+      "slot": 17,
+      "offset": 4950
+    },
+    {
+      "address": 28954,
+      "operation": "SBC HL,DE",
+      "hex": "ed52",
+      "slot": 17,
+      "offset": 4951
+    },
+    {
+      "address": 28956,
+      "operation": "JP NC,#7120",
+      "hex": "d22071",
+      "slot": 17,
+      "offset": 4953
+    },
+    {
+      "address": 28959,
+      "operation": "RET",
+      "hex": "c9",
+      "slot": 17,
+      "offset": 4956
+    },
+    {
+      "address": 28960,
+      "operation": "LD A,L",
+      "hex": "7d",
+      "slot": 17,
+      "offset": 4957
+    },
+    {
+      "address": 28961,
+      "operation": "LD (#9C10),A",
+      "hex": "32109c",
+      "slot": 17,
+      "offset": 4958
+    },
+    {
+      "address": 28964,
+      "operation": "JP #713E",
+      "hex": "c33e71",
+      "slot": 17,
+      "offset": 4961
+    },
+    {
+      "address": 28967,
+      "operation": "LD A,(#9C8A)",
+      "hex": "3a8a9c",
+      "slot": 17,
+      "offset": 4964
+    },
+    {
+      "address": 28970,
+      "operation": "LD E,A",
+      "hex": "5f",
+      "slot": 17,
+      "offset": 4967
+    },
+    {
+      "address": 28971,
+      "operation": "LD D,#00",
+      "hex": "1600",
+      "slot": 17,
+      "offset": 4968
+    },
+    {
+      "address": 28973,
+      "operation": "LD A,(#9C11)",
+      "hex": "3a119c",
+      "slot": 17,
+      "offset": 4970
+    },
+    {
+      "address": 28976,
+      "operation": "LD L,A",
+      "hex": "6f",
+      "slot": 17,
+      "offset": 4973
+    },
+    {
+      "address": 28977,
+      "operation": "LD H,#00",
+      "hex": "2600",
+      "slot": 17,
+      "offset": 4974
+    },
+    {
+      "address": 28979,
+      "operation": "XOR A",
+      "hex": "af",
+      "slot": 17,
+      "offset": 4976
+    },
+    {
+      "address": 28980,
+      "operation": "SBC HL,DE",
+      "hex": "ed52",
+      "slot": 17,
+      "offset": 4977
+    },
+    {
+      "address": 28982,
+      "operation": "JP NC,#713A",
+      "hex": "d23a71",
+      "slot": 17,
+      "offset": 4979
+    },
+    {
+      "address": 28985,
+      "operation": "RET",
+      "hex": "c9",
+      "slot": 17,
+      "offset": 4982
+    },
+    {
+      "address": 28986,
+      "operation": "LD A,L",
+      "hex": "7d",
+      "slot": 17,
+      "offset": 4983
+    },
+    {
+      "address": 28987,
+      "operation": "LD (#9C11),A",
+      "hex": "32119c",
+      "slot": 17,
+      "offset": 4984
+    },
+    {
+      "address": 28990,
+      "operation": "LD HL,(#9BC6)",
+      "hex": "2ac69b",
+      "slot": 17,
+      "offset": 4987
+    },
+    {
+      "address": 28993,
+      "operation": "LD DE,(#9BC1)",
+      "hex": "ed5bc19b",
+      "slot": 17,
+      "offset": 4990
+    },
+    {
+      "address": 28997,
+      "operation": "XOR A",
+      "hex": "af",
+      "slot": 17,
+      "offset": 4994
+    },
+    {
+      "address": 28998,
+      "operation": "SBC HL,DE",
+      "hex": "ed52",
+      "slot": 17,
+      "offset": 4995
+    },
+    {
+      "address": 29000,
+      "operation": "JP NZ,#7164",
+      "hex": "c26471",
+      "slot": 17,
+      "offset": 4997
+    },
+    {
+      "address": 29003,
+      "operation": "LD HL,(#9BC8)",
+      "hex": "2ac89b",
+      "slot": 17,
+      "offset": 5000
+    },
+    {
+      "address": 29006,
+      "operation": "LD DE,(#9BC3)",
+      "hex": "ed5bc39b",
+      "slot": 17,
+      "offset": 5003
+    },
+    {
+      "address": 29010,
+      "operation": "XOR A",
+      "hex": "af",
+      "slot": 17,
+      "offset": 5007
+    },
+    {
+      "address": 29011,
+      "operation": "SBC HL,DE",
+      "hex": "ed52",
+      "slot": 17,
+      "offset": 5008
+    },
+    {
+      "address": 29013,
+      "operation": "JP NZ,#7164",
+      "hex": "c26471",
+      "slot": 17,
+      "offset": 5010
+    },
+    {
+      "address": 29016,
+      "operation": "LD A,(#9BC5)",
+      "hex": "3ac59b",
+      "slot": 17,
+      "offset": 5013
+    },
+    {
+      "address": 29019,
+      "operation": "LD B,A",
+      "hex": "47",
+      "slot": 17,
+      "offset": 5016
+    },
+    {
+      "address": 29020,
+      "operation": "LD A,(#9BCA)",
+      "hex": "3aca9b",
+      "slot": 17,
+      "offset": 5017
+    },
+    {
+      "address": 29023,
+      "operation": "SBC A,B",
+      "hex": "98",
+      "slot": 17,
+      "offset": 5020
+    },
+    {
+      "address": 29024,
+      "operation": "JP NZ,#7164",
+      "hex": "c26471",
+      "slot": 17,
+      "offset": 5021
+    },
+    {
+      "address": 29027,
+      "operation": "RET",
+      "hex": "c9",
+      "slot": 17,
+      "offset": 5024
+    },
+    {
+      "address": 29028,
+      "operation": "LD HL,(#9BC6)",
+      "hex": "2ac69b",
+      "slot": 17,
+      "offset": 5025
+    },
+    {
+      "address": 29031,
+      "operation": "LD (#9BC1),HL",
+      "hex": "22c19b",
+      "slot": 17,
+      "offset": 5028
+    },
+    {
+      "address": 29034,
+      "operation": "LD HL,(#9BC8)",
+      "hex": "2ac89b",
+      "slot": 17,
+      "offset": 5031
+    },
+    {
+      "address": 29037,
+      "operation": "LD (#9BC3),HL",
+      "hex": "22c39b",
+      "slot": 17,
+      "offset": 5034
+    },
+    {
+      "address": 29040,
+      "operation": "LD A,(#9BCA)",
+      "hex": "3aca9b",
+      "slot": 17,
+      "offset": 5037
+    },
+    {
+      "address": 29043,
+      "operation": "LD (#9BC5),A",
+      "hex": "32c59b",
+      "slot": 17,
+      "offset": 5040
+    },
+    {
+      "address": 29046,
+      "operation": "PUSH DE",
+      "hex": "d5",
+      "slot": 17,
+      "offset": 5043
+    },
+    {
+      "address": 29047,
+      "operation": "LD DE,#F37F",
+      "hex": "117ff3",
+      "slot": 17,
+      "offset": 5044
+    },
+    {
+      "address": 29050,
+      "operation": "CALL #6040",
+      "hex": "cd4060",
+      "slot": 17,
+      "offset": 5047
+    },
+    {
+      "address": 29053,
+      "operation": "POP DE",
+      "hex": "d1",
+      "slot": 17,
+      "offset": 5050
+    },
+    {
+      "address": 29054,
+      "operation": "LD A,#11",
+      "hex": "3e11",
+      "slot": 17,
+      "offset": 5051
+    },
+    {
+      "address": 29056,
+      "operation": "CALL #AB1B",
+      "hex": "cd1bab",
+      "slot": 17,
+      "offset": 5053
+    },
+    {
+      "address": 29059,
+      "operation": "LD B,#00",
+      "hex": "0600",
+      "slot": 17,
+      "offset": 5056
+    },
+    {
+      "address": 29061,
+      "operation": "PUSH BC",
+      "hex": "c5",
+      "slot": 17,
+      "offset": 5058
+    },
+    {
+      "address": 29062,
+      "operation": "CALL #ECA2",
+      "hex": "cda2ec",
+      "slot": 17,
+      "offset": 5059
+    },
+    {
+      "address": 29065,
+      "operation": "POP BC",
+      "hex": "c1",
+      "slot": 17,
+      "offset": 5062
+    },
+    {
+      "address": 29066,
+      "operation": "DJNZ #7185",
+      "hex": "10f9",
+      "slot": 17,
+      "offset": 5063
+    },
+    {
+      "address": 29068,
+      "operation": "LD A,(#9C2A)",
+      "hex": "3a2a9c",
+      "slot": 17,
+      "offset": 5065
+    },
+    {
+      "address": 29071,
+      "operation": "INC A",
+      "hex": "3c",
+      "slot": 17,
+      "offset": 5068
+    },
+    {
+      "address": 29072,
+      "operation": "JP Z,#7198",
+      "hex": "ca9871",
+      "slot": 17,
+      "offset": 5069
+    },
+    {
+      "address": 29075,
+      "operation": "LD A,#40",
+      "hex": "3e40",
+      "slot": 17,
+      "offset": 5072
+    },
+    {
+      "address": 29077,
+      "operation": "JP #719A",
+      "hex": "c39a71",
+      "slot": 17,
+      "offset": 5074
+    },
+    {
+      "address": 29080,
+      "operation": "LD A,#80",
+      "hex": "3e80",
+      "slot": 17,
+      "offset": 5077
+    },
+    {
+      "address": 29082,
+      "operation": "PUSH AF",
+      "hex": "f5",
+      "slot": 17,
+      "offset": 5079
+    },
+    {
+      "address": 29083,
+      "operation": "LD A,#FF",
+      "hex": "3eff",
+      "slot": 17,
+      "offset": 5080
+    },
+    {
+      "address": 29085,
+      "operation": "LD B,#FF",
+      "hex": "06ff",
+      "slot": 17,
+      "offset": 5082
+    },
+    {
+      "address": 29087,
+      "operation": "DJNZ #719F",
+      "hex": "10fe",
+      "slot": 17,
+      "offset": 5084
+    },
+    {
+      "address": 29089,
+      "operation": "DEC A",
+      "hex": "3d",
+      "slot": 17,
+      "offset": 5086
+    },
+    {
+      "address": 29090,
+      "operation": "JP NZ,#719D",
+      "hex": "c29d71",
+      "slot": 17,
+      "offset": 5087
+    },
+    {
+      "address": 29093,
+      "operation": "POP AF",
+      "hex": "f1",
+      "slot": 17,
+      "offset": 5090
+    },
+    {
+      "address": 29094,
+      "operation": "DEC A",
+      "hex": "3d",
+      "slot": 17,
+      "offset": 5091
+    },
+    {
+      "address": 29095,
+      "operation": "JP NZ,#719A",
+      "hex": "c29a71",
+      "slot": 17,
+      "offset": 5092
+    },
+    {
+      "address": 29098,
+      "operation": "LD BC,#7FFD",
+      "hex": "01fd7f",
+      "slot": 17,
+      "offset": 5095
+    },
+    {
+      "address": 29101,
+      "operation": "LD A,#1F",
+      "hex": "3e1f",
+      "slot": 17,
+      "offset": 5098
+    },
+    {
+      "address": 29103,
+      "operation": "OUT (C),A",
+      "hex": "ed79",
+      "slot": 17,
+      "offset": 5100
+    },
+    {
+      "address": 29105,
+      "operation": "LD HL,#5800",
+      "hex": "210058",
+      "slot": 17,
+      "offset": 5102
+    },
+    {
+      "address": 29108,
+      "operation": "LD DE,#5801",
+      "hex": "110158",
+      "slot": 17,
+      "offset": 5105
+    },
+    {
+      "address": 29111,
+      "operation": "LD BC,#02FF",
+      "hex": "01ff02",
+      "slot": 17,
+      "offset": 5108
+    },
+    {
+      "address": 29114,
+      "operation": "LD (HL),L",
+      "hex": "75",
+      "slot": 17,
+      "offset": 5111
+    },
+    {
+      "address": 29115,
+      "operation": "LDIR",
+      "hex": "edb0",
+      "slot": 17,
+      "offset": 5112
+    },
+    {
+      "address": 29117,
+      "operation": "LD HL,#71CB",
+      "hex": "21cb71",
+      "slot": 17,
+      "offset": 5114
+    },
+    {
+      "address": 29120,
+      "operation": "LD DE,#4200",
+      "hex": "110042",
+      "slot": 17,
+      "offset": 5117
+    },
+    {
+      "address": 29123,
+      "operation": "LD BC,#0063",
+      "hex": "016300",
+      "slot": 17,
+      "offset": 5120
+    },
+    {
+      "address": 29126,
+      "operation": "LDIR",
+      "hex": "edb0",
+      "slot": 17,
+      "offset": 5123
+    },
+    {
+      "address": 29128,
+      "operation": "JP #4200",
+      "hex": "c30042",
+      "slot": 17,
+      "offset": 5125
+    },
+    {
+      "address": 29230,
+      "operation": "LD A,(#A85F)",
+      "hex": "3a5fa8",
+      "slot": 17,
+      "offset": 5227
+    },
+    {
+      "address": 29233,
+      "operation": "AND A",
+      "hex": "a7",
+      "slot": 17,
+      "offset": 5230
+    },
+    {
+      "address": 29234,
+      "operation": "RET NZ",
+      "hex": "c0",
+      "slot": 17,
+      "offset": 5231
+    },
+    {
+      "address": 29235,
+      "operation": "LD A,#05",
+      "hex": "3e05",
+      "slot": 17,
+      "offset": 5232
+    },
+    {
+      "address": 29237,
+      "operation": "LD (#A85F),A",
+      "hex": "325fa8",
+      "slot": 17,
+      "offset": 5234
+    },
+    {
+      "address": 29240,
+      "operation": "PUSH DE",
+      "hex": "d5",
+      "slot": 17,
+      "offset": 5237
+    },
+    {
+      "address": 29241,
+      "operation": "LD DE,#F32D",
+      "hex": "112df3",
+      "slot": 17,
+      "offset": 5238
+    },
+    {
+      "address": 29244,
+      "operation": "CALL #6040",
+      "hex": "cd4060",
+      "slot": 17,
+      "offset": 5241
+    },
+    {
+      "address": 29247,
+      "operation": "POP DE",
+      "hex": "d1",
+      "slot": 17,
+      "offset": 5244
+    },
+    {
+      "address": 29248,
+      "operation": "LD HL,#EDC1",
+      "hex": "21c1ed",
+      "slot": 17,
+      "offset": 5245
+    },
+    {
+      "address": 29251,
+      "operation": "LD (#ECA9),HL",
+      "hex": "22a9ec",
+      "slot": 17,
+      "offset": 5248
+    },
+    {
+      "address": 29254,
+      "operation": "LD HL,#A0C1",
+      "hex": "21c1a0",
+      "slot": 17,
+      "offset": 5251
+    },
+    {
+      "address": 29257,
+      "operation": "LD DE,#0040",
+      "hex": "114000",
+      "slot": 17,
+      "offset": 5254
+    },
+    {
+      "address": 29260,
+      "operation": "JP #7255",
+      "hex": "c35572",
+      "slot": 17,
+      "offset": 5257
+    },
+    {
+      "address": 29263,
+      "operation": "DEC L",
+      "hex": "2d",
+      "slot": 17,
+      "offset": 5260
+    },
+    {
+      "address": 29264,
+      "operation": "LD A,(HL)",
+      "hex": "7e",
+      "slot": 17,
+      "offset": 5261
+    },
+    {
+      "address": 29265,
+      "operation": "CP #80",
+      "hex": "fe80",
+      "slot": 17,
+      "offset": 5262
+    },
+    {
+      "address": 29267,
+      "operation": "RET Z",
+      "hex": "c8",
+      "slot": 17,
+      "offset": 5264
+    },
+    {
+      "address": 29268,
+      "operation": "INC L",
+      "hex": "2c",
+      "slot": 17,
+      "offset": 5265
+    },
+    {
+      "address": 29269,
+      "operation": "ADD HL,DE",
+      "hex": "19",
+      "slot": 17,
+      "offset": 5266
+    },
+    {
+      "address": 29270,
+      "operation": "LD A,(HL)",
+      "hex": "7e",
+      "slot": 17,
+      "offset": 5267
+    },
+    {
+      "address": 29271,
+      "operation": "CP #80",
+      "hex": "fe80",
+      "slot": 17,
+      "offset": 5268
+    },
+    {
+      "address": 29273,
+      "operation": "JR Z,#724F",
+      "hex": "28f4",
+      "slot": 17,
+      "offset": 5270
+    },
+    {
+      "address": 29275,
+      "operation": "LD A,L",
+      "hex": "7d",
+      "slot": 17,
+      "offset": 5272
+    },
+    {
+      "address": 29276,
+      "operation": "ADD A,#11",
+      "hex": "c611",
+      "slot": 17,
+      "offset": 5273
+    },
+    {
+      "address": 29278,
+      "operation": "LD L,A",
+      "hex": "6f",
+      "slot": 17,
+      "offset": 5275
+    },
+    {
+      "address": 29279,
+      "operation": "LD C,(HL)",
+      "hex": "4e",
+      "slot": 17,
+      "offset": 5276
+    },
+    {
+      "address": 29280,
+      "operation": "DEC L",
+      "hex": "2d",
+      "slot": 17,
+      "offset": 5277
+    },
+    {
+      "address": 29281,
+      "operation": "DEC L",
+      "hex": "2d",
+      "slot": 17,
+      "offset": 5278
+    },
+    {
+      "address": 29282,
+      "operation": "DEC L",
+      "hex": "2d",
+      "slot": 17,
+      "offset": 5279
+    },
+    {
+      "address": 29283,
+      "operation": "LD B,(HL)",
+      "hex": "46",
+      "slot": 17,
+      "offset": 5280
+    },
+    {
+      "address": 29284,
+      "operation": "SUB #11",
+      "hex": "d611",
+      "slot": 17,
+      "offset": 5281
+    },
+    {
+      "address": 29286,
+      "operation": "LD L,A",
+      "hex": "6f",
+      "slot": 17,
+      "offset": 5283
+    },
+    {
+      "address": 29287,
+      "operation": "LD A,C",
+      "hex": "79",
+      "slot": 17,
+      "offset": 5284
+    },
+    {
+      "address": 29288,
+      "operation": "CP #11",
+      "hex": "fe11",
+      "slot": 17,
+      "offset": 5285
+    },
+    {
+      "address": 29290,
+      "operation": "JR NZ,#7255",
+      "hex": "20e9",
+      "slot": 17,
+      "offset": 5287
+    },
+    {
+      "address": 29292,
+      "operation": "LD A,B",
+      "hex": "78",
+      "slot": 17,
+      "offset": 5289
+    },
+    {
+      "address": 29293,
+      "operation": "CP #1A",
+      "hex": "fe1a",
+      "slot": 17,
+      "offset": 5290
+    },
+    {
+      "address": 29295,
+      "operation": "JR NZ,#7255",
+      "hex": "20e4",
+      "slot": 17,
+      "offset": 5292
+    },
+    {
+      "address": 29297,
+      "operation": "PUSH IX",
+      "hex": "dde5",
+      "slot": 17,
+      "offset": 5294
+    },
+    {
+      "address": 29299,
+      "operation": "DEC L",
+      "hex": "2d",
+      "slot": 17,
+      "offset": 5296
+    },
+    {
+      "address": 29300,
+      "operation": "PUSH HL",
+      "hex": "e5",
+      "slot": 17,
+      "offset": 5297
+    },
+    {
+      "address": 29301,
+      "operation": "POP IX",
+      "hex": "dde1",
+      "slot": 17,
+      "offset": 5298
+    },
+    {
+      "address": 29303,
+      "operation": "SET 0,(IX+#0C)",
+      "hex": "ddcb0cc6",
+      "slot": 17,
+      "offset": 5300
+    },
+    {
+      "address": 29307,
+      "operation": "SET 3,(IX+#0C)",
+      "hex": "ddcb0cde",
+      "slot": 17,
+      "offset": 5304
+    },
+    {
+      "address": 29311,
+      "operation": "LD A,(IX+#1B)",
+      "hex": "dd7e1b",
+      "slot": 17,
+      "offset": 5308
+    },
+    {
+      "address": 29314,
+      "operation": "CP #80",
+      "hex": "fe80",
+      "slot": 17,
+      "offset": 5311
+    },
+    {
+      "address": 29316,
+      "operation": "SCF",
+      "hex": "37",
+      "slot": 17,
+      "offset": 5313
+    },
+    {
+      "address": 29317,
+      "operation": "JR Z,#72BB",
+      "hex": "2834",
+      "slot": 17,
+      "offset": 5314
+    },
+    {
+      "address": 29319,
+      "operation": "LD B,A",
+      "hex": "47",
+      "slot": 17,
+      "offset": 5316
+    },
+    {
+      "address": 29320,
+      "operation": "LD C,(IX+#1A)",
+      "hex": "dd4e1a",
+      "slot": 17,
+      "offset": 5317
+    },
+    {
+      "address": 29323,
+      "operation": "LD L,(IX+#1C)",
+      "hex": "dd6e1c",
+      "slot": 17,
+      "offset": 5320
+    },
+    {
+      "address": 29326,
+      "operation": "LD H,(IX+#1D)",
+      "hex": "dd661d",
+      "slot": 17,
+      "offset": 5323
+    },
+    {
+      "address": 29329,
+      "operation": "LD E,(IX+#1E)",
+      "hex": "dd5e1e",
+      "slot": 17,
+      "offset": 5326
+    },
+    {
+      "address": 29332,
+      "operation": "LD D,(IX+#1F)",
+      "hex": "dd561f",
+      "slot": 17,
+      "offset": 5329
+    },
+    {
+      "address": 29335,
+      "operation": "EXX",
+      "hex": "d9",
+      "slot": 17,
+      "offset": 5332
+    },
+    {
+      "address": 29336,
+      "operation": "LD BC,#0003",
+      "hex": "010300",
+      "slot": 17,
+      "offset": 5333
+    },
+    {
+      "address": 29339,
+      "operation": "LD (#D9B6),BC",
+      "hex": "ed43b6d9",
+      "slot": 17,
+      "offset": 5336
+    },
+    {
+      "address": 29343,
+      "operation": "LD (#AF48),BC",
+      "hex": "ed4348af",
+      "slot": 17,
+      "offset": 5340
+    },
+    {
+      "address": 29347,
+      "operation": "LD (#AF56),BC",
+      "hex": "ed4356af",
+      "slot": 17,
+      "offset": 5344
+    },
+    {
+      "address": 29351,
+      "operation": "LD (#AF69),BC",
+      "hex": "ed4369af",
+      "slot": 17,
+      "offset": 5348
+    },
+    {
+      "address": 29355,
+      "operation": "LD HL,#00B0",
+      "hex": "21b000",
+      "slot": 17,
+      "offset": 5352
+    },
+    {
+      "address": 29358,
+      "operation": "LD (#D7C4),HL",
+      "hex": "22c4d7",
+      "slot": 17,
+      "offset": 5355
+    },
+    {
+      "address": 29361,
+      "operation": "LD DE,#FFFF",
+      "hex": "11ffff",
+      "slot": 17,
+      "offset": 5358
+    },
+    {
+      "address": 29364,
+      "operation": "LD (#D7A2),DE",
+      "hex": "ed53a2d7",
+      "slot": 17,
+      "offset": 5361
+    },
+    {
+      "address": 29368,
+      "operation": "CALL #E835",
+      "hex": "cd35e8",
+      "slot": 17,
+      "offset": 5365
+    },
+    {
+      "address": 29371,
+      "operation": "POP IX",
+      "hex": "dde1",
+      "slot": 17,
+      "offset": 5368
+    },
+    {
+      "address": 29373,
+      "operation": "RET",
+      "hex": "c9",
+      "slot": 17,
+      "offset": 5370
+    },
+    {
+      "address": 29374,
+      "operation": "LD A,(#A85F)",
+      "hex": "3a5fa8",
+      "slot": 17,
+      "offset": 5371
+    },
+    {
+      "address": 29377,
+      "operation": "AND A",
+      "hex": "a7",
+      "slot": 17,
+      "offset": 5374
+    },
+    {
+      "address": 29378,
+      "operation": "RET NZ",
+      "hex": "c0",
+      "slot": 17,
+      "offset": 5375
+    },
+    {
+      "address": 29379,
+      "operation": "LD A,#07",
+      "hex": "3e07",
+      "slot": 17,
+      "offset": 5376
+    },
+    {
+      "address": 29381,
+      "operation": "LD (#A85F),A",
+      "hex": "325fa8",
+      "slot": 17,
+      "offset": 5378
+    },
+    {
+      "address": 29384,
+      "operation": "LD HL,#EDA8",
+      "hex": "21a8ed",
+      "slot": 17,
+      "offset": 5381
+    },
+    {
+      "address": 29387,
+      "operation": "LD (#ECA9),HL",
+      "hex": "22a9ec",
+      "slot": 17,
+      "offset": 5384
+    },
+    {
+      "address": 29390,
+      "operation": "LD A,#FF",
+      "hex": "3eff",
+      "slot": 17,
+      "offset": 5387
+    },
+    {
+      "address": 29392,
+      "operation": "LD (#9B1B),A",
+      "hex": "321b9b",
+      "slot": 17,
+      "offset": 5389
+    },
+    {
+      "address": 29395,
+      "operation": "LD (#9B1C),A",
+      "hex": "321c9b",
+      "slot": 17,
+      "offset": 5392
+    },
+    {
+      "address": 29398,
+      "operation": "LD (#9B1D),A",
+      "hex": "321d9b",
+      "slot": 17,
+      "offset": 5395
+    },
+    {
+      "address": 29401,
+      "operation": "PUSH DE",
+      "hex": "d5",
+      "slot": 17,
+      "offset": 5398
+    },
+    {
+      "address": 29402,
+      "operation": "LD DE,#F354",
+      "hex": "1154f3",
+      "slot": 17,
+      "offset": 5399
+    },
+    {
+      "address": 29405,
+      "operation": "CALL #6040",
+      "hex": "cd4060",
+      "slot": 17,
+      "offset": 5402
+    },
+    {
+      "address": 29408,
+      "operation": "POP DE",
+      "hex": "d1",
+      "slot": 17,
+      "offset": 5405
+    },
+    {
+      "address": 29409,
+      "operation": "RET",
+      "hex": "c9",
+      "slot": 17,
+      "offset": 5406
+    },
+    {
+      "address": 29410,
+      "operation": "LD A,(#A85F)",
+      "hex": "3a5fa8",
+      "slot": 17,
+      "offset": 5407
+    },
+    {
+      "address": 29413,
+      "operation": "AND A",
+      "hex": "a7",
+      "slot": 17,
+      "offset": 5410
+    },
+    {
+      "address": 29414,
+      "operation": "RET NZ",
+      "hex": "c0",
+      "slot": 17,
+      "offset": 5411
+    },
+    {
+      "address": 29415,
+      "operation": "LD HL,#EDA8",
+      "hex": "21a8ed",
+      "slot": 17,
+      "offset": 5412
+    },
+    {
+      "address": 29418,
+      "operation": "LD (#ECA9),HL",
+      "hex": "22a9ec",
+      "slot": 17,
+      "offset": 5415
+    },
+    {
+      "address": 29421,
+      "operation": "LD A,#07",
+      "hex": "3e07",
+      "slot": 17,
+      "offset": 5418
+    },
+    {
+      "address": 29423,
+      "operation": "LD (#A85F),A",
+      "hex": "325fa8",
+      "slot": 17,
+      "offset": 5420
+    },
+    {
+      "address": 29426,
+      "operation": "LD A,(#AA8E)",
+      "hex": "3a8eaa",
+      "slot": 17,
+      "offset": 5423
+    },
+    {
+      "address": 29429,
+      "operation": "XOR #01",
+      "hex": "ee01",
+      "slot": 17,
+      "offset": 5426
+    },
+    {
+      "address": 29431,
+      "operation": "LD (#AA8E),A",
+      "hex": "328eaa",
+      "slot": 17,
+      "offset": 5428
+    },
+    {
+      "address": 29434,
+      "operation": "JR NZ,#7306",
+      "hex": "200a",
+      "slot": 17,
+      "offset": 5431
+    },
+    {
+      "address": 29436,
+      "operation": "PUSH DE",
+      "hex": "d5",
+      "slot": 17,
+      "offset": 5433
+    },
+    {
+      "address": 29437,
+      "operation": "LD DE,#F1F0",
+      "hex": "11f0f1",
+      "slot": 17,
+      "offset": 5434
+    },
+    {
+      "address": 29440,
+      "operation": "CALL #6040",
+      "hex": "cd4060",
+      "slot": 17,
+      "offset": 5437
+    },
+    {
+      "address": 29443,
+      "operation": "POP DE",
+      "hex": "d1",
+      "slot": 17,
+      "offset": 5440
+    },
+    {
+      "address": 29444,
+      "operation": "JR #730E",
+      "hex": "1808",
+      "slot": 17,
+      "offset": 5441
+    },
+    {
+      "address": 29446,
+      "operation": "PUSH DE",
+      "hex": "d5",
+      "slot": 17,
+      "offset": 5443
+    },
+    {
+      "address": 29447,
+      "operation": "LD DE,#F1E1",
+      "hex": "11e1f1",
+      "slot": 17,
+      "offset": 5444
+    },
+    {
+      "address": 29450,
+      "operation": "CALL #6040",
+      "hex": "cd4060",
+      "slot": 17,
+      "offset": 5447
+    },
+    {
+      "address": 29453,
+      "operation": "POP DE",
+      "hex": "d1",
+      "slot": 17,
+      "offset": 5450
+    },
+    {
+      "address": 29454,
+      "operation": "PUSH DE",
+      "hex": "d5",
+      "slot": 17,
+      "offset": 5451
+    },
+    {
+      "address": 29455,
+      "operation": "LD DE,#F214",
+      "hex": "1114f2",
+      "slot": 17,
+      "offset": 5452
+    },
+    {
+      "address": 29458,
+      "operation": "CALL #6040",
+      "hex": "cd4060",
+      "slot": 17,
+      "offset": 5455
+    },
+    {
+      "address": 29461,
+      "operation": "POP DE",
+      "hex": "d1",
+      "slot": 17,
+      "offset": 5458
+    },
+    {
+      "address": 29462,
+      "operation": "RET",
+      "hex": "c9",
+      "slot": 17,
+      "offset": 5459
+    },
+    {
+      "address": 29463,
+      "operation": "LD A,#00",
+      "hex": "3e00",
+      "slot": 17,
+      "offset": 5460
+    },
+    {
+      "address": 29465,
+      "operation": "AND A",
+      "hex": "a7",
+      "slot": 17,
+      "offset": 5462
+    },
+    {
+      "address": 29466,
+      "operation": "JP Z,#63B6",
+      "hex": "cab663",
+      "slot": 17,
+      "offset": 5463
+    },
+    {
+      "address": 29469,
+      "operation": "LD A,(#9B1B)",
+      "hex": "3a1b9b",
+      "slot": 17,
+      "offset": 5466
+    },
+    {
+      "address": 29472,
+      "operation": "OR A",
+      "hex": "b7",
+      "slot": 17,
+      "offset": 5469
+    },
+    {
+      "address": 29473,
+      "operation": "RET M",
+      "hex": "f8",
+      "slot": 17,
+      "offset": 5470
+    },
+    {
+      "address": 29474,
+      "operation": "CALL #E6A7",
+      "hex": "cda7e6",
+      "slot": 17,
+      "offset": 5471
+    },
+    {
+      "address": 29477,
+      "operation": "INC L",
+      "hex": "2c",
+      "slot": 17,
+      "offset": 5474
+    },
+    {
+      "address": 29478,
+      "operation": "LD A,(HL)",
+      "hex": "7e",
+      "slot": 17,
+      "offset": 5475
+    },
+    {
+      "address": 29479,
+      "operation": "CP #80",
+      "hex": "fe80",
+      "slot": 17,
+      "offset": 5476
+    },
+    {
+      "address": 29481,
+      "operation": "JR Z,#7334",
+      "hex": "2809",
+      "slot": 17,
+      "offset": 5478
+    },
+    {
+      "address": 29483,
+      "operation": "LD A,L",
+      "hex": "7d",
+      "slot": 17,
+      "offset": 5480
+    },
+    {
+      "address": 29484,
+      "operation": "ADD A,#09",
+      "hex": "c609",
+      "slot": 17,
+      "offset": 5481
+    },
+    {
+      "address": 29486,
+      "operation": "LD L,A",
+      "hex": "6f",
+      "slot": 17,
+      "offset": 5483
+    },
+    {
+      "address": 29487,
+      "operation": "LD A,(HL)",
+      "hex": "7e",
+      "slot": 17,
+      "offset": 5484
+    },
+    {
+      "address": 29488,
+      "operation": "CP #04",
+      "hex": "fe04",
+      "slot": 17,
+      "offset": 5485
+    },
+    {
+      "address": 29490,
+      "operation": "JR Z,#733A",
+      "hex": "2806",
+      "slot": 17,
+      "offset": 5487
+    },
+    {
+      "address": 29492,
+      "operation": "LD A,#FF",
+      "hex": "3eff",
+      "slot": 17,
+      "offset": 5489
+    },
+    {
+      "address": 29494,
+      "operation": "LD (#9B1B),A",
+      "hex": "321b9b",
+      "slot": 17,
+      "offset": 5491
+    },
+    {
+      "address": 29497,
+      "operation": "RET",
+      "hex": "c9",
+      "slot": 17,
+      "offset": 5494
+    },
+    {
+      "address": 29498,
+      "operation": "LD A,L",
+      "hex": "7d",
+      "slot": 17,
+      "offset": 5495
+    },
+    {
+      "address": 29499,
+      "operation": "ADD A,#06",
+      "hex": "c606",
+      "slot": 17,
+      "offset": 5496
+    },
+    {
+      "address": 29501,
+      "operation": "LD L,A",
+      "hex": "6f",
+      "slot": 17,
+      "offset": 5498
+    },
+    {
+      "address": 29502,
+      "operation": "LD (HL),#00",
+      "hex": "3600",
+      "slot": 17,
+      "offset": 5499
+    },
+    {
+      "address": 29504,
+      "operation": "SUB #10",
+      "hex": "d610",
+      "slot": 17,
+      "offset": 5501
+    },
+    {
+      "address": 29506,
+      "operation": "LD L,A",
+      "hex": "6f",
+      "slot": 17,
+      "offset": 5503
+    },
+    {
+      "address": 29507,
+      "operation": "PUSH HL",
+      "hex": "e5",
+      "slot": 17,
+      "offset": 5504
+    },
+    {
+      "address": 29508,
+      "operation": "LD (#73A4),SP",
+      "hex": "ed73a473",
+      "slot": 17,
+      "offset": 5505
+    },
+    {
+      "address": 29512,
+      "operation": "LD SP,HL",
+      "hex": "f9",
+      "slot": 17,
+      "offset": 5509
+    },
+    {
+      "address": 29513,
+      "operation": "POP HL",
+      "hex": "e1",
+      "slot": 17,
+      "offset": 5510
+    },
+    {
+      "address": 29514,
+      "operation": "LD E,#00",
+      "hex": "1e00",
+      "slot": 17,
+      "offset": 5511
+    },
+    {
+      "address": 29516,
+      "operation": "LD BC,#FFCE",
+      "hex": "01ceff",
+      "slot": 17,
+      "offset": 5513
+    },
+    {
+      "address": 29519,
+      "operation": "LD A,H",
+      "hex": "7c",
+      "slot": 17,
+      "offset": 5516
+    },
+    {
+      "address": 29520,
+      "operation": "OR A",
+      "hex": "b7",
+      "slot": 17,
+      "offset": 5517
+    },
+    {
+      "address": 29521,
+      "operation": "JP P,#7355",
+      "hex": "f25573",
+      "slot": 17,
+      "offset": 5518
+    },
+    {
+      "address": 29524,
+      "operation": "CPL",
+      "hex": "2f",
+      "slot": 17,
+      "offset": 5521
+    },
+    {
+      "address": 29525,
+      "operation": "AND A",
+      "hex": "a7",
+      "slot": 17,
+      "offset": 5522
+    },
+    {
+      "address": 29526,
+      "operation": "JR NZ,#735C",
+      "hex": "2004",
+      "slot": 17,
+      "offset": 5523
+    },
+    {
+      "address": 29528,
+      "operation": "LD BC,#0000",
+      "hex": "010000",
+      "slot": 17,
+      "offset": 5525
+    },
+    {
+      "address": 29531,
+      "operation": "INC E",
+      "hex": "1c",
+      "slot": 17,
+      "offset": 5528
+    },
+    {
+      "address": 29532,
+      "operation": "BIT 7,H",
+      "hex": "cb7c",
+      "slot": 17,
+      "offset": 5529
+    },
+    {
+      "address": 29534,
+      "operation": "JR NZ,#7364",
+      "hex": "2004",
+      "slot": 17,
+      "offset": 5531
+    },
+    {
+      "address": 29536,
+      "operation": "ADD HL,BC",
+      "hex": "09",
+      "slot": 17,
+      "offset": 5533
+    },
+    {
+      "address": 29537,
+      "operation": "JP #7366",
+      "hex": "c36673",
+      "slot": 17,
+      "offset": 5534
+    },
+    {
+      "address": 29540,
+      "operation": "SBC HL,BC",
+      "hex": "ed42",
+      "slot": 17,
+      "offset": 5537
+    },
+    {
+      "address": 29542,
+      "operation": "PUSH HL",
+      "hex": "e5",
+      "slot": 17,
+      "offset": 5539
+    },
+    {
+      "address": 29543,
+      "operation": "INC SP",
+      "hex": "33",
+      "slot": 17,
+      "offset": 5540
+    },
+    {
+      "address": 29544,
+      "operation": "INC SP",
+      "hex": "33",
+      "slot": 17,
+      "offset": 5541
+    },
+    {
+      "address": 29545,
+      "operation": "POP HL",
+      "hex": "e1",
+      "slot": 17,
+      "offset": 5542
+    },
+    {
+      "address": 29546,
+      "operation": "LD BC,#FFCE",
+      "hex": "01ceff",
+      "slot": 17,
+      "offset": 5543
+    },
+    {
+      "address": 29549,
+      "operation": "LD A,H",
+      "hex": "7c",
+      "slot": 17,
+      "offset": 5546
+    },
+    {
+      "address": 29550,
+      "operation": "OR A",
+      "hex": "b7",
+      "slot": 17,
+      "offset": 5547
+    },
+    {
+      "address": 29551,
+      "operation": "JP P,#7373",
+      "hex": "f27373",
+      "slot": 17,
+      "offset": 5548
+    },
+    {
+      "address": 29554,
+      "operation": "CPL",
+      "hex": "2f",
+      "slot": 17,
+      "offset": 5551
+    },
+    {
+      "address": 29555,
+      "operation": "AND A",
+      "hex": "a7",
+      "slot": 17,
+      "offset": 5552
+    },
+    {
+      "address": 29556,
+      "operation": "JR NZ,#737A",
+      "hex": "2004",
+      "slot": 17,
+      "offset": 5553
+    },
+    {
+      "address": 29558,
+      "operation": "LD BC,#0000",
+      "hex": "010000",
+      "slot": 17,
+      "offset": 5555
+    },
+    {
+      "address": 29561,
+      "operation": "INC E",
+      "hex": "1c",
+      "slot": 17,
+      "offset": 5558
+    },
+    {
+      "address": 29562,
+      "operation": "BIT 7,H",
+      "hex": "cb7c",
+      "slot": 17,
+      "offset": 5559
+    },
+    {
+      "address": 29564,
+      "operation": "JR NZ,#7382",
+      "hex": "2004",
+      "slot": 17,
+      "offset": 5561
+    },
+    {
+      "address": 29566,
+      "operation": "ADD HL,BC",
+      "hex": "09",
+      "slot": 17,
+      "offset": 5563
+    },
+    {
+      "address": 29567,
+      "operation": "JP #7384",
+      "hex": "c38473",
+      "slot": 17,
+      "offset": 5564
+    },
+    {
+      "address": 29570,
+      "operation": "SBC HL,BC",
+      "hex": "ed42",
+      "slot": 17,
+      "offset": 5567
+    },
+    {
+      "address": 29572,
+      "operation": "PUSH HL",
+      "hex": "e5",
+      "slot": 17,
+      "offset": 5569
+    },
+    {
+      "address": 29573,
+      "operation": "INC SP",
+      "hex": "33",
+      "slot": 17,
+      "offset": 5570
+    },
+    {
+      "address": 29574,
+      "operation": "INC SP",
+      "hex": "33",
+      "slot": 17,
+      "offset": 5571
+    },
+    {
+      "address": 29575,
+      "operation": "POP HL",
+      "hex": "e1",
+      "slot": 17,
+      "offset": 5572
+    },
+    {
+      "address": 29576,
+      "operation": "LD BC,#FFCE",
+      "hex": "01ceff",
+      "slot": 17,
+      "offset": 5573
+    },
+    {
+      "address": 29579,
+      "operation": "LD A,H",
+      "hex": "7c",
+      "slot": 17,
+      "offset": 5576
+    },
+    {
+      "address": 29580,
+      "operation": "OR A",
+      "hex": "b7",
+      "slot": 17,
+      "offset": 5577
+    },
+    {
+      "address": 29581,
+      "operation": "JP P,#7391",
+      "hex": "f29173",
+      "slot": 17,
+      "offset": 5578
+    },
+    {
+      "address": 29584,
+      "operation": "CPL",
+      "hex": "2f",
+      "slot": 17,
+      "offset": 5581
+    },
+    {
+      "address": 29585,
+      "operation": "AND A",
+      "hex": "a7",
+      "slot": 17,
+      "offset": 5582
+    },
+    {
+      "address": 29586,
+      "operation": "JR NZ,#7398",
+      "hex": "2004",
+      "slot": 17,
+      "offset": 5583
+    },
+    {
+      "address": 29588,
+      "operation": "LD BC,#0000",
+      "hex": "010000",
+      "slot": 17,
+      "offset": 5585
+    },
+    {
+      "address": 29591,
+      "operation": "INC E",
+      "hex": "1c",
+      "slot": 17,
+      "offset": 5588
+    },
+    {
+      "address": 29592,
+      "operation": "BIT 7,H",
+      "hex": "cb7c",
+      "slot": 17,
+      "offset": 5589
+    },
+    {
+      "address": 29594,
+      "operation": "JR NZ,#73A0",
+      "hex": "2004",
+      "slot": 17,
+      "offset": 5591
+    },
+    {
+      "address": 29596,
+      "operation": "ADD HL,BC",
+      "hex": "09",
+      "slot": 17,
+      "offset": 5593
+    },
+    {
+      "address": 29597,
+      "operation": "JP #73A2",
+      "hex": "c3a273",
+      "slot": 17,
+      "offset": 5594
+    },
+    {
+      "address": 29600,
+      "operation": "SBC HL,BC",
+      "hex": "ed42",
+      "slot": 17,
+      "offset": 5597
+    },
+    {
+      "address": 29602,
+      "operation": "PUSH HL",
+      "hex": "e5",
+      "slot": 17,
+      "offset": 5599
+    },
+    {
+      "address": 29603,
+      "operation": "LD SP,#0000",
+      "hex": "310000",
+      "slot": 17,
+      "offset": 5600
+    },
+    {
+      "address": 29606,
+      "operation": "POP HL",
+      "hex": "e1",
+      "slot": 17,
+      "offset": 5603
+    },
+    {
+      "address": 29607,
+      "operation": "LD A,E",
+      "hex": "7b",
+      "slot": 17,
+      "offset": 5604
+    },
+    {
+      "address": 29608,
+      "operation": "CP #03",
+      "hex": "fe03",
+      "slot": 17,
+      "offset": 5605
+    },
+    {
+      "address": 29610,
+      "operation": "RET NZ",
+      "hex": "c0",
+      "slot": 17,
+      "offset": 5607
+    },
+    {
+      "address": 29611,
+      "operation": "LD A,#FF",
+      "hex": "3eff",
+      "slot": 17,
+      "offset": 5608
+    },
+    {
+      "address": 29613,
+      "operation": "LD (#9B1B),A",
+      "hex": "321b9b",
+      "slot": 17,
+      "offset": 5610
+    },
+    {
+      "address": 29616,
+      "operation": "PUSH HL",
+      "hex": "e5",
+      "slot": 17,
+      "offset": 5613
+    },
+    {
+      "address": 29617,
+      "operation": "LD A,L",
+      "hex": "7d",
+      "slot": 17,
+      "offset": 5614
+    },
+    {
+      "address": 29618,
+      "operation": "ADD A,#12",
+      "hex": "c612",
+      "slot": 17,
+      "offset": 5615
+    },
+    {
+      "address": 29620,
+      "operation": "LD L,A",
+      "hex": "6f",
+      "slot": 17,
+      "offset": 5617
+    },
+    {
+      "address": 29621,
+      "operation": "LD A,(HL)",
+      "hex": "7e",
+      "slot": 17,
+      "offset": 5618
+    },
+    {
+      "address": 29622,
+      "operation": "CP #13",
+      "hex": "fe13",
+      "slot": 17,
+      "offset": 5619
+    },
+    {
+      "address": 29624,
+      "operation": "JR Z,#73C9",
+      "hex": "280f",
+      "slot": 17,
+      "offset": 5621
+    },
+    {
+      "address": 29626,
+      "operation": "CP #10",
+      "hex": "fe10",
+      "slot": 17,
+      "offset": 5623
+    },
+    {
+      "address": 29628,
+      "operation": "LD E,#0F",
+      "hex": "1e0f",
+      "slot": 17,
+      "offset": 5625
+    },
+    {
+      "address": 29630,
+      "operation": "JR Z,#73C2",
+      "hex": "2802",
+      "slot": 17,
+      "offset": 5627
+    },
+    {
+      "address": 29632,
+      "operation": "LD E,#1B",
+      "hex": "1e1b",
+      "slot": 17,
+      "offset": 5629
+    },
+    {
+      "address": 29634,
+      "operation": "LD A,R",
+      "hex": "ed5f",
+      "slot": 17,
+      "offset": 5631
+    },
+    {
+      "address": 29636,
+      "operation": "AND #07",
+      "hex": "e607",
+      "slot": 17,
+      "offset": 5633
+    },
+    {
+      "address": 29638,
+      "operation": "INC A",
+      "hex": "3c",
+      "slot": 17,
+      "offset": 5635
+    },
+    {
+      "address": 29639,
+      "operation": "JR #73D2",
+      "hex": "1809",
+      "slot": 17,
+      "offset": 5636
+    },
+    {
+      "address": 29641,
+      "operation": "LD A,L",
+      "hex": "7d",
+      "slot": 17,
+      "offset": 5638
+    },
+    {
+      "address": 29642,
+      "operation": "ADD A,#11",
+      "hex": "c611",
+      "slot": 17,
+      "offset": 5639
+    },
+    {
+      "address": 29644,
+      "operation": "LD L,A",
+      "hex": "6f",
+      "slot": 17,
+      "offset": 5641
+    },
+    {
+      "address": 29645,
+      "operation": "LD E,(HL)",
+      "hex": "5e",
+      "slot": 17,
+      "offset": 5642
+    },
+    {
+      "address": 29646,
+      "operation": "ADD A,#EE",
+      "hex": "c6ee",
+      "slot": 17,
+      "offset": 5643
+    },
+    {
+      "address": 29648,
+      "operation": "LD L,A",
+      "hex": "6f",
+      "slot": 17,
+      "offset": 5645
+    },
+    {
+      "address": 29649,
+      "operation": "LD A,(HL)",
+      "hex": "7e",
+      "slot": 17,
+      "offset": 5646
+    },
+    {
+      "address": 29650,
+      "operation": "LD D,#00",
+      "hex": "1600",
+      "slot": 17,
+      "offset": 5647
+    },
+    {
+      "address": 29652,
+      "operation": "LD HL,#741D",
+      "hex": "211d74",
+      "slot": 17,
+      "offset": 5649
+    },
+    {
+      "address": 29655,
+      "operation": "ADD HL,DE",
+      "hex": "19",
+      "slot": 17,
+      "offset": 5652
+    },
+    {
+      "address": 29656,
+      "operation": "LD C,A",
+      "hex": "4f",
+      "slot": 17,
+      "offset": 5653
+    },
+    {
+      "address": 29657,
+      "operation": "LD A,(#9BD2)",
+      "hex": "3ad29b",
+      "slot": 17,
+      "offset": 5654
+    },
+    {
+      "address": 29660,
+      "operation": "LD B,A",
+      "hex": "47",
+      "slot": 17,
+      "offset": 5657
+    },
+    {
+      "address": 29661,
+      "operation": "LD A,(HL)",
+      "hex": "7e",
+      "slot": 17,
+      "offset": 5658
+    },
+    {
+      "address": 29662,
+      "operation": "POP HL",
+      "hex": "e1",
+      "slot": 17,
+      "offset": 5659
+    },
+    {
+      "address": 29663,
+      "operation": "AND #C0",
+      "hex": "e6c0",
+      "slot": 17,
+      "offset": 5660
+    },
+    {
+      "address": 29665,
+      "operation": "JR NZ,#73EB",
+      "hex": "2008",
+      "slot": 17,
+      "offset": 5662
+    },
+    {
+      "address": 29667,
+      "operation": "LD A,B",
+      "hex": "78",
+      "slot": 17,
+      "offset": 5664
+    },
+    {
+      "address": 29668,
+      "operation": "ADD A,C",
+      "hex": "81",
+      "slot": 17,
+      "offset": 5665
+    },
+    {
+      "address": 29669,
+      "operation": "LD B,A",
+      "hex": "47",
+      "slot": 17,
+      "offset": 5666
+    },
+    {
+      "address": 29670,
+      "operation": "LD A,(#9BD3)",
+      "hex": "3ad39b",
+      "slot": 17,
+      "offset": 5667
+    },
+    {
+      "address": 29673,
+      "operation": "CP B",
+      "hex": "b8",
+      "slot": 17,
+      "offset": 5670
+    },
+    {
+      "address": 29674,
+      "operation": "RET C",
+      "hex": "d8",
+      "slot": 17,
+      "offset": 5671
+    },
+    {
+      "address": 29675,
+      "operation": "PUSH HL",
+      "hex": "e5",
+      "slot": 17,
+      "offset": 5672
+    },
+    {
+      "address": 29676,
+      "operation": "LD HL,#9BD4",
+      "hex": "21d49b",
+      "slot": 17,
+      "offset": 5673
+    },
+    {
+      "address": 29679,
+      "operation": "ADD HL,DE",
+      "hex": "19",
+      "slot": 17,
+      "offset": 5676
+    },
+    {
+      "address": 29680,
+      "operation": "EX DE,HL",
+      "hex": "eb",
+      "slot": 17,
+      "offset": 5677
+    },
+    {
+      "address": 29681,
+      "operation": "POP HL",
+      "hex": "e1",
+      "slot": 17,
+      "offset": 5678
+    },
+    {
+      "address": 29682,
+      "operation": "LD A,(DE)",
+      "hex": "1a",
+      "slot": 17,
+      "offset": 5679
+    },
+    {
+      "address": 29683,
+      "operation": "ADD A,C",
+      "hex": "81",
+      "slot": 17,
+      "offset": 5680
+    },
+    {
+      "address": 29684,
+      "operation": "CP #C9",
+      "hex": "fec9",
+      "slot": 17,
+      "offset": 5681
+    },
+    {
+      "address": 29686,
+      "operation": "RET NC",
+      "hex": "d0",
+      "slot": 17,
+      "offset": 5683
+    },
+    {
+      "address": 29687,
+      "operation": "LD (DE),A",
+      "hex": "12",
+      "slot": 17,
+      "offset": 5684
+    },
+    {
+      "address": 29688,
+      "operation": "LD A,B",
+      "hex": "78",
+      "slot": 17,
+      "offset": 5685
+    },
+    {
+      "address": 29689,
+      "operation": "LD (#9BD2),A",
+      "hex": "32d29b",
+      "slot": 17,
+      "offset": 5686
+    },
+    {
+      "address": 29692,
+      "operation": "LD (HL),#00",
+      "hex": "3600",
+      "slot": 17,
+      "offset": 5689
+    },
+    {
+      "address": 29694,
+      "operation": "INC L",
+      "hex": "2c",
+      "slot": 17,
+      "offset": 5691
+    },
+    {
+      "address": 29695,
+      "operation": "LD (HL),#80",
+      "hex": "3680",
+      "slot": 17,
+      "offset": 5692
+    },
+    {
+      "address": 29697,
+      "operation": "LD A,L",
+      "hex": "7d",
+      "slot": 17,
+      "offset": 5694
+    },
+    {
+      "address": 29698,
+      "operation": "ADD A,#17",
+      "hex": "c617",
+      "slot": 17,
+      "offset": 5695
+    },
+    {
+      "address": 29700,
+      "operation": "LD L,A",
+      "hex": "6f",
+      "slot": 17,
+      "offset": 5697
+    },
+    {
+      "address": 29701,
+      "operation": "BIT 4,(HL)",
+      "hex": "cb66",
+      "slot": 17,
+      "offset": 5698
+    },
+    {
+      "address": 29703,
+      "operation": "JR Z,#740E",
+      "hex": "2805",
+      "slot": 17,
+      "offset": 5700
+    },
+    {
+      "address": 29705,
+      "operation": "LD HL,#A78C",
+      "hex": "218ca7",
+      "slot": 17,
+      "offset": 5702
+    },
+    {
+      "address": 29708,
+      "operation": "SET 2,(HL)",
+      "hex": "cbd6",
+      "slot": 17,
+      "offset": 5705
+    },
+    {
+      "address": 29710,
+      "operation": "LD HL,#EE1B",
+      "hex": "211bee",
+      "slot": 17,
+      "offset": 5707
+    },
+    {
+      "address": 29713,
+      "operation": "LD (#ECA9),HL",
+      "hex": "22a9ec",
+      "slot": 17,
+      "offset": 5710
+    },
+    {
+      "address": 29716,
+      "operation": "PUSH DE",
+      "hex": "d5",
+      "slot": 17,
+      "offset": 5713
+    },
+    {
+      "address": 29717,
+      "operation": "LD DE,#F36D",
+      "hex": "116df3",
+      "slot": 17,
+      "offset": 5714
+    },
+    {
+      "address": 29720,
+      "operation": "CALL #6040",
+      "hex": "cd4060",
+      "slot": 17,
+      "offset": 5717
+    },
+    {
+      "address": 29723,
+      "operation": "POP DE",
+      "hex": "d1",
+      "slot": 17,
+      "offset": 5720
+    },
+    {
+      "address": 29724,
+      "operation": "RET",
+      "hex": "c9",
+      "slot": 17,
+      "offset": 5721
+    },
+    {
+      "address": 29753,
+      "operation": "LD A,(#A85F)",
+      "hex": "3a5fa8",
+      "slot": 17,
+      "offset": 5750
+    },
+    {
+      "address": 29756,
+      "operation": "AND A",
+      "hex": "a7",
+      "slot": 17,
+      "offset": 5753
+    },
+    {
+      "address": 29757,
+      "operation": "RET NZ",
+      "hex": "c0",
+      "slot": 17,
+      "offset": 5754
+    },
+    {
+      "address": 29758,
+      "operation": "LD A,#0A",
+      "hex": "3e0a",
+      "slot": 17,
+      "offset": 5755
+    },
+    {
+      "address": 29760,
+      "operation": "LD (#A85F),A",
+      "hex": "325fa8",
+      "slot": 17,
+      "offset": 5757
+    },
+    {
+      "address": 29763,
+      "operation": "LD A,(#9C24)",
+      "hex": "3a249c",
+      "slot": 17,
+      "offset": 5760
+    },
+    {
+      "address": 29766,
+      "operation": "INC A",
+      "hex": "3c",
+      "slot": 17,
+      "offset": 5763
+    },
+    {
+      "address": 29767,
+      "operation": "RET Z",
+      "hex": "c8",
+      "slot": 17,
+      "offset": 5764
+    },
+    {
+      "address": 29768,
+      "operation": "LD HL,#EDA8",
+      "hex": "21a8ed",
+      "slot": 17,
+      "offset": 5765
+    },
+    {
+      "address": 29771,
+      "operation": "LD (#ECA9),HL",
+      "hex": "22a9ec",
+      "slot": 17,
+      "offset": 5768
+    },
+    {
+      "address": 29774,
+      "operation": "LD A,(#7318)",
+      "hex": "3a1873",
+      "slot": 17,
+      "offset": 5771
+    },
+    {
+      "address": 29777,
+      "operation": "XOR #01",
+      "hex": "ee01",
+      "slot": 17,
+      "offset": 5774
+    },
+    {
+      "address": 29779,
+      "operation": "LD (#7318),A",
+      "hex": "321873",
+      "slot": 17,
+      "offset": 5776
+    },
+    {
+      "address": 29782,
+      "operation": "LD A,#FF",
+      "hex": "3eff",
+      "slot": 17,
+      "offset": 5779
+    },
+    {
+      "address": 29784,
+      "operation": "LD (#9B1B),A",
+      "hex": "321b9b",
+      "slot": 17,
+      "offset": 5781
+    },
+    {
+      "address": 29787,
+      "operation": "LD (#9B1C),A",
+      "hex": "321c9b",
+      "slot": 17,
+      "offset": 5784
+    },
+    {
+      "address": 29790,
+      "operation": "LD (#9B1D),A",
+      "hex": "321d9b",
+      "slot": 17,
+      "offset": 5787
+    },
+    {
+      "address": 29793,
+      "operation": "JR Z,#746D",
+      "hex": "280a",
+      "slot": 17,
+      "offset": 5790
+    },
+    {
+      "address": 29795,
+      "operation": "PUSH DE",
+      "hex": "d5",
+      "slot": 17,
+      "offset": 5792
+    },
+    {
+      "address": 29796,
+      "operation": "LD DE,#F1E1",
+      "hex": "11e1f1",
+      "slot": 17,
+      "offset": 5793
+    },
+    {
+      "address": 29799,
+      "operation": "CALL #6040",
+      "hex": "cd4060",
+      "slot": 17,
+      "offset": 5796
+    },
+    {
+      "address": 29802,
+      "operation": "POP DE",
+      "hex": "d1",
+      "slot": 17,
+      "offset": 5799
+    },
+    {
+      "address": 29803,
+      "operation": "JR #7475",
+      "hex": "1808",
+      "slot": 17,
+      "offset": 5800
+    },
+    {
+      "address": 29805,
+      "operation": "PUSH DE",
+      "hex": "d5",
+      "slot": 17,
+      "offset": 5802
+    },
+    {
+      "address": 29806,
+      "operation": "LD DE,#F1F0",
+      "hex": "11f0f1",
+      "slot": 17,
+      "offset": 5803
+    },
+    {
+      "address": 29809,
+      "operation": "CALL #6040",
+      "hex": "cd4060",
+      "slot": 17,
+      "offset": 5806
+    },
+    {
+      "address": 29812,
+      "operation": "POP DE",
+      "hex": "d1",
+      "slot": 17,
+      "offset": 5809
+    },
+    {
+      "address": 29813,
+      "operation": "PUSH DE",
+      "hex": "d5",
+      "slot": 17,
+      "offset": 5810
+    },
+    {
+      "address": 29814,
+      "operation": "LD DE,#F2D9",
+      "hex": "11d9f2",
+      "slot": 17,
+      "offset": 5811
+    },
+    {
+      "address": 29817,
+      "operation": "CALL #6040",
+      "hex": "cd4060",
+      "slot": 17,
+      "offset": 5814
+    },
+    {
+      "address": 29820,
+      "operation": "POP DE",
+      "hex": "d1",
+      "slot": 17,
+      "offset": 5817
+    },
+    {
+      "address": 29821,
+      "operation": "JP #72F2",
+      "hex": "c3f272",
+      "slot": 17,
+      "offset": 5818
+    },
+    {
+      "address": 29824,
+      "operation": "LD A,(#A85F)",
+      "hex": "3a5fa8",
+      "slot": 17,
+      "offset": 5821
+    },
+    {
+      "address": 29827,
+      "operation": "AND A",
+      "hex": "a7",
+      "slot": 17,
+      "offset": 5824
+    },
+    {
+      "address": 29828,
+      "operation": "RET NZ",
+      "hex": "c0",
+      "slot": 17,
+      "offset": 5825
+    },
+    {
+      "address": 29829,
+      "operation": "LD A,#0A",
+      "hex": "3e0a",
+      "slot": 17,
+      "offset": 5826
+    },
+    {
+      "address": 29831,
+      "operation": "LD (#A85F),A",
+      "hex": "325fa8",
+      "slot": 17,
+      "offset": 5828
+    },
+    {
+      "address": 29834,
+      "operation": "LD A,(#9C25)",
+      "hex": "3a259c",
+      "slot": 17,
+      "offset": 5831
+    },
+    {
+      "address": 29837,
+      "operation": "INC A",
+      "hex": "3c",
+      "slot": 17,
+      "offset": 5834
+    },
+    {
+      "address": 29838,
+      "operation": "RET Z",
+      "hex": "c8",
+      "slot": 17,
+      "offset": 5835
+    },
+    {
+      "address": 29839,
+      "operation": "LD A,(#AA9A)",
+      "hex": "3a9aaa",
+      "slot": 17,
+      "offset": 5836
+    },
+    {
+      "address": 29842,
+      "operation": "INC A",
+      "hex": "3c",
+      "slot": 17,
+      "offset": 5839
+    },
+    {
+      "address": 29843,
+      "operation": "CP #04",
+      "hex": "fe04",
+      "slot": 17,
+      "offset": 5840
+    },
+    {
+      "address": 29845,
+      "operation": "JR C,#7499",
+      "hex": "3802",
+      "slot": 17,
+      "offset": 5842
+    },
+    {
+      "address": 29847,
+      "operation": "LD A,#01",
+      "hex": "3e01",
+      "slot": 17,
+      "offset": 5844
+    },
+    {
+      "address": 29849,
+      "operation": "LD (#AA9A),A",
+      "hex": "329aaa",
+      "slot": 17,
+      "offset": 5846
+    },
+    {
+      "address": 29852,
+      "operation": "LD HL,#EE02",
+      "hex": "2102ee",
+      "slot": 17,
+      "offset": 5849
+    },
+    {
+      "address": 29855,
+      "operation": "LD (#ECA9),HL",
+      "hex": "22a9ec",
+      "slot": 17,
+      "offset": 5852
+    },
+    {
+      "address": 29858,
+      "operation": "RET",
+      "hex": "c9",
+      "slot": 17,
+      "offset": 5855
+    },
+    {
+      "address": 29859,
+      "operation": "LD A,(#6E72)",
+      "hex": "3a726e",
+      "slot": 17,
+      "offset": 5856
+    },
+    {
+      "address": 29862,
+      "operation": "CP #C9",
+      "hex": "fec9",
+      "slot": 17,
+      "offset": 5859
+    },
+    {
+      "address": 29864,
+      "operation": "RET Z",
+      "hex": "c8",
+      "slot": 17,
+      "offset": 5861
+    },
+    {
+      "address": 29865,
+      "operation": "LD A,#01",
+      "hex": "3e01",
+      "slot": 17,
+      "offset": 5862
+    },
+    {
+      "address": 29867,
+      "operation": "LD (#6F56),A",
+      "hex": "32566f",
+      "slot": 17,
+      "offset": 5864
+    },
+    {
+      "address": 29870,
+      "operation": "LD HL,#A0C1",
+      "hex": "21c1a0",
+      "slot": 17,
+      "offset": 5867
+    },
+    {
+      "address": 29873,
+      "operation": "LD DE,#0040",
+      "hex": "114000",
+      "slot": 17,
+      "offset": 5870
+    },
+    {
+      "address": 29876,
+      "operation": "JR #74BD",
+      "hex": "1807",
+      "slot": 17,
+      "offset": 5873
+    },
+    {
+      "address": 29878,
+      "operation": "DEC L",
+      "hex": "2d",
+      "slot": 17,
+      "offset": 5875
+    },
+    {
+      "address": 29879,
+      "operation": "LD A,(HL)",
+      "hex": "7e",
+      "slot": 17,
+      "offset": 5876
+    },
+    {
+      "address": 29880,
+      "operation": "INC L",
+      "hex": "2c",
+      "slot": 17,
+      "offset": 5877
+    },
+    {
+      "address": 29881,
+      "operation": "CP #80",
+      "hex": "fe80",
+      "slot": 17,
+      "offset": 5878
+    },
+    {
+      "address": 29883,
+      "operation": "JR Z,#7504",
+      "hex": "2847",
+      "slot": 17,
+      "offset": 5880
+    },
+    {
+      "address": 29885,
+      "operation": "ADD HL,DE",
+      "hex": "19",
+      "slot": 17,
+      "offset": 5882
+    },
+    {
+      "address": 29886,
+      "operation": "LD A,(HL)",
+      "hex": "7e",
+      "slot": 17,
+      "offset": 5883
+    },
+    {
+      "address": 29887,
+      "operation": "CP #80",
+      "hex": "fe80",
+      "slot": 17,
+      "offset": 5884
+    },
+    {
+      "address": 29889,
+      "operation": "JR Z,#74B6",
+      "hex": "28f3",
+      "slot": 17,
+      "offset": 5886
+    },
+    {
+      "address": 29891,
+      "operation": "OR A",
+      "hex": "b7",
+      "slot": 17,
+      "offset": 5888
+    },
+    {
+      "address": 29892,
+      "operation": "JP P,#74C8",
+      "hex": "f2c874",
+      "slot": 17,
+      "offset": 5889
+    },
+    {
+      "address": 29895,
+      "operation": "CPL",
+      "hex": "2f",
+      "slot": 17,
+      "offset": 5892
+    },
+    {
+      "address": 29896,
+      "operation": "LD C,A",
+      "hex": "4f",
+      "slot": 17,
+      "offset": 5893
+    },
+    {
+      "address": 29897,
+      "operation": "LD A,L",
+      "hex": "7d",
+      "slot": 17,
+      "offset": 5894
+    },
+    {
+      "address": 29898,
+      "operation": "ADD A,#11",
+      "hex": "c611",
+      "slot": 17,
+      "offset": 5895
+    },
+    {
+      "address": 29900,
+      "operation": "LD L,A",
+      "hex": "6f",
+      "slot": 17,
+      "offset": 5897
+    },
+    {
+      "address": 29901,
+      "operation": "LD B,(HL)",
+      "hex": "46",
+      "slot": 17,
+      "offset": 5898
+    },
+    {
+      "address": 29902,
+      "operation": "SUB #11",
+      "hex": "d611",
+      "slot": 17,
+      "offset": 5899
+    },
+    {
+      "address": 29904,
+      "operation": "LD L,A",
+      "hex": "6f",
+      "slot": 17,
+      "offset": 5901
+    },
+    {
+      "address": 29905,
+      "operation": "LD A,B",
+      "hex": "78",
+      "slot": 17,
+      "offset": 5902
+    },
+    {
+      "address": 29906,
+      "operation": "CP #12",
+      "hex": "fe12",
+      "slot": 17,
+      "offset": 5903
+    },
+    {
+      "address": 29908,
+      "operation": "JR Z,#74DA",
+      "hex": "2804",
+      "slot": 17,
+      "offset": 5905
+    },
+    {
+      "address": 29910,
+      "operation": "CP #10",
+      "hex": "fe10",
+      "slot": 17,
+      "offset": 5907
+    },
+    {
+      "address": 29912,
+      "operation": "JR NC,#74BD",
+      "hex": "30e3",
+      "slot": 17,
+      "offset": 5909
+    },
+    {
+      "address": 29914,
+      "operation": "INC L",
+      "hex": "2c",
+      "slot": 17,
+      "offset": 5911
+    },
+    {
+      "address": 29915,
+      "operation": "INC L",
+      "hex": "2c",
+      "slot": 17,
+      "offset": 5912
+    },
+    {
+      "address": 29916,
+      "operation": "LD A,(HL)",
+      "hex": "7e",
+      "slot": 17,
+      "offset": 5913
+    },
+    {
+      "address": 29917,
+      "operation": "OR A",
+      "hex": "b7",
+      "slot": 17,
+      "offset": 5914
+    },
+    {
+      "address": 29918,
+      "operation": "JP P,#74E2",
+      "hex": "f2e274",
+      "slot": 17,
+      "offset": 5915
+    },
+    {
+      "address": 29921,
+      "operation": "CPL",
+      "hex": "2f",
+      "slot": 17,
+      "offset": 5918
+    },
+    {
+      "address": 29922,
+      "operation": "OR C",
+      "hex": "b1",
+      "slot": 17,
+      "offset": 5919
+    },
+    {
+      "address": 29923,
+      "operation": "LD C,A",
+      "hex": "4f",
+      "slot": 17,
+      "offset": 5920
+    },
+    {
+      "address": 29924,
+      "operation": "INC L",
+      "hex": "2c",
+      "slot": 17,
+      "offset": 5921
+    },
+    {
+      "address": 29925,
+      "operation": "INC L",
+      "hex": "2c",
+      "slot": 17,
+      "offset": 5922
+    },
+    {
+      "address": 29926,
+      "operation": "LD A,(HL)",
+      "hex": "7e",
+      "slot": 17,
+      "offset": 5923
+    },
+    {
+      "address": 29927,
+      "operation": "OR A",
+      "hex": "b7",
+      "slot": 17,
+      "offset": 5924
+    },
+    {
+      "address": 29928,
+      "operation": "JP P,#74EC",
+      "hex": "f2ec74",
+      "slot": 17,
+      "offset": 5925
+    },
+    {
+      "address": 29931,
+      "operation": "CPL",
+      "hex": "2f",
+      "slot": 17,
+      "offset": 5928
+    },
+    {
+      "address": 29932,
+      "operation": "OR C",
+      "hex": "b1",
+      "slot": 17,
+      "offset": 5929
+    },
+    {
+      "address": 29933,
+      "operation": "LD C,A",
+      "hex": "4f",
+      "slot": 17,
+      "offset": 5930
+    },
+    {
+      "address": 29934,
+      "operation": "LD A,L",
+      "hex": "7d",
+      "slot": 17,
+      "offset": 5931
+    },
+    {
+      "address": 29935,
+      "operation": "SUB #04",
+      "hex": "d604",
+      "slot": 17,
+      "offset": 5932
+    },
+    {
+      "address": 29937,
+      "operation": "LD L,A",
+      "hex": "6f",
+      "slot": 17,
+      "offset": 5934
+    },
+    {
+      "address": 29938,
+      "operation": "LD A,C",
+      "hex": "79",
+      "slot": 17,
+      "offset": 5935
+    },
+    {
+      "address": 29939,
+      "operation": "CP #30",
+      "hex": "fe30",
+      "slot": 17,
+      "offset": 5936
+    },
+    {
+      "address": 29941,
+      "operation": "JP NC,#74BD",
+      "hex": "d2bd74",
+      "slot": 17,
+      "offset": 5938
+    },
+    {
+      "address": 29944,
+      "operation": "JP #6172",
+      "hex": "c37261",
+      "slot": 17,
+      "offset": 5941
+    },
+    {
+      "address": 29956,
+      "operation": "CALL #74FB",
+      "hex": "cdfb74",
+      "slot": 17,
+      "offset": 5953
+    },
+    {
+      "address": 29959,
+      "operation": "LD C,A",
+      "hex": "4f",
+      "slot": 17,
+      "offset": 5956
+    },
+    {
+      "address": 29960,
+      "operation": "DEC C",
+      "hex": "0d",
+      "slot": 17,
+      "offset": 5957
+    },
+    {
+      "address": 29961,
+      "operation": "JP M,#6172",
+      "hex": "fa7261",
+      "slot": 17,
+      "offset": 5958
+    },
+    {
+      "address": 29964,
+      "operation": "LD A,#00",
+      "hex": "3e00",
+      "slot": 17,
+      "offset": 5961
+    },
+    {
+      "address": 29966,
+      "operation": "INC A",
+      "hex": "3c",
+      "slot": 17,
+      "offset": 5963
+    },
+    {
+      "address": 29967,
+      "operation": "LD (#750D),A",
+      "hex": "320d75",
+      "slot": 17,
+      "offset": 5964
+    },
+    {
+      "address": 29970,
+      "operation": "JR NZ,#752B",
+      "hex": "2017",
+      "slot": 17,
+      "offset": 5967
+    },
+    {
+      "address": 29972,
+      "operation": "LD A,#00",
+      "hex": "3e00",
+      "slot": 17,
+      "offset": 5969
+    },
+    {
+      "address": 29974,
+      "operation": "INC A",
+      "hex": "3c",
+      "slot": 17,
+      "offset": 5971
+    },
+    {
+      "address": 29975,
+      "operation": "AND #07",
+      "hex": "e607",
+      "slot": 17,
+      "offset": 5972
+    },
+    {
+      "address": 29977,
+      "operation": "LD (#7515),A",
+      "hex": "321575",
+      "slot": 17,
+      "offset": 5974
+    },
+    {
+      "address": 29980,
+      "operation": "JR NZ,#752B",
+      "hex": "200d",
+      "slot": 17,
+      "offset": 5977
+    },
+    {
+      "address": 29982,
+      "operation": "LD (HL),C",
+      "hex": "71",
+      "slot": 17,
+      "offset": 5979
+    },
+    {
+      "address": 29983,
+      "operation": "LD A,(#9BD2)",
+      "hex": "3ad29b",
+      "slot": 17,
+      "offset": 5980
+    },
+    {
+      "address": 29986,
+      "operation": "DEC A",
+      "hex": "3d",
+      "slot": 17,
+      "offset": 5983
+    },
+    {
+      "address": 29987,
+      "operation": "LD (#9BD2),A",
+      "hex": "32d29b",
+      "slot": 17,
+      "offset": 5984
+    },
+    {
+      "address": 29990,
+      "operation": "LD A,#01",
+      "hex": "3e01",
+      "slot": 17,
+      "offset": 5987
+    },
+    {
+      "address": 29992,
+      "operation": "LD (#665C),A",
+      "hex": "325c66",
+      "slot": 17,
+      "offset": 5989
+    },
+    {
+      "address": 29995,
+      "operation": "LD A,#11",
+      "hex": "3e11",
+      "slot": 17,
+      "offset": 5992
+    },
+    {
+      "address": 29997,
+      "operation": "RRCA",
+      "hex": "0f",
+      "slot": 17,
+      "offset": 5994
+    },
+    {
+      "address": 29998,
+      "operation": "LD (#752C),A",
+      "hex": "322c75",
+      "slot": 17,
+      "offset": 5995
+    },
+    {
+      "address": 30001,
+      "operation": "JR NC,#753C",
+      "hex": "3009",
+      "slot": 17,
+      "offset": 5998
+    },
+    {
+      "address": 30003,
+      "operation": "LD A,#88",
+      "hex": "3e88",
+      "slot": 17,
+      "offset": 6000
+    },
+    {
+      "address": 30005,
+      "operation": "RRCA",
+      "hex": "0f",
+      "slot": 17,
+      "offset": 6002
+    },
+    {
+      "address": 30006,
+      "operation": "LD (#7534),A",
+      "hex": "323475",
+      "slot": 17,
+      "offset": 6003
+    },
+    {
+      "address": 30009,
+      "operation": "CALL C,#617D",
+      "hex": "dc7d61",
+      "slot": 17,
+      "offset": 6006
+    },
+    {
+      "address": 30012,
+      "operation": "LD HL,#1000",
+      "hex": "210010",
+      "slot": 17,
+      "offset": 6009
+    },
+    {
+      "address": 30015,
+      "operation": "LD (#7693),HL",
+      "hex": "229376",
+      "slot": 17,
+      "offset": 6012
+    },
+    {
+      "address": 30018,
+      "operation": "LD B,#10",
+      "hex": "0610",
+      "slot": 17,
+      "offset": 6015
+    },
+    {
+      "address": 30020,
+      "operation": "PUSH BC",
+      "hex": "c5",
+      "slot": 17,
+      "offset": 6017
+    },
+    {
+      "address": 30021,
+      "operation": "CALL #7685",
+      "hex": "cd8576",
+      "slot": 17,
+      "offset": 6018
+    },
+    {
+      "address": 30024,
+      "operation": "POP BC",
+      "hex": "c1",
+      "slot": 17,
+      "offset": 6021
+    },
+    {
+      "address": 30025,
+      "operation": "DJNZ #7544",
+      "hex": "10f9",
+      "slot": 17,
+      "offset": 6022
+    },
+    {
+      "address": 30027,
+      "operation": "RET",
+      "hex": "c9",
+      "slot": 17,
+      "offset": 6024
+    },
+    {
+      "address": 30028,
+      "operation": "LD A,(#A85F)",
+      "hex": "3a5fa8",
+      "slot": 17,
+      "offset": 6025
+    },
+    {
+      "address": 30031,
+      "operation": "AND A",
+      "hex": "a7",
+      "slot": 17,
+      "offset": 6028
+    },
+    {
+      "address": 30032,
+      "operation": "RET NZ",
+      "hex": "c0",
+      "slot": 17,
+      "offset": 6029
+    },
+    {
+      "address": 30033,
+      "operation": "LD A,#14",
+      "hex": "3e14",
+      "slot": 17,
+      "offset": 6030
+    },
+    {
+      "address": 30035,
+      "operation": "LD (#A85F),A",
+      "hex": "325fa8",
+      "slot": 17,
+      "offset": 6032
+    },
+    {
+      "address": 30038,
+      "operation": "LD A,(#9C28)",
+      "hex": "3a289c",
+      "slot": 17,
+      "offset": 6035
+    },
+    {
+      "address": 30041,
+      "operation": "INC A",
+      "hex": "3c",
+      "slot": 17,
+      "offset": 6038
+    },
+    {
+      "address": 30042,
+      "operation": "RET Z",
+      "hex": "c8",
+      "slot": 17,
+      "offset": 6039
+    },
+    {
+      "address": 30043,
+      "operation": "LD HL,(#7693)",
+      "hex": "2a9376",
+      "slot": 17,
+      "offset": 6040
+    },
+    {
+      "address": 30046,
+      "operation": "LD BC,#0088",
+      "hex": "018800",
+      "slot": 17,
+      "offset": 6043
+    },
+    {
+      "address": 30049,
+      "operation": "OR A",
+      "hex": "b7",
+      "slot": 17,
+      "offset": 6046
+    },
+    {
+      "address": 30050,
+      "operation": "SBC HL,BC",
+      "hex": "ed42",
+      "slot": 17,
+      "offset": 6047
+    },
+    {
+      "address": 30052,
+      "operation": "RET NZ",
+      "hex": "c0",
+      "slot": 17,
+      "offset": 6049
+    },
+    {
+      "address": 30053,
+      "operation": "LD HL,#EDA8",
+      "hex": "21a8ed",
+      "slot": 17,
+      "offset": 6050
+    },
+    {
+      "address": 30056,
+      "operation": "LD (#ECA9),HL",
+      "hex": "22a9ec",
+      "slot": 17,
+      "offset": 6053
+    },
+    {
+      "address": 30059,
+      "operation": "LD A,(#6E72)",
+      "hex": "3a726e",
+      "slot": 17,
+      "offset": 6056
+    },
+    {
+      "address": 30062,
+      "operation": "CP #3A",
+      "hex": "fe3a",
+      "slot": 17,
+      "offset": 6059
+    },
+    {
+      "address": 30064,
+      "operation": "JR Z,#757E",
+      "hex": "280c",
+      "slot": 17,
+      "offset": 6061
+    },
+    {
+      "address": 30066,
+      "operation": "PUSH DE",
+      "hex": "d5",
+      "slot": 17,
+      "offset": 6063
+    },
+    {
+      "address": 30067,
+      "operation": "LD DE,#F1F0",
+      "hex": "11f0f1",
+      "slot": 17,
+      "offset": 6064
+    },
+    {
+      "address": 30070,
+      "operation": "CALL #6040",
+      "hex": "cd4060",
+      "slot": 17,
+      "offset": 6067
+    },
+    {
+      "address": 30073,
+      "operation": "POP DE",
+      "hex": "d1",
+      "slot": 17,
+      "offset": 6070
+    },
+    {
+      "address": 30074,
+      "operation": "LD A,#3A",
+      "hex": "3e3a",
+      "slot": 17,
+      "offset": 6071
+    },
+    {
+      "address": 30076,
+      "operation": "JR #7588",
+      "hex": "180a",
+      "slot": 17,
+      "offset": 6073
+    },
+    {
+      "address": 30078,
+      "operation": "PUSH DE",
+      "hex": "d5",
+      "slot": 17,
+      "offset": 6075
+    },
+    {
+      "address": 30079,
+      "operation": "LD DE,#F1E1",
+      "hex": "11e1f1",
+      "slot": 17,
+      "offset": 6076
+    },
+    {
+      "address": 30082,
+      "operation": "CALL #6040",
+      "hex": "cd4060",
+      "slot": 17,
+      "offset": 6079
+    },
+    {
+      "address": 30085,
+      "operation": "POP DE",
+      "hex": "d1",
+      "slot": 17,
+      "offset": 6082
+    },
+    {
+      "address": 30086,
+      "operation": "LD A,#C9",
+      "hex": "3ec9",
+      "slot": 17,
+      "offset": 6083
+    },
+    {
+      "address": 30088,
+      "operation": "LD (#6E72),A",
+      "hex": "32726e",
+      "slot": 17,
+      "offset": 6085
+    },
+    {
+      "address": 30091,
+      "operation": "PUSH DE",
+      "hex": "d5",
+      "slot": 17,
+      "offset": 6088
+    },
+    {
+      "address": 30092,
+      "operation": "LD DE,#F200",
+      "hex": "1100f2",
+      "slot": 17,
+      "offset": 6089
+    },
+    {
+      "address": 30095,
+      "operation": "CALL #6040",
+      "hex": "cd4060",
+      "slot": 17,
+      "offset": 6092
+    },
+    {
+      "address": 30098,
+      "operation": "POP DE",
+      "hex": "d1",
+      "slot": 17,
+      "offset": 6095
+    },
+    {
+      "address": 30099,
+      "operation": "RET",
+      "hex": "c9",
+      "slot": 17,
+      "offset": 6096
+    },
+    {
+      "address": 30100,
+      "operation": "LD A,(#A85F)",
+      "hex": "3a5fa8",
+      "slot": 17,
+      "offset": 6097
+    },
+    {
+      "address": 30103,
+      "operation": "AND A",
+      "hex": "a7",
+      "slot": 17,
+      "offset": 6100
+    },
+    {
+      "address": 30104,
+      "operation": "RET NZ",
+      "hex": "c0",
+      "slot": 17,
+      "offset": 6101
+    },
+    {
+      "address": 30105,
+      "operation": "LD HL,#EE1B",
+      "hex": "211bee",
+      "slot": 17,
+      "offset": 6102
+    },
+    {
+      "address": 30108,
+      "operation": "LD (#ECA9),HL",
+      "hex": "22a9ec",
+      "slot": 17,
+      "offset": 6105
+    },
+    {
+      "address": 30111,
+      "operation": "LD A,#14",
+      "hex": "3e14",
+      "slot": 17,
+      "offset": 6108
+    },
+    {
+      "address": 30113,
+      "operation": "LD (#A85F),A",
+      "hex": "325fa8",
+      "slot": 17,
+      "offset": 6110
+    },
+    {
+      "address": 30116,
+      "operation": "LD HL,#9BD3",
+      "hex": "21d39b",
+      "slot": 17,
+      "offset": 6113
+    },
+    {
+      "address": 30119,
+      "operation": "LD B,#1E",
+      "hex": "061e",
+      "slot": 17,
+      "offset": 6116
+    },
+    {
+      "address": 30121,
+      "operation": "INC HL",
+      "hex": "23",
+      "slot": 17,
+      "offset": 6118
+    },
+    {
+      "address": 30122,
+      "operation": "LD A,(HL)",
+      "hex": "7e",
+      "slot": 17,
+      "offset": 6119
+    },
+    {
+      "address": 30123,
+      "operation": "AND A",
+      "hex": "a7",
+      "slot": 17,
+      "offset": 6120
+    },
+    {
+      "address": 30124,
+      "operation": "JR NZ,#75B9",
+      "hex": "200b",
+      "slot": 17,
+      "offset": 6121
+    },
+    {
+      "address": 30126,
+      "operation": "DJNZ #75A9",
+      "hex": "10f9",
+      "slot": 17,
+      "offset": 6123
+    },
+    {
+      "address": 30128,
+      "operation": "PUSH DE",
+      "hex": "d5",
+      "slot": 17,
+      "offset": 6125
+    },
+    {
+      "address": 30129,
+      "operation": "LD DE,#F41C",
+      "hex": "111cf4",
+      "slot": 17,
+      "offset": 6126
+    },
+    {
+      "address": 30132,
+      "operation": "CALL #6040",
+      "hex": "cd4060",
+      "slot": 17,
+      "offset": 6129
+    },
+    {
+      "address": 30135,
+      "operation": "POP DE",
+      "hex": "d1",
+      "slot": 17,
+      "offset": 6132
+    },
+    {
+      "address": 30136,
+      "operation": "RET",
+      "hex": "c9",
+      "slot": 17,
+      "offset": 6133
+    },
+    {
+      "address": 30137,
+      "operation": "LD (HL),#00",
+      "hex": "3600",
+      "slot": 17,
+      "offset": 6134
+    },
+    {
+      "address": 30139,
+      "operation": "LD DE,#642C",
+      "hex": "112c64",
+      "slot": 17,
+      "offset": 6136
+    },
+    {
+      "address": 30142,
+      "operation": "ADD HL,DE",
+      "hex": "19",
+      "slot": 17,
+      "offset": 6139
+    },
+    {
+      "address": 30143,
+      "operation": "LD IX,#A780",
+      "hex": "dd2180a7",
+      "slot": 17,
+      "offset": 6140
+    },
+    {
+      "address": 30147,
+      "operation": "CALL #6441",
+      "hex": "cd4164",
+      "slot": 17,
+      "offset": 6144
+    },
+    {
+      "address": 30150,
+      "operation": "PUSH DE",
+      "hex": "d5",
+      "slot": 17,
+      "offset": 6147
+    },
+    {
+      "address": 30151,
+      "operation": "LD DE,#F3F3",
+      "hex": "11f3f3",
+      "slot": 17,
+      "offset": 6148
+    },
+    {
+      "address": 30154,
+      "operation": "CALL #6040",
+      "hex": "cd4060",
+      "slot": 17,
+      "offset": 6151
+    },
+    {
+      "address": 30157,
+      "operation": "POP DE",
+      "hex": "d1",
+      "slot": 17,
+      "offset": 6154
+    },
+    {
+      "address": 30158,
+      "operation": "RET",
+      "hex": "c9",
+      "slot": 17,
+      "offset": 6155
+    },
+    {
+      "address": 30159,
+      "operation": "LD A,(#A85F)",
+      "hex": "3a5fa8",
+      "slot": 17,
+      "offset": 6156
+    },
+    {
+      "address": 30162,
+      "operation": "AND A",
+      "hex": "a7",
+      "slot": 17,
+      "offset": 6159
+    },
+    {
+      "address": 30163,
+      "operation": "RET NZ",
+      "hex": "c0",
+      "slot": 17,
+      "offset": 6160
+    },
+    {
+      "address": 30164,
+      "operation": "LD HL,#EE1B",
+      "hex": "211bee",
+      "slot": 17,
+      "offset": 6161
+    },
+    {
+      "address": 30167,
+      "operation": "LD (#ECA9),HL",
+      "hex": "22a9ec",
+      "slot": 17,
+      "offset": 6164
+    },
+    {
+      "address": 30170,
+      "operation": "LD A,#14",
+      "hex": "3e14",
+      "slot": 17,
+      "offset": 6167
+    },
+    {
+      "address": 30172,
+      "operation": "LD (#A85F),A",
+      "hex": "325fa8",
+      "slot": 17,
+      "offset": 6169
+    },
+    {
+      "address": 30175,
+      "operation": "LD A,(#9C14)",
+      "hex": "3a149c",
+      "slot": 17,
+      "offset": 6172
+    },
+    {
+      "address": 30178,
+      "operation": "AND A",
+      "hex": "a7",
+      "slot": 17,
+      "offset": 6175
+    },
+    {
+      "address": 30179,
+      "operation": "JR Z,#75FD",
+      "hex": "2818",
+      "slot": 17,
+      "offset": 6176
+    },
+    {
+      "address": 30181,
+      "operation": "DEC A",
+      "hex": "3d",
+      "slot": 17,
+      "offset": 6178
+    },
+    {
+      "address": 30182,
+      "operation": "LD (#9C14),A",
+      "hex": "32149c",
+      "slot": 17,
+      "offset": 6179
+    },
+    {
+      "address": 30185,
+      "operation": "LD A,#01",
+      "hex": "3e01",
+      "slot": 17,
+      "offset": 6182
+    },
+    {
+      "address": 30187,
+      "operation": "LD L,#80",
+      "hex": "2e80",
+      "slot": 17,
+      "offset": 6184
+    },
+    {
+      "address": 30189,
+      "operation": "LD IX,#A780",
+      "hex": "dd2180a7",
+      "slot": 17,
+      "offset": 6186
+    },
+    {
+      "address": 30193,
+      "operation": "CALL #6441",
+      "hex": "cd4164",
+      "slot": 17,
+      "offset": 6190
+    },
+    {
+      "address": 30196,
+      "operation": "PUSH DE",
+      "hex": "d5",
+      "slot": 17,
+      "offset": 6193
+    },
+    {
+      "address": 30197,
+      "operation": "LD DE,#F402",
+      "hex": "1102f4",
+      "slot": 17,
+      "offset": 6194
+    },
+    {
+      "address": 30200,
+      "operation": "CALL #6040",
+      "hex": "cd4060",
+      "slot": 17,
+      "offset": 6197
+    },
+    {
+      "address": 30203,
+      "operation": "POP DE",
+      "hex": "d1",
+      "slot": 17,
+      "offset": 6200
+    },
+    {
+      "address": 30204,
+      "operation": "RET",
+      "hex": "c9",
+      "slot": 17,
+      "offset": 6201
+    },
+    {
+      "address": 30205,
+      "operation": "PUSH DE",
+      "hex": "d5",
+      "slot": 17,
+      "offset": 6202
+    },
+    {
+      "address": 30206,
+      "operation": "LD DE,#F412",
+      "hex": "1112f4",
+      "slot": 17,
+      "offset": 6203
+    },
+    {
+      "address": 30209,
+      "operation": "CALL #6040",
+      "hex": "cd4060",
+      "slot": 17,
+      "offset": 6206
+    },
+    {
+      "address": 30212,
+      "operation": "POP DE",
+      "hex": "d1",
+      "slot": 17,
+      "offset": 6209
+    },
+    {
+      "address": 30213,
+      "operation": "RET",
+      "hex": "c9",
+      "slot": 17,
+      "offset": 6210
+    },
+    {
+      "address": 30214,
+      "operation": "LD A,(#A85F)",
+      "hex": "3a5fa8",
+      "slot": 17,
+      "offset": 6211
+    },
+    {
+      "address": 30217,
+      "operation": "AND A",
+      "hex": "a7",
+      "slot": 17,
+      "offset": 6214
+    },
+    {
+      "address": 30218,
+      "operation": "RET NZ",
+      "hex": "c0",
+      "slot": 17,
+      "offset": 6215
+    },
+    {
+      "address": 30219,
+      "operation": "LD HL,#EE1B",
+      "hex": "211bee",
+      "slot": 17,
+      "offset": 6216
+    },
+    {
+      "address": 30222,
+      "operation": "LD (#ECA9),HL",
+      "hex": "22a9ec",
+      "slot": 17,
+      "offset": 6219
+    },
+    {
+      "address": 30225,
+      "operation": "LD A,#14",
+      "hex": "3e14",
+      "slot": 17,
+      "offset": 6222
+    },
+    {
+      "address": 30227,
+      "operation": "LD (#A85F),A",
+      "hex": "325fa8",
+      "slot": 17,
+      "offset": 6224
+    },
+    {
+      "address": 30230,
+      "operation": "LD A,(#9C27)",
+      "hex": "3a279c",
+      "slot": 17,
+      "offset": 6227
+    },
+    {
+      "address": 30233,
+      "operation": "INC A",
+      "hex": "3c",
+      "slot": 17,
+      "offset": 6230
+    },
+    {
+      "address": 30234,
+      "operation": "RET Z",
+      "hex": "c8",
+      "slot": 17,
+      "offset": 6231
+    },
+    {
+      "address": 30235,
+      "operation": "LD A,#FF",
+      "hex": "3eff",
+      "slot": 17,
+      "offset": 6232
+    },
+    {
+      "address": 30237,
+      "operation": "LD (#9C27),A",
+      "hex": "32279c",
+      "slot": 17,
+      "offset": 6234
+    },
+    {
+      "address": 30240,
+      "operation": "LD A,#19",
+      "hex": "3e19",
+      "slot": 17,
+      "offset": 6237
+    },
+    {
+      "address": 30242,
+      "operation": "LD BC,#7FFD",
+      "hex": "01fd7f",
+      "slot": 17,
+      "offset": 6239
+    },
+    {
+      "address": 30245,
+      "operation": "OUT (C),A",
+      "hex": "ed79",
+      "slot": 17,
+      "offset": 6242
+    },
+    {
+      "address": 30247,
+      "operation": "JP #DCE3",
+      "hex": "c3e3dc",
+      "slot": 17,
+      "offset": 6244
+    },
+    {
+      "address": 30250,
+      "operation": "LD A,(#A85F)",
+      "hex": "3a5fa8",
+      "slot": 17,
+      "offset": 6247
+    },
+    {
+      "address": 30253,
+      "operation": "AND A",
+      "hex": "a7",
+      "slot": 17,
+      "offset": 6250
+    },
+    {
+      "address": 30254,
+      "operation": "RET NZ",
+      "hex": "c0",
+      "slot": 17,
+      "offset": 6251
+    },
+    {
+      "address": 30255,
+      "operation": "LD HL,#EE1B",
+      "hex": "211bee",
+      "slot": 17,
+      "offset": 6252
+    },
+    {
+      "address": 30258,
+      "operation": "LD (#ECA9),HL",
+      "hex": "22a9ec",
+      "slot": 17,
+      "offset": 6255
+    },
+    {
+      "address": 30261,
+      "operation": "LD A,#14",
+      "hex": "3e14",
+      "slot": 17,
+      "offset": 6258
+    },
+    {
+      "address": 30263,
+      "operation": "LD (#A85F),A",
+      "hex": "325fa8",
+      "slot": 17,
+      "offset": 6260
+    },
+    {
+      "address": 30266,
+      "operation": "CALL #AFF5",
+      "hex": "cdf5af",
+      "slot": 17,
+      "offset": 6263
+    },
+    {
+      "address": 30269,
+      "operation": "CALL #6CD6",
+      "hex": "cdd66c",
+      "slot": 17,
+      "offset": 6266
+    },
+    {
+      "address": 30272,
+      "operation": "LD A,(#6E75)",
+      "hex": "3a756e",
+      "slot": 17,
+      "offset": 6269
+    },
+    {
+      "address": 30275,
+      "operation": "AND A",
+      "hex": "a7",
+      "slot": 17,
+      "offset": 6272
+    },
+    {
+      "address": 30276,
+      "operation": "JR Z,#7663",
+      "hex": "281d",
+      "slot": 17,
+      "offset": 6273
+    },
+    {
+      "address": 30278,
+      "operation": "LD HL,#0000",
+      "hex": "210000",
+      "slot": 17,
+      "offset": 6275
+    },
+    {
+      "address": 30281,
+      "operation": "LD (#6E75),HL",
+      "hex": "22756e",
+      "slot": 17,
+      "offset": 6278
+    },
+    {
+      "address": 30284,
+      "operation": "LD (#6E88),HL",
+      "hex": "22886e",
+      "slot": 17,
+      "offset": 6281
+    },
+    {
+      "address": 30287,
+      "operation": "LD (#6E9B),HL",
+      "hex": "229b6e",
+      "slot": 17,
+      "offset": 6284
+    },
+    {
+      "address": 30290,
+      "operation": "PUSH DE",
+      "hex": "d5",
+      "slot": 17,
+      "offset": 6287
+    },
+    {
+      "address": 30291,
+      "operation": "LD DE,#F1E1",
+      "hex": "11e1f1",
+      "slot": 17,
+      "offset": 6288
+    },
+    {
+      "address": 30294,
+      "operation": "CALL #6040",
+      "hex": "cd4060",
+      "slot": 17,
+      "offset": 6291
+    },
+    {
+      "address": 30297,
+      "operation": "POP DE",
+      "hex": "d1",
+      "slot": 17,
+      "offset": 6294
+    },
+    {
+      "address": 30298,
+      "operation": "PUSH DE",
+      "hex": "d5",
+      "slot": 17,
+      "offset": 6295
+    },
+    {
+      "address": 30299,
+      "operation": "LD DE,#F228",
+      "hex": "1128f2",
+      "slot": 17,
+      "offset": 6296
+    },
+    {
+      "address": 30302,
+      "operation": "CALL #6040",
+      "hex": "cd4060",
+      "slot": 17,
+      "offset": 6299
+    },
+    {
+      "address": 30305,
+      "operation": "POP DE",
+      "hex": "d1",
+      "slot": 17,
+      "offset": 6302
+    },
+    {
+      "address": 30306,
+      "operation": "RET",
+      "hex": "c9",
+      "slot": 17,
+      "offset": 6303
+    },
+    {
+      "address": 30307,
+      "operation": "LD HL,#44ED",
+      "hex": "21ed44",
+      "slot": 17,
+      "offset": 6304
+    },
+    {
+      "address": 30310,
+      "operation": "LD (#6E75),HL",
+      "hex": "22756e",
+      "slot": 17,
+      "offset": 6307
+    },
+    {
+      "address": 30313,
+      "operation": "LD (#6E88),HL",
+      "hex": "22886e",
+      "slot": 17,
+      "offset": 6310
+    },
+    {
+      "address": 30316,
+      "operation": "LD (#6E9B),HL",
+      "hex": "229b6e",
+      "slot": 17,
+      "offset": 6313
+    },
+    {
+      "address": 30319,
+      "operation": "PUSH DE",
+      "hex": "d5",
+      "slot": 17,
+      "offset": 6316
+    },
+    {
+      "address": 30320,
+      "operation": "LD DE,#F1E1",
+      "hex": "11e1f1",
+      "slot": 17,
+      "offset": 6317
+    },
+    {
+      "address": 30323,
+      "operation": "CALL #6040",
+      "hex": "cd4060",
+      "slot": 17,
+      "offset": 6320
+    },
+    {
+      "address": 30326,
+      "operation": "POP DE",
+      "hex": "d1",
+      "slot": 17,
+      "offset": 6323
+    },
+    {
+      "address": 30327,
+      "operation": "PUSH DE",
+      "hex": "d5",
+      "slot": 17,
+      "offset": 6324
+    },
+    {
+      "address": 30328,
+      "operation": "LD DE,#F239",
+      "hex": "1139f2",
+      "slot": 17,
+      "offset": 6325
+    },
+    {
+      "address": 30331,
+      "operation": "CALL #6040",
+      "hex": "cd4060",
+      "slot": 17,
+      "offset": 6328
+    },
+    {
+      "address": 30334,
+      "operation": "POP DE",
+      "hex": "d1",
+      "slot": 17,
+      "offset": 6331
+    },
+    {
+      "address": 30335,
+      "operation": "RET",
+      "hex": "c9",
+      "slot": 17,
+      "offset": 6332
+    },
+    {
+      "address": 45045,
+      "operation": "LD DE,(#9B04)",
+      "hex": "ed5b049b",
+      "slot": 17,
+      "offset": 20469
+    },
+    {
+      "address": 45049,
+      "operation": "LD HL,#0000",
+      "hex": "210000",
+      "slot": 17,
+      "offset": 20473
+    },
+    {
+      "address": 45052,
+      "operation": "OR A",
+      "hex": "b7",
+      "slot": 17,
+      "offset": 20476
+    },
+    {
+      "address": 45053,
+      "operation": "SBC HL,DE",
+      "hex": "ed52",
+      "slot": 17,
+      "offset": 20477
+    },
+    {
+      "address": 45055,
+      "operation": "LD (#9B04),HL",
+      "hex": "22049b",
+      "slot": 17,
+      "offset": 20479
+    },
+    {
+      "address": 45058,
+      "operation": "LD DE,(#9B0A)",
+      "hex": "ed5b0a9b",
+      "slot": 17,
+      "offset": 20482
+    },
+    {
+      "address": 45062,
+      "operation": "LD HL,#0000",
+      "hex": "210000",
+      "slot": 17,
+      "offset": 20486
+    },
+    {
+      "address": 45065,
+      "operation": "OR A",
+      "hex": "b7",
+      "slot": 17,
+      "offset": 20489
+    },
+    {
+      "address": 45066,
+      "operation": "SBC HL,DE",
+      "hex": "ed52",
+      "slot": 17,
+      "offset": 20490
+    },
+    {
+      "address": 45068,
+      "operation": "LD (#9B0A),HL",
+      "hex": "220a9b",
+      "slot": 17,
+      "offset": 20492
+    },
+    {
+      "address": 45071,
+      "operation": "LD DE,(#9B10)",
+      "hex": "ed5b109b",
+      "slot": 17,
+      "offset": 20495
+    },
+    {
+      "address": 45075,
+      "operation": "LD HL,#0000",
+      "hex": "210000",
+      "slot": 17,
+      "offset": 20499
+    },
+    {
+      "address": 45078,
+      "operation": "OR A",
+      "hex": "b7",
+      "slot": 17,
+      "offset": 20502
+    },
+    {
+      "address": 45079,
+      "operation": "SBC HL,DE",
+      "hex": "ed52",
+      "slot": 17,
+      "offset": 20503
+    },
+    {
+      "address": 45081,
+      "operation": "LD (#9B10),HL",
+      "hex": "22109b",
+      "slot": 17,
+      "offset": 20505
+    },
+    {
+      "address": 45084,
+      "operation": "LD DE,(#9B00)",
+      "hex": "ed5b009b",
+      "slot": 17,
+      "offset": 20508
+    },
+    {
+      "address": 45088,
+      "operation": "LD HL,#0000",
+      "hex": "210000",
+      "slot": 17,
+      "offset": 20512
+    },
+    {
+      "address": 45091,
+      "operation": "OR A",
+      "hex": "b7",
+      "slot": 17,
+      "offset": 20515
+    },
+    {
+      "address": 45092,
+      "operation": "SBC HL,DE",
+      "hex": "ed52",
+      "slot": 17,
+      "offset": 20516
+    },
+    {
+      "address": 45094,
+      "operation": "LD (#9B00),HL",
+      "hex": "22009b",
+      "slot": 17,
+      "offset": 20518
+    },
+    {
+      "address": 45097,
+      "operation": "LD DE,(#9B06)",
+      "hex": "ed5b069b",
+      "slot": 17,
+      "offset": 20521
+    },
+    {
+      "address": 45101,
+      "operation": "LD HL,#0000",
+      "hex": "210000",
+      "slot": 17,
+      "offset": 20525
+    },
+    {
+      "address": 45104,
+      "operation": "OR A",
+      "hex": "b7",
+      "slot": 17,
+      "offset": 20528
+    },
+    {
+      "address": 45105,
+      "operation": "SBC HL,DE",
+      "hex": "ed52",
+      "slot": 17,
+      "offset": 20529
+    },
+    {
+      "address": 45107,
+      "operation": "LD (#9B06),HL",
+      "hex": "22069b",
+      "slot": 17,
+      "offset": 20531
+    },
+    {
+      "address": 45110,
+      "operation": "LD DE,(#9B0C)",
+      "hex": "ed5b0c9b",
+      "slot": 17,
+      "offset": 20534
+    },
+    {
+      "address": 45114,
+      "operation": "LD HL,#0000",
+      "hex": "210000",
+      "slot": 17,
+      "offset": 20538
+    },
+    {
+      "address": 45117,
+      "operation": "OR A",
+      "hex": "b7",
+      "slot": 17,
+      "offset": 20541
+    },
+    {
+      "address": 45118,
+      "operation": "SBC HL,DE",
+      "hex": "ed52",
+      "slot": 17,
+      "offset": 20542
+    },
+    {
+      "address": 45120,
+      "operation": "LD (#9B0C),HL",
+      "hex": "220c9b",
+      "slot": 17,
+      "offset": 20544
+    },
+    {
+      "address": 45123,
+      "operation": "RET",
+      "hex": "c9",
+      "slot": 17,
+      "offset": 20547
+    },
+    {
+      "address": 53504,
+      "operation": "RST #38",
+      "hex": "ff",
+      "slot": 17,
+      "offset": 28928
+    }
+  ],
+  "overlaps": [],
+  "published": false,
+  "assembly_executed": false
+}

@@ -79,3 +79,5 @@ RET после записи. Во всех ранних выходах RET уж�
 Потребитель LimitWord по 7693 разобран в [ActionGaugeWordKeys](ActionGaugeWordKeys.md).
 
 [Отчёт проверки](../Tools/Disasm/Reports/ActionControlDecayVerification.json).
+
+[Физические входные записи](ActionInputContextData.md) сохраняют исходные управления и зерно как реальные STRUCT.

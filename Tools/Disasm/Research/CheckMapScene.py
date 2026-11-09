@@ -1,6 +1,7 @@
 """Весь C000, исходные дуга, шесть маркеров, внутренняя цепочка и 512 секторных слов."""
 from pathlib import Path
-import json,random,sys
+from collections import Counter, defaultdict
+import hashlib,json,random,sys
 ROOT=Path(__file__).resolve().parents[3]
 sys.path[:0]=[str(ROOT/'Tools/Disasm/Research/vendor/skoolkit-10.1'),str(ROOT/'Tools/Disasm/Research')]
 from skoolkit.simulator import Simulator
@@ -10,6 +11,7 @@ from CheckArcDispatcher import reference as arc_reference
 from CheckVisibleMapPoints import visible_points
 from CheckMapLine import points as line_points
 from CheckInsetFrame import bitmap_address
+from CheckInitialZeroTailAccesses import WatchedCPU
 
 
 def key(x,y):return bytes([x>>8,y>>8,x&255,y&255])
@@ -25,9 +27,45 @@ def marker(screen,source,address,x,y,ox,oy,width,height):
  return True
 
 
-def main():
- _,source,banks=make_context();memory=bytearray(65536);memory[0x4000:0x8000]=bytes(banks[5]);memory[0x8000:0xC000]=bytes(banks[2]);memory[0xC000:0xC000+len(source)]=source
- sim=Simulator(memory);initial=get_registers({'SP':0x7FFE,'HL':0x1357,'DE':0x247A,'BC':0x36C9,'AF':0x5A5D,'IX':0x2468,'IY':0x5C3A,
+class RangeMemory(bytearray):
+ active = False
+
+ def __init__(self):
+  super().__init__(65536)
+  self.source_map=(ROOT/'Tools/Disasm/Reports/SourceMap.json').read_bytes()
+  self.ranges=[row for row in json.loads(self.source_map) if row['slot']==7 and row['kind']=='unclassified']
+  self.watched={0xC000+offset:row['path'] for row in self.ranges
+                for offset in range(row['offset'],row['offset']+row['length'])}
+  self.accesses=defaultdict(Counter)
+
+ def observe(self,mode,address):
+  if self.active and isinstance(address,int) and address in self.watched:
+   self.accesses[self.watched[address]][mode,self.registers[PC],address]+=1
+
+ def __getitem__(self,address):
+  self.observe('read',address)
+  return super().__getitem__(address)
+
+ def __setitem__(self,address,value):
+  self.observe('write',address)
+  super().__setitem__(address,value)
+
+ def save(self,scenes):
+  result=dict(passed=True,source_map_sha256=hashlib.sha256(self.source_map).hexdigest(),
+   checked_ranges=len(self.ranges),checked_bytes=len(self.watched),scene_cases=scenes,
+   accesses=[dict(path=path,entries=[dict(mode=mode,pc=pc,address=address,count=count)
+                    for (mode,pc,address),count in sorted(entries.items())]) for path,entries in sorted(self.accesses.items())],
+   original_map_code_executed=True,irq_executed=False,full_game_paths_proved=False,assembly_executed=False)
+  (ROOT/'Tools/Disasm/Reports/MapUnclassifiedAccesses.json').write_text(json.dumps(result,indent=2)+'\n','utf-8')
+  print(json.dumps(result,indent=2))
+
+
+def main(trace_unknown=False):
+ _,source,banks=make_context();memory=RangeMemory() if trace_unknown else bytearray(65536)
+ memory[0x4000:0x8000]=bytes(banks[5]);memory[0x8000:0xC000]=bytes(banks[2]);memory[0xC000:0xC000+len(source)]=source
+ sim=WatchedCPU(memory) if trace_unknown else Simulator(memory)
+ if trace_unknown:memory.registers=sim.registers
+ initial=get_registers({'SP':0x7FFE,'HL':0x1357,'DE':0x247A,'BC':0x36C9,'AF':0x5A5D,'IX':0x2468,'IY':0x5C3A,
   '^HL':0x369C,'^DE':0x47AD,'^BC':0x58BE,'^AF':0x69CF},None,False)
  memory[0x7FFE:0x8000]=bytes([255,63]);sim.registers[:]=initial;sim.registers[D]=sim.registers[E]=0;sim.run(start=0xC49B,stop=0x3FFF)
  rng=random.Random(0xC000);cases=arcs=markers=stars=chains=shared_snapshot_cases=0
@@ -112,6 +150,7 @@ def main():
   individually_clipped_chain_edges_tested=False,full_game_loop_proved=False)
  (ROOT/'Tools/Disasm/Reports/MapSceneVerification.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n','utf-8')
  print(json.dumps(report,ensure_ascii=False,indent=2))
+ if trace_unknown:memory.save(cases)
 
 
-if __name__=='__main__':main()
+if __name__=='__main__':main('--trace-unknown' in sys.argv[1:])

@@ -388,7 +388,12 @@
                 ent
                 assert $ == #0EE3
                 ; Unknown, сохранённые физические байты вне доказанных процедур и типизированных записей
-                incbin "../Resources/19_3DPART/Physical0EE3.bin"
+                incbin "../Resources/19_3DPART/Unclassified0EE3_0F00.bin"
+                assert $ == #0F00
+                ; Документация [префикс таблицы и два рабочих байта](../../Docs/ClipDispatchPrefixData.md)
+                disp #CF00
+                include "../ThreeD/Data/ClipDispatchPrefix.asm"
+                ent
                 assert $ == #0F08
                 disp #CF08
                 include "../ThreeD/UnknownCF08.asm"
@@ -399,21 +404,48 @@
                 ent
                 assert $ == #0F10
                 ; Unknown, сохранённые физические байты вне доказанных процедур и типизированных записей
-                incbin "../Resources/19_3DPART/Physical0F10.bin"
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/ClipTargetLowPhysicalData.md)
+                assert $ == #0F10
+                disp #CF10
+                include "../ThreeD/Data/ClipTargetLowRow1.asm"
+                ent
                 assert $ == #0F1B
                 disp #CF1B
                 include "../ThreeD/Data/ClipSecondPoint.asm"
                 ent
                 assert $ == #0F20
                 ; Unknown, сохранённые физические байты вне доказанных процедур и типизированных записей
-                incbin "../Resources/19_3DPART/Physical0F20.bin"
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/ClipTargetLowPhysicalData.md)
+                assert $ == #0F20
+                disp #CF20
+                include "../ThreeD/Data/ClipTargetLowRow2.asm"
+                ent
                 assert $ == #0F2B
                 disp #CF2B
                 include "../ThreeD/Data/ClipProducts.asm"
                 ent
                 assert $ == #0F3B
                 ; Unknown, сохранённые физические байты вне доказанных процедур и типизированных записей
-                incbin "../Resources/19_3DPART/Physical0F3B.bin"
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/PolygonFillPhysicalData.md)
+                assert $ == #0F3B
+                ; Unknown, соседние байты не объявляются свободными
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/ClipTargetLowPhysicalData.md)
+                assert $ == #0F3B
+                disp #CF3B
+                include "../ThreeD/Data/ClipTargetLowTail3.asm"
+                ent
+                assert $ == #0F40
+                disp #CF40
+                include "../ThreeD/Data/ClipTargetLowRows4F.asm"
+                ent
+                assert $ == #1000
+                disp #D000
+                include "../ThreeD/Data/ClipTargetHigh.asm"
+                ent
+                assert $ == #1100
+                disp #D100
+                include "../ThreeD/Data/PolygonPatterns.asm"
+                ent
                 assert $ == #110A
                 disp #D10A
                 include "../ThreeD/ClearWorkBuffer.asm"
@@ -526,5 +558,7 @@
                 ent
                 assert $ == #2020
                 ; Unknown, сохранённые физические байты вне доказанных процедур и типизированных записей
+                ; Физический суффикс выделенных секторов, неиспользуемость не установлена
+                ; Документация [границы и сохранение суффиксов](../../Docs/AllocatedSectorSuffixes.md)
                 incbin "../Resources/19_3DPART/SectorTail.bin"
                 assert $ == #2100

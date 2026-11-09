@@ -26,7 +26,7 @@
                 ; сохранение настоящего SP перед переносом экрана через временные POP и PUSH
 Entry:          LD (@ControlsTextDisplayState.SavedScrollSP), SP
                 ; перенос растровой строки 1 из 30, чтение шести слов перед их записью на восемь пикселей выше
-                LD SP, #5134
+FirstSource:    LD SP, #5134
                 POP HL
                 POP DE
                 POP BC
@@ -34,7 +34,7 @@ Entry:          LD (@ControlsTextDisplayState.SavedScrollSP), SP
                 EXX
                 POP BC
                 POP DE
-                LD SP, #5120
+FirstTarget:    LD SP, #5120
                 PUSH DE
                 PUSH BC
                 EXX
@@ -43,7 +43,7 @@ Entry:          LD (@ControlsTextDisplayState.SavedScrollSP), SP
                 PUSH DE
                 PUSH HL
                 ; перенос растровой строки 2 из 30, чтение шести слов перед их записью на восемь пикселей выше
-                LD SP, #5134
+SecondSource:   LD SP, #5134
                 POP HL
                 POP DE
                 POP BC

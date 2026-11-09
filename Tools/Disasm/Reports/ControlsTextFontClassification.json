@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "physical_bytes": 624,
+  "glyphs": 208,
+  "pixel_bits": 4992,
+  "unknown_prefix_bytes_preserved": 186,
+  "original_code_and_data_bytes_preserved": true,
+  "out_of_range_code_reads_preserved": true,
+  "assembly_executed": false,
+  "native_execution": false
+}

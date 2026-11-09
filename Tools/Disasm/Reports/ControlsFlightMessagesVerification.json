@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "total_cases": 1479,
+  "strings": 29,
+  "classified_logical_bytes": 637,
+  "all_write_cursor_positions": true,
+  "column_boundaries": [
+    0,
+    23,
+    255
+  ],
+  "real_consumer_glyphs_scroll_executed": true,
+  "glyph_events": 29121,
+  "scroll_events": 2873,
+  "all_eight_banks_except_stack_66_and_scroll_saved_SP_compared": true,
+  "IX_IY_preserved": true,
+  "exact_registers_R_T_and_write_multiplicity_proved": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

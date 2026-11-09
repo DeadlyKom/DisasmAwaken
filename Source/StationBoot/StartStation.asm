@@ -1,6 +1,7 @@
                 module StationBoot
                 module StartStation
                 ; Внутренние входы [алгоритм](../../Docs/GraphicsStateInternalLabels.md)
+                ; Документация [физические ключи и размеры фонов](../../Docs/StationBootResourceTables.md)
 ; Документация [StationBoot](../../Docs/FunctionDetails/StationBoot.md)
 ; -----------------------------------------
 ; Загрузка банков карты, музыки, справки, 3D и языка, выбор фона, настройка устройств и запуск цикла станции
@@ -21,9 +22,10 @@ Entry:          LD A, #09
                 LD (#5D06), A
                 LD A, #11
                 CALL @Station.SelectMemoryPage.Entry
-                LD HL, #402A
+                ; Выбор файла карты для банка 1.
+                LD HL, @StationBootFileKeys.Karta.Name
                 LD DE, #5CDD
-                LD BC, #0009
+                LD BC, @FTrDosFileKey
                 LDIR
                 LD HL, #C000
                 LD C, #0E
@@ -31,9 +33,10 @@ Entry:          LD A, #09
                 CALL @TrDos.Dispatch
                 LD A, #13
                 CALL @Station.SelectMemoryPage.Entry
-                LD HL, #4033
+                ; Выбор музыкального файла и последующая инициализация проигрывателя.
+                LD HL, @StationBootFileKeys.Muz1.Name
                 LD DE, #5CDD
-                LD BC, #0009
+                LD BC, @FTrDosFileKey
                 LDIR
                 LD HL, #DB00
                 LD C, #0E
@@ -42,9 +45,10 @@ Entry:          LD A, #09
                 CALL @Music.Initialize.Entry
                 LD A, #17
                 CALL @Station.SelectMemoryPage.Entry
-                LD HL, #4045
+                ; Выбор файла справки для банка 7.
+                LD HL, @StationBootFileKeys.Help.Name
                 LD DE, #5CDD
-                LD BC, #0009
+                LD BC, @FTrDosFileKey
                 LDIR
                 LD HL, #DB00
                 LD C, #0E
@@ -52,9 +56,10 @@ Entry:          LD A, #09
                 CALL @TrDos.Dispatch
                 LD A, #14
                 CALL @Station.SelectMemoryPage.Entry
-                LD HL, #404E
+                ; Выбор модуля просмотра моделей для банка 4.
+                LD HL, @StationBootFileKeys.D3D.Name
                 LD DE, #5CDD
-                LD BC, #0009
+                LD BC, @FTrDosFileKey
                 LDIR
                 LD HL, #C000
                 LD C, #0E
@@ -77,9 +82,10 @@ Entry:          LD A, #09
                 LD (#C21C), HL
                 LD A, #16
                 CALL @Station.SelectMemoryPage.Entry
-                LD HL, #4057
+                ; Выбор модуля LANG для банка 6.
+                LD HL, @StationBootFileKeys.Lang.Name
                 LD DE, #5CDD
-                LD BC, #0009
+                LD BC, @FTrDosFileKey
                 LDIR
                 LD HL, #C000
                 LD C, #0E
@@ -87,21 +93,23 @@ Entry:          LD A, #09
                 CALL @TrDos.Dispatch
                 LD A, #13
                 CALL @Station.SelectMemoryPage.Entry
-                LD HL, #403C
+                ; Поиск каталожной записи исходного файла фонов.
+                LD HL, @StationBootFileKeys.StationScreens.Name
                 LD DE, #5CDD
-                LD BC, #0009
+                LD BC, @FTrDosFileKey
                 LDIR
                 LD C, #0A
                 CALL @TrDos.Dispatch
                 LD A, C
                 LD C, #08
                 CALL @TrDos.Dispatch
+                ; Выбор одного из шестнадцати фонов по младшей тетраде R.
                 LD A, R
                 AND #0F
                 LD C, A
                 LD L, A
                 LD H, #00
-                LD DE, #4060
+                LD DE, @StationBackdropSizes.Backdrop00.Sectors
                 ADD HL, DE
                 PUSH HL
                 INC C
@@ -116,6 +124,7 @@ SumLengths:     DEC C
                 JR @StationBoot.StartStation.SumLengths
 
 
+                ; Расчёт физического трека и сектора с добавлением начала файла.
 LocateScreen:   LD DE, (#5CEB)
                 LD C, A
                 AND #0F
@@ -139,6 +148,7 @@ LocateScreen:   LD DE, (#5CEB)
                 LD A, E
                 AND #0F
                 LD E, A
+                ; Чтение указанного числа секторов и распаковка фона на месте.
                 POP HL
                 LD B, (HL)
                 LD HL, #C000

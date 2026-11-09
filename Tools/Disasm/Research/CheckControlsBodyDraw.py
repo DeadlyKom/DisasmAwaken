@@ -18,12 +18,13 @@ def reference(banks, initial, x, y, radius, flags, small_mode, large_mode, patte
     r = list(initial)
     stack = r[12]
     writes = []
-    if r[24] == 0xD21A:
+    if r[24] in (0xD21A, 0xD227):
+        primary = r[24] == 0xD227
         flat = bytearray(0x4000) + banks[5] + banks[2] + banks[1]
-        writes.extend(((stack - 2, 0x1D), (stack - 1, 0xD2)))
+        writes.extend(((stack - 2, 0x2A if primary else 0x1D), (stack - 1, 0xD2)))
         child = list(r)
         child[12] -= 2
-        r, _, local_writes, path = small(flat, radius, small_mode, x, y, flags, pattern, child)
+        r, _, local_writes, path = small(flat, radius, small_mode, x, y, flags, pattern, child, primary=primary)
         for address, value in local_writes:
             if 0xBFF8 <= address <= 0xBFFD:
                 address += stack - 0xBFFE - 2
@@ -32,9 +33,9 @@ def reference(banks, initial, x, y, radius, flags, small_mode, large_mode, patte
         if r[0] < 9:
             r[12], r[24] = stack + 2, 0x3FFF
             return r, writes, flat[0x8000:0x8C00], 'small_'+path
-        r[:2] = [0, 0x44]
-        writes.append((0xD18C, 0))
-        large_mode = 0
+        large_mode = int(primary)
+        r[:2] = [large_mode, r[1] if primary else 0x44]
+        writes.append((0xD18C, large_mode))
     writes.extend(((stack - 2, 0x35), (stack - 1, 0xD2)))
     r[12], r[24] = stack - 2, 0xD236
     state, local_writes, raster, _, path = large(r, x, y, radius, flags, large_mode, background, pattern)
@@ -73,7 +74,9 @@ def main():
     simulator = Simulator(memory)
     counts, entries = Counter(), Counter()
     touched = set()
-    for entry, x, y, radius, flags, mode in profiles():
+    standard = list(profiles())
+    primary_profiles = [(0xD227, *case[1:]) for case in standard if case[0] == 0xD21A]
+    for entry, x, y, radius, flags, mode in standard + primary_profiles:
         serial = counts.total()
         stack = (0x9008, 0xBFFE)[serial & 1]
         pattern, background = (serial * 307) & 65535, (serial * 73) & 255
@@ -119,7 +122,8 @@ def main():
     report = dict(passed=True, total_cases=counts.total(), paths=dict(counts), cases_by_entry=dict(entries),
         original_small_and_large_children_without_stubs=True, exact_registers_except_R=True,
         all_physical_ram_bytes_proved=True, nonpixel_write_multiplicity_proved=True,
-        mode_clear_only_for_large_fallback=True, actual_large_call_frame_preserved=True,
+        large_fallback_mode_by_entry={'D21A': 0, 'D227': 1}, alternate_small_entry_at_operand=True,
+        actual_large_call_frame_preserved=True,
         assembly_executed=False, irq_executed=False, native_execution=False)
     (ROOT / 'Tools/Disasm/Reports/ControlsBodyDrawVerification.json').write_text(json.dumps(report, indent=2) + '\n', encoding='utf-8')
     print(json.dumps(report, indent=2))

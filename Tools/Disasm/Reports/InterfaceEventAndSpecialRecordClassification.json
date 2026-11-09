@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "typed_bytes": 14,
+  "physical_records": 2,
+  "physical_symbols": 13,
+  "files": 2,
+  "station_event_code_bytes": 2,
+  "special_record_prefix_bytes": 12,
+  "banked_effect_scan_anchor": 42883,
+  "first_effect_address": 42901,
+  "special_record_prefix_starts_after_initial_marker": true,
+  "full_special_record_layout_proved": false,
+  "original_bytes_addresses_and_instructions_preserved": true,
+  "gaps_preserved": true,
+  "invalid_pair_gameplay_proved": false,
+  "cf08_reclassified": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

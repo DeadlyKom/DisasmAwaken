@@ -32,7 +32,7 @@ Entry:          PUSH HL
                 AND #01
                 NEG
                 LD H, A
-ShiftVertical:  JR #F9F9                                                        ; исходный переход на себя, смещение задаёт DrawProjectedEffect
+ShiftVertical:  JR @Voxel.ProjectEffectPoint.ShiftVertical                      ; исходный переход на себя, смещение задаёт DrawProjectedEffect
 
                 ADD HL, HL
                 ADD HL, HL
@@ -63,7 +63,7 @@ ShiftVertical:  JR #F9F9                                                        
                 AND #01
                 NEG
                 LD H, A
-ShiftHorizontal:JR #FA1C                                                        ; исходный переход на себя, смещение задаёт DrawProjectedEffect
+ShiftHorizontal:JR @Voxel.ProjectEffectPoint.ShiftHorizontal                    ; исходный переход на себя, смещение задаёт DrawProjectedEffect
 
                 ADD HL, HL
                 ADD HL, HL

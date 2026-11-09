@@ -13,6 +13,7 @@ from skoolkit.simutils import get_registers, A, F, D, E, SP
 WORDS = (0xC095, 0xC0F2, 0xC0F8, 0xC0FF, 0xC13E, 0xC144)
 NORMAL = (0xC1C0, 0xC1C0, 0xC1ED, 0xC1C0, 0xC1ED, 0xC1C0)
 FILLED = (0xC1CF, 0xC1C0, 0xC1CF, 0xC1CF, 0xC1CF, 0xC1CF)
+ALL_FILLED = (0xC1CF,) * len(WORDS)
 
 
 def main():
@@ -27,7 +28,8 @@ def main():
                              "IX": 0x2468, "IY": 0x5C3A, "^HL": 0x369C,
                              "^DE": 0x47AD, "^BC": 0x58BE, "^AF": 0x69CF}, None, False)
     counts = {}
-    for start in (0xCCAF, 0xCCD4):
+    assert bytes(memory[0xCCAA:0xCCAF]) == bytes.fromhex('11 cf c1 18 03')
+    for start in (0xCCAA, 0xCCAF, 0xCCD4):
         for value in range(256):
             for flags in range(256):
                 # Создание произвольных прежних значений подтверждает полную перезапись всех шести слов.
@@ -44,7 +46,7 @@ def main():
                     expected_a = (value >> 1) | ((flags & 1) << 7)
                     expected_f = (flags & 0xC4) | (expected_a & 0x28) | (value & 1)
                     expected_de = 0xC1ED if value & 1 else 0xC1CF
-                    expected_words = NORMAL if value & 1 else FILLED
+                    expected_words = NORMAL if value & 1 else ALL_FILLED if start == 0xCCAA else FILLED
                 actual_words = tuple(memory[p]+256*memory[p+1] for p in WORDS)
                 if actual_words != expected_words or (simulator.registers[A], simulator.registers[F],
                         simulator.registers[D]*256+simulator.registers[E], simulator.registers[SP]) != (

@@ -1,5 +1,6 @@
                 module Action
                 module UpdateBodyMotion
+                ; Физические поля [локальный контекст](../../Docs/ActionLocalContextPhysicalData.md)
                 ; Документация [алгоритм и проверка](../../Docs/ActionWideMotionPrefix.md)
                 ; -----------------------------------------
                 ; Фазовое обновление рабочего вектора, запросов панели и широких целей
@@ -143,13 +144,13 @@ SaveGauge:      LD (#6682), A
                 CALL @Action.SelectPreferredByte.Entry
                 INC A
                 LD C, A
-                LD DE, (#9BD2)
+                LD DE, (@ActionByteLimitCounter.Value.Current)
                 INC E
                 LD A, D
                 CP E
                 JR C, @Action.UpdateBodyMotion.RequestGauge                     ; переход, если кандидат счётчика превышает лимит
 
-                LD (#9BD2), DE
+                LD (@ActionByteLimitCounter.Value.Current), DE
                 LD (HL), C
 RequestGauge:   LD A, #01
                 LD (#665C), A
@@ -163,17 +164,18 @@ ClearGauge:     LD A, (#6682)
                 LD (#667D), A
                 XOR A
                 LD (#6682), A
-                ; Проверка порога пересчёта Compare06A.
+                ; Проверка порога пересчёта SpawnLowLimit.
 CheckBias:      LD A, L
                 CP #1C
                 JR C, @Action.UpdateBodyMotion.CheckMode                        ; переход, если максимум ниже #1C и пересчитывать порог не нужно
 
                 SUB #1B
+                ; Расчёт нового SpawnLowLimit с изменяемой базой SpawnBiasBase и насыщением FF.
                 ADD A, #00
                 JR NC, @Action.UpdateBodyMotion.SaveBias                        ; переход, если сумма порога с поправкой помещается в байт
 
                 LD A, #FF
-SaveBias:       LD (@ActionApplyParametersState.Compare06A), A
+SaveBias:       LD (@ActionApplyParametersState.SpawnLowLimit), A
                 ; Проверка необходимости смены режима тела.
 CheckMode:      LD A, L
                 CP #40

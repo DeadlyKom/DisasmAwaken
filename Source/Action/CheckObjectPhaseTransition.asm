@@ -6,12 +6,12 @@
                 ; исходная запись 17, адреса E935..E97B
                 ; In:
                 ;   HL, DE, BC и AF числовых аргументов не задают, IX указывает доступную FActionRecord
-                ;   доступны поля StateCode, SavedStateCode, PhaseMoveTimer, Unknown1B, Unknown1D и Unknown1F
+                ;   доступны поля StateCode, SavedStateCode, PhaseMoveTimer, ViewPosition.X.High, ViewPosition.Y.High и ViewPosition.Depth.High
                 ;   выбран ACTION банка 0, действуют условия NextRandomWord5, четыре байта ниже SP не пересекают запись и поток 5, IRQ не вмешиваются
                 ; Out:
                 ;   HL=новое слово потока 5, DE и BC сохраняются
                 ;   при H>=FA и L>=EF прежний StateCode сохраняется в SavedStateCode, затем StateCode=13
-                ;   после случайной проверки каждый байт Unknown1B, Unknown1D и Unknown1F сворачивается как b при b<80 либо FF XOR b
+                ;   после случайной проверки каждый байт ViewPosition.X.High, ViewPosition.Y.High и ViewPosition.Depth.High сворачивается как b при b<80 либо FF XOR b
                 ;   если свёрнутые значения меньше 2, 2 и 6 соответственно, текущее StateCode сохраняется в SavedStateCode, StateCode=14 и PhaseMoveTimer=1E
                 ;   если оба перехода разрешены, итог SavedStateCode=13 независимо от состояния при входе
                 ;   при отказе A равен первому недопустимому свёрнутому байту, F соответствует его CP с порогом
@@ -46,9 +46,9 @@ Entry:          CALL @Action.NextRandomWord5.Entry
                 LD (IX + @FActionRecord.SavedStateCode), A
                 LD (IX + @FActionRecord.StateCode), @ActionPhaseTransitionConst.WaitState
                 ; Проверка первого байта, отрицательная половина сворачивается побитовым дополнением.
-CheckFirst:     LD A, (IX + @FActionRecord.Unknown1B)
+CheckFirst:     LD A, (IX + @FActionRecord.ViewPosition.X.High)
                 OR A
-                JP P, @Action.CheckObjectPhaseTransition.FoldFirst              ; переход, если бит 7 Unknown1B сброшен, сравнить исходный байт с порогом
+                JP P, @Action.CheckObjectPhaseTransition.FoldFirst              ; переход, если бит 7 ViewPosition.X.High сброшен, сравнить исходный байт с порогом
 
                 CPL
                 ; Проверка допуска первого свёрнутого байта, допустимы только значения 0 и 1.
@@ -56,9 +56,9 @@ FoldFirst:      CP @ActionPhaseTransitionConst.PairFoldLimit
                 RET NC                                                          ; выход, если первый свёрнутый байт не меньше 2, сохранить результат случайной проверки
 
                 ; Проверка знака второго байта перед такой же свёрткой без прибавления единицы.
-                LD A, (IX + @FActionRecord.Unknown1D)
+                LD A, (IX + @FActionRecord.ViewPosition.Y.High)
                 OR A
-                JP P, @Action.CheckObjectPhaseTransition.FoldSecond             ; переход, если бит 7 Unknown1D сброшен, сравнить исходный байт с порогом
+                JP P, @Action.CheckObjectPhaseTransition.FoldSecond             ; переход, если бит 7 ViewPosition.Y.High сброшен, сравнить исходный байт с порогом
 
                 CPL
                 ; Проверка допуска второго свёрнутого байта, допустимы только значения 0 и 1.
@@ -66,9 +66,9 @@ FoldSecond:     CP @ActionPhaseTransitionConst.PairFoldLimit
                 RET NC                                                          ; выход, если второй свёрнутый байт не меньше 2, не менять таймер смещения
 
                 ; Проверка знака третьего байта, для него используется отдельный порог.
-                LD A, (IX + @FActionRecord.Unknown1F)
+                LD A, (IX + @FActionRecord.ViewPosition.Depth.High)
                 OR A
-                JP P, @Action.CheckObjectPhaseTransition.FoldThird              ; переход, если бит 7 Unknown1F сброшен, сравнить исходный байт с порогом
+                JP P, @Action.CheckObjectPhaseTransition.FoldThird              ; переход, если бит 7 ViewPosition.Depth.High сброшен, сравнить исходный байт с порогом
 
                 CPL
                 ; Проверка допуска третьего свёрнутого байта, допустимы значения 0..5.

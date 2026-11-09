@@ -1,5 +1,7 @@
                 module Action
                 module TransformObjectVertices
+                ; Физические поля [заголовок модели](../../Docs/ActionRenderHeaderPhysicalData.md)
+                ; Физические результаты [поля, порядок заполнения и предел исходных моделей](../../Docs/ActionProjectedPointsData.md)
                 ; Документация [алгоритм и проверка](../../Docs/ActionObjectVertices.md)
                 ; -----------------------------------------
                 ; Копирование потока объекта и преобразование всех его фиксированных групп вершин

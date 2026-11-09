@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "offset": 16128,
+  "bytes": 28,
+  "address": 40704,
+  "physical_pointer_count": 14,
+  "target_bank": 4,
+  "targets": {
+    "ActionModels.M2469": 58473,
+    "ActionModels.M251F": 58655,
+    "ActionModels.M25C1": 58817,
+    "ActionModels.M266B": 58987,
+    "ActionModels.M27AB": 59307,
+    "ActionModels.M2707": 59143,
+    "ActionModels.M2859": 59481
+  },
+  "all_seven_targets_twice": true,
+  "established_object_pointer_consumers_wrap_inside_9e_page": true,
+  "game_callers_proved": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

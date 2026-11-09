@@ -13,7 +13,7 @@ CONTRACTS = {('Action', 0x6727): (
     ['Entry возвращается сразу при режиме 2, иначе устанавливает режим 1 и сбрасывает Stream14 перед CheckRandom',
      'CheckRandom продвигает Stream14 и только на слове #8746 выставляет режим 2 и три слова #6000, затем передаёт управление на #688A',
      'LowerWords вычитает #0030 из трёх старших слов и передаёт управление на #679B'],
-    ['HL, BC, AF, HL\', DE\', BC\', R, поля режима, Compare06A, состояние потока, вектор и временные слова по достигнутому пути'],
+    ['HL, BC, AF, HL\', DE\', BC\', R, поля режима, SpawnLowLimit, состояние потока, вектор и временные слова по достигнутому пути'],
     ['младшие байты компонент не затрагиваются, старшие слова изменяются по модулю #10000',
      '66816 сценариев сверяют локальные границы, а оба продолжения описаны отдельно'],
 )}
@@ -35,7 +35,7 @@ def name_operands(region, address, operation):
     aliases = {'9B81': 'ActionGlyphIndicatorState.Control.FirstMode',
                'EBF6': 'ActionRandomStreams.Stream14.LowWord',
                'EBF8': 'ActionRandomStreams.Stream14.FoldByte',
-               '7B6B': 'ActionApplyParametersState.Compare06A'}
+               '7B6B': 'ActionApplyParametersState.SpawnLowLimit'}
     for index in range(3):
         aliases[f'{0x9B70 + 3 * index:04X}'] = f'ActionTransformWorkVector.Value.Component{index}.LowWord + 1'
     for operand, alias in aliases.items():

@@ -102,3 +102,5 @@ def constants():
 
 
 INCLUDE_BLOCKS=(('Includes/Const/Include.inc','module ActionPacketRendererConst',constants()),)
+
+COMMENTS[0xdd23]=(['Физическое состояние [полные слова и код ориентации](../../Docs/ActionClippedLineWorkData.md)']+COMMENTS.get(0xdd23,([],None))[0],COMMENTS.get(0xdd23,([],None))[1])

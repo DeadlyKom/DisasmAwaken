@@ -34,7 +34,7 @@ Entry:          EX AF, AF'
                 CALL @Action.SelectMemoryPage.Entry
                 ; Восстановление передаваемого A после SelectMemoryPage без изменения передаваемого F.
                 LD A, E
-                ; Создание исходного IY-контекста обработчика, формат данных по A783 устанавливается отдельно.
+                ; Подготовка IY перед первой записью списка эффектов для известных входов банка 3.
                 LD IY, @ActionBankedCallbackState.ContextBase
                 ; Создание возврата банкового обработчика через отдельный хвост RestoreRuntimePage.
                 LD DE, @Action.RestoreRuntimePage.Entry

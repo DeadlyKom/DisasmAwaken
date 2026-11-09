@@ -1,6 +1,7 @@
                 module Final
                 module BuildDisplayChain
                 ; Внутренние входы [алгоритм](../../Docs/ArithmeticFinalInternalLabels.md)
+                ; Документация [физические указатели синхронизации](../../Docs/FinalSyncAndPreviewRecord.md)
 ; Документация [Final](../../Docs/FunctionDetails/Final.md)
 ; -----------------------------------------
 ; Создание 24 групп по восемь bitmap-строк и полосе атрибутов с двумя местами вставки синхронизации
@@ -32,7 +33,8 @@ BitmapLine:     PUSH BC
                 JP NZ, @Final.BuildDisplayChain.CheckFirstSync                  ; переход, если осталось не семь рядов, пропустить место синхронизации после восемнадцатого
 
 
-                LD (#62A5), DE
+                ; Сохранение адреса вставки после восемнадцатого знакоместного ряда.
+                LD (@FinalSyncPointers.Value.AfterRow18), DE
                 INC DE
                 INC DE
                 INC DE
@@ -41,7 +43,8 @@ CheckFirstSync: CP #0F
                 JP NZ, @Final.BuildDisplayChain.CountRows                       ; переход, если осталось не пятнадцать рядов, пропустить место синхронизации после десятого
 
 
-                LD (#62A7), DE
+                ; Сохранение адреса вставки после десятого знакоместного ряда.
+                LD (@FinalSyncPointers.Value.AfterRow10), DE
                 INC DE
                 INC DE
                 INC DE

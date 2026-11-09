@@ -5,6 +5,8 @@
 | Физическая область после загрузки | Ресурс в проекте | Писатель и последующее назначение |
 | --- | --- | --- |
 | 81CC..8BFF | [InitialLinearBufferTail.bin](../Source/Action/Resources/InitialLinearBufferTail.bin) | хвост линейного буфера, ClearWorkBuffer записывает FF перед обычным выводом кадра |
+| 8F00..8FFB | [InitialRenderQueuePool.bin](../Source/Action/Resources/InitialRenderQueuePool.bin) | InsertRenderQueue создаёт рабочие узлы, ReadRenderQueue читает их по цепочке |
+| 9000..90FF | [InitialClipOutputPage.bin](../Source/Action/Resources/InitialClipOutputPage.bin) | копирование граней и отсечение пишут пары координат для заливки и линий |
 | 9100..91FF | [InitialLogarithmLow.bin](../Source/Action/Resources/InitialLogarithmLow.bin) | BuildLogarithmTable создаёт младшие байты таблицы логарифма |
 | 9200..92FF | [InitialLogarithmHigh.bin](../Source/Action/Resources/InitialLogarithmHigh.bin) | тот же построитель создаёт старшие байты |
 | 9300..93FF | [InitialExponential.bin](../Source/Action/Resources/InitialExponential.bin) | BuildExponentialTable создаёт 256 байтов обратной аппроксимации |
@@ -25,7 +27,27 @@
 
 [InitializeFlight](../Source/ActionBoot/InitializeFlight.asm) вызывает построение экспоненты, логарифма и пиксельных таблиц. Семь страниц по 256 байтов полностью перезаписываются. Геометрические делители читают логарифмические страницы и экспоненту, растеризация и банковые точки используют четыре страницы пиксельной адресации. Начальные ресурсы не являются готовыми математическими таблицами, их нельзя заменить рассчитанными значениями при обратной сборке.
 
-Промежуток 8C00..90FF, 1280 байтов, сохранён отдельно как Unknown. Его отдельные писатели, потребители и возможные перекрытия этим разделом не объявляются разобранными.
+## Области геометрии
+
+[InsertRenderQueue](../Source/Action/InsertRenderQueue.asm) использует 18 мест
+по 14 байтов в 8F00..8FFB. При FreeOffset=FC вставка отказывается от создания
+узла. Последние четыре байта 8FFC..8FFF сохранены отдельно, их начальное
+назначение не установлено. В образе записаны исходные байты, которые не
+задаются заново как 18 готовых узлов.
+
+[RenderInsideRecords](../Source/Action/RenderInsideRecords.asm) и
+[RenderClippedRecords](../Source/Action/RenderClippedRecords.asm) копируют
+внутренние грани на страницу 90. Писатели отсечения размещают там же пары
+Second, First, оборачивая младший байт адреса. [PreparePolygonFill](../Source/Action/PreparePolygonFill.asm)
+читает число пар из OutputSize. Договоры потребителей описаны отдельно
+в [добавлении пересечений](ActionClipIntersections.md) и [очереди граней](ActionRenderQueueInsert.md).
+Расширенный профиль [растеризации](ActionLineRaster.md) может писать в обе
+страницы по адресам пикселей, поэтому роли не объявлены исключительными.
+
+[Сверка размещения](../Tools/Disasm/Reports/ActionRenderWorkspaceClassification.json)
+подтверждает сохранность 508 исходных байтов. Начальные байты этих страниц
+могут иметь другие назначения в более ранних фазах, которые этой сверкой
+не охвачены.
 
 ## Проверка
 

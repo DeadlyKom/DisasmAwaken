@@ -1,5 +1,6 @@
                 module Action
                 module ApproachTargetRecordAndResolve
+                ; Физические поля [локальный контекст](../../Docs/ActionLocalContextPhysicalData.md)
                 ; Документация [алгоритм и проверка](../../Docs/ActionArrivalState.md)
                 ; -----------------------------------------
                 ; Сближение с выбранной записью, обновление связи и завершение через большой эффект

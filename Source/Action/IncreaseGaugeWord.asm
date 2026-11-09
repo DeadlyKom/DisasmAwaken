@@ -30,7 +30,16 @@ Entry:          LD A, (@ActionProjectionClipState.SkipDetail)
                 RET NZ                                                          ; выход, если SkipDetail ненулевой, сохранить слово и запрос шкалы
 
                 ; Проверка исходного опкода 3A координатной цепочки, остальные байты не допускают изменение.
-                LD A, (@ActionGaugeWordKeysState.MotionOpcode)
+                ; Внутренний вход MotionGate из AdvanceBoost, проверка SkipDetail уже пропущена.
+                ; In:
+                ;   HL, DE, BC и AF числовых аргументов не задают, доступны MotionOpcode, SignedWord и LimitWord
+                ; Out:
+                ;   при MotionOpcode не 3A HL, DE и BC сохранены, A равен опкоду, F соответствует CP 3A
+                ;   иначе действуют расчёт и выходы основного входа после проверки SkipDetail, внешний RET задаёт SP=входной SP+2
+                ; Corrupt:
+                ;   HL, DE, AF, R, SignedWord и SixthRequest только на допущенном пути
+                ; Документация [шестнадцать вызовов ускорения](../../Docs/ActionBoostAdvance.md).
+MotionGate:     LD A, (@ActionGaugeWordKeysState.MotionOpcode)
                 CP @ActionGaugeKeyConst.MotionOpcode
                 RET NZ                                                          ; выход, если MotionOpcode отличается от 3A, сохранить слово
 

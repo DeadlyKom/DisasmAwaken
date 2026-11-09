@@ -13,7 +13,11 @@
       "catalog_parameter_is_not_runtime_load_proof": true,
       "bytes": 16384,
       "sha256": "7f1ee7d1f6280d1c646d0066c9c42e56d4c7d2f8eec17f8bcba1e825e2d8ff07",
-      "source_resource": "Source/Resources/33_BANK0/Unclassified000.bin",
+      "source_resources": [
+        "Source/Resources/33_BANK0/StripsPrefix.asm",
+        "Source/Resources/33_BANK0/UnknownGap.bin",
+        "Source/Resources/33_BANK0/StripsSuffix.asm"
+      ],
       "literal_name_payload_occurrences": [],
       "byte_entropy": 6.135426,
       "most_common_bytes": [
@@ -65,7 +69,13 @@
       "catalog_parameter_is_not_runtime_load_proof": true,
       "bytes": 16384,
       "sha256": "9d8c5cd116db7ba399cd1d07eb6123d16eefc6cef1cd29320ffb803e0b39fbf6",
-      "source_resource": "Source/Resources/34_BANK1/Unclassified000.bin",
+      "source_resources": [
+        "Source/Resources/34_BANK1/StripsPrefix.asm",
+        "Source/Resources/34_BANK1/Unclassified1CFE_1E12.bin",
+        "Source/Resources/34_BANK1/ArchiveRouteCopies.asm",
+        "Source/Resources/34_BANK1/Unclassified1E76_23DA.bin",
+        "Source/Resources/34_BANK1/StripsSuffix.asm"
+      ],
       "literal_name_payload_occurrences": [],
       "byte_entropy": 5.976976,
       "most_common_bytes": [
@@ -117,7 +127,13 @@
       "catalog_parameter_is_not_runtime_load_proof": true,
       "bytes": 16384,
       "sha256": "e5596e1080d8886e5084a43317fd6632cdf5ea4e78fb9f69a50631a37c189a3b",
-      "source_resource": "Source/Resources/35_BANK2/Unclassified000.bin",
+      "source_resources": [
+        "Source/Resources/35_BANK2/StripsPrefix.asm",
+        "Source/Resources/35_BANK2/Unclassified1CB6_1E12.bin",
+        "Source/Resources/35_BANK2/ArchiveRouteCopies.asm",
+        "Source/Resources/35_BANK2/Unclassified1EDA_242E.bin",
+        "Source/Resources/35_BANK2/StripsSuffix.asm"
+      ],
       "literal_name_payload_occurrences": [],
       "byte_entropy": 6.0653,
       "most_common_bytes": [
@@ -169,7 +185,11 @@
       "catalog_parameter_is_not_runtime_load_proof": true,
       "bytes": 16384,
       "sha256": "2b64332cdb6e4c41454195fb2f2040f09d2f7a23ecdbc0fa0d2a42bd5b4054f5",
-      "source_resource": "Source/Resources/36_BANK3/Unclassified000.bin",
+      "source_resources": [
+        "Source/Resources/36_BANK3/StripsPrefix.asm",
+        "Source/Resources/36_BANK3/UnknownGap.bin",
+        "Source/Resources/36_BANK3/StripsSuffix.asm"
+      ],
       "literal_name_payload_occurrences": [],
       "byte_entropy": 6.05683,
       "most_common_bytes": [
@@ -221,7 +241,15 @@
       "catalog_parameter_is_not_runtime_load_proof": true,
       "bytes": 16384,
       "sha256": "4fbfd86e50c378a09522557902b9a52364246b0623d5beb4e32a21bf1d2cd9b3",
-      "source_resource": "Source/Resources/37_BANK4/Unclassified000.bin",
+      "source_resources": [
+        "Source/Resources/37_BANK4/StripsPrefix.asm",
+        "Source/Resources/37_BANK4/Unclassified1B4E_1E12.bin",
+        "Source/Resources/37_BANK4/ArchiveRouteCopies.asm",
+        "Source/Resources/37_BANK4/Unclassified1FA2_221E.bin",
+        "Source/Resources/37_BANK4/StripsAdditional.asm",
+        "Source/Resources/37_BANK4/PartialStripCopy.asm",
+        "Source/Resources/37_BANK4/StripsSuffix.asm"
+      ],
       "literal_name_payload_occurrences": [],
       "byte_entropy": 6.204858,
       "most_common_bytes": [
@@ -273,7 +301,15 @@
       "catalog_parameter_is_not_runtime_load_proof": true,
       "bytes": 16384,
       "sha256": "475a6e428c648fd4f4bd0bc4c1d8082171763f927cdc78a5d825a2fef62d9445",
-      "source_resource": "Source/Resources/38_BANK5/Unclassified000.bin",
+      "source_resources": [
+        "Source/Resources/38_BANK5/StripsPrefix.asm",
+        "Source/Resources/38_BANK5/Unclassified1D16_1E12.bin",
+        "Source/Resources/38_BANK5/ArchiveRouteCopies.asm",
+        "Source/Resources/38_BANK5/Unclassified2006_221E.bin",
+        "Source/Resources/38_BANK5/StripsAdditional.asm",
+        "Source/Resources/38_BANK5/PartialStripCopy.asm",
+        "Source/Resources/38_BANK5/StripsSuffix.asm"
+      ],
       "literal_name_payload_occurrences": [],
       "byte_entropy": 6.74436,
       "most_common_bytes": [
@@ -316,6 +352,9 @@
       "hr_header_candidate_packed_size": 192
     }
   ],
+  "graphic_source_bytes_verified": 89454,
+  "route_copy_bytes_verified": 1200,
+  "unknown_gap_bytes": 7650,
   "preview_hypotheses": [
     "raw_bit_rows_256x512",
     "first_6912_bytes_as_ULA",

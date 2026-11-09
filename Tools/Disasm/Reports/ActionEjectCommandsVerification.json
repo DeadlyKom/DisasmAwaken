@@ -1,0 +1,36 @@
+{
+  "passed": true,
+  "total_cases": 10664,
+  "counts": {
+    "cargo_byte_cleared_before_spawn": 3737,
+    "accepted_message": 10052,
+    "cargo_cases": 4060,
+    "cases": 10664,
+    "delay_exit": 510,
+    "mine_removed_before_spawn": 6257,
+    "mine_cases": 6604,
+    "empty_mines": 92,
+    "empty_cargo": 68,
+    "dropped_message": 102
+  },
+  "paths": {
+    "free_record": 7564,
+    "generated_other": 7564,
+    "packed_HL_differs_from_child": 7564,
+    "replace_ff": 1894,
+    "no_free_record": 2430,
+    "no_child_slot": 2430,
+    "list_end_without_insertion": 3645,
+    "keep_active_list_item": 810,
+    "replace_unavailable": 2025,
+    "skip_once": 2430
+  },
+  "real_prepared_spawn_and_queue_executed": true,
+  "all_registers_except_R_and_T_checked": true,
+  "all_ram_and_write_multiplicity_outside_18_byte_stack_checked": true,
+  "exact_OUT_checked": true,
+  "removed_stock_not_restored_after_failed_spawn": true,
+  "cargo_total_counter_not_decremented": true,
+  "assembly_executed": false,
+  "native_execution": false
+}

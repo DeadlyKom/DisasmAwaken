@@ -1,0 +1,35 @@
+{
+  "passed": true,
+  "total_cases": 262144,
+  "profiles": {
+    "finish_all_cap_candidate_pairs": 65536,
+    "alternate_all_cap_candidate_pairs": 65536,
+    "finish_all_mask_random_low_pairs": 65536,
+    "alternate_all_mask_random_low_pairs": 65536
+  },
+  "branches": {
+    "cap_minus_one": 158918,
+    "candidate": 103226
+  },
+  "actual_apply_parameter_set_executed": true,
+  "both_actual_consumers_executed": true,
+  "actual_random_streams_executed": true,
+  "all_cap_candidate_pairs": true,
+  "all_mask_random_low_pairs": true,
+  "all_field11_bytes_observed": true,
+  "whole_64_byte_record_compared": true,
+  "cap_zero_produces_ff": true,
+  "field11_random_masks_disjoint": true,
+  "initial_operands": [
+    50,
+    100,
+    32
+  ],
+  "boundary": "FinishSpawnRecord 7DD8..7E18 and SpawnAlternate 7A51..7A99, stop before class overrides and later fields",
+  "full_spawn_executed": false,
+  "all_joint_inputs_exhausted": false,
+  "exact_refresh_and_flags_proved": false,
+  "irq_executed": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

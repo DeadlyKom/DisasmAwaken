@@ -10,21 +10,21 @@
 | Basic | 1 | 1 | [Факты](FunctionDetails/Basic.md) |
 | Intro | 42 | 42 | [Факты](FunctionDetails/Intro.md) |
 | IntroTemplates | 4 | 4 | [Факты](FunctionDetails/IntroTemplates.md) |
-| IntroUnpack | 1 | 1 | [Факты](FunctionDetails/IntroUnpack.md) |
+| IntroUnpack | 5 | 5 | [Факты](FunctionDetails/IntroUnpack.md) |
 | StationBoot | 3 | 3 | [Факты](FunctionDetails/StationBoot.md) |
 | StationExit | 1 | 1 | [Факты](FunctionDetails/StationExit.md) |
 | StationFinalExit | 1 | 1 | [Факты](FunctionDetails/StationFinalExit.md) |
-| Station | 423 | 423 | [Факты](FunctionDetails/Station.md) |
+| Station | 430 | 430 | [Факты](FunctionDetails/Station.md) |
 | Text | 126 | 126 | [Факты](FunctionDetails/Text.md) |
-| D3D | 70 | 70 | [Факты](FunctionDetails/D3D.md) |
-| Map | 89 | 89 | [Факты](FunctionDetails/Map.md) |
+| D3D | 71 | 71 | [Факты](FunctionDetails/D3D.md) |
+| Map | 90 | 90 | [Факты](FunctionDetails/Map.md) |
 | Help | 4 | 4 | [Факты](FunctionDetails/Help.md) |
 | Music | 49 | 49 | [Факты](FunctionDetails/Music.md) |
 | ActionBoot | 9 | 9 | [Факты](FunctionDetails/ActionBoot.md) |
-| Action | 351 | 350 | [Факты](FunctionDetails/Action.md) |
+| Action | 369 | 368 | [Факты](FunctionDetails/Action.md) |
 | ThreeD | 122 | 121 | [Факты](FunctionDetails/ThreeD.md) |
 | Voxel | 12 | 12 | [Факты](FunctionDetails/Voxel.md) |
-| Controls | 78 | 78 | [Факты](FunctionDetails/Controls.md) |
+| Controls | 86 | 86 | [Факты](FunctionDetails/Controls.md) |
 | Final | 9 | 9 | [Факты](FunctionDetails/Final.md) |
 | FinalTemplates | 2 | 2 | [Факты](FunctionDetails/FinalTemplates.md) |
 
@@ -82,6 +82,10 @@
 | #6D78 | [IntroTemplates.PointerSample](../Source/IntroTemplates/PointerSample.asm) | Шестибайтовый образец косвенной выборки, 64 копии по адресу #9100 |
 | #6D7E | [IntroTemplates.PhaseSum](../Source/IntroTemplates/PhaseSum.asm) | 15-байтовый образец суммы четырёх таблиц, 256 копий по адресу #9900 |
 | #6E31 | [IntroUnpack.UnpackScreen](../Source/IntroUnpack/UnpackScreen.asm) | Распаковка экранного потока после переноса из #8931 в #6E31 |
+| #7497 | [IntroUnpack.ScanAttributeCountTail](../Source/IntroUnpack/ScanAttributeCountTail.asm) | Чтение PAPER, изменение первого счётчика и вывод смещения максимума в ULA |
+| #74CD | [IntroUnpack.WaitNonzeroKeyByte](../Source/IntroUnpack/WaitNonzeroKeyByte.asm) | Очистка и ожидание ненулевого байта по 5C08 |
+| #74D8 | [IntroUnpack.CopyScreenToBankWindow](../Source/IntroUnpack/CopyScreenToBankWindow.asm) | Копирование экрана из 4000 в выбранное окно C000 |
+| #74E4 | [IntroUnpack.CopyScreenFromBankWindow](../Source/IntroUnpack/CopyScreenFromBankWindow.asm) | Копирование экрана из выбранного окна C000 в 4000 |
 | #6300 | [StationBoot.RelocateBootstrap](../Source/StationBoot/RelocateBootstrap.asm) | Очистка атрибутов и перенос #02B5 байт загрузчика в #4000 |
 | #4000 | [StationBoot.InitializeStation](../Source/StationBoot/InitializeStation.asm) | Перенос ядра из #65CE в #6322 и очистка экрана банка 7 |
 | #4070 | [StationBoot.StartStation](../Source/StationBoot/StartStation.asm) | Загрузка банков карты, музыки, справки, 3D и языка, выбор фона, настройка устройств и запуск цикла станции |
@@ -169,6 +173,11 @@
 | #7227 | [Station.DrawEquipmentList](../Source/Station/DrawEquipmentList.asm) | Рамка оснащения, заголовки колонок и сохранение счётчика попыток вывода |
 | #724C | [Station.PrintEquipmentRows](../Source/Station/PrintEquipmentRows.asm) | Имена оснащения и четыре параллельные колонки количества, цены, веса и проверки типа корабля |
 | #733F | [Station.SetupEquipmentColumns](../Source/Station/SetupEquipmentColumns.asm) | Подготовка четырёх X-колонок оснащения и сохранение характеристики L текущего ключа |
+| #735F | [Station.ScrollSecondaryRows](../Source/Station/ScrollSecondaryRows.asm) | Подготовка прокрутки второго списка и сохранение начального индекса |
+| #7386 | [Station.SelectSecondaryRow](../Source/Station/SelectSecondaryRow.asm) | Выбор описания либо отправка события 7 или 8 для второго списка |
+| #73D7 | [Station.TryDrawSecondaryList](../Source/Station/TryDrawSecondaryList.asm) | Проверка текущего слова поиска рисователя второго списка |
+| #73DE | [Station.DrawSecondaryList](../Source/Station/DrawSecondaryList.asm) | Рамка, заголовки и счётчик строк второго списка оснащения |
+| #7403 | [Station.PrintSecondaryRows](../Source/Station/PrintSecondaryRows.asm) | Выбор пяти баз второго списка для общего печатателя |
 | #741E | [Station.HandleSaveSlotHover](../Source/Station/HandleSaveSlotHover.asm) | Хвостовая передача наведения позиций записи состояния в UpdateToPositionHover |
 | #7482 | [Station.UpdateToPositionHover](../Source/Station/UpdateToPositionHover.asm) | Обновление XOR-полосы списка В позицию 1..5 с сохранением номера только по Z=0 |
 | #7492 | [Station.DrawSaveSlotPanel](../Source/Station/DrawSaveSlotPanel.asm) | Рамка и пять строк выбора позиции записи, без выполнения дискового протокола |
@@ -322,7 +331,7 @@
 | #A7E3 | [Station.OpenEnvOptions](../Source/Station/OpenEnvOptions.asm) | Перенос окна установок среды в конец списка и восстановление его геометрии |
 | #A7E9 | [Station.OpenGameOptions](../Source/Station/OpenGameOptions.asm) | Перенос окна установок игры в конец списка и восстановление его геометрии |
 | #A7EF | [Station.OpenRestoreDialog](../Source/Station/OpenRestoreDialog.asm) | Перенос окна восстановления в конец списка и восстановление его геометрии |
-| #A7F5 | [Station.GetSelectedVariantCount](../Source/Station/GetSelectedVariantCount.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #A7F5 | [Station.GetSelectedVariantCount](../Source/Station/GetSelectedVariantCount.asm) | Получение количества вариантов 0..6 из младших трёх битов XOR выбранного ключа |
 | #A82D | [Station.CountTextRows](../Source/Station/CountTextRows.asm) | Подсчёт сухих проходов выровненной строки до установленного Carry |
 | #A843 | [Station.PrintFromRow](../Source/Station/PrintFromRow.asm) | Пропуск E выровненных строк и печать остатка из заданной позиции курсора |
 | #A85F | [Station.QueueTextRow](../Source/Station/QueueTextRow.asm) | Выбор строки текста DrawItem10 и восстановление элемента в списке |
@@ -423,6 +432,7 @@
 | #C224 | [Station.SetOutlineCopy](../Source/Station/SetOutlineCopy.asm) | Исходная копия выбора нулевой середины и одиночных боковых пикселей по AF' |
 | #C233 | [Station.SetupInsetTextWindow](../Source/Station/SetupInsetTextWindow.asm) | Настройка внутреннего текстового окна с пиксельными отступами и начальным курсором X=1 |
 | #C287 | [Station.DrawCaptionItem](../Source/Station/DrawCaptionItem.asm) | Регистрация элемента, полосовая рамка, заголовок и установка курсора содержимого |
+| #C2CB | [Station.DrawCenteredWithoutOwner](../Source/Station/DrawCenteredWithoutOwner.asm) | Рисование центрируемого элемента без регистрации в карте владельцев |
 | #C2DF | [Station.DrawCenteredItem](../Source/Station/DrawCenteredItem.asm) | Регистрация и рисование рамки элемента с центрированием CR-строк и выравниванием последнего абзаца |
 | #C325 | [Station.CenterItemLine](../Source/Station/CenterItemLine.asm) | Внутреннее продолжение центрирования строки и общий выход стекового кадра элемента |
 | #C34B | [Station.SetupCenterText](../Source/Station/SetupCenterText.asm) | Настройка окна центрируемого текста с отступами X=3 и Y=4 и нулевым курсором |
@@ -453,6 +463,7 @@
 | #CC2C | [Station.FinishItemAction](../Source/Station/FinishItemAction.asm) | Условное завершение действия, выбор активации либо переключения геометрии |
 | #CC30 | [Station.ToggleItemBounds](../Source/Station/ToggleItemBounds.asm) | Возврат сохранённой геометрии либо установка исходного большого прямоугольника |
 | #CC81 | [Station.ActivateItem](../Source/Station/ActivateItem.asm) | Перенос элемента в конец списка, условная смена активного индекса и установка callback |
+| #CCAA | [Station.SetAllFilledBandMode](../Source/Station/SetAllFilledBandMode.asm) | Настройка заполненной рамки с заполнением одиннадцатой строки |
 | #CCAF | [Station.SetBandFillMode](../Source/Station/SetBandFillMode.asm) | Настройка заполненного либо обычного режима полосовой рамки по биту 0 FillMode |
 | #CCD4 | [Station.ResetBandMode](../Source/Station/ResetBandMode.asm) | Восстановление шести исходных операндов обычной полосовой рамки |
 | #C000 | [Text.RunMarketScript](../Source/Text/RunMarketScript.asm) | Инициализация интерпретатора и последовательный вход в чтение команд |
@@ -482,10 +493,10 @@
 | #C1A7 | [Text.SetSecondarySelection](../Source/Text/SetSecondarySelection.asm) | Выбор вторичной записи по индексу банка 4 либо коду FF |
 | #C1B5 | [Text.ReadCredits](../Source/Text/ReadCredits.asm) | Чтение исходного слова #984E и добавление его в стек выражений |
 | #C1B9 | [Text.PushExpressionWord](../Source/Text/PushExpressionWord.asm) | Запись DE по указателю HL альтернативного набора и продвижение стека выражений |
-| #C1C2 | [Text.ReadFieldLowero](../Source/Text/ReadFieldLowero.asm) | Получение результата через ReadEquipmentWeight и запись слова в стек выражений |
-| #C1C8 | [Text.ReadEquipmentWeight](../Source/Text/ReadEquipmentWeight.asm) | Чтение кодированного веса оснащения либо его свойства s или n |
-| #C1E6 | [Text.ReadFieldLoweri](../Source/Text/ReadFieldLoweri.asm) | Получение результата через ReadSecondWeight и запись слова в стек выражений |
-| #C1EC | [Text.ReadSecondWeight](../Source/Text/ReadSecondWeight.asm) | Чтение кодированного веса второго набора либо его свойства s или n |
+| #C1C2 | [Text.ReadFieldLowero](../Source/Text/ReadFieldLowero.asm) | Получение результата через ReadEquipmentQuantity и запись слова в стек выражений |
+| #C1C8 | [Text.ReadEquipmentQuantity](../Source/Text/ReadEquipmentQuantity.asm) | Чтение кодированного количества оснащения либо его свойства s или n |
+| #C1E6 | [Text.ReadFieldLoweri](../Source/Text/ReadFieldLoweri.asm) | Получение результата через ReadSecondQuantity и запись слова в стек выражений |
+| #C1EC | [Text.ReadSecondQuantity](../Source/Text/ReadSecondQuantity.asm) | Чтение кодированного количества второго набора либо его свойства s или n |
 | #C201 | [Text.ReadFieldLowerk](../Source/Text/ReadFieldLowerk.asm) | Получение результата через ReadSelectedPrimaryFields и запись слова в стек выражений |
 | #C207 | [Text.ReadSelectedPrimaryFields](../Source/Text/ReadSelectedPrimaryFields.asm) | Чтение свойств первого набора по байту выбранной записи |
 | #C221 | [Text.ReadFieldLowerr](../Source/Text/ReadFieldLowerr.asm) | Получение результата через ReadSelectedSecondaryFields и запись слова в стек выражений |
@@ -564,8 +575,8 @@
 | #C66E | [Text.PushByteJWriter](../Source/Text/PushByteJWriter.asm) | Создание указателя писателя байта по #9851 |
 | #C685 | [Text.PushCargo7BitWriter](../Source/Text/PushCargo7BitWriter.asm) | Создание захватывающего писателя семибитового поля через ReadCargoField |
 | #C6B6 | [Text.PushMarket7BitWriter](../Source/Text/PushMarket7BitWriter.asm) | Создание захватывающего писателя семибитового поля через ReadMarketField |
-| #C6BC | [Text.PushEquipmentWeightWriter](../Source/Text/PushEquipmentWeightWriter.asm) | Создание захватывающего писателя кодированного веса через ReadEquipmentWeight |
-| #C6E4 | [Text.PushSecondWeightWriter](../Source/Text/PushSecondWeightWriter.asm) | Создание захватывающего писателя кодированного веса через ReadSecondWeight |
+| #C6BC | [Text.PushEquipmentQuantityWriter](../Source/Text/PushEquipmentQuantityWriter.asm) | Создание захватывающего писателя кодированного количества через ReadEquipmentQuantity |
+| #C6E4 | [Text.PushSecondQuantityWriter](../Source/Text/PushSecondQuantityWriter.asm) | Создание захватывающего писателя кодированного количества через ReadSecondQuantity |
 | #C6EA | [Text.ReadDecimal5](../Source/Text/ReadDecimal5.asm) | Чтение от одной до пяти ASCII-цифр, десятичное число в HL по модулю 65536 |
 | #C79C | [Text.EmitOperator](../Source/Text/EmitOperator.asm) | Поиск символа бинарной операции и запись адреса её обработчика по альтернативному HL |
 | #C7B6 | [Text.DispatchUnaryField](../Source/Text/DispatchUnaryField.asm) | Выбор одного из семи унарных обработчиков по байту поля |
@@ -603,11 +614,12 @@
 | #DB63 | [Map.MultiplySigned16](../Source/Map/MultiplySigned16.asm) | Знаковое произведение HL и DE с двумя словами результата с тремя ядрами и исходным случаем 8000 |
 | #DCFB | [Map.DivideSigned32To16](../Source/Map/DivideSigned32To16.asm) | Деление 32-битного числителя на слово DE с исходной обработкой знака дополнением |
 | #DFC3 | [Map.DrawClippedMapArc](../Source/Map/DrawClippedMapArc.asm) | Выбор отсечённых проходов дуги по положению центра и пересечениям границ окна |
-| #E208 | [Map.PrepareArcFullSpan](../Source/Map/PrepareArcFullSpan.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #E208 | [Map.PrepareArcFullSpan](../Source/Map/PrepareArcFullSpan.asm) | Подготовка двух симметричных краёв дуги относительно CenterX |
 | #E248 | [Map.PrepareArcLeftEdge](../Source/Map/PrepareArcLeftEdge.asm) | Подготовка левого края дуги и изменяемой правой колонки |
 | #E260 | [Map.PrepareArcRightEdge](../Source/Map/PrepareArcRightEdge.asm) | Подготовка правого края дуги и изменяемой левой колонки |
 | #E278 | [Map.LoadArcRasterInputs](../Source/Map/LoadArcRasterInputs.asm) | Загрузка смещений и радиуса с подготовкой C'=-Radius и E'=0 |
-| #E299 | [Map.LoadClippedArcInputs](../Source/Map/LoadClippedArcInputs.asm) | Unknown, назначение этого фрагмента ещё не установлено |
+| #E289 | [Map.LoadHalfLimitArcInputs](../Source/Map/LoadHalfLimitArcInputs.asm) | Загрузка смещений и разности полуширины окна для счётчиков дуги |
+| #E299 | [Map.LoadClippedArcInputs](../Source/Map/LoadClippedArcInputs.asm) | Загрузка смещений и ненулевого начального состояния альтернативной пары C', E' |
 | #E514 | [Map.PrepareLeftRasterPoint](../Source/Map/PrepareLeftRasterPoint.asm) | Адрес левой растровой точки и одноразрядная маска в B |
 | #E52E | [Map.PrepareRightRasterPoint](../Source/Map/PrepareRightRasterPoint.asm) | Адрес правой растровой точки и маска C с сохранением левой B |
 | #E554 | [Map.SqrtSquareDiff](../Source/Map/SqrtSquareDiff.asm) | Поразрядный целочисленный корень из 16-битной разности D в квадрате, A в квадрате и входного Carry |
@@ -740,7 +752,22 @@
 | #70A4 | [Action.CheckMissileLaunch](../Source/Action/CheckMissileLaunch.asm) | Проверка кода захваченной цели и остатка ракет, очистка трёх захватов при пустом запасе |
 | #70C6 | [Action.ConsumeMissileStock](../Source/Action/ConsumeMissileStock.asm) | Уменьшение выбранного запаса и отдельного байта 9BD2, передача сообщения о пуске и нового остатка очереди |
 | #70ED | [Action.SelectMissileStock](../Source/Action/SelectMissileStock.asm) | Выбор ненулевого приоритетного остатка ракет либо запасного счётчика с возвратом адреса |
+| #70F6 | [Action.RequestHyperJump](../Source/Action/RequestHyperJump.asm) | Проверка гиперследа, списание выбранного запаса и перенос пятибайтового контекста перед перезагрузкой ACTION |
+| #7176 | [Action.PrepareHyperJumpRelay](../Source/Action/PrepareHyperJumpRelay.asm) | Сообщение гиперперехода, вывод очереди, исходная задержка и перенос загрузчика ACTION в 4200 |
+| #722E | [Action.ActivateAntimissileSystem](../Source/Action/ActivateAntimissileSystem.asm) | Поиск первой ракеты класса 11 с целью 1A, установка признаков противоракетной обработки и вывод сегмента |
+| #72BE | [Action.ClearMissileTargets](../Source/Action/ClearMissileTargets.asm) | Снятие трёх захватов ракет с задержкой повторной команды и сообщением |
+| #72E2 | [Action.ToggleTargetRequest](../Source/Action/ToggleTargetRequest.asm) | Переключение младшего бита запроса наведения с двумя сообщениями |
+| #7317 | [Action.RequestAimOrCollectTarget](../Source/Action/RequestAimOrCollectTarget.asm) | Запрос прицельных линий либо притягивание и сбор захваченного объекта по режиму силового луча |
+| #7439 | [Action.ToggleTractorMode](../Source/Action/ToggleTractorMode.asm) | Переключение режима силового луча и запроса наведения со снятием захватов |
+| #7480 | [Action.CycleTargetOverlayMode](../Source/Action/CycleTargetOverlayMode.asm) | Смена режима отображения целей при наличии системы наведения |
+| #74A3 | [Action.RequestBoost](../Source/Action/RequestBoost.asm) | Запрос ускорения с проверкой классов и квантованных старших байтов координат |
 | #74FB | [Action.SelectPreferredByte](../Source/Action/SelectPreferredByte.asm) | Выбор ненулевого предпочтительного байта либо запасного значения с возвратом адреса выбранного поля |
+| #7504 | [Action.AdvanceBoost](../Source/Action/AdvanceBoost.asm) | Общий хвост ускорения с фазовым расходом выбранного байта, созданием класса 20 и шестнадцатью шагами шкалы |
+| #754C | [Action.ToggleFreeFlightMode](../Source/Action/ToggleFreeFlightMode.asm) | Условная смена опкода координатного обновления с сообщением о свободном полёте |
+| #7594 | [Action.EjectCargo](../Source/Action/EjectCargo.asm) | Выброс первого ненулевого байта из начала пар груза с сообщением независимо от размещения |
+| #75CF | [Action.EjectMine](../Source/Action/EjectMine.asm) | Списание одной мины и попытка создания помеченной записи класса 19 |
+| #7606 | [Action.RequestStationReturn](../Source/Action/RequestStationReturn.asm) | Однократная команда возврата к станции с переходом в банковый подготовитель загрузки |
+| #762A | [Action.ToggleViewDirection](../Source/Action/ToggleViewDirection.asm) | Разворот базиса, обновление точек и согласованная смена трёх опкодных пар направления вида |
 | #7680 | [Action.IncreaseGaugeWord](../Source/Action/IncreaseGaugeWord.asm) | Увеличение слова шестой шкалы с исходными клавиатурными ограничениями |
 | #76A3 | [Action.DecreaseGaugeWord](../Source/Action/DecreaseGaugeWord.asm) | Уменьшение слова шестой шкалы с исходными клавиатурными ограничениями |
 | #76C7 | [Action.RequestTurnNegative](../Source/Action/RequestTurnNegative.asm) | Запрос уменьшения управления Turn с накопителем повтора и исходной знаковой границей |
@@ -777,6 +804,7 @@
 | #AE24 | [Action.EncodeSignedRatio](../Source/Action/EncodeSignedRatio.asm) | Табличное кодирование знакового отношения с четырьмя смещениями и исходными ограничениями |
 | #AE73 | [Action.DivideScaledLogarithmic](../Source/Action/DivideScaledLogarithmic.asm) | Приближённое отношение с масштабом 256 через нормализацию, разность логарифмов и обратную таблицу |
 | #AF43 | [Action.ComputePatchedVector](../Source/Action/ComputePatchedVector.asm) | Расчёт трёх компонентов по девяти коэффициентам с исходным переносом отрицательных произведений и досрочным выходом по переполнению |
+| #AFF5 | [Action.NegateOuterBasisRows](../Source/Action/NegateOuterBasisRows.asm) | Изменение знака слов строк 2 и 0 базиса с сохранением средней строки |
 | #B044 | [Action.BuildObjectOffsetCoefficients](../Source/Action/BuildObjectOffsetCoefficients.asm) | Подготовка коэффициентов смещения по трём фазовым парам |
 | #B0E9 | [Action.SqrtWordCached](../Source/Action/SqrtWordCached.asm) | Целый корень в области 0000..E8FF и исходное особое поведение E900..FFFF по трём страницам таблиц |
 | #C000 | [Action.ClipPolygon](../Source/Action/ClipPolygon.asm) | Обход замкнутого списка вершин с табличным отсечением и ранним завершением контура |
@@ -1003,6 +1031,7 @@
 | #F57F | [Action.ApproachTargetRecordAndResolve](../Source/Action/ApproachTargetRecordAndResolve.asm) | Сближение с выбранной записью, обновление связи и завершение через большой эффект |
 | #F66A | [Action.StepTimedRecordDecay](../Source/Action/StepTimedRecordDecay.asm) | Декремент времени состояния, освобождение при истечении и деление управляющего байта на два |
 | #F67F | [Action.StepIdleObjectOffset](../Source/Action/StepIdleObjectOffset.asm) | Проверка управляющего байта State00, сброс баз либо полный расчёт смещений после двойного декремента |
+| #F68E | [Action.EnterRandomClassGate](../Source/Action/EnterRandomClassGate.asm) | Хвостовой вход в проверку случайного допуска класса |
 | #F691 | [Action.ResetIdleRecordBases](../Source/Action/ResetIdleRecordBases.asm) | Обнуление трёх общих базовых слов при нулевом управляющем байте State00 |
 | #F69E | [Action.DispatchClassOnHighRandomWord](../Source/Action/DispatchClassOnHighRandomWord.asm) | Вызов обработчика класса только при новом слове потока 0 не меньше F000 |
 | #F6AB | [Action.StepFastRecordPhases](../Source/Action/StepFastRecordPhases.asm) | Увеличение второй и третьей фаз на два и три перед общим расчётом локальных смещений |
@@ -1147,6 +1176,12 @@
 | #F957 | [Voxel.Divide7BitFixed](../Source/Voxel/Divide7BitFixed.asm) | Деление младших семи битов A на E с восемью дробными битами, подтверждённый делитель 1..128 |
 | #F9E9 | [Voxel.ProjectEffectPoint](../Source/Voxel/ProjectEffectPoint.asm) | Проекция точки эффекта с двумя знаковыми поправками |
 | #FA3A | [Voxel.DrawProjectedEffect](../Source/Voxel/DrawProjectedEffect.asm) | Проекция двух углов эффекта и передача прямоугольника на отсечение |
+| #4000 | [Controls.LoadStationDirectRelay](../Source/Controls/LoadStationDirectRelay.asm) | Перенесённый запрос STATIONF с внешним возвратом TR-DOS непосредственно в загрузчик станции по 6300 |
+| #4200 | [Controls.LoadStationStateRelay](../Source/Controls/LoadStationStateRelay.asm) | Загрузка STATIONF с условным восстановлением 481 байта в состояние станции и переходом в свежий загрузчик |
+| #5E1F | [Controls.LoadLegacyPackedBlock](../Source/Controls/LoadLegacyPackedBlock.asm) | Старый вход чтения и распаковки блока с возвратом через восстановленный полётный контекст |
+| #5E4D | [Controls.ReadLegacySectors](../Source/Controls/ReadLegacySectors.asm) | Чтение последовательных секторов через внутренние входы ROM с повтором при ошибке |
+| #5ED2 | [Controls.WriteLegacyDiskPort](../Source/Controls/WriteLegacyDiskPort.asm) | Подготовка ROM-входа вывода байта в порт |
+| #5ED6 | [Controls.CallLegacyDosRom](../Source/Controls/CallLegacyDosRom.asm) | Передача внутреннему ROM-входу TR-DOS через подготовленный стек |
 | #C870 | [Controls.CopyViewportToScreen](../Source/Controls/CopyViewportToScreen.asm) | Перенос линейного растра 256 на 96 пикселей в верхнюю половину экрана |
 | #C882 | [Controls.CopyScreenRows](../Source/Controls/CopyScreenRows.asm) | Стековый перенос страниц линейного растра в символьные строки экрана |
 | #CA8D | [Controls.NextBufferRandom](../Source/Controls/NextBufferRandom.asm) | Получение байта из изменяемого 16-битового состояния генератора |
@@ -1173,6 +1208,7 @@
 | #D208 | [Controls.FillInteriorRowsUp](../Source/Controls/FillInteriorRowsUp.asm) | Заливка внутренних 30 байтов строк вверх с ограничением верхним краем |
 | #D211 | [Controls.FillInteriorRowsDown](../Source/Controls/FillInteriorRowsDown.asm) | Заливка внутренних 30 байтов строк вниз с ограничением нижним краем |
 | #D21A | [Controls.DrawProjectedBody](../Source/Controls/DrawProjectedBody.asm) | Выбор малого профиля или большого круга по результату малого рисователя |
+| #D227 | [Controls.DrawBodyPrimaryMask](../Source/Controls/DrawBodyPrimaryMask.asm) | Выбор основной затравки малого тела и режима 1 большого растра |
 | #D232 | [Controls.CallLargeCircle](../Source/Controls/CallLargeCircle.asm) | Вызов большого рисователя с исходной дополнительной рамкой |
 | #D236 | [Controls.DrawLargeCircle](../Source/Controls/DrawLargeCircle.asm) | Выбор и рисование большого кругового тела по спроецированным смещениям |
 | #D30B | [Controls.ReadByteSquare](../Source/Controls/ReadByteSquare.asm) | Чтение 16-битного квадрата байтового индекса из двух физических плоскостей |
@@ -1205,6 +1241,7 @@
 | #DC9B | [Controls.RelocateStationReload](../Source/Controls/RelocateStationReload.asm) | Копирование 256 байтов блока загрузки STATIONF в общую RAM и передача управления 4000 |
 | #DCE3 | [Controls.PrepareStationReload](../Source/Controls/PrepareStationReload.asm) | Очистка атрибутов, сохранение 512 байтов состояния и перенос следующей стадии загрузки станции |
 | #DD5D | [Controls.StepWordRandom](../Source/Controls/StepWordRandom.asm) | Обновление двухсловного состояния генератора и возврат XOR его четырёх байтов |
+| #DD87 | [Controls.ResetFlightContext](../Source/Controls/ResetFlightContext.asm) | Сброс рабочих векторов, списков объектов и эффектов и перенос ключа перед активацией параметров |
 | #DE0A | [Controls.BuildAndActivateParameters](../Source/Controls/BuildAndActivateParameters.asm) | Подготовка параметров в банке 1 и хвостовая активация набора с выбором банка 0 |
 | #DE10 | [Controls.BuildParameterTables](../Source/Controls/BuildParameterTables.asm) | Формирование пятнадцати параметров и девяти строковых значений по зерну и исходным таблицам |
 | #DE9A | [Controls.BuildSeededIndices](../Source/Controls/BuildSeededIndices.asm) | Формирование четырёх индексов из двухсловного зерна, координатной области и числа шагов генератора |
@@ -1253,7 +1290,7 @@
 
 | #C474 | [Map.BuildMapSectorTable](../Source/Map/BuildMapSectorTable.asm) | Формирование таблицы одного сектора с возвратом в противоположном общем наборе |
 
-| #D4DD | [Map.MapClipCases](../Source/Map/MapClipCases.asm) | Unknown, группа косвенных обработчиков, смысловой разбор продолжается |
+| #D4DD | [Map.MapClipCases](../Source/Map/MapClipCases.asm) | Табличные решения отсечения по двум зонам, пересечения, отметки углов и общий возврат |
 
 | #D8E2 | [Map.ComputeTopClipProduct](../Source/Map/ComputeTopClipProduct.asm) | Произведение (Y1-MinY)*(X1-X2) для верхней границы окна |
 
@@ -1273,41 +1310,41 @@
 
 | #DAB0 | [Map.AppendTopLeftCorner](../Source/Map/AppendTopLeftCorner.asm) | Условное добавление верхнего левого угла окна |
 
-| #DABB | [Map.AppendTopRightCorner](../Source/Map/AppendTopRightCorner.asm) | Unknown, самостоятельный вход общего хвоста отсечения |
+| #DABB | [Map.AppendTopRightCorner](../Source/Map/AppendTopRightCorner.asm) | Условное добавление верхнего правого угла окна |
 
-| #DAC6 | [Map.AppendBottomLeftCorner](../Source/Map/AppendBottomLeftCorner.asm) | Unknown, самостоятельный вход общего хвоста отсечения |
+| #DAC6 | [Map.AppendBottomLeftCorner](../Source/Map/AppendBottomLeftCorner.asm) | Условное добавление нижнего левого угла окна |
 
-| #DAD1 | [Map.AppendBottomRightCorner](../Source/Map/AppendBottomRightCorner.asm) | Unknown, самостоятельный вход общего хвоста отсечения |
+| #DAD1 | [Map.AppendBottomRightCorner](../Source/Map/AppendBottomRightCorner.asm) | Условное добавление нижнего правого угла окна |
 
-| #DADC | [Map.SubtractTopLeftProducts](../Source/Map/SubtractTopLeftProducts.asm) | Unknown, самостоятельный вход общего хвоста отсечения |
+| #DADC | [Map.SubtractTopLeftProducts](../Source/Map/SubtractTopLeftProducts.asm) | Старшее слово и флаги 32-битной разности верхнего и левого произведений |
 
-| #DAF0 | [Map.SubtractTopRightProducts](../Source/Map/SubtractTopRightProducts.asm) | Unknown, самостоятельный вход общего хвоста отсечения |
+| #DAF0 | [Map.SubtractTopRightProducts](../Source/Map/SubtractTopRightProducts.asm) | Старшее слово и флаги 32-битной разности верхнего и правого произведений |
 
-| #DB04 | [Map.SubtractBottomLeftProducts](../Source/Map/SubtractBottomLeftProducts.asm) | Unknown, самостоятельный вход общего хвоста отсечения |
+| #DB04 | [Map.SubtractBottomLeftProducts](../Source/Map/SubtractBottomLeftProducts.asm) | Старшее слово и флаги 32-битной разности нижнего и левого произведений |
 
-| #DB18 | [Map.SubtractBottomRightProducts](../Source/Map/SubtractBottomRightProducts.asm) | Unknown, самостоятельный вход общего хвоста отсечения |
+| #DB18 | [Map.SubtractBottomRightProducts](../Source/Map/SubtractBottomRightProducts.asm) | Старшее слово и флаги 32-битной разности нижнего и правого произведений |
 
-| #DB2C | [Map.SubtractClipPointX](../Source/Map/SubtractClipPointX.asm) | Unknown, самостоятельный вход общего хвоста отсечения |
+| #DB2C | [Map.SubtractClipPointX](../Source/Map/SubtractClipPointX.asm) | Знаковые флаги оборачиваемой разности X2-X1 |
 
-| #DB37 | [Map.SubtractClipPointY](../Source/Map/SubtractClipPointY.asm) | Unknown, самостоятельный вход общего хвоста отсечения |
+| #DB37 | [Map.SubtractClipPointY](../Source/Map/SubtractClipPointY.asm) | Знаковые флаги оборачиваемой разности Y2-Y1 |
 
-| #DB42 | [Map.AppendSecondClipPoint](../Source/Map/AppendSecondClipPoint.asm) | Unknown, самостоятельный вход общего хвоста отсечения |
+| #DB42 | [Map.AppendSecondClipPoint](../Source/Map/AppendSecondClipPoint.asm) | Добавление младших байтов второй точки либо пары из DE |
 
-| #DB59 | [Map.UnwindClipFrame](../Source/Map/UnwindClipFrame.asm) | Unknown, самостоятельный вход общего хвоста отсечения |
+| #DB59 | [Map.UnwindClipFrame](../Source/Map/UnwindClipFrame.asm) | Специальный возврат со снятием трёх слов и установленным Carry |
 
-[DrawClippedArcPair](../Source/Map/DrawClippedArcPair.asm) — Unknown, растровый вход после самостоятельной подготовки.
+[DrawClippedArcPair](../Source/Map/DrawClippedArcPair.asm) — Проходы вниз и вверх от исходной строки с выбором начального одиночного края.
 
-[RasterizeArcEdges](../Source/Map/RasterizeArcEdges.asm) — Unknown, растровый вход после самостоятельной подготовки.
+[RasterizeArcEdges](../Source/Map/RasterizeArcEdges.asm) — Рекуррентная инверсия одного либо двух краёв дуги с растровыми границами и закрытием байтов.
 
 | #6774 | [Station.HandleShipModelAction](../Source/Station/HandleShipModelAction.asm) | Развилка действия списка моделей после перерисовки, выбор строки либо закрытие группы |
 
 | #67A9 | [Station.ShipModelChoice](../Source/Station/ShipModelChoice.asm) | Пустая ветвь действия и отдельное применение выбранной строки с отложенной перерисовкой |
 
-| #683A | [Station.HandleModelPreviewClick](../Source/Station/HandleModelPreviewClick.asm) | Unknown, новый вход действия или его достижимый помощник |
+| #683A | [Station.HandleModelPreviewClick](../Source/Station/HandleModelPreviewClick.asm) | Выбор 3D-панели, закрытие с отключением периодического вызова либо изменение третьей координаты на 32 |
 
-| #6916 | [Station.HandleModelDescriptionClick](../Source/Station/HandleModelDescriptionClick.asm) | Unknown, новый вход действия или его достижимый помощник |
+| #6916 | [Station.HandleModelDescriptionClick](../Source/Station/HandleModelDescriptionClick.asm) | Выбор панели описания, закрытие по строке заголовка либо прокрутка выбранного текста |
 
-| #6963 | [Station.CountModelDescriptionRows](../Source/Station/CountModelDescriptionRows.asm) | Unknown, новый вход действия или его достижимый помощник |
+| #6963 | [Station.CountModelDescriptionRows](../Source/Station/CountModelDescriptionRows.asm) | Банковый подсчёт описания модели с записью полного слова границы прокрутки |
 
 | #697B | [Station.HandleHelpTextAction](../Source/Station/HandleHelpTextAction.asm) | Закрытие связанной пары либо прокрутка LF-текста, выбор единицей ничего не делает |
 
@@ -1321,17 +1358,17 @@
 
 | #6B9E | [Station.TryDrawEnvironmentPanel](../Source/Station/TryDrawEnvironmentPanel.asm) | Условное рисование установок среды при точном указателе панели в списке |
 
-| #6C0D | [Station.HandleMapPanelEvent](../Source/Station/HandleMapPanelEvent.asm) | Unknown, новый вход действия или его достижимый помощник |
+| #6C0D | [Station.HandleMapPanelEvent](../Source/Station/HandleMapPanelEvent.asm) | Обработка события панели карты с выбором точки, прокруткой либо закрытием набора связанных панелей |
 
-| #6D44 | [Station.RefreshMapPanel](../Source/Station/RefreshMapPanel.asm) | Unknown, новый вход действия или его достижимый помощник |
+| #6D44 | [Station.RefreshMapPanel](../Source/Station/RefreshMapPanel.asm) | Перерисовка карты через снимок банка 7, очистку тела и дополнительный HALT перед показом |
 
-| #6D4E | [Station.ClearAndDrawMapPanel](../Source/Station/ClearAndDrawMapPanel.asm) | Unknown, новый вход действия или его достижимый помощник |
+| #6D4E | [Station.ClearAndDrawMapPanel](../Source/Station/ClearAndDrawMapPanel.asm) | Проверка геометрии и заливка тела перед последовательным общим рисунком карты |
 
-| #6DC5 | [Station.HandleDecodedMessageClick](../Source/Station/HandleDecodedMessageClick.asm) | Unknown, новый вход действия или его достижимый помощник |
+| #6DC5 | [Station.HandleDecodedMessageClick](../Source/Station/HandleDecodedMessageClick.asm) | Перерисовка панели расшифровки с исключением селектора 1 и закрытием по текстовой строке |
 
-| #6E82 | [Station.HandleQueuedMessageClick](../Source/Station/HandleQueuedMessageClick.asm) | Unknown, новый вход действия или его достижимый помощник |
+| #6E82 | [Station.HandleQueuedMessageClick](../Source/Station/HandleQueuedMessageClick.asm) | Закрытие уведомления после RepaintAndFlag при сброшенном Carry |
 
-| #6FF1 | [Station.HandleTradePanelClick](../Source/Station/HandleTradePanelClick.asm) | Unknown, новый вход действия или его достижимый помощник |
+| #6FF1 | [Station.HandleTradePanelClick](../Source/Station/HandleTradePanelClick.asm) | Закрытие торговой панели с меню, прокрутка либо выбор кода события по колонке |
 
 | #7175 | [Station.HandleEquipmentListAction](../Source/Station/HandleEquipmentListAction.asm) | Выбор описания либо подтверждение сделки оснащения, закрытие группы и прокрутка списка |
 
@@ -1349,33 +1386,33 @@
 
 | #783B | [Station.HandleSystemMapAction](../Source/Station/HandleSystemMapAction.asm) | Выбор ближайшего варианта системы либо закрытие карты с отключением её периодического обновления |
 
-| #7885 | [Station.TryDrawVariantPanel](../Source/Station/TryDrawVariantPanel.asm) | Unknown, новый вход действия или его достижимый помощник |
+| #7885 | [Station.TryDrawVariantPanel](../Source/Station/TryDrawVariantPanel.asm) | Проверка наличия обработчика панели в списке перед последовательным рисованием |
 
 | #794B | [Station.HandleWelcomeAction](../Source/Station/HandleWelcomeAction.asm) | Общая перерисовка и закрытие приветствия, селектор 1 не меняет содержимое |
 
-| #A191 | [Station.ParseSettingsLabel](../Source/Station/ParseSettingsLabel.asm) | Unknown, новый вход действия или его достижимый помощник |
+| #A191 | [Station.ParseSettingsLabel](../Source/Station/ParseSettingsLabel.asm) | Преобразование нультерминированной подписи обратно в двухбайтовые настройки по прежнему типу записи |
 
-| #A1D6 | [Station.ScrollWindowRows](../Source/Station/ScrollWindowRows.asm) | Unknown, новый вход действия или его достижимый помощник |
+| #A1D6 | [Station.ScrollWindowRows](../Source/Station/ScrollWindowRows.asm) | Прокрутка индекса строк по указателю с теневым снимком, очисткой тела и изменяемым рисователем |
 
-| #A26F | [Station.XorRowIfSelected](../Source/Station/XorRowIfSelected.asm) | Unknown, новый вход действия или его достижимый помощник |
+| #A26F | [Station.XorRowIfSelected](../Source/Station/XorRowIfSelected.asm) | Инверсия выбранной строки с восстановлением указателя, FF означает отсутствие строки |
 
 | #AA58 | [Station.HandleMissionGroupAction](../Source/Station/HandleMissionGroupAction.asm) | Общее действие панели миссии и условное закрытие трёх связанных панелей |
 
-| #BE27 | [Station.MoveItemToTailIfListed](../Source/Station/MoveItemToTailIfListed.asm) | Unknown, новый вход действия или его достижимый помощник |
+| #BE27 | [Station.MoveItemToTailIfListed](../Source/Station/MoveItemToTailIfListed.asm) | Проверка присутствия DrawHandler в списке перед переносом элемента по его индексу |
 
-| #C6B0 | [Station.ClearScrollWindowBody](../Source/Station/ClearScrollWindowBody.asm) | Unknown, новый вход действия или его достижимый помощник |
+| #C6B0 | [Station.ClearScrollWindowBody](../Source/Station/ClearScrollWindowBody.asm) | Очистка тела окна с трёхпиксельными боковыми полями и тремя путями горизонтального отсечения |
 
-| #C368 | [Map.SumSquares8](../Source/Map/SumSquares8.asm) | Unknown, новый вход действия или его достижимый помощник |
+| #C368 | [Map.SumSquares8](../Source/Map/SumSquares8.asm) | Сумма квадратов двух беззнаковых байтов из A и A' с 16-битным оборачиванием |
 
-| #C38C | [Map.SelectNearestVisiblePoint](../Source/Map/SelectNearestVisiblePoint.asm) | Unknown, новый вход действия или его достижимый помощник |
+| #C38C | [Map.SelectNearestVisiblePoint](../Source/Map/SelectNearestVisiblePoint.asm) | Выбор первой ближайшей видимой точки карты и чтение её сохранённого варианта |
 
-| #C4E5 | [Map.BuildVisibleMapPoints](../Source/Map/BuildVisibleMapPoints.asm) | Unknown, новый вход действия или его достижимый помощник |
+| #C4E5 | [Map.BuildVisibleMapPoints](../Source/Map/BuildVisibleMapPoints.asm) | Фильтрация четырёх секторных таблиц в пары относительных координат и ссылки на исходные слова |
 
-| #C5E8 | [Map.SelectNearestMapVariant](../Source/Map/SelectNearestMapVariant.asm) | Unknown, новый вход действия или его достижимый помощник |
+| #C5E8 | [Map.SelectNearestMapVariant](../Source/Map/SelectNearestMapVariant.asm) | Выбор первого ближайшего варианта карты по текущим парам координат |
 
-| #C653 | [Map.UpdateMapDistanceMinimum](../Source/Map/UpdateMapDistanceMinimum.asm) | Unknown, новый вход действия или его достижимый помощник |
+| #C653 | [Map.UpdateMapDistanceMinimum](../Source/Map/UpdateMapDistanceMinimum.asm) | Обновление минимума квадрата расстояния от пары байтов до целевой точки |
 
-| #D0C3 | [Map.SetupMapRasterWindow](../Source/Map/SetupMapRasterWindow.asm) | Unknown, новый вход действия или его достижимый помощник |
+| #D0C3 | [Map.SetupMapRasterWindow](../Source/Map/SetupMapRasterWindow.asm) | Настройка границ отсечения, половин размеров и крайних адресов растрового окна |
 
 | #C677 | [Map.DrawVariantCluster](../Source/Map/DrawVariantCluster.asm) | XOR центральной пятистрочной метки и последовательная анимация не более шести вариантов |
 
@@ -1395,31 +1432,31 @@
 
 | #C827 | [Map.XorVariantPhase](../Source/Map/XorVariantPhase.asm) | Чтение пары смещений, уменьшение альтернативного счётчика и XOR трёхстрочной фазы |
 
-| #A806 | [Station.SwitchItemContour](../Source/Station/SwitchItemContour.asm) | Unknown, независимый соседний вход |
+| #A806 | [Station.SwitchItemContour](../Source/Station/SwitchItemContour.asm) | Сброс формы старого элемента, установка формы нового и две перерисовки центрируемых рамок |
 
 | #78BD | [Station.RefreshVariantPanel](../Source/Station/RefreshVariantPanel.asm) | Отложенный перенос панели в конец списка и перерисовка через теневой экран |
 
 | #78D6 | [Station.UpdateVariantPanel](../Source/Station/UpdateVariantPanel.asm) | Периодическая очистка и банковая анимация панели с отдельной ветвью отложенного обновления |
 
-| #6C6E | [Station.PanMapView](../Source/Station/PanMapView.asm) | Unknown, самостоятельный исходный вход |
+| #6C6E | [Station.PanMapView](../Source/Station/PanMapView.asm) | Прокрутка начала карты шагами по восемь с выбором оси по положению указателя |
 
-| #6D0D | [Station.SelectMapPointAndRefresh](../Source/Station/SelectMapPointAndRefresh.asm) | Unknown, самостоятельный исходный вход |
+| #6D0D | [Station.SelectMapPointAndRefresh](../Source/Station/SelectMapPointAndRefresh.asm) | Выбор ближайшей видимой точки карты, перерисовка карты и обновление панелей систем и планет |
 
-| #7B9B | [Station.RefreshStoredMapPanels](../Source/Station/RefreshStoredMapPanels.asm) | Unknown, самостоятельный вход |
+| #7B9B | [Station.RefreshStoredMapPanels](../Source/Station/RefreshStoredMapPanels.asm) | Общий рисунок сведений и основной карты после изменения сохранённых точек |
 
-| #7BAE | [Station.RemoveFoundStoredPoint](../Source/Station/RemoveFoundStoredPoint.asm) | Unknown, самостоятельный вход |
+| #7BAE | [Station.RemoveFoundStoredPoint](../Source/Station/RemoveFoundStoredPoint.asm) | Освобождение первой записи по результату поиска без стирания остальных четырёх байтов |
 
-| #7C24 | [Station.RemoveFoundSecondaryPoint](../Source/Station/RemoveFoundSecondaryPoint.asm) | Unknown, самостоятельный вход |
+| #7C24 | [Station.RemoveFoundSecondaryPoint](../Source/Station/RemoveFoundSecondaryPoint.asm) | Сдвиг физического остатка второго списка на одну запись и освобождение последней записи |
 
-| #7C4A | [Station.RefreshSecondaryListPanels](../Source/Station/RefreshSecondaryListPanels.asm) | Unknown, самостоятельный вход |
+| #7C4A | [Station.RefreshSecondaryListPanels](../Source/Station/RefreshSecondaryListPanels.asm) | Нормализация курсора и таблицы порядка B перед общим рисунком карты и сведений |
 
-| #7D14 | [Station.CenterKeyAndRefreshMap](../Source/Station/CenterKeyAndRefreshMap.asm) | Unknown, самостоятельный вход |
+| #7D14 | [Station.CenterKeyAndRefreshMap](../Source/Station/CenterKeyAndRefreshMap.asm) | Абсолютный банковый выбор ключа, чтение варианта из A и центрирование перед рисунком |
 
 | #4000 | [StationFinalExit.LoadFinal](../Source/StationFinalExit/LoadFinal.asm) | Перенесённый загрузчик FINALF с повторной инициализацией музыки и ожиданием точного байта клавиатуры |
 
-| #A1CD | [Station.RestoreScrollPointer](../Source/Station/RestoreScrollPointer.asm) | Unknown, самостоятельный вход |
+| #A1CD | [Station.RestoreScrollPointer](../Source/Station/RestoreScrollPointer.asm) | Общий выход прокрутки со снятием сохранённых координат и восстановлением указателя |
 
-| #7061 | [Station.UpdateTradeRowHover](../Source/Station/UpdateTradeRowHover.asm) | Unknown, самостоятельный вход |
+| #7061 | [Station.UpdateTradeRowHover](../Source/Station/UpdateTradeRowHover.asm) | Обновление торговой XOR-полосы по изменяемому числу начатых строк |
 
 ## Дополнительно обнаруженный корабельный код
 
@@ -1428,7 +1465,7 @@
 | #6870 | [Station.TryDrawShipPreview](../Source/Station/TryDrawShipPreview.asm) | Рисование корабельного просмотра только при наличии точного указателя обработчика |
 | #68CC | [Station.RefreshShipPanels](../Source/Station/RefreshShipPanels.asm) | Отложенное обновление списка моделей, описания и перенесённого в конец корабельного просмотра |
 | #68EA | [Station.AnimateShipPreview](../Source/Station/AnimateShipPreview.asm) | Периодическое рисование кадра последней корабельной панели либо переход к её отложенному обновлению |
-| #693E | [Station.TryDrawModelDescription](../Source/Station/TryDrawModelDescription.asm) | Unknown, полный контракт ещё не доказан |
+| #693E | [Station.TryDrawModelDescription](../Source/Station/TryDrawModelDescription.asm) | Условное последовательное рисование описания только при наличии точного обработчика в списке |
 
 | #E011, банк 4 | [D3D.ConfigurePreviewClip](../Source/D3D/ConfigurePreviewClip.asm) | Настройка четырёх углов и повторённых операндов границ корабельного просмотра |
 
@@ -1621,8 +1658,11 @@
 | #E4E6 | [Music.DecodePatternB](../Source/Music/DecodePatternB.asm) | Декодирование строки B, включая отдельную команду базового шума и отложенные эффекты |
 | #E53D | [Music.PatternCommandsC](../Source/Music/PatternCommandsC.asm) | Внутренние входы громкости, выключения, огибающей и указателей канала C |
 | #E583 | [Music.DecodePatternC](../Source/Music/DecodePatternC.asm) | Декодирование строки C с непосредственным сбросом новой ноты и отложенными эффектами |
+| #4200 | [Action.ReloadActionAfterHyperJump](../Source/Action/ReloadActionAfterHyperJump.asm) | Перенесённая стадия сохранения 481 байта, вызова TR-DOS для ACTION и восстановления состояния перед новым загрузчиком |
 | #6000 | [Action.QueueNumberBank1](../Source/Action/QueueNumberBank1.asm) | Передача байтового числа A в очередь Controls банка 1 с фиксированным возвратом страницы 10 |
 | #6010 | [Action.PrintByteAndScrollBank1](../Source/Action/PrintByteAndScrollBank1.asm) | Прямой десятичный вывод байта с обязательной прокруткой окна банка 1 |
 | #6029 | [Action.PrintByteBank1](../Source/Action/PrintByteBank1.asm) | Прямой десятичный вывод байта в окне банка 1 с исходной попыткой записи в ПЗУ |
 | #6040 | [Action.QueueTextItemBank1](../Source/Action/QueueTextItemBank1.asm) | Передача записи DE в очередь Controls банка 1 с сохранением регистров и возвратом страницы 10 |
 | #6054 | [Action.ShowNoiseBeforeReload](../Source/Action/ShowNoiseBeforeReload.asm) | Вывод шумовых кадров и ожидание клавиши перед загрузкой станции |
+
+| #E867, банк 4 | [D3D.SquarePreviewSignedWord](../Source/D3D/SquarePreviewSignedWord.asm) | Подготовка двух одинаковых знаковых сомножителей для общего умножения |

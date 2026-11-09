@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "classified_resource_bytes": 22,
+  "resources": 1,
+  "original_zero_bytes": 22,
+  "original_shift_instruction": "CB48",
+  "maximum_possible_shift_extent_proved": false,
+  "original_bytes_preserved": true,
+  "generated_values_not_serialized": true,
+  "assembly_executed": false
+}

@@ -13,7 +13,7 @@ def rotate(value,count):
     return ((value>>count)|(value<<(8-count)))&255
 
 
-def reference(memory,radius,mode,mx,my,flags,pattern,initial):
+def reference(memory,radius,mode,mx,my,flags,pattern,initial,*,primary=False):
     writes=[]
     def write(address,value):
         address&=65535
@@ -21,7 +21,7 @@ def reference(memory,radius,mode,mx,my,flags,pattern,initial):
         writes.append((address,value))
     wanted=list(initial)
     wanted[SP]=0xC000
-    wanted[16:18]=[0xAF,initial[1]]
+    wanted[16:18]=[0,0x44] if primary else [0xAF,initial[1]]
     m1=block_cost(0xD9DE,0xD9EA)
     if mode>=4:
         wanted[0:2]=[radius,cp_flags(mode,4)]
@@ -34,18 +34,18 @@ def reference(memory,radius,mode,mx,my,flags,pattern,initial):
     if radius<2:
         wanted[0:2]=[radius,cp_flags(radius,2)]
         return wanted,m1,writes,'tiny'
-    # Получение масок из числовых сдвигов альтернативной затравки, первый байт записывается дважды.
-    packed=memory[0xD987+radius]
+    # Начальная затравка зависит от входа, первая готовая строка всегда берётся из альтернативной.
+    packed=memory[(0xD97E if primary else 0xD987)+radius]
     transitions=packed&7
-    signed=(packed&0xF8)-256
+    signed=(packed&0xF8)-(256 if packed&128 else 0)
     masks=[(signed>>i)&255 for i in range(transitions)]+[((signed>>transitions)&255)]*radius
     write(0xBFFD,0xD9)
     write(0xBFFC,0xF3)
     for index,value in enumerate(masks):
         write(0xD990+index,value)
-    masks[0]=packed&0xF8
+    masks[0]=memory[0xD987+radius]&0xF8
     write(0xD990,masks[0])
-    m1+=1+21+5*transitions+3*radius
+    m1+=1+21-int(primary)+5*transitions+3*radius
     wanted[16:18]=[radius,cp_flags(radius,2)]
     wanted[4:6]=[0,radius]
     wanted[6:8]=[mx,my]

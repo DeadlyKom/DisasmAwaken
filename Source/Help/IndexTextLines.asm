@@ -33,8 +33,8 @@ Entry:          LD A, #00
                 LD (@TextWindow.CursorX), A
                 LD IX, @HelpLineCache.Line0000
                 ; запись рабочего адреса текущей строки в физическую двухбайтовую запись
-StoreLine:      LD (IX+#00), L
-                LD (IX+#01), H
+StoreLine:      LD (IX + @FHelpLinePointer.TextAddress), L
+                LD (IX + @FHelpLinePointer.TextAddress + 1), H
                 INC IX
                 INC IX
                 LD A, #08

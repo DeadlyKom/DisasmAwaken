@@ -31,6 +31,7 @@
                 ; -----------------------------------------
                 ; подготовка ненулевого селектора Alternate для BuildSmallBodyMasks через альтернативный AF
 Entry:          LD A, #AF
+                ; SmallBodyConst.PrimaryEntry указывает на байт AF, на этом входе выполняется XOR A.
                 EX AF, AF'
                 ; проверка допустимого режима перед чтением Radius без изменения результатов CP
                 LD A, (@ControlsSmallBodiesState.Mode)

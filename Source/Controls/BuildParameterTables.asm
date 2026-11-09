@@ -1,5 +1,7 @@
                 module Controls
                 module BuildParameterTables
+                ; Физические поля [очередь и параметры](../../Docs/ActionQueueParameterPhysicalData.md)
+                ; Физические входы [управления и зерно](../../Docs/ActionInputContextData.md)
                 ; Документация [алгоритм и проверка](../../Docs/ControlsParameterTables.md)
                 ; -----------------------------------------
                 ; Формирование пятнадцати параметров и девяти строковых значений по зерну и исходным таблицам

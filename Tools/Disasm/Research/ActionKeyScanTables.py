@@ -10,6 +10,17 @@ TABLES=(
     ('ActionKeyScanInputs','Source/Action/Data/KeyScanInputs.asm',0x3D4C,0x3D82,
      'FKeyScanInput',INPUT_FIELDS,tuple('Index'+format(i,'02X') for i in range(27))))
 NAMED_TARGETS={
+    '@Action.RequestHyperJump.Entry':('Index17',0x70F6),
+    '@Action.RequestBoost.Entry':('Index0F',0x74A3),
+    '@Action.ActivateAntimissileSystem.Entry':('Index14',0x722E),
+    '@Action.RequestAimOrCollectTarget.Entry':('Index06',0x7317),
+    '@Action.ToggleViewDirection.Entry':('Index19',0x762A),
+    '@Action.EjectCargo.Entry':('Index15',0x7594),
+    '@Action.EjectMine.Entry':('Index16',0x75CF),
+    '@Action.RequestStationReturn.Entry':('Index12',0x7606),
+    '@Action.ToggleFreeFlightMode.Entry':('Index10',0x754C),
+    '@Action.ToggleTractorMode.Entry':('Index13',0x7439),
+    '@Action.CycleTargetOverlayMode.Entry':('Index11',0x7480),
     '@Action.RequestYNegative.Entry':('Index00',0x7753),
     '@Action.RequestYPositive.Entry':('Index01',0x7776),
     '@Action.RequestXNegative.Entry':('Index02',0x770D),
@@ -21,7 +32,9 @@ NAMED_TARGETS={
     '@Action.IgnoreKey.Entry':('Index18',0x704B),
     '@Action.RequestMissile0.Entry':('Index0C',0x704C),
     '@Action.RequestMissile1.Entry':('Index0D',0x7075),
-    '@Action.RequestMissile2.Entry':('Index0E',0x7088)}
+    '@Action.RequestMissile2.Entry':('Index0E',0x7088),
+    '@Action.ClearMissileTargets.Entry':('Index0B',0x72BE),
+    '@Action.ToggleTargetRequest.Entry':('Index0A',0x72E2)}
 
 
 def origin(table):return 0x5DC3 if table[0]=='ActionKeyHandlerPointers' else 0x6000

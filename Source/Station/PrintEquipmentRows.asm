@@ -49,7 +49,7 @@ Entry:          EX DE, HL
                 PUSH HL
                 ; поиск CR-имён только по младшему байту TopRow, начало текста X=0 и Y=24
                 LD HL, @EquipmentListText.Names
-                LD BC, @EquipmentListConst.FirstCursor
+AtNameStream:   LD BC, @EquipmentListConst.FirstCursor
                 LD (@TextWindow.CursorX), BC
                 ; создание FEquipmentRowsFrame.TopRow поверх пяти сохранённых слов
                 PUSH DE

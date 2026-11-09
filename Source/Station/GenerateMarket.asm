@@ -209,12 +209,14 @@ StorePrice:     NEG
                 INC HL
                 LD (HL), #00
                 INC HL
-                LD A, (IX + #02)
+                ; Чтение BasePrice правила 28, IX остаётся на правиле 27.
+                LD A, (IX + @FMarketRule + @FMarketRule.BasePrice)
                 LD (HL), A
                 INC HL
                 LD (HL), #00
                 INC HL
-                LD A, (IX + #04)
+                ; Чтение BasePrice правила 29 без изменения исходного IX.
+                LD A, (IX + 2 * @FMarketRule + @FMarketRule.BasePrice)
                 LD (HL), A
                 RET
 

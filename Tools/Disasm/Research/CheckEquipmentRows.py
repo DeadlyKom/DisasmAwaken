@@ -9,13 +9,14 @@ from CheckGlyphRenderer import compare_flags
 from skoolkit.simutils import SP
 
 
-def reference(m,top,width,height,origin=(3,3)):
- columns=[m[a] for a in (0xBD73,0xBD7E,0xBD89,0xBD94,0xBD9F)];text=list(m[0xEE57:0x10000])+[10]*1024;offset=0
+def reference(m,top,width,height,origin=(3,3),*,bases=(0x988E,0x9592,0x95F0,0x9400,0xEE57),ship_address=0x9849):
+ quantities,prices,weights,ship_sets,names=bases
+ columns=[m[a] for a in (0xBD73,0xBD7E,0xBD89,0xBD94,0xBD9F)];text=list(m[names:0x10000])+[10]*1024;offset=0
  for _ in range((top&255)+1):offset=text.index(13,offset)+1
  positions=[];stream(text[offset:],list(m[0x8900:0x8A00]),0,24,width,height,0,columns,origin,24,positions=positions)
  screen=bytearray(m[0x4000:0x5B00])
  for code,x,y in positions:glyph(m,code,x,y,width,height,origin,screen)
- q=(0x988E+top)&65535;p=(0x9592+2*top)&65535;t=(0x95F0+2*top)&65535;c=(0x9400+4*top)&65535
+ q=(quantities+top)&65535;p=(prices+2*top)&65535;t=(weights+2*top)&65535;c=(ship_sets+4*top)&65535
  bc=(2*top)&65535;altbc=(4*top)&65535;count=0;cf=0x44;y=24;x=0;trace=[]
  def result(a,f,swapped=False):
   main=(altbc,t,c) if swapped else (bc,p,q);other=(bc,p,q) if swapped else (altbc,c,t)
@@ -47,7 +48,7 @@ def reference(m,top,width,height,origin=(3,3)):
   if m[0x72DD]>=threshold:trace.append(('weight',weight));a,f=number(0xBCAB,weight)
   else:trace.append(('weight_dash',));x,a,f=glyph(m,45,x,y,width,height,origin,screen)
   if not f&1 and a in (1,2):return result(0,0x42)
-  x=(columns[3]+4)&255;ship=m[0x9849];mark=ship<128 and all(ship!=m[(c+j)&65535] for j in range(4));trace.append(('mark',mark))
+  x=(columns[3]+4)&255;ship=m[ship_address];mark=ship<128 and all(ship!=m[(c+j)&65535] for j in range(4));trace.append(('mark',mark))
   if mark:
    x,a,f=glyph(m,0xFB,x,y,width,height,origin,screen)
    if not f&1 and a in (1,2):return result(0,0x42,True)
@@ -113,9 +114,23 @@ def main():
  # Проверка физического отказа первой, второй и третьей колонки при невидимых предшествующих глифах.
  for ox in (3,-130,-150):check(quantity=1,origin=(ox,161),synthetic=True)
  assert counts['swapped_register_early_return']>0
+ tail_reads={}
+ for top in range(30,34):
+  f=prepare(top,188,192,(3,3));m=f.memory;r=f.sim.registers;reads=[]
+  def observe(f,pc):
+   if pc==0x729D:
+    pointer=r[6]*256+r[7]
+    reads.append((pointer,m[pointer]))
+  expected=reference(m,top,188,192)
+  f.run(0x724C,observe)
+  assert reads==list(zip(range(0x988E+top,0x98B0),[255,0,255,128][top-30:]))
+  assert tuple(r[:2])==expected['af']==(128,0x42)
+  assert bytes(m[0x4000:0x5B00])==expected['screen']
+  tail_reads[top]=reads
  report=dict(passed=True,cases_by_path=dict(counts),field_phases=dict(paths),all_quantity_codes=True,all_ship_codes=True,
   exact_main_alternate_registers_and_counter=True,independent_all_bitmap_and_numeric_status_reference=True,
-  sentinel_counted_before_test=True,early_marker_return_leaves_exx_swapped=True,irq_executed=False,native_execution=False,assembly_executed=False)
+  sentinel_counted_before_test=True,early_marker_return_leaves_exx_swapped=True,original_tail_reads=tail_reads,
+  irq_executed=False,native_execution=False,assembly_executed=False)
  (ROOT/'Tools/Disasm/Reports/EquipmentRowsVerification.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n','utf-8');print(json.dumps(report,ensure_ascii=False,indent=2))
 
 

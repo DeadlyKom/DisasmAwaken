@@ -1,0 +1,37 @@
+{
+  "passed": true,
+  "total_cases": 82496,
+  "profiles": {
+    "all_kind_quantity_pairs_H_zero": 65536,
+    "all_H_and_kind_quantity_edges": 16384,
+    "caller_H_and_list_styles": 576
+  },
+  "paths": {
+    "free_record": 74304,
+    "generated_other": 74288,
+    "packed_HL_differs_from_child": 74304,
+    "replace_ff": 66752,
+    "no_free_record": 8192,
+    "no_child_slot": 8192,
+    "skip_once": 8192,
+    "list_end_without_insertion": 4640,
+    "replace_unavailable": 2912,
+    "generated_FE": 16,
+    "keep_active_list_item": 96
+  },
+  "inserted_FE_writes": 8,
+  "all_reuse_and_initial_R_products": false,
+  "all_rate_and_list_head_bytes": false,
+  "prepared_entry_6441_executed": true,
+  "all_kind_quantity_pairs_H_zero": true,
+  "generated_list_code_from_packed_HL_not_allocated_IY": true,
+  "real_search_and_both_index_conversions_executed": true,
+  "exact_registers_flags_r_sp": true,
+  "full_eight_bank_ram_and_write_multiplicity_compared": true,
+  "maximum_additional_stack_bytes": 2,
+  "complete_external_return": true,
+  "all_input_products_exhausted": false,
+  "assembly_executed": false,
+  "irq_executed": false,
+  "native_execution": false
+}

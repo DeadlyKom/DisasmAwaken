@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "strings": 29,
+  "logical_bytes": 637,
+  "sector_tail_preserved": 182,
+  "named_addresses": 29,
+  "model_cases": 1479,
+  "all_original_bytes_and_physical_layout_preserved": true,
+  "assembly_executed": false,
+  "native_execution": false
+}

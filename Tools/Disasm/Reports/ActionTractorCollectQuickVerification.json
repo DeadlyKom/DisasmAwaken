@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "total_cases": 163,
+  "paths": {
+    "delegate_paired_aim": 13,
+    "phase_no_carry": 9,
+    "class19_payload": 64,
+    "collected_message_accepted": 126,
+    "negative_target": 6,
+    "packed_line": 8,
+    "two_aim_lines": 4,
+    "drop_invalid_target": 6,
+    "pull_far_components": 6,
+    "quantity_from_R": 68,
+    "marked_record_sets_event2": 48,
+    "counter_exempt_rule": 27,
+    "capacity_refusal_target_already_cleared": 2,
+    "byte_limit_refusal_target_already_cleared": 4
+  },
+  "quick_scope": true,
+  "all_word_values_at_each_component": false,
+  "all_inventory_byte_amount_pairs": false,
+  "real_aim_child_and_queue_executed": true,
+  "delegated_aim_drawing_cases": 4,
+  "actual_SP_in_record_observed": true,
+  "all_registers_except_R_and_T_checked": true,
+  "all_ram_and_write_multiplicity_outside_18_byte_stack_checked": true,
+  "R_derived_amount_checked_against_prefix_M1": true,
+  "full_joint_input_product_exhausted": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

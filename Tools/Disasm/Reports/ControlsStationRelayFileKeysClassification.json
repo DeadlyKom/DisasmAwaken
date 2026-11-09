@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "typed_bytes": 18,
+  "physical_records": 2,
+  "physical_symbols": 6,
+  "files": 2,
+  "physical_file_keys": 2,
+  "total_key_bytes": 18,
+  "runtime_addresses": [
+    16433,
+    16945
+  ],
+  "terminators_present": false,
+  "original_bytes_addresses_and_instructions_preserved": true,
+  "gaps_preserved": true,
+  "invalid_pair_gameplay_proved": false,
+  "cf08_reclassified": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

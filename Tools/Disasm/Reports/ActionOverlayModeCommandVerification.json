@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "total_cases": 1280,
+  "counts": {
+    "cycled": 768,
+    "cases": 1280,
+    "delay_exit": 255,
+    "missing_equipment": 257
+  },
+  "all_ram_checked": true,
+  "registers_except_R_and_T_checked": true,
+  "no_temporary_stack_writes": true,
+  "mode_255_wraps_to_zero": true,
+  "missing_equipment_still_sets_delay": true,
+  "assembly_executed": false,
+  "native_execution": false
+}

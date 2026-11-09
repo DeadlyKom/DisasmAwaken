@@ -8,31 +8,72 @@
                 ent
                 assert $ == #007F
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/23_CONTROL/Unclassified000.bin"
+                assert $ == #007F
+                disp #5E1F
+                include "../Controls/LoadLegacyPackedBlock.asm"
+                ent
+                assert $ == #00AD
+                disp #5E4D
+                include "../Controls/ReadLegacySectors.asm"
+                ent
+                assert $ == #0132
+                disp #5ED2
+                include "../Controls/WriteLegacyDiskPort.asm"                   ; (0) жёсткий порядок, последовательное исполнение
+                ent
+                assert $ == #0136
+                disp #5ED6
+                include "../Controls/CallLegacyDosRom.asm"                      ; (1) жёсткий порядок, последовательное исполнение
+                ent
+                assert $ == #013B
+                ; Unknown, соседний диапазон сохраняется без классификации
+                incbin "../Resources/23_CONTROL/Unclassified013B_01BD.bin"
                 assert $ == #01BD
                 disp #DC9B
                 include "../Controls/RelocateStationReload.asm"
                 ent
                 assert $ == #01CB
                 ; Unknown, соседние исходные байты перед подготовкой станции
-                incbin "../Resources/23_CONTROL/Unclassified001_BeforeStationPrepare.bin"
+                assert $ == #01CB
+                disp #4000
+                include "../Controls/LoadStationDirectRelay.asm"
+                ent
+                assert $ == #01FC
+                ; Unknown, соседний диапазон сохраняется без классификации
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/ControlsDirectStationRelay.md)
+                assert $ == #01FC
+                disp #4031
+                include "../Controls/Data/DirectStationKey.asm"
+                ent
                 assert $ == #0205
                 disp #DCE3
                 include "../Controls/PrepareStationReload.asm"
                 ent
                 assert $ == #0245
                 ; Unknown, переносимый загрузочный блок после подготовки станции
-                incbin "../Resources/23_CONTROL/Unclassified001_AfterStationPrepare.bin"
+                assert $ == #0245
+                disp #4200
+                include "../Controls/LoadStationStateRelay.asm"
+                ent
+                assert $ == #0276
+                ; Unknown, соседний диапазон сохраняется без классификации
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/ControlsDirectStationRelay.md)
+                assert $ == #0276
+                disp #4231
+                include "../Controls/Data/StateStationKey.asm"
+                ent
                 assert $ == #027F
                 disp #DD5D
                 include "../Controls/StepWordRandom.asm"
                 ent
                 assert $ == #02A9
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/23_CONTROL/Unclassified002.bin"
+                assert $ == #02A9
+                disp #DD87
+                include "../Controls/ResetFlightContext.asm"                    ; (0) жёсткий порядок, последовательное исполнение
+                ent
                 assert $ == #032C
                 disp #DE0A
-                include "../Controls/BuildAndActivateParameters.asm"
+                include "../Controls/BuildAndActivateParameters.asm"            ; (1) жёсткий порядок, последовательное исполнение
                 ent
                 assert $ == #0332
                 disp #DE10
@@ -44,14 +85,38 @@
                 ent
                 assert $ == #03FE
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/23_CONTROL/Unclassified003_BeforeCoefficients.bin"
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/ControlsParameterTables.md)
+                assert $ == #03FE
+                disp #DEDC
+                include "../Controls/Data/ParameterRowGroups.asm"
+                ent
+                assert $ == #043E
+                disp #DF1C
+                include "../Controls/Data/ParameterLastRowGroup.asm"
+                ent
+                assert $ == #0447
+                disp #DF25
+                include "../Controls/Data/ParameterValueGroups.asm"
+                ent
+                assert $ == #0477
+                disp #DF55
+                include "../Controls/Data/ParameterLastValueGroup.asm"
+                ent
                 assert $ == #0486
                 disp #DF64
                 include "../Controls/Data/ParameterCoefficients.asm"
                 ent
                 assert $ == #04B3
                 ; Unknown, исходные байты после правил параметров
-                incbin "../Resources/23_CONTROL/Unclassified003_AfterCoefficients.bin"
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/ControlsResetFlightContext.md)
+                assert $ == #04B3
+                disp #DF91
+                include "../Controls/Data/VectorsNoDiablo.asm"
+                ent
+                assert $ == #04FB
+                disp #DFD9
+                include "../Controls/Data/VectorsWithDiablo.asm"
+                ent
                 assert $ == #0543
                 disp #E021
                 include "../Controls/UpdateGlyphIndicators.asm"                 ; (0) жёсткий порядок, последовательное исполнение
@@ -169,5 +234,11 @@
                 ent
                 assert $ == #16CD
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/23_CONTROL/Unclassified010.bin"
+                ; Документация [29 сообщений и секторный хвост](../../Docs/ControlsFlightMessages.md)
+                incbin "../Controls/Resources/FlightMessages.bin"
+                assert $ == #194A
+                ; Unknown, 182 байта хвоста секторов после логического конца CONTROL
+                ; Физический суффикс выделенных секторов, неиспользуемость не установлена
+                ; Документация [границы и сохранение суффиксов](../../Docs/AllocatedSectorSuffixes.md)
+                incbin "../Resources/23_CONTROL/SectorTail.bin"
                 assert $ == #1A00

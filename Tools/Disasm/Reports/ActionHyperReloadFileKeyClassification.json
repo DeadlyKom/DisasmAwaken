@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "typed_bytes": 9,
+  "physical_records": 1,
+  "physical_symbols": 3,
+  "files": 1,
+  "file_key_bytes": 9,
+  "source_runtime_address": 29221,
+  "copied_runtime_address": 16986,
+  "terminator_present": false,
+  "original_bytes_addresses_and_instructions_preserved": true,
+  "gaps_preserved": true,
+  "invalid_pair_gameplay_proved": false,
+  "cf08_reclassified": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

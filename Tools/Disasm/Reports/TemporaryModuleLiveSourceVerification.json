@@ -1,0 +1,86 @@
+{
+  "passed": true,
+  "cases": [
+    {
+      "frame_entries": 2,
+      "zero_length": {
+        "copied_before_self_overwrite": 56779,
+        "next_pc": 24010,
+        "next_instruction": "LD A,#B0",
+        "unpacker_entry_opcode_after_copy": 192,
+        "ldir_count_remaining": 8757,
+        "backup_copy_bytes": 8192,
+        "third_copy_before_self_overwrite": 63966,
+        "third_copy_new_instruction": "DD-prefixed OR B",
+        "third_copy_count_remaining": 1570,
+        "original_unpacker_entry_reached_with_replaced_code": true,
+        "reached_rom": 3584,
+        "reached_temporary_entry": false,
+        "stopped_before_rom_execution": true
+      },
+      "length_from_font_header": {
+        "invalid_reference": 25167,
+        "destination": 25606,
+        "length": 2,
+        "copied_bytes": "7e0b",
+        "source_outside_output_history": true
+      }
+    },
+    {
+      "frame_entries": 9,
+      "zero_length": {
+        "copied_before_self_overwrite": 56779,
+        "next_pc": 24010,
+        "next_instruction": "LD A,#B0",
+        "unpacker_entry_opcode_after_copy": 192,
+        "ldir_count_remaining": 8757,
+        "backup_copy_bytes": 8192,
+        "third_copy_before_self_overwrite": 63966,
+        "third_copy_new_instruction": "DD-prefixed OR B",
+        "third_copy_count_remaining": 1570,
+        "original_unpacker_entry_reached_with_replaced_code": true,
+        "reached_rom": 3584,
+        "reached_temporary_entry": false,
+        "stopped_before_rom_execution": true
+      },
+      "length_from_font_header": {
+        "invalid_reference": 25167,
+        "destination": 25606,
+        "length": 2,
+        "copied_bytes": "7e0b",
+        "source_outside_output_history": true
+      }
+    },
+    {
+      "frame_entries": 65,
+      "zero_length": {
+        "copied_before_self_overwrite": 56779,
+        "next_pc": 24010,
+        "next_instruction": "LD A,#B0",
+        "unpacker_entry_opcode_after_copy": 192,
+        "ldir_count_remaining": 8757,
+        "backup_copy_bytes": 8192,
+        "third_copy_before_self_overwrite": 63966,
+        "third_copy_new_instruction": "DD-prefixed OR B",
+        "third_copy_count_remaining": 1570,
+        "original_unpacker_entry_reached_with_replaced_code": true,
+        "reached_rom": 3584,
+        "reached_temporary_entry": false,
+        "stopped_before_rom_execution": true
+      },
+      "length_from_font_header": {
+        "invalid_reference": 25167,
+        "destination": 25606,
+        "length": 2,
+        "copied_bytes": "7e0b",
+        "source_outside_output_history": true
+      }
+    }
+  ],
+  "template_copy_base": 23968,
+  "relocation_is_fixture": true,
+  "trdos_substituted_during_flight_start": true,
+  "native_execution": false,
+  "actual_game_caller_proved": false,
+  "assembly_executed": false
+}

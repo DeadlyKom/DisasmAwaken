@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "total_cases": 132864,
+  "paths": {
+    "accepted_before_message": 51194,
+    "insufficient_selected_byte": 81409,
+    "delay": 255,
+    "no_hypertrail": 1,
+    "same_context_after_spend": 5
+  },
+  "all_byte_stock_cost_pairs_both_routes": true,
+  "all_delay_equipment_bytes": true,
+  "each_context_byte_domain": true,
+  "original_compare_operand_7104": 0,
+  "all_registers_except_R_and_T_checked": true,
+  "all_ram_and_write_multiplicity_checked": true,
+  "accepted_path_stops_before_message_at_7176": true,
+  "accepted_continuation_executed": false,
+  "original_charge_before_equal_context_return_preserved": true,
+  "full_joint_input_product_exhausted": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "classified_resource_bytes": 1480,
+  "resources": 4,
+  "original_index_pair_bytes_checked_separately": 256,
+  "original_bytes_preserved": true,
+  "generated_values_not_serialized": true,
+  "assembly_executed": false
+}

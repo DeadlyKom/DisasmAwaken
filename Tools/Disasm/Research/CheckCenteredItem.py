@@ -49,7 +49,7 @@ def reference(text, widths, width, height, origin):
     raise ValueError("Центрирование не достигло общего выхода")
 
 
-def main(caption=False, filled=False):
+def main(caption=False, filled=False, unregistered=False, filled_all=False):
     manifest = json.loads((ROOT / "Tools/Disasm/Disk/Manifest.json").read_text(encoding="utf-8"))
     entry = next(e for e in manifest["entries"] if e["slot"] == 4)
     source = (ROOT / (entry["path"]+".sectors.bin")).read_bytes()
@@ -76,7 +76,7 @@ def main(caption=False, filled=False):
         memory[0x99B4] = 0
         memory[0x7FFE:0x8000] = [0xFF, 0x3F]
         simulator.registers[:] = initial
-        simulator.run(start=0xCCAF, stop=0x3FFF)
+        simulator.run(start=0xCCAA if filled_all else 0xCCAF, stop=0x3FFF)
     cases = 0
     texts = (b"A\rB\n", b"ONE TWO\rTHREE FOUR\n", b"A\rB\rC\rD\n", b"LAST WORDS WITHOUT CR\n")
     resource_base = 0xE399 if caption else 0xE4AA
@@ -112,7 +112,7 @@ def main(caption=False, filled=False):
                     left = middle = right = 0
                 elif local_y in (1, 8*height-2):
                     left, middle, right = 0x7E, 255, 0x7E
-                elif local_y in (2, 11, 8*height-3):
+                elif local_y in (2, 8*height-3) or (local_y == 11 and not filled_all):
                     left, middle, right = 0x40, 0, 2
                 else:
                     left, middle, right = 0x5F, 255, 0xFA
@@ -163,9 +163,12 @@ def main(caption=False, filled=False):
         memory[0x7FFE:0x8000] = [0xFF, 0x3F]
         simulator.registers[:] = initial
         simulator.registers[H], simulator.registers[L] = key >> 8, key & 255
-        simulator.registers[PC] = 0xC287 if caption else 0xC2DF
+        simulator.registers[PC] = 0xC287 if caption else 0xC2CB if unregistered else 0xC2DF
+        if unregistered:
+            memory[0xC2F9:0xC2FB] = [0, 0x7E] if cases & 1 else [0xAE, 0xBE]
         actual_positions = []
         wakeups = 0
+        bypasses = 0
         for _ in range(150000):
             pc = simulator.registers[PC]
             if pc == 0x3FFF:
@@ -179,15 +182,24 @@ def main(caption=False, filled=False):
                 continue
             if pc == 0xAE8D:
                 actual_positions.append((simulator.registers[A], memory[0x6320], memory[0x6321]))
+            if unregistered and pc == 0xC2F8:
+                assert memory[0xC2F9:0xC2FB] == [0xDE, 0xC2]
+                bypasses += 1
+            if unregistered:
+                assert pc != 0xBEAE
             simulator.run()
         else:
             raise ValueError("Центрируемый элемент не завершился")
         if actual_positions != positions or memory[0x4000:0x6000] != expected:
             raise ValueError(f"Не совпал bitmap либо поток глифов key={key}, geometry={column}/{row}/{width}/{height}, flags={flags:02X}, text={text}")
         expected_map = [0x33]*768
-        for iy in range(row, row+height):
-            expected_map[32*iy+column:32*iy+column+width] = [1]*width
-        if memory[0x8600:0x8900] != expected_map or memory[0x8500:0x8502] != list(key.to_bytes(2, "little")):
+        expected_key = [0x80, 0xFF] if unregistered else list(key.to_bytes(2, 'little'))
+        if not unregistered:
+            for iy in range(row, row+height):
+                expected_map[32*iy+column:32*iy+column+width] = [1]*width
+        elif bypasses != 1 or memory[0xC2F9:0xC2FB] != [0xAE, 0xBE]:
+            raise ValueError("Не совпало временное отключение и восстановление регистрации")
+        if memory[0x8600:0x8900] != expected_map or memory[0x8500:0x8502] != expected_key:
             raise ValueError("Не совпала регистрация центрируемого элемента")
         if memory[0x8502:0x8600] != [0x80, 0xFF]*127:
             raise ValueError("Повреждён остаток индексной таблицы")
@@ -223,8 +235,20 @@ def main(caption=False, filled=False):
         report.update(method="original_caption_item_after_modeled_halt_wakeup", halt_wakeup_is_fixture=True,
                       interrupt_handler_executed=False, interrupt_timing_verified=False)
     if filled:
-        report.update(band_filled_mode=True, band_mode_setup_executed="#CCAF")
-    filename = "FilledCaptionItemVerification.json" if filled else "CaptionItemVerification.json" if caption else "CenteredItemVerification.json"
+        report.update(band_filled_mode=True, band_mode_setup_executed="#CCAA" if filled_all else "#CCAF")
+    if unregistered:
+        report.update(registration_bypassed=True, fixed_registration_target_restored=True,
+                      original_drawer_executed=True, normal_game_caller_proved=False)
+    if unregistered:
+        filename = 'DrawCenteredWithoutOwnerVerification.json'
+    elif filled_all:
+        filename = 'AllFilledCaptionItemVerification.json'
+    elif filled:
+        filename = 'FilledCaptionItemVerification.json'
+    elif caption:
+        filename = 'CaptionItemVerification.json'
+    else:
+        filename = 'CenteredItemVerification.json'
     (ROOT / "Tools/Disasm/Reports" / filename).write_text(
         json.dumps(report, ensure_ascii=False, indent=2)+"\n", encoding="utf-8")
     print(json.dumps(report, ensure_ascii=False, indent=2))
@@ -235,7 +259,13 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--caption", action="store_true")
     parser.add_argument("--filled", action="store_true")
+    parser.add_argument("--filled-all", action="store_true")
+    parser.add_argument("--unregistered", action="store_true")
     args = parser.parse_args()
-    if args.filled and not args.caption:
-        parser.error("--filled используется только вместе с --caption")
-    main(args.caption, args.filled)
+    if (args.filled or args.filled_all) and not args.caption:
+        parser.error("проверки заливки используются вместе с --caption")
+    if args.filled and args.filled_all:
+        parser.error("выберите один вариант заливки")
+    if args.unregistered and args.caption:
+        parser.error("--unregistered относится к центрируемому элементу")
+    main(args.caption, args.filled or args.filled_all, args.unregistered, args.filled_all)

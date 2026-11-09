@@ -1,0 +1,36 @@
+{
+  "passed": true,
+  "additional_records": 4,
+  "additional_graphic_bytes": 2172,
+  "header_bytes": 12,
+  "bitmap_bytes": 2160,
+  "reference_slot": 36,
+  "reference_start": 8734,
+  "reference_end": 9820,
+  "complete_header_and_bitmap_copies": true,
+  "publication_tables_checked": 2,
+  "rows": [
+    {
+      "slot": 37,
+      "start": 8734,
+      "end": 9820,
+      "records": 2,
+      "bytes": 1086,
+      "sha256": "3812eed7bf9a2b99b65e09fbdcbcdf688ff2e9b216b5f5e2af607146110d358e"
+    },
+    {
+      "slot": 38,
+      "start": 8734,
+      "end": 9820,
+      "records": 2,
+      "bytes": 1086,
+      "sha256": "3812eed7bf9a2b99b65e09fbdcbcdf688ff2e9b216b5f5e2af607146110d358e"
+    }
+  ],
+  "overlaps_main_prefix_or_suffix": false,
+  "runtime_reachability_proved": false,
+  "unused_or_garbage_asserted": false,
+  "hardware_bank_numbers_assigned": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

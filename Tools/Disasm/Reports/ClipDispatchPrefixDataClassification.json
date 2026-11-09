@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "typed_bytes": 16,
+  "physical_records": 2,
+  "physical_symbols": 18,
+  "six_target_low_bytes_and_two_work_bytes_per_record": true,
+  "valid_pair_indices_exclude_03_and_07": true,
+  "physical_slots_checked": [
+    17,
+    19
+  ],
+  "original_bytes_and_instructions_preserved": true,
+  "cf08_reclassified": false,
+  "cf08_execution_entry_proved": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

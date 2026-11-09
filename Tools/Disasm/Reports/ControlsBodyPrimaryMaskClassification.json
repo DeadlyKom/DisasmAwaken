@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "functions": 1,
+  "code_bytes": 11,
+  "instructions": 5,
+  "overlap_address": 55775,
+  "model_cases": 45365,
+  "original_bytes_and_addresses_preserved": true,
+  "assembly_executed": false,
+  "native_execution": false
+}

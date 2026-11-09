@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "method": "exact_common_64_byte_seeds_with_at_least_eight_distinct_values_and_maximal_extension",
+  "seed_windows_by_slot": {
+    "33": 16208,
+    "34": 14958,
+    "35": 14923,
+    "36": 14651,
+    "37": 15539,
+    "38": 15805
+  },
+  "minimum_seed_length": 64,
+  "minimum_distinct_seed_values": 8,
+  "includes_deleted_logical_files": true,
+  "compares_allocated_sector_tails": false,
+  "matches": [],
+  "matching_bytes_do_not_prove_runtime_loader": true,
+  "formats_or_compression_not_excluded": true,
+  "semantic_classification_performed": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

@@ -213,6 +213,8 @@ def audit():
     object_states = audit_object_state_coverage()
     from CheckClassHandlerCoverage import audit as audit_class_handler_coverage
     class_handlers = audit_class_handler_coverage()
+    from CheckActionKeyboardCoverage import audit as audit_action_keyboard_coverage
+    keyboard = audit_action_keyboard_coverage()
     return {
         "method": "static_source_audit_without_assembly",
         "modified_code_path_errors": modified_paths["errors"],
@@ -224,6 +226,10 @@ def audit():
         "unregistered_class_callback_count": class_handlers["unregistered_entries"],
         "registered_class_callbacks": class_handlers["registered_entries"],
         "unique_class_handler_targets": class_handlers["unique_targets"],
+        "registered_keyboard_callbacks": keyboard["registered_entries"],
+        "unregistered_keyboard_callbacks": keyboard["unregistered_targets"],
+        "unregistered_keyboard_callback_count": keyboard["unregistered_entries"],
+        "overlapping_keyboard_step": keyboard["overlapping_step"],
         "included_text_files": len(files), "included_binary_files": len(incbins),
         "registered_functions": len(functions), "unlinked_functions": unlinked,
         "missing_includes_or_resources": missing, "missing_include_order": missing_order,

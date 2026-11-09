@@ -840,6 +840,78 @@
 
 [Назначение, контракт и проверка](../ActionMissileStock.md).
 
+## RequestHyperJump
+
+[Action.RequestHyperJump](../../Source/Action/RequestHyperJump.asm)
+
+Проверка гиперследа, списание выбранного запаса и перенос пятибайтового контекста перед перезагрузкой ACTION.
+
+[Договоры и границы проверки](../ActionHyperJump.md).
+
+## PrepareHyperJumpRelay
+
+[Action.PrepareHyperJumpRelay](../../Source/Action/PrepareHyperJumpRelay.asm)
+
+Сообщение гиперперехода, вывод очереди, исходная задержка и перенос загрузчика ACTION в 4200.
+
+[Договоры и границы проверки](../ActionHyperJumpPreparation.md).
+
+## ActivateAntimissileSystem
+
+[Action.ActivateAntimissileSystem](../../Source/Action/ActivateAntimissileSystem.asm)
+
+Поиск первой ракеты класса 11 с целью 1A, установка признаков противоракетной обработки и вывод сегмента.
+
+[Договоры и границы проверки](../ActionAntimissileCommand.md).
+
+## ClearMissileTargets
+
+[Action.ClearMissileTargets](../../Source/Action/ClearMissileTargets.asm)
+
+Снятие трёх захватов ракет с задержкой повторной команды и сообщением.
+
+[Договоры и границы проверки](../ActionTargetCommands.md).
+
+## ToggleTargetRequest
+
+[Action.ToggleTargetRequest](../../Source/Action/ToggleTargetRequest.asm)
+
+Переключение младшего бита запроса наведения с двумя сообщениями.
+
+[Договоры и границы проверки](../ActionTargetCommands.md).
+
+## RequestAimOrCollectTarget
+
+[Action.RequestAimOrCollectTarget](../../Source/Action/RequestAimOrCollectTarget.asm)
+
+Запрос прицельных линий либо притягивание и сбор захваченного объекта по режиму силового луча.
+
+[Договоры и границы проверки](../ActionTractorCollect.md).
+
+## ToggleTractorMode
+
+[Action.ToggleTractorMode](../../Source/Action/ToggleTractorMode.asm)
+
+Переключение режима силового луча и запроса наведения со снятием захватов.
+
+[Договоры и границы проверки](../ActionTractorModeCommand.md).
+
+## CycleTargetOverlayMode
+
+[Action.CycleTargetOverlayMode](../../Source/Action/CycleTargetOverlayMode.asm)
+
+Смена режима отображения целей при наличии системы наведения.
+
+[Договоры и границы проверки](../ActionOverlayModeCommand.md).
+
+## RequestBoost
+
+[Action.RequestBoost](../../Source/Action/RequestBoost.asm)
+
+Запрос ускорения с проверкой классов и квантованных старших байтов координат.
+
+[Договоры и границы проверки](../ActionBoostCommand.md).
+
 ## SelectPreferredByte
 
 [Action.SelectPreferredByte](../../Source/Action/SelectPreferredByte.asm)
@@ -855,6 +927,54 @@
 - Косвенное завершение: нет в этом фрагменте.
 
 [Алгоритм, контракты и независимая модель](../ActionPreferredByte.md).
+
+## AdvanceBoost
+
+[Action.AdvanceBoost](../../Source/Action/AdvanceBoost.asm)
+
+Общий хвост ускорения с фазовым расходом выбранного байта, созданием класса 20 и шестнадцатью шагами шкалы.
+
+[Договоры и границы проверки](../ActionBoostAdvance.md).
+
+## ToggleFreeFlightMode
+
+[Action.ToggleFreeFlightMode](../../Source/Action/ToggleFreeFlightMode.asm)
+
+Условная смена опкода координатного обновления с сообщением о свободном полёте.
+
+[Договоры и границы проверки](../ActionFreeFlightCommand.md).
+
+## EjectCargo
+
+[Action.EjectCargo](../../Source/Action/EjectCargo.asm)
+
+Выброс первого ненулевого байта из начала пар груза с сообщением независимо от размещения.
+
+[Договоры и границы проверки](../ActionEjectCommands.md).
+
+## EjectMine
+
+[Action.EjectMine](../../Source/Action/EjectMine.asm)
+
+Списание одной мины и попытка создания помеченной записи класса 19.
+
+[Договоры и границы проверки](../ActionEjectCommands.md).
+
+## RequestStationReturn
+
+[Action.RequestStationReturn](../../Source/Action/RequestStationReturn.asm)
+
+Однократная команда возврата к станции с переходом в банковый подготовитель загрузки.
+
+[Договоры и границы проверки](../ActionStationReturnCommand.md).
+
+## ToggleViewDirection
+
+[Action.ToggleViewDirection](../../Source/Action/ToggleViewDirection.asm)
+
+Разворот базиса, обновление точек и согласованная смена трёх опкодных пар направления вида.
+
+[Договоры и границы проверки](../ActionViewDirectionCommand.md).
 
 ## IncreaseGaugeWord
 
@@ -1275,6 +1395,14 @@ Unknown, оставшийся фрагмент AE73..AF42 ещё не разоб
 Расчёт трёх компонентов по девяти коэффициентам с исходным переносом отрицательных произведений и досрочным выходом по переполнению.
 
 [Контракт, перенос, SP и модель](../ActionPatchedVector.md).
+
+## NegateOuterBasisRows
+
+[Action.NegateOuterBasisRows](../../Source/Action/NegateOuterBasisRows.asm)
+
+Изменение знака слов строк 2 и 0 базиса с сохранением средней строки.
+
+[Договоры и границы проверки](../ActionReverseViewBasis.md).
 
 ## BuildObjectOffsetCoefficients
 
@@ -4042,6 +4170,14 @@ Unknown, назначение этого фрагмента ещё не уста
 
 [Алгоритм, точные регистры и модель](../ActionIdleState.md).
 
+## EnterRandomClassGate
+
+[Action.EnterRandomClassGate](../../Source/Action/EnterRandomClassGate.asm)
+
+Хвостовой вход в проверку случайного допуска класса.
+
+[Договоры и границы проверки](../ActionRandomClassGateEntry.md).
+
 ## ResetIdleRecordBases
 
 [Action.ResetIdleRecordBases](../../Source/Action/ResetIdleRecordBases.asm)
@@ -4145,6 +4281,14 @@ Unknown, назначение этого фрагмента ещё не уста
 - Косвенное завершение: `JP (HL)`.
 
 [Алгоритм, контракты и проверка](../ActionObjectStateDispatch.md).
+
+## ReloadActionAfterHyperJump
+
+[Action.ReloadActionAfterHyperJump](../../Source/Action/ReloadActionAfterHyperJump.asm)
+
+Перенесённая стадия сохранения 481 байта, вызова TR-DOS для ACTION и восстановления состояния перед новым загрузчиком.
+
+[Договоры и границы проверки](../ActionHyperReload.md).
 
 ## QueueNumberBank1
 

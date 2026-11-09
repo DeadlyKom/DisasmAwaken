@@ -22,7 +22,7 @@
 ; -----------------------------------------
 Entry:          DI
                 LD HL, #65B7
-                LD DE, #5D3B
+                LD DE, @IntroStationRuntime.Entry
                 LD BC, #0100
                 LDIR
                 LD SP, #5FFF
@@ -39,7 +39,7 @@ Entry:          DI
                 LD C, #FF
                 CALL @Intro.FillBitmap.Entry
                 LD IY, #5C3A
-                LD (#65B4), SP
+                LD (@IntroStackSnapshot.Value.Stack), SP
                 CALL @Intro.SelectIntroPage.Entry
                 LD HL, #C000
                 LD DE, #C001
@@ -88,7 +88,7 @@ Entry:          DI
                 LD BC, #012C
                 LD HL, #661E
                 CALL @Intro.RunTimedEffect.Entry
-EnterStation:   JP #5D3B
+EnterStation:   JP @IntroStationRuntime.Entry
 
 
                 endmodule

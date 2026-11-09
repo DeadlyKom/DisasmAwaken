@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "typed_bytes": 18,
+  "physical_records": 3,
+  "physical_symbols": 21,
+  "files": 3,
+  "queue_cursor_bytes": 2,
+  "clip_output_size_bytes": 1,
+  "parameter_bytes": 15,
+  "initial_values_are_working_state": false,
+  "all_parameter_game_meanings_proved": false,
+  "original_bytes_addresses_and_instructions_preserved": true,
+  "gaps_preserved": true,
+  "invalid_pair_gameplay_proved": false,
+  "cf08_reclassified": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

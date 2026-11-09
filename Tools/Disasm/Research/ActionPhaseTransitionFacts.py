@@ -3,11 +3,11 @@ FUNCTIONS={0xE935:('CheckObjectPhaseTransition','Проверка случайн
 LOCAL={0xE94C:'CheckFirst',0xE954:'FoldFirst',0xE95F:'FoldSecond',0xE96A:'FoldThird'}
 CONTRACTS={('Action',0xE935):(
     ['HL, DE, BC и AF числовых аргументов не задают, IX указывает доступную FActionRecord',
-     'доступны поля StateCode, SavedStateCode, PhaseMoveTimer, Unknown1B, Unknown1D и Unknown1F',
+     'доступны поля StateCode, SavedStateCode, PhaseMoveTimer, ViewPosition.X.High, ViewPosition.Y.High и ViewPosition.Depth.High',
      'выбран ACTION банка 0, действуют условия NextRandomWord5, четыре байта ниже SP не пересекают запись и поток 5, IRQ не вмешиваются'],
     ['HL=новое слово потока 5, DE и BC сохраняются',
      'при H>=FA и L>=EF прежний StateCode сохраняется в SavedStateCode, затем StateCode=13',
-     'после случайной проверки каждый байт Unknown1B, Unknown1D и Unknown1F сворачивается как b при b<80 либо FF XOR b',
+     'после случайной проверки каждый байт ViewPosition.X.High, ViewPosition.Y.High и ViewPosition.Depth.High сворачивается как b при b<80 либо FF XOR b',
      'если свёрнутые значения меньше 2, 2 и 6 соответственно, текущее StateCode сохраняется в SavedStateCode, StateCode=14 и PhaseMoveTimer=1E',
      'если оба перехода разрешены, итог SavedStateCode=13 независимо от состояния при входе',
      'при отказе A равен первому недопустимому свёрнутому байту, F соответствует его CP с порогом',
@@ -30,15 +30,15 @@ COMMENTS={
     0xE940:([],'переход, если L меньше EF, пропустить случайный переход и проверить поля записи'),
     0xE942:(['Сохранение текущего состояния перед установкой ожидания 13, последующие проверки не пропускаются.'],None),
     0xE94C:(['Проверка первого байта, отрицательная половина сворачивается побитовым дополнением.'],None),
-    0xE950:([],'переход, если бит 7 Unknown1B сброшен, сравнить исходный байт с порогом'),
+    0xE950:([],'переход, если бит 7 ViewPosition.X.High сброшен, сравнить исходный байт с порогом'),
     0xE954:(['Проверка допуска первого свёрнутого байта, допустимы только значения 0 и 1.'],None),
     0xE956:([],'выход, если первый свёрнутый байт не меньше 2, сохранить результат случайной проверки'),
     0xE957:(['Проверка знака второго байта перед такой же свёрткой без прибавления единицы.'],None),
-    0xE95B:([],'переход, если бит 7 Unknown1D сброшен, сравнить исходный байт с порогом'),
+    0xE95B:([],'переход, если бит 7 ViewPosition.Y.High сброшен, сравнить исходный байт с порогом'),
     0xE95F:(['Проверка допуска второго свёрнутого байта, допустимы только значения 0 и 1.'],None),
     0xE961:([],'выход, если второй свёрнутый байт не меньше 2, не менять таймер смещения'),
     0xE962:(['Проверка знака третьего байта, для него используется отдельный порог.'],None),
-    0xE966:([],'переход, если бит 7 Unknown1F сброшен, сравнить исходный байт с порогом'),
+    0xE966:([],'переход, если бит 7 ViewPosition.Depth.High сброшен, сравнить исходный байт с порогом'),
     0xE96A:(['Проверка допуска третьего свёрнутого байта, допустимы значения 0..5.'],None),
     0xE96C:([],'выход, если третий свёрнутый байт не меньше 6, не устанавливать фазовое смещение'),
     0xE96D:(['Сохранение текущего состояния, в том числе уже установленного 13, перед переходом в 14.'],None),
@@ -60,7 +60,7 @@ RiseTimer       equ #1E                                                         
 
 def name_operands(region,function_address,operation):
     if (region,function_address)!=('Action',0xE935):return operation
-    for literal,field in (('0A','StateCode'),('16','SavedStateCode'),('17','PhaseMoveTimer'),('1B','Unknown1B'),('1D','Unknown1D'),('1F','Unknown1F')):
+    for literal,field in (('0A','StateCode'),('16','SavedStateCode'),('17','PhaseMoveTimer'),('1B','ViewPosition.X.High'),('1D','ViewPosition.Y.High'),('1F','ViewPosition.Depth.High')):
         for old in ('(IX+#'+literal+')','(IX + #'+literal+')'):
             operation=operation.replace(old,'(IX + @FActionRecord.'+field+')')
     for literal,name in (('FA','RandomHighMin'),('EF','RandomLowMin'),('02','PairFoldLimit'),('06','ThirdFoldLimit')):

@@ -1,0 +1,45 @@
+{
+  "passed": true,
+  "total_cases": 4,
+  "profiles": [
+    {
+      "equipment": 254,
+      "retry_first": false,
+      "sectors": 6,
+      "patch_opcode": 5,
+      "output_bytes": 6912
+    },
+    {
+      "equipment": 254,
+      "retry_first": true,
+      "sectors": 7,
+      "patch_opcode": 5,
+      "output_bytes": 6912
+    },
+    {
+      "equipment": 255,
+      "retry_first": false,
+      "sectors": 6,
+      "patch_opcode": 5,
+      "output_bytes": 6912
+    },
+    {
+      "equipment": 255,
+      "retry_first": true,
+      "sectors": 7,
+      "patch_opcode": 5,
+      "output_bytes": 6912
+    }
+  ],
+  "dos_rom": "trdos504t.rom",
+  "dos_rom_sha256": "e21d37271d087eab5ef8f88d8f3a58c8c19da1fa857b9790eaa974b231db9e13",
+  "basic_rom": "128-1.rom",
+  "basic_rom_sha256": "8d93c3342321e9d1e51d60afcd7d15f6a7afd978c231b43435a7c0757c60b9a3",
+  "original_sector_read_unpack_and_reset_executed": true,
+  "original_AY_restore_and_external_return_executed": true,
+  "panel_CHS_and_sector_count_are_explicit_legacy_input_fixtures": true,
+  "actual_game_legacy_source_resource_and_entry_proved": false,
+  "modelled_FDC_and_ROM_paging": true,
+  "assembly_executed": false,
+  "native_execution": false
+}

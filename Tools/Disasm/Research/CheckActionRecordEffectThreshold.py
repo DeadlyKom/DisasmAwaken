@@ -52,7 +52,7 @@ def main():
             assert memory[0xA10C] == flags and not trace.writes
         counts['effect' if expect_effect else 'dispatch'] += 1
     report = dict(passed=True, total_cases=counts.total(), outcomes=dict(counts),
-                  all_threshold_input_bytes=True, real_effect_class=16, assembly_executed=False)
+                  all_threshold_input_bytes=True, real_effect_class=16, mutable_limits_profile='original_defaults_0a_0a', assembly_executed=False)
     payload = json.dumps(report, indent=2) + '\n'
     (ROOT / 'Tools/Disasm/Reports/ActionRecordEffectThresholdVerification.json').write_text(payload, encoding='utf-8')
     print(payload)

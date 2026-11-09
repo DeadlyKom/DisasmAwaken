@@ -38,12 +38,23 @@ def main():
             actual, _ = parse(candidate, types)
             assert actual == data[offset:offset + span['length']]
             total += len(actual)
-        slots.append(dict(slot=slot, name=name, typed_bytes=total,
+        trailers = [row for row in source_map if row['slot'] == slot
+                    and row.get('format') == 'INITIAL_STATION_SAVE_TRANSFER_TRAILER']
+        assert len(trailers) <= 1
+        trailer_size = 0
+        if trailers:
+            trailer = trailers[0]
+            assert (trailer['offset'], trailer['length']) == (0x1E3, 29)
+            assert (ROOT / trailer['path']).read_bytes() == data[0x1E3:]
+            trailer_size = trailer['length']
+        slots.append(dict(slot=slot, name=name, typed_bytes=total, transfer_trailer_bytes=trailer_size,
                           all_zero=data == bytes(SIZE), differences_from_station=differences,
                           timer_low=data[3], semantic_validity_proved=False))
+    unknown_sizes = {SIZE - slot['typed_bytes'] - slot['transfer_trailer_bytes'] for slot in slots}
+    assert len(unknown_sizes) == 1
     result = dict(passed=True, total_cases=len(slots), transfer_start=START, transfer_size=SIZE,
                   typed_spans_per_slot=len(spans), slots=slots,
-                  unknown_bytes_per_slot=SIZE - total, assembly_executed=False)
+                  unknown_bytes_per_slot=unknown_sizes.pop(), assembly_executed=False)
     (reports / 'SavedStateLayoutVerification.json').write_text(
         json.dumps(result, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     print(json.dumps({k: v for k, v in result.items() if k != 'slots'}, indent=2))

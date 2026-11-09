@@ -317,8 +317,10 @@ Carry равен исходному биту 0 FillMode. ResetBandMode возв�
 и сохраняет оба байта AF. HL, BC, альтернативные и индексные регистры
 сохраняются, стек сбалансирован.
 
-[CheckBandMode.py](../Tools/Disasm/Research/CheckBandMode.py) проверил 131072
-случая, все байты режима и F условного настройщика, все AF безусловного.
+[CheckBandMode.py](../Tools/Disasm/Research/CheckBandMode.py) проверил 196608
+случаев, все байты режима и F обоих условных входов, все AF безусловного.
+[Заполненная одиннадцатая строка](StationAllFilledBand.md) использует общий
+вход проверки режима с другим установщиком в DE.
 Проверены полная перезапись шести слов и сохранность текущего BandPattern.
 Отчёт [BandModeVerification.json](../Tools/Disasm/Reports/BandModeVerification.json).
 

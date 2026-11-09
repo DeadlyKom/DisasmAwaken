@@ -1,8 +1,9 @@
 {
   "method": "original_band_mode_patch_against_six_word_contract",
   "passed": true,
-  "cases": 131072,
+  "cases": 196608,
   "by_entry": {
+    "CCAA": 65536,
     "CCAF": 65536,
     "CCD4": 65536
   },

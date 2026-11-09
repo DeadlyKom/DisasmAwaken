@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "total_cases": 65536,
+  "every_input_word": true,
+  "start": 28274,
+  "preceding_key_dispatch_executed": false,
+  "rear_NEG_pairs_executed": true,
+  "original_NOP_pairs_executed": false,
+  "exact_registers_flags_R_and_SP": true,
+  "all_memory_side_effects_checked": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

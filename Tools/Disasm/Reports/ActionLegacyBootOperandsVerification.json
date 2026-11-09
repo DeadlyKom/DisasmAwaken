@@ -1,0 +1,47 @@
+{
+  "passed": true,
+  "total_cases": 2,
+  "profiles": [
+    {
+      "name": "empty_low_ram",
+      "after_5E1F_5E23": "00054b001b",
+      "file_location": {
+        "track": 75,
+        "sector": 5,
+        "sector_count": 27,
+        "old_opcode": 0,
+        "old_count_opcode": 0
+      }
+    },
+    {
+      "name": "original_intro_copy",
+      "after_5E1F_5E23": "28054b291b",
+      "file_location": {
+        "track": 75,
+        "sector": 5,
+        "sector_count": 27,
+        "old_opcode": 40,
+        "old_count_opcode": 41
+      }
+    }
+  ],
+  "active_InitializeFlight_written_bytes": [
+    5,
+    75,
+    27
+  ],
+  "writer_addresses": [
+    16999,
+    17002
+  ],
+  "source_disk_slot": 22,
+  "legacy_bytes_remain_in_bank1_at": 56157,
+  "actual_CONTROL0_C000_prefix": "ffefe9e4dfdc",
+  "actual_CONTROL0_C600_prefix": "040404040004",
+  "actual_CONTROL0_matches_HR_signature": false,
+  "native_execution": false,
+  "assembly_executed": false,
+  "whole_station_session_before_boot_executed": false,
+  "trdos_io_substituted": true,
+  "all_possible_legacy_callers_excluded": false
+}

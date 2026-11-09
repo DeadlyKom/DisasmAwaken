@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "deleted_slot": 0,
+  "logical_bytes": 327,
+  "archive_file_offset": 771,
+  "archive_disk_offset": 4867,
+  "packed_bytes": 9350,
+  "decoded_bytes": 40960,
+  "decoded_sha256": "78caa956344744b8e1e31182c59c7bc3c57e79f2ecf4274c5c8982ff240e9686",
+  "decoded_path": "Tools/Disasm/Extracted/Deleted/00__XTime15.B.unpacked.bin",
+  "loader_entry": 24576,
+  "copied_code_entry": 23296,
+  "restored_stack": 24574,
+  "expanded_entry": 24576,
+  "executed_instructions": 208042,
+  "independent_decoder_and_original_instructions_agree": true,
+  "sectors_preloaded_for_model": true,
+  "expanded_application_executed": false,
+  "catalog_and_disk_unchanged": true,
+  "assembly_executed": false,
+  "native_execution": false
+}

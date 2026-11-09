@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "cases": 512,
+  "normal_indices": 81,
+  "normal_targets": 71,
+  "all_byte_indices_per_lookup": true,
+  "source_page_aliases_preserved": true,
+  "out_of_domain_targets_executed": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

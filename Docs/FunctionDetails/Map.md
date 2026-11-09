@@ -316,7 +316,7 @@ XOR-композиция дуги, шести видов маркеров, це�
 
 [Map.PrepareArcFullSpan](../../Source/Map/PrepareArcFullSpan.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+Подготовка двух симметричных краёв дуги относительно CenterX.
 
 Вход `#E208`, запись 7, смещения `#2208..#2247`.
 
@@ -368,11 +368,19 @@ Unknown, назначение этого фрагмента ещё не уста
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
+## LoadHalfLimitArcInputs
+
+[Map.LoadHalfLimitArcInputs](../../Source/Map/LoadHalfLimitArcInputs.asm)
+
+Загрузка смещений и разности полуширины окна для счётчиков дуги.
+
+[Договоры и границы проверки](../ArcHalfLimitInputs.md).
+
 ## LoadClippedArcInputs
 
 [Map.LoadClippedArcInputs](../../Source/Map/LoadClippedArcInputs.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+Загрузка смещений и ненулевого начального состояния альтернативной пары C', E'.
 
 Вход `#E299`, запись 7, смещения `#2299..#2513`.
 

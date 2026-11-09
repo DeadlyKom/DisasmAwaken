@@ -6,7 +6,7 @@ import io
 import json
 import sys
 
-from FighterAssetData import ROOT, original, decode, render, parse
+from FighterAssetData import FIELDS, ROOT, original, decode, render, parse
 sys.path.insert(0, str(ROOT / 'Tools/Disasm'))
 from VerifySources import main as verify
 
@@ -80,30 +80,14 @@ def main():
     path = ROOT / 'Includes/Structs/Include.inc'
     text = path.read_text(encoding='utf-8')
     assert 'struct FFighterPosePointer' not in text and text.count('                endif') == 1
-    block = '''                ; Физические записи BAR, смысл девяти начальных байтов шага не установлен
-                struct FFighterPosePointer
-FileOffset      dw #0000                                                        ; файловое смещение группы BAR, адрес RAM не назначается
-                ends
-                assert FFighterPosePointer == #02
-
-                struct FFighterPoseHeader
-CountMode       dw #0000                                                        ; биты 13..0 задают число шагов, бит 14 имеет неизвестный смысл, бит 15 исходно нулевой
-Unknown02       db #00                                                          ; Unknown, третий байт заголовка
-Unknown03       db #00                                                          ; Unknown, четвёртый байт заголовка
-                ends
-                assert FFighterPoseHeader == #04
-
-                struct FFighterPoseStep
-'''
-    for index in range(9):
-        block += (f'Unknown{index:02X}'.ljust(16) + 'db #00').ljust(80) + '; Unknown, исходное поле шага\n'
-    for name, kind, note in (
-        ('BankIndex', 'db', 'индекс 0..3 соответствующего файла BD, аппаратная страница не установлена'),
-        ('SpriteAddress', 'dw', 'адрес кадра в окне C000, физическое смещение файла равно адресу минус C000'),
-        ('WidthBytes', 'db', 'число пар маска и пиксели в строке, ширина изображения в пикселях в восемь раз больше'),
-        ('Height', 'db', 'число строк, размер кадра равен WidthBytes умножить на Height и на два')):
-        block += (name.ljust(16) + kind + ' #00').ljust(80) + '; ' + note + '\n'
-    block += '                ends\n                assert FFighterPoseStep == #0E\n\n'
+    block = '                ; Физические записи BAR, значения полей подтверждены архивным потребителем\n'
+    for structure, fields in FIELDS.items():
+        block += f'                struct {structure}\n'
+        for name, size, note in fields:
+            directive = 'db #00' if size == 1 else 'dw #0000'
+            block += (name.ljust(16) + directive).ljust(80) + '; ' + note + '\n'
+        length = sum(size for _, size, _ in fields)
+        block += f'                ends\n                assert {structure} == #{length:02X}\n\n'
     pending[path] = text.replace('                endif', block + '                endif').encode('utf-8')
     path = ROOT / 'Tools/Disasm/VerifySources.py'
     text = path.read_text(encoding='utf-8')

@@ -98,6 +98,11 @@ VISUAL_EFFECT_FIELDS = {
 
 
 def name_operands(region, function_address, operation):
+    if (region, function_address) == ("Action", 0xE020):
+        operation = operation.replace('LD HL, #001B', 'LD HL, @FActionRecord.ViewPosition.X.High')
+        operation = operation.replace('LD DE, #0020', 'LD DE, @FActionRecord.ViewPosition.Depth + @FActionWord')
+    operation = confirmed_control_target_name_operands(region,function_address,operation)
+    operation = flight_message_name_operands(region,function_address,operation)
     operation = action_boot_file_key_name_operands(region, function_address, operation)
     operation = intro_physical_parameter_name_operands(region, function_address, operation)
     operation = confirmed_call_target_name_operands(region, function_address, operation)
@@ -148,6 +153,38 @@ def name_operands(region, function_address, operation):
     operation = control_panel_group_name_operands(region, function_address, operation)
     operation = ship_periodic_code_name_operands(region, function_address, operation)
     operation = ship_preview_callback_name_operands(region, function_address, operation)
+    operation = introattributecounttail_name_operands(region,function_address,operation)
+    operation = actionrandomclassgateentry_name_operands(region,function_address,operation)
+    operation = stationallfilledband_name_operands(region,function_address,operation)
+    operation = introdetachedtail_name_operands(region,function_address,operation)
+    operation = archalflimitinputs_name_operands(region,function_address,operation)
+    operation = drawcenteredwithoutowner_name_operands(region,function_address,operation)
+    operation = controlsbodyprimarymask_name_operands(region,function_address,operation)
+    operation = secondaryequipmentrows_name_operands(region,function_address,operation)
+    operation = controlslegacyloadchain_name_operands(region,function_address,operation)
+    operation = controlsresetflightcontext_name_operands(region,function_address,operation)
+    operation = controlsstatestationrelay_name_operands(region,function_address,operation)
+    operation = controlsdirectstationrelay_name_operands(region,function_address,operation)
+    operation = actionhyperreload_name_operands(region,function_address,operation)
+    operation = actionhyperjumppreparation_name_operands(region,function_address,operation)
+    operation = actionhyperjump_name_operands(region,function_address,operation)
+    operation = final_sync_name_operands(region,function_address,operation)
+    operation = interface_special_name_operands(region,function_address,operation)
+    operation = map_distance_render_name_operands(region,function_address,operation)
+    operation = station_boot_resource_name_operands(region,function_address,operation)
+    operation = actionboostadvance_name_operands(region,function_address,operation)
+    operation = actionboostcommand_name_operands(region,function_address,operation)
+    operation = actionantimissilecommand_name_operands(region,function_address,operation)
+    operation = actiontractorcollect_name_operands(region,function_address,operation)
+    operation = actionviewdirectioncommand_name_operands(region,function_address,operation)
+    operation = actionreverseviewbasis_name_operands(region,function_address,operation)
+    operation = actionejectcommands_name_operands(region,function_address,operation)
+    operation = actionstationreturncommand_name_operands(region,function_address,operation)
+    operation = actionfreeflightcommand_name_operands(region,function_address,operation)
+    operation = actiontractormodecommand_name_operands(region,function_address,operation)
+    operation = actionoverlaymodecommand_name_operands(region,function_address,operation)
+    operation = action_target_commands_name_operands(region,function_address,operation)
+    operation = intro_station_runtime_name_operands(region,function_address,operation)
     operation = action_equipment_name_operands(region,function_address,operation)
     operation = action_render_basis_name_operands(region,function_address,operation)
     operation = action_banked_parameter_build_name_operands(region,function_address,operation)
@@ -501,6 +538,7 @@ def name_operands(region, function_address, operation):
     operation = preview_projection_scale_name_operands(region, function_address, operation)
     operation = preview_perspective_name_operands(region, function_address, operation)
     operation = preview_vertex_group_name_operands(region, function_address, operation)
+    operation = previewsquareentry_name_operands(region, function_address, operation)
     operation = previewframe_name_operands(region, function_address, operation)
     operation = previewqueuerender_name_operands(region, function_address, operation)
     operation = previewclippedfacestream_name_operands(region, function_address, operation)
@@ -669,6 +707,8 @@ def name_operands(region, function_address, operation):
         operation = operation.replace("LD DE, #FFFF", "LD DE, @SpanPattern.SolidPair")
     if (region, function_address) == ("Intro", 0x6A2C):
         operation = operation.replace("BIT 7, B", "BIT @IntroConst.PhaseSignBit, B")
+    if (region, function_address) == ("Intro", 0x6A4B):
+        operation = operation.replace("(#6A5E)", "(@Intro.RunTimedEffect.StepCall + 1)")
     if (region, function_address) == ("Intro", 0x6BF6):
         for address, name in ((0x6C8A, "TexturePhases.PhaseA"), (0x6C90, "TexturePhases.PhaseB"),
                               (0x6C96, "TexturePhases.PhaseC"), (0x6400, "IntroTables.PhaseSamples"),
@@ -1744,11 +1784,26 @@ LABELS.update(CONTROLS_POINT_RESPAWN_LABELS)
 DOCUMENTS.update({("Controls", a): ("ControlsPointRespawn", "алгоритм и проверка") for a in (52758, 52829)})
 
 
+ACTION_FIXED_OPERANDS = {
+    0x6B0D: ('#CEFA', '@Controls.ProjectAndDrawBody.Entry'),
+    0x6C86: ('#CEFA', '@Controls.ProjectAndDrawBody.Entry'),
+    0x6E1E: ('#FA3A', '@Voxel.DrawProjectedEffect.Entry'),
+    **dict.fromkeys((0xE98D, 0xE9A1, 0xF729),
+                    ('#A0C0', '@ActionObjectRecords.Record00 - @FActionRecord')),
+    **dict.fromkeys((0x7246, 0x74AE, 0xEA77, 0xF4A9),
+                    ('#A0C1', '@ActionObjectRecords.Record00.Components.Component0.High - @FActionRecord')),
+}
+
+
 def name_instruction(region, function_address, address, operation):
     """Уточнение одинаковых литералов с разным смыслом в конкретных инструкциях."""
     from ControlsPointMotionFacts import name_instruction as point_motion_instruction
+    from ActionBank4Writes import name_instruction as action_material_instruction
     operation = confirmed_indexed_field_name_instruction(region, function_address, address, operation)
     operation = action_class3_link_count_name_operands_instruction(region, function_address, address, operation)
+    operation = action_material_instruction(region, address, operation)
+    if region == 'Action' and address in ACTION_FIXED_OPERANDS:
+        operation = operation.replace(*ACTION_FIXED_OPERANDS[address])
     return point_motion_instruction(region, function_address, address, operation)
 
 from ControlsPointMotionFacts import LABELS as CONTROLS_POINT_MOTION_LABELS, name_operands as controls_point_motion_name_operands
@@ -2886,3 +2941,210 @@ LABELS.update({('Action', 27011): 'Build'})
 from ActionRenderBasisData import name_operands as action_render_basis_name_operands
 
 from ActionEquipmentData import name_operands as action_equipment_name_operands
+
+from IntroStationRuntimeNames import name_operands as intro_station_runtime_name_operands
+
+from ActionTargetCommandsFacts import name_operands as action_target_commands_name_operands
+DOCUMENTS['Action',29374]=('ActionTargetCommands','команды захватов и наведения')
+DOCUMENTS['Action',29410]=('ActionTargetCommands','команды захватов и наведения')
+LABELS['Action',29426]='ToggleRequest'
+LABELS['Action',29446]='QueueEnabled'
+LABELS['Action',29454]='QueueModeName'
+
+from ActionOverlayModeCommandFacts import name_operands as actionoverlaymodecommand_name_operands
+DOCUMENTS['Action',29824]=('ActionOverlayModeCommand','смена режима отображения целей')
+LABELS['Action',29849]='StoreMode'
+LABELS['Action',0xAA99]='OverlayMode'
+
+from ActionTractorModeCommandFacts import name_operands as actiontractormodecommand_name_operands
+DOCUMENTS['Action',29753]=('ActionTractorModeCommand','команда силового луча')
+LABELS['Action',29805]='QueueDisabled'
+LABELS['Action',29813]='QueueBeamName'
+
+from ActionFreeFlightCommandFacts import name_operands as actionfreeflightcommand_name_operands
+DOCUMENTS['Action',30028]=('ActionFreeFlightCommand','команда свободного полёта')
+LABELS['Action',30078]='QueueEnabled'
+LABELS['Action',30088]='StoreOpcode'
+
+from ActionStationReturnCommandFacts import name_operands as actionstationreturncommand_name_operands
+DOCUMENTS['Action',30214]=('ActionStationReturnCommand','команда возврата к станции')
+
+LABELS['Action',0x6441]='SpawnPrepared'
+
+from ActionEjectCommandsFacts import name_operands as actionejectcommands_name_operands
+DOCUMENTS['Action',30100]=('ActionEjectCommands','выброс груза и мины')
+DOCUMENTS['Action',30159]=('ActionEjectCommands','выброс груза и мины')
+LABELS['Action',30121]='NextByte'
+LABELS['Action',30137]='DropByte'
+LABELS['Action',30205]='NoMines'
+
+from ActionReverseViewBasisFacts import name_operands as actionreverseviewbasis_name_operands
+DOCUMENTS['Action',45045]=('ActionReverseViewBasis','отрицание внешних строк базиса')
+
+from ActionViewDirectionCommandFacts import name_operands as actionviewdirectioncommand_name_operands
+DOCUMENTS['Action',30250]=('ActionViewDirectionCommand','переключение переднего и заднего вида')
+LABELS['Action',30307]='SelectRear'
+LABELS['Action',28277]='NegateFirst'
+LABELS['Action',28296]='NegateSecond'
+LABELS['Action',28315]='NegateThird'
+
+from ActionTractorCollectFacts import name_operands as actiontractorcollect_name_operands
+DOCUMENTS['Action',29463]=('ActionTractorCollect','прицельный запрос и сбор захваченного объекта')
+LABELS['Action',29492]='DropTarget'
+LABELS['Action',29498]='PullTarget'
+LABELS['Action',29525]='CheckFirst'
+LABELS['Action',29532]='StepFirst'
+LABELS['Action',29540]='AddFirst'
+LABELS['Action',29542]='StoreFirst'
+LABELS['Action',29555]='CheckSecond'
+LABELS['Action',29562]='StepSecond'
+LABELS['Action',29570]='AddSecond'
+LABELS['Action',29572]='StoreSecond'
+LABELS['Action',29585]='CheckThird'
+LABELS['Action',29592]='StepThird'
+LABELS['Action',29600]='AddThird'
+LABELS['Action',29602]='StoreThird'
+LABELS['Action',29603]='RestoreStack'
+LABELS['Action',29634]='RandomAmount'
+LABELS['Action',29641]='ReadPayload'
+LABELS['Action',29650]='ApplyRule'
+LABELS['Action',29675]='CheckByte'
+LABELS['Action',29710]='QueuePickup'
+
+from ActionAntimissileCommandFacts import name_operands as actionantimissilecommand_name_operands
+DOCUMENTS['Action',29230]=('ActionAntimissileCommand','поиск ракеты противоракетной командой и общий вход вывода')
+LABELS['Action',29263]='CheckEndMarker'
+LABELS['Action',29269]='NextRecord'
+LABELS['Action',29371]='RestoreIndex'
+
+from ActionBoostCommandFacts import name_operands as actionboostcommand_name_operands
+DOCUMENTS['Action',29859]=('ActionBoostCommand','проверка пространства перед ускорением')
+LABELS['Action',29878]='CheckMarker'
+LABELS['Action',29885]='NextRecord'
+LABELS['Action',29896]='FirstFolded'
+LABELS['Action',29914]='CheckOtherAxes'
+LABELS['Action',29922]='SecondFolded'
+LABELS['Action',29932]='ThirdFolded'
+
+from ActionBoostAdvanceFacts import name_operands as actionboostadvance_name_operands
+DOCUMENTS['Action',29956]=('ActionBoostAdvance','общий хвост ускорения, расход и шестнадцать шагов шкалы')
+LABELS['Action',29964]='StepFastPhase'
+LABELS['Action',29972]='StepSlowPhase'
+LABELS['Action',29995]='RotateFirst'
+LABELS['Action',30003]='RotateSecond'
+LABELS['Action',30012]='SetBoostLimit'
+LABELS['Action',30020]='IncreaseLoop'
+
+LABELS['Action',0x7685]='MotionGate'
+
+from ActionHyperJumpFacts import name_operands as actionhyperjump_name_operands
+from FinalSyncAndPreviewRecord import name_operands as final_sync_name_operands
+from InterfaceEventAndSpecialRecord import name_operands as interface_special_name_operands
+from MapDistanceAndRenderState import name_operands as map_distance_render_name_operands
+from StationBootResourceTables import name_operands as station_boot_resource_name_operands
+DOCUMENTS['Action',28918]=('ActionHyperJump','запрос гиперперехода и расход до сравнения контекстов')
+LABELS['Action',28960]='SpendPreferred'
+LABELS['Action',28967]='TryFallback'
+LABELS['Action',28986]='SpendFallback'
+LABELS['Action',28990]='CompareContexts'
+LABELS['Action',29028]='CopyContext'
+
+from ActionHyperJumpPreparationFacts import name_operands as actionhyperjumppreparation_name_operands
+DOCUMENTS['Action',29046]=('ActionHyperJumpPreparation','подготовка копируемого загрузчика гиперперехода')
+LABELS['Action',29061]='ConsumeLoop'
+LABELS['Action',29080]='LongDelay'
+LABELS['Action',29082]='DelayOuter'
+LABELS['Action',29085]='DelayMiddle'
+LABELS['Action',29087]='DelayInner'
+
+from ActionHyperReloadFacts import name_operands as actionhyperreload_name_operands
+DOCUMENTS['Action',16896]=('ActionHyperReload','перенесённый загрузчик ACTION после гиперперехода')
+LABELS['Action',16948]='AfterLoad'
+
+from ActionFlightMessageNames import name_operands as flight_message_name_operands
+
+from ControlsDirectStationRelayFacts import name_operands as controlsdirectstationrelay_name_operands
+DOCUMENTS['Controls',16384]=('ControlsDirectStationRelay','прямая перенесённая загрузка STATIONF')
+
+from ControlsStateStationRelayFacts import name_operands as controlsstatestationrelay_name_operands
+DOCUMENTS['Controls',16896]=('ControlsStateStationRelay','перенесённая загрузка STATIONF с восстановлением состояния')
+LABELS['Controls',16927]='AfterLoad'
+
+from ConfirmedControlTargetNames import name_operands as confirmed_control_target_name_operands
+
+from ControlsResetFlightContextFacts import name_operands as controlsresetflightcontext_name_operands
+DOCUMENTS['Controls',56711]=('ControlsResetFlightContext','сброс полётного контекста и активация параметров')
+LABELS['Controls',56722]='StoreVector'
+LABELS['Controls',56743]='CopyVectors'
+LABELS['Controls',56758]='NextObject'
+LABELS['Controls',56772]='ClearObject'
+LABELS['Controls',56786]='BeginEffects'
+LABELS['Controls',56793]='NextEffect'
+LABELS['Controls',56808]='CopyContext'
+LABELS['Controls',56838]='StoreOpcode'
+
+LABELS['Action',0x7B60]='OpcodeGate'
+
+from ControlsLegacyLoadChainFacts import name_operands as controlslegacyloadchain_name_operands
+LABELS['Controls',0x5E22]='SectorCount'
+DOCUMENTS['Controls',24095]=('ControlsLegacyLoadChain','старое чтение секторов, распаковка и восстановление полётного контекста')
+DOCUMENTS['Controls',24141]=('ControlsLegacyLoadChain','старое чтение секторов, распаковка и восстановление полётного контекста')
+DOCUMENTS['Controls',24274]=('ControlsLegacyLoadChain','старое чтение секторов, распаковка и восстановление полётного контекста')
+DOCUMENTS['Controls',24278]=('ControlsLegacyLoadChain','старое чтение секторов, распаковка и восстановление полётного контекста')
+LABELS['Controls',24114]='RestoreStack'
+LABELS['Controls',24161]='NextSector'
+LABELS['Controls',24174]='SelectSide'
+LABELS['Controls',24195]='ReadAttempt'
+LABELS['Controls',24269]='CountDown'
+
+from SecondaryEquipmentRowsFacts import name_operands as secondaryequipmentrows_name_operands
+DOCUMENTS['Station',29535]=('SecondaryEquipmentRows','второй список, общая печать, выбор и события LANG')
+DOCUMENTS['Station',29574]=('SecondaryEquipmentRows','второй список, общая печать, выбор и события LANG')
+DOCUMENTS['Station',29655]=('SecondaryEquipmentRows','второй список, общая печать, выбор и события LANG')
+DOCUMENTS['Station',29662]=('SecondaryEquipmentRows','второй список, общая печать, выбор и события LANG')
+DOCUMENTS['Station',29699]=('SecondaryEquipmentRows','второй список, общая печать, выбор и события LANG')
+LABELS['Station',29564]='ReadTop'
+LABELS['Station',29617]='RepeatChoice'
+LABELS['Station',29626]='RunEvent'
+LABELS['Station',29691]='RenderRows'
+LABELS['Station',29694]='SaveRowCount'
+
+from ControlsBodyPrimaryMaskFacts import name_operands as controlsbodyprimarymask_name_operands
+DOCUMENTS['Controls',53799]=('ControlsBodyPrimaryMask','основная затравка малого тела и режим 1 большого растра')
+
+from DrawCenteredWithoutOwnerFacts import name_operands as drawcenteredwithoutowner_name_operands
+DOCUMENTS['Station',49867]=('DrawCenteredWithoutOwner','центрируемый элемент без записи в карту владельцев')
+LABELS['Station',49886]='Return'
+LABELS['Station',0xC2F8]='RegisterCall'
+
+from ArcHalfLimitInputsFacts import name_operands as archalflimitinputs_name_operands
+DOCUMENTS['Map',57993]=('ArcHalfLimitInputs','подготовка альтернативных счётчиков дуги от полуширины окна')
+
+LABELS['Controls',0xED2C]='FirstSource'
+LABELS['Controls',0xED36]='FirstTarget'
+LABELS['Controls',0xED40]='SecondSource'
+
+from IntroDetachedTailFacts import name_operands as introdetachedtail_name_operands
+DOCUMENTS['IntroUnpack',29901]=('IntroDetachedTail','условные входы за концом экранного потока')
+DOCUMENTS['IntroUnpack',29912]=('IntroDetachedTail','условные входы за концом экранного потока')
+DOCUMENTS['IntroUnpack',29924]=('IntroDetachedTail','условные входы за концом экранного потока')
+LABELS['IntroUnpack',29905]='PollKey'
+LABELS['IntroUnpack',29918]='CopyBlock'
+
+from StationAllFilledBandFacts import name_operands as stationallfilledband_name_operands
+DOCUMENTS['Station',52394]=('StationAllFilledBand','заполненная одиннадцатая строка полосовой рамки')
+LABELS['Station',0xCCB2]='ReadFillMode'
+
+from ActionRandomClassGateEntryFacts import name_operands as actionrandomclassgateentry_name_operands
+DOCUMENTS['Action',63118]=('ActionRandomClassGateEntry','хвостовой вход в случайный допуск класса')
+
+from IntroAttributeCountTailFacts import name_operands as introattributecounttail_name_operands
+DOCUMENTS['IntroUnpack',29847]=('IntroAttributeCountTail','условный подсчёт атрибутов и вывод смещения')
+LABELS['IntroUnpack',29864]='ReadPaper'
+LABELS['IntroUnpack',29883]='CompareCount'
+LABELS['IntroUnpack',29889]='NextCount'
+
+from PreviewSquareEntryFacts import LABELS as PREVIEW_SQUARE_ENTRY_LABELS, DOCUMENTS as PREVIEW_SQUARE_ENTRY_DOCUMENTS, name_operands as previewsquareentry_name_operands
+LABELS.update(PREVIEW_SQUARE_ENTRY_LABELS)
+DOCUMENTS.update(PREVIEW_SQUARE_ENTRY_DOCUMENTS)
+LABELS['Intro',0x6A5D]='StepCall'

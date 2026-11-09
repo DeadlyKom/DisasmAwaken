@@ -7,18 +7,19 @@ KEYS = (('Voxal', 'VOXAL   '), ('Voxal0', 'VOXAL0  '),
         ('Panel', 'PANEL   '), ('Object3D', 'OBJECT3D'))
 
 
-def render(raw):
-    assert len(raw) == 54
-    lines = ['                module ActionBootFileKeys',
-             '                ; Документация [ключи загрузчика полёта](../../../Docs/ActionBootFileKeys.md)',
-             '                assert $ == #42D0']
+def render(raw, *, keys=KEYS, module='ActionBootFileKeys', origin=0x42D0,
+           document='ActionBootFileKeys', title='ключи загрузчика полёта'):
+    assert len(raw) == len(keys) * 9
+    lines = ['                module ' + module,
+             '                ; Документация [' + title + '](../../../Docs/' + document + '.md)',
+             f'                assert $ == #{origin:04X}']
     labels = {}
-    for index, (label, name) in enumerate(KEYS):
+    for index, (label, name) in enumerate(keys):
         assert raw[index*9:index*9+9] == name.encode('ascii') + b'C'
         code = (label+':').ljust(16) + 'FTrDosFileKey { { "' + name + '" }, #43 }'
         lines.append(code.ljust(80) + '; восемь символов имени с исходными пробелами и тип C, терминатора нет')
-        labels['ActionBootFileKeys.'+label] = 0x42D0 + 9*index
-    lines += ['                assert $ == #4306', '                endmodule', '']
+        labels[module+'.'+label] = origin + 9*index
+    lines += [f'                assert $ == #{origin+len(raw):04X}', '                endmodule', '']
     return '\n'.join(lines), labels
 
 

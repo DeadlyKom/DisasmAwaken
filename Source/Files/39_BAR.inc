@@ -6,5 +6,7 @@
                 include "../Resources/39_BAR/PoseSequences.asm"
                 ; Исходный секторный хвост после логического файла, сохранён отдельно.
                 assert $ == #0C04
+                ; Физический суффикс выделенных секторов, неиспользуемость не установлена
+                ; Документация [границы и сохранение суффиксов](../../Docs/AllocatedSectorSuffixes.md)
                 incbin "../Resources/39_BAR/SectorTail.bin"
                 assert $ == #0D00

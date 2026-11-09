@@ -1,0 +1,36 @@
+{
+  "passed": true,
+  "cases": 1536,
+  "entries": {
+    "C4D7": {
+      "cases": 256,
+      "physical_records": 33
+    },
+    "C58A": {
+      "cases": 256,
+      "physical_records": 14
+    },
+    "C4E3": {
+      "cases": 256,
+      "physical_records": 33
+    },
+    "C590": {
+      "cases": 256,
+      "physical_records": 14
+    },
+    "C51A": {
+      "cases": 256,
+      "physical_records": 33
+    },
+    "C5A9": {
+      "cases": 256,
+      "physical_records": 13
+    }
+  },
+  "original_station_tables": true,
+  "second_index_13_reads_keyboard_anchor": true,
+  "contiguous_neighbor_groups": true,
+  "out_of_range_gameplay_proved": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

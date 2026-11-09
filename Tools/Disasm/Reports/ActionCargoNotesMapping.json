@@ -1,0 +1,196 @@
+{
+  "passed": true,
+  "cargo_rows": 30,
+  "cargo_bytes": 60,
+  "author_literal_bytes_matched": 60,
+  "reused_existing_FOwnedCargoRow": true,
+  "eject_scan_bytes": 30,
+  "eject_scan_includes_price_bytes": true,
+  "runtime_native_load_proved": false,
+  "rows": [
+    {
+      "index": 0,
+      "quantity": 1,
+      "price": 0,
+      "author_name": "ТЕКСТИЛЬ"
+    },
+    {
+      "index": 1,
+      "quantity": 2,
+      "price": 0,
+      "author_name": "С/Х Продукты"
+    },
+    {
+      "index": 2,
+      "quantity": 3,
+      "price": 0,
+      "author_name": "С/Х Техника"
+    },
+    {
+      "index": 3,
+      "quantity": 4,
+      "price": 0,
+      "author_name": "Стройматериялы"
+    },
+    {
+      "index": 4,
+      "quantity": 5,
+      "price": 0,
+      "author_name": "Стройтехника"
+    },
+    {
+      "index": 5,
+      "quantity": 1,
+      "price": 0,
+      "author_name": "Вода"
+    },
+    {
+      "index": 6,
+      "quantity": 1,
+      "price": 0,
+      "author_name": "Спиртное"
+    },
+    {
+      "index": 7,
+      "quantity": 1,
+      "price": 0,
+      "author_name": "Пиво"
+    },
+    {
+      "index": 8,
+      "quantity": 1,
+      "price": 0,
+      "author_name": "Табак"
+    },
+    {
+      "index": 9,
+      "quantity": 1,
+      "price": 0,
+      "author_name": "Медикаменты"
+    },
+    {
+      "index": 10,
+      "quantity": 1,
+      "price": 0,
+      "author_name": "Оборудование"
+    },
+    {
+      "index": 11,
+      "quantity": 1,
+      "price": 0,
+      "author_name": "Электроника"
+    },
+    {
+      "index": 12,
+      "quantity": 1,
+      "price": 0,
+      "author_name": "Компьютеры"
+    },
+    {
+      "index": 13,
+      "quantity": 1,
+      "price": 0,
+      "author_name": "Энергоностители"
+    },
+    {
+      "index": 14,
+      "quantity": 1,
+      "price": 0,
+      "author_name": "Минералы"
+    },
+    {
+      "index": 15,
+      "quantity": 0,
+      "price": 0,
+      "author_name": "РАДИАКТИВНЫЕ РУДЫ"
+    },
+    {
+      "index": 16,
+      "quantity": 0,
+      "price": 0,
+      "author_name": "Черн.металлы"
+    },
+    {
+      "index": 17,
+      "quantity": 0,
+      "price": 0,
+      "author_name": "Цвет.металлы"
+    },
+    {
+      "index": 18,
+      "quantity": 0,
+      "price": 0,
+      "author_name": "Драг.металлы"
+    },
+    {
+      "index": 19,
+      "quantity": 0,
+      "price": 0,
+      "author_name": "Драг.камни"
+    },
+    {
+      "index": 20,
+      "quantity": 0,
+      "price": 0,
+      "author_name": "ПРЕДМЕТЫ РОСКОШИ"
+    },
+    {
+      "index": 21,
+      "quantity": 0,
+      "price": 0,
+      "author_name": "легкое Вооружение"
+    },
+    {
+      "index": 22,
+      "quantity": 0,
+      "price": 0,
+      "author_name": "тяжолое Вооружение"
+    },
+    {
+      "index": 23,
+      "quantity": 0,
+      "price": 0,
+      "author_name": "Наркотики"
+    },
+    {
+      "index": 24,
+      "quantity": 0,
+      "price": 0,
+      "author_name": "Рабы"
+    },
+    {
+      "index": 25,
+      "quantity": 0,
+      "price": 0,
+      "author_name": "Проститутки"
+    },
+    {
+      "index": 26,
+      "quantity": 0,
+      "price": 0,
+      "author_name": "Уникумы"
+    },
+    {
+      "index": 27,
+      "quantity": 0,
+      "price": 0,
+      "author_name": "Трансплонтанты"
+    },
+    {
+      "index": 28,
+      "quantity": 0,
+      "price": 0,
+      "author_name": "Технологии"
+    },
+    {
+      "index": 29,
+      "quantity": 0,
+      "price": 0,
+      "author_name": "Артефакты"
+    }
+  ],
+  "sha256": "af92d674343c82c849ce5378df204a9e5aa476867acbc5adede4fd7a7c39a773",
+  "source_of_names": "original_embedded_TWRI_literals",
+  "assembly_executed": false,
+  "native_execution": false
+}

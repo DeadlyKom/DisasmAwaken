@@ -11,6 +11,8 @@ from CheckScreenUpdate import PortTrace
 
 def main():
     memory = Memory(flat_action())
+    # Проверка исходных шагов, произвольные изменяемые шаги проверяются отдельной моделью.
+    assert (memory[0xA8B5],memory[0xA968])==(20,80)
     sim = Simulator(memory)
     totals = {'thresholds': 0, 'events': 0}
 
@@ -110,7 +112,8 @@ def main():
     totals['overlay_gate'] = 65536
 
     report = dict(passed=True, total_cases=sum(totals.values()), by_window=totals,
-                  exact_write_order=True, original_page_selector_executed=True, assembly_executed=False)
+                  exact_write_order=True, original_page_selector_executed=True,
+                  mutable_phase_steps_profile='original_defaults_14_50',assembly_executed=False)
     payload = json.dumps(report, indent=2) + '\n'
     (ROOT / 'Tools/Disasm/Reports/ActionFrameGatesVerification.json').write_text(payload, encoding='utf-8')
     print(payload)

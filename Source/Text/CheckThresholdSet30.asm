@@ -35,9 +35,9 @@ Entry:          POP HL
                 ; обновление непосредственного операнда Limit в CP-цикле
                 LD (@ThresholdSetState.Limit), A
                 ; выбор 30 порогов с двухбайтовым шагом
-                LD HL, #95F0
+                LD HL, @EquipmentListData.Weights
                 ; выбор последовательных кодированных байтов активности
-                LD DE, #988E
+                LD DE, @EquipmentListData.Quantities
                 ; выбор числа проверяемых строк первого набора
                 LD B, #1E
                 ; чтение текущего кодированного байта активности

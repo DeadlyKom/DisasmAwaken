@@ -171,8 +171,8 @@ CPU-стек при таком обработчике восстанавлива
 | #CA40 | `u` | [Text.PushByteUWriter](../Source/Text/PushByteUWriter.asm) |
 | #CA43 | `g` | [Text.PushCargo7BitWriter](../Source/Text/PushCargo7BitWriter.asm) |
 | #CA46 | `G` | [Text.PushMarket7BitWriter](../Source/Text/PushMarket7BitWriter.asm) |
-| #CA49 | `o` | [Text.PushEquipmentWeightWriter](../Source/Text/PushEquipmentWeightWriter.asm) |
-| #CA4C | `i` | [Text.PushSecondWeightWriter](../Source/Text/PushSecondWeightWriter.asm) |
+| #CA49 | `o` | [Text.PushEquipmentQuantityWriter](../Source/Text/PushEquipmentQuantityWriter.asm) |
+| #CA4C | `i` | [Text.PushSecondQuantityWriter](../Source/Text/PushSecondQuantityWriter.asm) |
 | #CA4F | `J` | [Text.PushByteJWriter](../Source/Text/PushByteJWriter.asm) |
 | #CA52 | `t` | [Text.ActivateResourceRecord](../Source/Text/ActivateResourceRecord.asm) |
 | #CA55 | `p` | [Text.WriteIndexedPMode](../Source/Text/WriteIndexedPMode.asm) |

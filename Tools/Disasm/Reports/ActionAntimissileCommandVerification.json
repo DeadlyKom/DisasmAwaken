@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "total_cases": 197716,
+  "paths": {
+    "message_accepted": 197444,
+    "accepted": 327500,
+    "common_outside_side": 99280,
+    "overlay_returned": 163751,
+    "checked_vectors": 196695,
+    "delay": 255,
+    "marker": 510,
+    "message_dropped": 17,
+    "vector_marker": 256,
+    "clipped_line": 64470,
+    "overflow_2": 176,
+    "vertical_rejected": 1,
+    "first_projection_rejected": 1,
+    "both_depths_negative": 32768
+  },
+  "all_word_values_at_each_component": true,
+  "all_delay_class_target_flag_bytes": true,
+  "real_queue_E835_projection_clipping_renderer_executed": true,
+  "all_registers_except_R_and_T_checked": true,
+  "all_ram_and_write_multiplicity_outside_32_byte_stack_checked": true,
+  "maximum_observed_additional_stack_bytes": 28,
+  "full_joint_input_product_exhausted": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

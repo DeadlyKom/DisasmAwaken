@@ -79,6 +79,8 @@ def name_operands(region, address, operation):
     if region != 'Action' or address != 0xE020:
         return operation
     aliases = {
+        '9BA1': 'ActionRenderQueueCursor.Value.Head',
+        '9B8D': 'ActionRenderHeader.Value.ModeBits',
         '9B19': 'ActionAimFollowState.Position',
         'E021': 'ActionProjectedBoundsState.CompanionMask',
         'ED83': 'ActionAyEffectsState.ChannelCLevel',

@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "total_cases": 65536,
+  "profiles": {
+    "original_bank0_dispatch_to_clip_entry": 65536
+  },
+  "stationary_row_select": 253,
+  "stationary_mask": 2,
+  "all_Y_accumulator_value_pairs": true,
+  "real_first_handler_and_restore_frame_executed": true,
+  "all_256_mode_bytes_distributed": true,
+  "original_27th_word": 49353,
+  "actual_bank": 0,
+  "actual_target": "Action.ClipInsideToTopLeft.Entry",
+  "physical_pointer_word_overlaps_code": true,
+  "separate_pointer_record_added": false,
+  "all_registers_except_R_T_and_all_eight_banks_write_multiplicity_checked": true,
+  "stopped_before_clip_handler": true,
+  "clip_calling_frame_preconditions_not_proved": true,
+  "author_intent_not_proved": true,
+  "all_keyboard_state_products_exhausted": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

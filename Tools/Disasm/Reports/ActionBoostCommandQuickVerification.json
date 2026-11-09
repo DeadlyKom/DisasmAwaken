@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "total_cases": 87,
+  "paths": {
+    "clear_space": 81,
+    "sixteen_gauge_steps": 57,
+    "free_record": 13,
+    "stream_8": 13,
+    "transform_complete": 13,
+    "class20_created": 13,
+    "spawn_called": 14,
+    "selected_byte_spent": 18,
+    "selected_sign_refusal": 24,
+    "release_class14": 30,
+    "no_free_record": 1,
+    "near_record": 6
+  },
+  "quick_scope": true,
+  "all_preferred_fallback_pairs": false,
+  "all_fast_counter_and_three_bit_slow_pairs": false,
+  "all_high_bytes_each_axis": false,
+  "all_opcode_class_rotation_bytes": false,
+  "real_release_search_spawn_random_transform_and_sixteen_gauge_calls_executed": true,
+  "all_registers_except_R_and_T_checked": true,
+  "all_ram_and_write_multiplicity_outside_32_byte_stack_checked": true,
+  "maximum_observed_additional_stack_bytes": 10,
+  "full_joint_input_product_exhausted": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

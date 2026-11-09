@@ -9,6 +9,8 @@
   ],
   "actual_intro_initialization_and_screen_unpack": true,
   "real_rom_executed": true,
+  "saved_intro_stack_address": 26036,
+  "saved_intro_stack_value": 24575,
   "trdos_search_and_info_stubbed": true,
   "stops_at_sector_read_entry": true,
   "assembly_executed": false

@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "total_cases": 1568,
+  "counts": {
+    "clear_targets": 529,
+    "accepted": 1383,
+    "cases": 1568,
+    "delay_exit": 510,
+    "dropped": 204,
+    "toggle_request": 529
+  },
+  "real_queue_and_banking_executed": true,
+  "all_registers_except_R_and_T_checked": true,
+  "all_ram_except_18_byte_temporary_stack_checked": true,
+  "maximum_stack_bytes": 18,
+  "tested_entry_instruction_bytes_preserved": true,
+  "mutable_operands_or_gates_prepared": true,
+  "entry_bank_zero_required": true,
+  "assembly_executed": false,
+  "native_execution": false
+}

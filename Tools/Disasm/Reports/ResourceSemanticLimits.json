@@ -1,0 +1,289 @@
+{
+  "passed": true,
+  "method": "explicit_separation_of_format_proof_and_game_use_proof",
+  "source_map_sha256": "4542b7bab7a8485a672ee3a4d2e1cddb2afd69cceae8d348c36c1a7a85413ed7",
+  "groups": [
+    {
+      "name": "bank_screen_strips",
+      "physical_bytes": 89046,
+      "ranges": 14,
+      "source_paths": [
+        "Source/Resources/33_BANK0/StripsPrefix.asm",
+        "Source/Resources/33_BANK0/StripsSuffix.asm",
+        "Source/Resources/34_BANK1/StripsPrefix.asm",
+        "Source/Resources/34_BANK1/StripsSuffix.asm",
+        "Source/Resources/35_BANK2/StripsPrefix.asm",
+        "Source/Resources/35_BANK2/StripsSuffix.asm",
+        "Source/Resources/36_BANK3/StripsPrefix.asm",
+        "Source/Resources/36_BANK3/StripsSuffix.asm",
+        "Source/Resources/37_BANK4/StripsPrefix.asm",
+        "Source/Resources/37_BANK4/StripsAdditional.asm",
+        "Source/Resources/37_BANK4/StripsSuffix.asm",
+        "Source/Resources/38_BANK5/StripsPrefix.asm",
+        "Source/Resources/38_BANK5/StripsAdditional.asm",
+        "Source/Resources/38_BANK5/StripsSuffix.asm"
+      ],
+      "limit": "заголовки и растры доказаны, внекаталожный загрузчик и рисователь проверены, вход из активной игры неизвестен",
+      "document": "Docs/BankScreenStrips.md",
+      "all_game_consumers_and_writers_proved": false
+    },
+    {
+      "name": "bank_partial_strip_copies",
+      "physical_bytes": 408,
+      "ranges": 2,
+      "source_paths": [
+        "Source/Resources/37_BANK4/PartialStripCopy.asm",
+        "Source/Resources/38_BANK5/PartialStripCopy.asm"
+      ],
+      "limit": "точные заголовки и неполные копии растров установлены, штатные потребители неизвестны",
+      "document": "Docs/BankScreenStrips.md",
+      "all_game_consumers_and_writers_proved": false
+    },
+    {
+      "name": "bank_archive_route_copies",
+      "physical_bytes": 1200,
+      "ranges": 4,
+      "source_paths": [
+        "Source/Resources/34_BANK1/ArchiveRouteCopies.asm",
+        "Source/Resources/35_BANK2/ArchiveRouteCopies.asm",
+        "Source/Resources/37_BANK4/ArchiveRouteCopies.asm",
+        "Source/Resources/38_BANK5/ArchiveRouteCopies.asm"
+      ],
+      "limit": "формат маршрутов установлен по исходному архивному рисователю, чтение копий внутри BANK неизвестно",
+      "document": "Docs/BankArchiveRouteCopies.md",
+      "all_game_consumers_and_writers_proved": false
+    },
+    {
+      "name": "bank_strip_staging_tails",
+      "physical_bytes": 528,
+      "ranges": 6,
+      "source_paths": [
+        "Source/Resources/33_BANK0/StripStagingTail.bin",
+        "Source/Resources/34_BANK1/StripStagingTail.bin",
+        "Source/Resources/35_BANK2/StripStagingTail.bin",
+        "Source/Resources/36_BANK3/StripStagingTail.bin",
+        "Source/Resources/37_BANK4/StripStagingTail.bin",
+        "Source/Resources/38_BANK5/StripStagingTail.bin"
+      ],
+      "limit": "исходный LDIR читает хвосты за растром, их подмена не меняет вывод, вход из активной игры неизвестен",
+      "document": "Docs/BankStripArchiveConsumer.md",
+      "all_game_consumers_and_writers_proved": false
+    },
+    {
+      "name": "scene1_pixel_planes",
+      "physical_bytes": 18676,
+      "ranges": 1,
+      "source_paths": [
+        "Source/Resources/30_scene1po/PixelPairs.bin"
+      ],
+      "limit": "геометрия, внекаталожный загрузчик и копирование окна проверены, вход из активной игры неизвестен",
+      "document": "Docs/Scene1PixelPairs.md",
+      "all_game_consumers_and_writers_proved": false
+    },
+    {
+      "name": "embedded_author_notes",
+      "physical_bytes": 3729,
+      "ranges": 1,
+      "source_paths": [
+        "Source/Resources/17_ACTION/EmbeddedAuthorNotes.bin"
+      ],
+      "limit": "текстовый формат и происхождение доказаны, потребитель во время игры не установлен",
+      "document": "Docs/ActionEmbeddedNotes.md",
+      "all_game_consumers_and_writers_proved": false
+    },
+    {
+      "name": "allocated_sector_suffixes",
+      "physical_bytes": 2558,
+      "ranges": 16,
+      "source_paths": [
+        "Source/Resources/05_LANG/AfterMarketScript.bin",
+        "Source/Resources/06_D3D/AfterDescriptionText.bin",
+        "Source/Resources/08_HELP/SectorTail.bin",
+        "Source/Resources/18_DATAS/SectorTail.bin",
+        "Source/Resources/19_3DPART/SectorTail.bin",
+        "Source/Resources/21_VOXAL/SectorTail.bin",
+        "Source/Resources/22_CONTROL0/SectorTail.bin",
+        "Source/Resources/23_CONTROL/SectorTail.bin",
+        "Source/Resources/24_OBJECT3D/SectorTail.bin",
+        "Source/Resources/29_FINALF/SectorTail.bin",
+        "Source/Resources/30_scene1po/SectorTail.bin",
+        "Source/Resources/39_BAR/SectorTail.bin",
+        "Source/Resources/40_BD0/SectorTail.bin",
+        "Source/Resources/41_BD1/SectorTail.bin",
+        "Source/Resources/42_BD2/SectorTail.bin",
+        "Source/Resources/43_BD3/SectorTail.bin"
+      ],
+      "limit": "физические границы по каталогу доказаны, чтение, запись или неиспользуемость игрой не установлены",
+      "document": "Docs/AllocatedSectorSuffixes.md",
+      "all_game_consumers_and_writers_proved": false
+    },
+    {
+      "name": "news_and_order_records",
+      "physical_bytes": 71,
+      "ranges": 2,
+      "source_paths": [
+        "Source/Action/Data/NewsState.asm",
+        "Source/Action/Data/DeliveryOrders.asm"
+      ],
+      "limit": "исходные блоки совпадают с описанием NEWS и ORDER, игровой доступ к отдельным полям не установлен",
+      "document": "Docs/ActionNewsOrdersAndJumpCost.md",
+      "all_game_consumers_and_writers_proved": false
+    },
+    {
+      "name": "station_detached_text",
+      "physical_bytes": 458,
+      "ranges": 2,
+      "source_paths": [
+        "Source/Station/Resources/SubscriberSystemRows.bin",
+        "Source/Station/Resources/FuelAndDeliveryLabels.bin"
+      ],
+      "limit": "границы и столбцы доказаны, F066 читает второй печататель, его штатный вызов и потребитель списка абонентов неизвестны",
+      "document": "Docs/StationDetachedText.md",
+      "all_game_consumers_and_writers_proved": false
+    },
+    {
+      "name": "object3d_tail_packets",
+      "physical_bytes": 1259,
+      "ranges": 7,
+      "source_paths": [
+        "Source/Action/Data/Model2469.asm",
+        "Source/Action/Data/Model251F.asm",
+        "Source/Action/Data/Model25C1.asm",
+        "Source/Action/Data/Model266B.asm",
+        "Source/Action/Data/Model2707.asm",
+        "Source/Action/Data/Model27AB.asm",
+        "Source/Action/Data/Model2859.asm"
+      ],
+      "limit": "семь пакетов разобраны по физическому формату, игровые потребители и имена не установлены",
+      "document": "Docs/ActionModelTail.md",
+      "all_game_consumers_and_writers_proved": false
+    },
+    {
+      "name": "object3d_tail_pointer_pairs",
+      "physical_bytes": 28,
+      "ranges": 1,
+      "source_paths": [
+        "Source/Action/Data/TailModelPointers.asm"
+      ],
+      "limit": "четырнадцать слов указывают на семь дополнительных пакетов, игровой потребитель неизвестен",
+      "document": "Docs/ActionModelTail.md",
+      "all_game_consumers_and_writers_proved": false
+    },
+    {
+      "name": "preview_root_samples",
+      "physical_bytes": 256,
+      "ranges": 1,
+      "source_paths": [
+        "Source/D3D/Data/PreviewRootSamples.asm"
+      ],
+      "limit": "числовая форма и исходные отличия проверены, штатный потребитель неизвестен",
+      "document": "Docs/PreviewRootSamples.md",
+      "all_game_consumers_and_writers_proved": false
+    },
+    {
+      "name": "action_extra_polygon_pairs",
+      "physical_bytes": 175,
+      "ranges": 31,
+      "source_paths": [
+        "Source/Action/Data/PolygonExtraMasks/EvenLeft0.asm",
+        "Source/Action/Data/PolygonExtraMasks/EvenRight0.asm",
+        "Source/Action/Data/PolygonExtraMasks/EvenLeft1.asm",
+        "Source/Action/Data/PolygonExtraMasks/EvenRight1.asm",
+        "Source/Action/Data/PolygonExtraMasks/EvenLeft2.asm",
+        "Source/Action/Data/PolygonExtraMasks/EvenRight2.asm",
+        "Source/Action/Data/PolygonExtraMasks/EvenLeft3.asm",
+        "Source/Action/Data/PolygonExtraMasks/EvenRight3.asm",
+        "Source/Action/Data/PolygonExtraMasks/EvenLeft4.asm",
+        "Source/Action/Data/PolygonExtraMasks/EvenRight4.asm",
+        "Source/Action/Data/PolygonExtraMasks/EvenLeft5.asm",
+        "Source/Action/Data/PolygonExtraMasks/EvenRight5.asm",
+        "Source/Action/Data/PolygonExtraMasks/EvenLeft6.asm",
+        "Source/Action/Data/PolygonExtraMasks/EvenRight6.asm",
+        "Source/Action/Data/PolygonExtraMasks/EvenLeft7.asm",
+        "Source/Action/Data/PolygonExtraMasks/EvenRight7.asm",
+        "Source/Action/Data/PolygonExtraMasks/OddLeft0.asm",
+        "Source/Action/Data/PolygonExtraMasks/OddRight0.asm",
+        "Source/Action/Data/PolygonExtraMasks/OddLeft1.asm",
+        "Source/Action/Resources/OddRightPhase2Mode5Or.bin",
+        "Source/Action/Data/PolygonExtraMasks/OddRight2.asm",
+        "Source/Action/Data/PolygonExtraMasks/OddLeft3.asm",
+        "Source/Action/Data/PolygonExtraMasks/OddRight3.asm",
+        "Source/Action/Data/PolygonExtraMasks/OddLeft4.asm",
+        "Source/Action/Data/PolygonExtraMasks/OddRight4.asm",
+        "Source/Action/Data/PolygonExtraMasks/OddLeft5.asm",
+        "Source/Action/Data/PolygonExtraMasks/OddRight5.asm",
+        "Source/Action/Data/PolygonExtraMasks/OddLeft6.asm",
+        "Source/Action/Data/PolygonExtraMasks/OddRight6.asm",
+        "Source/Action/Data/PolygonExtraMasks/OddLeft7.asm",
+        "Source/Action/Data/PolygonExtraMasks/OddRight7.asm"
+      ],
+      "limit": "чтения AND и OR подтверждены для принудительных индексов 5..7, их штатный выбор не установлен",
+      "document": "Docs/ActionPolygonExtraMaskPairs.md",
+      "all_game_consumers_and_writers_proved": false
+    },
+    {
+      "name": "bd2_mask_pixel_tail",
+      "physical_bytes": 720,
+      "ranges": 1,
+      "source_paths": [
+        "Source/Resources/42_BD2/UnindexedMaskPixelPairs.bin"
+      ],
+      "limit": "проверены исходные пары маски и пикселей, геометрия и игровой потребитель не установлены",
+      "document": "Docs/FighterAssets.md",
+      "all_game_consumers_and_writers_proved": false
+    },
+    {
+      "name": "action_transferred_context",
+      "physical_bytes": 252,
+      "ranges": 3,
+      "source_paths": [
+        "Source/Action/Resources/InitialTransferredContextMiddle.bin",
+        "Source/Action/Data/ContextControlPairs.asm",
+        "Source/Action/Resources/InitialTransferredContextTail.bin"
+      ],
+      "limit": "установлено назначение переноса состояния, отдельные потребители ACTION ещё требуют подтверждения",
+      "document": "Docs/ActionContextTail.md",
+      "all_game_consumers_and_writers_proved": false
+    },
+    {
+      "name": "station_save_transfer_trailers",
+      "physical_bytes": 203,
+      "ranges": 7,
+      "source_paths": [
+        "Source/Station/Resources/InitialTransferTrailer.bin",
+        "Source/Resources/11_SAVE1/InitialTransferTrailer.bin",
+        "Source/Resources/12_SAVE2/InitialTransferTrailer.bin",
+        "Source/Resources/13_SAVE3/InitialTransferTrailer.bin",
+        "Source/Resources/14_SAVE4/InitialTransferTrailer.bin",
+        "Source/Resources/15_SAVE5/InitialTransferTrailer.bin",
+        "Source/Resources/16_SAVE0/InitialTransferTrailer.bin"
+      ],
+      "limit": "подтверждены сохранение и границы двух переносов, значение отдельных байтов остаётся открытым",
+      "document": "Docs/SavedStateLayout.md",
+      "all_game_consumers_and_writers_proved": false
+    },
+    {
+      "name": "station_order_compatible_slots",
+      "physical_bytes": 336,
+      "ranges": 7,
+      "source_paths": [
+        "Source/Station/Data/OrderCompatibleSlots.asm",
+        "Source/Resources/11_SAVE1/OrderCompatibleSlots.asm",
+        "Source/Resources/12_SAVE2/OrderCompatibleSlots.asm",
+        "Source/Resources/13_SAVE3/OrderCompatibleSlots.asm",
+        "Source/Resources/14_SAVE4/OrderCompatibleSlots.asm",
+        "Source/Resources/15_SAVE5/OrderCompatibleSlots.asm",
+        "Source/Resources/16_SAVE0/OrderCompatibleSlots.asm"
+      ],
+      "limit": "три записи совпадают с ORDER после переноса, потребитель и отдельные поля неизвестны",
+      "document": "Docs/StationOrderCompatibleSlots.md",
+      "all_game_consumers_and_writers_proved": false
+    }
+  ],
+  "classified_format_or_extent_bytes_with_unproved_game_use": 119903,
+  "unclassified_bytes": 15519,
+  "complete_unknown_resource_graph_proved": false,
+  "full_semantic_analysis_complete": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

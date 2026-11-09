@@ -1,5 +1,6 @@
                 module Action
                 module ReadRenderQueue
+                ; Физические поля [очередь и параметры](../../Docs/ActionQueueParameterPhysicalData.md)
                 ; Документация [алгоритм и проверка](../../Docs/ActionRenderQueueControl.md)
                 ; -----------------------------------------
                 ; Восстановление стека чтения очереди и загрузка снимка узла с обновлением AY

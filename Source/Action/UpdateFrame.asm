@@ -1,5 +1,6 @@
                 module Action
                 module UpdateFrame
+                ; Физическое состояние [панель и счётчик](../../Docs/ActionPanelPhysicalData.md)
                 ; Внутренние входы [алгоритм](../../Docs/GraphicsStateInternalLabels.md)
                 ; Документация [порядок вызовов кадра](../../Docs/ActionFlightCycle.md)
                 ; Документация [пороговые и событийные ветки кадра](../../Docs/ActionFrameGates.md)
@@ -69,11 +70,11 @@ BeginScene:     CALL @Action.ScheduleSpawn.Entry
                 LD (#A794), A
                 LD A, #02
                 LD (#664A), A
-                ; Обновление третьей шкалы по переполнению накопителя фазы.
+                ; Обновление фазы третьей шкалы, поле 05 ApplyParameterSet задаёт ThirdGaugeStep, исходно 14.
 StepGaugePhase: LD A, #00
                 ADD A, #14
                 LD (#A8B3), A
-                JR NC, @Action.UpdateFrame.UpdateRecords                        ; переход, если прибавление 20 к фазе не переполнило байт
+                JR NC, @Action.UpdateFrame.UpdateRecords                        ; переход, если прибавление текущего ThirdGaugeStep не переполнило байт
 
 
                 LD A, #00
@@ -85,8 +86,9 @@ StepGaugePhase: LD A, #00
                 LD (#A8BC), A
                 LD (#666B), A
 UpdateRecords:  CALL @Action.UpdateObjects.Entry
+                ; Очистка старшего байта первого компонента особой родительской записи.
                 XOR A
-                LD (#A781), A
+                LD (@ActionSpecialRecord.Value.Component0 + 1), A
                 CALL @Action.SubtractScaledWorkVector.Entry
                 CALL @Action.UpdateBodyMotion.Entry
                 CALL @Action.UpdateVisualEffects.Entry
@@ -175,11 +177,11 @@ CheckDrain:     BIT 2, C
                 LD (#A794), A
                 LD A, #01
                 LD (#664A), A
-                ; Восстановление первой шкалы по переполнению отдельного накопителя фазы.
+                ; Обновление фазы восстановления, поле 03 ApplyParameterSet задаёт RegenPhaseStep, исходно 50.
 StepRegenPhase: LD A, #00
                 ADD A, #50
                 LD (#A966), A
-                JR NC, @Action.UpdateFrame.BeginEffects                         ; переход, если прибавление 80 к фазе не переполнило байт
+                JR NC, @Action.UpdateFrame.BeginEffects                         ; переход, если прибавление текущего RegenPhaseStep не переполнило байт
 
 
                 LD A, (#A794)
@@ -192,95 +194,99 @@ StepRegenPhase: LD A, #00
                 LD A, #01
                 LD (#664A), A
 BeginEffects:   CALL @Action.UpdateAyEffects.Entry
-                ; Выбор банка 4 для трёх групп XOR 60 в OBJECT3D, совпадающие адреса ACTION банка 0 не меняются.
+                ; Выбор банка 4 для трёх групп заголовков граней OBJECT3D.
+                ; [Физические поля и проверка банков](../../Docs/ActionBank4Writes.md)
                 LD A, #14
                 CALL @Action.SelectMemoryPage.Entry
-                LD A, (#D408)
-                XOR #60
-                LD (#D408), A
-                LD A, (#D6CC)
-                XOR #60
-                LD (#D6CC), A
-                LD (#D77A), A
-                LD (#D7C1), A
-                LD (#D82D), A
-                LD (#DA61), A
-                LD (#DA9E), A
-                LD (#C09F), A
-                LD (#C13A), A
-                LD (#D138), A
-                LD (#D1BA), A
-                LD (#C1DC), A
-                LD (#C2B8), A
-                LD (#C301), A
-                LD (#C370), A
-                LD (#C3D5), A
-                LD (#C44E), A
-                LD (#C545), A
-                LD (#C649), A
-                LD (#C6B2), A
-                LD (#D222), A
-                LD (#C787), A
-                LD (#C820), A
-                LD (#C92F), A
-                LD (#D3CF), A
-                LD (#D3F9), A
-                LD (#D3FE), A
-                LD (#D53B), A
-                LD (#CA96), A
-                LD (#D67D), A
-                LD (#CB9F), A
-                LD (#CBA4), A
-                LD (#CC77), A
-                LD (#CCE5), A
-                LD (#CD79), A
-                LD (#CDC3), A
-                LD (#CE28), A
-                LD (#CE6C), A
-                LD (#CE9D), A
-                LD (#CF47), A
-                LD (#CF9C), A
-                LD (#CFEF), A
-                LD (#D083), A
-                LD (#D0C6), A
-                LD (#D0CB), A
-                LD (#D0D0), A
-                LD (#D0D5), A
-                LD A, (#D873)
-                XOR #60
-                LD (#D873), A
-                LD (#D877), A
-                LD (#D87B), A
-                LD (#D87F), A
-                LD (#D883), A
-                LD (#D887), A
-                LD (#D88B), A
-                LD (#D88F), A
-                LD (#C243), A
-                LD (#C247), A
-                LD (#C5CA), A
-                LD (#C5E7), A
-                LD (#C672), A
-                LD (#C6AE), A
-                LD (#D34D), A
-                LD (#D355), A
-                LD (#D359), A
-                LD (#D2DE), A
-                LD (#D2FD), A
-                LD (#C733), A
-                LD (#C765), A
-                LD (#C9A2), A
-                LD (#C9C4), A
-                LD (#CA24), A
-                LD (#CA2F), A
-                LD (#D5C9), A
-                LD (#D5D1), A
-                LD (#CB29), A
-                LD (#CB39), A
-                LD (#CE0E), A
-                LD (#CE1C), A
-                LD (#D0F2), A
-                LD (#D0F6), A
+                ; Переключение материала одной восьмиугольной грани.
+                LD A, (@ActionModels.R13D5_04.Header)
+                XOR @ActionPacketRendererConst.MaterialToggle
+                LD (@ActionModels.R13D5_04.Header), A
+                ; Переключение общего материала группы четырёхугольных граней.
+                LD A, (@ActionModels.R1683_0C.Header)
+                XOR @ActionPacketRendererConst.MaterialToggle
+                LD (@ActionModels.R1683_0C.Header), A
+                LD (@ActionModels.R16E0_1B.Header), A
+                LD (@ActionModels.R1780_0A.Header), A
+                LD (@ActionModels.R17DF_0D.Header), A
+                LD (@ActionModels.R1A1E_0D.Header), A
+                LD (@ActionModels.R1A6B_09.Header), A
+                LD (@ActionModels.R0040_10.Header), A
+                LD (@ActionModels.R00CC_11.Header), A
+                LD (@ActionModels.R1103_07.Header), A
+                LD (@ActionModels.R1150_11.Header), A
+                LD (@ActionModels.R0167_14.Header), A
+                LD (@ActionModels.R0271_0C.Header), A
+                LD (@ActionModels.R02BE_0B.Header), A
+                LD (@ActionModels.R0329_0B.Header), A
+                LD (@ActionModels.R03AE_05.Header), A
+                LD (@ActionModels.R03F1_10.Header), A
+                LD (@ActionModels.R04B2_17.Header), A
+                LD (@ActionModels.R0602_0A.Header), A
+                LD (@ActionModels.R064F_0E.Header), A
+                LD (@ActionModels.R11F9_04.Header), A
+                LD (@ActionModels.R06EA_1E.Header), A
+                LD (@ActionModels.R07C6_0D.Header), A
+                LD (@ActionModels.R08A0_1A.Header), A
+                LD (@ActionModels.R1398_08.Header), A
+                LD (@ActionModels.R13D5_01.Header), A
+                LD (@ActionModels.R13D5_02.Header), A
+                LD (@ActionModels.R14BE_15.Header), A
+                LD (@ActionModels.R0A40_09.Header), A
+                LD (@ActionModels.R1622_10.Header), A
+                LD (@ActionModels.R0B7A_02.Header), A
+                LD (@ActionModels.R0B7A_03.Header), A
+                LD (@ActionModels.R0C11_11.Header), A
+                LD (@ActionModels.R0CA5_09.Header), A
+                LD (@ActionModels.R0D10_11.Header), A
+                LD (@ActionModels.R0D8B_09.Header), A
+                LD (@ActionModels.R0DC9_0E.Header), A
+                LD (@ActionModels.R0E36_07.Header), A
+                LD (@ActionModels.R0E82_00.Header), A
+                LD (@ActionModels.R0F11_06.Header), A
+                LD (@ActionModels.R0F61_06.Header), A
+                LD (@ActionModels.R0FA2_0E.Header), A
+                LD (@ActionModels.R1047_09.Header), A
+                LD (@ActionModels.R1089_0A.Header), A
+                LD (@ActionModels.R1089_0B.Header), A
+                LD (@ActionModels.R1089_0C.Header), A
+                LD (@ActionModels.R1089_0D.Header), A
+                ; Переключение общего материала группы треугольных граней.
+                LD A, (@ActionModels.R1864_00.Header)
+                XOR @ActionPacketRendererConst.MaterialToggle
+                LD (@ActionModels.R1864_00.Header), A
+                LD (@ActionModels.R1864_01.Header), A
+                LD (@ActionModels.R1864_02.Header), A
+                LD (@ActionModels.R1864_03.Header), A
+                LD (@ActionModels.R1864_04.Header), A
+                LD (@ActionModels.R1864_05.Header), A
+                LD (@ActionModels.R1864_06.Header), A
+                LD (@ActionModels.R1864_07.Header), A
+                LD (@ActionModels.R0202_08.Header), A
+                LD (@ActionModels.R0202_09.Header), A
+                LD (@ActionModels.R056F_0A.Header), A
+                LD (@ActionModels.R056F_10.Header), A
+                LD (@ActionModels.R064F_00.Header), A
+                LD (@ActionModels.R064F_0D.Header), A
+                LD (@ActionModels.R1308_07.Header), A
+                LD (@ActionModels.R1308_09.Header), A
+                LD (@ActionModels.R1308_0A.Header), A
+                LD (@ActionModels.R128A_0B.Header), A
+                LD (@ActionModels.R128A_12.Header), A
+                LD (@ActionModels.R06EA_0A.Header), A
+                LD (@ActionModels.R06EA_16.Header), A
+                LD (@ActionModels.R0935_11.Header), A
+                LD (@ActionModels.R0935_18.Header), A
+                LD (@ActionModels.R09F7_05.Header), A
+                LD (@ActionModels.R09F7_08.Header), A
+                LD (@ActionModels.R157E_0C.Header), A
+                LD (@ActionModels.R157E_0E.Header), A
+                LD (@ActionModels.R0B13_01.Header), A
+                LD (@ActionModels.R0B13_05.Header), A
+                LD (@ActionModels.R0DC9_08.Header), A
+                LD (@ActionModels.R0DC9_0B.Header), A
+                LD (@ActionModels.R10DB_02.Header), A
+                LD (@ActionModels.R10DB_03.Header), A
                 LD A, #10
                 CALL @Action.SelectMemoryPage.Entry
                 CALL @Action.UpdatePanelGauges.Entry
@@ -292,7 +298,8 @@ BeginEffects:   CALL @Action.UpdateAyEffects.Entry
 
                 LD A, #05
 StorePanelAttr: LD (#5A1A), A
-                LD A, #00
+                ; Чтение режима отображения, 1 пропускает вызов, 2 выбирает короткие рамки, 3 полный проход.
+OverlayMode:    LD A, #00
                 DEC A
                 EX AF, AF'
                 LD A, #11

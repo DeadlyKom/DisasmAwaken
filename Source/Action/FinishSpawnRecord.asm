@@ -7,6 +7,7 @@
                 ; In:
                 ;   IX указывает создаваемую запись, класс, модель и начальное состояние уже заданы
                 ;   доступны потоки случайных слов 12, 13 и состояние потока 3, OBJECT3D находится в странице 4
+                ;   SpawnField11, SpawnValueMask и SpawnValueCap являются изменяемыми операндами, ApplyParameterSet задаёт их полями 0E, 0C и 0D
                 ; Out:
                 ;   Entry обнуляет байт 07, InitParameters заполняет поля по классу, потоку и R
                 ;   ReadHeader может вызываться отдельно, байт 25 получает 1 при показателе 4, иначе 2
@@ -14,12 +15,14 @@
                 ; Corrupt:
                 ;   HL, DE, BC, AF, HL', DE', BC', R, поля записи, потоки, временные слова и 7FFD
                 ; Note:
-                ;   пересечение масок #55 и #2A равно нулю, поле 11 на основном пути получает #20
+                ;   пересечение масок #55 и #2A равно нулю, поле 11 на основном пути получает SpawnField11, исходно 20
+                ;   кандидат поля 13 равен L OR SpawnValueMask, при кандидате не меньше SpawnValueCap записывается cap-1 по модулю 256
+                ;   исходные mask=32 и cap=64 дают min(99,L OR 32), изменяемый cap=00 даёт FF, класс 8 позже заменяет поле 13 на F0
                 ;   последовательные проверки класса #06 и #07 используют тот же A, специальные записи между ними и StoreState недостижимы
                 ; -----------------------------------------
                 ; Сброс первого байта смещения перед инициализацией.
 Entry:          LD (IX + @FActionRecord.OffsetPhase0), #00
-                ; Продвижение потока 12, непересекающиеся маски оставляют постоянный #20.
+                ; Продвижение потока 12, непересекающиеся маски оставляют изменяемый SpawnField11.
 InitParameters: CALL @Action.NextRandomWord12.Entry
                 LD A, L
                 AND #55
@@ -27,6 +30,7 @@ InitParameters: CALL @Action.NextRandomWord12.Entry
                 LD A, H
                 AND #2A
                 AND L
+                ; Подстановка SpawnField11, исходно 20, поле 0E ApplyParameterSet меняет операнд.
                 OR #20
                 LD (IX + @FActionRecord.Unknown11), A
                 LD (IX + @FActionRecord.LinkFlags), #00
@@ -40,10 +44,11 @@ InitParameters: CALL @Action.NextRandomWord12.Entry
                 CALL @Action.NextRandomWord13.Entry
                 LD E, H
                 LD A, L
+                ; Расчёт кандидата через SpawnValueMask и чтение SpawnValueCap, исходно 32 и 64.
                 OR #32
                 LD H, #64
                 CP H
-                JR C, @Action.FinishSpawnRecord.StoreLimit                      ; переход, если кандидат меньше #64
+                JR C, @Action.FinishSpawnRecord.StoreLimit                      ; переход, если кандидат меньше текущего SpawnValueCap, сохранить кандидата
 
                 LD A, H
                 DEC A

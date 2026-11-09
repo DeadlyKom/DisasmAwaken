@@ -1,0 +1,74 @@
+{
+  "passed": true,
+  "total_cases": 486,
+  "paths": {
+    "left_then_corner_mark": 76,
+    "left_then_corner_request": 152,
+    "top_intersection": 258
+  },
+  "examples": {
+    "left_then_corner_mark": {
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          -256,
+          -256
+        ]
+      ],
+      "seen": 0,
+      "block": 0,
+      "immediate_return": 28494,
+      "sp_after_clip": 49142,
+      "final_PC": 28501
+    },
+    "left_then_corner_request": {
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          -256,
+          -256
+        ]
+      ],
+      "seen": 8,
+      "block": 0,
+      "immediate_return": 28494,
+      "sp_after_clip": 49142,
+      "final_PC": 28501
+    },
+    "top_intersection": {
+      "points": [
+        [
+          127,
+          0
+        ],
+        [
+          -256,
+          -256
+        ]
+      ],
+      "seen": 0,
+      "block": 0,
+      "immediate_return": 28494,
+      "sp_after_clip": 49142,
+      "final_PC": 28501
+    }
+  },
+  "real_keyboard_scan_first_handler_clip_and_return_executed": true,
+  "prepared_valid_clip_coordinates": true,
+  "geometry_initialized_by_game_before_key_not_proved": true,
+  "exact_registers_except_R_T_all_banks_and_write_multiplicity_compared_at_clip_return": true,
+  "original_keyboard_frame_used_without_substitution": true,
+  "all_three_abstract_paths_end_in_normal_RET": true,
+  "geometry_finish_C993_bypassed": true,
+  "RestoreKeyScanFrame_returns_to_decay_with_original_SP": true,
+  "stopped_before_decay": true,
+  "author_intent_proved": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

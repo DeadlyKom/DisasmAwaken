@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "total_cases": 262144,
+  "profiles": {
+    "all_bias_maximum_pairs": 65536,
+    "all_scheduler_limit_random_low_pairs": 65536,
+    "all_saved_limit_low_pairs": 65536,
+    "all_saved_limit_high_pairs": 65536
+  },
+  "outcomes": {
+    "saved_accepted": 32896,
+    "saved_rejected": 32640
+  },
+  "actual_apply_parameter_set_executed": true,
+  "actual_consumers_executed": true,
+  "actual_stream0_executed": true,
+  "field06_duplicates_initial_limit_and_bias_base": true,
+  "field06_later_limit_recalculation": true,
+  "bias_saturates_at_ff": true,
+  "maximum_below_1c_preserves_limit": true,
+  "saved_word_requires_high_23": true,
+  "saved_low_limit_zero_accepts_all_low_bytes": true,
+  "all_joint_inputs_exhausted": false,
+  "full_spawn_or_body_update_executed": false,
+  "refresh_irq_native_execution_proved": false,
+  "assembly_executed": false
+}

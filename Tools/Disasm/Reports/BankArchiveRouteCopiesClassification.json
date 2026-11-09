@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "typed_bytes": 1200,
+  "physical_records": 24,
+  "physical_symbols": 648,
+  "files": 4,
+  "original_routes_copied": 24,
+  "route_copy_source_disk_offset": 606319,
+  "runtime_read_of_bank_copies_proved": false,
+  "original_bytes_addresses_and_instructions_preserved": true,
+  "gaps_preserved": true,
+  "invalid_pair_gameplay_proved": false,
+  "cf08_reclassified": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

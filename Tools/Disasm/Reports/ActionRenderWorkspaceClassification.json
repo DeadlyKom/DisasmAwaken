@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "classified_resource_bytes": 508,
+  "resources": 2,
+  "runtime_queue_nodes": 18,
+  "runtime_node_stride": 14,
+  "clip_output_page_bytes": 256,
+  "unknown_neighbor_bytes": 60,
+  "original_bytes_preserved": true,
+  "generated_values_not_serialized": true,
+  "assembly_executed": false
+}

@@ -31,3 +31,15 @@
 и внешний стек. Все чтения клавиатуры возвращали `#FF`. Эта модель
 охватывает полный проход без выбора обработчика.
 [Результаты](../Tools/Disasm/Reports/ActionMotionWithoutKeysVerification.json)
+
+## Самомодификация начала хвоста
+
+[ToggleFreeFlightMode](../Source/Action/ToggleFreeFlightMode.asm) заменяет исходный опкод 3A по 6E72 на C9 либо восстанавливает 3A. При C9 оба предшествующих вызова уже выполнены, но три последующих умножения и записи Component0..2 пропускаются. IX и прочие регистры остаются результатом предшествующих процедур, их сохранение на полном входе этим не утверждается. Произвольные иные опкоды договором не охвачены. [Алгоритм команды](ActionFreeFlightCommand.md).
+
+[Отдельная модель возвратного хвоста](../Tools/Disasm/Research/CheckActionFreeFlightReturnTail.py) начинает с 6E72 после доказанной записи C9. В [1024 сценариях](../Tools/Disasm/Reports/ActionFreeFlightReturnTailVerification.json) проверены все F и четыре граничных R, точное сохранение регистров, один M1, SP+2 и неизменность всей RAM. Предшествующие StepNearZeroWord и ScanActionKeys в этой проверке не исполняются. Эта проверка не заменяет полного исполнения UpdateMotionFromControls или нативной игры.
+
+## Пары направления вида
+
+[ToggleViewDirection](../Source/Action/ToggleViewDirection.asm) создаёт по 6E75, 6E88 и 6E9B три согласованные пары 0000 либо ED44. Две NOP сохраняют загруженный C2i, NEG даёт эффективный коэффициент (-C2i) AND FF. Исходный коэффициент 80 остаётся 80, особенность MultiplySignedScaled с нулевым модулем не исправляется. Две NOP и NEG занимают по два байта и два M1.
+
+[65536 сценариев заднего хвоста](../Tools/Disasm/Reports/ActionMotionRearTailVerification.json) действительно исполняют все три NEG и проверяют результаты, регистры, флаги, R и внешний возврат. Предшествующие вызовы и все побочные записи RAM этой моделью отдельно не проверяются. [Модель](../Tools/Disasm/Research/CheckActionMotionVectorTail.py) запускает этот вариант аргументом --rear. [Создание пар и его отдельная проверка](ActionViewDirectionCommand.md).

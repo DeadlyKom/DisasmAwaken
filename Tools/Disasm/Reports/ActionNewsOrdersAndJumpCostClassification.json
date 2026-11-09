@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "typed_bytes": 72,
+  "physical_records": 6,
+  "physical_symbols": 76,
+  "files": 3,
+  "note_backed_bytes": 71,
+  "news_record_bytes": 7,
+  "order_records": 4,
+  "order_record_bytes": 16,
+  "hyper_jump_cost_read_sites": [
+    28936,
+    28967
+  ],
+  "initial_hyper_jump_cost": 0,
+  "covered_by_hyper_reload_9BBD_9D9D": true,
+  "known_direct_cost_writer": false,
+  "all_game_consumers_and_writers_proved": false,
+  "original_bytes_addresses_and_instructions_preserved": true,
+  "gaps_preserved": true,
+  "invalid_pair_gameplay_proved": false,
+  "cf08_reclassified": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

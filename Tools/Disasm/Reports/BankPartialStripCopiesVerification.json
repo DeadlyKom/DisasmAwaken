@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "reference_slot": 36,
+  "reference_offset": 9820,
+  "reference_header_hex": "80495a",
+  "copies": [
+    {
+      "slot": 37,
+      "offset": 9820,
+      "end": 10144,
+      "bytes": 324,
+      "raster_bytes": 321,
+      "declared_height": 90,
+      "sha256": "bfcdb7781b7ca24f7fb4b94c325ea2bd995ee286345a690579b76c4ffc3517a8",
+      "source": "Source/Resources/37_BANK4/PartialStripCopy.asm"
+    },
+    {
+      "slot": 38,
+      "offset": 9820,
+      "end": 9904,
+      "bytes": 84,
+      "raster_bytes": 81,
+      "declared_height": 90,
+      "sha256": "90765453fca4d3261d7f185491ef1517df269d69463d9b89e4e4eb366987eff8",
+      "source": "Source/Resources/38_BANK5/PartialStripCopy.asm"
+    }
+  ],
+  "partial_copy_bytes": 408,
+  "remaining_bank_gap_bytes": 8850,
+  "game_callers_proved": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

@@ -48,6 +48,7 @@ def main():
         sim.run(0x6500, 0x5D3B, interrupts=True)
         assert trace.polls == min(300, frames + 1), frames
         assert sim.registers[SP] == (0x5FFF if frames == 300 else 0x5FF9), frames
+        assert bytes(memory[0x65B4:0x65B6]) == bytes.fromhex('FF 5F')
         assert bytes(memory[0x5D3B:0x5D3B + 0x100]) == bytes(flat[0x65B7:0x66B7])
         assert bytes(memory[0x6E31:0x6ECB]) == bytes(flat[0x8931:0x89CB])
         sim.run(0x5D3B, 0x3D13, interrupts=True)
@@ -74,6 +75,7 @@ def main():
         assert bytes(memory[r[SP]:r[SP] + 2]) == b'\x00\x63' and r[SP] == 0x5FFD
     report = dict(passed=True, total_cases=4, actual_final_effect_frames=[0, 1, 2, 300],
                   actual_intro_initialization_and_screen_unpack=True, real_rom_executed=True,
+                  saved_intro_stack_address=0x65B4, saved_intro_stack_value=0x5FFF,
                   trdos_search_and_info_stubbed=True, stops_at_sector_read_entry=True, assembly_executed=False)
     (ROOT / 'Tools/Disasm/Reports/IntroStationTransitionVerification.json').write_text(
         json.dumps(report, indent=2) + '\n', encoding='utf-8')

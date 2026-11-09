@@ -399,7 +399,76 @@
                 ent
                 assert $ == #1333
                 ; Unknown, остальные обработчики ещё не разобраны
-                incbin "../Resources/17_ACTION/Unclassified017_AfterMissileStock.bin"
+                assert $ == #1333
+                ; Unknown, соседний диапазон сохраняется без классификации
+                assert $ == #1333
+                ; Unknown, соседний диапазон сохраняется без классификации
+                assert $ == #1333
+                disp #70F6
+                include "../Action/RequestHyperJump.asm"                        ; (0) жёсткий порядок, последовательное исполнение
+                ent
+                assert $ == #13B3
+                ; Unknown, соседний диапазон сохраняется без классификации
+                assert $ == #13B3
+                disp #7176
+                include "../Action/PrepareHyperJumpRelay.asm"                   ; (1) жёсткий порядок, последовательное исполнение
+                ent
+                assert $ == #1408
+                ; Unknown, соседний диапазон сохраняется без классификации
+                assert $ == #1408
+                disp #4200
+                include "../Action/ReloadActionAfterHyperJump.asm"
+                ent
+                assert $ == #1462
+                ; Unknown, соседний диапазон сохраняется без классификации
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/ActionHyperReload.md)
+                assert $ == #1462
+                disp #425A
+                include "../Action/Data/HyperReloadFileKey.asm"
+                ent
+                assert $ == #146B
+                disp #722E
+                include "../Action/ActivateAntimissileSystem.asm"
+                ent
+                assert $ == #14FB
+                disp #72BE
+                include "../Action/ClearMissileTargets.asm"
+                ent
+                assert $ == #151F
+                disp #72E2
+                include "../Action/ToggleTargetRequest.asm"
+                ent
+                assert $ == #1554
+                ; Unknown, соседний диапазон сохраняется без классификации
+                assert $ == #1554
+                ; Unknown, соседний диапазон сохраняется без классификации
+                assert $ == #1554
+                ; Unknown, соседний диапазон сохраняется без классификации
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/ActionTractorCollect.md)
+                assert $ == #1554
+                ; Unknown, соседние байты не объявляются свободными
+                assert $ == #1554
+                disp #7317
+                include "../Action/RequestAimOrCollectTarget.asm"
+                ent
+                assert $ == #165A
+                disp #741D
+                include "../Action/Data/TractorCargoRules.asm"
+                ent
+                assert $ == #1676
+                disp #7439
+                include "../Action/ToggleTractorMode.asm"
+                ent
+                assert $ == #16BD
+                disp #7480
+                include "../Action/CycleTargetOverlayMode.asm"
+                ent
+                assert $ == #16E0
+                ; Unknown, соседний диапазон сохраняется без классификации
+                assert $ == #16E0
+                disp #74A3
+                include "../Action/RequestBoost.asm"
+                ent
                 assert $ == #1738
                 disp #74FB
                 include "../Action/SelectPreferredByte.asm"
@@ -409,7 +478,38 @@
                 assert $ == #1741
                 assert $ == #1741
                 ; Unknown, соседние байты вне доказанного входа IncreaseGaugeWord
-                incbin "../Resources/17_ACTION/Unclassified018_BeforeGaugeKeys.bin"
+                assert $ == #1741
+                ; Unknown, соседний диапазон сохраняется без классификации
+                assert $ == #1741
+                disp #7504
+                include "../Action/AdvanceBoost.asm"
+                ent
+                assert $ == #1789
+                disp #754C
+                include "../Action/ToggleFreeFlightMode.asm"
+                ent
+                assert $ == #17D1
+                ; Unknown, соседний диапазон сохраняется без классификации
+                assert $ == #17D1
+                ; Unknown, соседний диапазон сохраняется без классификации
+                assert $ == #17D1
+                disp #7594
+                include "../Action/EjectCargo.asm"
+                ent
+                assert $ == #180C
+                disp #75CF
+                include "../Action/EjectMine.asm"
+                ent
+                assert $ == #1843
+                disp #7606
+                include "../Action/RequestStationReturn.asm"
+                ent
+                assert $ == #1867
+                ; Unknown, соседний диапазон сохраняется без классификации
+                assert $ == #1867
+                disp #762A
+                include "../Action/ToggleViewDirection.asm"
+                ent
                 assert $ == #18BD
                 disp #7680
                 include "../Action/IncreaseGaugeWord.asm"
@@ -496,7 +596,375 @@
                 incbin "../Action/Resources/InitialLinearBufferTail.bin"
                 assert $ == #2C00
                 ; Unknown, промежуток 8C00..90FF не классифицирован этим разбором
-                incbin "../Resources/17_ACTION/Unclassified2C00_3100.bin"
+                ; Документация [физические ячейки проекции](../../Docs/ActionProjectedPointsData.md)
+                assert $ == #2C00
+                ; Unknown, соседняя рабочая память не классифицирована этой типизацией
+                ; Документация [физические входные состояния](../../Docs/ActionRasterWorkData.md)
+                assert $ == #2C00
+                ; Unknown, соседнее состояние требует отдельного разбора
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/PolygonFillPhysicalData.md)
+                assert $ == #2C00
+                disp #8C00
+                include "../Action/Data/PolygonMasks/EvenLeft0.asm"
+                ent
+                assert $ == #2C0A
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/ActionPolygonExtraMaskPairs.md)
+                assert $ == #2C0A
+                disp #8C0A
+                include "../Action/Data/PolygonExtraMasks/EvenLeft0.asm"
+                ent
+                assert $ == #2C10
+                disp #8C10
+                include "../Action/Data/PolygonMasks/EvenRight0.asm"
+                ent
+                assert $ == #2C1A
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/ActionPolygonExtraMaskPairs.md)
+                assert $ == #2C1A
+                disp #8C1A
+                include "../Action/Data/PolygonExtraMasks/EvenRight0.asm"
+                ent
+                assert $ == #2C20
+                disp #8C20
+                include "../Action/Data/PolygonMasks/EvenLeft1.asm"
+                ent
+                assert $ == #2C2A
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/ActionPolygonExtraMaskPairs.md)
+                assert $ == #2C2A
+                disp #8C2A
+                include "../Action/Data/PolygonExtraMasks/EvenLeft1.asm"
+                ent
+                assert $ == #2C30
+                disp #8C30
+                include "../Action/Data/PolygonMasks/EvenRight1.asm"
+                ent
+                assert $ == #2C3A
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/ActionPolygonExtraMaskPairs.md)
+                assert $ == #2C3A
+                disp #8C3A
+                include "../Action/Data/PolygonExtraMasks/EvenRight1.asm"
+                ent
+                assert $ == #2C40
+                disp #8C40
+                include "../Action/Data/PolygonMasks/EvenLeft2.asm"
+                ent
+                assert $ == #2C4A
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/ActionPolygonExtraMaskPairs.md)
+                assert $ == #2C4A
+                disp #8C4A
+                include "../Action/Data/PolygonExtraMasks/EvenLeft2.asm"
+                ent
+                assert $ == #2C50
+                disp #8C50
+                include "../Action/Data/PolygonMasks/EvenRight2.asm"
+                ent
+                assert $ == #2C5A
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/ActionPolygonExtraMaskPairs.md)
+                assert $ == #2C5A
+                disp #8C5A
+                include "../Action/Data/PolygonExtraMasks/EvenRight2.asm"
+                ent
+                assert $ == #2C60
+                disp #8C60
+                include "../Action/Data/PolygonMasks/EvenLeft3.asm"
+                ent
+                assert $ == #2C6A
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/ActionPolygonExtraMaskPairs.md)
+                assert $ == #2C6A
+                disp #8C6A
+                include "../Action/Data/PolygonExtraMasks/EvenLeft3.asm"
+                ent
+                assert $ == #2C70
+                disp #8C70
+                include "../Action/Data/PolygonMasks/EvenRight3.asm"
+                ent
+                assert $ == #2C7A
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/ActionPolygonExtraMaskPairs.md)
+                assert $ == #2C7A
+                disp #8C7A
+                include "../Action/Data/PolygonExtraMasks/EvenRight3.asm"
+                ent
+                assert $ == #2C80
+                disp #8C80
+                include "../Action/Data/PolygonMasks/EvenLeft4.asm"
+                ent
+                assert $ == #2C8A
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/ActionPolygonExtraMaskPairs.md)
+                assert $ == #2C8A
+                disp #8C8A
+                include "../Action/Data/PolygonExtraMasks/EvenLeft4.asm"
+                ent
+                assert $ == #2C90
+                disp #8C90
+                include "../Action/Data/PolygonMasks/EvenRight4.asm"
+                ent
+                assert $ == #2C9A
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/ActionPolygonExtraMaskPairs.md)
+                assert $ == #2C9A
+                disp #8C9A
+                include "../Action/Data/PolygonExtraMasks/EvenRight4.asm"
+                ent
+                assert $ == #2CA0
+                disp #8CA0
+                include "../Action/Data/PolygonMasks/EvenLeft5.asm"
+                ent
+                assert $ == #2CAA
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/ActionPolygonExtraMaskPairs.md)
+                assert $ == #2CAA
+                disp #8CAA
+                include "../Action/Data/PolygonExtraMasks/EvenLeft5.asm"
+                ent
+                assert $ == #2CB0
+                disp #8CB0
+                include "../Action/Data/PolygonMasks/EvenRight5.asm"
+                ent
+                assert $ == #2CBA
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/ActionPolygonExtraMaskPairs.md)
+                assert $ == #2CBA
+                disp #8CBA
+                include "../Action/Data/PolygonExtraMasks/EvenRight5.asm"
+                ent
+                assert $ == #2CC0
+                disp #8CC0
+                include "../Action/Data/PolygonMasks/EvenLeft6.asm"
+                ent
+                assert $ == #2CCA
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/ActionPolygonExtraMaskPairs.md)
+                assert $ == #2CCA
+                disp #8CCA
+                include "../Action/Data/PolygonExtraMasks/EvenLeft6.asm"
+                ent
+                assert $ == #2CD0
+                disp #8CD0
+                include "../Action/Data/PolygonMasks/EvenRight6.asm"
+                ent
+                assert $ == #2CDA
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/ActionPolygonExtraMaskPairs.md)
+                assert $ == #2CDA
+                disp #8CDA
+                include "../Action/Data/PolygonExtraMasks/EvenRight6.asm"
+                ent
+                assert $ == #2CE0
+                disp #8CE0
+                include "../Action/Data/PolygonMasks/EvenLeft7.asm"
+                ent
+                assert $ == #2CEA
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/ActionPolygonExtraMaskPairs.md)
+                assert $ == #2CEA
+                disp #8CEA
+                include "../Action/Data/PolygonExtraMasks/EvenLeft7.asm"
+                ent
+                assert $ == #2CF0
+                disp #8CF0
+                include "../Action/Data/PolygonMasks/EvenRight7.asm"
+                ent
+                assert $ == #2CFA
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/ActionPolygonExtraMaskPairs.md)
+                assert $ == #2CFA
+                disp #8CFA
+                include "../Action/Data/PolygonExtraMasks/EvenRight7.asm"
+                ent
+                assert $ == #2D00
+                disp #8D00
+                include "../Action/Data/PolygonMasks/OddLeft0.asm"
+                ent
+                assert $ == #2D0A
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/ActionPolygonExtraMaskPairs.md)
+                assert $ == #2D0A
+                disp #8D0A
+                include "../Action/Data/PolygonExtraMasks/OddLeft0.asm"
+                ent
+                assert $ == #2D10
+                disp #8D10
+                include "../Action/Data/PolygonMasks/OddRight0.asm"
+                ent
+                assert $ == #2D1A
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/ActionPolygonExtraMaskPairs.md)
+                assert $ == #2D1A
+                disp #8D1A
+                include "../Action/Data/PolygonExtraMasks/OddRight0.asm"
+                ent
+                assert $ == #2D20
+                disp #8D20
+                include "../Action/Data/PolygonMasks/OddLeft1.asm"
+                ent
+                assert $ == #2D2A
+                disp #8D2A
+                include "../Action/Data/RasterPoints.asm"
+                ent
+                assert $ == #2D2E
+                ; Unknown, соседнее состояние требует отдельного разбора
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/PolygonFillPhysicalData.md)
+                assert $ == #2D2E
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/ActionPolygonExtraMaskPairs.md)
+                assert $ == #2D2E
+                disp #8D2E
+                include "../Action/Data/PolygonExtraMasks/OddLeft1.asm"
+                ent
+                assert $ == #2D30
+                disp #8D30
+                include "../Action/Data/PolygonMasks/OddRight1.asm"
+                ent
+                assert $ == #2D3A
+                ; Unknown, соседние байты не объявляются свободными
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/ActionClippedLineWorkData.md)
+                assert $ == #2D3A
+                disp #8D3A
+                include "../Action/Data/ClipLineHead.asm"
+                ent
+                assert $ == #2D40
+                disp #8D40
+                include "../Action/Data/PolygonMasks/OddLeft2.asm"
+                ent
+                assert $ == #2D4A
+                ; Unknown, соседние байты не объявляются свободными
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/ActionClippedLineWorkData.md)
+                assert $ == #2D4A
+                disp #8D4A
+                include "../Action/Data/ClipLineTail.asm"
+                ent
+                assert $ == #2D4E
+                disp #8D4E
+                include "../Action/Data/RasterMode.asm"
+                ent
+                assert $ == #2D50
+                ; Unknown, соседнее состояние требует отдельного разбора
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/PolygonFillPhysicalData.md)
+                assert $ == #2D50
+                disp #8D50
+                include "../Action/Data/PolygonMasks/OddRight2.asm"
+                ent
+                assert $ == #2D5A
+                ; Unknown, соседние байты не объявляются свободными
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/ActionClippedLineWorkData.md)
+                assert $ == #2D5A
+                disp #8D5A
+                include "../Action/Data/FaceGate.asm"
+                ent
+                assert $ == #2D5B
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/ActionPolygonExtraMaskPairs.md)
+                assert $ == #2D5B
+                ; Буквальный операнд OR при индексе 5, правой фазе 2 и странице 8D
+                incbin "../Action/Resources/OddRightPhase2Mode5Or.bin"
+                assert $ == #2D5C
+                disp #8D5C
+                include "../Action/Data/PolygonExtraMasks/OddRight2.asm"
+                ent
+                assert $ == #2D60
+                disp #8D60
+                include "../Action/Data/PolygonMasks/OddLeft3.asm"
+                ent
+                assert $ == #2D6A
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/ActionPolygonExtraMaskPairs.md)
+                assert $ == #2D6A
+                disp #8D6A
+                include "../Action/Data/PolygonExtraMasks/OddLeft3.asm"
+                ent
+                assert $ == #2D70
+                disp #8D70
+                include "../Action/Data/PolygonMasks/OddRight3.asm"
+                ent
+                assert $ == #2D7A
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/ActionPolygonExtraMaskPairs.md)
+                assert $ == #2D7A
+                disp #8D7A
+                include "../Action/Data/PolygonExtraMasks/OddRight3.asm"
+                ent
+                assert $ == #2D80
+                disp #8D80
+                include "../Action/Data/PolygonMasks/OddLeft4.asm"
+                ent
+                assert $ == #2D8A
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/ActionPolygonExtraMaskPairs.md)
+                assert $ == #2D8A
+                disp #8D8A
+                include "../Action/Data/PolygonExtraMasks/OddLeft4.asm"
+                ent
+                assert $ == #2D90
+                disp #8D90
+                include "../Action/Data/PolygonMasks/OddRight4.asm"
+                ent
+                assert $ == #2D9A
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/ActionPolygonExtraMaskPairs.md)
+                assert $ == #2D9A
+                disp #8D9A
+                include "../Action/Data/PolygonExtraMasks/OddRight4.asm"
+                ent
+                assert $ == #2DA0
+                disp #8DA0
+                include "../Action/Data/PolygonMasks/OddLeft5.asm"
+                ent
+                assert $ == #2DAA
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/ActionPolygonExtraMaskPairs.md)
+                assert $ == #2DAA
+                disp #8DAA
+                include "../Action/Data/PolygonExtraMasks/OddLeft5.asm"
+                ent
+                assert $ == #2DB0
+                disp #8DB0
+                include "../Action/Data/PolygonMasks/OddRight5.asm"
+                ent
+                assert $ == #2DBA
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/ActionPolygonExtraMaskPairs.md)
+                assert $ == #2DBA
+                disp #8DBA
+                include "../Action/Data/PolygonExtraMasks/OddRight5.asm"
+                ent
+                assert $ == #2DC0
+                disp #8DC0
+                include "../Action/Data/PolygonMasks/OddLeft6.asm"
+                ent
+                assert $ == #2DCA
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/ActionPolygonExtraMaskPairs.md)
+                assert $ == #2DCA
+                disp #8DCA
+                include "../Action/Data/PolygonExtraMasks/OddLeft6.asm"
+                ent
+                assert $ == #2DD0
+                disp #8DD0
+                include "../Action/Data/PolygonMasks/OddRight6.asm"
+                ent
+                assert $ == #2DDA
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/ActionPolygonExtraMaskPairs.md)
+                assert $ == #2DDA
+                disp #8DDA
+                include "../Action/Data/PolygonExtraMasks/OddRight6.asm"
+                ent
+                assert $ == #2DE0
+                disp #8DE0
+                include "../Action/Data/PolygonMasks/OddLeft7.asm"
+                ent
+                assert $ == #2DEA
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/ActionPolygonExtraMaskPairs.md)
+                assert $ == #2DEA
+                disp #8DEA
+                include "../Action/Data/PolygonExtraMasks/OddLeft7.asm"
+                ent
+                assert $ == #2DF0
+                disp #8DF0
+                include "../Action/Data/PolygonMasks/OddRight7.asm"
+                ent
+                assert $ == #2DFA
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/ActionPolygonExtraMaskPairs.md)
+                assert $ == #2DFA
+                disp #8DFA
+                include "../Action/Data/PolygonExtraMasks/OddRight7.asm"
+                ent
+                assert $ == #2E00
+                disp #8E00
+                include "../Action/Data/ProjectedPoints.asm"
+                ent
+                assert $ == #2EC8
+                ; Unknown, хвост перед страницей рабочих узлов
+                incbin "../Resources/17_ACTION/Unclassified2EC8_2F00.bin"
+                assert $ == #2F00
+                ; исходные 252 байта области восемнадцати рабочих узлов
+                incbin "../Action/Resources/InitialRenderQueuePool.bin"
+                assert $ == #2FFC
+                ; Unknown, при FreeOffset=FC вставка не создаёт узел
+                incbin "../Resources/17_ACTION/Unclassified2FFC_3000.bin"
+                assert $ == #3000
+                ; исходные 256 байтов рабочей страницы упакованных пар
+                incbin "../Action/Resources/InitialClipOutputPage.bin"
                 assert $ == #3100
                 ; исходные байты страницы 9100, BuildLogarithmTable заменяет их младшими байтами результатов
                 incbin "../Action/Resources/InitialLogarithmLow.bin"
@@ -576,7 +1044,93 @@
                 ent
                 assert $ == #3B8D
                 ; Unknown, исходная область после входов знаков
-                incbin "../Resources/17_ACTION/Unclassified020_BeforePreferredByte.bin"
+                ; Документация [физические входные состояния](../../Docs/ActionInputContextData.md)
+                assert $ == #3B8D
+                ; Unknown, соседнее состояние требует отдельного разбора
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/ActionRenderHeaderPhysicalData.md)
+                assert $ == #3B8D
+                disp #9B8D
+                include "../Action/Data/RenderHeader.asm"
+                ent
+                assert $ == #3B8F
+                ; Unknown, соседние байты не объявляются свободными
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/MapDistanceAndRenderState.md)
+                assert $ == #3B8F
+                disp #9B8F
+                include "../Action/Data/RenderInputSnapshot.asm"
+                ent
+                assert $ == #3B95
+                disp #9B95
+                include "../Action/Data/FlightControls.asm"
+                ent
+                assert $ == #3B98
+                ; Unknown, соседнее состояние требует отдельного разбора
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/ActionQueueParameterPhysicalData.md)
+                assert $ == #3B98
+                ; Unknown, соседние байты не объявляются свободными
+                incbin "../Resources/17_ACTION/Unclassified3B98_3BA1.bin"
+                assert $ == #3BA1
+                disp #9BA1
+                include "../Action/Data/RenderQueueCursor.asm"
+                ent
+                assert $ == #3BA3
+                disp #9BA3
+                include "../Action/Data/ClipOutputState.asm"
+                ent
+                assert $ == #3BA4
+                disp #9BA4
+                include "../Action/Data/ParameterSet.asm"
+                ent
+                assert $ == #3BB3
+                ; Unknown, соседние байты не объявляются свободными
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/ActionPanelPhysicalData.md)
+                assert $ == #3BB3
+                ; Unknown, соседние байты не объявляются свободными
+                incbin "../Resources/17_ACTION/Unclassified3BB3_3BBD.bin"
+                assert $ == #3BBD
+                disp #9BBD
+                include "../Action/Data/FlightCounter.asm"
+                ent
+                assert $ == #3BC1
+                disp #9BC1
+                include "../Action/Data/ParameterSeeds.asm"
+                ent
+                assert $ == #3BC6
+                ; Unknown, соседнее состояние требует отдельного разбора
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/ActionLocalContextPhysicalData.md)
+                assert $ == #3BC6
+                disp #9BC6
+                include "../Action/Data/OtherContext.asm"
+                ent
+                assert $ == #3BCA
+                disp #9BCA
+                include "../Action/Data/ContextIndex.asm"
+                ent
+                assert $ == #3BCB
+                ; Unknown, соседние байты не объявляются свободными
+                incbin "../Resources/17_ACTION/Unclassified3BCB_3BCD.bin"
+                assert $ == #3BCD
+                disp #9BCD
+                include "../Action/Data/IndexedGate.asm"
+                ent
+                assert $ == #3BCE
+                disp #9BCE
+                include "../Action/Data/ArrivalCounter.asm"
+                ent
+                assert $ == #3BD0
+                ; Unknown, соседние байты не объявляются свободными
+                incbin "../Resources/17_ACTION/Unclassified3BD0_3BD2.bin"
+                assert $ == #3BD2
+                disp #9BD2
+                include "../Action/Data/ByteLimitCounter.asm"
+                ent
+                assert $ == #3BD4
+                ; Unknown, соседние байты не объявляются свободными
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/ActionOwnedCargoPhysicalData.md)
+                assert $ == #3BD4
+                disp #9BD4
+                include "../Action/Data/OwnedCargoRows.asm"
+                ent
                 assert $ == #3C10
                 disp #9C10
                 include "../Action/Data/PreferredByteState.asm"
@@ -598,7 +1152,32 @@
                 ent
                 assert $ == #3C41
                 ; Unknown, соседние байты вне подтверждённой раскладки оборудования
-                incbin "../Resources/17_ACTION/Unclassified3C41_3D4C.bin"
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/ActionNewsOrdersAndJumpCost.md)
+                assert $ == #3C41
+                disp #9C41
+                include "../Action/Data/NewsState.asm"
+                ent
+                assert $ == #3C48
+                disp #9C48
+                include "../Action/Data/DeliveryOrders.asm"
+                ent
+                assert $ == #3C88
+                ; Unknown, соседние байты не объявляются свободными
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/MapDistanceAndRenderState.md)
+                assert $ == #3C88
+                disp #9C88
+                include "../Action/Data/TransitionCounter.asm"
+                ent
+                assert $ == #3C89
+                ; Unknown, соседние байты не объявляются свободными
+                incbin "../Resources/17_ACTION/Unclassified3C89_3C8A.bin"
+                assert $ == #3C8A
+                disp #9C8A
+                include "../Action/Data/HyperJumpCost.asm"
+                ent
+                assert $ == #3C8B
+                ; исходный диапазон внутри 512-байтового назначения переноса, до таблицы активных клавиш
+                incbin "../Action/Resources/InitialTransferredContextMiddle.bin"
                 assert $ == #3D4C
                 disp #9D4C
                 include "../Action/Data/KeyScanInputs.asm"
@@ -607,18 +1186,25 @@
                 ; Unknown, соседние данные ещё не разобраны
                 assert $ == #3D82
                 ; Unknown, соседние байты вне доказанной таблицы OBJECT3D
-                incbin "../Resources/17_ACTION/Unclassified020_BeforeObjectPointers.bin"
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/ActionContextTail.md)
+                assert $ == #3D82
+                disp #9D82
+                include "../Action/Data/ContextControlPairs.asm"
+                ent
+                assert $ == #3DA0
+                ; исходные 29 байтов назначения после последних станционных настроек
+                incbin "../Action/Resources/InitialTransferredContextTail.bin"
+                assert $ == #3DBD
+                ; Unknown, эти байты лежат после конца 512-байтового контекста
+                incbin "../Resources/17_ACTION/Unclassified3DBD_3E00.bin"
                 assert $ == #3E00
                 disp #9E00
                 include "../Action/Data/ObjectPointers.asm"
                 ent
                 assert $ == #3F00
-                ; Unknown, соседние байты вне доказанной таблицы OBJECT3D
-                assert $ == #3F00
-                ; Unknown, соседние байты не классифицированы типизацией списка кандидатов
-                assert $ == #3F00
-                ; Unknown, соседние байты вне доказанного назначения CopyObjectData
-                incbin "../Resources/17_ACTION/Unclassified3F00_3F1C.bin"
+                disp #9F00
+                include "../Action/Data/TailModelPointers.asm"
+                ent
                 assert $ == #3F1C
                 ; Документация [исходное содержимое буфера объекта](../../Docs/ActionObjectStreamStorage.md)
                 ; исходные 238 байтов назначения CopyObjectData, подтверждённых всеми исходными чётными указателями
@@ -639,7 +1225,32 @@
                 ent
                 assert $ == #4780
                 ; Unknown, соседнее состояние A780..A794 ещё не разобрано
-                incbin "../Resources/17_ACTION/Unclassified020_BeforeVisualEffects.bin"
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/ActionPanelPhysicalData.md)
+                assert $ == #4780
+                ; Unknown, соседние байты не объявляются свободными
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/InterfaceEventAndSpecialRecord.md)
+                assert $ == #4780
+                disp #A780
+                include "../Action/Data/SpecialRecordPrefix.asm"
+                ent
+                assert $ == #478C
+                disp #A78C
+                include "../Action/Data/PanelEvents.asm"
+                ent
+                assert $ == #478D
+                ; Unknown, соседние байты не объявляются свободными
+                incbin "../Resources/17_ACTION/Unclassified478D_478F.bin"
+                assert $ == #478F
+                disp #A78F
+                include "../Action/Data/PanelSignedWord.asm"
+                ent
+                assert $ == #4791
+                ; Unknown, соседние байты не объявляются свободными
+                incbin "../Resources/17_ACTION/Unclassified4791_4794.bin"
+                assert $ == #4794
+                disp #A794
+                include "../Action/Data/PanelFirstLevel.asm"
+                ent
                 assert $ == #4795
                 disp #A795
                 include "../Action/Data/VisualEffects.asm"
@@ -739,7 +1350,10 @@
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
                 assert $ == #4FF5
                 ; Unknown, соседние байты вне доказанного входа BuildObjectOffsetCoefficients
-                incbin "../Resources/17_ACTION/Unclassified024_BeforeActionObjectOffsetCoefficients.bin"
+                assert $ == #4FF5
+                disp #AFF5
+                include "../Action/NegateOuterBasisRows.asm"
+                ent
                 assert $ == #5044
                 disp #B044
                 include "../Action/BuildObjectOffsetCoefficients.asm"
@@ -751,7 +1365,9 @@
                 assert $ == #516F
                 ; Документация [фрагмент заметок о данных](../../Docs/ActionEmbeddedNotes.md)
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/17_ACTION/Unclassified025.bin"
+                ; Фрагмент авторских заметок CP866, потребитель в игре не установлен
+                ; Документация [формат и происхождение](../../Docs/ActionEmbeddedNotes.md)
+                incbin "../Resources/17_ACTION/EmbeddedAuthorNotes.bin"
                 assert $ == #6000
                 disp #C000
                 include "../Action/ClipPolygon.asm"
@@ -1138,7 +1754,12 @@
                 ent
                 assert $ == #6EE3
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/17_ACTION/Unclassified026.bin"
+                incbin "../Resources/17_ACTION/Unclassified6EE3_6F00.bin"
+                assert $ == #6F00
+                ; Документация [префикс таблицы и два рабочих байта](../../Docs/ClipDispatchPrefixData.md)
+                disp #CF00
+                include "../Action/Data/ClipDispatchPrefix.asm"
+                ent
                 assert $ == #6F08
                 disp #CF08
                 include "../Action/UnknownCF08.asm"
@@ -1152,20 +1773,47 @@
                 ent
                 assert $ == #6F10
                 ; Соседние байты таблицы, поэлементная разметка ещё не оформлена
-                incbin "../Resources/17_ACTION/Unclassified027_BetweenClipPoints.bin"
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/ClipTargetLowPhysicalData.md)
+                assert $ == #6F10
+                disp #CF10
+                include "../Action/Data/ClipTargetLowRow1.asm"
+                ent
                 assert $ == #6F1B
                 disp #CF1B
                 include "../Action/Data/ClipSecondPoint.asm"
                 ent
                 assert $ == #6F20
                 ; Соседние байты таблицы, поэлементная разметка ещё не оформлена
-                incbin "../Resources/17_ACTION/Unclassified027_AfterClipPoints.bin"
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/ClipTargetLowPhysicalData.md)
+                assert $ == #6F20
+                disp #CF20
+                include "../Action/Data/ClipTargetLowRow2.asm"
+                ent
                 assert $ == #6F2B
                 disp #CF2B
                 include "../Action/Data/ClipProducts.asm"
                 ent
                 assert $ == #6F3B
-                incbin "../Resources/17_ACTION/Unclassified027_AfterProducts.bin"
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/PolygonFillPhysicalData.md)
+                assert $ == #6F3B
+                ; Unknown, соседние байты не объявляются свободными
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/ClipTargetLowPhysicalData.md)
+                assert $ == #6F3B
+                disp #CF3B
+                include "../Action/Data/ClipTargetLowTail3.asm"
+                ent
+                assert $ == #6F40
+                disp #CF40
+                include "../Action/Data/ClipTargetLowRows4F.asm"
+                ent
+                assert $ == #7000
+                disp #D000
+                include "../Action/Data/ClipTargetHigh.asm"
+                ent
+                assert $ == #7100
+                disp #D100
+                include "../Action/Data/PolygonPatterns.asm"
+                ent
                 assert $ == #710A
                 disp #D10A
                 include "../Action/ClearWorkBuffer.asm"
@@ -1688,7 +2336,9 @@
                 ; Unknown, соседние байты вне пяти доказанных потоков
                 assert $ == #8DC1
                 ; Unknown, соседние байты вне доказанных потоков назначения цели
-                incbin "../Resources/17_ACTION/Unclassified044_BeforeCaptureStreams.bin"
+                disp #EDC1
+                include "../Action/Data/AyAntimissileStream.asm"
+                ent
                 assert $ == #8E02
                 disp #EE02
                 include "../Action/Data/AyCaptureStreams.asm"
@@ -1904,7 +2554,10 @@
                 ent
                 assert $ == #968E
                 ; Unknown, соседние байты вне доказанного входа StepIdleObjectOffset
-                incbin "../Resources/17_ACTION/Unclassified051_AfterActionTimedDecayState_BeforeActionIdleBaseReset_AfterActionIdleState.bin"
+                assert $ == #968E
+                disp #F68E
+                include "../Action/EnterRandomClassGate.asm"
+                ent
                 assert $ == #9691
                 disp #F691
                 include "../Action/ResetIdleRecordBases.asm"
@@ -1952,5 +2605,15 @@
                 ent
                 assert $ == #9866
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/17_ACTION/Unclassified054.bin"
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/ActionPolygonFill.md)
+                assert $ == #9866
+                ; Unknown, соседние байты не объявляются свободными
+                incbin "../Resources/17_ACTION/Unclassified9866_9FDE.bin"
+                assert $ == #9FDE
+                disp #FFDE
+                include "../Action/Data/PolygonScratch.asm"
+                ent
+                assert $ == #9FE0
+                ; Unknown, соседние байты не объявляются свободными
+                incbin "../Resources/17_ACTION/Unclassified9FE0_A000.bin"
                 assert $ == #A000

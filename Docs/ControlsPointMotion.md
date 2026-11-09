@@ -111,3 +111,5 @@ PV при q=127, N=0, Carry равен разряду 6 числа p.
 [Отчёт полного прохода](../Tools/Disasm/Reports/ControlsPointMotionVerification.json) и
 [отчёт ядер](../Tools/Disasm/Reports/ControlsPointProductsVerification.json) относятся
 к модели без IRQ. Это не сборка и не нативный игровой запуск.
+
+[Физические входные записи](ActionInputContextData.md) сохраняют исходные управления и зерно как реальные STRUCT.

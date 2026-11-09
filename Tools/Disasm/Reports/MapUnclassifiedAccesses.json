@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "source_map_sha256": "89697dc8b4d93ad66107f50a1d7fe67d6a74149f40b712e0ff205cf8fab16964",
+  "checked_ranges": 7,
+  "checked_bytes": 536,
+  "scene_cases": 1024,
+  "accesses": [],
+  "original_map_code_executed": true,
+  "irq_executed": false,
+  "full_game_paths_proved": false,
+  "assembly_executed": false
+}

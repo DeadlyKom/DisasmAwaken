@@ -116,7 +116,7 @@
                 ent
                 assert $ == #01C8
                 disp #C1C8
-                include "../Text/ReadEquipmentWeight.asm"
+                include "../Text/ReadEquipmentQuantity.asm"
                 ent
                 assert $ == #01E6
                 disp #C1E6
@@ -124,7 +124,7 @@
                 ent
                 assert $ == #01EC
                 disp #C1EC
-                include "../Text/ReadSecondWeight.asm"
+                include "../Text/ReadSecondQuantity.asm"
                 ent
                 assert $ == #0201
                 disp #C201
@@ -440,11 +440,11 @@
                 ent
                 assert $ == #06BC
                 disp #C6BC
-                include "../Text/PushEquipmentWeightWriter.asm"
+                include "../Text/PushEquipmentQuantityWriter.asm"
                 ent
                 assert $ == #06E4
                 disp #C6E4
-                include "../Text/PushSecondWeightWriter.asm"
+                include "../Text/PushSecondQuantityWriter.asm"
                 ent
                 assert $ == #06EA
                 disp #C6EA
@@ -528,5 +528,7 @@
                 ent
                 assert $ == #0F18
                 ; исходный хвост после первого NUL, дополнительные потребители пока не установлены
+                ; Физический суффикс выделенных секторов, неиспользуемость не установлена
+                ; Документация [границы и сохранение суффиксов](../../Docs/AllocatedSectorSuffixes.md)
                 incbin "../Resources/05_LANG/AfterMarketScript.bin"
                 assert $ == #1000

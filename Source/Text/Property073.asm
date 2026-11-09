@@ -21,7 +21,7 @@
 ;   игровое назначение поля и старшего разряда пока не доказано
 ; -----------------------------------------
                 ; выбор второй базы байтовых старших разрядов
-Entry:          LD DE, #98F6
+Entry:          LD DE, @SecondaryEquipmentData.Quantities
                 JP @Text.GetHighBitCode.ReadAtBase
 
                 endmodule

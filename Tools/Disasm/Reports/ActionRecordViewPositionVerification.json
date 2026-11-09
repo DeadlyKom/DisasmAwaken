@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "frame_entries": 32,
+  "writers": {
+    "E0EC": 806,
+    "E160": 48,
+    "E164": 48,
+    "E169": 48
+  },
+  "radar_readers": {
+    "E4CE": 24,
+    "E4E0": 24,
+    "E4EE": 24
+  },
+  "action_bank": 0,
+  "radar_bank": 1,
+  "physical_bank": 2,
+  "original_projection_and_radar_executed": true,
+  "disk_calls_substituted": true,
+  "irq_executed": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

@@ -384,11 +384,11 @@ UpperG:         FScriptToken {
                 }
 LowerO:         FScriptToken {
                     #6F,                                                        ; Symbol, исходный ASCII-код
-                    @Text.PushEquipmentWeightWriter.Entry                       ; Handler, адрес из исходной записи
+                    @Text.PushEquipmentQuantityWriter.Entry                       ; Handler, адрес из исходной записи
                 }
 LowerI:         FScriptToken {
                     #69,                                                        ; Symbol, исходный ASCII-код
-                    @Text.PushSecondWeightWriter.Entry                          ; Handler, адрес из исходной записи
+                    @Text.PushSecondQuantityWriter.Entry                          ; Handler, адрес из исходной записи
                 }
 UpperJ:         FScriptToken {
                     #4A,                                                        ; Symbol, исходный ASCII-код

@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "stream_count": 10,
+  "faces": 219,
+  "lines": 4,
+  "physical_bytes": 1045,
+  "verified_mutated_headers": 13,
+  "vertex_bounds_checked": true,
+  "original_bytes_round_trip": true,
+  "assembly_executed": false,
+  "native_execution": false,
+  "classified": true,
+  "preserved_write_targets": true
+}

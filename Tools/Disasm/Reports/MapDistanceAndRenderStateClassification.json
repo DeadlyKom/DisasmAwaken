@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "typed_bytes": 22,
+  "physical_records": 17,
+  "physical_symbols": 36,
+  "files": 17,
+  "typed_context_bytes": 3,
+  "typed_save_context_bytes": 12,
+  "raw_render_input_bytes": 6,
+  "body_draw_mode_bytes": 1,
+  "distance_transfer_offset": 205,
+  "transition_counter_transfer_offset": 203,
+  "all_render_snapshot_consumers_proved": false,
+  "action_counter_reader_proved": false,
+  "original_bytes_addresses_and_instructions_preserved": true,
+  "gaps_preserved": true,
+  "invalid_pair_gameplay_proved": false,
+  "cf08_reclassified": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

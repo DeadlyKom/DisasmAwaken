@@ -1,0 +1,459 @@
+{
+  "passed": true,
+  "total_cases": 26,
+  "matrix_steps_reached": 27,
+  "cases": [
+    {
+      "row": 253,
+      "mask": 2,
+      "read_count": 27,
+      "handlers": [
+        [
+          0,
+          0,
+          30547
+        ],
+        [
+          26,
+          0,
+          49353
+        ]
+      ],
+      "keyboard_frame_returns": 2,
+      "decay_reached": true,
+      "next_flight_frame_reached": true,
+      "stop_reason": "requested_frame_entries",
+      "watched_entries": []
+    },
+    {
+      "row": 254,
+      "mask": 4,
+      "read_count": 27,
+      "handlers": [
+        [
+          1,
+          0,
+          30582
+        ]
+      ],
+      "keyboard_frame_returns": 1,
+      "decay_reached": true,
+      "next_flight_frame_reached": true,
+      "stop_reason": "requested_frame_entries",
+      "watched_entries": []
+    },
+    {
+      "row": 191,
+      "mask": 4,
+      "read_count": 27,
+      "handlers": [
+        [
+          2,
+          0,
+          30477
+        ]
+      ],
+      "keyboard_frame_returns": 1,
+      "decay_reached": true,
+      "next_flight_frame_reached": true,
+      "stop_reason": "requested_frame_entries",
+      "watched_entries": []
+    },
+    {
+      "row": 191,
+      "mask": 2,
+      "read_count": 27,
+      "handlers": [
+        [
+          3,
+          0,
+          30512
+        ]
+      ],
+      "keyboard_frame_returns": 1,
+      "decay_reached": true,
+      "next_flight_frame_reached": true,
+      "stop_reason": "requested_frame_entries",
+      "watched_entries": []
+    },
+    {
+      "row": 127,
+      "mask": 8,
+      "read_count": 27,
+      "handlers": [
+        [
+          4,
+          0,
+          30407
+        ]
+      ],
+      "keyboard_frame_returns": 1,
+      "decay_reached": true,
+      "next_flight_frame_reached": true,
+      "stop_reason": "requested_frame_entries",
+      "watched_entries": []
+    },
+    {
+      "row": 127,
+      "mask": 4,
+      "read_count": 27,
+      "handlers": [
+        [
+          5,
+          0,
+          30442
+        ]
+      ],
+      "keyboard_frame_returns": 1,
+      "decay_reached": true,
+      "next_flight_frame_reached": true,
+      "stop_reason": "requested_frame_entries",
+      "watched_entries": []
+    },
+    {
+      "row": 253,
+      "mask": 1,
+      "read_count": 27,
+      "handlers": [
+        [
+          6,
+          0,
+          29463
+        ]
+      ],
+      "keyboard_frame_returns": 1,
+      "decay_reached": true,
+      "next_flight_frame_reached": true,
+      "stop_reason": "requested_frame_entries",
+      "watched_entries": []
+    },
+    {
+      "row": 127,
+      "mask": 1,
+      "read_count": 27,
+      "handlers": [
+        [
+          7,
+          0,
+          30336
+        ]
+      ],
+      "keyboard_frame_returns": 1,
+      "decay_reached": true,
+      "next_flight_frame_reached": true,
+      "stop_reason": "requested_frame_entries",
+      "watched_entries": []
+    },
+    {
+      "row": 127,
+      "mask": 2,
+      "read_count": 27,
+      "handlers": [
+        [
+          8,
+          0,
+          30371
+        ]
+      ],
+      "keyboard_frame_returns": 1,
+      "decay_reached": true,
+      "next_flight_frame_reached": true,
+      "stop_reason": "requested_frame_entries",
+      "watched_entries": []
+    },
+    {
+      "row": 223,
+      "mask": 1,
+      "read_count": 27,
+      "handlers": [
+        [
+          9,
+          0,
+          44203
+        ]
+      ],
+      "keyboard_frame_returns": 1,
+      "decay_reached": true,
+      "next_flight_frame_reached": true,
+      "stop_reason": "requested_frame_entries",
+      "watched_entries": []
+    },
+    {
+      "row": 191,
+      "mask": 16,
+      "read_count": 27,
+      "handlers": [
+        [
+          10,
+          0,
+          29410
+        ]
+      ],
+      "keyboard_frame_returns": 1,
+      "decay_reached": true,
+      "next_flight_frame_reached": true,
+      "stop_reason": "requested_frame_entries",
+      "watched_entries": []
+    },
+    {
+      "row": 254,
+      "mask": 8,
+      "read_count": 27,
+      "handlers": [
+        [
+          11,
+          0,
+          29374
+        ]
+      ],
+      "keyboard_frame_returns": 1,
+      "decay_reached": true,
+      "next_flight_frame_reached": true,
+      "stop_reason": "requested_frame_entries",
+      "watched_entries": []
+    },
+    {
+      "row": 247,
+      "mask": 1,
+      "read_count": 27,
+      "handlers": [
+        [
+          12,
+          0,
+          28748
+        ]
+      ],
+      "keyboard_frame_returns": 1,
+      "decay_reached": true,
+      "next_flight_frame_reached": true,
+      "stop_reason": "requested_frame_entries",
+      "watched_entries": []
+    },
+    {
+      "row": 247,
+      "mask": 2,
+      "read_count": 27,
+      "handlers": [
+        [
+          13,
+          0,
+          28789
+        ]
+      ],
+      "keyboard_frame_returns": 1,
+      "decay_reached": true,
+      "next_flight_frame_reached": true,
+      "stop_reason": "requested_frame_entries",
+      "watched_entries": []
+    },
+    {
+      "row": 247,
+      "mask": 4,
+      "read_count": 27,
+      "handlers": [
+        [
+          14,
+          0,
+          28808
+        ]
+      ],
+      "keyboard_frame_returns": 1,
+      "decay_reached": true,
+      "next_flight_frame_reached": true,
+      "stop_reason": "requested_frame_entries",
+      "watched_entries": []
+    },
+    {
+      "row": 191,
+      "mask": 8,
+      "read_count": 27,
+      "handlers": [
+        [
+          15,
+          0,
+          29859
+        ]
+      ],
+      "keyboard_frame_returns": 1,
+      "decay_reached": true,
+      "next_flight_frame_reached": true,
+      "stop_reason": "requested_frame_entries",
+      "watched_entries": []
+    },
+    {
+      "row": 253,
+      "mask": 8,
+      "read_count": 27,
+      "handlers": [
+        [
+          16,
+          0,
+          30028
+        ]
+      ],
+      "keyboard_frame_returns": 1,
+      "decay_reached": true,
+      "next_flight_frame_reached": true,
+      "stop_reason": "requested_frame_entries",
+      "watched_entries": []
+    },
+    {
+      "row": 254,
+      "mask": 2,
+      "read_count": 27,
+      "handlers": [
+        [
+          17,
+          0,
+          29824
+        ]
+      ],
+      "keyboard_frame_returns": 1,
+      "decay_reached": true,
+      "next_flight_frame_reached": true,
+      "stop_reason": "requested_frame_entries",
+      "watched_entries": []
+    },
+    {
+      "row": 251,
+      "mask": 8,
+      "read_count": 27,
+      "handlers": [
+        [
+          18,
+          0,
+          30214
+        ]
+      ],
+      "keyboard_frame_returns": 1,
+      "decay_reached": true,
+      "next_flight_frame_reached": true,
+      "stop_reason": "requested_frame_entries",
+      "watched_entries": []
+    },
+    {
+      "row": 127,
+      "mask": 16,
+      "read_count": 27,
+      "handlers": [
+        [
+          19,
+          0,
+          29753
+        ]
+      ],
+      "keyboard_frame_returns": 1,
+      "decay_reached": true,
+      "next_flight_frame_reached": true,
+      "stop_reason": "requested_frame_entries",
+      "watched_entries": []
+    },
+    {
+      "row": 251,
+      "mask": 1,
+      "read_count": 27,
+      "handlers": [
+        [
+          20,
+          0,
+          29230
+        ]
+      ],
+      "keyboard_frame_returns": 1,
+      "decay_reached": true,
+      "next_flight_frame_reached": true,
+      "stop_reason": "requested_frame_entries",
+      "watched_entries": []
+    },
+    {
+      "row": 251,
+      "mask": 2,
+      "read_count": 27,
+      "handlers": [
+        [
+          21,
+          0,
+          30100
+        ]
+      ],
+      "keyboard_frame_returns": 1,
+      "decay_reached": true,
+      "next_flight_frame_reached": true,
+      "stop_reason": "requested_frame_entries",
+      "watched_entries": []
+    },
+    {
+      "row": 251,
+      "mask": 4,
+      "read_count": 27,
+      "handlers": [
+        [
+          22,
+          0,
+          30159
+        ]
+      ],
+      "keyboard_frame_returns": 1,
+      "decay_reached": true,
+      "next_flight_frame_reached": true,
+      "stop_reason": "requested_frame_entries",
+      "watched_entries": []
+    },
+    {
+      "row": 253,
+      "mask": 16,
+      "read_count": 27,
+      "handlers": [
+        [
+          23,
+          0,
+          28918
+        ]
+      ],
+      "keyboard_frame_returns": 1,
+      "decay_reached": true,
+      "next_flight_frame_reached": true,
+      "stop_reason": "requested_frame_entries",
+      "watched_entries": []
+    },
+    {
+      "row": 253,
+      "mask": 4,
+      "read_count": 27,
+      "handlers": [
+        [
+          24,
+          0,
+          28747
+        ]
+      ],
+      "keyboard_frame_returns": 1,
+      "decay_reached": true,
+      "next_flight_frame_reached": true,
+      "stop_reason": "requested_frame_entries",
+      "watched_entries": []
+    },
+    {
+      "row": 254,
+      "mask": 16,
+      "read_count": 27,
+      "handlers": [
+        [
+          25,
+          0,
+          30250
+        ]
+      ],
+      "keyboard_frame_returns": 1,
+      "decay_reached": true,
+      "next_flight_frame_reached": true,
+      "stop_reason": "requested_frame_entries",
+      "watched_entries": []
+    }
+  ],
+  "irq_scheduled_by_flight_model": true,
+  "trdos_stub": true,
+  "continuous_key_hold_verified": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

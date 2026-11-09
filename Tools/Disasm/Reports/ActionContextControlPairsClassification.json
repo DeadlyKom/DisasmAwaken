@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "typed_bytes": 30,
+  "physical_records": 15,
+  "physical_symbols": 45,
+  "files": 1,
+  "matrix_pairs": 14,
+  "trailing_zero_pair": true,
+  "context_offset": 453,
+  "original_station_and_five_save_copies_match": true,
+  "direct_action_scan_proved": false,
+  "original_bytes_addresses_and_instructions_preserved": true,
+  "gaps_preserved": true,
+  "invalid_pair_gameplay_proved": false,
+  "cf08_reclassified": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

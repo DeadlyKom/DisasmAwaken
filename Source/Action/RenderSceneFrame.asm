@@ -1,5 +1,8 @@
                 module Action
                 module RenderSceneFrame
+                ; Физические поля [заголовок модели](../../Docs/ActionRenderHeaderPhysicalData.md)
+                ; Физические поля [очередь и параметры](../../Docs/ActionQueueParameterPhysicalData.md)
+                ; Физические поля [снимок исходных компонент](../../Docs/MapDistanceAndRenderState.md)
                 ; Документация [алгоритм и проверка](../../Docs/ActionRenderFrameSetup.md)
                 ; -----------------------------------------
                 ; Подготовка кадра, проекция объектов и передача в очередь отрисовки
@@ -122,7 +125,7 @@ StoreC22:       LD (@ActionPatchedVectorCoeffs.C22), A
                 CALL @Action.ProjectWideVectors.Entry
                 ; Инициализация пустой очереди и сохранение настоящего SP.
                 LD HL, #0001
-                LD (#9BA1), HL
+                LD (@ActionRenderQueueCursor.Value.Head), HL
                 LD BC, #0040
                 LD HL, #A100
                 LD (#E4A7), SP
@@ -135,10 +138,10 @@ CheckMarker:    LD A, L
 
 AdvanceRecord:  EXX
                 ADD HL, BC
-                ; Чтение текущей записи через SP после установки маркера по смещению #1B.
+                ; Чтение текущей записи через SP после установки маркера в ViewPosition.X.High.
 ReadRecord:     LD SP, HL
                 EX DE, HL
-                LD HL, #001B
+                LD HL, @FActionRecord.ViewPosition.X.High
                 ADD HL, DE
                 LD A, #80
                 LD (HL), A
@@ -148,7 +151,8 @@ ReadRecord:     LD SP, HL
                 CP H
                 JR Z, @Action.RenderSceneFrame.CheckMarker                      ; переход, если старший байт первого слова равен #80
 
-                LD (#9B8F), HL
+                ; Сохранение исходного X перед проверкой модуля его старшего байта.
+                LD (@ActionRenderInputSnapshot.Value.InputX), HL
                 LD A, H
                 AND A
                 JP P, @Action.RenderSceneFrame.CheckX                           ; переход, если старший байт X неотрицателен
@@ -159,7 +163,8 @@ CheckX:         CP #70
 
                 LD (@ActionPatchedVectorState.Input0), HL
                 POP HL
-                LD (#9B91), HL
+                ; Сохранение исходного Y перед проверкой модуля его старшего байта.
+                LD (@ActionRenderInputSnapshot.Value.InputY), HL
                 LD A, H
                 AND A
                 JP P, @Action.RenderSceneFrame.CheckY                           ; переход, если старший байт Y неотрицателен
@@ -170,7 +175,8 @@ CheckY:         CP #70
 
                 LD (@ActionPatchedVectorState.Input1), HL
                 POP HL
-                LD (#9B93), HL
+                ; Сохранение исходной глубины перед проверкой модуля её старшего байта.
+                LD (@ActionRenderInputSnapshot.Value.InputDepth), HL
                 LD A, H
                 AND A
                 JP P, @Action.RenderSceneFrame.CheckDepth                       ; переход, если старший байт глубины неотрицателен
@@ -195,7 +201,7 @@ CheckDepth:     CP #70
                 JR Z, @Action.RenderSceneFrame.StorePhaseFlag                   ; переход, если первый и третий углы равны нулю
 
                 XOR A
-StorePhaseFlag: LD (#9B8D), A
+StorePhaseFlag: LD (@ActionRenderHeader.Value.ModeBits), A
                 LD IY, @Action.RenderSceneFrame.ResumeTransform
                 JP @Action.ComputePatchedVector.Entry
 
@@ -210,8 +216,8 @@ ResumeTransform:JP PE, @Action.RenderSceneFrame.AdvanceRecord                   
                 LD A, H
                 EXX
                 LD H, A
-                ; Подготовка SP для записи трёх выходных слов в запись.
-                LD DE, #0020
+                ; Подготовка SP за последним словом ViewPosition для нисходящей записи Depth, Y и X.
+                LD DE, @FActionRecord.ViewPosition.Depth + @FActionWord
                 ADD HL, DE
                 LD SP, HL
                 LD DE, (@ActionPatchedVectorState.Output2)

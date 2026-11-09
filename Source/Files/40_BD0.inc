@@ -55,5 +55,7 @@
                 incbin "../Resources/40_BD0/Sprite3BFE.bin"
                 ; Исходный секторный хвост после логического файла, сохранён отдельно.
                 assert $ == #3F8C
+                ; Физический суффикс выделенных секторов, неиспользуемость не установлена
+                ; Документация [границы и сохранение суффиксов](../../Docs/AllocatedSectorSuffixes.md)
                 incbin "../Resources/40_BD0/SectorTail.bin"
                 assert $ == #4000

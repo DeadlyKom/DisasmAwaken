@@ -80,6 +80,7 @@ COMMENTS = {
 
 
 def name_operands(region, function_address, operation):
+    if (region,function_address)==("Controls",0xF188):operation=operation.replace("LD DE, #C600","LD DE, @ControlsTextFont.Pixels")
     if region == 'Action' and function_address == 0xA85E:
         operation = operation.replace('CALL #F10D', 'CALL @Controls.TickBcdCounter.Entry')
     if region == 'Action' and function_address == 0x6145:

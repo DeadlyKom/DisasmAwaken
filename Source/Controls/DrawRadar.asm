@@ -473,7 +473,7 @@ NextRecord:     ADD IX, DE
                 CP #15
                 JR Z, @Controls.DrawRadar.NextRecord                            ; переход, если код типа равен 15, запись не отображается
 
-                LD A, (IX + @FActionRecord.Unknown1B)
+                LD A, (IX + @FActionRecord.ViewPosition.X.High)
                 ; Проверка недопустимого знакового байта 80 в первой координате.
                 CP #80
                 JR Z, @Controls.DrawRadar.NextRecord                            ; переход, если первая координата равна 80, запись пропускается
@@ -486,7 +486,7 @@ NextRecord:     ADD IX, DE
 CheckX:         CP #80
                 JR NC, @Controls.DrawRadar.NextRecord                           ; переход, если модуль первой координаты не меньше 80, запись пропускается
 
-                LD A, (IX + @FActionRecord.Unknown1D)
+                LD A, (IX + @FActionRecord.ViewPosition.Y.High)
                 LD B, A
                 ; Проверка знака высоты перед проверкой её допустимого модуля.
                 AND A
@@ -496,7 +496,7 @@ CheckX:         CP #80
 CheckHeight:    CP #80
                 JR NC, @Controls.DrawRadar.NextRecord                           ; переход, если высота равна знаковому байту 80, запись пропускается
 
-                LD A, (IX + @FActionRecord.Unknown1F)
+                LD A, (IX + @FActionRecord.ViewPosition.Depth.High)
                 LD E, A
                 ; Проверка знака второй координаты, исходный байт уже сохранён в E.
                 AND A
@@ -506,7 +506,7 @@ CheckHeight:    CP #80
 CheckDepth:     CP #80
                 JR NC, @Controls.DrawRadar.ResetStride                          ; переход, если вторая координата равна 80, шаг DE сначала восстанавливается
 
-                ; Расчёт экранного Y из противоположного по знаку поля IX+1F и X из поля IX+1B.
+                ; Расчёт экранного Y из противоположного по знаку ViewPosition.Depth.High и X из ViewPosition.X.High.
                 LD A, E
                 LD E, C
                 NEG
@@ -582,7 +582,7 @@ CheckDepth:     CP #80
                 ADD HL, BC
                 LD C, (HL)
                 EXX
-                ; Расчёт знаковой высоты линии из поля IX+1D, два SRA делят её на четыре с округлением вниз.
+                ; Расчёт знаковой высоты линии из ViewPosition.Y.High, два SRA делят её на четыре с округлением вниз.
                 LD A, B
                 EXX
                 SRA A

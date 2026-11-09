@@ -1,0 +1,675 @@
+{
+  "passed": true,
+  "regions": {
+    "station": {
+      "first_address": "F3F4",
+      "frame_entries": 8,
+      "accesses": [
+        {
+          "mode": "read",
+          "pc": "9CEF",
+          "count": 848
+        },
+        {
+          "mode": "read",
+          "pc": "9D02",
+          "count": 952
+        },
+        {
+          "mode": "write",
+          "pc": "9CEF",
+          "count": 864
+        },
+        {
+          "mode": "write",
+          "pc": "9D02",
+          "count": 936
+        }
+      ],
+      "first_accesses": {
+        "F3F4": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F3F5": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F3F6": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F3F7": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F3F8": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F3F9": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F3FA": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F3FB": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F3FC": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F3FD": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F3FE": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F3FF": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F400": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F401": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F402": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F403": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F404": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F405": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F406": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F407": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F408": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F409": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F40A": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F40B": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F40C": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F40D": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F40E": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F40F": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F410": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F411": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F412": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F413": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F414": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F415": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F416": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F417": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F418": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F419": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F41A": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F41B": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F41C": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F41D": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F41E": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F41F": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F420": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F421": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F422": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F423": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F424": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F425": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F426": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F427": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F428": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F429": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F42A": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F42B": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F42C": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F42D": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F42E": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F42F": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F430": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F431": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F432": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F433": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F434": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F435": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F436": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F437": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F438": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F439": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F43A": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F43B": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F43C": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F43D": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F43E": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F43F": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F440": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F441": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F442": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F443": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F444": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F445": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F446": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F447": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F448": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F449": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F44A": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F44B": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F44C": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F44D": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F44E": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F44F": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F450": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F451": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F452": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F453": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F454": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F455": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F456": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F457": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F458": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F459": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F45A": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F45B": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F45C": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F45D": {
+          "mode": "read",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F45E": {
+          "mode": "write",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F45F": {
+          "mode": "write",
+          "pc": "9CEF",
+          "value": 0
+        },
+        "F460": {
+          "mode": "read",
+          "pc": "9D02",
+          "value": 0
+        },
+        "F461": {
+          "mode": "read",
+          "pc": "9D02",
+          "value": 0
+        },
+        "F462": {
+          "mode": "read",
+          "pc": "9D02",
+          "value": 0
+        },
+        "F463": {
+          "mode": "read",
+          "pc": "9D02",
+          "value": 0
+        },
+        "F464": {
+          "mode": "read",
+          "pc": "9D02",
+          "value": 0
+        },
+        "F465": {
+          "mode": "read",
+          "pc": "9D02",
+          "value": 0
+        },
+        "F466": {
+          "mode": "read",
+          "pc": "9D02",
+          "value": 0
+        },
+        "F467": {
+          "mode": "read",
+          "pc": "9D02",
+          "value": 0
+        },
+        "F468": {
+          "mode": "read",
+          "pc": "9D02",
+          "value": 0
+        },
+        "F469": {
+          "mode": "read",
+          "pc": "9D02",
+          "value": 0
+        },
+        "F46A": {
+          "mode": "read",
+          "pc": "9D02",
+          "value": 0
+        },
+        "F46B": {
+          "mode": "read",
+          "pc": "9D02",
+          "value": 0
+        },
+        "F46C": {
+          "mode": "read",
+          "pc": "9D02",
+          "value": 0
+        },
+        "F46D": {
+          "mode": "read",
+          "pc": "9D02",
+          "value": 0
+        },
+        "F46E": {
+          "mode": "read",
+          "pc": "9D02",
+          "value": 0
+        },
+        "F46F": {
+          "mode": "read",
+          "pc": "9D02",
+          "value": 0
+        },
+        "F470": {
+          "mode": "read",
+          "pc": "9D02",
+          "value": 0
+        },
+        "F471": {
+          "mode": "read",
+          "pc": "9D02",
+          "value": 0
+        }
+      }
+    },
+    "flight": {
+      "first_address": "F866",
+      "frame_entries": 65,
+      "accesses": [],
+      "first_accesses": {}
+    }
+  },
+  "real_software_instructions": true,
+  "TR_DOS_read_substituted": true,
+  "inactive_regions_proved": false,
+  "other_inputs_or_frames_proved": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

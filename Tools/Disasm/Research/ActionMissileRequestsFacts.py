@@ -80,3 +80,5 @@ def name_operands(region,function_address,operation):
     operation=operation.replace('LD HL, #EDA8','LD HL, @ActionMissileCreateConst.ActionSound')
     operation=operation.replace('LD HL, #0007','LD HL, FActionRecord.ClassCode - FActionRecord.LinkedIndex')
     return operation
+
+CONTRACTS['Action',0x704C][3].append("первый код C0 читается как старший байт перекрытого слова C0C9 последнего шага диспетчера")

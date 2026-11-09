@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "total_cases": 66304,
+  "all_word_values_at_each_target": true,
+  "mixed_words_cases": 512,
+  "all_input_A_and_F_values": true,
+  "exact_registers_flags_R_and_SP": true,
+  "all_ram_and_ordered_writes_checked": true,
+  "refresh_M1": 43,
+  "no_stack_writes": true,
+  "target_words": 6,
+  "middle_row_words_unchanged": 3,
+  "full_six_word_product_exhausted": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

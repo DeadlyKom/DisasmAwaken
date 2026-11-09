@@ -17,17 +17,25 @@ def main():
     assert read('BuildVerification')['byte_identical'] is True
     capsule=(f"Текущий срез содержит {inventory['fragments']} фрагментов. Описаны {inventory['described']}, остаются 2 Unknown и 1 недоказанный контракт именованного RunTemporaryModule. "
         f"Обе записи Unknown относятся к CF08 в Action и ThreeD, их табличная роль и условный эффект инструкций установлены, игровой вход неизвестен. "
+        f"В таблице клавиш отдельно оформлены {audit.get('registered_keyboard_callbacks',0)} из 26 физических целей. "
         f"Неразмеченные физические диапазоны занимают {inventory['physical_bytes_by_kind']['unclassified']} байтов. "
         f"Статически сверены {inventory['instructions']} инструкций, {labels['labels_checked']} кодовых меток, {placement['ranges_checked']} диапазонов и {placement['physical_assertions_checked']} утверждения размещения. "
         "Пользователь подтвердил сборку 196226 строк за 2,468 с, 0 ошибок и 0 предупреждений, побайтовое совпадение всех 655360 байтов TRD. "
         "Эта сборка выполнена до последующих изменений исходников, новые изменения проверены статически и моделями без запуска сборки. Нативный запуск нового среза не подтверждён.")
+    overlap=audit.get('overlapping_keyboard_step',{})
+    if overlap.get('initialized_frame_probes'):
+        capsule+=f" Перекрытый шаг клавиатуры проверен в {overlap['initialized_frame_probes']} снимках полётного кадра, замысел перекрытия неизвестен."
+    if (reports/'ResourceSemanticLimits.json').exists():
+        limits=read('ResourceSemanticLimits');assert limits['passed']
+        assert limits['source_map_sha256']==hashlib.sha256((reports/'SourceMap.json').read_bytes()).hexdigest()
+        capsule+=f" Ещё {limits['classified_format_or_extent_bytes_with_unproved_game_use']} байтов имеют подтверждённый формат либо физическую роль, но не полностью установленные игровые связи, это не завершённый смысловой разбор."
     pending={}
     for filename in ('README.md','Docs/Validation.md','Docs/ConformancePlan.md'):
         path=ROOT/filename;text=path.read_text('utf-8')
         matches=list(re.finditer(r'^Текущий срез содержит [^\n]*',text,re.M));assert matches
         match=matches[-1];text=text[:match.start()]+capsule+text[match.end():]
-        pattern=r'В исходной таблице из 22 состояний теперь отдельно оформлены (?:шесть|\d+) целей, \d+ остаются в сырых блоках\.'
-        new=f"В исходной таблице из 22 состояний теперь отдельно оформлены {coverage['registered_entries']} целей, {coverage['unregistered_entries']} остаются в сырых блоках."
+        pattern=r'В исходной таблице из 22 состояний теперь отдельно оформлены (?:шесть|\d+) цел(?:ей|и), \d+ остаются в сырых блоках\.'
+        new=f"В исходной таблице из 22 состояний теперь отдельно оформлены {coverage['registered_entries']} цели, {coverage['unregistered_entries']} остаются в сырых блоках."
         text,count=re.subn(pattern,new,text);assert count==1
         prefix='Docs/' if filename=='README.md' else ''
         if '[Фазовые переходы](' not in text:
@@ -76,15 +84,51 @@ def main():
             text+='Поле LinkOverride названо по установленной подстановке связи, его FF и разрешённый ноль проверены на 72192 сценариях. '
             text+='[Начальный список кандидатов]('+prefix+'ActionCandidateList.md) оформлен физическими записями, '
             text+='[дисковые байты буфера OBJECT3D]('+prefix+'ActionObjectStreamStorage.md) отделены от загружаемых потоков по 512 моделям копирования. '
-            text+='[BANK0–BANK5]('+prefix+'AuxiliaryBankPayloads.md) сохранены неизвестными, их формат и штатные потребители ещё не установлены.\n'
+            text+='[BANK0–BANK5]('+prefix+'AuxiliaryBankPayloads.md) содержат распознанные графические цепочки, неизвестные промежутки и неустановленные штатные загрузчики.\n'
         if '[Слова базиса](' not in text:
             text+='\n[Слова базиса]('+prefix+'ActionRenderBasis.md) оформлены девятью физическими FBasisWord, 63 обращения связаны с именами компонентов и фаз. '
             text+='[Раскладка оборудования]('+prefix+'ActionEquipmentCodes.md) подтверждена всеми 49 байтами встроенного описания, 45 новых байтов оформлены FEquipmentCode. '
             text+='Игровые потребители всех устройств и полноценный режим скиммера не объявляются доказанными.\n'
+        if '[Физические страницы диспетчера](' not in text:
+            text+='\n[Физические страницы диспетчера]('+prefix+'ClipTargetLowPhysicalData.md), '
+            text+='[старшие адреса и маски заливки]('+prefix+'PolygonFillPhysicalData.md) и '
+            text+='[поля очереди и параметров]('+prefix+'ActionQueueParameterPhysicalData.md) оформляют ещё 1308 исходных байтов в 235 физических записях, 47 файлах. '
+            text+='Добавлены 1543 физических символа, исходные адреса, значения и промежутки сохранены. '
+            text+='[Изменяемые пороги эффекта]('+prefix+'ActionRecordEffectResume.md) проверены в 136192 сценариях, '
+            text+='[параметры обоих создателей]('+prefix+'ActionSpawnRecordFinish.md) в 262144, '
+            text+='[шаги фаз шкал]('+prefix+'ActionFrameGates.md) в 524288, '
+            text+='[изменяемые пороги планировщика]('+prefix+'ActionSpawnSchedule.md) ещё в 262144. '
+            text+='Эти серии имеют описанные границы, полного игрового запуска и всех совместных входов они не доказывают.\n'
+        if '[Физическое состояние панели](' not in text:
+            text+='\n[Физическое состояние панели]('+prefix+'ActionPanelPhysicalData.md) оформляет ещё восемь исходных байтов, четыре физические записи. '
+            text+='Сохранены порядок BCD-пар E,D,L,H и исходное число 01221010, слово 0014 шестой шкалы, значение 2E первой шкалы и нулевая маска событий. '
+            text+='Игровые единицы счётчика и шкал и назначение старших пяти битов маски остаются неизвестными.\n'
+        if '[Локальные поля контекста](' not in text:
+            text+='\n[Локальные поля контекста]('+prefix+'ActionLocalContextPhysicalData.md) оформляют ещё десять исходных байтов, пять физических записей. '
+            text+='Пары сравнения, индекс публикации, байт табличных поправок, счётчик ближнего завершения и пара текущего значения с пределом разделены по реальным потребителям. '
+            text+='Исходное байтовое оборачивание и неизвестный игровой смысл полей сохранены.\n'
+        if '[Заголовок текущей модели](' not in text:
+            text+='\n[Заголовок текущей модели]('+prefix+'ActionRenderHeaderPhysicalData.md) оформляет два исходных байта ModeBits и ModelByteOffset. '
+            text+='Шестнадцать обращений обеих копий ComposeRenderMatrix используют имя поля флагов, '
+            text+='два смещения следующих правил рынка выражены через FMarketRule и BasePrice. Исходные инструкции сохранены.\n'
+        text=text.replace('сохранены неизвестными, их формат и штатные потребители ещё не установлены.',
+                          'содержат распознанные графические цепочки, неизвестные промежутки и неустановленные штатные загрузчики.')
+        if '[Графические цепочки BANK](' not in text:
+            text+='\n[Графические цепочки BANK]('+prefix+'BankScreenStrips.md) содержат 170 физических заголовков и растры, всего 89046 исходных байтов. '
+            text+='Сверены 691008 пиксельных битов основных цепочек, 2172 байта дополнительных пар и 408 байтов неполных копий. В промежутках остаются 8850 байтов с неизвестным назначением. '
+            text+='[scene1po]('+prefix+'Scene1PixelPairs.md) распознан как графический ресурс, 18676 байтов, две согласованные плоскости с исследовательской геометрией 368×203. '
+            text+='Палитры, игровые загрузчики и связь парных растров с временными фазами не доказаны. '
+            text+='[Удалённый исходник ALASM]('+prefix+'DeletedDecimalFormatterSource.md) восстановлен как отдельный исследовательский текст, каталог не менялся.\n'
+        text=text.replace('Сверены 691008 пиксельных битов и однозначные границы цепочек,','Сверены 691008 пиксельных битов основных цепочек и 2172 байта дополнительных пар,')
+        text=text.replace('Сверены 691008 пиксельных битов основных цепочек и 2172 байта дополнительных пар, 9258 байтов промежутков оставлены неизвестными.',
+                          'Сверены 691008 пиксельных битов основных цепочек, 2172 байта дополнительных пар и 408 байтов неполных копий. В промежутках остаются 8850 байтов с неизвестным назначением.')
         pending[path]=text.encode('utf-8')
     path=ROOT/'Docs/ModifiedCode.md';text=path.read_text('utf-8')
     text,count=re.subn(r'сверяет \d+ записей','сверяет '+str(mutation['records_checked'])+' записей',text);assert count==1
-    text,count=re.subn(r'и \d+ целей с','и '+str(mutation['physical_target_ranges_checked'])+' целей с',text);assert count==1
+    text,count=re.subn(r'и (?:\d+ )?цел(?:ей|и) с\s+явными физическими смещениями(?: \(всего \d+\))?|и записи с\s+явными физическими смещениями целей \(всего \d+\)',
+                       f"и записи с\nявными физическими смещениями целей (всего {mutation['physical_target_ranges_checked']})",text);assert count==1
+    unbound = sum('target_path' not in row for row in read('ModifiedCode'))
+    text,count=re.subn(r'Остальные \d+ записей отдельного',f'Остальные {unbound} записей отдельного',text);assert count==1
     pending[path]=text.encode('utf-8')
     checkpoint=read('InteractionCheckpoint');build=read('BuildVerification')
     checkpoint['last_user_confirmed_build'].update(compiled_lines=196226,work_seconds=2.468,errors=0,warnings=0,
@@ -99,7 +143,11 @@ def main():
     candidate=ROOT/('Tools/Disasm/Research/Candidates/'+args.tag)
     history=ROOT/('Tools/Disasm/Research/History/Before'+args.tag)
     assert not candidate.exists() and not history.exists()
-    plan=[(path,path.read_bytes(),after) for path,after in pending.items()]
+    plan=[]
+    for path,after in pending.items():
+        before=path.read_bytes()
+        if before!=after:
+            plan.append((path,before,after))
     # Подготовка отдельного кандидата и проверка всех исходных оснований перед публикацией сводки.
     for path,before,after in plan:
         target=candidate/path.relative_to(ROOT);target.parent.mkdir(parents=True,exist_ok=True);target.write_bytes(after)

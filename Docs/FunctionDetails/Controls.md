@@ -4,6 +4,54 @@
 Список непосредственных чтений и записей не включает косвенные обращения
 через HL, DE, BC, IX/IY и эффекты вызываемых подпрограмм.
 
+## LoadStationDirectRelay
+
+[Controls.LoadStationDirectRelay](../../Source/Controls/LoadStationDirectRelay.asm)
+
+Перенесённый запрос STATIONF с внешним возвратом TR-DOS непосредственно в загрузчик станции по 6300.
+
+[Договоры и границы проверки](../ControlsDirectStationRelay.md).
+
+## LoadStationStateRelay
+
+[Controls.LoadStationStateRelay](../../Source/Controls/LoadStationStateRelay.asm)
+
+Загрузка STATIONF с условным восстановлением 481 байта в состояние станции и переходом в свежий загрузчик.
+
+[Договоры и границы проверки](../ControlsStateStationRelay.md).
+
+## LoadLegacyPackedBlock
+
+[Controls.LoadLegacyPackedBlock](../../Source/Controls/LoadLegacyPackedBlock.asm)
+
+Старый вход чтения и распаковки блока с возвратом через восстановленный полётный контекст.
+
+[Договоры и границы проверки](../ControlsLegacyLoadChain.md).
+
+## ReadLegacySectors
+
+[Controls.ReadLegacySectors](../../Source/Controls/ReadLegacySectors.asm)
+
+Чтение последовательных секторов через внутренние входы ROM с повтором при ошибке.
+
+[Договоры и границы проверки](../ControlsLegacyLoadChain.md).
+
+## WriteLegacyDiskPort
+
+[Controls.WriteLegacyDiskPort](../../Source/Controls/WriteLegacyDiskPort.asm)
+
+Подготовка ROM-входа вывода байта в порт.
+
+[Договоры и границы проверки](../ControlsLegacyLoadChain.md).
+
+## CallLegacyDosRom
+
+[Controls.CallLegacyDosRom](../../Source/Controls/CallLegacyDosRom.asm)
+
+Передача внутреннему ROM-входу TR-DOS через подготовленный стек.
+
+[Договоры и границы проверки](../ControlsLegacyLoadChain.md).
+
 ## CopyViewportToScreen
 
 [Controls.CopyViewportToScreen](../../Source/Controls/CopyViewportToScreen.asm)
@@ -413,6 +461,14 @@
 - Косвенное завершение: нет в этом фрагменте.
 
 [Алгоритм, контракты и независимая модель](../ControlsBodyDraw.md).
+
+## DrawBodyPrimaryMask
+
+[Controls.DrawBodyPrimaryMask](../../Source/Controls/DrawBodyPrimaryMask.asm)
+
+Выбор основной затравки малого тела и режима 1 большого растра.
+
+[Договоры и границы проверки](../ControlsBodyPrimaryMask.md).
 
 ## CallLargeCircle
 
@@ -843,6 +899,14 @@
 - Косвенное завершение: нет в этом фрагменте.
 
 [Алгоритм, контракты и независимая модель](../ControlsWordRandom.md).
+
+## ResetFlightContext
+
+[Controls.ResetFlightContext](../../Source/Controls/ResetFlightContext.asm)
+
+Сброс рабочих векторов, списков объектов и эффектов и перенос ключа перед активацией параметров.
+
+[Договоры и границы проверки](../ControlsResetFlightContext.md).
 
 ## BuildAndActivateParameters
 

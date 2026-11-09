@@ -2,6 +2,7 @@
                 module InitializeFinal
                 ; Внутренние входы [алгоритм](../../Docs/ArithmeticFinalInternalLabels.md)
                 ; Документация [банки и цикл финала](../../Docs/FinalCycle.md)
+                ; Документация [физические указатели синхронизации](../../Docs/FinalSyncAndPreviewRecord.md)
 ; Документация [Final](../../Docs/FunctionDetails/Final.md)
 ; -----------------------------------------
 ; Подготовка трёх экранных банков, таблицы IM 2 и финальной анимации
@@ -82,7 +83,8 @@ Entry:          LD HL, #5800
 BeginFramePair: EI
                 HALT
                 EI
-                LD HL, (#62A7)
+                ; Отключение вставки после десятого ряда для первой фазы.
+                LD HL, (@FinalSyncPointers.Value.AfterRow10)
                 LD (HL), #00
                 INC HL
                 LD (HL), #00
@@ -90,7 +92,8 @@ BeginFramePair: EI
                 LD (HL), #00
                 INC HL
                 LD (HL), #00
-                LD HL, (#62A5)
+                ; Подготовка остановки до IRQ после восемнадцатого ряда для первой фазы.
+                LD HL, (@FinalSyncPointers.Value.AfterRow18)
                 LD (HL), #31
                 INC HL
                 LD DE, #6196
@@ -106,12 +109,13 @@ BeginFramePair: EI
                 LD (#6173), A
                 LD A, #90
                 EX AF, AF'
-                CALL #8000
+                CALL @FinalDisplayChainConst.GeneratedEntry
                 LD BC, #7FFD
                 LD A, #01
                 OUT (C), A
                 LD (#6173), A
-                LD HL, (#62A5)
+                ; Отключение вставки после восемнадцатого ряда для второй фазы.
+                LD HL, (@FinalSyncPointers.Value.AfterRow18)
                 LD (HL), #00
                 INC HL
                 LD (HL), #00
@@ -119,7 +123,8 @@ BeginFramePair: EI
                 LD (HL), #00
                 INC HL
                 LD (HL), #00
-                LD HL, (#62A7)
+                ; Подготовка остановки до IRQ после десятого ряда для второй фазы.
+                LD HL, (@FinalSyncPointers.Value.AfterRow10)
                 LD (HL), #31
                 INC HL
                 LD DE, #6196
@@ -185,7 +190,7 @@ DelaySecond:    NOP
 
                 LD A, #A0
                 EX AF, AF'
-                CALL #8000
+                CALL @FinalDisplayChainConst.GeneratedEntry
                 LD A, #00
                 OUT (#FE), A
                 CALL @Final.ReadSpeedKeys.Entry

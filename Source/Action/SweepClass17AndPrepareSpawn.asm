@@ -43,7 +43,7 @@ Entry:          LD A, #92
                 LD E, @ActionClass17SweepConst.EffectLimit
                 EXX
                 ; Подготовка указателя перед первой записью и исходного шага 64 к её старшему байту компоненты.
-                LD HL, #A0C1
+                LD HL, @ActionObjectRecords.Record00.Components.Component0.High - @FActionRecord
                 LD DE, @FActionRecord
                 JP @Action.SweepClass17AndPrepareSpawn.NextRecord
 

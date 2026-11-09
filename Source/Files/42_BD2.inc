@@ -40,8 +40,11 @@
                 incbin "../Resources/42_BD2/Sprite3888.bin"
                 ; 720 логических байтов без подтверждённой ссылки BAR, формат не назначается.
                 assert $ == #3CA8
-                incbin "../Resources/42_BD2/UnknownLogicalTail.bin"
+                ; 360 пар маска, пиксели после последнего кадра BAR, размеры не установлены
+                incbin "../Resources/42_BD2/UnindexedMaskPixelPairs.bin"
                 ; Исходный секторный хвост после логического файла, сохранён отдельно.
                 assert $ == #3F78
+                ; Физический суффикс выделенных секторов, неиспользуемость не установлена
+                ; Документация [границы и сохранение суффиксов](../../Docs/AllocatedSectorSuffixes.md)
                 incbin "../Resources/42_BD2/SectorTail.bin"
                 assert $ == #4000

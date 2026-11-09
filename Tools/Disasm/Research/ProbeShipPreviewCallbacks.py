@@ -24,8 +24,9 @@ class Trace(PortTrace):
 
 class Fixture:
  boot_code=None
- def __init__(self,base,selector=0,model=0,rectangle=(1,1,16,12),page=0x10,flags=0):
-  self.memory=m=SliceableMemory(banks=[b.copy() for b in base],out7ffd=page);self.sim=s=Simulator(m);self.trace=Trace(s);s.set_tracer(self.trace)
+ def __init__(self,base,selector=0,model=0,rectangle=(1,1,16,12),page=0x10,flags=0,*,memory_type=SliceableMemory,cpu_type=Simulator):
+  self.memory=m=memory_type(banks=[b.copy() for b in base],out7ffd=page);self.sim=s=cpu_type(m);self.trace=Trace(s);s.set_tracer(self.trace)
+  if hasattr(m,'bind_registers'):m.bind_registers(s.registers)
   # Подготовка настоящей таблицы IM2 и JP 8181 исходными инструкциями загрузчика.
   if Fixture.boot_code is None:
    source=payload(4);flow=json.loads((ROOT/'Tools/Disasm/Reports/ControlFlow.json').read_text('utf-8'));code_rows=[]

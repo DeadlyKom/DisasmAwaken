@@ -1,5 +1,6 @@
                 module Action
                 module ProjectWideVectors
+                ; Физические поля [локальный контекст](../../Docs/ActionLocalContextPhysicalData.md)
                 ; Документация [алгоритм и проверка](../../Docs/ActionWideProjectionInput.md)
                 ; -----------------------------------------
                 ; Обход широких векторов с выбором масштаба, отрисовкой близких записей и публикацией выбранной

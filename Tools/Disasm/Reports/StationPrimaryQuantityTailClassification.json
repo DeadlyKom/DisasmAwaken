@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "typed_bytes": 28,
+  "physical_records": 28,
+  "physical_symbols": 56,
+  "files": 7,
+  "original_data_rows": 33,
+  "end_marker_address": 39087,
+  "end_marker_original_value": 128,
+  "save5_zero_preserved": true,
+  "original_bytes_addresses_and_instructions_preserved": true,
+  "gaps_preserved": true,
+  "invalid_pair_gameplay_proved": false,
+  "cf08_reclassified": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

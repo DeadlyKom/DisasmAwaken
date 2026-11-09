@@ -3,3394 +3,2615 @@
                 ; Метки являются смещениями BAR, исполнительный адрес этому файлу не назначается.
                 assert $ == #0000
 Index00:        FFighterPosePointer {
-                    #0048                                                       ; FFighterPosePointer.FileOffset, исходное значение
+                    #0048                                                       ; FileOffset, смещение начала группы в BAR
                 }
 Index01:        FFighterPosePointer {
-                    #00D8                                                       ; FFighterPosePointer.FileOffset, исходное значение
+                    #00D8                                                       ; FileOffset, смещение начала группы в BAR
                 }
 Index02:        FFighterPosePointer {
-                    #015A                                                       ; FFighterPosePointer.FileOffset, исходное значение
+                    #015A                                                       ; FileOffset, смещение начала группы в BAR
                 }
 Index03:        FFighterPosePointer {
-                    #01DC                                                       ; FFighterPosePointer.FileOffset, исходное значение
+                    #01DC                                                       ; FileOffset, смещение начала группы в BAR
                 }
 Index04:        FFighterPosePointer {
-                    #02CE                                                       ; FFighterPosePointer.FileOffset, исходное значение
+                    #02CE                                                       ; FileOffset, смещение начала группы в BAR
                 }
 Index05:        FFighterPosePointer {
-                    #02E0                                                       ; FFighterPosePointer.FileOffset, исходное значение
+                    #02E0                                                       ; FileOffset, смещение начала группы в BAR
                 }
 Index06:        FFighterPosePointer {
-                    #0304                                                       ; FFighterPosePointer.FileOffset, исходное значение
+                    #0304                                                       ; FileOffset, смещение начала группы в BAR
                 }
 Index07:        FFighterPosePointer {
-                    #0316                                                       ; FFighterPosePointer.FileOffset, исходное значение
+                    #0316                                                       ; FileOffset, смещение начала группы в BAR
                 }
 Index08:        FFighterPosePointer {
-                    #03D0                                                       ; FFighterPosePointer.FileOffset, исходное значение
+                    #03D0                                                       ; FileOffset, смещение начала группы в BAR
                 }
 Index09:        FFighterPosePointer {
-                    #048A                                                       ; FFighterPosePointer.FileOffset, исходное значение
+                    #048A                                                       ; FileOffset, смещение начала группы в BAR
                 }
 Index10:        FFighterPosePointer {
-                    #04AA                                                       ; FFighterPosePointer.FileOffset, исходное значение
+                    #04AA                                                       ; FileOffset, смещение начала группы в BAR
                 }
 Index11:        FFighterPosePointer {
-                    #04BC                                                       ; FFighterPosePointer.FileOffset, исходное значение
+                    #04BC                                                       ; FileOffset, смещение начала группы в BAR
                 }
 Index12:        FFighterPosePointer {
-                    #04EE                                                       ; FFighterPosePointer.FileOffset, исходное значение
+                    #04EE                                                       ; FileOffset, смещение начала группы в BAR
                 }
 Index13:        FFighterPosePointer {
-                    #0520                                                       ; FFighterPosePointer.FileOffset, исходное значение
+                    #0520                                                       ; FileOffset, смещение начала группы в BAR
                 }
 Index14:        FFighterPosePointer {
-                    #0540                                                       ; FFighterPosePointer.FileOffset, исходное значение
+                    #0540                                                       ; FileOffset, смещение начала группы в BAR
                 }
 Index15:        FFighterPosePointer {
-                    #058A                                                       ; FFighterPosePointer.FileOffset, исходное значение
+                    #058A                                                       ; FileOffset, смещение начала группы в BAR
                 }
 Index16:        FFighterPosePointer {
-                    #05D4                                                       ; FFighterPosePointer.FileOffset, исходное значение
+                    #05D4                                                       ; FileOffset, смещение начала группы в BAR
                 }
 Index17:        FFighterPosePointer {
-                    #0602                                                       ; FFighterPosePointer.FileOffset, исходное значение
+                    #0602                                                       ; FileOffset, смещение начала группы в BAR
                 }
 Index18:        FFighterPosePointer {
-                    #02F2                                                       ; FFighterPosePointer.FileOffset, исходное значение
+                    #02F2                                                       ; FileOffset, смещение начала группы в BAR
                 }
 Index19:        FFighterPosePointer {
-                    #0630                                                       ; FFighterPosePointer.FileOffset, исходное значение
+                    #0630                                                       ; FileOffset, смещение начала группы в BAR
                 }
 Index20:        FFighterPosePointer {
-                    #065E                                                       ; FFighterPosePointer.FileOffset, исходное значение
+                    #065E                                                       ; FileOffset, смещение начала группы в BAR
                 }
 Index21:        FFighterPosePointer {
-                    #069A                                                       ; FFighterPosePointer.FileOffset, исходное значение
+                    #069A                                                       ; FileOffset, смещение начала группы в BAR
                 }
 Index22:        FFighterPosePointer {
-                    #050E                                                       ; FFighterPosePointer.FileOffset, исходное значение
+                    #050E                                                       ; FileOffset, смещение начала группы в BAR
                 }
 Index23:        FFighterPosePointer {
-                    #06D6                                                       ; FFighterPosePointer.FileOffset, исходное значение
+                    #06D6                                                       ; FileOffset, смещение начала группы в BAR
                 }
 Index24:        FFighterPosePointer {
-                    #0732                                                       ; FFighterPosePointer.FileOffset, исходное значение
+                    #0732                                                       ; FileOffset, смещение начала группы в BAR
                 }
 Index25:        FFighterPosePointer {
-                    #0744                                                       ; FFighterPosePointer.FileOffset, исходное значение
+                    #0744                                                       ; FileOffset, смещение начала группы в BAR
                 }
 Index26:        FFighterPosePointer {
-                    #0704                                                       ; FFighterPosePointer.FileOffset, исходное значение
+                    #0704                                                       ; FileOffset, смещение начала группы в BAR
                 }
 Index27:        FFighterPosePointer {
-                    #0756                                                       ; FFighterPosePointer.FileOffset, исходное значение
+                    #0756                                                       ; FileOffset, смещение начала группы в BAR
                 }
 Index28:        FFighterPosePointer {
-                    #0768                                                       ; FFighterPosePointer.FileOffset, исходное значение
+                    #0768                                                       ; FileOffset, смещение начала группы в BAR
                 }
 Index29:        FFighterPosePointer {
-                    #084C                                                       ; FFighterPosePointer.FileOffset, исходное значение
+                    #084C                                                       ; FileOffset, смещение начала группы в BAR
                 }
 Index30:        FFighterPosePointer {
-                    #08F8                                                       ; FFighterPosePointer.FileOffset, исходное значение
+                    #08F8                                                       ; FileOffset, смещение начала группы в BAR
                 }
 Index31:        FFighterPosePointer {
-                    #09A4                                                       ; FFighterPosePointer.FileOffset, исходное значение
+                    #09A4                                                       ; FileOffset, смещение начала группы в BAR
                 }
 Index32:        FFighterPosePointer {
-                    #0A88                                                       ; FFighterPosePointer.FileOffset, исходное значение
+                    #0A88                                                       ; FileOffset, смещение начала группы в BAR
                 }
 Index33:        FFighterPosePointer {
-                    #0B34                                                       ; FFighterPosePointer.FileOffset, исходное значение
+                    #0B34                                                       ; FileOffset, смещение начала группы в BAR
                 }
 Index34:        FFighterPosePointer {
-                    #0BE0                                                       ; FFighterPosePointer.FileOffset, исходное значение
+                    #0BE0                                                       ; FileOffset, смещение начала группы в BAR
                 }
 Index35:        FFighterPosePointer {
-                    #0BF2                                                       ; FFighterPosePointer.FileOffset, исходное значение
+                    #0BF2                                                       ; FileOffset, смещение начала группы в BAR
                 }
                 assert $ == #0048
 Group0048:      FFighterPoseHeader {
-                    #000A,                                                      ; FFighterPoseHeader.CountMode, исходное значение
-                    #00,                                                        ; FFighterPoseHeader.Unknown02, исходное значение
-                    #00                                                         ; FFighterPoseHeader.Unknown03, исходное значение
+                    #0A,                                                        ; FrameCount, число кадров группы
+                    #00,                                                        ; RepeatFlags, флаг, бит 6 задаёт повтор с RepeatIndex, ноль выбирает NextAction
+                    #00,                                                        ; RepeatIndex, индекс кадра после окончания группы при повторе
+                    #00                                                         ; NextAction, следующий код действия при отключённом повторе
                 }
 R0048_00:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #C000,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #06,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #54                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #C000,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #06,                                                        ; WidthBytes, число пар в строке
+                    #54                                                         ; Height, число строк
                 }
 R0048_01:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #C3F0,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #06,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #55                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #C3F0,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #06,                                                        ; WidthBytes, число пар в строке
+                    #55                                                         ; Height, число строк
                 }
 R0048_02:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #C7EC,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #06,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #56                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #C7EC,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #06,                                                        ; WidthBytes, число пар в строке
+                    #56                                                         ; Height, число строк
                 }
 R0048_03:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #CBF4,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #06,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #56                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #CBF4,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #06,                                                        ; WidthBytes, число пар в строке
+                    #56                                                         ; Height, число строк
                 }
 R0048_04:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #CFFC,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #06,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #58                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #CFFC,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #06,                                                        ; WidthBytes, число пар в строке
+                    #58                                                         ; Height, число строк
                 }
 R0048_05:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #D41C,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #06,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #58                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #D41C,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #06,                                                        ; WidthBytes, число пар в строке
+                    #58                                                         ; Height, число строк
                 }
 R0048_06:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #CFFC,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #06,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #58                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #CFFC,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #06,                                                        ; WidthBytes, число пар в строке
+                    #58                                                         ; Height, число строк
                 }
 R0048_07:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #CBF4,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #06,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #56                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #CBF4,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #06,                                                        ; WidthBytes, число пар в строке
+                    #56                                                         ; Height, число строк
                 }
 R0048_08:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #C7EC,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #06,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #56                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #C7EC,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #06,                                                        ; WidthBytes, число пар в строке
+                    #56                                                         ; Height, число строк
                 }
 R0048_09:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #C3F0,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #06,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #55                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #C3F0,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #06,                                                        ; WidthBytes, число пар в строке
+                    #55                                                         ; Height, число строк
                 }
                 assert $ == #00D8
 Group00D8:      FFighterPoseHeader {
-                    #4009,                                                      ; FFighterPoseHeader.CountMode, исходное значение
-                    #00,                                                        ; FFighterPoseHeader.Unknown02, исходное значение
-                    #00                                                         ; FFighterPoseHeader.Unknown03, исходное значение
+                    #09,                                                        ; FrameCount, число кадров группы
+                    #40,                                                        ; RepeatFlags, флаг, бит 6 задаёт повтор с RepeatIndex, ноль выбирает NextAction
+                    #00,                                                        ; RepeatIndex, индекс кадра после окончания группы при повторе
+                    #00                                                         ; NextAction, следующий код действия при отключённом повторе
                 }
 R00D8_00:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #01,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #C000,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #07,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #5B                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0001,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #C000,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #07,                                                        ; WidthBytes, число пар в строке
+                    #5B                                                         ; Height, число строк
                 }
 R00D8_01:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #01,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #C4FA,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #07,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #5A                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0001,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #C4FA,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #07,                                                        ; WidthBytes, число пар в строке
+                    #5A                                                         ; Height, число строк
                 }
 R00D8_02:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #01,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #C9E6,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #07,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #5B                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0001,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #C9E6,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #07,                                                        ; WidthBytes, число пар в строке
+                    #5B                                                         ; Height, число строк
                 }
 R00D8_03:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #01,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #CEE0,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #07,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #58                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0001,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #CEE0,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #07,                                                        ; WidthBytes, число пар в строке
+                    #58                                                         ; Height, число строк
                 }
 R00D8_04:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #01,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #D3B0,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #07,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #58                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0001,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #D3B0,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #07,                                                        ; WidthBytes, число пар в строке
+                    #58                                                         ; Height, число строк
                 }
 R00D8_05:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #01,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #D880,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #07,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #59                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0001,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #D880,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #07,                                                        ; WidthBytes, число пар в строке
+                    #59                                                         ; Height, число строк
                 }
 R00D8_06:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #01,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #DD5E,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #07,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #59                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0001,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #DD5E,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #07,                                                        ; WidthBytes, число пар в строке
+                    #59                                                         ; Height, число строк
                 }
 R00D8_07:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #01,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #E23C,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #07,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #58                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0001,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #E23C,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #07,                                                        ; WidthBytes, число пар в строке
+                    #58                                                         ; Height, число строк
                 }
 R00D8_08:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #01,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #E70C,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #07,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #58                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0001,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #E70C,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #07,                                                        ; WidthBytes, число пар в строке
+                    #58                                                         ; Height, число строк
                 }
                 assert $ == #015A
 Group015A:      FFighterPoseHeader {
-                    #4009,                                                      ; FFighterPoseHeader.CountMode, исходное значение
-                    #00,                                                        ; FFighterPoseHeader.Unknown02, исходное значение
-                    #00                                                         ; FFighterPoseHeader.Unknown03, исходное значение
+                    #09,                                                        ; FrameCount, число кадров группы
+                    #40,                                                        ; RepeatFlags, флаг, бит 6 задаёт повтор с RepeatIndex, ноль выбирает NextAction
+                    #00,                                                        ; RepeatIndex, индекс кадра после окончания группы при повторе
+                    #00                                                         ; NextAction, следующий код действия при отключённом повторе
                 }
 R015A_00:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #E70C,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #07,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #58                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #FFFF,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #E70C,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #07,                                                        ; WidthBytes, число пар в строке
+                    #58                                                         ; Height, число строк
                 }
 R015A_01:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #E23C,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #07,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #58                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #FFFF,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #E23C,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #07,                                                        ; WidthBytes, число пар в строке
+                    #58                                                         ; Height, число строк
                 }
 R015A_02:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #DD5E,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #07,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #59                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #FFFF,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #DD5E,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #07,                                                        ; WidthBytes, число пар в строке
+                    #59                                                         ; Height, число строк
                 }
 R015A_03:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #D880,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #07,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #59                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #FFFF,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #D880,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #07,                                                        ; WidthBytes, число пар в строке
+                    #59                                                         ; Height, число строк
                 }
 R015A_04:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #D3B0,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #07,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #58                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #FFFF,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #D3B0,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #07,                                                        ; WidthBytes, число пар в строке
+                    #58                                                         ; Height, число строк
                 }
 R015A_05:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #CEE0,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #07,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #58                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #FFFF,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #CEE0,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #07,                                                        ; WidthBytes, число пар в строке
+                    #58                                                         ; Height, число строк
                 }
 R015A_06:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #C9E6,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #07,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #5B                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #FFFF,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #C9E6,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #07,                                                        ; WidthBytes, число пар в строке
+                    #5B                                                         ; Height, число строк
                 }
 R015A_07:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #C4FA,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #07,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #5A                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #FFFF,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #C4FA,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #07,                                                        ; WidthBytes, число пар в строке
+                    #5A                                                         ; Height, число строк
                 }
 R015A_08:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #C000,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #07,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #5B                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #FFFF,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #C000,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #07,                                                        ; WidthBytes, число пар в строке
+                    #5B                                                         ; Height, число строк
                 }
                 assert $ == #01DC
 Group01DC:      FFighterPoseHeader {
-                    #0011,                                                      ; FFighterPoseHeader.CountMode, исходное значение
-                    #00,                                                        ; FFighterPoseHeader.Unknown02, исходное значение
-                    #00                                                         ; FFighterPoseHeader.Unknown03, исходное значение
+                    #11,                                                        ; FrameCount, число кадров группы
+                    #00,                                                        ; RepeatFlags, флаг, бит 6 задаёт повтор с RepeatIndex, ноль выбирает NextAction
+                    #00,                                                        ; RepeatIndex, индекс кадра после окончания группы при повторе
+                    #00                                                         ; NextAction, следующий код действия при отключённом повторе
                 }
 R01DC_00:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #06,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #C000,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #06,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #54                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0006,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #C000,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #06,                                                        ; WidthBytes, число пар в строке
+                    #54                                                         ; Height, число строк
                 }
 R01DC_01:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #08,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FD,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #D83C,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #07,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #5E                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0008,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFD,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #D83C,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #07,                                                        ; WidthBytes, число пар в строке
+                    #5E                                                         ; Height, число строк
                 }
 R01DC_02:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #10,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FD,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #D83C,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #07,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #5E                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0010,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFD,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #D83C,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #07,                                                        ; WidthBytes, число пар в строке
+                    #5E                                                         ; Height, число строк
                 }
 R01DC_03:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #29,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FD,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #DD60,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #08,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #41                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0029,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFD,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #DD60,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #08,                                                        ; WidthBytes, число пар в строке
+                    #41                                                         ; Height, число строк
                 }
 R01DC_04:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #08,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FD,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #DD60,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #08,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #41                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0008,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFD,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #DD60,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #08,                                                        ; WidthBytes, число пар в строке
+                    #41                                                         ; Height, число строк
                 }
 R01DC_05:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #07,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FD,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #DD60,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #08,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #41                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0007,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFD,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #DD60,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #08,                                                        ; WidthBytes, число пар в строке
+                    #41                                                         ; Height, число строк
                 }
 R01DC_06:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #08,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FD,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #DD60,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #08,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #41                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0008,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFD,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #DD60,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #08,                                                        ; WidthBytes, число пар в строке
+                    #41                                                         ; Height, число строк
                 }
 R01DC_07:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #02,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FD,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #DD60,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #08,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #41                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0002,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFD,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #DD60,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #08,                                                        ; WidthBytes, число пар в строке
+                    #41                                                         ; Height, число строк
                 }
 R01DC_08:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #04,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FD,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #DD60,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #08,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #41                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0004,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFD,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #DD60,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #08,                                                        ; WidthBytes, число пар в строке
+                    #41                                                         ; Height, число строк
                 }
 R01DC_09:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #FC,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FD,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #DD60,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #08,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #41                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #FFFC,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFD,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #DD60,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #08,                                                        ; WidthBytes, число пар в строке
+                    #41                                                         ; Height, число строк
                 }
 R01DC_10:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FD,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #DD60,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #08,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #41                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #FFFE,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFD,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #DD60,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #08,                                                        ; WidthBytes, число пар в строке
+                    #41                                                         ; Height, число строк
                 }
 R01DC_11:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #F8,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FD,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #DD60,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #08,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #41                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #FFF8,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFD,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #DD60,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #08,                                                        ; WidthBytes, число пар в строке
+                    #41                                                         ; Height, число строк
                 }
 R01DC_12:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #F9,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FD,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #DD60,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #08,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #41                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #FFF9,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFD,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #DD60,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #08,                                                        ; WidthBytes, число пар в строке
+                    #41                                                         ; Height, число строк
                 }
 R01DC_13:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #F8,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FD,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #DD60,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #08,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #41                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #FFF8,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFD,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #DD60,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #08,                                                        ; WidthBytes, число пар в строке
+                    #41                                                         ; Height, число строк
                 }
 R01DC_14:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #D2,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FD,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #D83C,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #07,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #5E                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #FFD2,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFD,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #D83C,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #07,                                                        ; WidthBytes, число пар в строке
+                    #5E                                                         ; Height, число строк
                 }
 R01DC_15:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #E7,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FD,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #D83C,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #07,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #5E                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #FFE7,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFD,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #D83C,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #07,                                                        ; WidthBytes, число пар в строке
+                    #5E                                                         ; Height, число строк
                 }
 R01DC_16:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #E170,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #06,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #48                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #E170,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #06,                                                        ; WidthBytes, число пар в строке
+                    #48                                                         ; Height, число строк
                 }
                 assert $ == #02CE
 Group02CE:      FFighterPoseHeader {
-                    #0001,                                                      ; FFighterPoseHeader.CountMode, исходное значение
-                    #00,                                                        ; FFighterPoseHeader.Unknown02, исходное значение
-                    #12                                                         ; FFighterPoseHeader.Unknown03, исходное значение
+                    #01,                                                        ; FrameCount, число кадров группы
+                    #00,                                                        ; RepeatFlags, флаг, бит 6 задаёт повтор с RepeatIndex, ноль выбирает NextAction
+                    #00,                                                        ; RepeatIndex, индекс кадра после окончания группы при повторе
+                    #12                                                         ; NextAction, следующий код действия при отключённом повторе
                 }
 R02CE_00:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FD,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #EBDC,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #06,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #39                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFD,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #EBDC,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #06,                                                        ; WidthBytes, число пар в строке
+                    #39                                                         ; Height, число строк
                 }
                 assert $ == #02E0
 Group02E0:      FFighterPoseHeader {
-                    #0001,                                                      ; FFighterPoseHeader.CountMode, исходное значение
-                    #00,                                                        ; FFighterPoseHeader.Unknown02, исходное значение
-                    #12                                                         ; FFighterPoseHeader.Unknown03, исходное значение
+                    #01,                                                        ; FrameCount, число кадров группы
+                    #00,                                                        ; RepeatFlags, флаг, бит 6 задаёт повтор с RepeatIndex, ноль выбирает NextAction
+                    #00,                                                        ; RepeatIndex, индекс кадра после окончания группы при повторе
+                    #12                                                         ; NextAction, следующий код действия при отключённом повторе
                 }
 R02E0_00:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FD,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #01,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #ECCE,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #06,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #39                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFD,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0001,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #ECCE,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #06,                                                        ; WidthBytes, число пар в строке
+                    #39                                                         ; Height, число строк
                 }
                 assert $ == #02F2
 Group02F2:      FFighterPoseHeader {
-                    #4001,                                                      ; FFighterPoseHeader.CountMode, исходное значение
-                    #00,                                                        ; FFighterPoseHeader.Unknown02, исходное значение
-                    #00                                                         ; FFighterPoseHeader.Unknown03, исходное значение
+                    #01,                                                        ; FrameCount, число кадров группы
+                    #40,                                                        ; RepeatFlags, флаг, бит 6 задаёт повтор с RepeatIndex, ноль выбирает NextAction
+                    #00,                                                        ; RepeatIndex, индекс кадра после окончания группы при повторе
+                    #00                                                         ; NextAction, следующий код действия при отключённом повторе
                 }
 R02F2_00:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FD,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #EE88,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #06,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #32                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFD,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #EE88,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #06,                                                        ; WidthBytes, число пар в строке
+                    #32                                                         ; Height, число строк
                 }
                 assert $ == #0304
 Group0304:      FFighterPoseHeader {
-                    #0001,                                                      ; FFighterPoseHeader.CountMode, исходное значение
-                    #00,                                                        ; FFighterPoseHeader.Unknown02, исходное значение
-                    #00                                                         ; FFighterPoseHeader.Unknown03, исходное значение
+                    #01,                                                        ; FrameCount, число кадров группы
+                    #00,                                                        ; RepeatFlags, флаг, бит 6 задаёт повтор с RepeatIndex, ноль выбирает NextAction
+                    #00,                                                        ; RepeatIndex, индекс кадра после окончания группы при повторе
+                    #00                                                         ; NextAction, следующий код действия при отключённом повторе
                 }
 R0304_00:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FD,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #EBDC,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #06,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #39                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFD,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #EBDC,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #06,                                                        ; WidthBytes, число пар в строке
+                    #39                                                         ; Height, число строк
                 }
                 assert $ == #0316
 Group0316:      FFighterPoseHeader {
-                    #000D,                                                      ; FFighterPoseHeader.CountMode, исходное значение
-                    #00,                                                        ; FFighterPoseHeader.Unknown02, исходное значение
-                    #00                                                         ; FFighterPoseHeader.Unknown03, исходное значение
+                    #0D,                                                        ; FrameCount, число кадров группы
+                    #00,                                                        ; RepeatFlags, флаг, бит 6 задаёт повтор с RepeatIndex, ноль выбирает NextAction
+                    #00,                                                        ; RepeatIndex, индекс кадра после окончания группы при повторе
+                    #00                                                         ; NextAction, следующий код действия при отключённом повторе
                 }
 R0316_00:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #01,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #0A,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FD,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #D83C,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #07,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #5E                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0001,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #000A,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFD,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #D83C,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #07,                                                        ; WidthBytes, число пар в строке
+                    #5E                                                         ; Height, число строк
                 }
 R0316_01:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #01,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #35,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #F0E0,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #05,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #2A                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0001,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0035,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #F0E0,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #05,                                                        ; WidthBytes, число пар в строке
+                    #2A                                                         ; Height, число строк
                 }
 R0316_02:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #01,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #0F,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #F0E0,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #05,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #2A                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0001,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #000F,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #F0E0,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #05,                                                        ; WidthBytes, число пар в строке
+                    #2A                                                         ; Height, число строк
                 }
 R0316_03:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #01,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #0F,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #F284,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #06,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #21                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0001,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #000F,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #F284,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #06,                                                        ; WidthBytes, число пар в строке
+                    #21                                                         ; Height, число строк
                 }
 R0316_04:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #01,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #0D,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #F284,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #06,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #21                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0001,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #000D,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #F284,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #06,                                                        ; WidthBytes, число пар в строке
+                    #21                                                         ; Height, число строк
                 }
 R0316_05:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #01,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #09,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #F410,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #05,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #2A                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0001,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0009,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #F410,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #05,                                                        ; WidthBytes, число пар в строке
+                    #2A                                                         ; Height, число строк
                 }
 R0316_06:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #01,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #F410,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #05,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #2A                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0001,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #F410,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #05,                                                        ; WidthBytes, число пар в строке
+                    #2A                                                         ; Height, число строк
                 }
 R0316_07:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #01,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #F7,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #F5B4,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #06,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #20                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0001,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #FFF7,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #F5B4,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #06,                                                        ; WidthBytes, число пар в строке
+                    #20                                                         ; Height, число строк
                 }
 R0316_08:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #01,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #F8,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #F5B4,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #06,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #20                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0001,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #FFF8,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #F5B4,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #06,                                                        ; WidthBytes, число пар в строке
+                    #20                                                         ; Height, число строк
                 }
 R0316_09:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #01,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #EC,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #F0E0,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #05,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #2A                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0001,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #FFEC,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #F0E0,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #05,                                                        ; WidthBytes, число пар в строке
+                    #2A                                                         ; Height, число строк
                 }
 R0316_10:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #01,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #F1,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #F0E0,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #05,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #2A                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0001,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #FFF1,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #F0E0,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #05,                                                        ; WidthBytes, число пар в строке
+                    #2A                                                         ; Height, число строк
                 }
 R0316_11:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #01,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #F6,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #F284,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #06,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #21                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0001,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #FFF6,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #F284,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #06,                                                        ; WidthBytes, число пар в строке
+                    #21                                                         ; Height, число строк
                 }
 R0316_12:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #01,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #CB,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #C000,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #06,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #54                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0001,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #FFCB,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #C000,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #06,                                                        ; WidthBytes, число пар в строке
+                    #54                                                         ; Height, число строк
                 }
                 assert $ == #03D0
 Group03D0:      FFighterPoseHeader {
-                    #000D,                                                      ; FFighterPoseHeader.CountMode, исходное значение
-                    #00,                                                        ; FFighterPoseHeader.Unknown02, исходное значение
-                    #00                                                         ; FFighterPoseHeader.Unknown03, исходное значение
+                    #0D,                                                        ; FrameCount, число кадров группы
+                    #00,                                                        ; RepeatFlags, флаг, бит 6 задаёт повтор с RepeatIndex, ноль выбирает NextAction
+                    #00,                                                        ; RepeatIndex, индекс кадра после окончания группы при повторе
+                    #00                                                         ; NextAction, следующий код действия при отключённом повторе
                 }
 R03D0_00:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #0A,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FD,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #D83C,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #07,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #5E                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #FFFF,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #000A,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFD,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #D83C,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #07,                                                        ; WidthBytes, число пар в строке
+                    #5E                                                         ; Height, число строк
                 }
 R03D0_01:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #35,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #F5B4,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #06,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #20                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #FFFF,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0035,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #F5B4,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #06,                                                        ; WidthBytes, число пар в строке
+                    #20                                                         ; Height, число строк
                 }
 R03D0_02:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #0F,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #F5B4,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #06,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #20                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #FFFF,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #000F,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #F5B4,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #06,                                                        ; WidthBytes, число пар в строке
+                    #20                                                         ; Height, число строк
                 }
 R03D0_03:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #0F,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #F410,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #05,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #2A                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #FFFF,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #000F,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #F410,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #05,                                                        ; WidthBytes, число пар в строке
+                    #2A                                                         ; Height, число строк
                 }
 R03D0_04:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #0D,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #F410,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #05,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #2A                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #FFFF,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #000D,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #F410,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #05,                                                        ; WidthBytes, число пар в строке
+                    #2A                                                         ; Height, число строк
                 }
 R03D0_05:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #09,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #F284,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #06,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #21                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #FFFF,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0009,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #F284,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #06,                                                        ; WidthBytes, число пар в строке
+                    #21                                                         ; Height, число строк
                 }
 R03D0_06:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #F284,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #06,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #21                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #FFFF,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #F284,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #06,                                                        ; WidthBytes, число пар в строке
+                    #21                                                         ; Height, число строк
                 }
 R03D0_07:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #F7,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #F0E0,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #05,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #2A                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #FFFF,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #FFF7,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #F0E0,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #05,                                                        ; WidthBytes, число пар в строке
+                    #2A                                                         ; Height, число строк
                 }
 R03D0_08:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #F8,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #F0E0,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #05,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #2A                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #FFFF,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #FFF8,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #F0E0,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #05,                                                        ; WidthBytes, число пар в строке
+                    #2A                                                         ; Height, число строк
                 }
 R03D0_09:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #EC,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #F5B4,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #06,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #20                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #FFFF,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #FFEC,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #F5B4,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #06,                                                        ; WidthBytes, число пар в строке
+                    #20                                                         ; Height, число строк
                 }
 R03D0_10:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #F1,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #F5B4,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #06,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #20                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #FFFF,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #FFF1,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #F5B4,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #06,                                                        ; WidthBytes, число пар в строке
+                    #20                                                         ; Height, число строк
                 }
 R03D0_11:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #F6,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #F410,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #05,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #2A                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #FFFF,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #FFF6,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #F410,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #05,                                                        ; WidthBytes, число пар в строке
+                    #2A                                                         ; Height, число строк
                 }
 R03D0_12:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #CB,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #C000,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #06,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #54                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #FFFF,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #FFCB,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #C000,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #06,                                                        ; WidthBytes, число пар в строке
+                    #54                                                         ; Height, число строк
                 }
                 assert $ == #048A
 Group048A:      FFighterPoseHeader {
-                    #4002,                                                      ; FFighterPoseHeader.CountMode, исходное значение
-                    #01,                                                        ; FFighterPoseHeader.Unknown02, исходное значение
-                    #00                                                         ; FFighterPoseHeader.Unknown03, исходное значение
+                    #02,                                                        ; FrameCount, число кадров группы
+                    #40,                                                        ; RepeatFlags, флаг, бит 6 задаёт повтор с RepeatIndex, ноль выбирает NextAction
+                    #01,                                                        ; RepeatIndex, индекс кадра после окончания группы при повторе
+                    #00                                                         ; NextAction, следующий код действия при отключённом повторе
                 }
 R048A_00:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #01,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #E4D0,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #06,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #5D                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0001,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #E4D0,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #06,                                                        ; WidthBytes, число пар в строке
+                    #5D                                                         ; Height, число строк
                 }
 R048A_01:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #01,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #E92C,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #05,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #5D                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0001,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #E92C,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #05,                                                        ; WidthBytes, число пар в строке
+                    #5D                                                         ; Height, число строк
                 }
                 assert $ == #04AA
 Group04AA:      FFighterPoseHeader {
-                    #0001,                                                      ; FFighterPoseHeader.CountMode, исходное значение
-                    #00,                                                        ; FFighterPoseHeader.Unknown02, исходное значение
-                    #00                                                         ; FFighterPoseHeader.Unknown03, исходное значение
+                    #01,                                                        ; FrameCount, число кадров группы
+                    #00,                                                        ; RepeatFlags, флаг, бит 6 задаёт повтор с RepeatIndex, ноль выбирает NextAction
+                    #00,                                                        ; RepeatIndex, индекс кадра после окончания группы при повторе
+                    #00                                                         ; NextAction, следующий код действия при отключённом повторе
                 }
 R04AA_00:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #01,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #E4D0,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #06,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #5D                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0001,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #E4D0,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #06,                                                        ; WidthBytes, число пар в строке
+                    #5D                                                         ; Height, число строк
                 }
                 assert $ == #04BC
 Group04BC:      FFighterPoseHeader {
-                    #4002,                                                      ; FFighterPoseHeader.CountMode, исходное значение
-                    #01,                                                        ; FFighterPoseHeader.Unknown02, исходное значение
-                    #00                                                         ; FFighterPoseHeader.Unknown03, исходное значение
+                    #02,                                                        ; FrameCount, число кадров группы
+                    #40,                                                        ; RepeatFlags, флаг, бит 6 задаёт повтор с RepeatIndex, ноль выбирает NextAction
+                    #01,                                                        ; RepeatIndex, индекс кадра после окончания группы при повторе
+                    #00                                                         ; NextAction, следующий код действия при отключённом повторе
                 }
 R04BC_00:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FD,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #01,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #ECCE,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #06,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #39                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFD,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0001,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #ECCE,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #06,                                                        ; WidthBytes, число пар в строке
+                    #39                                                         ; Height, число строк
                 }
 R04BC_01:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FD,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #01,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #EF7A,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #06,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #3C                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFD,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0001,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #EF7A,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #06,                                                        ; WidthBytes, число пар в строке
+                    #3C                                                         ; Height, число строк
                 }
                 assert $ == #04DC
 Group04DC:      FFighterPoseHeader {
-                    #0001,                                                      ; FFighterPoseHeader.CountMode, исходное значение
-                    #00,                                                        ; FFighterPoseHeader.Unknown02, исходное значение
-                    #00                                                         ; FFighterPoseHeader.Unknown03, исходное значение
+                    #01,                                                        ; FrameCount, число кадров группы
+                    #00,                                                        ; RepeatFlags, флаг, бит 6 задаёт повтор с RepeatIndex, ноль выбирает NextAction
+                    #00,                                                        ; RepeatIndex, индекс кадра после окончания группы при повторе
+                    #00                                                         ; NextAction, следующий код действия при отключённом повторе
                 }
 R04DC_00:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FD,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #01,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #ECCE,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #06,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #39                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFD,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0001,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #ECCE,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #06,                                                        ; WidthBytes, число пар в строке
+                    #39                                                         ; Height, число строк
                 }
                 assert $ == #04EE
 Group04EE:      FFighterPoseHeader {
-                    #0002,                                                      ; FFighterPoseHeader.CountMode, исходное значение
-                    #00,                                                        ; FFighterPoseHeader.Unknown02, исходное значение
-                    #16                                                         ; FFighterPoseHeader.Unknown03, исходное значение
+                    #02,                                                        ; FrameCount, число кадров группы
+                    #00,                                                        ; RepeatFlags, флаг, бит 6 задаёт повтор с RepeatIndex, ноль выбирает NextAction
+                    #00,                                                        ; RepeatIndex, индекс кадра после окончания группы при повторе
+                    #16                                                         ; NextAction, следующий код действия при отключённом повторе
                 }
 R04EE_00:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FD,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #02,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #C000,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #08,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #57                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFD,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #FFFF,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #02,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #C000,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #08,                                                        ; WidthBytes, число пар в строке
+                    #57                                                         ; Height, число строк
                 }
 R04EE_01:       FFighterPoseStep {
-                    #02,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FD,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #02,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #C570,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0A,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #52                                                         ; FFighterPoseStep.Height, исходное значение
+                    #02,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFD,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #FFFE,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #02,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #C570,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0A,                                                        ; WidthBytes, число пар в строке
+                    #52                                                         ; Height, число строк
                 }
                 assert $ == #050E
 Group050E:      FFighterPoseHeader {
-                    #0001,                                                      ; FFighterPoseHeader.CountMode, исходное значение
-                    #00,                                                        ; FFighterPoseHeader.Unknown02, исходное значение
-                    #00                                                         ; FFighterPoseHeader.Unknown03, исходное значение
+                    #01,                                                        ; FrameCount, число кадров группы
+                    #00,                                                        ; RepeatFlags, флаг, бит 6 задаёт повтор с RepeatIndex, ноль выбирает NextAction
+                    #00,                                                        ; RepeatIndex, индекс кадра после окончания группы при повторе
+                    #00                                                         ; NextAction, следующий код действия при отключённом повторе
                 }
 R050E_00:       FFighterPoseStep {
-                    #02,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FD,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #02,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #C000,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #08,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #57                                                         ; FFighterPoseStep.Height, исходное значение
+                    #02,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFD,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #FFFF,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #02,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #C000,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #08,                                                        ; WidthBytes, число пар в строке
+                    #57                                                         ; Height, число строк
                 }
                 assert $ == #0520
 Group0520:      FFighterPoseHeader {
-                    #0002,                                                      ; FFighterPoseHeader.CountMode, исходное значение
-                    #00,                                                        ; FFighterPoseHeader.Unknown02, исходное значение
-                    #16                                                         ; FFighterPoseHeader.Unknown03, исходное значение
+                    #02,                                                        ; FrameCount, число кадров группы
+                    #00,                                                        ; RepeatFlags, флаг, бит 6 задаёт повтор с RepeatIndex, ноль выбирает NextAction
+                    #00,                                                        ; RepeatIndex, индекс кадра после окончания группы при повторе
+                    #16                                                         ; NextAction, следующий код действия при отключённом повторе
                 }
 R0520_00:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FD,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #02,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #C000,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #08,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #57                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFD,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #FFFF,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #02,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #C000,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #08,                                                        ; WidthBytes, число пар в строке
+                    #57                                                         ; Height, число строк
                 }
 R0520_01:       FFighterPoseStep {
-                    #02,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FD,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #02,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #CBD8,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0A,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #56                                                         ; FFighterPoseStep.Height, исходное значение
+                    #02,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFD,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #FFFE,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #02,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #CBD8,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0A,                                                        ; WidthBytes, число пар в строке
+                    #56                                                         ; Height, число строк
                 }
                 assert $ == #0540
 Group0540:      FFighterPoseHeader {
-                    #0005,                                                      ; FFighterPoseHeader.CountMode, исходное значение
-                    #00,                                                        ; FFighterPoseHeader.Unknown02, исходное значение
-                    #00                                                         ; FFighterPoseHeader.Unknown03, исходное значение
+                    #05,                                                        ; FrameCount, число кадров группы
+                    #00,                                                        ; RepeatFlags, флаг, бит 6 задаёт повтор с RepeatIndex, ноль выбирает NextAction
+                    #00,                                                        ; RepeatIndex, индекс кадра после окончания группы при повторе
+                    #00                                                         ; NextAction, следующий код действия при отключённом повторе
                 }
 R0540_00:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #01,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #02,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #D290,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #04,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #59                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFF,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0001,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #02,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #D290,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #04,                                                        ; WidthBytes, число пар в строке
+                    #59                                                         ; Height, число строк
                 }
 R0540_01:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #02,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #D558,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #09,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #50                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #02,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #D558,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #09,                                                        ; WidthBytes, число пар в строке
+                    #50                                                         ; Height, число строк
                 }
 R0540_02:       FFighterPoseStep {
-                    #02,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #02,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #DAF8,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0A,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #45                                                         ; FFighterPoseStep.Height, исходное значение
+                    #02,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #02,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #DAF8,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0A,                                                        ; WidthBytes, число пар в строке
+                    #45                                                         ; Height, число строк
                 }
 R0540_03:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #02,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #D558,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #09,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #50                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #02,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #D558,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #09,                                                        ; WidthBytes, число пар в строке
+                    #50                                                         ; Height, число строк
                 }
 R0540_04:       FFighterPoseStep {
-                    #02,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #01,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #02,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #D290,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #04,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #59                                                         ; FFighterPoseStep.Height, исходное значение
+                    #02,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFF,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0001,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #02,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #D290,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #04,                                                        ; WidthBytes, число пар в строке
+                    #59                                                         ; Height, число строк
                 }
                 assert $ == #058A
 Group058A:      FFighterPoseHeader {
-                    #0005,                                                      ; FFighterPoseHeader.CountMode, исходное значение
-                    #00,                                                        ; FFighterPoseHeader.Unknown02, исходное значение
-                    #00                                                         ; FFighterPoseHeader.Unknown03, исходное значение
+                    #05,                                                        ; FrameCount, число кадров группы
+                    #00,                                                        ; RepeatFlags, флаг, бит 6 задаёт повтор с RepeatIndex, ноль выбирает NextAction
+                    #00,                                                        ; RepeatIndex, индекс кадра после окончания группы при повторе
+                    #00                                                         ; NextAction, следующий код действия при отключённом повторе
                 }
 R058A_00:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #01,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #02,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #D290,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #04,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #59                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFF,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0001,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #02,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #D290,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #04,                                                        ; WidthBytes, число пар в строке
+                    #59                                                         ; Height, число строк
                 }
 R058A_01:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #02,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #D558,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #09,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #50                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #02,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #D558,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #09,                                                        ; WidthBytes, число пар в строке
+                    #50                                                         ; Height, число строк
                 }
 R058A_02:       FFighterPoseStep {
-                    #02,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #02,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #E05C,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #09,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #55                                                         ; FFighterPoseStep.Height, исходное значение
+                    #02,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #02,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #E05C,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #09,                                                        ; WidthBytes, число пар в строке
+                    #55                                                         ; Height, число строк
                 }
 R058A_03:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #02,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #D558,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #09,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #50                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #02,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #D558,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #09,                                                        ; WidthBytes, число пар в строке
+                    #50                                                         ; Height, число строк
                 }
 R058A_04:       FFighterPoseStep {
-                    #02,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #01,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #02,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #D290,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #04,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #59                                                         ; FFighterPoseStep.Height, исходное значение
+                    #02,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFF,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0001,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #02,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #D290,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #04,                                                        ; WidthBytes, число пар в строке
+                    #59                                                         ; Height, число строк
                 }
                 assert $ == #05D4
 Group05D4:      FFighterPoseHeader {
-                    #0003,                                                      ; FFighterPoseHeader.CountMode, исходное значение
-                    #00,                                                        ; FFighterPoseHeader.Unknown02, исходное значение
-                    #12                                                         ; FFighterPoseHeader.Unknown03, исходное значение
+                    #03,                                                        ; FrameCount, число кадров группы
+                    #00,                                                        ; RepeatFlags, флаг, бит 6 задаёт повтор с RepeatIndex, ноль выбирает NextAction
+                    #00,                                                        ; RepeatIndex, индекс кадра после окончания группы при повторе
+                    #12                                                         ; NextAction, следующий код действия при отключённом повторе
                 }
 R05D4_00:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #F24A,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #06,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #30                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFF,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #FFFF,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #F24A,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #06,                                                        ; WidthBytes, число пар в строке
+                    #30                                                         ; Height, число строк
                 }
 R05D4_01:       FFighterPoseStep {
-                    #03,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #F87A,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #09,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #32                                                         ; FFighterPoseStep.Height, исходное значение
+                    #03,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFF,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #FFFF,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #F87A,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #09,                                                        ; WidthBytes, число пар в строке
+                    #32                                                         ; Height, число строк
                 }
 R05D4_02:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #F24A,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #06,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #30                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFF,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #FFFF,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #F24A,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #06,                                                        ; WidthBytes, число пар в строке
+                    #30                                                         ; Height, число строк
                 }
                 assert $ == #0602
 Group0602:      FFighterPoseHeader {
-                    #0003,                                                      ; FFighterPoseHeader.CountMode, исходное значение
-                    #00,                                                        ; FFighterPoseHeader.Unknown02, исходное значение
-                    #12                                                         ; FFighterPoseHeader.Unknown03, исходное значение
+                    #03,                                                        ; FrameCount, число кадров группы
+                    #00,                                                        ; RepeatFlags, флаг, бит 6 задаёт повтор с RepeatIndex, ноль выбирает NextAction
+                    #00,                                                        ; RepeatIndex, индекс кадра после окончания группы при повторе
+                    #12                                                         ; NextAction, следующий код действия при отключённом повторе
                 }
 R0602_00:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #F24A,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #06,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #30                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFF,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #FFFF,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #F24A,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #06,                                                        ; WidthBytes, число пар в строке
+                    #30                                                         ; Height, число строк
                 }
 R0602_01:       FFighterPoseStep {
-                    #03,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #F48A,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #09,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #38                                                         ; FFighterPoseStep.Height, исходное значение
+                    #03,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFF,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #FFFF,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #F48A,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #09,                                                        ; WidthBytes, число пар в строке
+                    #38                                                         ; Height, число строк
                 }
 R0602_02:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #F24A,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #06,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #30                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFF,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #FFFF,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #F24A,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #06,                                                        ; WidthBytes, число пар в строке
+                    #30                                                         ; Height, число строк
                 }
                 assert $ == #0630
 Group0630:      FFighterPoseHeader {
-                    #0003,                                                      ; FFighterPoseHeader.CountMode, исходное значение
-                    #00,                                                        ; FFighterPoseHeader.Unknown02, исходное значение
-                    #12                                                         ; FFighterPoseHeader.Unknown03, исходное значение
+                    #03,                                                        ; FrameCount, число кадров группы
+                    #00,                                                        ; RepeatFlags, флаг, бит 6 задаёт повтор с RepeatIndex, ноль выбирает NextAction
+                    #00,                                                        ; RepeatIndex, индекс кадра после окончания группы при повторе
+                    #12                                                         ; NextAction, следующий код действия при отключённом повторе
                 }
 R0630_00:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FD,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #03,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #C000,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #07,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #5A                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFD,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #03,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #C000,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #07,                                                        ; WidthBytes, число пар в строке
+                    #5A                                                         ; Height, число строк
                 }
 R0630_01:       FFighterPoseStep {
-                    #03,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #03,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #C4EC,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #06,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #69                                                         ; FFighterPoseStep.Height, исходное значение
+                    #03,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #FFFF,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #03,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #C4EC,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #06,                                                        ; WidthBytes, число пар в строке
+                    #69                                                         ; Height, число строк
                 }
 R0630_02:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FD,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #03,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #C000,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #07,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #5A                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFD,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #03,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #C000,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #07,                                                        ; WidthBytes, число пар в строке
+                    #5A                                                         ; Height, число строк
                 }
                 assert $ == #065E
 Group065E:      FFighterPoseHeader {
-                    #0004,                                                      ; FFighterPoseHeader.CountMode, исходное значение
-                    #00,                                                        ; FFighterPoseHeader.Unknown02, исходное значение
-                    #00                                                         ; FFighterPoseHeader.Unknown03, исходное значение
+                    #04,                                                        ; FrameCount, число кадров группы
+                    #00,                                                        ; RepeatFlags, флаг, бит 6 задаёт повтор с RepeatIndex, ноль выбирает NextAction
+                    #00,                                                        ; RepeatIndex, индекс кадра после окончания группы при повторе
+                    #00                                                         ; NextAction, следующий код действия при отключённом повторе
                 }
 R065E_00:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #02,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #E656,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #07,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #4D                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #02,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #E656,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #07,                                                        ; WidthBytes, число пар в строке
+                    #4D                                                         ; Height, число строк
                 }
 R065E_01:       FFighterPoseStep {
-                    #02,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #02,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #EA8C,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #08,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #51                                                         ; FFighterPoseStep.Height, исходное значение
+                    #02,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #02,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #EA8C,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #08,                                                        ; WidthBytes, число пар в строке
+                    #51                                                         ; Height, число строк
                 }
 R065E_02:       FFighterPoseStep {
-                    #02,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #02,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #EF9C,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #06,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #4D                                                         ; FFighterPoseStep.Height, исходное значение
+                    #02,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #02,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #EF9C,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #06,                                                        ; WidthBytes, число пар в строке
+                    #4D                                                         ; Height, число строк
                 }
 R065E_03:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FD,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #02,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #F338,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #08,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #55                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFD,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #02,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #F338,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #08,                                                        ; WidthBytes, число пар в строке
+                    #55                                                         ; Height, число строк
                 }
                 assert $ == #069A
 Group069A:      FFighterPoseHeader {
-                    #0004,                                                      ; FFighterPoseHeader.CountMode, исходное значение
-                    #00,                                                        ; FFighterPoseHeader.Unknown02, исходное значение
-                    #00                                                         ; FFighterPoseHeader.Unknown03, исходное значение
+                    #04,                                                        ; FrameCount, число кадров группы
+                    #00,                                                        ; RepeatFlags, флаг, бит 6 задаёт повтор с RepeatIndex, ноль выбирает NextAction
+                    #00,                                                        ; RepeatIndex, индекс кадра после окончания группы при повторе
+                    #00                                                         ; NextAction, следующий код действия при отключённом повторе
                 }
 R069A_00:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #FD,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #03,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #C9D8,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #06,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #2A                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #FFFD,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #03,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #C9D8,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #06,                                                        ; WidthBytes, число пар в строке
+                    #2A                                                         ; Height, число строк
                 }
 R069A_01:       FFighterPoseStep {
-                    #02,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #FB,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #03,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #CBD0,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0C,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #28                                                         ; FFighterPoseStep.Height, исходное значение
+                    #02,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #FFFB,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #03,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #CBD0,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0C,                                                        ; WidthBytes, число пар в строке
+                    #28                                                         ; Height, число строк
                 }
 R069A_02:       FFighterPoseStep {
-                    #02,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #F9,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #03,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #CF90,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #07,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #36                                                         ; FFighterPoseStep.Height, исходное значение
+                    #02,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #FFF9,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #03,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #CF90,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #07,                                                        ; WidthBytes, число пар в строке
+                    #36                                                         ; Height, число строк
                 }
 R069A_03:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FD,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #FD,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #03,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #D284,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #07,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #4A                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFD,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #FFFD,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #03,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #D284,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #07,                                                        ; WidthBytes, число пар в строке
+                    #4A                                                         ; Height, число строк
                 }
                 assert $ == #06D6
 Group06D6:      FFighterPoseHeader {
-                    #0003,                                                      ; FFighterPoseHeader.CountMode, исходное значение
-                    #00,                                                        ; FFighterPoseHeader.Unknown02, исходное значение
-                    #18                                                         ; FFighterPoseHeader.Unknown03, исходное значение
+                    #03,                                                        ; FrameCount, число кадров группы
+                    #00,                                                        ; RepeatFlags, флаг, бит 6 задаёт повтор с RepeatIndex, ноль выбирает NextAction
+                    #00,                                                        ; RepeatIndex, индекс кадра после окончания группы при повторе
+                    #18                                                         ; NextAction, следующий код действия при отключённом повторе
                 }
 R06D6_00:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FD,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #03,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #D690,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #08,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #56                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFD,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #FFFF,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #03,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #D690,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #08,                                                        ; WidthBytes, число пар в строке
+                    #56                                                         ; Height, число строк
                 }
 R06D6_01:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FD,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #03,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #DBF0,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #09,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #56                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFD,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #FFFF,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #03,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #DBF0,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #09,                                                        ; WidthBytes, число пар в строке
+                    #56                                                         ; Height, число строк
                 }
 R06D6_02:       FFighterPoseStep {
-                    #02,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FD,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #03,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #E1FC,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0B,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #51                                                         ; FFighterPoseStep.Height, исходное значение
+                    #02,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFD,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #FFFE,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #03,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #E1FC,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0B,                                                        ; WidthBytes, число пар в строке
+                    #51                                                         ; Height, число строк
                 }
                 assert $ == #0704
 Group0704:      FFighterPoseHeader {
-                    #0003,                                                      ; FFighterPoseHeader.CountMode, исходное значение
-                    #00,                                                        ; FFighterPoseHeader.Unknown02, исходное значение
-                    #18                                                         ; FFighterPoseHeader.Unknown03, исходное значение
+                    #03,                                                        ; FrameCount, число кадров группы
+                    #00,                                                        ; RepeatFlags, флаг, бит 6 задаёт повтор с RepeatIndex, ноль выбирает NextAction
+                    #00,                                                        ; RepeatIndex, индекс кадра после окончания группы при повторе
+                    #18                                                         ; NextAction, следующий код действия при отключённом повторе
                 }
 R0704_00:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FD,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #03,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #D690,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #08,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #56                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFD,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #FFFF,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #03,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #D690,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #08,                                                        ; WidthBytes, число пар в строке
+                    #56                                                         ; Height, число строк
                 }
 R0704_01:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FD,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #03,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #DBF0,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #09,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #56                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFD,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #FFFF,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #03,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #DBF0,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #09,                                                        ; WidthBytes, число пар в строке
+                    #56                                                         ; Height, число строк
                 }
 R0704_02:       FFighterPoseStep {
-                    #02,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #03,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #E8F2,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #09,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #57                                                         ; FFighterPoseStep.Height, исходное значение
+                    #02,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #FFFE,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #03,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #E8F2,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #09,                                                        ; WidthBytes, число пар в строке
+                    #57                                                         ; Height, число строк
                 }
                 assert $ == #0732
 Group0732:      FFighterPoseHeader {
-                    #0001,                                                      ; FFighterPoseHeader.CountMode, исходное значение
-                    #00,                                                        ; FFighterPoseHeader.Unknown02, исходное значение
-                    #00                                                         ; FFighterPoseHeader.Unknown03, исходное значение
+                    #01,                                                        ; FrameCount, число кадров группы
+                    #00,                                                        ; RepeatFlags, флаг, бит 6 задаёт повтор с RepeatIndex, ноль выбирает NextAction
+                    #00,                                                        ; RepeatIndex, индекс кадра после окончания группы при повторе
+                    #00                                                         ; NextAction, следующий код действия при отключённом повторе
                 }
 R0732_00:       FFighterPoseStep {
-                    #02,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FD,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #03,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #DBF0,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #09,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #56                                                         ; FFighterPoseStep.Height, исходное значение
+                    #02,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFD,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #FFFF,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #03,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #DBF0,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #09,                                                        ; WidthBytes, число пар в строке
+                    #56                                                         ; Height, число строк
                 }
                 assert $ == #0744
 Group0744:      FFighterPoseHeader {
-                    #0001,                                                      ; FFighterPoseHeader.CountMode, исходное значение
-                    #00,                                                        ; FFighterPoseHeader.Unknown02, исходное значение
-                    #0C                                                         ; FFighterPoseHeader.Unknown03, исходное значение
+                    #01,                                                        ; FrameCount, число кадров группы
+                    #00,                                                        ; RepeatFlags, флаг, бит 6 задаёт повтор с RepeatIndex, ноль выбирает NextAction
+                    #00,                                                        ; RepeatIndex, индекс кадра после окончания группы при повторе
+                    #0C                                                         ; NextAction, следующий код действия при отключённом повторе
                 }
 R0744_00:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FD,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #03,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #D690,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #08,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #56                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFD,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #FFFF,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #03,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #D690,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #08,                                                        ; WidthBytes, число пар в строке
+                    #56                                                         ; Height, число строк
                 }
                 assert $ == #0756
 Group0756:      FFighterPoseHeader {
-                    #0001,                                                      ; FFighterPoseHeader.CountMode, исходное значение
-                    #00,                                                        ; FFighterPoseHeader.Unknown02, исходное значение
-                    #0D                                                         ; FFighterPoseHeader.Unknown03, исходное значение
+                    #01,                                                        ; FrameCount, число кадров группы
+                    #00,                                                        ; RepeatFlags, флаг, бит 6 задаёт повтор с RepeatIndex, ноль выбирает NextAction
+                    #00,                                                        ; RepeatIndex, индекс кадра после окончания группы при повторе
+                    #0D                                                         ; NextAction, следующий код действия при отключённом повторе
                 }
 R0756_00:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FD,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #03,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #D690,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #08,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #56                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFD,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #FFFF,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #03,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #D690,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #08,                                                        ; WidthBytes, число пар в строке
+                    #56                                                         ; Height, число строк
                 }
                 assert $ == #0768
 Group0768:      FFighterPoseHeader {
-                    #0010,                                                      ; FFighterPoseHeader.CountMode, исходное значение
-                    #00,                                                        ; FFighterPoseHeader.Unknown02, исходное значение
-                    #00                                                         ; FFighterPoseHeader.Unknown03, исходное значение
+                    #10,                                                        ; FrameCount, число кадров группы
+                    #00,                                                        ; RepeatFlags, флаг, бит 6 задаёт повтор с RepeatIndex, ноль выбирает NextAction
+                    #00,                                                        ; RepeatIndex, индекс кадра после окончания группы при повторе
+                    #00                                                         ; NextAction, следующий код действия при отключённом повторе
                 }
 R0768_00:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #08,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FD,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #D83C,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #07,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #5E                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0008,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFD,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #D83C,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #07,                                                        ; WidthBytes, число пар в строке
+                    #5E                                                         ; Height, число строк
                 }
 R0768_01:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #10,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FD,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #D83C,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #07,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #5E                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0010,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFD,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #D83C,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #07,                                                        ; WidthBytes, число пар в строке
+                    #5E                                                         ; Height, число строк
                 }
 R0768_02:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #29,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FA,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #08,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #FBFE,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0D,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #23                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0029,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFA,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0008,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #FBFE,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0D,                                                        ; WidthBytes, число пар в строке
+                    #23                                                         ; Height, число строк
                 }
 R0768_03:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #08,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FA,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #08,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #FBFE,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0D,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #23                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0008,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFA,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0008,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #FBFE,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0D,                                                        ; WidthBytes, число пар в строке
+                    #23                                                         ; Height, число строк
                 }
 R0768_04:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #07,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FA,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #08,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #FBFE,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0D,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #23                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0007,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFA,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0008,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #FBFE,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0D,                                                        ; WidthBytes, число пар в строке
+                    #23                                                         ; Height, число строк
                 }
 R0768_05:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #08,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FA,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #08,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #FBFE,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0D,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #23                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0008,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFA,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0008,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #FBFE,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0D,                                                        ; WidthBytes, число пар в строке
+                    #23                                                         ; Height, число строк
                 }
 R0768_06:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #02,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FA,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #08,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #FBFE,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0D,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #23                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0002,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFA,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0008,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #FBFE,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0D,                                                        ; WidthBytes, число пар в строке
+                    #23                                                         ; Height, число строк
                 }
 R0768_07:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #04,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FA,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #08,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #FBFE,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0D,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #23                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0004,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFA,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0008,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #FBFE,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0D,                                                        ; WidthBytes, число пар в строке
+                    #23                                                         ; Height, число строк
                 }
 R0768_08:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #FC,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FA,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #08,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #FBFE,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0D,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #23                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #FFFC,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFA,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0008,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #FBFE,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0D,                                                        ; WidthBytes, число пар в строке
+                    #23                                                         ; Height, число строк
                 }
 R0768_09:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FA,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #08,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #FBFE,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0D,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #23                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #FFFE,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFA,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0008,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #FBFE,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0D,                                                        ; WidthBytes, число пар в строке
+                    #23                                                         ; Height, число строк
                 }
 R0768_10:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #F8,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FA,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #08,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #FBFE,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0D,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #23                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #FFF8,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFA,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0008,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #FBFE,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0D,                                                        ; WidthBytes, число пар в строке
+                    #23                                                         ; Height, число строк
                 }
 R0768_11:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #F9,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FA,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #08,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #FBFE,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0D,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #23                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #FFF9,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFA,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0008,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #FBFE,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0D,                                                        ; WidthBytes, число пар в строке
+                    #23                                                         ; Height, число строк
                 }
 R0768_12:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #F8,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FA,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #08,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #FBFE,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0D,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #23                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #FFF8,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFA,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0008,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #FBFE,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0D,                                                        ; WidthBytes, число пар в строке
+                    #23                                                         ; Height, число строк
                 }
 R0768_13:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #F6,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FA,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #08,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #FBFE,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0D,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #23                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #FFF6,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFA,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0008,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #FBFE,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0D,                                                        ; WidthBytes, число пар в строке
+                    #23                                                         ; Height, число строк
                 }
 R0768_14:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #F6,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FA,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #08,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #FBFE,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0D,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #23                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #FFF6,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFA,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0008,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #FBFE,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0D,                                                        ; WidthBytes, число пар в строке
+                    #23                                                         ; Height, число строк
                 }
 R0768_15:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #CD,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #E170,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #06,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #48                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #FFCD,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #E170,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #06,                                                        ; WidthBytes, число пар в строке
+                    #48                                                         ; Height, число строк
                 }
                 assert $ == #084C
 Group084C:      FFighterPoseHeader {
-                    #000C,                                                      ; FFighterPoseHeader.CountMode, исходное значение
-                    #00,                                                        ; FFighterPoseHeader.Unknown02, исходное значение
-                    #00                                                         ; FFighterPoseHeader.Unknown03, исходное значение
+                    #0C,                                                        ; FrameCount, число кадров группы
+                    #00,                                                        ; RepeatFlags, флаг, бит 6 задаёт повтор с RepeatIndex, ноль выбирает NextAction
+                    #00,                                                        ; RepeatIndex, индекс кадра после окончания группы при повторе
+                    #00                                                         ; NextAction, следующий код действия при отключённом повторе
                 }
 R084C_00:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #01,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #35,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FA,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #FBFE,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0D,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #23                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0001,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0035,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFA,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #FBFE,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0D,                                                        ; WidthBytes, число пар в строке
+                    #23                                                         ; Height, число строк
                 }
 R084C_01:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #01,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #0F,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FA,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #FBFE,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0D,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #23                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0001,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #000F,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFA,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #FBFE,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0D,                                                        ; WidthBytes, число пар в строке
+                    #23                                                         ; Height, число строк
                 }
 R084C_02:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #01,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #0F,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FA,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #FBFE,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0D,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #23                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0001,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #000F,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFA,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #FBFE,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0D,                                                        ; WidthBytes, число пар в строке
+                    #23                                                         ; Height, число строк
                 }
 R084C_03:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #01,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #0D,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FA,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #FBFE,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0D,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #23                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0001,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #000D,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFA,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #FBFE,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0D,                                                        ; WidthBytes, число пар в строке
+                    #23                                                         ; Height, число строк
                 }
 R084C_04:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #01,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #09,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FA,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #FBFE,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0D,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #23                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0001,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0009,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFA,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #FBFE,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0D,                                                        ; WidthBytes, число пар в строке
+                    #23                                                         ; Height, число строк
                 }
 R084C_05:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #01,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FA,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #FBFE,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0D,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #23                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0001,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFA,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #FBFE,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0D,                                                        ; WidthBytes, число пар в строке
+                    #23                                                         ; Height, число строк
                 }
 R084C_06:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #01,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #F7,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FA,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #FBFE,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0D,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #23                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0001,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #FFF7,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFA,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #FBFE,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0D,                                                        ; WidthBytes, число пар в строке
+                    #23                                                         ; Height, число строк
                 }
 R084C_07:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #01,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #F8,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FA,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #FBFE,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0D,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #23                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0001,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #FFF8,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFA,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #FBFE,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0D,                                                        ; WidthBytes, число пар в строке
+                    #23                                                         ; Height, число строк
                 }
 R084C_08:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #01,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #EC,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FA,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #FBFE,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0D,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #23                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0001,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #FFEC,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFA,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #FBFE,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0D,                                                        ; WidthBytes, число пар в строке
+                    #23                                                         ; Height, число строк
                 }
 R084C_09:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #01,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #F1,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FA,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #FBFE,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0D,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #23                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0001,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #FFF1,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFA,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #FBFE,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0D,                                                        ; WidthBytes, число пар в строке
+                    #23                                                         ; Height, число строк
                 }
 R084C_10:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #01,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #F6,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FA,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #FBFE,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0D,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #23                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0001,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #FFF6,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFA,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #FBFE,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0D,                                                        ; WidthBytes, число пар в строке
+                    #23                                                         ; Height, число строк
                 }
 R084C_11:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #CB,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #E170,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #06,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #48                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #FFCB,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #E170,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #06,                                                        ; WidthBytes, число пар в строке
+                    #48                                                         ; Height, число строк
                 }
                 assert $ == #08F8
 Group08F8:      FFighterPoseHeader {
-                    #000C,                                                      ; FFighterPoseHeader.CountMode, исходное значение
-                    #00,                                                        ; FFighterPoseHeader.Unknown02, исходное значение
-                    #00                                                         ; FFighterPoseHeader.Unknown03, исходное значение
+                    #0C,                                                        ; FrameCount, число кадров группы
+                    #00,                                                        ; RepeatFlags, флаг, бит 6 задаёт повтор с RepeatIndex, ноль выбирает NextAction
+                    #00,                                                        ; RepeatIndex, индекс кадра после окончания группы при повторе
+                    #00                                                         ; NextAction, следующий код действия при отключённом повторе
                 }
 R08F8_00:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #35,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FA,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #FBFE,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0D,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #23                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #FFFF,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0035,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFA,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #FBFE,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0D,                                                        ; WidthBytes, число пар в строке
+                    #23                                                         ; Height, число строк
                 }
 R08F8_01:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #0F,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FA,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #FBFE,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0D,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #23                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #FFFF,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #000F,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFA,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #FBFE,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0D,                                                        ; WidthBytes, число пар в строке
+                    #23                                                         ; Height, число строк
                 }
 R08F8_02:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #0F,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FA,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #FBFE,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0D,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #23                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #FFFF,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #000F,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFA,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #FBFE,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0D,                                                        ; WidthBytes, число пар в строке
+                    #23                                                         ; Height, число строк
                 }
 R08F8_03:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #0D,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FA,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #FBFE,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0D,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #23                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #FFFF,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #000D,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFA,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #FBFE,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0D,                                                        ; WidthBytes, число пар в строке
+                    #23                                                         ; Height, число строк
                 }
 R08F8_04:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #09,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FA,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #FBFE,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0D,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #23                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #FFFF,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0009,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFA,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #FBFE,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0D,                                                        ; WidthBytes, число пар в строке
+                    #23                                                         ; Height, число строк
                 }
 R08F8_05:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FA,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #FBFE,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0D,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #23                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #FFFF,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFA,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #FBFE,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0D,                                                        ; WidthBytes, число пар в строке
+                    #23                                                         ; Height, число строк
                 }
 R08F8_06:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #F7,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FA,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #FBFE,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0D,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #23                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #FFFF,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #FFF7,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFA,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #FBFE,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0D,                                                        ; WidthBytes, число пар в строке
+                    #23                                                         ; Height, число строк
                 }
 R08F8_07:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #F8,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FA,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #FBFE,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0D,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #23                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #FFFF,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #FFF8,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFA,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #FBFE,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0D,                                                        ; WidthBytes, число пар в строке
+                    #23                                                         ; Height, число строк
                 }
 R08F8_08:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #EC,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FA,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #FBFE,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0D,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #23                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #FFFF,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #FFEC,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFA,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #FBFE,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0D,                                                        ; WidthBytes, число пар в строке
+                    #23                                                         ; Height, число строк
                 }
 R08F8_09:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #F1,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FA,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #FBFE,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0D,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #23                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #FFFF,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #FFF1,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFA,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #FBFE,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0D,                                                        ; WidthBytes, число пар в строке
+                    #23                                                         ; Height, число строк
                 }
 R08F8_10:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #F6,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FA,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #FBFE,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0D,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #23                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #FFFF,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #FFF6,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFA,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #FBFE,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0D,                                                        ; WidthBytes, число пар в строке
+                    #23                                                         ; Height, число строк
                 }
 R08F8_11:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #CB,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #E170,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #06,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #48                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #FFCB,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #E170,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #06,                                                        ; WidthBytes, число пар в строке
+                    #48                                                         ; Height, число строк
                 }
                 assert $ == #09A4
 Group09A4:      FFighterPoseHeader {
-                    #0010,                                                      ; FFighterPoseHeader.CountMode, исходное значение
-                    #00,                                                        ; FFighterPoseHeader.Unknown02, исходное значение
-                    #00                                                         ; FFighterPoseHeader.Unknown03, исходное значение
+                    #10,                                                        ; FrameCount, число кадров группы
+                    #00,                                                        ; RepeatFlags, флаг, бит 6 задаёт повтор с RepeatIndex, ноль выбирает NextAction
+                    #00,                                                        ; RepeatIndex, индекс кадра после окончания группы при повторе
+                    #00                                                         ; NextAction, следующий код действия при отключённом повторе
                 }
 R09A4_00:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #08,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FD,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #D83C,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #07,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #5E                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0008,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFD,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #D83C,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #07,                                                        ; WidthBytes, число пар в строке
+                    #5E                                                         ; Height, число строк
                 }
 R09A4_01:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #10,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FD,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #D83C,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #07,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #5E                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0010,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFD,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #D83C,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #07,                                                        ; WidthBytes, число пар в строке
+                    #5E                                                         ; Height, число строк
                 }
 R09A4_02:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #29,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FC,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #08,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #F734,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0A,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #38                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0029,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFC,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0008,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #F734,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0A,                                                        ; WidthBytes, число пар в строке
+                    #38                                                         ; Height, число строк
                 }
 R09A4_03:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #08,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FC,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #08,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #F734,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0A,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #38                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0008,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFC,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0008,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #F734,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0A,                                                        ; WidthBytes, число пар в строке
+                    #38                                                         ; Height, число строк
                 }
 R09A4_04:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #07,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FC,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #08,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #F734,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0A,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #38                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0007,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFC,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0008,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #F734,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0A,                                                        ; WidthBytes, число пар в строке
+                    #38                                                         ; Height, число строк
                 }
 R09A4_05:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #08,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FC,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #08,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #F734,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0A,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #38                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0008,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFC,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0008,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #F734,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0A,                                                        ; WidthBytes, число пар в строке
+                    #38                                                         ; Height, число строк
                 }
 R09A4_06:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #02,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FC,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #08,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #F734,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0A,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #38                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0002,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFC,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0008,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #F734,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0A,                                                        ; WidthBytes, число пар в строке
+                    #38                                                         ; Height, число строк
                 }
 R09A4_07:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #04,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FC,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #08,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #F734,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0A,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #38                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0004,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFC,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0008,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #F734,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0A,                                                        ; WidthBytes, число пар в строке
+                    #38                                                         ; Height, число строк
                 }
 R09A4_08:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #FC,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FC,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #08,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #F734,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0A,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #38                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #FFFC,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFC,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0008,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #F734,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0A,                                                        ; WidthBytes, число пар в строке
+                    #38                                                         ; Height, число строк
                 }
 R09A4_09:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FC,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #08,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #F734,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0A,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #38                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #FFFE,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFC,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0008,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #F734,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0A,                                                        ; WidthBytes, число пар в строке
+                    #38                                                         ; Height, число строк
                 }
 R09A4_10:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #F8,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FC,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #08,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #F734,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0A,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #38                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #FFF8,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFC,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0008,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #F734,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0A,                                                        ; WidthBytes, число пар в строке
+                    #38                                                         ; Height, число строк
                 }
 R09A4_11:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #F9,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FC,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #08,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #F734,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0A,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #38                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #FFF9,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFC,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0008,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #F734,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0A,                                                        ; WidthBytes, число пар в строке
+                    #38                                                         ; Height, число строк
                 }
 R09A4_12:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #F8,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FC,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #08,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #F734,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0A,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #38                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #FFF8,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFC,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0008,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #F734,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0A,                                                        ; WidthBytes, число пар в строке
+                    #38                                                         ; Height, число строк
                 }
 R09A4_13:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #F6,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FC,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #08,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #F734,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0A,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #38                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #FFF6,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFC,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0008,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #F734,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0A,                                                        ; WidthBytes, число пар в строке
+                    #38                                                         ; Height, число строк
                 }
 R09A4_14:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #F6,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FC,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #08,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #F734,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0A,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #38                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #FFF6,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFC,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0008,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #F734,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0A,                                                        ; WidthBytes, число пар в строке
+                    #38                                                         ; Height, число строк
                 }
 R09A4_15:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #CD,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #E170,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #06,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #48                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #FFCD,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #E170,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #06,                                                        ; WidthBytes, число пар в строке
+                    #48                                                         ; Height, число строк
                 }
                 assert $ == #0A88
 Group0A88:      FFighterPoseHeader {
-                    #000C,                                                      ; FFighterPoseHeader.CountMode, исходное значение
-                    #00,                                                        ; FFighterPoseHeader.Unknown02, исходное значение
-                    #00                                                         ; FFighterPoseHeader.Unknown03, исходное значение
+                    #0C,                                                        ; FrameCount, число кадров группы
+                    #00,                                                        ; RepeatFlags, флаг, бит 6 задаёт повтор с RepeatIndex, ноль выбирает NextAction
+                    #00,                                                        ; RepeatIndex, индекс кадра после окончания группы при повторе
+                    #00                                                         ; NextAction, следующий код действия при отключённом повторе
                 }
 R0A88_00:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #01,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #35,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FD,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #FB94,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0A,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #2D                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0001,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0035,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFD,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #FB94,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0A,                                                        ; WidthBytes, число пар в строке
+                    #2D                                                         ; Height, число строк
                 }
 R0A88_01:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #01,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #0F,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FD,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #FB94,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0A,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #2D                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0001,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #000F,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFD,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #FB94,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0A,                                                        ; WidthBytes, число пар в строке
+                    #2D                                                         ; Height, число строк
                 }
 R0A88_02:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #01,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #0F,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FD,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #FB94,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0A,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #2D                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0001,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #000F,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFD,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #FB94,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0A,                                                        ; WidthBytes, число пар в строке
+                    #2D                                                         ; Height, число строк
                 }
 R0A88_03:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #01,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #0D,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FD,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #FB94,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0A,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #2D                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0001,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #000D,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFD,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #FB94,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0A,                                                        ; WidthBytes, число пар в строке
+                    #2D                                                         ; Height, число строк
                 }
 R0A88_04:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #01,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #09,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FD,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #FB94,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0A,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #2D                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0001,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0009,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFD,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #FB94,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0A,                                                        ; WidthBytes, число пар в строке
+                    #2D                                                         ; Height, число строк
                 }
 R0A88_05:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #01,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FD,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #FB94,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0A,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #2D                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0001,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFD,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #FB94,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0A,                                                        ; WidthBytes, число пар в строке
+                    #2D                                                         ; Height, число строк
                 }
 R0A88_06:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #01,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #F7,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FD,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #FB94,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0A,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #2D                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0001,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #FFF7,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFD,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #FB94,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0A,                                                        ; WidthBytes, число пар в строке
+                    #2D                                                         ; Height, число строк
                 }
 R0A88_07:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #01,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #F8,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FD,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #FB94,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0A,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #2D                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0001,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #FFF8,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFD,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #FB94,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0A,                                                        ; WidthBytes, число пар в строке
+                    #2D                                                         ; Height, число строк
                 }
 R0A88_08:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #01,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #EC,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FD,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #FB94,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0A,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #2D                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0001,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #FFEC,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFD,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #FB94,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0A,                                                        ; WidthBytes, число пар в строке
+                    #2D                                                         ; Height, число строк
                 }
 R0A88_09:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #01,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #F1,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FD,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #FB94,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0A,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #2D                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0001,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #FFF1,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFD,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #FB94,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0A,                                                        ; WidthBytes, число пар в строке
+                    #2D                                                         ; Height, число строк
                 }
 R0A88_10:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #01,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #F6,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FD,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #FB94,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0A,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #2D                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0001,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #FFF6,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFD,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #FB94,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0A,                                                        ; WidthBytes, число пар в строке
+                    #2D                                                         ; Height, число строк
                 }
 R0A88_11:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #CB,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #E170,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #06,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #48                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #FFCB,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #E170,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #06,                                                        ; WidthBytes, число пар в строке
+                    #48                                                         ; Height, число строк
                 }
                 assert $ == #0B34
 Group0B34:      FFighterPoseHeader {
-                    #000C,                                                      ; FFighterPoseHeader.CountMode, исходное значение
-                    #00,                                                        ; FFighterPoseHeader.Unknown02, исходное значение
-                    #00                                                         ; FFighterPoseHeader.Unknown03, исходное значение
+                    #0C,                                                        ; FrameCount, число кадров группы
+                    #00,                                                        ; RepeatFlags, флаг, бит 6 задаёт повтор с RepeatIndex, ноль выбирает NextAction
+                    #00,                                                        ; RepeatIndex, индекс кадра после окончания группы при повторе
+                    #00                                                         ; NextAction, следующий код действия при отключённом повторе
                 }
 R0B34_00:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #35,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FD,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #FB94,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0A,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #2D                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #FFFF,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0035,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFD,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #FB94,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0A,                                                        ; WidthBytes, число пар в строке
+                    #2D                                                         ; Height, число строк
                 }
 R0B34_01:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #0F,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FD,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #FB94,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0A,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #2D                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #FFFF,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #000F,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFD,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #FB94,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0A,                                                        ; WidthBytes, число пар в строке
+                    #2D                                                         ; Height, число строк
                 }
 R0B34_02:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #0F,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FD,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #FB94,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0A,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #2D                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #FFFF,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #000F,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFD,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #FB94,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0A,                                                        ; WidthBytes, число пар в строке
+                    #2D                                                         ; Height, число строк
                 }
 R0B34_03:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #0D,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FD,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #FB94,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0A,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #2D                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #FFFF,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #000D,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFD,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #FB94,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0A,                                                        ; WidthBytes, число пар в строке
+                    #2D                                                         ; Height, число строк
                 }
 R0B34_04:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #09,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FD,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #FB94,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0A,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #2D                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #FFFF,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0009,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFD,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #FB94,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0A,                                                        ; WidthBytes, число пар в строке
+                    #2D                                                         ; Height, число строк
                 }
 R0B34_05:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FD,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #FB94,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0A,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #2D                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #FFFF,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFD,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #FB94,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0A,                                                        ; WidthBytes, число пар в строке
+                    #2D                                                         ; Height, число строк
                 }
 R0B34_06:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #F7,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FD,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #FB94,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0A,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #2D                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #FFFF,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #FFF7,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFD,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #FB94,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0A,                                                        ; WidthBytes, число пар в строке
+                    #2D                                                         ; Height, число строк
                 }
 R0B34_07:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #F8,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FD,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #FB94,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0A,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #2D                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #FFFF,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #FFF8,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFD,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #FB94,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0A,                                                        ; WidthBytes, число пар в строке
+                    #2D                                                         ; Height, число строк
                 }
 R0B34_08:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #EC,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FD,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #FB94,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0A,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #2D                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #FFFF,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #FFEC,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFD,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #FB94,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0A,                                                        ; WidthBytes, число пар в строке
+                    #2D                                                         ; Height, число строк
                 }
 R0B34_09:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #F1,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FD,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #FB94,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0A,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #2D                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #FFFF,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #FFF1,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFD,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #FB94,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0A,                                                        ; WidthBytes, число пар в строке
+                    #2D                                                         ; Height, число строк
                 }
 R0B34_10:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #F6,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FD,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #01,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #FB94,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #0A,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #2D                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #FFFF,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #FFF6,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFD,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #01,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #FB94,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #0A,                                                        ; WidthBytes, число пар в строке
+                    #2D                                                         ; Height, число строк
                 }
 R0B34_11:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #CB,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #00,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #E170,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #06,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #48                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #FFCB,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #00,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #E170,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #06,                                                        ; WidthBytes, число пар в строке
+                    #48                                                         ; Height, число строк
                 }
                 assert $ == #0BE0
 Group0BE0:      FFighterPoseHeader {
-                    #0001,                                                      ; FFighterPoseHeader.CountMode, исходное значение
-                    #00,                                                        ; FFighterPoseHeader.Unknown02, исходное значение
-                    #23                                                         ; FFighterPoseHeader.Unknown03, исходное значение
+                    #01,                                                        ; FrameCount, число кадров группы
+                    #00,                                                        ; RepeatFlags, флаг, бит 6 задаёт повтор с RepeatIndex, ноль выбирает NextAction
+                    #00,                                                        ; RepeatIndex, индекс кадра после окончания группы при повторе
+                    #23                                                         ; NextAction, следующий код действия при отключённом повторе
                 }
 R0BE0_00:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #02,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #F888,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #06,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #58                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #02,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #F888,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #06,                                                        ; WidthBytes, число пар в строке
+                    #58                                                         ; Height, число строк
                 }
                 assert $ == #0BF2
 Group0BF2:      FFighterPoseHeader {
-                    #0001,                                                      ; FFighterPoseHeader.CountMode, исходное значение
-                    #00,                                                        ; FFighterPoseHeader.Unknown02, исходное значение
-                    #00                                                         ; FFighterPoseHeader.Unknown03, исходное значение
+                    #01,                                                        ; FrameCount, число кадров группы
+                    #00,                                                        ; RepeatFlags, флаг, бит 6 задаёт повтор с RepeatIndex, ноль выбирает NextAction
+                    #00,                                                        ; RepeatIndex, индекс кадра после окончания группы при повторе
+                    #00                                                         ; NextAction, следующий код действия при отключённом повторе
                 }
 R0BF2_00:       FFighterPoseStep {
-                    #01,                                                        ; FFighterPoseStep.Unknown00, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown01, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown02, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown03, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown04, исходное значение
-                    #FE,                                                        ; FFighterPoseStep.Unknown05, исходное значение
-                    #FF,                                                        ; FFighterPoseStep.Unknown06, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown07, исходное значение
-                    #00,                                                        ; FFighterPoseStep.Unknown08, исходное значение
-                    #02,                                                        ; FFighterPoseStep.BankIndex, исходное значение
-                    #F888,                                                      ; FFighterPoseStep.SpriteAddress, исходное значение
-                    #06,                                                        ; FFighterPoseStep.WidthBytes, исходное значение
-                    #58                                                         ; FFighterPoseStep.Height, исходное значение
+                    #01,                                                        ; Ticks, задержка до продвижения кадра
+                    #0000,                                                      ; MoveX, приращение горизонтальной позиции с учётом стороны
+                    #0000,                                                      ; MoveY, приращение вертикальной позиции по модулю 256
+                    #FFFE,                                                      ; DrawX, смещение рисунка по горизонтали относительно новой позиции
+                    #0000,                                                      ; DrawY, смещение рисунка по вертикали относительно новой позиции
+                    #02,                                                        ; BankIndex, индекс файла BD0..BD3
+                    #F888,                                                      ; SpriteAddress, адрес пары маски и пикселей в окне C000
+                    #06,                                                        ; WidthBytes, число пар в строке
+                    #58                                                         ; Height, число строк
                 }
                 assert $ == #0C04
                 endmodule

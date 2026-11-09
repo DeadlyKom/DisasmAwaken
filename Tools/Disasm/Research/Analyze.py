@@ -25,6 +25,14 @@ def block(slot, offset, length, origin, name, roots=()):
 
 # Адреса переноса получены из LDIR исходных загрузчиков, не являются новой раскладкой.
 BLOCKS = [
+    # Согласованные адреса старого блока, реальная игровая релокация не доказана.
+    block(23, 0x7F, 0xBC, 0x5E1F, "Controls", (0x5E1F, 0x5E4D, 0x5ED2, 0x5ED6)),
+    # Копия по LDIR Controls.PrepareStationReload, длина переноса 100.
+    block(23, 0x245, 0x100, 0x4200, "Controls", (0x4200,)),
+    # Копия по LDIR Controls.RelocateStationReload, длина переноса 100.
+    block(23, 0x1CB, 0x100, 0x4000, "Controls", (0x4000,)),
+    # Доказанная копия 99 байтов по LDIR 71BD, включает девятибайтовый ключ.
+    block(17, 0x1408, 0x63, 0x4200, "Action", (0x4200,)),
     block(3, 0, 119, 0x5D3B, "Basic", (0x5D41,)),
     block(3, 0x100, 0xA31, 0x6400, "Intro", (0x6500, 0x65B7)),
     # Образцы исполняются только после копирования, границы взяты из длины RepeatPattern.
@@ -53,7 +61,7 @@ BLOCKS = [
     block(20, 0, 11264, 0xC000, "Voxel", ()),
     block(21, 0, 3784, 0xEC00, "Voxel", (0xEC00, 0xEC0E, 0xEC1B, 0xEC7F)),
     block(22, 0, 6878, 0xC000, "Controls", ()),
-    block(23, 0, 6474, 0xDADE, "Controls", (0xDADE,)),
+    block(23, 0, 6474, 0xDADE, "Controls", (0xDADE, 0xDD87)),
     block(29, 0, 19114, 0x6000, "Final", (0x6000, 0x616C, 0x6196)),
     block(29, 0x247, 0x34, 0x6247, "FinalTemplates", (0x6247,)),
     block(29, 0x27D, 0x17, 0x627D, "FinalTemplates", (0x627D,)),

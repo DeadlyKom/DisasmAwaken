@@ -37,7 +37,8 @@ NOTES = {
     0x683B: 'Вращение фазы пополнения и проверка её младшего бита.',
     0x6844: 'Выбор байта и проверка кандидата счётчика относительно лимита.',
     0x685F: 'Сброс значения четвёртой шкалы с запросом перерисовки.',
-    0x686C: 'Проверка порога пересчёта Compare06A.',
+    0x686C: 'Проверка порога пересчёта SpawnLowLimit.',
+    0x6873: 'Расчёт нового SpawnLowLimit с изменяемой базой SpawnBiasBase и насыщением FF.',
     0x687C: 'Проверка необходимости смены режима тела.',
     0x688A: 'Проверка длины списка широких векторов.',
     0x688F: 'Расчёт шага X как знаковой четверти с заменой нуля единицей.',
@@ -92,9 +93,10 @@ def name_operands(region, address, operation):
         return operation
     operation = operation.replace('IY+#', 'IY + #')
     aliases = {
+        '9BD2': 'ActionByteLimitCounter.Value.Current',
         '6781': 'ActionBodyMotionState.PhaseWord', '9B81': 'ActionGlyphIndicatorState.Control.FirstMode',
         '68D5': 'ActionBodyMotionState.WideStepX', '68FD': 'ActionBodyMotionState.WideStepY',
-        '6925': 'ActionBodyMotionState.WideStepDepth', '7B6B': 'ActionApplyParametersState.Compare06A',
+        '6925': 'ActionBodyMotionState.WideStepDepth', '7B6B': 'ActionApplyParametersState.SpawnLowLimit',
     }
     for index in range(3):
         base = 0x9B6F + 3 * index

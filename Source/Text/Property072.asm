@@ -22,7 +22,7 @@
 ;   Property072 сохраняет табличное имя до установления назначения её поля
 ; -----------------------------------------
                 ; выбор второй базы четырёхбайтовых записей
-Entry:          LD DE, #9484
+Entry:          LD DE, @EquipmentSkimmerTypeSets.Row00.Type0
                 ; чтение искомого байта второго входа из #984A
                 LD A, (#984A)
                 JP @Text.IsByteMissingFromFour.CheckAtBase

@@ -19,7 +19,7 @@
                 ; -----------------------------------------
                 ; Постановка элемента текста в очередь CONTROL.
 Entry:          PUSH DE
-                LD DE, #F2A5
+                LD DE, @ControlsFlightText.ShipDestroyed
                 CALL @Action.QueueTextItemBank1.Entry
                 POP DE
                 ; Выбор звукового потока и подготовка режима ожидания.

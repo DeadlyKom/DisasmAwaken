@@ -1,0 +1,39 @@
+{
+  "passed": true,
+  "total_cases": 2,
+  "profiles": [
+    {
+      "recognition": 0,
+      "consumer_calls": 256,
+      "consumer_entries_including_CR_restarts": 259,
+      "wait_outer": 64,
+      "wait_DJNZ_executions": 4161600,
+      "text_glyphs": 54,
+      "text_scrolls": 4,
+      "instructions": 4224070
+    },
+    {
+      "recognition": 255,
+      "consumer_calls": 256,
+      "consumer_entries_including_CR_restarts": 259,
+      "wait_outer": 128,
+      "wait_DJNZ_executions": 8323200,
+      "text_glyphs": 54,
+      "text_scrolls": 4,
+      "instructions": 8434949
+    }
+  ],
+  "actual_text_queue_and_renderer_executed": true,
+  "all_original_delay_instructions_executed": true,
+  "no_counter_patching": true,
+  "copied_bytes": 99,
+  "relay_code_bytes": 90,
+  "file_key_bytes": 9,
+  "all_eight_banks_compared_except_64_stack_bytes_and_scroll_saved_SP": true,
+  "final_A_HL_DE_BC_IX_IY_SP_I_IM_IFF_checked": true,
+  "full_text_registers_R_T_and_write_multiplicity_checked": false,
+  "stopped_before_copied_relay_entry": true,
+  "TRDOS_executed": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

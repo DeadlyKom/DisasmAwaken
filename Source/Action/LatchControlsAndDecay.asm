@@ -1,5 +1,6 @@
                 module Action
                 module LatchControlsAndDecay
+                ; Физические входы [управления и зерно](../../Docs/ActionInputContextData.md)
                 ; Документация [алгоритм и проверка](../../Docs/ActionControlDecay.md)
                 ; -----------------------------------------
                 ; Фиксация запросов управления и фазовое приближение трёх знаковых величин к нулю

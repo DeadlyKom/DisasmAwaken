@@ -1,0 +1,161 @@
+{
+  "passed": true,
+  "method": "actual_cpu_accesses_at_initial_physical_load_addresses",
+  "source_map_sha256": "d92aafd67f792ff325d7d25e21807ef19ca2e91f55e7102bfe9ccaf885f373e3",
+  "profiles": {
+    "station": {
+      "frame_entries": 8,
+      "checked_ranges": 11,
+      "touched_ranges": [
+        {
+          "path": "Source/Resources/04_STATIONF/BeforeMarketRules.bin",
+          "file_offset": 13559,
+          "total_bytes": 33,
+          "addresses_reached": 30,
+          "addresses": [
+            38138,
+            38139,
+            38140,
+            38141,
+            38142,
+            38143,
+            38144,
+            38145,
+            38146,
+            38147,
+            38148,
+            38149,
+            38150,
+            38151,
+            38152,
+            38153,
+            38154,
+            38155,
+            38156,
+            38157,
+            38158,
+            38159,
+            38160,
+            38161,
+            38162,
+            38163,
+            38164,
+            38165,
+            38166,
+            38167
+          ],
+          "first": [
+            {
+              "mode": "read",
+              "pc": 51343,
+              "value_matches_initial": true,
+              "distinct_addresses": 30
+            }
+          ],
+          "accesses": [
+            {
+              "mode": "read",
+              "pc": 51343,
+              "instruction_bank": 6,
+              "count": 30
+            }
+          ]
+        }
+      ]
+    },
+    "flight": {
+      "frame_entries": 65,
+      "checked_ranges": 52,
+      "touched_ranges": [
+        {
+          "path": "Source/Resources/17_ACTION/Unclassified0BBA_0BBB.bin",
+          "file_offset": 3002,
+          "total_bytes": 1,
+          "addresses_reached": 1,
+          "addresses": [
+            27578
+          ],
+          "first": [
+            {
+              "mode": "read",
+              "pc": 16906,
+              "value_matches_initial": true,
+              "distinct_addresses": 1
+            }
+          ],
+          "accesses": [
+            {
+              "mode": "read",
+              "pc": 16906,
+              "instruction_bank": null,
+              "count": 1
+            },
+            {
+              "mode": "read",
+              "pc": 27577,
+              "instruction_bank": null,
+              "count": 192
+            },
+            {
+              "mode": "write",
+              "pc": 16906,
+              "instruction_bank": null,
+              "count": 1
+            }
+          ]
+        },
+        {
+          "path": "Source/Resources/17_ACTION/UnknownAfterSpawnModelChoices.bin",
+          "file_offset": 7557,
+          "total_bytes": 16,
+          "addresses_reached": 16,
+          "addresses": [
+            32133,
+            32134,
+            32135,
+            32136,
+            32137,
+            32138,
+            32139,
+            32140,
+            32141,
+            32142,
+            32143,
+            32144,
+            32145,
+            32146,
+            32147,
+            32148
+          ],
+          "first": [
+            {
+              "mode": "read",
+              "pc": 16906,
+              "value_matches_initial": true,
+              "distinct_addresses": 16
+            }
+          ],
+          "accesses": [
+            {
+              "mode": "read",
+              "pc": 16906,
+              "instruction_bank": null,
+              "count": 16
+            },
+            {
+              "mode": "write",
+              "pc": 16906,
+              "instruction_bank": null,
+              "count": 16
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "all_runtime_aliases_tracked": false,
+  "semantic_classification_performed": false,
+  "trdos_stub": true,
+  "native_execution": false,
+  "assembly_executed": false
+}

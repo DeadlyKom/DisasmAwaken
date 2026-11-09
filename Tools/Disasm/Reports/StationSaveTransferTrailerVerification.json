@@ -1,0 +1,174 @@
+{
+  "passed": true,
+  "trailer_size": 29,
+  "save_offset": 483,
+  "station_offset": 14878,
+  "action_offset": 15776,
+  "original_station_and_save_trailers": "0000000000000000000000000000000000000000000000000000000000",
+  "save_slots": [
+    11,
+    12,
+    13,
+    14,
+    15,
+    16
+  ],
+  "cycle": {
+    "purchase": {
+      "event": 5,
+      "equipment_row": 23,
+      "eligible_fixture": true,
+      "ship": 0,
+      "starting_credits": 10000,
+      "remaining_credits": 0,
+      "equipment_byte": 254,
+      "queued_messages": []
+    },
+    "station_start_loads": [
+      {
+        "slot": 7,
+        "address": 49152,
+        "length": 11776,
+        "bank": 1
+      },
+      {
+        "slot": 10,
+        "address": 56064,
+        "length": 7209,
+        "bank": 3
+      },
+      {
+        "slot": 8,
+        "address": 56064,
+        "length": 5921,
+        "bank": 7
+      },
+      {
+        "slot": 6,
+        "address": 49152,
+        "length": 15978,
+        "bank": 4
+      },
+      {
+        "slot": 5,
+        "address": 49152,
+        "length": 3864,
+        "bank": 6
+      },
+      {
+        "offset": 178688,
+        "address": 49152,
+        "length": 3584,
+        "bank": 3
+      }
+    ],
+    "departure_file": {
+      "slot": 17,
+      "name": "ACTION  C",
+      "destination": 24576,
+      "size": 40960,
+      "return_address": 16950
+    },
+    "outgoing_context_bytes": 512,
+    "flight_start_loads": [
+      {
+        "slot": 25,
+        "address": 49152,
+        "length": 1463,
+        "bank": 6
+      },
+      {
+        "slot": 20,
+        "address": 49152,
+        "length": 11264,
+        "bank": 3
+      },
+      {
+        "slot": 21,
+        "address": 60416,
+        "length": 3784,
+        "bank": 3
+      },
+      {
+        "slot": 22,
+        "address": 49152,
+        "length": 6878,
+        "bank": 1
+      },
+      {
+        "slot": 23,
+        "address": 56030,
+        "length": 6474,
+        "bank": 1
+      },
+      {
+        "slot": 24,
+        "address": 49152,
+        "length": 10580,
+        "bank": 4
+      }
+    ],
+    "complete_flight_frames": 64,
+    "key_row": 251,
+    "key_mask": 8,
+    "key_index": 18,
+    "handler": 30214,
+    "return_requested": true,
+    "return_file": {
+      "slot": 4,
+      "name": "STATIONFC",
+      "destination": 24576,
+      "size": 40960,
+      "return_address": 16927
+    },
+    "incoming_context_bytes": 481,
+    "untouched_station_tail_bytes": 31,
+    "station_restart_loads": [
+      {
+        "slot": 7,
+        "address": 49152,
+        "length": 11776,
+        "bank": 1
+      },
+      {
+        "slot": 10,
+        "address": 56064,
+        "length": 7209,
+        "bank": 3
+      },
+      {
+        "slot": 8,
+        "address": 56064,
+        "length": 5921,
+        "bank": 7
+      },
+      {
+        "slot": 6,
+        "address": 49152,
+        "length": 15978,
+        "bank": 4
+      },
+      {
+        "slot": 5,
+        "address": 49152,
+        "length": 3864,
+        "bank": 6
+      },
+      {
+        "offset": 187136,
+        "address": 49152,
+        "length": 3840,
+        "bank": 3
+      }
+    ],
+    "station_frame_entries": 8,
+    "trailer_forward": "13385d82a7ccf1163b6085aacff4193e6388add2f71c41668bb0d5fa1f",
+    "trailer_after_64_frames": "13385d82a7ccf1163b6085aacff4193e6388add2f71c41668bb0d5fa1f",
+    "trailer_in_fresh_station": "0000000000000000000000000000000000000000000000000000000000"
+  },
+  "fixture_trailer": true,
+  "trdos_substituted": true,
+  "gameplay_fields_proved": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

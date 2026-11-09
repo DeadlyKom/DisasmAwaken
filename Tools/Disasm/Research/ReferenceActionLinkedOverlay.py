@@ -38,6 +38,10 @@ class LinkedOverlayMachine(OverlayPairMachine):
             index,flags,_=decode(ix);self.r[0:2]=[index,flags];self.put(iy+11,index);self.m1(19)
             self.path.append('link_written')
         else:self.path.append('link_skipped')
+        return self.check_depth_signs(ops)
+
+    def check_depth_signs(self,ops):
+        self.rendered=False;ix=self.r[8]*256+self.r[9]
         selected_high=self.r[4];self.exx();a=selected_high&self.r[4]
         self.r[0:2]=[a,logic_flags(a)|16];self.m1(4)
         if a&128:self.path.append('both_depths_negative');return self.finish()

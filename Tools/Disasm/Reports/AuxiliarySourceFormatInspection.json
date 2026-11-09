@@ -1,0 +1,124 @@
+{
+  "passed": true,
+  "format_reference": "https://github.com/Bedazzle/ZX-M8XXX/blob/main/core/asm-detok.js",
+  "positive_control": {
+    "slot": 2,
+    "deleted": true,
+    "extracted": "Tools/Disasm/Extracted/Deleted/02__L-_TXT.H.bin",
+    "bytes": 521,
+    "embedded_source_name": "HL->TXT",
+    "alasm_signature_offset": 40,
+    "first_line_offset": 64,
+    "framed_lines": 50,
+    "source_terminator_end": 521,
+    "all_native_source_frames_roundtrip": true,
+    "sha256": "19e949ad37b59bf584d4f2152f908afcbce53944d1bfa189bf9110b03c106e45",
+    "text_view": "Tools/Disasm/Research/Evidence/DeletedDecimalFormatter.asm.txt",
+    "purpose": "decimal number formatter, author input HL number and BC text destination"
+  },
+  "banks": [
+    {
+      "slot": 33,
+      "name": "BANK0",
+      "sha256": "7f1ee7d1f6280d1c646d0066c9c42e56d4c7d2f8eec17f8bcba1e825e2d8ff07",
+      "alasm_signature_offsets": [],
+      "tasm_from_offset_zero": {
+        "complete_lines": 0,
+        "terminator": false,
+        "stop_offset": 0
+      },
+      "ads_from_offset_zero": {
+        "complete_lines": 1,
+        "terminator": false,
+        "stop_offset": 12
+      }
+    },
+    {
+      "slot": 34,
+      "name": "BANK1",
+      "sha256": "9d8c5cd116db7ba399cd1d07eb6123d16eefc6cef1cd29320ffb803e0b39fbf6",
+      "alasm_signature_offsets": [],
+      "tasm_from_offset_zero": {
+        "complete_lines": 0,
+        "terminator": false,
+        "stop_offset": 0
+      },
+      "ads_from_offset_zero": {
+        "complete_lines": 3,
+        "terminator": false,
+        "stop_offset": 30
+      }
+    },
+    {
+      "slot": 35,
+      "name": "BANK2",
+      "sha256": "e5596e1080d8886e5084a43317fd6632cdf5ea4e78fb9f69a50631a37c189a3b",
+      "alasm_signature_offsets": [],
+      "tasm_from_offset_zero": {
+        "complete_lines": 0,
+        "terminator": false,
+        "stop_offset": 0
+      },
+      "ads_from_offset_zero": {
+        "complete_lines": 1,
+        "terminator": false,
+        "stop_offset": 19
+      }
+    },
+    {
+      "slot": 36,
+      "name": "BANK3",
+      "sha256": "2b64332cdb6e4c41454195fb2f2040f09d2f7a23ecdbc0fa0d2a42bd5b4054f5",
+      "alasm_signature_offsets": [],
+      "tasm_from_offset_zero": {
+        "complete_lines": 0,
+        "terminator": false,
+        "stop_offset": 0
+      },
+      "ads_from_offset_zero": {
+        "complete_lines": 3,
+        "terminator": false,
+        "stop_offset": 30
+      }
+    },
+    {
+      "slot": 37,
+      "name": "BANK4",
+      "sha256": "4fbfd86e50c378a09522557902b9a52364246b0623d5beb4e32a21bf1d2cd9b3",
+      "alasm_signature_offsets": [],
+      "tasm_from_offset_zero": {
+        "complete_lines": 0,
+        "terminator": false,
+        "stop_offset": 0
+      },
+      "ads_from_offset_zero": {
+        "complete_lines": 1,
+        "terminator": false,
+        "stop_offset": 7
+      }
+    },
+    {
+      "slot": 38,
+      "name": "BANK5",
+      "sha256": "475a6e428c648fd4f4bd0bc4c1d8082171763f927cdc78a5d825a2fef62d9445",
+      "alasm_signature_offsets": [],
+      "tasm_from_offset_zero": {
+        "complete_lines": 0,
+        "terminator": false,
+        "stop_offset": 0
+      },
+      "ads_from_offset_zero": {
+        "complete_lines": 1,
+        "terminator": false,
+        "stop_offset": 6
+      }
+    }
+  ],
+  "recognized_native_bank_sources": false,
+  "arbitrary_offsets_fragmented_compressed_and_other_formats_excluded": false,
+  "banks_semantically_classified": false,
+  "deleted_catalog_entry_restored": false,
+  "ordinary_build_sources_changed": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

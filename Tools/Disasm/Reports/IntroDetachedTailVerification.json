@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "total_cases": 287,
+  "wait_cases": 255,
+  "screen_copy_cases": 32,
+  "bounded_bytes": 31,
+  "addresses": [
+    29901,
+    29912,
+    29924
+  ],
+  "physical_offset": 11469,
+  "original_relocation_executed": true,
+  "direct_entry_from_registered_intro_code": false,
+  "byte_injected_in_exhaustive_255_value_profiles": true,
+  "original_keyboard_irq_profiles": [
+    {
+      "rom": "48.rom",
+      "cases": 41,
+      "returns": 38,
+      "writer_pc": 776
+    },
+    {
+      "rom": "128-1.rom",
+      "cases": 41,
+      "returns": 38,
+      "writer_pc": 776
+    }
+  ],
+  "game_callers_proved": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

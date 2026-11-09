@@ -12,6 +12,8 @@ from ReferenceControlsPointRespawn import refresh
 
 def main():
     flat = flat_action()
+    # Проверка области применимости прежней сквозной серии, изменённые параметры проверяются отдельно.
+    assert (flat[0x7E07],flat[0x7E09],flat[0x7DE4])==(0x32,0x64,0x20)
     banks = [bytearray(0x4000) for _ in range(8)]
     for bank, start in ((5, 0x4000), (2, 0x8000), (0, 0xC000)):
         banks[bank][:] = bytes(flat[start:start + 0x4000])
@@ -69,7 +71,8 @@ def main():
         assert memory[0xEBDD] == 0 and trace.writes == [(0x7FFD, 20), (0x7FFD, 16)]
         cases += 1
     report = dict(passed=True, total_cases=cases, all_classes_and_even_model_indices=True,
-                  whole_object_record_compared=True, stops_before_class_dispatch=True, assembly_executed=False)
+                  whole_object_record_compared=True, stops_before_class_dispatch=True,
+                  mutable_parameters_profile='original_defaults_32_64_20',assembly_executed=False)
     payload = json.dumps(report, indent=2) + '\n'
     (ROOT / 'Tools/Disasm/Reports/ActionSpawnRecordFinishVerification.json').write_text(payload, encoding='utf-8')
     print(payload)

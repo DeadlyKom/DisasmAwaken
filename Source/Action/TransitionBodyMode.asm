@@ -12,7 +12,7 @@
                 ;   CheckRandom продвигает Stream14 и только на слове #8746 выставляет режим 2 и три слова #6000, затем передаёт управление на #688A
                 ;   LowerWords вычитает #0030 из трёх старших слов и передаёт управление на #679B
                 ; Corrupt:
-                ;   HL, BC, AF, HL', DE', BC', R, поля режима, Compare06A, состояние потока, вектор и временные слова по достигнутому пути
+                ;   HL, BC, AF, HL', DE', BC', R, поля режима, SpawnLowLimit, состояние потока, вектор и временные слова по достигнутому пути
                 ; Note:
                 ;   младшие байты компонент не затрагиваются, старшие слова изменяются по модулю #10000
                 ;   66816 сценариев сверяют локальные границы, а оба продолжения описаны отдельно
@@ -30,7 +30,7 @@ Entry:          LD A, (@ActionGlyphIndicatorState.Control.FirstMode)
                 LD A, #13
                 LD (@ActionRandomStreams.Stream14.FoldByte), A
                 LD A, #FF
-                LD (@ActionApplyParametersState.Compare06A), A
+                LD (@ActionApplyParametersState.SpawnLowLimit), A
                 ; Продвижение потока и проверка слова перехода в режим 2.
 CheckRandom:    CALL @Action.NextRandomWord14.Entry
                 LD A, H

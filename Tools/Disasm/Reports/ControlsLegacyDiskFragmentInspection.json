@@ -1,0 +1,119 @@
+{
+  "passed": true,
+  "method": "five_independent_internal_absolute_address_equalities_and_original_byte_decode",
+  "slot": 23,
+  "file_offset": 127,
+  "code_candidate_bytes": 188,
+  "sha256": "d585cf3c46abe1e805e78add558ff434596e4281b4cf96064c7a7f22941a369c",
+  "consistent_legacy_base": 23968,
+  "witnesses": [
+    {
+      "target_address": 24141,
+      "target_file_offset": 173,
+      "derived_base": 23968
+    },
+    {
+      "target_address": 24274,
+      "target_file_offset": 306,
+      "derived_base": 23968
+    },
+    {
+      "target_address": 24278,
+      "target_file_offset": 310,
+      "derived_base": 23968
+    },
+    {
+      "target_address": 24161,
+      "target_file_offset": 193,
+      "derived_base": 23968
+    },
+    {
+      "target_address": 24115,
+      "target_file_offset": 147,
+      "derived_base": 23968
+    }
+  ],
+  "matching_direct_control_references": [
+    {
+      "source_address": 24104,
+      "source_offset": 136,
+      "operation": "CALL #5E4D",
+      "target_offset": 173
+    },
+    {
+      "source_address": 24146,
+      "source_offset": 178,
+      "operation": "CALL #5ED2",
+      "target_offset": 306
+    },
+    {
+      "source_address": 24153,
+      "source_offset": 185,
+      "operation": "CALL #5ED6",
+      "target_offset": 310
+    },
+    {
+      "source_address": 24177,
+      "source_offset": 209,
+      "operation": "CALL #5ED2",
+      "target_offset": 306
+    },
+    {
+      "source_address": 24185,
+      "source_offset": 217,
+      "operation": "CALL #5ED2",
+      "target_offset": 306
+    },
+    {
+      "source_address": 24191,
+      "source_offset": 223,
+      "operation": "CALL #5ED2",
+      "target_offset": 306
+    },
+    {
+      "source_address": 24200,
+      "source_offset": 232,
+      "operation": "CALL #5ED2",
+      "target_offset": 306
+    },
+    {
+      "source_address": 24209,
+      "source_offset": 241,
+      "operation": "CALL #5ED6",
+      "target_offset": 310
+    },
+    {
+      "source_address": 24227,
+      "source_offset": 259,
+      "operation": "CALL #5ED6",
+      "target_offset": 310
+    },
+    {
+      "source_address": 24258,
+      "source_offset": 290,
+      "operation": "CALL #5ED2",
+      "target_offset": 306
+    },
+    {
+      "source_address": 24265,
+      "source_offset": 297,
+      "operation": "CALL #5ED6",
+      "target_offset": 310
+    },
+    {
+      "source_address": 24270,
+      "source_offset": 302,
+      "operation": "JP NZ,#5E61",
+      "target_offset": 193
+    }
+  ],
+  "saved_SP_writer_points_to_legacy_LD_SP_operand": true,
+  "legacy_fragment_end_after_JP_3D2F": true,
+  "remaining_gap_bytes_not_classified": 130,
+  "source_map_changed": false,
+  "actual_game_relocation_proved": false,
+  "actual_game_entry_proved": false,
+  "TRDOS_ROM_routine_semantics_proved": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

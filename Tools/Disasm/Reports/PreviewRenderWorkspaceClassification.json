@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "classified_resource_bytes": 1024,
+  "resources": 4,
+  "bank": 4,
+  "contour_page_bytes": 256,
+  "generated_address_table_bytes": 768,
+  "unknown_neighbor_bytes": 436,
+  "original_bytes_preserved": true,
+  "generated_values_not_serialized": true,
+  "assembly_executed": false
+}

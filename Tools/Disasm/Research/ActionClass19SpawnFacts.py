@@ -1,6 +1,6 @@
 """6417, счётчик в двух младших битах и исходный производный код списка, не адрес IY."""
 FUNCTIONS={0x6417:('SpawnClass19AndUpdateList','Создание записи класса 19 по двухбитовому счётчику и обновление списка кодом из сохранённого HL')}
-LOCAL={0x6432:'StoreKind',0x6439:'BuildControl',0x649C:'ClampHigh',0x64A2:'StoreScale',
+LOCAL={0x6441:'SpawnPrepared',0x6432:'StoreKind',0x6439:'BuildControl',0x649C:'ClampHigh',0x64A2:'StoreScale',
        0x64B9:'StoreTag',0x64C8:'NextItem',0x64D1:'CheckOld'}
 CONTRACTS={('Action',0x6417):(
     ['HL, DE, BC и AF числовых аргументов не задают, IX указывает текущую активную FActionRecord',
@@ -108,3 +108,5 @@ def name_operands(region,function_address,operation):
         operation=operation.replace('CALL #'+format(address,'04X'),'CALL @Action.'+name+'.Entry')
     return (operation.replace('LD HL, #A01B','LD HL, @ActionCandidateListData.Slot00.Code - 1')
             .replace('CP #FE','CP @ActionCandidateListConst.ListEnd').replace('CP #80','CP @ActionReuseConst.ReusableHigh'))
+
+COMMENTS[0x6441]=(['-----------------------------------------', 'Подготовленный вход без расхода счётчика и генерации от R', 'In:', '  HL содержит подготовленный код списка, L задаёт пометку в бите 7 и значение Unknown23 в битах 6..0', "  DE входного аргумента не задаёт, C сохраняется, B заменяется L, AF содержит A для Unknown11 и сохраняемые в AF' флаги", '  IX указывает активного родителя, действуют договоры поиска места и конечного списка, два дополнительных байта стека доступны, IRQ не вмешиваются', 'Out:', "  при отсутствии места AF=8042, HL сохранён, DE=0040, B=входной L, C сохранён, AF'=входной AF, IY указывает маркер", '  при успехе поля ребёнка следуют основному телу, Unknown11 получает входной A, Unknown23=входной L AND 7F', '  ReuseByte ребёнка=10 при входном бите 7 L, иначе 0, код списка рассчитывается из входного HL, не из адреса ребёнка IY', '  после успеха HL указывает достигнутую ячейку списка, DE=00:E, B=входной L AND 7F, C сохранён, AF определяется последней проверкой списка', '  IX, I, IM, IFF и paging сохраняются, SP после RET равен входному SP+2, IY указывает ребёнка либо маркер', 'Corrupt:', "  HL, DE, BC только B, AF, HL', DE', BC', AF', IY, R, запись ребёнка, список, пометки поиска и два временных байта CPU-стека по пути", 'Note:', '  родительский счётчик не уменьшается, случайный код не рассчитывается, весь входной A сохраняется без ограничения 1..8', '  [Договор внутреннего входа и 82496 сценариев](../../Docs/ActionPreparedClass19Spawn.md)', '-----------------------------------------'],None)

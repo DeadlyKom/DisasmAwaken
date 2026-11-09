@@ -61,7 +61,7 @@ CheckClass:     LD A, (IX + @FActionRecord.ClassCode)
                 JP NC, @Action.AllocateLargeEffect.ReleaseObject                ; переход, если класс не меньше #10, дочерние записи не создаются
 
                 ; Подготовка сканирования списка и счётчика от двух до пяти по R.
-                LD HL, #A0C1
+                LD HL, @ActionObjectRecords.Record00.Components.Component0.High - @FActionRecord
                 LD A, R
                 AND #03
                 ADD A, #02

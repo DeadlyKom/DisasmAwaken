@@ -27,17 +27,17 @@ Entry:          LD HL, #0000
                 INC HL
                 LD (@ControlsTextQueueState.WriteCursor), HL
                 ; подготовка обхода операндов 30 развёрнутых копирований по 20 байтов кода
-                LD IX, #ED19
-                LD BC, #0014
+                LD IX, @ControlsScrollPatchConst.CursorSeed
+                LD BC, @ControlsScrollPatchConst.Stride
                 LD HL, #5074
                 LD DE, #5060
                 LD A, #1E
                 ; обновление пары адресов источника и вершины стека назначения текущей растровой строки
 PatchRow:       ADD IX, BC
-                LD (IX+#00), L
-                LD (IX+#01), H
-                LD (IX+#0A), E
-                LD (IX+#0B), D
+                LD (IX + @ControlsScrollPatchConst.SourceLow), L
+                LD (IX + @ControlsScrollPatchConst.SourceHigh), H
+                LD (IX + @ControlsScrollPatchConst.TargetLow), E
+                LD (IX + @ControlsScrollPatchConst.TargetHigh), D
                 EX AF, AF'
                 ; вычисление следующей растровой строки в пределах шестипиксельного ряда
                 INC H

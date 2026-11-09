@@ -387,7 +387,36 @@
                 include "../Action/Data/Model23D3.asm"
                 ent
                 assert $ == #2469
-                ; Исходный промежуток, его назначение ещё не установлено.
-                incbin "../Resources/24_OBJECT3D/Gap2469.bin"
+                disp #E469
+                include "../Action/Data/Model2469.asm"
+                ent
+                assert $ == #251F
+                disp #E51F
+                include "../Action/Data/Model251F.asm"
+                ent
+                assert $ == #25C1
+                disp #E5C1
+                include "../Action/Data/Model25C1.asm"
+                ent
+                assert $ == #266B
+                disp #E66B
+                include "../Action/Data/Model266B.asm"
+                ent
+                assert $ == #2707
+                disp #E707
+                include "../Action/Data/Model2707.asm"
+                ent
+                assert $ == #27AB
+                disp #E7AB
+                include "../Action/Data/Model27AB.asm"
+                ent
+                assert $ == #2859
+                disp #E859
+                include "../Action/Data/Model2859.asm"
+                ent
+                assert $ == #2954
+                ; Физический суффикс выделенных секторов, неиспользуемость не установлена
+                ; Документация [границы и сохранение суффиксов](../../Docs/AllocatedSectorSuffixes.md)
+                incbin "../Resources/24_OBJECT3D/SectorTail.bin"
                 assert $ == #2A00
                 assert $ == #2A00

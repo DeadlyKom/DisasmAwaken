@@ -1,5 +1,9 @@
                 module Action
                 module ClipPolygon
+                ; Физические поля [очередь и параметры](../../Docs/ActionQueueParameterPhysicalData.md)
+                ; Место в странице CF00 [адресные байты и наложенные рабочие записи](../../Docs/ClipTargetLowPhysicalData.md)
+                ; Физические таблицы [адресные строки, шаблоны и крайние маски](../../Docs/PolygonFillPhysicalData.md)
+                ; Физические ячейки [префикс CF00 и рабочие состояния](../../Docs/ClipDispatchPrefixData.md)
                 ; Документация [алгоритм и проверка](../../Docs/ActionPolygon.md)
                 ; -----------------------------------------
                 ; Обход замкнутого списка вершин с табличным отсечением и ранним завершением контура

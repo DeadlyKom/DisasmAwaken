@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "typed_bytes": 11,
+  "physical_records": 2,
+  "physical_symbols": 8,
+  "files": 2,
+  "final_pointer_bytes": 4,
+  "final_sync_read_sites": 4,
+  "final_sync_write_sites": 2,
+  "preview_header_bytes": 7,
+  "preview_next_record_field_starts_at": 52679,
+  "runtime_chain_start": 32768,
+  "code_emitted_at_chain_start_by_assembly": false,
+  "original_bytes_addresses_and_instructions_preserved": true,
+  "gaps_preserved": true,
+  "invalid_pair_gameplay_proved": false,
+  "cf08_reclassified": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

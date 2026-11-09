@@ -55,7 +55,7 @@ Entry:          PUSH HL
                 CALL @Station.SetupCenterText.Entry
                 ; получение исходного индекса из Workspace для регистрации, указатель Flags временно сохраняется в кадре
                 EX (SP), HL
-                CALL @Station.RegisterItemCells.Entry
+RegisterCall:   CALL @Station.RegisterItemCells.Entry
                 ; возврат указателя Flags, Workspace получает рабочий адрес карты от RegisterItemCells
                 EX (SP), HL
                 ; выбор типа контура из младших пяти битов Flags, рисователь затем использует только бит 0

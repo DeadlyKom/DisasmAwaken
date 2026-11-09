@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "typed_bytes": 70,
+  "physical_records": 22,
+  "physical_symbols": 50,
+  "files": 2,
+  "file_keys": 6,
+  "backdrop_sizes": 16,
+  "backdrop_sector_sum": 239,
+  "physical_bytes": 70,
+  "station_relocation_preserved": true,
+  "original_bytes_addresses_and_instructions_preserved": true,
+  "gaps_preserved": true,
+  "invalid_pair_gameplay_proved": false,
+  "cf08_reclassified": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "total_cases": 1792,
+  "counts": {
+    "prepared_station_entry": 1280,
+    "cases": 1792,
+    "delay_exit": 255,
+    "missing_equipment": 257
+  },
+  "actual_station_prepare_executed": true,
+  "all_registers_except_T_checked": true,
+  "all_physical_ram_and_write_multiplicity_checked": true,
+  "exact_OUT_and_refresh_checked": true,
+  "successful_entry_not_a_return": true,
+  "stop_before_relocated_4200": true,
+  "TRDOS_and_station_loading_executed": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

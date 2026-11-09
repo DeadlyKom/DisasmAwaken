@@ -6,12 +6,12 @@
                 ; исходная запись 17, адреса E804..E862
                 ; In:
                 ;   HL, DE, BC и AF числовых аргументов не задают, альтернативные пары учитываются ранними отказами
-                ;   IX указывает FActionRecord с доступными словами 1A, 1C, 1E и LinkedIndex
+                ;   IX указывает FActionRecord с доступными ViewPosition и LinkedIndex
                 ;   RecordPointer подготовлен через PrepareLinkedRecordContext либо явно указывает допустимую запись, особый LinkedIndex=1A его игнорирует
                 ;   действуют договоры LoadLinkedRecordVectors, RecordAddressToIndex и ToggleTargetOverlay, LinkRLimit доступен
                 ;   ACTION банка 0, таблицы проекции, экран и CPU-стек детей доступны, IRQ и повторный вход исключены
                 ; Out:
-                ;   при полном Unknown1B=80 возвращается Carry=1 до обмена наборов, остальные данные сохраняются
+                ;   при полном ViewPosition.X.High=80 возвращается Carry=1 до обмена наборов, остальные данные сохраняются
                 ;   иначе BC/HL/DE получают слова текущей записи 1A/1C/1E и EXX сохраняет их, LoadLinkedRecordVectors подготавливает выбранную запись
                 ;   при Carry дочернего чтения возвращается Carry=1 с неотменённым EXX, созданные ранее контексты не нормализуются
                 ;   при прочитанном R>=LinkRLimit у выбранной IY устанавливается бит 0 LinkFlags и LinkedIndex получает индекс текущего IX
@@ -32,18 +32,18 @@
                 ;   на остальных путях R сверяется точно, R/T растеризатора, полное произведение входов, IRQ, сборка и нативный вывод не проверялись
                 ; -----------------------------------------
                 ; Проверка полного старшего байта первого слова контекста текущей записи до любых обменов регистров.
-Entry:          LD A, (IX + @FActionRecord.Unknown1B)
+Entry:          LD A, (IX + @FActionRecord.ViewPosition.X.High)
                 CP @ActionReuseConst.ReusableHigh
                 SCF
-                RET Z                                                           ; выход, если Unknown1B равен 80, вернуть Carry без изменения векторных контекстов
+                RET Z                                                           ; выход, если ViewPosition.X.High равен 80, вернуть Carry без изменения векторных контекстов
 
                 ; Подготовка BC, HL и DE из трёх слов текущей записи с сохранением в альтернативном наборе.
                 LD B, A
-                LD C, (IX + @FActionRecord.Unknown1A)
-                LD L, (IX + @FActionRecord.Unknown1C)
-                LD H, (IX + @FActionRecord.Unknown1D)
-                LD E, (IX + @FActionRecord.Unknown1E)
-                LD D, (IX + @FActionRecord.Unknown1F)
+                LD C, (IX + @FActionRecord.ViewPosition.X.Low)
+                LD L, (IX + @FActionRecord.ViewPosition.Y.Low)
+                LD H, (IX + @FActionRecord.ViewPosition.Y.High)
+                LD E, (IX + @FActionRecord.ViewPosition.Depth.Low)
+                LD D, (IX + @FActionRecord.ViewPosition.Depth.High)
                 EXX
                 ; Чтение выбранного контекста либо фиксированного контекста особой связи 1A.
                 CALL @Action.LoadLinkedRecordVectors.Entry
@@ -63,6 +63,20 @@ Entry:          LD A, (IX + @FActionRecord.Unknown1B)
                 POP HL
                 LD (IY + @FActionRecord.LinkedIndex), A
                 ; Проверка совместного знака двух глубин, один отрицательный конец сам по себе не завершает обработку.
+                ; Внутренний вход CheckDepthSigns, самостоятельный CALL из ActivateAntimissileSystem.
+                ; Документация [противоракетный вызов](../../Docs/ActionAntimissileCommand.md).
+                ; In:
+                ;   HL, DE, BC задают первый выбранный контекст, HL', DE', BC' второй, AF числового аргумента не задаёт
+                ;   Output0, Output1 и Output2 подготовлены, действуют договоры ToggleTargetOverlay и его детей
+                ;   IX сохраняется, IY и альтернативные регистры определяются достигнутым путём, требуется стек дочернего вывода
+                ; Out:
+                ;   EXX выполняется на каждом пути, оба отрицательных DE дают A=AND старших байтов, F от AND A и Carry=0
+                ;   иначе сохраняются рабочие векторы до трёх проверок Output0-BC, Output2-DE и HL-Output1
+                ;   при signed overflow F соответствует SBC с последующим SCF, Carry=1, очередная разность не сохраняется в HL
+                ;   при трёх допусках действует ToggleTargetOverlay, затем IX восстанавливается и AND A сбрасывает Carry
+                ;   SP после RET равен входному SP+2, поиск связи, чтение R и создание обратной ссылки пропускаются
+                ; Corrupt:
+                ;   HL, DE, BC, AF, HL', DE', BC', AF', IY, R, экран, буферы и CPU-стек по договору дочернего вывода
 CheckDepthSigns:LD A, D
                 EXX
                 AND D

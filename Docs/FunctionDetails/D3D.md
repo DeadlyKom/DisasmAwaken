@@ -139,3 +139,5 @@
 [RestorePreviewStack](../../Source/D3D/RestorePreviewStack.asm) — см. [PreviewQueueRender](../PreviewQueueRender.md).
 
 [RenderPreviewFrame](../../Source/D3D/RenderPreviewFrame.asm) — см. [PreviewFrame](../PreviewFrame.md).
+
+[SquarePreviewSignedWord](../../Source/D3D/SquarePreviewSignedWord.asm) — см. [PreviewSquareEntry](../PreviewSquareEntry.md).

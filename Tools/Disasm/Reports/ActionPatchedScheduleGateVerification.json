@@ -1,0 +1,39 @@
+{
+  "passed": true,
+  "total_cases": 295040,
+  "opcode_profiles": {
+    "01": 32768,
+    "02": 32768,
+    "03": 32768,
+    "04": 32768,
+    "05": 32768,
+    "06": 32768,
+    "07": 32768,
+    "C9": 32768,
+    "3E": 32768
+  },
+  "all_admitted_phase_bytes_and_counter_bytes": true,
+  "blocked_phase_profiles": 128,
+  "original_counter_zero_routes": {
+    "01:79A8": 64,
+    "01:7B66": 64,
+    "02:79A8": 1,
+    "02:7B66": 127,
+    "03:79A8": 1,
+    "03:7B66": 127,
+    "04:79A8": 1,
+    "04:7B66": 127,
+    "05:79A8": 1,
+    "05:7B66": 127,
+    "06:79A8": 1,
+    "06:7B66": 127,
+    "07:79A8": 64,
+    "07:7B66": 64,
+    "3E:7B66": 128
+  },
+  "exact_registers_except_R_T_and_ordered_writes": true,
+  "successor_algorithms_executed": false,
+  "full_mutable_counter_stream_proved": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

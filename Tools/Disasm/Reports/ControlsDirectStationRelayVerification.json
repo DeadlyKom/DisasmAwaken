@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "total_cases": 768,
+  "phases": {
+    "direct_before_TRDOS": 256,
+    "state_before_TRDOS": 256,
+    "conditional_state_return": 256
+  },
+  "actual_relocated_4000_and_4200_code_executed": true,
+  "TRDOS_C": 14,
+  "file_key": "STATIONFC",
+  "state_restore_bytes": 481,
+  "full_eight_banks_and_write_multiplicity_checked": true,
+  "main_and_preserved_registers_I_IM_IFF_SP_checked": true,
+  "full_R_T_and_postload_F_checked": false,
+  "successful_load_is_explicit_external_assumption": true,
+  "fresh_STATIONF_entry_6300": true,
+  "TRDOS_executed": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

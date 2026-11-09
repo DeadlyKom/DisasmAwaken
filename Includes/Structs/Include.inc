@@ -1478,6 +1478,7 @@ RowSelect       db #00                                                          
 InputMask       db #00                                                          ; маска входного байта, нулевой результат AND допускает обработчик
                 ends
                 assert FKeyScanInput == 2
+                assert @ActionKeyScanConst.PrevMaskBack == FKeyScanInput - FKeyScanInput.InputMask
 
 
                 ; Два исходных счётчика ракет в обратном порядке приоритета
@@ -1520,6 +1521,13 @@ Component2      FActionWord                                                     
                 assert FActionComponents == #06
 
                 ; Исходная физическая раскладка, неизвестные поля не переименованы по предположению
+                struct FActionViewPosition
+X               FActionWord                                                     ; знаковая координата после преобразования
+Y               FActionWord                                                     ; знаковая координата после преобразования
+Depth           FActionWord                                                     ; знаковая координата после преобразования
+                ends
+                assert FActionViewPosition == #06
+
                 struct FActionRecord
 Components      FActionComponents                                               ; три исходных слова записи, 60AE записывает результаты TransformVectorTransposed
 ModelOffset     db #00                                                          ; байтовое смещение таблицы указателей 9E00, ReadObjectHeaderWord читает заголовок выбранной модели
@@ -1528,15 +1536,15 @@ OffsetPhase1    db #00                                                          
 OffsetPhase2    db #00                                                          ; байтовый индекс третьей фазовой пары вычислителя смещения
 StateCode       db #00                                                          ; байтовый код выбора обработчика ObjectStateHandlers, 60AE записывает 08
 LinkedIndex     db #00                                                          ; индекс связанной записи, 60AE записывает сюда индекс новой ракеты у цели
-                ; Разряды 7..0, ? ? ? ? ? A L B, маски B=01, L=02, A=04
+                ; Разряды 7..0, ? ? ? ? P A L B, маски B=01, L=02, A=04, P=08
                 ; B задаёт обратную ссылку E804, L запись связи создателем или State08, A ближнюю область State08
-                ; Ноль сбрасывает три известных признака и неизвестные биты, отсутствие живой связи этим не доказывается
-LinkFlags       db #00                                                          ; бит 0 задаёт обратную связь E804, бит 1 установленную связь создателя или State08, бит 2 ближнюю область State08, биты 7..3 неизвестны
+                ; Ноль сбрасывает четыре известных признака и неизвестные биты, отсутствие живой связи этим не доказывается
+LinkFlags       db #00                                                          ; бит 0 задаёт обратную связь E804, бит 1 установленную связь, бит 2 ближнюю область State08, бит 3 противоракетный выбор порога PS1/PS2, биты 7..4 неизвестны
 Unknown0D       db #00                                                          ; игровой смысл ещё неизвестен, 60AE записывает 1A
 Unknown0E       db #00                                                          ; игровой смысл ещё неизвестен
 TargetIndex     db #00                                                          ; код цели в создаваемой записи ракеты, для других классов смысл ещё не установлен
 Unknown10       db #00                                                          ; игровой смысл ещё неизвестен
-Unknown11       db #00                                                          ; игровой смысл ещё неизвестен, 60AE записывает 01
+Unknown11       db #00                                                          ; для класса 13 полный байт пополнения при сборе, 60AE записывает 01, смыслы для других классов не обобщаются
 ClassCode       db #00                                                          ; полный код класса, используется FindRecordByCode, создаваемая ракета получает 11
 Unknown13       db #00                                                          ; игровой смысл ещё неизвестен, 60AE записывает 0A либо 32 по выбранному запасу
 Unknown14       db #00                                                          ; игровой смысл ещё неизвестен
@@ -1545,16 +1553,11 @@ SavedStateCode  db #00                                                          
 PhaseMoveTimer  db #00                                                          ; байтовый таймер вызовов обработчиков хода первой фазы
 ReuseByte       db #00                                                          ; FF задаёт однократный пропуск поиска, в отдельных состояниях биты 1..0 задают счётчик, бит 2 запрос детей, бит 4 допуск эффекта
 Unknown19       db #00                                                          ; игровой смысл ещё неизвестен
-Unknown1A       db #00                                                          ; игровой смысл ещё неизвестен
-Unknown1B       db #00                                                          ; игровой смысл ещё неизвестен
-Unknown1C       db #00                                                          ; игровой смысл ещё неизвестен
-Unknown1D       db #00                                                          ; игровой смысл ещё неизвестен
-Unknown1E       db #00                                                          ; игровой смысл ещё неизвестен
-Unknown1F       db #00                                                          ; игровой смысл ещё неизвестен
+ViewPosition    FActionViewPosition                                             ; X, Y и глубина после ComputePatchedVector, старший байт X равен 80 до успешного преобразования
 Unknown20       db #00                                                          ; игровой смысл ещё неизвестен
 Unknown21       db #00                                                          ; игровой смысл ещё неизвестен
 Unknown22       db #00                                                          ; игровой смысл ещё неизвестен
-Unknown23       db #00                                                          ; игровой смысл ещё неизвестен
+Unknown23       db #00                                                          ; для класса 13 полный код вида байтового сбора, границы не проверяются, прочие смыслы не установлены
 Unknown24       db #00                                                          ; игровой смысл ещё неизвестен
 TargetCodeStep  db #00                                                          ; числовой предельный шаг подвода второго и третьего фазовых кодов
 Unknown26       db #00                                                          ; игровой смысл ещё неизвестен
@@ -1585,6 +1588,8 @@ Unknown3E       db #00                                                          
 Unknown3F       db #00                                                          ; игровой смысл ещё неизвестен
                 ends
                 assert FActionRecord == #40
+                assert FActionRecord.ViewPosition == #1A
+                assert FActionRecord.ViewPosition.Depth.High == #1F
 
 
                 ; Физическая четырёхбайтовая строка потоков эффектов ACTION
@@ -1618,7 +1623,7 @@ Phase2          db #00                                                          
 Next            db #00                                                          ; младший байт следующего узла в странице 8F, 01 конец
 Unknown01       db #00                                                          ; неизвестный байт, вставка не читает и не меняет
 Unknown02       db #00                                                          ; неизвестный байт, вставка не читает и не меняет
-HeaderWord0     dw #0000                                                        ; снимок слова 9B8D, игровой смысл ещё неизвестен
+HeaderWord0     dw #0000                                                        ; снимок ModeBits и ModelByteOffset по 9B8D, порядок байтов сохранён
 Phases          FRenderPhases                                                   ; Phase0, Phase1 и Phase2, снимок 9B12..9B14
 Components      FActionComponents                                               ; снимок Output0, Output1 и Output2, глубина по +0C
                 ends
@@ -2197,33 +2202,30 @@ SavedAxis       dw #0000                                                        
                 ends
                 assert FOverlayProjectionFrame == #06
 
-                ; Физические записи BAR, смысл девяти начальных байтов шага не установлен
+                ; Физические записи BAR, значения полей подтверждены архивным потребителем
                 struct FFighterPosePointer
 FileOffset      dw #0000                                                        ; файловое смещение группы BAR, адрес RAM не назначается
                 ends
                 assert FFighterPosePointer == #02
 
                 struct FFighterPoseHeader
-CountMode       dw #0000                                                        ; биты 13..0 задают число шагов, бит 14 имеет неизвестный смысл, бит 15 исходно нулевой
-Unknown02       db #00                                                          ; Unknown, третий байт заголовка
-Unknown03       db #00                                                          ; Unknown, четвёртый байт заголовка
+FrameCount      db #00                                                          ; число кадров группы
+RepeatFlags     db #00                                                          ; флаг, бит 6 задаёт повтор с RepeatIndex, ноль выбирает NextAction
+RepeatIndex     db #00                                                          ; индекс кадра после окончания группы при повторе
+NextAction      db #00                                                          ; следующий код действия при отключённом повторе
                 ends
                 assert FFighterPoseHeader == #04
 
                 struct FFighterPoseStep
-Unknown00       db #00                                                          ; Unknown, исходное поле шага
-Unknown01       db #00                                                          ; Unknown, исходное поле шага
-Unknown02       db #00                                                          ; Unknown, исходное поле шага
-Unknown03       db #00                                                          ; Unknown, исходное поле шага
-Unknown04       db #00                                                          ; Unknown, исходное поле шага
-Unknown05       db #00                                                          ; Unknown, исходное поле шага
-Unknown06       db #00                                                          ; Unknown, исходное поле шага
-Unknown07       db #00                                                          ; Unknown, исходное поле шага
-Unknown08       db #00                                                          ; Unknown, исходное поле шага
-BankIndex       db #00                                                          ; индекс 0..3 соответствующего файла BD, аппаратная страница не установлена
-SpriteAddress   dw #00                                                          ; адрес кадра в окне C000, физическое смещение файла равно адресу минус C000
-WidthBytes      db #00                                                          ; число пар маска и пиксели в строке, ширина изображения в пикселях в восемь раз больше
-Height          db #00                                                          ; число строк, размер кадра равен WidthBytes умножить на Height и на два
+Ticks           db #00                                                          ; задержка до продвижения кадра
+MoveX           dw #0000                                                        ; приращение горизонтальной позиции с учётом стороны
+MoveY           dw #0000                                                        ; приращение вертикальной позиции по модулю 256
+DrawX           dw #0000                                                        ; смещение рисунка по горизонтали относительно новой позиции
+DrawY           dw #0000                                                        ; смещение рисунка по вертикали относительно новой позиции
+BankIndex       db #00                                                          ; индекс файла BD0..BD3
+SpriteAddress   dw #0000                                                        ; адрес пары маски и пикселей в окне C000
+WidthBytes      db #00                                                          ; число пар в строке
+Height          db #00                                                          ; число строк
                 ends
                 assert FFighterPoseStep == #0E
 
@@ -2389,5 +2391,967 @@ Value           db #00                                                          
                 ends
                 assert FEquipmentCode == 1
                 assert FEquipmentCode.Value == 0
+
+
+                ; Физические знаковые управления, это числовые байты, не наборы флагов
+                struct FFlightControls
+YControl        db #00                                                          ; управление проходом Y
+XControl        db #00                                                          ; управление проходом X
+TurnControl     db #00                                                          ; отрицание по модулю 256 задаёт индекс синусоиды
+                ends
+                assert FFlightControls == 3
+                assert FFlightControls.YControl == 0
+                assert FFlightControls.XControl == 1
+                assert FFlightControls.TurnControl == 2
+
+                ; Физическое зерно BuildParameterTables, размещено в общем ядре ACTION
+                struct FParameterSeeds
+SeedFirst       dw #0000                                                        ; первое слово зерна
+SeedSecond      dw #0000                                                        ; второе слово зерна
+StepControl     db #00                                                          ; управляющий байт количества повторов
+                ends
+                assert FParameterSeeds == 5
+                assert FParameterSeeds.SeedFirst == 0
+                assert FParameterSeeds.SeedSecond == 2
+                assert FParameterSeeds.StepControl == 4
+
+
+                ; Упакованная пиксельная точка линии, порядок отличается от FBufferPoint
+                struct FLineRasterPoint
+Second          db #00                                                          ; горизонтальная пиксельная координата, младший байт слова
+First           db #00                                                          ; вертикальная пиксельная координата, старший байт слова
+                ends
+                assert FLineRasterPoint == 2
+                assert FLineRasterPoint.Second == 0
+                assert FLineRasterPoint.First == 1
+
+                ; Полные коды команд для выбранного режима линии, не независимые флаги
+                struct FLineRasterMode
+PixelOpcode     db #00                                                          ; A1 для AND C, B1 для OR C либо A9 для XOR C
+BranchOpcode    db #00                                                          ; 30 для JR NC либо 38 для JR C
+                ends
+                assert FLineRasterMode == 2
+                assert FLineRasterMode.PixelOpcode == 0
+                assert FLineRasterMode.BranchOpcode == 1
+
+                ; Префикс разделённой таблицы CF00/D000, индексы 03 и 07 используются как состояние
+                struct FClipDispatchPrefix
+AppendPointLow  db #00                                                          ; младший байт адреса AppendSecondClipPoint.Entry
+ToRightLow      db #00                                                          ; младший байт адреса ClipInsideToRight.Entry
+ToLeftLow       db #00                                                          ; младший байт адреса ClipInsideToLeft.Entry
+CornerBlock     db #00                                                          ; нулевой байт разрешает запись углов, любой ненулевой запрещает
+ToBottomLow     db #00                                                          ; младший байт адреса ClipInsideToBottom.Entry
+ToBottomRLow    db #00                                                          ; младший байт адреса ClipInsideToBottomRight.Entry
+ToBottomLLow    db #00                                                          ; младший байт адреса ClipInsideToBottomLeft.Entry
+SeenFlags       db #00                                                          ; отметки TL, TR, BL, BR в битах 3..0, обработчики углов сохраняют 7..4
+                ends
+                assert FClipDispatchPrefix == 8
+                assert FClipDispatchPrefix.AppendPointLow == 0
+                assert FClipDispatchPrefix.ToRightLow == 1
+                assert FClipDispatchPrefix.ToLeftLow == 2
+                assert FClipDispatchPrefix.CornerBlock == 3
+                assert FClipDispatchPrefix.ToBottomLow == 4
+                assert FClipDispatchPrefix.ToBottomRLow == 5
+                assert FClipDispatchPrefix.ToBottomLLow == 6
+                assert FClipDispatchPrefix.SeenFlags == 7
+
+                ; Строка старших байтов разделённого диспетчера, младшая тетрада выбирает поле
+                struct FClipTargetHighRow
+SecondSides0    db #00                                                          ; старший байт адреса при младшей тетраде второго кода 0
+SecondSides1    db #00                                                          ; старший байт адреса при младшей тетраде второго кода 1
+SecondSides2    db #00                                                          ; старший байт адреса при младшей тетраде второго кода 2
+SecondSides3    db #00                                                          ; старший байт адреса при младшей тетраде второго кода 3
+SecondSides4    db #00                                                          ; старший байт адреса при младшей тетраде второго кода 4
+SecondSides5    db #00                                                          ; старший байт адреса при младшей тетраде второго кода 5
+SecondSides6    db #00                                                          ; старший байт адреса при младшей тетраде второго кода 6
+SecondSides7    db #00                                                          ; старший байт адреса при младшей тетраде второго кода 7
+SecondSides8    db #00                                                          ; старший байт адреса при младшей тетраде второго кода 8
+SecondSides9    db #00                                                          ; старший байт адреса при младшей тетраде второго кода 9
+SecondSidesA    db #00                                                          ; старший байт адреса при младшей тетраде второго кода A
+SecondSidesB    db #00                                                          ; старший байт адреса при младшей тетраде второго кода B
+SecondSidesC    db #00                                                          ; старший байт адреса при младшей тетраде второго кода C
+SecondSidesD    db #00                                                          ; старший байт адреса при младшей тетраде второго кода D
+SecondSidesE    db #00                                                          ; старший байт адреса при младшей тетраде второго кода E
+SecondSidesF    db #00                                                          ; старший байт адреса при младшей тетраде второго кода F
+                ends
+                assert FClipTargetHighRow == 16
+                assert FClipTargetHighRow.SecondSides0 == 0
+                assert FClipTargetHighRow.SecondSides1 == 1
+                assert FClipTargetHighRow.SecondSides2 == 2
+                assert FClipTargetHighRow.SecondSides3 == 3
+                assert FClipTargetHighRow.SecondSides4 == 4
+                assert FClipTargetHighRow.SecondSides5 == 5
+                assert FClipTargetHighRow.SecondSides6 == 6
+                assert FClipTargetHighRow.SecondSides7 == 7
+                assert FClipTargetHighRow.SecondSides8 == 8
+                assert FClipTargetHighRow.SecondSides9 == 9
+                assert FClipTargetHighRow.SecondSidesA == 10
+                assert FClipTargetHighRow.SecondSidesB == 11
+                assert FClipTargetHighRow.SecondSidesC == 12
+                assert FClipTargetHighRow.SecondSidesD == 13
+                assert FClipTargetHighRow.SecondSidesE == 14
+                assert FClipTargetHighRow.SecondSidesF == 15
+
+                ; Сохранение и установка крайних пикселей по формуле (старый AND Preserve) OR Apply
+                struct FPolygonEdgeMask
+Preserve        db #00                                                          ; единичные биты сохраняют прежние пиксели вне заполняемой части
+Apply           db #00                                                          ; единичные биты устанавливают пиксели выбранного шаблона
+                ends
+                assert FPolygonEdgeMask == 2
+                assert FPolygonEdgeMask.Preserve == 0
+                assert FPolygonEdgeMask.Apply == 1
+
+                ; Физическая часть строки младших адресов, пропущенные части заняты отдельными структурами
+                struct FClipTargetLowRow
+SecondSides0    db #00                                                          ; младший байт адреса при младшей тетраде второго кода 0
+SecondSides1    db #00                                                          ; младший байт адреса при младшей тетраде второго кода 1
+SecondSides2    db #00                                                          ; младший байт адреса при младшей тетраде второго кода 2
+SecondSides3    db #00                                                          ; младший байт адреса при младшей тетраде второго кода 3
+SecondSides4    db #00                                                          ; младший байт адреса при младшей тетраде второго кода 4
+SecondSides5    db #00                                                          ; младший байт адреса при младшей тетраде второго кода 5
+SecondSides6    db #00                                                          ; младший байт адреса при младшей тетраде второго кода 6
+SecondSides7    db #00                                                          ; младший байт адреса при младшей тетраде второго кода 7
+SecondSides8    db #00                                                          ; младший байт адреса при младшей тетраде второго кода 8
+SecondSides9    db #00                                                          ; младший байт адреса при младшей тетраде второго кода 9
+SecondSidesA    db #00                                                          ; младший байт адреса при младшей тетраде второго кода A
+SecondSidesB    db #00                                                          ; младший байт адреса при младшей тетраде второго кода B
+SecondSidesC    db #00                                                          ; младший байт адреса при младшей тетраде второго кода C
+SecondSidesD    db #00                                                          ; младший байт адреса при младшей тетраде второго кода D
+SecondSidesE    db #00                                                          ; младший байт адреса при младшей тетраде второго кода E
+SecondSidesF    db #00                                                          ; младший байт адреса при младшей тетраде второго кода F
+                ends
+                assert FClipTargetLowRow == 16
+                assert FClipTargetLowRow.SecondSides0 == 0
+                assert FClipTargetLowRow.SecondSides1 == 1
+                assert FClipTargetLowRow.SecondSides2 == 2
+                assert FClipTargetLowRow.SecondSides3 == 3
+                assert FClipTargetLowRow.SecondSides4 == 4
+                assert FClipTargetLowRow.SecondSides5 == 5
+                assert FClipTargetLowRow.SecondSides6 == 6
+                assert FClipTargetLowRow.SecondSides7 == 7
+                assert FClipTargetLowRow.SecondSides8 == 8
+                assert FClipTargetLowRow.SecondSides9 == 9
+                assert FClipTargetLowRow.SecondSidesA == 10
+                assert FClipTargetLowRow.SecondSidesB == 11
+                assert FClipTargetLowRow.SecondSidesC == 12
+                assert FClipTargetLowRow.SecondSidesD == 13
+                assert FClipTargetLowRow.SecondSidesE == 14
+                assert FClipTargetLowRow.SecondSidesF == 15
+
+                ; Физическая часть строки младших адресов, пропущенные части заняты отдельными структурами
+                struct FClipTargetLowHead
+SecondSides0    db #00                                                          ; младший байт адреса при младшей тетраде второго кода 0
+SecondSides1    db #00                                                          ; младший байт адреса при младшей тетраде второго кода 1
+SecondSides2    db #00                                                          ; младший байт адреса при младшей тетраде второго кода 2
+SecondSides3    db #00                                                          ; младший байт адреса при младшей тетраде второго кода 3
+SecondSides4    db #00                                                          ; младший байт адреса при младшей тетраде второго кода 4
+SecondSides5    db #00                                                          ; младший байт адреса при младшей тетраде второго кода 5
+SecondSides6    db #00                                                          ; младший байт адреса при младшей тетраде второго кода 6
+SecondSides7    db #00                                                          ; младший байт адреса при младшей тетраде второго кода 7
+SecondSides8    db #00                                                          ; младший байт адреса при младшей тетраде второго кода 8
+SecondSides9    db #00                                                          ; младший байт адреса при младшей тетраде второго кода 9
+SecondSidesA    db #00                                                          ; младший байт адреса при младшей тетраде второго кода A
+                ends
+                assert FClipTargetLowHead == 11
+                assert FClipTargetLowHead.SecondSides0 == 0
+                assert FClipTargetLowHead.SecondSides1 == 1
+                assert FClipTargetLowHead.SecondSides2 == 2
+                assert FClipTargetLowHead.SecondSides3 == 3
+                assert FClipTargetLowHead.SecondSides4 == 4
+                assert FClipTargetLowHead.SecondSides5 == 5
+                assert FClipTargetLowHead.SecondSides6 == 6
+                assert FClipTargetLowHead.SecondSides7 == 7
+                assert FClipTargetLowHead.SecondSides8 == 8
+                assert FClipTargetLowHead.SecondSides9 == 9
+                assert FClipTargetLowHead.SecondSidesA == 10
+
+                ; Физическая часть строки младших адресов, пропущенные части заняты отдельными структурами
+                struct FClipTargetLowTail
+SecondSidesB    db #00                                                          ; младший байт адреса при младшей тетраде второго кода B
+SecondSidesC    db #00                                                          ; младший байт адреса при младшей тетраде второго кода C
+SecondSidesD    db #00                                                          ; младший байт адреса при младшей тетраде второго кода D
+SecondSidesE    db #00                                                          ; младший байт адреса при младшей тетраде второго кода E
+SecondSidesF    db #00                                                          ; младший байт адреса при младшей тетраде второго кода F
+                ends
+                assert FClipTargetLowTail == 5
+                assert FClipTargetLowTail.SecondSidesB == 0
+                assert FClipTargetLowTail.SecondSidesC == 1
+                assert FClipTargetLowTail.SecondSidesD == 2
+                assert FClipTargetLowTail.SecondSidesE == 3
+                assert FClipTargetLowTail.SecondSidesF == 4
+
+
+                ; Физические байты существующего рабочего состояния ACTION
+                struct FRenderQueueCursor
+Head            db #00                                                          ; младшее смещение головы в странице 8F, рабочий конец цепочки 01
+FreeOffset      db #00                                                          ; смещение следующего узла, рабочий шаг 0E и признак исчерпания FC
+                ends
+                assert FRenderQueueCursor == 2
+                assert FRenderQueueCursor.Head == 0
+                assert FRenderQueueCursor.FreeOffset == 1
+
+                ; Физические байты существующего рабочего состояния ACTION
+                struct FClipOutputState
+OutputSize      db #00                                                          ; байтовая длина выходных пар Second, First в странице 90
+                ends
+                assert FClipOutputState == 1
+                assert FClipOutputState.OutputSize == 0
+
+                ; Физические байты существующего рабочего состояния ACTION
+                struct FActionParameterSet
+Link1ABaseLimit db #00                                                          ; поле 00, базовый порог связи 1A при сброшенном бите 3 LinkFlags, адрес изменяемого операнда F79C
+ReadOnly01      db #00                                                          ; ApplyParameterSet читает поле без записи, отдельный игровой смысл неизвестен
+OtherLinkLimit  db #00                                                          ; поле 02, порог для LinkedIndex, отличного от 1A, адрес изменяемого операнда F798
+RegenPhaseStep  db #00                                                          ; поле 03, шаг фазы восстановления первой шкалы, адрес изменяемого операнда A968
+PairedLineStep  db #00                                                          ; поле 04, шаг фазового допуска RequestPairedAimLines, адрес изменяемого операнда 63B9
+ThirdGaugeStep  db #00                                                          ; поле 05, шаг фазы повышения третьей шкалы, адрес изменяемого операнда A8B5
+SpawnLowAndBias db #00                                                          ; общий начальный SpawnLowLimit и база пересчёта SpawnBiasBase
+Class0RLimit    db #00                                                          ; поле 07, изменяемый операнд CP аппаратного R в ConfigureClass0Link, адрес изменяемого операнда 6615
+RandomLowLimit  db #00                                                          ; поле 08, изменяемый операнд CP младшего байта Stream10 в FindFilteredRecordOr26, адрес изменяемого операнда E6E7
+LinkedRLimit    db #00                                                          ; поле 09, порог R обратной связи в CheckAndToggleLinkedOverlay, адрес изменяемого операнда E823
+Class3RLimit    db #00                                                          ; поле 0A, изменяемый операнд CP аппаратного R в ConfigureClass3Link, адрес изменяемого операнда 65E5
+SavedLowLimit   db #00                                                          ; поле 0B, нижний предел младшего байта сохранённого слова с верхним байтом 23
+SpawnValueMask  db #00                                                          ; поле 0C, маска OR кандидата Unknown13 в обоих создателях, адрес изменяемого операнда 7E07
+SpawnValueCap   db #00                                                          ; поле 0D, исключённый верхний предел Unknown13, ноль даёт FF, адрес изменяемого операнда 7E09
+SpawnField11    db #00                                                          ; поле 0E, значение Unknown11 после непересекающихся случайных масок, адрес изменяемого операнда 7DE4
+                ends
+                assert FActionParameterSet == 15
+                assert FActionParameterSet.Link1ABaseLimit == 0
+                assert FActionParameterSet.ReadOnly01 == 1
+                assert FActionParameterSet.OtherLinkLimit == 2
+                assert FActionParameterSet.RegenPhaseStep == 3
+                assert FActionParameterSet.PairedLineStep == 4
+                assert FActionParameterSet.ThirdGaugeStep == 5
+                assert FActionParameterSet.SpawnLowAndBias == 6
+                assert FActionParameterSet.Class0RLimit == 7
+                assert FActionParameterSet.RandomLowLimit == 8
+                assert FActionParameterSet.LinkedRLimit == 9
+                assert FActionParameterSet.Class3RLimit == 10
+                assert FActionParameterSet.SavedLowLimit == 11
+                assert FActionParameterSet.SpawnValueMask == 12
+                assert FActionParameterSet.SpawnValueCap == 13
+                assert FActionParameterSet.SpawnField11 == 14
+
+
+                ; Существующее физическое состояние панели, новая память не выделяется
+                struct FFlightBcdCounter
+MidHigh         db #00                                                          ; BCD-пара разрядов 10^4 и 10^5, регистр E
+High            db #00                                                          ; BCD-пара разрядов 10^6 и 10^7, регистр D
+Low             db #00                                                          ; BCD-пара разрядов 10^0 и 10^1, регистр L
+MidLow          db #00                                                          ; BCD-пара разрядов 10^2 и 10^3, регистр H
+                ends
+                assert FFlightBcdCounter == 4
+                assert FFlightBcdCounter.MidHigh == 0
+                assert FFlightBcdCounter.High == 1
+                assert FFlightBcdCounter.Low == 2
+                assert FFlightBcdCounter.MidLow == 3
+
+                ; Существующее физическое состояние панели, новая память не выделяется
+                struct FPanelEventFlags
+Flags           db #00                                                          ; UpdateFrame использует биты 0, 1 и 2, остальные биты не интерпретируются
+                ends
+                assert FPanelEventFlags == 1
+                assert FPanelEventFlags.Flags == 0
+
+                ; Существующее физическое состояние панели, новая память не выделяется
+                struct FPanelSignedWord
+Value           dw #0000                                                        ; знаковое слово источника шестой шкалы, полный игровой смысл и единицы неизвестны
+                ends
+                assert FPanelSignedWord == 2
+                assert FPanelSignedWord.Value == 0
+
+                ; Существующее физическое состояние панели, новая память не выделяется
+                struct FPanelGaugeValue
+Value           db #00                                                          ; байтовый источник первой шкалы, полный игровой смысл неизвестен
+                ends
+                assert FPanelGaugeValue == 1
+                assert FPanelGaugeValue.Value == 0
+
+
+                ; Физические поля существующего контекста ACTION
+                struct FContextWordPair
+OtherFirst      dw #0000                                                        ; первое слово для сравнения с SeedFirst
+OtherSecond     dw #0000                                                        ; второе слово для сравнения с SeedSecond
+                ends
+                assert FContextWordPair == 4
+                assert FContextWordPair.OtherFirst == 0
+                assert FContextWordPair.OtherSecond == 2
+
+                ; Физические поля существующего контекста ACTION
+                struct FContextPublishIndex
+SelectedIndex   db #00                                                          ; байт публикации при совпадении обеих пар контекста
+                ends
+                assert FContextPublishIndex == 1
+                assert FContextPublishIndex.SelectedIndex == 0
+
+                ; Физические поля существующего контекста ACTION
+                struct FIndexedGateValue
+Value           db #00                                                          ; знаковое сложение поправок и беззнаковые пороговые сравнения, игровой смысл неизвестен
+                ends
+                assert FIndexedGateValue == 1
+                assert FIndexedGateValue.Value == 0
+
+                ; Физические поля существующего контекста ACTION
+                struct FArrivalCounter
+Value           dw #0000                                                        ; счётчик ближнего завершения по модулю 65536, полный игровой смысл неизвестен
+                ends
+                assert FArrivalCounter == 2
+                assert FArrivalCounter.Value == 0
+
+                ; Физические поля существующего контекста ACTION
+                struct FByteLimitCounter
+Current         db #00                                                          ; младший байт E, кандидат пополнения увеличивается по модулю 256
+Limit           db #00                                                          ; старший байт D, беззнаковый предел кандидата E
+                ends
+                assert FByteLimitCounter == 2
+                assert FByteLimitCounter.Current == 0
+                assert FByteLimitCounter.Limit == 1
+
+
+                ; Заголовок текущей модели, слово снимка HeaderWord0
+                struct FRenderHeaderState
+ModeBits        db #00                                                          ; бит 0 задаёт одноосный расчёт, RenderSceneFrame пишет 00 либо 01
+ModelByteOffset db #00                                                          ; байтовое смещение слова указателя модели в таблице OBJECT3D
+                ends
+                assert FRenderHeaderState == 2
+                assert FRenderHeaderState.ModeBits == 0
+                assert FRenderHeaderState.ModelByteOffset == 1
+
+
+
+                ; Физический заголовок растровой полосы BANK, метаданные не задают банк загрузки
+                struct FScreenBitmapStrip
+ScreenAddress   dw #0000                                                        ; слово координат в раскладке ULA-экрана
+Height          db #00                                                          ; количество следующих строк по шесть байтов
+                ends
+                assert FScreenBitmapStrip == 3
+                assert FScreenBitmapStrip.ScreenAddress == 0
+                assert FScreenBitmapStrip.Height == 2
+
+                ; Исходный байт правила счётчика при сборе, младшие шесть битов не переименовываются в придуманные флаги
+                struct FTractorCargoRule
+Control         db #00                                                          ; поле 7..6, нуль учитывает количество в Current, ненулевое значение исключает
+                ends
+                assert FTractorCargoRule == 1
+                assert FTractorCargoRule.Control == 0
+
+
+                ; Физическая часть существующего рабочего состояния, адреса и промежуточные маски сохранены
+                struct FClipLineHead
+CurrentSecond   dw #0000                                                        ; полная горизонтальная компонента первой точки текущего сегмента
+CurrentFirst    dw #0000                                                        ; полная вертикальная компонента первой точки текущего сегмента
+NextSecond      dw #0000                                                        ; полная горизонтальная компонента следующей точки ломаной
+                ends
+                assert FClipLineHead == 6
+                assert FClipLineHead.CurrentSecond == 0
+                assert FClipLineHead.CurrentFirst == 2
+                assert FClipLineHead.NextSecond == 4
+
+                ; Физическая часть существующего рабочего состояния, адреса и промежуточные маски сохранены
+                struct FClipLineTail
+NextFirst       dw #0000                                                        ; полная вертикальная компонента следующей точки ломаной
+CurrentCode     db #00                                                          ; полный ClipCode первой точки, ноль означает локальный отказ подготовки
+NextCode        db #00                                                          ; полный ClipCode следующей точки, ноль означает локальный отказ подготовки
+                ends
+                assert FClipLineTail == 4
+                assert FClipLineTail.NextFirst == 0
+                assert FClipLineTail.CurrentCode == 2
+                assert FClipLineTail.NextCode == 3
+
+                ; Физическая часть существующего рабочего состояния, адреса и промежуточные маски сохранены
+                struct FFaceGateCode
+Code            db #00                                                          ; полный код ориентации, ноль допускает связанную ломаную, любой ненулевой байт запрещает
+                ends
+                assert FFaceGateCode == 1
+                assert FFaceGateCode.Code == 0
+
+
+                struct FActionNewsState
+State           db #00                                                          ; исходное состояние NEWS по авторской заметке, игровые коды не проверены
+Byte01          db #00                                                          ; второй исходный байт строки 1, 0, назначение неизвестно
+Word02          dw #0000                                                        ; первое слово нулевой пары, назначение неизвестно
+Word04          dw #0000                                                        ; второе слово нулевой пары, назначение неизвестно
+Byte06          db #00                                                          ; последний исходный ноль NEWS, назначение неизвестно
+                ends
+                assert FActionNewsState == 7
+                assert FActionNewsState.State == 0
+                assert FActionNewsState.Byte01 == 1
+                assert FActionNewsState.Word02 == 2
+                assert FActionNewsState.Word04 == 4
+                assert FActionNewsState.Byte06 == 6
+
+                struct FActionOrderRecord
+Marker          db #00                                                          ; исходное значение FF из записи ORDER, проверка маркера не найдена
+Byte01          db #00                                                          ; байт тела по смещению 1, игровое назначение не доказано
+Byte02          db #00                                                          ; байт тела по смещению 2, игровое назначение не доказано
+Byte03          db #00                                                          ; байт тела по смещению 3, игровое назначение не доказано
+Byte04          db #00                                                          ; байт тела по смещению 4, игровое назначение не доказано
+Byte05          db #00                                                          ; байт тела по смещению 5, игровое назначение не доказано
+Byte06          db #00                                                          ; байт тела по смещению 6, игровое назначение не доказано
+Byte07          db #00                                                          ; байт тела по смещению 7, игровое назначение не доказано
+Byte08          db #00                                                          ; байт тела по смещению 8, игровое назначение не доказано
+Byte09          db #00                                                          ; байт тела по смещению 9, игровое назначение не доказано
+Byte10          db #00                                                          ; байт тела по смещению 10, игровое назначение не доказано
+Byte11          db #00                                                          ; байт тела по смещению 11, игровое назначение не доказано
+Byte12          db #00                                                          ; байт тела по смещению 12, игровое назначение не доказано
+Byte13          db #00                                                          ; байт тела по смещению 13, игровое назначение не доказано
+Byte14          db #00                                                          ; байт тела по смещению 14, игровое назначение не доказано
+Byte15          db #00                                                          ; байт тела по смещению 15, игровое назначение не доказано
+                ends
+                assert FActionOrderRecord == 16
+                assert FActionOrderRecord.Marker == 0
+                assert FActionOrderRecord.Byte01 == 1
+                assert FActionOrderRecord.Byte02 == 2
+                assert FActionOrderRecord.Byte03 == 3
+                assert FActionOrderRecord.Byte04 == 4
+                assert FActionOrderRecord.Byte05 == 5
+                assert FActionOrderRecord.Byte06 == 6
+                assert FActionOrderRecord.Byte07 == 7
+                assert FActionOrderRecord.Byte08 == 8
+                assert FActionOrderRecord.Byte09 == 9
+                assert FActionOrderRecord.Byte10 == 10
+                assert FActionOrderRecord.Byte11 == 11
+                assert FActionOrderRecord.Byte12 == 12
+                assert FActionOrderRecord.Byte13 == 13
+                assert FActionOrderRecord.Byte14 == 14
+                assert FActionOrderRecord.Byte15 == 15
+
+                struct FHyperJumpCost
+Cost            db #00                                                          ; базовая стоимость гиперперехода, маршрут Preferred удваивает её в слове
+                ends
+                assert FHyperJumpCost == 1
+                assert FHyperJumpCost.Cost == 0
+
+
+                struct FFinalSyncPointers
+AfterRow18      dw #0000                                                        ; указатель вставки после восемнадцатого знакоместного ряда, установлен построителем
+AfterRow10      dw #0000                                                        ; указатель вставки после десятого знакоместного ряда, установлен построителем
+                ends
+                assert FFinalSyncPointers == 4
+                assert FFinalSyncPointers.AfterRow18 == 0
+                assert FFinalSyncPointers.AfterRow10 == 2
+
+                struct FPreviewObjectHeader
+First           dw #0000                                                        ; первая координата исходной записи, прочитана первым POP
+Second          dw #0000                                                        ; вторая координата исходной записи, прочитана вторым POP
+Third           dw #0000                                                        ; третья координата исходной записи, управление принимает значения 512..4095
+ModelOffset     db #00                                                          ; байтовое смещение пары указателей модели, устанавливается SetupPreviewModel
+                ends
+                assert FPreviewObjectHeader == 7
+                assert FPreviewObjectHeader.First == 0
+                assert FPreviewObjectHeader.Second == 2
+                assert FPreviewObjectHeader.Third == 4
+                assert FPreviewObjectHeader.ModelOffset == 6
+
+
+                struct FStationEventCodes
+InterfaceCode   db #00                                                          ; код интерфейсного события, используется при передаче действия и выборе меню
+ScriptCode      db #00                                                          ; код события для LANG, ReadEventCode переносит его в стек выражений
+                ends
+                assert FStationEventCodes == 2
+                assert FStationEventCodes.InterfaceCode == 0
+                assert FStationEventCodes.ScriptCode == 1
+
+                struct FSpecialRecordPrefix
+Component0      dw #0000                                                        ; первое слово родителя для SpawnPrepared, UpdateFrame очищает старший байт
+Component1      dw #0000                                                        ; второе слово родителя, его старший байт совпадает с позицией до списка эффектов
+Component2      dw #0000                                                        ; третье слово родителя для SpawnPrepared
+Byte06          db #00                                                          ; исходный байт по смещению 06, использование у особой записи не доказано
+OffsetPhase0    db #00                                                          ; первый фазовый байт, копируется из родителя в создаваемую запись
+OffsetPhase1    db #00                                                          ; второй фазовый байт, копируется из родителя в создаваемую запись
+OffsetPhase2    db #00                                                          ; третий фазовый байт, копируется из родителя в создаваемую запись
+Byte0A          db #00                                                          ; исходный FF, его обработка как кода состояния особой записи не доказана
+Byte0B          db #00                                                          ; исходный ноль по смещению 0B, использование у особой записи не доказано
+                ends
+                assert FSpecialRecordPrefix == 12
+                assert FSpecialRecordPrefix.Component0 == 0
+                assert FSpecialRecordPrefix.Component1 == 2
+                assert FSpecialRecordPrefix.Component2 == 4
+                assert FSpecialRecordPrefix.Byte06 == 6
+                assert FSpecialRecordPrefix.OffsetPhase0 == 7
+                assert FSpecialRecordPrefix.OffsetPhase1 == 8
+                assert FSpecialRecordPrefix.OffsetPhase2 == 9
+                assert FSpecialRecordPrefix.Byte0A == 10
+                assert FSpecialRecordPrefix.Byte0B == 11
+
+
+                struct FMeasuredDistance
+Value           db #00                                                          ; результат MeasureCoordinateDistance, FF при переполнении
+                ends
+                assert FMeasuredDistance == 1
+                assert FMeasuredDistance.Value == 0
+
+                struct FTransitionCounter
+Count           db #00                                                          ; байтовый счётчик, станционный переход условно прибавляет 30
+                ends
+                assert FTransitionCounter == 1
+                assert FTransitionCounter.Count == 0
+
+                struct FRenderInputSnapshot
+InputX          dw #0000                                                        ; первое исходное слово текущего объекта до допуска по старшему байту
+InputY          dw #0000                                                        ; второе исходное слово после допуска X, до допуска Y
+InputDepth      dw #0000                                                        ; третье исходное слово после допуска Y, до допуска глубины
+                ends
+                assert FRenderInputSnapshot == 6
+                assert FRenderInputSnapshot.InputX == 0
+                assert FRenderInputSnapshot.InputY == 2
+                assert FRenderInputSnapshot.InputDepth == 4
+
+                struct FBodyDrawMode
+Mode            db #00                                                          ; режим малого рисователя, поддерживаются полные коды 0..3
+                ends
+                assert FBodyDrawMode == 1
+                assert FBodyDrawMode.Mode == 0
+
+
+                struct FBackdropSectorCount
+Sectors         db #00                                                          ; число физических секторов упакованного фона
+                ends
+                assert FBackdropSectorCount == 1
+                assert FBackdropSectorCount.Sectors == 0
+
+                struct FStationItemIndexPair
+Low             db #00                                                          ; младший байт ключа, проверяется первым при поиске
+High            db #00                                                          ; старший байт ключа, FF означает свободную пару
+                ends
+                assert FStationItemIndexPair == 2
+                assert FStationItemIndexPair.Low == 0
+                assert FStationItemIndexPair.High == 1
+
+                struct FEquipmentPrice
+Price           dw #0000                                                        ; слово для колонки «Цена» и стекового запроса LANG
+                ends
+                assert FEquipmentPrice == 2
+                assert FEquipmentPrice.Price == 0
+
+                struct FEquipmentWeight
+Threshold       db #00                                                          ; нижний допустимый признак L для вывода веса и прямой проверки
+Weight          db #00                                                          ; выводимый вес и множитель взвешенной суммы
+                ends
+                assert FEquipmentWeight == 2
+                assert FEquipmentWeight.Threshold == 0
+                assert FEquipmentWeight.Weight == 1
+
+                struct FSecondWeightFactor
+Threshold       db #00                                                          ; нижний допустимый признак L в прямой проверке второго набора
+Factor          db #00                                                          ; множитель третьего слагаемого и байт запроса Property071
+                ends
+                assert FSecondWeightFactor == 2
+                assert FSecondWeightFactor.Threshold == 0
+                assert FSecondWeightFactor.Factor == 1
+
+                struct FNeighborBounds
+Left            db #00                                                          ; число шагов влево кодируется отрицанием по модулю 256
+Right           db #00                                                          ; число шагов вправо без преобразования
+                ends
+                assert FNeighborBounds == 2
+                assert FNeighborBounds.Left == 0
+                assert FNeighborBounds.Right == 1
+
+                struct FParameterRowGroup
+First           db #00                                                          ; первая строка получает этот байт без добавки индекса
+Row01           db #00                                                          ; база строки, к ней прибавляется средний индекс C
+Row02           db #00                                                          ; база строки, к ней прибавляется средний индекс C
+Row03           db #00                                                          ; база строки, к ней прибавляется средний индекс C
+Row04           db #00                                                          ; база строки, к ней прибавляется средний индекс C
+Row05           db #00                                                          ; база строки, к ней прибавляется средний индекс C
+Row06           db #00                                                          ; база строки, к ней прибавляется средний индекс C
+Row07           db #00                                                          ; база строки, к ней прибавляется средний индекс C
+Row08           db #00                                                          ; база строки, к ней прибавляется средний индекс C
+Spacing0        db #00                                                          ; исходный байт между группами, DE10 его не читает
+Spacing1        db #00                                                          ; исходный байт между группами, DE10 его не читает
+Spacing2        db #00                                                          ; исходный байт между группами, DE10 его не читает
+Spacing3        db #00                                                          ; исходный байт между группами, DE10 его не читает
+Spacing4        db #00                                                          ; исходный байт между группами, DE10 его не читает
+Spacing5        db #00                                                          ; исходный байт между группами, DE10 его не читает
+Spacing6        db #00                                                          ; исходный байт между группами, DE10 его не читает
+                ends
+                assert FParameterRowGroup == 16
+                assert FParameterRowGroup.First == 0
+                assert FParameterRowGroup.Row01 == 1
+                assert FParameterRowGroup.Row02 == 2
+                assert FParameterRowGroup.Row03 == 3
+                assert FParameterRowGroup.Row04 == 4
+                assert FParameterRowGroup.Row05 == 5
+                assert FParameterRowGroup.Row06 == 6
+                assert FParameterRowGroup.Row07 == 7
+                assert FParameterRowGroup.Row08 == 8
+                assert FParameterRowGroup.Spacing0 == 9
+                assert FParameterRowGroup.Spacing1 == 10
+                assert FParameterRowGroup.Spacing2 == 11
+                assert FParameterRowGroup.Spacing3 == 12
+                assert FParameterRowGroup.Spacing4 == 13
+                assert FParameterRowGroup.Spacing5 == 14
+                assert FParameterRowGroup.Spacing6 == 15
+
+                struct FParameterRowValues
+First           db #00                                                          ; первая строка получает этот байт без добавки индекса
+Row01           db #00                                                          ; база строки, к ней прибавляется средний индекс C
+Row02           db #00                                                          ; база строки, к ней прибавляется средний индекс C
+Row03           db #00                                                          ; база строки, к ней прибавляется средний индекс C
+Row04           db #00                                                          ; база строки, к ней прибавляется средний индекс C
+Row05           db #00                                                          ; база строки, к ней прибавляется средний индекс C
+Row06           db #00                                                          ; база строки, к ней прибавляется средний индекс C
+Row07           db #00                                                          ; база строки, к ней прибавляется средний индекс C
+Row08           db #00                                                          ; база строки, к ней прибавляется средний индекс C
+                ends
+                assert FParameterRowValues == 9
+                assert FParameterRowValues.First == 0
+                assert FParameterRowValues.Row01 == 1
+                assert FParameterRowValues.Row02 == 2
+                assert FParameterRowValues.Row03 == 3
+                assert FParameterRowValues.Row04 == 4
+                assert FParameterRowValues.Row05 == 5
+                assert FParameterRowValues.Row06 == 6
+                assert FParameterRowValues.Row07 == 7
+                assert FParameterRowValues.Row08 == 8
+
+                struct FParameterValueGroup
+Value00         db #00                                                          ; групповая прибавка к соответствующему полю Parameters
+Value01         db #00                                                          ; групповая прибавка к соответствующему полю Parameters
+Value02         db #00                                                          ; групповая прибавка к соответствующему полю Parameters
+Value03         db #00                                                          ; групповая прибавка к соответствующему полю Parameters
+Value04         db #00                                                          ; групповая прибавка к соответствующему полю Parameters
+Value05         db #00                                                          ; групповая прибавка к соответствующему полю Parameters
+Value06         db #00                                                          ; групповая прибавка к соответствующему полю Parameters
+Value07         db #00                                                          ; групповая прибавка к соответствующему полю Parameters
+Value08         db #00                                                          ; групповая прибавка к соответствующему полю Parameters
+Value09         db #00                                                          ; групповая прибавка к соответствующему полю Parameters
+Value10         db #00                                                          ; групповая прибавка к соответствующему полю Parameters
+Value11         db #00                                                          ; групповая прибавка к соответствующему полю Parameters
+Value12         db #00                                                          ; групповая прибавка к соответствующему полю Parameters
+Value13         db #00                                                          ; групповая прибавка к соответствующему полю Parameters
+Value14         db #00                                                          ; групповая прибавка к соответствующему полю Parameters
+Spacing         db #00                                                          ; исходный байт между группами, DE10 его не читает
+                ends
+                assert FParameterValueGroup == 16
+                assert FParameterValueGroup.Value00 == 0
+                assert FParameterValueGroup.Value01 == 1
+                assert FParameterValueGroup.Value02 == 2
+                assert FParameterValueGroup.Value03 == 3
+                assert FParameterValueGroup.Value04 == 4
+                assert FParameterValueGroup.Value05 == 5
+                assert FParameterValueGroup.Value06 == 6
+                assert FParameterValueGroup.Value07 == 7
+                assert FParameterValueGroup.Value08 == 8
+                assert FParameterValueGroup.Value09 == 9
+                assert FParameterValueGroup.Value10 == 10
+                assert FParameterValueGroup.Value11 == 11
+                assert FParameterValueGroup.Value12 == 12
+                assert FParameterValueGroup.Value13 == 13
+                assert FParameterValueGroup.Value14 == 14
+                assert FParameterValueGroup.Spacing == 15
+
+                struct FParameterValueBytes
+Value00         db #00                                                          ; групповая прибавка к соответствующему полю Parameters
+Value01         db #00                                                          ; групповая прибавка к соответствующему полю Parameters
+Value02         db #00                                                          ; групповая прибавка к соответствующему полю Parameters
+Value03         db #00                                                          ; групповая прибавка к соответствующему полю Parameters
+Value04         db #00                                                          ; групповая прибавка к соответствующему полю Parameters
+Value05         db #00                                                          ; групповая прибавка к соответствующему полю Parameters
+Value06         db #00                                                          ; групповая прибавка к соответствующему полю Parameters
+Value07         db #00                                                          ; групповая прибавка к соответствующему полю Parameters
+Value08         db #00                                                          ; групповая прибавка к соответствующему полю Parameters
+Value09         db #00                                                          ; групповая прибавка к соответствующему полю Parameters
+Value10         db #00                                                          ; групповая прибавка к соответствующему полю Parameters
+Value11         db #00                                                          ; групповая прибавка к соответствующему полю Parameters
+Value12         db #00                                                          ; групповая прибавка к соответствующему полю Parameters
+Value13         db #00                                                          ; групповая прибавка к соответствующему полю Parameters
+Value14         db #00                                                          ; групповая прибавка к соответствующему полю Parameters
+                ends
+                assert FParameterValueBytes == 15
+                assert FParameterValueBytes.Value00 == 0
+                assert FParameterValueBytes.Value01 == 1
+                assert FParameterValueBytes.Value02 == 2
+                assert FParameterValueBytes.Value03 == 3
+                assert FParameterValueBytes.Value04 == 4
+                assert FParameterValueBytes.Value05 == 5
+                assert FParameterValueBytes.Value06 == 6
+                assert FParameterValueBytes.Value07 == 7
+                assert FParameterValueBytes.Value08 == 8
+                assert FParameterValueBytes.Value09 == 9
+                assert FParameterValueBytes.Value10 == 10
+                assert FParameterValueBytes.Value11 == 11
+                assert FParameterValueBytes.Value12 == 12
+                assert FParameterValueBytes.Value13 == 13
+                assert FParameterValueBytes.Value14 == 14
+
+                struct FPreviewEdgeMaskPhase
+LeftAnd0        db #00                                                          ; AND краевого байта
+LeftOr0         db #00                                                          ; OR шаблона внутри края
+LeftAnd1        db #00                                                          ; AND краевого байта
+LeftOr1         db #00                                                          ; OR шаблона внутри края
+LeftAnd2        db #00                                                          ; AND краевого байта
+LeftOr2         db #00                                                          ; OR шаблона внутри края
+LeftAnd3        db #00                                                          ; AND краевого байта
+LeftOr3         db #00                                                          ; OR шаблона внутри края
+LeftAnd4        db #00                                                          ; AND краевого байта
+LeftOr4         db #00                                                          ; OR шаблона внутри края
+LeftAnd5        db #00                                                          ; исходный операнд AND, геометрическая маска не подтверждена
+LeftOr5         db #00                                                          ; исходный операнд OR, игровое применение не подтверждено
+LeftAnd6        db #00                                                          ; исходный операнд AND, геометрическая маска не подтверждена
+LeftOr6         db #00                                                          ; исходный операнд OR, игровое применение не подтверждено
+LeftAnd7        db #00                                                          ; исходный операнд AND, геометрическая маска не подтверждена
+LeftOr7         db #00                                                          ; исходный операнд OR, игровое применение не подтверждено
+RightAnd0       db #00                                                          ; AND краевого байта
+RightOr0        db #00                                                          ; OR шаблона внутри края
+RightAnd1       db #00                                                          ; AND краевого байта
+RightOr1        db #00                                                          ; OR шаблона внутри края
+RightAnd2       db #00                                                          ; AND краевого байта
+RightOr2        db #00                                                          ; OR шаблона внутри края
+RightAnd3       db #00                                                          ; AND краевого байта
+RightOr3        db #00                                                          ; OR шаблона внутри края
+RightAnd4       db #00                                                          ; AND краевого байта
+RightOr4        db #00                                                          ; OR шаблона внутри края
+RightAnd5       db #00                                                          ; исходный операнд AND, геометрическая маска не подтверждена
+RightOr5        db #00                                                          ; исходный операнд OR, игровое применение не подтверждено
+RightAnd6       db #00                                                          ; исходный операнд AND, геометрическая маска не подтверждена
+RightOr6        db #00                                                          ; исходный операнд OR, игровое применение не подтверждено
+RightAnd7       db #00                                                          ; исходный операнд AND, геометрическая маска не подтверждена
+RightOr7        db #00                                                          ; исходный операнд OR, игровое применение не подтверждено
+                ends
+                assert FPreviewEdgeMaskPhase == 32
+                assert FPreviewEdgeMaskPhase.LeftAnd0 == 0
+                assert FPreviewEdgeMaskPhase.LeftOr0 == 1
+                assert FPreviewEdgeMaskPhase.LeftAnd1 == 2
+                assert FPreviewEdgeMaskPhase.LeftOr1 == 3
+                assert FPreviewEdgeMaskPhase.LeftAnd2 == 4
+                assert FPreviewEdgeMaskPhase.LeftOr2 == 5
+                assert FPreviewEdgeMaskPhase.LeftAnd3 == 6
+                assert FPreviewEdgeMaskPhase.LeftOr3 == 7
+                assert FPreviewEdgeMaskPhase.LeftAnd4 == 8
+                assert FPreviewEdgeMaskPhase.LeftOr4 == 9
+                assert FPreviewEdgeMaskPhase.LeftAnd5 == 10
+                assert FPreviewEdgeMaskPhase.LeftOr5 == 11
+                assert FPreviewEdgeMaskPhase.LeftAnd6 == 12
+                assert FPreviewEdgeMaskPhase.LeftOr6 == 13
+                assert FPreviewEdgeMaskPhase.LeftAnd7 == 14
+                assert FPreviewEdgeMaskPhase.LeftOr7 == 15
+                assert FPreviewEdgeMaskPhase.RightAnd0 == 16
+                assert FPreviewEdgeMaskPhase.RightOr0 == 17
+                assert FPreviewEdgeMaskPhase.RightAnd1 == 18
+                assert FPreviewEdgeMaskPhase.RightOr1 == 19
+                assert FPreviewEdgeMaskPhase.RightAnd2 == 20
+                assert FPreviewEdgeMaskPhase.RightOr2 == 21
+                assert FPreviewEdgeMaskPhase.RightAnd3 == 22
+                assert FPreviewEdgeMaskPhase.RightOr3 == 23
+                assert FPreviewEdgeMaskPhase.RightAnd4 == 24
+                assert FPreviewEdgeMaskPhase.RightOr4 == 25
+                assert FPreviewEdgeMaskPhase.RightAnd5 == 26
+                assert FPreviewEdgeMaskPhase.RightOr5 == 27
+                assert FPreviewEdgeMaskPhase.RightAnd6 == 28
+                assert FPreviewEdgeMaskPhase.RightOr6 == 29
+                assert FPreviewEdgeMaskPhase.RightAnd7 == 30
+                assert FPreviewEdgeMaskPhase.RightOr7 == 31
+
+                struct FPreviewClipTargetRow
+End0            db #00                                                          ; байт адреса по прямому коду второго конца
+End1            db #00                                                          ; байт адреса по прямому коду второго конца
+End2            db #00                                                          ; байт адреса по прямому коду второго конца
+End3            db #00                                                          ; байт адреса по прямому коду второго конца
+End4            db #00                                                          ; байт адреса по прямому коду второго конца
+End5            db #00                                                          ; байт адреса по прямому коду второго конца
+End6            db #00                                                          ; байт адреса по прямому коду второго конца
+End7            db #00                                                          ; байт адреса по прямому коду второго конца
+End8            db #00                                                          ; байт адреса по прямому коду второго конца
+End9            db #00                                                          ; байт адреса по прямому коду второго конца
+EndA            db #00                                                          ; байт адреса по прямому коду второго конца
+EndB            db #00                                                          ; байт адреса по прямому коду второго конца
+EndC            db #00                                                          ; байт адреса по прямому коду второго конца
+EndD            db #00                                                          ; байт адреса по прямому коду второго конца
+EndE            db #00                                                          ; байт адреса по прямому коду второго конца
+EndF            db #00                                                          ; байт адреса по прямому коду второго конца
+                ends
+                assert FPreviewClipTargetRow == 16
+                assert FPreviewClipTargetRow.End0 == 0
+                assert FPreviewClipTargetRow.End1 == 1
+                assert FPreviewClipTargetRow.End2 == 2
+                assert FPreviewClipTargetRow.End3 == 3
+                assert FPreviewClipTargetRow.End4 == 4
+                assert FPreviewClipTargetRow.End5 == 5
+                assert FPreviewClipTargetRow.End6 == 6
+                assert FPreviewClipTargetRow.End7 == 7
+                assert FPreviewClipTargetRow.End8 == 8
+                assert FPreviewClipTargetRow.End9 == 9
+                assert FPreviewClipTargetRow.EndA == 10
+                assert FPreviewClipTargetRow.EndB == 11
+                assert FPreviewClipTargetRow.EndC == 12
+                assert FPreviewClipTargetRow.EndD == 13
+                assert FPreviewClipTargetRow.EndE == 14
+                assert FPreviewClipTargetRow.EndF == 15
+
+                struct FEquipmentTypeSet
+Type0           db #FF                                                          ; код для сравнения с текущим типом транспорта
+Type1           db #FF                                                          ; код для сравнения с текущим типом транспорта
+Type2           db #FF                                                          ; код для сравнения с текущим типом транспорта
+Type3           db #FF                                                          ; код для сравнения с текущим типом транспорта
+                ends
+                assert FEquipmentTypeSet == 4
+                assert FEquipmentTypeSet.Type0 == 0
+                assert FEquipmentTypeSet.Type1 == 1
+                assert FEquipmentTypeSet.Type2 == 2
+                assert FEquipmentTypeSet.Type3 == 3
+
+                struct FPreviewRootSample
+Value           db #00                                                          ; исходное байтовое приближение
+                ends
+                assert FPreviewRootSample == 1
+                assert FPreviewRootSample.Value == 0
+
+                struct FStationShipTradeRow
+Capacity        db #00                                                          ; поле K.t, переносится в вместимость при покупке
+Price           dw #0000                                                        ; цена K.c, младший байт первым
+Unknown03       db #00                                                          ; назначение отдельного байта пока не установлено
+SaleField       db #00                                                          ; поле k.s, нуль выбирает особую ветвь продажи
+                ends
+                assert FStationShipTradeRow == 5
+                assert FStationShipTradeRow.Capacity == 0
+                assert FStationShipTradeRow.Price == 1
+                assert FStationShipTradeRow.Unknown03 == 3
+                assert FStationShipTradeRow.SaleField == 4
+
+                struct FStationSkimmerTradeRow
+Unknown00       db #00                                                          ; назначение отдельного байта пока не установлено
+PriceField      dw #0000                                                        ; слово свойства c второго набора, сценарий покупки отсутствует
+Unknown03       db #00                                                          ; назначение отдельного байта пока не установлено
+LoadAddend      db #00                                                          ; свойство v и добавка в ComputeWeightedLoad
+                ends
+                assert FStationSkimmerTradeRow == 5
+                assert FStationSkimmerTradeRow.Unknown00 == 0
+                assert FStationSkimmerTradeRow.PriceField == 1
+                assert FStationSkimmerTradeRow.Unknown03 == 3
+                assert FStationSkimmerTradeRow.LoadAddend == 4
+
+                struct FPolygonEdgeScratch
+Row             db #00                                                          ; младший байт PUSH HL, текущая строка из D
+MaskPage        db #00                                                          ; старший байт PUSH HL, текущая страница масок из H
+                ends
+                assert FPolygonEdgeScratch == 2
+                assert FPolygonEdgeScratch.Row == 0
+                assert FPolygonEdgeScratch.MaskPage == 1
+
+                struct FIntroStackSnapshot
+Stack           dw #0000                                                        ; сохранённое слово CPU-SP
+                ends
+                assert FIntroStackSnapshot == 2
+                assert FIntroStackSnapshot.Stack == 0
+
+                struct FVoxelCosineByte
+Value           db #00                                                          ; исходный байт коэффициента
+                ends
+                assert FVoxelCosineByte == 1
+                assert FVoxelCosineByte.Value == 0
+
+                struct FCargoLoadScale
+Code            db #00                                                          ; код вклада строки груза
+                ends
+                assert FCargoLoadScale == 1
+                assert FCargoLoadScale.Code == 0
+
+                struct FPreviewObjectEnd
+Low             db #80                                                          ; бит 7 означает конец списка при High=80
+High            db #80                                                          ; старший байт специальной записи
+                ends
+                assert FPreviewObjectEnd == 2
+                assert FPreviewObjectEnd.Low == 0
+                assert FPreviewObjectEnd.High == 1
+
+                struct FMapClipLowTail3
+SecondSidesE    db #00                                                          ; младший байт адреса при младшей тетраде второго кода E
+SecondSidesF    db #00                                                          ; младший байт адреса при младшей тетраде второго кода F
+                ends
+                assert FMapClipLowTail3 == 2
+                assert FMapClipLowTail3.SecondSidesE == 0
+                assert FMapClipLowTail3.SecondSidesF == 1
+
+                struct FMapClipHighHead
+SecondSides0    db #00                                                          ; старший байт адреса при младшей тетраде второго кода 0
+SecondSides1    db #00                                                          ; старший байт адреса при младшей тетраде второго кода 1
+SecondSides2    db #00                                                          ; старший байт адреса при младшей тетраде второго кода 2
+SecondSides3    db #00                                                          ; старший байт адреса при младшей тетраде второго кода 3
+SecondSides4    db #00                                                          ; старший байт адреса при младшей тетраде второго кода 4
+SecondSides5    db #00                                                          ; старший байт адреса при младшей тетраде второго кода 5
+SecondSides6    db #00                                                          ; старший байт адреса при младшей тетраде второго кода 6
+SecondSides7    db #00                                                          ; старший байт адреса при младшей тетраде второго кода 7
+SecondSides8    db #00                                                          ; старший байт адреса при младшей тетраде второго кода 8
+SecondSides9    db #00                                                          ; старший байт адреса при младшей тетраде второго кода 9
+SecondSidesA    db #00                                                          ; старший байт адреса при младшей тетраде второго кода A
+                ends
+                assert FMapClipHighHead == 11
+                assert FMapClipHighHead.SecondSides0 == 0
+                assert FMapClipHighHead.SecondSides1 == 1
+                assert FMapClipHighHead.SecondSides2 == 2
+                assert FMapClipHighHead.SecondSides3 == 3
+                assert FMapClipHighHead.SecondSides4 == 4
+                assert FMapClipHighHead.SecondSides5 == 5
+                assert FMapClipHighHead.SecondSides6 == 6
+                assert FMapClipHighHead.SecondSides7 == 7
+                assert FMapClipHighHead.SecondSides8 == 8
+                assert FMapClipHighHead.SecondSides9 == 9
+                assert FMapClipHighHead.SecondSidesA == 10
+
+                struct FArchiveBankStripRoute
+BankIndex       db #00                                                          ; индекс файла BANK, которому принадлежит маршрут
+FrameCount      db #00                                                          ; число используемых кадров в каждом списке
+Staged00        dw #0000                                                        ; указатель полосы через буфер для страницы 7
+Staged01        dw #0000                                                        ; указатель полосы через буфер для страницы 7
+Staged02        dw #0000                                                        ; указатель полосы через буфер для страницы 7
+Staged03        dw #0000                                                        ; указатель полосы через буфер для страницы 7
+Staged04        dw #0000                                                        ; указатель полосы через буфер для страницы 7
+Staged05        dw #0000                                                        ; указатель полосы через буфер для страницы 7
+Staged06        dw #0000                                                        ; указатель полосы через буфер для страницы 7
+Staged07        dw #0000                                                        ; указатель полосы через буфер для страницы 7
+Staged08        dw #0000                                                        ; указатель полосы через буфер для страницы 7
+Staged09        dw #0000                                                        ; указатель полосы через буфер для страницы 7
+Staged10        dw #0000                                                        ; указатель полосы через буфер для страницы 7
+Staged11        dw #0000                                                        ; указатель полосы через буфер для страницы 7
+Direct00        dw #0000                                                        ; указатель полосы прямого вывода в экран 4000
+Direct01        dw #0000                                                        ; указатель полосы прямого вывода в экран 4000
+Direct02        dw #0000                                                        ; указатель полосы прямого вывода в экран 4000
+Direct03        dw #0000                                                        ; указатель полосы прямого вывода в экран 4000
+Direct04        dw #0000                                                        ; указатель полосы прямого вывода в экран 4000
+Direct05        dw #0000                                                        ; указатель полосы прямого вывода в экран 4000
+Direct06        dw #0000                                                        ; указатель полосы прямого вывода в экран 4000
+Direct07        dw #0000                                                        ; указатель полосы прямого вывода в экран 4000
+Direct08        dw #0000                                                        ; указатель полосы прямого вывода в экран 4000
+Direct09        dw #0000                                                        ; указатель полосы прямого вывода в экран 4000
+Direct10        dw #0000                                                        ; указатель полосы прямого вывода в экран 4000
+Direct11        dw #0000                                                        ; указатель полосы прямого вывода в экран 4000
+                ends
+                assert FArchiveBankStripRoute == 50
+                assert FArchiveBankStripRoute.BankIndex == 0
+                assert FArchiveBankStripRoute.FrameCount == 1
+                assert FArchiveBankStripRoute.Staged00 == 2
+                assert FArchiveBankStripRoute.Staged01 == 4
+                assert FArchiveBankStripRoute.Staged02 == 6
+                assert FArchiveBankStripRoute.Staged03 == 8
+                assert FArchiveBankStripRoute.Staged04 == 10
+                assert FArchiveBankStripRoute.Staged05 == 12
+                assert FArchiveBankStripRoute.Staged06 == 14
+                assert FArchiveBankStripRoute.Staged07 == 16
+                assert FArchiveBankStripRoute.Staged08 == 18
+                assert FArchiveBankStripRoute.Staged09 == 20
+                assert FArchiveBankStripRoute.Staged10 == 22
+                assert FArchiveBankStripRoute.Staged11 == 24
+                assert FArchiveBankStripRoute.Direct00 == 26
+                assert FArchiveBankStripRoute.Direct01 == 28
+                assert FArchiveBankStripRoute.Direct02 == 30
+                assert FArchiveBankStripRoute.Direct03 == 32
+                assert FArchiveBankStripRoute.Direct04 == 34
+                assert FArchiveBankStripRoute.Direct05 == 36
+                assert FArchiveBankStripRoute.Direct06 == 38
+                assert FArchiveBankStripRoute.Direct07 == 40
+                assert FArchiveBankStripRoute.Direct08 == 42
+                assert FArchiveBankStripRoute.Direct09 == 44
+                assert FArchiveBankStripRoute.Direct10 == 46
+                assert FArchiveBankStripRoute.Direct11 == 48
+
+                struct FPolygonLiteralEdgeMask
+AndMask         db #00                                                          ; буквальный операнд AND краевого байта в исходном состоянии
+OrMask          db #00                                                          ; буквальный операнд OR краевого байта в исходном состоянии
+                ends
+                assert FPolygonLiteralEdgeMask == 2
+                assert FPolygonLiteralEdgeMask.AndMask == 0
+                assert FPolygonLiteralEdgeMask.OrMask == 1
 
                 endif

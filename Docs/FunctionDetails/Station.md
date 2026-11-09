@@ -1180,6 +1180,46 @@ JP-обёртка наведения оснащения с текущим счё
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
+## ScrollSecondaryRows
+
+[Station.ScrollSecondaryRows](../../Source/Station/ScrollSecondaryRows.asm)
+
+Подготовка прокрутки второго списка и сохранение начального индекса.
+
+[Договоры и границы проверки](../SecondaryEquipmentRows.md).
+
+## SelectSecondaryRow
+
+[Station.SelectSecondaryRow](../../Source/Station/SelectSecondaryRow.asm)
+
+Выбор описания либо отправка события 7 или 8 для второго списка.
+
+[Договоры и границы проверки](../SecondaryEquipmentRows.md).
+
+## TryDrawSecondaryList
+
+[Station.TryDrawSecondaryList](../../Source/Station/TryDrawSecondaryList.asm)
+
+Проверка текущего слова поиска рисователя второго списка.
+
+[Договоры и границы проверки](../SecondaryEquipmentRows.md).
+
+## DrawSecondaryList
+
+[Station.DrawSecondaryList](../../Source/Station/DrawSecondaryList.asm)
+
+Рамка, заголовки и счётчик строк второго списка оснащения.
+
+[Договоры и границы проверки](../SecondaryEquipmentRows.md).
+
+## PrintSecondaryRows
+
+[Station.PrintSecondaryRows](../../Source/Station/PrintSecondaryRows.asm)
+
+Выбор пяти баз второго списка для общего печатателя.
+
+[Договоры и границы проверки](../SecondaryEquipmentRows.md).
+
 ## HandleSaveSlotHover
 
 [Station.HandleSaveSlotHover](../../Source/Station/HandleSaveSlotHover.asm)
@@ -3306,7 +3346,7 @@ CR-подписи игровых клавиш и передача значени
 
 [Station.GetSelectedVariantCount](../../Source/Station/GetSelectedVariantCount.asm)
 
-Unknown, назначение этого фрагмента ещё не установлено.
+Получение количества вариантов 0..6 из младших трёх битов XOR выбранного ключа.
 
 Вход `#A7F5`, запись 4, смещения `#47F5..#482C`.
 
@@ -4686,6 +4726,14 @@ XOR префикса глифа до следующего знакоместа, 
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
+## DrawCenteredWithoutOwner
+
+[Station.DrawCenteredWithoutOwner](../../Source/Station/DrawCenteredWithoutOwner.asm)
+
+Рисование центрируемого элемента без регистрации в карте владельцев.
+
+[Договоры и границы проверки](../DrawCenteredWithoutOwner.md).
+
 ## DrawCenteredItem
 
 [Station.DrawCenteredItem](../../Source/Station/DrawCenteredItem.asm)
@@ -5106,6 +5154,14 @@ XOR префикса глифа до следующего знакоместа, 
 - Непосредственные записи: `#9E78`, `#9E7E`, `#9E8B`.
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
+
+## SetAllFilledBandMode
+
+[Station.SetAllFilledBandMode](../../Source/Station/SetAllFilledBandMode.asm)
+
+Настройка заполненной рамки с заполнением одиннадцатой строки.
+
+[Договоры и границы проверки](../StationAllFilledBand.md).
 
 ## SetBandFillMode
 

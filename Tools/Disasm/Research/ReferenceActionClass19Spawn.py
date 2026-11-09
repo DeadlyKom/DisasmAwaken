@@ -8,18 +8,25 @@ from ReferenceControlsPointRespawn import cp_flags
 
 
 class Class19Machine(SpawnMachine,NearestMachine):
-    def class19_spawn(self):
-        ix=self.r[8]*256+self.r[9];old=self.read(ix+24);count=old&3
-        self.r[3]=old;self.r[0:2]=[count,logical_flags(count)|16];self.m1(5)
-        if count==0:self.path.append('zero_count');return self.finish()
-        count-=1;updated=(old&252)|count;self.put(ix+24,updated);self.r[2]=count;self.m1(7)
-        self.m1(2);raw=self.r[15];self.r[6]=raw;self.m1(4)
-        kind=raw&31
-        if kind>=27:kind-=5;self.m1(1)
-        marked=kind<5;self.r[7]=kind|(128 if marked else 0);self.m1(3+2*marked)
-        control=((raw&112)>>4)+1;self.r[2]=self.r[7]
-        self.r[0:2],self.r[16:18]=self.r[16:18],[control,inc_flags(control-1,0)]
-        self.m1(9);self.call(0xE9A1,0x6446,self.reusable);self.m1(1)
+    def class19_spawn(self,prepared=False):
+        if prepared:
+            ix=self.r[8]*256+self.r[9];marked=bool(self.r[7]&128)
+            self.r[2]=self.r[7]
+            self.r[0:2],self.r[16:18]=self.r[16:18],self.r[0:2]
+            self.m1(2)
+        else:
+            ix=self.r[8]*256+self.r[9];old=self.read(ix+24);count=old&3
+            self.r[3]=old;self.r[0:2]=[count,logical_flags(count)|16];self.m1(5)
+            if count==0:self.path.append('zero_count');return self.finish()
+            count-=1;updated=(old&252)|count;self.put(ix+24,updated);self.r[2]=count;self.m1(7)
+            self.m1(2);raw=self.r[15];self.r[6]=raw;self.m1(4)
+            kind=raw&31
+            if kind>=27:kind-=5;self.m1(1)
+            marked=kind<5;self.r[7]=kind|(128 if marked else 0);self.m1(3+2*marked)
+            control=((raw&112)>>4)+1;self.r[2]=self.r[7]
+            self.r[0:2],self.r[16:18]=self.r[16:18],[control,inc_flags(control-1,0)]
+            self.m1(9)
+        self.call(0xE9A1,0x6446,self.reusable);self.m1(1)
         if self.r[1]&64:self.path.append('no_child_slot');return self.finish()
         iy=self.r[10]*256+self.r[11];self.exx();self.m1(1);self.pair(4,200)
         for axis in range(3):

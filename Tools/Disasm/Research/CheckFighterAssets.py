@@ -17,8 +17,7 @@ def main():
                   mask_pixel_intersections=0, banks=[dict(bank=bank, covered=ends[bank],
                       logical_length=len(data), unclassified_suffix=len(data) - ends[bank])
                       for bank, data in enumerate(banks)],
-                  runtime_consumer_proved=False, unknown_step_bytes=list(range(9)),
-                  header_bit14_meaning_proved=False, assembly_executed=False, native_execution=False)
+                  runtime_consumer_exercised_in_this_check=False, assembly_executed=False, native_execution=False)
     (ROOT / 'Tools/Disasm/Reports/FighterAssetsVerification.json').write_text(
         json.dumps(result, indent=2) + '\n', encoding='utf-8')
     print(json.dumps(result, indent=2))

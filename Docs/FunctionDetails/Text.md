@@ -386,7 +386,7 @@
 
 [Text.ReadFieldLowero](../../Source/Text/ReadFieldLowero.asm)
 
-Получение результата через ReadEquipmentWeight и запись слова в стек выражений.
+Получение результата через ReadEquipmentQuantity и запись слова в стек выражений.
 
 Вход `#C1C2`, запись 5, смещения `#01C2..#01C7`.
 
@@ -396,11 +396,11 @@
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## ReadEquipmentWeight
+## ReadEquipmentQuantity
 
-[Text.ReadEquipmentWeight](../../Source/Text/ReadEquipmentWeight.asm)
+[Text.ReadEquipmentQuantity](../../Source/Text/ReadEquipmentQuantity.asm)
 
-Чтение кодированного веса оснащения либо его свойства s или n.
+Чтение кодированного количества оснащения либо его свойства s или n.
 
 Вход `#C1C8`, запись 5, смещения `#01C8..#01E5`.
 
@@ -414,7 +414,7 @@
 
 [Text.ReadFieldLoweri](../../Source/Text/ReadFieldLoweri.asm)
 
-Получение результата через ReadSecondWeight и запись слова в стек выражений.
+Получение результата через ReadSecondQuantity и запись слова в стек выражений.
 
 Вход `#C1E6`, запись 5, смещения `#01E6..#01EB`.
 
@@ -424,11 +424,11 @@
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## ReadSecondWeight
+## ReadSecondQuantity
 
-[Text.ReadSecondWeight](../../Source/Text/ReadSecondWeight.asm)
+[Text.ReadSecondQuantity](../../Source/Text/ReadSecondQuantity.asm)
 
-Чтение кодированного веса второго набора либо его свойства s или n.
+Чтение кодированного количества второго набора либо его свойства s или n.
 
 Вход `#C1EC`, запись 5, смещения `#01EC..#0200`.
 
@@ -1530,11 +1530,11 @@
 - Ввод и вывод: нет.
 - Косвенное завершение: нет в этом фрагменте.
 
-## PushEquipmentWeightWriter
+## PushEquipmentQuantityWriter
 
-[Text.PushEquipmentWeightWriter](../../Source/Text/PushEquipmentWeightWriter.asm)
+[Text.PushEquipmentQuantityWriter](../../Source/Text/PushEquipmentQuantityWriter.asm)
 
-Создание захватывающего писателя кодированного веса через ReadEquipmentWeight.
+Создание захватывающего писателя кодированного количества через ReadEquipmentQuantity.
 
 Вход `#C6BC`, запись 5, смещения `#06BC..#06E3`.
 
@@ -1544,11 +1544,11 @@
 - Ввод и вывод: нет.
 - Косвенное завершение: `JP (HL)`.
 
-## PushSecondWeightWriter
+## PushSecondQuantityWriter
 
-[Text.PushSecondWeightWriter](../../Source/Text/PushSecondWeightWriter.asm)
+[Text.PushSecondQuantityWriter](../../Source/Text/PushSecondQuantityWriter.asm)
 
-Создание захватывающего писателя кодированного веса через ReadSecondWeight.
+Создание захватывающего писателя кодированного количества через ReadSecondQuantity.
 
 Вход `#C6E4`, запись 5, смещения `#06E4..#06E9`.
 

@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "classified_resource_bytes": 720,
+  "resources": 1,
+  "mask_pixel_pairs": 360,
+  "pair_alignment_checked": true,
+  "dimensions_or_game_consumer_proved": false,
+  "original_bytes_preserved": true,
+  "generated_values_not_serialized": true,
+  "assembly_executed": false
+}

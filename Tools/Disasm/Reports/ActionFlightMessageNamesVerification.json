@@ -1,0 +1,209 @@
+{
+  "passed": true,
+  "immediate_queue_calls": 33,
+  "numeric_operands_named": 23,
+  "sites": [
+    {
+      "writer": 24661,
+      "message_address": 62117,
+      "message_name": "ShipDestroyed",
+      "path": "Source/Action/ShowNoiseBeforeReload.asm"
+    },
+    {
+      "writer": 24767,
+      "message_address": 62024,
+      "message_name": "TargetLost",
+      "path": "Source/Action/CreateMissileForTarget.asm"
+    },
+    {
+      "writer": 28828,
+      "message_address": 62149,
+      "message_name": "TargetNotLocked",
+      "path": "Source/Action/ReportMissingMissileTarget.asm"
+    },
+    {
+      "writer": 28861,
+      "message_address": 62080,
+      "message_name": "NoMissiles",
+      "path": "Source/Action/CheckMissileLaunch.asm"
+    },
+    {
+      "writer": 28879,
+      "message_address": 62185,
+      "message_name": "MissileDeparted",
+      "path": "Source/Action/ConsumeMissileStock.asm"
+    },
+    {
+      "writer": 28887,
+      "message_address": 62061,
+      "message_name": "MissilePrefix",
+      "path": "Source/Action/ConsumeMissileStock.asm"
+    },
+    {
+      "writer": 28901,
+      "message_address": 62071,
+      "message_name": "MissileSuffix",
+      "path": "Source/Action/ConsumeMissileStock.asm"
+    },
+    {
+      "writer": 29047,
+      "message_address": 62335,
+      "message_name": "HyperWarmup",
+      "path": "Source/Action/PrepareHyperJumpRelay.asm"
+    },
+    {
+      "writer": 29241,
+      "message_address": 62253,
+      "message_name": "AntimissileOn",
+      "path": "Source/Action/ActivateAntimissileSystem.asm"
+    },
+    {
+      "writer": 29402,
+      "message_address": 62292,
+      "message_name": "TargetsForgot",
+      "path": "Source/Action/ClearMissileTargets.asm"
+    },
+    {
+      "writer": 29437,
+      "message_address": 61936,
+      "message_name": "ModeDisabled",
+      "path": "Source/Action/ToggleTargetRequest.asm"
+    },
+    {
+      "writer": 29447,
+      "message_address": 61921,
+      "message_name": "ModeEnabled",
+      "path": "Source/Action/ToggleTargetRequest.asm"
+    },
+    {
+      "writer": 29455,
+      "message_address": 61972,
+      "message_name": "Targeting",
+      "path": "Source/Action/ToggleTargetRequest.asm"
+    },
+    {
+      "writer": 29717,
+      "message_address": 62317,
+      "message_name": "ObjectCollected",
+      "path": "Source/Action/RequestAimOrCollectTarget.asm"
+    },
+    {
+      "writer": 29796,
+      "message_address": 61921,
+      "message_name": "ModeEnabled",
+      "path": "Source/Action/ToggleTractorMode.asm"
+    },
+    {
+      "writer": 29806,
+      "message_address": 61936,
+      "message_name": "ModeDisabled",
+      "path": "Source/Action/ToggleTractorMode.asm"
+    },
+    {
+      "writer": 29814,
+      "message_address": 62169,
+      "message_name": "TractorBeam",
+      "path": "Source/Action/ToggleTractorMode.asm"
+    },
+    {
+      "writer": 30067,
+      "message_address": 61936,
+      "message_name": "ModeDisabled",
+      "path": "Source/Action/ToggleFreeFlightMode.asm"
+    },
+    {
+      "writer": 30079,
+      "message_address": 61921,
+      "message_name": "ModeEnabled",
+      "path": "Source/Action/ToggleFreeFlightMode.asm"
+    },
+    {
+      "writer": 30092,
+      "message_address": 61952,
+      "message_name": "FreeFlight",
+      "path": "Source/Action/ToggleFreeFlightMode.asm"
+    },
+    {
+      "writer": 30129,
+      "message_address": 62492,
+      "message_name": "NoCargo",
+      "path": "Source/Action/EjectCargo.asm"
+    },
+    {
+      "writer": 30151,
+      "message_address": 62451,
+      "message_name": "CargoEjected",
+      "path": "Source/Action/EjectCargo.asm"
+    },
+    {
+      "writer": 30197,
+      "message_address": 62466,
+      "message_name": "MineEjected",
+      "path": "Source/Action/EjectMine.asm"
+    },
+    {
+      "writer": 30206,
+      "message_address": 62482,
+      "message_name": "NoMines",
+      "path": "Source/Action/EjectMine.asm"
+    },
+    {
+      "writer": 30291,
+      "message_address": 61921,
+      "message_name": "ModeEnabled",
+      "path": "Source/Action/ToggleViewDirection.asm"
+    },
+    {
+      "writer": 30299,
+      "message_address": 61992,
+      "message_name": "ForwardView",
+      "path": "Source/Action/ToggleViewDirection.asm"
+    },
+    {
+      "writer": 30320,
+      "message_address": 61921,
+      "message_name": "ModeEnabled",
+      "path": "Source/Action/ToggleViewDirection.asm"
+    },
+    {
+      "writer": 30328,
+      "message_address": 62009,
+      "message_name": "RearView",
+      "path": "Source/Action/ToggleViewDirection.asm"
+    },
+    {
+      "writer": 43090,
+      "message_address": 61867,
+      "message_name": "SystemsReady",
+      "path": "Source/Action/StartFlight.asm"
+    },
+    {
+      "writer": 58353,
+      "message_address": 62040,
+      "message_name": "TargetsLocked",
+      "path": "Source/Action/FollowProjectedTarget.asm"
+    },
+    {
+      "writer": 58959,
+      "message_address": 62393,
+      "message_name": "DockApproach",
+      "path": "Source/Action/UpdateRecordComponents.asm"
+    },
+    {
+      "writer": 62886,
+      "message_address": 62024,
+      "message_name": "TargetLost",
+      "path": "Source/Action/ApproachTargetRecordAndResolve.asm"
+    },
+    {
+      "writer": 63031,
+      "message_address": 62099,
+      "message_name": "TargetDestroyed",
+      "path": "Source/Action/ApproachTargetRecordAndResolve.asm"
+    }
+  ],
+  "only_proved_call_6040_operands_changed": true,
+  "instructions_and_all_resource_bytes_preserved": true,
+  "assembly_executed": false,
+  "native_execution": false
+}

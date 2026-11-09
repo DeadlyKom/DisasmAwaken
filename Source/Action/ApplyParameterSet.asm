@@ -1,5 +1,6 @@
                 module Action
                 module ApplyParameterSet
+                ; Физические поля [очередь и параметры](../../Docs/ActionQueueParameterPhysicalData.md)
                 ; Изменяемые пороги [писатели и влияние](../../Docs/ActionParameterThresholds.md)
                 ; Документация [алгоритм и проверка](../../Docs/ActionApplyParameters.md)
                 ; -----------------------------------------
@@ -23,20 +24,20 @@
                 ; -----------------------------------------
                 ; выбор пятнадцатибайтового набора, подготовленного BuildParameterTables
 Entry:          LD HL, @ControlsParameterTablesState.Parameters
-                ; применение поля 00 к операнду CImmediate00 в верхнем банке 0
+                ; обновление базового порога Link1ABaseLimit для связи 1A при сброшенном бите 3
                 LD A, (HL)
-                LD (@ActionApplyParametersState.CImmediate00), A
+                LD (@ActionApplyParametersState.Link1ABaseLimit), A
                 INC HL
                 ; чтение поля 01 сохранено, следующий LD A, (HL) заменяет его без использования
                 LD A, (HL)
                 INC HL
-                ; применение поля 02 к соседнему операнду CImmediate02
+                ; обновление порога OtherLinkLimit для индекса связи, отличного от 1A
                 LD A, (HL)
-                LD (@ActionApplyParametersState.CImmediate02), A
+                LD (@ActionApplyParametersState.OtherLinkLimit), A
                 INC HL
                 ; применение поля 03 к аддитивному операнду общего кода
                 LD A, (HL)
-                LD (@ActionApplyParametersState.AddImmediate03), A
+                LD (@ActionApplyParametersState.RegenPhaseStep), A
                 INC HL
                 ; обновление PairedLineStep фазового допуска двух линий прицела
                 LD A, (HL)
@@ -44,12 +45,12 @@ Entry:          LD HL, @ControlsParameterTablesState.Parameters
                 INC HL
                 ; применение поля 05 ко второму аддитивному операнду общего кода
                 LD A, (HL)
-                LD (@ActionApplyParametersState.AddImmediate05), A
+                LD (@ActionApplyParametersState.ThirdGaugeStep), A
                 INC HL
-                ; применение одного поля 06 к порогу Compare06A и аддитивному операнду AddImmediate06B
+                ; применение одного поля 06 к порогу SpawnLowLimit и аддитивному операнду SpawnBiasBase
                 LD A, (HL)
-                LD (@ActionApplyParametersState.Compare06A), A
-                LD (@ActionApplyParametersState.AddImmediate06B), A
+                LD (@ActionApplyParametersState.SpawnLowLimit), A
+                LD (@ActionApplyParametersState.SpawnBiasBase), A
                 INC HL
                 ; обновление операнда Class0RLimit, порога аппаратного R для класса 0
                 LD A, (HL)
@@ -67,21 +68,21 @@ Entry:          LD HL, @ControlsParameterTablesState.Parameters
                 LD A, (HL)
                 LD (@ActionApplyParametersState.Class3RLimit), A
                 INC HL
-                ; применение поля 0B к порогу Compare0B
+                ; применение поля 0B к порогу SavedLowLimit
                 LD A, (HL)
-                LD (@ActionApplyParametersState.Compare0B), A
+                LD (@ActionApplyParametersState.SavedLowLimit), A
                 INC HL
-                ; применение поля 0C к маске OrImmediate0C
+                ; применение поля 0C к маске SpawnValueMask
                 LD A, (HL)
-                LD (@ActionApplyParametersState.OrImmediate0C), A
+                LD (@ActionApplyParametersState.SpawnValueMask), A
                 INC HL
-                ; применение поля 0D к операнду HImmediate0D
+                ; применение поля 0D к операнду SpawnValueCap
                 LD A, (HL)
-                LD (@ActionApplyParametersState.HImmediate0D), A
+                LD (@ActionApplyParametersState.SpawnValueCap), A
                 INC HL
-                ; применение поля 0E к маске OrImmediate0E, это же значение остаётся в A
+                ; применение поля 0E к маске SpawnField11, это же значение остаётся в A
                 LD A, (HL)
-                LD (@ActionApplyParametersState.OrImmediate0E), A
+                LD (@ActionApplyParametersState.SpawnField11), A
                 RET
 
                 endmodule

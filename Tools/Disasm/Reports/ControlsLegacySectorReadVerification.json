@@ -1,0 +1,607 @@
+{
+  "passed": true,
+  "total_cases": 16,
+  "original_control_worker_and_rom_INI_loop_executed": true,
+  "roms": [
+    {
+      "rom": "trdos.rom",
+      "sha256": "5d5ca3abe832e2cc440a8d5d1eb9e8e840b2da8306031c70e18fb19d770dc38c",
+      "profiles": [
+        {
+          "start_track": 0,
+          "start_sector": 1,
+          "count": 3,
+          "attempts": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "commands": [
+            24,
+            128,
+            24,
+            128,
+            24,
+            128,
+            24
+          ],
+          "keyboard_checks": 3,
+          "retry_first": false,
+          "next_track": 0,
+          "next_sector": 4,
+          "destination_end": 37637
+        },
+        {
+          "start_track": 0,
+          "start_sector": 16,
+          "count": 3,
+          "attempts": [
+            [
+              0,
+              16
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "commands": [
+            24,
+            128,
+            24,
+            128,
+            24,
+            128,
+            24
+          ],
+          "keyboard_checks": 3,
+          "retry_first": false,
+          "next_track": 1,
+          "next_sector": 3,
+          "destination_end": 37637
+        },
+        {
+          "start_track": 1,
+          "start_sector": 16,
+          "count": 3,
+          "attempts": [
+            [
+              1,
+              16
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              2
+            ]
+          ],
+          "commands": [
+            24,
+            128,
+            24,
+            88,
+            128,
+            24,
+            128,
+            24
+          ],
+          "keyboard_checks": 3,
+          "retry_first": false,
+          "next_track": 2,
+          "next_sector": 3,
+          "destination_end": 37637
+        },
+        {
+          "start_track": 1,
+          "start_sector": 16,
+          "count": 2,
+          "attempts": [
+            [
+              1,
+              16
+            ],
+            [
+              1,
+              16
+            ],
+            [
+              2,
+              1
+            ]
+          ],
+          "commands": [
+            24,
+            128,
+            24,
+            128,
+            24,
+            88,
+            128,
+            24
+          ],
+          "keyboard_checks": 3,
+          "retry_first": true,
+          "next_track": 2,
+          "next_sector": 2,
+          "destination_end": 37381
+        }
+      ],
+      "executed_rom_entries": {
+        "2740": 12,
+        "2A53": 51,
+        "2F55": 4,
+        "2F59": 6,
+        "3D2F": 93,
+        "3FE5": 3084
+      }
+    },
+    {
+      "rom": "trdos503.rom",
+      "sha256": "91259fca6a8ded428cc24046f5b48b31d4043f2afbd9087d8946eaf4e10d71a5",
+      "profiles": [
+        {
+          "start_track": 0,
+          "start_sector": 1,
+          "count": 3,
+          "attempts": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "commands": [
+            27,
+            128,
+            27,
+            128,
+            27,
+            128,
+            27
+          ],
+          "keyboard_checks": 3,
+          "retry_first": false,
+          "next_track": 0,
+          "next_sector": 4,
+          "destination_end": 37637
+        },
+        {
+          "start_track": 0,
+          "start_sector": 16,
+          "count": 3,
+          "attempts": [
+            [
+              0,
+              16
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "commands": [
+            27,
+            128,
+            27,
+            128,
+            27,
+            128,
+            27
+          ],
+          "keyboard_checks": 3,
+          "retry_first": false,
+          "next_track": 1,
+          "next_sector": 3,
+          "destination_end": 37637
+        },
+        {
+          "start_track": 1,
+          "start_sector": 16,
+          "count": 3,
+          "attempts": [
+            [
+              1,
+              16
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              2
+            ]
+          ],
+          "commands": [
+            27,
+            128,
+            27,
+            88,
+            128,
+            27,
+            128,
+            27
+          ],
+          "keyboard_checks": 3,
+          "retry_first": false,
+          "next_track": 2,
+          "next_sector": 3,
+          "destination_end": 37637
+        },
+        {
+          "start_track": 1,
+          "start_sector": 16,
+          "count": 2,
+          "attempts": [
+            [
+              1,
+              16
+            ],
+            [
+              1,
+              16
+            ],
+            [
+              2,
+              1
+            ]
+          ],
+          "commands": [
+            27,
+            128,
+            27,
+            128,
+            27,
+            88,
+            128,
+            27
+          ],
+          "keyboard_checks": 3,
+          "retry_first": true,
+          "next_track": 2,
+          "next_sector": 2,
+          "destination_end": 37381
+        }
+      ],
+      "executed_rom_entries": {
+        "2740": 12,
+        "2A53": 51,
+        "2F55": 4,
+        "2F59": 6,
+        "3D2F": 93,
+        "3FE5": 3084
+      }
+    },
+    {
+      "rom": "trdos504t.rom",
+      "sha256": "e21d37271d087eab5ef8f88d8f3a58c8c19da1fa857b9790eaa974b231db9e13",
+      "profiles": [
+        {
+          "start_track": 0,
+          "start_sector": 1,
+          "count": 3,
+          "attempts": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "commands": [
+            24,
+            128,
+            24,
+            128,
+            24,
+            128,
+            24
+          ],
+          "keyboard_checks": 3,
+          "retry_first": false,
+          "next_track": 0,
+          "next_sector": 4,
+          "destination_end": 37637
+        },
+        {
+          "start_track": 0,
+          "start_sector": 16,
+          "count": 3,
+          "attempts": [
+            [
+              0,
+              16
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "commands": [
+            24,
+            128,
+            24,
+            128,
+            24,
+            128,
+            24
+          ],
+          "keyboard_checks": 3,
+          "retry_first": false,
+          "next_track": 1,
+          "next_sector": 3,
+          "destination_end": 37637
+        },
+        {
+          "start_track": 1,
+          "start_sector": 16,
+          "count": 3,
+          "attempts": [
+            [
+              1,
+              16
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              2
+            ]
+          ],
+          "commands": [
+            24,
+            128,
+            24,
+            88,
+            128,
+            24,
+            128,
+            24
+          ],
+          "keyboard_checks": 3,
+          "retry_first": false,
+          "next_track": 2,
+          "next_sector": 3,
+          "destination_end": 37637
+        },
+        {
+          "start_track": 1,
+          "start_sector": 16,
+          "count": 2,
+          "attempts": [
+            [
+              1,
+              16
+            ],
+            [
+              1,
+              16
+            ],
+            [
+              2,
+              1
+            ]
+          ],
+          "commands": [
+            24,
+            128,
+            24,
+            128,
+            24,
+            88,
+            128,
+            24
+          ],
+          "keyboard_checks": 3,
+          "retry_first": true,
+          "next_track": 2,
+          "next_sector": 2,
+          "destination_end": 37381
+        }
+      ],
+      "executed_rom_entries": {
+        "2740": 12,
+        "2A53": 51,
+        "2F55": 4,
+        "2F59": 6,
+        "3D2F": 93,
+        "3FE5": 3084
+      }
+    },
+    {
+      "rom": "dos6_10e.rom",
+      "sha256": "8f64178dd0b6458809001668568dd73e30701120cbdf1acdb77c1d73259001ce",
+      "profiles": [
+        {
+          "start_track": 0,
+          "start_sector": 1,
+          "count": 3,
+          "attempts": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "commands": [
+            24,
+            128,
+            24,
+            128,
+            24,
+            128,
+            24
+          ],
+          "keyboard_checks": 3,
+          "retry_first": false,
+          "next_track": 0,
+          "next_sector": 4,
+          "destination_end": 37637
+        },
+        {
+          "start_track": 0,
+          "start_sector": 16,
+          "count": 3,
+          "attempts": [
+            [
+              0,
+              16
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "commands": [
+            24,
+            128,
+            24,
+            128,
+            24,
+            128,
+            24
+          ],
+          "keyboard_checks": 3,
+          "retry_first": false,
+          "next_track": 1,
+          "next_sector": 3,
+          "destination_end": 37637
+        },
+        {
+          "start_track": 1,
+          "start_sector": 16,
+          "count": 3,
+          "attempts": [
+            [
+              1,
+              16
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              2
+            ]
+          ],
+          "commands": [
+            24,
+            128,
+            24,
+            88,
+            128,
+            24,
+            128,
+            24
+          ],
+          "keyboard_checks": 3,
+          "retry_first": false,
+          "next_track": 2,
+          "next_sector": 3,
+          "destination_end": 37637
+        },
+        {
+          "start_track": 1,
+          "start_sector": 16,
+          "count": 2,
+          "attempts": [
+            [
+              1,
+              16
+            ],
+            [
+              1,
+              16
+            ],
+            [
+              2,
+              1
+            ]
+          ],
+          "commands": [
+            24,
+            128,
+            24,
+            128,
+            24,
+            88,
+            128,
+            24
+          ],
+          "keyboard_checks": 3,
+          "retry_first": true,
+          "next_track": 2,
+          "next_sector": 2,
+          "destination_end": 37381
+        }
+      ],
+      "executed_rom_entries": {
+        "2740": 12,
+        "2A53": 51,
+        "2F55": 4,
+        "2F59": 6,
+        "3D2F": 93,
+        "3FE5": 3084
+      }
+    }
+  ],
+  "basic_rom": "128-1.rom",
+  "basic_rom_sha256": "8d93c3342321e9d1e51d60afcd7d15f6a7afd978c231b43435a7c0757c60b9a3",
+  "modelled_port_timing_and_rom_paging": true,
+  "rom_cleanup_executed": true,
+  "legacy_copy_at_5DA0_is_fixture": true,
+  "game_entry_proved": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

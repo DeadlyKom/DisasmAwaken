@@ -12,6 +12,8 @@
 и для этой дисковой копии. Назначение DATAS как механизма сброса
 состояния этой проверкой не устанавливается.
 
+Начальные #0200 байтов также совпадают с D3D. Для них установлены буквальные чтения обоих краёв широкого пролёта. [Пары ACTION и 3DPART](ActionPolygonExtraMaskPairs.md)
+
 | Смещение DATAS | Длина | Вид ACTION | Соответствующий исходник |
 | --- | --- | --- | --- |
 | #0000 | 3072 | unclassified | [Source/Resources/17_ACTION/Unclassified020_Prefix.bin](../Source/Resources/17_ACTION/Unclassified020_Prefix.bin) |

@@ -150,6 +150,7 @@ COMMENTS[0xEF84] = (['очистка нижнего ряда, исходный �
 
 
 def name_operands(region, function_address, operation):
+    if (region,function_address)==("Controls",0xEFC4):operation=operation.replace("LD BC, #C600","LD BC, @ControlsTextFont.Pixels")
     if region == 'Action' and function_address == 0xA85E:
         operation = operation.replace('CALL #ECA2', 'CALL @Controls.ConsumeTextQueue.Entry')
     if region != 'Controls' or function_address not in FUNCTIONS:
@@ -159,4 +160,12 @@ def name_operands(region, function_address, operation):
         operation = operation.replace('(#'+format(address, '04X')+')', '(@ControlsTextDisplayState.'+name+')')
     operation = operation.replace('(#EC5D)', '(@ControlsTextQueueState.WriteCursor)')
     operation = operation.replace('#EC80', '@ControlsTextQueue.Slot00')
+    if function_address == 0xEC0E:
+        for literal, name in (('LD IX, #ED19', 'CursorSeed'), ('LD BC, #0014', 'Stride')):
+            operation = operation.replace(literal, literal.partition('#')[0] + '@ControlsScrollPatchConst.' + name)
+        for literal, name in (('#00', 'SourceLow'), ('#01', 'SourceHigh'),
+                              ('#0A', 'TargetLow'), ('#0B', 'TargetHigh')):
+            operation = operation.replace('(IX + ' + literal + ')', '(IX + @ControlsScrollPatchConst.' + name + ')')
     return operation
+
+CONTRACTS["Controls",0xEFC4][3].append("растр C600..C86F содержит коды 20..EF, остальные 48 кодов читают соседний код C870..C8FF, см. ControlsTextFont.md")

@@ -1,5 +1,6 @@
                 module Action
                 module InsertRenderQueue
+                ; Физические поля [очередь и параметры](../../Docs/ActionQueueParameterPhysicalData.md)
                 ; Документация [алгоритм и проверка](../../Docs/ActionRenderQueueInsert.md)
                 ; -----------------------------------------
                 ; Вставка снимка объекта в связанную очередь по исходному знаковому сравнению глубины

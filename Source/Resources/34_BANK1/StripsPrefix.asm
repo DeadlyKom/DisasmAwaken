@@ -1,0 +1,104 @@
+                module Bank1StripsPrefix
+                ; Метки являются смещениями файла BANK, номер аппаратного банка не назначается
+                ; Документация [заголовки и растры BANK](../../../Docs/BankScreenStrips.md)
+                assert $ == #0000
+                ; -----------------------------------------
+                ; Экранная строка 98, высота 89, шесть байтов на строку
+Strip00:        FScreenBitmapStrip {
+                    #4A80,                                                      ; ScreenAddress, исходное слово экранных координат
+                    #59                                                         ; Height, число строк растра
+                }
+Pixels00:       incbin "Strips/Strip00.bitmap"
+                ; -----------------------------------------
+                ; Экранная строка 98, высота 89, шесть байтов на строку
+Strip01:        FScreenBitmapStrip {
+                    #4A80,                                                      ; ScreenAddress, исходное слово экранных координат
+                    #59                                                         ; Height, число строк растра
+                }
+Pixels01:       incbin "Strips/Strip01.bitmap"
+                ; -----------------------------------------
+                ; Экранная строка 98, высота 89, шесть байтов на строку
+Strip02:        FScreenBitmapStrip {
+                    #4A80,                                                      ; ScreenAddress, исходное слово экранных координат
+                    #59                                                         ; Height, число строк растра
+                }
+Pixels02:       incbin "Strips/Strip02.bitmap"
+                ; -----------------------------------------
+                ; Экранная строка 98, высота 89, шесть байтов на строку
+Strip03:        FScreenBitmapStrip {
+                    #4A80,                                                      ; ScreenAddress, исходное слово экранных координат
+                    #59                                                         ; Height, число строк растра
+                }
+Pixels03:       incbin "Strips/Strip03.bitmap"
+                ; -----------------------------------------
+                ; Экранная строка 98, высота 89, шесть байтов на строку
+Strip04:        FScreenBitmapStrip {
+                    #4A80,                                                      ; ScreenAddress, исходное слово экранных координат
+                    #59                                                         ; Height, число строк растра
+                }
+Pixels04:       incbin "Strips/Strip04.bitmap"
+                ; -----------------------------------------
+                ; Экранная строка 98, высота 89, шесть байтов на строку
+Strip05:        FScreenBitmapStrip {
+                    #4A80,                                                      ; ScreenAddress, исходное слово экранных координат
+                    #59                                                         ; Height, число строк растра
+                }
+Pixels05:       incbin "Strips/Strip05.bitmap"
+                ; -----------------------------------------
+                ; Экранная строка 99, высота 88, шесть байтов на строку
+Strip06:        FScreenBitmapStrip {
+                    #4B80,                                                      ; ScreenAddress, исходное слово экранных координат
+                    #58                                                         ; Height, число строк растра
+                }
+Pixels06:       incbin "Strips/Strip06.bitmap"
+                ; -----------------------------------------
+                ; Экранная строка 99, высота 88, шесть байтов на строку
+Strip07:        FScreenBitmapStrip {
+                    #4B80,                                                      ; ScreenAddress, исходное слово экранных координат
+                    #58                                                         ; Height, число строк растра
+                }
+Pixels07:       incbin "Strips/Strip07.bitmap"
+                ; -----------------------------------------
+                ; Экранная строка 100, высота 87, шесть байтов на строку
+Strip08:        FScreenBitmapStrip {
+                    #4C80,                                                      ; ScreenAddress, исходное слово экранных координат
+                    #57                                                         ; Height, число строк растра
+                }
+Pixels08:       incbin "Strips/Strip08.bitmap"
+                ; -----------------------------------------
+                ; Экранная строка 100, высота 87, шесть байтов на строку
+Strip09:        FScreenBitmapStrip {
+                    #4C80,                                                      ; ScreenAddress, исходное слово экранных координат
+                    #57                                                         ; Height, число строк растра
+                }
+Pixels09:       incbin "Strips/Strip09.bitmap"
+                ; -----------------------------------------
+                ; Экранная строка 101, высота 86, шесть байтов на строку
+Strip10:        FScreenBitmapStrip {
+                    #4D80,                                                      ; ScreenAddress, исходное слово экранных координат
+                    #56                                                         ; Height, число строк растра
+                }
+Pixels10:       incbin "Strips/Strip10.bitmap"
+                ; -----------------------------------------
+                ; Экранная строка 101, высота 86, шесть байтов на строку
+Strip11:        FScreenBitmapStrip {
+                    #4D80,                                                      ; ScreenAddress, исходное слово экранных координат
+                    #56                                                         ; Height, число строк растра
+                }
+Pixels11:       incbin "Strips/Strip11.bitmap"
+                ; -----------------------------------------
+                ; Экранная строка 100, высота 87, шесть байтов на строку
+Strip12:        FScreenBitmapStrip {
+                    #4C80,                                                      ; ScreenAddress, исходное слово экранных координат
+                    #57                                                         ; Height, число строк растра
+                }
+Pixels12:       incbin "Strips/Strip12.bitmap"
+                ; -----------------------------------------
+                ; Экранная строка 100, высота 87, шесть байтов на строку
+Strip13:        FScreenBitmapStrip {
+                    #4C80,                                                      ; ScreenAddress, исходное слово экранных координат
+                    #57                                                         ; Height, число строк растра
+                }
+Pixels13:       incbin "Strips/Strip13.bitmap"
+                assert $ == #1CFE
+                endmodule

@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "classified_resource_bytes": 458,
+  "resources": 2,
+  "subscriber_rows": 16,
+  "delivery_columns": 5,
+  "control_bytes_round_trip": true,
+  "active_consumers_proved": false,
+  "original_bytes_preserved": true,
+  "generated_values_not_serialized": true,
+  "assembly_executed": false
+}

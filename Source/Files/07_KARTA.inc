@@ -330,19 +330,34 @@
                 ent
                 assert $ == #1DB0
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/07_KARTA/BeforeMapChainPoints.bin"
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/MapClipTablePages.md)
+                assert $ == #1DB0
+                ; Unknown, соседние байты не объявляются свободными
+                incbin "../Resources/07_KARTA/Unclassified1DB0_1E00.bin"
+                assert $ == #1E00
+                disp #DE00
+                include "../Map/Data/ClipLowRow0.asm"
+                ent
                 assert $ == #1E0B
                 disp #DE0B
                 include "../Map/Data/CurrentMapChainPoint.asm"
                 ent
                 assert $ == #1E10
-                incbin "../Resources/07_KARTA/BetweenMapChainPoints.bin"
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/MapClipTablePages.md)
+                assert $ == #1E10
+                disp #DE10
+                include "../Map/Data/ClipLowRow1.asm"
+                ent
                 assert $ == #1E1B
                 disp #DE1B
                 include "../Map/Data/PreviousMapChainPoint.asm"
                 ent
                 assert $ == #1E20
-                incbin "../Resources/07_KARTA/AfterMapChainPoints.bin"
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/MapClipTablePages.md)
+                assert $ == #1E20
+                disp #DE20
+                include "../Map/Data/ClipLowRow2.asm"
+                ent
                 assert $ == #1E2B
                 assert $ == #1E2B
                 disp #DE2B
@@ -366,14 +381,42 @@
                 include "../Map/Data/MapLineMode.asm"
                 ent
                 assert $ == #1E3E
-                incbin "../Resources/07_KARTA/AfterMapLineMode.bin"
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/MapClipTablePages.md)
+                assert $ == #1E3E
+                disp #DE3E
+                include "../Map/Data/ClipLowTail3.asm"
+                ent
+                assert $ == #1E40
+                disp #DE40
+                include "../Map/Data/ClipLowRows45.asm"
+                ent
+                assert $ == #1E60
+                disp #DE60
+                include "../Map/Data/ClipLowRow6.asm"
+                ent
                 assert $ == #1E6B
                 assert $ == #1E6B
                 disp #DE6B
                 include "../Map/Data/ClipProducts.asm"
                 ent
                 assert $ == #1E7B
-                incbin "../Resources/07_KARTA/BeforeArcWorkspace.bin"
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/MapClipTablePages.md)
+                assert $ == #1E7B
+                disp #DE7B
+                include "../Map/Data/ClipLowTail7.asm"
+                ent
+                assert $ == #1E80
+                disp #DE80
+                include "../Map/Data/ClipLowRows8F.asm"
+                ent
+                assert $ == #1F00
+                disp #DF00
+                include "../Map/Data/ClipHighRows09.asm"
+                ent
+                assert $ == #1FA0
+                disp #DFA0
+                include "../Map/Data/ClipHighRowA.asm"
+                ent
                 assert $ == #1FAB
                 disp #DFAB
                 include "../Map/Data/ArcWorkspace.asm"
@@ -407,7 +450,10 @@
                 ent
                 assert $ == #2289
                 ; Unknown, исходные байты вне подтверждённого прямого потока управления
-                incbin "../Resources/07_KARTA/Unclassified008.bin"
+                assert $ == #2289
+                disp #E289
+                include "../Map/LoadHalfLimitArcInputs.asm"
+                ent
                 assert $ == #2299
                 disp #E299
                 include "../Map/LoadClippedArcInputs.asm"

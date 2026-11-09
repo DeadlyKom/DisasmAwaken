@@ -2,6 +2,7 @@
                 module HandleItem08
 ; Документация [Station](../../Docs/FunctionDetails/Station.md)
 ; Подробный разбор [проверка выбора, две страницы экрана и копирование перехода](../../Docs/StationTransition.md)
+                ; Документация [физические поля переносимого состояния](../../Docs/MapDistanceAndRenderState.md)
 ; -----------------------------------------
 ; Активация элемента 8 и подготовка перенесённого перехода из станции
 ; исходная запись 4, файловые смещения #20FF..#216B
@@ -57,15 +58,15 @@ Prepare:        DI
                 LD BC, #02FF
                 LD (HL), L
                 LDIR
-                ; проверка кода FF, запрещающего прибавление к счётчику 9906
+                ; Проверка кода FF, запрещающего прибавление к StationTransitionCounter.
                 LD A, (#98AA)
                 INC A
                 JP Z, @Station.HandleItem08.ClearAttributes                     ; переход, если исходный байт 98AA равен FF, не увеличивать счётчик
 
                 ; расчёт увеличенного на 30 счётчика с байтовым оборачиванием
-                LD A, (#9906)
+                LD A, (@StationTransitionCounter.Value.Count)
                 ADD A, #1E
-                LD (#9906), A
+                LD (@StationTransitionCounter.Value.Count), A
                 ; очистка атрибутов фиксированного экрана перед заменой его начала
 ClearAttributes:LD HL, #5800
                 LD DE, #5801

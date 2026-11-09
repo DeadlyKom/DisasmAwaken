@@ -1,0 +1,45 @@
+{
+  "passed": true,
+  "original_sha256": "55a11de202a5334547e39a6db42c945242a2a53559dc1cf601522219e3463f32",
+  "total_cases": 2,
+  "archived_loader_disk_offset": 569600,
+  "profiles": [
+    {
+      "file_key": "scene1pos",
+      "sector_tail_supplied": false,
+      "loaded_bytes": 18676,
+      "initial_destination": 30464,
+      "width_bytes": 92,
+      "height": 203,
+      "first_page": 13,
+      "first_page_rows": 178,
+      "second_page": 14,
+      "second_page_start": 84,
+      "second_page_rows": 25,
+      "extra_fixed_bytes": 12,
+      "extra_bank_bytes": 80,
+      "window_bytes_compared": 1024
+    },
+    {
+      "file_key": "scene1pos",
+      "sector_tail_supplied": true,
+      "loaded_bytes": 18688,
+      "initial_destination": 30464,
+      "width_bytes": 92,
+      "height": 203,
+      "first_page": 13,
+      "first_page_rows": 178,
+      "second_page": 14,
+      "second_page_start": 84,
+      "second_page_rows": 25,
+      "extra_fixed_bytes": 12,
+      "extra_bank_bytes": 80,
+      "window_bytes_compared": 1024
+    }
+  ],
+  "trdos_substituted": true,
+  "machine_paging_model": true,
+  "active_game_entry_proved": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

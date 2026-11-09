@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "first_rule_index": 27,
+  "subsequent_rule_indices": [
+    28,
+    29
+  ],
+  "physical_rule_size": 2,
+  "base_price_field_offset": 0,
+  "original_displacements": [
+    2,
+    4
+  ],
+  "actual_source_full_verification_passed": true,
+  "wrong_multiplier_probe_rejected": true,
+  "probe_changed_source_file": false,
+  "failed_probe_changed_verification_report": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

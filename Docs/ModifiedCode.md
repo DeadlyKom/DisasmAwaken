@@ -5,11 +5,11 @@
 ветви. Не перечисляют все косвенные записи и генерируемые области.
 
 [Проверка путей реестра](../Tools/Disasm/Research/CheckModifiedCodePaths.py)
-сверяет 1359 записей, существование указанных исходников и 345 целей с
-явными физическими смещениями. У 41 из этих целей недостающие смещения
+сверяет 1418 записей, существование указанных исходников и записи с
+явными физическими смещениями целей (всего 404). У 41 из этих записей недостающие смещения
 дополнены по существующему целевому файлу, реальным инструкциям и SourceMap.
 Выбранный во время исполнения банк из этого соответствия не выводится,
-исходные банковые поля сохранены. Остальные 1015 записей отдельного
+исходные банковые поля сохранены. Остальные 1014 записей отдельного
 target_path не содержат. Такая проверка не устанавливает
 все косвенные записи. При согласовании имён исправлены 16 устаревших
 путей, адреса записей и исходные инструкции сохранены. Контрольная
@@ -19,6 +19,12 @@ target_path не содержат. Такая проверка не устана
 [Дополнение физических целей](../Tools/Disasm/Research/CompleteExplicitMutationTargets.py)
 сохраняет отдельный кандидат и исходную версию реестра, затем проверяет,
 что все прежние поля каждой записи остались буквально неизменными.
+
+Две записи C2CF и C2DA обёртки DrawCenteredWithoutOwner меняют одно и то же
+слово C2F9 внутри `CALL` по C2F8. Первая ставит адрес C2DE с пустым RET,
+вторая восстанавливает BEAE после рисования. Ещё восемь станционных
+записей относятся к прокрутке, строке и перерисовке второго списка оснащения.
+[Обёртка](DrawCenteredWithoutOwner.md), [второй список](SecondaryEquipmentRows.md).
 
 | Регион | Запись из | Адрес записи | Исходная инструкция | Исходник |
 | --- | --- | --- | --- | --- |
@@ -289,8 +295,8 @@ target_path не содержат. Такая проверка не устана
 | Text | #C59B | #C509 | `LD A,#00` | [CheckThresholdSet14.asm](../Source/Text/CheckThresholdSet14.asm) |
 | Text | #C689 | #C697 | `LD HL,#0000` | [PushCargo7BitWriter.asm](../Source/Text/PushCargo7BitWriter.asm) |
 | Text | #C68C | #C69A | `LD A,#00` | [PushCargo7BitWriter.asm](../Source/Text/PushCargo7BitWriter.asm) |
-| Text | #C6BF | #C6CD | `LD HL,#0000` | [PushEquipmentWeightWriter.asm](../Source/Text/PushEquipmentWeightWriter.asm) |
-| Text | #C6C2 | #C6D0 | `LD A,#00` | [PushEquipmentWeightWriter.asm](../Source/Text/PushEquipmentWeightWriter.asm) |
+| Text | #C6BF | #C6CD | `LD HL,#0000` | [PushEquipmentQuantityWriter.asm](../Source/Text/PushEquipmentQuantityWriter.asm) |
+| Text | #C6C2 | #C6D0 | `LD A,#00` | [PushEquipmentQuantityWriter.asm](../Source/Text/PushEquipmentQuantityWriter.asm) |
 | Text | #C7EE | #C804 | `JP #0000` | [ParseFieldSuffix.asm](../Source/Text/ParseFieldSuffix.asm) |
 | Text | #C849 | #C856 | `LD B,#00` | [FindDelimitedRecord.asm](../Source/Text/FindDelimitedRecord.asm) |
 | Text | #C84D | #C862 | `LD B,#00` | [FindDelimitedRecord.asm](../Source/Text/FindDelimitedRecord.asm) |
@@ -1231,7 +1237,13 @@ target_path не содержат. Такая проверка не устана
 | Music | #E2C1 | #E2B9 | CP #00 | [RenderChannelC.asm](../Source/Music/RenderChannelC.asm) |
 | Music | #E2C6 | #E296 | LD BC,#0000 | [RenderChannelC.asm](../Source/Music/RenderChannelC.asm) |
 
+| ActionBoot | #4267 | #5E20 | `LD DE,#0000` | [InitializeFlight.asm](../Source/ActionBoot/InitializeFlight.asm) |
+| ActionBoot | #426A | #5E23 | `LD B,#00` | [InitializeFlight.asm](../Source/ActionBoot/InitializeFlight.asm) |
+| Controls | #DAE0 | #5E33 | `LD SP,#0000` | [RunTemporaryModule.asm](../Source/Controls/RunTemporaryModule.asm) |
+| Controls | #DE07 | #7B60 | `LD A,#00` | [ResetFlightContext.asm](../Source/Controls/ResetFlightContext.asm) |
 | Controls | #DE1D | #688B | `LD A,#00` | [BuildParameterTables.asm](../Source/Controls/BuildParameterTables.asm) |
+
+Записи 4267, 426A и DAE0 совпадают с адресами операндов старой копии CONTROL. Физические цели в таблице указывают на дисковые байты этой условной копии. Для 4267 и 426A подтверждена штатная запись по адресам, но в проверенных профилях в RAM там нет опкодов старого загрузчика. Запись DE07 меняет опкод планировщика ACTION, а писатели 79A8 и 79B4 меняют только соседний байт 7B61. [Старая копия](ControlsLegacyLoadChain.md), [исполнение опкодов](ActionSpawnSchedule.md).
 
 Запись DE1D из банка 1 меняет операнд 688B общего ядра ACTION в фиксированном банке 5. Исходные байты целевой команды находятся в ACTION по смещению 0AC7, операнд по 0AC8, после переноса ядра. Цель находится в [UpdateBodyMotion.asm](../Source/Action/UpdateBodyMotion.asm), числовой индекс и проверка цепочки описаны в [ControlsParameterTables](ControlsParameterTables.md).
 
@@ -1714,3 +1726,31 @@ target_path не содержат. Такая проверка не устана
 - 63E0→DE0F, 1 байт, инструкция по DE0E.
 
 [Алгоритм и ограничения](./ActionPairedAimLines.md) описаны отдельно.
+
+## Клавиатурные команды захватов и наведения
+
+[ClearMissileTargets](../Source/Action/ClearMissileTargets.asm) записывает CommandDelay по A85F и поток CursorA по ECA9. [ToggleTargetRequest](../Source/Action/ToggleTargetRequest.asm) записывает те же два операнда и Request по AA8E. Все пять писателей привязаны к физическим файлам и смещениям своих целей. Банк 0 требуется до первой записи потока AY, переключение на очередь происходит позже. [Договоры команд](ActionTargetCommands.md).
+
+## Режим отображения целей
+
+[CycleTargetOverlayMode](../Source/Action/CycleTargetOverlayMode.asm) пишет CommandDelay по A85F, Mode по AA9A и CursorA по ECA9. Все три писателя привязаны к физическим инструкциям, операнд Mode принадлежит UpdateFrame. [Цикл, переполнение и договор](ActionOverlayModeCommand.md).
+
+## Команда силового луча
+
+[ToggleTractorMode](../Source/Action/ToggleTractorMode.asm) записывает CommandDelay по A85F, CursorA по ECA9 и Mode по 7318. Последний операнд принадлежит [RequestAimOrCollectTarget](../Source/Action/RequestAimOrCollectTarget.asm), его физический диапазон явно указан в реестре самомодификации. [Переход в общий хвост наведения](ActionTractorModeCommand.md).
+
+## Команда свободного полёта
+
+[ToggleFreeFlightMode](../Source/Action/ToggleFreeFlightMode.asm) пишет CommandDelay по A85F, CursorA по ECA9 и существующий опкод ScaleMotion по 6E72. Последний переключается между 3A и C9, остальные байты инструкции не меняются. [Договор команды](ActionFreeFlightCommand.md) и [ограничения потребителя](ActionMotionVectorTail.md).
+
+## Возврат к станции и выброс
+
+[RequestStationReturn](../Source/Action/RequestStationReturn.asm) записывает CursorA по ECA9 и CommandDelay по A85F до проверки оборудования, затем передаёт управление банковому подготовителю. [EjectCargo](../Source/Action/EjectCargo.asm) и [EjectMine](../Source/Action/EjectMine.asm) также записывают оба операнда до проверки наличия выбрасываемого содержимого. Все шесть писателей привязаны к физическим инструкциям. [Возврат](ActionStationReturnCommand.md), [выброс](ActionEjectCommands.md).
+
+## Три пары направления вида
+
+[ToggleViewDirection](../Source/Action/ToggleViewDirection.asm) имеет шесть писателей двухбайтовых пар по 6E75, 6E88 и 6E9B, три записывают 0000, три ED44. Каждая запись охватывает две исходные NOP и создаёт две NOP либо одну NEG, это явно отмечено в реестре. Ещё два писателя задают CommandDelay и CursorA. [Создание пар](ActionViewDirectionCommand.md), [их исполнение](ActionMotionVectorTail.md).
+
+## Стек данных притягиваемой записи
+
+[RequestAimOrCollectTarget](../Source/Action/RequestAimOrCollectTarget.asm) по 7344 сохраняет обычный SP в собственный операнд RestoreStack по 73A4 до временной установки SP в запись объекта. По 7411 записывается CursorA по ECA9 только после принятого сбора. [Рамка, IRQ и пути отказа](ActionTractorCollect.md).

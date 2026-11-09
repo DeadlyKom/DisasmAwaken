@@ -9,7 +9,7 @@ CONST_BLOCK+='                endmodule\n\n'
 
 def create(start):
     _,end,name,tag=next(row for row in LAYOUT if row[0]==start);increase=start==0x7680
-    local={} if increase else {0x76BB:'SubtractStep'}
+    local={0x7685:'MotionGate'} if increase else {0x76BB:'SubtractStep'}
     notes=['все пары SkipDetail и MotionOpcode проверены для обоих входов, все 65536 слов проверены для уменьшения и семи границ увеличения',
         'все 65536 ограничений проверены отдельно, точные регистры включая R, записи и восемь банков RAM сопоставлены',
         'исходное знаковое условие не заменяется общим насыщением, переполнения слова сохраняются',
@@ -56,6 +56,7 @@ def create(start):
         0x76BB:(['Расчёт SignedWord-8 с предварительно очищенным Carry.'],None),
         0x76BE:(['Обновление SignedWord результатом вычитания по модулю 65536.'],None),
         0x76C1:(['Создание запроса перерисовки шестой шкалы после изменения слова.'],None)})
+    if increase:comments[0x7685]=(comments[0x7685][0]+['Внутренний вход MotionGate из AdvanceBoost, проверка SkipDetail уже пропущена.', 'In:', '  HL, DE, BC и AF числовых аргументов не задают, доступны MotionOpcode, SignedWord и LimitWord', 'Out:', '  при MotionOpcode не 3A HL, DE и BC сохранены, A равен опкоду, F соответствует CP 3A', '  иначе действуют расчёт и выходы основного входа после проверки SkipDetail, внешний RET задаёт SP=входной SP+2', 'Corrupt:', '  HL, DE, AF, R, SignedWord и SixthRequest только на допущенном пути', 'Документация [шестнадцать вызовов ускорения](../../Docs/ActionBoostAdvance.md).'],None)
     def name_operands(region,address,operation):
         if (region,address)!=('Action',start):return operation
         for old,new in (('#6F59','@ActionProjectionClipState.SkipDetail'),('#6E72','@ActionGaugeWordKeysState.MotionOpcode'),

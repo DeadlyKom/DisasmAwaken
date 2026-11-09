@@ -1,0 +1,47 @@
+{
+  "passed": true,
+  "renamed_targets": 6,
+  "sites": [
+    {
+      "path": "Source/D3D/BuildPreviewQueue.asm",
+      "line": 146,
+      "target": 61166,
+      "name": "D3D.RestorePreviewStack.Entry"
+    },
+    {
+      "path": "Source/D3D/InsertPreviewQueue.asm",
+      "line": 110,
+      "target": 61166,
+      "name": "D3D.RestorePreviewStack.Entry"
+    },
+    {
+      "path": "Source/D3D/InsertPreviewQueue.asm",
+      "line": 126,
+      "target": 61166,
+      "name": "D3D.RestorePreviewStack.Entry"
+    },
+    {
+      "path": "Source/D3D/InsertPreviewQueue.asm",
+      "line": 140,
+      "target": 61166,
+      "name": "D3D.RestorePreviewStack.Entry"
+    },
+    {
+      "path": "Source/Voxel/ProjectEffectPoint.asm",
+      "line": 35,
+      "target": 63993,
+      "name": "Voxel.ProjectEffectPoint.ShiftVertical"
+    },
+    {
+      "path": "Source/Voxel/ProjectEffectPoint.asm",
+      "line": 66,
+      "target": 64028,
+      "name": "Voxel.ProjectEffectPoint.ShiftHorizontal"
+    }
+  ],
+  "existing_proved_symbol_values_checked": true,
+  "unknown_dynamic_targets_unchanged": true,
+  "original_instructions_preserved": true,
+  "assembly_executed": false,
+  "native_execution": false
+}

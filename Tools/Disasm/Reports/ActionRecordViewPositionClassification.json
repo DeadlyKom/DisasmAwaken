@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "physical_records": 26,
+  "record_size": 64,
+  "new_structure": "FActionViewPosition",
+  "fields": {
+    "X.Low": 26,
+    "X.High": 27,
+    "Y.Low": 28,
+    "Y.High": 29,
+    "Depth.Low": 30,
+    "Depth.High": 31
+  },
+  "physical_bytes_preserved": true,
+  "assembly_executed": false
+}

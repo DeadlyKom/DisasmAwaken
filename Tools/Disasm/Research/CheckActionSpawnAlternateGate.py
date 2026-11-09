@@ -12,6 +12,8 @@ from ReferenceControlsPointRespawn import refresh
 
 def main():
     memory = flat_action()
+    # Проверка исходного порога сохранённого слова, произвольный порог проверяется отдельно.
+    assert memory[0x79A4]==0xF2
     memory[0xBFFE:0xC000] = [0xFF, 0x3F]
     sim = Simulator(memory)
     outcomes = Counter()
@@ -75,7 +77,7 @@ def main():
             assert memory[0xEC02:0xEC05] == [seed & 255, seed >> 8, fold]
 
     report = dict(passed=True, total_cases=outcomes.total(), outcomes=dict(outcomes),
-                  ends_before_record_search=True, assembly_executed=False)
+                  ends_before_record_search=True,saved_low_limit_profile='original_default_f2',assembly_executed=False)
     payload = json.dumps(report, indent=2) + '\n'
     (ROOT / 'Tools/Disasm/Reports/ActionSpawnAlternateGateVerification.json').write_text(payload, encoding='utf-8')
     print(payload)

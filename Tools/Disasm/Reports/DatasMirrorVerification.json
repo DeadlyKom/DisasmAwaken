@@ -9,10 +9,563 @@
   "source_spans": [
     {
       "datas_offset": 0,
-      "length": 3072,
+      "length": 10,
       "action_offset": 11264,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/PolygonMasks/EvenLeft0.asm"
+    },
+    {
+      "datas_offset": 10,
+      "length": 6,
+      "action_offset": 11274,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/PolygonExtraMasks/EvenLeft0.asm"
+    },
+    {
+      "datas_offset": 16,
+      "length": 10,
+      "action_offset": 11280,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/PolygonMasks/EvenRight0.asm"
+    },
+    {
+      "datas_offset": 26,
+      "length": 6,
+      "action_offset": 11290,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/PolygonExtraMasks/EvenRight0.asm"
+    },
+    {
+      "datas_offset": 32,
+      "length": 10,
+      "action_offset": 11296,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/PolygonMasks/EvenLeft1.asm"
+    },
+    {
+      "datas_offset": 42,
+      "length": 6,
+      "action_offset": 11306,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/PolygonExtraMasks/EvenLeft1.asm"
+    },
+    {
+      "datas_offset": 48,
+      "length": 10,
+      "action_offset": 11312,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/PolygonMasks/EvenRight1.asm"
+    },
+    {
+      "datas_offset": 58,
+      "length": 6,
+      "action_offset": 11322,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/PolygonExtraMasks/EvenRight1.asm"
+    },
+    {
+      "datas_offset": 64,
+      "length": 10,
+      "action_offset": 11328,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/PolygonMasks/EvenLeft2.asm"
+    },
+    {
+      "datas_offset": 74,
+      "length": 6,
+      "action_offset": 11338,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/PolygonExtraMasks/EvenLeft2.asm"
+    },
+    {
+      "datas_offset": 80,
+      "length": 10,
+      "action_offset": 11344,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/PolygonMasks/EvenRight2.asm"
+    },
+    {
+      "datas_offset": 90,
+      "length": 6,
+      "action_offset": 11354,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/PolygonExtraMasks/EvenRight2.asm"
+    },
+    {
+      "datas_offset": 96,
+      "length": 10,
+      "action_offset": 11360,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/PolygonMasks/EvenLeft3.asm"
+    },
+    {
+      "datas_offset": 106,
+      "length": 6,
+      "action_offset": 11370,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/PolygonExtraMasks/EvenLeft3.asm"
+    },
+    {
+      "datas_offset": 112,
+      "length": 10,
+      "action_offset": 11376,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/PolygonMasks/EvenRight3.asm"
+    },
+    {
+      "datas_offset": 122,
+      "length": 6,
+      "action_offset": 11386,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/PolygonExtraMasks/EvenRight3.asm"
+    },
+    {
+      "datas_offset": 128,
+      "length": 10,
+      "action_offset": 11392,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/PolygonMasks/EvenLeft4.asm"
+    },
+    {
+      "datas_offset": 138,
+      "length": 6,
+      "action_offset": 11402,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/PolygonExtraMasks/EvenLeft4.asm"
+    },
+    {
+      "datas_offset": 144,
+      "length": 10,
+      "action_offset": 11408,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/PolygonMasks/EvenRight4.asm"
+    },
+    {
+      "datas_offset": 154,
+      "length": 6,
+      "action_offset": 11418,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/PolygonExtraMasks/EvenRight4.asm"
+    },
+    {
+      "datas_offset": 160,
+      "length": 10,
+      "action_offset": 11424,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/PolygonMasks/EvenLeft5.asm"
+    },
+    {
+      "datas_offset": 170,
+      "length": 6,
+      "action_offset": 11434,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/PolygonExtraMasks/EvenLeft5.asm"
+    },
+    {
+      "datas_offset": 176,
+      "length": 10,
+      "action_offset": 11440,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/PolygonMasks/EvenRight5.asm"
+    },
+    {
+      "datas_offset": 186,
+      "length": 6,
+      "action_offset": 11450,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/PolygonExtraMasks/EvenRight5.asm"
+    },
+    {
+      "datas_offset": 192,
+      "length": 10,
+      "action_offset": 11456,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/PolygonMasks/EvenLeft6.asm"
+    },
+    {
+      "datas_offset": 202,
+      "length": 6,
+      "action_offset": 11466,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/PolygonExtraMasks/EvenLeft6.asm"
+    },
+    {
+      "datas_offset": 208,
+      "length": 10,
+      "action_offset": 11472,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/PolygonMasks/EvenRight6.asm"
+    },
+    {
+      "datas_offset": 218,
+      "length": 6,
+      "action_offset": 11482,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/PolygonExtraMasks/EvenRight6.asm"
+    },
+    {
+      "datas_offset": 224,
+      "length": 10,
+      "action_offset": 11488,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/PolygonMasks/EvenLeft7.asm"
+    },
+    {
+      "datas_offset": 234,
+      "length": 6,
+      "action_offset": 11498,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/PolygonExtraMasks/EvenLeft7.asm"
+    },
+    {
+      "datas_offset": 240,
+      "length": 10,
+      "action_offset": 11504,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/PolygonMasks/EvenRight7.asm"
+    },
+    {
+      "datas_offset": 250,
+      "length": 6,
+      "action_offset": 11514,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/PolygonExtraMasks/EvenRight7.asm"
+    },
+    {
+      "datas_offset": 256,
+      "length": 10,
+      "action_offset": 11520,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/PolygonMasks/OddLeft0.asm"
+    },
+    {
+      "datas_offset": 266,
+      "length": 6,
+      "action_offset": 11530,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/PolygonExtraMasks/OddLeft0.asm"
+    },
+    {
+      "datas_offset": 272,
+      "length": 10,
+      "action_offset": 11536,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/PolygonMasks/OddRight0.asm"
+    },
+    {
+      "datas_offset": 282,
+      "length": 6,
+      "action_offset": 11546,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/PolygonExtraMasks/OddRight0.asm"
+    },
+    {
+      "datas_offset": 288,
+      "length": 10,
+      "action_offset": 11552,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/PolygonMasks/OddLeft1.asm"
+    },
+    {
+      "datas_offset": 298,
+      "length": 4,
+      "action_offset": 11562,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/RasterPoints.asm"
+    },
+    {
+      "datas_offset": 302,
+      "length": 2,
+      "action_offset": 11566,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/PolygonExtraMasks/OddLeft1.asm"
+    },
+    {
+      "datas_offset": 304,
+      "length": 10,
+      "action_offset": 11568,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/PolygonMasks/OddRight1.asm"
+    },
+    {
+      "datas_offset": 314,
+      "length": 6,
+      "action_offset": 11578,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/ClipLineHead.asm"
+    },
+    {
+      "datas_offset": 320,
+      "length": 10,
+      "action_offset": 11584,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/PolygonMasks/OddLeft2.asm"
+    },
+    {
+      "datas_offset": 330,
+      "length": 4,
+      "action_offset": 11594,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/ClipLineTail.asm"
+    },
+    {
+      "datas_offset": 334,
+      "length": 2,
+      "action_offset": 11598,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/RasterMode.asm"
+    },
+    {
+      "datas_offset": 336,
+      "length": 10,
+      "action_offset": 11600,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/PolygonMasks/OddRight2.asm"
+    },
+    {
+      "datas_offset": 346,
+      "length": 1,
+      "action_offset": 11610,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/FaceGate.asm"
+    },
+    {
+      "datas_offset": 347,
+      "length": 1,
+      "action_offset": 11611,
       "action_kind": "unclassified",
-      "action_path": "Source/Resources/17_ACTION/Unclassified020_Prefix.bin"
+      "action_path": "Source/Resources/17_ACTION/Unclassified2D5B_2D5C.bin"
+    },
+    {
+      "datas_offset": 348,
+      "length": 4,
+      "action_offset": 11612,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/PolygonExtraMasks/OddRight2.asm"
+    },
+    {
+      "datas_offset": 352,
+      "length": 10,
+      "action_offset": 11616,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/PolygonMasks/OddLeft3.asm"
+    },
+    {
+      "datas_offset": 362,
+      "length": 6,
+      "action_offset": 11626,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/PolygonExtraMasks/OddLeft3.asm"
+    },
+    {
+      "datas_offset": 368,
+      "length": 10,
+      "action_offset": 11632,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/PolygonMasks/OddRight3.asm"
+    },
+    {
+      "datas_offset": 378,
+      "length": 6,
+      "action_offset": 11642,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/PolygonExtraMasks/OddRight3.asm"
+    },
+    {
+      "datas_offset": 384,
+      "length": 10,
+      "action_offset": 11648,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/PolygonMasks/OddLeft4.asm"
+    },
+    {
+      "datas_offset": 394,
+      "length": 6,
+      "action_offset": 11658,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/PolygonExtraMasks/OddLeft4.asm"
+    },
+    {
+      "datas_offset": 400,
+      "length": 10,
+      "action_offset": 11664,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/PolygonMasks/OddRight4.asm"
+    },
+    {
+      "datas_offset": 410,
+      "length": 6,
+      "action_offset": 11674,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/PolygonExtraMasks/OddRight4.asm"
+    },
+    {
+      "datas_offset": 416,
+      "length": 10,
+      "action_offset": 11680,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/PolygonMasks/OddLeft5.asm"
+    },
+    {
+      "datas_offset": 426,
+      "length": 6,
+      "action_offset": 11690,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/PolygonExtraMasks/OddLeft5.asm"
+    },
+    {
+      "datas_offset": 432,
+      "length": 10,
+      "action_offset": 11696,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/PolygonMasks/OddRight5.asm"
+    },
+    {
+      "datas_offset": 442,
+      "length": 6,
+      "action_offset": 11706,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/PolygonExtraMasks/OddRight5.asm"
+    },
+    {
+      "datas_offset": 448,
+      "length": 10,
+      "action_offset": 11712,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/PolygonMasks/OddLeft6.asm"
+    },
+    {
+      "datas_offset": 458,
+      "length": 6,
+      "action_offset": 11722,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/PolygonExtraMasks/OddLeft6.asm"
+    },
+    {
+      "datas_offset": 464,
+      "length": 10,
+      "action_offset": 11728,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/PolygonMasks/OddRight6.asm"
+    },
+    {
+      "datas_offset": 474,
+      "length": 6,
+      "action_offset": 11738,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/PolygonExtraMasks/OddRight6.asm"
+    },
+    {
+      "datas_offset": 480,
+      "length": 10,
+      "action_offset": 11744,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/PolygonMasks/OddLeft7.asm"
+    },
+    {
+      "datas_offset": 490,
+      "length": 6,
+      "action_offset": 11754,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/PolygonExtraMasks/OddLeft7.asm"
+    },
+    {
+      "datas_offset": 496,
+      "length": 10,
+      "action_offset": 11760,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/PolygonMasks/OddRight7.asm"
+    },
+    {
+      "datas_offset": 506,
+      "length": 6,
+      "action_offset": 11770,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/PolygonExtraMasks/OddRight7.asm"
+    },
+    {
+      "datas_offset": 512,
+      "length": 200,
+      "action_offset": 11776,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/ProjectedPoints.asm"
+    },
+    {
+      "datas_offset": 712,
+      "length": 56,
+      "action_offset": 11976,
+      "action_kind": "unclassified",
+      "action_path": "Source/Resources/17_ACTION/Unclassified2EC8_2F00.bin"
+    },
+    {
+      "datas_offset": 768,
+      "length": 252,
+      "action_offset": 12032,
+      "action_kind": "binary_resource",
+      "action_path": "Source/Action/Resources/InitialRenderQueuePool.bin"
+    },
+    {
+      "datas_offset": 1020,
+      "length": 4,
+      "action_offset": 12284,
+      "action_kind": "unclassified",
+      "action_path": "Source/Resources/17_ACTION/Unclassified2FFC_3000.bin"
+    },
+    {
+      "datas_offset": 1024,
+      "length": 256,
+      "action_offset": 12288,
+      "action_kind": "binary_resource",
+      "action_path": "Source/Action/Resources/InitialClipOutputPage.bin"
+    },
+    {
+      "datas_offset": 1280,
+      "length": 256,
+      "action_offset": 12544,
+      "action_kind": "binary_resource",
+      "action_path": "Source/Action/Resources/InitialLogarithmLow.bin"
+    },
+    {
+      "datas_offset": 1536,
+      "length": 256,
+      "action_offset": 12800,
+      "action_kind": "binary_resource",
+      "action_path": "Source/Action/Resources/InitialLogarithmHigh.bin"
+    },
+    {
+      "datas_offset": 1792,
+      "length": 256,
+      "action_offset": 13056,
+      "action_kind": "binary_resource",
+      "action_path": "Source/Action/Resources/InitialExponential.bin"
+    },
+    {
+      "datas_offset": 2048,
+      "length": 256,
+      "action_offset": 13312,
+      "action_kind": "binary_resource",
+      "action_path": "Source/Action/Resources/InitialRowHigh.bin"
+    },
+    {
+      "datas_offset": 2304,
+      "length": 256,
+      "action_offset": 13568,
+      "action_kind": "binary_resource",
+      "action_path": "Source/Action/Resources/InitialRowLow.bin"
+    },
+    {
+      "datas_offset": 2560,
+      "length": 256,
+      "action_offset": 13824,
+      "action_kind": "binary_resource",
+      "action_path": "Source/Action/Resources/InitialColumnByte.bin"
+    },
+    {
+      "datas_offset": 2816,
+      "length": 256,
+      "action_offset": 14080,
+      "action_kind": "binary_resource",
+      "action_path": "Source/Action/Resources/InitialColumnMask.bin"
     },
     {
       "datas_offset": 3072,
@@ -39,8 +592,8 @@
       "datas_offset": 3840,
       "length": 18,
       "action_offset": 15104,
-      "action_kind": "unclassified",
-      "action_path": "Source/Resources/17_ACTION/Unclassified020_AfterRatioCodes.bin"
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/RenderBasis.asm"
     },
     {
       "datas_offset": 3858,
@@ -107,10 +660,129 @@
     },
     {
       "datas_offset": 3981,
-      "length": 131,
+      "length": 2,
       "action_offset": 15245,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/RenderHeader.asm"
+    },
+    {
+      "datas_offset": 3983,
+      "length": 6,
+      "action_offset": 15247,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/RenderInputSnapshot.asm"
+    },
+    {
+      "datas_offset": 3989,
+      "length": 3,
+      "action_offset": 15253,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/FlightControls.asm"
+    },
+    {
+      "datas_offset": 3992,
+      "length": 9,
+      "action_offset": 15256,
       "action_kind": "unclassified",
-      "action_path": "Source/Resources/17_ACTION/Unclassified020_BeforePreferredByte.bin"
+      "action_path": "Source/Resources/17_ACTION/Unclassified3B98_3BA1.bin"
+    },
+    {
+      "datas_offset": 4001,
+      "length": 2,
+      "action_offset": 15265,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/RenderQueueCursor.asm"
+    },
+    {
+      "datas_offset": 4003,
+      "length": 1,
+      "action_offset": 15267,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/ClipOutputState.asm"
+    },
+    {
+      "datas_offset": 4004,
+      "length": 15,
+      "action_offset": 15268,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/ParameterSet.asm"
+    },
+    {
+      "datas_offset": 4019,
+      "length": 10,
+      "action_offset": 15283,
+      "action_kind": "unclassified",
+      "action_path": "Source/Resources/17_ACTION/Unclassified3BB3_3BBD.bin"
+    },
+    {
+      "datas_offset": 4029,
+      "length": 4,
+      "action_offset": 15293,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/FlightCounter.asm"
+    },
+    {
+      "datas_offset": 4033,
+      "length": 5,
+      "action_offset": 15297,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/ParameterSeeds.asm"
+    },
+    {
+      "datas_offset": 4038,
+      "length": 4,
+      "action_offset": 15302,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/OtherContext.asm"
+    },
+    {
+      "datas_offset": 4042,
+      "length": 1,
+      "action_offset": 15306,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/ContextIndex.asm"
+    },
+    {
+      "datas_offset": 4043,
+      "length": 2,
+      "action_offset": 15307,
+      "action_kind": "unclassified",
+      "action_path": "Source/Resources/17_ACTION/Unclassified3BCB_3BCD.bin"
+    },
+    {
+      "datas_offset": 4045,
+      "length": 1,
+      "action_offset": 15309,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/IndexedGate.asm"
+    },
+    {
+      "datas_offset": 4046,
+      "length": 2,
+      "action_offset": 15310,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/ArrivalCounter.asm"
+    },
+    {
+      "datas_offset": 4048,
+      "length": 2,
+      "action_offset": 15312,
+      "action_kind": "unclassified",
+      "action_path": "Source/Resources/17_ACTION/Unclassified3BD0_3BD2.bin"
+    },
+    {
+      "datas_offset": 4050,
+      "length": 2,
+      "action_offset": 15314,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/ByteLimitCounter.asm"
+    },
+    {
+      "datas_offset": 4052,
+      "length": 60,
+      "action_offset": 15316,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/OwnedCargoRows.asm"
     },
     {
       "datas_offset": 4112,
@@ -128,10 +800,59 @@
     },
     {
       "datas_offset": 4116,
-      "length": 312,
+      "length": 30,
       "action_offset": 15380,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/ShipEquipment.asm"
+    },
+    {
+      "datas_offset": 4146,
+      "length": 15,
+      "action_offset": 15410,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/SkimmerEquipment.asm"
+    },
+    {
+      "datas_offset": 4161,
+      "length": 7,
+      "action_offset": 15425,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/NewsState.asm"
+    },
+    {
+      "datas_offset": 4168,
+      "length": 64,
+      "action_offset": 15432,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/DeliveryOrders.asm"
+    },
+    {
+      "datas_offset": 4232,
+      "length": 1,
+      "action_offset": 15496,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/TransitionCounter.asm"
+    },
+    {
+      "datas_offset": 4233,
+      "length": 1,
+      "action_offset": 15497,
       "action_kind": "unclassified",
-      "action_path": "Source/Resources/17_ACTION/Unclassified020_AfterMissileStock.bin"
+      "action_path": "Source/Resources/17_ACTION/Unclassified3C89_3C8A.bin"
+    },
+    {
+      "datas_offset": 4234,
+      "length": 1,
+      "action_offset": 15498,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/HyperJumpCost.asm"
+    },
+    {
+      "datas_offset": 4235,
+      "length": 193,
+      "action_offset": 15499,
+      "action_kind": "binary_resource",
+      "action_path": "Source/Action/Resources/InitialTransferredContextMiddle.bin"
     },
     {
       "datas_offset": 4428,
@@ -142,10 +863,24 @@
     },
     {
       "datas_offset": 4482,
-      "length": 126,
+      "length": 30,
       "action_offset": 15746,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/ContextControlPairs.asm"
+    },
+    {
+      "datas_offset": 4512,
+      "length": 29,
+      "action_offset": 15776,
+      "action_kind": "binary_resource",
+      "action_path": "Source/Action/Resources/InitialTransferredContextTail.bin"
+    },
+    {
+      "datas_offset": 4541,
+      "length": 67,
+      "action_offset": 15805,
       "action_kind": "unclassified",
-      "action_path": "Source/Resources/17_ACTION/Unclassified020_BeforeObjectPointers.bin"
+      "action_path": "Source/Resources/17_ACTION/Unclassified3DBD_3E00.bin"
     },
     {
       "datas_offset": 4608,
@@ -156,10 +891,38 @@
     },
     {
       "datas_offset": 4864,
-      "length": 512,
+      "length": 28,
       "action_offset": 16128,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/TailModelPointers.asm"
+    },
+    {
+      "datas_offset": 4892,
+      "length": 238,
+      "action_offset": 16156,
+      "action_kind": "binary_resource",
+      "action_path": "Source/Action/Resources/InitialObjectStreamBuffer.bin"
+    },
+    {
+      "datas_offset": 5130,
+      "length": 18,
+      "action_offset": 16394,
       "action_kind": "unclassified",
-      "action_path": "Source/Resources/17_ACTION/Unclassified020_AfterObjectPointers.bin"
+      "action_path": "Source/Resources/17_ACTION/Unclassified400A_401C.bin"
+    },
+    {
+      "datas_offset": 5148,
+      "length": 11,
+      "action_offset": 16412,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/CandidateList.asm"
+    },
+    {
+      "datas_offset": 5159,
+      "length": 217,
+      "action_offset": 16423,
+      "action_kind": "unclassified",
+      "action_path": "Source/Resources/17_ACTION/Unclassified4027_4100.bin"
     },
     {
       "datas_offset": 5376,
@@ -170,10 +933,45 @@
     },
     {
       "datas_offset": 7040,
-      "length": 21,
+      "length": 12,
       "action_offset": 18304,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/SpecialRecordPrefix.asm"
+    },
+    {
+      "datas_offset": 7052,
+      "length": 1,
+      "action_offset": 18316,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/PanelEvents.asm"
+    },
+    {
+      "datas_offset": 7053,
+      "length": 2,
+      "action_offset": 18317,
       "action_kind": "unclassified",
-      "action_path": "Source/Resources/17_ACTION/Unclassified020_BeforeVisualEffects.bin"
+      "action_path": "Source/Resources/17_ACTION/Unclassified478D_478F.bin"
+    },
+    {
+      "datas_offset": 7055,
+      "length": 2,
+      "action_offset": 18319,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/PanelSignedWord.asm"
+    },
+    {
+      "datas_offset": 7057,
+      "length": 3,
+      "action_offset": 18321,
+      "action_kind": "unclassified",
+      "action_path": "Source/Resources/17_ACTION/Unclassified4791_4794.bin"
+    },
+    {
+      "datas_offset": 7060,
+      "length": 1,
+      "action_offset": 18324,
+      "action_kind": "typed_data",
+      "action_path": "Source/Action/Data/PanelFirstLevel.asm"
     },
     {
       "datas_offset": 7061,

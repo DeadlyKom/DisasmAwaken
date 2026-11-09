@@ -1,0 +1,154 @@
+{
+  "passed": true,
+  "total_cases": 20,
+  "cases": [
+    {
+      "slot": 9,
+      "index": 0,
+      "packed_bytes": 3230,
+      "unpacked_bytes": 6912,
+      "instructions": 104974
+    },
+    {
+      "slot": 9,
+      "index": 1,
+      "packed_bytes": 2725,
+      "unpacked_bytes": 6912,
+      "instructions": 99501
+    },
+    {
+      "slot": 9,
+      "index": 2,
+      "packed_bytes": 2708,
+      "unpacked_bytes": 6912,
+      "instructions": 102945
+    },
+    {
+      "slot": 9,
+      "index": 3,
+      "packed_bytes": 3056,
+      "unpacked_bytes": 6912,
+      "instructions": 120234
+    },
+    {
+      "slot": 9,
+      "index": 4,
+      "packed_bytes": 2002,
+      "unpacked_bytes": 6912,
+      "instructions": 78908
+    },
+    {
+      "slot": 9,
+      "index": 5,
+      "packed_bytes": 3526,
+      "unpacked_bytes": 6912,
+      "instructions": 119234
+    },
+    {
+      "slot": 9,
+      "index": 6,
+      "packed_bytes": 4731,
+      "unpacked_bytes": 6912,
+      "instructions": 135202
+    },
+    {
+      "slot": 9,
+      "index": 7,
+      "packed_bytes": 3805,
+      "unpacked_bytes": 6912,
+      "instructions": 133841
+    },
+    {
+      "slot": 9,
+      "index": 8,
+      "packed_bytes": 3640,
+      "unpacked_bytes": 6912,
+      "instructions": 125010
+    },
+    {
+      "slot": 9,
+      "index": 9,
+      "packed_bytes": 3128,
+      "unpacked_bytes": 6912,
+      "instructions": 105616
+    },
+    {
+      "slot": 9,
+      "index": 10,
+      "packed_bytes": 4774,
+      "unpacked_bytes": 6912,
+      "instructions": 134738
+    },
+    {
+      "slot": 9,
+      "index": 11,
+      "packed_bytes": 2990,
+      "unpacked_bytes": 6912,
+      "instructions": 107408
+    },
+    {
+      "slot": 9,
+      "index": 12,
+      "packed_bytes": 4042,
+      "unpacked_bytes": 6912,
+      "instructions": 126891
+    },
+    {
+      "slot": 9,
+      "index": 13,
+      "packed_bytes": 4940,
+      "unpacked_bytes": 6912,
+      "instructions": 150142
+    },
+    {
+      "slot": 9,
+      "index": 14,
+      "packed_bytes": 5157,
+      "unpacked_bytes": 6912,
+      "instructions": 163574
+    },
+    {
+      "slot": 9,
+      "index": 15,
+      "packed_bytes": 4940,
+      "unpacked_bytes": 6912,
+      "instructions": 145719
+    },
+    {
+      "slot": 25,
+      "index": 0,
+      "packed_bytes": 1463,
+      "unpacked_bytes": 6912,
+      "instructions": 74819
+    },
+    {
+      "slot": 26,
+      "index": 0,
+      "packed_bytes": 1436,
+      "unpacked_bytes": 6912,
+      "instructions": 82428
+    },
+    {
+      "slot": 27,
+      "index": 0,
+      "packed_bytes": 1423,
+      "unpacked_bytes": 6912,
+      "instructions": 81886
+    },
+    {
+      "slot": 28,
+      "index": 0,
+      "packed_bytes": 1543,
+      "unpacked_bytes": 6912,
+      "instructions": 78309
+    }
+  ],
+  "original_ldir_and_action_unpacker_executed": true,
+  "call_frame_at_6500_checked": true,
+  "source_and_length_supplied_in_model": true,
+  "hypothetical_template_relocation": true,
+  "payload_instructions_executed": false,
+  "actual_game_caller_proved": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

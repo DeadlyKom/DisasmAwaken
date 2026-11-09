@@ -1,7 +1,7 @@
 """Два захватывающих писателя байтов с разной обработкой разрядов результата."""
 ENTRIES={0xC685:('PushCargo7BitWriter','ReadCargoField',True),0xC6B6:('PushMarket7BitWriter','ReadMarketField',True),
- 0xC6BC:('PushEquipmentWeightWriter','ReadEquipmentWeight',False),0xC6E4:('PushSecondWeightWriter','ReadSecondWeight',False)}
-FUNCTIONS={a:(name,'Создание захватывающего писателя '+('семибитового поля' if packed else 'кодированного веса')+' через '+reader) for a,(name,reader,packed) in ENTRIES.items()}
+ 0xC6BC:('PushEquipmentQuantityWriter','ReadEquipmentQuantity',False),0xC6E4:('PushSecondQuantityWriter','ReadSecondQuantity',False)}
+FUNCTIONS={a:(name,'Создание захватывающего писателя '+('семибитового поля' if packed else 'кодированного количества')+' через '+reader) for a,(name,reader,packed) in ENTRIES.items()}
 DOCUMENTS={('Text',a):('IndexedWriters','захват адреса и значения, рамка оператора и точный способ сохранения') for a in ENTRIES}
 LABELS={('Text',0xC688):'Capture',('Text',0xC695):'Invoke',('Text',0xC6A5):'Store',('Text',0xC6AC):'MaskLow',
  ('Text',0xC6BF):'Capture',('Text',0xC6CB):'Invoke',('Text',0xC6DB):'Store',('Text',0xC6E2):'StoreValue'}
@@ -25,7 +25,7 @@ for address,(name,reader,packed) in ENTRIES.items():
   ['целевой адрес и левый операнд захватываются при создании, маркер либо условие инверсии читается из памяти только в Store',
    'Invoke добавляет SavedTarget между StoreReturn и AfterStore, Store снимает этот адрес POP HL',
    ('D!=0 выбирает E=127, но при D=0 значение E>=128 только маскируется, общего насыщения min(result,127) нет' if packed else 'D результата игнорируется, если E>=128, запись может изменить исходный bit7 несмотря на условие инверсии'),
-   'игровой смысл маркера и физические единицы веса отдельно не доказаны'])
+   'прямой читатель использует код количества, арифметический результат хранится по правилу текущего bit7'])
 COMMENTS={
  0xC685:(['получение адреса и текущего байта грузовой записи для захвата'],None),
  0xC688:(['выбор E читателя как захваченного левого операнда, для груза bit7 может остаться'],None),
@@ -49,25 +49,25 @@ COMMENTS={
  0xC6B1:(['выделение bit7 для объединения с новым семибитовым значением'],None),
  0xC6B3:(['создание записываемого байта и окончательных флагов'],None),
  0xC6B6:(['получение адреса и значения рынка перед общим захватом семибитового поля'],None),
- 0xC6BC:(['получение адреса и декодированного веса оснащения'],None),
- 0xC6BF:(['обновление захваченного адреса общего писателя кодированных весов'],None),
- 0xC6C2:(['сохранение A читателя как левого операнда веса'],None),
- 0xC6C5:(['выбор общего Invoke писателя кодированного веса'],None),
- 0xC6CB:(['снятие адреса оператора из рамки вызова писателя веса'],None),
- 0xC6CC:(['чтение захваченного адреса целевого веса'],None),
- 0xC6CF:(['чтение захваченного левого значения веса'],None),
- 0xC6D1:(['сохранение адреса веса для последующего Store'],None),
- 0xC6D2:(['выбор Store как возврата оператора веса'],None),
+ 0xC6BC:(['получение адреса и декодированного количества оснащения'],None),
+ 0xC6BF:(['обновление захваченного адреса общего писателя кодированных количеств'],None),
+ 0xC6C2:(['сохранение A читателя как левого операнда'],None),
+ 0xC6C5:(['выбор общего Invoke писателя кодированного количества'],None),
+ 0xC6CB:(['снятие адреса оператора из рамки вызова писателя количества'],None),
+ 0xC6CC:(['чтение захваченного адреса целевого количества'],None),
+ 0xC6CF:(['чтение захваченного левого значения'],None),
+ 0xC6D1:(['сохранение адреса количества для последующего Store'],None),
+ 0xC6D2:(['выбор Store как возврата оператора'],None),
  0xC6D5:(['создание рамки StoreReturn, SavedTarget, AfterStore'],None),
  0xC6D6:(['создание левого DE с нулевым D из захваченного A'],None),
  0xC6D9:(['передача оператору HL адреса и DE левого значения'],None),
- 0xC6DB:(['восстановление адреса веса после RET оператора'],None),
+ 0xC6DB:(['восстановление адреса количества после RET оператора'],None),
  0xC6DC:(['проверка bit7 текущего байта, захваченное прежнее значение тут не используется'],None),
  0xC6DE:(['выбор только младшего E результата, D не участвует в сохранении'],None),
  0xC6DF:([], 'переход, если текущий bit7 цели снят, записать E без инверсии'),
  0xC6E1:(['инверсия младшего E по текущему bit7 цели, старший разряд результата может сменить кодировку'],None),
- 0xC6E2:(['запись кодированного веса без отдельного насыщения и без изменения DE'],None),
- 0xC6E4:(['получение адреса и декодированного значения второго набора весов'],None)}
+ 0xC6E2:(['запись кодированного количества без отдельного насыщения и без изменения DE'],None),
+ 0xC6E4:(['получение адреса и декодированного количества второго набора'],None)}
 
 
 def name_operands(region,address,operation):
@@ -75,4 +75,4 @@ def name_operands(region,address,operation):
  _,_,packed=ENTRIES[address]
  if packed:
   return operation.replace('#C697','@PackedWriterState.Target').replace('#C69A','@PackedWriterState.InitialValue').replace('#C695','@Text.PushCargo7BitWriter.Invoke').replace('#C6A5','@Text.PushCargo7BitWriter.Store')
- return operation.replace('#C6CD','@EncodedWriterState.Target').replace('#C6D0','@EncodedWriterState.InitialValue').replace('#C6CB','@Text.PushEquipmentWeightWriter.Invoke').replace('#C6DB','@Text.PushEquipmentWeightWriter.Store')
+ return operation.replace('#C6CD','@EncodedWriterState.Target').replace('#C6D0','@EncodedWriterState.InitialValue').replace('#C6CB','@Text.PushEquipmentQuantityWriter.Invoke').replace('#C6DB','@Text.PushEquipmentQuantityWriter.Store')

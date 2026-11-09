@@ -1,5 +1,6 @@
                 module ThreeD
                 module ComposeRenderMatrix
+                ; Физические поля [заголовок модели](../../Docs/ActionRenderHeaderPhysicalData.md)
                 ; Документация [алгоритм и проверка](../../Docs/ThreeDOverlayMirror.md)
                 ; -----------------------------------------
                 ; Композиция исходной матрицы и ориентации с одноосным режимом и точными четвертями
@@ -40,7 +41,7 @@
 Entry:          LD H, @ActionProjectionClipConst.SquarePage
                 LD IY, @ActionRenderQueueInsertState.HeaderWord0
                 ; Проверка бита одной фазы, остальные разряды HeaderWord0 не участвуют в выборе ветви.
-                BIT @ActionRenderCoefficientsConst.OneAxisBit, (IY+#00)
+                BIT @ActionRenderCoefficientsConst.OneAxisBit, (IY + @FRenderHeaderState.ModeBits)
                 JR Z, @ThreeD.ComposeRenderMatrix.Column1                       ; переход, если бит одной фазы сброшен, вычислить общую композицию
 
                 ; Чтение Phase1 и проверка её младших шести разрядов на кратность четверти оборота.
@@ -68,7 +69,7 @@ Column1:        LD B, #00
                 SUB E
                 LD IXH, A
                 ; Проверка, нужен ли средний член для Coeff11.
-                BIT @ActionRenderCoefficientsConst.OneAxisBit, (IY+#00)
+                BIT @ActionRenderCoefficientsConst.OneAxisBit, (IY + @FRenderHeaderState.ModeBits)
                 JR NZ, @ThreeD.ComposeRenderMatrix.Last11                       ; переход, если бит одной фазы установлен, средний член Coeff11 пропустить
 
                 ; Расчёт P(C01, Coeff21) для выходного Coeff11.
@@ -131,7 +132,7 @@ Store11:        LD (@ActionRenderMatrixState.Coeff11), A
                 SUB E
                 LD IXH, A
                 ; Проверка, нужен ли средний член для Coeff21.
-                BIT @ActionRenderCoefficientsConst.OneAxisBit, (IY+#00)
+                BIT @ActionRenderCoefficientsConst.OneAxisBit, (IY + @FRenderHeaderState.ModeBits)
                 JR NZ, @ThreeD.ComposeRenderMatrix.Last21                       ; переход, если бит одной фазы установлен, средний член Coeff21 пропустить
 
                 ; Расчёт P(C11, Coeff21) для выходного Coeff21.
@@ -194,7 +195,7 @@ Store21:        LD (@ActionRenderMatrixState.Coeff21), A
                 SUB E
                 LD IXH, A
                 ; Проверка, нужен ли средний член для Coeff31.
-                BIT @ActionRenderCoefficientsConst.OneAxisBit, (IY+#00)
+                BIT @ActionRenderCoefficientsConst.OneAxisBit, (IY + @FRenderHeaderState.ModeBits)
                 JR NZ, @ThreeD.ComposeRenderMatrix.Last31                       ; переход, если бит одной фазы установлен, средний член Coeff31 пропустить
 
                 ; Расчёт P(C21, Coeff21) для выходного Coeff31.
@@ -263,7 +264,7 @@ Store31:        LD (@ActionRenderMatrixState.Coeff31), A
                 SUB E
                 LD IXH, A
                 ; Проверка, нужен ли средний член для Coeff12.
-                BIT @ActionRenderCoefficientsConst.OneAxisBit, (IY+#00)
+                BIT @ActionRenderCoefficientsConst.OneAxisBit, (IY + @FRenderHeaderState.ModeBits)
                 JR NZ, @ThreeD.ComposeRenderMatrix.Last12                       ; переход, если бит одной фазы установлен, средний член Coeff12 пропустить
 
                 ; Расчёт P(C01, Coeff22) для выходного Coeff12.
@@ -326,7 +327,7 @@ Store12:        LD (@ActionRenderMatrixState.Coeff12), A
                 SUB E
                 LD IXH, A
                 ; Проверка, нужен ли средний член для Coeff22.
-                BIT @ActionRenderCoefficientsConst.OneAxisBit, (IY+#00)
+                BIT @ActionRenderCoefficientsConst.OneAxisBit, (IY + @FRenderHeaderState.ModeBits)
                 JR NZ, @ThreeD.ComposeRenderMatrix.Last22                       ; переход, если бит одной фазы установлен, средний член Coeff22 пропустить
 
                 ; Расчёт P(C11, Coeff22) для выходного Coeff22.
@@ -389,7 +390,7 @@ Store22:        LD (@ActionRenderMatrixState.Coeff22), A
                 SUB E
                 LD IXH, A
                 ; Проверка, нужен ли средний член для Coeff32.
-                BIT @ActionRenderCoefficientsConst.OneAxisBit, (IY+#00)
+                BIT @ActionRenderCoefficientsConst.OneAxisBit, (IY + @FRenderHeaderState.ModeBits)
                 JR NZ, @ThreeD.ComposeRenderMatrix.Last32                       ; переход, если бит одной фазы установлен, средний член Coeff32 пропустить
 
                 ; Расчёт P(C21, Coeff22) для выходного Coeff32.
@@ -441,7 +442,7 @@ Store32:        LD (@ActionRenderMatrixState.Coeff32), A
                 ; -----------------------------------------
                 ; Третий столбец либо точная копия
                 ; Проверка бита одной фазы после первых двух столбцов, BIT сохраняет Carry последней коррекции.
-                BIT @ActionRenderCoefficientsConst.OneAxisBit, (IY+#00)
+                BIT @ActionRenderCoefficientsConst.OneAxisBit, (IY + @FRenderHeaderState.ModeBits)
                 JP NZ, @ThreeD.ComposeRenderMatrix.CopyMiddle                   ; переход, если бит одной фазы установлен, точно скопировать второй столбец сцены
 
                 ; Чтение Coeff13, Coeff23 и Coeff33 ориентации для общего третьего столбца.

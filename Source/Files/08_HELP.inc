@@ -30,5 +30,7 @@
                 incbin "../Resources/08_HELP/SectionTexts.bin"
                 assert $ == #1721
                 ; Unknown, секторный хвост после логической длины, исходные байты сохранены
+                ; Физический суффикс выделенных секторов, неиспользуемость не установлена
+                ; Документация [границы и сохранение суффиксов](../../Docs/AllocatedSectorSuffixes.md)
                 incbin "../Resources/08_HELP/SectorTail.bin"
                 assert $ == #1800

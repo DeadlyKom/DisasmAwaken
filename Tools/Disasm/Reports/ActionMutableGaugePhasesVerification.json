@@ -1,0 +1,31 @@
+{
+  "passed": true,
+  "total_cases": 524288,
+  "profiles": {
+    "third": 262144,
+    "regen": 262144
+  },
+  "outcomes": {
+    "unchanged": 393728,
+    "increment": 130560
+  },
+  "actual_apply_parameter_set_executed": true,
+  "both_actual_phase_consumers_executed": true,
+  "all_step_phase_pairs": true,
+  "gauge_profiles": [
+    0,
+    45,
+    46,
+    255
+  ],
+  "all_gauge_values_exhausted": false,
+  "exact_order_and_values_of_all_memory_writes": true,
+  "sp_and_preserved_registers_checked": true,
+  "zero_step_never_increments": true,
+  "all_joint_inputs_exhausted": false,
+  "whole_frame_executed": false,
+  "af_and_refresh_proved": false,
+  "irq_executed": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

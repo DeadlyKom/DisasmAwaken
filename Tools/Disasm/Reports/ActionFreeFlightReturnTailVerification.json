@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "total_cases": 1024,
+  "actual_ret_opcode_executed": true,
+  "initial_gate_from_proved_command": true,
+  "all_registers_except_T_checked": true,
+  "all_ram_checked": true,
+  "full_UpdateMotionFromControls_executed": false,
+  "preceding_calls_executed": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

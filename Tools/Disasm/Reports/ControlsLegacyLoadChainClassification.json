@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "functions": 4,
+  "code_bytes": 188,
+  "instructions": 95,
+  "model_cases": 4,
+  "original_bytes_and_addresses_preserved": true,
+  "assembly_executed": false,
+  "native_execution": false
+}

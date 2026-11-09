@@ -57,10 +57,26 @@ class FlightCycleChecks:
         self.de = None
         self.frame_returns = 0
         self.loop_entries = 0
+        self.legacy_parameters = None
+        self.legacy_execution_visits = 0
 
     def observe(self, pc, registers, memory):
         sp = registers[SP]
         page = memory.o7ffd
+        if 0x5E1F <= pc < 0x5EDB:
+            self.legacy_execution_visits += 1
+        if pc == 0x4267:
+            assert page == 0x19 and self.legacy_parameters is None
+            assert bytes(memory[0x5CDD + index] for index in range(9)) == b'CONTROL0C'
+            position = (memory[0x5CEB] + 1) & 255
+            assert (registers[H], registers[L], registers[A]) == (memory[0x5CEC], position, memory[0x5CEA])
+            self.legacy_parameters = dict(track=registers[H], sector=position, sector_count=registers[A],
+                                          old_opcode=memory[0x5E1F], old_count_opcode=memory[0x5E22])
+        elif pc == 0x426D:
+            params = self.legacy_parameters
+            assert (memory[0x5E20], memory[0x5E21], memory[0x5E23]) == (
+                params['sector'], params['track'], params['sector_count'])
+            assert (memory[0x5E1F], memory[0x5E22]) == (params['old_opcode'], params['old_count_opcode'])
         if pc == 0xA82D:
             from PackedResourceCodec import decode
             from ReferenceActionLogRatio import EXP, LOG
@@ -128,31 +144,38 @@ class FlightCycleChecks:
                     complete_frame_returns=self.frame_returns, frame_entries=entries,
                     frame_call_sites=[dict(pc=pc, page=page) for pc, page in self.FRAME_CALLS],
                     loop_entry_sp=self.loop_sp, child_frame_return_address=0xA85C,
+                    legacy_control0_parameters=self.legacy_parameters, legacy_runtime_execution_visits=self.legacy_execution_visits,
                     panel_bytes_compared=0x1B00, boot_table_bytes_compared=1792, loads=loads, real_boot_verified=False, assembly_executed=False)
 
 
-def main():
+def main(arguments=None, scan_observer=None, *, boot_simulator=None, save_reports=True,
+         ports_factory=Ports, instruction_observer=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--region", choices=("flight", "station"), default="flight")
     parser.add_argument("--frames", type=int, default=3)
     parser.add_argument("--verify-flight-cycle", action="store_true")
-    args = parser.parse_args()
+    args = parser.parse_args(arguments)
     if args.verify_flight_cycle and (args.region != "flight" or args.frames < 2):
         parser.error("--verify-flight-cycle requires flight and at least two frame entries")
     cycle = FlightCycleChecks() if args.verify_flight_cycle else None
     manifest = json.loads((ROOT / "Tools/Disasm/Disk/Manifest.json").read_text(encoding="utf-8"))
     disk = (ROOT / "Tools/Disasm/Disk/original.trd").read_bytes()
-    memory = Memory(out7ffd=0x10)
     start = 0x6000 if args.region == "flight" else 0x6300
-    sim = Simulator(memory, {"PC":start, "SP":0x5FFF, "IY":0x5C3A},
-                    config={"fast_ldir":False, "fast_djnz":False})
+    if boot_simulator is None:
+        memory = Memory(out7ffd=0x10)
+        sim = Simulator(memory, {"PC":start, "SP":0x5FFF, "IY":0x5C3A},
+                        config={"fast_ldir":False, "fast_djnz":False})
+        filename = "17_ACTION.C.bin" if args.region == "flight" else "04_STATIONF.C.bin"
+        action = (ROOT / "Tools/Disasm/Extracted/Active" / filename).read_bytes()
+        for index, value in enumerate(action):
+            memory[0x6000 + index] = value
+    else:
+        sim = boot_simulator
+        memory = sim.memory
+        assert sim.registers[PC] == start
     registers = sim.registers
-    ports = Ports(memory)
+    ports = ports_factory(memory)
     sim.set_tracer(ports)
-    filename = "17_ACTION.C.bin" if args.region == "flight" else "04_STATIONF.C.bin"
-    action = (ROOT / "Tools/Disasm/Extracted/Active" / filename).read_bytes()
-    for index, value in enumerate(action):
-        memory[0x6000 + index] = value
     selected = None
     loads = []
     visited = {}
@@ -172,13 +195,18 @@ def main():
             calls.add((memory.o7ffd & 7, pc, memory[(pc+1)&65535] + 256*memory[(pc+2)&65535]))
         if cycle:
             cycle.observe(pc, registers, memory)
+        if scan_observer is not None and pc == 0x6F1D:
+            scan_observer(main_count, memory, registers)
+        if instruction_observer is not None:
+            instruction_observer(main_count, memory, registers)
         if pc == (0xA85E if args.region == "flight" else 0x9A81):
             main_count += 1
             if main_count >= args.frames:
                 reason = "requested_frame_entries"
                 break
         if step % 100000 == 0:
-            print(f"step={step} pc={pc:04X} bank={memory.o7ffd & 7} frames={main_count}", flush=True)
+            if save_reports:
+                print(f"step={step} pc={pc:04X} bank={memory.o7ffd & 7} frames={main_count}", flush=True)
             if time.monotonic() - started > 35:
                 reason = "wall_time_limit"
                 break
@@ -243,10 +271,14 @@ def main():
     if cycle:
         assert reason == "requested_frame_entries", (reason, main_count)
         result = cycle.report(main_count, loads)
+        if scan_observer is not None or not save_reports:
+            return result
         (ROOT / "Tools/Disasm/Reports/ActionFlightCycleVerification.json").write_text(
             json.dumps(result, indent=2) + "\n", encoding="utf-8")
         print(json.dumps(result, indent=2))
         return
+    if not save_reports:
+        return report
     snapshots = ROOT / "Tools/Disasm/Research/ModelScreens"
     snapshots.mkdir(parents=True, exist_ok=True)
     for page in (5, 7):

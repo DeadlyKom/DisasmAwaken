@@ -1,7 +1,7 @@
 {
   "method": "static_source_audit_without_assembly",
   "modified_code_path_errors": [],
-  "modified_code_physical_target_ranges": 345,
+  "modified_code_physical_target_ranges": 404,
   "unregistered_object_state_callbacks": [],
   "unregistered_object_state_callback_count": 0,
   "registered_object_state_callbacks": 22,
@@ -9,14 +9,30 @@
   "unregistered_class_callback_count": 0,
   "registered_class_callbacks": 26,
   "unique_class_handler_targets": 11,
-  "included_text_files": 1945,
-  "included_binary_files": 293,
-  "registered_functions": 1397,
+  "registered_keyboard_callbacks": 26,
+  "unregistered_keyboard_callbacks": [],
+  "unregistered_keyboard_callback_count": 0,
+  "overlapping_keyboard_step": {
+    "index": 26,
+    "word": 49353,
+    "bytes": "c9c0",
+    "separate_physical_record": false,
+    "bank_context_and_intended_handler_proved": false,
+    "actual_bank_in_stationary_FD_02_profile": 0,
+    "actual_target_in_that_profile": "Action.ClipInsideToTopLeft.Entry",
+    "prepared_clip_returns_proved": true,
+    "author_intent_proved": false,
+    "initialized_frame_probes": 7,
+    "all_runtime_clip_states_proved": false
+  },
+  "included_text_files": 2210,
+  "included_binary_files": 472,
+  "registered_functions": 1436,
   "unlinked_functions": [],
   "missing_includes_or_resources": [],
   "missing_include_order": [],
-  "global_definitions": 59830,
-  "global_references": 15888,
+  "global_definitions": 71444,
+  "global_references": 17339,
   "unresolved_global_references": [],
   "duplicate_global_definitions": [],
   "global_reference_case_mismatches": [],
@@ -33,18 +49,78 @@
     "Action": 1,
     "ThreeD": 1
   },
-  "potential_continuations": 159,
-  "ordered_fragments": 286,
-  "python_scripts_parsed": 3336,
+  "potential_continuations": 165,
+  "ordered_fragments": 298,
+  "python_scripts_parsed": 3798,
   "python_duplicate_literal_keys": [],
   "totals": {
-    "numeric_control_target": 20,
-    "numeric_index_operand": 45
+    "numeric_index_operand": 20,
+    "numeric_control_target": 9
   },
   "findings": [
     {
-      "path": "Source/Intro/InitializeIntro.asm",
-      "line": 91,
+      "path": "Source/Action/UnpackResource.asm",
+      "line": 112,
+      "issue": "numeric_index_operand"
+    },
+    {
+      "path": "Source/Action/UnpackResource.asm",
+      "line": 225,
+      "issue": "numeric_index_operand"
+    },
+    {
+      "path": "Source/Action/UnpackResource.asm",
+      "line": 268,
+      "issue": "numeric_index_operand"
+    },
+    {
+      "path": "Source/Action/UnpackResource.asm",
+      "line": 302,
+      "issue": "numeric_index_operand"
+    },
+    {
+      "path": "Source/Action/UnpackResource.asm",
+      "line": 366,
+      "issue": "numeric_index_operand"
+    },
+    {
+      "path": "Source/Action/ReadWordFromIX.asm",
+      "line": 24,
+      "issue": "numeric_index_operand"
+    },
+    {
+      "path": "Source/Action/ReadWordFromIX.asm",
+      "line": 27,
+      "issue": "numeric_index_operand"
+    },
+    {
+      "path": "Source/ActionBoot/BuildExponentialTable.asm",
+      "line": 39,
+      "issue": "numeric_index_operand"
+    },
+    {
+      "path": "Source/Controls/DrawSmallBody.asm",
+      "line": 156,
+      "issue": "numeric_index_operand"
+    },
+    {
+      "path": "Source/Controls/RunTemporaryModule.asm",
+      "line": 67,
+      "issue": "numeric_control_target"
+    },
+    {
+      "path": "Source/Controls/RunTemporaryModule.asm",
+      "line": 92,
+      "issue": "numeric_control_target"
+    },
+    {
+      "path": "Source/Controls/BuildParameterTables.asm",
+      "line": 120,
+      "issue": "numeric_index_operand"
+    },
+    {
+      "path": "Source/D3D/MultiplyPreviewCoordinate.asm",
+      "line": 151,
       "issue": "numeric_control_target"
     },
     {
@@ -60,6 +136,11 @@
     {
       "path": "Source/Intro/InitializeColumnEffect.asm",
       "line": 51,
+      "issue": "numeric_index_operand"
+    },
+    {
+      "path": "Source/IntroUnpack/ScanAttributeCountTail.asm",
+      "line": 46,
       "issue": "numeric_index_operand"
     },
     {
@@ -108,16 +189,6 @@
       "issue": "numeric_control_target"
     },
     {
-      "path": "Source/Station/GenerateMarket.asm",
-      "line": 212,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Station/GenerateMarket.asm",
-      "line": 217,
-      "issue": "numeric_index_operand"
-    },
-    {
       "path": "Source/Station/DrawGlyph.asm",
       "line": 138,
       "issue": "numeric_control_target"
@@ -128,243 +199,8 @@
       "issue": "numeric_control_target"
     },
     {
-      "path": "Source/Help/IndexTextLines.asm",
-      "line": 36,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Help/IndexTextLines.asm",
-      "line": 37,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/ActionBoot/BuildExponentialTable.asm",
-      "line": 39,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/ScanActionKeys.asm",
-      "line": 31,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/ScanActionKeys.asm",
-      "line": 37,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/UnpackResource.asm",
-      "line": 112,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/UnpackResource.asm",
-      "line": 225,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/UnpackResource.asm",
-      "line": 268,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/UnpackResource.asm",
-      "line": 302,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/UnpackResource.asm",
-      "line": 366,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/ReadWordFromIX.asm",
-      "line": 24,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/ReadWordFromIX.asm",
-      "line": 27,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/ComposeRenderMatrix.asm",
-      "line": 40,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/ComposeRenderMatrix.asm",
-      "line": 68,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/ComposeRenderMatrix.asm",
-      "line": 131,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/ComposeRenderMatrix.asm",
-      "line": 194,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/ComposeRenderMatrix.asm",
-      "line": 263,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/ComposeRenderMatrix.asm",
-      "line": 326,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/ComposeRenderMatrix.asm",
-      "line": 389,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/ComposeRenderMatrix.asm",
-      "line": 441,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Action/PolygonFillRows.asm",
-      "line": 178,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/ThreeD/ComposeRenderMatrix.asm",
-      "line": 43,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/ThreeD/ComposeRenderMatrix.asm",
-      "line": 71,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/ThreeD/ComposeRenderMatrix.asm",
-      "line": 134,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/ThreeD/ComposeRenderMatrix.asm",
-      "line": 197,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/ThreeD/ComposeRenderMatrix.asm",
-      "line": 266,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/ThreeD/ComposeRenderMatrix.asm",
-      "line": 329,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/ThreeD/ComposeRenderMatrix.asm",
-      "line": 392,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/ThreeD/ComposeRenderMatrix.asm",
-      "line": 444,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/ThreeD/PolygonFillRows.asm",
-      "line": 181,
-      "issue": "numeric_control_target"
-    },
-    {
       "path": "Source/Voxel/ClipSprite.asm",
       "line": 446,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/Controls/DrawSmallBody.asm",
-      "line": 155,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Controls/RunTemporaryModule.asm",
-      "line": 55,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/Controls/RunTemporaryModule.asm",
-      "line": 80,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/Controls/BuildParameterTables.asm",
-      "line": 118,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Controls/InitializeTextWindow.asm",
-      "line": 37,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Controls/InitializeTextWindow.asm",
-      "line": 38,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Controls/InitializeTextWindow.asm",
-      "line": 39,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Controls/InitializeTextWindow.asm",
-      "line": 40,
-      "issue": "numeric_index_operand"
-    },
-    {
-      "path": "Source/Final/InitializeFinal.asm",
-      "line": 109,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/Final/InitializeFinal.asm",
-      "line": 188,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/D3D/MultiplyPreviewCoordinate.asm",
-      "line": 151,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/D3D/InsertPreviewQueue.asm",
-      "line": 110,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/D3D/InsertPreviewQueue.asm",
-      "line": 126,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/D3D/InsertPreviewQueue.asm",
-      "line": 140,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/D3D/BuildPreviewQueue.asm",
-      "line": 146,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/Voxel/ProjectEffectPoint.asm",
-      "line": 35,
-      "issue": "numeric_control_target"
-    },
-    {
-      "path": "Source/Voxel/ProjectEffectPoint.asm",
-      "line": 66,
       "issue": "numeric_control_target"
     }
   ],

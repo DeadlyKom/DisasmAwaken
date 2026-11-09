@@ -1,5 +1,6 @@
                 module Action
                 module CompareContextWordPairs
+                ; Физические поля [локальный контекст](../../Docs/ActionLocalContextPhysicalData.md)
                 ; Документация [алгоритм и проверка](../../Docs/ActionContextWordPairs.md)
                 ; -----------------------------------------
                 ; Сравнение двух пар слов контекста с ранним выходом по первой разности

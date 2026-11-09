@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "logical_bytes_classified_as_graphic_resource": 18676,
+  "unclassified_sector_tail_bytes": 12,
+  "original_bytes_and_physical_layout_preserved": true,
+  "runtime_loader_proved": false,
+  "geometry_from_runtime_metadata": false,
+  "runtime_plane_combination_proved": false,
+  "python_needed_for_ordinary_build": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

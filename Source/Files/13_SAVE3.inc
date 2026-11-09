@@ -19,12 +19,50 @@
                 include "../Resources/13_SAVE3/EquipmentQuantityCodes.asm"
                 assert $ == #0071
                 ; Четыре соседних байта сохраняют неизвестный смысл.
-                incbin "../Resources/13_SAVE3/Unknown98AC.bin"
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/EquipmentPhysicalTables.md)
+                assert $ == #0071
+                disp #0071
+                include "../Resources/13_SAVE3/PrimaryQuantityTail.asm"
+                ent
                 assert $ == #0075
                 include "../Resources/13_SAVE3/MissionOffer.asm"
                 ; Неизвестные поля сохранены, нули не считаются свободным местом.
                 assert $ == #0085
-                incbin "../Resources/13_SAVE3/Unknown085.bin"
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/MapDistanceAndRenderState.md)
+                assert $ == #0085
+                ; Unknown, соседние байты не объявляются свободными
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/StationTransportTradeTables.md)
+                assert $ == #0085
+                ; Unknown, соседние байты не объявляются свободными
+                ; Документация [таблицы и сохранённые промежутки](../../Docs/StationOrderCompatibleSlots.md)
+                assert $ == #0085
+                ; Unknown, соседние байты не объявляются свободными
+                incbin "../Resources/13_SAVE3/Unclassified0085_008B.bin"
+                assert $ == #008B
+                disp #008B
+                include "../Resources/13_SAVE3/OrderCompatibleSlots.asm"
+                ent
+                assert $ == #00BB
+                disp #00BB
+                include "../Resources/13_SAVE3/SecondaryQuantities.asm"
+                ent
+                assert $ == #00C9
+                ; Unknown, соседние байты не объявляются свободными
+                incbin "../Resources/13_SAVE3/Unclassified00C9_00CB.bin"
+                assert $ == #00CB
+                disp #00CB
+                include "../Resources/13_SAVE3/TransitionCounter.asm"
+                ent
+                assert $ == #00CC
+                ; Unknown, соседние байты не объявляются свободными
+                incbin "../Resources/13_SAVE3/Unclassified00CC_00CD.bin"
+                assert $ == #00CD
+                disp #00CD
+                include "../Resources/13_SAVE3/MeasuredDistance.asm"
+                ent
+                assert $ == #00CE
+                ; Unknown, соседние байты не объявляются свободными
+                incbin "../Resources/13_SAVE3/Unclassified00CE_00CF.bin"
                 assert $ == #00CF
                 include "../Resources/13_SAVE3/StoredMapPoints.asm"
                 assert $ == #0135
@@ -41,7 +79,7 @@
                 include "../Resources/13_SAVE3/InterfaceColors.asm"
                 assert $ == #018D
                 include "../Resources/13_SAVE3/ControlOptions.asm"
-                ; Неизвестные поля сохранены, нули не считаются свободным местом.
                 assert $ == #01E3
-                incbin "../Resources/13_SAVE3/Unknown1E3.bin"
+                ; Хвост исходного состояния перед переносом в ACTION
+                incbin "../Resources/13_SAVE3/InitialTransferTrailer.bin"
                 assert $ == #0200

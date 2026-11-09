@@ -66,6 +66,8 @@ COMMENTS={
 
 
 def name_operands(region,function_address,operation):
+    if function_address == 0xD1C0 and region in ('Action', 'ThreeD') and operation == 'JP #D100':
+        operation = f'JP @{region}PolygonPatterns.Mode0.Pattern'
     if region=='Action' and function_address==0xD1C0:
         for name,address in (('WideDelta',0xD1FF),('NarrowDelta',0xD258),('SavedSP',0xD264),('RowLimit',0xD22A),('RowBranch',0xD22C)):
             operation=operation.replace('(#'+format(address,'04X')+')','(@ActionPolygonPreparationState.'+name+')')

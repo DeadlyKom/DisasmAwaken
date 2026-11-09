@@ -1,0 +1,81 @@
+"""Договор замкнутого фрагмента 7497 в перенесённом хвосте AWAKEN.B."""
+
+TAG = 'IntroAttributeCountTail'
+TITLE = 'условный подсчёт атрибутов и вывод смещения'
+REGION = 'IntroUnpack'
+SLOT = 3
+LOCATION = 'перенесённый хвост AWAKEN.B банка 5'
+CASES = 1024
+KEYS = {}
+FUNCTIONS = {
+    0x7497: ('ScanAttributeCountTail', 'Чтение PAPER, изменение первого счётчика и вывод смещения максимума в ULA'),
+}
+ENDS = {0x7497: 0x74CD}
+LOCAL = {0x74A8: 'ReadPaper', 0x74BB: 'CompareCount', 0x74C1: 'NextCount'}
+MUTATIONS = ()
+
+CONTRACTS = {('IntroUnpack', 0x7497): (
+    ['HL указывает на восемь байтов счётчиков с доступом на запись, DE указывает на семь байтов приёмника',
+     '5800..58FE читаются, 8157 доступен на запись, RAM и CPU-стек отделены от кода и счётчиков',
+     'SP указывает на внешнее слово возврата, IRQ в модели не выполняются'],
+    ['HL содержит адрес первого максимального счётчика минус входной HL, DE равен входному HL, BC=0',
+     'AF содержит младший байт разности и флаги 16-разрядного вычитания, этот же байт выведен в порт ULA',
+     "HL', DE', BC', AF', IY сохраняются, IX равен входному HL, SP увеличивается на два",
+     'LDIR последовательно копирует семь байтов в приёмник, включая перекрытие при DE=HL+1',
+     'после копирования первый счётчик увеличен 255 раз, 8157 получает PAPER из последнего атрибута 58FE'],
+    ['HL, DE, BC, AF, IX, R, восемь байтов ниже входного SP, счётчики, приёмник, 8157 и выход ULA'],
+    ['первый счётчик получает младший байт своего адреса перед LDIR, совпадение максимумов оставляет прежний адрес',
+     '8157 лежит в исходной копии bitmap, смещение INC (IX+0) по 74B3 сохраняется',
+     'проверен условный договор после исходного переноса, штатная передача управления сюда не установлена'],
+)}
+
+COMMENTS = {
+    0x7497: (['Подготовка указателей на первый счётчик, приёмник и рамку восстановления.'], None),
+    0x749B: (['Инициализация первого счётчика младшим байтом адреса и копирование семи соседних значений.'], None),
+    0x74A1: (['Подготовка обхода 255 атрибутов и восстановление базы счётчиков в IX.'], None),
+    0x74A8: (['Чтение PAPER текущего атрибута, три сдвига и маска удаляют INK, BRIGHT и FLASH.'], None),
+    0x74AE: (['Запись извлечённого PAPER в исходный адрес 8157.'], None),
+    0x74B1: (['Обновление первого счётчика, записанный PAPER не меняет смещение команды после переноса.'], None),
+    0x74B7: (['Восстановление адреса первого кандидата и начала семи сравниваемых байтов.'], None),
+    0x74BB: (['Проверка нового значения против текущего максимума.'], None),
+    0x74BD: ([], 'переход, если текущий максимум не меньше нового значения, сохранить прежнего кандидата'),
+    0x74BF: (['Обновление адреса максимального счётчика.'], None),
+    0x74C1: (['Продвижение к следующему сравниваемому байту.'], None),
+    0x74C4: (['Расчёт смещения найденного счётчика относительно начальной базы.'], None),
+    0x74C9: (['Вывод младшего байта смещения в ULA, A также задаёт старший байт адреса порта.'], None),
+}
+
+
+def file_offset(address):
+    return address - 0x4800
+
+
+def name_operands(region, address, operation):
+    if (region, address) not in CONTRACTS:
+        return operation
+    return (operation.replace('#5800', '@ScreenUpdateConst.BaseAttributes')
+            .replace('#8157', '@IntroTailState.PaperSample')
+            .replace('#74C1', '@IntroUnpack.ScanAttributeCountTail.NextCount')
+            .replace('#74BB', '@IntroUnpack.ScanAttributeCountTail.CompareCount')
+            .replace('#74A8', '@IntroUnpack.ScanAttributeCountTail.ReadPaper')
+            .replace('(#FE)', '(@Hardware.BorderPort)'))
+
+
+def prepare(pending, symbols, root):
+    alias = 'IntroTailState.PaperSample'
+    assert alias not in symbols
+    symbols[alias] = 0x8157
+    path = root / 'Includes/Variables/Include.inc'
+    text = path.read_text('utf-8')
+    marker = '                module IntroTailState\n'
+    declaration = 'PaperSample'.ljust(16) + 'equ #8157'
+    assert text.count(marker) == 1
+    pending[path] = text.replace(marker, marker + declaration.ljust(80) +
+                                '; адрес записи PAPER, после переноса попадает в исходный bitmap\n').encode('utf-8')
+
+    path = root / 'Tools/Disasm/VerifySources.py'
+    text = path.read_text('utf-8')
+    marker = "(0x2C6B, 98, 'unclassified'), (0x2CCD, 11, 'code'), (0x2CD8, 12, 'code'),"
+    assert text.count(marker) == 1
+    pending[path] = text.replace(marker, "(0x2C6B, 44, 'unclassified'), (0x2C97, 54, 'code'),\n"
+                                 "            (0x2CCD, 11, 'code'), (0x2CD8, 12, 'code'),").encode('utf-8')

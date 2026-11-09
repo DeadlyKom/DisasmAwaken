@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "typed_bytes": 10,
+  "physical_records": 5,
+  "physical_symbols": 12,
+  "files": 5,
+  "context_pair_bytes": 4,
+  "publish_index_bytes": 1,
+  "indexed_gate_bytes": 1,
+  "arrival_counter_bytes": 2,
+  "byte_limit_counter_bytes": 2,
+  "full_game_meaning_proved": false,
+  "adjacent_unreferenced_bytes_classified": false,
+  "original_bytes_addresses_and_instructions_preserved": true,
+  "gaps_preserved": true,
+  "invalid_pair_gameplay_proved": false,
+  "cf08_reclassified": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

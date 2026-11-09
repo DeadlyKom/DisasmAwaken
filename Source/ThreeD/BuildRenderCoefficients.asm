@@ -1,5 +1,6 @@
                 module ThreeD
                 module BuildRenderCoefficients
+                ; Физические поля [заголовок модели](../../Docs/ActionRenderHeaderPhysicalData.md)
                 ; Документация [точные формулы коэффициентов](../../Docs/ThreeDOverlayMirror.md)
                 ; -----------------------------------------
                 ; Построение девяти байтовых коэффициентов по трём фазам либо по одной фазе

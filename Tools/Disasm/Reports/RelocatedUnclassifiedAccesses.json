@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "source_map_sha256": "89697dc8b4d93ad66107f50a1d7fe67d6a74149f40b712e0ff205cf8fab16964",
+  "profiles": {
+    "station": {
+      "frame_entries": 8,
+      "watched_addresses": 3192,
+      "first": [],
+      "accesses": []
+    },
+    "flight": {
+      "frame_entries": 65,
+      "watched_addresses": 2612,
+      "first": [],
+      "accesses": []
+    }
+  },
+  "real_core_relocations_verified": true,
+  "trdos_stub": true,
+  "no_keys": true,
+  "complete_runtime_provenance": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

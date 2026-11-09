@@ -19,6 +19,56 @@
   "independent_all_bitmap_and_numeric_status_reference": true,
   "sentinel_counted_before_test": true,
   "early_marker_return_leaves_exx_swapped": true,
+  "original_tail_reads": {
+    "30": [
+      [
+        39084,
+        255
+      ],
+      [
+        39085,
+        0
+      ],
+      [
+        39086,
+        255
+      ],
+      [
+        39087,
+        128
+      ]
+    ],
+    "31": [
+      [
+        39085,
+        0
+      ],
+      [
+        39086,
+        255
+      ],
+      [
+        39087,
+        128
+      ]
+    ],
+    "32": [
+      [
+        39086,
+        255
+      ],
+      [
+        39087,
+        128
+      ]
+    ],
+    "33": [
+      [
+        39087,
+        128
+      ]
+    ]
+  },
   "irq_executed": false,
   "native_execution": false,
   "assembly_executed": false

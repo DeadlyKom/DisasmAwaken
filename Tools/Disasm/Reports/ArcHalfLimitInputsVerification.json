@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "total_cases": 65536,
+  "exact_flags_r_sp_and_memory": true,
+  "instructions_executed": 9,
+  "t_states": 76,
+  "normal_game_caller_proved": false,
+  "irq_executed": false,
+  "native_execution": false,
+  "assembly_executed": false
+}

@@ -1,5 +1,7 @@
                 module Action
                 module RenderClippedRecords
+                ; Физическое состояние [полные слова и код ориентации](../../Docs/ActionClippedLineWorkData.md)
+                ; Физическое состояние [упакованные точки и полные коды режима](../../Docs/ActionRasterWorkData.md)
                 ; Документация [алгоритм и проверка](../../Docs/ActionClippedPacketRenderer.md)
                 ; -----------------------------------------
                 ; Вывод записей объекта с проверкой кодов точек и отсечением граней и открытых сегментов

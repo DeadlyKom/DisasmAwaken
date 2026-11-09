@@ -198,7 +198,7 @@ def main():
                "| FKeyScanInput | #02 | 27 физических RowSelect и InputMask, см. [ActionKeyDispatchPrefix](ActionKeyDispatchPrefix.md) |",
                "| FMissileStock | #02 | физические Fallback и Preferred запаса ракет, виды запасов не установлены, см. [ActionMissileStock](ActionMissileStock.md) |",
                "| FMissileTargets | #03 | три физических кода захвата Target0..Target2, FF означает отсутствие цели, см. [ActionMissileLaunch](ActionMissileLaunch.md) |",
-               "| FActionAyFrame | #04 | 88 физических строк семи потоков и 7 терминаторов, см. [ActionAyStreams](ActionAyStreams.md) |",
+               "| FActionAyFrame | #04 | 110 физических строк девяти потоков и 9 терминаторов, см. [ActionAyStreams](ActionAyStreams.md) |",
                "| FActionAimPoint | #02 | Физические байты X и Y, см. [сопровождение](ActionAimFollow.md) |",
                "| FActionRenderNode | #0E | Создаваемый runtime-узел с неизвестными байтами 01 и 02, см. [очередь](ActionRenderQueueInsert.md) |",
                "| FRenderPhases | #03 | Три физических фазы и вложенный снимок узла, см. [коэффициенты](ActionRenderCoefficients.md) |",

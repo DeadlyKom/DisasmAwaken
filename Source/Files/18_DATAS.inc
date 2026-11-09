@@ -8,5 +8,7 @@
                 incbin "../Resources/18_DATAS/ActionInitialBlock.bin"
                 assert $ == #1C2D
                 ; 211 байтов после логического конца, сохранены без классификации.
+                ; Физический суффикс выделенных секторов, неиспользуемость не установлена
+                ; Документация [границы и сохранение суффиксов](../../Docs/AllocatedSectorSuffixes.md)
                 incbin "../Resources/18_DATAS/SectorTail.bin"
                 assert $ == #1D00

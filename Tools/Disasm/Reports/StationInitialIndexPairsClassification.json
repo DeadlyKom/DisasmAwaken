@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "typed_bytes": 256,
+  "physical_records": 128,
+  "physical_symbols": 384,
+  "files": 1,
+  "original_index_bytes": 256,
+  "index_pairs": 128,
+  "reset_prefix_bytes": 128,
+  "original_second_half_preserved": true,
+  "initialized_values_not_serialized": true,
+  "original_bytes_addresses_and_instructions_preserved": true,
+  "gaps_preserved": true,
+  "invalid_pair_gameplay_proved": false,
+  "cf08_reclassified": false,
+  "assembly_executed": false,
+  "native_execution": false
+}

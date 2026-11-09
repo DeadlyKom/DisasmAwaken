@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "typed_bytes": 200,
+  "physical_records": 40,
+  "physical_symbols": 160,
+  "original_even_model_pointers": 128,
+  "initial_disk_bytes_preserved": true,
+  "existing_structure_reused": true,
+  "consumer_instructions_preserved": true,
+  "projection_preserves_clip_code": true,
+  "arbitrary_runtime_capacity_proved": false,
+  "assembly_executed": false,
+  "native_execution": false
+}
